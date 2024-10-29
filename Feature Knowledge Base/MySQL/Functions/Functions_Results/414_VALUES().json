@@ -1,0 +1,33 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/built-in-function-reference.html",
+        "https://dev.mysql.com/doc/refman/8.4/en/miscellaneous-functions.html"
+    ],
+    "Title": [
+        "14.1 Built-In Function and Operator Reference",
+        "14.23 Miscellaneous Functions"
+    ],
+    "Feature": [
+        "VALUES(col_name)"
+    ],
+    "Description": [
+        "Define the values to be used during an INSERT",
+        "\nVALUES(col_name)\n",
+        "\n          In an\n          INSERT\n          ... ON DUPLICATE KEY UPDATE statement, you can use\n          the\n          VALUES(col_name)\n          function in the UPDATE clause\n          to refer to column values from the\n          INSERT portion of the\n          statement. In other words,\n          VALUES(col_name)\n          in the UPDATE clause refers to\n          the value of col_name that would be\n          inserted, had no duplicate-key conflict occurred. This\n          function is especially useful in multiple-row inserts. The\n          VALUES() function is meaningful\n          only in the ON DUPLICATE KEY UPDATE clause\n          of INSERT statements and\n          returns NULL otherwise. See\n          Section\u00a015.2.7.2, \u201cINSERT ... ON DUPLICATE KEY UPDATE Statement\u201d.\n        ",
+        "Press CTRL+C to copy mysql> INSERT INTO table (a,b,c) VALUES (1,2,3),(4,5,6)\n    -> ON DUPLICATE KEY UPDATE c=VALUES(a)+VALUES(b);",
+        "\n\nImportant\n\n\n            This usage is deprecated, and subject to removal in a future\n            release of MySQL. Use a row alias, or row and column\n            aliases, instead. For more information and examples, see\n            Section\u00a015.2.7.2, \u201cINSERT ... ON DUPLICATE KEY UPDATE Statement\u201d.\n\n"
+    ],
+    "Examples": [
+        "mysql> INSERT INTO table (a,b,c) VALUES (1,2,3),(4,5,6)\n    -> ON DUPLICATE KEY UPDATE c=VALUES(a)+VALUES(b);"
+    ],
+    "Category": [
+        "Built-In Functions",
+        "Miscellaneous Functions"
+    ],
+    "Reference HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/miscellaneous-functions.html#function_values"
+    ],
+    "Feature Type": [
+        "Function"
+    ]
+}

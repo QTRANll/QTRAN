@@ -1,0 +1,69 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000000823351"
+    ],
+    "Title": [
+        "NORMAL"
+    ],
+    "Feature": [
+        "NORMAL(<mean> , <stddev> , <gen>)\n"
+    ],
+    "Description": [
+        "该函数返回一个符合正态分布（Normal Distribution，又称高斯分布）的浮点数。",
+        "mean",
+        " 表示均值，",
+        "stddev",
+        " 表示标准差。",
+        "mean",
+        " 和 ",
+        "stddev",
+        " 的取值必须是标量值，不随行迭代而变。例如，整形或浮点型常量、标量函数等。 \n    ",
+        "\nmean 和 stddev 的取值可以是 1、2、ABS(-10)；PL 里还可以是 @v1、1+@v3 等。\nmean 和 stddev 的取值不可以是 RAND()、RANDOM()、RAND(2)、t1.c1、ABS(-t1.c1)、1+c2 等。\n",
+        "mean",
+        " 和 ",
+        "stddev",
+        " 的取值可以是 ",
+        "1",
+        "、",
+        "2",
+        "、",
+        "ABS(-10)",
+        "；PL 里还可以是 ",
+        "@v1",
+        "、",
+        "1+@v3",
+        " 等。",
+        "mean",
+        " 和 ",
+        "stddev",
+        " 的取值不可以是 ",
+        "RAND()",
+        "、",
+        "RANDOM()",
+        "、",
+        "RAND(2)",
+        "、",
+        "t1.c1",
+        "、",
+        "ABS(-t1.c1)",
+        "、",
+        "1+c2",
+        " 等。",
+        "随机值生成算法基于 ",
+        "std::normal_distribution",
+        "，采用了 “Marsaglia Polar Method”算法，该算法会消耗较多 CPU。",
+        "gen",
+        " 是一个数值生成函数，通常使用 ",
+        "RANDOM()",
+        " 函数生成。如果传入值是一个常量，则 ",
+        "NORMAL()",
+        " 函数返回值也为一个定值。"
+    ],
+    "Examples": [
+        "obclient> SELECT v, COUNT(*) FROM (SELECT ROUND(NORMAL(3, 0.1, RANDOM()), 1) v FROM TABLE(GENERATOR(1000000))) x GROUP BY v ORDER BY v;\n+------+----------+\n| v    | COUNT(*) |\n+------+----------+\n|  2.5 |        4 |\n|  2.6 |      238 |\n|  2.7 |     5979 |\n|  2.8 |    60889 |\n|  2.9 |   241991 |\n|  3.0 |   382951 |\n|  3.1 |   241306 |\n|  3.2 |    60533 |\n|  3.3 |     5861 |\n|  3.4 |      243 |\n|  3.5 |        5 |\n+------+----------+\n11 rows in set\n",
+        "obclient> SELECT COUNT(NORMAL(0, 1, RANDOM())) v FROM TABLE(GENERATOR(1000000));\n+---------+\n| V       |\n+---------+\n| 1000000 |\n+---------+\n1 row in set (1.49 sec)\n"
+    ],
+    "Category": [
+        "Mathematical Functions"
+    ]
+}

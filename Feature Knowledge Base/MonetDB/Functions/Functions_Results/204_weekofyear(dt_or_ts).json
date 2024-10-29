@@ -1,0 +1,22 @@
+{
+    "HTML": [
+        "https://www.monetdb.org/documentation-Aug2024/user-guide/sql-functions/date-time-functions"
+    ],
+    "Title": [
+        "weekofyear(dt_or_ts)"
+    ],
+    "Feature": [
+        "weekofyear(dt_or_ts)"
+    ],
+    "Description": [
+        "Return type: ",
+        "int",
+        "extract ISO 8601 week number (1 .. 53) of a date or timestamp or timestamptz. same as: week(date)"
+    ],
+    "Examples": [
+        "weekofyear(date '2020-03-22')"
+    ],
+    "Category": [
+        "Date Time Functions"
+    ]
+}

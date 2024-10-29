@@ -1,0 +1,38 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/built-in-function-reference.html",
+        "https://dev.mysql.com/doc/refman/8.4/en/miscellaneous-functions.html"
+    ],
+    "Title": [
+        "14.1 Built-In Function and Operator Reference",
+        "14.23 Miscellaneous Functions"
+    ],
+    "Feature": [
+        "UUID()"
+    ],
+    "Description": [
+        "Return a Universal Unique Identifier (UUID)",
+        "\nUUID()\n",
+        "\n          Returns a Universal Unique Identifier (UUID) generated\n          according to RFC 4122, \u201cA Universally Unique IDentifier\n          (UUID) URN Namespace\u201d\n          (http://www.ietf.org/rfc/rfc4122.txt).\n        ",
+        "\n          A UUID is designed as a number that is globally unique in\n          space and time. Two calls to\n          UUID() are expected to generate\n          two different values, even if these calls are performed on two\n          separate devices not connected to each other.\n",
+        "\n\nWarning\n\n\n            Although UUID() values are\n            intended to be unique, they are not necessarily unguessable\n            or unpredictable. If unpredictability is required, UUID\n            values should be generated some other way.\n\n",
+        "\nUUID() returns a value that\n          conforms to UUID version 1 as described in RFC 4122. The value\n          is a 128-bit number represented as a\n          utf8mb3 string of five hexadecimal numbers\n          in aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee\n          format:\n",
+        "\n\n              The first three numbers are generated from the low,\n              middle, and high parts of a timestamp. The high part also\n              includes the UUID version number.\n            \n              The fourth number preserves temporal uniqueness in case\n              the timestamp value loses monotonicity (for example, due\n              to daylight saving time).\n            \n              The fifth number is an IEEE 802 node number that provides\n              spatial uniqueness. A random number is substituted if the\n              latter is not available (for example, because the host\n              device has no Ethernet card, or it is unknown how to find\n              the hardware address of an interface on the host operating\n              system). In this case, spatial uniqueness cannot be\n              guaranteed. Nevertheless, a collision should have\n              very low probability.\n            \n              The MAC address of an interface is taken into account only\n              on FreeBSD, Linux, and Windows. On other operating\n              systems, MySQL uses a randomly generated 48-bit number.\n\n",
+        "Press CTRL+C to copy mysql> SELECT UUID();\n        -> '6ccd780c-baba-1026-9564-5b8c656024db'",
+        "\n          To convert between string and binary UUID values, use the\n          UUID_TO_BIN() and\n          BIN_TO_UUID() functions. To\n          check whether a string is a valid UUID value, use the\n          IS_UUID() function.\n        ",
+        "\n          This function is unsafe for statement-based replication. A\n          warning is logged if you use this function when\n          binlog_format is set to\n          STATEMENT.\n        "
+    ],
+    "Examples": [
+        "mysql> SELECT UUID();\n        -> '6ccd780c-baba-1026-9564-5b8c656024db'"
+    ],
+    "Category": [
+        "Built-In Functions",
+        "Miscellaneous Functions"
+    ],
+    "Reference HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/miscellaneous-functions.html#function_uuid"
+    ],
+    "Feature Type": [
+        "Function"
+    ]
+}

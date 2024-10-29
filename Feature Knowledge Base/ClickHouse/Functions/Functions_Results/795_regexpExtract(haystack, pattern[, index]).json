@@ -1,0 +1,28 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/string-search-functions"
+    ],
+    "Title": [
+        "regexpExtract"
+    ],
+    "Feature": [
+        "regexpExtract(haystack, pattern[, index])"
+    ],
+    "Description": [
+        "regexpExtract",
+        "Extracts the first string in haystack that matches the regexp pattern and corresponds to the regex group index.",
+        "Syntax",
+        "regexpExtract(haystack, pattern[, index])",
+        "Alias: REGEXP_EXTRACT(haystack, pattern[, index]).",
+        "Arguments",
+        "haystack \u2014 String, in which regexp pattern will to be matched. String.pattern \u2014 String, regexp expression, must be constant. String.index \u2013 An integer number greater or equal 0 with default 1. It represents which regex group to extract. UInt or Int. Optional.",
+        "Returned value",
+        "pattern may contain multiple regexp groups, index indicates which regex group to extract. An index of 0 means matching the entire regular expression. String."
+    ],
+    "Examples": [
+        "SELECT    regexpExtract('100-200', '(\\\\d+)-(\\\\d+)', 1),    regexpExtract('100-200', '(\\\\d+)-(\\\\d+)', 2),    regexpExtract('100-200', '(\\\\d+)-(\\\\d+)', 0),    regexpExtract('100-200', '(\\\\d+)-(\\\\d+)');"
+    ],
+    "Category": [
+        "Searching in Strings Functions"
+    ]
+}

@@ -1,0 +1,43 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/built-in-function-reference.html",
+        "https://dev.mysql.com/doc/refman/8.4/en/aggregate-functions.html"
+    ],
+    "Title": [
+        "14.1 Built-In Function and Operator Reference",
+        "14.19.1 Aggregate Function Descriptions"
+    ],
+    "Feature": [
+        "GROUP_CONCAT(expr)"
+    ],
+    "Description": [
+        "Return a concatenated string",
+        "\nGROUP_CONCAT(expr)\n",
+        "\n            This function returns a string result with the concatenated\n            non-NULL values from a group. It returns\n            NULL if there are no\n            non-NULL values. The full syntax is as\n            follows:\n          ",
+        "Press CTRL+C to copy GROUP_CONCAT([DISTINCT] expr [,expr ...]\n             [ORDER BY {unsigned_integer | col_name | expr}\n                 [ASC | DESC] [,col_name ...]]\n             [SEPARATOR str_val])",
+        "Press CTRL+C to copy mysql> SELECT student_name,\n         GROUP_CONCAT(test_score)\n       FROM student\n       GROUP BY student_name;",
+        "\n            Or:\n          ",
+        "Press CTRL+C to copy mysql> SELECT student_name,\n         GROUP_CONCAT(DISTINCT test_score\n                      ORDER BY test_score DESC SEPARATOR ' ')\n       FROM student\n       GROUP BY student_name;",
+        "\n            In MySQL, you can get the concatenated values of expression\n            combinations. To eliminate duplicate values, use the\n            DISTINCT clause. To sort values in the\n            result, use the ORDER BY clause. To sort\n            in reverse order, add the DESC\n            (descending) keyword to the name of the column you are\n            sorting by in the ORDER BY clause. The\n            default is ascending order; this may be specified explicitly\n            using the ASC keyword. The default\n            separator between values in a group is comma\n            (,). To specify a separator explicitly,\n            use SEPARATOR followed by the string\n            literal value that should be inserted between group values.\n            To eliminate the separator altogether, specify\n            SEPARATOR ''.\n          ",
+        "\n            The result is truncated to the maximum length that is given\n            by the group_concat_max_len\n            system variable, which has a default value of 1024. The\n            value can be set higher, although the effective maximum\n            length of the return value is constrained by the value of\n            max_allowed_packet. The\n            syntax to change the value of\n            group_concat_max_len at\n            runtime is as follows, where val\n            is an unsigned integer:\n          ",
+        "Press CTRL+C to copy SET [GLOBAL | SESSION] group_concat_max_len = val;",
+        "\n            The return value is a nonbinary or binary string, depending\n            on whether the arguments are nonbinary or binary strings.\n            The result type is TEXT or\n            BLOB unless\n            group_concat_max_len is\n            less than or equal to 512, in which case the result type is\n            VARCHAR or\n            VARBINARY.\n          ",
+        "\n            If GROUP_CONCAT() is invoked\n            from within the mysql client, binary\n            string results display using hexadecimal notation, depending\n            on the value of the\n            --binary-as-hex. For more\n            information about that option, see Section\u00a06.5.1, \u201cmysql \u2014 The MySQL Command-Line Client\u201d.\n          ",
+        "\n            See also CONCAT() and\n            CONCAT_WS():\n            Section\u00a014.8, \u201cString Functions and Operators\u201d.\n          "
+    ],
+    "Examples": [
+        "mysql> SELECT student_name,\n         GROUP_CONCAT(test_score)\n       FROM student\n       GROUP BY student_name;",
+        "mysql> SELECT student_name,\n         GROUP_CONCAT(DISTINCT test_score\n                      ORDER BY test_score DESC SEPARATOR ' ')\n       FROM student\n       GROUP BY student_name;",
+        "SET [GLOBAL | SESSION] group_concat_max_len = val;"
+    ],
+    "Category": [
+        "Built-In Functions",
+        "Aggregate Functions"
+    ],
+    "Reference HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/aggregate-functions.html#function_group-concat"
+    ],
+    "Feature Type": [
+        "Function"
+    ]
+}

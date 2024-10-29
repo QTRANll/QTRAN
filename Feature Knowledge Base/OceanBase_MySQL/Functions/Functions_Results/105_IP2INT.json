@@ -1,0 +1,22 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000000823459"
+    ],
+    "Title": [
+        "IP2INT"
+    ],
+    "Feature": [
+        "IP2INT('ip_addr')\n"
+    ],
+    "Description": [
+        "将 IP 地址 ip_addr 转换成整数。",
+        "假设输入的 IP 形如 s1.s2.s3.s4，则返回值的计算规则为：",
+        "s1 * 2^24^ + s2 * 2^16^ + s3 * 2^8^+ s4"
+    ],
+    "Examples": [
+        "obclient> SELECT\n     IP2INT('0.0.0.1'),\n     HEX(IP2INT('0.0.0.1')),\n     HEX(IP2INT('1.0.0.0'))\n     \\G\n*************************** 1. row ***************************\n     IP2INT('0.0.0.1'): 1\nHEX(IP2INT('0.0.0.1')): 1\nHEX(IP2INT('1.0.0.0')): 1000000\n1 row in set\n"
+    ],
+    "Category": [
+        "String Functions"
+    ]
+}

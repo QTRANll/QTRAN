@@ -1,0 +1,23 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/case-operator/"
+    ],
+    "Title": [
+        "CASE OPERATOR"
+    ],
+    "Feature": [
+        "CASE value WHEN [compare_value] THEN result [WHEN [compare_value] THEN\nresult ...] [ELSE result] END\n\nCASE WHEN [condition] THEN result [WHEN [condition] THEN result ...]\n[ELSE result] END\n"
+    ],
+    "Description": [
+        "The first version returns the result where value=compare_value. The\nsecond version returns the result for the first condition that is\ntrue.  If there was no matching result value, the result after ELSE is\nreturned, or NULL if there is no ELSE part.",
+        "There is also a CASE statement, which differs from the CASE operator described here."
+    ],
+    "Examples": [
+        "SELECT CASE 1 WHEN 1 THEN 'one' WHEN 2 THEN 'two' ELSE 'more' END;",
+        "SELECT CASE WHEN 1>0 THEN 'true' ELSE 'false' END;",
+        "SELECT CASE BINARY 'B' WHEN 'a' THEN 1 WHEN 'b' THEN 2 END;"
+    ],
+    "Category": [
+        "Control Flow Functions"
+    ]
+}

@@ -1,0 +1,28 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/other-functions"
+    ],
+    "Title": [
+        "parseTimeDelta"
+    ],
+    "Feature": [
+        "parseTimeDelta(timestr)"
+    ],
+    "Description": [
+        "parseTimeDelta",
+        "Parse a sequence of numbers followed by something resembling a time unit.",
+        "Syntax",
+        "parseTimeDelta(timestr)",
+        "Arguments",
+        "timestr \u2014 A sequence of numbers followed by something resembling a time unit.",
+        "Returned value",
+        "A floating-point number with the number of seconds."
+    ],
+    "Examples": [
+        "SELECT parseTimeDelta('11s+22min')",
+        "SELECT parseTimeDelta('1yr2mo')"
+    ],
+    "Category": [
+        "Other Functions"
+    ]
+}

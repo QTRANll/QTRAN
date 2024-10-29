@@ -1,0 +1,35 @@
+{
+    "HTML": "https://mariadb.com//kb/en/sign/",
+    "Title": "SIGN",
+    "Feature": [
+        "SIGN(X)\n"
+    ],
+    "Description": [
+        "Returns the sign of the argument as -1, 0, or 1, depending on whether\nX is negative, zero, or positive."
+    ],
+    "Examples": [
+        "SELECT SIGN(-32);\n+-----------+\n| SIGN(-32) |\n+-----------+\n|        -1 |\n+-----------+\n\nSELECT SIGN(0);\n+---------+\n| SIGN(0) |\n+---------+\n|       0 |\n+---------+\n\nSELECT SIGN(234);\n+-----------+\n| SIGN(234) |\n+-----------+\n|         1 |\n+-----------+\n"
+    ],
+    "Category": [
+        "Numeric Functions"
+    ],
+    "Effective SQLs Refined": [
+        "SELECT SIGN(-32);",
+        "SELECT SIGN(0);",
+        "SELECT SIGN(234);"
+    ],
+    "Ineffective SQLs Refined": [],
+    "Wrong Messages from Ineffective SQLs Refined": [],
+    "SQLs Generated1": [],
+    "SQLs Generated Costs1": [],
+    "SQLs Generated ExecResults1": [],
+    "SQLs Generated ExecTimes1": [],
+    "SQLs Generated ErrorMessages1": [],
+    "Effective SQLs Generated1": [],
+    "SQLs Generated2": [],
+    "SQLs Generated Costs2": [],
+    "SQLs Generated ExecResults2": [],
+    "SQLs Generated ExecTimes2": [],
+    "SQLs Generated ErrorMessages2": [],
+    "Effective SQLs Generated2": []
+}

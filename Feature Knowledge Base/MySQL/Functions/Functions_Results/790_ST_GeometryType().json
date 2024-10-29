@@ -1,0 +1,33 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/built-in-function-reference.html",
+        "https://dev.mysql.com/doc/refman/8.4/en/spatial-function-reference.html"
+    ],
+    "Title": [
+        "14.1 Built-In Function and Operator Reference",
+        "14.16.1 Spatial Function Reference"
+    ],
+    "Feature": [
+        "ST_GeometryType(g)"
+    ],
+    "Description": [
+        "Return name of geometry type",
+        "\nST_GeometryType(g)\n",
+        "\n            Returns a binary string indicating the name of the geometry\n            type of which the geometry instance\n            g is a member. The name\n            corresponds to one of the instantiable\n            Geometry subclasses.\n          ",
+        "\nST_GeometryType() handles its\n            arguments as described in the introduction to this section.\n          ",
+        "Press CTRL+C to copy mysql> SELECT ST_GeometryType(ST_GeomFromText('POINT(1 1)'));\n+------------------------------------------------+\n| ST_GeometryType(ST_GeomFromText('POINT(1 1)')) |\n+------------------------------------------------+\n| POINT                                          |\n+------------------------------------------------+"
+    ],
+    "Examples": [
+        "mysql> SELECT ST_GeometryType(ST_GeomFromText('POINT(1 1)'));\n+------------------------------------------------+\n| ST_GeometryType(ST_GeomFromText('POINT(1 1)')) |\n+------------------------------------------------+\n| POINT                                          |\n+------------------------------------------------+"
+    ],
+    "Category": [
+        "Built-In Functions",
+        "Spatial Analysis Functions"
+    ],
+    "Reference HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/gis-general-property-functions.html#function_st-geometrytype"
+    ],
+    "Feature Type": [
+        "Function"
+    ]
+}

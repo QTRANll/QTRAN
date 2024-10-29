@@ -1,0 +1,33 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/built-in-function-reference.html",
+        "https://dev.mysql.com/doc/refman/8.4/en/string-functions.html"
+    ],
+    "Title": [
+        "14.1 Built-In Function and Operator Reference",
+        "14.8 String Functions and Operators"
+    ],
+    "Feature": [
+        "RIGHT(str,len)"
+    ],
+    "Description": [
+        "Return the specified rightmost number of characters",
+        "\nRIGHT(str,len)\n",
+        "\n          Returns the rightmost len\n          characters from the string str, or\n          NULL if any argument is\n          NULL.\n        ",
+        "Press CTRL+C to copy mysql> SELECT RIGHT('foobarbar', 4);\n        -> 'rbar'",
+        "\n          This function is multibyte safe.\n        "
+    ],
+    "Examples": [
+        "mysql> SELECT RIGHT('foobarbar', 4);\n        -> 'rbar'"
+    ],
+    "Category": [
+        "Built-In Functions",
+        "String Functions"
+    ],
+    "Reference HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/string-functions.html#function_right"
+    ],
+    "Feature Type": [
+        "Function"
+    ]
+}

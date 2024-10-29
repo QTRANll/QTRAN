@@ -1,0 +1,24 @@
+{
+    "HTML": [
+        "https://duckdb.org/docs/sql/functions/list"
+    ],
+    "Title": [
+        "array_aggr"
+    ],
+    "Feature": [
+        "array_aggr"
+    ],
+    "Description": [
+        "array_aggregate",
+        "aggregate",
+        "list_aggr",
+        "list_aggregate(list, name)",
+        "Executes the aggregate function name on the elements of list. See the List Aggregates section for more details."
+    ],
+    "Examples": [
+        "list_aggregate([1, 2, NULL], 'min')"
+    ],
+    "Category": [
+        "List Functions"
+    ]
+}

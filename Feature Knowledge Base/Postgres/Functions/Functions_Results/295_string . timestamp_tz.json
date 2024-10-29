@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/current/functions-json.html"
+    ],
+    "Title": [
+        "string . timestamp_tz"
+    ],
+    "Feature": [
+        "string . timestamp_tz(precision) → timestamp with time zone"
+    ],
+    "Description": [
+        "Timestamp with time zone value converted from a string, with fractional seconds adjusted to the given precision"
+    ],
+    "Examples": [
+        "jsonb_path_query('\"2023-08-15 12:34:56.789 +05:30\"', '$.timestamp_tz(2)') → \"2023-08-15T12:34:56.79+05:30\""
+    ],
+    "Category": [
+        "JSON Functions and Operators"
+    ]
+}

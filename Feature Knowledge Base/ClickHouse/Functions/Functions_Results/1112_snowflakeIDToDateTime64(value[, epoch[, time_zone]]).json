@@ -1,0 +1,27 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/uuid-functions"
+    ],
+    "Title": [
+        "snowflakeIDToDateTime64"
+    ],
+    "Feature": [
+        "snowflakeIDToDateTime64(value[, epoch[, time_zone]])"
+    ],
+    "Description": [
+        "snowflakeIDToDateTime64",
+        "Returns the timestamp component of a Snowflake ID as a value of type DateTime64.",
+        "Syntax",
+        "snowflakeIDToDateTime64(value[, epoch[, time_zone]])",
+        "Arguments",
+        "value \u2014 Snowflake ID. UInt64.epoch - Epoch of the Snowflake ID in milliseconds since 1970-01-01. Defaults to 0 (1970-01-01). For the Twitter/X epoch (2015-01-01), provide 1288834974657. Optional. UInt*.time_zone \u2014 Timezone. The function parses time_string according to the timezone. Optional. String.",
+        "Returned value",
+        "The timestamp component of value as a DateTime64 with scale = 3, i.e. millisecond precision."
+    ],
+    "Examples": [
+        "SELECT snowflakeIDToDateTime64(7204436857747984384) AS res"
+    ],
+    "Category": [
+        "UUIDs Functions"
+    ]
+}

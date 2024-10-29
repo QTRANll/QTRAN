@@ -1,0 +1,31 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/ext-dict-functions"
+    ],
+    "Title": [
+        "Other Functions"
+    ],
+    "Feature": [
+        "dictGet[Type]('dict_name', 'attr_name', id_expr)dictGet[Type]OrDefault('dict_name', 'attr_name', id_expr, default_value_expr)"
+    ],
+    "Description": [
+        "Other Functions",
+        "ClickHouse supports specialized functions that convert dictionary attribute values to a specific data type regardless of the dictionary configuration.",
+        "Functions:",
+        "dictGetInt8, dictGetInt16, dictGetInt32, dictGetInt64dictGetUInt8, dictGetUInt16, dictGetUInt32, dictGetUInt64dictGetFloat32, dictGetFloat64dictGetDatedictGetDateTimedictGetUUIDdictGetStringdictGetIPv4, dictGetIPv6",
+        "All these functions have the OrDefault modification. For example, dictGetDateOrDefault.",
+        "Syntax:",
+        "dictGet[Type]('dict_name', 'attr_name', id_expr)dictGet[Type]OrDefault('dict_name', 'attr_name', id_expr, default_value_expr)",
+        "Arguments",
+        "dict_name \u2014 Name of the dictionary. String literal.attr_name \u2014 Name of the column of the dictionary. String literal.id_expr \u2014 Key value. Expression returning a UInt64 or Tuple-type value depending on the dictionary configuration.default_value_expr \u2014 Value returned if the dictionary does not contain a row with the id_expr key. Expression returning the value in the data type configured for the attr_name attribute.",
+        "Returned value",
+        "If ClickHouse parses the attribute successfully in the attribute\u2019s data type, functions return the value of the dictionary attribute that corresponds to id_expr.If there is no requested id_expr in the dictionary then:  - `dictGet[Type]` returns the content of the `<null_value>` element specified for the attribute in the dictionary configuration.  - `dictGet[Type]OrDefault` returns the value passed as the `default_value_expr` parameter.",
+        "ClickHouse throws an exception if it cannot parse the value of the attribute or the value does not match the attribute data type."
+    ],
+    "Examples": [
+        "dictGet[Type]('dict_name', 'attr_name', id_expr)dictGet[Type]OrDefault('dict_name', 'attr_name', id_expr, default_value_expr)"
+    ],
+    "Category": [
+        "Dictionaries Functions"
+    ]
+}

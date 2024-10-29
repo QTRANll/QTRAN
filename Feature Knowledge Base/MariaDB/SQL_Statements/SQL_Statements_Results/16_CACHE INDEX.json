@@ -1,0 +1,22 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/cache-index/"
+    ],
+    "Title": [
+        "CACHE INDEX"
+    ],
+    "Feature": [
+        "CACHE INDEX                      \n  tbl_index_list [, tbl_index_list] ...\n  IN key_cache_name                    \n\ntbl_index_list:\n  tbl_name [[INDEX|KEY] (index_name[, index_name] ...)]\n"
+    ],
+    "Description": [
+        "The CACHE INDEX statement assigns table indexes to a specific key\ncache. It is used only for MyISAM tables.",
+        "A default key cache exists and cannot be destroyed. To create more key caches, the key_buffer_size server system variable.",
+        "The associations between tables indexes and key caches are lost on server restart. To recreate them automatically, it is necessary to configure caches in a configuration file and include some CACHE INDEX (and optionally LOAD INDEX) statements in the init file."
+    ],
+    "Examples": [
+        "CACHE INDEX t1, t2, t3 IN hot_cache;\n+---------+--------------------+----------+----------+\n| Table   | Op                 | Msg_type | Msg_text |\n+---------+--------------------+----------+----------+\n| test.t1 | assign_to_keycache | status   | OK       |\n| test.t2 | assign_to_keycache | status   | OK       |\n| test.t3 | assign_to_keycache | status   | OK       |\n+---------+--------------------+----------+----------+\n"
+    ],
+    "Category": [
+        "Administrative SQL Statements"
+    ]
+}

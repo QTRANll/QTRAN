@@ -1,0 +1,43 @@
+{
+    "HTML": "https://mariadb.com//kb/en/field/",
+    "Title": "FIELD",
+    "Feature": [
+        "FIELD(pattern, str1[,str2,...])\n"
+    ],
+    "Description": [
+        "Returns the index position of the string or number matching the given pattern.  Returns 0 in the event that none of the arguments match the pattern.  Raises an Error 1582 if not given at least two arguments.",
+        "When all arguments given to the FIELD() function are strings, they are treated as case-insensitive.  When all the arguments are numbers, they are treated as numbers.  Otherwise, they are treated as doubles.  ",
+        "If the given pattern occurs more than once, the\tFIELD() function only returns the index of the first instance.  If the given pattern is NULL, the function returns 0, as a NULL pattern always fails to match.",
+        "This function is complementary to the ELT() function."
+    ],
+    "Examples": [
+        "SELECT FIELD('ej', 'Hej', 'ej', 'Heja', 'hej', 'foo') \n   AS 'Field Results';\n+---------------+\n| Field Results | \n+---------------+\n|             2 |\n+---------------+\n\nSELECT FIELD('fo', 'Hej', 'ej', 'Heja', 'hej', 'foo')\n   AS 'Field Results';\n+---------------+\n| Field Results | \n+---------------+\n|             0 |\n+---------------+\n\nSELECT FIELD(1, 2, 3, 4, 5, 1) AS 'Field Results';\n+---------------+\n| Field Results |\n+---------------+\n|             5 |\n+---------------+\n\nSELECT FIELD(NULL, 2, 3) AS 'Field Results';\n+---------------+\n| Field Results |\n+---------------+\n|             0 |\n+---------------+\n\nSELECT FIELD('fail') AS 'Field Results';\nError 1582 (42000): Incorrect parameter count in call\nto native function 'field'\n"
+    ],
+    "Category": [
+        "String Functions"
+    ],
+    "Effective SQLs Refined": [
+        "SELECT FIELD('ej', 'Hej', 'ej', 'Heja', 'hej', 'foo') \n   AS 'Field Results';",
+        "SELECT FIELD('fo', 'Hej', 'ej', 'Heja', 'hej', 'foo')\n   AS 'Field Results';",
+        "SELECT FIELD(1, 2, 3, 4, 5, 1) AS 'Field Results';",
+        "SELECT FIELD(NULL, 2, 3) AS 'Field Results';"
+    ],
+    "Ineffective SQLs Refined": [
+        "SELECT FIELD('fail') AS 'Field Results';"
+    ],
+    "Wrong Messages from Ineffective SQLs Refined": [
+        "(pymysql.err.OperationalError) (1582, \"Incorrect parameter count in the call to native function 'FIELD'\")\n[SQL: SELECT FIELD('fail') AS 'Field Results';]\n(Background on this error at: https://sqlalche.me/e/20/e3q8)"
+    ],
+    "SQLs Generated1": [],
+    "SQLs Generated Costs1": [],
+    "SQLs Generated ExecResults1": [],
+    "SQLs Generated ExecTimes1": [],
+    "SQLs Generated ErrorMessages1": [],
+    "Effective SQLs Generated1": [],
+    "SQLs Generated2": [],
+    "SQLs Generated Costs2": [],
+    "SQLs Generated ExecResults2": [],
+    "SQLs Generated ExecTimes2": [],
+    "SQLs Generated ErrorMessages2": [],
+    "Effective SQLs Generated2": []
+}

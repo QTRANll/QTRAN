@@ -1,0 +1,22 @@
+{
+    "HTML": [
+        "https://docs.pingcap.com/zh/tidb/stable/tidb-functions#tidb_encode_sql_digest"
+    ],
+    "Title": [
+        "TIDB_ENCODE_SQL_DIGEST"
+    ],
+    "Feature": [
+        "TIDB_ENCODE_SQL_DIGEST"
+    ],
+    "Description": [
+        "TIDB_ENCODE_SQL_DIGEST",
+        "TIDB_ENCODE_SQL_DIGEST(query_str) \u51fd\u6570\u8fd4\u56de\u67e5\u8be2\u5b57\u7b26\u4e32\u7684 SQL digest\u3002"
+    ],
+    "Examples": [
+        "SELECT TIDB_ENCODE_SQL_DIGEST('SELECT 1');\n",
+        "SELECT TIDB_ENCODE_SQL_DIGEST('SELECT 2');\n"
+    ],
+    "Category": [
+        "TiDB Specific Functions"
+    ]
+}

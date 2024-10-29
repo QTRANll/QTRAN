@@ -1,0 +1,27 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000000823027"
+    ],
+    "Title": [
+        "GROUPING"
+    ],
+    "Feature": [
+        "GROUPING(expr)\n"
+    ],
+    "Description": [
+        "GROUP BY 可以通过 WITH ROLLUP 子句将各分组进行汇总以表示更高级的聚合（也称为超聚合），并产生额外的行。例如以下 SQL 可以将销售额按年度分组，并输出各分组的汇总。",
+        "其中 year 为 NULL 的行即超聚合行。",
+        "obclient> SELECT year, SUM(profit) AS profit\n       FROM sales\n       GROUP BY year WITH ROLLUP;\n+------+--------+\n| year | profit |\n+------+--------+\n| 2000 |   4525 |\n| 2001 |   3010 |\n| NULL |   7535 |\n+------+--------+\n",
+        "WITH ROLLUP 修饰多个 GROUP BY 列时，结果会更加复杂。在这种情况下，每一个分组都会产生一个超聚合行。例如以下 SQL 会产生额外的超聚合行。",
+        "obclient> SELECT year, country, product, SUM(profit) AS profit\n       FROM sales\n       GROUP BY year, country, product WITH ROLLUP;\n+------+---------+------------+--------+\n| year | country | product    | profit |\n+------+---------+------------+--------+\n| 2000 | Finland | Computer   |   1500 |\n| 2000 | Finland | Phone      |    100 |\n| 2000 | Finland | NULL       |   1600 |\n| 2000 | India   | Calculator |    150 |\n| 2000 | India   | Computer   |   1200 |\n| 2000 | India   | NULL       |   1350 |\n| 2000 | USA     | Calculator |     75 |\n| 2000 | USA     | Computer   |   1500 |\n| 2000 | USA     | NULL       |   1575 |\n| 2000 | NULL    | NULL       |   4525 |\n| 2001 | Finland | Phone      |     10 |\n| 2001 | Finland | NULL       |     10 |\n| 2001 | USA     | Calculator |     50 |\n| 2001 | USA     | Computer   |   2700 |\n| 2001 | USA     | TV         |    250 |\n| 2001 | USA     | NULL       |   3000 |\n| 2001 | NULL    | NULL       |   3010 |\n| NULL | NULL    | NULL       |   7535 |\n+------+---------+------------+--------+\n",
+        "GROUPING 函数用于对超聚合行进行区分，如果返回的行是超聚合行，则该函数返回 1，否则返回 0。",
+        "例如对上述 SQL 进行改写，利用 GROUPING 函数的特性添加判断。",
+        "obclient>  SELECT\n         IF(GROUPING(year), 'All years', year) AS year,\n         IF(GROUPING(country), 'All countries', country) AS country,\n         IF(GROUPING(product), 'All products', product) AS product,\n         SUM(profit) AS profit\n       FROM sales\n       GROUP BY year, country, product WITH ROLLUP;\n+-----------+---------------+--------------+--------+\n| year      | country       | product      | profit |\n+-----------+---------------+--------------+--------+\n| 2000      | Finland       | Computer     |   1500 |\n| 2000      | Finland       | Phone        |    100 |\n| 2000      | Finland       | All products |   1600 |\n| 2000      | India         | Calculator   |    150 |\n| 2000      | India         | Computer     |   1200 |\n| 2000      | India         | All products |   1350 |\n| 2000      | USA           | Calculator   |     75 |\n| 2000      | USA           | Computer     |   1500 |\n| 2000      | USA           | All products |   1575 |\n| 2000      | All countries | All products |   4525 |\n| 2001      | Finland       | Phone        |     10 |\n| 2001      | Finland       | All products |     10 |\n| 2001      | USA           | Calculator   |     50 |\n| 2001      | USA           | Computer     |   2700 |\n| 2001      | USA           | TV           |    250 |\n| 2001      | USA           | All products |   3000 |\n| 2001      | All countries | All products |   3010 |\n| All years | All countries | All products |   7535 |\n+-----------+---------------+--------------+--------+\n"
+    ],
+    "Examples": [
+        "obclient> CREATE TABLE employees (manager_id INT,last_name varchar(50),hiredate varchar(50),SALARY INT);\nINSERT INTO employees VALUES(100, 'Raphaely', '2017-07-01', 1700);\nINSERT INTO employees VALUES(100, 'De Haan', '2018-05-01',11000);      \nINSERT INTO employees VALUES(100, 'Errazuriz', '2017-07-21', 1400);\nINSERT INTO employees VALUES(100, 'Hartstein', '2019-05-01',14000);     \nINSERT INTO employees VALUES(100, 'Raphaely', '2017-07-22', 1700);\nINSERT INTO employees VALUES(100, 'Weiss',  '2019-07-11',13500);     \nINSERT INTO employees VALUES(100, 'Russell', '2019-10-05', 13000);\nINSERT INTO employees VALUES(100, 'Partners',  '2018-12-01',14000);     \nINSERT INTO employees VALUES(200, 'Ross',  '2019-06-11',13500);     \nINSERT INTO employees VALUES(200, 'Bell', '2019-05-25', 13000);\nINSERT INTO employees VALUES(200, 'Part',  '2018-08-11',14000);   \nCOMMIT;\n\nobclient> SELECT IF(GROUPING(manager_id),'manager_id',manager_id) AS manager_id,SUM(SALARY) FROM employees GROUP BY manager_id WITH ROLLUP;\n+------------+-------------+\n| manager_id | SUM(SALARY) |\n+------------+-------------+\n| 100        |       70300 |\n| 200        |       40500 |\n| manager_id |      110800 |\n+------------+-------------+\n3 rows in set\n"
+    ],
+    "Category": [
+        "Aggregate Functions"
+    ]
+}

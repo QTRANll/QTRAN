@@ -1,0 +1,21 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/current/functions-json.html"
+    ],
+    "Title": [
+        "json ->> integer"
+    ],
+    "Feature": [
+        "json ->> integer → text",
+        "jsonb ->> integer → text"
+    ],
+    "Description": [
+        "Extracts n'th element of JSON array, as text."
+    ],
+    "Examples": [
+        "'[1,2,3]'::json ->> 2 → 3"
+    ],
+    "Category": [
+        "JSON Functions and Operators"
+    ]
+}

@@ -1,0 +1,18 @@
+{
+    "HTML": [
+        "https://sqlite.org/lang_corefunc.html#abs"
+    ],
+    "Title": [
+        "Built-In Scalar SQL Functions"
+    ],
+    "Feature": [
+        "abs(X)"
+    ],
+    "Description": [
+        "The abs(X) function returns the absolute value of the numeric\n  argument X.  Abs(X) returns NULL if X is NULL.\n  Abs(X) returns 0.0 if X is a string or blob\n  that cannot be converted to a numeric value.  If X is the\n  integer -9223372036854775808 then abs(X) throws an integer overflow\n  error since there is no equivalent positive 64-bit two complement value."
+    ],
+    "Examples": [],
+    "Category": [
+        "Built-In Scalar SQL Functions"
+    ]
+}

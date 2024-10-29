@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000000823058"
+    ],
+    "Title": [
+        "LEAD"
+    ],
+    "Feature": [
+        "LEAD { ( value_expr [, offset [, default]]) [ { RESPECT | IGNORE } NULLS ] | ( value_expr [ { RESPECT | IGNORE } NULLS ] [, offset [, default]] )} OVER ([ query_partition_clause ] order_by_clause)\n"
+    ],
+    "Description": [
+        "LEAD 函数用户在一次查询中取出当前行的同一个字段的后面第 N 行的数据，这种操作可以使用相同表的自连接来实现，但 LEAD() 窗口函数有更高的效率。"
+    ],
+    "Examples": [
+        "obclient> CREATE TABLE EXPLOYEES(LAST_NAME CHAR(10), SALARY DECIMAL, JOB_ID CHAR(32));\nQuery OK, 0 rows affected\n\nobclient> INSERT INTO EXPLOYEES VALUES('JIM', 2000, 'CLEANER');\nQuery OK, 1 row affected\n\nobclient> INSERT INTO EXPLOYEES VALUES('MIKE', 12000, 'ENGINEERING');\nQuery OK, 1 row affected\n\nobclient> INSERT INTO EXPLOYEES VALUES('LILY', 13000, 'ENGINEERING');\nQuery OK, 1 row affected\n\nobclient> INSERT INTO EXPLOYEES VALUES('TOM', 11000, 'ENGINEERING');\nQuery OK, 1 row affected\n\nobclient> SELECT LAST_NAME, LEAD(SALARY) OVER(ORDER BY SALARY) LEAD, LAG(SALARY) OVER(ORDER BY SALARY) LAG FROM EXPLOYEES;\n+-----------+-------+-------+\n| LAST_NAME | LEAD  | LAG   |\n+-----------+-------+-------+\n| JIM       | 11000 |  NULL |\n| TOM       | 12000 |  2000 |\n| MIKE      | 13000 | 11000 |\n| LILY      |  NULL | 12000 |\n+-----------+-------+-------+\n4 rows in set\n"
+    ],
+    "Category": [
+        "Analysis Functions"
+    ]
+}

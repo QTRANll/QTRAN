@@ -1,0 +1,27 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/date-time-functions"
+    ],
+    "Title": [
+        "subtractTupleOfIntervals"
+    ],
+    "Feature": [
+        "subtractTupleOfIntervals(interval_1, interval_2)"
+    ],
+    "Description": [
+        "subtractTupleOfIntervals",
+        "Consecutively subtracts a tuple of intervals from a Date or a DateTime.",
+        "Syntax",
+        "subtractTupleOfIntervals(interval_1, interval_2)",
+        "Parameters",
+        "date: First interval or interval of tuples. Date/Date32/DateTime/DateTime64.intervals: Tuple of intervals to subtract from date. tuple(interval).",
+        "Returned value",
+        "Returns date with subtracted intervals. Date/Date32/DateTime/DateTime64."
+    ],
+    "Examples": [
+        "WITH toDate('2018-01-01') AS date SELECT subtractTupleOfIntervals(date, (INTERVAL 1 DAY, INTERVAL 1 YEAR))"
+    ],
+    "Category": [
+        "Dates and Times Functions"
+    ]
+}

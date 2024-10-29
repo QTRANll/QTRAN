@@ -1,0 +1,34 @@
+{
+    "HTML": "https://mariadb.com//kb/en/timestamp-function/",
+    "Title": "TIMESTAMP FUNCTION",
+    "Feature": [
+        "TIMESTAMP(expr), TIMESTAMP(expr1,expr2)\n"
+    ],
+    "Description": [
+        "With a single argument, this function returns the date or datetime\nexpression expr as a datetime value. With two arguments, it adds the\ntime expression expr2 to the date or datetime expression expr1 and\nreturns the result as a datetime value."
+    ],
+    "Examples": [
+        "SELECT TIMESTAMP('2003-12-31');\n+-------------------------+\n| TIMESTAMP('2003-12-31') |\n+-------------------------+\n| 2003-12-31 00:00:00     |\n+-------------------------+\n\nSELECT TIMESTAMP('2003-12-31 12:00:00','6:30:00');\n+--------------------------------------------+\n| TIMESTAMP('2003-12-31 12:00:00','6:30:00') |\n+--------------------------------------------+\n| 2003-12-31 18:30:00                        |\n+--------------------------------------------+\n"
+    ],
+    "Category": [
+        "Date & Time Functions"
+    ],
+    "Effective SQLs Refined": [
+        "SELECT TIMESTAMP('2003-12-31');",
+        "SELECT TIMESTAMP('2003-12-31 12:00:00','6:30:00');"
+    ],
+    "Ineffective SQLs Refined": [],
+    "Wrong Messages from Ineffective SQLs Refined": [],
+    "SQLs Generated1": [],
+    "SQLs Generated Costs1": [],
+    "SQLs Generated ExecResults1": [],
+    "SQLs Generated ExecTimes1": [],
+    "SQLs Generated ErrorMessages1": [],
+    "Effective SQLs Generated1": [],
+    "SQLs Generated2": [],
+    "SQLs Generated Costs2": [],
+    "SQLs Generated ExecResults2": [],
+    "SQLs Generated ExecTimes2": [],
+    "SQLs Generated ErrorMessages2": [],
+    "Effective SQLs Generated2": []
+}

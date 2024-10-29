@@ -1,0 +1,57 @@
+{
+    "HTML": "https://mariadb.com//kb/en/mpolyfromwkb/",
+    "Title": "MPolyFromWKB",
+    "Feature": [
+        "MPolyFromWKB(wkb[,srid])\nMultiPolygonFromWKB(wkb[,srid])\n"
+    ],
+    "Description": [
+        "Constructs a MULTIPOLYGON value using its WKB  representation and SRID.",
+        "MPolyFromWKB() and MultiPolygonFromWKB() are synonyms."
+    ],
+    "Examples": [
+        "SET @g = ST_AsBinary(MPointFromText('MULTIPOLYGON(((28 26,28 0,84 0,84 42,28 26),(52 18,66 23,73 9,48 6,52 18)),((59 18,67 18,67 13,59 13,59 18)))'));\n\nSELECT ST_AsText(MPolyFromWKB(@g))\\G\n*************************** 1. row ***************************\nST_AsText(MPolyFromWKB(@g)): MULTIPOLYGON(((28 26,28 0,84 0,84 42,28 26),(52 18,66 23,73 9,48 6,52 18)),((59 18,67 18,67 13,59 13,59 18)))\n"
+    ],
+    "Category": [
+        "Geographic Functions"
+    ],
+    "Effective SQLs Refined": [],
+    "Ineffective SQLs Refined": [],
+    "Wrong Messages from Ineffective SQLs Refined": [],
+    "SQLs Generated1": [
+        {
+            "Example SQL": "SELECT MPolyFromWKB('010600000001000000010200000001000000010200000002000000010200000003000000', 4326);"
+        },
+        {
+            "Example SQL": "SELECT MPolyFromWKB(UNHEX('010600000001000000010200000001000000010200000002000000010200000003000000'), 4326);"
+        }
+    ],
+    "SQLs Generated Costs1": [
+        {
+            "Total Tokens": 347,
+            "Prompt Tokens": 298,
+            "Completion Tokens": 49,
+            "Total Cost (USD)": 7.41e-05
+        },
+        {
+            "Total Tokens": 533,
+            "Prompt Tokens": 481,
+            "Completion Tokens": 52,
+            "Total Cost (USD)": 0.00010334999999999999
+        }
+    ],
+    "SQLs Generated ExecResults1": [
+        "None",
+        "[(None,)]"
+    ],
+    "SQLs Generated ExecTimes1": [
+        "0",
+        "0.004731416702270508"
+    ],
+    "SQLs Generated ErrorMessages1": [
+        "(pymysql.err.OperationalError) (4079, \"Illegal parameter data type varchar for operation 'st_geometryfromwkb'\")\n",
+        "None"
+    ],
+    "Effective SQLs Generated1": [
+        "SELECT MPolyFromWKB(UNHEX('010600000001000000010200000001000000010200000002000000010200000003000000'), 4326);"
+    ]
+}

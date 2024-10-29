@@ -1,0 +1,137 @@
+{
+    "HTML": "https://mariadb.com//kb/en/percentile_disc/",
+    "Title": "PERCENTILE_DISC",
+    "Feature": [],
+    "Description": [
+        "PERCENTILE_DISC() (standing for discrete percentile) is a window function which returns the first value in the set whose ordered position is the same or more than the specified fraction.",
+        "Essentially, the following process is followed to find the value to return:",
+        "Get the number of rows in the partition.\nWalk through the partition, in order, until finding the the first row with CUME_DIST() >= function_argument.\n"
+    ],
+    "Examples": [
+        "CREATE TABLE book_rating (name CHAR(30), star_rating TINYINT);\n\nINSERT INTO book_rating VALUES ('Lord of the Ladybirds', 5);\nINSERT INTO book_rating VALUES ('Lord of the Ladybirds', 3);\nINSERT INTO book_rating VALUES ('Lady of the Flies', 1);\nINSERT INTO book_rating VALUES ('Lady of the Flies', 2);\nINSERT INTO book_rating VALUES ('Lady of the Flies', 5);\n\nSELECT name, PERCENTILE_DISC(0.5) WITHIN GROUP (ORDER BY star_rating)\n  OVER (PARTITION BY name) AS pc FROM book_rating;\n+-----------------------+------+\n| name                  | pc   |\n+-----------------------+------+\n| Lord of the Ladybirds |    3 |\n| Lord of the Ladybirds |    3 |\n| Lady of the Flies     |    2 |\n| Lady of the Flies     |    2 |\n| Lady of the Flies     |    2 |\n+-----------------------+------+\n5 rows in set (0.000 sec)\n\nSELECT name, PERCENTILE_DISC(0) WITHIN GROUP (ORDER BY star_rating) \n OVER (PARTITION BY name) AS pc FROM book_rating;\n+-----------------------+------+\n| name                  | pc   |\n+-----------------------+------+\n| Lord of the Ladybirds |    3 |\n| Lord of the Ladybirds |    3 |\n| Lady of the Flies     |    1 |\n| Lady of the Flies     |    1 |\n| Lady of the Flies     |    1 |\n+-----------------------+------+\n5 rows in set (0.000 sec)\n\nSELECT name, PERCENTILE_DISC(1) WITHIN GROUP (ORDER BY star_rating) \n  OVER (PARTITION BY name) AS pc FROM book_rating;\n+-----------------------+------+\n| name                  | pc   |\n+-----------------------+------+\n| Lord of the Ladybirds |    5 |\n| Lord of the Ladybirds |    5 |\n| Lady of the Flies     |    5 |\n| Lady of the Flies     |    5 |\n| Lady of the Flies     |    5 |\n+-----------------------+------+\n5 rows in set (0.000 sec)\n\nSELECT name, PERCENTILE_DISC(0.6) WITHIN GROUP (ORDER BY star_rating) \n  OVER (PARTITION BY name) AS pc FROM book_rating;\n+-----------------------+------+\n| name                  | pc   |\n+-----------------------+------+\n| Lord of the Ladybirds |    5 |\n| Lord of the Ladybirds |    5 |\n| Lady of the Flies     |    2 |\n| Lady of the Flies     |    2 |\n| Lady of the Flies     |    2 |\n+-----------------------+------\n"
+    ],
+    "Category": [
+        "Window Functions"
+    ],
+    "Effective SQLs Refined": [],
+    "Ineffective SQLs Refined": [
+        "SELECT name, PERCENTILE_DISC(0.5) WITHIN GROUP (ORDER BY star_rating)\n  OVER (PARTITION BY name) AS pc FROM book_rating;",
+        "set (0.000 sec)\n\nSELECT name, PERCENTILE_DISC(0) WITHIN GROUP (ORDER BY star_rating) \n OVER (PARTITION BY name) AS pc FROM book_rating;",
+        "set (0.000 sec)\n\nSELECT name, PERCENTILE_DISC(1) WITHIN GROUP (ORDER BY star_rating) \n  OVER (PARTITION BY name) AS pc FROM book_rating;",
+        "set (0.000 sec)\n\nSELECT name, PERCENTILE_DISC(0.6) WITHIN GROUP (ORDER BY star_rating) \n  OVER (PARTITION BY name) AS pc FROM book_rating;"
+    ],
+    "Wrong Messages from Ineffective SQLs Refined": [
+        "(pymysql.err.ProgrammingError) (1146, \"Table 'PINOLO_MariaDB.book_rating' doesn't exist\")\n[SQL: SELECT name, PERCENTILE_DISC(0.5) WITHIN GROUP (ORDER BY star_rating)\n  OVER (PARTITION BY name) AS pc FROM book_rating;]\n(Background on this error at: https://sqlalche.me/e/20/f405)",
+        "(pymysql.err.ProgrammingError) (1064, \"You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '(0.000 sec)\\n\\nSELECT name, PERCENTILE_DISC(0) WITHIN GROUP (ORDER BY star_rati...' at line 1\")\n[SQL: set (0.000 sec)\n\nSELECT name, PERCENTILE_DISC(0) WITHIN GROUP (ORDER BY star_rating) \n OVER (PARTITION BY name) AS pc FROM book_rating;]\n(Background on this error at: https://sqlalche.me/e/20/f405)",
+        "(pymysql.err.ProgrammingError) (1064, \"You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '(0.000 sec)\\n\\nSELECT name, PERCENTILE_DISC(1) WITHIN GROUP (ORDER BY star_rati...' at line 1\")\n[SQL: set (0.000 sec)\n\nSELECT name, PERCENTILE_DISC(1) WITHIN GROUP (ORDER BY star_rating) \n  OVER (PARTITION BY name) AS pc FROM book_rating;]\n(Background on this error at: https://sqlalche.me/e/20/f405)",
+        "(pymysql.err.ProgrammingError) (1064, \"You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '(0.000 sec)\\n\\nSELECT name, PERCENTILE_DISC(0.6) WITHIN GROUP (ORDER BY star_ra...' at line 1\")\n[SQL: set (0.000 sec)\n\nSELECT name, PERCENTILE_DISC(0.6) WITHIN GROUP (ORDER BY star_rating) \n  OVER (PARTITION BY name) AS pc FROM book_rating;]\n(Background on this error at: https://sqlalche.me/e/20/f405)"
+    ],
+    "SQLs Generated1": [
+        {
+            "Example SQL": "SELECT PERCENTILE_DISC(0.5) OVER ()"
+        },
+        {
+            "Example SQL": "SELECT PERCENTILE_DISC(0.5) FROM your_table"
+        },
+        {
+            "Example SQL": "SELECT PERCENTILE_DISC(0.5) WITHIN GROUP (ORDER BY your_column) FROM your_table"
+        },
+        {
+            "Example SQL": "SELECT PERCENTILE_DISC(0.5) FROM (SELECT your_column FROM your_table) AS subquery"
+        },
+        {
+            "Example SQL": "SELECT PERCENTILE_DISC(0.5) FROM your_table WHERE your_column IS NOT NULL"
+        }
+    ],
+    "SQLs Generated Costs1": [
+        {
+            "Total Tokens": 346,
+            "Prompt Tokens": 321,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 6.314999999999999e-05
+        },
+        {
+            "Total Tokens": 527,
+            "Prompt Tokens": 501,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 9.075e-05
+        },
+        {
+            "Total Tokens": 718,
+            "Prompt Tokens": 683,
+            "Completion Tokens": 35,
+            "Total Cost (USD)": 0.00012345
+        },
+        {
+            "Total Tokens": 909,
+            "Prompt Tokens": 874,
+            "Completion Tokens": 35,
+            "Total Cost (USD)": 0.00015209999999999998
+        },
+        {
+            "Total Tokens": 1106,
+            "Prompt Tokens": 1074,
+            "Completion Tokens": 32,
+            "Total Cost (USD)": 0.0001803
+        }
+    ],
+    "SQLs Generated ExecResults1": [
+        "None",
+        "None",
+        "None",
+        "None",
+        "None"
+    ],
+    "SQLs Generated ExecTimes1": [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+    ],
+    "SQLs Generated ErrorMessages1": [
+        "(pymysql.err.ProgrammingError) (1064, \"You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'OVER ()' at line 1\")\n",
+        "(pymysql.err.ProgrammingError) (1064, \"You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'FROM your_table' at line 1\")\n",
+        "(pymysql.err.ProgrammingError) (1064, \"You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'FROM your_table' at line 1\")\n",
+        "(pymysql.err.ProgrammingError) (1064, \"You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'FROM (SELECT your_column FROM your_table) AS subquery' at line 1\")\n",
+        "(pymysql.err.ProgrammingError) (1064, \"You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'FROM your_table WHERE your_column IS NOT NULL' at line 1\")\n"
+    ],
+    "Effective SQLs Generated1": [],
+    "SQLs Generated2": [
+        {
+            "Example SQL": "SELECT PERCENTILE_DISC(0.5) WITHIN GROUP (ORDER BY speaker_count) FROM dialect_recognize_table;"
+        },
+        {
+            "Example SQL": "SELECT PERCENTILE_DISC(0.5) WITHIN GROUP (ORDER BY speaker_count) OVER () FROM dialect_recognize_table;"
+        }
+    ],
+    "SQLs Generated Costs2": [
+        {
+            "Total Tokens": 809,
+            "Prompt Tokens": 771,
+            "Completion Tokens": 38,
+            "Total Cost (USD)": 0.00013844999999999998
+        },
+        {
+            "Total Tokens": 1008,
+            "Prompt Tokens": 968,
+            "Completion Tokens": 40,
+            "Total Cost (USD)": 0.00016919999999999997
+        }
+    ],
+    "SQLs Generated ExecResults2": [
+        "None",
+        "[(46000000,), (46000000,), (46000000,), (46000000,), (46000000,)]"
+    ],
+    "SQLs Generated ExecTimes2": [
+        "0",
+        "0.0052607059478759766"
+    ],
+    "SQLs Generated ErrorMessages2": [
+        "(pymysql.err.ProgrammingError) (1064, \"You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'FROM dialect_recognize_table' at line 1\")\n",
+        "None"
+    ],
+    "Effective SQLs Generated2": [
+        "SELECT PERCENTILE_DISC(0.5) WITHIN GROUP (ORDER BY speaker_count) OVER () FROM dialect_recognize_table;"
+    ]
+}

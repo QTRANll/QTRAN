@@ -1,0 +1,23 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000001054313"
+    ],
+    "Title": [
+        "SET NAMES"
+    ],
+    "Feature": [
+        "SET NAMES 'charset_name' [COLLATE 'collation_name'];\n"
+    ],
+    "Description": [
+        "该语句用来设置当前会话的字符集以及字符集排序规则。",
+        "\n\n\n参数\n描述\n\n\n\n\ncharset_name\n指定字符集。\n\n\ncollation_name\n指定字符集的排序规则。如未指定，则使用字符集默认字符集排序规则。\n\n\n",
+        "\n说明\n可以通过 SHOW CHARSET; 查询系统支持的字符集，通过 SHOW COLLATION; 查询系统支持的字符集排序规则。\n"
+    ],
+    "Examples": [
+        "obclient> SET NAMES 'gbk';\nQuery OK, 0 rows affected\n\nobclient> SHOW VARIABLES LIKE 'character_set_c%';\n+--------------------------+-------+\n| VARIABLE_NAME            | VALUE |\n+--------------------------+-------+\n| character_set_client     | gbk   |\n| character_set_connection | gbk   |\n+--------------------------+-------+\n2 rows in set\n\nobclient> SHOW VARIABLES LIKE 'collation_connection';\n+----------------------+----------------+\n| VARIABLE_NAME        | VALUE          |\n+----------------------+----------------+\n| collation_connection | gbk_chinese_ci |\n+----------------------+----------------+\n1 row in set\n",
+        "obclient> SET NAMES 'utf8mb4' COLLATE 'utf8mb4_general_ci';\nQuery OK, 0 rows affected\n\nobclient> SHOW VARIABLES LIKE 'character_set_c%';\n+--------------------------+---------+\n| VARIABLE_NAME            | VALUE   |\n+--------------------------+---------+\n| character_set_client     | utf8mb4 |\n| character_set_connection | utf8mb4 |\n+--------------------------+---------+\n2 rows in set\n\nobclient> SHOW VARIABLES LIKE 'collation_connection';\n+----------------------+--------------------+\n| VARIABLE_NAME        | VALUE              |\n+----------------------+--------------------+\n| collation_connection | utf8mb4_general_ci |\n+----------------------+--------------------+\n1 row in set\n"
+    ],
+    "Category": [
+        "DCL"
+    ]
+}

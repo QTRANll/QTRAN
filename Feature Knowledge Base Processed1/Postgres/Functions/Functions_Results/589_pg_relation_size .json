@@ -1,0 +1,22 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/current/functions-admin.html"
+    ],
+    "Title": [
+        "pg_relation_size"
+    ],
+    "Feature": [
+        "pg_relation_size ( relation regclass [, fork text ] ) → bigint"
+    ],
+    "Description": [
+        "Computes the disk space used by one “fork” of the specified relation. (Note that for most purposes it is more convenient to use the higher-level functions pg_total_relation_size or pg_table_size, which sum the sizes of all forks.) With one argument, this returns the size of the main data fork of the relation. The second argument can be provided to specify which fork to examine:",
+        "main returns the size of the main data fork of the relation.",
+        "fsm returns the size of the Free Space Map (see Section 65.3) associated with the relation.",
+        "vm returns the size of the Visibility Map (see Section 65.4) associated with the relation.",
+        "init returns the size of the initialization fork, if any, associated with the relation."
+    ],
+    "Examples": [],
+    "Category": [
+        "System Administration Functions"
+    ]
+}

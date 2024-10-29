@@ -1,0 +1,33 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/tuple-map-functions"
+    ],
+    "Title": [
+        "mapFromArrays"
+    ],
+    "Feature": [
+        "mapFromArrays(keys, values)"
+    ],
+    "Description": [
+        "mapFromArrays",
+        "Creates a map from an array or map of keys and an array or map of values.",
+        "The function is a convenient alternative to syntax CAST([...], 'Map(key_type, value_type)').\nFor example, instead of writing",
+        "CAST((['aa', 'bb'], [4, 5]), 'Map(String, UInt32)'), orCAST([('aa',4), ('bb',5)], 'Map(String, UInt32)')",
+        "you can write mapFromArrays(['aa', 'bb'], [4, 5]).",
+        "Syntax",
+        "mapFromArrays(keys, values)",
+        "Alias: MAP_FROM_ARRAYS(keys, values)",
+        "Arguments",
+        "keys \u2014  Array or map of keys to create the map from Array or Map. If keys is an array, we accept Array(Nullable(T)) or Array(LowCardinality(Nullable(T))) as its type as long as it doesn't contain NULL value.values  - Array or map of values to create the map from Array or Map.",
+        "Returned value",
+        "A map with keys and values constructed from the key array and value array/map."
+    ],
+    "Examples": [
+        "select mapFromArrays(['a', 'b', 'c'], [1, 2, 3])",
+        "SELECT mapFromArrays([1, 2, 3], map('a', 1, 'b', 2, 'c', 3))",
+        "SELECT mapFromArrays(map('a', 1, 'b', 2, 'c', 3), [1, 2, 3])"
+    ],
+    "Category": [
+        "Maps Functions"
+    ]
+}

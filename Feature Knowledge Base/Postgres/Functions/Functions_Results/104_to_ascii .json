@@ -1,0 +1,22 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/current/functions-string.html"
+    ],
+    "Title": [
+        "to_ascii"
+    ],
+    "Feature": [
+        "to_ascii ( string text ) → text",
+        "to_ascii ( string text, encoding name ) → text",
+        "to_ascii ( string text, encoding integer ) → text"
+    ],
+    "Description": [
+        "Converts string to ASCII from another encoding, which may be identified by name or number. If encoding is omitted the database encoding is assumed (which in practice is the only useful case). The conversion consists primarily of dropping accents. Conversion is only supported from LATIN1, LATIN2, LATIN9, and WIN1250 encodings. (See the unaccent module for another, more flexible solution.)"
+    ],
+    "Examples": [
+        "to_ascii('Karél') → Karel"
+    ],
+    "Category": [
+        "String Functions and Operators"
+    ]
+}

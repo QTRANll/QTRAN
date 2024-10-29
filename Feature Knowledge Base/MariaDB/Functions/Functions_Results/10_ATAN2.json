@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/atan2/"
+    ],
+    "Title": [
+        "ATAN2"
+    ],
+    "Feature": [
+        "ATAN(Y,X), ATAN2(Y,X)\n"
+    ],
+    "Description": [
+        "Returns the arc tangent of the two variables X and Y. It is similar to\ncalculating the arc tangent of Y / X, except that the signs of both\narguments are used to determine the quadrant of the result."
+    ],
+    "Examples": [
+        "SELECT ATAN(-2,2);\n+---------------------+\n| ATAN(-2,2)          |\n+---------------------+\n| -0.7853981633974483 |\n+---------------------+\n\nSELECT ATAN2(PI(),0);\n+--------------------+\n| ATAN2(PI(),0)      |\n+--------------------+\n| 1.5707963267948966 |\n+--------------------+\n"
+    ],
+    "Category": [
+        "Numeric Functions"
+    ]
+}

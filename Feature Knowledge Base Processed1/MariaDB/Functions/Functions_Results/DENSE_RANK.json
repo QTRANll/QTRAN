@@ -1,0 +1,84 @@
+{
+    "HTML": "https://mariadb.com//kb/en/dense_rank/",
+    "Title": "DENSE_RANK",
+    "Feature": [
+        "DENSE_RANK() OVER (\n  [ PARTITION BY partition_expression ]\n  [ ORDER BY order_list ]\n) \n"
+    ],
+    "Description": [
+        "DENSE_RANK() is a window function that displays the number of a given row, starting at one and following the ORDER BY sequence of the window function, with identical values receiving the same result. Unlike the  RANK() function, there are no skipped values if the preceding results are identical. It is also similar to the ROW_NUMBER() function except that in that function, identical values will receive a different row number for each result."
+    ],
+    "Examples": [
+        "CREATE TABLE student(course VARCHAR(10), mark int, name varchar(10));\n\nINSERT INTO student VALUES \n  ('Maths', 60, 'Thulile'),\n  ('Maths', 60, 'Pritha'),\n  ('Maths', 70, 'Voitto'),\n  ('Maths', 55, 'Chun'),\n  ('Biology', 60, 'Bilal'),\n   ('Biology', 70, 'Roger');\n\nSELECT \n  RANK() OVER (PARTITION BY course ORDER BY mark DESC) AS rank, \n  DENSE_RANK() OVER (PARTITION BY course ORDER BY mark DESC) AS dense_rank, \n  ROW_NUMBER() OVER (PARTITION BY course ORDER BY mark DESC) AS row_num, \n  course, mark, name \nFROM student ORDER BY course, mark DESC;\n+------+------------+---------+---------+------+---------+\n| rank | dense_rank | row_num | course  | mark | name    |\n+------+------------+---------+---------+------+---------+\n|    1 |          1 |       1 | Biology |   70 | Roger   |\n|    2 |          2 |       2 | Biology |   60 | Bilal   |\n|    1 |          1 |       1 | Maths   |   70 | Voitto  |\n|    2 |          2 |       2 | Maths   |   60 | Thulile |\n|    2 |          2 |       3 | Maths   |   60 | Pritha  |\n|    4 |          3 |       4 | Maths   |   55 | Chun    |\n+------+------------+---------+---------+------+---------+\n"
+    ],
+    "Category": [
+        "Window Functions"
+    ],
+    "Effective SQLs Refined": [],
+    "Ineffective SQLs Refined": [
+        "SELECT \n  RANK() OVER (PARTITION BY course ORDER BY mark DESC) AS rank, \n  DENSE_RANK() OVER (PARTITION BY course ORDER BY mark DESC) AS dense_rank, \n  ROW_NUMBER() OVER (PARTITION BY course ORDER BY mark DESC) AS row_num, \n  course, mark, name \nFROM student ORDER BY course, mark DESC;"
+    ],
+    "Wrong Messages from Ineffective SQLs Refined": [
+        "(pymysql.err.OperationalError) (1054, \"Unknown column 'course' in 'field list'\")\n[SQL: SELECT \n  RANK() OVER (PARTITION BY course ORDER BY mark DESC) AS rank, \n  DENSE_RANK() OVER (PARTITION BY course ORDER BY mark DESC) AS dense_rank, \n  ROW_NUMBER() OVER (PARTITION BY course ORDER BY mark DESC) AS row_num, \n  course, mark, name \nFROM student ORDER BY course, mark DESC;]\n(Background on this error at: https://sqlalche.me/e/20/e3q8)"
+    ],
+    "SQLs Generated1": [
+        {
+            "Example SQL": "DENSE_RANK() OVER (ORDER BY column_name)"
+        },
+        {
+            "Example SQL": "SELECT DENSE_RANK() OVER (ORDER BY column_name) AS rank_value"
+        },
+        {
+            "Example SQL": "SELECT DENSE_RANK() OVER (ORDER BY some_existing_column) AS rank_value"
+        },
+        {
+            "Example SQL": "SELECT DENSE_RANK() OVER (ORDER BY 1) AS rank_value"
+        }
+    ],
+    "SQLs Generated Costs1": [
+        {
+            "Total Tokens": 376,
+            "Prompt Tokens": 352,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 6.72e-05
+        },
+        {
+            "Total Tokens": 569,
+            "Prompt Tokens": 540,
+            "Completion Tokens": 29,
+            "Total Cost (USD)": 9.84e-05
+        },
+        {
+            "Total Tokens": 729,
+            "Prompt Tokens": 699,
+            "Completion Tokens": 30,
+            "Total Cost (USD)": 0.00012284999999999998
+        },
+        {
+            "Total Tokens": 889,
+            "Prompt Tokens": 860,
+            "Completion Tokens": 29,
+            "Total Cost (USD)": 0.00014639999999999998
+        }
+    ],
+    "SQLs Generated ExecResults1": [
+        "None",
+        "None",
+        "None",
+        "[(1,)]"
+    ],
+    "SQLs Generated ExecTimes1": [
+        "0",
+        "0",
+        "0",
+        "0.021086454391479492"
+    ],
+    "SQLs Generated ErrorMessages1": [
+        "(pymysql.err.ProgrammingError) (1064, \"You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'DENSE_RANK() OVER (ORDER BY column_name)' at line 1\")\n",
+        "(pymysql.err.OperationalError) (1054, \"Unknown column 'column_name' in 'order clause'\")\n",
+        "(pymysql.err.OperationalError) (1054, \"Unknown column 'some_existing_column' in 'order clause'\")\n",
+        "None"
+    ],
+    "Effective SQLs Generated1": [
+        "SELECT DENSE_RANK() OVER (ORDER BY 1) AS rank_value"
+    ]
+}

@@ -1,0 +1,24 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000001054332"
+    ],
+    "Title": [
+        "ALTER SESSION"
+    ],
+    "Feature": [
+        "ALTER SESSION {\n  alter_session_set_clause\n| { ENABLE | DISABLE | FORCE } PARALLEL { DML | QUERY } [ PARALLEL integer ]\n};\n\nalter_session_set_clause：\nSET {\n  CURRENT_SCHEMA = current_schema_name\n| ISOLATION_LEVEL = [ READ UNCOMMITTED\n                                   | READ COMMITTED\n                                   | REPEATABLE READ\n                                   | SERIALIZABLE];\n| variable_name = variable_value[,variable_name = variable_value...]\n}\n"
+    ],
+    "Description": [
+        "该语句用来设置或修改 Session 状态等信息。",
+        "\n说明\nALTER SESSION 对应了多种功能的语句，OceanBase 数据库目前支持以下四种：\n\n切换当前 Session 连接的数据库。\n修改当前 Session 的隔离级别。\n设置 Session 变量，支持同一个语句设置多个变量。\n设置 QUERY 或 DML 的并行执行能力。\n\n",
+        "\n\n\n参数\n描述\n\n\n\n\nCURRENT_SCHEMA\n指定 Session 连接要切换到的 Schema 名称。\n\n\nISOLATION_LEVEL\n指定 Session 的隔离级别。\n\n\nvariable_name = variable_value[,variable_name = variable_value…];\n指定要设置的 Session 变量名称和取值。设置多个变量时，变量之间没有逗号分隔。\n\n\n* { ENABLE | DISABLE | FORCE } PARALLEL\n设置 QUERY 或 DML 的并行执行能力： * ENABLE：默认情况下 Session 上并行度的值根据 表的 DOP 值进行决定 \n      \nDISABLE：默认情况下 Session 上的并行度的值为 1。\nFORCE：指定 QUERY 或 DML 的并行度的值，此时参数 PARALLEL integer 必须指定。\n 注意 当指定并行度时，优先级关系为： 通过 Hint 指定的并行度 > 通过 ALTER SESSION 指定的并行度 > 表级别的并行度。\n\n\n"
+    ],
+    "Examples": [
+        "obclient> ALTER SESSION SET CURRENT_SCHEMA = user1;\nQuery OK, 0 rows affected\n",
+        "obclient> ALTER SESSION SET recyclebin = 'on'\n                           sql_warnings = 'on'\n                           tx_isolation = 'read-committed';\nQuery OK, 0 rows affected\n",
+        "/*以并发度为 3 并行执行*/\nobclient> ALTER SESSION FORCE PARALLEL QUERY PARALLEL 3;\nQuery OK, 0 rows affected\n\nobclient> SELECT * FROM tbl1;\n+------+------+\n| COL1 | COL2 |\n+------+------+\n|    1 |    1 |\n+------+------+\n1 row in set\n\n/*串行执行*/\nobclient> ALTER SESSION FORCE PARALLEL QUERY PARALLEL 1;\nQuery OK, 0 rows affected\n\nobclient> SELECT * FROM tbl1;\n+------+------+\n| COL1 | COL2 |\n+------+------+\n|    1 |    1 |\n+------+------+\n1 row in set\n\n/*开启 PDML 路径，以并发度为 3 并行执行*/\nobclient> ALTER SESSION FORCE PARALLEL DML PARALLEL 3;\nQuery OK, 0 rows affected\n\nobclient> INSERT INTO tbl2 SELECT * FROM tbl1;\nQuery OK, 1 row affected\n\n/*串行执行*/\nobclient> ALTER SESSION FORCE PARALLEL DML PARALLEL 1;\nQuery OK, 0 rows affected\n\nobclient> INSERT INTO tbl2 SELECT * FROM tbl1;\nQuery OK, 1 row affected\n"
+    ],
+    "Category": [
+        "DDL"
+    ]
+}

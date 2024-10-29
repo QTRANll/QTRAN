@@ -1,0 +1,22 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000000823437"
+    ],
+    "Title": [
+        "FORMAT"
+    ],
+    "Feature": [
+        "FORMAT(X,D)\n"
+    ],
+    "Description": [
+        "把数字 X 格式转换为 #,###,###.## 格式，四舍五入到 D 位小数，并以字符串形式返回结果。",
+        "如果整数部分超过三位，会用逗号（,）作为千分位分隔符。",
+        "如果 D 为 0，则结果没有小数点或小数部分。"
+    ],
+    "Examples": [
+        "obclient> SELECT FORMAT(12332.123456, 4) FROM DUAL;\n+-------------------------+\n| format(12332.123456, 4) |\n+-------------------------+\n| 12,332.1235             |\n+-------------------------+\n1 row in set\n\nobclient> SELECT FORMAT(12332.1, 4) FROM DUAL;\n+--------------------+\n| format(12332.1, 4) |\n+--------------------+\n| 12,332.1000        |\n+--------------------+\n1 row in set\n\nobclient> SELECT FORMAT(12332.2, 0) FROM DUAL;\n+--------------------+\n| format(12332.2, 0) |\n+--------------------+\n| 12,332             |\n+--------------------+\n1 row in set\n"
+    ],
+    "Category": [
+        "String Functions"
+    ]
+}

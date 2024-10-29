@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000000823046"
+    ],
+    "Title": [
+        "NTILE"
+    ],
+    "Feature": [
+        "NTILE(expr) OVER ([ query_partition_clause ] order_by_clause)\n"
+    ],
+    "Description": [
+        "将分区中已经排序的行划分为大小尽可能相同的指定数量的分组，并返回给每行组号。expr 如果是 NULL，则返回 NULL。"
+    ],
+    "Examples": [
+        "obclient> CREATE TABLE employees(LAST_NAME CHAR(10), SALARY DECIMAL, JOB_ID CHAR(32));\nINSERT INTO employees VALUES('JIM', 2000, 'CLEANER');\nINSERT INTO employees VALUES('MIKE', 12000, 'ENGINEERING');\nINSERT INTO employees VALUES('LILY', 13000, 'ENGINEERING');\nINSERT INTO employees VALUES('TOM', 11000, 'ENGINEERING');\nCOMMIT;\nQuery OK, 0 rows affected\n\nobclient> SELECT LAST_NAME, NTILE(10) OVER(PARTITION BY JOB_ID ORDER BY SALARY) NTL FROM employees;\n+-----------+------+\n| LAST_NAME | NTL  |\n+-----------+------+\n| JIM       |    1 |\n| TOM       |    1 |\n| MIKE      |    2 |\n| LILY      |    3 |\n+-----------+------+\n4 rows in set\n"
+    ],
+    "Category": [
+        "Analysis Functions"
+    ]
+}

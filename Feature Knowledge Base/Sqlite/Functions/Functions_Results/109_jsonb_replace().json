@@ -1,0 +1,18 @@
+{
+    "HTML": [
+        "https://sqlite.org/json1.html#jreplb"
+    ],
+    "Title": [
+        "JSON Functions"
+    ],
+    "Feature": [
+        "jsonb_replace()"
+    ],
+    "Description": [
+        "The jsonb_insert(), jsonb_replace(), and jsonb_set() functions operate analogously to their json_ prefixed counterparts, namely json_insert(), json_replace(), and json_set(). These jsonb_ prefixed functions are designed to manipulate JSON data, allowing for insertion, replacement, and setting of values at specified paths within a JSON object. A key distinction, however, is that the jsonb_ versions return their results in the binary JSONB format, which can offer performance optimizations for operations involving JSON data in SQLite. This is particularly beneficial when dealing with a series of JSON data manipulations, as the binary format can reduce the overhead associated with parsing and converting JSON text."
+    ],
+    "Examples": [],
+    "Category": [
+        "JSON Functions"
+    ]
+}

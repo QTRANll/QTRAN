@@ -1,0 +1,21 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/common-oceanbase-database-cn-1000000000822071"
+    ],
+    "Title": [
+        ">>"
+    ],
+    "Feature": [
+        ">>"
+    ],
+    "Description": [
+        "逻辑右移",
+        "两个操作数的二进制位全部右移若干位。对无符号数，高位补 0。结果是一个无符号的 64 位整数。该值被截断为 64 位。如果移位计数大于或等于无符号 64 位数字的宽度，则结果为零。"
+    ],
+    "Examples": [
+        "SELECT 4 >> 2;\n+--------+\n| 4 >> 2 |\n+--------+\n|      1 |\n+--------+\n1 row in set\n"
+    ],
+    "Category": [
+        "Bit Operators"
+    ]
+}

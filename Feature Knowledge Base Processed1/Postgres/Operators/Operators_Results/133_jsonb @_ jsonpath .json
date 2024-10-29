@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/current/functions-json.html"
+    ],
+    "Title": [
+        "jsonb @? jsonpath"
+    ],
+    "Feature": [
+        "jsonb @? jsonpath → boolean"
+    ],
+    "Description": [
+        "Does JSON path return any item for the specified JSON value? (This is useful only with SQL-standard JSON path expressions, not predicate check expressions, since those always return a value.)"
+    ],
+    "Examples": [
+        "'{\"a\":[1,2,3,4,5]}'::jsonb @? '$.a[*] ? (@ > 2)' → t"
+    ],
+    "Category": [
+        "JSON Functions and Operators"
+    ]
+}

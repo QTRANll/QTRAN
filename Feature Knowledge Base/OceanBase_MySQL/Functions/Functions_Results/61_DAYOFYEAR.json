@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000000823409"
+    ],
+    "Title": [
+        "DAYOFYEAR"
+    ],
+    "Feature": [
+        "DAYOFYEAR(date)\n"
+    ],
+    "Description": [
+        "返回日期或时间日期 date 在一年中的位置。"
+    ],
+    "Examples": [
+        "obclient> SELECT DAYOFYEAR('2021-07-15');\n+-------------------------+\n| DAYOFYEAR('2021-07-15') |\n+-------------------------+\n|                     196 |\n+-------------------------+\n1 row in set\n"
+    ],
+    "Category": [
+        "Date and Time Functions"
+    ]
+}

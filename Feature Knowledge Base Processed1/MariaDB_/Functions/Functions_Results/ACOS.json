@@ -1,0 +1,36 @@
+{
+    "HTML": "https://mariadb.com//kb/en/acos/",
+    "Title": "ACOS",
+    "Feature": [
+        "ACOS(X)\n"
+    ],
+    "Description": [
+        "Returns the arc cosine of X, that is, the value whose cosine is X.\nReturns NULL if X is not in the range -1 to 1."
+    ],
+    "Examples": [
+        "SELECT ACOS(1);\n+---------+\n| ACOS(1) |\n+---------+\n|       0 |\n+---------+\n\nSELECT ACOS(1.0001);\n+--------------+\n| ACOS(1.0001) |\n+--------------+\n|         NULL |\n+--------------+\n\nSELECT ACOS(0);\n+-----------------+\n| ACOS(0)         |\n+-----------------+\n| 1.5707963267949 |\n+-----------------+\n\nSELECT ACOS(0.234);\n+------------------+\n| ACOS(0.234)      |\n+------------------+\n| 1.33460644244679 |\n+------------------+\n"
+    ],
+    "Category": [
+        "Numeric Functions"
+    ],
+    "Effective SQLs Refined": [
+        "SELECT ACOS(1);",
+        "SELECT ACOS(1.0001);",
+        "SELECT ACOS(0);",
+        "SELECT ACOS(0.234);"
+    ],
+    "Ineffective SQLs Refined": [],
+    "Wrong Messages from Ineffective SQLs Refined": [],
+    "SQLs Generated1": [],
+    "SQLs Generated Costs1": [],
+    "SQLs Generated ExecResults1": [],
+    "SQLs Generated ExecTimes1": [],
+    "SQLs Generated ErrorMessages1": [],
+    "Effective SQLs Generated1": [],
+    "SQLs Generated2": [],
+    "SQLs Generated Costs2": [],
+    "SQLs Generated ExecResults2": [],
+    "SQLs Generated ExecTimes2": [],
+    "SQLs Generated ErrorMessages2": [],
+    "Effective SQLs Generated2": []
+}

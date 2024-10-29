@@ -1,0 +1,18 @@
+{
+    "HTML": [
+        "https://sqlite.org/lang_corefunc.html#sqlite_compileoption_used"
+    ],
+    "Title": [
+        "Built-In Scalar SQL Functions"
+    ],
+    "Feature": [
+        "sqlite_compileoption_used(X)"
+    ],
+    "Description": [
+        "The sqlite_compileoption_used() SQL function is a wrapper around thesqlite3_compileoption_used()C/C++ function.\n  When the argument X to sqlite_compileoption_used(X) is a string which\n  is the name of a compile-time option, this routine returns true (1) or\n  false (0) depending on whether or not that option was used during the\n  build."
+    ],
+    "Examples": [],
+    "Category": [
+        "Built-In Scalar SQL Functions"
+    ]
+}

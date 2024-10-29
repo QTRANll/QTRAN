@@ -1,0 +1,21 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/ps_is_thread_instrumented/"
+    ],
+    "Title": [
+        "ps_is_thread_instrumented"
+    ],
+    "Feature": [
+        "sys.ps_is_thread_instrumented(connection_id)\n"
+    ],
+    "Description": [
+        "ps_is_thread_instrumented is a stored function available with the Sys Schema that returns whether or not Performance Schema instrumentation for the given connection_id is enabled.",
+        "YES - instrumentation is enabled\nNO - instrumentation is not enabled\nUNKNOWN - the connection ID is unknown\nNULL - NULL value\n"
+    ],
+    "Examples": [
+        "SELECT sys.ps_is_thread_instrumented(CONNECTION_ID());\n+------------------------------------------------+\n| sys.ps_is_thread_instrumented(CONNECTION_ID()) |\n+------------------------------------------------+\n| YES                                            |\n+------------------------------------------------+\n\nSELECT sys.ps_is_thread_instrumented(2042);\n+-------------------------------------+\n| sys.ps_is_thread_instrumented(2042) |\n+-------------------------------------+\n| UNKNOWN                             |\n+-------------------------------------+\n\nSELECT sys.ps_is_thread_instrumented(NULL);\n+-------------------------------------+\n| sys.ps_is_thread_instrumented(NULL) |\n+-------------------------------------+\n| NULL                                |\n+-------------------------------------+\n"
+    ],
+    "Category": [
+        "Administrative SQL Statements"
+    ]
+}

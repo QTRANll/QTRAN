@@ -1,0 +1,45 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/built-in-function-reference.html",
+        "https://dev.mysql.com/doc/refman/8.4/en/spatial-function-reference.html"
+    ],
+    "Title": [
+        "14.1 Built-In Function and Operator Reference",
+        "14.16.1 Spatial Function Reference"
+    ],
+    "Feature": [
+        "ST_GeomFromGeoJSON(str\n          [, options [,\n          srid]])"
+    ],
+    "Description": [
+        "Generate geometry from GeoJSON object",
+        "\nST_GeomFromGeoJSON(str\n          [, options [,\n          srid]])\n",
+        "\n          Parses a string str representing a\n          GeoJSON object and returns a geometry.\n        ",
+        "\n          If any argument is NULL, the return value\n          is NULL. If any non-NULL\n          argument is invalid, an error occurs.\n        ",
+        "\noptions, if given, describes how to\n          handle GeoJSON documents that contain geometries with\n          coordinate dimensions higher than 2. The following table shows\n          the permitted options values.\n",
+        "\n\nOption Value\nMeaning\n\n1\nReject the document and produce an error. This is the default if\n                options is not specified.\n\n2, 3, 4\nAccept the document and strip off the coordinates for higher coordinate\n                dimensions.\n\n",
+        "\noptions values of 2, 3, and 4\n          currently produce the same effect. If geometries with\n          coordinate dimensions higher than 2 are supported in the\n          future, you can expect these values to produce different\n          effects.\n        ",
+        "\n          The srid argument, if given, must\n          be a 32-bit unsigned integer. If not given, the geometry\n          return value has an SRID of 4326.\n        ",
+        "\n          If srid refers to an undefined\n          spatial reference system (SRS), an\n          ER_SRS_NOT_FOUND error occurs.\n        ",
+        "\n          For geographic SRS geometry arguments, if any argument has a\n          longitude or latitude that is out of range, an error occurs:\n",
+        "\n\n              If a longitude value is not in the range (\u2212180,\n              180], an\n              ER_LONGITUDE_OUT_OF_RANGE\n              error occurs.\n            \n              If a latitude value is not in the range [\u221290, 90],\n              an\n              ER_LATITUDE_OUT_OF_RANGE\n              error occurs.\n\n",
+        "\n          Ranges shown are in degrees. If an SRS uses another unit, the\n          range uses the corresponding values in its unit. The exact\n          range limits deviate slightly due to floating-point\n          arithmetic.\n        ",
+        "\n          GeoJSON geometry, feature, and feature collection objects may\n          have a crs property. The parsing function\n          parses named CRS URNs in the\n          urn:ogc:def:crs:EPSG::srid\n          and EPSG:srid\n          namespaces, but not CRSs given as link objects. Also,\n          urn:ogc:def:crs:OGC:1.3:CRS84 is recognized\n          as SRID 4326. If an object has a CRS that is not understood,\n          an error occurs, with the exception that if the optional\n          srid argument is given, any CRS is\n          ignored even if it is invalid.\n        ",
+        "\n          If a crs member that specifies an SRID\n          different from the top-level object SRID is found at a lower\n          level of the GeoJSON document, an\n          ER_INVALID_GEOJSON_CRS_NOT_TOP_LEVEL\n          error occurs.\n        ",
+        "\n          As specified in the GeoJSON specification, parsing is\n          case-sensitive for the type member of the\n          GeoJSON input (Point,\n          LineString, and so forth). The\n          specification is silent regarding case sensitivity for other\n          parsing, which in MySQL is not case-sensitive.\n        ",
+        "\n          This example shows the parsing result for a simple GeoJSON\n          object. Observe that the order of coordinates depends on the\n          SRID used.\n        ",
+        "Press CTRL+C to copy mysql> SET @json = '{ \"type\": \"Point\", \"coordinates\": [102.0, 0.0]}';\nmysql> SELECT ST_AsText(ST_GeomFromGeoJSON(@json));\n+--------------------------------------+\n| ST_AsText(ST_GeomFromGeoJSON(@json)) |\n+--------------------------------------+\n| POINT(0 102)                         |\n+--------------------------------------+\nmysql> SELECT ST_SRID(ST_GeomFromGeoJSON(@json));\n+------------------------------------+\n| ST_SRID(ST_GeomFromGeoJSON(@json)) |\n+------------------------------------+\n|                               4326 |\n+------------------------------------+\nmysql> SELECT ST_AsText(ST_SRID(ST_GeomFromGeoJSON(@json),0));\n+-------------------------------------------------+\n| ST_AsText(ST_SRID(ST_GeomFromGeoJSON(@json),0)) |\n+-------------------------------------------------+\n| POINT(102 0)                                    |\n+-------------------------------------------------+"
+    ],
+    "Examples": [
+        "mysql> SET @json = '{ \"type\": \"Point\", \"coordinates\": [102.0, 0.0]}';\nmysql> SELECT ST_AsText(ST_GeomFromGeoJSON(@json));\n+--------------------------------------+\n| ST_AsText(ST_GeomFromGeoJSON(@json)) |\n+--------------------------------------+\n| POINT(0 102)                         |\n+--------------------------------------+\nmysql> SELECT ST_SRID(ST_GeomFromGeoJSON(@json));\n+------------------------------------+\n| ST_SRID(ST_GeomFromGeoJSON(@json)) |\n+------------------------------------+\n|                               4326 |\n+------------------------------------+\nmysql> SELECT ST_AsText(ST_SRID(ST_GeomFromGeoJSON(@json),0));\n+-------------------------------------------------+\n| ST_AsText(ST_SRID(ST_GeomFromGeoJSON(@json),0)) |\n+-------------------------------------------------+\n| POINT(102 0)                                    |\n+-------------------------------------------------+"
+    ],
+    "Category": [
+        "Built-In Functions",
+        "Spatial Analysis Functions"
+    ],
+    "Reference HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/spatial-geojson-functions.html#function_st-geomfromgeojson"
+    ],
+    "Feature Type": [
+        "Function"
+    ]
+}

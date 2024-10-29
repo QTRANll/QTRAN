@@ -1,0 +1,27 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/array-functions"
+    ],
+    "Title": [
+        "arrayShingles"
+    ],
+    "Feature": [
+        "arrayShingles(array, length)"
+    ],
+    "Description": [
+        "arrayShingles",
+        "Generates an array of \"shingles\", i.e. consecutive sub-arrays with specified length of the input array.",
+        "Syntax",
+        "arrayShingles(array, length)",
+        "Arguments",
+        "array \u2014 Input array Array.length \u2014 The length of each shingle.",
+        "Returned value",
+        "An array of generated shingles. Array."
+    ],
+    "Examples": [
+        "SELECT arrayShingles([1,2,3,4], 3) as res;"
+    ],
+    "Category": [
+        "Arrays Functions"
+    ]
+}

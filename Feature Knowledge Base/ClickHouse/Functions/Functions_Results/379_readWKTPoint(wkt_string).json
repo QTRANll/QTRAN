@@ -1,0 +1,27 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/geo/polygons"
+    ],
+    "Title": [
+        "readWKTPoint"
+    ],
+    "Feature": [
+        "readWKTPoint(wkt_string)"
+    ],
+    "Description": [
+        "readWKTPoint",
+        "The readWKTPoint function in ClickHouse parses a Well-Known Text (WKT) representation of a Point geometry and returns a point in the internal ClickHouse format.",
+        "Syntax",
+        "readWKTPoint(wkt_string)",
+        "Arguments",
+        "wkt_string: The input WKT string representing a Point geometry.",
+        "Returned value",
+        "The function returns a ClickHouse internal representation of the Point geometry."
+    ],
+    "Examples": [
+        "SELECT readWKTPoint('POINT (1.2 3.4)');"
+    ],
+    "Category": [
+        "Geo Functions"
+    ]
+}

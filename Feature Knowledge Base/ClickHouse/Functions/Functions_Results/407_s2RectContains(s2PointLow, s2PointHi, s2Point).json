@@ -1,0 +1,27 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/geo/s2"
+    ],
+    "Title": [
+        "s2RectContains"
+    ],
+    "Feature": [
+        "s2RectContains(s2PointLow, s2PointHi, s2Point)"
+    ],
+    "Description": [
+        "s2RectContains",
+        "Determines if a given rectangle contains a S2 point. In the S2 system, a rectangle is represented by a type of S2Region called a S2LatLngRect that represents a rectangle in latitude-longitude space.",
+        "Syntax",
+        "s2RectContains(s2PointLow, s2PointHi, s2Point)",
+        "Arguments",
+        "s2PointLow \u2014 Low S2 point index corresponding to the rectangle. UInt64.s2PointHigh \u2014 High S2 point index corresponding to the rectangle. UInt64.s2Point \u2014 Target S2 point index. UInt64.",
+        "Returned value",
+        "1 \u2014 If the rectangle contains the given S2 point.0 \u2014 If the rectangle doesn't contain the given S2 point."
+    ],
+    "Examples": [
+        "SELECT s2RectContains(5179062030687166815, 5177056748191934217, 5177914411069187297) AS rectContains;"
+    ],
+    "Category": [
+        "Geo Functions"
+    ]
+}

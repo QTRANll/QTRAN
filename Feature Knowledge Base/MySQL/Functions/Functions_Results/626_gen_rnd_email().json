@@ -1,0 +1,34 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/loadable-function-reference.html"
+    ],
+    "Title": [
+        "14.2 Loadable Function Reference"
+    ],
+    "Feature": [
+        "gen_rnd_email(name_size,\n              surname_size,\n              domain)"
+    ],
+    "Description": [
+        "Generate random email address",
+        "\ngen_rnd_email(name_size,\n              surname_size,\n              domain)\n",
+        "\n              Generates a random email address in the form of\n              random_name.random_surname@domain.\n            ",
+        "\n              Arguments:\n",
+        "\n\nname_size: (Optional) An\n                  integer that specifies the number of characters in the\n                  name part of an address. The default is five if\n                  name_size is not given.\n                \nsurname_size: (Optional) An\n                  integer that specifies the number of characters in the\n                  surname part of an address. The default is seven if\n                  surname_size is not given.\n                \ndomain: (Optional) A string\n                  that specifies the domain part of the address. The\n                  default is example.com if\n                  domain is not given.\n\n",
+        "\n              Return value:\n            ",
+        "\n              A random email address as a string encoded in the\n              utf8mb4 character set.\n            ",
+        "\n              Example:\n            ",
+        "Press CTRL+C to copy mysql> SELECT gen_rnd_email(name_size = 4, surname_size = 5, domain = 'mynet.com');\n+----------------------------------------------------------------------+\n| gen_rnd_email(name_size = 4, surname_size = 5, domain = 'mynet.com') |\n+----------------------------------------------------------------------+\n| lsoy.qwupp@mynet.com                                                 |\n+----------------------------------------------------------------------+\nmysql> SELECT gen_rnd_email();\n+---------------------------+\n| gen_rnd_email()           |\n+---------------------------+\n| ijocv.mwvhhuf@example.com |\n+---------------------------+"
+    ],
+    "Examples": [
+        "mysql> SELECT gen_rnd_email(name_size = 4, surname_size = 5, domain = 'mynet.com');\n+----------------------------------------------------------------------+\n| gen_rnd_email(name_size = 4, surname_size = 5, domain = 'mynet.com') |\n+----------------------------------------------------------------------+\n| lsoy.qwupp@mynet.com                                                 |\n+----------------------------------------------------------------------+\nmysql> SELECT gen_rnd_email();\n+---------------------------+\n| gen_rnd_email()           |\n+---------------------------+\n| ijocv.mwvhhuf@example.com |\n+---------------------------+"
+    ],
+    "Category": [
+        "Loadable Functions"
+    ],
+    "Reference HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/data-masking-component-functions.html#function_gen-rnd-email"
+    ],
+    "Feature Type": [
+        "Function"
+    ]
+}

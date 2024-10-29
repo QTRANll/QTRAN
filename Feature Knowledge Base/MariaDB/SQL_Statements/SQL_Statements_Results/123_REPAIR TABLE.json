@@ -1,0 +1,41 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/repair-table/"
+    ],
+    "Title": [
+        "REPAIR TABLE"
+    ],
+    "Feature": [
+        "<= MariaDB 11.4",
+        "REPAIR [NO_WRITE_TO_BINLOG | LOCAL] TABLE\n    tbl_name [, tbl_name] ...\n    [QUICK] [EXTENDED] [USE_FRM]\n",
+        " >= MariaDB 11.5",
+        "REPAIR [NO_WRITE_TO_BINLOG | LOCAL] TABLE\n    tbl_name [, tbl_name] ...\n    [QUICK] [EXTENDED] [USE_FRM] [FORCE]\n"
+    ],
+    "Description": [
+        "REPAIR TABLE repairs a possibly corrupted table. By default,\nit has the same effect as",
+        "myisamchk --recover tbl_name\n",
+        "or",
+        "aria_chk --recover tbl_name\n",
+        "See aria_chk and myisamchk for more.",
+        "REPAIR TABLE works for Archive, Aria, CSV and MyISAM tables. For InnoDB, see recovery modes. For CSV, see also Checking and Repairing CSV Tables. For Archive, this statement also improves compression. If the storage engine does not support this statement, a warning is issued.",
+        "This statement requires SELECT and INSERT privileges for the table.",
+        "By default, REPAIR TABLE statements are written to the binary log and will be replicated. The NO_WRITE_TO_BINLOG keyword (LOCAL is an alias) will ensure the statement is not written to the binary log.",
+        "From MariaDB 10.3.19, REPAIR TABLE statements are not logged to the binary log if read_only is set. See also Read-Only Replicas.",
+        "When an index is recreated, the storage engine may use a configurable buffer in the process. Incrementing the buffer speeds up the index creation. Aria and MyISAM allocate a buffer whose size is defined by aria_sort_buffer_size or myisam_sort_buffer_size, also used for ALTER TABLE.",
+        "QUICK",
+        "When specified, REPAIR TABLE will not modify the data file, only attempting to repair the index file. The same behavior can be achieved with myisamchk --recover --quick.",
+        "EXTENDED",
+        "Creates the index row by row rather than sorting and creating a single index. Similar to myisamchk --safe-recover. ",
+        "USE_FRM",
+        "For use only when the index file is missing or its header corrupted. MariaDB then attempts to recreate it using the .frm file. There is no equivalent myisamchk option. ",
+        "MariaDB starting with 11.5FORCE\nThe FORCE argument was added in MariaDB 11.5 to allow one to first run internal repair to fix damaged blocks and then follow it with ALTER TABLE (MDEV-33449).\n",
+        "Partitioned Tables",
+        "REPAIR TABLE is also supported for partitioned tables with the ALTER TABLE ... REPAIR PARTITION statement. However, the USE_FRM option cannot be used with this statement on a partitioned table. See Repairing Partitions for details.",
+        "Progress Reporting",
+        "The Aria storage engine supports progress reporting for this statement."
+    ],
+    "Examples": [],
+    "Category": [
+        "Table Statements"
+    ]
+}

@@ -1,0 +1,21 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/mpointfromtext/"
+    ],
+    "Title": [
+        "MPointFromText"
+    ],
+    "Feature": [
+        "MPointFromText(wkt[,srid])\nMultiPointFromText(wkt[,srid])\n"
+    ],
+    "Description": [
+        "Constructs a MULTIPOINT value using its WKT representation and SRID.",
+        "MPointFromText() and MultiPointFromText() are synonyms."
+    ],
+    "Examples": [
+        "CREATE TABLE gis_multi_point (g MULTIPOINT);\nSHOW FIELDS FROM gis_multi_point;\nINSERT INTO gis_multi_point VALUES\n    (MultiPointFromText('MULTIPOINT(0 0,10 10,10 20,20 20)')),\n    (MPointFromText('MULTIPOINT(1 1,11 11,11 21,21 21)')),\n    (MPointFromWKB(AsWKB(MultiPoint(Point(3, 6), Point(4, 10)))));\n"
+    ],
+    "Category": [
+        "Geographic Functions"
+    ]
+}

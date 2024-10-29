@@ -1,0 +1,23 @@
+{
+    "HTML": [
+        "https://docs.pingcap.com/zh/tidb/stable/encryption-and-compression-functions#sha1"
+    ],
+    "Title": [
+        "SHA1()"
+    ],
+    "Feature": [
+        "SHA1()"
+    ],
+    "Description": [
+        "SHA1()",
+        "SHA1(expr) \u51fd\u6570\u4e3a\u7ed9\u5b9a\u53c2\u6570 expr \u8ba1\u7b97 160 \u4f4d SHA-1 \u54c8\u5e0c\u503c\u3002",
+        "SELECT SHA1('abc');\n",
+        "+------------------------------------------+\n| SHA1('abc')                              |\n+------------------------------------------+\n| a9993e364706816aba3e25717850c26c9cd0d89d |\n+------------------------------------------+\n1 row in set (0.00 sec)\n"
+    ],
+    "Examples": [
+        "SELECT SHA1('abc');\n"
+    ],
+    "Category": [
+        "Encryption and Compression Functions"
+    ]
+}

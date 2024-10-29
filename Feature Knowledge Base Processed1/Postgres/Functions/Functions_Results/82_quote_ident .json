@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/current/functions-string.html"
+    ],
+    "Title": [
+        "quote_ident"
+    ],
+    "Feature": [
+        "quote_ident ( text ) → text"
+    ],
+    "Description": [
+        "Returns the given string suitably quoted to be used as an identifier in an SQL statement string. Quotes are added only if necessary (i.e., if the string contains non-identifier characters or would be case-folded). Embedded quotes are properly doubled. See also Example 41.1."
+    ],
+    "Examples": [
+        "quote_ident('Foo bar') → \"Foo bar\""
+    ],
+    "Category": [
+        "String Functions and Operators"
+    ]
+}

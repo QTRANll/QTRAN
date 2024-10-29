@@ -1,0 +1,167 @@
+{
+    "HTML": "https://mariadb.com//kb/en/column_add/",
+    "Title": "COLUMN_ADD",
+    "Feature": [
+        "COLUMN_ADD(dyncol_blob, column_nr, value [as type], [column_nr, value [as type]]...);\nCOLUMN_ADD(dyncol_blob, column_name, value [as type], [column_name, value [as type]]...);\n"
+    ],
+    "Description": [
+        "Adds or updates dynamic columns.",
+        "dyncol_blob must be either a valid dynamic columns blob (for example, COLUMN_CREATE returns such blob), or an empty string.\ncolumn_name specifies the name of the column to be added. If dyncol_blob already has a column with this name, it will be overwritten.\nvalue specifies the new value for the column.  Passing a NULL value will cause the column to be deleted.\nas type is optional. See #datatypes section for a discussion about types.\n",
+        "The return value is a dynamic column blob after the modifications."
+    ],
+    "Examples": [
+        "UPDATE t1 SET dyncol_blob=COLUMN_ADD(dyncol_blob, \"column_name\", \"value\") WHERE id=1;\n"
+    ],
+    "Category": [
+        "Dynamic Columns Functions"
+    ],
+    "Effective SQLs Refined": [],
+    "Ineffective SQLs Refined": [
+        "UPDATE t1 SET dyncol_blob=COLUMN_ADD(dyncol_blob, \"column_name\", \"value\") WHERE id=1;"
+    ],
+    "Wrong Messages from Ineffective SQLs Refined": [
+        "(pymysql.err.OperationalError) (1054, \"Unknown column 'dyncol_blob' in 'field list'\")\n[SQL: UPDATE t1 SET dyncol_blob=COLUMN_ADD(dyncol_blob, \"column_name\", \"value\") WHERE id=1;]\n(Background on this error at: https://sqlalche.me/e/20/e3q8)"
+    ],
+    "SQLs Generated1": [
+        {
+            "Example SQL": "COLUMN_ADD(dyncol_blob, 'new_column', 'new_value');"
+        },
+        {
+            "Example SQL": "SELECT COLUMN_ADD(dyncol_blob, 'new_column', 'new_value');"
+        },
+        {
+            "Example SQL": "COLUMN_ADD('', 'new_column', 'new_value');"
+        },
+        {
+            "Example SQL": "SET @dyncol_blob = COLUMN_CREATE(); COLUMN_ADD(@dyncol_blob, 'new_column', 'new_value');"
+        },
+        {
+            "Example SQL": "SET @dyncol_blob = COLUMN_CREATE(); SELECT COLUMN_ADD(@dyncol_blob, 'new_column', 'new_value');"
+        }
+    ],
+    "SQLs Generated Costs1": [
+        {
+            "Total Tokens": 427,
+            "Prompt Tokens": 399,
+            "Completion Tokens": 28,
+            "Total Cost (USD)": 7.664999999999999e-05
+        },
+        {
+            "Total Tokens": 622,
+            "Prompt Tokens": 593,
+            "Completion Tokens": 29,
+            "Total Cost (USD)": 0.00010635
+        },
+        {
+            "Total Tokens": 775,
+            "Prompt Tokens": 751,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 0.00012705
+        },
+        {
+            "Total Tokens": 974,
+            "Prompt Tokens": 937,
+            "Completion Tokens": 37,
+            "Total Cost (USD)": 0.00016275
+        },
+        {
+            "Total Tokens": 1179,
+            "Prompt Tokens": 1141,
+            "Completion Tokens": 38,
+            "Total Cost (USD)": 0.00019394999999999997
+        }
+    ],
+    "SQLs Generated ExecResults1": [
+        "None",
+        "None",
+        "None",
+        "None",
+        "None"
+    ],
+    "SQLs Generated ExecTimes1": [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+    ],
+    "SQLs Generated ErrorMessages1": [
+        "(pymysql.err.ProgrammingError) (1064, \"You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'COLUMN_ADD(dyncol_blob, 'new_column', 'new_value')' at line 1\")\n",
+        "(pymysql.err.OperationalError) (1054, \"Unknown column 'dyncol_blob' in 'field list'\")\n",
+        "(pymysql.err.ProgrammingError) (1064, \"You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'COLUMN_ADD('', 'new_column', 'new_value')' at line 1\")\n",
+        "(pymysql.err.ProgrammingError) (1064, \"You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '); COLUMN_ADD(@dyncol_blob, 'new_column', 'new_value')' at line 1\")\n",
+        "(pymysql.err.ProgrammingError) (1064, \"You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '); SELECT COLUMN_ADD(@dyncol_blob, 'new_column', 'new_value')' at line 1\")\n"
+    ],
+    "Effective SQLs Generated1": [],
+    "SQLs Generated2": [
+        {
+            "Example SQL": "COLUMN_ADD('', 'description', 'A widely spoken language in various regions.', 'is_endangered', TRUE);"
+        },
+        {
+            "Example SQL": "COLUMN_ADD('', 'description', 'A widely spoken language in various regions.');"
+        },
+        {
+            "Example SQL": "COLUMN_ADD(dyncol_blob, 'description', 'A widely spoken language in various regions.');"
+        },
+        {
+            "Example SQL": "COLUMN_ADD(dyncol_blob, 'description', 'A widely spoken language in various regions.');"
+        },
+        {
+            "Example SQL": "COLUMN_ADD(dyncol_blob, 'description', 'A widely spoken language in various regions.');"
+        }
+    ],
+    "SQLs Generated Costs2": [
+        {
+            "Total Tokens": 884,
+            "Prompt Tokens": 849,
+            "Completion Tokens": 35,
+            "Total Cost (USD)": 0.00014834999999999997
+        },
+        {
+            "Total Tokens": 1079,
+            "Prompt Tokens": 1050,
+            "Completion Tokens": 29,
+            "Total Cost (USD)": 0.00017489999999999997
+        },
+        {
+            "Total Tokens": 1278,
+            "Prompt Tokens": 1245,
+            "Completion Tokens": 33,
+            "Total Cost (USD)": 0.00020655
+        },
+        {
+            "Total Tokens": 1480,
+            "Prompt Tokens": 1447,
+            "Completion Tokens": 33,
+            "Total Cost (USD)": 0.00023684999999999998
+        },
+        {
+            "Total Tokens": 1682,
+            "Prompt Tokens": 1649,
+            "Completion Tokens": 33,
+            "Total Cost (USD)": 0.00026714999999999996
+        }
+    ],
+    "SQLs Generated ExecResults2": [
+        "None",
+        "None",
+        "None",
+        "None",
+        "None"
+    ],
+    "SQLs Generated ExecTimes2": [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+    ],
+    "SQLs Generated ErrorMessages2": [
+        "(pymysql.err.ProgrammingError) (1064, \"You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'COLUMN_ADD('', 'description', 'A widely spoken language in various regions.',...' at line 1\")\n",
+        "(pymysql.err.ProgrammingError) (1064, \"You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'COLUMN_ADD('', 'description', 'A widely spoken language in various regions.')' at line 1\")\n",
+        "(pymysql.err.ProgrammingError) (1064, \"You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'COLUMN_ADD(dyncol_blob, 'description', 'A widely spoken language in various r...' at line 1\")\n",
+        "(pymysql.err.ProgrammingError) (1064, \"You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'COLUMN_ADD(dyncol_blob, 'description', 'A widely spoken language in various r...' at line 1\")\n",
+        "(pymysql.err.ProgrammingError) (1064, \"You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'COLUMN_ADD(dyncol_blob, 'description', 'A widely spoken language in various r...' at line 1\")\n"
+    ],
+    "Effective SQLs Generated2": []
+}

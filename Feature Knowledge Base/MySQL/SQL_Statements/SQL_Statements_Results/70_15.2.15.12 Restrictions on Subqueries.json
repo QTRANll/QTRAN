@@ -1,0 +1,24 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/subquery-restrictions.html"
+    ],
+    "Title": [
+        "15.2.15.12 Restrictions on Subqueries"
+    ],
+    "Feature": [
+        "(expr_1, ..., expr_n) [NOT] IN table_subquery",
+        "(expr_1, ..., expr_n) op {ALL|ANY|SOME} subquery"
+    ],
+    "Description": [
+        "\n\n            In general, you cannot modify a table and select from the\n            same table in a subquery. For example, this limitation\n            applies to statements of the following forms:\n          Press CTRL+C to copy DELETE FROM t WHERE ... (SELECT ... FROM t ...);\nUPDATE t ... WHERE col = (SELECT ... FROM t ...);\n{INSERT|REPLACE} INTO t (SELECT ... FROM t ...);\n            Exception: The preceding prohibition does not apply if for\n            the modified table you are using a derived table and that\n            derived table is materialized rather than merged into the\n            outer query. (See\n            Section\u00a010.2.2.4, \u201cOptimizing Derived Tables, View References, and Common Table Expressions\n          with Merging or Materialization\u201d.) Example:\n          Press CTRL+C to copy UPDATE t ... WHERE col = (SELECT * FROM (SELECT ... FROM t...) AS dt ...);\n            Here the result from the derived table is materialized as a\n            temporary table, so the relevant rows in\n            t have already been selected by the time\n            the update to t takes place.\n          \n            In general, you may be able to influence the optimizer to\n            materialize a derived table by adding a\n            NO_MERGE optimizer hint.\n            See Section\u00a010.9.3, \u201cOptimizer Hints\u201d.\n          \n            Row comparison operations are only partially supported:\n\n\n\n                For expr [NOT] IN\n                subquery,\n                expr can be an\n                n-tuple (specified using row\n                constructor syntax) and the subquery can return rows of\n                n-tuples. The permitted\n                syntax is therefore more specifically expressed as\n                row_constructor\n                [NOT] IN\n                table_subquery\n\n                For expr\nop {ALL|ANY|SOME}\n                subquery,\n                expr must be a scalar value\n                and the subquery must be a column subquery; it cannot\n                return multiple-column rows.\n\n\n\n            In other words, for a subquery that returns rows of\n            n-tuples, this is supported:\n          Press CTRL+C to copy (expr_1, ..., expr_n) [NOT] IN table_subquery\n            But this is not supported:\n          Press CTRL+C to copy (expr_1, ..., expr_n) op {ALL|ANY|SOME} subquery\n            The reason for supporting row comparisons for\n            IN but not for the others is that\n            IN is implemented by rewriting it as a\n            sequence of =\n            comparisons and AND operations.\n            This approach cannot be used for ALL,\n            ANY, or SOME.\n          \n            MySQL does not support LIMIT in\n            subqueries for certain subquery operators:\n          Press CTRL+C to copy mysql> SELECT * FROM t1\n       WHERE s1 IN (SELECT s2 FROM t2 ORDER BY s1 LIMIT 1);\nERROR 1235 (42000): This version of MySQL doesn't yet support\n 'LIMIT & IN/ALL/ANY/SOME subquery'\n            See Section\u00a015.2.15.10, \u201cSubquery Errors\u201d.\n          \n            MySQL permits a subquery to refer to a stored function that\n            has data-modifying side effects such as inserting rows into\n            a table. For example, if f() inserts\n            rows, the following query can modify data:\n          Press CTRL+C to copy SELECT ... WHERE x IN (SELECT f() ...);\n            This behavior is an extension to the SQL standard. In MySQL,\n            it can produce nondeterministic results because\n            f() might be executed a different number\n            of times for different executions of a given query depending\n            on how the optimizer chooses to handle it.\n          \n            For statement-based or mixed-format replication, one\n            implication of this indeterminism is that such a query can\n            produce different results on the source and its replicas.\n\n"
+    ],
+    "Examples": [
+        "DELETE FROM t WHERE ... (SELECT ... FROM t ...);\nUPDATE t ... WHERE col = (SELECT ... FROM t ...);\n{INSERT|REPLACE} INTO t (SELECT ... FROM t ...);",
+        "UPDATE t ... WHERE col = (SELECT * FROM (SELECT ... FROM t...) AS dt ...);",
+        "mysql> SELECT * FROM t1\n       WHERE s1 IN (SELECT s2 FROM t2 ORDER BY s1 LIMIT 1);\nERROR 1235 (42000): This version of MySQL doesn't yet support\n 'LIMIT & IN/ALL/ANY/SOME subquery'",
+        "SELECT ... WHERE x IN (SELECT f() ...);"
+    ],
+    "Category": [
+        "Data Manipulation Statements"
+    ]
+}

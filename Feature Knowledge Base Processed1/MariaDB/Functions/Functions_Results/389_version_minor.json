@@ -1,0 +1,21 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/version_minor/"
+    ],
+    "Title": [
+        "version_minor"
+    ],
+    "Feature": [
+        "sys.version_minor()\n"
+    ],
+    "Description": [
+        "version_minor is a stored function available with the Sys Schema.",
+        "It returns the MariaDB Server minor release version."
+    ],
+    "Examples": [
+        "SELECT VERSION(),\n sys.version_major() AS major, \n sys.version_minor() AS minor,\n sys.version_patch() AS patch;"
+    ],
+    "Category": [
+        "No Category"
+    ]
+}

@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/current/functions-json.html"
+    ],
+    "Title": [
+        "json"
+    ],
+    "Feature": [
+        "json ( expression [ FORMAT JSON [ ENCODING UTF8 ]] [ { WITH | WITHOUT } UNIQUE [ KEYS ]] ) → json"
+    ],
+    "Description": [
+        "Converts a given expression specified as text or bytea string (in UTF8 encoding) into a JSON value. If expression is NULL, an SQL null value is returned. If WITH UNIQUE is specified, the expression must not contain any duplicate object keys."
+    ],
+    "Examples": [
+        "json('{\"a\":123, \"b\":[true,\"foo\"], \"a\":\"bar\"}') → {\"a\":123, \"b\":[true,\"foo\"], \"a\":\"bar\"}"
+    ],
+    "Category": [
+        "JSON Functions and Operators"
+    ]
+}

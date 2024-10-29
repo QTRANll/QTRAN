@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/current/functions-textsearch.html"
+    ],
+    "Title": [
+        "tsquery <-> tsquery"
+    ],
+    "Feature": [
+        "tsquery <-> tsquery → tsquery"
+    ],
+    "Description": [
+        "Constructs a phrase query, which matches if the two input queries match at successive lexemes."
+    ],
+    "Examples": [
+        "to_tsquery('fat') <-> to_tsquery('rat') → 'fat' <-> 'rat'"
+    ],
+    "Category": [
+        "Text Search Functions and Operators"
+    ]
+}

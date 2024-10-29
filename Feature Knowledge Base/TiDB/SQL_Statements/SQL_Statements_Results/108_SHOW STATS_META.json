@@ -1,0 +1,25 @@
+{
+    "HTML": [
+        "https://docs.pingcap.com//zh/tidb/stable/sql-statement-show-stats-meta"
+    ],
+    "Title": [
+        "SHOW STATS_META"
+    ],
+    "Feature": [
+        "ShowStatsMetaStmt ::=\n    \"SHOW\" \"STATS_META\" ShowLikeOrWhere?\n\nShowLikeOrWhere ::=\n    \"LIKE\" SimpleExpr\n|   \"WHERE\" Expression\n"
+    ],
+    "Description": [
+        "\u4f60\u53ef\u4ee5\u901a\u8fc7 SHOW STATS_META \u6765\u67e5\u770b\u8868\u7684\u603b\u884c\u6570\u4ee5\u53ca\u4fee\u6539\u7684\u884c\u6570\u7b49\u4fe1\u606f\uff0c\u53ef\u4ee5\u901a\u8fc7 ShowLikeOrWhere \u6765\u7b5b\u9009\u9700\u8981\u7684\u4fe1\u606f\u3002",
+        "\u76ee\u524d SHOW STATS_META \u4f1a\u8f93\u51fa 6 \u5217\uff0c\u5177\u4f53\u5982\u4e0b\uff1a",
+        "\u5217\u540d\u8bf4\u660edb_name\u6570\u636e\u5e93\u540dtable_name\u8868\u540dpartition_name\u5206\u533a\u540dupdate_time\u66f4\u65b0\u65f6\u95f4modify_count\u4fee\u6539\u7684\u884c\u6570row_count\u603b\u884c\u6570",
+        ".css-1weqspv{padding-top:0.5rem;padding-bottom:0.5rem;}.css-1weqspv .MuiAlert-message p{margin-bottom:0px;margin-top:0px;}",
+        "\u6ce8\u610f\u5728 TiDB \u6839\u636e DML \u8bed\u53e5\u81ea\u52a8\u66f4\u65b0\u603b\u884c\u6570\u4ee5\u53ca\u4fee\u6539\u7684\u884c\u6570\u65f6\uff0cupdate_time \u4e5f\u4f1a\u88ab\u66f4\u65b0\uff0c\u56e0\u6b64\u5e76\u4e0d\u80fd\u8ba4\u4e3a update_time \u662f\u6700\u8fd1\u4e00\u6b21\u53d1\u751f Analyze \u7684\u65f6\u95f4\u3002"
+    ],
+    "Examples": [
+        "SHOW STATS_META;\n",
+        "SHOW STATS_META WHERE table_name = 't2';\n"
+    ],
+    "Category": [
+        "\u7edf\u8ba1\u4fe1\u606f\u548c\u6267\u884c\u8ba1\u5212\u7ba1\u7406"
+    ]
+}

@@ -1,0 +1,63 @@
+{
+    "HTML": "https://mariadb.com//kb/en/column_create/",
+    "Title": "COLUMN_CREATE",
+    "Feature": [
+        "COLUMN_CREATE(column_nr, value [as type], [column_nr, value [as type]]...);\nCOLUMN_CREATE(column_name, value [as type], [column_name, value [as type]]...);\n"
+    ],
+    "Description": [
+        "Returns a dynamic columns blob that stores the specified columns with values.",
+        "The return value is suitable for ",
+        "storing in a table\nfurther modification with other dynamic columns functions\n",
+        "The as type part allows one to specify the value type. In most cases,\nthis is redundant because MariaDB will be able to deduce the type of the\nvalue. Explicit type specification may be needed when the type of the value is\nnot apparent. For example, a literal '2012-12-01' has a CHAR type by\ndefault, one will need to specify '2012-12-01' AS DATE to have it stored as\na date. See Dynamic Columns:Datatypes for further details."
+    ],
+    "Examples": [
+        "INSERT INTO tbl SET dyncol_blob=COLUMN_CREATE(\"column_name\", \"value\");\n"
+    ],
+    "Category": [
+        "Dynamic Columns Functions"
+    ],
+    "Effective SQLs Refined": [],
+    "Ineffective SQLs Refined": [
+        "INSERT INTO tbl SET dyncol_blob=COLUMN_CREATE(\"column_name\", \"value\");"
+    ],
+    "Wrong Messages from Ineffective SQLs Refined": [
+        "(pymysql.err.ProgrammingError) (1146, \"Table 'PINOLO_MariaDB.tbl' doesn't exist\")\n[SQL: INSERT INTO tbl SET dyncol_blob=COLUMN_CREATE(\"column_name\", \"value\");]\n(Background on this error at: https://sqlalche.me/e/20/f405)"
+    ],
+    "SQLs Generated1": [
+        {
+            "Example SQL": "COLUMN_CREATE(1, 'value1', 2, 'value2' AS CHAR);"
+        },
+        {
+            "Example SQL": "SELECT COLUMN_CREATE(1, 'value1', 2, 'value2' AS CHAR);"
+        }
+    ],
+    "SQLs Generated Costs1": [
+        {
+            "Total Tokens": 452,
+            "Prompt Tokens": 420,
+            "Completion Tokens": 32,
+            "Total Cost (USD)": 8.219999999999999e-05
+        },
+        {
+            "Total Tokens": 654,
+            "Prompt Tokens": 621,
+            "Completion Tokens": 33,
+            "Total Cost (USD)": 0.00011294999999999998
+        }
+    ],
+    "SQLs Generated ExecResults1": [
+        "None",
+        "[(b'\\x00\\x02\\x00\\x01\\x00\\x03\\x02\\x00C\\x80\\x12value1\\x80\\x12value2',)]"
+    ],
+    "SQLs Generated ExecTimes1": [
+        "0",
+        "0.017133712768554688"
+    ],
+    "SQLs Generated ErrorMessages1": [
+        "(pymysql.err.ProgrammingError) (1064, \"You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'COLUMN_CREATE(1, 'value1', 2, 'value2' AS CHAR)' at line 1\")\n",
+        "None"
+    ],
+    "Effective SQLs Generated1": [
+        "SELECT COLUMN_CREATE(1, 'value1', 2, 'value2' AS CHAR);"
+    ]
+}

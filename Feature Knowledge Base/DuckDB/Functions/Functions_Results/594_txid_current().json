@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://duckdb.org/docs/sql/functions/utility"
+    ],
+    "Title": [
+        "txid_current()"
+    ],
+    "Feature": [
+        "txid_current()"
+    ],
+    "Description": [
+        "Returns the current transaction's identifier, a BIGINT value. It will assign a new one if the current transaction does not have one already."
+    ],
+    "Examples": [
+        "txid_current()"
+    ],
+    "Category": [
+        "Utility Functions"
+    ]
+}

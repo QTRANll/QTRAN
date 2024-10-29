@@ -1,0 +1,22 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000000823025"
+    ],
+    "Title": [
+        "SUM"
+    ],
+    "Feature": [
+        "SUM([DISTINCT | ALL] expr)\n"
+    ],
+    "Description": [
+        "返回 expr 的总数。如果集合中无任何行，则返回 NULL。DISTINCT 关键字可用于求得 expr 不同值的总和。",
+        "如果找不到匹配的行，该函数也会返回 NULL。"
+    ],
+    "Examples": [
+        "obclient> SELECT * FROM oceanbasetest;\n+------+------+------+\n| id   | ip   | ip2  |\n+------+------+------+\n|    1 |    4 | NULL |\n|    3 |    3 | NULL |\n|    4 |    3 | NULL |\n+------+------+------+\n3 rows in set\n\nobclient> SELECT SUM(ip2),SUM(ip),SUM(DISTINCT(ip)) FROM oceanbasetest;\n+----------+---------+-------------------+\n| sum(ip2) | sum(ip) | sum(distinct(ip)) |\n+----------+---------+-------------------+\n|     NULL |      10 |                 7 |\n+----------+---------+-------------------+\n1 row in set\n"
+    ],
+    "Category": [
+        "Aggregate Functions",
+        "Analysis Functions"
+    ]
+}

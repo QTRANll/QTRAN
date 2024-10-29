@@ -1,0 +1,23 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000001053512"
+    ],
+    "Title": [
+        "SET ROLE"
+    ],
+    "Feature": [
+        "SET ROLE {\n    DEFAULT\n    | NONE\n    | ALL\n    | ALL EXCEPT role_name [, role_name ...]\n    | role_name [, role_name ...]\n};\n"
+    ],
+    "Description": [
+        "该语句用于激活当前登录用户在当前会话（Session）中已被授予的角色。",
+        "\n说明\n通过 SET ROLE 语句激活的角色，仅影响当前 Session，不影响之后的 Session。\n",
+        "\n\n\n参数\n描述\n\n\n\n\nDEFAULT\n指定保持默认角色的设置。系统会根据变量 activate_all_roles_on_login 的值以及 SET DEFAULT ROLE 语句或 ALTER USER 语句设置的默认激活的角色来激活角色： \n      \n如果变量 activate_all_roles_on_login 的值为 on，则在会话中激活用户授予的所有角色。\n如果变量 activate_all_roles_on_login 的值为 off，则在会话中激活 SET DEFAULT ROLE 语句或 ALTER USER 语句指定的默认激活的角色。\n\n\n\nNONE\n指定停用用户被授予的所有角色。\n\n\nALL\n指定激活用户被授予的所有角色。\n\n\nALL EXCEPT\n指定不激活用户被授予的角色中的角色。\n\n\nrole_name\n指定角色的名称，激活多个角色时，角色名用英文逗号（,）隔开。\n\n\n"
+    ],
+    "Examples": [
+        "obclient [(none)]> SET ROLE ALL EXCEPT role001;\n",
+        "obclient [(none)]> SET ROLE role001, role002;\n"
+    ],
+    "Category": [
+        "No Category"
+    ]
+}

@@ -1,0 +1,23 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000001053483"
+    ],
+    "Title": [
+        "DESCRIBE"
+    ],
+    "Feature": [
+        "{EXPLAIN | DESCRIBE | DESC} table_name [column_name | wild];\n"
+    ],
+    "Description": [
+        "该语句用于获取表或列的 Schema 信息。",
+        "EXPLAIN 与 DESCRIBE、DESC 互为同义词。",
+        "\n\n\n参数\n描述\n\n\n\n\ntable_name\n指定表名。\n\n\ncolumn_name\n指定表的列名。\n\n\n"
+    ],
+    "Examples": [
+        "obclient> DESCRIBE t1;\n+-------+-------------+------+-----+---------+-------+\n| Field | Type        | Null | Key | Default | Extra |\n+-------+-------------+------+-----+---------+-------+\n| c1    | int(11)     | NO   | PRI | NULL    |       |\n| c2    | int(11)     | YES  |     | NULL    |       |\n| c3    | varchar(20) | YES  |     | NULL    |       |\n+-------+-------------+------+-----+---------+-------+\n3 rows in set\n",
+        "obclient> DESCRIBE t1 c1;\n+-------+---------+------+-----+---------+-------+\n| Field | Type    | Null | Key | Default | Extra |\n+-------+---------+------+-----+---------+-------+\n| c1    | int(11) | NO   | PRI | NULL    |       |\n+-------+---------+------+-----+---------+-------+\n1 row in set\n"
+    ],
+    "Category": [
+        "No Category"
+    ]
+}

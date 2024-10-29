@@ -1,0 +1,22 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/makedate/"
+    ],
+    "Title": [
+        "MAKEDATE"
+    ],
+    "Feature": [
+        "MAKEDATE(year,dayofyear)\n"
+    ],
+    "Description": [
+        "Returns a date, given year and day-of-year values. dayofyear must be\ngreater than 0 or the result is NULL."
+    ],
+    "Examples": [
+        "SELECT MAKEDATE(2011,31), MAKEDATE(2011,32);",
+        "SELECT MAKEDATE(2011,365), MAKEDATE(2014,365);",
+        "SELECT MAKEDATE(2011,0);"
+    ],
+    "Category": [
+        "Date & Time Functions"
+    ]
+}

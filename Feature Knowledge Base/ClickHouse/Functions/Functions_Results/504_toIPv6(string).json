@@ -1,0 +1,29 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/ip-address-functions"
+    ],
+    "Title": [
+        "toIPv6"
+    ],
+    "Feature": [
+        "toIPv6(string)"
+    ],
+    "Description": [
+        "toIPv6",
+        "Converts a string form of IPv6 address to IPv6 type. If the IPv6 address has an invalid format, returns an empty value.\nSimilar to IPv6StringToNum function, which converts IPv6 address to binary format.",
+        "If the input string contains a valid IPv4 address, then the IPv6 equivalent of the IPv4 address is returned.",
+        "Syntax",
+        "toIPv6(string)",
+        "Argument",
+        "string \u2014 IP address. String",
+        "Returned value",
+        "IP address. IPv6."
+    ],
+    "Examples": [
+        "WITH '2001:438:ffff::407d:1bc1' AS IPv6_stringSELECT    hex(IPv6StringToNum(IPv6_string)),    hex(toIPv6(IPv6_string));",
+        "SELECT toIPv6('127.0.0.1');"
+    ],
+    "Category": [
+        "IP Addresses Functions"
+    ]
+}

@@ -1,0 +1,21 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000000822980"
+    ],
+    "Title": [
+        "CONNECTION_ID"
+    ],
+    "Feature": [
+        "CONNECTION_ID()\n"
+    ],
+    "Description": [
+        "该函数返回当前会话的 Client Session ID，该 ID 是会话在客户端中的唯一标识。"
+    ],
+    "Examples": [
+        "obclient [(none)]> SELECT CONNECTION_ID() AS Client_Session_ID;\n",
+        "+-------------------+\n| Client_Session_ID |\n+-------------------+\n|        3221488032 |\n+-------------------+\n1 row in set\n"
+    ],
+    "Category": [
+        "Information Functions"
+    ]
+}

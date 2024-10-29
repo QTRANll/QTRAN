@@ -1,0 +1,36 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/table-functions/odbc"
+    ],
+    "Title": [
+        "Usage Example"
+    ],
+    "Feature": [
+        "Usage Example"
+    ],
+    "Description": [
+        "Usage Example",
+        "Getting data from the local MySQL installation via ODBC",
+        "This example is checked for Ubuntu Linux 18.04 and MySQL server 5.7.",
+        "Ensure that unixODBC and MySQL Connector are installed.",
+        "By default (if installed from packages), ClickHouse starts as user clickhouse. Thus you need to create and configure this user in the MySQL server.",
+        "$ sudo mysql",
+        "mysql> CREATE USER 'clickhouse'@'localhost' IDENTIFIED BY 'clickhouse';mysql> GRANT ALL PRIVILEGES ON *.* TO 'clickhouse'@'clickhouse' WITH GRANT OPTION;",
+        "Then configure the connection in /etc/odbc.ini.",
+        "$ cat /etc/odbc.ini[mysqlconn]DRIVER = /usr/local/lib/libmyodbc5w.soSERVER = 127.0.0.1PORT = 3306DATABASE = testUSERNAME = clickhousePASSWORD = clickhouse",
+        "You can check the connection using the isql utility from the unixODBC installation.",
+        "$ isql -v mysqlconn+-------------------------+| Connected!                            ||                                       |...",
+        "Table in MySQL:",
+        "mysql> CREATE TABLE `test`.`test` (    ->   `int_id` INT NOT NULL AUTO_INCREMENT,    ->   `int_nullable` INT NULL DEFAULT NULL,    ->   `float` FLOAT NOT NULL,    ->   `float_nullable` FLOAT NULL DEFAULT NULL,    ->   PRIMARY KEY (`int_id`));Query OK, 0 rows affected (0,09 sec)mysql> insert into test (`int_id`, `float`) VALUES (1,2);Query OK, 1 row affected (0,00 sec)mysql> select * from test;+------+----------+-----+----------+| int_id | int_nullable | float | float_nullable |+------+----------+-----+----------+|      1 |         NULL |     2 |           NULL |+------+----------+-----+----------+1 row in set (0,00 sec)",
+        "Retrieving data from the MySQL table in ClickHouse:",
+        "SELECT * FROM odbc('DSN=mysqlconn', 'test', 'test')",
+        "\u250c\u2500int_id\u2500\u252c\u2500int_nullable\u2500\u252c\u2500float\u2500\u252c\u2500float_nullable\u2500\u2510\u2502      1 \u2502            0 \u2502     2 \u2502              0 \u2502\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518"
+    ],
+    "Examples": [
+        "mysql> CREATE USER 'clickhouse'@'localhost' IDENTIFIED BY 'clickhouse';mysql> GRANT ALL PRIVILEGES ON *.* TO 'clickhouse'@'clickhouse' WITH GRANT OPTION;",
+        "SELECT * FROM odbc('DSN=mysqlconn', 'test', 'test')"
+    ],
+    "Category": [
+        "Table Functions"
+    ]
+}

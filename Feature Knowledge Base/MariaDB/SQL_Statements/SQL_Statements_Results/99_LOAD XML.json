@@ -1,0 +1,36 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/load-xml/"
+    ],
+    "Title": [
+        "LOAD XML"
+    ],
+    "Feature": [
+        "LOAD XML [LOW_PRIORITY | CONCURRENT] [LOCAL] INFILE 'file_name'\n    [REPLACE | IGNORE]\n    INTO TABLE [db_name.]tbl_name\n    [CHARACTER SET charset_name]\n    [ROWS IDENTIFIED BY '<tagname>']\n    [IGNORE number {LINES | ROWS}]\n    [(column_or_user_var,...)]\n    [SET col_name = expr,...]\n"
+    ],
+    "Description": [
+        "The LOAD XML statement reads data from an XML file into a table. The\nfile_name must be given as a literal string. The tagname in the\noptional ROWS IDENTIFIED BY clause must also be given as a literal\nstring, and must be surrounded by angle brackets (< and >).",
+        "LOAD XML acts as the complement of running the mariadb client in XML\noutput mode (that is, starting the client with the --xml option). To\nwrite data from a table to an XML file, use a command such as the\nfollowing one from the system shell:",
+        "shell> mariadb --xml -e 'SELECT * FROM mytable' > file.xml\n",
+        "To read the file back into a table, use LOAD XML INFILE. By default,\nthe <row> element is considered to be the equivalent of a database\ntable row; this can be changed using the ROWS IDENTIFIED BY clause.",
+        "This statement supports three different XML formats:",
+        "Column names as attributes and column values as attribute values:\n",
+        "<row column1=\"value1\" column2=\"value2\" .../>\n",
+        "Column names as tags and column values as the content of these tags:\n",
+        "<row>\n  <column1>value1</column1>\n  <column2>value2</column2>\n</row>\n",
+        "Column names are the name attributes of <field> tags, and values are\n  the contents of these tags:\n",
+        "<row>\n  <field name='column1'>value1</field>\n  <field name='column2'>value2</field>\n</row>\n",
+        "  This is the format used by other tools, such as mariadb-dump.",
+        "All 3 formats can be used in the same XML file; the import routine\nautomatically detects the format for each row and interprets it\ncorrectly. Tags are matched based on the tag or attribute name and the\ncolumn name.",
+        "The following clauses work essentially the same way for LOAD XML as\nthey do for LOAD DATA:",
+        "LOW_PRIORITY or CONCURRENT\nLOCAL\nREPLACE or IGNORE\nCHARACTER SET\n(column_or_user_var,...)\nSET\n",
+        "See LOAD DATA for more information about these clauses.",
+        "The IGNORE number LINES or IGNORE number ROWS clause causes the first\nnumber rows in the XML file to be skipped. It is analogous to the LOAD\nDATA statement's IGNORE ... LINES clause.",
+        "If the LOW_PRIORITY keyword is used, insertions are delayed until no other clients are reading from the table. The CONCURRENT keyword allows the use of concurrent inserts. These clauses cannot be specified together.",
+        "This statement activates INSERT triggers."
+    ],
+    "Examples": [],
+    "Category": [
+        "Data Manipulation"
+    ]
+}

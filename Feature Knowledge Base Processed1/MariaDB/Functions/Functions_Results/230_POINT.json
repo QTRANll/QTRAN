@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/point/"
+    ],
+    "Title": [
+        "POINT"
+    ],
+    "Feature": [
+        "Point(x,y)\n"
+    ],
+    "Description": [
+        "Constructs a WKB Point using the given coordinates."
+    ],
+    "Examples": [
+        "INSERT INTO gis_point VALUES\n    (PointFromText('POINT(10 10)')),\n    (PointFromText('POINT(20 10)')),\n    (PointFromText('POINT(20 20)')),\n    (PointFromWKB(AsWKB(PointFromText('POINT(10 20)'))));"
+    ],
+    "Category": [
+        "Geographic Functions"
+    ]
+}

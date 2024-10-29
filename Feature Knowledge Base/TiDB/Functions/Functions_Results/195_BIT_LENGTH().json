@@ -1,0 +1,23 @@
+{
+    "HTML": [
+        "https://docs.pingcap.com/zh/tidb/stable/string-functions#bit_length"
+    ],
+    "Title": [
+        "BIT_LENGTH()"
+    ],
+    "Feature": [
+        "BIT_LENGTH()"
+    ],
+    "Description": [
+        "BIT_LENGTH()",
+        "BIT_LENGTH() \u51fd\u6570\u7528\u4e8e\u8fd4\u56de\u8f93\u5165\u53c2\u6570\u7684\u957f\u5ea6\uff0c\u5355\u4f4d\u4e3a bit\u3002"
+    ],
+    "Examples": [
+        "SELECT BIT_LENGTH(\"TiDB\");\n\n+--------------------+\n| BIT_LENGTH(\"TiDB\") |\n+--------------------+\n|                 32 |\n+--------------------+\n",
+        "SELECT BIT_LENGTH(\"PingCAP 123\");\n\n+---------------------------+\n| BIT_LENGTH(\"PingCAP 123\") |\n+---------------------------+\n|                        88 |\n+---------------------------+\n",
+        "SELECT CustomerName, BIT_LENGTH(CustomerName) AS BitLengthOfName FROM Customers;\n\n+--------------------+-----------------+\n| CustomerName       | BitLengthOfName |\n+--------------------+-----------------+\n| Albert Einstein    |             120 |\n| Robert Oppenheimer |             144 |\n+--------------------+-----------------+\n"
+    ],
+    "Category": [
+        "String Functions"
+    ]
+}

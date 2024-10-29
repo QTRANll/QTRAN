@@ -1,0 +1,32 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/built-in-function-reference.html",
+        "https://dev.mysql.com/doc/refman/8.4/en/date-and-time-functions.html"
+    ],
+    "Title": [
+        "14.1 Built-In Function and Operator Reference",
+        "14.7 Date and Time Functions"
+    ],
+    "Feature": [
+        "SECOND(time)"
+    ],
+    "Description": [
+        "Return the second (0-59)",
+        "\nSECOND(time)\n",
+        "\n          Returns the second for time, in the\n          range 0 to 59, or\n          NULL if time is\n          NULL.\n        ",
+        "Press CTRL+C to copy mysql> SELECT SECOND('10:05:03');\n        -> 3"
+    ],
+    "Examples": [
+        "mysql> SELECT SECOND('10:05:03');\n        -> 3"
+    ],
+    "Category": [
+        "Built-In Functions",
+        "Date and Time Functions"
+    ],
+    "Reference HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/date-and-time-functions.html#function_second"
+    ],
+    "Feature Type": [
+        "Function"
+    ]
+}

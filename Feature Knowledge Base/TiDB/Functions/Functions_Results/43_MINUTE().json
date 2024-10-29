@@ -1,0 +1,23 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/date-and-time-functions.html#function_minute"
+    ],
+    "Title": [
+        "MINUTE()"
+    ],
+    "Feature": [
+        "MINUTE(time)"
+    ],
+    "Description": [
+        "Return the minute from the argument",
+        "\nMINUTE(time)\n",
+        "\n          Returns the minute for time, in the\n          range 0 to 59, or\n          NULL if time is\n          NULL.\n        ",
+        "Press CTRL+C to copy mysql> SELECT MINUTE('2008-02-03 10:05:03');\n        -> 5"
+    ],
+    "Examples": [
+        "mysql> SELECT MINUTE('2008-02-03 10:05:03');\n        -> 5"
+    ],
+    "Category": [
+        "Date and Time Functions"
+    ]
+}

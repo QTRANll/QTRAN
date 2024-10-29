@@ -1,0 +1,22 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000000823504"
+    ],
+    "Title": [
+        "XMLPARSE"
+    ],
+    "Feature": [
+        "XMLPARSE\n({ DOCUMENT | CONTENT } value_expr [ WELLFORMED ])\n"
+    ],
+    "Description": [
+        "该函数解析输入的字符串并生成 XMLType 数据类型。",
+        "\n\n\n字段\n说明\n\n\n\n\nDOCUMENT\n指定解析的内容必须为一个单根节点的 XML 文档。DOCUMENT 可以带声明头也可以不带。\n\n\nCONTENT\n指定解析的内容必须为一个有效的 XML 片段。CONTENT 一定不带声明头，否则会报错。\n\n\nvalue_expr\n指定被解析的字符串。结果的字符类型可以为 CHAR、VARCHAR2、NCHAR、NVARCHAR2 或 CLOB。\n\n\n注意：如果 value_expr 计算结果为 NULL，函数也会返回 NULL。\n\n\nWELLFORMED\n如果标记 WELLFORMED，将不执行解析内容的有效性检查，为可选项。\n\n\n",
+        "返回 XMLType 数据类型。"
+    ],
+    "Examples": [
+        "# 解析一个有效的 XML 片段 'abc'\nobclient> SELECT XMLPARSE(CONTENT '<a>abc</a>') FROM DUAL;\n+-------------------------------+\n| XMLPARSE(CONTENT'<A>ABC</A>') |\n+-------------------------------+\n| <a>abc</a>\n                   |\n+-------------------------------+\n1 row in set\n\n# 解析 XML DOCUMENT\nobclient> SELECT XMLPARSE(DOCUMENT '<?xml version=\"1.0\" encoding=\"UTF-8\" ?><body>135 <purchaseOrder poNo=\"12435\">\n         <customerName>  Enterprises</customerName>\n         <itemNo>123456</itemNo>\n         </purchaseOrder></body>'\n        WELLFORMED) AS PRO FROM DUAL;\n+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+\n| PRO                                                                                                                                                                                   |\n+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+\n| <?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<body>135 <purchaseOrder poNo=\"12435\">\n    <customerName>  Enterprises</customerName>\n    <itemNo>123456</itemNo>\n  </purchaseOrder>\n</body>\n |\n+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+\n1 row in set\n"
+    ],
+    "Category": [
+        "XML Functions"
+    ]
+}

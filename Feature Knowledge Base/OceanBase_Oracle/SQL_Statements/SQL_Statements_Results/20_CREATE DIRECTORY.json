@@ -1,0 +1,25 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000001054335"
+    ],
+    "Title": [
+        "CREATE DIRECTORY"
+    ],
+    "Feature": [
+        "CREATE [ OR REPLACE ] DIRECTORY directory AS 'path_name';\n"
+    ],
+    "Description": [
+        "该语句用来创建路径对象。",
+        "\n\n\n参数\n描述\n\n\n\n\nOR REPLACE\n指定 OR REPLACE 表示如果对应的路径对象已经存在，则用新的文件系统路径替代原有的路径定义。\n\n\ndirectory\n指定要创建的路径对象的名称，最大长度为 30 字节。\n\n\npath_name\n指定文件系统路径，定义了共享文件系统所在的绝对路径名。路径名区分大小写。 \n      \n注意\nOceanBase 数据库不会在文件系统上为用户创建路径，用户在指定 path_name 时需要保证路径是真实存在的。\n\n\n\n"
+    ],
+    "Examples": [
+        "obclient -S /home/admin/test421/oceanbase/run/sql.sock -usys@oracle001 -p******\n",
+        "obclient [SYS]> SET GLOBAL secure_file_priv = \"/usr/sqldump\";\n",
+        "obclient [SYS]> \\q\n",
+        "obclient -hxxx.xxx.xxx.xxx -P2881 -utest_user001@oracle001 -p******\n",
+        "obclient [TEST_USER001]> CREATE OR REPLACE DIRECTORY sql_file_dir AS '/usr/sqldump';\n"
+    ],
+    "Category": [
+        "DDL"
+    ]
+}

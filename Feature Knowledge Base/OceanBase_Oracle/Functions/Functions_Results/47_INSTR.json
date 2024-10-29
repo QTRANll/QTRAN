@@ -1,0 +1,22 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000000823209"
+    ],
+    "Title": [
+        "INSTR"
+    ],
+    "Feature": [
+        "INSTR(char1,char2[,i[,j]])\n"
+    ],
+    "Description": [
+        "该函数在一个字符串中搜索指定的字符，返回发现指定的字符的位置。多字节字符（汉字、全角符等）按 1 个字符计算。",
+        "\n\n\n参数\n说明\n\n\n\n\nchar1\n被搜索的字符串。字符串类型可以为 CHAR、VARCHAR2、NCHAR、NVARCHAR2 或 CLOB。\n\n\nchar2\n指定要搜索的字符串。字符串类型可以为 CHAR、VARCHAR2、NCHAR、NVARCHAR2 或 CLOB。\n\n\ni\n搜索的开始位置，默认值为 1。当值小于 0 时，搜索从反方向开始，但是仍返回被搜索到的字符的正序位置。\n\n\nj\nchar2 第 j 次出现的位置，为可选项。默认值为 1。\n\n\n",
+        "返回 NUMBER 数据类型。"
+    ],
+    "Examples": [
+        "obclient> SELECT INSTR('OceanBase','a',1,2) \"INSTR\" FROM DUAL;\n+-------+\n| INSTR |\n+-------+\n|     7 |\n+-------+\n1 row in set\n"
+    ],
+    "Category": [
+        "Character Functions Returning NumberValues"
+    ]
+}

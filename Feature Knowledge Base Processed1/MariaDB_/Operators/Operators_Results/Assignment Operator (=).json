@@ -1,0 +1,124 @@
+{
+    "HTML": "https://mariadb.com//kb/en/assignment-operators-assignment-operator/",
+    "Title": "Assignment Operator (=)",
+    "Feature": [
+        "identifier = expr\n"
+    ],
+    "Description": [
+        "The equal sign is used as both an assignment operator in certain contexts, and as a comparison operator. When used as assignment operator, the value on the right is assigned to the variable (or column, in some contexts) on the left.",
+        "Since its use can be ambiguous, unlike the := assignment operator, the = assignment operator cannot be used in all contexts, and is only valid as part of a SET statement, or the SET clause of an UPDATE statement",
+        "This operator works with both user-defined variables and local variables."
+    ],
+    "Examples": [
+        "UPDATE table_name SET x = 2 WHERE x > 100;\n",
+        "SET @x = 1, @y := 2;\n"
+    ],
+    "Category": [
+        "Assignment Operators"
+    ],
+    "Effective SQLs Refined": [],
+    "Ineffective SQLs Refined": [
+        "UPDATE table_name SET x = 2 WHERE x > 100;",
+        "SET @x = 1, @y := 2;"
+    ],
+    "Wrong Messages from Ineffective SQLs Refined": [
+        "(pymysql.err.ProgrammingError) (1146, \"Table 'PINOLO_MariaDB.table_name' doesn't exist\")\n[SQL: UPDATE table_name SET x = 2 WHERE x > 100;]\n(Background on this error at: https://sqlalche.me/e/20/f405)",
+        "This result object does not return rows. It has been closed automatically."
+    ],
+    "SQLs Generated1": [
+        {
+            "Example SQL": "SET @x = 1;"
+        },
+        {
+            "Example SQL": "SET @x = 1;"
+        },
+        {
+            "Example SQL": "SET @x = 1;"
+        },
+        {
+            "Example SQL": "SET @x := 1;"
+        },
+        {
+            "Example SQL": "SET @x = 1;"
+        }
+    ],
+    "SQLs Generated Costs1": [
+        {
+            "Total Tokens": 395,
+            "Prompt Tokens": 376,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 6.78e-05
+        },
+        {
+            "Total Tokens": 534,
+            "Prompt Tokens": 515,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 8.864999999999999e-05
+        },
+        {
+            "Total Tokens": 673,
+            "Prompt Tokens": 654,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 0.0001095
+        },
+        {
+            "Total Tokens": 812,
+            "Prompt Tokens": 793,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 0.00013035
+        },
+        {
+            "Total Tokens": 951,
+            "Prompt Tokens": 932,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 0.0001512
+        }
+    ],
+    "SQLs Generated ExecResults1": [
+        "None",
+        "None",
+        "None",
+        "None",
+        "None"
+    ],
+    "SQLs Generated ExecTimes1": [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+    ],
+    "SQLs Generated ErrorMessages1": [
+        "This result object does not return rows. It has been closed automatically.",
+        "This result object does not return rows. It has been closed automatically.",
+        "This result object does not return rows. It has been closed automatically.",
+        "This result object does not return rows. It has been closed automatically.",
+        "This result object does not return rows. It has been closed automatically."
+    ],
+    "Effective SQLs Generated1": [],
+    "SQLs Generated2": [
+        {
+            "Example SQL": "UPDATE dialect_recognize_table SET speaker_count = 100000 WHERE dialect_name = 'Mandarin';"
+        }
+    ],
+    "SQLs Generated Costs2": [
+        {
+            "Total Tokens": 828,
+            "Prompt Tokens": 794,
+            "Completion Tokens": 34,
+            "Total Cost (USD)": 0.0001395
+        }
+    ],
+    "SQLs Generated ExecResults2": [
+        "None"
+    ],
+    "SQLs Generated ExecTimes2": [
+        "0.031623125076293945"
+    ],
+    "SQLs Generated ErrorMessages2": [
+        "None"
+    ],
+    "Effective SQLs Generated2": [
+        "UPDATE dialect_recognize_table SET speaker_count = 100000 WHERE dialect_name = 'Mandarin';"
+    ]
+}

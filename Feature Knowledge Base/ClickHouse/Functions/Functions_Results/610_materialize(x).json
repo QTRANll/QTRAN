@@ -1,0 +1,27 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/other-functions"
+    ],
+    "Title": [
+        "materialize"
+    ],
+    "Feature": [
+        "materialize(x)"
+    ],
+    "Description": [
+        "materialize",
+        "Turns a constant into a full column containing a single value.\nFull columns and constants are represented differently in memory.\nFunctions usually execute different code for normal and constant arguments, although the result should typically be the same.\nThis function can be used to debug this behavior.",
+        "Syntax",
+        "materialize(x)",
+        "Parameters",
+        "x \u2014 A constant. Constant.",
+        "Returned value",
+        "A column containing a single value x."
+    ],
+    "Examples": [
+        "SELECT countMatches('foobarfoo', 'foo');SELECT countMatches('foobarfoo', materialize('foo'));"
+    ],
+    "Category": [
+        "Other Functions"
+    ]
+}

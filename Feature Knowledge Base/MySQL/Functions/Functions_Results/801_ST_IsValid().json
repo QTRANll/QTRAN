@@ -1,0 +1,35 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/built-in-function-reference.html",
+        "https://dev.mysql.com/doc/refman/8.4/en/spatial-function-reference.html"
+    ],
+    "Title": [
+        "14.1 Built-In Function and Operator Reference",
+        "14.16.1 Spatial Function Reference"
+    ],
+    "Feature": [
+        "ST_IsValid(g)"
+    ],
+    "Description": [
+        "Whether a geometry is valid",
+        "\nST_IsValid(g)\n",
+        "\n          Returns 1 if the argument is geometrically valid, 0 if the\n          argument is not geometrically valid. Geometry validity is\n          defined by the OGC specification.\n        ",
+        "\n          The only valid empty geometry is represented in the form of an\n          empty geometry collection value.\n          ST_IsValid() returns 1 in this\n          case. MySQL does not support GIS EMPTY\n          values such as POINT EMPTY.\n        ",
+        "\nST_IsValid() handles its\n          arguments as described in the introduction to this section,\n          with this exception:\n",
+        "\n\n              If the geometry has a geographic SRS with a longitude or\n              latitude that is out of range, an error occurs:\n\n\n\n                  If a longitude value is not in the range (\u2212180,\n                  180], an\n                  ER_GEOMETRY_PARAM_LONGITUDE_OUT_OF_RANGE\n                  error occurs.\n                \n                  If a latitude value is not in the range [\u221290,\n                  90], an\n                  ER_GEOMETRY_PARAM_LATITUDE_OUT_OF_RANGE\n                  error occurs.\n\n\n\n              Ranges shown are in degrees. If an SRS uses another unit,\n              the range uses the corresponding values in its unit. The\n              exact range limits deviate slightly due to floating-point\n              arithmetic.\n\n",
+        "Press CTRL+C to copy mysql> SET @ls1 = ST_GeomFromText('LINESTRING(0 0,-0.00 0,0.0 0)');\nmysql> SET @ls2 = ST_GeomFromText('LINESTRING(0 0, 1 1)');\nmysql> SELECT ST_IsValid(@ls1);\n+------------------+\n| ST_IsValid(@ls1) |\n+------------------+\n|                0 |\n+------------------+\nmysql> SELECT ST_IsValid(@ls2);\n+------------------+\n| ST_IsValid(@ls2) |\n+------------------+\n|                1 |\n+------------------+"
+    ],
+    "Examples": [
+        "mysql> SET @ls1 = ST_GeomFromText('LINESTRING(0 0,-0.00 0,0.0 0)');\nmysql> SET @ls2 = ST_GeomFromText('LINESTRING(0 0, 1 1)');\nmysql> SELECT ST_IsValid(@ls1);\n+------------------+\n| ST_IsValid(@ls1) |\n+------------------+\n|                0 |\n+------------------+\nmysql> SELECT ST_IsValid(@ls2);\n+------------------+\n| ST_IsValid(@ls2) |\n+------------------+\n|                1 |\n+------------------+"
+    ],
+    "Category": [
+        "Built-In Functions",
+        "Spatial Analysis Functions"
+    ],
+    "Reference HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/spatial-convenience-functions.html#function_st-isvalid"
+    ],
+    "Feature Type": [
+        "Function"
+    ]
+}

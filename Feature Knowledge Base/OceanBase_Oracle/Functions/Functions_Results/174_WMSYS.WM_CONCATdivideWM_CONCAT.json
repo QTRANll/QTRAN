@@ -1,0 +1,26 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000000822884"
+    ],
+    "Title": [
+        "WMSYS.WM_CONCAT/WM_CONCAT"
+    ],
+    "Feature": [
+        "WM_CONCAT ([DISTINCT] measure_expr) [OVER query_partition_clause]\n"
+    ],
+    "Description": [
+        "该函数用于列转行，将度量列的值进行合并。可以将其用作聚合或分析函数。",
+        "\n说明\n\n作为分析函数使用时，需要使用 OVER 子句定义窗口进行计算。该函数基于 query_partition_clause 中的一个或多个表达式将查询结果集分为几组。\n作为聚合函数使用时，不需要加 OVER 关键字。 \n     \n作为单个集合的聚合函数，WM_CONCAT 对所有行进行操作并返回单个输出行。\n作为组集聚合，WM_CONCAT 将对 GROUP BY 子句定义的每个组进行操作并返回输出行。\n\n\n",
+        "\n\n\n参数\n说明\n\n\n\n\nDISTINCT\n如果指定 DISTINCT，会在返回结果中删除重复值。为可选项。\n\n\nmeasure_expr\n可以是任何表达式。度量列中的空值将被忽略。\n\n\nOVER\n使用 OVER 子句定义窗口进行计算。详细信息请参见 分析函数说明。\n\n\n",
+        "返回 CLOB 类型的数据值。"
+    ],
+    "Examples": [
+        "obclient> SELECT * FROM employees;\n+---------------+-----------+------------+--------+\n| DEPARTMENT_ID | LAST_NAME | HIREDATE   | SALARY |\n+---------------+-----------+------------+--------+\n|            30 | Raphaely  | 2017-07-01 |   1700 |\n|            30 | De Haan   | 2018-05-01 |  11000 |\n|            40 | Errazuriz | 2017-07-21 |   1400 |\n|            50 | Hartstein | 2019-10-05 |  14000 |\n|            50 | Raphaely  | 2017-07-22 |   1700 |\n|            50 | Weiss     | 2019-10-05 |  13500 |\n|            90 | Russell   | 2019-07-11 |  13000 |\n|            90 | Partners  | 2018-12-01 |  14000 |\n+---------------+-----------+------------+--------+\n8 rows in set\n",
+        "obclient> SELECT WM_CONCAT(last_name) \"Emp_list\" FROM employees;\n+----------------------------------------------------------------------+\n| Emp_list                                                             |\n+----------------------------------------------------------------------+\n| Raphaely,De Haan,Errazuriz,Hartstein,Raphaely,Weiss,Russell,Partners |\n+----------------------------------------------------------------------+\n1 row in set\n",
+        "obclient> SELECT department_id,hiredate,last_name,\n              WM_CONCAT(last_name) OVER (PARTITION BY department_id) as \"Emp_list\"\n    FROM employees\n    ORDER BY 1,2;\n+---------------+------------+-----------+--------------------------+\n| DEPARTMENT_ID | HIREDATE   | LAST_NAME | Emp_list                 |\n+---------------+------------+-----------+--------------------------+\n|            30 | 2017-07-01 | Raphaely  | Raphaely,De Haan         |\n|            30 | 2018-05-01 | De Haan   | Raphaely,De Haan         |\n|            40 | 2017-07-21 | Errazuriz | Errazuriz                |\n|            50 | 2017-07-22 | Raphaely  | Hartstein,Raphaely,Weiss |\n|            50 | 2019-10-05 | Hartstein | Hartstein,Raphaely,Weiss |\n|            50 | 2019-10-05 | Weiss     | Hartstein,Raphaely,Weiss |\n|            90 | 2018-12-01 | Partners  | Russell,Partners         |\n|            90 | 2019-07-11 | Russell   | Russell,Partners         |\n+---------------+------------+-----------+--------------------------+\n8 rows in set\n"
+    ],
+    "Category": [
+        "Aggregate Functions",
+        "Analytic Functions"
+    ]
+}

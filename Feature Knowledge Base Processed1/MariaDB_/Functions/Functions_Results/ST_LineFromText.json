@@ -1,0 +1,45 @@
+{
+    "HTML": "https://mariadb.com//kb/en/linefromtext/",
+    "Title": "ST_LineFromText",
+    "Feature": [
+        "ST_LineFromText(wkt[,srid])\nST_LineStringFromText(wkt[,srid])\nLineFromText(wkt[,srid])\nLineStringFromText(wkt[,srid])\n"
+    ],
+    "Description": [
+        "Constructs a LINESTRING value using its WKT representation and SRID.",
+        "ST_LineFromText(), ST_LineStringFromText(), ST_LineFromText() and ST_LineStringFromText() are all synonyms."
+    ],
+    "Examples": [
+        "CREATE TABLE gis_line  (g LINESTRING);\nSHOW FIELDS FROM gis_line;\nINSERT INTO gis_line VALUES\n    (LineFromText('LINESTRING(0 0,0 10,10 0)')),\n    (LineStringFromText('LINESTRING(10 10,20 10,20 20,10 20,10 10)')),\n    (LineStringFromWKB(AsWKB(LineString(Point(10, 10), Point(40, 10)))));\n"
+    ],
+    "Category": [
+        "Geographic Functions"
+    ],
+    "Effective SQLs Refined": [],
+    "Ineffective SQLs Refined": [],
+    "Wrong Messages from Ineffective SQLs Refined": [],
+    "SQLs Generated1": [
+        {
+            "Example SQL": "SELECT ST_LineFromText('LINESTRING(0 0, 1 1, 2 2)');"
+        }
+    ],
+    "SQLs Generated Costs1": [
+        {
+            "Total Tokens": 362,
+            "Prompt Tokens": 325,
+            "Completion Tokens": 37,
+            "Total Cost (USD)": 7.094999999999999e-05
+        }
+    ],
+    "SQLs Generated ExecResults1": [
+        "[(b'\\x00\\x00\\x00\\x00\\x01\\x02\\x00\\x00\\x00\\x03\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\xf0?\\x00\\x00\\x00\\x00\\x00\\x00\\xf0?\\x00\\x00\\x00\\x00\\x00\\x00\\x00@\\x00\\x00\\x00\\x00\\x00\\x00\\x00@',)]"
+    ],
+    "SQLs Generated ExecTimes1": [
+        "0.00420832633972168"
+    ],
+    "SQLs Generated ErrorMessages1": [
+        "None"
+    ],
+    "Effective SQLs Generated1": [
+        "SELECT ST_LineFromText('LINESTRING(0 0, 1 1, 2 2)');"
+    ]
+}

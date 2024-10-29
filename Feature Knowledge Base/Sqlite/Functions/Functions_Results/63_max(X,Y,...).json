@@ -1,0 +1,18 @@
+{
+    "HTML": [
+        "https://sqlite.org/lang_corefunc.html#max_scalar"
+    ],
+    "Title": [
+        "Built-In Scalar SQL Functions"
+    ],
+    "Feature": [
+        "max(X,Y,...)"
+    ],
+    "Description": [
+        "The multi-argument max() function returns the argument with the \n  maximum value, or return NULL if any argument is NULL. \n  The multi-argument max() function searches its arguments from left to right\n  for an argument that defines a collating function and uses that collating\n  function for all string comparisons.  If none of the arguments to max()\n  define a collating function, then the BINARY collating function is used.\n  Note thatmax()is a simple function when\n  it has 2 or more arguments but operates as anaggregate functionif given only a single argument."
+    ],
+    "Examples": [],
+    "Category": [
+        "Built-In Scalar SQL Functions"
+    ]
+}

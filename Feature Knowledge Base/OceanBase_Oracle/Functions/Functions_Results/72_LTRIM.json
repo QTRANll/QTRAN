@@ -1,0 +1,24 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000000823184"
+    ],
+    "Title": [
+        "LTRIM"
+    ],
+    "Feature": [
+        "LTRIM(char1 [,char2])\n"
+    ],
+    "Description": [
+        "该函数功能是从 char1 的左端开始删除 char2 中包含的所有字符，直到 char1 左端出现 char2 中不存在的字符为止，然后返回结果。",
+        "\n\n\n参数\n说明\n\n\n\n\nchar1\n表示字符串。 字符串类型可为 CHAR、VARCHAR2、NCHAR、NVARCHAR2 或 CLOB。\n\n\nchar2\n表示要删除的字符集合。如果未指定 char2，则默认为单个空格。 字符串类型可为 CHAR、VARCHAR2、NCHAR、NVARCHAR2 或 CLOB。\n\n\n",
+        "如果 char1 是 CHAR、VARCHAR2 数据类型，则函数返回 VARCHAR2 数据类型。",
+        "如果 char1 是 NCHAR、NVARCHAR2 数据类型，则函数返回 NVARCHAR2 数据类型。",
+        "如果 char1 是 LOB 数据类型，则返回的字符串为 LOB 数据类型。"
+    ],
+    "Examples": [
+        "obclient> SELECT LTRIM('#a￥!aa￥  Hello World!','#a￥! ') text FROM DUAL;\n+--------------+\n| TEXT         |\n+--------------+\n| Hello World! |\n+--------------+\n1 row in set\n"
+    ],
+    "Category": [
+        "Character Functions Returning CharacterValues"
+    ]
+}

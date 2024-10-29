@@ -1,0 +1,34 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/show-create-table/"
+    ],
+    "Title": [
+        "SHOW CREATE TABLE"
+    ],
+    "Feature": [
+        "SHOW CREATE TABLE tbl_name\n"
+    ],
+    "Description": [
+        "Shows the CREATE TABLE statement that creates the given table. The statement requires the SELECT privilege for the table. This statement also works with views and SEQUENCE.",
+        "SHOW CREATE TABLE quotes table and\ncolumn names according to the value of the sql_quote_show_create server system variable.",
+        "Certain SQL_MODE values can result in parts of the original CREATE statement not being included in the output. MariaDB-specific table options, column options, and index options are not included in the output of this statement if the NO_TABLE_OPTIONS, NO_FIELD_OPTIONS and NO_KEY_OPTIONS SQL_MODE flags are used. All MariaDB-specific table attributes are also not shown when a non-MariaDB/MySQL emulation mode is used, which includes ANSI, DB2, POSTGRESQL, MSSQL, MAXDB or ORACLE.\n",
+        "Invalid table options, column options and index options are normally commented out (note, that it is possible to create a table with invalid options, by altering a table of a different engine, where these options were valid). To have them uncommented, enable the IGNORE_BAD_TABLE_OPTIONS SQL_MODE. Remember that replaying a CREATE TABLE statement with uncommented invalid options will fail with an error, unless the IGNORE_BAD_TABLE_OPTIONS SQL_MODE is in effect.",
+        "Note that SHOW CREATE TABLE is not meant to provide metadata about a table. It provides information about how the table was declared, but the real table structure could differ a bit. For example, if an index has been declared as HASH, the CREATE TABLE statement returned by SHOW CREATE TABLE will declare that index as HASH; however, it is possible that the index is in fact a BTREE, because the storage engine does not support HASH.",
+        "MariaDB permits TEXT and BLOB data types to be assigned a DEFAULT value. As a result, SHOW CREATE TABLE will append a DEFAULT NULL to nullable TEXT or BLOB fields if no specific default is provided. ",
+        "Numbers are no longer quoted in the DEFAULT clause in SHOW CREATE statement. Prior to MariaDB 10.2.2, MariaDB quoted numbers. ",
+        "Index Order",
+        "Indexes are sorted and displayed in the following order, which may differ from the order of the CREATE TABLE statement.",
+        "PRIMARY KEY\nUNIQUE keys where all column are NOT NULL\nUNIQUE keys that don't contain partial segments\nOther UNIQUE keys\nLONG UNIQUE keys\nNormal keys\nFulltext keys\n",
+        "See sql/sql_table.cc for details."
+    ],
+    "Examples": [
+        "SHOW CREATE TABLE t\\G\n*************************** 1. row ***************************\n       Table: t\nCreate Table: CREATE TABLE `t` (\n  `id` int(11) NOT NULL AUTO_INCREMENT,\n  `s` char(60) DEFAULT NULL,\n  PRIMARY KEY (`id`)\n) ENGINE=InnoDB DEFAULT CHARSET=latin1\n",
+        "SHOW CREATE TABLE t\\G\n*************************** 1. row ***************************\n       Table: t\nCreate Table: CREATE TABLE t (\n  id int(11) NOT NULL AUTO_INCREMENT,\n  s char(60) DEFAULT NULL,\n  PRIMARY KEY (id)\n) ENGINE=InnoDB DEFAULT CHARSET=latin1\n",
+        "CREATE TABLE td (link TINYINT DEFAULT 1);\n\nSHOW CREATE TABLE td\\G\n*************************** 1. row ***************************\n       Table: td\nCreate Table: CREATE TABLE `td` (\n  `link` tinyint(4) DEFAULT 1\n) ENGINE=InnoDB DEFAULT CHARSET=latin1\n",
+        "CREATE TABLE td (link TINYINT DEFAULT 1);\n\nSHOW CREATE TABLE td\\G\n*************************** 1. row ***************************\n       Table: td\nCreate Table: CREATE TABLE `td` (\n  `link` tinyint(4) DEFAULT '1'\n) ENGINE=InnoDB DEFAULT CHARSET=latin1\n",
+        "SELECT @@sql_mode;\n+-------------------------------------------------------------------------------------------+\n| @@sql_mode                                                                                |\n+-------------------------------------------------------------------------------------------+\n| STRICT_TRANS_TABLES,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION |\n+-------------------------------------------------------------------------------------------+\n\nCREATE TABLE `t1` (\n       `id` int(11) NOT NULL AUTO_INCREMENT,\n       `msg` varchar(100) DEFAULT NULL,\n       PRIMARY KEY (`id`)\n     ) ENGINE=InnoDB DEFAULT CHARSET=latin1\n;\n\nSHOW CREATE TABLE t1\\G\n*************************** 1. row ***************************\n       Table: t1\nCreate Table: CREATE TABLE `t1` (\n  `id` int(11) NOT NULL AUTO_INCREMENT,\n  `msg` varchar(100) DEFAULT NULL,\n  PRIMARY KEY (`id`)\n) ENGINE=InnoDB DEFAULT CHARSET=latin1\n\nSET SQL_MODE=ORACLE;\n\nSHOW CREATE TABLE t1\\G\n*************************** 1. row ***************************\n       Table: t1\nCreate Table: CREATE TABLE \"t1\" (\n  \"id\" int(11) NOT NULL,\n  \"msg\" varchar(100) DEFAULT NULL,\n  PRIMARY KEY (\"id\")\n"
+    ],
+    "Category": [
+        "Administrative SQL Statements"
+    ]
+}

@@ -1,0 +1,34 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/built-in-function-reference.html",
+        "https://dev.mysql.com/doc/refman/8.4/en/spatial-function-reference.html"
+    ],
+    "Title": [
+        "14.1 Built-In Function and Operator Reference",
+        "14.16.1 Spatial Function Reference"
+    ],
+    "Feature": [
+        "ST_AsBinary(g\n          [, options])"
+    ],
+    "Description": [
+        "Convert from internal geometry format to WKB",
+        "\nST_AsBinary(g\n          [, options]),\n          ST_AsWKB(g\n          [, options])\n",
+        "\n          Converts a value in internal geometry format to its WKB\n          representation and returns the binary result.\n        ",
+        "\n          The function return value has geographic coordinates\n          (latitude, longitude) in the order specified by the spatial\n          reference system that applies to the geometry argument. An\n          optional options argument may be\n          given to override the default axis order.\n        ",
+        "\nST_AsBinary() and\n          ST_AsWKB()\n          handle their arguments as described in the introduction to\n          this section.\n        ",
+        "Press CTRL+C to copy mysql> SET @g = ST_LineFromText('LINESTRING(0 5,5 10,10 15)', 4326);\nmysql> SELECT ST_AsText(ST_GeomFromWKB(ST_AsWKB(@g)));\n+-----------------------------------------+\n| ST_AsText(ST_GeomFromWKB(ST_AsWKB(@g))) |\n+-----------------------------------------+\n| LINESTRING(5 0,10 5,15 10)              |\n+-----------------------------------------+\nmysql> SELECT ST_AsText(ST_GeomFromWKB(ST_AsWKB(@g, 'axis-order=long-lat')));\n+----------------------------------------------------------------+\n| ST_AsText(ST_GeomFromWKB(ST_AsWKB(@g, 'axis-order=long-lat'))) |\n+----------------------------------------------------------------+\n| LINESTRING(0 5,5 10,10 15)                                     |\n+----------------------------------------------------------------+\nmysql> SELECT ST_AsText(ST_GeomFromWKB(ST_AsWKB(@g, 'axis-order=lat-long')));\n+----------------------------------------------------------------+\n| ST_AsText(ST_GeomFromWKB(ST_AsWKB(@g, 'axis-order=lat-long'))) |\n+----------------------------------------------------------------+\n| LINESTRING(5 0,10 5,15 10)                                     |\n+----------------------------------------------------------------+"
+    ],
+    "Examples": [
+        "mysql> SET @g = ST_LineFromText('LINESTRING(0 5,5 10,10 15)', 4326);\nmysql> SELECT ST_AsText(ST_GeomFromWKB(ST_AsWKB(@g)));\n+-----------------------------------------+\n| ST_AsText(ST_GeomFromWKB(ST_AsWKB(@g))) |\n+-----------------------------------------+\n| LINESTRING(5 0,10 5,15 10)              |\n+-----------------------------------------+\nmysql> SELECT ST_AsText(ST_GeomFromWKB(ST_AsWKB(@g, 'axis-order=long-lat')));\n+----------------------------------------------------------------+\n| ST_AsText(ST_GeomFromWKB(ST_AsWKB(@g, 'axis-order=long-lat'))) |\n+----------------------------------------------------------------+\n| LINESTRING(0 5,5 10,10 15)                                     |\n+----------------------------------------------------------------+\nmysql> SELECT ST_AsText(ST_GeomFromWKB(ST_AsWKB(@g, 'axis-order=lat-long')));\n+----------------------------------------------------------------+\n| ST_AsText(ST_GeomFromWKB(ST_AsWKB(@g, 'axis-order=lat-long'))) |\n+----------------------------------------------------------------+\n| LINESTRING(5 0,10 5,15 10)                                     |\n+----------------------------------------------------------------+"
+    ],
+    "Category": [
+        "Built-In Functions",
+        "Spatial Analysis Functions"
+    ],
+    "Reference HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/gis-format-conversion-functions.html#function_st-asbinary"
+    ],
+    "Feature Type": [
+        "Function"
+    ]
+}

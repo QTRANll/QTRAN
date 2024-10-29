@@ -1,0 +1,23 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/ascii/"
+    ],
+    "Title": [
+        "ASCII"
+    ],
+    "Feature": [
+        "ASCII(str)\n"
+    ],
+    "Description": [
+        "Returns the numeric ASCII value of the leftmost character of the string argument.  Returns 0 if the given string is empty and NULL if it is NULL.",
+        "ASCII() works for 8-bit characters."
+    ],
+    "Examples": [
+        "SELECT ASCII(9);",
+        "SELECT ASCII('9');",
+        "SELECT ASCII('abc');"
+    ],
+    "Category": [
+        "String Functions"
+    ]
+}

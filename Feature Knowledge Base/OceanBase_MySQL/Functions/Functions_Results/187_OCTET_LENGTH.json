@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000000823481"
+    ],
+    "Title": [
+        "OCTET_LENGTH"
+    ],
+    "Feature": [
+        "OCTET_LENGTH(str)\n"
+    ],
+    "Description": [
+        "OCTET_LENGTH() 是 LENGTH() 的同义词。"
+    ],
+    "Examples": [
+        "obclient> SELECT OCTET_LENGTH('中国'), OCTET_LENGTH('hello');\n+------------------------+-----------------------+\n| OCTET_LENGTH('中国')   | OCTET_LENGTH('hello') |\n+------------------------+-----------------------+\n|                      6 |                     5 |\n+------------------------+-----------------------+\n1 row in set\n"
+    ],
+    "Category": [
+        "String Functions"
+    ]
+}

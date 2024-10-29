@@ -1,0 +1,23 @@
+{
+    "HTML": [
+        "https://docs.pingcap.com/zh/tidb/stable/information-functions#version"
+    ],
+    "Title": [
+        "VERSION()"
+    ],
+    "Feature": [
+        "VERSION()"
+    ],
+    "Description": [
+        "VERSION()",
+        "VERSION() \u51fd\u6570\u4ee5\u4e0e MySQL \u517c\u5bb9\u7684\u683c\u5f0f\u8fd4\u56de TiDB \u7248\u672c\u3002\u5982\u9700\u83b7\u53d6\u66f4\u8be6\u7ec6\u7684\u7248\u672c\u4fe1\u606f\uff0c\u53ef\u4ee5\u4f7f\u7528 TIDB_VERSION() \u51fd\u6570\u3002",
+        "SELECT VERSION();\n+--------------------+\n| VERSION()          |\n+--------------------+\n| 8.0.11-TiDB-v7.5.1 |\n+--------------------+\n1 row in set (0.00 sec)\n",
+        "SELECT TIDB_VERSION()\\G\n*************************** 1. row ***************************\nTIDB_VERSION(): Release Version: v7.5.1\nEdition: Community\nGit Commit Hash: 7d16cc79e81bbf573124df3fd9351c26963f3e70\nGit Branch: heads/refs/tags/v7.5.1\nUTC Build Time: 2024-02-27 14:28:32\nGoVersion: go1.21.6\nRace Enabled: false\nCheck Table Before Drop: false\nStore: tikv\n1 row in set (0.00 sec)\n"
+    ],
+    "Examples": [
+        "SELECT VERSION();\n+--------------------+\n| VERSION()          |\n+--------------------+\n| 8.0.11-TiDB-v7.5.1 |\n+--------------------+\n1 row in set (0.00 sec)\n"
+    ],
+    "Category": [
+        "Information Functions"
+    ]
+}

@@ -1,0 +1,21 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/version_major/"
+    ],
+    "Title": [
+        "version_major"
+    ],
+    "Feature": [
+        "sys.version_major()\n"
+    ],
+    "Description": [
+        "version_major is a stored function available with the Sys Schema.",
+        "It returns the MariaDB Server major release version."
+    ],
+    "Examples": [
+        "SELECT VERSION(),\n sys.version_major() AS major, \n sys.version_minor() AS minor,\n sys.version_patch() AS patch;\n+----------------+-------+-------+-------+\n| VERSION()      | major | minor | patch |\n+----------------+-------+-------+-------+\n| 10.8.2-MariaDB |    10 |     8 |     2 |\n+----------------+-------+-------+-------+\n"
+    ],
+    "Category": [
+        "No Category"
+    ]
+}

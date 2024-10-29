@@ -1,0 +1,25 @@
+{
+    "HTML": [
+        "https://docs.pingcap.com/zh/tidb/stable/string-functions#to_base64"
+    ],
+    "Title": [
+        "TO_BASE64()"
+    ],
+    "Feature": [
+        "TO_BASE64()"
+    ],
+    "Description": [
+        "TO_BASE64()",
+        "TO_BASE64() \u51fd\u6570\u7528\u4e8e\u5c06\u8f93\u5165\u7684\u53c2\u6570\u8f6c\u6362\u4e3a base-64 \u7f16\u7801\u5f62\u5f0f\u7684\u5b57\u7b26\u4e32\uff0c\u5e76\u6309\u7167\u5f53\u524d\u8fde\u63a5\u7684\u5b57\u7b26\u96c6\u548c\u6392\u5e8f\u89c4\u5219\u8fd4\u56de\u7ed3\u679c\u3002base-64 \u7f16\u7801\u7684\u5b57\u7b26\u4e32\u53ef\u4ee5\u4f7f\u7528 FROM_BASE64() \u51fd\u6570\u8fdb\u884c\u89e3\u7801\u3002",
+        "\u8bed\u6cd5\uff1a",
+        "TO_BASE64(str)\n",
+        "\u5982\u679c\u8f93\u5165\u53c2\u6570\u4e0d\u662f\u5b57\u7b26\u4e32\uff0c\u8be5\u51fd\u6570\u4f1a\u5c06\u5176\u8f6c\u6362\u4e3a\u5b57\u7b26\u4e32\u540e\u518d\u8fdb\u884c base-64 \u7f16\u7801\u3002\u5982\u679c\u8f93\u5165\u53c2\u6570\u4e3a NULL\uff0c\u8be5\u51fd\u6570\u8fd4\u56de NULL\u3002"
+    ],
+    "Examples": [
+        "SELECT TO_BASE64('abc');\n",
+        "SELECT TO_BASE64(6);\n"
+    ],
+    "Category": [
+        "String Functions"
+    ]
+}

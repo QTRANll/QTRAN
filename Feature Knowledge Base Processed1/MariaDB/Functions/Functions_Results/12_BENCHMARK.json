@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/benchmark/"
+    ],
+    "Title": [
+        "BENCHMARK"
+    ],
+    "Feature": [
+        "BENCHMARK(count,expr)\n"
+    ],
+    "Description": [
+        "The BENCHMARK() function executes the expression expr repeatedly count\ntimes. It may be used to time how quickly MariaDB processes the\nexpression. The result value is always 0. The intended use is from\nwithin the mariadb client, which reports query execution times."
+    ],
+    "Examples": [
+        "SELECT BENCHMARK(1000000,ENCODE('hello','goodbye'));"
+    ],
+    "Category": [
+        "Information Functions"
+    ]
+}

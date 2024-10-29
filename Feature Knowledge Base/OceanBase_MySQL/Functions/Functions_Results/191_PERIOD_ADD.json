@@ -1,0 +1,22 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000000823400"
+    ],
+    "Title": [
+        "PERIOD_ADD"
+    ],
+    "Feature": [
+        "PERIOD_ADD(P,N)\n"
+    ],
+    "Description": [
+        "向时间段 P 添加 N 个月。其中 P 的格式为 YYMM 或 YYYYMM。",
+        "返回值的格式为 YYYYMM。",
+        "\n说明\n参数 P 不能是 DATE 类型，即非日期值。\n"
+    ],
+    "Examples": [
+        "obclient> SELECT PERIOD_ADD(200801,2);\n+----------------------+\n| PERIOD_ADD(200801,2) |\n+----------------------+\n|               200803 |\n+----------------------+\n1 row in set\n"
+    ],
+    "Category": [
+        "Date and Time Functions"
+    ]
+}

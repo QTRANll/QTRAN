@@ -1,0 +1,28 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/splitting-merging-functions"
+    ],
+    "Title": [
+        "splitByWhitespace"
+    ],
+    "Feature": [
+        "splitByWhitespace(s[, max_substrings]))"
+    ],
+    "Description": [
+        "splitByWhitespace",
+        "Splits a string into substrings separated by whitespace characters.\nReturns an array of selected substrings.",
+        "Syntax",
+        "splitByWhitespace(s[, max_substrings]))",
+        "Arguments",
+        "s \u2014 The string to split. String.max_substrings \u2014 An optional Int64 defaulting to 0. When max_substrings > 0, the returned substrings will be no more than max_substrings, otherwise the function will return as many substrings as possible.",
+        "Returned value(s)",
+        "An array of selected substrings. Array(String).",
+        "NoteSetting splitby_max_substrings_includes_remaining_string (default: 0) controls if the remaining string is included in the last element of the result array when argument max_substrings > 0."
+    ],
+    "Examples": [
+        "SELECT splitByWhitespace('  1!  a,  b.  ');"
+    ],
+    "Category": [
+        "Splitting Strings Functions"
+    ]
+}

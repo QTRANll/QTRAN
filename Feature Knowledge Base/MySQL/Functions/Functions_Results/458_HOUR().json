@@ -1,0 +1,32 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/built-in-function-reference.html",
+        "https://dev.mysql.com/doc/refman/8.4/en/date-and-time-functions.html"
+    ],
+    "Title": [
+        "14.1 Built-In Function and Operator Reference",
+        "14.7 Date and Time Functions"
+    ],
+    "Feature": [
+        "HOUR(time)"
+    ],
+    "Description": [
+        "Extract the hour",
+        "\nHOUR(time)\n",
+        "\n          Returns the hour for time. The\n          range of the return value is 0 to\n          23 for time-of-day values. However, the\n          range of TIME values actually\n          is much larger, so HOUR can return values\n          greater than 23. Returns\n          NULL if time is\n          NULL.\n        ",
+        "Press CTRL+C to copy mysql> SELECT HOUR('10:05:03');\n        -> 10\nmysql> SELECT HOUR('272:59:59');\n        -> 272"
+    ],
+    "Examples": [
+        "mysql> SELECT HOUR('10:05:03');\n        -> 10\nmysql> SELECT HOUR('272:59:59');\n        -> 272"
+    ],
+    "Category": [
+        "Built-In Functions",
+        "Date and Time Functions"
+    ],
+    "Reference HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/date-and-time-functions.html#function_hour"
+    ],
+    "Feature Type": [
+        "Function"
+    ]
+}

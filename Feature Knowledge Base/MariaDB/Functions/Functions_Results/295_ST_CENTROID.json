@@ -1,0 +1,21 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/st_centroid/"
+    ],
+    "Title": [
+        "ST_CENTROID"
+    ],
+    "Feature": [
+        "ST_Centroid(mpoly)\nCentroid(mpoly)\n"
+    ],
+    "Description": [
+        "Returns a point reflecting the mathematical centroid (geometric center) for the MultiPolygon mpoly. The resulting point will not necessarily be on the MultiPolygon. ",
+        "ST_Centroid() and Centroid() are synonyms."
+    ],
+    "Examples": [
+        "SET @poly = ST_GeomFromText('POLYGON((0 0,20 0,20 20,0 20,0 0))');\nSELECT ST_AsText(ST_Centroid(@poly)) AS center;\n+--------------+\n| center       |\n+--------------+\n| POINT(10 10) |\n+--------------+\n"
+    ],
+    "Category": [
+        "Geographic Functions"
+    ]
+}

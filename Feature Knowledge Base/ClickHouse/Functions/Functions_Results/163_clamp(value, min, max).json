@@ -1,0 +1,27 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/conditional-functions"
+    ],
+    "Title": [
+        "clamp"
+    ],
+    "Feature": [
+        "clamp(value, min, max)"
+    ],
+    "Description": [
+        "clamp",
+        "Constrain the return value between A and B.",
+        "Syntax",
+        "clamp(value, min, max)",
+        "Arguments",
+        "value \u2013 Input value.min \u2013 Limit the lower bound.max \u2013 Limit the upper bound.",
+        "Returned values",
+        "If the value is less than the minimum value, return the minimum value; if it is greater than the maximum value, return the maximum value; otherwise, return the current value."
+    ],
+    "Examples": [
+        "SELECT clamp(1, 2, 3) result,  toTypeName(result) type;"
+    ],
+    "Category": [
+        "Conditional Functions"
+    ]
+}

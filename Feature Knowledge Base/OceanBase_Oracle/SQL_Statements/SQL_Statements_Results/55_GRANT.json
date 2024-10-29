@@ -1,0 +1,23 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000001054310"
+    ],
+    "Title": [
+        "GRANT"
+    ],
+    "Feature": [
+        "/* 授予对象权限 */\nGRANT {obj_all_col_priv [, obj_all_col_priv...]} \n    ON obj_clause \n    TO {grant_user [, grant_user...]} \n    [WITH GRANT OPTION]\n\n/* 授予系统权限或角色 */\nGRANT obj_all_col_priv [, obj_all_col_priv...] \n    TO grantee_clause \n    [WITH ADMIN OPTION]\n\ngrantee_clause:  \n      grant_user [, grant_user...] \n    | grant_user IDENTIFIED BY password\n\nobj_all_col_priv:  \n      role \n    | sys_and_obj_priv [(column_list)] \n    | ALL [PRIVILEGES] [(column_list)]\n"
+    ],
+    "Description": [
+        "该语句用于系统管理员授予用户权限，包括对象权限、系统权限和角色。",
+        "\n\n\n参数\n描述\n\n\n\n\nobj_all_col_priv\n指定授予的权限，您可通过授予权限或角色来直接或间接授予用户权限，同时把多个权限赋予用户时，权限类型使用英文逗号（,）隔开。具体的权限类型及其说明请参见 Oracle 模式下的权限分类。\n\n\nobj_clause\n指定授权的对象，授权的对象有如下几种指定方法。 \n      \n指定所有对象，即对象为所有数据库和所有表（*.*）。\n指定特定对象，即对象为特定的数据库（db_name.*）、特定的表（table_name）或特定的数据库中特定的表（db_name.table_name）。\n指定目录对象（[DIRECTORY] relation_name）。\n\n\n\ngrant_user\n指定要授予权限的用户或角色，有如下几种取值。 \n      \nuser [USER_VARIABLE]：授权给具体的用户。\nCONNECT：授权给 CONNECT 角色。\nRESOURCE：授权给 RESOURCE 角色。\nPUBLIC：授权给公共角色。\n\n\n\nIDENTIFIED BY password\n为待授权的用户指定一个密码，此处密码为明文，存入 dba_users 表后，服务器端会变为密文存储下来。如果密码中包含特殊字符 ~!@#%^&*_-+=`|(){}[]:;’,.?/，需使用英文双引号（\"\"）包含。\n\n\nWITH GRANT OPTION\n指定权限是否允许转授，取消授权时级联。\n\n\nWITH ADMIN OPTION\n指定权限是否允许转授，取消授权时不级联。\n\n\nrole\n指定授予的角色，有如下几种取值。 \n      \nrole_name：表示自定义角色的名称。\nDBA：表示数据库管理员角色，具有完全的数据库管理权限。授予 DBA 角色的用户可以执行任何数据库操作。\nRESOURCE：表示 RESOURCE 角色。\nCONNECT：表示 CONNECT 角色。\nPUBLIC：表示公共角色。\n\n\n\n"
+    ],
+    "Examples": [
+        "obclient> GRANT CREATE VIEW TO user1 WITH ADMIN OPTION;\n",
+        "obclient> GRANT CONNECT TO user1 IDENTIFIED by '********';\n",
+        "GRANT COMMENT ANY TABLE TO role1;\n"
+    ],
+    "Category": [
+        "DCL"
+    ]
+}

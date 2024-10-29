@@ -1,0 +1,21 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/endpoint/"
+    ],
+    "Title": [
+        "ST_ENDPOINT"
+    ],
+    "Feature": [
+        "ST_EndPoint(ls)\nEndPoint(ls)\n"
+    ],
+    "Description": [
+        "Returns the Point that is the endpoint of the\nLineString value ls.",
+        "ST_EndPoint() and EndPoint() are synonyms."
+    ],
+    "Examples": [
+        "SET @ls = 'LineString(1 1,2 2,3 3)';\n\nSELECT AsText(EndPoint(GeomFromText(@ls)));\n+-------------------------------------+\n| AsText(EndPoint(GeomFromText(@ls))) |\n+-------------------------------------+\n| POINT(3 3)                          |\n+-------------------------------------+\n"
+    ],
+    "Category": [
+        "Geographic Functions"
+    ]
+}

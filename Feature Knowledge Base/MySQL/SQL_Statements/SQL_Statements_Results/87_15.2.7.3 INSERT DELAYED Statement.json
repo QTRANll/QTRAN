@@ -1,0 +1,19 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/insert-delayed.html"
+    ],
+    "Title": [
+        "15.2.7.3 INSERT DELAYED Statement"
+    ],
+    "Feature": [
+        "INSERT DELAYED ..."
+    ],
+    "Description": [
+        "\n        The DELAYED option for the\n        INSERT statement is a MySQL\n        extension to standard SQL. In previous versions of MySQL, it can\n        be used for certain kinds of tables (such as\n        MyISAM), such that when a client uses\n        INSERT DELAYED, it gets an okay\n        from the server at once, and the row is queued to be inserted\n        when the table is not in use by any other thread.\n      ",
+        "\nDELAYED inserts and replaces were deprecated\n        in MySQL 5.6. In MySQL 8.4,\n        DELAYED is not supported. The server\n        recognizes but ignores the DELAYED keyword,\n        handles the insert as a nondelayed insert, and generates an\n        ER_WARN_LEGACY_SYNTAX_CONVERTED\n        warning: INSERT DELAYED is no longer supported. The\n        statement was converted to INSERT. The\n        DELAYED keyword is scheduled for removal in a\n        future release.\n"
+    ],
+    "Examples": [],
+    "Category": [
+        "Data Manipulation Statements"
+    ]
+}

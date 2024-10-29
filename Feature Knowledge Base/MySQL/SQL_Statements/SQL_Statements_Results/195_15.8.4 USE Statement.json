@@ -1,0 +1,26 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/use.html"
+    ],
+    "Title": [
+        "15.8.4 USE Statement"
+    ],
+    "Feature": [
+        "USE db_name"
+    ],
+    "Description": [
+        "\n      The USE statement tells MySQL to\n      use the named database as the default (current) database for\n      subsequent statements. This statement requires some privilege for\n      the database or some object within it.\n    ",
+        "\n      The named database remains the default until the end of the\n      session or another USE statement is\n      issued:\n    ",
+        "Press CTRL+C to copy USE db1;\nSELECT COUNT(*) FROM mytable;   # selects from db1.mytable\nUSE db2;\nSELECT COUNT(*) FROM mytable;   # selects from db2.mytable",
+        "\n      The database name must be specified on a single line. Newlines in\n      database names are not supported.\n    ",
+        "\n      Making a particular database the default by means of the\n      USE statement does not preclude\n      accessing tables in other databases. The following example\n      accesses the author table from the\n      db1 database and the editor\n      table from the db2 database:\n    ",
+        "Press CTRL+C to copy USE db1;\nSELECT author_name,editor_name FROM author,db2.editor\n  WHERE author.editor_id = db2.editor.editor_id;"
+    ],
+    "Examples": [
+        "USE db1;\nSELECT COUNT(*) FROM mytable;   # selects from db1.mytable\nUSE db2;\nSELECT COUNT(*) FROM mytable;   # selects from db2.mytable",
+        "USE db1;\nSELECT author_name,editor_name FROM author,db2.editor\n  WHERE author.editor_id = db2.editor.editor_id;"
+    ],
+    "Category": [
+        "Utility Statements"
+    ]
+}

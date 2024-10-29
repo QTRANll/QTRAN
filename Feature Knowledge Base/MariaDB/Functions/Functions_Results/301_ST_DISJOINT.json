@@ -1,0 +1,22 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/st_disjoint/"
+    ],
+    "Title": [
+        "ST_DISJOINT"
+    ],
+    "Feature": [
+        "ST_DISJOINT(g1,g2)\n"
+    ],
+    "Description": [
+        "Returns 1 or 0 to indicate whether geometry g1 is spatially disjoint from\n(does not intersect with) geometry g2.",
+        "ST_DISJOINT() uses object shapes, while DISJOINT(), based on the original MySQL implementation, uses object bounding rectangles.",
+        "ST_DISJOINT() tests the opposite relationship to ST_INTERSECTS()."
+    ],
+    "Examples": [
+        "SET @g1 = ST_GEOMFROMTEXT('POINT(0 0)');\n\nSET @g2 = ST_GEOMFROMTEXT('LINESTRING(2 0, 0 2)');\n\nSELECT ST_DISJOINT(@g1,@g2);\n+----------------------+\n| ST_DISJOINT(@g1,@g2) |\n+----------------------+\n|                    1 |\n+----------------------+\n\nSET @g2 = ST_GEOMFROMTEXT('LINESTRING(0 0, 0 2)');\n\nSELECT ST_DISJOINT(@g1,@g2);\n+----------------------+\n| ST_DISJOINT(@g1,@g2) |\n+----------------------+\n|                    0 |\n+----------------------+\n"
+    ],
+    "Category": [
+        "Geographic Functions"
+    ]
+}

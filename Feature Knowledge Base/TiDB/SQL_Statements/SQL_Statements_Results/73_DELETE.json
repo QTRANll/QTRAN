@@ -1,0 +1,24 @@
+{
+    "HTML": [
+        "https://docs.pingcap.com//zh/tidb/stable/sql-statement-delete"
+    ],
+    "Title": [
+        "DELETE"
+    ],
+    "Feature": [
+        "DeleteFromStmt ::=\n    'DELETE' TableOptimizerHints PriorityOpt QuickOptional IgnoreOptional ( 'FROM' ( TableName TableAsNameOpt IndexHintListOpt WhereClauseOptional OrderByOptional LimitClause | TableAliasRefList 'USING' TableRefs WhereClauseOptional ) | TableAliasRefList 'FROM' TableRefs WhereClauseOptional )\n"
+    ],
+    "Description": [
+        "DELETE \u8bed\u53e5\u7528\u4e8e\u4ece\u6307\u5b9a\u7684\u8868\u4e2d\u5220\u9664\u884c\u3002"
+    ],
+    "Examples": [
+        "CREATE TABLE t1 (id INT NOT NULL PRIMARY KEY AUTO_INCREMENT, c1 INT NOT NULL);\n",
+        "INSERT INTO t1 (c1) VALUES (1),(2),(3),(4),(5);\n",
+        "SELECT * FROM t1;\n",
+        "DELETE FROM t1 WHERE id = 4;\n",
+        "SELECT * FROM t1;\n"
+    ],
+    "Category": [
+        "\u6570\u636e\u64cd\u4f5c\u8bed\u53e5 (DML)"
+    ]
+}

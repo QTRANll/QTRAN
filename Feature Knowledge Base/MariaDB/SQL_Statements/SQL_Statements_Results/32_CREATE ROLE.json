@@ -1,0 +1,35 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/create-role/"
+    ],
+    "Title": [
+        "CREATE ROLE"
+    ],
+    "Feature": [
+        "CREATE [OR REPLACE] ROLE [IF NOT EXISTS] role \n  [WITH ADMIN \n    {CURRENT_USER | CURRENT_ROLE | user | role}]\n"
+    ],
+    "Description": [
+        "The CREATE ROLE statement creates one or more MariaDB roles. To\nuse it, you must have the global CREATE USER\nprivilege or the INSERT privilege for the mysql\ndatabase. For each account, CREATE ROLE creates a new row in the\nmysql.user table that has no privileges, and with the\ncorresponding is_role field set to Y. It also creates a record in the\nmysql.roles_mapping table.",
+        "If any of the specified roles already exist, ERROR 1396 (HY000) results. If\nan error occurs, CREATE ROLE will still create the roles that do not result\nin an error. The maximum length for a role is 128 characters. Role names can be\nquoted, as explained in the Identifier names page. Only\none error is produced for all roles which have not been created:",
+        "ERROR 1396 (HY000): Operation CREATE ROLE failed for 'a','b','c'\n",
+        "Failed CREATE or DROP operations, for both users and roles, produce the\nsame error code.",
+        "PUBLIC and NONE are reserved, and cannot be used as role names. NONE is used to unset a role and PUBLIC has a special use in other systems, such as Oracle, so is reserved for compatibility purposes.",
+        "For valid identifiers to use as role names, see Identifier Names.",
+        "WITH ADMIN",
+        "The optional WITH ADMIN clause determines whether the current user, the\ncurrent role or another user or role has use of the newly created role. If the\nclause is omitted, WITH ADMIN CURRENT_USER is treated as the default, which\nmeans that the current user will be able to GRANT this role to\nusers.",
+        "OR REPLACE",
+        "If the optional OR REPLACE clause is used, it acts as a shortcut for:",
+        "DROP ROLE IF EXISTS name;\nCREATE ROLE name ...;\n",
+        "IF NOT EXISTS",
+        "When the IF NOT EXISTS clause is used, MariaDB will return a warning instead of an error if the specified role already exists. Cannot be used together with the OR REPLACE clause."
+    ],
+    "Examples": [
+        "CREATE ROLE journalist;\n\nCREATE ROLE developer WITH ADMIN lorinda@localhost;\n",
+        " SELECT USER();\n+-------------------+\n| USER()            |\n+-------------------+\n| henning@localhost |\n+-------------------+\n...\nGRANT developer TO ian@localhost;\nAccess denied for user 'henning'@'localhost'\n\n SELECT USER();\n+-------------------+\n| USER()            |\n+-------------------+\n| lorinda@localhost |\n+-------------------+\n\nGRANT m_role TO ian@localhost;\n",
+        "CREATE ROLE journalist;\nERROR 1396 (HY000): Operation CREATE ROLE failed for 'journalist'\n\nCREATE OR REPLACE ROLE journalist;\nQuery OK, 0 rows affected (0.00 sec)\n\nCREATE ROLE IF NOT EXISTS journalist;\nQuery OK, 0 rows affected, 1 warning (0.00 sec)\n",
+        "SHOW WARNINGS;\n+-------+------+---------------------------------------------------+\n| Level | Code | Message                                           |\n+-------+------+---------------------------------------------------+\n| Note  | 1975 | Can't create role 'journalist'; it already exists |\n+-------+------+---------------------------------------------------+\n\n"
+    ],
+    "Category": [
+        "Account Management SQL Commands"
+    ]
+}

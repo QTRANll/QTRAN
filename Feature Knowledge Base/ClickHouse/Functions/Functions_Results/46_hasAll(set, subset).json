@@ -1,0 +1,27 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/array-functions"
+    ],
+    "Title": [
+        "hasAll"
+    ],
+    "Feature": [
+        "hasAll(set, subset)"
+    ],
+    "Description": [
+        "hasAll",
+        "Checks whether one array is a subset of another.",
+        "hasAll(set, subset)",
+        "Arguments",
+        "set \u2013 Array of any type with a set of elements.subset \u2013 Array of any type that shares a common supertype with set containing elements that should be tested to be a subset of set.",
+        "Return values",
+        "1, if set contains all of the elements from subset.0, otherwise.",
+        "Raises an exception NO_COMMON_TYPE if the set and subset elements do not share a common supertype.",
+        "Peculiar properties",
+        "An empty array is a subset of any array.Null processed as a value.Order of values in both of arrays does not matter."
+    ],
+    "Examples": [],
+    "Category": [
+        "Arrays Functions"
+    ]
+}

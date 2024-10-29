@@ -1,0 +1,22 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000001053495"
+    ],
+    "Title": [
+        "DROP MATERIALIZED VIEW"
+    ],
+    "Feature": [
+        "DROP MATERIALIZED VIEW [IF EXISTS] materialized_view_list [opt_drop_behavior];\n\nmaterialized_view_list:\n    [ database. ]materialized_view [,[ database. ]materialized_view]...\n\nopt_drop_behavior:\n    RESTRICT | CASCADE\n"
+    ],
+    "Description": [
+        "该语句用来删除物化视图。",
+        "\n\n\n参数\n描述\n\n\n\n\nIF EXISTS\n可选项，如果指定 IF EXISTS，即使要删除的物化视图不存在，也不会报错；如果不指定，要删除的物化视图不存在则会报错。\n\n\ndatabase.\n可选项，指定物化视图所在的数据库。如果省略 database.，则默认在您自己的数据库中。\n\n\nmaterialized_view\n指定物化视图的名称。\n\n\nRESTRICT | CASCADE\n可选项，表示删除操作的行为。 \n      \nCASCADE 默认值，表示删除物化视图的同时也删除依赖于它的其他对象。\nRESTRICT 表示如果有其他对象依赖于该物化视图，则不允许删除物化视图。\n\n\n\n"
+    ],
+    "Examples": [
+        "obclient [test_db]> DROP MATERIALIZED VIEW mv_test_tbl1;\n",
+        "Query OK, 0 rows affected\n"
+    ],
+    "Category": [
+        "No Category"
+    ]
+}

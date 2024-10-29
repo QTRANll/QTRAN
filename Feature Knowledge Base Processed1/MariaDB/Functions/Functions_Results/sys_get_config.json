@@ -1,0 +1,35 @@
+{
+    "HTML": "https://mariadb.com//kb/en/sys_get_config/",
+    "Title": "sys_get_config",
+    "Feature": [
+        "sys.sys_get_config(name,default)\n"
+    ],
+    "Description": [
+        "sys_get_config is a stored function available with the Sys Schema.",
+        "The function returns a configuration option value from the sys_config table. It takes two arguments; name, a configuration option name, and default, which is returned if the given option does not exist in the table. ",
+        "Both arguments are VARCHAR(128) and can be NULL. Returns NULL if name is NULL, or if the given option is not found and default is NULL."
+    ],
+    "Examples": [
+        "SELECT sys.sys_get_config('ps_thread_trx_info.max_length',NULL);\n+----------------------------------------------------------+\n| sys.sys_get_config('ps_thread_trx_info.max_length',NULL) |\n+----------------------------------------------------------+\n| 65535                                                    |\n+----------------------------------------------------------+\n"
+    ],
+    "Category": [
+        "No Category"
+    ],
+    "Effective SQLs Refined": [
+        "SELECT sys.sys_get_config('ps_thread_trx_info.max_length',NULL);"
+    ],
+    "Ineffective SQLs Refined": [],
+    "Wrong Messages from Ineffective SQLs Refined": [],
+    "SQLs Generated1": [],
+    "SQLs Generated Costs1": [],
+    "SQLs Generated ExecResults1": [],
+    "SQLs Generated ExecTimes1": [],
+    "SQLs Generated ErrorMessages1": [],
+    "Effective SQLs Generated1": [],
+    "SQLs Generated2": [],
+    "SQLs Generated Costs2": [],
+    "SQLs Generated ExecResults2": [],
+    "SQLs Generated ExecTimes2": [],
+    "SQLs Generated ErrorMessages2": [],
+    "Effective SQLs Generated2": []
+}

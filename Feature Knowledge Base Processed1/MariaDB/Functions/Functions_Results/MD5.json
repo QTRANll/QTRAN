@@ -1,0 +1,35 @@
+{
+    "HTML": "https://mariadb.com//kb/en/md5/",
+    "Title": "MD5",
+    "Feature": [
+        "MD5(str)\n"
+    ],
+    "Description": [
+        "Calculates an MD5 128-bit checksum for the string. ",
+        "The return value is a 32-hex digit string, and as of MariaDB 5.5, is a nonbinary string in the connection character set and collation, determined by the values of the character_set_connection and collation_connection system variables. Before 5.5, the return value was a binary string.",
+        "NULL is returned if the argument was NULL. "
+    ],
+    "Examples": [
+        "SELECT MD5('testing');\n+----------------------------------+\n| MD5('testing')                   |\n+----------------------------------+\n| ae2b1fca515949e5d54fb22b8ed95575 |\n+----------------------------------+\n"
+    ],
+    "Category": [
+        "Encryption, Hashing and Compression Functions"
+    ],
+    "Effective SQLs Refined": [
+        "SELECT MD5('testing');"
+    ],
+    "Ineffective SQLs Refined": [],
+    "Wrong Messages from Ineffective SQLs Refined": [],
+    "SQLs Generated1": [],
+    "SQLs Generated Costs1": [],
+    "SQLs Generated ExecResults1": [],
+    "SQLs Generated ExecTimes1": [],
+    "SQLs Generated ErrorMessages1": [],
+    "Effective SQLs Generated1": [],
+    "SQLs Generated2": [],
+    "SQLs Generated Costs2": [],
+    "SQLs Generated ExecResults2": [],
+    "SQLs Generated ExecTimes2": [],
+    "SQLs Generated ErrorMessages2": [],
+    "Effective SQLs Generated2": []
+}

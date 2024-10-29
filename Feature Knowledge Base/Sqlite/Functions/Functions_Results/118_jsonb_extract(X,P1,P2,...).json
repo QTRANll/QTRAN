@@ -1,0 +1,18 @@
+{
+    "HTML": [
+        "https://sqlite.org/json1.html#jexb"
+    ],
+    "Title": [
+        "JSON Functions"
+    ],
+    "Feature": [
+        "jsonb_extract(X,P1,P2,...)"
+    ],
+    "Description": [
+        "The jsonb_extract() function operates in a similar manner to the json_extract() function with a distinct behavior when it comes to returning array objects. While json_extract() would return a text JSON array object, jsonb_extract() returns the array or object in the binary JSONB format, which can be beneficial for performance in certain scenarios involving JSON data manipulation in SQLite. For cases where the JSON element being returned is of a text, numeric, null, or boolean type, jsonb_extract() functions identically to json_extract()."
+    ],
+    "Examples": [],
+    "Category": [
+        "JSON Functions"
+    ]
+}

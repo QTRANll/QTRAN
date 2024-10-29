@@ -1,0 +1,22 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/current/functions-json.html"
+    ],
+    "Title": [
+        "to_json"
+    ],
+    "Feature": [
+        "to_json ( anyelement ) → json",
+        "to_jsonb ( anyelement ) → jsonb"
+    ],
+    "Description": [
+        "Converts any SQL value to json or jsonb. Arrays and composites are converted recursively to arrays and objects (multidimensional arrays become arrays of arrays in JSON). Otherwise, if there is a cast from the SQL data type to json, the cast function will be used to perform the conversion;[a] otherwise, a scalar JSON value is produced. For any scalar other than a number, a Boolean, or a null value, the text representation will be used, with escaping as necessary to make it a valid JSON string value."
+    ],
+    "Examples": [
+        "to_json('Fred said \"Hi.\"'::text) → \"Fred said \\\"Hi.\\\"\"",
+        "to_jsonb(row(42, 'Fred said \"Hi.\"'::text)) → {\"f1\": 42, \"f2\": \"Fred said \\\"Hi.\\\"\"}"
+    ],
+    "Category": [
+        "JSON Functions and Operators"
+    ]
+}

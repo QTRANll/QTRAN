@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/drop-package-body/"
+    ],
+    "Title": [
+        "DROP PACKAGE BODY"
+    ],
+    "Feature": [
+        "DROP PACKAGE BODY [IF EXISTS]  [ db_name . ] package_name\n"
+    ],
+    "Description": [
+        "The DROP PACKAGE BODY statement can be used when Oracle SQL_MODE is set.",
+        "The DROP PACKAGE BODY statement drops the package body (i.e the implementation), previously created using the CREATE PACKAGE BODY statement.",
+        "Note, DROP PACKAGE BODY drops only the package implementation, but does not drop the package specification. Use DROP PACKAGE to drop the package entirely (i.e. both implementation and specification)."
+    ],
+    "Examples": [],
+    "Category": [
+        "Data Definition"
+    ]
+}

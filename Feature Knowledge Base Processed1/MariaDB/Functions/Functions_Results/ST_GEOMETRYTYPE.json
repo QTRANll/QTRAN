@@ -1,0 +1,57 @@
+{
+    "HTML": "https://mariadb.com//kb/en/geometrytype/",
+    "Title": "ST_GEOMETRYTYPE",
+    "Feature": [
+        "ST_GeometryType(g)\nGeometryType(g)\n"
+    ],
+    "Description": [
+        "Returns as a string the name of the geometry type of which the\ngeometry instance g is a member. The name corresponds to one of the\ninstantiable Geometry subclasses.",
+        "ST_GeometryType() and GeometryType() are synonyms."
+    ],
+    "Examples": [
+        "SELECT GeometryType(GeomFromText('POINT(1 1)'));\n+------------------------------------------+\n| GeometryType(GeomFromText('POINT(1 1)')) |\n+------------------------------------------+\n| POINT                                    |\n+------------------------------------------+\n"
+    ],
+    "Category": [
+        "Geographic Functions"
+    ],
+    "Effective SQLs Refined": [],
+    "Ineffective SQLs Refined": [],
+    "Wrong Messages from Ineffective SQLs Refined": [],
+    "SQLs Generated1": [
+        {
+            "Example SQL": "SELECT ST_GeometryType(geometry_instance);"
+        },
+        {
+            "Example SQL": "SELECT ST_GeometryType(GeomFromText('POINT(1 1)'));"
+        }
+    ],
+    "SQLs Generated Costs1": [
+        {
+            "Total Tokens": 322,
+            "Prompt Tokens": 299,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 5.864999999999999e-05
+        },
+        {
+            "Total Tokens": 484,
+            "Prompt Tokens": 453,
+            "Completion Tokens": 31,
+            "Total Cost (USD)": 8.654999999999999e-05
+        }
+    ],
+    "SQLs Generated ExecResults1": [
+        "None",
+        "[('POINT',)]"
+    ],
+    "SQLs Generated ExecTimes1": [
+        "0",
+        "0.016197919845581055"
+    ],
+    "SQLs Generated ErrorMessages1": [
+        "(pymysql.err.OperationalError) (1054, \"Unknown column 'geometry_instance' in 'field list'\")\n",
+        "None"
+    ],
+    "Effective SQLs Generated1": [
+        "SELECT ST_GeometryType(GeomFromText('POINT(1 1)'));"
+    ]
+}

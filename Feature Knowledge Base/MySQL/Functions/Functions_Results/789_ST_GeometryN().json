@@ -1,0 +1,33 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/built-in-function-reference.html",
+        "https://dev.mysql.com/doc/refman/8.4/en/spatial-function-reference.html"
+    ],
+    "Title": [
+        "14.1 Built-In Function and Operator Reference",
+        "14.16.1 Spatial Function Reference"
+    ],
+    "Feature": [
+        "ST_GeometryN(gc,\n            N)"
+    ],
+    "Description": [
+        "Return N-th geometry from geometry collection",
+        "\nST_GeometryN(gc,\n            N)\n",
+        "\n            Returns the N-th geometry in the\n            GeometryCollection value\n            gc. Geometries are numbered\n            beginning with 1.\n          ",
+        "\nST_GeometryN() handles its\n            arguments as described in the introduction to this section.\n          ",
+        "Press CTRL+C to copy mysql> SET @gc = 'GeometryCollection(Point(1 1),LineString(2 2, 3 3))';\nmysql> SELECT ST_AsText(ST_GeometryN(ST_GeomFromText(@gc),1));\n+-------------------------------------------------+\n| ST_AsText(ST_GeometryN(ST_GeomFromText(@gc),1)) |\n+-------------------------------------------------+\n| POINT(1 1)                                      |\n+-------------------------------------------------+"
+    ],
+    "Examples": [
+        "mysql> SET @gc = 'GeometryCollection(Point(1 1),LineString(2 2, 3 3))';\nmysql> SELECT ST_AsText(ST_GeometryN(ST_GeomFromText(@gc),1));\n+-------------------------------------------------+\n| ST_AsText(ST_GeometryN(ST_GeomFromText(@gc),1)) |\n+-------------------------------------------------+\n| POINT(1 1)                                      |\n+-------------------------------------------------+"
+    ],
+    "Category": [
+        "Built-In Functions",
+        "Spatial Analysis Functions"
+    ],
+    "Reference HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/gis-geometrycollection-property-functions.html#function_st-geometryn"
+    ],
+    "Feature Type": [
+        "Function"
+    ]
+}

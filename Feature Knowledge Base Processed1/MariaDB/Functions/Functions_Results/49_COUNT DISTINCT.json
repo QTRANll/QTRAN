@@ -1,0 +1,23 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/count-distinct/"
+    ],
+    "Title": [
+        "COUNT DISTINCT"
+    ],
+    "Feature": [
+        "COUNT(DISTINCT expr,[expr...])\n"
+    ],
+    "Description": [
+        "Returns a count of the number of different non-NULL values.",
+        "COUNT(DISTINCT) returns 0 if there were no matching rows.",
+        "Although, from MariaDB 10.2.0, COUNT can be used as a window function, COUNT DISTINCT cannot be."
+    ],
+    "Examples": [
+        "SELECT COUNT(*) FROM student;",
+        "SELECT COUNT(DISTINCT (name)) FROM student;"
+    ],
+    "Category": [
+        "Aggregate Functions"
+    ]
+}

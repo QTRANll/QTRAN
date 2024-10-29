@@ -1,0 +1,57 @@
+{
+    "HTML": "https://mariadb.com//kb/en/numpoints/",
+    "Title": "ST_NUMPOINTS",
+    "Feature": [
+        "ST_NumPoints(ls)\nNumPoints(ls)\n"
+    ],
+    "Description": [
+        "Returns the number of Point objects in the LineString\nvalue ls.",
+        "ST_NumPoints() and NumPoints() are synonyms."
+    ],
+    "Examples": [
+        "SET @ls = 'LineString(1 1,2 2,3 3)';\n\nSELECT NumPoints(GeomFromText(@ls));\n+------------------------------+\n| NumPoints(GeomFromText(@ls)) |\n+------------------------------+\n|                            3 |\n+------------------------------+\n"
+    ],
+    "Category": [
+        "Geographic Functions"
+    ],
+    "Effective SQLs Refined": [],
+    "Ineffective SQLs Refined": [],
+    "Wrong Messages from Ineffective SQLs Refined": [],
+    "SQLs Generated1": [
+        {
+            "Example SQL": "SELECT ST_NumPoints(ls);"
+        },
+        {
+            "Example SQL": "SELECT ST_NumPoints(GeomFromText('LINESTRING(0 0, 1 1, 2 2)'));"
+        }
+    ],
+    "SQLs Generated Costs1": [
+        {
+            "Total Tokens": 290,
+            "Prompt Tokens": 271,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 5.205e-05
+        },
+        {
+            "Total Tokens": 459,
+            "Prompt Tokens": 419,
+            "Completion Tokens": 40,
+            "Total Cost (USD)": 8.685e-05
+        }
+    ],
+    "SQLs Generated ExecResults1": [
+        "None",
+        "[(3,)]"
+    ],
+    "SQLs Generated ExecTimes1": [
+        "0",
+        "0.0283968448638916"
+    ],
+    "SQLs Generated ErrorMessages1": [
+        "(pymysql.err.OperationalError) (1054, \"Unknown column 'ls' in 'field list'\")\n",
+        "None"
+    ],
+    "Effective SQLs Generated1": [
+        "SELECT ST_NumPoints(GeomFromText('LINESTRING(0 0, 1 1, 2 2)'));"
+    ]
+}

@@ -1,0 +1,27 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/date-time-functions"
+    ],
+    "Title": [
+        "fromModifiedJulianDayOrNull"
+    ],
+    "Feature": [
+        "fromModifiedJulianDayOrNull(day)"
+    ],
+    "Description": [
+        "fromModifiedJulianDayOrNull",
+        "Similar to fromModifiedJulianDayOrNull(), but instead of raising exceptions it returns NULL.",
+        "Syntax",
+        "fromModifiedJulianDayOrNull(day)",
+        "Arguments",
+        "day \u2014 Modified Julian Day number. Any integral types.",
+        "Returned value",
+        "Date in text form. Nullable(String)"
+    ],
+    "Examples": [
+        "SELECT fromModifiedJulianDayOrNull(58849);"
+    ],
+    "Category": [
+        "Dates and Times Functions"
+    ]
+}

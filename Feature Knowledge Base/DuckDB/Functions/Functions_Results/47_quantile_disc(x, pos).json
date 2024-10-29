@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://duckdb.org/docs/sql/functions/aggregates"
+    ],
+    "Title": [
+        "quantile"
+    ],
+    "Feature": [
+        "quantile"
+    ],
+    "Description": [
+        "quantile_disc(x, pos)",
+        "The discrete pos-quantile of x for 0 <= pos <= 1, i.e., orders the values of x and returns the greatest(ceil(pos * n_nonnull_values) - 1, 0)th (zero-indexed) element. If pos is a LIST of FLOATs, then the result is a LIST of the corresponding discrete quantiles.",
+        "-"
+    ],
+    "Examples": [],
+    "Category": [
+        "Aggregate Functions"
+    ]
+}

@@ -1,0 +1,23 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/rtrim/"
+    ],
+    "Title": [
+        "RTRIM"
+    ],
+    "Feature": [
+        "RTRIM(str)\n"
+    ],
+    "Description": [
+        "Returns the string str with trailing space characters removed.",
+        "Returns NULL if given a NULL argument. If the result is empty, returns either an empty string, or, from MariaDB 10.3.6 with SQL_MODE=Oracle, NULL.",
+        "The Oracle mode version of the function can be accessed outside of Oracle mode by using RTRIM_ORACLE as the function name."
+    ],
+    "Examples": [
+        "SELECT QUOTE(RTRIM('MariaDB    '));\n+-----------------------------+\n| QUOTE(RTRIM('MariaDB    ')) |\n+-----------------------------+\n| 'MariaDB'                   |\n+-----------------------------+\n",
+        "SELECT RTRIM(''),RTRIM_ORACLE('');\n+-----------+------------------+\n| RTRIM('') | RTRIM_ORACLE('') |\n+-----------+------------------+\n|           | NULL             |\n+-----------+------------------+\n"
+    ],
+    "Category": [
+        "String Functions"
+    ]
+}

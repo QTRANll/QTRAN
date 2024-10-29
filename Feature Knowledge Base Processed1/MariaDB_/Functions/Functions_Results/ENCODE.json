@@ -1,0 +1,48 @@
+{
+    "HTML": "https://mariadb.com//kb/en/encode/",
+    "Title": "ENCODE",
+    "Feature": [
+        "ENCODE(str,pass_str)\n"
+    ],
+    "Description": [
+        "ENCODE is not considered cryptographically secure, and should not be used for password encryption.\n",
+        "Encrypt str using pass_str as the password. To decrypt the result, use\nDECODE().",
+        "The result is a binary string of the same length as str.",
+        "The strength of the encryption is based on how good the random generator is. ",
+        "It is not recommended to rely on the encryption performed by the ENCODE function. Using a salt value (changed when a password is updated) will improve matters somewhat, but for storing passwords, consider a more cryptographically secure function, such as SHA2()."
+    ],
+    "Examples": [
+        "ENCODE('not so secret text', CONCAT('random_salt','password'))\n"
+    ],
+    "Category": [
+        "Encryption, Hashing and Compression Functions"
+    ],
+    "Effective SQLs Refined": [],
+    "Ineffective SQLs Refined": [],
+    "Wrong Messages from Ineffective SQLs Refined": [],
+    "SQLs Generated1": [
+        {
+            "Example SQL": "SELECT ENCODE('my_string', 'my_password');"
+        }
+    ],
+    "SQLs Generated Costs1": [
+        {
+            "Total Tokens": 384,
+            "Prompt Tokens": 360,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 6.84e-05
+        }
+    ],
+    "SQLs Generated ExecResults1": [
+        "[(b'u\\x987c\\xe0R\\x18\\x1c^',)]"
+    ],
+    "SQLs Generated ExecTimes1": [
+        "0.029968738555908203"
+    ],
+    "SQLs Generated ErrorMessages1": [
+        "None"
+    ],
+    "Effective SQLs Generated1": [
+        "SELECT ENCODE('my_string', 'my_password');"
+    ]
+}

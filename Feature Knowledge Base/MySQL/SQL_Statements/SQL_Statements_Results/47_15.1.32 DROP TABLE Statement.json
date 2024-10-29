@@ -1,0 +1,30 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/drop-table.html"
+    ],
+    "Title": [
+        "15.1.32 DROP TABLE Statement"
+    ],
+    "Feature": [
+        "DROP [TEMPORARY] TABLE [IF EXISTS]\n    tbl_name [, tbl_name] ...\n    [RESTRICT | CASCADE]"
+    ],
+    "Description": [
+        "\nDROP TABLE removes one or more\n      tables. You must have the DROP\n      privilege for each table.\n    ",
+        "\nBe careful with this statement! For each\n      table, it removes the table definition and all table data. If the\n      table is partitioned, the statement removes the table definition,\n      all its partitions, all data stored in those partitions, and all\n      partition definitions associated with the dropped table.\n    ",
+        "\n      Dropping a table also drops any triggers for the table.\n    ",
+        "\nDROP TABLE causes an implicit\n      commit, except when used with the TEMPORARY\n      keyword. See Section\u00a015.3.3, \u201cStatements That Cause an Implicit Commit\u201d.\n",
+        "\n\nImportant\n\n\n        When a table is dropped, privileges granted specifically for the\n        table are not automatically dropped. They\n        must be dropped manually. See Section\u00a015.7.1.6, \u201cGRANT Statement\u201d.\n\n",
+        "\n      If any tables named in the argument list do not exist,\n      DROP TABLE behavior depends on\n      whether the IF EXISTS clause is given:\n",
+        "\n\n          Without IF EXISTS, the statement fails with\n          an error indicating which nonexisting tables it was unable to\n          drop, and no changes are made.\n        \n          With IF EXISTS, no error occurs for\n          nonexisting tables. The statement drops all named tables that\n          do exist, and generates a NOTE diagnostic\n          for each nonexistent table. These notes can be displayed with\n          SHOW WARNINGS. See\n          Section\u00a015.7.7.41, \u201cSHOW WARNINGS Statement\u201d.\n\n",
+        "\nIF EXISTS can also be useful for dropping\n      tables in unusual circumstances under which there is an entry in\n      the data dictionary but no table managed by the storage engine.\n      (For example, if an abnormal server exit occurs after removal of\n      the table from the storage engine but before removal of the data\n      dictionary entry.)\n    ",
+        "\n      The TEMPORARY keyword has the following\n      effects:\n",
+        "\n\n          The statement drops only TEMPORARY tables.\n        \n          The statement does not cause an implicit commit.\n        \n          No access rights are checked. A TEMPORARY\n          table is visible only with the session that created it, so no\n          check is necessary.\n\n",
+        "\n      Including the TEMPORARY keyword is a good way\n      to prevent accidentally dropping non-TEMPORARY\n      tables.\n    ",
+        "\n      The RESTRICT and CASCADE\n      keywords do nothing. They are permitted to make porting easier\n      from other database systems.\n    ",
+        "\nDROP TABLE is not supported with\n      all innodb_force_recovery\n      settings. See Section\u00a017.20.3, \u201cForcing InnoDB Recovery\u201d.\n"
+    ],
+    "Examples": [],
+    "Category": [
+        "Data Definition Statements"
+    ]
+}

@@ -1,0 +1,36 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/built-in-function-reference.html",
+        "https://dev.mysql.com/doc/refman/8.4/en/date-and-time-functions.html"
+    ],
+    "Title": [
+        "14.1 Built-In Function and Operator Reference",
+        "14.7 Date and Time Functions"
+    ],
+    "Feature": [
+        "SUBDATE(date,INTERVAL\n          expr\nunit)"
+    ],
+    "Description": [
+        "Synonym for DATE_SUB() when invoked with three arguments",
+        "\nSUBDATE(date,INTERVAL\n          expr\nunit),\n          SUBDATE(expr,days)\n",
+        "\n          When invoked with the INTERVAL form of the\n          second argument, SUBDATE() is a\n          synonym for DATE_SUB(). For\n          information on the INTERVAL\nunit argument, see the discussion\n          for DATE_ADD().\n        ",
+        "Press CTRL+C to copy mysql> SELECT DATE_SUB('2008-01-02', INTERVAL 31 DAY);\n        -> '2007-12-02'\nmysql> SELECT SUBDATE('2008-01-02', INTERVAL 31 DAY);\n        -> '2007-12-02'",
+        "\n          The second form enables the use of an integer value for\n          days. In such cases, it is\n          interpreted as the number of days to be subtracted from the\n          date or datetime expression expr.\n        ",
+        "Press CTRL+C to copy mysql> SELECT SUBDATE('2008-01-02 12:00:00', 31);\n        -> '2007-12-02 12:00:00'",
+        "\n          This function returns NULL if any of its\n          arguments are NULL.\n        "
+    ],
+    "Examples": [
+        "mysql> SELECT DATE_SUB('2008-01-02', INTERVAL 31 DAY);\n        -> '2007-12-02'\nmysql> SELECT SUBDATE('2008-01-02', INTERVAL 31 DAY);\n        -> '2007-12-02'",
+        "mysql> SELECT SUBDATE('2008-01-02 12:00:00', 31);\n        -> '2007-12-02 12:00:00'"
+    ],
+    "Category": [
+        "Built-In Functions",
+        "Date and Time Functions"
+    ],
+    "Reference HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/date-and-time-functions.html#function_subdate"
+    ],
+    "Feature Type": [
+        "Function"
+    ]
+}

@@ -1,0 +1,23 @@
+{
+    "HTML": [
+        "https://sqlite.org/lang_expr.html"
+    ],
+    "Title": [
+        "SQL Language Expressions"
+    ],
+    "Feature": [
+        "NOT NULL"
+    ],
+    "Description": [
+        "The NOT NULL constraint ensures that a column cannot have a NULL value. It is used in table definitions to enforce that a column must always contain a value.",
+        "Parameters: A column definition in a table.",
+        "Returns: The column definition ensures no NULL values."
+    ],
+    "Examples": [
+        "CREATE TABLE users (id INTEGER PRIMARY KEY, username TEXT NOT NULL); -- Ensures username cannot be NULL",
+        "ALTER TABLE orders ADD COLUMN status TEXT NOT NULL DEFAULT 'pending'; -- Adds a new column with default non-NULL value"
+    ],
+    "Category": [
+        "Operators"
+    ]
+}

@@ -1,0 +1,18 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/current/functions-aggregate.html"
+    ],
+    "Title": [
+        "array_agg"
+    ],
+    "Feature": [
+        "array_agg ( anyarray ORDER BY input_sort_columns ) → anyarray"
+    ],
+    "Description": [
+        "Concatenates all the input arrays into an array of one higher dimension. (The inputs must all have the same dimensionality, and cannot be empty or null.)"
+    ],
+    "Examples": [],
+    "Category": [
+        "Aggregate Functions"
+    ]
+}

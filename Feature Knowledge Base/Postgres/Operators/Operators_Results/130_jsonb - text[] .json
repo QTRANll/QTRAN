@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/current/functions-json.html"
+    ],
+    "Title": [
+        "jsonb - text[]"
+    ],
+    "Feature": [
+        "jsonb - text[] → jsonb"
+    ],
+    "Description": [
+        "Deletes all matching keys or array elements from the left operand."
+    ],
+    "Examples": [
+        "'{\"a\": \"b\", \"c\": \"d\"}'::jsonb - '{a,c}'::text[] → {}"
+    ],
+    "Category": [
+        "JSON Functions and Operators"
+    ]
+}

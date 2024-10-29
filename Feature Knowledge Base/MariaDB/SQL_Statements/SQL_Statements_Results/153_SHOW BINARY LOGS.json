@@ -1,0 +1,21 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/show-binary-logs/"
+    ],
+    "Title": [
+        "SHOW BINARY LOGS"
+    ],
+    "Feature": [
+        "SHOW BINARY LOGS\nSHOW MASTER LOGS\n"
+    ],
+    "Description": [
+        "Lists the binary log files on the server. This statement is used as part of the\nprocedure described in PURGE BINARY LOGS, that shows how to\ndetermine which logs can be purged.",
+        "This statement requires the SUPER privilege, the REPLICATION_CLIENT privilege, or, from MariaDB 10.5.2, the BINLOG MONITOR privilege."
+    ],
+    "Examples": [
+        "SHOW BINARY LOGS;\n+--------------------+-----------+\n| Log_name           | File_size |\n+--------------------+-----------+\n| mariadb-bin.000001 |     19039 |\n| mariadb-bin.000002 |    717389 |\n| mariadb-bin.000003 |       300 |\n| mariadb-bin.000004 |       333 |\n| mariadb-bin.000005 |       899 |\n| mariadb-bin.000006 |       125 |\n| mariadb-bin.000007 |     18907 |\n| mariadb-bin.000008 |     19530 |\n| mariadb-bin.000009 |       151 |\n| mariadb-bin.000010 |       151 |\n| mariadb-bin.000011 |       125 |\n| mariadb-bin.000012 |       151 |\n| mariadb-bin.000013 |       151 |\n| mariadb-bin.000014 |       125 |\n| mariadb-bin.000015 |       151 |\n| mariadb-bin.000016 |       314 |\n+--------------------+-----------+\n"
+    ],
+    "Category": [
+        "Administrative SQL Statements"
+    ]
+}

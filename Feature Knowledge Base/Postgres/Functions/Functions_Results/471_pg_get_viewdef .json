@@ -1,0 +1,18 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/current/functions-info.html"
+    ],
+    "Title": [
+        "pg_get_viewdef"
+    ],
+    "Feature": [
+        "pg_get_viewdef ( view text [, pretty boolean ] ) → text"
+    ],
+    "Description": [
+        "Reconstructs the underlying SELECT command for a view or materialized view, working from a textual name for the view rather than its OID. (This is deprecated; use the OID variant instead.)"
+    ],
+    "Examples": [],
+    "Category": [
+        "System Information Functions and Operators"
+    ]
+}

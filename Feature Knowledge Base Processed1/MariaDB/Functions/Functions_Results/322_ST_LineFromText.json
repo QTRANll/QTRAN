@@ -1,0 +1,21 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/linefromtext/"
+    ],
+    "Title": [
+        "ST_LineFromText"
+    ],
+    "Feature": [
+        "ST_LineFromText(wkt[,srid])\nST_LineStringFromText(wkt[,srid])\nLineFromText(wkt[,srid])\nLineStringFromText(wkt[,srid])\n"
+    ],
+    "Description": [
+        "Constructs a LINESTRING value using its WKT representation and SRID.",
+        "ST_LineFromText(), ST_LineStringFromText(), ST_LineFromText() and ST_LineStringFromText() are all synonyms."
+    ],
+    "Examples": [
+        "SELECT ST_LineFromText('LINESTRING(0 0, 1 1, 2 2)');"
+    ],
+    "Category": [
+        "Geographic Functions"
+    ]
+}

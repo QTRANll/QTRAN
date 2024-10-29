@@ -1,0 +1,25 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000001054300"
+    ],
+    "Title": [
+        "TRANSACTION"
+    ],
+    "Feature": [
+        "transaction_stmt:\n      START TRANSACTION [READ ONLY | READ WRITE];\n    | BEGIN [WORK];\n    | COMMIT [WORK];\n    | ROLLBACK [WORK];\n    | SET TRANSACTION {READ ONLY | READ WRITE};\n"
+    ],
+    "Description": [
+        "该语句用于开启事务。",
+        "数据库事务（Database Transaction）是指作为单个逻辑工作单元执行的一系列操作。事务处理可以用来维护数据库的完整性，保证成批的 SQL 操作全部执行或全部不执行。",
+        "显示事务是用户自定义或用户指定的事务。通过 BEGIN 和 BEGIN WORK（BEGIN 和 BEGIN WORK 被作为 START TRANSACTION的别名）语句显示开始，以 COMMIT 或 ROLLBACK 语句显示结束。",
+        "\n说明\n\n在事务 COMMIT 前，可以执行一条 SELECT 语句查看本事务中的操作是否已经生效。\n在事务 COMMIT 前，当前事务会话之外的会话都是看不到本事务中的操作的。即在事务 COMMIT 前，只有本事务 Session 的访问能读到最新的结果，本事务 Session 之外的访问是看不到最新结果的。\n如果您想回滚该事务，直接用 ROOLBACK 代替 COMMIT。\n\n"
+    ],
+    "Examples": [
+        "obclient> CREATE TABLE tbl1 (id INT,name VARCHAR(10),num INT);\nQuery OK, 0 rows affected\n\nobclient> INSERT INTO tbl1 VALUES (1, 'a',100),(2, 'b',200),(3, 'a',50);\nQuery OK, 3 rows affected\nRecords: 3  Duplicates: 0  Warnings: 0\n\nobclient> SELECT * FROM tbl1;\n+------+------+------+\n| ID   | NAME | NUM  |\n+------+------+------+\n|    1 | a    |  100 |\n|    2 | b    |  200 |\n|    3 | a    |   50 |\n+------+------+------+\n3 rows in set\n",
+        "obclient> START TRANSACTION;\nQuery OK, 0 rows affected\n\nobclient> UPDATE tbl1 SET name = 'c' WHERE id = 3;\nQuery OK, 1 row affected\nRows matched: 1  Changed: 1  Warnings: 0\n\nobclient> INSERT INTO tbl1 VALUES (4, 'a', 30);\nQuery OK, 1 row affected\n\nobclient> COMMIT;\nQuery OK, 0 rows affected\n\nobclient> SELECT * FROM tbl1;\n+------+------+------+\n| ID   | NAME | NUM  |\n+------+------+------+\n|    1 | a    |  100 |\n|    2 | b    |  200 |\n|    3 | c    |   50 |\n|    4 | a    |   30 |\n+------+------+------+\n4 rows in set\n",
+        "obclient> BEGIN;\nQuery OK, 0 rows affected\n\nobclient> UPDATE tbl1 SET name = 'c' WHERE id = 3;\nQuery OK, 1 row affected\nRows matched: 1  Changed: 1  Warnings: 0\n\nobclient> INSERT INTO tbl1 VALUES (4, 'd', 300);\nQuery OK, 1 row affected\n\nobclient> SELECT * FROM tbl1;\n+------+------+------+\n| ID   | NAME | NUM  |\n+------+------+------+\n|    1 | a    |  100 |\n|    2 | b    |  200 |\n|    3 | c    |   50 |\n|    4 | d    |  300 |\n+------+------+------+\n4 rows in set\n\nobclient> ROLLBACK ;\nQuery OK, 0 rows affected\n\nobclient> SELECT * FROM tbl1;\n+------+------+------+\n| ID   | NAME | NUM  |\n+------+------+------+\n|    1 | a    |  100 |\n|    2 | b    |  200 |\n|    3 | a    |   50 |\n+------+------+------+\n3 rows in set\n"
+    ],
+    "Category": [
+        "DCL"
+    ]
+}

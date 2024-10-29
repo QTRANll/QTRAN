@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/current/functions-textsearch.html"
+    ],
+    "Title": [
+        "ts_rank"
+    ],
+    "Feature": [
+        "ts_rank ( [ weights real[], ] vector tsvector, query tsquery [, normalization integer ] ) → real"
+    ],
+    "Description": [
+        "Computes a score showing how well the vector matches the query. See Section 12.3.3 for details."
+    ],
+    "Examples": [
+        "ts_rank(to_tsvector('raining cats and dogs'), 'cat') → 0.06079271"
+    ],
+    "Category": [
+        "Text Search Functions and Operators"
+    ]
+}

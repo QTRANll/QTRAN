@@ -1,0 +1,23 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/begin-end.html"
+    ],
+    "Title": [
+        "15.6.1 BEGIN ... END Compound Statement"
+    ],
+    "Feature": [
+        "[begin_label:] BEGIN\n    [statement_list]\nEND [end_label]"
+    ],
+    "Description": [
+        "\nBEGIN ... END\n      syntax is used for writing compound statements, which can appear\n      within stored programs (stored procedures and functions, triggers,\n      and events). A compound statement can contain multiple statements,\n      enclosed by the BEGIN and\n      END keywords.\n      statement_list represents a list of one\n      or more statements, each terminated by a semicolon\n      (;) statement delimiter. The\n      statement_list itself is optional, so\n      the empty compound statement (BEGIN END) is\n      legal.\n    ",
+        "\nBEGIN ... END\n      blocks can be nested.\n    ",
+        "\n      Use of multiple statements requires that a client is able to send\n      statement strings containing the ; statement\n      delimiter. In the mysql command-line client,\n      this is handled with the delimiter command.\n      Changing the ; end-of-statement delimiter (for\n      example, to //) permit ; to\n      be used in a program body. For an example, see\n      Section\u00a027.1, \u201cDefining Stored Programs\u201d.\n    ",
+        "\n      A BEGIN ...\n      END block can be labeled. See\n      Section\u00a015.6.2, \u201cStatement Labels\u201d.\n    ",
+        "\n      The optional [NOT] ATOMIC clause is not\n      supported. This means that no transactional savepoint is set at\n      the start of the instruction block and the\n      BEGIN clause used in this context has no effect\n      on the current transaction.\n",
+        "\n\nNote\n\n\n        Within all stored programs, the parser treats\n        BEGIN [WORK]\n        as the beginning of a\n        BEGIN ...\n        END block. To begin a transaction in this context, use\n        START\n        TRANSACTION instead.\n\n"
+    ],
+    "Examples": [],
+    "Category": [
+        "Compound Statement Syntax"
+    ]
+}

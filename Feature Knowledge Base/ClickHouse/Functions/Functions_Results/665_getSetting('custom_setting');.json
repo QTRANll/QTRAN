@@ -1,0 +1,27 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/other-functions"
+    ],
+    "Title": [
+        "getSetting"
+    ],
+    "Feature": [
+        "getSetting('custom_setting');"
+    ],
+    "Description": [
+        "getSetting",
+        "Returns the current value of a custom setting.",
+        "Syntax",
+        "getSetting('custom_setting');",
+        "Parameter",
+        "custom_setting \u2014 The setting name. String.",
+        "Returned value",
+        "The setting's current value."
+    ],
+    "Examples": [
+        "SET custom_a = 123;SELECT getSetting('custom_a');"
+    ],
+    "Category": [
+        "Other Functions"
+    ]
+}

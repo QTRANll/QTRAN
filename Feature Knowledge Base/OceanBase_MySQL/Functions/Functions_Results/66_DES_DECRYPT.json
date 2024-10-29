@@ -1,0 +1,22 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000000822990"
+    ],
+    "Title": [
+        "DES_DECRYPT"
+    ],
+    "Feature": [
+        "DES_DECRYPT(crypt_str[,key_str])\n"
+    ],
+    "Description": [
+        "该函数用于解密由函数 DES_ENCRYPT() 加密的字符串。如果发生错误，该函数返回 NULL。 此功能仅在 OceanBase 数据库已配置为支持 SSL 时才有效。",
+        "key_str 参数用于传递解密消息的密钥。如果没有指定 key_str 参数，DES_DECRYPT() 函数会检查加密字符串的第一个字节以确定用于加密原始字符串的 DES 密钥编号，然后从 DES 密钥文件中读取密钥以解密字符串。由此，要求用户必须具有 SUPER 权限。",
+        "如果 crypt_str 参数不是加密字符串，则直接返回该字符串。"
+    ],
+    "Examples": [
+        "obclient> SELECT DES_DECRYPT(DES_ENCRYPT('secret','cry'), 'cry');\n+-------------------------------------------------+\n| DES_DECRYPT(DES_ENCRYPT('secret','cry'), 'cry') |\n+-------------------------------------------------+\n| secret                                          |\n+-------------------------------------------------+\n1 row in set\n"
+    ],
+    "Category": [
+        "Encryption Functions"
+    ]
+}

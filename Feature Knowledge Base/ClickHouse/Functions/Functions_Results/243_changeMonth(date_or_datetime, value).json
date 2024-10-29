@@ -1,0 +1,27 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/date-time-functions"
+    ],
+    "Title": [
+        "changeMonth"
+    ],
+    "Feature": [
+        "changeMonth(date_or_datetime, value)"
+    ],
+    "Description": [
+        "changeMonth",
+        "Changes the month component of a date or date time.",
+        "Syntax",
+        "changeMonth(date_or_datetime, value)",
+        "Arguments",
+        "date_or_datetime - a Date, Date32, DateTime or DateTime64value - a new value of the month. Integer.",
+        "Returned value",
+        "Returns a value of same type as date_or_datetime."
+    ],
+    "Examples": [
+        "SELECT changeMonth(toDate('1999-01-01'), 2), changeMonth(toDateTime64('1999-01-01 00:00:00.000', 3), 2);"
+    ],
+    "Category": [
+        "Dates and Times Functions"
+    ]
+}

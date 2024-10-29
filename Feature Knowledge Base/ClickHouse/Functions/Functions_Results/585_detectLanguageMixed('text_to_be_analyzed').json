@@ -1,0 +1,27 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/nlp-functions"
+    ],
+    "Title": [
+        "detectLanguageMixed"
+    ],
+    "Feature": [
+        "detectLanguageMixed('text_to_be_analyzed')"
+    ],
+    "Description": [
+        "detectLanguageMixed",
+        "Similar to the detectLanguage function, but detectLanguageMixed returns a Map of 2-letter language codes that are mapped to the percentage of the certain language in the text.",
+        "Syntax",
+        "detectLanguageMixed('text_to_be_analyzed')",
+        "Arguments",
+        "text_to_be_analyzed \u2014 A collection (or sentences) of strings to analyze. String.",
+        "Returned value",
+        "Map(String, Float32): The keys are 2-letter ISO codes and the values are a percentage of text found for that language"
+    ],
+    "Examples": [
+        "SELECT detectLanguageMixed('\u4e8c\u514e\u3092\u8ffd\u3046\u8005\u306f\u4e00\u514e\u3092\u3082\u5f97\u305a\u4e8c\u514e\u3092\u8ffd\u3046\u8005\u306f\u4e00\u514e\u3092\u3082\u5f97\u305a A vaincre sans peril, on triomphe sans gloire.');"
+    ],
+    "Category": [
+        "NLP (experimental) Functions"
+    ]
+}

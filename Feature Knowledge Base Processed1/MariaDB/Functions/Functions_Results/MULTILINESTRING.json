@@ -1,0 +1,37 @@
+{
+    "HTML": "https://mariadb.com//kb/en/multilinestring/",
+    "Title": "MULTILINESTRING",
+    "Feature": [
+        "MultiLineString(ls1,ls2,...)\n"
+    ],
+    "Description": [
+        "Constructs a WKB MultiLineString value using WKB LineString arguments.  If any argument is not a WKB LineString, the return value is\nNULL."
+    ],
+    "Examples": [
+        "CREATE TABLE gis_multi_line (g MULTILINESTRING);\nINSERT INTO gis_multi_line VALUES\n (MultiLineStringFromText('MULTILINESTRING((10 48,10 21,10 0),(16 0,16 23,16 48))')),\n (MLineFromText('MULTILINESTRING((10 48,10 21,10 0))')),\n (MLineFromWKB(AsWKB(MultiLineString(LineString(Point(1, 2), \n    Point(3, 5)), LineString(Point(2, 5),Point(5, 8),Point(21, 7))))));\n"
+    ],
+    "Category": [
+        "Geographic Functions"
+    ],
+    "Effective SQLs Refined": [
+        "INSERT INTO gis_multi_line VALUES\n (MultiLineStringFromText('MULTILINESTRING((10 48,10 21,10 0),(16 0,16 23,16 48))')),\n (MLineFromText('MULTILINESTRING((10 48,10 21,10 0))')),\n (MLineFromWKB(AsWKB(MultiLineString(LineString(Point(1, 2), \n    Point(3, 5)), LineString(Point(2, 5),Point(5, 8),Point(21, 7))))));"
+    ],
+    "Ineffective SQLs Refined": [
+        "CREATE TABLE gis_multi_line (g MULTILINESTRING);"
+    ],
+    "Wrong Messages from Ineffective SQLs Refined": [
+        "(pymysql.err.OperationalError) (1050, \"Table 'gis_multi_line' already exists\")\n[SQL: CREATE TABLE gis_multi_line (g MULTILINESTRING);]\n(Background on this error at: https://sqlalche.me/e/20/e3q8)"
+    ],
+    "SQLs Generated1": [],
+    "SQLs Generated Costs1": [],
+    "SQLs Generated ExecResults1": [],
+    "SQLs Generated ExecTimes1": [],
+    "SQLs Generated ErrorMessages1": [],
+    "Effective SQLs Generated1": [],
+    "SQLs Generated2": [],
+    "SQLs Generated Costs2": [],
+    "SQLs Generated ExecResults2": [],
+    "SQLs Generated ExecTimes2": [],
+    "SQLs Generated ErrorMessages2": [],
+    "Effective SQLs Generated2": []
+}

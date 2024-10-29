@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/timestamp-function/"
+    ],
+    "Title": [
+        "TIMESTAMP FUNCTION"
+    ],
+    "Feature": [
+        "TIMESTAMP(expr), TIMESTAMP(expr1,expr2)\n"
+    ],
+    "Description": [
+        "With a single argument, this function returns the date or datetime\nexpression expr as a datetime value. With two arguments, it adds the\ntime expression expr2 to the date or datetime expression expr1 and\nreturns the result as a datetime value."
+    ],
+    "Examples": [
+        "SELECT TIMESTAMP('2003-12-31');\n+-------------------------+\n| TIMESTAMP('2003-12-31') |\n+-------------------------+\n| 2003-12-31 00:00:00     |\n+-------------------------+\n\nSELECT TIMESTAMP('2003-12-31 12:00:00','6:30:00');\n+--------------------------------------------+\n| TIMESTAMP('2003-12-31 12:00:00','6:30:00') |\n+--------------------------------------------+\n| 2003-12-31 18:30:00                        |\n+--------------------------------------------+\n"
+    ],
+    "Category": [
+        "Date & Time Functions"
+    ]
+}

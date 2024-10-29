@@ -1,0 +1,29 @@
+{
+    "HTML": [
+        "https://sqlite.org/json1.html#jex"
+    ],
+    "Title": [
+        "JSON Functions"
+    ],
+    "Feature": [
+        "json_extract(X,P1,P2,...)"
+    ],
+    "Description": [
+        "The json_extract() function in SQLite is used to extract values from a well-formed JSON string at X. Depending on the number of path arguments provided, the function operates in two modes: If a single path argument P1 is given, the function returns the value at that path in its corresponding SQL datatype. This can be SQL NULL for JSON null, INTEGER or REAL for numeric values, INTEGER zero for JSON false, INTEGER one for JSON true, dequoted text for JSON strings, and text representation for JSON objects and arrays. When multiple path arguments are provided, the function returns a well-formed JSON array containing the extracted values. It's important to note that SQLite's json_extract() differs from MySQL's in terms of the datatype returned when accessing individual string or NULL values within the JSON. SQLite returns the actual SQL datatype, whereas MySQL always returns JSON."
+    ],
+    "Examples": [
+        "json_extract('{\"a\":2,\"c\":[4,5,{\"f\":7}]}', '$') returns '{\"a\":2,\"c\":[4,5,{\"f\":7}]}'",
+        "json_extract('{\"a\":2,\"c\":[4,5,{\"f\":7}]}', '$.c') returns '[4,5,{\"f\":7}]'",
+        "json_extract('{\"a\":2,\"c\":[4,5,{\"f\":7}]}', '$.c[2]') returns '{\"f\":7}'",
+        "json_extract('{\"a\":2,\"c\":[4,5,{\"f\":7}]}', '$.c[2].f') returns 7",
+        "json_extract('{\"a\":2,\"c\":[4,5],\"f\":7}','$.c','$.a') returns '[[4,5],2]'",
+        "json_extract('{\"a\":2,\"c\":[4,5],\"f\":7}','$.c[#-1]') returns 5",
+        "json_extract('{\"a\":2,\"c\":[4,5,{\"f\":7}]}', '$.x') returns NULL",
+        "json_extract('{\"a\":2,\"c\":[4,5,{\"f\":7}]}', '$.x', '$.a') returns '[null,2]'",
+        "json_extract('{\"a\":\"xyz\"}', '$.a') returns 'xyz'",
+        "json_extract('{\"a\":null}', '$.a') returns NULL"
+    ],
+    "Category": [
+        "JSON Functions"
+    ]
+}

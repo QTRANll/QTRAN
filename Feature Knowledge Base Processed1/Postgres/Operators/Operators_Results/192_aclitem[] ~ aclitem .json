@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/current/functions-info.html"
+    ],
+    "Title": [
+        "aclitem[] ~ aclitem"
+    ],
+    "Feature": [
+        "aclitem[] ~ aclitem → boolean"
+    ],
+    "Description": [
+        "This is a deprecated alias for @>."
+    ],
+    "Examples": [
+        "'{calvin=r*w/hobbes,hobbes=r*w*/postgres}'::aclitem[] ~ 'calvin=r*/hobbes'::aclitem → t"
+    ],
+    "Category": [
+        "System Information Functions and Operators"
+    ]
+}

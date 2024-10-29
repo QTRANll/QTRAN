@@ -1,0 +1,31 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/array-functions"
+    ],
+    "Title": [
+        "arrayFirstOrNull"
+    ],
+    "Feature": [
+        "arrayFirstOrNull(func, arr1, ...)"
+    ],
+    "Description": [
+        "arrayFirstOrNull",
+        "Returns the first element in the arr1 array for which func(arr1[i], ..., arrN[i]) returns something other than 0, otherwise it returns NULL.",
+        "Syntax",
+        "arrayFirstOrNull(func, arr1, ...)",
+        "Parameters",
+        "func: Lambda function. Lambda function.arr1: Array to operate on. Array.",
+        "Returned value",
+        "The first element in the passed array.Otherwise, returns NULL",
+        "Implementation details",
+        "Note that the arrayFirstOrNull is a higher-order function. You must pass a lambda function to it as the first argument, and it can\u2019t be omitted."
+    ],
+    "Examples": [
+        "SELECT arrayFirstOrNull(x -> x >= 2, [1, 2, 3]);",
+        "SELECT arrayFirstOrNull(x -> x >= 2, emptyArrayUInt8());",
+        "SELECT arrayLastOrNull((x,f) -> f, [1,2,3,NULL], [0,1,0,1]);"
+    ],
+    "Category": [
+        "Arrays Functions"
+    ]
+}

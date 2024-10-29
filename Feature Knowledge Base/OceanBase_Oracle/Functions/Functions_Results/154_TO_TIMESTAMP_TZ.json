@@ -1,0 +1,23 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000000823138"
+    ],
+    "Title": [
+        "TO_TIMESTAMP_TZ"
+    ],
+    "Feature": [
+        "TO_TIMESTAMP_TZ (char，[fmt],['nlsparam'])\n"
+    ],
+    "Description": [
+        "该函数将字符串转换为 TIMESTAMP WITH TIME ZONE 数据类型，包含时区信息。",
+        "\n\n\n参数\n说明\n\n\n\n\nchar\nCHAR、VARCHAR2、NCHAR 或 NVARCHAR2 数据类型的字符串。\n\n\nfmt\n指定 char 的格式，为可选项。如果省略 fmt，则 char 必须采用 TIMESTAMP WITH TIME ZONE 数据类型的默认格式。\n\n\nnlsparam\n用来控制返回的月份和日期所使用的语言，为可选项。\n\n\n",
+        "返回 TIMESTAMP WITH TIME ZONE 数据类型。"
+    ],
+    "Examples": [
+        "obclient> SELECT TO_TIMESTAMP_TZ ('2021-11-11 11:11:11.11', 'YYYY-MM-DD HH24:MI:SS.FF')\n    FROM DUAL;\n+--------------------------------------------------------------------+\n| TO_TIMESTAMP_TZ('2021-11-1111:11:11.11','YYYY-MM-DDHH24:MI:SS.FF') |\n+--------------------------------------------------------------------+\n| 11-NOV-21 11.11.11.110000000 AM +08:00                             |\n+--------------------------------------------------------------------+\n1 row in set\n"
+    ],
+    "Category": [
+        "Datetime Functions",
+        "Conversion Functions"
+    ]
+}

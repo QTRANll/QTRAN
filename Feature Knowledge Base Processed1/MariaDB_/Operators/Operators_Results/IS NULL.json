@@ -1,0 +1,33 @@
+{
+    "HTML": "https://mariadb.com//kb/en/is-null/",
+    "Title": "IS NULL",
+    "Feature": [
+        "IS NULL\n"
+    ],
+    "Description": [
+        "Tests whether a value is NULL. See also NULL Values in MariaDB."
+    ],
+    "Examples": [
+        "SELECT 1 IS NULL, 0 IS NULL, NULL IS NULL;\n+-----------+-----------+--------------+\n| 1 IS NULL | 0 IS NULL | NULL IS NULL |\n+-----------+-----------+--------------+\n|         0 |         0 |            1 |\n+-----------+-----------+--------------+\n"
+    ],
+    "Category": [
+        "Comparison Operators"
+    ],
+    "Effective SQLs Refined": [
+        "SELECT 1 IS NULL, 0 IS NULL, NULL IS NULL;"
+    ],
+    "Ineffective SQLs Refined": [],
+    "Wrong Messages from Ineffective SQLs Refined": [],
+    "SQLs Generated1": [],
+    "SQLs Generated Costs1": [],
+    "SQLs Generated ExecResults1": [],
+    "SQLs Generated ExecTimes1": [],
+    "SQLs Generated ErrorMessages1": [],
+    "Effective SQLs Generated1": [],
+    "SQLs Generated2": [],
+    "SQLs Generated Costs2": [],
+    "SQLs Generated ExecResults2": [],
+    "SQLs Generated ExecTimes2": [],
+    "SQLs Generated ErrorMessages2": [],
+    "Effective SQLs Generated2": []
+}

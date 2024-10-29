@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/json_compact/"
+    ],
+    "Title": [
+        "JSON_COMPACT"
+    ],
+    "Feature": [
+        "JSON_COMPACT(json_doc)\n"
+    ],
+    "Description": [
+        "Removes all unnecessary spaces so the json document is as short as possible."
+    ],
+    "Examples": [
+        "SELECT JSON_COMPACT(@j), @j;"
+    ],
+    "Category": [
+        "JSON Functions"
+    ]
+}

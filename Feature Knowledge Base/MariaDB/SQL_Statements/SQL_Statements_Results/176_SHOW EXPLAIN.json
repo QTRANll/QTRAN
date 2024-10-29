@@ -1,0 +1,40 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/show-explain/"
+    ],
+    "Title": [
+        "SHOW EXPLAIN"
+    ],
+    "Feature": [
+        "SHOW EXPLAIN [FORMAT=JSON] FOR <connection_id>;\nEXPLAIN [FORMAT=JSON] FOR CONNECTION <connection_id>;\n"
+    ],
+    "Description": [
+        "The SHOW EXPLAIN command allows one to get an EXPLAIN (that is, a\ndescription of a query plan) of a query running in a certain connection.",
+        "SHOW EXPLAIN FOR <connection_id>;\n",
+        "will produce an EXPLAIN output for the query that connection number connection_id is running. The connection id can be obtained with SHOW PROCESSLIST.",
+        "SHOW EXPLAIN FOR 1;\n+------+-------------+-------+-------+---------------+------+---------+------+---------+-------------+\n| id   | select_type | table | type  | possible_keys | key  | key_len | ref  | rows    | Extra       |\n+------+-------------+-------+-------+---------------+------+---------+------+---------+-------------+\n|    1 | SIMPLE      | tbl   | index | NULL          | a    | 5       | NULL | 1000107 | Using index |\n+------+-------------+-------+-------+---------------+------+---------+------+---------+-------------+\n1 row in set, 1 warning (0.00 sec)\n",
+        "The output is always accompanied with a warning which shows the query the\ntarget connection is running (this shows what the EXPLAIN is for):",
+        "SHOW WARNINGS;\n+-------+------+------------------------+\n| Level | Code | Message                |\n+-------+------+------------------------+\n| Note  | 1003 | select sum(a) from tbl |\n+-------+------+------------------------+\n1 row in set (0.00 sec)\n",
+        "EXPLAIN FOR CONNECTION",
+        "MariaDB starting with 10.9The EXPLAIN FOR CONNECTION syntax was added for MySQL compatibility.\n",
+        "FORMAT=JSON",
+        "MariaDB starting with 10.9SHOW EXPLAIN [FORMAT=JSON] FOR <connection_id> extends SHOW EXPLAIN to return more detailed JSON output. \n",
+        "Possible Errors",
+        "The output can be only produced if the target connection is currently running a\nquery, which has a ready query plan. If this is not the case, the output will\nbe:",
+        "SHOW EXPLAIN FOR 2;\nERROR 1932 (HY000): Target is not running an EXPLAINable command\n",
+        "You will get this error when:",
+        "the target connection is not running a command for which one can run EXPLAIN\nthe target connection is running a command for which one can run EXPLAIN, but\nthere is no query plan yet (for example, tables are open and locks are\n   acquired before the query plan is produced)\n\n",
+        "Differences Between SHOW EXPLAIN and EXPLAIN Outputs",
+        "Background",
+        "In MySQL, EXPLAIN execution takes a slightly different route from the way\nthe real query (typically the SELECT) is optimized. This is unfortunate,\nand has caused a number of bugs in EXPLAIN. (For example, see\nMDEV-326, MDEV-410, and\nlp:1013343.\nlp:992942 is not directly\nabout EXPLAIN, but it also would not have existed if MySQL didn't try to delete\nparts of a query plan in the middle of the query) ",
+        "SHOW EXPLAIN examines a running SELECT, and hence its output may be\nslightly different from what EXPLAIN SELECT would produce. We did our best\nto make sure that either the difference is negligible, or SHOW EXPLAIN's\noutput is closer to reality than EXPLAIN's output.",
+        "List of Recorded Differences",
+        "SHOW EXPLAIN may have Extra='no matching row in const table', where  EXPLAIN would produce Extra='Impossible WHERE ...'\nFor queries with subqueries, SHOW EXPLAIN may print select_type==PRIMARY where regular EXPLAIN used to print select_type==SIMPLE, or vice versa.\n",
+        "Required Permissions",
+        "Running SHOW EXPLAIN requires the same permissions as running SHOW PROCESSLIST would."
+    ],
+    "Examples": [],
+    "Category": [
+        "Administrative SQL Statements"
+    ]
+}

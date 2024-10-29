@@ -1,0 +1,23 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/ip-address-functions"
+    ],
+    "Title": [
+        "cutIPv6(x, bytesToCutForIPv6, bytesToCutForIPv4)"
+    ],
+    "Feature": [
+        "cutIPv6(x, bytesToCutForIPv6, bytesToCutForIPv4)"
+    ],
+    "Description": [
+        "cutIPv6(x, bytesToCutForIPv6, bytesToCutForIPv4)",
+        "Accepts a FixedString(16) value containing the IPv6 address in binary format. Returns a string containing the address of the specified number of bytes removed in text format. For example:",
+        "WITH    IPv6StringToNum('2001:0DB8:AC10:FE01:FEED:BABE:CAFE:F00D') AS ipv6,    IPv4ToIPv6(IPv4StringToNum('192.168.0.1')) AS ipv4SELECT    cutIPv6(ipv6, 2, 0),    cutIPv6(ipv4, 0, 2)",
+        "\u250c\u2500cutIPv6(ipv6, 2, 0)\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500cutIPv6(ipv4, 0, 2)\u2500\u2510\u2502 2001:db8:ac10:fe01:feed:babe:cafe:0 \u2502 ::ffff:192.168.0.0  \u2502\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518"
+    ],
+    "Examples": [
+        "WITH    IPv6StringToNum('2001:0DB8:AC10:FE01:FEED:BABE:CAFE:F00D') AS ipv6,    IPv4ToIPv6(IPv4StringToNum('192.168.0.1')) AS ipv4SELECT    cutIPv6(ipv6, 2, 0),    cutIPv6(ipv4, 0, 2)"
+    ],
+    "Category": [
+        "IP Addresses Functions"
+    ]
+}

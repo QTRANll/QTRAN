@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000000823227"
+    ],
+    "Title": [
+        "TIMESTAMP_TO_SCN"
+    ],
+    "Feature": [
+        "TIMESTAMP_TO_SCN(timestamp)\n"
+    ],
+    "Description": [
+        "TIMESTAMP_TO_SCN() 函数将时间戳类型的参数作为输入并返回对应的 SCN（System Change Number）。该函数的输入参数类型为 TIMESTAMP 类型，返回值的数据类型为 NUMBER。"
+    ],
+    "Examples": [
+        "obclient> SELECT TIMESTAMP_TO_SCN('2022-06-16 11:50:30.123451234') FROM DUAL;\n+--------------------------------------------------+\n| TIMESTAMP_TO_SCN('2022-06-1611:50:30.123451234') |\n+--------------------------------------------------+\n|                              1655351430123451234 |\n+--------------------------------------------------+\n1 row in set\n"
+    ],
+    "Category": [
+        "Conversion Functions"
+    ]
+}

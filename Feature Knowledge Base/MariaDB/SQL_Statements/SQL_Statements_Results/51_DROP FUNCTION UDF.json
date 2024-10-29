@@ -1,0 +1,25 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/drop-function-udf/"
+    ],
+    "Title": [
+        "DROP FUNCTION UDF"
+    ],
+    "Feature": [
+        "DROP FUNCTION [IF EXISTS] function_name\n"
+    ],
+    "Description": [
+        "This statement drops the user-defined function (UDF) named function_name.",
+        "To drop a function, you must have the DELETE privilege for the mysql database. This is because DROP FUNCTION removes the row from the mysql.func system table that records the function's name, type and shared library name.",
+        "For dropping a stored function, see DROP FUNCTION.",
+        "Upgrading a UDF",
+        "To upgrade the UDF's shared library, first run a DROP FUNCTION statement, then upgrade the shared library and finally run the CREATE FUNCTION statement. If you upgrade without following this process, you may crash the server."
+    ],
+    "Examples": [
+        "DROP FUNCTION jsoncontains_path;\n",
+        "DROP FUNCTION jsoncontains_path;\nERROR 1305 (42000): FUNCTION test.jsoncontains_path does not exist\n\nDROP FUNCTION IF EXISTS jsoncontains_path;\nQuery OK, 0 rows affected, 1 warning (0.00 sec)\n\nSHOW WARNINGS;\n+-------+------+------------------------------------------------+\n| Level | Code | Message                                        |\n+-------+------+------------------------------------------------+\n| Note  | 1305 | FUNCTION test.jsoncontains_path does not exist |\n+-------+------+------------------------------------------------+\n"
+    ],
+    "Category": [
+        "Data Definition"
+    ]
+}

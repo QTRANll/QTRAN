@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/current/functions-string.html"
+    ],
+    "Title": [
+        "octet_length"
+    ],
+    "Feature": [
+        "octet_length ( character ) → integer"
+    ],
+    "Description": [
+        "Returns number of bytes in the string. Since this version of the function accepts type character directly, it will not strip trailing spaces."
+    ],
+    "Examples": [
+        "octet_length('abc '::character(4)) → 4"
+    ],
+    "Category": [
+        "String Functions and Operators"
+    ]
+}

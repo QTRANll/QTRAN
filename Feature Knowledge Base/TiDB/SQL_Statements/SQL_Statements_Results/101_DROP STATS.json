@@ -1,0 +1,23 @@
+{
+    "HTML": [
+        "https://docs.pingcap.com//zh/tidb/stable/sql-statement-drop-stats"
+    ],
+    "Title": [
+        "DROP STATS"
+    ],
+    "Feature": [
+        "DropStatsStmt ::=\n    'DROP' 'STATS' TableName  (\"PARTITION\" partition | \"GLOBAL\")? ( ',' TableName )*\n\nTableName ::=\n    Identifier ('.' Identifier)?\n"
+    ],
+    "Description": [
+        "DROP STATS \u8bed\u53e5\u7528\u4e8e\u4ece\u5f53\u524d\u6240\u9009\u5b9a\u7684\u6570\u636e\u5e93\u4e2d\u5220\u9664\u9009\u5b9a\u8868\u7684\u7edf\u8ba1\u4fe1\u606f\u3002"
+    ],
+    "Examples": [
+        "CREATE TABLE t(a INT);\n",
+        "SHOW STATS_META WHERE db_name='test' and table_name='t';\n",
+        "DROP STATS t;\n",
+        "SHOW STATS_META WHERE db_name='test' and table_name='t';\n"
+    ],
+    "Category": [
+        "\u7edf\u8ba1\u4fe1\u606f\u548c\u6267\u884c\u8ba1\u5212\u7ba1\u7406"
+    ]
+}

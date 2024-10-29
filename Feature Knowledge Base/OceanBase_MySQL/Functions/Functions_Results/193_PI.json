@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000000823357"
+    ],
+    "Title": [
+        "PI"
+    ],
+    "Feature": [
+        "PI()\n"
+    ],
+    "Description": [
+        "返回 π 的值（圆周率）。"
+    ],
+    "Examples": [
+        "obclient> SELECT PI();\n+----------+\n| PI()     |\n+----------+\n| 3.141593 |\n+----------+\n1 row in set\n\nobclient> SELECT ROUND(2*PI(),2);\n+----------------+\n| ROUND(2*PI(),2)|\n+----------------+\n| 6.28           |\n+----------------+\n1 row in set\n"
+    ],
+    "Category": [
+        "Mathematical Functions"
+    ]
+}

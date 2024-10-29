@@ -1,0 +1,19 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/current/functions-admin.html"
+    ],
+    "Title": [
+        "pg_ls_waldir"
+    ],
+    "Feature": [
+        "pg_ls_waldir () → setof record ( name text, size bigint, modification timestamp with time zone )"
+    ],
+    "Description": [
+        "Returns the name, size, and last modification time (mtime) of each ordinary file in the server's write-ahead log (WAL) directory. Filenames beginning with a dot, directories, and other special files are excluded.",
+        "This function is restricted to superusers and roles with privileges of the pg_monitor role by default, but other users can be granted EXECUTE to run the function."
+    ],
+    "Examples": [],
+    "Category": [
+        "System Administration Functions"
+    ]
+}

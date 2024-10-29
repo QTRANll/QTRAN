@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/charset/"
+    ],
+    "Title": [
+        "CHARSET"
+    ],
+    "Feature": [
+        "CHARSET(str)\n"
+    ],
+    "Description": [
+        "Returns the character set of the string argument. If str is not a string, it is considered as a binary string (so the function returns 'binary'). This applies to NULL, too.  The return value is a string in the utf8 character set."
+    ],
+    "Examples": [
+        "SELECT CHARSET('abc');"
+    ],
+    "Category": [
+        "Information Functions"
+    ]
+}

@@ -1,0 +1,21 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/spider_copy_tables/"
+    ],
+    "Title": [
+        "SPIDER_COPY_TABLES"
+    ],
+    "Feature": [
+        "SPIDER_COPY_TABLES(spider_table_name, \n  source_link_id, destination_link_id_list [,parameters])\n"
+    ],
+    "Description": [
+        "A UDF installed with the Spider Storage Engine, this function copies table data from source_link_id to destination_link_id_list. The service does not need to be stopped in order to copy.",
+        "If the Spider table is partitioned, the name must be of the format table_name#P#partition_name. The partition name can be viewed in the mysql.spider_tables table, for example:",
+        "SELECT table_name FROM mysql.spider_tables;\n+-------------+\n| table_name  |\n+-------------+\n| spt_a#P#pt1 |\n| spt_a#P#pt2 |\n| spt_a#P#pt3 |\n+-------------+\n",
+        "Returns 1 if the data was copied successfully, or 0 if copying the data failed."
+    ],
+    "Examples": [],
+    "Category": [
+        "Spider Functions"
+    ]
+}

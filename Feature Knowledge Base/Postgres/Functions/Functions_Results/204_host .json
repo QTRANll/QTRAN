@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/current/functions-net.html"
+    ],
+    "Title": [
+        "host"
+    ],
+    "Feature": [
+        "host ( inet ) → text"
+    ],
+    "Description": [
+        "Returns the IP address as text, ignoring the netmask."
+    ],
+    "Examples": [
+        "host(inet '192.168.1.0/24') → 192.168.1.0"
+    ],
+    "Category": [
+        "Network Address Functions and Operators"
+    ]
+}

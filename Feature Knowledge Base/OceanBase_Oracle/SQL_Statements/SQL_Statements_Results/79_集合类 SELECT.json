@@ -1,0 +1,24 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000001054667"
+    ],
+    "Title": [
+        "集合类 SELECT"
+    ],
+    "Feature": [
+        "select_clause_set:\n  simple_select [ UNION | UNION ALL | MINUS | INTERSECT] select_clause_set_right\n      [ORDER BY sort_list_columns]\n\nselect_clause_set_right:\n    simple_select  \n    | select_caluse_set\n"
+    ],
+    "Description": [
+        "该语句用于对多个 SELECT 查询的结果合并为一个结果。每个 SELECT 的列数和数据类型必须相同，但列长可以不同。"
+    ],
+    "Examples": [
+        "obclient> CREATE TABLE tbl1 (col1 INT, col2 INT);\nQuery OK, 0 rows affected\n\nobclient> CREATE TABLE tbl2 (col1 INT, col2 INT);\nQuery OK, 0 rows affected\n\nobclient> INSERT INTO tbl1 VALUES (1, 1), (2, 2),(2,2);\nQuery OK, 3 rows affected\nRecords: 3  Duplicates: 0  Warnings: 0\n\nobclient> INSERT INTO tbl2 VALUES (2, 2),(2, 2),(3,3);\nQuery OK, 3 rows affected\nRecords: 3  Duplicates: 0  Warnings: 0\n\nobclient> SELECT * FROM tbl1;\n+------+------+\n| COL1 | COL2 |\n+------+------+\n|    1 |    1 |\n|    2 |    2 |\n|    2 |    2 |\n+------+------+\n3 rows in set\n\nobclient> SELECT * FROM tbl2;\n+------+------+\n| COL1 | COL2 |\n+------+------+\n|    2 |    2 |\n|    2 |    2 |\n|    3 |    3 |\n+------+------+\n3 rows in set\n",
+        "obclient> SELECT col1, col2 FROM tbl1 UNION ALL SELECT col1, col2 FROM tbl2;\n+------+------+\n| COL1 | COL2 |\n+------+------+\n|    1 |    1 |\n|    2 |    2 |\n|    2 |    2 |\n|    2 |    2 |\n|    2 |    2 |\n|    3 |    3 |\n+------+------+\n6 rows in set\n",
+        "obclient> SELECT col1, col2 FROM tbl1 UNION SELECT col1, col2 FROM tbl2;\n+------+------+\n| COL1 | COL2 |\n+------+------+\n|    1 |    1 |\n|    2 |    2 |\n|    3 |    3 |\n+------+------+\n3 rows in set\n",
+        "obclient> SELECT col1, col2 FROM tbl1 INTERSECT SELECT col1, col2 FROM tbl2;\n+------+------+\n| COL1 | COL2 |\n+------+------+\n|    2 |    2 |\n+------+------+\n1 row in set\n",
+        "obclient> SELECT col1, col2 FROM tbl1 MINUS SELECT col1, col2 FROM tbl2;\n+------+------+\n| COL1 | COL2 |\n+------+------+\n|    1 |    1 |\n+------+------+\n1 row in set\n"
+    ],
+    "Category": [
+        "DML"
+    ]
+}

@@ -1,0 +1,33 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/create-resource-group.html"
+    ],
+    "Title": [
+        "15.7.2.2 CREATE RESOURCE GROUP Statement"
+    ],
+    "Feature": [
+        "CREATE RESOURCE GROUP group_name\n    TYPE = {SYSTEM|USER}\n    [VCPU [=] vcpu_spec [, vcpu_spec] ...]\n    [THREAD_PRIORITY [=] N]\n    [ENABLE|DISABLE]\n\nvcpu_spec: {N | M - N}",
+        "VCPU = 0,1,2,3,9,10\nVCPU = 0-3,9-10\nVCPU = 9,10,0-3\nVCPU = 0,10,1,9,3,2"
+    ],
+    "Description": [
+        "\nCREATE RESOURCE GROUP is used for\n        resource group management (see\n        Section\u00a07.1.16, \u201cResource Groups\u201d). This statement creates a new\n        resource group and assigns its initial attribute values. It\n        requires the RESOURCE_GROUP_ADMIN\n        privilege.\n      ",
+        "\ngroup_name identifies which resource\n        group to create. If the group already exists, an error occurs.\n      ",
+        "\n        The TYPE attribute is required. It should be\n        SYSTEM for a system resource group,\n        USER for a user resource group. The group\n        type affects permitted THREAD_PRIORITY\n        values, as described later.\n      ",
+        "\n        The VCPU attribute indicates the CPU\n        affinity; that is, the set of virtual CPUs the group can use:\n",
+        "\n\n            If VCPU is not given, the resource group\n            has no CPU affinity and can use all available CPUs.\n          \n            If VCPU is given, the attribute value is\n            a list of comma-separated CPU numbers or ranges:\n\n\n\n                Each number must be an integer in the range from 0 to\n                the number of CPUs \u2212 1. For example, on a system\n                with 64 CPUs, the number can range from 0 to 63.\n              \n                A range is given in the form\n                M \u2212\n                N, where\n                M is less than or equal to\n                N and both numbers are in the\n                CPU range.\n              \n                If a CPU number is an integer outside the permitted\n                range or is not an integer, an error occurs.\n\n\n\n",
+        "\n        Example VCPU specifiers (these are all\n        equivalent):\n      ",
+        "\n        The THREAD_PRIORITY attribute indicates the\n        priority for threads assigned to the group:\n",
+        "\n\n            If THREAD_PRIORITY is not given, the\n            default priority is 0.\n          \n            If THREAD_PRIORITY is given, the\n            attribute value must be in the range from -20 (highest\n            priority) to 19 (lowest priority). The priority for system\n            resource groups must be in the range from -20 to 0. The\n            priority for user resource groups must be in the range from\n            0 to 19. Use of different ranges for system and user groups\n            ensures that user threads never have a higher priority than\n            system threads.\n\n",
+        "\nENABLE and DISABLE specify\n        that the resource group is initially enabled or disabled. If\n        neither is specified, the group is enabled by default. A\n        disabled group cannot have threads assigned to it.\n      ",
+        "\n        Examples:\n",
+        "\n\n            Create an enabled user group that has a single CPU and the\n            lowest priority:\n          Press CTRL+C to copy CREATE RESOURCE GROUP rg1\n  TYPE = USER\n  VCPU = 0\n  THREAD_PRIORITY = 19;\n            Create a disabled system group that has no CPU affinity (can\n            use all CPUs) and the highest priority:\n          Press CTRL+C to copy CREATE RESOURCE GROUP rg2\n  TYPE = SYSTEM\n  THREAD_PRIORITY = -20\n  DISABLE;\n",
+        "\n        Resource group management is local to the server on which it\n        occurs. CREATE RESOURCE GROUP\n        statements are not written to the binary log and are not\n        replicated.\n"
+    ],
+    "Examples": [
+        "CREATE RESOURCE GROUP rg1\n  TYPE = USER\n  VCPU = 0\n  THREAD_PRIORITY = 19;",
+        "CREATE RESOURCE GROUP rg2\n  TYPE = SYSTEM\n  THREAD_PRIORITY = -20\n  DISABLE;"
+    ],
+    "Category": [
+        "Database Administration Statements"
+    ]
+}

@@ -1,0 +1,33 @@
+{
+    "HTML": "https://mariadb.com//kb/en/mbrwithin/",
+    "Title": "MBRWithin",
+    "Feature": [
+        "MBRWithin(g1,g2)\n"
+    ],
+    "Description": [
+        "Returns 1 or 0 to indicate whether the Minimum Bounding Rectangle of\ng1 is within the Minimum Bounding Rectangle of g2. This tests the\nopposite relationship as MBRContains()."
+    ],
+    "Examples": [
+        "SET @g1 = GeomFromText('Polygon((0 0,0 3,3 3,3 0,0 0))');\nSET @g2 = GeomFromText('Polygon((0 0,0 5,5 5,5 0,0 0))');\nSELECT MBRWithin(@g1,@g2), MBRWithin(@g2,@g1);\n+--------------------+--------------------+\n| MBRWithin(@g1,@g2) | MBRWithin(@g2,@g1) |\n+--------------------+--------------------+\n|                  1 |                  0 |\n+--------------------+--------------------+\n"
+    ],
+    "Category": [
+        "Geographic Functions"
+    ],
+    "Effective SQLs Refined": [
+        "SELECT MBRWithin(@g1,@g2), MBRWithin(@g2,@g1);"
+    ],
+    "Ineffective SQLs Refined": [],
+    "Wrong Messages from Ineffective SQLs Refined": [],
+    "SQLs Generated1": [],
+    "SQLs Generated Costs1": [],
+    "SQLs Generated ExecResults1": [],
+    "SQLs Generated ExecTimes1": [],
+    "SQLs Generated ErrorMessages1": [],
+    "Effective SQLs Generated1": [],
+    "SQLs Generated2": [],
+    "SQLs Generated Costs2": [],
+    "SQLs Generated ExecResults2": [],
+    "SQLs Generated ExecTimes2": [],
+    "SQLs Generated ErrorMessages2": [],
+    "Effective SQLs Generated2": []
+}

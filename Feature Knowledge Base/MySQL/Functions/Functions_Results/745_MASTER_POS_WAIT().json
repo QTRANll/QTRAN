@@ -1,0 +1,32 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/built-in-function-reference.html",
+        "https://dev.mysql.com/doc/refman/8.4/en/replication-functions.html",
+        "https://dev.mysql.com/doc/refman/8.4/en/replication-functions-synchronization.html"
+    ],
+    "Title": [
+        "14.1 Built-In Function and Operator Reference",
+        "14.18 Replication Functions",
+        "14.18.4 Position-Based Synchronization Functions"
+    ],
+    "Feature": [
+        "MASTER_POS_WAIT(log_name,log_pos[,timeout][,channel])"
+    ],
+    "Description": [
+        "Block until the replica has read and applied all updates up to the",
+        "\nMASTER_POS_WAIT(log_name,log_pos[,timeout][,channel])\n",
+        "\n            Deprecated alias for\n            SOURCE_POS_WAIT().\n          "
+    ],
+    "Examples": [],
+    "Category": [
+        "Built-In Functions",
+        "Replication Functions",
+        "Replication Functions"
+    ],
+    "Reference HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/replication-functions-synchronization.html#function_master-pos-wait"
+    ],
+    "Feature Type": [
+        "Function"
+    ]
+}

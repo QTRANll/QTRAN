@@ -1,0 +1,28 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/distance-functions"
+    ],
+    "Title": [
+        "L1Norm"
+    ],
+    "Feature": [
+        "L1Norm(vector)"
+    ],
+    "Description": [
+        "L1Norm",
+        "Calculates the sum of absolute values of a vector.",
+        "Syntax",
+        "L1Norm(vector)",
+        "Alias: normL1.",
+        "Arguments",
+        "vector \u2014 Tuple or Array.",
+        "Returned value",
+        "L1-norm or taxicab geometry distance. UInt, Float or Decimal."
+    ],
+    "Examples": [
+        "SELECT L1Norm((1, 2));"
+    ],
+    "Category": [
+        "Distance Functions"
+    ]
+}

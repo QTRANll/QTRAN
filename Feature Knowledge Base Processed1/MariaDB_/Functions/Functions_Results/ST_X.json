@@ -1,0 +1,69 @@
+{
+    "HTML": "https://mariadb.com//kb/en/st_x/",
+    "Title": "ST_X",
+    "Feature": [
+        "ST_X(p)\nX(p)\n"
+    ],
+    "Description": [
+        "Returns the X-coordinate value for the point p as a double-precision number.",
+        "ST_X() and X() are synonyms."
+    ],
+    "Examples": [
+        "SET @pt = 'Point(56.7 53.34)';\n\nSELECT X(GeomFromText(@pt));\n+----------------------+\n| X(GeomFromText(@pt)) |\n+----------------------+\n|                 56.7 |\n+----------------------+\n"
+    ],
+    "Category": [
+        "Geographic Functions"
+    ],
+    "Effective SQLs Refined": [],
+    "Ineffective SQLs Refined": [],
+    "Wrong Messages from Ineffective SQLs Refined": [],
+    "SQLs Generated1": [
+        {
+            "Example SQL": "SELECT ST_X(point_column) FROM your_table;"
+        },
+        {
+            "Example SQL": "SELECT ST_X(point_column) FROM DUAL;"
+        },
+        {
+            "Example SQL": "SELECT ST_X(POINT(1, 2));"
+        }
+    ],
+    "SQLs Generated Costs1": [
+        {
+            "Total Tokens": 285,
+            "Prompt Tokens": 263,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 5.264999999999999e-05
+        },
+        {
+            "Total Tokens": 439,
+            "Prompt Tokens": 417,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 7.574999999999998e-05
+        },
+        {
+            "Total Tokens": 591,
+            "Prompt Tokens": 567,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 9.944999999999998e-05
+        }
+    ],
+    "SQLs Generated ExecResults1": [
+        "None",
+        "None",
+        "[(1.0,)]"
+    ],
+    "SQLs Generated ExecTimes1": [
+        "0",
+        "0",
+        "0.004801511764526367"
+    ],
+    "SQLs Generated ErrorMessages1": [
+        "(pymysql.err.ProgrammingError) (1146, \"Table 'PINOLO_MariaDB.your_table' doesn't exist\")\n",
+        "(pymysql.err.OperationalError) (1054, \"Unknown column 'point_column' in 'field list'\")\n",
+        "None"
+    ],
+    "Effective SQLs Generated1": [
+        "SELECT ST_X(POINT(1, 2));"
+    ]
+}

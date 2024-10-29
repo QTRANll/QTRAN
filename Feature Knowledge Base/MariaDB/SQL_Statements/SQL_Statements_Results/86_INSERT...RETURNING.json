@@ -1,0 +1,26 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/insertreturning/"
+    ],
+    "Title": [
+        "INSERT...RETURNING"
+    ],
+    "Feature": [
+        "INSERT [LOW_PRIORITY | DELAYED | HIGH_PRIORITY] [IGNORE]\n [INTO] tbl_name [PARTITION (partition_list)] [(col,...)]\n {VALUES | VALUE} ({expr | DEFAULT},...),(...),...\n [ ON DUPLICATE KEY UPDATE\n   col=expr\n     [, col=expr] ... ] [RETURNING select_expr \n      [, select_expr ...]]\n",
+        "Or:",
+        "INSERT [LOW_PRIORITY | DELAYED | HIGH_PRIORITY] [IGNORE]\n    [INTO] tbl_name [PARTITION (partition_list)]\n    SET col={expr | DEFAULT}, ...\n    [ ON DUPLICATE KEY UPDATE\n      col=expr\n        [, col=expr] ... ] [RETURNING select_expr \n      [, select_expr ...]]\n",
+        "Or:",
+        "INSERT [LOW_PRIORITY | HIGH_PRIORITY] [IGNORE]\n    [INTO] tbl_name [PARTITION (partition_list)] [(col,...)]\n    SELECT ...\n    [ ON DUPLICATE KEY UPDATE\n      col=expr\n        [, col=expr] ... ] [RETURNING select_expr \n      [, select_expr ...]]\n"
+    ],
+    "Description": [
+        "INSERT ... RETURNING returns a resultset of the inserted rows.\nThis returns the listed columns for all the rows that are inserted, or alternatively, the specified SELECT expression. Any SQL expressions which can be calculated can be used in the select expression for the RETURNING clause, including virtual columns and aliases, expressions which use various operators such as bitwise, logical and arithmetic operators, string functions, date-time functions, numeric functions, control flow functions, secondary functions and stored functions. Along with this, statements which have subqueries and prepared statements can also be used.\n"
+    ],
+    "Examples": [
+        "CREATE OR REPLACE TABLE t2 (id INT, animal VARCHAR(20), t TIMESTAMP);\n\nINSERT INTO t2 (id) VALUES (2),(3) RETURNING id,t;\n+------+---------------------+\n| id   | t                   |\n+------+---------------------+\n|    2 | 2021-04-28 00:59:32 |\n|    3 | 2021-04-28 00:59:32 |\n+------+---------------------+\n",
+        "INSERT INTO t2(id,animal) VALUES (1,'Dog'),(2,'Lion'),(3,'Tiger'),(4,'Leopard')  \n  RETURNING id,id+id,id&id,id||id;\n+------+-------+-------+--------+\n| id   | id+id | id&id | id||id |\n+------+-------+-------+--------+\n|    1 |     2 |     1 |      1 |\n|    2 |     4 |     2 |      1 |\n|    3 |     6 |     3 |      1 |\n|    4 |     8 |     4 |      1 |\n+------+-------+-------+--------+\n",
+        "DELIMITER |\nCREATE FUNCTION f(arg INT) RETURNS INT\n    BEGIN\n       RETURN (SELECT arg+arg);\n    END|\n\nDELIMITER ;\n\nPREPARE stmt FROM \"INSERT INTO t1 SET id1=1, animal1='Bear' RETURNING f(id1), UPPER(animal1)\";\n\nEXECUTE stmt;\n+---------+----------------+\n| f(id1)  | UPPER(animal1) |\n+---------+----------------+\n|       2 | BEAR           |\n+---------+----------------+\n"
+    ],
+    "Category": [
+        "Data Manipulation"
+    ]
+}

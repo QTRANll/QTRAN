@@ -1,0 +1,18 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/current/functions-admin.html"
+    ],
+    "Title": [
+        "pg_create_physical_replication_slot"
+    ],
+    "Feature": [
+        "pg_create_physical_replication_slot ( slot_name name [, immediately_reserve boolean, temporary boolean ] ) → record ( slot_name name, lsn pg_lsn )"
+    ],
+    "Description": [
+        "Creates a new physical replication slot named slot_name. The optional second parameter, when true, specifies that the LSN for this replication slot be reserved immediately; otherwise the LSN is reserved on first connection from a streaming replication client. Streaming changes from a physical slot is only possible with the streaming-replication protocol — see Section 53.4. The optional third parameter, temporary, when set to true, specifies that the slot should not be permanently stored to disk and is only meant for use by the current session. Temporary slots are also released upon any error. This function corresponds to the replication protocol command CREATE_REPLICATION_SLOT ... PHYSICAL."
+    ],
+    "Examples": [],
+    "Category": [
+        "System Administration Functions"
+    ]
+}

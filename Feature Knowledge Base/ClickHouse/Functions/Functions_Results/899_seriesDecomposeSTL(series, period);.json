@@ -1,0 +1,28 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/time-series-functions"
+    ],
+    "Title": [
+        "seriesDecomposeSTL"
+    ],
+    "Feature": [
+        "seriesDecomposeSTL(series, period);"
+    ],
+    "Description": [
+        "seriesDecomposeSTL",
+        "Decomposes a series data using STL (Seasonal-Trend Decomposition Procedure Based on Loess) into a season, a trend and a residual component. ",
+        "Syntax",
+        "seriesDecomposeSTL(series, period);",
+        "Arguments",
+        "series - An array of numeric valuesperiod - A positive integer",
+        "The number of data points in series should be at least twice the value of period.",
+        "Returned value",
+        "An array of four arrays where the first array include seasonal components, the second array - trend,\nthe third array - residue component, and the fourth array - baseline(seasonal + trend) component. Array."
+    ],
+    "Examples": [
+        "SELECT seriesDecomposeSTL([10.1, 20.45, 40.34, 10.1, 20.45, 40.34, 10.1, 20.45, 40.34, 10.1, 20.45, 40.34, 10.1, 20.45, 40.34, 10.1, 20.45, 40.34, 10.1, 20.45, 40.34, 10.1, 20.45, 40.34], 3) AS print_0;"
+    ],
+    "Category": [
+        "Time Series Functions"
+    ]
+}

@@ -1,0 +1,35 @@
+{
+    "HTML": "https://mariadb.com//kb/en/is-not/",
+    "Title": "IS NOT",
+    "Feature": [
+        "IS NOT boolean_value\n"
+    ],
+    "Description": [
+        "Tests a value against a boolean value, where boolean_value can be\nTRUE, FALSE, or UNKNOWN. "
+    ],
+    "Examples": [
+        "SELECT 1 IS NOT UNKNOWN, 0 IS NOT UNKNOWN, NULL IS NOT UNKNOWN;\n+------------------+------------------+---------------------+\n| 1 IS NOT UNKNOWN | 0 IS NOT UNKNOWN | NULL IS NOT UNKNOWN |\n+------------------+------------------+---------------------+\n|                1 |                1 |                   0 |\n+------------------+------------------+---------------------+\n",
+        "SELECT NULL IS NOT TRUE, NULL IS NOT FALSE;\n+------------------+-------------------+\n| NULL IS NOT TRUE | NULL IS NOT FALSE |\n+------------------+-------------------+\n|                1 |                 1 |\n+------------------+-------------------+\n"
+    ],
+    "Category": [
+        "Comparison Operators"
+    ],
+    "Effective SQLs Refined": [
+        "SELECT 1 IS NOT UNKNOWN, 0 IS NOT UNKNOWN, NULL IS NOT UNKNOWN;",
+        "SELECT NULL IS NOT TRUE, NULL IS NOT FALSE;"
+    ],
+    "Ineffective SQLs Refined": [],
+    "Wrong Messages from Ineffective SQLs Refined": [],
+    "SQLs Generated1": [],
+    "SQLs Generated Costs1": [],
+    "SQLs Generated ExecResults1": [],
+    "SQLs Generated ExecTimes1": [],
+    "SQLs Generated ErrorMessages1": [],
+    "Effective SQLs Generated1": [],
+    "SQLs Generated2": [],
+    "SQLs Generated Costs2": [],
+    "SQLs Generated ExecResults2": [],
+    "SQLs Generated ExecTimes2": [],
+    "SQLs Generated ErrorMessages2": [],
+    "Effective SQLs Generated2": []
+}

@@ -1,0 +1,21 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/st_startpoint/"
+    ],
+    "Title": [
+        "ST_STARTPOINT"
+    ],
+    "Feature": [
+        "ST_StartPoint(ls)\nStartPoint(ls)\n"
+    ],
+    "Description": [
+        "Returns the Point that is the start point of the\nLineString value ls.",
+        "ST_StartPoint() and StartPoint() are synonyms."
+    ],
+    "Examples": [
+        "SET @ls = 'LineString(1 1,2 2,3 3)';\n\nSELECT AsText(StartPoint(GeomFromText(@ls)));\n+---------------------------------------+\n| AsText(StartPoint(GeomFromText(@ls))) |\n+---------------------------------------+\n| POINT(1 1)                            |\n+---------------------------------------+\n"
+    ],
+    "Category": [
+        "Geographic Functions"
+    ]
+}

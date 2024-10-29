@@ -1,0 +1,27 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/create-database.html"
+    ],
+    "Title": [
+        "15.1.12 CREATE DATABASE Statement"
+    ],
+    "Feature": [
+        "CREATE {DATABASE | SCHEMA} [IF NOT EXISTS] db_name\n    [create_option] ...\n\ncreate_option: [DEFAULT] {\n    CHARACTER SET [=] charset_name\n  | COLLATE [=] collation_name\n  | ENCRYPTION [=] {'Y' | 'N'}\n}"
+    ],
+    "Description": [
+        "\nCREATE DATABASE creates a database\n      with the given name. To use this statement, you need the\n      CREATE privilege for the database.\n      CREATE\n      SCHEMA is a synonym for CREATE\n      DATABASE.\n    ",
+        "\n      An error occurs if the database exists and you did not specify\n      IF NOT EXISTS.\n    ",
+        "\nCREATE DATABASE is not permitted\n      within a session that has an active LOCK\n      TABLES statement.\n    ",
+        "\n      Each create_option specifies a database\n      characteristic. Database characteristics are stored in the data\n      dictionary.\n",
+        "\n\n          The CHARACTER SET option specifies the\n          default database character set. The COLLATE\n          option specifies the default database collation. For\n          information about character set and collation names, see\n          Chapter\u00a012, Character Sets, Collations, Unicode.\n        \n          To see the available character sets and collations, use the\n          the SHOW CHARACTER SET and\n          SHOW COLLATION statements,\n          respectively. See Section\u00a015.7.7.4, \u201cSHOW CHARACTER SET Statement\u201d, and\n          Section\u00a015.7.7.5, \u201cSHOW COLLATION Statement\u201d.\n        \n          The ENCRYPTION option defines the default\n          database encryption, which is inherited by tables created in\n          the database. The permitted values are 'Y'\n          (encryption enabled) and 'N' (encryption\n          disabled). If the ENCRYPTION option is not\n          specified, the value of the\n          default_table_encryption\n          system variable defines the default database encryption. If\n          the\n          table_encryption_privilege_check\n          system variable is enabled, the\n          TABLE_ENCRYPTION_ADMIN\n          privilege is required to specify a default encryption setting\n          that differs from the\n          default_table_encryption\n          setting. For more information, see\n          Defining an Encryption Default for Schemas and General Tablespaces.\n\n",
+        "\n      A database in MySQL is implemented as a directory containing files\n      that correspond to tables in the database. Because there are no\n      tables in a database when it is initially created, the\n      CREATE DATABASE statement creates\n      only a directory under the MySQL data directory. Rules for\n      permissible database names are given in\n      Section\u00a011.2, \u201cSchema Object Names\u201d. If a database name contains special\n      characters, the name for the database directory contains encoded\n      versions of those characters as described in\n      Section\u00a011.2.4, \u201cMapping of Identifiers to File Names\u201d.\n    ",
+        "\n      Creating a database directory by manually creating a directory\n      under the data directory (for example, with\n      mkdir) is unsupported in MySQL\n      8.4.\n    ",
+        "\n      When you create a database, let the server manage the directory\n      and the files in it. Manipulating database directories and files\n      directly can cause inconsistencies and unexpected results.\n    ",
+        "\n      MySQL has no limit on the number of databases. The underlying file\n      system may have a limit on the number of directories.\n    ",
+        "\n      You can also use the mysqladmin program to\n      create databases. See Section\u00a06.5.2, \u201cmysqladmin \u2014 A MySQL Server Administration Program\u201d.\n"
+    ],
+    "Examples": [],
+    "Category": [
+        "Data Definition Statements"
+    ]
+}

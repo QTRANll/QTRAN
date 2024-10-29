@@ -1,0 +1,21 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/ps_thread_stack/"
+    ],
+    "Title": [
+        "ps_thread_stack"
+    ],
+    "Feature": [
+        "sys.ps_thread_stack(thread_id, verbose)\n"
+    ],
+    "Description": [
+        "ps_thread_stack is a stored function available with the Sys Schema that, for a given thread_id, returns all statements, stages, and events within the Performance Schema, as a JSON formatted stack.",
+        "The boolean verbose argument specifies whether or not to include file:lineno information in the events."
+    ],
+    "Examples": [
+        "SELECT sys.ps_thread_stack(THREAD_ID, TRUE) FROM performance_schema.threads;"
+    ],
+    "Category": [
+        "No Category"
+    ]
+}

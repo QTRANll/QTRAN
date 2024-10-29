@@ -1,0 +1,25 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000001053509"
+    ],
+    "Title": [
+        "REPLACE"
+    ],
+    "Feature": [
+        "replace_stmt:\n    REPLACE [INTO] table_factor [PARTITION (partition_name_list)] [(column_name_list)]\n    {VALUES | VALUE} column_value_lists;\n\npartition_name_list:\n        partition_name [, partition_name ...]\n\ncolumn_name_list:\n    column_name [, column_name ...]\n\ncolumn_value_lists:\n        (column_value_list) [, (column_value_list) ...]\n\ncolumn_value_list:\n    column_value [, column_value ...]\n\ncolumn_value:\n    {expression | DEFAULT}\n"
+    ],
+    "Description": [
+        "该语句用于替换表中的一个或多个记录。如果没有主键或唯一键冲突则插入记录，如果存在冲突则先删除冲突记录再插入新的记录。",
+        "\n\n\n参数\n描述\n\n\n\n\ntable_factor\n替换的表名。\n\n\ncolumn_name_list\n指定替换数据的列。\n\n\npartition_name_list\n替换表指定的分区名。\n\n\n"
+    ],
+    "Examples": [
+        "obclient> CREATE TABLE test (c1 INT PRIMARY KEY, c2 VARCHAR(40));\nQuery OK, 0 rows affected\n",
+        "obclient> REPLACE INTO test VALUES (1, 'hello alibaba'),(2, 'hello ob');\nQuery OK, 2 rows affected\nRecords: 2  Duplicates: 0  Warnings: 0\n",
+        "obclient> SELECT * FROM test;\n+----+---------------+\n| c1 | c2            |\n+----+---------------+\n|  1 | hello alibaba |\n|  2 | hello ob      |\n+----+---------------+\n2 rows in set\n",
+        "obclient> REPLACE INTO test VALUES (3, 'hello alibaba'),(2, 'hello oceanbase');\nQuery OK, 3 rows affected\nRecords: 2  Duplicates: 1  Warnings: 0\n",
+        "obclient> SELECT * FROM test;\n+----+-----------------+\n| c1 | c2              |\n+----+-----------------+\n|  1 | hello alibaba   |\n|  2 | hello oceanbase |\n|  3 | hello alibaba   |\n+----+-----------------+\n3 rows in set\n"
+    ],
+    "Category": [
+        "No Category"
+    ]
+}

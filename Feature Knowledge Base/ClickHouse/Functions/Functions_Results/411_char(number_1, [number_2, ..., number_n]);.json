@@ -1,0 +1,29 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/encoding-functions"
+    ],
+    "Title": [
+        "char"
+    ],
+    "Feature": [
+        "char(number_1, [number_2, ..., number_n]);"
+    ],
+    "Description": [
+        "char",
+        "Returns the string with the length as the number of passed arguments and each byte has the value of corresponding argument. Accepts multiple arguments of numeric types. If the value of argument is out of range of UInt8 data type, it is converted to UInt8 with possible rounding and overflow.",
+        "Syntax",
+        "char(number_1, [number_2, ..., number_n]);",
+        "Arguments",
+        "number_1, number_2, ..., number_n \u2014 Numerical arguments interpreted as integers. Types: Int, Float.",
+        "Returned value",
+        "a string of given bytes. String."
+    ],
+    "Examples": [
+        "SELECT char(104.1, 101, 108.9, 108.9, 111) AS hello;",
+        "SELECT char(0xD0, 0xBF, 0xD1, 0x80, 0xD0, 0xB8, 0xD0, 0xB2, 0xD0, 0xB5, 0xD1, 0x82) AS hello;",
+        "SELECT char(0xE4, 0xBD, 0xA0, 0xE5, 0xA5, 0xBD) AS hello;"
+    ],
+    "Category": [
+        "Encoding Functions"
+    ]
+}

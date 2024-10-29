@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/current/functions-datetime.html"
+    ],
+    "Title": [
+        "justify_days"
+    ],
+    "Feature": [
+        "justify_days ( interval ) → interval"
+    ],
+    "Description": [
+        "Adjust interval, converting 30-day time periods to months"
+    ],
+    "Examples": [
+        "justify_days(interval '1 year 65 days') → 1 year 2 mons 5 days"
+    ],
+    "Category": [
+        "Date divide Time Functions and Operators"
+    ]
+}

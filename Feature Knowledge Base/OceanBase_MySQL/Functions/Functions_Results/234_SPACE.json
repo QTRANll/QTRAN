@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000000823461"
+    ],
+    "Title": [
+        "SPACE"
+    ],
+    "Feature": [
+        "SPACE(N)\n"
+    ],
+    "Description": [
+        "返回包含 N 个空格的字符串。"
+    ],
+    "Examples": [
+        "obclient> SELECT SPACE(5);\n+----------+\n| SPACE(5) |\n+----------+\n|          |\n+----------+\n1 row in set\n"
+    ],
+    "Category": [
+        "String Functions"
+    ]
+}

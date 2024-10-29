@@ -1,0 +1,37 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/built-in-function-reference.html",
+        "https://dev.mysql.com/doc/refman/8.4/en/non-typed-operators.html",
+        "https://dev.mysql.com/doc/refman/8.4/en/comparison-operators.html"
+    ],
+    "Title": [
+        "14.1 Built-In Function and Operator Reference",
+        "14.4 Operators",
+        "14.4.2 Comparison Functions and Operators"
+    ],
+    "Feature": [
+        "<=>"
+    ],
+    "Description": [
+        "NULL-safe equal to operator",
+        "\n<=>\n",
+        "\nNULL-safe equal. This operator performs\n            an equality comparison like the\n            = operator,\n            but returns 1 rather than\n            NULL if both operands are\n            NULL, and 0 rather\n            than NULL if one operand is\n            NULL.\n          ",
+        "\n            The\n            <=>\n            operator is equivalent to the standard SQL IS NOT\n            DISTINCT FROM operator.\n          ",
+        "Press CTRL+C to copy mysql> SELECT 1 <=> 1, NULL <=> NULL, 1 <=> NULL;\n        -> 1, 1, 0\nmysql> SELECT 1 = 1, NULL = NULL, 1 = NULL;\n        -> 1, NULL, NULL",
+        "\n            For row comparisons, (a, b) <=> (x,\n            y) is equivalent to:\n          ",
+        "Press CTRL+C to copy (a <=> x) AND (b <=> y)"
+    ],
+    "Examples": [
+        "mysql> SELECT 1 <=> 1, NULL <=> NULL, 1 <=> NULL;\n        -> 1, 1, 0\nmysql> SELECT 1 = 1, NULL = NULL, 1 = NULL;\n        -> 1, NULL, NULL"
+    ],
+    "Category": [
+        "Built-In Operators",
+        "Comparison Operators"
+    ],
+    "Reference HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/comparison-operators.html#operator_equal-to"
+    ],
+    "Feature Type": [
+        "Operator"
+    ]
+}

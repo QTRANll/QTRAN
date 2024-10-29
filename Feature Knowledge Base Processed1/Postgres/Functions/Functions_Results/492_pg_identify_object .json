@@ -1,0 +1,18 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/current/functions-info.html"
+    ],
+    "Title": [
+        "pg_identify_object"
+    ],
+    "Feature": [
+        "pg_identify_object ( classid oid, objid oid, objsubid integer ) → record ( type text, schema text, name text, identity text )"
+    ],
+    "Description": [
+        "Returns a row containing enough information to uniquely identify the database object specified by catalog OID, object OID and sub-object ID. This information is intended to be machine-readable, and is never translated. type identifies the type of database object; schema is the schema name that the object belongs in, or NULL for object types that do not belong to schemas; name is the name of the object, quoted if necessary, if the name (along with schema name, if pertinent) is sufficient to uniquely identify the object, otherwise NULL; identity is the complete object identity, with the precise format depending on object type, and each name within the format being schema-qualified and quoted as necessary. Undefined objects are identified with NULL values."
+    ],
+    "Examples": [],
+    "Category": [
+        "System Information Functions and Operators"
+    ]
+}

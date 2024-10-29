@@ -1,0 +1,18 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/current/functions-admin.html"
+    ],
+    "Title": [
+        "pg_database_collation_actual_version"
+    ],
+    "Feature": [
+        "pg_database_collation_actual_version ( oid ) → text"
+    ],
+    "Description": [
+        "Returns the actual version of the database's collation as it is currently installed in the operating system. If this is different from the value in pg_database.datcollversion, then objects depending on the collation might need to be rebuilt. See also ALTER DATABASE."
+    ],
+    "Examples": [],
+    "Category": [
+        "System Administration Functions"
+    ]
+}

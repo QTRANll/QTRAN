@@ -1,0 +1,21 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000000823382"
+    ],
+    "Title": [
+        "GET_FORMAT"
+    ],
+    "Feature": [
+        "GET_FORMAT({DATE | TIME | DATETIME | TIMESTAMP}, {'EUR' | 'USA' | 'JIS' | 'ISO' | 'INTERNAL'})\n"
+    ],
+    "Description": [
+        "该函数返回指定格式的字符串，可以与 DATE_FORMAT 或 STR_TO_DATE 函数一起使用。根据第一个参数和第二个参数不同取值的组合，可以产生如下表所示的字符串格式（结果中使用的格式符说明请参考 DATE_FORMAT 函数）。",
+        "\n\n\n函数调用\n结果\n\n\n\n\nGET_FORMAT(DATE,'USA')\n'%m.%d.%Y'\n\n\nGET_FORMAT(DATE,'JIS')\n'%Y-%m-%d'\n\n\nGET_FORMAT(DATE,'ISO')\n'%Y-%m-%d'\n\n\nGET_FORMAT(DATE,'EUR')\n'%d.%m.%Y'\n\n\nGET_FORMAT(DATE,'INTERNAL')\n'%Y%m%d'\n\n\nGET_FORMAT(DATETIME,'USA')\n'%Y-%m-%d %H.%i.%s'\n\n\nGET_FORMAT(DATETIME,'JIS')\n'%Y-%m-%d %H:%i:%s'\n\n\nGET_FORMAT(DATETIME,'ISO')\n'%Y-%m-%d %H:%i:%s'\n\n\nGET_FORMAT(DATETIME,'EUR')\n'%Y-%m-%d %H.%i.%s'\n\n\nGET_FORMAT(DATETIME,'INTERNAL')\n'%Y%m%d%H%i%s'\n\n\nGET_FORMAT(TIME,'USA')\n'%h:%i:%s %p'\n\n\nGET_FORMAT(TIME,'JIS')\n'%H:%i:%s'\n\n\nGET_FORMAT(TIME,'ISO')\n'%H:%i:%s'\n\n\nGET_FORMAT(TIME,'EUR')\n'%H.%i.%s'\n\n\nGET_FORMAT(TIME,'INTERNAL')\n'%H%i%s'\n\n\nGET_FORMAT(TIMESTAMP,'USA')\n'%Y-%m-%d %H.%i.%s'\n\n\nGET_FORMAT(TIMESTAMP,'JIS')\n'%Y-%m-%d %H:%i:%s'\n\n\nGET_FORMAT(TIMESTAMP,'ISO')\n'%Y-%m-%d %H:%i:%s'\n\n\nGET_FORMAT(TIMESTAMP,'EUR')\n'%Y-%m-%d %H.%i.%s'\n\n\nGET_FORMAT(TIMESTAMP,'INTERNAL')\n'%Y%m%d%H%i%s'\n\n\n"
+    ],
+    "Examples": [
+        "obclient> SELECT DATE_FORMAT('2003-10-03',GET_FORMAT(DATE,'EUR'));\n+--------------------------------------------------+\n| DATE_FORMAT('2003-10-03',GET_FORMAT(DATE,'EUR')) |\n+--------------------------------------------------+\n| 03.10.2003                                       |\n+--------------------------------------------------+\n1 row in set\n\nobclient> SELECT STR_TO_DATE('10.31.2003',GET_FORMAT(DATE,'USA'));\n+--------------------------------------------------+\n| STR_TO_DATE('10.31.2003',GET_FORMAT(DATE,'USA')) |\n+--------------------------------------------------+\n| 2003-10-31 00:00:00.000000                       |\n+--------------------------------------------------+\n1 row in set\n"
+    ],
+    "Category": [
+        "Date and Time Functions"
+    ]
+}

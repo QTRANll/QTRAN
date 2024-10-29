@@ -1,0 +1,29 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000000822888"
+    ],
+    "Title": [
+        "PERCENTILE_CONT"
+    ],
+    "Feature": [
+        "PERCENTILE_CONT(percentile) WITHIN GROUP (ORDER BY expr [ DESC | ASC ])\n[ OVER (query_partition_clause) ]\n"
+    ],
+    "Description": [
+        "该函数是一个假定连续分布模型的逆分布函数。根据指定百分比值和排序规范，返回一个在该排序规范的给定百分比值的内插值。在计算中忽略空值。",
+        "\n说明\n\n作为分析函数使用时，需要使用 OVER 子句定义窗口进行计算。它对一组行的集合进行计算并返回多个值。\n作为聚合函数使用时，该函数对一组行的集合进行聚合计算，结果只能返回一个值，此时不需要加 OVER 子句。\n\n",
+        "\n\n\n参数\n说明\n\n\n\n\npercentile\n指定百分位的值，是一个数值数据类型的常量，取值范围为 [0,1]。 说明 MEDIAN 函数相当于是 percentile 为 0.5 的特殊情况。\n\n\nexpr\n指定排序规范的表达式，数据类型属于数值类型或日期时间类型。 注意 expr 必须为涉及列引用的单个表达式，不允许使用多个表达式。\n\n\nDESC | ASC\n指定列表的排序方式，为可选项。 \n      \nASC 为升序排序，为默认值。\nDESC 为降序排序。\n\n\n\nOVER\n使用 OVER 子句定义窗口进行计算。详细信息请参见 分析函数说明。\n\n\n",
+        "\n说明\n该函数在根据排序规范对行进行排序后，通过指定百分比值 (P) 和非空行数 (N) 计算行号，行号计算公式为 RN = (1+ (P*(N-1))。该函数的最终结果通过行号 CRN = CEILING(RN) 和 FRN = FLOOR(RN) 的行中的值之间的线性内插计算。最终结果将如下：\n",
+        "如果 (CRN = FRN = RN)，则结果为 (value of expression from row at RN)；否则，结果为：",
+        "(CRN - RN) * (value of expression for row at FRN) + (RN - FRN) * (value of expression for row at CRN)。",
+        "返回与参数 expr 相同的数据类型。"
+    ],
+    "Examples": [
+        "obclient> SELECT * FROM tbl1;\n+------+------+------+------+\n| COL1 | COL2 | COL3 | COL4 |\n+------+------+------+------+\n|    1 | A1   |    8 |   12 |\n|    1 | A2   |   10 |   15 |\n|    1 | A3   |   11 |   16 |\n|    2 | B1   |    9 |   14 |\n|    2 | B2   |   10 |   15 |\n|    2 | B3   |    8 |   13 |\n|    2 | B4   |   11 |   16 |\n|    3 | C1   |    8 |   18 |\n|    3 | C2   |    9 |   16 |\n|    3 | C3   |   10 |   15 |\n|    3 | C4   |   11 |   12 |\n|    3 | C5   |   12 |   10 |\n+------+------+------+------+\n12 rows in set\n",
+        "obclient> SELECT PERCENTILE_CONT(0.1) WITHIN GROUP (ORDER BY col4) FROM tbl1;\n+----------------------------------------------+\n| PERCENTILE_CONT(0.1)WITHINGROUP(ORDERBYCOL4) |\n+----------------------------------------------+\n|                                           12 |\n+----------------------------------------------+\n1 row in set\n",
+        "obclient> SELECT col1,col4,PERCENTILE_CONT(0.5) WITHIN GROUP (ORDER BY col4) OVER (PARTITION BY col1)\n          FROM tbl1;\n+------+------+-------------------------------------------------------------------+\n| COL1 | COL4 | PERCENTILE_CONT(0.5)WITHINGROUP(ORDERBYCOL4)OVER(PARTITIONBYCOL1) |\n+------+------+-------------------------------------------------------------------+\n|    1 |   12 |                                                                15 |\n|    1 |   15 |                                                                15 |\n|    1 |   16 |                                                                15 |\n|    2 |   14 |                                                              14.5 |\n|    2 |   15 |                                                              14.5 |\n|    2 |   13 |                                                              14.5 |\n|    2 |   16 |                                                              14.5 |\n|    3 |   18 |                                                                15 |\n|    3 |   16 |                                                                15 |\n|    3 |   15 |                                                                15 |\n|    3 |   12 |                                                                15 |\n|    3 |   10 |                                                                15 |\n+------+------+-------------------------------------------------------------------+\n12 rows in set\n"
+    ],
+    "Category": [
+        "Aggregate Functions",
+        "Analytic Functions"
+    ]
+}

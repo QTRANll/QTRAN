@@ -1,0 +1,28 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/bit-functions.html#operator_right-shift"
+    ],
+    "Title": [
+        ">>"
+    ],
+    "Feature": [
+        ">>"
+    ],
+    "Description": [
+        "Right shift",
+        "\n>>\n",
+        "\n          Shifts a longlong (BIGINT)\n          number or binary string to the right.\n        ",
+        "\n          The result type depends on whether the bit argument is\n          evaluated as a binary string or number:\n",
+        "\n\n              Binary-string evaluation occurs when the bit argument has\n              a binary string type, and is not a hexadecimal literal,\n              bit literal, or NULL literal. Numeric\n              evaluation occurs otherwise, with argument conversion to\n              an unsigned 64-bit integer as necessary.\n            \n              Binary-string evaluation produces a binary string of the\n              same length as the bit argument. Numeric evaluation\n              produces an unsigned 64-bit integer.\n\n",
+        "\n          Bits shifted off the end of the value are lost without\n          warning, regardless of the argument type. In particular, if\n          the shift count is greater or equal to the number of bits in\n          the bit argument, all bits in the result are 0.\n        ",
+        "\n          For more information, see the introductory discussion in this\n          section.\n        ",
+        "Press CTRL+C to copy mysql> SELECT 4 >> 2;\n        -> 1\nmysql> SELECT HEX(_binary X'00FF00FF00FF' >> 8);\n        -> '0000FF00FF00'",
+        "\n          If a bit shift is invoked from within the\n          mysql client, binary string results display\n          using hexadecimal notation, depending on the value of the\n          --binary-as-hex. For more\n          information about that option, see Section\u00a06.5.1, \u201cmysql \u2014 The MySQL Command-Line Client\u201d.\n        "
+    ],
+    "Examples": [
+        "mysql> SELECT 4 >> 2;\n        -> 1\nmysql> SELECT HEX(_binary X'00FF00FF00FF' >> 8);\n        -> '0000FF00FF00'"
+    ],
+    "Category": [
+        "Bit Operators"
+    ]
+}

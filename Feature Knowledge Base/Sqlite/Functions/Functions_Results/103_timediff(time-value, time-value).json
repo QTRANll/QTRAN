@@ -1,0 +1,23 @@
+{
+    "HTML": [
+        "https://sqlite.org/lang_datefunc.html"
+    ],
+    "Title": [
+        "Date And Time Functions"
+    ],
+    "Feature": [
+        "timediff(time-value, time-value)"
+    ],
+    "Description": [
+        "The timediff(A, B) function returns a string that describes the amount of time that must be added to B to reach time A. The result is formatted as a human-readable string (+|-)YYYY-MM-DD HH:MM:SS.SSS.",
+        "Parameters: A (later time-value), B (earlier time-value).",
+        "Returns: A string formatted as (+|-)YYYY-MM-DD HH:MM:SS.SSS."
+    ],
+    "Examples": [
+        "SELECT timediff('2024-08-21 15:00:00', '2024-08-21 14:00:00'); -- Returns '+0000-00-01 01:00:00.000'.",
+        "SELECT timediff('2024-08-21', '2024-08-20'); -- Returns '+0000-01-00 00:00:00.000'."
+    ],
+    "Category": [
+        "Date And Time Functions"
+    ]
+}

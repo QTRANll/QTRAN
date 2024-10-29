@@ -1,0 +1,18 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/current/functions-admin.html"
+    ],
+    "Title": [
+        "pg_split_walfile_name"
+    ],
+    "Feature": [
+        "pg_split_walfile_name ( file_name text ) → record ( segment_number numeric, timeline_id bigint )"
+    ],
+    "Description": [
+        "Extracts the sequence number and timeline ID from a WAL file name."
+    ],
+    "Examples": [],
+    "Category": [
+        "System Administration Functions"
+    ]
+}

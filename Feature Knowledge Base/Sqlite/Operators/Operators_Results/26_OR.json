@@ -1,0 +1,23 @@
+{
+    "HTML": [
+        "https://sqlite.org/lang_expr.html"
+    ],
+    "Title": [
+        "SQL Language Expressions"
+    ],
+    "Feature": [
+        "OR"
+    ],
+    "Description": [
+        "The OR operator is used to combine two or more boolean expressions. It returns true if at least one of the expressions evaluates to true; otherwise, it returns false.",
+        "Parameters: Two or more boolean expressions.",
+        "Returns: True if at least one expression is true; otherwise, false."
+    ],
+    "Examples": [
+        "SELECT * FROM orders WHERE status = 'pending' OR status = 'shipped'; -- Finds orders that are either pending or shipped",
+        "SELECT * FROM employees WHERE department_id = 1 OR department_id = 2; -- Finds employees in either department 1 or 2"
+    ],
+    "Category": [
+        "Operators"
+    ]
+}

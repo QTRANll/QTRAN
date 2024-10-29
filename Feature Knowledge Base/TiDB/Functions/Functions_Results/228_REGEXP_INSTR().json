@@ -1,0 +1,31 @@
+{
+    "HTML": [
+        "https://docs.pingcap.com/zh/tidb/stable/string-functions#regexp_instr"
+    ],
+    "Title": [
+        "REGEXP_INSTR()"
+    ],
+    "Feature": [
+        "REGEXP_INSTR()"
+    ],
+    "Description": [
+        "REGEXP_INSTR()",
+        "\u8fd4\u56de\u6ee1\u8db3\u6b63\u5219\u7684\u5b50\u5b57\u7b26\u4e32\u7684\u7b2c\u4e00\u4e2a\u7d22\u5f15\u4f4d\u7f6e\uff08\u4e0e MySQL \u4e0d\u5b8c\u5168\u517c\u5bb9\uff0c\u5177\u4f53\u8bf7\u53c2\u8003\u6b63\u5219\u51fd\u6570\u4e0e MySQL \u7684\u517c\u5bb9\u6027\uff09",
+        "REGEXP_INSTR(str, regexp, [start, [match, [ret, [match_type]]]]) \u51fd\u6570\u8fd4\u56de\u6b63\u5219\u8868\u8fbe\u5f0f\uff08regexp\uff09\u5339\u914d\u5b57\u7b26\u4e32\uff08str\uff09\u7684\u4f4d\u7f6e\u3002",
+        "\u5982\u679c str \u6216 regexp \u4e3a NULL\uff0c\u5219\u8be5\u51fd\u6570\u8fd4\u56de NULL\u3002"
+    ],
+    "Examples": [
+        "SELECT REGEXP_INSTR('abc','^.b.$');\n",
+        "SELECT REGEXP_INSTR('abcabc','a');\n",
+        "SELECT REGEXP_INSTR('abcabc','a',2);\n",
+        "SELECT REGEXP_INSTR('abcabc','a',1,2);\n",
+        "SELECT REGEXP_INSTR('abcabc','a',1,1,1);\n",
+        "SELECT REGEXP_INSTR('abcabc','A',1,1,0,'');\n",
+        "SELECT REGEXP_INSTR('abcabc','A',1,1,0,'i');\n",
+        "SELECT REGEXP_INSTR('abcabc','A' COLLATE utf8mb4_general_ci);\n",
+        "SELECT REGEXP_INSTR('abcabc','A' COLLATE utf8mb4_bin);\n"
+    ],
+    "Category": [
+        "String Functions"
+    ]
+}

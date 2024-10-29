@@ -1,0 +1,24 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/median/"
+    ],
+    "Title": [
+        "MEDIAN"
+    ],
+    "Feature": [
+        "MEDIAN(median expression) OVER (\n  [ PARTITION BY partition_expression ] \n)\n"
+    ],
+    "Description": [
+        "MEDIAN() is a window function that returns the median value of a range of values.",
+        "It is a specific case of PERCENTILE_CONT, with an argument of 0.5 and the ORDER BY column the one in MEDIAN's argument. ",
+        "MEDIAN(<median-arg>) OVER ( [ PARTITION BY partition_expression] )\n",
+        "Is equivalent to:",
+        "PERCENTILE_CONT(0.5) WITHIN \n  GROUP (ORDER BY <median-arg>) OVER ( [ PARTITION BY partition_expression ])\n"
+    ],
+    "Examples": [
+        "SELECT MEDIAN(1) OVER ()"
+    ],
+    "Category": [
+        "Window Functions"
+    ]
+}

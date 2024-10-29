@@ -1,0 +1,68 @@
+{
+    "HTML": "https://mariadb.com//kb/en/intersects/",
+    "Title": "INTERSECTS",
+    "Feature": [
+        "INTERSECTS(g1,g2)\n"
+    ],
+    "Description": [
+        "Returns 1 or 0 to indicate whether geometry g1 spatially intersects geometry g2.",
+        "INTERSECTS() is based on the original MySQL implementation and uses object bounding rectangles, while ST_INTERSECTS() uses object shapes.",
+        "INTERSECTS() tests the opposite relationship to DISJOINT()."
+    ],
+    "Examples": [],
+    "Category": [
+        "Geographic Functions"
+    ],
+    "Effective SQLs Refined": [],
+    "Ineffective SQLs Refined": [],
+    "Wrong Messages from Ineffective SQLs Refined": [],
+    "SQLs Generated1": [
+        {
+            "Example SQL": "SELECT INTERSECTS(g1, g2);"
+        },
+        {
+            "Example SQL": "SELECT INTERSECTS(geometry1, geometry2);"
+        },
+        {
+            "Example SQL": "SELECT INTERSECTS(POINT(1, 1), POINT(2, 2));"
+        }
+    ],
+    "SQLs Generated Costs1": [
+        {
+            "Total Tokens": 325,
+            "Prompt Tokens": 302,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 5.909999999999999e-05
+        },
+        {
+            "Total Tokens": 478,
+            "Prompt Tokens": 454,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 8.25e-05
+        },
+        {
+            "Total Tokens": 639,
+            "Prompt Tokens": 607,
+            "Completion Tokens": 32,
+            "Total Cost (USD)": 0.00011025
+        }
+    ],
+    "SQLs Generated ExecResults1": [
+        "None",
+        "None",
+        "[(0,)]"
+    ],
+    "SQLs Generated ExecTimes1": [
+        "0",
+        "0",
+        "0.026864290237426758"
+    ],
+    "SQLs Generated ErrorMessages1": [
+        "(pymysql.err.OperationalError) (1054, \"Unknown column 'g1' in 'field list'\")\n",
+        "(pymysql.err.OperationalError) (1054, \"Unknown column 'geometry1' in 'field list'\")\n",
+        "None"
+    ],
+    "Effective SQLs Generated1": [
+        "SELECT INTERSECTS(POINT(1, 1), POINT(2, 2));"
+    ]
+}

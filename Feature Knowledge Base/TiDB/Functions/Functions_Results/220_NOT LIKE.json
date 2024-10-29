@@ -1,0 +1,23 @@
+{
+    "HTML": [
+        "https://docs.pingcap.com/zh/tidb/stable/string-functions#not-like"
+    ],
+    "Title": [
+        "NOT LIKE"
+    ],
+    "Feature": [
+        "NOT LIKE"
+    ],
+    "Description": [
+        "NOT LIKE",
+        "\u5426\u5b9a\u7b80\u5355\u6a21\u5f0f\u5339\u914d\u3002",
+        "\u8be5\u51fd\u6570\u7684\u529f\u80fd\u4e0e LIKE \u51fd\u6570\u76f8\u53cd\u3002"
+    ],
+    "Examples": [
+        "SELECT 'aaa' LIKE 'a%', 'aaa' NOT LIKE 'a%';\n",
+        "SELECT 'aaa' LIKE 'b%', 'aaa' NOT LIKE 'b%';\n"
+    ],
+    "Category": [
+        "String Functions"
+    ]
+}

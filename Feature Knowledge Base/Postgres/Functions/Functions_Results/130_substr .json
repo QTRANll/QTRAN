@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/current/functions-binarystring.html"
+    ],
+    "Title": [
+        "substr"
+    ],
+    "Feature": [
+        "substr ( bytes bytea, start integer [, count integer ] ) → bytea"
+    ],
+    "Description": [
+        "Extracts the substring of bytes starting at the start'th byte, and extending for count bytes if that is specified. (Same as substring(bytes from start for count).)"
+    ],
+    "Examples": [
+        "substr('\\x1234567890'::bytea, 3, 2) → \\x5678"
+    ],
+    "Category": [
+        "Binary String Functions and Operators"
+    ]
+}

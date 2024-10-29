@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/current/functions-range.html"
+    ],
+    "Title": [
+        "lower_inf"
+    ],
+    "Feature": [
+        "lower_inf ( anymultirange ) → boolean"
+    ],
+    "Description": [
+        "Does the multirange have no lower bound? (A lower bound of -Infinity returns false.)"
+    ],
+    "Examples": [
+        "lower_inf('{(,)}'::datemultirange) → t"
+    ],
+    "Category": [
+        "Range divide Multirange Functions and Operators"
+    ]
+}

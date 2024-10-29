@@ -1,0 +1,37 @@
+{
+    "HTML": "https://mariadb.com//kb/en/ltrim/",
+    "Title": "LTRIM",
+    "Feature": [
+        "LTRIM(str)\n"
+    ],
+    "Description": [
+        "Returns the string str with leading space characters removed.",
+        "Returns NULL if given a NULL argument. If the result is empty, returns either an empty string, or, from MariaDB 10.3.6 with SQL_MODE=Oracle, NULL.",
+        "The Oracle mode version of the function can be accessed outside of Oracle mode by using LTRIM_ORACLE as the function name."
+    ],
+    "Examples": [
+        "SELECT QUOTE(LTRIM('   MariaDB   '));\n+-------------------------------+\n| QUOTE(LTRIM('   MariaDB   ')) |\n+-------------------------------+\n| 'MariaDB   '                  |\n+-------------------------------+\n",
+        "SELECT LTRIM(''),LTRIM_ORACLE('');\n+-----------+------------------+\n| LTRIM('') | LTRIM_ORACLE('') |\n+-----------+------------------+\n|           | NULL             |\n+-----------+------------------+\n"
+    ],
+    "Category": [
+        "String Functions"
+    ],
+    "Effective SQLs Refined": [
+        "SELECT QUOTE(LTRIM('   MariaDB   '));",
+        "SELECT LTRIM(''),LTRIM_ORACLE('');"
+    ],
+    "Ineffective SQLs Refined": [],
+    "Wrong Messages from Ineffective SQLs Refined": [],
+    "SQLs Generated1": [],
+    "SQLs Generated Costs1": [],
+    "SQLs Generated ExecResults1": [],
+    "SQLs Generated ExecTimes1": [],
+    "SQLs Generated ErrorMessages1": [],
+    "Effective SQLs Generated1": [],
+    "SQLs Generated2": [],
+    "SQLs Generated Costs2": [],
+    "SQLs Generated ExecResults2": [],
+    "SQLs Generated ExecTimes2": [],
+    "SQLs Generated ErrorMessages2": [],
+    "Effective SQLs Generated2": []
+}

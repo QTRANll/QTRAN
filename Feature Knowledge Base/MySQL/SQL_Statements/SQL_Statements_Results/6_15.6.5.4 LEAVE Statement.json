@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/leave.html"
+    ],
+    "Title": [
+        "15.6.5.4 LEAVE Statement"
+    ],
+    "Feature": [
+        "LEAVE label"
+    ],
+    "Description": [
+        "\n        This statement is used to exit the flow control construct that\n        has the given label. If the label is for the outermost stored\n        program block, LEAVE exits the\n        program.\n      ",
+        "\nLEAVE can be used within\n        BEGIN ...\n        END or loop constructs\n        (LOOP,\n        REPEAT,\n        WHILE).\n      ",
+        "\n        For an example, see Section\u00a015.6.5.5, \u201cLOOP Statement\u201d.\n"
+    ],
+    "Examples": [],
+    "Category": [
+        "Compound Statement Syntax"
+    ]
+}

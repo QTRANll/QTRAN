@@ -1,0 +1,30 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/aggregate-functions/reference/grouparraymovingavg"
+    ],
+    "Title": [
+        "groupArrayMovingAvg"
+    ],
+    "Feature": [
+        "groupArrayMovingAvg(numbers_for_summing)groupArrayMovingAvg(window_size)(numbers_for_summing)"
+    ],
+    "Description": [
+        "groupArrayMovingAvg",
+        "Calculates the moving average of input values.",
+        "groupArrayMovingAvg(numbers_for_summing)groupArrayMovingAvg(window_size)(numbers_for_summing)",
+        "The function can take the window size as a parameter. If left unspecified, the function takes the window size equal to the number of rows in the column.",
+        "Arguments",
+        "numbers_for_summing \u2014 Expression resulting in a numeric data type value.window_size \u2014 Size of the calculation window.",
+        "Returned values",
+        "Array of the same size and type as the input data.",
+        "The function uses rounding towards zero. It truncates the decimal places insignificant for the resulting data type."
+    ],
+    "Examples": [
+        "CREATE TABLE t(    `int` UInt8,    `float` Float32,    `dec` Decimal32(2))ENGINE = TinyLog",
+        "SELECT    groupArrayMovingAvg(int) AS I,    groupArrayMovingAvg(float) AS F,    groupArrayMovingAvg(dec) AS DFROM t",
+        "SELECT    groupArrayMovingAvg(2)(int) AS I,    groupArrayMovingAvg(2)(float) AS F,    groupArrayMovingAvg(2)(dec) AS DFROM t"
+    ],
+    "Category": [
+        "Aggregate Functions"
+    ]
+}

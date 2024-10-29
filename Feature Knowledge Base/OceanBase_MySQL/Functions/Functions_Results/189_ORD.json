@@ -1,0 +1,22 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000000823449"
+    ],
+    "Title": [
+        "ORD"
+    ],
+    "Feature": [
+        "ORD(str)\n"
+    ],
+    "Description": [
+        "返回字符串最左侧字符的字符码。单字节编码如果最左侧字符是多字节编码字符，返回值计算规则如下：",
+        "(1st byte code)\n+ (2nd byte code * 256)\n+ (3rd byte code * 256^2) ...\n",
+        "如果最左边的字符不是多字节字符，则 ORD() 返回与 ASCII() 函数相同的值。"
+    ],
+    "Examples": [
+        "obclient> SELECT ORD('中国');\n+---------------+\n| ORD('中国') |\n+---------------+\n|      14989485 |\n+---------------+\n1 row in set\n"
+    ],
+    "Category": [
+        "String Functions"
+    ]
+}

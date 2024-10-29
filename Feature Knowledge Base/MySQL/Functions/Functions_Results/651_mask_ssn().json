@@ -1,0 +1,34 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/loadable-function-reference.html"
+    ],
+    "Title": [
+        "14.2 Loadable Function Reference"
+    ],
+    "Feature": [
+        "mask_ssn(str\n              [, mask_char])"
+    ],
+    "Description": [
+        "Mask US Social Security Number",
+        "\nmask_ssn(str\n              [, mask_char])\n",
+        "\n              Masks a US Social Security Number (SSN) and returns the\n              number with all but the last four digits replaced by\n              '*' characters. An optional masking\n              character can be specified.\n            ",
+        "\n              Arguments:\n",
+        "\n\nstr: The string to mask.\n                  The accepted formats are:\n\n\n\n                      Nine non-separated digits.\n                    \n                      Nine digits grouped in pattern:\n                      xxx-xx-xxxx\n                      ('-' is any separator\n                      character).\n\n\n\n                  This argument is converted to the\n                  utf8mb4 character set.\n                \nmask_char: (Optional) The\n                  single character to use for masking. The default is\n                  '*' if\n                  mask_char is not given.\n\n",
+        "\n              Return value:\n            ",
+        "\n              The masked Social Security Number as a string encoded in\n              the utf8mb4 character set, an error if\n              the argument is not the correct length, or\n              NULL if str\n              is in incorrect format or contains a multibyte character.\n            ",
+        "\n              Example:\n            ",
+        "Press CTRL+C to copy mysql> SELECT mask_ssn('909-63-6922'), mask_ssn('cdefghijk');\n+-------------------------+-------------------------+\n| mask_ssn('909-63-6922') | mask_ssn('cdefghijk')   |\n+-------------------------+-------------------------+\n| ***-**-6922             | *******hijk             |\n+-------------------------+-------------------------+\nmysql> SELECT mask_ssn('909');\nERROR 1123 (HY000): Can't initialize function 'mask_ssn'; Argument 0 is too short.\nmysql> SELECT mask_ssn('123456789123456789');\nERROR 1123 (HY000): Can't initialize function 'mask_ssn'; Argument 0 is too long."
+    ],
+    "Examples": [
+        "mysql> SELECT mask_ssn('909-63-6922'), mask_ssn('cdefghijk');\n+-------------------------+-------------------------+\n| mask_ssn('909-63-6922') | mask_ssn('cdefghijk')   |\n+-------------------------+-------------------------+\n| ***-**-6922             | *******hijk             |\n+-------------------------+-------------------------+\nmysql> SELECT mask_ssn('909');\nERROR 1123 (HY000): Can't initialize function 'mask_ssn'; Argument 0 is too short.\nmysql> SELECT mask_ssn('123456789123456789');\nERROR 1123 (HY000): Can't initialize function 'mask_ssn'; Argument 0 is too long."
+    ],
+    "Category": [
+        "Loadable Functions"
+    ],
+    "Reference HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/data-masking-component-functions.html#function_mask-ssn"
+    ],
+    "Feature Type": [
+        "Function"
+    ]
+}

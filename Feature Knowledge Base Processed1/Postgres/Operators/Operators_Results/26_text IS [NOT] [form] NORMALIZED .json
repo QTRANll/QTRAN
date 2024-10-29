@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/current/functions-string.html"
+    ],
+    "Title": [
+        "text IS [NOT] [form] NORMALIZED"
+    ],
+    "Feature": [
+        "text IS [NOT] [form] NORMALIZED → boolean"
+    ],
+    "Description": [
+        "Checks whether the string is in the specified Unicode normalization form. The optional form key word specifies the form: NFC (the default), NFD, NFKC, or NFKD. This expression can only be used when the server encoding is UTF8. Note that checking for normalization using this expression is often faster than normalizing possibly already normalized strings."
+    ],
+    "Examples": [
+        "U&'\\0061\\0308bc' IS NFD NORMALIZED → t"
+    ],
+    "Category": [
+        "String Functions and Operators"
+    ]
+}

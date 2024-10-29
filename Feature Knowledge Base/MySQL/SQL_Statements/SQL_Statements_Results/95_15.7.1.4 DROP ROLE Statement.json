@@ -1,0 +1,29 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/drop-role.html"
+    ],
+    "Title": [
+        "15.7.1.4 DROP ROLE Statement"
+    ],
+    "Feature": [
+        "DROP ROLE [IF EXISTS] role [, role ] ..."
+    ],
+    "Description": [
+        "\nDROP ROLE removes one or more\n        roles (named collections of privileges). To use this statement,\n        you must have the global DROP\n        ROLE or CREATE USER\n        privilege. When the read_only\n        system variable is enabled, DROP\n        ROLE additionally requires the\n        CONNECTION_ADMIN privilege (or\n        the deprecated SUPER privilege).\n      ",
+        "\n        Users who have the CREATE USER\n        privilege can use this statement to drop accounts that are\n        locked or unlocked. Users who have the DROP\n        ROLE privilege can use this statement only to drop\n        accounts that are locked (unlocked accounts are presumably user\n        accounts used to log in to the server and not just as roles).\n      ",
+        "\n        Roles named in the\n        mandatory_roles system variable\n        value cannot be dropped.\n      ",
+        "\nDROP ROLE either succeeds for all\n        named roles or rolls back and has no effect if any error occurs.\n        By default, an error occurs if you try to drop a role that does\n        not exist. If the IF EXISTS clause is given,\n        the statement produces a warning for each named role that does\n        not exist, rather than an error.\n      ",
+        "\n        The statement is written to the binary log if it succeeds, but\n        not if it fails; in that case, rollback occurs and no changes\n        are made. A statement written to the binary log includes all\n        named roles. If the IF EXISTS clause is\n        given, this includes even roles that do not exist and were not\n        dropped.\n      ",
+        "\n        Each role name uses the format described in\n        Section\u00a08.2.5, \u201cSpecifying Role Names\u201d. For example:\n      ",
+        "Press CTRL+C to copy DROP ROLE 'admin', 'developer';\nDROP ROLE 'webapp'@'localhost';",
+        "\n        The host name part of the role name, if omitted, defaults to\n        '%'.\n      ",
+        "\n        A dropped role is automatically revoked from any user account\n        (or role) to which the role was granted. Within any current\n        session for such an account, its adjusted privileges apply\n        beginning with the next statement executed.\n      ",
+        "\n        For role usage examples, see Section\u00a08.2.10, \u201cUsing Roles\u201d.\n"
+    ],
+    "Examples": [
+        "DROP ROLE 'admin', 'developer';\nDROP ROLE 'webapp'@'localhost';"
+    ],
+    "Category": [
+        "Database Administration Statements"
+    ]
+}

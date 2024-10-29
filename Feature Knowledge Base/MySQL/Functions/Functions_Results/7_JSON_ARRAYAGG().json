@@ -1,0 +1,33 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/built-in-function-reference.html",
+        "https://dev.mysql.com/doc/refman/8.4/en/aggregate-functions.html"
+    ],
+    "Title": [
+        "14.1 Built-In Function and Operator Reference",
+        "14.19.1 Aggregate Function Descriptions"
+    ],
+    "Feature": [
+        "JSON_ARRAYAGG(col_or_expr)\n            [over_clause]"
+    ],
+    "Description": [
+        "Return result set as a single JSON array",
+        "\nJSON_ARRAYAGG(col_or_expr)\n            [over_clause]\n",
+        "\n            Aggregates a result set as a single\n            JSON array whose elements\n            consist of the rows. The order of elements in this array is\n            undefined. The function acts on a column or an expression\n            that evaluates to a single value. Returns\n            NULL if the result contains no rows, or\n            in the event of an error. If\n            col_or_expr is\n            NULL, the function returns an array of\n            JSON [null] elements.\n          ",
+        "\n            This function executes as a window function if\n            over_clause is present.\n            over_clause is as described in\n            Section\u00a014.20.2, \u201cWindow Function Concepts and Syntax\u201d.\n          ",
+        "Press CTRL+C to copy mysql> SELECT o_id, attribute, value FROM t3;\n+------+-----------+-------+\n| o_id | attribute | value |\n+------+-----------+-------+\n|    2 | color     | red   |\n|    2 | fabric    | silk  |\n|    3 | color     | green |\n|    3 | shape     | square|\n+------+-----------+-------+\n4 rows in set (0.00 sec)\n\nmysql> SELECT o_id, JSON_ARRAYAGG(attribute) AS attributes\n    -> FROM t3 GROUP BY o_id;\n+------+---------------------+\n| o_id | attributes          |\n+------+---------------------+\n|    2 | [\"color\", \"fabric\"] |\n|    3 | [\"color\", \"shape\"]  |\n+------+---------------------+\n2 rows in set (0.00 sec)"
+    ],
+    "Examples": [
+        "mysql> SELECT o_id, attribute, value FROM t3;\n+------+-----------+-------+\n| o_id | attribute | value |\n+------+-----------+-------+\n|    2 | color     | red   |\n|    2 | fabric    | silk  |\n|    3 | color     | green |\n|    3 | shape     | square|\n+------+-----------+-------+\n4 rows in set (0.00 sec)\n\nmysql> SELECT o_id, JSON_ARRAYAGG(attribute) AS attributes\n    -> FROM t3 GROUP BY o_id;\n+------+---------------------+\n| o_id | attributes          |\n+------+---------------------+\n|    2 | [\"color\", \"fabric\"] |\n|    3 | [\"color\", \"shape\"]  |\n+------+---------------------+\n2 rows in set (0.00 sec)"
+    ],
+    "Category": [
+        "Built-In Functions",
+        "Aggregate Functions"
+    ],
+    "Reference HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/aggregate-functions.html#function_json-arrayagg"
+    ],
+    "Feature Type": [
+        "Function"
+    ]
+}

@@ -1,0 +1,51 @@
+{
+    "HTML": "https://mariadb.com//kb/en/load_file/",
+    "Title": "LOAD_FILE",
+    "Feature": [
+        "LOAD_FILE(file_name)\n"
+    ],
+    "Description": [
+        "Reads the file and returns the file contents as a string. To use this function, the file must be located on the server host, you must specify the full path name to the file, and you must have the FILE privilege.  The file must be readable by all and it must be less than the size, in bytes, of the max_allowed_packet system variable. If the secure_file_priv system variable is set to a non-empty directory name, the file to be loaded must be located in that directory.",
+        "If the file does not exist or cannot be read because one of the preceding conditions is not satisfied, the function returns NULL.",
+        "Since MariaDB 5.1, the character_set_filesystem system variable has controlled interpretation of file names that are given as literal strings.",
+        "Statements using the LOAD_FILE() function are not safe for statement based replication. This is because the slave will execute the LOAD_FILE() command itself.  If the file doesn't exist on the slave, the function will return NULL."
+    ],
+    "Examples": [
+        "UPDATE t SET blob_col=LOAD_FILE('/tmp/picture') WHERE id=1;\n"
+    ],
+    "Category": [
+        "String Functions"
+    ],
+    "Effective SQLs Refined": [],
+    "Ineffective SQLs Refined": [
+        "UPDATE t SET blob_col=LOAD_FILE('/tmp/picture') WHERE id=1;"
+    ],
+    "Wrong Messages from Ineffective SQLs Refined": [
+        "(pymysql.err.OperationalError) (1054, \"Unknown column 'blob_col' in 'field list'\")\n[SQL: UPDATE t SET blob_col=LOAD_FILE('/tmp/picture') WHERE id=1;]\n(Background on this error at: https://sqlalche.me/e/20/e3q8)"
+    ],
+    "SQLs Generated1": [
+        {
+            "Example SQL": "SELECT LOAD_FILE('/path/to/your/file.txt');"
+        }
+    ],
+    "SQLs Generated Costs1": [
+        {
+            "Total Tokens": 461,
+            "Prompt Tokens": 437,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 7.994999999999999e-05
+        }
+    ],
+    "SQLs Generated ExecResults1": [
+        "[(None,)]"
+    ],
+    "SQLs Generated ExecTimes1": [
+        "0.030609130859375"
+    ],
+    "SQLs Generated ErrorMessages1": [
+        "None"
+    ],
+    "Effective SQLs Generated1": [
+        "SELECT LOAD_FILE('/path/to/your/file.txt');"
+    ]
+}

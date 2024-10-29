@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://sqlite.org/lang_corefunc.html#like"
+    ],
+    "Title": [
+        "Built-In Scalar SQL Functions"
+    ],
+    "Feature": [
+        "like(X,Y)"
+    ],
+    "Description": [
+        "The like() function is used to implement the\n  \"Y LIKE X [ESCAPE Z]\" expression. \n  If the optional ESCAPE clause is present, then the\n  like() function is invoked with three arguments.  Otherwise, it is\n  invoked with two arguments only. Note that the X and Y parameters are\n  reversed in the like() function relative to the infixLIKEoperator.\n  X is the pattern and Y is the string to match against that pattern.\n  Hence, the following expressions are equivalent:Thesqlite3_create_function()interface can be used to override the\n  like() function and thereby change the operation of theLIKEoperator.  When overriding the like() function, it may be important\n  to override both the two and three argument versions of the like() \n  function. Otherwise, different code may be called to implement theLIKEoperator depending on whether or not an ESCAPE clause was \n  specified."
+    ],
+    "Examples": [
+        "name LIKE '%neon%'\n     like('%neon%',name)"
+    ],
+    "Category": [
+        "Built-In Scalar SQL Functions"
+    ]
+}

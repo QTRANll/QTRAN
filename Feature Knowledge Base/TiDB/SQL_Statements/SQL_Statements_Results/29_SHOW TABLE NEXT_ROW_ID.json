@@ -1,0 +1,24 @@
+{
+    "HTML": [
+        "https://docs.pingcap.com//zh/tidb/stable/sql-statement-show-table-next-rowid"
+    ],
+    "Title": [
+        "SHOW TABLE NEXT_ROW_ID"
+    ],
+    "Feature": [
+        "ShowTableNextRowIDStmt ::=\n    \"SHOW\" \"TABLE\" (SchemaName \".\")? TableName \"NEXT_ROW_ID\"\n"
+    ],
+    "Description": [
+        "SHOW TABLE NEXT_ROW_ID \u8bed\u53e5\u7528\u4e8e\u663e\u793a\u7528\u6237\u8868\u4e2d\u67d0\u4e9b\u7279\u6b8a\u5217\u7684\u8be6\u60c5\uff0c\u4e3b\u8981\u5305\u542b\u4ee5\u4e0b\u51e0\u79cd\u7c7b\u578b\uff1a",
+        "TiDB \u521b\u5efa\u7684 AUTO_INCREMENT \u7c7b\u578b\u5217\uff0c\u5373 _tidb_rowid \u5217\u7528\u6237\u521b\u5efa\u7684 AUTO_INCREMENT \u7c7b\u578b\u5217\u7528\u6237\u521b\u5efa\u7684 AUTO_RANDOM \u7c7b\u578b\u5217\u7528\u6237\u521b\u5efa\u7684 SEQUENCE \u5bf9\u8c61\u4fe1\u606f"
+    ],
+    "Examples": [
+        "CREATE TABLE t(a int);\nQuery OK, 0 rows affected (0.06 sec)\n",
+        "SHOW TABLE t NEXT_ROW_ID;\n+---------+------------+-------------+--------------------+\n| DB_NAME | TABLE_NAME | COLUMN_NAME | NEXT_GLOBAL_ROW_ID |\n+---------+------------+-------------+--------------------+\n| test    | t          | _tidb_rowid |                  1 |\n+---------+------------+-------------+--------------------+\n1 row in set (0.00 sec)\n",
+        "INSERT INTO t VALUES (), (), ();\nQuery OK, 3 rows affected (0.02 sec)\nRecords: 3  Duplicates: 0  Warnings: 0\n",
+        "SHOW TABLE t NEXT_ROW_ID;\n+---------+------------+-------------+--------------------+\n| DB_NAME | TABLE_NAME | COLUMN_NAME | NEXT_GLOBAL_ROW_ID |\n+---------+------------+-------------+--------------------+\n| test    | t          | _tidb_rowid |              30001 |\n+---------+------------+-------------+--------------------+\n1 row in set (0.00 sec)\n"
+    ],
+    "Category": [
+        "Schema \u7ba1\u7406\u4e0e\u6570\u636e\u5b9a\u4e49\u8bed\u53e5 (DDL)"
+    ]
+}

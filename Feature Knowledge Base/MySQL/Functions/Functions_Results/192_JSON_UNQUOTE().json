@@ -1,0 +1,38 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/built-in-function-reference.html",
+        "https://dev.mysql.com/doc/refman/8.4/en/json-function-reference.html"
+    ],
+    "Title": [
+        "14.1 Built-In Function and Operator Reference",
+        "14.17.1 JSON Function Reference"
+    ],
+    "Feature": [
+        "JSON_UNQUOTE(json_val)"
+    ],
+    "Description": [
+        "Unquote JSON value",
+        "\nJSON_UNQUOTE(json_val)\n",
+        "\n          Unquotes JSON value and returns the result as a\n          utf8mb4 string. Returns\n          NULL if the argument is\n          NULL. An error occurs if the value starts\n          and ends with double quotes but is not a valid JSON string\n          literal.\n        ",
+        "\n          Within a string, certain sequences have special meaning unless\n          the NO_BACKSLASH_ESCAPES SQL\n          mode is enabled. Each of these sequences begins with a\n          backslash (\\), known as the\n          escape character. MySQL recognizes the\n          escape sequences shown in\n          Table\u00a014.23, \u201cJSON_UNQUOTE() Special Character Escape Sequences\u201d. For\n          all other escape sequences, backslash is ignored. That is, the\n          escaped character is interpreted as if it was not escaped. For\n          example, \\x is just x.\n          These sequences are case-sensitive. For example,\n          \\b is interpreted as a backspace, but\n          \\B is interpreted as B.\n",
+        "\nTable\u00a014.23\u00a0JSON_UNQUOTE() Special Character Escape Sequences\n\n\nEscape Sequence\nCharacter Represented by Sequence\n\n\\\"\nA double quote (\") character\n\n\\b\nA backspace character\n\n\\f\nA formfeed character\n\n\\n\nA newline (linefeed) character\n\n\\r\nA carriage return character\n\n\\t\nA tab character\n\n\\\\\nA backslash (\\) character\n\n\\uXXXX\nUTF-8 bytes for Unicode value XXXX\n\n\n",
+        "\n          Two simple examples of the use of this function are shown\n          here:\n        ",
+        "Press CTRL+C to copy mysql> SET @j = '\"abc\"';\nmysql> SELECT @j, JSON_UNQUOTE(@j);\n+-------+------------------+\n| @j    | JSON_UNQUOTE(@j) |\n+-------+------------------+\n| \"abc\" | abc              |\n+-------+------------------+\nmysql> SET @j = '[1, 2, 3]';\nmysql> SELECT @j, JSON_UNQUOTE(@j);\n+-----------+------------------+\n| @j        | JSON_UNQUOTE(@j) |\n+-----------+------------------+\n| [1, 2, 3] | [1, 2, 3]        |\n+-----------+------------------+",
+        "\n          The following set of examples shows how\n          JSON_UNQUOTE handles escapes with\n          NO_BACKSLASH_ESCAPES\n          disabled and enabled:\n        ",
+        "Press CTRL+C to copy mysql> SELECT @@sql_mode;\n+------------+\n| @@sql_mode |\n+------------+\n|            |\n+------------+\n\nmysql> SELECT JSON_UNQUOTE('\"\\\\t\\\\u0032\"');\n+------------------------------+\n| JSON_UNQUOTE('\"\\\\t\\\\u0032\"') |\n+------------------------------+\n|       2                           |\n+------------------------------+\n\nmysql> SET @@sql_mode = 'NO_BACKSLASH_ESCAPES';\nmysql> SELECT JSON_UNQUOTE('\"\\\\t\\\\u0032\"');\n+------------------------------+\n| JSON_UNQUOTE('\"\\\\t\\\\u0032\"') |\n+------------------------------+\n| \\t\\u0032                     |\n+------------------------------+\n\nmysql> SELECT JSON_UNQUOTE('\"\\t\\u0032\"');\n+----------------------------+\n| JSON_UNQUOTE('\"\\t\\u0032\"') |\n+----------------------------+\n|       2                         |\n+----------------------------+"
+    ],
+    "Examples": [
+        "mysql> SET @j = '\"abc\"';\nmysql> SELECT @j, JSON_UNQUOTE(@j);\n+-------+------------------+\n| @j    | JSON_UNQUOTE(@j) |\n+-------+------------------+\n| \"abc\" | abc              |\n+-------+------------------+\nmysql> SET @j = '[1, 2, 3]';\nmysql> SELECT @j, JSON_UNQUOTE(@j);\n+-----------+------------------+\n| @j        | JSON_UNQUOTE(@j) |\n+-----------+------------------+\n| [1, 2, 3] | [1, 2, 3]        |\n+-----------+------------------+",
+        "mysql> SELECT @@sql_mode;\n+------------+\n| @@sql_mode |\n+------------+\n|            |\n+------------+\n\nmysql> SELECT JSON_UNQUOTE('\"\\\\t\\\\u0032\"');\n+------------------------------+\n| JSON_UNQUOTE('\"\\\\t\\\\u0032\"') |\n+------------------------------+\n|       2                           |\n+------------------------------+\n\nmysql> SET @@sql_mode = 'NO_BACKSLASH_ESCAPES';\nmysql> SELECT JSON_UNQUOTE('\"\\\\t\\\\u0032\"');\n+------------------------------+\n| JSON_UNQUOTE('\"\\\\t\\\\u0032\"') |\n+------------------------------+\n| \\t\\u0032                     |\n+------------------------------+\n\nmysql> SELECT JSON_UNQUOTE('\"\\t\\u0032\"');\n+----------------------------+\n| JSON_UNQUOTE('\"\\t\\u0032\"') |\n+----------------------------+\n|       2                         |\n+----------------------------+"
+    ],
+    "Category": [
+        "Built-In Functions",
+        "JSON Functions"
+    ],
+    "Reference HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/json-modification-functions.html#function_json-unquote"
+    ],
+    "Feature Type": [
+        "Function"
+    ]
+}

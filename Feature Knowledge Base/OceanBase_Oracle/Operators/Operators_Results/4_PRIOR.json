@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/common-oceanbase-database-cn-1000000000821961"
+    ],
+    "Title": [
+        "PRIOR"
+    ],
+    "Feature": [
+        "PRIOR"
+    ],
+    "Description": [
+        "",
+        "在层次查询中，CONNECT BY 条件中应该包含至少一个由 PRIOR 运算符限定的表达式。PRIOR 运算符的结果，通过使用当前行的父行计算紧随其后的表达式来得到。",
+        "PRIOR 最常用在列的等值比较场景中（PRIOR 可以在比较符的任意一侧）。理论上，在 CONNECT BY 子句中也可以使用等号（=）以外的其他运算符。但是，这些由其他运算符创建的条件可能会导致循环，在这种情况下，OceanBase 数据库在运行时会检测循环并返回错误。"
+    ],
+    "Examples": [],
+    "Category": [
+        "Hierarchical Query Operators"
+    ]
+}

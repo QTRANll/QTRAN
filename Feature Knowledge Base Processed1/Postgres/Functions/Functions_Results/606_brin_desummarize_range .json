@@ -1,0 +1,18 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/current/functions-admin.html"
+    ],
+    "Title": [
+        "brin_desummarize_range"
+    ],
+    "Feature": [
+        "brin_desummarize_range ( index regclass, blockNumber bigint ) → void"
+    ],
+    "Description": [
+        "Removes the BRIN index tuple that summarizes the page range covering the given table block, if there is one."
+    ],
+    "Examples": [],
+    "Category": [
+        "System Administration Functions"
+    ]
+}

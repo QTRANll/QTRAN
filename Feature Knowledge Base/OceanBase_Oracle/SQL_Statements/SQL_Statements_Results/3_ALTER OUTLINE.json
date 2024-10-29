@@ -1,0 +1,22 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000001054331"
+    ],
+    "Title": [
+        "ALTER OUTLINE"
+    ],
+    "Feature": [
+        "ALTER OUTLINE outline_name ADD stmt [ TO target_stmt ]\n"
+    ],
+    "Description": [
+        "该语句仅支持使用 SQL_TEXT 创建的 Outline，可用于添加绑定 Outline 和限流规则。",
+        "\n\n\n参数\n描述\n\n\n\n\noutline_name\n指定要创建的 Outline 名称。\n\n\nstmt\n一般为一个带有 Hint 和原始参数的 DML 语句。\n\n\nTO target_stmt\n如果不指定 TO target_stmt，则表示如果数据库接受的 SQL 参数化后与 stmt 去掉 Hint 参数化文本相同，则将该 SQL 绑定 stmt 中 Hint 生成执行计划；如果期望对含有 Hint 的语句进行固定计划，则需要 TO target_stmt 来指明原始的 SQL。  注意 在使用 target_stmt 时，严格要求 stmt 与target_stmt 在去掉 Hint 后完全匹配。\n\n\n"
+    ],
+    "Examples": [
+        "obclient> CREATE OUTLINE outline1 ON SELECT /*+max_concurrent(1)*/ * FROM tbl1 WHERE col1 =1\n           AND col2 = 1;\nobclient> ALTER OUTLINE outline1 ADD SELECT /*+max_concurrent(1)*/ * FROM tbl1 WHERE col1 =1\n           AND col2 = ?;\nobclient> ALTER OUTLINE outline1 ADD SELECT /*+max_concurrent(1)*/ * FROM tbl1 WHERE col1 =?\n           AND col2 = 1;\n",
+        "obclient> CREATE OUTLINE outline2 ON SELECT /*+max_concurrent(1)*/ * FROM tbl1,tbl2\n          WHERE tbl1.col1 = 1;\nobclient> ALTER OUTLINE outline2 ADD SELECT /*+use_nl(tbl2)*/ * FROM tbl1,tbl2\n          WHERE tbl1.col1 = 1;\n"
+    ],
+    "Category": [
+        "DDL"
+    ]
+}

@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/strcmp/"
+    ],
+    "Title": [
+        "STRCMP"
+    ],
+    "Feature": [
+        "STRCMP(expr1,expr2)\n"
+    ],
+    "Description": [
+        "STRCMP() returns 0 if the strings are the same, -1 if the first\nargument is smaller than the second according to the current sort order,\nand 1 if the strings are otherwise not the same. Returns NULL is either argument is NULL."
+    ],
+    "Examples": [
+        "SELECT STRCMP('text', 'text2');\n+-------------------------+\n| STRCMP('text', 'text2') |\n+-------------------------+\n|                      -1 |\n+-------------------------+\n\nSELECT STRCMP('text2', 'text');\n+-------------------------+\n| STRCMP('text2', 'text') |\n+-------------------------+\n|                       1 |\n+-------------------------+\n\nSELECT STRCMP('text', 'text');\n+------------------------+\n| STRCMP('text', 'text') |\n+------------------------+\n|                      0 |\n+------------------------+\n"
+    ],
+    "Category": [
+        "String Functions"
+    ]
+}

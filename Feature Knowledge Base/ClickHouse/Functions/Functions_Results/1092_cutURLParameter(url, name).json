@@ -1,0 +1,37 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/url-functions"
+    ],
+    "Title": [
+        "Functions that remove part of a URL"
+    ],
+    "Feature": [
+        "cutURLParameter(url, name)"
+    ],
+    "Description": [
+        "Functions that remove part of a URL",
+        "If the URL does not have anything similar, the URL remains unchanged.",
+        "cutWWW",
+        "Removes leading www. (if present) from the URL\u2019s domain.",
+        "cutQueryString",
+        "Removes query string, including the question mark.",
+        "cutFragment",
+        "Removes the fragment identifier, including the number sign.",
+        "cutQueryStringAndFragment",
+        "Removes the query string and fragment identifier, including the question mark and number sign.",
+        "cutURLParameter(url, name)",
+        "Removes the name parameter from a URL, if present.\nThis function does not encode or decode characters in parameter names, e.g. Client ID and Client%20ID are treated as different parameter names.",
+        "Syntax",
+        "cutURLParameter(url, name)",
+        "Arguments",
+        "url \u2014 URL. String.name \u2014 name of URL parameter. String or Array of Strings.",
+        "Returned value",
+        "url with name URL parameter removed. String."
+    ],
+    "Examples": [
+        "SELECT    cutURLParameter('http://bigmir.net/?a=b&c=d&e=f#g', 'a') as url_without_a,    cutURLParameter('http://bigmir.net/?a=b&c=d&e=f#g', ['c', 'e']) as url_without_c_and_e;"
+    ],
+    "Category": [
+        "URLs Functions"
+    ]
+}

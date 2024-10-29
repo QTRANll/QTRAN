@@ -1,0 +1,18 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/current/functions-info.html"
+    ],
+    "Title": [
+        "pg_current_snapshot"
+    ],
+    "Feature": [
+        "pg_current_snapshot () → pg_snapshot"
+    ],
+    "Description": [
+        "Returns a current snapshot, a data structure showing which transaction IDs are now in-progress. Only top-level transaction IDs are included in the snapshot; subtransaction IDs are not shown; see Section 66.3 for details."
+    ],
+    "Examples": [],
+    "Category": [
+        "System Information Functions and Operators"
+    ]
+}

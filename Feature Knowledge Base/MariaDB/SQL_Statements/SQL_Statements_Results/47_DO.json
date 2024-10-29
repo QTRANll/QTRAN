@@ -1,0 +1,19 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/do/"
+    ],
+    "Title": [
+        "DO"
+    ],
+    "Feature": [
+        "DO expr [, expr] ...\n"
+    ],
+    "Description": [
+        " DO executes the expressions but does not return any\nresults. In most respects, DO is shorthand for\n SELECT expr, ..., but has the advantage that it is slightly\nfaster when you do not care about the result.",
+        " DO is useful primarily with functions that have side\n effects, such as RELEASE_LOCK()."
+    ],
+    "Examples": [],
+    "Category": [
+        "Stored Routine Statements"
+    ]
+}

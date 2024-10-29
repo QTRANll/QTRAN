@@ -1,0 +1,28 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/date-time-functions"
+    ],
+    "Title": [
+        "timeZoneOf"
+    ],
+    "Feature": [
+        "timeZoneOf(value)"
+    ],
+    "Description": [
+        "timeZoneOf",
+        "Returns the timezone name of DateTime or DateTime64 data types.",
+        "Syntax",
+        "timeZoneOf(value)",
+        "Alias: timezoneOf.",
+        "Arguments",
+        "value \u2014 Date and time. DateTime or DateTime64.",
+        "Returned value",
+        "Timezone name. String."
+    ],
+    "Examples": [
+        "SELECT timezoneOf(now());"
+    ],
+    "Category": [
+        "Dates and Times Functions"
+    ]
+}

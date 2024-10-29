@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000000823450"
+    ],
+    "Title": [
+        "FROM_BASE64"
+    ],
+    "Feature": [
+        "FROM_BASE64(str)\n"
+    ],
+    "Description": [
+        "解码一个 base-64 编码的字符串，并以二进制字符串的形式返回。通常用来对 TO_BASE64() 编码的字符串进行解码，详细信息请参见 TO_BASE64()。"
+    ],
+    "Examples": [
+        "obclient> SELECT FROM_BASE64('T0I=');\n+---------------------+\n| FROM_BASE64('T0I=') |\n+---------------------+\n| OB                  |\n+---------------------+\n1 row in set\n"
+    ],
+    "Category": [
+        "String Functions"
+    ]
+}

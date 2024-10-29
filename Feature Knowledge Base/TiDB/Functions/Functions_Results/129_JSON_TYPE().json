@@ -1,0 +1,23 @@
+{
+    "HTML": [
+        "https://docs.pingcap.com/zh/tidb/stable/json-functions-return#json_type"
+    ],
+    "Title": [
+        "JSON_TYPE()"
+    ],
+    "Feature": [
+        "JSON_TYPE()"
+    ],
+    "Description": [
+        "JSON_TYPE()",
+        "JSON_TYPE(json_val) \u51fd\u6570\u8fd4\u56de\u4e00\u4e2a\u5b57\u7b26\u4e32\uff0c\u8868\u793a JSON \u503c\u7684\u7c7b\u578b\u3002"
+    ],
+    "Examples": [
+        "WITH demo AS (\n    SELECT 'null' AS 'v'\n    UNION SELECT '\"foobar\"'\n    UNION SELECT 'true'\n    UNION SELECT '5'\n    UNION SELECT '1.14'\n    UNION SELECT '[]'\n    UNION SELECT '{}'\n    UNION SELECT POW(2,63)\n)\nSELECT v, JSON_TYPE(v) FROM demo ORDER BY 2;\n",
+        "SELECT '\"2025-06-14\"',CAST(CAST('2025-06-14' AS date) AS json);\n",
+        "SELECT JSON_TYPE('\"2025-06-14\"'),JSON_TYPE(CAST(CAST('2025-06-14' AS date) AS json));\n"
+    ],
+    "Category": [
+        "JSON Functions"
+    ]
+}

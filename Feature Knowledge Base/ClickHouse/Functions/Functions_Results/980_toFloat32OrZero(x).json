@@ -1,0 +1,31 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/type-conversion-functions"
+    ],
+    "Title": [
+        "toFloat32OrZero"
+    ],
+    "Feature": [
+        "toFloat32OrZero(x)"
+    ],
+    "Description": [
+        "toFloat32OrZero",
+        "Like toFloat32, this function converts an input value to a value of type Float32 but returns 0 in case of an error.",
+        "Syntax",
+        "toFloat32OrZero(x)",
+        "Arguments",
+        "x \u2014 A String representation of a number. String.",
+        "Supported arguments:",
+        "String representations of (U)Int8/16/32/128/256, Float32/64.",
+        "Unsupported arguments (return 0):",
+        "String representations of binary and hexadecimal values, e.g. SELECT toFloat32OrZero('0xc0fe');.",
+        "Returned value",
+        "32-bit Float value if successful, otherwise 0. Float32."
+    ],
+    "Examples": [
+        "SELECT    toFloat32OrZero('42.7'),    toFloat32OrZero('abc')FORMAT Vertical;"
+    ],
+    "Category": [
+        "Type Conversion Functions"
+    ]
+}

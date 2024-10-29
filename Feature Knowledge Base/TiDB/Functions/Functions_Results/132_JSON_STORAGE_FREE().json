@@ -1,0 +1,25 @@
+{
+    "HTML": [
+        "https://docs.pingcap.com/zh/tidb/stable/json-functions-utility#json_storage_free"
+    ],
+    "Title": [
+        "JSON_STORAGE_FREE()"
+    ],
+    "Feature": [
+        "JSON_STORAGE_FREE()"
+    ],
+    "Description": [
+        "JSON_STORAGE_FREE()",
+        "JSON_STORAGE_FREE(json_doc) \u51fd\u6570\u8fd4\u56de JSON \u503c\u5728\u539f\u5730\u66f4\u65b0\u64cd\u4f5c\u540e\u91ca\u653e\u4e86\u591a\u5c11\u5b58\u50a8\u7a7a\u95f4\uff0c\u4ee5\u4e8c\u8fdb\u5236\u8868\u793a\u3002",
+        ".css-1weqspv{padding-top:0.5rem;padding-bottom:0.5rem;}.css-1weqspv .MuiAlert-message p{margin-bottom:0px;margin-top:0px;}",
+        "\u6ce8\u610f\u7531\u4e8e TiDB \u7684\u5b58\u50a8\u67b6\u6784\u4e0e MySQL \u4e0d\u540c\uff0c\u56e0\u6b64\u5bf9\u4e8e\u6709\u6548\u7684 JSON \u503c\uff0c\u8be5\u51fd\u6570\u603b\u662f\u8fd4\u56de 0\uff0c\u800c\u4e14\u5b83\u7684\u5b9e\u73b0\u662f\u4e3a\u4e86\u4e0e MySQL 8.0 \u517c\u5bb9\u3002\u8bf7\u6ce8\u610f\uff0cTiDB \u4e0d\u80fd\u8fdb\u884c\u539f\u5730\u66f4\u65b0\u3002\u66f4\u591a\u4fe1\u606f\uff0c\u8bf7\u53c2\u9605 RocksDB \u7684\u7a7a\u95f4\u5360\u7528\u3002",
+        "SELECT JSON_STORAGE_FREE('{}');\n",
+        "+-------------------------+\n| JSON_STORAGE_FREE('{}') |\n+-------------------------+\n|                       0 |\n+-------------------------+\n1 row in set (0.00 sec)\n"
+    ],
+    "Examples": [
+        "SELECT JSON_STORAGE_FREE('{}');\n"
+    ],
+    "Category": [
+        "JSON Functions"
+    ]
+}

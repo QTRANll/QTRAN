@@ -1,0 +1,22 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/extract_table_from_file_name/"
+    ],
+    "Title": [
+        "extract_table_from_file_name"
+    ],
+    "Feature": [
+        "sys.extract_table_from_file_name(path)\n"
+    ],
+    "Description": [
+        "extract_table_from_file_name is a stored function available with the Sys Schema.",
+        "Given a file path, it returns the table name.",
+        "The function does not examine anything on disk. The return value, a VARCHAR(64), is determined solely from the provided path."
+    ],
+    "Examples": [
+        "SELECT sys.extract_table_from_file_name('/usr/local/mysql/data/db/t1.ibd');\n+---------------------------------------------------------------------+\n| sys.extract_table_from_file_name('/usr/local/mysql/data/db/t1.ibd') |\n+---------------------------------------------------------------------+\n| t1                                                                  |\n+---------------------------------------------------------------------+\n"
+    ],
+    "Category": [
+        "Administrative SQL Statements"
+    ]
+}

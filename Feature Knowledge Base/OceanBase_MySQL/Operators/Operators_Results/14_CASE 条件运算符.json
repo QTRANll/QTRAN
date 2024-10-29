@@ -1,0 +1,24 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/common-oceanbase-database-cn-1000000000822069"
+    ],
+    "Title": [
+        "CASE 条件运算符"
+    ],
+    "Feature": [
+        "CASE 条件运算符"
+    ],
+    "Description": [
+        "CASE 条件运算符可以实现类似 IF...THEN...ELSE 的逻辑而不用调用子程序。",
+        "CASE 条件运算符的语法有两种，如下所示：",
+        "CASE value WHEN compare-value THEN result [WHEN [compare-value] THEN result ...] [ELSE result] END\n\nCASE WHEN condition THEN result [WHEN [condition] THEN result ...] [ELSE result] END\n",
+        "第一个 CASE 语法返回第一个 value=compare-value 的比较结果为 True 时的 result。",
+        "第二个 CASE 语法返回第一个 condition 为 True 时的 result。如果没有比较或条件为 True，则返回 ELSE 之后的 result，如果没有 ELSE 部分，则返回 NULL。"
+    ],
+    "Examples": [
+        "SELECT CASE 'B' WHEN 'A' THEN 1 WHEN 'B' THEN 2 END;\n+----------------------------------------------+\n| CASE 'B' WHEN 'A' THEN 1 WHEN 'B' THEN 2 END |\n+----------------------------------------------+\n|                                            2 |\n+----------------------------------------------+\n1 row in set\n\nSELECT CASE CONCAT('A','B') WHEN CONCAT('AB','') THEN 'A' WHEN 'B' THEN 'B' END;\n+--------------------------------------------------------------------------+\n| CASE CONCAT('A','B') WHEN CONCAT('AB','') THEN 'A' WHEN 'B' THEN 'B' END |\n+--------------------------------------------------------------------------+\n| A                                                                        |\n+--------------------------------------------------------------------------+\n1 row in set\n\nSELECT CASE WHEN 1>0 THEN 'TRUE' ELSE 'FALSE' END;\n+--------------------------------------------+\n| CASE WHEN 1>0 THEN 'TRUE' ELSE 'FALSE' END |\n+--------------------------------------------+\n| TRUE                                       |\n+--------------------------------------------+\n1 row in set\n"
+    ],
+    "Category": [
+        "CASE Conditional Operators"
+    ]
+}

@@ -1,0 +1,75 @@
+{
+    "HTML": "https://mariadb.com//kb/en/vec_totext/",
+    "Title": "VEC_ToText",
+    "Feature": [
+        "VEC_ToText(v)\n"
+    ],
+    "Description": [
+        "VEC_ToText converts a binary vector into a json array of numbers (floats). Returns NULL and throws a warning 4201 if given an invalid vector."
+    ],
+    "Examples": [
+        "SELECT VEC_ToText(x'e360d63ebe554f3fcdbc523f4522193f5236083d');\n+---------------------------------------------------------+\n| VEC_ToText(x'e360d63ebe554f3fcdbc523f4522193f5236083d') |\n+---------------------------------------------------------+\n| [0.418708,0.809902,0.823193,0.598179,0.033255]          |\n+---------------------------------------------------------+\n",
+        "SELECT VEC_ToText(x'aabbcc');\n+-----------------------+\n| VEC_ToText(x'aabbcc') |\n+-----------------------+\n| NULL                  |\n+-----------------------+\n1 row in set, 1 warning (0.000 sec)\n\nWarning (Code 4201): Invalid binary vector format. Must use IEEE standard float \n  representation in little-endian format. Use VEC_FromText() to generate it.\n"
+    ],
+    "Category": [
+        "Vector Functions"
+    ],
+    "Effective SQLs Refined": [],
+    "Ineffective SQLs Refined": [
+        "SELECT VEC_ToText(x'e360d63ebe554f3fcdbc523f4522193f5236083d');",
+        "SELECT VEC_ToText(x'aabbcc');"
+    ],
+    "Wrong Messages from Ineffective SQLs Refined": [
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION PINOLO_MariaDB.VEC_ToText does not exist')\n[SQL: SELECT VEC_ToText(x'e360d63ebe554f3fcdbc523f4522193f5236083d');]\n(Background on this error at: https://sqlalche.me/e/20/e3q8)",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION PINOLO_MariaDB.VEC_ToText does not exist')\n[SQL: SELECT VEC_ToText(x'aabbcc');]\n(Background on this error at: https://sqlalche.me/e/20/e3q8)"
+    ],
+    "SQLs Generated1": [
+        {
+            "Example SQL": "SELECT VEC_ToText(your_vector) AS json_array;"
+        },
+        {
+            "Example SQL": "SELECT VEC_ToText(your_vector) AS json_array FROM dual;"
+        },
+        {
+            "Example SQL": "SELECT NULL AS json_array;"
+        }
+    ],
+    "SQLs Generated Costs1": [
+        {
+            "Total Tokens": 299,
+            "Prompt Tokens": 274,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 5.61e-05
+        },
+        {
+            "Total Tokens": 460,
+            "Prompt Tokens": 433,
+            "Completion Tokens": 27,
+            "Total Cost (USD)": 8.115e-05
+        },
+        {
+            "Total Tokens": 612,
+            "Prompt Tokens": 594,
+            "Completion Tokens": 18,
+            "Total Cost (USD)": 9.989999999999999e-05
+        }
+    ],
+    "SQLs Generated ExecResults1": [
+        "None",
+        "None",
+        "[(None,)]"
+    ],
+    "SQLs Generated ExecTimes1": [
+        "0",
+        "0",
+        "0.005273103713989258"
+    ],
+    "SQLs Generated ErrorMessages1": [
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION PINOLO_MariaDB.VEC_ToText does not exist')\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION PINOLO_MariaDB.VEC_ToText does not exist')\n",
+        "None"
+    ],
+    "Effective SQLs Generated1": [
+        "SELECT NULL AS json_array;"
+    ]
+}

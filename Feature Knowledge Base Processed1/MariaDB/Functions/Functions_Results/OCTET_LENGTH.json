@@ -1,0 +1,37 @@
+{
+    "HTML": "https://mariadb.com//kb/en/octet_length/",
+    "Title": "OCTET_LENGTH",
+    "Feature": [
+        "OCTET_LENGTH(str)\n"
+    ],
+    "Description": [
+        "OCTET_LENGTH() returns the length of the given string, in octets (bytes). This is a synonym for LENGTHB(), and, when Oracle mode from MariaDB 10.3 is not set, a synonym for LENGTH().",
+        "A multi-byte character counts as multiple bytes. This means that for a string containing five two-byte characters, OCTET_LENGTH() returns 10, whereas CHAR_LENGTH() returns 5.",
+        "If str is not a string value, it is converted into a string. If str is NULL, the function returns NULL."
+    ],
+    "Examples": [
+        "SELECT CHAR_LENGTH('\u03c0'), LENGTH('\u03c0'), LENGTHB('\u03c0'), OCTET_LENGTH('\u03c0');\n+-------------------+--------------+---------------+--------------------+\n| CHAR_LENGTH('\u03c0')  | LENGTH('\u03c0')  | LENGTHB('\u03c0')  | OCTET_LENGTH('\u03c0')  |\n+-------------------+--------------+---------------+--------------------+\n|                 1 |            2 |             2 |                  2 |\n+-------------------+--------------+---------------+--------------------+\n",
+        "SELECT CHAR_LENGTH('\u03c0'), LENGTH('\u03c0'), LENGTHB('\u03c0'), OCTET_LENGTH('\u03c0');\n+-------------------+--------------+---------------+--------------------+\n| CHAR_LENGTH('\u03c0')  | LENGTH('\u03c0')  | LENGTHB('\u03c0')  | OCTET_LENGTH('\u03c0')  |\n+-------------------+--------------+---------------+--------------------+\n|                 1 |            1 |             2 |                  2 |\n+-------------------+--------------+---------------+--------------------+\n"
+    ],
+    "Category": [
+        "String Functions"
+    ],
+    "Effective SQLs Refined": [
+        "SELECT CHAR_LENGTH('\u03c0'), LENGTH('\u03c0'), LENGTHB('\u03c0'), OCTET_LENGTH('\u03c0');",
+        "SELECT CHAR_LENGTH('\u03c0'), LENGTH('\u03c0'), LENGTHB('\u03c0'), OCTET_LENGTH('\u03c0');"
+    ],
+    "Ineffective SQLs Refined": [],
+    "Wrong Messages from Ineffective SQLs Refined": [],
+    "SQLs Generated1": [],
+    "SQLs Generated Costs1": [],
+    "SQLs Generated ExecResults1": [],
+    "SQLs Generated ExecTimes1": [],
+    "SQLs Generated ErrorMessages1": [],
+    "Effective SQLs Generated1": [],
+    "SQLs Generated2": [],
+    "SQLs Generated Costs2": [],
+    "SQLs Generated ExecResults2": [],
+    "SQLs Generated ExecTimes2": [],
+    "SQLs Generated ErrorMessages2": [],
+    "Effective SQLs Generated2": []
+}

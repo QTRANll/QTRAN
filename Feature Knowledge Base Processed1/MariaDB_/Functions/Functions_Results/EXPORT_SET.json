@@ -1,0 +1,39 @@
+{
+    "HTML": "https://mariadb.com//kb/en/export_set/",
+    "Title": "EXPORT_SET",
+    "Feature": [
+        "EXPORT_SET(bits, on, off[, separator[, number_of_bits]])\n"
+    ],
+    "Description": [
+        "Takes a minimum of three arguments.  Returns a string where each bit in the given bits argument is returned, with the string values given for on and off.  ",
+        "Bits are examined from right to left, (from low-order to high-order bits).  Strings are added to the result from left to right, separated by a separator string (defaults as ',').  You can optionally limit the number of bits the EXPORT_SET() function examines using the number_of_bits option.  ",
+        "If any of the arguments are set as NULL, the function returns NULL."
+    ],
+    "Examples": [
+        "SELECT EXPORT_SET(5,'Y','N',',',4);\n+-----------------------------+\n| EXPORT_SET(5,'Y','N',',',4) |\n+-----------------------------+\n| Y,N,Y,N                     |\n+-----------------------------+\n\nSELECT EXPORT_SET(6,'1','0',',',10);\n+------------------------------+\n| EXPORT_SET(6,'1','0',',',10) |\n+------------------------------+\n| 0,1,1,0,0,0,0,0,0,0          |\n+------------------------------+\n"
+    ],
+    "Category": [
+        "String Functions"
+    ],
+    "Effective SQLs Refined": [
+        "SELECT EXPORT_SET(5,'Y','N',',',4);"
+    ],
+    "Ineffective SQLs Refined": [
+        "SET(5,'Y','N',',',4) |\n+-----------------------------+\n| Y,N,Y,N                     |\n+-----------------------------+\n\nSELECT EXPORT_SET(6,'1','0',',',10);"
+    ],
+    "Wrong Messages from Ineffective SQLs Refined": [
+        "(pymysql.err.ProgrammingError) (1064, \"You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '(5,'Y','N',',',4) |\\n+-----------------------------+\\n| Y,N,Y,N                ...' at line 1\")\n[SQL: SET(5,'Y','N',',',4) |\n+-----------------------------+\n| Y,N,Y,N                     |\n+-----------------------------+\n\nSELECT EXPORT_SET(6,'1','0',',',10);]\n(Background on this error at: https://sqlalche.me/e/20/f405)"
+    ],
+    "SQLs Generated1": [],
+    "SQLs Generated Costs1": [],
+    "SQLs Generated ExecResults1": [],
+    "SQLs Generated ExecTimes1": [],
+    "SQLs Generated ErrorMessages1": [],
+    "Effective SQLs Generated1": [],
+    "SQLs Generated2": [],
+    "SQLs Generated Costs2": [],
+    "SQLs Generated ExecResults2": [],
+    "SQLs Generated ExecTimes2": [],
+    "SQLs Generated ErrorMessages2": [],
+    "Effective SQLs Generated2": []
+}

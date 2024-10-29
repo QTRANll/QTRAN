@@ -1,0 +1,52 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/alter-tablespace.html"
+    ],
+    "Title": [
+        "15.1.10 ALTER TABLESPACE Statement"
+    ],
+    "Feature": [
+        "ALTER [UNDO] TABLESPACE tablespace_name\n  NDB only:\n    {ADD | DROP} DATAFILE 'file_name'\n    [INITIAL_SIZE [=] size]\n    [WAIT]\n  InnoDB and NDB:\n    [RENAME TO tablespace_name]\n  InnoDB only:\n    [AUTOEXTEND_SIZE [=] 'value']\n    [SET {ACTIVE | INACTIVE}]\n    [ENCRYPTION [=] {'Y' | 'N'}]\n  InnoDB and NDB:\n    [ENGINE [=] engine_name]\n  Reserved for future use:\n    [ENGINE_ATTRIBUTE [=] 'string']",
+        "ALTER TABLESPACE tablespace_name ADD DATAFILE 'file_name'\n    ENGINE={NDB|NDBCLUSTER}",
+        "ALTER UNDO TABLESPACE tablespace_name SET {ACTIVE|INACTIVE}\n    ENGINE=INNODB"
+    ],
+    "Description": [
+        "\n      This statement is used with NDB and\n      InnoDB tablespaces. It can be used to add a new\n      data file to, or to drop a data file from an\n      NDB tablespace. It can also be used to rename\n      an NDB Cluster Disk Data tablespace, rename an\n      InnoDB general tablespace, encrypt an\n      InnoDB general tablespace, or mark an\n      InnoDB undo tablespace as active or inactive.\n    ",
+        "\n      The UNDO keyword is used with the SET\n      {ACTIVE | INACTIVE} clause to mark an\n      InnoDB undo tablespace as active or inactive.\n      For more information, see\n      Section\u00a017.6.3.4, \u201cUndo Tablespaces\u201d.\n    ",
+        "\n      The ADD DATAFILE variant enables you to specify\n      an initial size for an NDB Disk Data tablespace\n      using an INITIAL_SIZE clause, where\n      size is measured in bytes; the default\n      value is 134217728 (128 MB). You may optionally follow\n      size with a one-letter abbreviation for\n      an order of magnitude, similar to those used in\n      my.cnf. Generally, this is one of the letters\n      M (megabytes) or G\n      (gigabytes).\n    ",
+        "\n      On 32-bit systems, the maximum supported value for\n      INITIAL_SIZE is 4294967296 (4 GB). (Bug #29186)\n    ",
+        "\nINITIAL_SIZE is rounded, explicitly, as for\n      CREATE TABLESPACE.\n    ",
+        "\n      Once a data file has been created, its size cannot be changed;\n      however, you can add more data files to an NDB\n      tablespace using additional ALTER TABLESPACE ... ADD\n      DATAFILE statements.\n    ",
+        "\n      When ALTER TABLESPACE ... ADD DATAFILE is used\n      with ENGINE = NDB, a data file is created on\n      each Cluster data node, but only one row is generated in the\n      Information Schema FILES table. See\n      the description of this table, as well as\n      Section\u00a025.6.11.1, \u201cNDB Cluster Disk Data Objects\u201d, for more\n      information. ADD DATAFILE is not supported with\n      InnoDB tablespaces.\n    ",
+        "\n      Using DROP DATAFILE with\n      ALTER TABLESPACE drops the data\n      file 'file_name' from an\n      NDB tablespace. You cannot drop a data file\n      from a tablespace which is in use by any table; in other words,\n      the data file must be empty (no extents used). See\n      Section\u00a025.6.11.1, \u201cNDB Cluster Disk Data Objects\u201d. In addition,\n      any data file to be dropped must previously have been added to the\n      tablespace with CREATE TABLESPACE\n      or ALTER TABLESPACE. DROP\n      DATAFILE is not supported with InnoDB\n      tablespaces.\n    ",
+        "\nWAIT is parsed but otherwise ignored. It is\n      intended for future expansion.\n    ",
+        "\n      The ENGINE clause, which specifies the storage\n      engine used by the tablespace, is deprecated, since the tablespace\n      storage engine is known by the data dictionary, making the\n      ENGINE clause obsolete. In MySQL\n      8.4, it is supported in the following two cases only:\n",
+        "\nPress CTRL+C to copy ALTER TABLESPACE tablespace_name ADD DATAFILE 'file_name'\n    ENGINE={NDB|NDBCLUSTER}Press CTRL+C to copy ALTER UNDO TABLESPACE tablespace_name SET {ACTIVE|INACTIVE}\n    ENGINE=INNODB\n",
+        "\n      You should expect the eventual removal of\n      ENGINE from these statements as well, in a\n      future version of MySQL.\n    ",
+        "\nRENAME TO operations are implicitly performed\n      in autocommit mode, regardless of the value of\n      autocommit.\n    ",
+        "\n      A RENAME TO operation cannot be performed while\n      LOCK TABLES or\n      FLUSH TABLES WITH READ\n      LOCK is in effect for tables that reside in the\n      tablespace.\n    ",
+        "\n      Exclusive metadata locks\n      are taken on tables that reside in a general tablespace while the\n      tablespace is renamed, which prevents concurrent DDL. Concurrent\n      DML is supported.\n    ",
+        "\n      The CREATE TABLESPACE privilege is\n      required to rename an InnoDB general\n      tablespace.\n    ",
+        "\n      The AUTOEXTEND_SIZE option defines the amount\n      by which InnoDB extends the size of a\n      tablespace when it becomes full. The setting must be a multiple of\n      4MB. The default setting is 0, which causes the tablespace to be\n      extended according to the implicit default behavior. For more\n      information, see\n      Section\u00a017.6.3.9, \u201cTablespace AUTOEXTEND_SIZE Configuration\u201d.\n    ",
+        "\n      The ENCRYPTION clause enables or disables\n      page-level data encryption for an InnoDB\n      general tablespace or the mysql system\n      tablespace.\n    ",
+        "\n      A keyring plugin must be installed and configured before\n      encryption can be enabled.\n    ",
+        "\n      If the\n      table_encryption_privilege_check\n      variable is enabled, the\n      TABLE_ENCRYPTION_ADMIN privilege is\n      required to alter a general tablespace with an\n      ENCRYPTION clause setting that differs from the\n      default_table_encryption setting.\n    ",
+        "\n      Enabling encryption for a general tablespace fails if any table in\n      the tablespace belongs to a schema defined with DEFAULT\n      ENCRYPTION='N'. Similarly, disabling encryption fails if\n      any table in the general tablespace belongs to a schema defined\n      with DEFAULT ENCRYPTION='Y'.\n    ",
+        "\n      If an ALTER TABLESPACE statement\n      executed on a general tablespace does not include an\n      ENCRYPTION clause, the tablespace retains its\n      current encryption status, regardless of the\n      default_table_encryption setting.\n    ",
+        "\n      When a general tablespace or the mysql system\n      tablespace is encrypted, all tables residing in the tablespace are\n      encrypted. Likewise, a table created in an encrypted tablespace is\n      encrypted.\n    ",
+        "\n      The INPLACE algorithm is used when altering the\n      ENCRYPTION attribute of a general tablespace or\n      the mysql system tablespace. The\n      INPLACE algorithm permits concurrent DML on\n      tables that reside in the tablespace. Concurrent DDL is blocked.\n    ",
+        "\n      For more information, see\n      Section\u00a017.13, \u201cInnoDB Data-at-Rest Encryption\u201d.\n    ",
+        "\n      The ENGINE_ATTRIBUTE option is used to specify\n      tablespace attributes for primary storage engines. The option is\n      reserved for future use.\n    ",
+        "\n      The value assigned to this option is a string literal containing a\n      valid JSON document or an empty string (''). Invalid JSON is\n      rejected.\n    ",
+        "Press CTRL+C to copy ALTER TABLESPACE ts1 ENGINE_ATTRIBUTE='{\"key\":\"value\"}';",
+        "\nENGINE_ATTRIBUTE values can be repeated without\n      error. In this case, the last specified value is used.\n    ",
+        "\nENGINE_ATTRIBUTE values are not checked by the\n      server, nor are they cleared when the table's storage engine\n      is changed.\n    ",
+        "\n      It is not permitted to alter an individual element of a JSON\n      attribute value. You can only add or replace an attribute.\n"
+    ],
+    "Examples": [
+        "ALTER TABLESPACE ts1 ENGINE_ATTRIBUTE='{\"key\":\"value\"}';"
+    ],
+    "Category": [
+        "Data Definition Statements"
+    ]
+}

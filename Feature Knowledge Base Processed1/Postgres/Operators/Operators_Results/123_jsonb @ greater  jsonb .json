@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/current/functions-json.html"
+    ],
+    "Title": [
+        "jsonb @> jsonb"
+    ],
+    "Feature": [
+        "jsonb @> jsonb → boolean"
+    ],
+    "Description": [
+        "Does the first JSON value contain the second? (See Section 8.14.3 for details about containment.)"
+    ],
+    "Examples": [
+        "'{\"a\":1, \"b\":2}'::jsonb @> '{\"b\":2}'::jsonb → t"
+    ],
+    "Category": [
+        "JSON Functions and Operators"
+    ]
+}

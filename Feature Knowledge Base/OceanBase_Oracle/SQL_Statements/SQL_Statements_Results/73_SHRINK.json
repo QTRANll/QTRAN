@@ -1,0 +1,21 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000001054305"
+    ],
+    "Title": [
+        "SHRINK"
+    ],
+    "Feature": [
+        "ALTER TABLE table_name SHRINK SPACE;\n"
+    ],
+    "Description": [
+        "该语句会将表的数据重写。",
+        "\n\n\n参数\n描述\n\n\n\n\ntable_name\n表名。\n\n\n"
+    ],
+    "Examples": [
+        "obclient> ALTER TABLE tbl1 SHRINK SPACE;\nQuery OK, 0 rows affected\n"
+    ],
+    "Category": [
+        "DCL"
+    ]
+}

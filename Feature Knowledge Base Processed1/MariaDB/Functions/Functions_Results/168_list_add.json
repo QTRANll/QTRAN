@@ -1,0 +1,22 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/list_add/"
+    ],
+    "Title": [
+        "list_add"
+    ],
+    "Feature": [
+        "sys.list_add(list,value)\n"
+    ],
+    "Description": [
+        "list_add is a stored function available with the Sys Schema.",
+        "It takes a list to be be modified and a value to be added to the list, returning the resulting value. This can be used, for example, to add a value to a system variable taking a comma-delimited list of options, such as sql_mode.",
+        "The related function list_drop can be used to drop a value from a list."
+    ],
+    "Examples": [
+        "SELECT sys.list_add('value1,value2', 'value3');"
+    ],
+    "Category": [
+        "No Category"
+    ]
+}

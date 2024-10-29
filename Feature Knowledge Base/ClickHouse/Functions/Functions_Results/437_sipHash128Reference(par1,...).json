@@ -1,0 +1,27 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/hash-functions"
+    ],
+    "Title": [
+        "sipHash128Reference"
+    ],
+    "Feature": [
+        "sipHash128Reference(par1,...)"
+    ],
+    "Description": [
+        "sipHash128Reference",
+        "Like sipHash128 but implements the 128-bit algorithm from the original authors of SipHash.",
+        "Syntax",
+        "sipHash128Reference(par1,...)",
+        "Arguments",
+        "Same as for sipHash128.",
+        "Returned value",
+        "A 128-bit SipHash hash value of type FixedString(16)."
+    ],
+    "Examples": [
+        "SELECT hex(sipHash128Reference('foo', '\\x01', 3));"
+    ],
+    "Category": [
+        "Hash Functions"
+    ]
+}

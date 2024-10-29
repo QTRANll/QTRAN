@@ -1,0 +1,29 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/nlp-functions"
+    ],
+    "Title": [
+        "detectLanguageUnknown"
+    ],
+    "Feature": [
+        "detectLanguageUnknown('text_to_be_analyzed')"
+    ],
+    "Description": [
+        "detectLanguageUnknown",
+        "Similar to the detectLanguage function, except the detectLanguageUnknown function works with non-UTF8-encoded strings. Prefer this version when your character set is UTF-16 or UTF-32.",
+        "Syntax",
+        "detectLanguageUnknown('text_to_be_analyzed')",
+        "Arguments",
+        "text_to_be_analyzed \u2014 A collection (or sentences) of strings to analyze. String.",
+        "Returned value",
+        "The 2-letter ISO code of the detected language",
+        "Other possible results:",
+        "un = unknown, can not detect any language.other = the detected language does not have 2 letter code."
+    ],
+    "Examples": [
+        "SELECT detectLanguageUnknown('Ich bleibe f\u00fcr ein paar Tage.');"
+    ],
+    "Category": [
+        "NLP (experimental) Functions"
+    ]
+}

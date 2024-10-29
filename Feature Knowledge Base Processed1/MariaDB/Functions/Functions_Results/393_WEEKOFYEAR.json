@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/weekofyear/"
+    ],
+    "Title": [
+        "WEEKOFYEAR"
+    ],
+    "Feature": [
+        "WEEKOFYEAR(date)\n"
+    ],
+    "Description": [
+        "Returns the calendar week of the date as a number in the range from 1\nto 53. WEEKOFYEAR() is a compatibility function that is equivalent to\nWEEK(date,3)."
+    ],
+    "Examples": [
+        "SELECT WEEKOFYEAR('2008-02-20');"
+    ],
+    "Category": [
+        "Date & Time Functions"
+    ]
+}

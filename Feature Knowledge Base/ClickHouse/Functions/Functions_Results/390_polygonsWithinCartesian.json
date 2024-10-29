@@ -1,0 +1,21 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/geo/polygons"
+    ],
+    "Title": [
+        "polygonsWithinCartesian"
+    ],
+    "Feature": [
+        "polygonsWithinCartesian"
+    ],
+    "Description": [
+        "polygonsWithinCartesian",
+        "Returns true if the second polygon is within the first polygon."
+    ],
+    "Examples": [
+        "SELECT polygonsWithinCartesian([[[(2., 2.), (2., 3.), (3., 3.), (3., 2.)]]], [[[(1., 1.), (1., 4.), (4., 4.), (4., 1.), (1., 1.)]]])"
+    ],
+    "Category": [
+        "Geo Functions"
+    ]
+}

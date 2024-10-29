@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/current/functions-binarystring.html"
+    ],
+    "Title": [
+        "trim"
+    ],
+    "Feature": [
+        "trim ( [ LEADING | TRAILING | BOTH ] [ FROM ] bytes bytea, bytesremoved bytea ) → bytea"
+    ],
+    "Description": [
+        "This is a non-standard syntax for trim()."
+    ],
+    "Examples": [
+        "trim(both from '\\x1234567890'::bytea, '\\x9012'::bytea) → \\x345678"
+    ],
+    "Category": [
+        "Binary String Functions and Operators"
+    ]
+}

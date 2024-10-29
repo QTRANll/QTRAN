@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/current/functions-binarystring.html"
+    ],
+    "Title": [
+        "get_bit"
+    ],
+    "Feature": [
+        "get_bit ( bytes bytea, n bigint ) → integer"
+    ],
+    "Description": [
+        "Extracts n'th bit from binary string."
+    ],
+    "Examples": [
+        "get_bit('\\x1234567890'::bytea, 30) → 1"
+    ],
+    "Category": [
+        "Binary String Functions and Operators"
+    ]
+}

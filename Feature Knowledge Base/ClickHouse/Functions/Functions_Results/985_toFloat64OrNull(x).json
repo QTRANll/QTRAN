@@ -1,0 +1,31 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/type-conversion-functions"
+    ],
+    "Title": [
+        "toFloat64OrNull"
+    ],
+    "Feature": [
+        "toFloat64OrNull(x)"
+    ],
+    "Description": [
+        "toFloat64OrNull",
+        "Like toFloat64, this function converts an input value to a value of type Float64 but returns NULL in case of an error.",
+        "Syntax",
+        "toFloat64OrNull(x)",
+        "Arguments",
+        "x \u2014 A String representation of a number. String.",
+        "Supported arguments:",
+        "String representations of (U)Int8/16/32/128/256, Float32/64.",
+        "Unsupported arguments (return \\N):",
+        "String representations of binary and hexadecimal values, e.g. SELECT toFloat64OrNull('0xc0fe');.",
+        "Returned value",
+        "64-bit Float value if successful, otherwise \\N. Float64."
+    ],
+    "Examples": [
+        "SELECT    toFloat64OrNull('42.7'),    toFloat64OrNull('abc')FORMAT Vertical;"
+    ],
+    "Category": [
+        "Type Conversion Functions"
+    ]
+}

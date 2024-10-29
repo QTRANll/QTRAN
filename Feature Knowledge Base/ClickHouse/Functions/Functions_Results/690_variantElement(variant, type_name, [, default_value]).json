@@ -1,0 +1,27 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/other-functions"
+    ],
+    "Title": [
+        "variantElement"
+    ],
+    "Feature": [
+        "variantElement(variant, type_name, [, default_value])"
+    ],
+    "Description": [
+        "variantElement",
+        "Extracts a column with specified type from a Variant column.",
+        "Syntax",
+        "variantElement(variant, type_name, [, default_value])",
+        "Arguments",
+        "variant \u2014 Variant column. Variant.type_name \u2014 The name of the variant type to extract. String.default_value - The default value that will be used if variant doesn't have variant with specified type. Can be any type. Optional.",
+        "Returned value",
+        "Subcolumn of a Variant column with specified type."
+    ],
+    "Examples": [
+        "CREATE TABLE test (v Variant(UInt64, String, Array(UInt64))) ENGINE = Memory;INSERT INTO test VALUES (NULL), (42), ('Hello, World!'), ([1, 2, 3]);SELECT v, variantElement(v, 'String'), variantElement(v, 'UInt64'), variantElement(v, 'Array(UInt64)') FROM test;"
+    ],
+    "Category": [
+        "Other Functions"
+    ]
+}

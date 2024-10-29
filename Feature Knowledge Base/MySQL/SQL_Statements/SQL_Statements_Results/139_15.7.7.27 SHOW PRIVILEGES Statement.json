@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/show-privileges.html"
+    ],
+    "Title": [
+        "15.7.7.27 SHOW PRIVILEGES Statement"
+    ],
+    "Feature": [
+        "SHOW PRIVILEGES",
+        "mysql> SHOW PRIVILEGES\\G\n*************************** 1. row ***************************\nPrivilege: Alter\n  Context: Tables\n  Comment: To alter the table\n*************************** 2. row ***************************\nPrivilege: Alter routine\n  Context: Functions,Procedures\n  Comment: To alter or drop stored functions/procedures\n*************************** 3. row ***************************\nPrivilege: Create\n  Context: Databases,Tables,Indexes\n  Comment: To create new databases and tables\n*************************** 4. row ***************************\nPrivilege: Create routine\n  Context: Databases\n  Comment: To use CREATE FUNCTION/PROCEDURE\n*************************** 5. row ***************************\nPrivilege: Create role\n  Context: Server Admin\n  Comment: To create new roles\n..."
+    ],
+    "Description": [
+        "\nSHOW PRIVILEGES shows the list of\n        system privileges that the MySQL server supports. The privileges\n        displayed include all static privileges, and all currently\n        registered dynamic privileges.\n      ",
+        "\n        Privileges belonging to a specific user are displayed by the\n        SHOW GRANTS statement. See\n        Section\u00a015.7.7.22, \u201cSHOW GRANTS Statement\u201d, for more information.\n"
+    ],
+    "Examples": [],
+    "Category": [
+        "Database Administration Statements"
+    ]
+}

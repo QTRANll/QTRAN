@@ -1,0 +1,26 @@
+{
+    "HTML": [
+        "https://docs.pingcap.com//zh/tidb/stable/sql-statement-drop-view"
+    ],
+    "Title": [
+        "DROP VIEW"
+    ],
+    "Feature": [
+        "DropViewStmt ::=\n    'DROP' 'VIEW' ( 'IF' 'EXISTS' )? TableNameList RestrictOrCascadeOpt\n\nTableNameList ::=\n    TableName ( ',' TableName )*\n\nTableName ::=\n    Identifier ('.' Identifier)?\n"
+    ],
+    "Description": [
+        "DROP VIEW \u8bed\u53e5\u7528\u4e8e\u4ece\u5f53\u524d\u6240\u9009\u5b9a\u7684\u6570\u636e\u5e93\u4e2d\u5220\u9664\u89c6\u56fe\u5bf9\u8c61\u3002\u89c6\u56fe\u6240\u5f15\u7528\u7684\u57fa\u8868\u4e0d\u53d7\u5f71\u54cd\u3002"
+    ],
+    "Examples": [
+        "CREATE TABLE t1 (id INT NOT NULL PRIMARY KEY AUTO_INCREMENT, c1 INT NOT NULL);\n",
+        "INSERT INTO t1 (c1) VALUES (1),(2),(3),(4),(5);\n",
+        "CREATE VIEW v1 AS SELECT * FROM t1 WHERE c1 > 2;\n",
+        "SELECT * FROM t1;\n",
+        "SELECT * FROM v1;\n",
+        "DROP VIEW v1;\n",
+        "SELECT * FROM t1;\n"
+    ],
+    "Category": [
+        "Schema \u7ba1\u7406\u4e0e\u6570\u636e\u5b9a\u4e49\u8bed\u53e5 (DDL)"
+    ]
+}

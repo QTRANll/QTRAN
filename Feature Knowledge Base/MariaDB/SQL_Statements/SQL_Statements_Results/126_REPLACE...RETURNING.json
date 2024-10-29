@@ -1,0 +1,26 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/replacereturning/"
+    ],
+    "Title": [
+        "REPLACE...RETURNING"
+    ],
+    "Feature": [
+        "REPLACE [LOW_PRIORITY | DELAYED]\n [INTO] tbl_name [PARTITION (partition_list)] [(col,...)]\n {VALUES | VALUE} ({expr | DEFAULT},...),(...),...\n[RETURNING select_expr \n      [, select_expr ...]]\n",
+        "Or:",
+        "REPLACE [LOW_PRIORITY | DELAYED]\n    [INTO] tbl_name [PARTITION (partition_list)]\n    SET col={expr | DEFAULT}, ...\n[RETURNING select_expr \n      [, select_expr ...]]\n",
+        "Or:",
+        "REPLACE [LOW_PRIORITY | DELAYED]\n    [INTO] tbl_name [PARTITION (partition_list)] [(col,...)]\n    SELECT ...\n[RETURNING select_expr \n      [, select_expr ...]]\n"
+    ],
+    "Description": [
+        "REPLACE ... RETURNING returns a resultset of the replaced rows.\nThis returns the listed columns for all the rows that are replaced, or alternatively, the specified SELECT expression. Any SQL expressions which can be calculated can be used in the select expression for the RETURNING clause, including virtual columns and aliases, expressions which use various operators such as bitwise, logical and arithmetic operators, string functions, date-time functions, numeric functions, control flow functions, secondary functions and stored functions. Along with this, statements which have subqueries and prepared statements can also be used.\n"
+    ],
+    "Examples": [
+        "REPLACE INTO t2 VALUES (1,'Leopard'),(2,'Dog') RETURNING id2, id2+id2 \nas Total ,id2|id2, id2&&id2;\n+-----+-------+---------+----------+\n| id2 | Total | id2|id2 | id2&&id2 |\n+-----+-------+---------+----------+\n|   1 |     2 |       1 |        1 |\n|   2 |     4 |       2 |        1 |\n+-----+-------+---------+----------+\n",
+        "DELIMITER |\nCREATE FUNCTION f(arg INT) RETURNS INT\n    BEGIN\n      RETURN (SELECT arg+arg);\n    END|\n\nDELIMITER ;\nPREPARE stmt FROM \"REPLACE INTO t2 SET id2=3, animal2='Fox' RETURNING f2(id2),\nUPPER(animal2)\";\n\nEXECUTE stmt;\n+---------+----------------+\n| f2(id2) | UPPER(animal2) |\n+---------+----------------+\n|       6 | FOX            |\n+---------+----------------+\n",
+        "REPLACE INTO t1 SELECT * FROM t2 RETURNING (SELECT id2 FROM t2 WHERE \nid2 IN (SELECT id2 FROM t2 WHERE id2=1)) AS new_id;\n+--------+\n| new_id |\n+--------+\n|      1 |\n|      1 |\n|      1 |\n|      1 |\n+--------+\n"
+    ],
+    "Category": [
+        "Data Manipulation"
+    ]
+}

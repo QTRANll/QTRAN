@@ -1,0 +1,30 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/built-in-function-reference.html",
+        "https://dev.mysql.com/doc/refman/8.4/en/encryption-functions.html"
+    ],
+    "Title": [
+        "14.1 Built-In Function and Operator Reference",
+        "14.13 Encryption and Compression Functions"
+    ],
+    "Feature": [
+        "AES_DECRYPT(crypt_str,key_str[,init_vector][,kdf_name][,salt][,info\n          | iterations])"
+    ],
+    "Description": [
+        "Decrypt using AES",
+        "\nAES_DECRYPT(crypt_str,key_str[,init_vector][,kdf_name][,salt][,info\n          | iterations])\n",
+        "\n          This function decrypts data using the official AES (Advanced\n          Encryption Standard) algorithm. For more information, see the\n          description of AES_ENCRYPT().\n        ",
+        "\n          Statements that use\n          AES_DECRYPT() are unsafe for\n          statement-based replication.\n        "
+    ],
+    "Examples": [],
+    "Category": [
+        "Built-In Functions",
+        "Encryption and Compression Functions"
+    ],
+    "Reference HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/encryption-functions.html#function_aes-decrypt"
+    ],
+    "Feature Type": [
+        "Function"
+    ]
+}

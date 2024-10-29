@@ -1,0 +1,27 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/case-statement/"
+    ],
+    "Title": [
+        "CASE Statement"
+    ],
+    "Feature": [
+        "CASE case_value\n    WHEN when_value THEN statement_list\n    [WHEN when_value THEN statement_list] ...\n    [ELSE statement_list]\nEND CASE\n",
+        "Or:",
+        "CASE\n    WHEN search_condition THEN statement_list\n    [WHEN search_condition THEN statement_list] ...\n    [ELSE statement_list] \nEND CASE\n"
+    ],
+    "Description": [
+        "The text on this page describes the CASE statement for stored programs. See the CASE OPERATOR for details on the CASE operator outside of stored programs.",
+        "The CASE statement for stored programs implements a complex conditional\nconstruct. If a search_condition evaluates to true, the corresponding SQL\nstatement list is executed. If no search condition matches, the statement list\nin the ELSE clause is executed. Each statement_list consists of one or\nmore statements.",
+        "The CASE statement cannot have an ELSE NULL clause, and it is\nterminated with END CASE instead of END. implements a complex conditional\nconstruct. If a search_condition evaluates to true, the corresponding SQL\nstatement list is executed. If no search condition matches, the statement list\nin the ELSE clause is executed. Each statement_list consists of one or\nmore statements.",
+        "If no when_value or search_condition matches the value tested and the CASE\nstatement contains no ELSE clause, a Case not found for CASE statement\nerror results.",
+        "Each statement_list consists of one or more statements; an empty\nstatement_list is not allowed. To handle situations where no value is\nmatched by any WHEN clause, use an ELSE containing an\nempty BEGIN ... END block, as shown in this example:",
+        "DELIMITER |\nCREATE PROCEDURE p()\nBEGIN\n  DECLARE v INT DEFAULT 1;\n  CASE v\n    WHEN 2 THEN SELECT v;\n    WHEN 3 THEN SELECT 0;\n    ELSE BEGIN END;\n  END CASE;\nEND;\n|\n",
+        "The indentation used here in the ELSE clause is for purposes of clarity only,\nand is not otherwise significant. See Delimiters in the mariadb client for more on the use of the delimiter command.",
+        "Note: The syntax of the CASE statement used inside stored programs\ndiffers slightly from that of the SQL CASE expression described in\nCASE OPERATOR.\nThe CASE statement cannot have an ELSE NULL clause, and it is\nterminated with END CASE instead of END."
+    ],
+    "Examples": [],
+    "Category": [
+        "Programmatic and Compound Statements"
+    ]
+}

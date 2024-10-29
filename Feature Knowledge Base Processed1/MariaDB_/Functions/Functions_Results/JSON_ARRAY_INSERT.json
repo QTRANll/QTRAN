@@ -1,0 +1,41 @@
+{
+    "HTML": "https://mariadb.com//kb/en/json_array_insert/",
+    "Title": "JSON_ARRAY_INSERT",
+    "Feature": [
+        "JSON_ARRAY_INSERT(json_doc, path, value[, path, value] ...)\n"
+    ],
+    "Description": [
+        "Inserts a value into a JSON document, returning the modified document, or NULL if any of the arguments are NULL.",
+        "Evaluation is performed from left to right, with the resulting document from the previous pair becoming the new value against which the next pair is evaluated.",
+        "If the json_doc is not a valid JSON document, or if any of the paths are not valid, or contain a * or ** wildcard, an error is returned."
+    ],
+    "Examples": [
+        "SET @json = '[1, 2, [3, 4]]';\n\nSELECT JSON_ARRAY_INSERT(@json, '$[0]', 5);\n+-------------------------------------+\n| JSON_ARRAY_INSERT(@json, '$[0]', 5) |\n+-------------------------------------+\n| [5, 1, 2, [3, 4]]                   |\n+-------------------------------------+\n\nSELECT JSON_ARRAY_INSERT(@json, '$[1]', 6);\n+-------------------------------------+\n| JSON_ARRAY_INSERT(@json, '$[1]', 6) |\n+-------------------------------------+\n| [1, 6, 2, [3, 4]]                   |\n+-------------------------------------+\n\nSELECT JSON_ARRAY_INSERT(@json, '$[1]', 6, '$[2]', 7);\n+------------------------------------------------+\n| JSON_ARRAY_INSERT(@json, '$[1]', 6, '$[2]', 7) |\n+------------------------------------------------+\n| [1, 6, 7, 2, [3, 4]]                           |\n+------------------------------------------------+\n"
+    ],
+    "Category": [
+        "JSON Functions"
+    ],
+    "Effective SQLs Refined": [
+        "SELECT JSON_ARRAY_INSERT(@json, '$[0]', 5);"
+    ],
+    "Ineffective SQLs Refined": [
+        "INSERT(@json, '$[0]', 5) |\n+-------------------------------------+\n| [5, 1, 2, [3, 4]]                   |\n+-------------------------------------+\n\nSELECT JSON_ARRAY_INSERT(@json, '$[1]', 6);",
+        "INSERT(@json, '$[1]', 6) |\n+-------------------------------------+\n| [1, 6, 2, [3, 4]]                   |\n+-------------------------------------+\n\nSELECT JSON_ARRAY_INSERT(@json, '$[1]', 6, '$[2]', 7);"
+    ],
+    "Wrong Messages from Ineffective SQLs Refined": [
+        "(pymysql.err.ProgrammingError) (1064, \"You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '(@json, '$[0]', 5) |\\n+-------------------------------------+\\n| [5, 1, 2, [3, ...' at line 1\")\n[SQL: INSERT(@json, '$[0]', 5) |\n+-------------------------------------+\n| [5, 1, 2, [3, 4]]                   |\n+-------------------------------------+\n\nSELECT JSON_ARRAY_INSERT(@json, '$[1]', 6);]\n(Background on this error at: https://sqlalche.me/e/20/f405)",
+        "(pymysql.err.ProgrammingError) (1064, \"You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '(@json, '$[1]', 6) |\\n+-------------------------------------+\\n| [1, 6, 2, [3, ...' at line 1\")\n[SQL: INSERT(@json, '$[1]', 6) |\n+-------------------------------------+\n| [1, 6, 2, [3, 4]]                   |\n+-------------------------------------+\n\nSELECT JSON_ARRAY_INSERT(@json, '$[1]', 6, '$[2]', 7);]\n(Background on this error at: https://sqlalche.me/e/20/f405)"
+    ],
+    "SQLs Generated1": [],
+    "SQLs Generated Costs1": [],
+    "SQLs Generated ExecResults1": [],
+    "SQLs Generated ExecTimes1": [],
+    "SQLs Generated ErrorMessages1": [],
+    "Effective SQLs Generated1": [],
+    "SQLs Generated2": [],
+    "SQLs Generated Costs2": [],
+    "SQLs Generated ExecResults2": [],
+    "SQLs Generated ExecTimes2": [],
+    "SQLs Generated ErrorMessages2": [],
+    "Effective SQLs Generated2": []
+}

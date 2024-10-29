@@ -1,0 +1,23 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/set-sql-log-bin.html"
+    ],
+    "Title": [
+        "15.4.1.3 SET sql_log_bin Statement"
+    ],
+    "Feature": [
+        "SET sql_log_bin = {OFF|ON}"
+    ],
+    "Description": [
+        "\n        The sql_log_bin variable\n        controls whether logging to the binary log is enabled for the\n        current session (assuming that the binary log itself is\n        enabled). The default value is ON. To disable\n        or enable binary logging for the current session, set the\n        session sql_log_bin variable to\n        OFF or ON.\n      ",
+        "\n        Set this variable to OFF for a session to\n        temporarily disable binary logging while making changes to the\n        source that you do not want replicated to the replica.\n      ",
+        "\n        Setting the session value of this system variable is a\n        restricted operation. The session user must have privileges\n        sufficient to set restricted session variables. See\n        Section\u00a07.1.9.1, \u201cSystem Variable Privileges\u201d.\n      ",
+        "\n        It is not possible to set the session value of\n        sql_log_bin within a\n        transaction or subquery.\n      ",
+        "\nSetting this variable to OFF\n        prevents new GTIDs from being assigned to transactions in the\n        binary log. If you are using GTIDs for replication,\n        this means that even when binary logging is later enabled again,\n        the GTIDs written into the log from this point do not account\n        for any transactions that occurred in the meantime, so in effect\n        those transactions are lost.\n      ",
+        "\nmysqldump adds a SET\n        @@SESSION.sql_log_bin=0 statement to a dump file from\n        a server where GTIDs are in use, which disables binary logging\n        while the dump file is being reloaded. The statement prevents\n        new GTIDs from being generated and assigned to the transactions\n        in the dump file as they are executed, so that the original\n        GTIDs for the transactions are used.\n"
+    ],
+    "Examples": [],
+    "Category": [
+        "Replication Statements"
+    ]
+}

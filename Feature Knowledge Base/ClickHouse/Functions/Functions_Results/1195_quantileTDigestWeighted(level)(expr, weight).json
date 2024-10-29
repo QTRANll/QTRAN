@@ -1,0 +1,34 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/aggregate-functions/reference/quantiletdigestweighted"
+    ],
+    "Title": [
+        "quantileTDigestWeighted"
+    ],
+    "Feature": [
+        "quantileTDigestWeighted(level)(expr, weight)"
+    ],
+    "Description": [
+        "quantileTDigestWeighted",
+        "Computes an approximate quantile of a numeric data sequence using the t-digest algorithm. The function takes into account the weight of each sequence member. The maximum error is 1%. Memory consumption is log(n), where n is a number of values.",
+        "The performance of the function is lower than performance of quantile or quantileTiming. In terms of the ratio of State size to precision, this function is much better than quantile.",
+        "The result depends on the order of running the query, and is nondeterministic.",
+        "When using multiple quantile* functions with different levels in a query, the internal states are not combined (that is, the query works less efficiently than it could). In this case, use the quantiles function.",
+        "NoteUsing quantileTDigestWeighted is not recommended for tiny data sets and can lead to significant error. In this case, consider possibility of using quantileTDigest instead.",
+        "Syntax",
+        "quantileTDigestWeighted(level)(expr, weight)",
+        "Alias: medianTDigestWeighted.",
+        "Arguments",
+        "level \u2014 Level of quantile. Optional parameter. Constant floating-point number from 0 to 1. We recommend using a level value in the range of [0.01, 0.99]. Default value: 0.5. At level=0.5 the function calculates median.expr \u2014 Expression over the column values resulting in numeric data types, Date or DateTime.weight \u2014 Column with weights of sequence elements. Weight is a number of value occurrences.",
+        "Returned value",
+        "Approximate quantile of the specified level.",
+        "Type:",
+        "Float64 for numeric data type input.Date if input values have the Date type.DateTime if input values have the DateTime type."
+    ],
+    "Examples": [
+        "SELECT quantileTDigestWeighted(number, 1) FROM numbers(10)"
+    ],
+    "Category": [
+        "Aggregate Functions"
+    ]
+}

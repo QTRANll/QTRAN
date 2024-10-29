@@ -1,0 +1,27 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/window-functions/percent_rank"
+    ],
+    "Title": [
+        "percent_rank"
+    ],
+    "Feature": [
+        "percent_rank (column_name)  OVER ([[PARTITION BY grouping_column] [ORDER BY sorting_column]         [RANGE BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING]] | [window_name])FROM table_nameWINDOW window_name as ([PARTITION BY grouping_column] [ORDER BY sorting_column] RANGE BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING)"
+    ],
+    "Description": [
+        "percent_rank",
+        "returns the relative rank (i.e. percentile) of rows within a window partition.",
+        "Syntax",
+        "Alias: percentRank (case-sensitive)",
+        "percent_rank (column_name)  OVER ([[PARTITION BY grouping_column] [ORDER BY sorting_column]         [RANGE BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING]] | [window_name])FROM table_nameWINDOW window_name as ([PARTITION BY grouping_column] [ORDER BY sorting_column] RANGE BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING)",
+        "The default and required window frame definition is RANGE BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING.",
+        "For more detail on window function syntax see: Window Functions - Syntax."
+    ],
+    "Examples": [
+        "CREATE TABLE salaries(    `team` String,    `player` String,    `salary` UInt32,    `position` String)Engine = Memory;INSERT INTO salaries FORMAT Values    ('Port Elizabeth Barbarians', 'Gary Chen', 195000, 'F'),    ('New Coreystad Archdukes', 'Charles Juarez', 190000, 'F'),    ('Port Elizabeth Barbarians', 'Michael Stanley', 150000, 'D'),    ('New Coreystad Archdukes', 'Scott Harrison', 150000, 'D'),    ('Port Elizabeth Barbarians', 'Robert George', 195000, 'M'),    ('South Hampton Seagulls', 'Douglas Benson', 150000, 'M'),    ('South Hampton Seagulls', 'James Henderson', 140000, 'M');",
+        "SELECT player, salary,        percent_rank() OVER (ORDER BY salary DESC) AS percent_rankFROM salaries;"
+    ],
+    "Category": [
+        "Window Functions"
+    ]
+}

@@ -1,0 +1,21 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/show-create-package/"
+    ],
+    "Title": [
+        "SHOW CREATE PACKAGE"
+    ],
+    "Feature": [
+        "SHOW CREATE PACKAGE  [ db_name . ] package_name\n"
+    ],
+    "Description": [
+        "The SHOW CREATE PACKAGE statement can be used when Oracle SQL_MODE is set. It shows the CREATE statement that creates the given package specification.",
+        "SHOW CREATE PACKAGE quotes identifiers according to the value of the sql_quote_show_create system variable."
+    ],
+    "Examples": [
+        "SHOW CREATE PACKAGE employee_tools\\G\n*************************** 1. row ***************************\n             Package: employee_tools\n            sql_mode: PIPES_AS_CONCAT,ANSI_QUOTES,IGNORE_SPACE,ORACLE,NO_KEY_OPTIONS,NO_TABLE_OPTIONS,NO_FIELD_OPTIONS,NO_AUTO_CREATE_USER\n      Create Package: CREATE DEFINER=\"root\"@\"localhost\" PACKAGE \"employee_tools\" AS\n  FUNCTION getSalary(eid INT) RETURN DECIMAL(10,2);\n  PROCEDURE raiseSalary(eid INT, amount DECIMAL(10,2));\n  PROCEDURE raiseSalaryStd(eid INT);\n  PROCEDURE hire(ename TEXT, esalary DECIMAL(10,2));\nEND\ncharacter_set_client: utf8\ncollation_connection: utf8_general_ci\n  Database Collation: latin1_swedish_ci\n"
+    ],
+    "Category": [
+        "Administrative SQL Statements"
+    ]
+}

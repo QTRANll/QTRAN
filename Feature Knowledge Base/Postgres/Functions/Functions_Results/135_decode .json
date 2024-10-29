@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/current/functions-binarystring.html"
+    ],
+    "Title": [
+        "decode"
+    ],
+    "Feature": [
+        "decode ( string text, format text ) → bytea"
+    ],
+    "Description": [
+        "Decodes binary data from a textual representation; supported format values are the same as for encode."
+    ],
+    "Examples": [
+        "decode('MTIzAAE=', 'base64') → \\x3132330001"
+    ],
+    "Category": [
+        "Binary String Functions and Operators"
+    ]
+}

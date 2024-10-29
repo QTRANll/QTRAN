@@ -1,0 +1,37 @@
+{
+    "HTML": "https://mariadb.com//kb/en/ps_thread_id/",
+    "Title": "ps_thread_id",
+    "Feature": [
+        "sys.ps_thread_id(connection_id)\n"
+    ],
+    "Description": [
+        "ps_thread_id is a stored function available with the Sys Schema that returns the thread_id associated with the given connection_id. If the connection_id is NULL, returns the thread_id for the current connection. "
+    ],
+    "Examples": [
+        "SELECT * FROM performance_schema.threads\\G\n*************************** 13. row ***************************\n          THREAD_ID: 13\n               NAME: thread/sql/one_connection\n               TYPE: FOREGROUND\n     PROCESSLIST_ID: 3\n   PROCESSLIST_USER: msandbox\n   PROCESSLIST_HOST: localhost\n     PROCESSLIST_DB: test\nPROCESSLIST_COMMAND: Query\n   PROCESSLIST_TIME: 0\n  PROCESSLIST_STATE: Sending data\n   PROCESSLIST_INFO: SELECT * FROM performance_schema.threads\n   PARENT_THREAD_ID: 1\n               ROLE: NULL\n       INSTRUMENTED: YES\n            HISTORY: YES\n    CONNECTION_TYPE: Socket\n       THREAD_OS_ID: 24379\n\n\nSELECT sys.ps_thread_id(3);\n+---------------------+\n| sys.ps_thread_id(3) |\n+---------------------+\n|                  13 |\n+---------------------+\n\nSELECT sys.ps_thread_id(NULL);\n+------------------------+\n| sys.ps_thread_id(NULL) |\n+------------------------+\n|                     13 |\n+------------------------+\n"
+    ],
+    "Category": [
+        "No Category"
+    ],
+    "Effective SQLs Refined": [
+        "SELECT sys.ps_thread_id(NULL);"
+    ],
+    "Ineffective SQLs Refined": [
+        "SELECT * FROM performance_schema.threads\\G\n*************************** 13. row ***************************\n          THREAD_ID: 13\n               NAME: thread/sql/one_connection\n               TYPE: FOREGROUND\n     PROCESSLIST_ID: 3\n   PROCESSLIST_USER: msandbox\n   PROCESSLIST_HOST: localhost\n     PROCESSLIST_DB: test\nPROCESSLIST_COMMAND: Query\n   PROCESSLIST_TIME: 0\n  PROCESSLIST_STATE: Sending data\n   PROCESSLIST_INFO: SELECT * FROM performance_schema.threads\n   PARENT_THREAD_ID: 1\n               ROLE: NULL\n       INSTRUMENTED: YES\n            HISTORY: YES\n    CONNECTION_TYPE: Socket\n       THREAD_OS_ID: 24379\n\n\nSELECT sys.ps_thread_id(3);"
+    ],
+    "Wrong Messages from Ineffective SQLs Refined": [
+        "(pymysql.err.ProgrammingError) (1064, \"You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '\\\\G\\n*************************** 13. row ***************************\\n          ...' at line 1\")\n[SQL: SELECT * FROM performance_schema.threads\\G\n*************************** 13. row ***************************\n          THREAD_ID: 13\n               NAME: thread/sql/one_connection\n               TYPE: FOREGROUND\n     PROCESSLIST_ID: 3\n   PROCESSLIST_USER: msandbox\n   PROCESSLIST_HOST: localhost\n     PROCESSLIST_DB: test\nPROCESSLIST_COMMAND: Query\n   PROCESSLIST_TIME: 0\n  PROCESSLIST_STATE: Sending data\n   PROCESSLIST_INFO: SELECT * FROM performance_schema.threads\n   PARENT_THREAD_ID: 1\n               ROLE: NULL\n       INSTRUMENTED: YES\n            HISTORY: YES\n    CONNECTION_TYPE: Socket\n       THREAD_OS_ID: 24379\n\n\nSELECT sys.ps_thread_id(3);]\n(Background on this error at: https://sqlalche.me/e/20/f405)"
+    ],
+    "SQLs Generated1": [],
+    "SQLs Generated Costs1": [],
+    "SQLs Generated ExecResults1": [],
+    "SQLs Generated ExecTimes1": [],
+    "SQLs Generated ErrorMessages1": [],
+    "Effective SQLs Generated1": [],
+    "SQLs Generated2": [],
+    "SQLs Generated Costs2": [],
+    "SQLs Generated ExecResults2": [],
+    "SQLs Generated ExecTimes2": [],
+    "SQLs Generated ErrorMessages2": [],
+    "Effective SQLs Generated2": []
+}

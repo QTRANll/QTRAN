@@ -1,0 +1,27 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/aggregate-functions/reference/stddevsampstable"
+    ],
+    "Title": [
+        "stddevSampStable"
+    ],
+    "Feature": [
+        "stddevSampStable(x)"
+    ],
+    "Description": [
+        "stddevSampStable",
+        "The result is equal to the square root of varSamp. Unlike stddevSamp This function uses a numerically stable algorithm. It works slower but provides a lower computational error.",
+        "Syntax",
+        "stddevSampStable(x)",
+        "Parameters",
+        "x: Values for which to find the square root of sample variance. (U)Int*, Float*, Decimal*.",
+        "Returned value",
+        "Square root of sample variance of x. Float64."
+    ],
+    "Examples": [
+        "DROP TABLE IF EXISTS test_data;CREATE TABLE test_data(    population UInt8,)ENGINE = Log;INSERT INTO test_data VALUES (3),(3),(3),(4),(4),(5),(5),(7),(11),(15);SELECT    stddevSampStable(population)FROM test_data;"
+    ],
+    "Category": [
+        "Aggregate Functions"
+    ]
+}

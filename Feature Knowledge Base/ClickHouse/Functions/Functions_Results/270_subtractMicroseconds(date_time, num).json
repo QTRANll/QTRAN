@@ -1,0 +1,27 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/date-time-functions"
+    ],
+    "Title": [
+        "subtractMicroseconds"
+    ],
+    "Feature": [
+        "subtractMicroseconds(date_time, num)"
+    ],
+    "Description": [
+        "subtractMicroseconds",
+        "Subtracts a specified number of microseconds from a date with time or a string-encoded date with time.",
+        "Syntax",
+        "subtractMicroseconds(date_time, num)",
+        "Parameters",
+        "date_time: Date with time to subtract specified number of microseconds from. DateTime/DateTime64, String.num: Number of microseconds to subtract. (U)Int*, Float*.",
+        "Returned value",
+        "Returns date_time minus num microseconds. DateTime64."
+    ],
+    "Examples": [
+        "WITH    toDateTime('2024-01-01 00:00:00') AS date_time,    '2024-01-01 00:00:00' AS date_time_stringSELECT    subtractMicroseconds(date_time, 1000000) AS subtract_microseconds_with_date_time,    subtractMicroseconds(date_time_string, 1000000) AS subtract_microseconds_with_date_time_string"
+    ],
+    "Category": [
+        "Dates and Times Functions"
+    ]
+}

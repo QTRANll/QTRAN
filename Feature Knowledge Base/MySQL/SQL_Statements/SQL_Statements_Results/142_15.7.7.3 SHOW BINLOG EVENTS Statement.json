@@ -1,0 +1,25 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/show-binlog-events.html"
+    ],
+    "Title": [
+        "15.7.7.3 SHOW BINLOG EVENTS Statement"
+    ],
+    "Feature": [
+        "SHOW BINLOG EVENTS\n   [IN 'log_name']\n   [FROM pos]\n   [LIMIT [offset,] row_count]"
+    ],
+    "Description": [
+        "\n        Shows the events in the binary log. If you do not specify\n        'log_name', the\n        first binary log is displayed. SHOW BINLOG\n        EVENTS requires the REPLICATION\n        SLAVE privilege.\n      ",
+        "\n        The LIMIT clause has the same syntax as for\n        the SELECT statement. See\n        Section\u00a015.2.13, \u201cSELECT Statement\u201d.\n",
+        "\n\nNote\n\n\n          Issuing a SHOW BINLOG EVENTS\n          with no LIMIT clause could start a very\n          time- and resource-consuming process because the server\n          returns to the client the complete contents of the binary log\n          (which includes all statements executed by the server that\n          modify data). As an alternative to SHOW\n          BINLOG EVENTS, use the\n          mysqlbinlog utility to save the binary log\n          to a text file for later examination and analysis. See\n          Section\u00a06.6.9, \u201cmysqlbinlog \u2014 Utility for Processing Binary Log Files\u201d.\n\n",
+        "\nSHOW BINLOG EVENTS displays the\n        following fields for each event in the binary log:\n",
+        "\n\nLog_name\n\n            The name of the file that is being listed.\n          \nPos\n\n            The position at which the event occurs.\n          \nEvent_type\n\n            An identifier that describes the event type.\n          \nServer_id\n\n            The server ID of the server on which the event originated.\n          \nEnd_log_pos\n\n            The position at which the next event begins, which is equal\n            to Pos plus the size of the event.\n          \nInfo\n\n            More detailed information about the event type. The format\n            of this information depends on the event type.\n\n",
+        "\n        For compressed transaction payloads, the\n        Transaction_payload_event is first printed as\n        a single unit, then it is unpacked and each event inside it is\n        printed.\n      ",
+        "\n        Some events relating to the setting of user and system variables\n        are not included in the output from SHOW\n        BINLOG EVENTS. To get complete coverage of events\n        within a binary log, use mysqlbinlog.\n      ",
+        "\nSHOW BINLOG EVENTS does\n        not work with relay log files. You can use\n        SHOW RELAYLOG EVENTS for this\n        purpose.\n"
+    ],
+    "Examples": [],
+    "Category": [
+        "Database Administration Statements"
+    ]
+}

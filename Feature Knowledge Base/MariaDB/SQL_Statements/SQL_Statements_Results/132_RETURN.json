@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/return/"
+    ],
+    "Title": [
+        "RETURN"
+    ],
+    "Feature": [
+        "RETURN expr \n",
+        "The RETURN statement terminates execution of a stored function and\nreturns the value expr to the function caller. There must be at least\none RETURN statement in a stored function. If the function has multiple exit points, all exit points must have a RETURN.",
+        "This statement is not used in stored procedures, triggers, or events. LEAVE can be used instead.",
+        "The following example shows that RETURN can return the result of a scalar subquery:",
+        "CREATE FUNCTION users_count() RETURNS BOOL\n   READS SQL DATA\nBEGIN\n   RETURN (SELECT COUNT(DISTINCT User) FROM mysql.user);\nEND;\n"
+    ],
+    "Description": [],
+    "Examples": [],
+    "Category": [
+        "Programmatic and Compound Statements"
+    ]
+}

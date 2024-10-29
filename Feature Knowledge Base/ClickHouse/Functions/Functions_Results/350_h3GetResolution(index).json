@@ -1,0 +1,27 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/geo/h3"
+    ],
+    "Title": [
+        "h3GetResolution"
+    ],
+    "Feature": [
+        "h3GetResolution(index)"
+    ],
+    "Description": [
+        "h3GetResolution",
+        "Returns the resolution of the H3 index.",
+        "Syntax",
+        "h3GetResolution(index)",
+        "Parameter",
+        "index \u2014 Hexagon index number. UInt64.",
+        "Returned value",
+        "Index resolution. Range: [0, 15]. UInt8."
+    ],
+    "Examples": [
+        "SELECT h3GetResolution(617420388352917503) AS res;"
+    ],
+    "Category": [
+        "Geo Functions"
+    ]
+}

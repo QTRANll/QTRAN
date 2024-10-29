@@ -1,0 +1,18 @@
+{
+    "HTML": [
+        "https://sqlite.org/lang_corefunc.html#length"
+    ],
+    "Title": [
+        "Built-In Scalar SQL Functions"
+    ],
+    "Feature": [
+        "length(X)"
+    ],
+    "Description": [
+        "For a string value X, the length(X) function returns the number of \n  characters (not bytes) in X prior to the first NUL character.\n  Since SQLite strings do not normally contain NUL characters, the length(X)\n  function will usually return the total number of characters in the string X.\n  For a blob value X, length(X) returns the number of bytes in the blob.\n  If X is NULL then length(X) is NULL.\n  If X is numeric then length(X) returns the length of a string\n  representation of X.Note that for strings, the length(X) function returns thecharacterlength of the string, not the byte length.  The character length is the number\n  of characters in the string.  The character length is always different from\n  the byte length for UTF-16 strings, and can be different from the byte length\n  for UTF-8 strings if the string contains multi-byte characters.  Use theoctet_length()function to find the byte length of a string.For BLOB values, length(X) always returns the byte-length of the BLOB.For string values, length(X) must read the entire string into memory in order\n  to compute the character length.  But for BLOB values, that is not necessary as\n  SQLite knows how many bytes are in the BLOB.  Hence, for multi-megabyte values,\n  the length(X) function is usually much faster for BLOBs than for strings, since\n  it does not need to load the value into memory."
+    ],
+    "Examples": [],
+    "Category": [
+        "Built-In Scalar SQL Functions"
+    ]
+}

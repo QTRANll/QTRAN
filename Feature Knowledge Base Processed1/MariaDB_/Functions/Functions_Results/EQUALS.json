@@ -1,0 +1,58 @@
+{
+    "HTML": "https://mariadb.com//kb/en/equals/",
+    "Title": "EQUALS",
+    "Feature": [
+        "Equals(g1,g2)\n",
+        "From MariaDB 10.2.3:",
+        "MBREQUALS(g1,g2)\n"
+    ],
+    "Description": [
+        "Returns 1 or 0 to indicate whether g1 is spatially equal to g2.",
+        "EQUALS() is based on the original MySQL implementation and uses object bounding rectangles, while ST_EQUALS() uses object shapes.",
+        "From MariaDB 10.2.3, MBREQUALS is a synonym for Equals."
+    ],
+    "Examples": [],
+    "Category": [
+        "Geographic Functions"
+    ],
+    "Effective SQLs Refined": [],
+    "Ineffective SQLs Refined": [],
+    "Wrong Messages from Ineffective SQLs Refined": [],
+    "SQLs Generated1": [
+        {
+            "Example SQL": "SELECT Equals(g1, g2);"
+        },
+        {
+            "Example SQL": "SELECT Equals(GeomFromText('POINT(1 1)'), GeomFromText('POINT(1 1)'));"
+        }
+    ],
+    "SQLs Generated Costs1": [
+        {
+            "Total Tokens": 349,
+            "Prompt Tokens": 328,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 6.18e-05
+        },
+        {
+            "Total Tokens": 516,
+            "Prompt Tokens": 478,
+            "Completion Tokens": 38,
+            "Total Cost (USD)": 9.449999999999999e-05
+        }
+    ],
+    "SQLs Generated ExecResults1": [
+        "None",
+        "[(1,)]"
+    ],
+    "SQLs Generated ExecTimes1": [
+        "0",
+        "0.0053217411041259766"
+    ],
+    "SQLs Generated ErrorMessages1": [
+        "(pymysql.err.OperationalError) (1054, \"Unknown column 'g1' in 'field list'\")\n",
+        "None"
+    ],
+    "Effective SQLs Generated1": [
+        "SELECT Equals(GeomFromText('POINT(1 1)'), GeomFromText('POINT(1 1)'));"
+    ]
+}

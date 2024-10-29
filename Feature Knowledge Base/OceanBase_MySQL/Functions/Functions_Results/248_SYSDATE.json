@@ -1,0 +1,21 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000000823417"
+    ],
+    "Title": [
+        "SYSDATE"
+    ],
+    "Feature": [
+        "SYSDATE(fsp)\n"
+    ],
+    "Description": [
+        "返回当前日期和时间，格式为 %Y-%m-%d %H.%i.%s。",
+        "fsp 表示秒精度，即返回值的小数位秒部分包含多少位数字。有效值为 0 到 6 的整数，默认值为 0。"
+    ],
+    "Examples": [
+        "obclient> SELECT SYSDATE();\n+---------------------+\n| SYSDATE()           |\n+---------------------+\n| 2021-07-15 14:10:06 |\n+---------------------+\n1 row in set\n"
+    ],
+    "Category": [
+        "Date and Time Functions"
+    ]
+}

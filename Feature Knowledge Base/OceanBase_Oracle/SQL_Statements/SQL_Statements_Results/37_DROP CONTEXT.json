@@ -1,0 +1,24 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000001054329"
+    ],
+    "Title": [
+        "DROP CONTEXT"
+    ],
+    "Feature": [
+        "DROP CONTEXT namespace;\n"
+    ],
+    "Description": [
+        "DROP CONTEXT 语句用于从数据库中删除上下文命名空间。",
+        "删除上下文命名空间不会使该命名空间下为用户会话设置的上下文无效。但是，当用户下次尝试设置该上下文时，该上下文将无效。",
+        "\n注意\n您必须具有 DROP ANY CONTEXT 系统权限。\n",
+        "namespace 是指定要删除的上下文命名空间的名称。您不能删除内置的命名空间 USERENV。",
+        "有关 USERENV 命名空间的信息，请参见函数 SYS_CONTEXT。"
+    ],
+    "Examples": [
+        "obclient> DROP CONTEXT dev_context;\nQuery OK, 0 rows affected\n"
+    ],
+    "Category": [
+        "DDL"
+    ]
+}

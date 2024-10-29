@@ -1,0 +1,34 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/loadable-function-reference.html"
+    ],
+    "Title": [
+        "14.2 Loadable Function Reference"
+    ],
+    "Feature": [
+        "audit_log_rotate()"
+    ],
+    "Description": [
+        "Rotate audit log file",
+        "\naudit_log_rotate()\n",
+        "\n              Arguments:\n            ",
+        "\n              None.\n            ",
+        "\n              Return value:\n            ",
+        "\n              The renamed file name.\n            ",
+        "\n              Example:\n            ",
+        "Press CTRL+C to copy mysql> SELECT audit_log_rotate();",
+        "\n              Using audit_log_rotate() requires the\n              AUDIT_ADMIN privilege.\n"
+    ],
+    "Examples": [
+        "mysql> SELECT audit_log_rotate();"
+    ],
+    "Category": [
+        "Loadable Functions"
+    ],
+    "Reference HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/audit-log-reference.html#function_audit-log-rotate"
+    ],
+    "Feature Type": [
+        "Function"
+    ]
+}

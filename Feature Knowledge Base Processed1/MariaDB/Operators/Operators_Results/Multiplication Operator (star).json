@@ -1,0 +1,40 @@
+{
+    "HTML": "https://mariadb.com//kb/en/multiplication-operator/",
+    "Title": "Multiplication Operator (*)",
+    "Feature": [
+        "*\n"
+    ],
+    "Description": [
+        "Multiplication operator."
+    ],
+    "Examples": [
+        "SELECT 7*6;\n+-----+\n| 7*6 |\n+-----+\n|  42 |\n+-----+\n\nSELECT 1234567890*9876543210;\n+-----------------------+\n| 1234567890*9876543210 |\n+-----------------------+\n|  -6253480962446024716 |\n+-----------------------+\n\nSELECT 18014398509481984*18014398509481984.0;\n+---------------------------------------+\n| 18014398509481984*18014398509481984.0 |\n+---------------------------------------+\n|   324518553658426726783156020576256.0 |\n+---------------------------------------+\n\nSELECT 18014398509481984*18014398509481984;\n+-------------------------------------+\n| 18014398509481984*18014398509481984 |\n+-------------------------------------+\n|                                   0 |\n+-------------------------------------+\n"
+    ],
+    "Category": [
+        "Arithmetic Operators"
+    ],
+    "Effective SQLs Refined": [
+        "SELECT 7*6;",
+        "SELECT 18014398509481984*18014398509481984.0;"
+    ],
+    "Ineffective SQLs Refined": [
+        "SELECT 1234567890*9876543210;",
+        "SELECT 18014398509481984*18014398509481984;"
+    ],
+    "Wrong Messages from Ineffective SQLs Refined": [
+        "(pymysql.err.OperationalError) (1690, \"BIGINT value is out of range in '1234567890 * 9876543210'\")\n[SQL: SELECT 1234567890*9876543210;]\n(Background on this error at: https://sqlalche.me/e/20/e3q8)",
+        "(pymysql.err.OperationalError) (1690, \"BIGINT value is out of range in '18014398509481984 * 18014398509481984'\")\n[SQL: SELECT 18014398509481984*18014398509481984;]\n(Background on this error at: https://sqlalche.me/e/20/e3q8)"
+    ],
+    "SQLs Generated1": [],
+    "SQLs Generated Costs1": [],
+    "SQLs Generated ExecResults1": [],
+    "SQLs Generated ExecTimes1": [],
+    "SQLs Generated ErrorMessages1": [],
+    "Effective SQLs Generated1": [],
+    "SQLs Generated2": [],
+    "SQLs Generated Costs2": [],
+    "SQLs Generated ExecResults2": [],
+    "SQLs Generated ExecTimes2": [],
+    "SQLs Generated ErrorMessages2": [],
+    "Effective SQLs Generated2": []
+}

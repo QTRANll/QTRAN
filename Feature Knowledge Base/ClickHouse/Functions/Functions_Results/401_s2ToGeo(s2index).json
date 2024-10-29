@@ -1,0 +1,27 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/geo/s2"
+    ],
+    "Title": [
+        "s2ToGeo"
+    ],
+    "Feature": [
+        "s2ToGeo(s2index)"
+    ],
+    "Description": [
+        "s2ToGeo",
+        "Returns geo coordinates (longitude, latitude) corresponding to the provided S2 point index.",
+        "Syntax",
+        "s2ToGeo(s2index)",
+        "Arguments",
+        "s2index \u2014 S2 Index. UInt64.",
+        "Returned values",
+        "A tuple consisting of two values: lon. Float64.lat. Float64."
+    ],
+    "Examples": [
+        "SELECT s2ToGeo(4704772434919038107) AS s2Coodrinates;"
+    ],
+    "Category": [
+        "Geo Functions"
+    ]
+}

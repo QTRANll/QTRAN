@@ -1,0 +1,21 @@
+{
+    "HTML": [
+        "https://docs.pingcap.com/zh/tidb/stable/tidb-functions#tidb_version"
+    ],
+    "Title": [
+        "TIDB_VERSION"
+    ],
+    "Feature": [
+        "TIDB_VERSION"
+    ],
+    "Description": [
+        "TIDB_VERSION",
+        "TIDB_VERSION() \u51fd\u6570\u7528\u4e8e\u83b7\u53d6\u5f53\u524d\u8fde\u63a5\u7684 TiDB \u670d\u52a1\u5668\u7248\u672c\u548c\u6784\u5efa\u8be6\u7ec6\u4fe1\u606f\u3002\u5411 GitHub \u4e0a\u63d0\u4ea4 issue \u65f6\uff0c\u4f60\u53ef\u4f7f\u7528\u6b64\u51fd\u6570\u83b7\u53d6\u76f8\u5173\u4fe1\u606f\u3002",
+        "SELECT TIDB_VERSION()\\G\n",
+        "*************************** 1. row ***************************\nTIDB_VERSION(): Release Version: v8.1.1\nEdition: Community\nGit Commit Hash: 821e491a20fbab36604b36b647b5bae26a2c1418\nGit Branch: HEAD\nUTC Build Time: 2024-08-27 19:16:25\nGoVersion: go1.21.10\nRace Enabled: false\nCheck Table Before Drop: false\nStore: tikv\n1 row in set (0.00 sec)\n"
+    ],
+    "Examples": [],
+    "Category": [
+        "TiDB Specific Functions"
+    ]
+}

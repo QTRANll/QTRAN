@@ -1,0 +1,19 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/current/functions-admin.html"
+    ],
+    "Title": [
+        "pg_promote"
+    ],
+    "Feature": [
+        "pg_promote ( wait boolean DEFAULT true, wait_seconds integer DEFAULT 60 ) → boolean"
+    ],
+    "Description": [
+        "Promotes a standby server to primary status. With wait set to true (the default), the function waits until promotion is completed or wait_seconds seconds have passed, and returns true if promotion is successful and false otherwise. If wait is set to false, the function returns true immediately after sending a SIGUSR1 signal to the postmaster to trigger promotion.",
+        "This function is restricted to superusers by default, but other users can be granted EXECUTE to run the function."
+    ],
+    "Examples": [],
+    "Category": [
+        "System Administration Functions"
+    ]
+}

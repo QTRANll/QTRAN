@@ -1,0 +1,21 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000000822972"
+    ],
+    "Title": [
+        "SESSION_USER"
+    ],
+    "Feature": [
+        "SESSION_USER()\n"
+    ],
+    "Description": [
+        "返回当前的用户名与主机名，返回值使用的字符集为 utf8mb4。",
+        "该函数是 USER() 的同义词。"
+    ],
+    "Examples": [
+        "obclient> SELECT SESSION_USER();\n+---------------------+\n| SESSION_USER()      |\n+---------------------+\n| root@100.0.0.1 |\n+---------------------+\n1 row in set\n"
+    ],
+    "Category": [
+        "Information Functions"
+    ]
+}

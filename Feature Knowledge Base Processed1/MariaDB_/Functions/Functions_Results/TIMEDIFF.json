@@ -1,0 +1,34 @@
+{
+    "HTML": "https://mariadb.com//kb/en/timediff/",
+    "Title": "TIMEDIFF",
+    "Feature": [
+        "TIMEDIFF(expr1,expr2)\n"
+    ],
+    "Description": [
+        "TIMEDIFF() returns expr1 - expr2 expressed as a time value. expr1 and\nexpr2 are time or date-and-time expressions, but both must be of the\nsame type."
+    ],
+    "Examples": [
+        "SELECT TIMEDIFF('2000:01:01 00:00:00', '2000:01:01 00:00:00.000001');\n+---------------------------------------------------------------+\n| TIMEDIFF('2000:01:01 00:00:00', '2000:01:01 00:00:00.000001') |\n+---------------------------------------------------------------+\n| -00:00:00.000001                                              |\n+---------------------------------------------------------------+\n\nSELECT TIMEDIFF('2008-12-31 23:59:59.000001', '2008-12-30 01:01:01.000002');\n+----------------------------------------------------------------------+\n| TIMEDIFF('2008-12-31 23:59:59.000001', '2008-12-30 01:01:01.000002') |\n+----------------------------------------------------------------------+\n| 46:58:57.999999                                                      |\n+----------------------------------------------------------------------+\n"
+    ],
+    "Category": [
+        "Date & Time Functions"
+    ],
+    "Effective SQLs Refined": [
+        "SELECT TIMEDIFF('2000:01:01 00:00:00', '2000:01:01 00:00:00.000001');",
+        "SELECT TIMEDIFF('2008-12-31 23:59:59.000001', '2008-12-30 01:01:01.000002');"
+    ],
+    "Ineffective SQLs Refined": [],
+    "Wrong Messages from Ineffective SQLs Refined": [],
+    "SQLs Generated1": [],
+    "SQLs Generated Costs1": [],
+    "SQLs Generated ExecResults1": [],
+    "SQLs Generated ExecTimes1": [],
+    "SQLs Generated ErrorMessages1": [],
+    "Effective SQLs Generated1": [],
+    "SQLs Generated2": [],
+    "SQLs Generated Costs2": [],
+    "SQLs Generated ExecResults2": [],
+    "SQLs Generated ExecTimes2": [],
+    "SQLs Generated ErrorMessages2": [],
+    "Effective SQLs Generated2": []
+}

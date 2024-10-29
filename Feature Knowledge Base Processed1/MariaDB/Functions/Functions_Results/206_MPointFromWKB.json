@@ -1,0 +1,21 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/mpointfromwkb/"
+    ],
+    "Title": [
+        "MPointFromWKB"
+    ],
+    "Feature": [
+        "MPointFromWKB(wkb[,srid])\nMultiPointFromWKB(wkb[,srid])\n"
+    ],
+    "Description": [
+        "Constructs a MULTIPOINT value using its WKB representation and SRID.",
+        "MPointFromWKB() and MultiPointFromWKB() are synonyms."
+    ],
+    "Examples": [
+        "SELECT ST_AsText(MPointFromWKB(@g));"
+    ],
+    "Category": [
+        "Geographic Functions"
+    ]
+}

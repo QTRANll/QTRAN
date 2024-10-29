@@ -1,0 +1,27 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/date-time-functions"
+    ],
+    "Title": [
+        "toStartOfWeek"
+    ],
+    "Feature": [
+        "toStartOfWeek(t[, mode[, timezone]])"
+    ],
+    "Description": [
+        "toStartOfWeek",
+        "Rounds a date or date with time down to the nearest Sunday or Monday. Returns the date. The mode argument works exactly like the mode argument in function toWeek(). If no mode is specified, it defaults to 0.",
+        "Syntax",
+        "toStartOfWeek(t[, mode[, timezone]])",
+        "Arguments",
+        "t - a Date, Date32, DateTime or DateTime64mode - determines the first day of the week as described in the toWeek() functiontimezone - Optional parameter, it behaves like any other conversion function",
+        "Returned value",
+        "The date of the nearest Sunday or Monday on or prior to the given date, depending on the mode. Date."
+    ],
+    "Examples": [
+        "SELECT    toStartOfWeek(toDateTime('2023-04-21 10:20:30')), /* a Friday */    toStartOfWeek(toDateTime('2023-04-21 10:20:30'), 1), /* a Friday */    toStartOfWeek(toDate('2023-04-24')), /* a Monday */    toStartOfWeek(toDate('2023-04-24'), 1) /* a Monday */FORMAT Vertical"
+    ],
+    "Category": [
+        "Dates and Times Functions"
+    ]
+}

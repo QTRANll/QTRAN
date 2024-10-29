@@ -1,0 +1,45 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000000823157"
+    ],
+    "Title": [
+        "UNIFORM"
+    ],
+    "Feature": [
+        "UNIFORM(<min> , <max> , <gen>)\n"
+    ],
+    "Description": [
+        "该函数返回一个符合均匀分布（Uniform Distribution）的整数或浮点数。",
+        "min",
+        ", ",
+        "max",
+        " 的取值必须是标量值，不随行迭代而变。例如，常量、标量函数等。PL 里还可以是 ",
+        "@v1",
+        "、",
+        "1+@v3",
+        " 等。",
+        "Oracle 模式下，无论 ",
+        "min",
+        "、",
+        "max",
+        " 是否为整数，都当做 ",
+        "NUMBER",
+        " 类型处理，",
+        "UNIFORM()",
+        " 函数的输出结果为浮点数。如果希望生成整数，可以配合 ",
+        "FLOOR()",
+        " 函数使用。",
+        "gen",
+        " 是一个数值生成函数，通常使用 ",
+        "RANDOM()",
+        " 函数生成。如果传入值是一个常量，则 ",
+        "UNIFORM()",
+        " 函数返回值也为一个定值。"
+    ],
+    "Examples": [
+        "obclient> SELECT UNIFORM(0.0, 10, RANDOM()) FROM TABLE(GENERATOR(4)) ORDER BY 1;\n+--------------------------+\n| UNIFORM(0.0,10,RANDOM()) |\n+--------------------------+\n|        .8657087411722835 |\n|       1.0922542185892958 |\n|       1.1803956370514672 |\n|        5.613282729140028 |\n+--------------------------+\n4 rows in set\n\nobclient> SELECT UNIFORM(0, 10, RANDOM()) FROM TABLE(GENERATOR(4)) ORDER BY 1;\n+------------------------+\n| UNIFORM(0,10,RANDOM()) |\n+------------------------+\n|     2.6761305377880125 |\n|     3.0277418674828116 |\n|      5.170644071608517 |\n|      5.805950943815582 |\n+------------------------+\n4 rows in set\n"
+    ],
+    "Category": [
+        "Numeric Functions"
+    ]
+}

@@ -1,0 +1,30 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/except.html"
+    ],
+    "Title": [
+        "15.2.4 EXCEPT Clause"
+    ],
+    "Feature": [
+        "query_expression_body EXCEPT [ALL | DISTINCT] query_expression_body\n    [EXCEPT [ALL | DISTINCT] query_expression_body]\n    [...]\n\nquery_expression_body:\n    See Section 15.2.14, \u201cSet Operations with UNION, INTERSECT, and EXCEPT\u201d"
+    ],
+    "Description": [
+        "\nEXCEPT limits the result from the\n      first query block to those rows which are (also) not found in the\n      second. As with UNION and\n      INTERSECT, either query block can\n      make use of any of SELECT,\n      TABLE, or\n      VALUES. An example using the tables\n      a, b, and\n      c defined in Section\u00a015.2.8, \u201cINTERSECT Clause\u201d, is\n      shown here:\n    ",
+        "Press CTRL+C to copy mysql> TABLE a EXCEPT TABLE b;\n+------+------+\n| m    | n    |\n+------+------+\n|    2 |    3 |\n+------+------+\n1 row in set (0.00 sec)\n\nmysql> TABLE a EXCEPT TABLE c;\n+------+------+\n| m    | n    |\n+------+------+\n|    1 |    2 |\n|    2 |    3 |\n+------+------+\n2 rows in set (0.00 sec)\n\nmysql> TABLE b EXCEPT TABLE c;\n+------+------+\n| m    | n    |\n+------+------+\n|    1 |    2 |\n+------+------+\n1 row in set (0.00 sec)",
+        "\n      As with UNION and\n      INTERSECT, if neither\n      DISTINCT nor ALL is\n      specified, the default is DISTINCT.\n    ",
+        "\nDISTINCT removes duplicates found on either\n      side of the relation, as shown here:\n    ",
+        "Press CTRL+C to copy mysql> TABLE c EXCEPT DISTINCT TABLE a;\n+------+------+\n| m    | n    |\n+------+------+\n|    1 |    3 |\n+------+------+\n1 row in set (0.00 sec)\n\nmysql> TABLE c EXCEPT ALL TABLE a;\n+------+------+\n| m    | n    |\n+------+------+\n|    1 |    3 |\n|    1 |    3 |\n+------+------+\n2 rows in set (0.00 sec)",
+        "\n      (The first statement has the same effect as TABLE c\n      EXCEPT TABLE a.)\n    ",
+        "\n      Unlike UNION or INTERSECT,\n      EXCEPT is not\n      commutative\u2014that is, the result depends on the order of the\n      operands, as shown here:\n    ",
+        "Press CTRL+C to copy mysql> TABLE a EXCEPT TABLE c;\n+------+------+\n| m    | n    |\n+------+------+\n|    1 |    2 |\n|    2 |    3 |\n+------+------+\n2 rows in set (0.00 sec)\n\nmysql> TABLE c EXCEPT TABLE a;\n+------+------+\n| m    | n    |\n+------+------+\n|    1 |    3 |\n+------+------+\n1 row in set (0.00 sec)",
+        "\n      As with UNION, the result sets to be compared\n      must have the same number of columns. Result set column types are\n      also determined as for UNION.\n"
+    ],
+    "Examples": [
+        "mysql> TABLE a EXCEPT TABLE b;\n+------+------+\n| m    | n    |\n+------+------+\n|    2 |    3 |\n+------+------+\n1 row in set (0.00 sec)\n\nmysql> TABLE a EXCEPT TABLE c;\n+------+------+\n| m    | n    |\n+------+------+\n|    1 |    2 |\n|    2 |    3 |\n+------+------+\n2 rows in set (0.00 sec)\n\nmysql> TABLE b EXCEPT TABLE c;\n+------+------+\n| m    | n    |\n+------+------+\n|    1 |    2 |\n+------+------+\n1 row in set (0.00 sec)",
+        "mysql> TABLE c EXCEPT DISTINCT TABLE a;\n+------+------+\n| m    | n    |\n+------+------+\n|    1 |    3 |\n+------+------+\n1 row in set (0.00 sec)\n\nmysql> TABLE c EXCEPT ALL TABLE a;\n+------+------+\n| m    | n    |\n+------+------+\n|    1 |    3 |\n|    1 |    3 |\n+------+------+\n2 rows in set (0.00 sec)",
+        "mysql> TABLE a EXCEPT TABLE c;\n+------+------+\n| m    | n    |\n+------+------+\n|    1 |    2 |\n|    2 |    3 |\n+------+------+\n2 rows in set (0.00 sec)\n\nmysql> TABLE c EXCEPT TABLE a;\n+------+------+\n| m    | n    |\n+------+------+\n|    1 |    3 |\n+------+------+\n1 row in set (0.00 sec)"
+    ],
+    "Category": [
+        "Data Manipulation Statements"
+    ]
+}

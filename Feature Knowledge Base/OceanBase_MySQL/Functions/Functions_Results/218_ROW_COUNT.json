@@ -1,0 +1,26 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000000822975"
+    ],
+    "Title": [
+        "ROW_COUNT"
+    ],
+    "Feature": [
+        "ROW_COUNT()\n"
+    ],
+    "Description": [
+        "返回执行的 SQL 语句影响的行数。",
+        "ROW_COUNT 根据不同语句返回不同的值:",
+        "DDL 语句：返回 0。",
+        "除 SELECT 外的 DML 语句：影响的行数。",
+        "特别地，UPDATE 语句会返回实际影响的行数。",
+        "SELECT 语句：如果 SELECT 语句的执行结果是一个集合，则返回 -1，如果 SELECT 语句影响到了行的状态，则返回被影响的行数。",
+        "例如，SELECT .... INTO 语句会返回插入的行数。"
+    ],
+    "Examples": [
+        "obclient> INSERT INTO t VALUES(1),(2),(3);\nQuery OK, 3 rows affected (0.02 sec)\nRecords: 3  Duplicates: 0  Warnings: 0\n\nobclient> SELECT ROW_COUNT();\n+-------------+\n| ROW_COUNT() |\n+-------------+\n|           3 |\n+-------------+\n1 row in set\n"
+    ],
+    "Category": [
+        "Information Functions"
+    ]
+}

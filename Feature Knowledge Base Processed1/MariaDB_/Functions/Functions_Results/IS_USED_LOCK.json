@@ -1,0 +1,44 @@
+{
+    "HTML": "https://mariadb.com//kb/en/is_used_lock/",
+    "Title": "IS_USED_LOCK",
+    "Feature": [
+        "IS_USED_LOCK(str)\n"
+    ],
+    "Description": [
+        "Checks whether the lock named str is in use (that is, locked). If so,\nit returns the connection identifier of the client that holds the\nlock. Otherwise, it returns NULL. str is case insensitive.",
+        "If the metadata_lock_info plugin is installed, the Information Schema metadata_lock_info table contains information about locks of this kind (as well as metadata locks).",
+        "Statements using the IS_USED_LOCK function are not safe for statement-based replication."
+    ],
+    "Examples": [],
+    "Category": [
+        "Miscellaneous Functions"
+    ],
+    "Effective SQLs Refined": [],
+    "Ineffective SQLs Refined": [],
+    "Wrong Messages from Ineffective SQLs Refined": [],
+    "SQLs Generated1": [
+        {
+            "Example SQL": "SELECT IS_USED_LOCK('my_lock_name');"
+        }
+    ],
+    "SQLs Generated Costs1": [
+        {
+            "Total Tokens": 350,
+            "Prompt Tokens": 328,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 6.24e-05
+        }
+    ],
+    "SQLs Generated ExecResults1": [
+        "[(None,)]"
+    ],
+    "SQLs Generated ExecTimes1": [
+        "0.018164634704589844"
+    ],
+    "SQLs Generated ErrorMessages1": [
+        "None"
+    ],
+    "Effective SQLs Generated1": [
+        "SELECT IS_USED_LOCK('my_lock_name');"
+    ]
+}

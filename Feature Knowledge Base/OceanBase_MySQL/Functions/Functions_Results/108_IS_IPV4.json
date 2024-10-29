@@ -1,0 +1,21 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000000822943"
+    ],
+    "Title": [
+        "IS_IPV4"
+    ],
+    "Feature": [
+        "IS_IPV4(expr)\n"
+    ],
+    "Description": [
+        "如果参数 expr 是有效的 IPv4 地址字符串，则返回 1，否则返回 0。",
+        "对于指定的参数，如果 IS_IPV4() 返回 1，则 INET_ATON() 和 INET6_ATON() 返回非 NULL。反之却是不正确的，在某些情况下，当 IS_IPV4() 返回 0 时，INET_ATON() 返回非 NULL。IS_IPV4() 对 IPv4 地址的要求比 INET_ATON() 更严格，INET6_ATON() 在检查 IPv4 地址方面与 IS_IPV4() 一样强大。"
+    ],
+    "Examples": [
+        "obclient> SELECT IS_IPV4('10.x.x.9'), IS_IPV4('10.x.x.256');\n+---------------------+-----------------------+\n| IS_IPV4('10.x.x.9') | IS_IPV4('10.x.x.256') |\n+---------------------+-----------------------+\n|                   1 |                     0 |\n+---------------------+-----------------------+\n1 row in set\n"
+    ],
+    "Category": [
+        "Miscellaneous Functions"
+    ]
+}

@@ -1,0 +1,23 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/show-character-set/"
+    ],
+    "Title": [
+        "SHOW CHARACTER SET"
+    ],
+    "Feature": [
+        "SHOW CHARACTER SET\n    [LIKE 'pattern' | WHERE expr]\n"
+    ],
+    "Description": [
+        "The SHOW CHARACTER SET statement shows all available character sets.  The LIKE clause, if present on its own, indicates which character\nset names to match. The WHERE and LIKE clauses can be given to select rows using more general conditions, as discussed in Extended SHOW.",
+        "The same information can be queried from the Information Schema CHARACTER_SETS table.",
+        "See Setting Character Sets and Collations for details on specifying the character set at the server, database, table and column levels."
+    ],
+    "Examples": [
+        "SHOW CHARACTER SET LIKE 'latin%';\n+---------+-----------------------------+-------------------+--------+\n| Charset | Description                 | Default collation | Maxlen |\n+---------+-----------------------------+-------------------+--------+\n| latin1  | cp1252 West European        | latin1_swedish_ci |      1 |\n| latin2  | ISO 8859-2 Central European | latin2_general_ci |      1 |\n| latin5  | ISO 8859-9 Turkish          | latin5_turkish_ci |      1 |\n| latin7  | ISO 8859-13 Baltic          | latin7_general_ci |      1 |\n+---------+-----------------------------+-------------------+--------+\n",
+        "SHOW CHARACTER SET WHERE Maxlen LIKE '2';\n+---------+---------------------------+-------------------+--------+\n| Charset | Description               | Default collation | Maxlen |\n+---------+---------------------------+-------------------+--------+\n| big5    | Big5 Traditional Chinese  | big5_chinese_ci   |      2 |\n| sjis    | Shift-JIS Japanese        | sjis_japanese_ci  |      2 |\n| euckr   | EUC-KR Korean             | euckr_korean_ci   |      2 |\n| gb2312  | GB2312 Simplified Chinese | gb2312_chinese_ci |      2 |\n| gbk     | GBK Simplified Chinese    | gbk_chinese_ci    |      2 |\n| ucs2    | UCS-2 Unicode             | ucs2_general_ci   |      2 |\n| cp932   | SJIS for Windows Japanese | cp932_japanese_ci |      2 |\n+---------+---------------------------+-------------------+--------+\n"
+    ],
+    "Category": [
+        "Administrative SQL Statements"
+    ]
+}

@@ -1,0 +1,33 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/type-conversion-functions"
+    ],
+    "Title": [
+        "toInt64OrZero"
+    ],
+    "Feature": [
+        "toInt64OrZero(x)"
+    ],
+    "Description": [
+        "toInt64OrZero",
+        "Like toInt64, this function converts an input value to a value of type Int64 but returns 0 in case of an error.",
+        "Syntax",
+        "toInt64OrZero(x)",
+        "Arguments",
+        "x \u2014 A String representation of a number. String.",
+        "Supported arguments:",
+        "String representations of (U)Int8/16/32/128/256.",
+        "Unsupported arguments (return 0):",
+        "String representations of Float32/64 values, including NaN and Inf.String representations of binary and hexadecimal values, e.g. SELECT toInt64OrZero('0xc0fe');.",
+        "NoteIf the input value cannot be represented within the bounds of Int64, overflow or underflow of the result occurs.\nThis is not considered an error.",
+        "Returned value",
+        "64-bit integer value if successful, otherwise 0. Int64.",
+        "NoteThe function uses rounding towards zero, meaning it truncates fractional digits of numbers."
+    ],
+    "Examples": [
+        "SELECT    toInt64OrZero('-64'),    toInt64OrZero('abc')FORMAT Vertical;"
+    ],
+    "Category": [
+        "Type Conversion Functions"
+    ]
+}

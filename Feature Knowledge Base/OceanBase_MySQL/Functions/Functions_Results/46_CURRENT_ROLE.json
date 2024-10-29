@@ -1,0 +1,21 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000000822969"
+    ],
+    "Title": [
+        "CURRENT_ROLE"
+    ],
+    "Feature": [
+        "CURRENT_ROLE()\n"
+    ],
+    "Description": [
+        "该函数用于查看当前用户在当前会话中被激活的角色。如果查询结果为 NONE，则表示当前用户没有处于激活状态的角色，只有处于激活状态的角色的权限才能被用户使用。"
+    ],
+    "Examples": [
+        "obclient [(none)]> SELECT CURRENT_ROLE();\n",
+        "+-----------------------------+\n| CURRENT_ROLE()              |\n+-----------------------------+\n| `role002`@`%`,`role001`@`%` |\n+-----------------------------+\n1 row in set\n"
+    ],
+    "Category": [
+        "Information Functions"
+    ]
+}

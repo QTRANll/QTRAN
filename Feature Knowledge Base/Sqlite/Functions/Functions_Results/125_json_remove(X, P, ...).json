@@ -1,0 +1,27 @@
+{
+    "HTML": [
+        "https://sqlite.org/json1.html#jrm"
+    ],
+    "Title": [
+        "JSON Functions"
+    ],
+    "Feature": [
+        "json_remove(X, P, ...)"
+    ],
+    "Description": [
+        "The json_remove() function is designed to remove elements from a JSON object or array. It accepts a JSON value as the first argument and is followed by zero or more path arguments that identify the elements to be removed. The function returns a copy of the original JSON value with the specified elements removed. If a path does not match any element, it is ignored without error. The removal process is sequential and can affect subsequent path searches due to changes made by earlier removals. If called without path arguments, json_remove() returns the input JSON reformatted with excess whitespace removed. The function will throw an error if the initial argument is not well-formed JSON or if any path argument is not a well-formed path."
+    ],
+    "Examples": [
+        "json_remove('[0,1,2,3,4]', '$[2]') returns '[0,1,3,4]'",
+        "json_remove('[0,1,2,3,4]', '$[2]', '$[0]') returns '[1,3,4]'",
+        "json_remove('[0,1,2,3,4]', '$[0]', '$[2]') returns '[1,2,4]'",
+        "json_remove('[0,1,2,3,4]', '$[#-1]', '$[0]') returns '[1,2,3]'",
+        "json_remove('{\"x\":25,\"y\":42}') returns '{\"x\":25,\"y\":42}'",
+        "json_remove('{\"x\":25,\"y\":42}', '$.z') returns '{\"x\":25,\"y\":42}'",
+        "json_remove('{\"x\":25,\"y\":42}', '$.y') returns '{\"x\":25}'",
+        "json_remove('{\"x\":25,\"y\":42}', '$') returns NULL"
+    ],
+    "Category": [
+        "JSON Functions"
+    ]
+}

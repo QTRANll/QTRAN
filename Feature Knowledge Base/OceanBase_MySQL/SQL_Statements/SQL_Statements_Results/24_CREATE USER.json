@@ -1,0 +1,23 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000001053459"
+    ],
+    "Title": [
+        "CREATE USER"
+    ],
+    "Feature": [
+        "CREATE USER [IF NOT EXISTS] {user [, user...]}\n    [REQUIRE {NONE | SSL | X509 | tls_option}]\n    [WITH resource_option [resource_option...]];\n\nuser:\n      user_name\n    | user_name IDENTIFIED [WITH auth_plugin] BY password\n    | user_name IDENTIFIED [WITH auth_plugin] BY PASSWORD password\n\ntls_option:\n      CIPHER cipher_name\n    | ISSUER issuer_name\n    | SUBJECT subject_name\n\nresource_option:\n      MAX_CONNECTIONS_PER_HOUR integer\n    | MAX_USER_CONNECTIONS integer  \n"
+    ],
+    "Description": [
+        "CREATE USER 语句用于创建新的 OceanBase 数据库用户。创建新用户后，可以使用新用户连接 OceanBase 数据库。",
+        "\n\n\n参数\n描述\n\n\n\n\nIF NOT EXISTS\n用于指示如果用户名已存在，则不进行创建。创建用户时，如果要创建的用户名已存在且没有指定 IF NOT EXISTS，则会报错。\n\n\nuser_name\n用户名，新建用户后，mysql.user 表会新增一行该用户的表项。可同时创建多个用户时，使用英文逗号（,）隔开。\n\n\nauth_plugin\n用于指定用户身份验证的方式，目前仅支持 mysql_native_password 身份验证插件。\n\n\nIDENTIFIED BY password\n为待创建的用户创建一个密码，此处密码为明文，存入 mysql.user 表后，服务器端会变为密文存储下来。如果密码中包含特殊字符 ~!@#%^&*_-+=`|(){}[]:;‘,.?/，需使用英文引号（’ 或 \"）包含。\n\n\nIDENTIFIED BY PASSWORD password\n为待创建的用户创建一个密码，此处密码为密文，将直接存入 mysql.user 表。\n\n\nREQUIRE\n指定用户的密码验证要求，有如下几种取值。 \n      \nNONE：表示用户没有密码验证要求，意味着用户可以使用任何密码或不设置密码。\nSSL：表示用户必须使用 SSL 连接进行身份验证。\nX509：表示用户必须使用 X509 证书进行身份验证。\ntls_option：表示用户必须满足指定的 TLS（Transport Layer Security）要求。\n\n\n\ntls_option\n指定 TLS 要求的具体选项。 \n      \nCIPHER：用于指定 TLS 连接使用的加密算法或密码套件。\nISSUER：用于指定 TLS 证书的发行者（Issuer）。\nSUBJECT：用于指定 TLS 证书的主题（Subject）。\n\n\n\nresource_option\n指定用户的资源选项，指定多个资源选项时，使用英文空格隔开。 \n      \nMAX_CONNECTIONS_PER_HOUR：用于指定每小时允许的最大连接数，integer 是一个整数，表示允许的最大连接数。\nMAX_USER_CONNECTIONS：用于指定每个用户允许的最大连接数，integer 是一个整数，表示允许的最大连接数。\n\n\n\n"
+    ],
+    "Examples": [
+        "obclient> CREATE USER IF NOT EXISTS test1 IDENTIFIED BY '********', test2 IDENTIFIED BY '********' WITH MAX_USER_CONNECTIONS 10;\n",
+        "obclient> CREATE USER IF NOT EXISTS test3 IDENTIFIED BY PASSWORD '********' REQUIRE SSL;\n",
+        "obclient> CREATE USER IF NOT EXISTS test4 IDENTIFIED WITH mysql_native_password BY PASSWORD '********';\n"
+    ],
+    "Category": [
+        "No Category"
+    ]
+}

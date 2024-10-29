@@ -1,0 +1,21 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000000823416"
+    ],
+    "Title": [
+        "MAKEDATE"
+    ],
+    "Feature": [
+        "MAKEDATE(year,dayofyear)\n"
+    ],
+    "Description": [
+        "返回指定 year 年份第 dayofyear 天的日期值。dayofyear 取值必须大于 0，否则返回 NULL。",
+        "如果 dayofyear 大于 366，则会将多余的值添加到 year 指定的年份，如果相加后 year 大于 9999，则该函数返回 NULL。"
+    ],
+    "Examples": [
+        "obclient> SELECT MAKEDATE(2011,31), MAKEDATE(2011,32);\n+-------------------+-------------------+\n| MAKEDATE(2011,31) | MAKEDATE(2011,32) |\n+-------------------+-------------------+\n| 2011-01-31        | 2011-02-01        |\n+-------------------+-------------------+\n1 row in set\n\nobclient> SELECT MAKEDATE(2011,0);\n+------------------+\n| MAKEDATE(2011,0) |\n+------------------+\n| NULL             |\n+------------------+\n1 row in set\n\nobclient> SELECT MAKEDATE(2011,2917923);\n+------------------------+\n| MAKEDATE(2011,2917923) |\n+------------------------+\n| NULL                   |\n+------------------------+\n1 row in set\n"
+    ],
+    "Category": [
+        "Date and Time Functions"
+    ]
+}

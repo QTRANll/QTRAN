@@ -1,0 +1,22 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000001054316"
+    ],
+    "Title": [
+        "DROP MATERIALIZED VIEW"
+    ],
+    "Feature": [
+        "DROP MATERIALIZED VIEW [ schema. ] materialized_view;\n"
+    ],
+    "Description": [
+        "该语句用来删除物化视图。",
+        "\n\n\n参数\n描述\n\n\n\n\nschema.\n可选项，指定物化视图所在的 Schema。如果省略 schema.，则默认在您自己的 Schema 中。\n\n\nmaterialized_view\n指定物化视图的名称。\n\n\n"
+    ],
+    "Examples": [
+        "DROP MATERIALIZED VIEW mv_test_tbl1;\n",
+        "Query OK, 0 rows affected\n"
+    ],
+    "Category": [
+        "DDL"
+    ]
+}

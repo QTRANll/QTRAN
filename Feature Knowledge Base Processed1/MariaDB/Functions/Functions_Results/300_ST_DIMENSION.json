@@ -1,0 +1,22 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/st_dimension/"
+    ],
+    "Title": [
+        "ST_DIMENSION"
+    ],
+    "Feature": [
+        "ST_Dimension(g)\nDimension(g)\n"
+    ],
+    "Description": [
+        "Returns the inherent dimension of the geometry value g. The result can\nbe",
+        "DimensionDefinition\n   -1empty geometry\n    0geometry with no length or area\n    1geometry with no area but nonzero length\n    2geometry with nonzero area\n\n",
+        "ST_Dimension() and Dimension() are synonyms."
+    ],
+    "Examples": [
+        "SELECT ST_Dimension(ST_GeomFromText('POINT(1 1)'));"
+    ],
+    "Category": [
+        "Geographic Functions"
+    ]
+}

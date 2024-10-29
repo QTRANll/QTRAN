@@ -1,0 +1,34 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/row-subqueries.html"
+    ],
+    "Title": [
+        "15.2.15.5 Row Subqueries"
+    ],
+    "Feature": [
+        "=  >  <  >=  <=  <>  !=  <=>",
+        "SELECT * FROM t1 WHERE ROW(1) = (SELECT column1 FROM t2)"
+    ],
+    "Description": [
+        "\n        Scalar or column subqueries return a single value or a column of\n        values. A row subquery is a subquery\n        variant that returns a single row and can thus return more than\n        one column value. Legal operators for row subquery comparisons\n        are:\n      ",
+        "\n        Here are two examples:\n      ",
+        "Press CTRL+C to copy SELECT * FROM t1\n  WHERE (col1,col2) = (SELECT col3, col4 FROM t2 WHERE id = 10);\nSELECT * FROM t1\n  WHERE ROW(col1,col2) = (SELECT col3, col4 FROM t2 WHERE id = 10);",
+        "\n        For both queries, if the table t2 contains a\n        single row with id = 10, the subquery returns\n        a single row. If this row has col3 and\n        col4 values equal to the\n        col1 and col2 values of\n        any rows in t1, the WHERE\n        expression is TRUE and each query returns\n        those t1 rows. If the t2\n        row col3 and col4 values\n        are not equal the col1 and\n        col2 values of any t1 row,\n        the expression is FALSE and the query returns\n        an empty result set. The expression is\n        unknown (that is, NULL)\n        if the subquery produces no rows. An error occurs if the\n        subquery produces multiple rows because a row subquery can\n        return at most one row.\n      ",
+        "\n        For information about how each operator works for row\n        comparisons, see Section\u00a014.4.2, \u201cComparison Functions and Operators\u201d.\n      ",
+        "\n        The expressions (1,2) and\n        ROW(1,2) are sometimes called\n        row constructors. The two\n        are equivalent. The row constructor and the row returned by the\n        subquery must contain the same number of values.\n      ",
+        "\n        A row constructor is used for comparisons with subqueries that\n        return two or more columns. When a subquery returns a single\n        column, this is regarded as a scalar value and not as a row, so\n        a row constructor cannot be used with a subquery that does not\n        return at least two columns. Thus, the following query fails\n        with a syntax error:\n      ",
+        "\n        Row constructors are legal in other contexts. For example, the\n        following two statements are semantically equivalent (and are\n        handled in the same way by the optimizer):\n      ",
+        "Press CTRL+C to copy SELECT * FROM t1 WHERE (column1,column2) = (1,1);\nSELECT * FROM t1 WHERE column1 = 1 AND column2 = 1;",
+        "\n        The following query answers the request, \u201cfind all rows in\n        table t1 that also exist in table\n        t2\u201d:\n      ",
+        "Press CTRL+C to copy SELECT column1,column2,column3\n  FROM t1\n  WHERE (column1,column2,column3) IN\n         (SELECT column1,column2,column3 FROM t2);",
+        "\n        For more information about the optimizer and row constructors,\n        see Section\u00a010.2.1.22, \u201cRow Constructor Expression Optimization\u201d\n"
+    ],
+    "Examples": [
+        "SELECT * FROM t1\n  WHERE (col1,col2) = (SELECT col3, col4 FROM t2 WHERE id = 10);\nSELECT * FROM t1\n  WHERE ROW(col1,col2) = (SELECT col3, col4 FROM t2 WHERE id = 10);",
+        "SELECT * FROM t1 WHERE (column1,column2) = (1,1);\nSELECT * FROM t1 WHERE column1 = 1 AND column2 = 1;",
+        "SELECT column1,column2,column3\n  FROM t1\n  WHERE (column1,column2,column3) IN\n         (SELECT column1,column2,column3 FROM t2);"
+    ],
+    "Category": [
+        "Data Manipulation Statements"
+    ]
+}

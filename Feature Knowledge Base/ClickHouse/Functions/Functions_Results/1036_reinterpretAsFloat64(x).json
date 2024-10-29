@@ -1,0 +1,27 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/type-conversion-functions"
+    ],
+    "Title": [
+        "reinterpretAsFloat64"
+    ],
+    "Feature": [
+        "reinterpretAsFloat64(x)"
+    ],
+    "Description": [
+        "reinterpretAsFloat64",
+        "Performs byte reinterpretation by treating the input value as a value of type Float64. Unlike CAST, the function does not attempt to preserve the original value - if the target type is not able to represent the input type, the output is meaningless.",
+        "Syntax",
+        "reinterpretAsFloat64(x)",
+        "Parameters",
+        "x: value to reinterpret as Float64. (U)Int*, Float, Date, DateTime, UUID, String or FixedString.",
+        "Returned value",
+        "Reinterpreted value x as Float64. Float64."
+    ],
+    "Examples": [
+        "SELECT reinterpretAsUInt64(toFloat64(0.2)) as x, reinterpretAsFloat64(x);"
+    ],
+    "Category": [
+        "Type Conversion Functions"
+    ]
+}

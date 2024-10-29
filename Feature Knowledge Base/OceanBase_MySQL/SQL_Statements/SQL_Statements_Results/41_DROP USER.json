@@ -1,0 +1,22 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000001053461"
+    ],
+    "Title": [
+        "DROP USER"
+    ],
+    "Feature": [
+        "DROP USER [IF EXISTS] user_name [, user_name...];\n"
+    ],
+    "Description": [
+        "该语句用于删除一个或多个数据库用户。",
+        "\n注意\n\n必须拥有全局的 CREATE USER 权限，才可以使用 DROP USER 命令。\n不能通过 DELETE 方式对 mysql.user 表进行删除操作，只能通过 DROP 命令删除。\n成功删除用户后，该用户的所有权限也会被一同删除。\n\n",
+        "\n\n\n参数\n描述\n\n\n\n\nIF EXISTS\n可选项，当使用它时，尝试删除一个不存在的用户会产生警告而不是错误。如果不使用该子句，则删除一个不存在的用户会引发错误。\n\n\nuser_name\n用户名。同时删除多个用户时，用\",\"隔开。\n\n\n"
+    ],
+    "Examples": [
+        "obclient> DROP USER sqluser01;\nQuery OK, 0 rows affected\n"
+    ],
+    "Category": [
+        "No Category"
+    ]
+}

@@ -1,0 +1,27 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/geo/h3"
+    ],
+    "Title": [
+        "h3IsValid"
+    ],
+    "Feature": [
+        "h3IsValid(h3index)"
+    ],
+    "Description": [
+        "h3IsValid",
+        "Verifies whether the number is a valid H3 index.",
+        "Syntax",
+        "h3IsValid(h3index)",
+        "Parameter",
+        "h3index \u2014 Hexagon index number. UInt64.",
+        "Returned values",
+        "1 \u2014 The number is a valid H3 index. UInt8.0 \u2014 The number is not a valid H3 index. UInt8."
+    ],
+    "Examples": [
+        "SELECT h3IsValid(630814730351855103) AS h3IsValid;"
+    ],
+    "Category": [
+        "Geo Functions"
+    ]
+}

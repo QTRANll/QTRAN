@@ -1,0 +1,25 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/show-plugins.html"
+    ],
+    "Title": [
+        "15.7.7.26 SHOW PLUGINS Statement"
+    ],
+    "Feature": [
+        "SHOW PLUGINS",
+        "mysql> SHOW PLUGINS\\G\n*************************** 1. row ***************************\n   Name: binlog\n Status: ACTIVE\n   Type: STORAGE ENGINE\nLibrary: NULL\nLicense: GPL\n*************************** 2. row ***************************\n   Name: CSV\n Status: ACTIVE\n   Type: STORAGE ENGINE\nLibrary: NULL\nLicense: GPL\n*************************** 3. row ***************************\n   Name: MEMORY\n Status: ACTIVE\n   Type: STORAGE ENGINE\nLibrary: NULL\nLicense: GPL\n*************************** 4. row ***************************\n   Name: MyISAM\n Status: ACTIVE\n   Type: STORAGE ENGINE\nLibrary: NULL\nLicense: GPL\n..."
+    ],
+    "Description": [
+        "\nSHOW PLUGINS displays information\n        about server plugins.\n      ",
+        "\n        Example of SHOW PLUGINS output:\n      ",
+        "\nSHOW PLUGINS output has these\n        columns:\n",
+        "\n\nName\n\n            The name used to refer to the plugin in statements such as\n            INSTALL PLUGIN and\n            UNINSTALL PLUGIN.\n          \nStatus\n\n            The plugin status, one of ACTIVE,\n            INACTIVE, DISABLED,\n            DELETING, or DELETED.\n          \nType\n\n            The type of plugin, such as STORAGE\n            ENGINE, INFORMATION_SCHEMA, or\n            AUTHENTICATION.\n          \nLibrary\n\n            The name of the plugin shared library file. This is the name\n            used to refer to the plugin file in statements such as\n            INSTALL PLUGIN and\n            UNINSTALL PLUGIN. This file\n            is located in the directory named by the\n            plugin_dir system variable.\n            If the library name is NULL, the plugin\n            is compiled in and cannot be uninstalled with\n            UNINSTALL PLUGIN.\n          \nLicense\n\n            How the plugin is licensed (for example,\n            GPL).\n\n",
+        "\n        For plugins installed with INSTALL\n        PLUGIN, the Name and\n        Library values are also registered in the\n        mysql.plugin system table.\n      ",
+        "\n        For information about plugin data structures that form the basis\n        of the information displayed by SHOW\n        PLUGINS, see The MySQL Plugin API.\n      ",
+        "\n        Plugin information is also available from the\n        INFORMATION_SCHEMA\n.PLUGINS table. See\n        Section\u00a028.3.22, \u201cThe INFORMATION_SCHEMA PLUGINS Table\u201d.\n"
+    ],
+    "Examples": [],
+    "Category": [
+        "Database Administration Statements"
+    ]
+}

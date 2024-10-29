@@ -1,0 +1,22 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/declare-cursor.html"
+    ],
+    "Title": [
+        "15.6.6.2 Cursor DECLARE Statement"
+    ],
+    "Feature": [
+        "DECLARE cursor_name CURSOR FOR select_statement"
+    ],
+    "Description": [
+        "\n        This statement declares a cursor and associates it with a\n        SELECT statement that retrieves\n        the rows to be traversed by the cursor. To fetch the rows later,\n        use a FETCH statement. The number\n        of columns retrieved by the\n        SELECT statement must match the\n        number of output variables specified in the\n        FETCH statement.\n      ",
+        "\n        The SELECT statement cannot have\n        an INTO clause.\n      ",
+        "\n        Cursor declarations must appear before handler declarations and\n        after variable and condition declarations.\n      ",
+        "\n        A stored program may contain multiple cursor declarations, but\n        each cursor declared in a given block must have a unique name.\n        For an example, see Section\u00a015.6.6, \u201cCursors\u201d.\n      ",
+        "\n        For information available through\n        SHOW statements, it is possible\n        in many cases to obtain equivalent information by using a cursor\n        with an INFORMATION_SCHEMA table.\n"
+    ],
+    "Examples": [],
+    "Category": [
+        "Compound Statement Syntax"
+    ]
+}

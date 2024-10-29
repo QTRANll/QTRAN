@@ -1,0 +1,34 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/built-in-function-reference.html",
+        "https://dev.mysql.com/doc/refman/8.4/en/comparison-operators.html"
+    ],
+    "Title": [
+        "14.1 Built-In Function and Operator Reference",
+        "14.4.2 Comparison Functions and Operators"
+    ],
+    "Feature": [
+        "LEAST(value1,value2,...)"
+    ],
+    "Description": [
+        "Return the smallest argument",
+        "\nLEAST(value1,value2,...)\n",
+        "\n            With two or more arguments, returns the smallest\n            (minimum-valued) argument. The arguments are compared using\n            the following rules:\n",
+        "\n\n                If any argument is NULL, the result\n                is NULL. No comparison is needed.\n              \n                If all arguments are integer-valued, they are compared\n                as integers.\n              \n                If at least one argument is double precision, they are\n                compared as double-precision values. Otherwise, if at\n                least one argument is a\n                DECIMAL value, they are\n                compared as DECIMAL\n                values.\n              \n                If the arguments comprise a mix of numbers and strings,\n                they are compared as strings.\n              \n                If any argument is a nonbinary (character) string, the\n                arguments are compared as nonbinary strings.\n              \n                In all other cases, the arguments are compared as binary\n                strings.\n\n",
+        "\n            The return type of LEAST() is\n            the aggregated type of the comparison argument types.\n          ",
+        "Press CTRL+C to copy mysql> SELECT LEAST(2,0);\n        -> 0\nmysql> SELECT LEAST(34.0,3.0,5.0,767.0);\n        -> 3.0\nmysql> SELECT LEAST('B','A','C');\n        -> 'A'"
+    ],
+    "Examples": [
+        "mysql> SELECT LEAST(2,0);\n        -> 0\nmysql> SELECT LEAST(34.0,3.0,5.0,767.0);\n        -> 3.0\nmysql> SELECT LEAST('B','A','C');\n        -> 'A'"
+    ],
+    "Category": [
+        "Built-In Functions",
+        "Comparison Functions"
+    ],
+    "Reference HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/comparison-operators.html#function_least"
+    ],
+    "Feature Type": [
+        "Function"
+    ]
+}

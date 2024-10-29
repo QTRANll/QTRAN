@@ -1,0 +1,28 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/other-functions"
+    ],
+    "Title": [
+        "formatQuerySingleLine"
+    ],
+    "Feature": [
+        "formatQuerySingleLine(query)formatQuerySingleLineOrNull(query)"
+    ],
+    "Description": [
+        "formatQuerySingleLine",
+        "Like formatQuery() but the returned formatted string contains no line breaks.",
+        "Throws an exception if the query is not well-formed. To return NULL instead, function formatQuerySingleLineOrNull() may be used.",
+        "Syntax",
+        "formatQuerySingleLine(query)formatQuerySingleLineOrNull(query)",
+        "Arguments",
+        "query - The SQL query to be formatted. String",
+        "Returned value",
+        "The formatted query. String."
+    ],
+    "Examples": [
+        "SELECT formatQuerySingleLine('select a,    b FRom tab WHERE a > 3 and  b < 3');"
+    ],
+    "Category": [
+        "Other Functions"
+    ]
+}

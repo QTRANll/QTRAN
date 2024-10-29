@@ -1,0 +1,40 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/loadable-function-reference.html",
+        "https://dev.mysql.com/doc/refman/8.4/en/loadable-function-reference.html"
+    ],
+    "Title": [
+        "14.2 Loadable Function Reference",
+        "14.2 Loadable Function Reference"
+    ],
+    "Feature": [
+        "mask_inner(str,\n              margin1,\n              margin2 [,\n              mask_char])"
+    ],
+    "Description": [
+        "Mask interior part of string",
+        "\nmask_inner(str,\n              margin1,\n              margin2 [,\n              mask_char])\n",
+        "\n              Masks the interior part of a string, leaving the ends\n              untouched, and returns the result. An optional masking\n              character can be specified.\n            ",
+        "\nmask_inner supports all\n              character sets.\n            ",
+        "\n              Arguments:\n",
+        "\n\nstr: The string to mask.\n                  This argument is converted to the\n                  utf8mb4 character set.\n                \nmargin1: A nonnegative\n                  integer that specifies the number of characters on the\n                  left end of the string to remain unmasked. If the\n                  value is 0, no left end characters remain unmasked.\n                \nmargin2: A nonnegative\n                  integer that specifies the number of characters on the\n                  right end of the string to remain unmasked. If the\n                  value is 0, no right end characters remain unmasked.\n                \nmask_char: (Optional) The\n                  single character to use for masking. The default is\n                  'X' if\n                  mask_char is not given.\n\n",
+        "\n              Return value:\n            ",
+        "\n              The masked string encoded in the same character set used\n              for str, or an error if either\n              margin is negative.\n            ",
+        "\n              If the sum of the margin values is larger than the\n              argument length, no masking occurs and the argument is\n              returned unchanged.\n",
+        "\n\nNote\n\n\n                The function is optimized to work faster for single byte\n                strings (having equal byte length and character length).\n                For example, the utf8mb4 character\n                set uses only one byte for ASCII characters, so the\n                function processes strings containing only ASCII\n                characters as single-byte character strings.\n\n",
+        "\n              Example:\n            ",
+        "Press CTRL+C to copy mysql> SELECT mask_inner('abcdef', 1, 2), mask_inner('abcdef',0, 5);\n+----------------------------+---------------------------+\n| mask_inner('abcdef', 1, 2) | mask_inner('abcdef',0, 5) |\n+----------------------------+---------------------------+\n| aXXXef                     | Xbcdef                    |\n+----------------------------+---------------------------+\nmysql> SELECT mask_inner('abcdef', 1, 2, '*'), mask_inner('abcdef',0, 5, '#');\n+---------------------------------+--------------------------------+\n| mask_inner('abcdef', 1, 2, '*') | mask_inner('abcdef',0, 5, '#') |\n+---------------------------------+--------------------------------+\n| a***ef                          | #bcdef                         |\n+---------------------------------+--------------------------------+"
+    ],
+    "Examples": [
+        "mysql> SELECT mask_inner('abcdef', 1, 2), mask_inner('abcdef',0, 5);\n+----------------------------+---------------------------+\n| mask_inner('abcdef', 1, 2) | mask_inner('abcdef',0, 5) |\n+----------------------------+---------------------------+\n| aXXXef                     | Xbcdef                    |\n+----------------------------+---------------------------+\nmysql> SELECT mask_inner('abcdef', 1, 2, '*'), mask_inner('abcdef',0, 5, '#');\n+---------------------------------+--------------------------------+\n| mask_inner('abcdef', 1, 2, '*') | mask_inner('abcdef',0, 5, '#') |\n+---------------------------------+--------------------------------+\n| a***ef                          | #bcdef                         |\n+---------------------------------+--------------------------------+"
+    ],
+    "Category": [
+        "Loadable Functions",
+        "Loadable Functions"
+    ],
+    "Reference HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/data-masking-component-functions.html#function_mask-inner"
+    ],
+    "Feature Type": [
+        "Function"
+    ]
+}

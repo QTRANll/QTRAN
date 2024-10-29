@@ -1,0 +1,36 @@
+{
+    "HTML": "https://mariadb.com//kb/en/json_contains/",
+    "Title": "JSON_CONTAINS",
+    "Feature": [
+        "JSON_CONTAINS(json_doc, val[, path])\n"
+    ],
+    "Description": [
+        "Returns whether or not the specified value is found in the given JSON document or, optionally, at the specified path within the document. Returns 1 if it does, 0 if not and NULL if any of the arguments are null. An error occurs if the document or path is not valid, or contains the * or ** wildcards."
+    ],
+    "Examples": [
+        "SET @json = '{\"A\": 0, \"B\": {\"C\": 1}, \"D\": 2}';\n\nSELECT JSON_CONTAINS(@json, '2', '$.A');\n+----------------------------------+\n| JSON_CONTAINS(@json, '2', '$.A') |\n+----------------------------------+\n|                                0 |\n+----------------------------------+\n\nSELECT JSON_CONTAINS(@json, '2', '$.D');\n+----------------------------------+\n| JSON_CONTAINS(@json, '2', '$.D') |\n+----------------------------------+\n|                                1 |\n+----------------------------------+\n\nSELECT JSON_CONTAINS(@json, '{\"C\": 1}', '$.A');\n+-----------------------------------------+\n| JSON_CONTAINS(@json, '{\"C\": 1}', '$.A') |\n+-----------------------------------------+\n|                                       0 |\n+-----------------------------------------+\n\nSELECT JSON_CONTAINS(@json, '{\"C\": 1}', '$.B');\n+-----------------------------------------+\n| JSON_CONTAINS(@json, '{\"C\": 1}', '$.B') |\n+-----------------------------------------+\n|                                       1 |\n+-----------------------------------------+\n"
+    ],
+    "Category": [
+        "JSON Functions"
+    ],
+    "Effective SQLs Refined": [
+        "SELECT JSON_CONTAINS(@json, '2', '$.A');",
+        "SELECT JSON_CONTAINS(@json, '2', '$.D');",
+        "SELECT JSON_CONTAINS(@json, '{\"C\": 1}', '$.A');",
+        "SELECT JSON_CONTAINS(@json, '{\"C\": 1}', '$.B');"
+    ],
+    "Ineffective SQLs Refined": [],
+    "Wrong Messages from Ineffective SQLs Refined": [],
+    "SQLs Generated1": [],
+    "SQLs Generated Costs1": [],
+    "SQLs Generated ExecResults1": [],
+    "SQLs Generated ExecTimes1": [],
+    "SQLs Generated ErrorMessages1": [],
+    "Effective SQLs Generated1": [],
+    "SQLs Generated2": [],
+    "SQLs Generated Costs2": [],
+    "SQLs Generated ExecResults2": [],
+    "SQLs Generated ExecTimes2": [],
+    "SQLs Generated ErrorMessages2": [],
+    "Effective SQLs Generated2": []
+}

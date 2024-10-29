@@ -1,0 +1,25 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/timestampdiff/"
+    ],
+    "Title": [
+        "TIMESTAMPDIFF"
+    ],
+    "Feature": [
+        "TIMESTAMPDIFF(unit,datetime_expr1,datetime_expr2)\n"
+    ],
+    "Description": [
+        "Returns datetime_expr2 - datetime_expr1, where datetime_expr1 and\ndatetime_expr2 are date or datetime expressions. One expression may be\na date and the other a datetime; a date value is treated as a datetime\nhaving the time part '00:00:00' where necessary. The unit for the\nresult (an integer) is given by the unit argument. The legal values\nfor unit are the same as those listed in the description of the\nTIMESTAMPADD() function, i.e  MICROSECOND, SECOND, MINUTE, HOUR, DAY, WEEK, MONTH, QUARTER, or YEAR.",
+        "TIMESTAMPDIFF can also be used to calculate age."
+    ],
+    "Examples": [
+        "SELECT TIMESTAMPDIFF(MONTH,'2003-02-01','2003-05-01');",
+        "SELECT TIMESTAMPDIFF(YEAR,'2002-05-01','2001-01-01');",
+        "SELECT TIMESTAMPDIFF(MINUTE,'2003-02-01','2003-05-01 12:05:55');",
+        "SELECT TIMESTAMPDIFF(YEAR, '1971-06-06', CURDATE()) AS age;",
+        "SELECT TIMESTAMPDIFF(YEAR, '1971-05-06', CURDATE()) AS age;"
+    ],
+    "Category": [
+        "Date & Time Functions"
+    ]
+}

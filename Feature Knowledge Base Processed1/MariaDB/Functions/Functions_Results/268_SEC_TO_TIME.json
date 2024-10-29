@@ -1,0 +1,23 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/sec_to_time/"
+    ],
+    "Title": [
+        "SEC_TO_TIME"
+    ],
+    "Feature": [
+        "SEC_TO_TIME(seconds)\n"
+    ],
+    "Description": [
+        "Returns the seconds argument, converted to hours, minutes, and\nseconds, as a TIME value. The range of the result is constrained to\nthat of the TIME data type. A warning occurs if the argument\ncorresponds to a value outside that range.",
+        "The time will be returned in the format hh:mm:ss, or hhmmss if used in a numeric calculation."
+    ],
+    "Examples": [
+        "SELECT SEC_TO_TIME(12414);",
+        "SELECT SEC_TO_TIME(12414)+0;",
+        "SELECT SEC_TO_TIME(9999999);"
+    ],
+    "Category": [
+        "Date & Time Functions"
+    ]
+}

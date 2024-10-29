@@ -1,0 +1,24 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/set-names/"
+    ],
+    "Title": [
+        "SET NAMES"
+    ],
+    "Feature": [
+        "SET NAMES {'charset_name'\n    [COLLATE 'collation_name'] | DEFAULT}\n"
+    ],
+    "Description": [
+        "Sets the character_set_client, character_set_connection, character_set_results and, implicitly, the collation_connection session system variables to the specified character set and collation.",
+        "This determines which character set the client will use to send statements to the server, and the server will use for sending results back to the client. ",
+        "ucs2, utf16, utf16le and utf32 are not valid character sets for SET NAMES, as they cannot be used as client character sets. ",
+        "The collation clause is optional. If not defined (or if DEFAULT is specified), the default collation for the character set will be used.",
+        "Quotes are optional for the character set or collation clauses."
+    ],
+    "Examples": [
+        "SELECT VARIABLE_NAME, SESSION_VALUE \n  FROM INFORMATION_SCHEMA.SYSTEM_VARIABLES WHERE \n  VARIABLE_NAME LIKE 'character_set_c%' OR \n  VARIABLE_NAME LIKE 'character_set_re%' OR \n  VARIABLE_NAME LIKE 'collation_c%';\n+--------------------------+-----------------+\n| VARIABLE_NAME            | SESSION_VALUE   |\n+--------------------------+-----------------+\n| CHARACTER_SET_RESULTS    | utf8            |\n| CHARACTER_SET_CONNECTION | utf8            |\n| CHARACTER_SET_CLIENT     | utf8            |\n| COLLATION_CONNECTION     | utf8_general_ci |\n+--------------------------+-----------------+\n\nSET NAMES big5;\n\nSELECT VARIABLE_NAME, SESSION_VALUE \n  FROM INFORMATION_SCHEMA.SYSTEM_VARIABLES WHERE \n  VARIABLE_NAME LIKE 'character_set_c%' OR \n  VARIABLE_NAME LIKE 'character_set_re%' OR \n  VARIABLE_NAME LIKE 'collation_c%';\n+--------------------------+-----------------+\n| VARIABLE_NAME            | SESSION_VALUE   |\n+--------------------------+-----------------+\n| CHARACTER_SET_RESULTS    | big5            |\n| CHARACTER_SET_CONNECTION | big5            |\n| CHARACTER_SET_CLIENT     | big5            |\n| COLLATION_CONNECTION     | big5_chinese_ci |\n+--------------------------+-----------------+\n\nSET NAMES 'latin1' COLLATE 'latin1_bin';\n\nSELECT VARIABLE_NAME, SESSION_VALUE \n  FROM INFORMATION_SCHEMA.SYSTEM_VARIABLES WHERE \n  VARIABLE_NAME LIKE 'character_set_c%' OR \n  VARIABLE_NAME LIKE 'character_set_re%' OR \n  VARIABLE_NAME LIKE 'collation_c%';\n+--------------------------+---------------+\n| VARIABLE_NAME            | SESSION_VALUE |\n+--------------------------+---------------+\n| CHARACTER_SET_RESULTS    | latin1        |\n| CHARACTER_SET_CONNECTION | latin1        |\n| CHARACTER_SET_CLIENT     | latin1        |\n| COLLATION_CONNECTION     | latin1_bin    |\n+--------------------------+---------------+\n\nSET NAMES DEFAULT;\n\nSELECT VARIABLE_NAME, SESSION_VALUE \n  FROM INFORMATION_SCHEMA.SYSTEM_VARIABLES WHERE \n  VARIABLE_NAME LIKE 'character_set_c%' OR \n  VARIABLE_NAME LIKE 'character_set_re%' OR \n  VARIABLE_NAME LIKE 'collation_c%';\n+--------------------------+-------------------+\n| VARIABLE_NAME            | SESSION_VALUE     |\n+--------------------------+-------------------+\n| CHARACTER_SET_RESULTS    | latin1            |\n| CHARACTER_SET_CONNECTION | latin1            |\n| CHARACTER_SET_CLIENT     | latin1            |\n| COLLATION_CONNECTION     | latin1_swedish_ci |\n+--------------------------+-------------------+\n"
+    ],
+    "Category": [
+        "Administrative SQL Statements"
+    ]
+}

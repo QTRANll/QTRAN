@@ -1,0 +1,41 @@
+{
+    "HTML": "https://mariadb.com//kb/en/rpad/",
+    "Title": "RPAD",
+    "Feature": [
+        "RPAD(str, len [, padstr])\n"
+    ],
+    "Description": [
+        "Returns the string str, right-padded with the string padstr to a\nlength of len characters. If str is longer than len, the return value\nis shortened to len characters. If padstr is omitted, the RPAD function pads spaces.",
+        "Prior to MariaDB 10.3.1, the padstr parameter was mandatory.",
+        "Returns NULL if given a NULL argument. If the result is empty (a length of zero), returns either an empty string, or, from MariaDB 10.3.6 with SQL_MODE=Oracle, NULL.",
+        "The Oracle mode version of the function can be accessed outside of Oracle mode by using RPAD_ORACLE as the function name."
+    ],
+    "Examples": [
+        "SELECT RPAD('hello',10,'.');\n+----------------------+\n| RPAD('hello',10,'.') |\n+----------------------+\n| hello.....           |\n+----------------------+\n\nSELECT RPAD('hello',2,'.');\n+---------------------+\n| RPAD('hello',2,'.') |\n+---------------------+\n| he                  |\n+---------------------+\n",
+        "SELECT RPAD('hello',30);\n+--------------------------------+\n| RPAD('hello',30)               |\n+--------------------------------+\n| hello                          |\n+--------------------------------+\n",
+        "SELECT RPAD('',0),RPAD_ORACLE('',0);\n+------------+-------------------+\n| RPAD('',0) | RPAD_ORACLE('',0) |\n+------------+-------------------+\n|            | NULL              |\n+------------+-------------------+\n"
+    ],
+    "Category": [
+        "String Functions"
+    ],
+    "Effective SQLs Refined": [
+        "SELECT RPAD('hello',10,'.');",
+        "SELECT RPAD('hello',2,'.');",
+        "SELECT RPAD('hello',30);",
+        "SELECT RPAD('',0),RPAD_ORACLE('',0);"
+    ],
+    "Ineffective SQLs Refined": [],
+    "Wrong Messages from Ineffective SQLs Refined": [],
+    "SQLs Generated1": [],
+    "SQLs Generated Costs1": [],
+    "SQLs Generated ExecResults1": [],
+    "SQLs Generated ExecTimes1": [],
+    "SQLs Generated ErrorMessages1": [],
+    "Effective SQLs Generated1": [],
+    "SQLs Generated2": [],
+    "SQLs Generated Costs2": [],
+    "SQLs Generated ExecResults2": [],
+    "SQLs Generated ExecTimes2": [],
+    "SQLs Generated ErrorMessages2": [],
+    "Effective SQLs Generated2": []
+}

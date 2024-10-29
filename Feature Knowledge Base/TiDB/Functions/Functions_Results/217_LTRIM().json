@@ -1,0 +1,24 @@
+{
+    "HTML": [
+        "https://docs.pingcap.com/zh/tidb/stable/string-functions#ltrim"
+    ],
+    "Title": [
+        "LTRIM()"
+    ],
+    "Feature": [
+        "LTRIM()"
+    ],
+    "Description": [
+        "LTRIM()",
+        "LTRIM() \u51fd\u6570\u7528\u4e8e\u5220\u9664\u7ed9\u5b9a\u7684\u5b57\u7b26\u4e32\u4e2d\u7684\u524d\u5bfc\u7a7a\u683c\uff08\u5373\u5b57\u7b26\u4e32\u5f00\u5934\u7684\u8fde\u7eed\u7a7a\u683c\uff09\u3002",
+        "\u5982\u679c\u8f93\u5165\u7684\u53c2\u6570\u4e3a NULL\uff0c\u8be5\u51fd\u6570\u5c06\u8fd4\u56de NULL\u3002",
+        "\u6ce8\u610f\u8be5\u51fd\u6570\u53ea\u53bb\u6389\u7a7a\u683c\u5b57\u7b26\uff08U+0020\uff09\uff0c\u4e0d\u53bb\u6389\u5176\u4ed6\u7c7b\u4f3c\u7a7a\u683c\u7684\u5b57\u7b26\uff0c\u5982\u5236\u8868\u7b26\uff08U+0009\uff09\u6216\u975e\u5206\u9694\u7b26\uff08U+00A0\uff09\u3002"
+    ],
+    "Examples": [
+        "SELECT LTRIM('    hello');\n",
+        "SELECT CONCAT('\u00ab',LTRIM('    hello'),'\u00bb');\n"
+    ],
+    "Category": [
+        "String Functions"
+    ]
+}

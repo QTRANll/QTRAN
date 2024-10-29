@@ -1,0 +1,24 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000000822950"
+    ],
+    "Title": [
+        "INET6_NTOA"
+    ],
+    "Feature": [
+        "INET6_NTOA(expr)\n"
+    ],
+    "Description": [
+        "将以数字形式表示的 IPv6 或 IPv4 网络地址返回为二进制字符串，该地址的字符串可以作为连接字符集中的字符串。如果参数不是有效地址，则返回 NULL。",
+        "INET6_NTOA() 具有以下属性：",
+        "不使用系统函数来执行转换，因此输出字符串与平台无关。",
+        "返回字符串的最大长度为 39 (4 x 8 + 7)。",
+        "返回字符串使用小写字母表示 IPv6 地址。"
+    ],
+    "Examples": [
+        "obclient> SELECT INET6_NTOA(INET6_ATON('fdfe::5a55:caff:fefa:9089'));\n+------------------------------------------------------------+\n|  INET6_NTOA(INET6_ATON('fdfe::5a55:caff:fefa:9089')) |\n+------------------------------------------------------------+\n|                            fdfe::5a55:caff:fefa:9089 |\n+------------------------------------------------------------+\n1 row in set\n"
+    ],
+    "Category": [
+        "Miscellaneous Functions"
+    ]
+}

@@ -1,0 +1,27 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/string-functions"
+    ],
+    "Title": [
+        "normalizedQueryHash"
+    ],
+    "Feature": [
+        "normalizedQueryHash(x)"
+    ],
+    "Description": [
+        "normalizedQueryHash",
+        "Returns identical 64bit hash values without the values of literals for similar queries. Can be helpful to analyze query logs.",
+        "Syntax",
+        "normalizedQueryHash(x)",
+        "Arguments",
+        "x \u2014 Sequence of characters. String.",
+        "Returned value",
+        "Hash value. UInt64."
+    ],
+    "Examples": [
+        "SELECT normalizedQueryHash('SELECT 1 AS `xyz`') != normalizedQueryHash('SELECT 1 AS `abc`') AS res;"
+    ],
+    "Category": [
+        "Strings Functions"
+    ]
+}

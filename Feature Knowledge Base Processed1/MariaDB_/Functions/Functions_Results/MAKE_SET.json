@@ -1,0 +1,41 @@
+{
+    "HTML": "https://mariadb.com//kb/en/make_set/",
+    "Title": "MAKE_SET",
+    "Feature": [
+        "MAKE_SET(bits,str1,str2,...)\n"
+    ],
+    "Description": [
+        "Returns a set value (a string containing substrings separated by \",\"\ncharacters) consisting of the strings that have the corresponding bit\nin bits set. str1 corresponds to bit 0, str2 to bit 1, and so on. NULL\nvalues in str1, str2, ... are not appended to the result."
+    ],
+    "Examples": [
+        "SELECT MAKE_SET(1,'a','b','c');\n+-------------------------+\n| MAKE_SET(1,'a','b','c') |\n+-------------------------+\n| a                       |\n+-------------------------+\n\nSELECT MAKE_SET(1 | 4,'hello','nice','world');\n+----------------------------------------+\n| MAKE_SET(1 | 4,'hello','nice','world') |\n+----------------------------------------+\n| hello,world                            |\n+----------------------------------------+\n\nSELECT MAKE_SET(1 | 4,'hello','nice',NULL,'world');\n+---------------------------------------------+\n| MAKE_SET(1 | 4,'hello','nice',NULL,'world') |\n+---------------------------------------------+\n| hello                                       |\n+---------------------------------------------+\n\nSELECT QUOTE(MAKE_SET(0,'a','b','c'));\n+--------------------------------+\n| QUOTE(MAKE_SET(0,'a','b','c')) |\n+--------------------------------+\n| ''                             |\n+--------------------------------+\n"
+    ],
+    "Category": [
+        "String Functions"
+    ],
+    "Effective SQLs Refined": [
+        "SELECT MAKE_SET(1,'a','b','c');"
+    ],
+    "Ineffective SQLs Refined": [
+        "SET(1,'a','b','c') |\n+-------------------------+\n| a                       |\n+-------------------------+\n\nSELECT MAKE_SET(1 | 4,'hello','nice','world');",
+        "SET(1 | 4,'hello','nice','world') |\n+----------------------------------------+\n| hello,world                            |\n+----------------------------------------+\n\nSELECT MAKE_SET(1 | 4,'hello','nice',NULL,'world');",
+        "SET(1 | 4,'hello','nice',NULL,'world') |\n+---------------------------------------------+\n| hello                                       |\n+---------------------------------------------+\n\nSELECT QUOTE(MAKE_SET(0,'a','b','c'));"
+    ],
+    "Wrong Messages from Ineffective SQLs Refined": [
+        "(pymysql.err.ProgrammingError) (1064, \"You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '(1,'a','b','c') |\\n+-------------------------+\\n| a                       |\\n+--...' at line 1\")\n[SQL: SET(1,'a','b','c') |\n+-------------------------+\n| a                       |\n+-------------------------+\n\nSELECT MAKE_SET(1 | 4,'hello','nice','world');]\n(Background on this error at: https://sqlalche.me/e/20/f405)",
+        "(pymysql.err.ProgrammingError) (1064, \"You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '(1 | 4,'hello','nice','world') |\\n+----------------------------------------+\\n|...' at line 1\")\n[SQL: SET(1 | 4,'hello','nice','world') |\n+----------------------------------------+\n| hello,world                            |\n+----------------------------------------+\n\nSELECT MAKE_SET(1 | 4,'hello','nice',NULL,'world');]\n(Background on this error at: https://sqlalche.me/e/20/f405)",
+        "(pymysql.err.ProgrammingError) (1064, \"You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '(1 | 4,'hello','nice',NULL,'world') |\\n+--------------------------------------...' at line 1\")\n[SQL: SET(1 | 4,'hello','nice',NULL,'world') |\n+---------------------------------------------+\n| hello                                       |\n+---------------------------------------------+\n\nSELECT QUOTE(MAKE_SET(0,'a','b','c'));]\n(Background on this error at: https://sqlalche.me/e/20/f405)"
+    ],
+    "SQLs Generated1": [],
+    "SQLs Generated Costs1": [],
+    "SQLs Generated ExecResults1": [],
+    "SQLs Generated ExecTimes1": [],
+    "SQLs Generated ErrorMessages1": [],
+    "Effective SQLs Generated1": [],
+    "SQLs Generated2": [],
+    "SQLs Generated Costs2": [],
+    "SQLs Generated ExecResults2": [],
+    "SQLs Generated ExecTimes2": [],
+    "SQLs Generated ErrorMessages2": [],
+    "Effective SQLs Generated2": []
+}

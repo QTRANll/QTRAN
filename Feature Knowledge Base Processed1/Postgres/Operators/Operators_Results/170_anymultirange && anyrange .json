@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/current/functions-range.html"
+    ],
+    "Title": [
+        "anymultirange && anyrange"
+    ],
+    "Feature": [
+        "anymultirange && anyrange → boolean"
+    ],
+    "Description": [
+        "Does the multirange overlap the range?"
+    ],
+    "Examples": [
+        "'{[3,7)}'::int8multirange && int8range(4,12) → t"
+    ],
+    "Category": [
+        "Range divide Multirange Functions and Operators"
+    ]
+}

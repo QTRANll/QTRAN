@@ -1,0 +1,19 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/current/functions-admin.html"
+    ],
+    "Title": [
+        "pg_backup_start"
+    ],
+    "Feature": [
+        "pg_backup_start ( label text [, fast boolean ] ) → pg_lsn"
+    ],
+    "Description": [
+        "Prepares the server to begin an on-line backup. The only required parameter is an arbitrary user-defined label for the backup. (Typically this would be the name under which the backup dump file will be stored.) If the optional second parameter is given as true, it specifies executing pg_backup_start as quickly as possible. This forces an immediate checkpoint which will cause a spike in I/O operations, slowing any concurrently executing queries.",
+        "This function is restricted to superusers by default, but other users can be granted EXECUTE to run the function."
+    ],
+    "Examples": [],
+    "Category": [
+        "System Administration Functions"
+    ]
+}

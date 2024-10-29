@@ -1,0 +1,49 @@
+{
+    "HTML": "https://mariadb.com//kb/en/max/",
+    "Title": "MAX",
+    "Feature": [
+        "MAX([DISTINCT] expr)\n"
+    ],
+    "Description": [
+        "Returns the largest, or maximum, value of expr. MAX() can also take a string\nargument in which case it returns the maximum string value. The DISTINCT\nkeyword can be used to find the maximum of the distinct values of expr,\nhowever, this produces the same result as omitting DISTINCT.",
+        "Note that SET and ENUM fields are currently compared by their string value rather than their relative position in the set, so MAX() may produce a different highest result than ORDER BY DESC.",
+        "It is an aggregate function, and so can be used with the GROUP BY clause.",
+        "MAX() can be used as a window function.",
+        "MAX() returns NULL if there were no matching rows."
+    ],
+    "Examples": [
+        "CREATE TABLE student (name CHAR(10), test CHAR(10), score TINYINT); \n\nINSERT INTO student VALUES \n  ('Chun', 'SQL', 75), ('Chun', 'Tuning', 73), \n  ('Esben', 'SQL', 43), ('Esben', 'Tuning', 31), \n  ('Kaolin', 'SQL', 56), ('Kaolin', 'Tuning', 88), \n  ('Tatiana', 'SQL', 87), ('Tatiana', 'Tuning', 83);\n\nSELECT name, MAX(score) FROM student GROUP BY name;\n+---------+------------+\n| name    | MAX(score) |\n+---------+------------+\n| Chun    |         75 |\n| Esben   |         43 |\n| Kaolin  |         88 |\n| Tatiana |         87 |\n+---------+------------+\n",
+        "SELECT MAX(name) FROM student;\n+-----------+\n| MAX(name) |\n+-----------+\n| Tatiana   |\n+-----------+\n",
+        "SELECT name,test,MAX(SCORE) FROM student;\n+------+------+------------+\n| name | test | MAX(SCORE) |\n+------+------+------------+\n| Chun | SQL  |         88 |\n+------+------+------------+\n",
+        "CREATE TABLE student2(name CHAR(10),grade ENUM('b','c','a'));\n\nINSERT INTO student2 VALUES('Chun','b'),('Esben','c'),('Kaolin','a');\n\nSELECT MAX(grade) FROM student2;\n+------------+\n| MAX(grade) |\n+------------+\n| c          |\n+------------+\n\nSELECT grade FROM student2 ORDER BY grade DESC LIMIT 1;\n+-------+\n| grade |\n+-------+\n| a     |\n+-------+\n",
+        "CREATE OR REPLACE TABLE student_test (name CHAR(10), test CHAR(10), score TINYINT);\nINSERT INTO student_test VALUES \n    ('Chun', 'SQL', 75), ('Chun', 'Tuning', 73), \n    ('Esben', 'SQL', 43), ('Esben', 'Tuning', 31), \n    ('Kaolin', 'SQL', 56), ('Kaolin', 'Tuning', 88), \n    ('Tatiana', 'SQL', 87);\n\nSELECT name, test, score, MAX(score) \n  OVER (PARTITION BY name) AS highest_score FROM student_test;\n+---------+--------+-------+---------------+\n| name    | test   | score | highest_score |\n+---------+--------+-------+---------------+\n| Chun    | SQL    |    75 |            75 |\n| Chun    | Tuning |    73 |            75 |\n| Esben   | SQL    |    43 |            43 |\n| Esben   | Tuning |    31 |            43 |\n| Kaolin  | SQL    |    56 |            88 |\n| Kaolin  | Tuning |    88 |            88 |\n| Tatiana | SQL    |    87 |            87 |\n+---------+--------+-------+---------------+\n"
+    ],
+    "Category": [
+        "Aggregate Functions"
+    ],
+    "Effective SQLs Refined": [
+        "SELECT name, MAX(score) FROM student GROUP BY name;",
+        "SELECT MAX(name) FROM student;",
+        "SELECT name,test,MAX(SCORE) FROM student;"
+    ],
+    "Ineffective SQLs Refined": [
+        "SELECT MAX(grade) FROM student2;",
+        "SELECT name, test, score, MAX(score) \n  OVER (PARTITION BY name) AS highest_score FROM student_test;"
+    ],
+    "Wrong Messages from Ineffective SQLs Refined": [
+        "(pymysql.err.ProgrammingError) (1146, \"Table 'PINOLO_MariaDB.student2' doesn't exist\")\n[SQL: SELECT MAX(grade) FROM student2;]\n(Background on this error at: https://sqlalche.me/e/20/f405)",
+        "(pymysql.err.ProgrammingError) (1146, \"Table 'PINOLO_MariaDB.student_test' doesn't exist\")\n[SQL: SELECT name, test, score, MAX(score) \n  OVER (PARTITION BY name) AS highest_score FROM student_test;]\n(Background on this error at: https://sqlalche.me/e/20/f405)"
+    ],
+    "SQLs Generated1": [],
+    "SQLs Generated Costs1": [],
+    "SQLs Generated ExecResults1": [],
+    "SQLs Generated ExecTimes1": [],
+    "SQLs Generated ErrorMessages1": [],
+    "Effective SQLs Generated1": [],
+    "SQLs Generated2": [],
+    "SQLs Generated Costs2": [],
+    "SQLs Generated ExecResults2": [],
+    "SQLs Generated ExecTimes2": [],
+    "SQLs Generated ErrorMessages2": [],
+    "Effective SQLs Generated2": []
+}

@@ -1,0 +1,19 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/current/functions-info.html"
+    ],
+    "Title": [
+        "pg_current_logfile"
+    ],
+    "Feature": [
+        "pg_current_logfile ( [ text ] ) → text"
+    ],
+    "Description": [
+        "Returns the path name of the log file currently in use by the logging collector. The path includes the log_directory directory and the individual log file name. The result is NULL if the logging collector is disabled. When multiple log files exist, each in a different format, pg_current_logfile without an argument returns the path of the file having the first format found in the ordered list: stderr, csvlog, jsonlog. NULL is returned if no log file has any of these formats. To request information about a specific log file format, supply either csvlog, jsonlog or stderr as the value of the optional parameter. The result is NULL if the log format requested is not configured in log_destination. The result reflects the contents of the current_logfiles file.",
+        "This function is restricted to superusers and roles with privileges of the pg_monitor role by default, but other users can be granted EXECUTE to run the function."
+    ],
+    "Examples": [],
+    "Category": [
+        "System Information Functions and Operators"
+    ]
+}

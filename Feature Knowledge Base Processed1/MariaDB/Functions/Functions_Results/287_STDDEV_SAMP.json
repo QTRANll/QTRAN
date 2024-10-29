@@ -1,0 +1,23 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/stddev_samp/"
+    ],
+    "Title": [
+        "STDDEV_SAMP"
+    ],
+    "Feature": [
+        "STDDEV_SAMP(expr)\n"
+    ],
+    "Description": [
+        "Returns the sample standard deviation of expr (the square root of VAR_SAMP()).",
+        "It is an aggregate function, and so can be used with the GROUP BY clause.",
+        "STDDEV_SAMP() can be used as a window function.",
+        "STDDEV_SAMP() returns NULL if there were no matching rows."
+    ],
+    "Examples": [
+        "SELECT STDDEV_SAMP(value) FROM (SELECT 1 AS value UNION ALL SELECT 2 UNION ALL SELECT 3) AS temp;"
+    ],
+    "Category": [
+        "Aggregate Functions"
+    ]
+}

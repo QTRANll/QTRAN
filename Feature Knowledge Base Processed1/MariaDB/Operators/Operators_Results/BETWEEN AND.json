@@ -1,0 +1,52 @@
+{
+    "HTML": "https://mariadb.com//kb/en/between-and/",
+    "Title": "BETWEEN AND",
+    "Feature": [
+        "expr BETWEEN min AND max\n"
+    ],
+    "Description": [
+        "If expr is greater than or equal to min and expr is less than or equal\nto max, BETWEEN returns 1, otherwise it returns 0. This is equivalent\nto the expression (min <= expr AND expr <= max) if all the arguments\nare of the same type. Otherwise type conversion takes place according\nto the rules described at Type Conversion, but\napplied to all the three arguments."
+    ],
+    "Examples": [
+        "SELECT 1 BETWEEN 2 AND 3;\n+-------------------+\n| 1 BETWEEN 2 AND 3 |\n+-------------------+\n|                 0 |\n+-------------------+\n",
+        "SELECT 'b' BETWEEN 'a' AND 'c';\n+-------------------------+\n| 'b' BETWEEN 'a' AND 'c' |\n+-------------------------+\n|                       1 |\n+-------------------------+\n",
+        "SELECT 2 BETWEEN 2 AND '3';\n+---------------------+\n| 2 BETWEEN 2 AND '3' |\n+---------------------+\n|                   1 |\n+---------------------+\n",
+        "SELECT 2 BETWEEN 2 AND 'x-3';\n+-----------------------+\n| 2 BETWEEN 2 AND 'x-3' |\n+-----------------------+\n|                     0 |\n+-----------------------+\n1 row in set, 1 warning (0.00 sec)\n\nWarning (Code 1292): Truncated incorrect DOUBLE value: 'x-3'\n",
+        "SELECT 1 BETWEEN 1 AND NULL;\n+----------------------+\n| 1 BETWEEN 1 AND NULL |\n+----------------------+\n|                 NULL |\n+----------------------+\n",
+        "CREATE TABLE `x` (\n  a date ,\n  b datetime,\n  c timestamp\n)\n\nINSERT INTO x VALUES \n ('2018-11-11', '2018-11-11 05:15', '2018-11-11 05:15'), \n ('2018-11-12', '2018-11-12 05:15', '2018-11-12 05:15'); \n\nSELECT * FROM x WHERE a BETWEEN '2018-11-11' AND '2018-11-12';\n+------------+---------------------+---------------------+\n| a          | b                   | c                   |\n+------------+---------------------+---------------------+\n| 2018-11-11 | 2018-11-11 05:15:00 | 2018-11-11 05:15:00 |\n| 2018-11-12 | 2018-11-12 05:15:00 | 2018-11-12 05:15:00 |\n+------------+---------------------+---------------------+\n\nSELECT * FROM x WHERE b BETWEEN '2018-11-11' AND '2018-11-12';\n+------------+---------------------+---------------------+\n| a          | b                   | c                   |\n+------------+---------------------+---------------------+\n| 2018-11-11 | 2018-11-11 05:15:00 | 2018-11-11 05:15:00 |\n+------------+---------------------+---------------------+\n\nSELECT * FROM x WHERE c BETWEEN '2018-11-11' AND '2018-11-12';\n+------------+---------------------+---------------------+\n| a          | b                   | c                   |\n+------------+---------------------+---------------------+\n| 2018-11-11 | 2018-11-11 05:15:00 | 2018-11-11 05:15:00 |\n+------------+---------------------+---------------------+\n"
+    ],
+    "Category": [
+        "Comparison Operators"
+    ],
+    "Effective SQLs Refined": [
+        "SELECT 1 BETWEEN 2 AND 3;",
+        "SELECT 'b' BETWEEN 'a' AND 'c';",
+        "SELECT 2 BETWEEN 2 AND '3';",
+        "SELECT 2 BETWEEN 2 AND 'x-3';",
+        "SELECT 1 BETWEEN 1 AND NULL;"
+    ],
+    "Ineffective SQLs Refined": [
+        "CREATE TABLE `x` (\n  a date ,\n  b datetime,\n  c timestamp\n)\n\nINSERT INTO x VALUES \n ('2018-11-11', '2018-11-11 05:15', '2018-11-11 05:15'), \n ('2018-11-12', '2018-11-12 05:15', '2018-11-12 05:15');",
+        "SELECT * FROM x WHERE a BETWEEN '2018-11-11' AND '2018-11-12';",
+        "SELECT * FROM x WHERE b BETWEEN '2018-11-11' AND '2018-11-12';",
+        "SELECT * FROM x WHERE c BETWEEN '2018-11-11' AND '2018-11-12';"
+    ],
+    "Wrong Messages from Ineffective SQLs Refined": [
+        "(pymysql.err.ProgrammingError) (1064, \"You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'INSERT INTO x VALUES \\n ('2018-11-11', '2018-11-11 05:15', '2018-11-11 05:15')...' at line 7\")\n[SQL: CREATE TABLE `x` (\n  a date ,\n  b datetime,\n  c timestamp\n)\n\nINSERT INTO x VALUES \n ('2018-11-11', '2018-11-11 05:15', '2018-11-11 05:15'), \n ('2018-11-12', '2018-11-12 05:15', '2018-11-12 05:15');]\n(Background on this error at: https://sqlalche.me/e/20/f405)",
+        "(pymysql.err.ProgrammingError) (1146, \"Table 'PINOLO_MariaDB.x' doesn't exist\")\n[SQL: SELECT * FROM x WHERE a BETWEEN '2018-11-11' AND '2018-11-12';]\n(Background on this error at: https://sqlalche.me/e/20/f405)",
+        "(pymysql.err.ProgrammingError) (1146, \"Table 'PINOLO_MariaDB.x' doesn't exist\")\n[SQL: SELECT * FROM x WHERE b BETWEEN '2018-11-11' AND '2018-11-12';]\n(Background on this error at: https://sqlalche.me/e/20/f405)",
+        "(pymysql.err.ProgrammingError) (1146, \"Table 'PINOLO_MariaDB.x' doesn't exist\")\n[SQL: SELECT * FROM x WHERE c BETWEEN '2018-11-11' AND '2018-11-12';]\n(Background on this error at: https://sqlalche.me/e/20/f405)"
+    ],
+    "SQLs Generated1": [],
+    "SQLs Generated Costs1": [],
+    "SQLs Generated ExecResults1": [],
+    "SQLs Generated ExecTimes1": [],
+    "SQLs Generated ErrorMessages1": [],
+    "Effective SQLs Generated1": [],
+    "SQLs Generated2": [],
+    "SQLs Generated Costs2": [],
+    "SQLs Generated ExecResults2": [],
+    "SQLs Generated ExecTimes2": [],
+    "SQLs Generated ErrorMessages2": [],
+    "Effective SQLs Generated2": []
+}

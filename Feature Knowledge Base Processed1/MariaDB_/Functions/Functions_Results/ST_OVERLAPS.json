@@ -1,0 +1,56 @@
+{
+    "HTML": "https://mariadb.com//kb/en/st_overlaps/",
+    "Title": "ST_OVERLAPS",
+    "Feature": [
+        "ST_OVERLAPS(g1,g2)\n"
+    ],
+    "Description": [
+        "Returns 1 or 0 to indicate whether geometry g1 spatially overlaps geometry g2.",
+        "The term spatially overlaps is used if two geometries intersect and their\nintersection results in a geometry of the same dimension but not equal to\neither of the given geometries.",
+        "ST_OVERLAPS() uses object shapes, while OVERLAPS(), based on the original MySQL implementation, uses object bounding rectangles."
+    ],
+    "Examples": [],
+    "Category": [
+        "Geographic Functions"
+    ],
+    "Effective SQLs Refined": [],
+    "Ineffective SQLs Refined": [],
+    "Wrong Messages from Ineffective SQLs Refined": [],
+    "SQLs Generated1": [
+        {
+            "Example SQL": "SELECT ST_OVERLAPS(geometry1, geometry2);"
+        },
+        {
+            "Example SQL": "SELECT ST_OVERLAPS(GeomFromText('POLYGON((...))'), GeomFromText('POLYGON((...))'));"
+        }
+    ],
+    "SQLs Generated Costs1": [
+        {
+            "Total Tokens": 354,
+            "Prompt Tokens": 329,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 6.434999999999999e-05
+        },
+        {
+            "Total Tokens": 524,
+            "Prompt Tokens": 484,
+            "Completion Tokens": 40,
+            "Total Cost (USD)": 9.659999999999999e-05
+        }
+    ],
+    "SQLs Generated ExecResults1": [
+        "None",
+        "[(None,)]"
+    ],
+    "SQLs Generated ExecTimes1": [
+        "0",
+        "0.004736185073852539"
+    ],
+    "SQLs Generated ErrorMessages1": [
+        "(pymysql.err.OperationalError) (1054, \"Unknown column 'geometry1' in 'field list'\")\n",
+        "None"
+    ],
+    "Effective SQLs Generated1": [
+        "SELECT ST_OVERLAPS(GeomFromText('POLYGON((...))'), GeomFromText('POLYGON((...))'));"
+    ]
+}

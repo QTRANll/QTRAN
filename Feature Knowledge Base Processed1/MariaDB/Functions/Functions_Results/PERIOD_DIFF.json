@@ -1,0 +1,36 @@
+{
+    "HTML": "https://mariadb.com//kb/en/period_diff/",
+    "Title": "PERIOD_DIFF",
+    "Feature": [
+        "PERIOD_DIFF(P1,P2)\n"
+    ],
+    "Description": [
+        "Returns the number of months between periods P1 and P2. P1 and P2 \ncan be in the format YYMM or YYYYMM, and are not date values.",
+        "If P1 or P2 contains a two-digit year, values from 00 to 69 are converted to from 2000 to 2069, while values from 70 are converted to 1970 upwards."
+    ],
+    "Examples": [
+        "SELECT PERIOD_DIFF(200802,200703);\n+----------------------------+\n| PERIOD_DIFF(200802,200703) |\n+----------------------------+\n|                         11 |\n+----------------------------+\n\nSELECT PERIOD_DIFF(6902,6803);\n+------------------------+\n| PERIOD_DIFF(6902,6803) |\n+------------------------+\n|                     11 |\n+------------------------+\n\nSELECT PERIOD_DIFF(7002,6803);\n+------------------------+\n| PERIOD_DIFF(7002,6803) |\n+------------------------+\n|                  -1177 |\n+------------------------+\n"
+    ],
+    "Category": [
+        "Date & Time Functions"
+    ],
+    "Effective SQLs Refined": [
+        "SELECT PERIOD_DIFF(200802,200703);",
+        "SELECT PERIOD_DIFF(6902,6803);",
+        "SELECT PERIOD_DIFF(7002,6803);"
+    ],
+    "Ineffective SQLs Refined": [],
+    "Wrong Messages from Ineffective SQLs Refined": [],
+    "SQLs Generated1": [],
+    "SQLs Generated Costs1": [],
+    "SQLs Generated ExecResults1": [],
+    "SQLs Generated ExecTimes1": [],
+    "SQLs Generated ErrorMessages1": [],
+    "Effective SQLs Generated1": [],
+    "SQLs Generated2": [],
+    "SQLs Generated Costs2": [],
+    "SQLs Generated ExecResults2": [],
+    "SQLs Generated ExecTimes2": [],
+    "SQLs Generated ErrorMessages2": [],
+    "Effective SQLs Generated2": []
+}

@@ -1,0 +1,23 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/drop-procedure/"
+    ],
+    "Title": [
+        "DROP PROCEDURE"
+    ],
+    "Feature": [
+        "DROP PROCEDURE [IF EXISTS] sp_name\n"
+    ],
+    "Description": [
+        "This statement is used to drop a stored procedure. That is, the\nspecified routine is removed from the server along with all privileges specific to the procedure. You must have the ALTER ROUTINE privilege for the routine. If the automatic_sp_privileges server system variable is set, that privilege and EXECUTE are granted automatically to the routine creator - see Stored Routine Privileges.",
+        "The IF EXISTS clause is a MySQL/MariaDB extension.  It\nprevents an error from occurring if the procedure or function does not exist. A\nNOTE is produced that can be viewed with SHOW WARNINGS.",
+        "While this statement takes effect immediately, threads which are executing a procedure can continue execution."
+    ],
+    "Examples": [
+        "DROP PROCEDURE simpleproc;\n",
+        "DROP PROCEDURE simpleproc;\nERROR 1305 (42000): PROCEDURE test.simpleproc does not exist\n\nDROP PROCEDURE IF EXISTS simpleproc;\nQuery OK, 0 rows affected, 1 warning (0.00 sec)\n\nSHOW WARNINGS;\n+-------+------+------------------------------------------+\n| Level | Code | Message                                  |\n+-------+------+------------------------------------------+\n| Note  | 1305 | PROCEDURE test.simpleproc does not exist |\n+-------+------+------------------------------------------+\n"
+    ],
+    "Category": [
+        "Data Definition"
+    ]
+}

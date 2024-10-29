@@ -1,0 +1,27 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/aggregate-functions/reference/skewsamp"
+    ],
+    "Title": [
+        "skewSamp"
+    ],
+    "Feature": [
+        "skewSamp(expr)"
+    ],
+    "Description": [
+        "skewSamp",
+        "Computes the sample skewness of a sequence.",
+        "It represents an unbiased estimate of the skewness of a random variable if passed values form its sample.",
+        "skewSamp(expr)",
+        "Arguments",
+        "expr \u2014 Expression returning a number.",
+        "Returned value",
+        "The skewness of the given distribution. Type \u2014 Float64. If n <= 1 (n is the size of the sample), then the function returns nan."
+    ],
+    "Examples": [
+        "SELECT skewSamp(value) FROM series_with_value_column;"
+    ],
+    "Category": [
+        "Aggregate Functions"
+    ]
+}

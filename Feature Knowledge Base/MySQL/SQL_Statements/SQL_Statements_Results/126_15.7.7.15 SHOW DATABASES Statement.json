@@ -1,0 +1,23 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/show-databases.html"
+    ],
+    "Title": [
+        "15.7.7.15 SHOW DATABASES Statement"
+    ],
+    "Feature": [
+        "SHOW {DATABASES | SCHEMAS}\n    [LIKE 'pattern' | WHERE expr]"
+    ],
+    "Description": [
+        "\nSHOW DATABASES lists the\n        databases on the MySQL server host.\n        SHOW\n        SCHEMAS is a synonym for SHOW\n        DATABASES. The LIKE\n        clause, if present, indicates which database names to match. The\n        WHERE clause can be given to select rows\n        using more general conditions, as discussed in\n        Section\u00a028.8, \u201cExtensions to SHOW Statements\u201d.\n      ",
+        "\n        You see only those databases for which you have some kind of\n        privilege, unless you have the global SHOW\n        DATABASES privilege. You can also get this list using\n        the mysqlshow command.\n      ",
+        "\n        If the server was started with the\n        --skip-show-database option, you\n        cannot use this statement at all unless you have the\n        SHOW DATABASES privilege.\n      ",
+        "\n        MySQL implements databases as directories in the data directory,\n        so this statement simply lists directories in that location.\n        However, the output may include names of directories that do not\n        correspond to actual databases.\n      ",
+        "\n        Database information is also available from the\n        INFORMATION_SCHEMA\nSCHEMATA table. See\n        Section\u00a028.3.31, \u201cThe INFORMATION_SCHEMA SCHEMATA Table\u201d.\n",
+        "\n\nCaution\n\n\n          Because any static global privilege is considered a privilege\n          for all databases, any static global privilege enables a user\n          to see all database names with SHOW\n          DATABASES or by examining the\n          SCHEMATA table of\n          INFORMATION_SCHEMA, except databases that\n          have been restricted at the database level by partial revokes.\n\n"
+    ],
+    "Examples": [],
+    "Category": [
+        "Database Administration Statements"
+    ]
+}

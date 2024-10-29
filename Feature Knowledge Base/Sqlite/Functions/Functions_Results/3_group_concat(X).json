@@ -1,0 +1,18 @@
+{
+    "HTML": [
+        "https://sqlite.org/lang_aggfunc.html#group_concat"
+    ],
+    "Title": [
+        "Built-in Aggregate Functions"
+    ],
+    "Feature": [
+        "group_concat(X)"
+    ],
+    "Description": [
+        "The group_concat() function returns\n  a string which is the concatenation of\n  all non-NULL values ofX.  If parameterYis present then\n  it is used as the separator\n  between instances ofX.A comma (\",\") is used as the separator\n  ifYis omitted.The string_agg(X,Y) function is an alias\n  for group_concat(X,Y).  String_agg() is compatible with PostgreSQL\n  and SQL-Server and group_concat() is compatible with MySQL.The order of the concatenated elements is arbitrary unless an\n  ORDER BY argument is included immediately after the last parameter."
+    ],
+    "Examples": [],
+    "Category": [
+        "Built-in Aggregate Functions"
+    ]
+}

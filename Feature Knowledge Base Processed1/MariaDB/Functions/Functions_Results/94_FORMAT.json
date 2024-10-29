@@ -1,0 +1,24 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/format/"
+    ],
+    "Title": [
+        "FORMAT"
+    ],
+    "Feature": [
+        "FORMAT(num, decimal_position[, locale])\n"
+    ],
+    "Description": [
+        "Formats the given number for display as a string, adding separators to appropriate position and rounding the results to the given decimal position.  For instance, it would format 15233.345 to 15,233.35.",
+        "If the given decimal position is 0, it rounds to return no decimal point or fractional part.  You can optionally specify a locale value to format numbers to the pattern appropriate for the given region."
+    ],
+    "Examples": [
+        "SELECT FORMAT(1234567890.09876543210, 4) AS 'Format';",
+        "SELECT FORMAT(1234567.89, 4) AS 'Format';",
+        "SELECT FORMAT(1234567.89, 0) AS 'Format';",
+        "SELECT FORMAT(123456789,2,'rm_CH') AS 'Format';"
+    ],
+    "Category": [
+        "String Functions"
+    ]
+}

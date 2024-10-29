@@ -1,0 +1,33 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/built-in-function-reference.html",
+        "https://dev.mysql.com/doc/refman/8.4/en/json-function-reference.html"
+    ],
+    "Title": [
+        "14.1 Built-In Function and Operator Reference",
+        "14.17.1 JSON Function Reference"
+    ],
+    "Feature": [
+        "JSON_KEYS(json_doc[,\n          path])"
+    ],
+    "Description": [
+        "Array of keys from JSON document",
+        "\nJSON_KEYS(json_doc[,\n          path])\n",
+        "\n          Returns the keys from the top-level value of a JSON object as\n          a JSON array, or, if a path\n          argument is given, the top-level keys from the selected path.\n          Returns NULL if any argument is\n          NULL, the\n          json_doc argument is not an object,\n          or path, if given, does not locate\n          an object. An error occurs if the\n          json_doc argument is not a valid\n          JSON document or the path argument\n          is not a valid path expression or contains a\n          * or ** wildcard.\n        ",
+        "\n          The result array is empty if the selected object is empty. If\n          the top-level value has nested subobjects, the return value\n          does not include keys from those subobjects.\n        ",
+        "Press CTRL+C to copy mysql> SELECT JSON_KEYS('{\"a\": 1, \"b\": {\"c\": 30}}');\n+---------------------------------------+\n| JSON_KEYS('{\"a\": 1, \"b\": {\"c\": 30}}') |\n+---------------------------------------+\n| [\"a\", \"b\"]                            |\n+---------------------------------------+\nmysql> SELECT JSON_KEYS('{\"a\": 1, \"b\": {\"c\": 30}}', '$.b');\n+----------------------------------------------+\n| JSON_KEYS('{\"a\": 1, \"b\": {\"c\": 30}}', '$.b') |\n+----------------------------------------------+\n| [\"c\"]                                        |\n+----------------------------------------------+"
+    ],
+    "Examples": [
+        "mysql> SELECT JSON_KEYS('{\"a\": 1, \"b\": {\"c\": 30}}');\n+---------------------------------------+\n| JSON_KEYS('{\"a\": 1, \"b\": {\"c\": 30}}') |\n+---------------------------------------+\n| [\"a\", \"b\"]                            |\n+---------------------------------------+\nmysql> SELECT JSON_KEYS('{\"a\": 1, \"b\": {\"c\": 30}}', '$.b');\n+----------------------------------------------+\n| JSON_KEYS('{\"a\": 1, \"b\": {\"c\": 30}}', '$.b') |\n+----------------------------------------------+\n| [\"c\"]                                        |\n+----------------------------------------------+"
+    ],
+    "Category": [
+        "Built-In Functions",
+        "JSON Functions"
+    ],
+    "Reference HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/json-search-functions.html#function_json-keys"
+    ],
+    "Feature Type": [
+        "Function"
+    ]
+}

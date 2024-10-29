@@ -1,0 +1,18 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/current/functions-admin.html"
+    ],
+    "Title": [
+        "pg_walfile_name_offset"
+    ],
+    "Feature": [
+        "pg_walfile_name_offset ( lsn pg_lsn ) → record ( file_name text, file_offset integer )"
+    ],
+    "Description": [
+        "Converts a write-ahead log location to a WAL file name and byte offset within that file."
+    ],
+    "Examples": [],
+    "Category": [
+        "System Administration Functions"
+    ]
+}

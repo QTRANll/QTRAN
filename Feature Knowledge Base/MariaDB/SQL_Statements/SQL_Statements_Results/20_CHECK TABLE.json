@@ -1,0 +1,29 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/check-table/"
+    ],
+    "Title": [
+        "CHECK TABLE"
+    ],
+    "Feature": [
+        "CHECK TABLE tbl_name [, tbl_name] ... [option] ...\n\noption = {FOR UPGRADE | QUICK | FAST | MEDIUM | EXTENDED | CHANGED}\n"
+    ],
+    "Description": [
+        "CHECK TABLE checks a table or tables for errors. CHECK TABLE works for\nArchive, Aria, CSV, InnoDB and MyISAM tables. For Aria and MyISAM tables, the\nkey statistics are updated as well. For CSV, see also Checking and Repairing CSV Tables.",
+        "As an alternative, myisamchk is a commandline tool for checking MyISAM tables when the tables are not being accessed. For Aria tables, there is a similar tool: aria_chk.",
+        "For checking dynamic columns integrity, COLUMN_CHECK() can be used.",
+        "CHECK TABLE can also check views for problems, such as tables\nthat are referenced in the view definition that no longer exist.",
+        "CHECK TABLE is also supported for partitioned tables. You can\nuse ALTER TABLE ... CHECK PARTITION \nto check one or more partitions.",
+        "The meaning of the different options are as follows - note that this can vary a bit between\nstorage engines:",
+        "FOR UPGRADEDo a very quick check if the storage format for the table has changed so that one needs to do a REPAIR. This is only needed when one upgrades between major versions of MariaDB or MySQL. This is usually done by running mariadb-upgrade.\nFASTOnly check tables that has not been closed properly or are marked as corrupt. Only supported by the MyISAM and Aria engines. For other engines the table is checked normally\nCHANGEDCheck only tables that has changed since last REPAIR / CHECK. Only supported by the MyISAM and Aria engines. For other engines the table is checked normally.\nQUICKDo a fast check. For MyISAM and Aria, this means skipping the check of the delete link chain, which may take some time.\nMEDIUMScan also the data files. Checks integrity between data and index files with checksums. In most cases this should find all possible errors.\nEXTENDEDDoes a full check to verify every possible error. For InnoDB, Aria, and MyISAM, verify for each row that all its keys exists, and for those index keys, they point back to the primary clustered key. This may take a long time on large tables. This option was previously ignored by InnoDB before MariaDB 10.6.11, MariaDB 10.7.7, MariaDB 10.8.6 and MariaDB 10.9.4.\n\n",
+        "For most cases running CHECK TABLE without options or MEDIUM should be\ngood enough.",
+        "The Aria storage engine supports progress reporting for this statement.",
+        "If you want to know if two tables are identical, take a look\nat CHECKSUM TABLE."
+    ],
+    "Examples": [
+        "check table y extended;\n+--------+-------+----------+----------+\n| Table  | Op    | Msg_type | Msg_text |\n+--------+-------+----------+----------+\n| test.y | check | status   | OK       |\n+--------+-------+----------+----------+\n"
+    ],
+    "Category": [
+        "Table Statements"
+    ]
+}

@@ -1,0 +1,24 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/date-and-time-functions.html#function_time"
+    ],
+    "Title": [
+        "TIME()"
+    ],
+    "Feature": [
+        "TIME(expr)"
+    ],
+    "Description": [
+        "Extract the time portion of the expression passed",
+        "\nTIME(expr)\n",
+        "\n          Extracts the time part of the time or datetime expression\n          expr and returns it as a string.\n          Returns NULL if\n          expr is NULL.\n        ",
+        "\n          This function is unsafe for statement-based replication. A\n          warning is logged if you use this function when\n          binlog_format is set to\n          STATEMENT.\n        ",
+        "Press CTRL+C to copy mysql> SELECT TIME('2003-12-31 01:02:03');\n        -> '01:02:03'\nmysql> SELECT TIME('2003-12-31 01:02:03.000123');\n        -> '01:02:03.000123'"
+    ],
+    "Examples": [
+        "mysql> SELECT TIME('2003-12-31 01:02:03');\n        -> '01:02:03'\nmysql> SELECT TIME('2003-12-31 01:02:03.000123');\n        -> '01:02:03.000123'"
+    ],
+    "Category": [
+        "Date and Time Functions"
+    ]
+}

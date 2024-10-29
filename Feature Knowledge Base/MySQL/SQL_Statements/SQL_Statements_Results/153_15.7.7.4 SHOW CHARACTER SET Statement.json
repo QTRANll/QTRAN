@@ -1,0 +1,25 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/show-character-set.html"
+    ],
+    "Title": [
+        "15.7.7.4 SHOW CHARACTER SET Statement"
+    ],
+    "Feature": [
+        "SHOW {CHARACTER SET | CHARSET}\n    [LIKE 'pattern' | WHERE expr]"
+    ],
+    "Description": [
+        "\n        The SHOW CHARACTER SET statement\n        shows all available character sets. The\n        LIKE clause, if present, indicates\n        which character set names to match. The WHERE\n        clause can be given to select rows using more general\n        conditions, as discussed in Section\u00a028.8, \u201cExtensions to SHOW Statements\u201d. For\n        example:\n      ",
+        "Press CTRL+C to copy mysql> SHOW CHARACTER SET LIKE 'latin%';\n+---------+-----------------------------+-------------------+--------+\n| Charset | Description                 | Default collation | Maxlen |\n+---------+-----------------------------+-------------------+--------+\n| latin1  | cp1252 West European        | latin1_swedish_ci |      1 |\n| latin2  | ISO 8859-2 Central European | latin2_general_ci |      1 |\n| latin5  | ISO 8859-9 Turkish          | latin5_turkish_ci |      1 |\n| latin7  | ISO 8859-13 Baltic          | latin7_general_ci |      1 |\n+---------+-----------------------------+-------------------+--------+",
+        "\nSHOW CHARACTER SET output has\n        these columns:\n",
+        "\n\nCharset\n\n            The character set name.\n          \nDescription\n\n            A description of the character set.\n          \nDefault collation\n\n            The default collation for the character set.\n          \nMaxlen\n\n            The maximum number of bytes required to store one character.\n\n",
+        "\n        The filename character set is for internal\n        use only; consequently, SHOW CHARACTER\n        SET does not display it.\n      ",
+        "\n        Character set information is also available from the\n        INFORMATION_SCHEMA\nCHARACTER_SETS table.\n"
+    ],
+    "Examples": [
+        "mysql> SHOW CHARACTER SET LIKE 'latin%';\n+---------+-----------------------------+-------------------+--------+\n| Charset | Description                 | Default collation | Maxlen |\n+---------+-----------------------------+-------------------+--------+\n| latin1  | cp1252 West European        | latin1_swedish_ci |      1 |\n| latin2  | ISO 8859-2 Central European | latin2_general_ci |      1 |\n| latin5  | ISO 8859-9 Turkish          | latin5_turkish_ci |      1 |\n| latin7  | ISO 8859-13 Baltic          | latin7_general_ci |      1 |\n+---------+-----------------------------+-------------------+--------+"
+    ],
+    "Category": [
+        "Database Administration Statements"
+    ]
+}

@@ -1,0 +1,19 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/current/functions-aggregate.html"
+    ],
+    "Title": [
+        "json_object_agg_unique_strict"
+    ],
+    "Feature": [
+        "json_object_agg_unique_strict ( key \"any\", value \"any\" ) → json",
+        "jsonb_object_agg_unique_strict ( key \"any\", value \"any\" ) → jsonb"
+    ],
+    "Description": [
+        "Collects all the key/value pairs into a JSON object. Key arguments are coerced to text; value arguments are converted as per to_json or to_jsonb. The key can not be null. If the value is null then the entry is skipped. If there is a duplicate key an error is thrown."
+    ],
+    "Examples": [],
+    "Category": [
+        "Aggregate Functions"
+    ]
+}

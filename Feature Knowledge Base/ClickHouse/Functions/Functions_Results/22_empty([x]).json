@@ -1,0 +1,30 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/array-functions"
+    ],
+    "Title": [
+        "empty"
+    ],
+    "Feature": [
+        "empty([x])"
+    ],
+    "Description": [
+        "empty",
+        "Checks whether the input array is empty.",
+        "Syntax",
+        "empty([x])",
+        "An array is considered empty if it does not contain any elements.",
+        "NoteCan be optimized by enabling the optimize_functions_to_subcolumns setting. With optimize_functions_to_subcolumns = 1 the function reads only size0 subcolumn instead of reading and processing the whole array column. The query SELECT empty(arr) FROM TABLE; transforms to SELECT arr.size0 = 0 FROM TABLE;.",
+        "The function also works for strings or UUID.",
+        "Arguments",
+        "[x] \u2014 Input array. Array.",
+        "Returned value",
+        "Returns 1 for an empty array or 0 for a non-empty array. UInt8."
+    ],
+    "Examples": [
+        "SELECT empty([]);"
+    ],
+    "Category": [
+        "Arrays Functions"
+    ]
+}

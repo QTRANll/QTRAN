@@ -1,0 +1,25 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/hash-functions"
+    ],
+    "Title": [
+        "xxHash32, xxHash64"
+    ],
+    "Feature": [
+        "SELECT xxHash32('')ORSELECT xxHash64('')"
+    ],
+    "Description": [
+        "xxHash32, xxHash64",
+        "Calculates xxHash from a string. It is proposed in two flavors, 32 and 64 bits.",
+        "SELECT xxHash32('')ORSELECT xxHash64('')",
+        "Returned value",
+        "Hash value. UInt32/64.",
+        "NoteThe return type will be UInt32 for xxHash32 and UInt64 for xxHash64."
+    ],
+    "Examples": [
+        "SELECT xxHash32('Hello, world!');"
+    ],
+    "Category": [
+        "Hash Functions"
+    ]
+}

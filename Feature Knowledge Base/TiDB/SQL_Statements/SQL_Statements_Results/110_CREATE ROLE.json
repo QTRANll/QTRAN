@@ -1,0 +1,23 @@
+{
+    "HTML": [
+        "https://docs.pingcap.com//zh/tidb/stable/sql-statement-create-role"
+    ],
+    "Title": [
+        "CREATE ROLE"
+    ],
+    "Feature": [
+        "CreateRoleStmt ::=\n    'CREATE' 'ROLE' IfNotExists RoleSpec (',' RoleSpec)*\n\nIfNotExists ::=\n    ('IF' 'NOT' 'EXISTS')?\n\nRoleSpec ::=\n    Rolename\n"
+    ],
+    "Description": [
+        "CREATE ROLE \u8bed\u53e5\u662f\u57fa\u4e8e\u89d2\u8272\u7684\u8bbf\u95ee\u63a7\u5236 (RBAC) \u64cd\u4f5c\u7684\u4e00\u90e8\u5206\uff0c\u7528\u4e8e\u521b\u5efa\u65b0\u89d2\u8272\u5e76\u5c06\u65b0\u89d2\u8272\u5206\u914d\u7ed9\u7528\u6237\u3002"
+    ],
+    "Examples": [
+        "CREATE ROLE analyticsteam;\nQuery OK, 0 rows affected (0.02 sec)\n\nGRANT SELECT ON test.* TO analyticsteam;\nQuery OK, 0 rows affected (0.02 sec)\n\nCREATE USER jennifer;\nQuery OK, 0 rows affected (0.01 sec)\n\nGRANT analyticsteam TO jennifer;\nQuery OK, 0 rows affected (0.01 sec)\n",
+        "SHOW GRANTS;\n+---------------------------------------------+\n| Grants for User                             |\n+---------------------------------------------+\n| GRANT USAGE ON *.* TO 'jennifer'@'%'        |\n| GRANT 'analyticsteam'@'%' TO 'jennifer'@'%' |\n+---------------------------------------------+\n2 rows in set (0.00 sec)\n\nSHOW TABLES in test;\nERROR 1044 (42000): Access denied for user 'jennifer'@'%' to database 'test'\nSET ROLE analyticsteam;\nQuery OK, 0 rows affected (0.00 sec)\n\nSHOW GRANTS;\n+---------------------------------------------+\n| Grants for User                             |\n+---------------------------------------------+\n| GRANT USAGE ON *.* TO 'jennifer'@'%'        |\n| GRANT SELECT ON test.* TO 'jennifer'@'%'    |\n| GRANT 'analyticsteam'@'%' TO 'jennifer'@'%' |\n+---------------------------------------------+\n3 rows in set (0.00 sec)\n\nSHOW TABLES IN test;\n+----------------+\n| Tables_in_test |\n+----------------+\n| t1             |\n+----------------+\n1 row in set (0.00 sec)\n",
+        "SET DEFAULT ROLE analyticsteam TO jennifer;\nQuery OK, 0 rows affected (0.02 sec)\n",
+        "SHOW GRANTS;\n+---------------------------------------------+\n| Grants for User                             |\n+---------------------------------------------+\n| GRANT USAGE ON *.* TO 'jennifer'@'%'        |\n| GRANT SELECT ON test.* TO 'jennifer'@'%'    |\n| GRANT 'analyticsteam'@'%' TO 'jennifer'@'%' |\n+---------------------------------------------+\n3 rows in set (0.00 sec)\n\nSHOW TABLES IN test;\n+----------------+\n| Tables_in_test |\n+----------------+\n| t1             |\n+----------------+\n1 row in set (0.00 sec)\n"
+    ],
+    "Category": [
+        "\u8d26\u6237\u7ba1\u7406\u4e0e\u6570\u636e\u63a7\u5236\u8bed\u8a00 (DCL)"
+    ]
+}

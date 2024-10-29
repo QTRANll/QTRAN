@@ -1,0 +1,21 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000000822971"
+    ],
+    "Title": [
+        "COLLATION"
+    ],
+    "Feature": [
+        "COLLATION(str)\n"
+    ],
+    "Description": [
+        "返回字符串 str 的字符序。",
+        "您可以通过 SHOW COLLATION 语句查看 OceanBase 数据库支持的字符序。"
+    ],
+    "Examples": [
+        "obclient> SELECT COLLATION(\"oceanbase\");\n+------------------------+\n| COLLATION(\"oceanbase\") |\n+------------------------+\n| utf8mb4_general_ci     |\n+------------------------+\n1 row in set\n\nobclient> SELECT COLLATION(\"oceanbase\" COLLATE utf8mb4_bin);\n+--------------------------------------------+\n| COLLATION(\"oceanbase\" COLLATE utf8mb4_bin) |\n+--------------------------------------------+\n| utf8mb4_bin                                |\n+--------------------------------------------+\n1 row in set\n"
+    ],
+    "Category": [
+        "Information Functions"
+    ]
+}

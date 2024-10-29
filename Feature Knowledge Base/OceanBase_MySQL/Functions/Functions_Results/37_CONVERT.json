@@ -1,0 +1,24 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000000823320"
+    ],
+    "Title": [
+        "CONVERT"
+    ],
+    "Feature": [
+        "CONVERT(expr USING transcoding_name)\nCONVERT(expr,type)\n"
+    ],
+    "Description": [
+        "CONVERT() 函数的两种声明对应两种不同的应用：",
+        "CONVERT(expr USING transcoding_name) 用于将表达式 expr 转换为 transcoding_name 指定的字符集。",
+        "CONVERT(expr,type) 用于将表达式 expr 转换为 type 指定的数据类型。",
+        "在这种用法中，CONVERT(expr,type) 与 CAST(expr AS type) 是完全一致的。有关 CAST 函数的详细信息，请参见 CAST。"
+    ],
+    "Examples": [
+        "obclient> SELECT CHARSET(CONVERT('abc' USING binary));\n+--------------------------------------+\n| charset(CONVERT('abc' USING binary)) |\n+--------------------------------------+\n| binary                               |\n+--------------------------------------+\n1 row in set\n",
+        "obclient> SELECT CONVERT('test', CHAR);\n+-----------------------+\n| CONVERT('test', CHAR) |\n+-----------------------+\n| test                  |\n+-----------------------+\n1 row in set\n"
+    ],
+    "Category": [
+        "Cast Functions"
+    ]
+}

@@ -1,0 +1,22 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/st_touches/"
+    ],
+    "Title": [
+        "ST_TOUCHES"
+    ],
+    "Feature": [
+        "ST_TOUCHES(g1,g2)\n"
+    ],
+    "Description": [
+        "Returns 1 or 0 to indicate whether geometry g1 spatially touches geometry g2. Two geometries spatially touch if the interiors of the geometries do not intersect,\nbut the boundary of one of the geometries intersects either the boundary or the\ninterior of the other.",
+        "ST_TOUCHES() uses object shapes, while TOUCHES(), based on the original MySQL implementation, uses object bounding rectangles."
+    ],
+    "Examples": [
+        "SELECT ST_TOUCHES(@g1,@g2);",
+        "SELECT ST_TOUCHES(@g1,@g2);"
+    ],
+    "Category": [
+        "Geographic Functions"
+    ]
+}

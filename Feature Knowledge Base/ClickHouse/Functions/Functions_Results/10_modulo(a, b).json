@@ -1,0 +1,27 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/arithmetic-functions"
+    ],
+    "Title": [
+        "modulo"
+    ],
+    "Feature": [
+        "modulo(a, b)"
+    ],
+    "Description": [
+        "modulo",
+        "Calculates the remainder of the division of two values a by b.",
+        "The result type is an integer if both inputs are integers. If one of the inputs is a floating-point number, the result type is Float64.",
+        "The remainder is computed like in C++. Truncated division is used for negative numbers.",
+        "An exception is thrown when dividing by zero or when dividing a minimal negative number by minus one.",
+        "Syntax",
+        "modulo(a, b)",
+        "Alias: a % b (operator)"
+    ],
+    "Examples": [
+        "modulo(a, b)"
+    ],
+    "Category": [
+        "Arithmetic Functions"
+    ]
+}

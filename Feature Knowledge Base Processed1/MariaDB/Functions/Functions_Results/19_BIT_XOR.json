@@ -1,0 +1,22 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/bit_xor/"
+    ],
+    "Title": [
+        "BIT_XOR"
+    ],
+    "Feature": [
+        "BIT_XOR(expr) [over_clause]\n"
+    ],
+    "Description": [
+        "Returns the bitwise XOR of all bits in expr. The calculation is performed with 64-bit (BIGINT) precision. It is an aggregate function, and so can be used with the GROUP BY clause.",
+        "If no rows match, BIT_XOR will return a value with all bits set to 0. NULL values have no effect on the result unless all results are NULL, which is treated as no match.",
+        "BIT_XOR can be used as a window function with the addition of the over_clause."
+    ],
+    "Examples": [
+        "SELECT BIT_XOR(NULL);"
+    ],
+    "Category": [
+        "Aggregate Functions"
+    ]
+}

@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/current/functions-geometry.html"
+    ],
+    "Title": [
+        "circle"
+    ],
+    "Feature": [
+        "circle ( polygon ) → circle"
+    ],
+    "Description": [
+        "Converts polygon to circle. The circle's center is the mean of the positions of the polygon's points, and the radius is the average distance of the polygon's points from that center."
+    ],
+    "Examples": [
+        "circle(polygon '((0,0),(1,3),(2,0))') → <(1,1),1.6094757082487299>"
+    ],
+    "Category": [
+        "Geometric Functions and Operators"
+    ]
+}

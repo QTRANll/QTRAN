@@ -1,0 +1,28 @@
+{
+    "HTML": [
+        "https://docs.pingcap.com//zh/tidb/stable/sql-statement-select"
+    ],
+    "Title": [
+        "SELECT"
+    ],
+    "Feature": [
+        "SelectStmt ::=\n    ( SelectStmtBasic | SelectStmtFromDualTable | SelectStmtFromTable )\n    OrderBy? SelectStmtLimit? SelectLockOpt? SelectStmtIntoOption\n\nSelectStmtBasic ::=\n    \"SELECT\" SelectStmtOpts Field (\",\" Field)* ( \"HAVING\" Expression)?\n\nSelectStmtFromDualTable ::=\n    \"SELECT\" SelectStmtOpts Field (\",\" Field)* \"FROM\" \"DUAL\" WhereClause?\n\nSelectStmtFromTable ::=\n    \"SELECT\" SelectStmtOpts Field (\",\" Field)* \"FROM\" TableRefsClause\n    WhereClause? GroupByClause? ( \"HAVING\" Expression)? WindowClause?\n\nSelectStmtOpts ::=\n    TableOptimizerHints DefaultFalseDistictOpt PriorityOpt SelectStmtSQLSmallResult\n    SelectStmtSQLBigResult SelectStmtSQLBufferResult SelectStmtSQLCache SelectStmtCalcFoundRows\n    SelectStmtStraightJoin\n\nTableRefsClause ::=\n    TableRef AsOfClause? ( ',' TableRef AsOfClause? )*\n\nAsOfClause ::=\n    'AS' 'OF' 'TIMESTAMP' Expression\n\nSelectStmtLimit ::=\n    (\"LIMIT\" LimitOption ( (\",\" | \"OFFSET\") LimitOption )?\n| \"FETCH\" (\"FIRST\" | \"NEXT\") LimitOption? (\"ROW\" | \"ROWS\") \"ONLY\" )\n\nSelectLockOpt ::= \n    ( 'FOR' 'UPDATE' ( 'OF' TableList )? 'NOWAIT'?\n|   'LOCK' 'IN' 'SHARE' 'MODE' )\n\nTableList ::=\n    TableName ( ',' TableName )*\n\nWindowClause ::=\n    \"WINDOW\" WindowDefinition (\",\" WindowDefinition)*\n\nTableSampleOpt ::=\n    'TABLESAMPLE' 'REGIONS' '(' ')'\n"
+    ],
+    "Description": [
+        "SELECT \u8bed\u53e5\u7528\u4e8e\u4ece TiDB \u8bfb\u53d6\u6570\u636e\u3002"
+    ],
+    "Examples": [
+        "CREATE TABLE t1 (id INT NOT NULL PRIMARY KEY AUTO_INCREMENT, c1 INT NOT NULL);\n",
+        "INSERT INTO t1 (c1) VALUES (1),(2),(3),(4),(5);\n",
+        "SELECT * FROM t1;\n",
+        "mysql> SELECT AVG(s_quantity), COUNT(s_quantity) FROM stock TABLESAMPLE REGIONS();\n+-----------------+-------------------+\n| AVG(s_quantity) | COUNT(s_quantity) |\n+-----------------+-------------------+\n|         59.5000 |                 4 |\n+-----------------+-------------------+\n1 row in set (0.00 sec)\n\nmysql> SELECT AVG(s_quantity), COUNT(s_quantity) FROM stock;\n+-----------------+-------------------+\n| AVG(s_quantity) | COUNT(s_quantity) |\n+-----------------+-------------------+\n|         54.9729 |           1000000 |\n+-----------------+-------------------+\n1 row in set (0.52 sec)\n",
+        ".css-1weqspv{padding-top:0.5rem;padding-bottom:0.5rem;}.css-1weqspv .MuiAlert-message p{margin-bottom:0px;margin-top:0px;}",
+        "mysql> CREATE TABLE t (a INT, b VARCHAR(10), c DECIMAL(10,2));\nQuery OK, 0 rows affected (0.02 sec)\n\nmysql> INSERT INTO t VALUES (1, 'a', 1.1), (2, 'b', 2.2), (3, 'c', 3.3);\nQuery OK, 3 rows affected (0.01 sec)\n",
+        "mysql> SELECT * FROM t INTO OUTFILE '/tmp/tmp_file1';\nQuery OK, 3 rows affected (0.00 sec)\n",
+        "mysql> SELECT * FROM t INTO OUTFILE '/tmp/tmp_file2' FIELDS TERMINATED BY ',' ENCLOSED BY '\"';\nQuery OK, 3 rows affected (0.00 sec)\n",
+        "mysql> SELECT * FROM t INTO OUTFILE '/tmp/tmp_file3'\n    -> FIELDS TERMINATED BY ',' ENCLOSED BY '\\'' LINES TERMINATED BY '<<<\\n';\nQuery OK, 3 rows affected (0.00 sec)\n"
+    ],
+    "Category": [
+        "\u6570\u636e\u64cd\u4f5c\u8bed\u53e5 (DML)"
+    ]
+}

@@ -1,0 +1,34 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/built-in-function-reference.html",
+        "https://dev.mysql.com/doc/refman/8.4/en/spatial-function-reference.html"
+    ],
+    "Title": [
+        "14.1 Built-In Function and Operator Reference",
+        "14.16.1 Spatial Function Reference"
+    ],
+    "Feature": [
+        "ST_Area({poly|mpoly})"
+    ],
+    "Description": [
+        "Return Polygon or MultiPolygon area",
+        "\nST_Area({poly|mpoly})\n",
+        "\n            Returns a double-precision number indicating the area of the\n            Polygon or\n            MultiPolygon argument, as measured in its\n            spatial reference system.\n          ",
+        "\nST_Area() handles its\n            arguments as described in the introduction to this section,\n            with these exceptions:\n",
+        "\n\n                If the geometry is geometrically invalid, either the\n                result is an undefined area (that is, it can be any\n                number), or an error occurs.\n              \n                If the geometry is valid but is not a\n                Polygon or\n                MultiPolygon object, an\n                ER_UNEXPECTED_GEOMETRY_TYPE\n                error occurs.\n              \n                If the geometry is a valid Polygon in\n                a Cartesian SRS, the result is the Cartesian area of the\n                polygon.\n              \n                If the geometry is a valid\n                MultiPolygon in a Cartesian SRS, the\n                result is the sum of the Cartesian area of the polygons.\n              \n                If the geometry is a valid Polygon in\n                a geographic SRS, the result is the geodetic area of the\n                polygon in that SRS, in square meters.\n              \n                If the geometry is a valid\n                MultiPolygon in a geographic SRS, the\n                result is the sum of geodetic area of the polygons in\n                that SRS, in square meters.\n              \n                If an area computation results in\n                +inf, an\n                ER_DATA_OUT_OF_RANGE\n                error occurs.\n              \n                If the geometry has a geographic SRS with a longitude or\n                latitude that is out of range, an error occurs:\n\n\n\n                    If a longitude value is not in the range\n                    (\u2212180, 180], an\n                    ER_GEOMETRY_PARAM_LONGITUDE_OUT_OF_RANGE\n                    error occurs.\n                  \n                    If a latitude value is not in the range [\u221290,\n                    90], an\n                    ER_GEOMETRY_PARAM_LATITUDE_OUT_OF_RANGE\n                    error occurs.\n\n\n\n                Ranges shown are in degrees. The exact range limits\n                deviate slightly due to floating-point arithmetic.\n\n",
+        "Press CTRL+C to copy mysql> SET @poly =\n       'Polygon((0 0,0 3,3 0,0 0),(1 1,1 2,2 1,1 1))';\nmysql> SELECT ST_Area(ST_GeomFromText(@poly));\n+---------------------------------+\n| ST_Area(ST_GeomFromText(@poly)) |\n+---------------------------------+\n|                               4 |\n+---------------------------------+\n\nmysql> SET @mpoly =\n       'MultiPolygon(((0 0,0 3,3 3,3 0,0 0),(1 1,1 2,2 2,2 1,1 1)))';\nmysql> SELECT ST_Area(ST_GeomFromText(@mpoly));\n+----------------------------------+\n| ST_Area(ST_GeomFromText(@mpoly)) |\n+----------------------------------+\n|                                8 |\n+----------------------------------+"
+    ],
+    "Examples": [
+        "mysql> SET @poly =\n       'Polygon((0 0,0 3,3 0,0 0),(1 1,1 2,2 1,1 1))';\nmysql> SELECT ST_Area(ST_GeomFromText(@poly));\n+---------------------------------+\n| ST_Area(ST_GeomFromText(@poly)) |\n+---------------------------------+\n|                               4 |\n+---------------------------------+\n\nmysql> SET @mpoly =\n       'MultiPolygon(((0 0,0 3,3 3,3 0,0 0),(1 1,1 2,2 2,2 1,1 1)))';\nmysql> SELECT ST_Area(ST_GeomFromText(@mpoly));\n+----------------------------------+\n| ST_Area(ST_GeomFromText(@mpoly)) |\n+----------------------------------+\n|                                8 |\n+----------------------------------+"
+    ],
+    "Category": [
+        "Built-In Functions",
+        "Spatial Analysis Functions"
+    ],
+    "Reference HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/gis-polygon-property-functions.html#function_st-area"
+    ],
+    "Feature Type": [
+        "Function"
+    ]
+}

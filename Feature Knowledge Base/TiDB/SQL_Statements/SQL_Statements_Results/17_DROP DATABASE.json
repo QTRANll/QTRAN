@@ -1,0 +1,22 @@
+{
+    "HTML": [
+        "https://docs.pingcap.com//zh/tidb/stable/sql-statement-drop-database"
+    ],
+    "Title": [
+        "DROP DATABASE"
+    ],
+    "Feature": [
+        "DropDatabaseStmt ::=\n    'DROP' 'DATABASE' IfExists DBName\n\nIfExists ::= ( 'IF' 'EXISTS' )?\n"
+    ],
+    "Description": [
+        "DROP DATABASE \u8bed\u53e5\u7528\u4e8e\u6c38\u4e45\u5220\u9664\u6307\u5b9a\u7684\u6570\u636e\u5e93\uff0c\u4ee5\u53ca\u5220\u9664\u6240\u6709\u5728 schema \u4e2d\u521b\u5efa\u7684\u8868\u548c\u89c6\u56fe\u3002\u4e0e\u88ab\u5220\u6570\u636e\u5e93\u76f8\u5173\u8054\u7684\u7528\u6237\u6743\u9650\u4e0d\u53d7\u5f71\u54cd\u3002"
+    ],
+    "Examples": [
+        "SHOW DATABASES;\n",
+        "DROP DATABASE test;\n",
+        "SHOW DATABASES;\n"
+    ],
+    "Category": [
+        "Schema \u7ba1\u7406\u4e0e\u6570\u636e\u5b9a\u4e49\u8bed\u53e5 (DDL)"
+    ]
+}

@@ -1,0 +1,29 @@
+{
+    "HTML": [
+        "https://docs.pingcap.com//zh/tidb/stable/sql-statement-show-errors"
+    ],
+    "Title": [
+        "SHOW ERRORS"
+    ],
+    "Feature": [
+        "ShowErrorsStmt ::=\n    \"SHOW\" \"ERRORS\" ShowLikeOrWhere?\n\nShowLikeOrWhere ::=\n    \"LIKE\" SimpleExpr\n|   \"WHERE\" Expression\n"
+    ],
+    "Description": [
+        "SHOW ERRORS \u8bed\u53e5\u7528\u4e8e\u663e\u793a\u5df2\u6267\u884c\u8bed\u53e5\u4e2d\u7684\u9519\u8bef\u3002\u4e00\u65e6\u5148\u524d\u7684\u8bed\u53e5\u6210\u529f\u6267\u884c\uff0c\u5c31\u4f1a\u6e05\u9664\u9519\u8bef\u7f13\u51b2\u533a\uff0c\u8fd9\u65f6 SHOW ERRORS \u4f1a\u8fd4\u56de\u4e00\u4e2a\u7a7a\u96c6\u3002",
+        "\u5f53\u524d\u7684 sql_mode \u5f88\u5927\u7a0b\u5ea6\u51b3\u5b9a\u4e86\u54ea\u4e9b\u8bed\u53e5\u4f1a\u4ea7\u751f\u9519\u8bef\u4e0e\u8b66\u544a\u3002"
+    ],
+    "Examples": [
+        "select invalid;\n",
+        "create invalid;\n",
+        "ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your TiDB version for the right syntax to use line 1 column 14 near \"invalid\"\n",
+        "SHOW ERRORS;\n",
+        "+-------+------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+\n| Level | Code | Message                                                                                                                                                   |\n+-------+------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+\n| Error | 1054 | Unknown column 'invalid' in 'field list'                                                                                                                  |\n| Error | 1064 | You have an error in your SQL syntax; check the manual that corresponds to your TiDB version for the right syntax to use line 1 column 14 near \"invalid\"  |\n+-------+------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+\n2 rows in set (0.00 sec)\n",
+        "CREATE invalid2;\n",
+        "ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your TiDB version for the right syntax to use line 1 column 15 near \"invalid2\"\n",
+        "SELECT 1;\n",
+        "SHOW ERRORS;\n"
+    ],
+    "Category": [
+        "\u663e\u793a\u8bed\u53e5"
+    ]
+}

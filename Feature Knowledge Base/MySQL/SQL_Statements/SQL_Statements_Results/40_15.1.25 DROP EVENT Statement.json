@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/drop-event.html"
+    ],
+    "Title": [
+        "15.1.25 DROP EVENT Statement"
+    ],
+    "Feature": [
+        "DROP EVENT [IF EXISTS] event_name"
+    ],
+    "Description": [
+        "\n      This statement drops the event named\n      event_name. The event immediately\n      ceases being active, and is deleted completely from the server.\n    ",
+        "\n      If the event does not exist, the error ERROR 1517\n      (HY000): Unknown event\n      'event_name' results. You\n      can override this and cause the statement to generate a warning\n      for nonexistent events instead using IF EXISTS.\n    ",
+        "\n      This statement requires the EVENT\n      privilege for the schema to which the event to be dropped belongs.\n"
+    ],
+    "Examples": [],
+    "Category": [
+        "Data Definition Statements"
+    ]
+}

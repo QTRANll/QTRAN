@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000000823323"
+    ],
+    "Title": [
+        "CASE"
+    ],
+    "Feature": [
+        "CASE value WHEN compare-value THEN result [WHEN [compare-value] THEN result ...] [ELSE result] END\nCASE WHEN condition THEN result [WHEN [condition] THEN result ...] [ELSE result] END\n"
+    ],
+    "Description": [
+        "在第一种声明的返回结果中，value = compare-value。而第二种声明的返回结果是第一种条件为真。如果没有匹配的结果值，则返回结果为 ELSE 后的结果，如果没有 ELSE 部分，则返回值为 NULL。"
+    ],
+    "Examples": [
+        "obclient> SELECT CASE 'B' WHEN 'A' THEN 1 WHEN 'B' THEN 2 END;\n+----------------------------------------------+\n| CASE 'B' WHEN 'A' THEN 1 WHEN 'B' THEN 2 END |\n+----------------------------------------------+\n|                                            2 |\n+----------------------------------------------+\n1 row in set\n\nobclient> SELECT CASE CONCAT('A','B') WHEN CONCAT('AB','') THEN 'A' WHEN 'B' THEN 'B' END;\n+--------------------------------------------------------------------------+\n| CASE CONCAT('A','B') WHEN CONCAT('AB','') THEN 'A' WHEN 'B' THEN 'B' END |\n+--------------------------------------------------------------------------+\n| A                                                                        |\n+--------------------------------------------------------------------------+\n1 row in set\n\nobclient> SELECT CASE WHEN 1>0 THEN 'TRUE' ELSE 'FALSE' END;\n+--------------------------------------------+\n| CASE WHEN 1>0 THEN 'TRUE' ELSE 'FALSE' END |\n+--------------------------------------------+\n| TRUE                                       |\n+--------------------------------------------+\n1 row in set\n"
+    ],
+    "Category": [
+        "Flow Control Functions"
+    ]
+}

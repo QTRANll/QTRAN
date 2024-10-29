@@ -1,0 +1,26 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000000823478"
+    ],
+    "Title": [
+        "INT2IP"
+    ],
+    "Feature": [
+        "INT2IP(int_value)\n"
+    ],
+    "Description": [
+        "将整数 int_value 转换成 IP 地址。",
+        "假设输入的数值为 s，则返回的 IP 地址 s4.s3.s2.s1 的计算方式为：",
+        "s1：s mod 2^8^",
+        "s2：s - s1 / 2^8^ mod 2^8^",
+        "s3：((s - s1) / 2^8^ - s2 )/ 2^8^ mod 2^8^",
+        "s4：(((s - s1) / 2^8^ - s2 )/ 2^8^ - s3)/ 2^8^ mod 2^8^",
+        "如果输入大于 4294967295 的值或 NULL 值，则返回 NULL。"
+    ],
+    "Examples": [
+        "obclient> SELECT\n     INT2IP(16777216),\n     HEX(16777216),\n     INT2IP(1)\n     \\G\n*************************** 1. row ***************************\nINT2IP(16777216): 1.0.0.0\n   HEX(16777216): 1000000\n       INT2IP(1): 0.0.0.1\n1 row in set\n"
+    ],
+    "Category": [
+        "String Functions"
+    ]
+}

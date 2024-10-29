@@ -1,0 +1,25 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/found_rows/"
+    ],
+    "Title": [
+        "FOUND_ROWS"
+    ],
+    "Feature": [
+        "FOUND_ROWS()\n"
+    ],
+    "Description": [
+        "A SELECT statement may include a LIMIT clause to restrict the number\nof rows the server returns to the client. In some cases, it is\ndesirable to know how many rows the statement would have returned\nwithout the LIMIT, but without running the statement again. To obtain\nthis row count, include a SQL_CALC_FOUND_ROWS option in the SELECT\nstatement, and then invoke FOUND_ROWS() afterwards.",
+        "You can also use FOUND_ROWS() to obtain the number of rows returned by a SELECT which does not contain a LIMIT clause. In this case you don't need to use the SQL_CALC_FOUND_ROWS option. This can be useful for example in a stored procedure.",
+        "Also, this function works with some other statements which return a resultset, including SHOW, DESC and HELP. For DELETE ... RETURNING you should use ROW_COUNT(). It also works as a prepared statement, or after executing a prepared statement.",
+        "Statements which don't return any results don't affect FOUND_ROWS() - the previous value will still be returned.",
+        "Warning: When used after a CALL statement, this function returns the number of rows selected by the last query in the procedure, not by the whole procedure.",
+        "Statements using the FOUND_ROWS() function are not safe for statement-based replication."
+    ],
+    "Examples": [
+        "SELECT FOUND_ROWS();"
+    ],
+    "Category": [
+        "Information Functions"
+    ]
+}

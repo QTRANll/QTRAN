@@ -1,0 +1,28 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/other-functions"
+    ],
+    "Title": [
+        "toTypeName"
+    ],
+    "Feature": [
+        "toTypeName(value)"
+    ],
+    "Description": [
+        "toTypeName",
+        "Returns the type name of the passed argument.",
+        "If NULL is passed, the function returns type Nullable(Nothing), which corresponds to ClickHouse's internal NULL representation.",
+        "Syntax",
+        "toTypeName(value)",
+        "Arguments",
+        "value \u2014 A value of arbitrary type.",
+        "Returned value",
+        "The data type name of the input value. String."
+    ],
+    "Examples": [
+        "SELECT toTypeName(123);"
+    ],
+    "Category": [
+        "Other Functions"
+    ]
+}

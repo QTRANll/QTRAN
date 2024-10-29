@@ -1,0 +1,27 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/date-and-time-functions.html#function_adddate"
+    ],
+    "Title": [
+        "ADDDATE()"
+    ],
+    "Feature": [
+        "ADDDATE(date,INTERVAL\n          expr\nunit)"
+    ],
+    "Description": [
+        "Add time values (intervals) to a date value",
+        "\nADDDATE(date,INTERVAL\n          expr\nunit),\n          ADDDATE(date,days)\n",
+        "\n          When invoked with the INTERVAL form of the\n          second argument, ADDDATE() is a\n          synonym for DATE_ADD(). The\n          related function SUBDATE() is a\n          synonym for DATE_SUB(). For\n          information on the INTERVAL\nunit argument, see\n          Temporal Intervals.\n        ",
+        "Press CTRL+C to copy mysql> SELECT DATE_ADD('2008-01-02', INTERVAL 31 DAY);\n        -> '2008-02-02'\nmysql> SELECT ADDDATE('2008-01-02', INTERVAL 31 DAY);\n        -> '2008-02-02'",
+        "\n          When invoked with the days form of\n          the second argument, MySQL treats it as an integer number of\n          days to be added to expr.\n        ",
+        "Press CTRL+C to copy mysql> SELECT ADDDATE('2008-01-02', 31);\n        -> '2008-02-02'",
+        "\n          This function returns NULL if\n          date or\n          days is NULL.\n        "
+    ],
+    "Examples": [
+        "mysql> SELECT DATE_ADD('2008-01-02', INTERVAL 31 DAY);\n        -> '2008-02-02'\nmysql> SELECT ADDDATE('2008-01-02', INTERVAL 31 DAY);\n        -> '2008-02-02'",
+        "mysql> SELECT ADDDATE('2008-01-02', 31);\n        -> '2008-02-02'"
+    ],
+    "Category": [
+        "Date and Time Functions"
+    ]
+}

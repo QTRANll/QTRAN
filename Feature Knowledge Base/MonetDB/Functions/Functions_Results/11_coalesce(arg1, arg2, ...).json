@@ -1,0 +1,22 @@
+{
+    "HTML": [
+        "https://www.monetdb.org/documentation-Aug2024/user-guide/sql-functions/comparison-functions"
+    ],
+    "Title": [
+        "coalesce(arg1, arg2, ...)"
+    ],
+    "Feature": [
+        "coalesce(arg1, arg2, ...)"
+    ],
+    "Description": [
+        "Return type: ",
+        "same as arg1 or arg2",
+        "returns the first non-NULL value in the list, or NULL if all args are NULL. At least two parameters must be passed."
+    ],
+    "Examples": [
+        "coalesce(null, 'ac', 'dc')"
+    ],
+    "Category": [
+        "Comparison Functions"
+    ]
+}

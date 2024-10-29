@@ -1,0 +1,22 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/set-role/"
+    ],
+    "Title": [
+        "SET ROLE"
+    ],
+    "Feature": [
+        "SET ROLE { role | NONE }\n"
+    ],
+    "Description": [
+        "The SET ROLE statement enables a role, along with all of its associated permissions, for the current session. To unset a role, use NONE .",
+        "If a role that doesn't exist, or to which the user has not been assigned, is specified, an ERROR 1959 (OP000): Invalid role specification error occurs.",
+        "An automatic SET ROLE is implicitly performed when a user connects if that user has been assigned a default role. See SET DEFAULT ROLE."
+    ],
+    "Examples": [
+        "SELECT CURRENT_ROLE;\n+--------------+\n| CURRENT_ROLE |\n+--------------+\n| NULL         |\n+--------------+\n\nSET ROLE staff;\n\nSELECT CURRENT_ROLE;\n+--------------+\n| CURRENT_ROLE |\n+--------------+\n| staff        |\n+--------------+\n\nSET ROLE NONE;\n\nSELECT CURRENT_ROLE();\n+----------------+\n| CURRENT_ROLE() |\n+----------------+\n| NULL           |\n+----------------+\n"
+    ],
+    "Category": [
+        "Account Management SQL Commands"
+    ]
+}

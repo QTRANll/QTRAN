@@ -1,0 +1,34 @@
+{
+    "HTML": "https://mariadb.com//kb/en/nullif/",
+    "Title": "NULLIF",
+    "Feature": [
+        "NULLIF(expr1,expr2)\n"
+    ],
+    "Description": [
+        "Returns NULL if expr1 = expr2 is true, otherwise returns expr1. This is\nthe same as CASE WHEN expr1 = expr2 THEN NULL ELSE expr1 END."
+    ],
+    "Examples": [
+        "SELECT NULLIF(1,1);\n+-------------+\n| NULLIF(1,1) |\n+-------------+\n|        NULL |\n+-------------+\n\nSELECT NULLIF(1,2);\n+-------------+\n| NULLIF(1,2) |\n+-------------+\n|           1 |\n+-------------+\n"
+    ],
+    "Category": [
+        "Control Flow Functions"
+    ],
+    "Effective SQLs Refined": [
+        "SELECT NULLIF(1,1);",
+        "SELECT NULLIF(1,2);"
+    ],
+    "Ineffective SQLs Refined": [],
+    "Wrong Messages from Ineffective SQLs Refined": [],
+    "SQLs Generated1": [],
+    "SQLs Generated Costs1": [],
+    "SQLs Generated ExecResults1": [],
+    "SQLs Generated ExecTimes1": [],
+    "SQLs Generated ErrorMessages1": [],
+    "Effective SQLs Generated1": [],
+    "SQLs Generated2": [],
+    "SQLs Generated Costs2": [],
+    "SQLs Generated ExecResults2": [],
+    "SQLs Generated ExecTimes2": [],
+    "SQLs Generated ErrorMessages2": [],
+    "Effective SQLs Generated2": []
+}

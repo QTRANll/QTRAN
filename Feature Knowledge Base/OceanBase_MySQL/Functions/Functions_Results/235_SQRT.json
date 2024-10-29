@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000000823360"
+    ],
+    "Title": [
+        "SQRT"
+    ],
+    "Feature": [
+        "SQRT(X)\n"
+    ],
+    "Description": [
+        "返回 X 的平方根。"
+    ],
+    "Examples": [
+        "obclient> SELECT SQRT(4);\n+---------+\n| SQRT(4) |\n+---------+\n|       2 |\n+---------+\n1 row in set\n\nobclient> SELECT SQRT(5);\n+------------------+\n| SQRT(5)          |\n+------------------+\n| 2.23606797749979 |\n+------------------+\n1 row in set\n\nobclient> SELECT SQRT(-16);\n+-----------+\n| SQRT(-16) |\n+-----------+\n|      NULL |\n+-----------+\n1 row in set\n"
+    ],
+    "Category": [
+        "Mathematical Functions"
+    ]
+}

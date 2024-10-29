@@ -1,0 +1,26 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000000823178"
+    ],
+    "Title": [
+        "SYS_CONTEXT"
+    ],
+    "Feature": [
+        "SYS_CONTEXT('namespace', 'parameter' [, length ])\n"
+    ],
+    "Description": [
+        "该函数返回当前时刻与上下文命名空间关联的参数的值。",
+        "\n\n\n参数\n说明\n\n\n\n\nnamespace\n指定命名空间。目前仅支持 USERENV。\n\n\nparameter\n指定命名空间关联的参数。目前支持的参数如下表 命名空间 USERENV 的预定义参数 所示。\n\n\nlength\n指定返回值的长度，单位为字节，为可选项。取值范围是 [1, 4000]，默认长度是 256 字节。\n\n\n",
+        "命名空间 USERENV 的预定义参数",
+        "\n\n\n参数名\n返回值\n\n\n\n\nCON_ID\n如果在连接到 CDB（Container DataBase）时查询，则返回当前容器 ID。否则，返回 0。\n\n\nCON_NAME\n如果在连接到 CDB 时进行查询，则返回当前容器名称。否则，返回 DB_NAME 参数指定的数据库名称。\n\n\nCURRENT_SCHEMA\n当前活动的默认 Schema 名称。\n\n\nCURRENT_SCHEMAID\n当前活动的默认 Schema ID。\n\n\nCURRENT_USER\n当前权限处于活动状态的数据库用户名。\n\n\nCURRENT_USERID\n当前权限处于活动状态的数据库用户 ID。\n\n\nDB_NAME\n数据库名称。\n\n\nINSTANCE\n当前实例的标识号。\n\n\nINSTANCE_NAME\n当前实例名称。\n\n\nIP_ADDRESS\n客户端的机器 IP 地址。\n\n\nLANG\n语言的缩写名称，比 LANGUAGE 参数更短的格式。\n\n\nLANGUAGE\n当前会话使用的语言和区域，以及数据库字符集。\n\n\nSESSION_USER\n登录的数据库用户名，在整个会话期间该值保持不变。\n\n\nSESSION_USERID\n登录的数据库用户 ID。\n\n\nSID | SESSIONID\n获取当前会话的 Client Session ID，该 ID 是会话在客户端中的唯一标识。\n\n\n",
+        "返回 VARCHAR2 数据类型。"
+    ],
+    "Examples": [
+        "obclient [SYS]> SELECT SYS_CONTEXT ('USERENV', 'SESSIONID') AS Client_Session_ID FROM DUAL;\n",
+        "obclient [SYS]> SELECT SYS_CONTEXT ('USERENV', 'SID') AS Client_Session_ID FROM DUAL;\n",
+        "+-------------------+\n| CLIENT_SESSION_ID |\n+-------------------+\n| 3221488043        |\n+-------------------+\n1 row in set\n"
+    ],
+    "Category": [
+        "Environment and Identifier Functions"
+    ]
+}

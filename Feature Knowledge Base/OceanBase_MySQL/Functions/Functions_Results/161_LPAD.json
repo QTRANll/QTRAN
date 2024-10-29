@@ -1,0 +1,21 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000000823470"
+    ],
+    "Title": [
+        "LPAD"
+    ],
+    "Feature": [
+        "LPAD(str,len,padstr)\n"
+    ],
+    "Description": [
+        "使用字符串 padstr 从左侧填充字符串 str，直到长度为 len 时为止。",
+        "如果 str 长度大于 len，则返回 str 左边 len 个字符。如果 str 长度小于 len，且 padstr 和 str 连接后大于 len，则返回连接后的右边 len 个字符。"
+    ],
+    "Examples": [
+        "obclient> SELECT LPAD('Base',9,'Ocean');\n+------------------------+\n| LPAD('Base',9,'Ocean') |\n+------------------------+\n| OceanBase              |\n+------------------------+\n1 row in set\n\nobclient> SELECT LPAD('Base',1,'Ocean');\n+------------------------+\n| LPAD('Base',1,'Ocean') |\n+------------------------+\n| B                      |\n+------------------------+\n1 row in set\n"
+    ],
+    "Category": [
+        "String Functions"
+    ]
+}

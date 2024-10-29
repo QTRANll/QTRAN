@@ -1,0 +1,26 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000001054294"
+    ],
+    "Title": [
+        "UPDATE"
+    ],
+    "Feature": [
+        "UPDATE [hint_options] dml_table_clause\n    SET update_asgn_list\n    [ WHERE where_condition]\n    [{ RETURNING | RETURN } returning_exprs [into_clause]]\n\ndml_table_clause:\n    dml_table_name opt_table_alias\n\nupdate_asgn_list:\n    column_name = expr [, expr...]\n\nwhere_condition:\n    expression\n\nreturning_exprs:\n    projection_col_name [,projection_col_name ...]\n\ninto_clause:\n    { INTO into_var_list | BULK COLLECT INTO into_var_list}\n\ninto_var_list:\n    { USER_VARIABLE | ref_name } [,{ USER_VARIABLE | ref_name } ...]\n"
+    ],
+    "Description": [
+        "该语句用于修改表中现有的的字段值。",
+        "\n\n\n参数\n描述\n\n\n\n\nhint_options\n指定 Hint 选项。\n\n\ndml_table_clause\n指定要更新的表、视图、或特殊子查询返回的列的名称。 说明 如果指定 view，则数据库更新视图的基表。但是不能通过一个视图更新多个基表。\n\n\nwhere_condition\n指定过滤条件。\n\n\nupdate_asgn_list\n指定更新列表。\n\n\nreturning_exprs\n返回修改数据后的投影列。\n\n\ninto_clause\n将修改数据后的投影列插入到指定列表。\n\n\ninto_var_list\n将指定投影列插入到指定变量列表。\n\n\nref_name\n变量名。\n\n\n",
+        "\n注意\n特殊子查询指的类似于可更新视图对应的子查询，这类子查询不应该包含复杂的算子（例如 GROUP BY、DISTINCT、WINDOW FUNCTION 等）。\n"
+    ],
+    "Examples": [
+        "obclient> CREATE TABLE tbl1(col1 INT PRIMARY KEY,col2 INT);\nQuery OK, 0 rows affected\n\nobclient> INSERT INTO tbl1 VALUES(1,1),(2,2),(3,3),(4,4),(5,5);\nQuery OK, 5 rows affected\nRecords: 5  Duplicates: 0  Warnings: 0\n\nobclient> SELECT * FROM tbl1;\n+------+------+\n| COL1 | COL2 |\n+------+------+\n|    1 |    1 |\n|    2 |    2 |\n|    3 |    3 |\n|    4 |    4 |\n|    5 |    5 |\n+------+------+\n5 rows in set\n",
+        "obclient> UPDATE tbl1 SET tbl1.col2 = 100  WHERE tbl1.col1 = 1;\nQuery OK, 1 row affected\nRows matched: 1  Changed: 1  Warnings: 0\n\nobclient> SELECT * FROM tbl1;\n+------+------+\n| COL1 | COL2 |\n+------+------+\n|    1 |  100 |\n|    2 |    2 |\n|    3 |    3 |\n|    4 |    4 |\n|    5 |    5 |\n+------+------+\n5 rows in set\n",
+        "obclient> UPDATE (SELECT * FROM tbl1) v SET v.col2 = 10 WHERE v.col1 = 1;\nQuery OK, 1 row affected\nRows matched: 1  Changed: 1  Warnings: 0\n\nobclient> SELECT * FROM tbl1;\n+------+------+\n| COL1 | COL2 |\n+------+------+\n|    1 |   10 |\n|    2 |    2 |\n|    3 |    3 |\n|    4 |    4 |\n|    5 |    5 |\n+------+------+\n5 rows in set\n",
+        "obclient> UPDATE tbl1 SET tbl1.col2 = 100 WHERE tbl1.col1 < 3;\nQuery OK, 2 rows affected\nRows matched: 2  Changed: 2  Warnings: 0\n\nobclient> SELECT * FROM tbl1;\n+------+------+\n| COL1 | COL2 |\n+------+------+\n|    1 |  100 |\n|    2 |  100 |\n|    3 |    3 |\n|    4 |    4 |\n|    5 |    5 |\n+------+------+\n5 rows in set\n",
+        "obclient> UPDATE tbl1 SET tbl1.col2 = 1000 WHERE tbl1.col1 = 1 RETURNING col2;\n+------+\n| COL2 |\n+------+\n| 1000 |\n+------+\n1 row in set\n\nobclient> SELECT * FROM tbl1;\n+------+------+\n| COL1 | COL2 |\n+------+------+\n|    1 | 1000 |\n|    2 |    2 |\n|    3 |    3 |\n|    4 |    4 |\n|    5 |    5 |\n+------+------+\n5 rows in set\n"
+    ],
+    "Category": [
+        "DML"
+    ]
+}

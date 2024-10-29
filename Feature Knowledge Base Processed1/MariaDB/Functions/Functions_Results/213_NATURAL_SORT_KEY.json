@@ -1,0 +1,23 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/natural_sort_key/"
+    ],
+    "Title": [
+        "NATURAL_SORT_KEY"
+    ],
+    "Feature": [
+        "NATURAL_SORT_KEY(str)\n"
+    ],
+    "Description": [
+        "The NATURAL_SORT_KEY function is used for sorting that is closer to natural sorting. Strings are sorted in alphabetical order, while numbers are treated in a way such that, for example, 10 is greater than 2, whereas in other forms of sorting, 2 would be greater than 10, just like z is greater than ya.",
+        "There are multiple natural sort implementations, differing in the way they handle leading zeroes, fractions, i18n, negatives, decimals and so on.",
+        "MariaDB's implementation ignores leading zeroes when performing the sort.",
+        "You can use also use NATURAL_SORT_KEY with generated columns. The value is not stored permanently in the table. When using a generated column, the virtual column must be longer than the base column to cater for embedded numbers in the string and MDEV-24582."
+    ],
+    "Examples": [
+        "SELECT NATURAL_SORT_KEY('10 apples, 2 oranges, 1 banana');"
+    ],
+    "Category": [
+        "String Functions"
+    ]
+}

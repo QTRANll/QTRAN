@@ -1,0 +1,47 @@
+{
+    "HTML": "https://mariadb.com//kb/en/week/",
+    "Title": "WEEK",
+    "Feature": [
+        "WEEK(date[,mode])\n"
+    ],
+    "Description": [
+        "This function returns the week number for date. The two-argument form of\nWEEK() allows you to specify whether the week starts on Sunday or Monday\nand whether the return value should be in the range from 0 to 53 or from 1 to\n53. If the mode argument is omitted, the value of the default_week_format system variable is used.",
+        "Modes",
+        "Mode1st day of weekRangeWeek 1 is the 1st week with\n0Sunday0-53a Sunday in this year\n1Monday0-53more than 3 days this year\n2Sunday1-53a Sunday in this year\n3Monday1-53more than 3 days this year\n4Sunday0-53more than 3 days this year\n5Monday0-53a Monday in this year\n6Sunday1-53more than 3 days this year\n7Monday1-53a Monday in this year\n\n",
+        "With the mode value of 3, which means 'more than 3 days this year',  weeks are numbered according to ISO 8601:1988."
+    ],
+    "Examples": [
+        "SELECT WEEK('2008-02-20');\n+--------------------+\n| WEEK('2008-02-20') |\n+--------------------+\n|                  7 |\n+--------------------+\n\nSELECT WEEK('2008-02-20',0);\n+----------------------+\n| WEEK('2008-02-20',0) |\n+----------------------+\n|                    7 |\n+----------------------+\n\nSELECT WEEK('2008-02-20',1);\n+----------------------+\n| WEEK('2008-02-20',1) |\n+----------------------+\n|                    8 |\n+----------------------+\n\nSELECT WEEK('2008-12-31',0);\n+----------------------+\n| WEEK('2008-12-31',0) |\n+----------------------+\n|                   52 |\n+----------------------+\n\nSELECT WEEK('2008-12-31',1);\n+----------------------+\n| WEEK('2008-12-31',1) |\n+----------------------+\n|                   53 |\n+----------------------+\n\n SELECT WEEK('2019-12-30',3);\n+----------------------+\n| WEEK('2019-12-30',3) |\n+----------------------+\n|                    1 |\n+----------------------+\n",
+        "CREATE TABLE t1 (d DATETIME);\nINSERT INTO t1 VALUES\n    (\"2007-01-30 21:31:07\"),\n    (\"1983-10-15 06:42:51\"),\n    (\"2011-04-21 12:34:56\"),\n    (\"2011-10-30 06:31:41\"),\n    (\"2011-01-30 14:03:25\"),\n    (\"2004-10-07 11:19:34\");\n",
+        "SELECT d, WEEK(d,0), WEEK(d,1) from t1;\n+---------------------+-----------+-----------+\n| d                   | WEEK(d,0) | WEEK(d,1) |\n+---------------------+-----------+-----------+\n| 2007-01-30 21:31:07 |         4 |         5 |\n| 1983-10-15 06:42:51 |        41 |        41 |\n| 2011-04-21 12:34:56 |        16 |        16 |\n| 2011-10-30 06:31:41 |        44 |        43 |\n| 2011-01-30 14:03:25 |         5 |         4 |\n| 2004-10-07 11:19:34 |        40 |        41 |\n+---------------------+-----------+-----------+\n"
+    ],
+    "Category": [
+        "Date & Time Functions"
+    ],
+    "Effective SQLs Refined": [
+        "SELECT WEEK('2008-02-20');",
+        "SELECT WEEK('2008-02-20',0);",
+        "SELECT WEEK('2008-02-20',1);",
+        "SELECT WEEK('2008-12-31',0);",
+        "SELECT WEEK('2008-12-31',1);",
+        "SELECT WEEK('2019-12-30',3);"
+    ],
+    "Ineffective SQLs Refined": [
+        "SELECT d, WEEK(d,0), WEEK(d,1) from t1;"
+    ],
+    "Wrong Messages from Ineffective SQLs Refined": [
+        "(pymysql.err.OperationalError) (1054, \"Unknown column 'd' in 'field list'\")\n[SQL: SELECT d, WEEK(d,0), WEEK(d,1) from t1;]\n(Background on this error at: https://sqlalche.me/e/20/e3q8)"
+    ],
+    "SQLs Generated1": [],
+    "SQLs Generated Costs1": [],
+    "SQLs Generated ExecResults1": [],
+    "SQLs Generated ExecTimes1": [],
+    "SQLs Generated ErrorMessages1": [],
+    "Effective SQLs Generated1": [],
+    "SQLs Generated2": [],
+    "SQLs Generated Costs2": [],
+    "SQLs Generated ExecResults2": [],
+    "SQLs Generated ExecTimes2": [],
+    "SQLs Generated ErrorMessages2": [],
+    "Effective SQLs Generated2": []
+}

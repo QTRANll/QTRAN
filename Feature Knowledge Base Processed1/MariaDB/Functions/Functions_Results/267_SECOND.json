@@ -1,0 +1,21 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/second/"
+    ],
+    "Title": [
+        "SECOND"
+    ],
+    "Feature": [
+        "SECOND(time)\n"
+    ],
+    "Description": [
+        "Returns the second for a given time (which can include microseconds), in the range 0 to 59, or NULL if not given a valid time value."
+    ],
+    "Examples": [
+        "SELECT SECOND('10:05:03');",
+        "SELECT SECOND('10:05:01.999999');"
+    ],
+    "Category": [
+        "Date & Time Functions"
+    ]
+}

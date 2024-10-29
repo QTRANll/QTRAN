@@ -1,0 +1,22 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/geo/polygons"
+    ],
+    "Title": [
+        "polygonConvexHullCartesian"
+    ],
+    "Feature": [
+        "polygonConvexHullCartesian"
+    ],
+    "Description": [
+        "polygonConvexHullCartesian",
+        "Calculates a convex hull. Reference",
+        "Coordinates are in Cartesian coordinate system."
+    ],
+    "Examples": [
+        "SELECT wkt(polygonConvexHullCartesian([[[(0., 0.), (0., 5.), (5., 5.), (5., 0.), (2., 3.)]]]))"
+    ],
+    "Category": [
+        "Geo Functions"
+    ]
+}

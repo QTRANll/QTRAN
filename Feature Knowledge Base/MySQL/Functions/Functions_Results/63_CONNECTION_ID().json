@@ -1,0 +1,34 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/built-in-function-reference.html",
+        "https://dev.mysql.com/doc/refman/8.4/en/information-functions.html"
+    ],
+    "Title": [
+        "14.1 Built-In Function and Operator Reference",
+        "14.15 Information Functions"
+    ],
+    "Feature": [
+        "CONNECTION_ID()"
+    ],
+    "Description": [
+        "Return the connection ID (thread ID) for the connection",
+        "\nCONNECTION_ID()\n",
+        "\n          Returns the connection ID (thread ID) for the connection.\n          Every connection has an ID that is unique among the set of\n          currently connected clients.\n        ",
+        "\n          The value returned by\n          CONNECTION_ID() is the same\n          type of value as displayed in the ID column\n          of the Information Schema\n          PROCESSLIST table, the\n          Id column of SHOW\n          PROCESSLIST output, and the\n          PROCESSLIST_ID column of the Performance\n          Schema threads table.\n        ",
+        "Press CTRL+C to copy mysql> SELECT CONNECTION_ID();\n        -> 23786",
+        "\n\nWarning\n\n\n            Changing the session value of the\n            pseudo_thread_id system\n            variable changes the value returned by the\n            CONNECTION_ID() function.\n\n"
+    ],
+    "Examples": [
+        "mysql> SELECT CONNECTION_ID();\n        -> 23786"
+    ],
+    "Category": [
+        "Built-In Functions",
+        "Information Functions"
+    ],
+    "Reference HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/information-functions.html#function_connection-id"
+    ],
+    "Feature Type": [
+        "Function"
+    ]
+}

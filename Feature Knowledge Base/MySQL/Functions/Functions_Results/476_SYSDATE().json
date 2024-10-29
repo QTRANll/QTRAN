@@ -1,0 +1,38 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/built-in-function-reference.html",
+        "https://dev.mysql.com/doc/refman/8.4/en/date-and-time-functions.html"
+    ],
+    "Title": [
+        "14.1 Built-In Function and Operator Reference",
+        "14.7 Date and Time Functions"
+    ],
+    "Feature": [
+        "SYSDATE([fsp])"
+    ],
+    "Description": [
+        "Return the time at which the function executes",
+        "\nSYSDATE([fsp])\n",
+        "\n          Returns the current date and time as a value in\n          'YYYY-MM-DD\n          hh:mm:ss' or\n          YYYYMMDDhhmmss format, depending on\n          whether the function is used in string or numeric context.\n        ",
+        "\n          If the fsp argument is given to\n          specify a fractional seconds precision from 0 to 6, the return\n          value includes a fractional seconds part of that many digits.\n        ",
+        "\nSYSDATE() returns the time at\n          which it executes. This differs from the behavior for\n          NOW(), which returns a constant\n          time that indicates the time at which the statement began to\n          execute. (Within a stored function or trigger,\n          NOW() returns the time at which\n          the function or triggering statement began to execute.)\n        ",
+        "Press CTRL+C to copy mysql> SELECT NOW(), SLEEP(2), NOW();\n+---------------------+----------+---------------------+\n| NOW()               | SLEEP(2) | NOW()               |\n+---------------------+----------+---------------------+\n| 2006-04-12 13:47:36 |        0 | 2006-04-12 13:47:36 |\n+---------------------+----------+---------------------+\n\nmysql> SELECT SYSDATE(), SLEEP(2), SYSDATE();\n+---------------------+----------+---------------------+\n| SYSDATE()           | SLEEP(2) | SYSDATE()           |\n+---------------------+----------+---------------------+\n| 2006-04-12 13:47:44 |        0 | 2006-04-12 13:47:46 |\n+---------------------+----------+---------------------+",
+        "\n          In addition, the SET TIMESTAMP statement\n          affects the value returned by\n          NOW() but not by\n          SYSDATE(). This means that\n          timestamp settings in the binary log have no effect on\n          invocations of SYSDATE().\n        ",
+        "\n          Because SYSDATE() can return\n          different values even within the same statement, and is not\n          affected by SET TIMESTAMP, it is\n          nondeterministic and therefore unsafe for replication if\n          statement-based binary logging is used. If that is a problem,\n          you can use row-based logging.\n        ",
+        "\n          Alternatively, you can use the\n          --sysdate-is-now option to\n          cause SYSDATE() to be an alias\n          for NOW(). This works if the\n          option is used on both the replication source server and the\n          replica.\n        ",
+        "\n          The nondeterministic nature of\n          SYSDATE() also means that\n          indexes cannot be used for evaluating expressions that refer\n          to it.\n        "
+    ],
+    "Examples": [
+        "mysql> SELECT NOW(), SLEEP(2), NOW();\n+---------------------+----------+---------------------+\n| NOW()               | SLEEP(2) | NOW()               |\n+---------------------+----------+---------------------+\n| 2006-04-12 13:47:36 |        0 | 2006-04-12 13:47:36 |\n+---------------------+----------+---------------------+\n\nmysql> SELECT SYSDATE(), SLEEP(2), SYSDATE();\n+---------------------+----------+---------------------+\n| SYSDATE()           | SLEEP(2) | SYSDATE()           |\n+---------------------+----------+---------------------+\n| 2006-04-12 13:47:44 |        0 | 2006-04-12 13:47:46 |\n+---------------------+----------+---------------------+"
+    ],
+    "Category": [
+        "Built-In Functions",
+        "Date and Time Functions"
+    ],
+    "Reference HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/date-and-time-functions.html#function_sysdate"
+    ],
+    "Feature Type": [
+        "Function"
+    ]
+}

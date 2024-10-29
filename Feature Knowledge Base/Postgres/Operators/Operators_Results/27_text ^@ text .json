@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/current/functions-string.html"
+    ],
+    "Title": [
+        "text ^@ text"
+    ],
+    "Feature": [
+        "text ^@ text → boolean"
+    ],
+    "Description": [
+        "Returns true if the first string starts with the second string (equivalent to the starts_with() function)."
+    ],
+    "Examples": [
+        "'alphabet' ^@ 'alph' → t"
+    ],
+    "Category": [
+        "String Functions and Operators"
+    ]
+}

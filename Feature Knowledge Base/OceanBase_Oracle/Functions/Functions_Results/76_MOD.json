@@ -1,0 +1,23 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000000823160"
+    ],
+    "Title": [
+        "MOD"
+    ],
+    "Feature": [
+        "MOD (x,y)\n"
+    ],
+    "Description": [
+        "该函数是一个求余函数，即是两个数值表达式作除法运算后的余数。返回结果的符号与被除数的符号相同。",
+        "\n注意\n在用 REMAINDER (x,y) 和 MOD (x,y) 函数进行运算时，都用了一个公式 result=x-y*(x/y)，区别在于计算 x/y 时的处理方式不同。在 REMAINDER (x,y) 函数中，采用 ROUND(x/y)，而在 MOD (x,y) 函数中采用 FLOOR(x/y)。\n",
+        "\n\n\n参数\n说明\n\n\n\n\nx\n表示被除数，属于数值型（NUMBER、FLOAT、BINARY_FLOAT 和 BINARY_DOUBLE）表达式。\n\n\ny\n表示除数，属于数值型（NUMBER、FLOAT、BINARY_FLOAT 和 BINARY_DOUBLE）表达式。\n\n\n",
+        "返回类型与数值优先级高的参数的数据类型相同。"
+    ],
+    "Examples": [
+        "obclient> SELECT MOD(11,4),MOD(12,4),MOD(-11,4) FROM DUAL;\n+-----------+-----------+------------+\n| MOD(11,4) | MOD(12,4) | MOD(-11,4) |\n+-----------+-----------+------------+\n|         3 |         0 |         -3 |\n+-----------+-----------+------------+\n1 row in set\n"
+    ],
+    "Category": [
+        "Numeric Functions"
+    ]
+}

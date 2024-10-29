@@ -1,0 +1,22 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/show-create-trigger/"
+    ],
+    "Title": [
+        "SHOW CREATE TRIGGER"
+    ],
+    "Feature": [
+        "SHOW CREATE TRIGGER trigger_name\n"
+    ],
+    "Description": [
+        "This statement shows a CREATE TRIGGER\nstatement that creates the given trigger, as well as the SQL_MODE that was used when the trigger has been created and the character set used by the connection.",
+        "The TRIGGER privilege is required on the table the trigger is defined for to execute this statement.",
+        "SHOW CREATE TRIGGER quotes identifiers according to the value of the sql_quote_show_create system variable. Prior to MariaDB 10.6.5, MariaDB 10.5.13 and MariaDB 10.4.22, the output of this statement was unreliably affected by the sql_quote_show_create system variable."
+    ],
+    "Examples": [
+        "SHOW CREATE TRIGGER example\\G\n*************************** 1. row ***************************\n               Trigger: example\n              sql_mode: ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,STRICT_ALL_TABLES\n,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_\nENGINE_SUBSTITUTION\nSQL Original Statement: CREATE DEFINER=`root`@`localhost` TRIGGER example BEFORE\n INSERT ON t FOR EACH ROW\nBEGIN\n        SET NEW.c = NEW.c * 2;\nEND\n  character_set_client: cp850\n  collation_connection: cp850_general_ci\n  Database Collation: utf8_general_ci\n  Created: 2016-09-29 13:53:34.35\n"
+    ],
+    "Category": [
+        "Administrative SQL Statements"
+    ]
+}

@@ -1,0 +1,21 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/current/functions-textsearch.html"
+    ],
+    "Title": [
+        "ts_headline"
+    ],
+    "Feature": [
+        "ts_headline ( [ config regconfig, ] document json, query tsquery [, options text ] ) → text",
+        "ts_headline ( [ config regconfig, ] document jsonb, query tsquery [, options text ] ) → text"
+    ],
+    "Description": [
+        "Displays, in an abbreviated form, match(es) for the query that occur in string values within the JSON document. See Section 12.3.4 for more details."
+    ],
+    "Examples": [
+        "ts_headline('{\"cat\":\"raining cats and dogs\"}'::jsonb, 'cat') → {\"cat\": \"raining <b>cats</b> and dogs\"}"
+    ],
+    "Category": [
+        "Text Search Functions and Operators"
+    ]
+}

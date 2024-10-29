@@ -1,0 +1,50 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/built-in-function-reference.html",
+        "https://dev.mysql.com/doc/refman/8.4/en/built-in-function-reference.html",
+        "https://dev.mysql.com/doc/refman/8.4/en/non-typed-operators.html",
+        "https://dev.mysql.com/doc/refman/8.4/en/non-typed-operators.html",
+        "https://dev.mysql.com/doc/refman/8.4/en/string-functions.html",
+        "https://dev.mysql.com/doc/refman/8.4/en/string-functions.html",
+        "https://dev.mysql.com/doc/refman/8.4/en/regexp.html",
+        "https://dev.mysql.com/doc/refman/8.4/en/regexp.html"
+    ],
+    "Title": [
+        "14.1 Built-In Function and Operator Reference",
+        "14.1 Built-In Function and Operator Reference",
+        "14.4 Operators",
+        "14.4 Operators",
+        "14.8 String Functions and Operators",
+        "14.8 String Functions and Operators",
+        "14.8.2 Regular Expressions",
+        "14.8.2 Regular Expressions"
+    ],
+    "Feature": [
+        "expr\n              REGEXP pat"
+    ],
+    "Description": [
+        "Whether string matches regular expression",
+        "\nexpr\n              REGEXP pat,\n              expr\n              RLIKE pat\n",
+        "\n              Returns 1 if the string expr\n              matches the regular expression specified by the pattern\n              pat, 0 otherwise. If\n              expr or\n              pat is NULL,\n              the return value is NULL.\n            ",
+        "\nREGEXP and\n              RLIKE are\n              synonyms for REGEXP_LIKE().\n            ",
+        "\n              For additional information about how matching occurs, see\n              the description for\n              REGEXP_LIKE().\n            ",
+        "Press CTRL+C to copy mysql> SELECT 'Michael!' REGEXP '.*';\n+------------------------+\n| 'Michael!' REGEXP '.*' |\n+------------------------+\n|                      1 |\n+------------------------+\nmysql> SELECT 'new*\\n*line' REGEXP 'new\\\\*.\\\\*line';\n+---------------------------------------+\n| 'new*\\n*line' REGEXP 'new\\\\*.\\\\*line' |\n+---------------------------------------+\n|                                     0 |\n+---------------------------------------+\nmysql> SELECT 'a' REGEXP '^[a-d]';\n+---------------------+\n| 'a' REGEXP '^[a-d]' |\n+---------------------+\n|                   1 |\n+---------------------+"
+    ],
+    "Examples": [
+        "mysql> SELECT 'Michael!' REGEXP '.*';\n+------------------------+\n| 'Michael!' REGEXP '.*' |\n+------------------------+\n|                      1 |\n+------------------------+\nmysql> SELECT 'new*\\n*line' REGEXP 'new\\\\*.\\\\*line';\n+---------------------------------------+\n| 'new*\\n*line' REGEXP 'new\\\\*.\\\\*line' |\n+---------------------------------------+\n|                                     0 |\n+---------------------------------------+\nmysql> SELECT 'a' REGEXP '^[a-d]';\n+---------------------+\n| 'a' REGEXP '^[a-d]' |\n+---------------------+\n|                   1 |\n+---------------------+"
+    ],
+    "Category": [
+        "Built-In Operators",
+        "Built-In Operators",
+        "String Operators",
+        "String Operators",
+        "String Operators",
+        "String Operators"
+    ],
+    "Reference HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/regexp.html#operator_regexp"
+    ],
+    "Feature Type": [
+        "Operator"
+    ]
+}

@@ -1,0 +1,21 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000000823338"
+    ],
+    "Title": [
+        "ATAN2"
+    ],
+    "Feature": [
+        "ATAN2(X,Y)\n"
+    ],
+    "Description": [
+        "返回 X 与 Y 的反正切。它类似于计算 Y/X 的反正切，两个参数的符号用于确定结果所在的象限。",
+        "该函数也可写作 ATAN(X,Y)，请参见 ATAN。"
+    ],
+    "Examples": [
+        "obclient> SELECT ATAN(PI(),0);\n+--------------------+\n| ATAN(PI(),0)       |\n+--------------------+\n| 1.5707963267948966 |\n+--------------------+\n1 row in set\n"
+    ],
+    "Category": [
+        "Mathematical Functions"
+    ]
+}

@@ -1,0 +1,18 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/current/functions-info.html"
+    ],
+    "Title": [
+        "pg_available_wal_summaries"
+    ],
+    "Feature": [
+        "pg_available_wal_summaries () → setof record ( tli bigint, start_lsn pg_lsn, end_lsn pg_lsn )"
+    ],
+    "Description": [
+        "Returns information about the WAL summary files present in the data directory, under pg_wal/summaries. One row will be returned per WAL summary file. Each file summarizes WAL on the indicated TLI within the indicated LSN range. This function might be useful to determine whether enough WAL summaries are present on the server to take an incremental backup based on some prior backup whose start LSN is known."
+    ],
+    "Examples": [],
+    "Category": [
+        "System Information Functions and Operators"
+    ]
+}

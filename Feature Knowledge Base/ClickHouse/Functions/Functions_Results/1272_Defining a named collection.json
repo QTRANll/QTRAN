@@ -1,0 +1,27 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/table-functions/iceberg"
+    ],
+    "Title": [
+        "Defining a named collection"
+    ],
+    "Feature": [
+        "Defining a named collection"
+    ],
+    "Description": [
+        "Defining a named collection",
+        "Here is an example of configuring a named collection for storing the URL and credentials:",
+        "<clickhouse>    <named_collections>        <iceberg_conf>            <url>http://test.s3.amazonaws.com/clickhouse-bucket/</url>            <access_key_id>test<access_key_id>            <secret_access_key>test</secret_access_key>            <format>auto</format>            <structure>auto</structure>        </iceberg_conf>    </named_collections></clickhouse>",
+        "SELECT * FROM icebergS3(iceberg_conf, filename = 'test_table')DESCRIBE icebergS3(iceberg_conf, filename = 'test_table')",
+        "Aliases",
+        "Table function iceberg is an alias to icebergS3 now.",
+        "See Also",
+        "Iceberg engine"
+    ],
+    "Examples": [
+        "SELECT * FROM icebergS3(iceberg_conf, filename = 'test_table')DESCRIBE icebergS3(iceberg_conf, filename = 'test_table')"
+    ],
+    "Category": [
+        "Table Functions"
+    ]
+}

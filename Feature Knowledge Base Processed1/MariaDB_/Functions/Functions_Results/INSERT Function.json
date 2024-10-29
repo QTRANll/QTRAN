@@ -1,0 +1,39 @@
+{
+    "HTML": "https://mariadb.com//kb/en/insert-function/",
+    "Title": "INSERT Function",
+    "Feature": [
+        "INSERT(str,pos,len,newstr)\n"
+    ],
+    "Description": [
+        "Returns the string str, with the substring beginning at position pos\nand len characters long replaced by the string newstr. Returns the\noriginal string if pos is not within the length of the string.\nReplaces the rest of the string from position pos if len is not within\nthe length of the rest of the string. Returns NULL if any argument is\nNULL."
+    ],
+    "Examples": [
+        "SELECT INSERT('Quadratic', 3, 4, 'What');\n+-----------------------------------+\n| INSERT('Quadratic', 3, 4, 'What') |\n+-----------------------------------+\n| QuWhattic                         |\n+-----------------------------------+\n\nSELECT INSERT('Quadratic', -1, 4, 'What');\n+------------------------------------+\n| INSERT('Quadratic', -1, 4, 'What') |\n+------------------------------------+\n| Quadratic                          |\n+------------------------------------+\n\nSELECT INSERT('Quadratic', 3, 100, 'What');\n+-------------------------------------+\n| INSERT('Quadratic', 3, 100, 'What') |\n+-------------------------------------+\n| QuWhat                              |\n+-------------------------------------+\n"
+    ],
+    "Category": [
+        "String Functions"
+    ],
+    "Effective SQLs Refined": [
+        "SELECT INSERT('Quadratic', 3, 4, 'What');"
+    ],
+    "Ineffective SQLs Refined": [
+        "INSERT('Quadratic', 3, 4, 'What') |\n+-----------------------------------+\n| QuWhattic                         |\n+-----------------------------------+\n\nSELECT INSERT('Quadratic', -1, 4, 'What');",
+        "INSERT('Quadratic', -1, 4, 'What') |\n+------------------------------------+\n| Quadratic                          |\n+------------------------------------+\n\nSELECT INSERT('Quadratic', 3, 100, 'What');"
+    ],
+    "Wrong Messages from Ineffective SQLs Refined": [
+        "(pymysql.err.ProgrammingError) (1064, \"You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '('Quadratic', 3, 4, 'What') |\\n+-----------------------------------+\\n| QuWhatt...' at line 1\")\n[SQL: INSERT('Quadratic', 3, 4, 'What') |\n+-----------------------------------+\n| QuWhattic                         |\n+-----------------------------------+\n\nSELECT INSERT('Quadratic', -1, 4, 'What');]\n(Background on this error at: https://sqlalche.me/e/20/f405)",
+        "(pymysql.err.ProgrammingError) (1064, \"You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '('Quadratic', -1, 4, 'What') |\\n+------------------------------------+\\n| Quadr...' at line 1\")\n[SQL: INSERT('Quadratic', -1, 4, 'What') |\n+------------------------------------+\n| Quadratic                          |\n+------------------------------------+\n\nSELECT INSERT('Quadratic', 3, 100, 'What');]\n(Background on this error at: https://sqlalche.me/e/20/f405)"
+    ],
+    "SQLs Generated1": [],
+    "SQLs Generated Costs1": [],
+    "SQLs Generated ExecResults1": [],
+    "SQLs Generated ExecTimes1": [],
+    "SQLs Generated ErrorMessages1": [],
+    "Effective SQLs Generated1": [],
+    "SQLs Generated2": [],
+    "SQLs Generated Costs2": [],
+    "SQLs Generated ExecResults2": [],
+    "SQLs Generated ExecTimes2": [],
+    "SQLs Generated ErrorMessages2": [],
+    "Effective SQLs Generated2": []
+}

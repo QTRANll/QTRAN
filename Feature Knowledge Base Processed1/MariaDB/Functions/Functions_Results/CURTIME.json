@@ -1,0 +1,37 @@
+{
+    "HTML": "https://mariadb.com//kb/en/curtime/",
+    "Title": "CURTIME",
+    "Feature": [
+        "CURTIME([precision])\n"
+    ],
+    "Description": [
+        "Returns the current time as a value in 'HH:MM:SS' or HHMMSS.uuuuuu format, depending on whether the function is used in a string or numeric context. The value is expressed in the current time zone.",
+        "The optional precision determines the microsecond precision. See Microseconds in MariaDB."
+    ],
+    "Examples": [
+        "SELECT CURTIME();\n+-----------+\n| CURTIME() |\n+-----------+\n| 12:45:39  |\n+-----------+\n\nSELECT CURTIME() + 0;\n+---------------+\n| CURTIME() + 0 |\n+---------------+\n| 124545.000000 |\n+---------------+\n",
+        "SELECT CURTIME(2);\n+-------------+\n| CURTIME(2)  |\n+-------------+\n| 09:49:08.09 |\n+-------------+\n"
+    ],
+    "Category": [
+        "Date & Time Functions"
+    ],
+    "Effective SQLs Refined": [
+        "SELECT CURTIME();",
+        "SELECT CURTIME() + 0;",
+        "SELECT CURTIME(2);"
+    ],
+    "Ineffective SQLs Refined": [],
+    "Wrong Messages from Ineffective SQLs Refined": [],
+    "SQLs Generated1": [],
+    "SQLs Generated Costs1": [],
+    "SQLs Generated ExecResults1": [],
+    "SQLs Generated ExecTimes1": [],
+    "SQLs Generated ErrorMessages1": [],
+    "Effective SQLs Generated1": [],
+    "SQLs Generated2": [],
+    "SQLs Generated Costs2": [],
+    "SQLs Generated ExecResults2": [],
+    "SQLs Generated ExecTimes2": [],
+    "SQLs Generated ErrorMessages2": [],
+    "Effective SQLs Generated2": []
+}

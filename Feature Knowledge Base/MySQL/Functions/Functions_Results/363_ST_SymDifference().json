@@ -1,0 +1,37 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/built-in-function-reference.html",
+        "https://dev.mysql.com/doc/refman/8.4/en/spatial-function-reference.html"
+    ],
+    "Title": [
+        "14.1 Built-In Function and Operator Reference",
+        "14.16.1 Spatial Function Reference"
+    ],
+    "Feature": [
+        "ST_SymDifference(g1,\n          g2)"
+    ],
+    "Description": [
+        "Return point set symmetric difference of two geometries",
+        "\nST_SymDifference(g1,\n          g2)\n",
+        "\n          Returns a geometry that represents the point set symmetric\n          difference of the geometry values\n          g1 and\n          g2, which is defined as:\n        ",
+        "Press CTRL+C to copy g1 symdifference g2 := (g1 union g2) difference (g1 intersection g2)",
+        "\n          Or, in function call notation:\n        ",
+        "Press CTRL+C to copy ST_SymDifference(g1, g2) = ST_Difference(ST_Union(g1, g2), ST_Intersection(g1, g2))",
+        "\n          The result is in the same SRS as the geometry arguments.\n        ",
+        "\nST_SymDifference() permits\n          arguments in either a Cartesian or a geographic SRS, and\n          handles its arguments as described in the introduction to this\n          section.\n        ",
+        "Press CTRL+C to copy mysql> SET @g1 = ST_GeomFromText('MULTIPOINT(5 0,15 10,15 25)');\nmysql> SET @g2 = ST_GeomFromText('MULTIPOINT(1 1,15 10,15 25)');\nmysql> SELECT ST_AsText(ST_SymDifference(@g1, @g2));\n+---------------------------------------+\n| ST_AsText(ST_SymDifference(@g1, @g2)) |\n+---------------------------------------+\n| MULTIPOINT((1 1),(5 0))               |\n+---------------------------------------+"
+    ],
+    "Examples": [
+        "mysql> SET @g1 = ST_GeomFromText('MULTIPOINT(5 0,15 10,15 25)');\nmysql> SET @g2 = ST_GeomFromText('MULTIPOINT(1 1,15 10,15 25)');\nmysql> SELECT ST_AsText(ST_SymDifference(@g1, @g2));\n+---------------------------------------+\n| ST_AsText(ST_SymDifference(@g1, @g2)) |\n+---------------------------------------+\n| MULTIPOINT((1 1),(5 0))               |\n+---------------------------------------+"
+    ],
+    "Category": [
+        "Built-In Functions",
+        "Spatial Analysis Functions"
+    ],
+    "Reference HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/spatial-operator-functions.html#function_st-symdifference"
+    ],
+    "Feature Type": [
+        "Function"
+    ]
+}

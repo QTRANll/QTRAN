@@ -1,0 +1,23 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/st_within/"
+    ],
+    "Title": [
+        "ST_WITHIN"
+    ],
+    "Feature": [
+        "ST_WITHIN(g1,g2)\n"
+    ],
+    "Description": [
+        "Returns 1 or 0 to indicate whether geometry g1 is spatially within geometry g2.",
+        "This tests the opposite relationship as ST_CONTAINS().",
+        "ST_WITHIN() uses object shapes, while WITHIN(), based on the original MySQL implementation, uses object bounding rectangles."
+    ],
+    "Examples": [
+        "SELECT ST_WITHIN(@g1,@g2);",
+        "SELECT ST_WITHIN(@g1,@g2);"
+    ],
+    "Category": [
+        "Geographic Functions"
+    ]
+}

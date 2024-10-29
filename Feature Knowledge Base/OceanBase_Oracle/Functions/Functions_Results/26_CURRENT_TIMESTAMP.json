@@ -1,0 +1,23 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000000823132"
+    ],
+    "Title": [
+        "CURRENT_TIMESTAMP"
+    ],
+    "Feature": [
+        "CURRENT_TIMESTAMP[ (precision）]\n"
+    ],
+    "Description": [
+        "该函数返回当前会话时区中的当前日期，返回值中包含当前的时区信息。",
+        "precision 表示秒小数位的精度，取整数值，范围为 [0,9]，为可选项。默认值为 6。",
+        "返回包含当前的时区信息的 TIMESTAMP WITH TIME ZONE 数据类型。"
+    ],
+    "Examples": [
+        "obclient> ALTER SESSION SET TIME_ZONE = '-05:00';\nQuery OK, 0 rows affected\n\nobclient> SELECT CURRENT_TIMESTAMP(2) FROM DUAL;\n+---------------------------------+\n| CURRENT_TIMESTAMP(2)            |\n+---------------------------------+\n| 17-NOV-21 04.22.51.13 AM -05:00 |\n+---------------------------------+\n1 row in set\n",
+        "obclient> ALTER SESSION SET TIME_ZONE = '+08:00';\nQuery OK, 0 rows affected\n\nobclient> SELECT CURRENT_TIMESTAMP(2) FROM DUAL;\n+---------------------------------+\n| CURRENT_TIMESTAMP(2)            |\n+---------------------------------+\n| 17-NOV-21 05.23.01.92 PM +08:00 |\n+---------------------------------+\n1 row in set\n"
+    ],
+    "Category": [
+        "Datetime Functions"
+    ]
+}

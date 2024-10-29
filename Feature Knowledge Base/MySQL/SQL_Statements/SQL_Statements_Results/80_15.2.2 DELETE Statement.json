@@ -1,0 +1,141 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/delete.html"
+    ],
+    "Title": [
+        "15.2.2 DELETE Statement"
+    ],
+    "Feature": [
+        "DELETE [LOW_PRIORITY] [QUICK] [IGNORE] FROM tbl_name [[AS] tbl_alias]\n    [PARTITION (partition_name [, partition_name] ...)]\n    [WHERE where_condition]\n    [ORDER BY ...]\n    [LIMIT row_count]",
+        "DELETE [LOW_PRIORITY] [QUICK] [IGNORE]\n    tbl_name[.*] [, tbl_name[.*]] ...\n    FROM table_references\n    [WHERE where_condition]\n\nDELETE [LOW_PRIORITY] [QUICK] [IGNORE]\n    FROM tbl_name[.*] [, tbl_name[.*]] ...\n    USING table_references\n    [WHERE where_condition]",
+        "DELETE t1 FROM test AS t1, test2 WHERE ..."
+    ],
+    "Description": [
+        "\nDELETE is a DML statement that\n      removes rows from a table.\n    ",
+        "\n      A DELETE statement can start with a\n      WITH clause to define common table\n      expressions accessible within the\n      DELETE. See Section\u00a015.2.20, \u201cWITH (Common Table Expressions)\u201d.\n",
+        {
+            "Sub-title": "Single-Table Syntax",
+            "Illustration": [
+                "\n      The DELETE statement deletes rows from\n      tbl_name and returns the number of\n      deleted rows. To check the number of deleted rows, call the\n      ROW_COUNT() function described in\n      Section\u00a014.15, \u201cInformation Functions\u201d.\n"
+            ]
+        },
+        {
+            "Sub-title": "Main Clauses",
+            "Illustration": [
+                "\n      The conditions in the optional WHERE clause\n      identify which rows to delete. With no WHERE\n      clause, all rows are deleted.\n    ",
+                "\nwhere_condition is an expression that\n      evaluates to true for each row to be deleted. It is specified as\n      described in Section\u00a015.2.13, \u201cSELECT Statement\u201d.\n    ",
+                "\n      If the ORDER BY clause is specified, the rows\n      are deleted in the order that is specified. The\n      LIMIT clause places a limit on the number of\n      rows that can be deleted. These clauses apply to single-table\n      deletes, but not multi-table deletes.\n"
+            ]
+        },
+        {
+            "Sub-title": "Multiple-Table Syntax",
+            "Illustration": []
+        },
+        {
+            "Sub-title": "Privileges",
+            "Illustration": [
+                "\n      You need the DELETE privilege on a\n      table to delete rows from it. You need only the\n      SELECT privilege for any columns\n      that are only read, such as those named in the\n      WHERE clause.\n"
+            ]
+        },
+        {
+            "Sub-title": "Performance",
+            "Illustration": [
+                "\n      When you do not need to know the number of deleted rows, the\n      TRUNCATE TABLE statement is a\n      faster way to empty a table than a\n      DELETE statement with no\n      WHERE clause. Unlike\n      DELETE,\n      TRUNCATE TABLE cannot be used\n      within a transaction or if you have a lock on the table. See\n      Section\u00a015.1.37, \u201cTRUNCATE TABLE Statement\u201d and\n      Section\u00a015.3.6, \u201cLOCK TABLES and UNLOCK TABLES Statements\u201d.\n    ",
+                "\n      The speed of delete operations may also be affected by factors\n      discussed in Section\u00a010.2.5.3, \u201cOptimizing DELETE Statements\u201d.\n    ",
+                "\n      To ensure that a given DELETE\n      statement does not take too much time, the MySQL-specific\n      LIMIT row_count\n      clause for DELETE specifies the\n      maximum number of rows to be deleted. If the number of rows to\n      delete is larger than the limit, repeat the\n      DELETE statement until the number of affected\n      rows is less than the LIMIT value.\n"
+            ]
+        },
+        {
+            "Sub-title": "Subqueries",
+            "Illustration": [
+                "\n      You cannot delete from a table and select from the same table in a\n      subquery.\n"
+            ]
+        },
+        {
+            "Sub-title": "Partitioned Table Support",
+            "Illustration": [
+                "\nDELETE supports explicit partition selection\n      using the PARTITION clause, which takes a list\n      of the comma-separated names of one or more partitions or\n      subpartitions (or both) from which to select rows to be dropped.\n      Partitions not included in the list are ignored. Given a\n      partitioned table t with a partition named\n      p0, executing the statement DELETE\n      FROM t PARTITION (p0) has the same effect on the table\n      as executing ALTER\n      TABLE t TRUNCATE PARTITION (p0); in both cases, all rows\n      in partition p0 are dropped.\n    ",
+                "\nPARTITION can be used along with a\n      WHERE condition, in which case the condition is\n      tested only on rows in the listed partitions. For example,\n      DELETE FROM t PARTITION (p0) WHERE c < 5\n      deletes rows only from partition p0 for which\n      the condition c < 5 is true; rows in any\n      other partitions are not checked and thus not affected by the\n      DELETE.\n    ",
+                "\n      The PARTITION clause can also be used in\n      multiple-table DELETE statements. You can use\n      up to one such option per table named in the\n      FROM option.\n    ",
+                "\n      For more information and examples, see\n      Section\u00a026.5, \u201cPartition Selection\u201d.\n"
+            ]
+        },
+        {
+            "Sub-title": "Auto-Increment Columns",
+            "Illustration": [
+                "\n      If you delete the row containing the maximum value for an\n      AUTO_INCREMENT column, the value is not reused\n      for a MyISAM or InnoDB\n      table. If you delete all rows in the table with DELETE\n      FROM tbl_name (without a\n      WHERE clause) in\n      autocommit mode, the sequence\n      starts over for all storage engines except\n      InnoDB and MyISAM. There are\n      some exceptions to this behavior for InnoDB\n      tables, as discussed in\n      Section\u00a017.6.1.6, \u201cAUTO_INCREMENT Handling in InnoDB\u201d.\n    ",
+                "\n      For MyISAM tables, you can specify an\n      AUTO_INCREMENT secondary column in a\n      multiple-column key. In this case, reuse of values deleted from\n      the top of the sequence occurs even for MyISAM\n      tables. See Section\u00a05.6.9, \u201cUsing AUTO_INCREMENT\u201d.\n"
+            ]
+        },
+        {
+            "Sub-title": "Modifiers",
+            "Illustration": [
+                "\n      The DELETE statement supports the\n      following modifiers:\n",
+                "\n\n          If you specify the LOW_PRIORITY modifier,\n          the server delays execution of the\n          DELETE until no other clients\n          are reading from the table. This affects only storage engines\n          that use only table-level locking (such as\n          MyISAM, MEMORY, and\n          MERGE).\n        \n          For MyISAM tables, if you use the\n          QUICK modifier, the storage engine does not\n          merge index leaves during delete, which may speed up some\n          kinds of delete operations.\n        \n          The IGNORE modifier causes MySQL to ignore\n          ignorable errors during the process of deleting rows. (Errors\n          encountered during the parsing stage are processed in the\n          usual manner.) Errors that are ignored due to the use of\n          IGNORE are returned as warnings. For more\n          information, see The Effect of IGNORE on Statement Execution.\n\n"
+            ]
+        },
+        {
+            "Sub-title": "Order of Deletion",
+            "Illustration": [
+                "\n      If the DELETE statement includes an\n      ORDER BY clause, rows are deleted in the order\n      specified by the clause. This is useful primarily in conjunction\n      with LIMIT. For example, the following\n      statement finds rows matching the WHERE clause,\n      sorts them by timestamp_column, and deletes the\n      first (oldest) one:\n    ",
+                "Press CTRL+C to copy DELETE FROM somelog WHERE user = 'jcole'\nORDER BY timestamp_column LIMIT 1;",
+                "\nORDER BY also helps to delete rows in an order\n      required to avoid referential integrity violations.\n"
+            ]
+        },
+        {
+            "Sub-title": "InnoDB Tables",
+            "Illustration": [
+                "\n      If you are deleting many rows from a large table, you may exceed\n      the lock table size for an InnoDB table. To\n      avoid this problem, or simply to minimize the time that the table\n      remains locked, the following strategy (which does not use\n      DELETE at all) might be helpful:\n",
+                "\n\n          Select the rows not to be deleted into an\n          empty table that has the same structure as the original table:\n        Press CTRL+C to copy INSERT INTO t_copy SELECT * FROM t WHERE ... ;\n          Use RENAME TABLE to atomically\n          move the original table out of the way and rename the copy to\n          the original name:\n        Press CTRL+C to copy RENAME TABLE t TO t_old, t_copy TO t;\n          Drop the original table:\n        Press CTRL+C to copy DROP TABLE t_old;\n",
+                "\n      No other sessions can access the tables involved while\n      RENAME TABLE executes, so the\n      rename operation is not subject to concurrency problems. See\n      Section\u00a015.1.36, \u201cRENAME TABLE Statement\u201d.\n"
+            ]
+        },
+        {
+            "Sub-title": "MyISAM Tables",
+            "Illustration": [
+                "\n      In MyISAM tables, deleted rows are maintained\n      in a linked list and subsequent\n      INSERT operations reuse old row\n      positions. To reclaim unused space and reduce file sizes, use the\n      OPTIMIZE TABLE statement or the\n      myisamchk utility to reorganize tables.\n      OPTIMIZE TABLE is easier to use,\n      but myisamchk is faster. See\n      Section\u00a015.7.3.4, \u201cOPTIMIZE TABLE Statement\u201d, and Section\u00a06.6.4, \u201cmyisamchk \u2014 MyISAM Table-Maintenance Utility\u201d.\n    ",
+                "\n      The QUICK modifier affects whether index leaves\n      are merged for delete operations. DELETE QUICK\n      is most useful for applications where index values for deleted\n      rows are replaced by similar index values from rows inserted\n      later. In this case, the holes left by deleted values are reused.\n    ",
+                "\nDELETE QUICK is not useful when deleted values\n      lead to underfilled index blocks spanning a range of index values\n      for which new inserts occur again. In this case, use of\n      QUICK can lead to wasted space in the index\n      that remains unreclaimed. Here is an example of such a scenario:\n",
+                "\n\n          Create a table that contains an indexed\n          AUTO_INCREMENT column.\n        \n          Insert many rows into the table. Each insert results in an\n          index value that is added to the high end of the index.\n        \n          Delete a block of rows at the low end of the column range\n          using DELETE QUICK.\n\n",
+                "\n      In this scenario, the index blocks associated with the deleted\n      index values become underfilled but are not merged with other\n      index blocks due to the use of QUICK. They\n      remain underfilled when new inserts occur, because new rows do not\n      have index values in the deleted range. Furthermore, they remain\n      underfilled even if you later use\n      DELETE without\n      QUICK, unless some of the deleted index values\n      happen to lie in index blocks within or adjacent to the\n      underfilled blocks. To reclaim unused index space under these\n      circumstances, use OPTIMIZE TABLE.\n    ",
+                "\n      If you are going to delete many rows from a table, it might be\n      faster to use DELETE QUICK followed by\n      OPTIMIZE TABLE. This rebuilds the\n      index rather than performing many index block merge operations.\n"
+            ]
+        },
+        {
+            "Sub-title": "Multi-Table Deletes",
+            "Illustration": [
+                "\n      You can specify multiple tables in a\n      DELETE statement to delete rows\n      from one or more tables depending on the condition in the\n      WHERE clause. You cannot use ORDER\n      BY or LIMIT in a multiple-table\n      DELETE. The\n      table_references clause lists the\n      tables involved in the join, as described in\n      Section\u00a015.2.13.2, \u201cJOIN Clause\u201d.\n    ",
+                "\n      For the first multiple-table syntax, only matching rows from the\n      tables listed before the FROM clause are\n      deleted. For the second multiple-table syntax, only matching rows\n      from the tables listed in the FROM clause\n      (before the USING clause) are deleted. The\n      effect is that you can delete rows from many tables at the same\n      time and have additional tables that are used only for searching:\n    ",
+                "Press CTRL+C to copy DELETE t1, t2 FROM t1 INNER JOIN t2 INNER JOIN t3\nWHERE t1.id=t2.id AND t2.id=t3.id;",
+                "\n      Or:\n    ",
+                "Press CTRL+C to copy DELETE FROM t1, t2 USING t1 INNER JOIN t2 INNER JOIN t3\nWHERE t1.id=t2.id AND t2.id=t3.id;",
+                "\n      These statements use all three tables when searching for rows to\n      delete, but delete matching rows only from tables\n      t1 and t2.\n    ",
+                "\n      The preceding examples use INNER JOIN, but\n      multiple-table DELETE statements\n      can use other types of join permitted in\n      SELECT statements, such as\n      LEFT JOIN. For example, to delete rows that\n      exist in t1 that have no match in\n      t2, use a LEFT JOIN:\n    ",
+                "Press CTRL+C to copy DELETE t1 FROM t1 LEFT JOIN t2 ON t1.id=t2.id WHERE t2.id IS NULL;",
+                "\n      The syntax permits .* after each\n      tbl_name for compatibility with\n      Access.\n    ",
+                "\n      If you use a multiple-table DELETE\n      statement involving InnoDB tables for which\n      there are foreign key constraints, the MySQL optimizer might\n      process tables in an order that differs from that of their\n      parent/child relationship. In this case, the statement fails and\n      rolls back. Instead, you should delete from a single table and\n      rely on the ON DELETE capabilities that\n      InnoDB provides to cause the other tables to be\n      modified accordingly.\n",
+                "\n\nNote\n\n\n        If you declare an alias for a table, you must use the alias when\n        referring to the table:\n      Press CTRL+C to copy DELETE t1 FROM test AS t1, test2 WHERE ...\n",
+                "\n      Table aliases in a multiple-table\n      DELETE should be declared only in\n      the table_references part of the\n      statement. Elsewhere, alias references are permitted but not alias\n      declarations.\n    ",
+                "\n      Correct:\n    ",
+                "Press CTRL+C to copy DELETE a1, a2 FROM t1 AS a1 INNER JOIN t2 AS a2\nWHERE a1.id=a2.id;\n\nDELETE FROM a1, a2 USING t1 AS a1 INNER JOIN t2 AS a2\nWHERE a1.id=a2.id;",
+                "\n      Incorrect:\n    ",
+                "Press CTRL+C to copy DELETE t1 AS a1, t2 AS a2 FROM t1 INNER JOIN t2\nWHERE a1.id=a2.id;\n\nDELETE FROM t1 AS a1, t2 AS a2 USING t1 INNER JOIN t2\nWHERE a1.id=a2.id;",
+                "\n      Table aliases are also supported for single-table\n      DELETE statements.\n"
+            ]
+        }
+    ],
+    "Examples": [
+        "DELETE FROM somelog WHERE user = 'jcole'\nORDER BY timestamp_column LIMIT 1;",
+        "INSERT INTO t_copy SELECT * FROM t WHERE ... ;",
+        "RENAME TABLE t TO t_old, t_copy TO t;",
+        "DROP TABLE t_old;",
+        "DELETE t1, t2 FROM t1 INNER JOIN t2 INNER JOIN t3\nWHERE t1.id=t2.id AND t2.id=t3.id;",
+        "DELETE FROM t1, t2 USING t1 INNER JOIN t2 INNER JOIN t3\nWHERE t1.id=t2.id AND t2.id=t3.id;",
+        "DELETE t1 FROM t1 LEFT JOIN t2 ON t1.id=t2.id WHERE t2.id IS NULL;",
+        "DELETE a1, a2 FROM t1 AS a1 INNER JOIN t2 AS a2\nWHERE a1.id=a2.id;\n\nDELETE FROM a1, a2 USING t1 AS a1 INNER JOIN t2 AS a2\nWHERE a1.id=a2.id;",
+        "DELETE t1 AS a1, t2 AS a2 FROM t1 INNER JOIN t2\nWHERE a1.id=a2.id;\n\nDELETE FROM t1 AS a1, t2 AS a2 USING t1 INNER JOIN t2\nWHERE a1.id=a2.id;"
+    ],
+    "Category": [
+        "Data Manipulation Statements"
+    ]
+}

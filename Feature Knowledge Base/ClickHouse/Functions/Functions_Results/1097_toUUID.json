@@ -1,0 +1,29 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/uuid-functions"
+    ],
+    "Title": [
+        "toUUID"
+    ],
+    "Feature": [
+        "toUUID"
+    ],
+    "Description": [
+        "toUUID",
+        "Converts a value of type String to a UUID.",
+        "toUUID(string)",
+        "Returned value",
+        "The UUID type value.",
+        "Usage example",
+        "SELECT toUUID('61f0c404-5cb3-11e7-907b-a6006ad3dba0') AS uuid",
+        "Result:",
+        "\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500uuid\u2500\u2510\u2502 61f0c404-5cb3-11e7-907b-a6006ad3dba0 \u2502\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518"
+    ],
+    "Examples": [
+        "toUUID(string)",
+        "SELECT toUUID('61f0c404-5cb3-11e7-907b-a6006ad3dba0') AS uuid"
+    ],
+    "Category": [
+        "UUIDs Functions"
+    ]
+}

@@ -1,0 +1,45 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000000823435"
+    ],
+    "Title": [
+        "WEIGHT_STRING"
+    ],
+    "Feature": [
+        "WEIGHT_STRING(str [AS {CHAR|BINARY}(N)] [LEVEL levels] [flags])\n\nlevels:\n   N [ASC|DESC|REVERSE] [, N [ASC|DESC|REVERSE]] ...\n"
+    ],
+    "Description": [
+        "WEIGHT_STRING() 函数返回输入字符串的权重，返回值是一个二进制字符串，表示字符串的比较和排序值。比较规则如下：",
+        "如果 WEIGHT_STRING(str1) = WEIGHT_STRING(str2)，则 str1 = str2（即 str1 和 str2 相等）。",
+        "如果 WEIGHT_STRING(str1) < WEIGHT_STRING(str2)，则 str1 < str2（即 str1 排在 str2 之前）。",
+        "WEIGHT_STRING() 函数仅供内部调试使用，可用于测试和调试排序规则，尤其是在添加新排序规则的场景。",
+        "语法说明",
+        "WEIGHT_STRING() 函数的语法解释如下：",
+        "\n\n\n关键字\n说明\n\n\n\n\nstr\n输入的字符串表达式。 \n      \n如果输入是非二进制（字符）的字符串，例如 CHAR、VARCHAR 或 TEXT 值，则返回值包含字符串的排序规则权重。\n如果输入是二进制（字节）的字符串，例如 BINARY、VARBINARY 或 BLOB 值，则返回值与输入相同（二进制字符串中每个字节的权重就是字节值）。\n如果输入为 NULL，则返回 NULL。\n 对于非 NULL 返回值，如果其长度在 VARBINARY 的最大长度范围内，则该值的数据类型为 VARBINARY，否则数据类型为 BLOB。\n\n\nAS\n该子句将输入字符串转换为指定的类型和长度，为可选项。\n\n\nLEVEL\n该子句指定返回值的权重级别，为可选项。\n\n\nflags\n此参数暂未使用，为可选项。\n\n\n",
+        "AS 子句使用说明",
+        "AS 子句可以将输入字符串强制转换为非二进制或二进制字符串，并将其强制设置为指定长度，使用说明如下：",
+        "AS CHAR(N) 将字符串转换为非二进制字符串，并在右侧用空格填充到 N（N>=1） 个字符的长度。如果 N 小于输入字符串的长度，则字符串将被截断为 N 个字符，而且截断时不会发出告警。",
+        "AS BINARY(N) 将字符串转换为二进制字符串，N 以字节（不是字符）为单位，填充使用 0x00 字节（不是空格）。",
+        "示例如下：",
+        "obclient> SELECT HEX(WEIGHT_STRING('ab' AS CHAR(4)));\n+-------------------------------------+\n| HEX(WEIGHT_STRING('ab' AS CHAR(4))) |\n+-------------------------------------+\n| 41422020                            |\n+-------------------------------------+\n1 row in set\n\nobclient> SELECT HEX(WEIGHT_STRING('ab' AS BINARY(4)));\n+---------------------------------------+\n| HEX(WEIGHT_STRING('ab' AS BINARY(4))) |\n+---------------------------------------+\n| 61620000                              |\n+---------------------------------------+\n1 row in set\n",
+        "LEVEL 子句使用说明",
+        "LEVEL 子句可以用来指定返回值应该包含排序规则级别的权重。多个级别可以使用逗号（，）分隔形成列表的形式，连续多个级别可以使用破折号（-）标定范围。例如 LEVEL1-5。",
+        "一般遵从以下规则：",
+        "任何小于 1 的级别都被视为 1。任何大于输入字符串排序规则最大值的级别都被视为排序规则的最大值。最大值因排序规则而异，但永远不会大于 6。",
+        "在级别列表中的级别必须按递增顺序排列。在某个级别范围内，如果第二个数字小于第一个数字，则将其视为与第一个数字相同（例如，3-2 与 3-3 等同）。",
+        "如果省略 LEVEL 子句，则假定 LEVEL 1 - max，其中 max 是排序规则的最大级别。",
+        "如果 LEVEL 子句使用列表表示法（而不是范围表示法），则级别编号后面可以使用以下修饰符：",
+        "\nASC：返回权重且不做任何修改。这是默认设置。\nDESC：返回按位反转的权重。\nREVERSE：以相反的顺序返回权重（即反转字符串，第一个字符排在最后，最后一个字符排在前）。\n",
+        "ASC：返回权重且不做任何修改。这是默认设置。",
+        "DESC：返回按位反转的权重。",
+        "REVERSE：以相反的顺序返回权重（即反转字符串，第一个字符排在最后，最后一个字符排在前）。",
+        "示例如下：",
+        "obclient> SELECT HEX(WEIGHT_STRING(0x56af LEVEL 1));\n+------------------------------------+\n| HEX(WEIGHT_STRING(0x56af LEVEL 1)) |\n+------------------------------------+\n| 56AF                               |\n+------------------------------------+\n1 row in set\n\nobclient> SELECT HEX(WEIGHT_STRING(0x56af LEVEL 1 DESC));\n+-----------------------------------------+\n| HEX(WEIGHT_STRING(0x56af LEVEL 1 DESC)) |\n+-----------------------------------------+\n| A950                                    |\n+-----------------------------------------+\n1 row in set\n\nobclient> SELECT HEX(WEIGHT_STRING(0x56af LEVEL 1 REVERSE ));\n+---------------------------------------------+\n| HEX(WEIGHT_STRING(0x56af LEVEL 1 REVERSE )) |\n+---------------------------------------------+\n| AF56                                        |\n+---------------------------------------------+\n1 row in set\n\nobclient> SELECT HEX(WEIGHT_STRING(0x56af LEVEL 1 DESC REVERSE ));\n+--------------------------------------------------+\n| HEX(WEIGHT_STRING(0x56af LEVEL 1 DESC REVERSE )) |\n+--------------------------------------------------+\n| 50A9                                             |\n+--------------------------------------------------+\n1 row in set\n"
+    ],
+    "Examples": [
+        "obclient> SET @s = CAST('AB' AS BINARY);\nQuery OK, 0 rows affected\n\nobclient> SELECT @s, HEX(@s), HEX(WEIGHT_STRING(@s));\n+------+---------+------------------------+\n| @s   | HEX(@s) | HEX(WEIGHT_STRING(@s)) |\n+------+---------+------------------------+\n| AB   | 4142    | 4142                   |\n+------+---------+------------------------+\n1 row in set\n"
+    ],
+    "Category": [
+        "String Functions"
+    ]
+}

@@ -1,0 +1,28 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/bit-functions"
+    ],
+    "Title": [
+        "bitHammingDistance"
+    ],
+    "Feature": [
+        "bitHammingDistance(int1, int2)"
+    ],
+    "Description": [
+        "bitHammingDistance",
+        "Returns the Hamming Distance between the bit representations of two integer values. Can be used with SimHash functions for detection of semi-duplicate strings. The smaller is the distance, the more likely those strings are the same.",
+        "Syntax",
+        "bitHammingDistance(int1, int2)",
+        "Arguments",
+        "int1 \u2014 First integer value. Int64.int2 \u2014 Second integer value. Int64.",
+        "Returned value",
+        "The Hamming distance. UInt8."
+    ],
+    "Examples": [
+        "SELECT bitHammingDistance(111, 121);",
+        "SELECT bitHammingDistance(ngramSimHash('cat ate rat'), ngramSimHash('rat ate cat'));"
+    ],
+    "Category": [
+        "Bit Functions"
+    ]
+}

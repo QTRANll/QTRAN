@@ -1,0 +1,22 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000000823372"
+    ],
+    "Title": [
+        "TIMESTAMP"
+    ],
+    "Feature": [
+        "TIMESTAMP(expr)\nTIMESTAMP(expr1,expr2)\n"
+    ],
+    "Description": [
+        "第一种声明返回日期时间表达式 expr 的日期时间值。",
+        "第二种声明返回日期时间表达式 expr1 与时间表达式 expr2 相加，返回日期时间表达式，如果 expr2 中包含日期，则也只取其中的时间值。",
+        "如果任一参数为 NULL，则该函数返回 NULL。"
+    ],
+    "Examples": [
+        "obclient> SELECT TIMESTAMP('2020-12-31');\n+----------------------------+\n| TIMESTAMP('2020-12-31')    |\n+----------------------------+\n| 2020-12-31 00:00:00.000000 |\n+----------------------------+\n1 row in set\n\nobclient> SELECT TIMESTAMP('2020-12-31 12:00:00','12:00:00');\n+---------------------------------------------+\n| TIMESTAMP('2020-12-31 12:00:00','12:00:00') |\n+---------------------------------------------+\n| 2021-01-01 00:00:00.000000                  |\n+---------------------------------------------+\n1 row in set\n"
+    ],
+    "Category": [
+        "Date and Time Functions"
+    ]
+}

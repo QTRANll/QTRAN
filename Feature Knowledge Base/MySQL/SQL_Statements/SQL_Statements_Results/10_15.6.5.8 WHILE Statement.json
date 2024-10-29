@@ -1,0 +1,23 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/while.html"
+    ],
+    "Title": [
+        "15.6.5.8 WHILE Statement"
+    ],
+    "Feature": [
+        "[begin_label:] WHILE search_condition DO\n    statement_list\nEND WHILE [end_label]"
+    ],
+    "Description": [
+        "\n        The statement list within a WHILE\n        statement is repeated as long as the\n        search_condition expression is true.\n        statement_list consists of one or\n        more SQL statements, each terminated by a semicolon\n        (;) statement delimiter.\n      ",
+        "\n        A WHILE statement can be labeled.\n        For the rules regarding label use, see\n        Section\u00a015.6.2, \u201cStatement Labels\u201d.\n      ",
+        "\n        Example:\n      ",
+        "Press CTRL+C to copy CREATE PROCEDURE dowhile()\nBEGIN\n  DECLARE v1 INT DEFAULT 5;\n\n  WHILE v1 > 0 DO\n    ...\n    SET v1 = v1 - 1;\n  END WHILE;\nEND;"
+    ],
+    "Examples": [
+        "CREATE PROCEDURE dowhile()\nBEGIN\n  DECLARE v1 INT DEFAULT 5;\n\n  WHILE v1 > 0 DO\n    ...\n    SET v1 = v1 - 1;\n  END WHILE;\nEND;"
+    ],
+    "Category": [
+        "Compound Statement Syntax"
+    ]
+}

@@ -1,0 +1,78 @@
+{
+    "HTML": "https://mariadb.com//kb/en/stddev_pop/",
+    "Title": "STDDEV_POP",
+    "Feature": [
+        "STDDEV_POP(expr)\n"
+    ],
+    "Description": [
+        "Returns the population standard deviation of expr (the square root of\nVAR_POP()). You can also use STD() or\nSTDDEV(), which are equivalent but not standard SQL.",
+        "It is an aggregate function, and so can be used with the GROUP BY clause.",
+        "STDDEV_POP() can be used as a window function.",
+        "STDDEV_POP() returns NULL if there were no matching rows."
+    ],
+    "Examples": [
+        "CREATE OR REPLACE TABLE stats (category VARCHAR(2), x INT);\n\nINSERT INTO stats VALUES \n  ('a',1),('a',2),('a',3),\n  ('b',11),('b',12),('b',20),('b',30),('b',60);\n\nSELECT category, STDDEV_POP(x), STDDEV_SAMP(x), VAR_POP(x) \n  FROM stats GROUP BY category;\n+----------+---------------+----------------+------------+\n| category | STDDEV_POP(x) | STDDEV_SAMP(x) | VAR_POP(x) |\n+----------+---------------+----------------+------------+\n| a        |        0.8165 |         1.0000 |     0.6667 |\n| b        |       18.0400 |        20.1693 |   325.4400 |\n+----------+---------------+----------------+------------+\n",
+        "CREATE OR REPLACE TABLE student_test (name CHAR(10), test CHAR(10), score TINYINT);\n\nINSERT INTO student_test VALUES \n    ('Chun', 'SQL', 75), ('Chun', 'Tuning', 73), \n    ('Esben', 'SQL', 43), ('Esben', 'Tuning', 31), \n    ('Kaolin', 'SQL', 56), ('Kaolin', 'Tuning', 88), \n    ('Tatiana', 'SQL', 87);\n\nSELECT name, test, score, STDDEV_POP(score) \n  OVER (PARTITION BY test) AS stddev_results FROM student_test;\n+---------+--------+-------+----------------+\n| name    | test   | score | stddev_results |\n+---------+--------+-------+----------------+\n| Chun    | SQL    |    75 |        16.9466 |\n| Chun    | Tuning |    73 |        24.1247 |\n| Esben   | SQL    |    43 |        16.9466 |\n| Esben   | Tuning |    31 |        24.1247 |\n| Kaolin  | SQL    |    56 |        16.9466 |\n| Kaolin  | Tuning |    88 |        24.1247 |\n| Tatiana | SQL    |    87 |        16.9466 |\n+---------+--------+-------+----------------+\n"
+    ],
+    "Category": [
+        "Aggregate Functions"
+    ],
+    "Effective SQLs Refined": [],
+    "Ineffective SQLs Refined": [
+        "SELECT category, STDDEV_POP(x), STDDEV_SAMP(x), VAR_POP(x) \n  FROM stats GROUP BY category;",
+        "SELECT name, test, score, STDDEV_POP(score) \n  OVER (PARTITION BY test) AS stddev_results FROM student_test;"
+    ],
+    "Wrong Messages from Ineffective SQLs Refined": [
+        "(pymysql.err.ProgrammingError) (1146, \"Table 'PINOLO_MariaDB.stats' doesn't exist\")\n[SQL: SELECT category, STDDEV_POP(x), STDDEV_SAMP(x), VAR_POP(x) \n  FROM stats GROUP BY category;]\n(Background on this error at: https://sqlalche.me/e/20/f405)",
+        "(pymysql.err.ProgrammingError) (1146, \"Table 'PINOLO_MariaDB.student_test' doesn't exist\")\n[SQL: SELECT name, test, score, STDDEV_POP(score) \n  OVER (PARTITION BY test) AS stddev_results FROM student_test;]\n(Background on this error at: https://sqlalche.me/e/20/f405)"
+    ],
+    "SQLs Generated1": [
+        {
+            "Example SQL": "SELECT STDDEV_POP(column_name) FROM table_name;"
+        },
+        {
+            "Example SQL": "SELECT STDDEV_POP(column_name);"
+        },
+        {
+            "Example SQL": "SELECT STDDEV_POP(1);"
+        }
+    ],
+    "SQLs Generated Costs1": [
+        {
+            "Total Tokens": 340,
+            "Prompt Tokens": 317,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 6.135e-05
+        },
+        {
+            "Total Tokens": 492,
+            "Prompt Tokens": 472,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 8.279999999999998e-05
+        },
+        {
+            "Total Tokens": 641,
+            "Prompt Tokens": 621,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 0.00010514999999999998
+        }
+    ],
+    "SQLs Generated ExecResults1": [
+        "None",
+        "None",
+        "[(0.0,)]"
+    ],
+    "SQLs Generated ExecTimes1": [
+        "0",
+        "0",
+        "0.02216362953186035"
+    ],
+    "SQLs Generated ErrorMessages1": [
+        "(pymysql.err.ProgrammingError) (1146, \"Table 'PINOLO_MariaDB.table_name' doesn't exist\")\n",
+        "(pymysql.err.OperationalError) (1054, \"Unknown column 'column_name' in 'field list'\")\n",
+        "None"
+    ],
+    "Effective SQLs Generated1": [
+        "SELECT STDDEV_POP(1);"
+    ]
+}

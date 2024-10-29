@@ -1,0 +1,22 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000000823139"
+    ],
+    "Title": [
+        "NEXT_DAY"
+    ],
+    "Feature": [
+        "NEXT_DAY (date,week)\n"
+    ],
+    "Description": [
+        "该函数是返回日期 date 的下一周中 week（星期值）所在的日期值。",
+        "\n\n\n参数\n说明\n\n\n\n\ndate\nDATE 数据类型的值。\n\n\nweek\n星期值。包括 SUNDAY（星期天）、 MONDAY（星期一）、 TUESDAY（星期二）、 WEDNESDAY（星期三）、 THURSDAY（星期四）、 FRIDAY（星期五）和 SATURDAY（星期六）。\n\n\n",
+        "返回 DATE 数据类型。"
+    ],
+    "Examples": [
+        "obclient> SELECT SYSDATE \"当前日期\",\n    NEXT_DAY(SYSDATE,'MONDAY') \"下周一\",\n    NEXT_DAY(SYSDATE,'TUESDAY') \"下周二\",\n    NEXT_DAY(SYSDATE,'WEDNESDAY') \"下周三\",\n    NEXT_DAY(SYSDATE,'THURSDAY') \"下周四\",\n    NEXT_DAY(SYSDATE,'FRIDAY') \"下周五\",\n    NEXT_DAY(SYSDATE,'SATURDAY') \"下周六\",\n    NEXT_DAY(SYSDATE,'SUNDAY') \"下周日\"\n    FROM DUAL;\n+--------------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+\n| 当前日期     | 下周一    | 下周二    | 下周三    | 下周四    | 下周五    | 下周六    | 下周日    |\n+--------------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+\n| 17-NOV-21    | 22-NOV-21 | 23-NOV-21 | 24-NOV-21 | 18-NOV-21 | 19-NOV-21 | 20-NOV-21 | 21-NOV-21 |\n+--------------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+\n1 row in set\n"
+    ],
+    "Category": [
+        "Datetime Functions"
+    ]
+}

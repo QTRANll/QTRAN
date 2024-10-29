@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/current/functions-comparison.html"
+    ],
+    "Title": [
+        "num_nonnulls"
+    ],
+    "Feature": [
+        "num_nonnulls ( VARIADIC \"any\" ) → integer"
+    ],
+    "Description": [
+        "Returns the number of non-null arguments."
+    ],
+    "Examples": [
+        "num_nonnulls(1, NULL, 2) → 2"
+    ],
+    "Category": [
+        "Comparison Functions and Operators"
+    ]
+}

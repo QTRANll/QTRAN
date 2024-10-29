@@ -1,0 +1,18 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/current/functions-admin.html"
+    ],
+    "Title": [
+        "pg_replication_origin_progress"
+    ],
+    "Feature": [
+        "pg_replication_origin_progress ( node_name text, flush boolean ) → pg_lsn"
+    ],
+    "Description": [
+        "Returns the replay location for the given replication origin. The parameter flush determines whether the corresponding local transaction will be guaranteed to have been flushed to disk or not."
+    ],
+    "Examples": [],
+    "Category": [
+        "System Administration Functions"
+    ]
+}

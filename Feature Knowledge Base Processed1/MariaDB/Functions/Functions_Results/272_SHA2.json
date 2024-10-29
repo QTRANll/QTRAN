@@ -1,0 +1,25 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/sha2/"
+    ],
+    "Title": [
+        "SHA2"
+    ],
+    "Feature": [
+        "SHA2(str,hash_len)\n"
+    ],
+    "Description": [
+        "Given a string str, calculates an SHA-2 checksum, which is considered more cryptographically secure than its SHA-1 equivalent. The SHA-2 family includes SHA-224, SHA-256, SHA-384, and SHA-512, and the hash_len must correspond to one of these, i.e. 224, 256, 384 or 512. 0 is equivalent to 256.",
+        "The return value is a nonbinary string in the connection character set and collation, determined by the values of the character_set_connection and collation_connection system variables. ",
+        "NULL is returned if the hash length is not valid, or the string str is NULL.",
+        "SHA2 will only work if MariaDB was has been configured with TLS support. "
+    ],
+    "Examples": [
+        "SELECT SHA2('Maria',224);",
+        "SELECT SHA2('Maria',256);",
+        "SELECT SHA2('Maria',0);"
+    ],
+    "Category": [
+        "Encryption, Hashing and Compression Functions"
+    ]
+}

@@ -1,0 +1,32 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/tuple-functions"
+    ],
+    "Title": [
+        "tupleHammingDistance"
+    ],
+    "Feature": [
+        "tupleHammingDistance(tuple1, tuple2)"
+    ],
+    "Description": [
+        "tupleHammingDistance",
+        "Returns the Hamming Distance between two tuples of the same size.",
+        "Syntax",
+        "tupleHammingDistance(tuple1, tuple2)",
+        "Arguments",
+        "tuple1 \u2014 First tuple. Tuple.tuple2 \u2014 Second tuple. Tuple.",
+        "Tuples should have the same type of the elements.",
+        "Returned value",
+        "The Hamming distance.",
+        "NoteThe result type is calculated the same way it is for Arithmetic functions, based on the number of elements in the input tuples.",
+        "SELECT    toTypeName(tupleHammingDistance(tuple(0), tuple(0))) AS t1,    toTypeName(tupleHammingDistance((0, 0), (0, 0))) AS t2,    toTypeName(tupleHammingDistance((0, 0, 0), (0, 0, 0))) AS t3,    toTypeName(tupleHammingDistance((0, 0, 0, 0), (0, 0, 0, 0))) AS t4,    toTypeName(tupleHammingDistance((0, 0, 0, 0, 0), (0, 0, 0, 0, 0))) AS t5",
+        "\u250c\u2500t1\u2500\u2500\u2500\u2500\u252c\u2500t2\u2500\u2500\u2500\u2500\u2500\u252c\u2500t3\u2500\u2500\u2500\u2500\u2500\u252c\u2500t4\u2500\u2500\u2500\u2500\u2500\u252c\u2500t5\u2500\u2500\u2500\u2500\u2500\u2510\u2502 UInt8 \u2502 UInt16 \u2502 UInt32 \u2502 UInt64 \u2502 UInt64 \u2502\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518"
+    ],
+    "Examples": [
+        "SELECT tupleHammingDistance((1, 2, 3), (3, 2, 1)) AS HammingDistance;",
+        "SELECT tupleHammingDistance(wordShingleMinHash(string), wordShingleMinHashCaseInsensitive(string)) AS HammingDistanceFROM (SELECT 'ClickHouse is a column-oriented database management system for online analytical processing of queries.' AS string);"
+    ],
+    "Category": [
+        "Tuples Functions"
+    ]
+}

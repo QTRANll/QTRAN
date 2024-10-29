@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/current/functions-info.html"
+    ],
+    "Title": [
+        "pg_typeof"
+    ],
+    "Feature": [
+        "pg_typeof ( \"any\" ) → regtype"
+    ],
+    "Description": [
+        "Returns the OID of the data type of the value that is passed to it. This can be helpful for troubleshooting or dynamically constructing SQL queries. The function is declared as returning regtype, which is an OID alias type (see Section 8.19); this means that it is the same as an OID for comparison purposes but displays as a type name."
+    ],
+    "Examples": [
+        "pg_typeof(33) → integer"
+    ],
+    "Category": [
+        "System Information Functions and Operators"
+    ]
+}

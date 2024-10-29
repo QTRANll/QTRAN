@@ -1,0 +1,39 @@
+{
+    "HTML": "https://mariadb.com//kb/en/linestring/",
+    "Title": "LINESTRING",
+    "Feature": [
+        "LineString(pt1,pt2,...)\n"
+    ],
+    "Description": [
+        "Constructs a WKB LineString value from a number of WKB Point arguments.  If any argument is not a WKB Point, the return value is\nNULL. If the number of Point arguments is less than two, the return value is NULL."
+    ],
+    "Examples": [
+        "SET @ls = 'LineString(1 1,2 2,3 3)';\n\nSELECT AsText(EndPoint(GeomFromText(@ls)));\n+-------------------------------------+\n| AsText(EndPoint(GeomFromText(@ls))) |\n+-------------------------------------+\n| POINT(3 3)                          |\n+-------------------------------------+\n\nCREATE TABLE gis_line  (g LINESTRING);\nINSERT INTO gis_line VALUES\n    (LineFromText('LINESTRING(0 0,0 10,10 0)')),\n    (LineStringFromText('LINESTRING(10 10,20 10,20 20,10 20,10 10)')),\n    (LineStringFromWKB(AsWKB(LineString(Point(10, 10), Point(40, 10)))));\n"
+    ],
+    "Category": [
+        "Geographic Functions"
+    ],
+    "Effective SQLs Refined": [
+        "INSERT INTO gis_line VALUES\n    (LineFromText('LINESTRING(0 0,0 10,10 0)')),\n    (LineStringFromText('LINESTRING(10 10,20 10,20 20,10 20,10 10)')),\n    (LineStringFromWKB(AsWKB(LineString(Point(10, 10), Point(40, 10)))));"
+    ],
+    "Ineffective SQLs Refined": [
+        "SET @ls = 'LineString(1 1,2 2,3 3)';",
+        "CREATE TABLE gis_line  (g LINESTRING);"
+    ],
+    "Wrong Messages from Ineffective SQLs Refined": [
+        "This result object does not return rows. It has been closed automatically.",
+        "(pymysql.err.OperationalError) (1050, \"Table 'gis_line' already exists\")\n[SQL: CREATE TABLE gis_line  (g LINESTRING);]\n(Background on this error at: https://sqlalche.me/e/20/e3q8)"
+    ],
+    "SQLs Generated1": [],
+    "SQLs Generated Costs1": [],
+    "SQLs Generated ExecResults1": [],
+    "SQLs Generated ExecTimes1": [],
+    "SQLs Generated ErrorMessages1": [],
+    "Effective SQLs Generated1": [],
+    "SQLs Generated2": [],
+    "SQLs Generated Costs2": [],
+    "SQLs Generated ExecResults2": [],
+    "SQLs Generated ExecTimes2": [],
+    "SQLs Generated ErrorMessages2": [],
+    "Effective SQLs Generated2": []
+}

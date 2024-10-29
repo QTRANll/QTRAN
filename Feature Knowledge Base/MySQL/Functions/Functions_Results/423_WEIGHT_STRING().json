@@ -1,0 +1,56 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/built-in-function-reference.html",
+        "https://dev.mysql.com/doc/refman/8.4/en/string-functions.html"
+    ],
+    "Title": [
+        "14.1 Built-In Function and Operator Reference",
+        "14.8 String Functions and Operators"
+    ],
+    "Feature": [
+        "WEIGHT_STRING(str\n          [AS {CHAR|BINARY}(N)]\n          [flags])"
+    ],
+    "Description": [
+        "Return the weight string for a string",
+        "\nWEIGHT_STRING(str\n          [AS {CHAR|BINARY}(N)]\n          [flags])\n",
+        "\n          This function returns the weight string for the input string.\n          The return value is a binary string that represents the\n          comparison and sorting value of the string, or\n          NULL if the argument is\n          NULL. It has these properties:\n",
+        "\n\n              If\n              WEIGHT_STRING(str1)\n              =\n              WEIGHT_STRING(str2),\n              then str1 =\n              str2\n              (str1 and\n              str2 are considered equal)\n            \n              If\n              WEIGHT_STRING(str1)\n              <\n              WEIGHT_STRING(str2),\n              then str1 <\n              str2\n              (str1 sorts before\n              str2)\n\n",
+        "\nWEIGHT_STRING() is a debugging\n          function intended for internal use. Its behavior can change\n          without notice between MySQL versions. It can be used for\n          testing and debugging of collations, especially if you are\n          adding a new collation. See\n          Section\u00a012.14, \u201cAdding a Collation to a Character Set\u201d.\n        ",
+        "\n          This list briefly summarizes the arguments. More details are\n          given in the discussion following the list.\n",
+        "\n\nstr: The input string\n              expression.\n            \nAS clause: Optional; cast the input\n              string to a given type and length.\n            \nflags: Optional; unused.\n\n",
+        "\n          The input string, str, is a string\n          expression. If the input is a nonbinary (character) string\n          such as a CHAR,\n          VARCHAR, or\n          TEXT value, the return value\n          contains the collation weights for the string. If the input is\n          a binary (byte) string such as a\n          BINARY,\n          VARBINARY, or\n          BLOB value, the return value is\n          the same as the input (the weight for each byte in a binary\n          string is the byte value). If the input is\n          NULL,\n          WEIGHT_STRING() returns\n          NULL.\n        ",
+        "\n          Examples:\n        ",
+        "Press CTRL+C to copy mysql> SET @s = _utf8mb4 'AB' COLLATE utf8mb4_0900_ai_ci;\nmysql> SELECT @s, HEX(@s), HEX(WEIGHT_STRING(@s));\n+------+---------+------------------------+\n| @s   | HEX(@s) | HEX(WEIGHT_STRING(@s)) |\n+------+---------+------------------------+\n| AB   | 4142    | 1C471C60               |\n+------+---------+------------------------+",
+        "Press CTRL+C to copy mysql> SET @s = _utf8mb4 'ab' COLLATE utf8mb4_0900_ai_ci;\nmysql> SELECT @s, HEX(@s), HEX(WEIGHT_STRING(@s));\n+------+---------+------------------------+\n| @s   | HEX(@s) | HEX(WEIGHT_STRING(@s)) |\n+------+---------+------------------------+\n| ab   | 6162    | 1C471C60               |\n+------+---------+------------------------+",
+        "Press CTRL+C to copy mysql> SET @s = CAST('AB' AS BINARY);\nmysql> SELECT @s, HEX(@s), HEX(WEIGHT_STRING(@s));\n+------+---------+------------------------+\n| @s   | HEX(@s) | HEX(WEIGHT_STRING(@s)) |\n+------+---------+------------------------+\n| AB   | 4142    | 4142                   |\n+------+---------+------------------------+",
+        "Press CTRL+C to copy mysql> SET @s = CAST('ab' AS BINARY);\nmysql> SELECT @s, HEX(@s), HEX(WEIGHT_STRING(@s));\n+------+---------+------------------------+\n| @s   | HEX(@s) | HEX(WEIGHT_STRING(@s)) |\n+------+---------+------------------------+\n| ab   | 6162    | 6162                   |\n+------+---------+------------------------+",
+        "\n          The preceding examples use\n          HEX() to display the\n          WEIGHT_STRING() result. Because\n          the result is a binary value,\n          HEX() can be especially useful\n          when the result contains nonprinting values, to display it in\n          printable form:\n        ",
+        "Press CTRL+C to copy mysql> SET @s = CONVERT(X'C39F' USING utf8mb4) COLLATE utf8mb4_czech_ci;\nmysql> SELECT HEX(WEIGHT_STRING(@s));\n+------------------------+\n| HEX(WEIGHT_STRING(@s)) |\n+------------------------+\n| 0FEA0FEA               |\n+------------------------+",
+        "\n          For non-NULL return values, the data type\n          of the value is VARBINARY if\n          its length is within the maximum length for\n          VARBINARY, otherwise the data\n          type is BLOB.\n        ",
+        "\n          The AS clause may be given to cast the\n          input string to a nonbinary or binary string and to force it\n          to a given length:\n",
+        "\n\nAS CHAR(N)\n              casts the string to a nonbinary string and pads it on the\n              right with spaces to a length of\n              N characters.\n              N must be at least 1. If\n              N is less than the length of\n              the input string, the string is truncated to\n              N characters. No warning occurs\n              for truncation.\n            \nAS BINARY(N)\n              is similar but casts the string to a binary string,\n              N is measured in bytes (not\n              characters), and padding uses 0x00\n              bytes (not spaces).\n\n",
+        "Press CTRL+C to copy mysql> SET NAMES 'latin1';\nmysql> SELECT HEX(WEIGHT_STRING('ab' AS CHAR(4)));\n+-------------------------------------+\n| HEX(WEIGHT_STRING('ab' AS CHAR(4))) |\n+-------------------------------------+\n| 41422020                            |\n+-------------------------------------+\nmysql> SET NAMES 'utf8mb4';\nmysql> SELECT HEX(WEIGHT_STRING('ab' AS CHAR(4)));\n+-------------------------------------+\n| HEX(WEIGHT_STRING('ab' AS CHAR(4))) |\n+-------------------------------------+\n| 1C471C60                            |\n+-------------------------------------+",
+        "Press CTRL+C to copy mysql> SELECT HEX(WEIGHT_STRING('ab' AS BINARY(4)));\n+---------------------------------------+\n| HEX(WEIGHT_STRING('ab' AS BINARY(4))) |\n+---------------------------------------+\n| 61620000                              |\n+---------------------------------------+",
+        "\n          The flags clause currently is\n          unused.\n        ",
+        "\n          If WEIGHT_STRING() is invoked\n          from within the mysql client, binary\n          strings display using hexadecimal notation, depending on the\n          value of the --binary-as-hex.\n          For more information about that option, see\n          Section\u00a06.5.1, \u201cmysql \u2014 The MySQL Command-Line Client\u201d.\n"
+    ],
+    "Examples": [
+        "mysql> SET @s = _utf8mb4 'AB' COLLATE utf8mb4_0900_ai_ci;\nmysql> SELECT @s, HEX(@s), HEX(WEIGHT_STRING(@s));\n+------+---------+------------------------+\n| @s   | HEX(@s) | HEX(WEIGHT_STRING(@s)) |\n+------+---------+------------------------+\n| AB   | 4142    | 1C471C60               |\n+------+---------+------------------------+",
+        "mysql> SET @s = _utf8mb4 'ab' COLLATE utf8mb4_0900_ai_ci;\nmysql> SELECT @s, HEX(@s), HEX(WEIGHT_STRING(@s));\n+------+---------+------------------------+\n| @s   | HEX(@s) | HEX(WEIGHT_STRING(@s)) |\n+------+---------+------------------------+\n| ab   | 6162    | 1C471C60               |\n+------+---------+------------------------+",
+        "mysql> SET @s = CAST('AB' AS BINARY);\nmysql> SELECT @s, HEX(@s), HEX(WEIGHT_STRING(@s));\n+------+---------+------------------------+\n| @s   | HEX(@s) | HEX(WEIGHT_STRING(@s)) |\n+------+---------+------------------------+\n| AB   | 4142    | 4142                   |\n+------+---------+------------------------+",
+        "mysql> SET @s = CAST('ab' AS BINARY);\nmysql> SELECT @s, HEX(@s), HEX(WEIGHT_STRING(@s));\n+------+---------+------------------------+\n| @s   | HEX(@s) | HEX(WEIGHT_STRING(@s)) |\n+------+---------+------------------------+\n| ab   | 6162    | 6162                   |\n+------+---------+------------------------+",
+        "mysql> SET @s = CONVERT(X'C39F' USING utf8mb4) COLLATE utf8mb4_czech_ci;\nmysql> SELECT HEX(WEIGHT_STRING(@s));\n+------------------------+\n| HEX(WEIGHT_STRING(@s)) |\n+------------------------+\n| 0FEA0FEA               |\n+------------------------+",
+        "mysql> SET NAMES 'latin1';\nmysql> SELECT HEX(WEIGHT_STRING('ab' AS CHAR(4)));\n+-------------------------------------+\n| HEX(WEIGHT_STRING('ab' AS CHAR(4))) |\n+-------------------------------------+\n| 41422020                            |\n+-------------------------------------+\nmysql> SET NAMES 'utf8mb4';\nmysql> SELECT HEX(WEIGHT_STRING('ab' AS CHAR(4)));\n+-------------------------------------+\n| HEX(WEIGHT_STRING('ab' AS CHAR(4))) |\n+-------------------------------------+\n| 1C471C60                            |\n+-------------------------------------+",
+        "mysql> SELECT HEX(WEIGHT_STRING('ab' AS BINARY(4)));\n+---------------------------------------+\n| HEX(WEIGHT_STRING('ab' AS BINARY(4))) |\n+---------------------------------------+\n| 61620000                              |\n+---------------------------------------+"
+    ],
+    "Category": [
+        "Built-In Functions",
+        "String Functions"
+    ],
+    "Reference HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/string-functions.html#function_weight-string"
+    ],
+    "Feature Type": [
+        "Function"
+    ]
+}

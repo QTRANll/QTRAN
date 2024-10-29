@@ -1,0 +1,22 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000000823193"
+    ],
+    "Title": [
+        "REGEXP_REPLACE"
+    ],
+    "Feature": [
+        "REGEXP_REPLACE(source_char, pattern\n                 [, replace_string\n                    [, position\n                      [, occurrence\n                        [, match_param ]\n                      ]\n                    ]\n                 ]\n               )\n"
+    ],
+    "Description": [
+        "该函数将字符串 source_char 中与正则表达式相匹配的字符替换为 replace_string 中的字符。",
+        "\n\n\n参数\n说明\n\n\n\n\nsource_char\n指定用作搜索值的字符表达式。它通常是一种字符列。数据类型可以是 CHAR、VARCHAR2、NCHAR、NVARCHAR2 或 CLOB。\n\n\npattern\n指定正则表达式，它通常是一个文本文字，数据类型可以是 CHAR、VARCHAR2、NCHAR 或 NVARCHAR2。\n\n\nreplace_string\n表示替换的字符，可以是 CHAR、VARCHAR2、NCHAR、NVARCHAR2 或 CLOB 类型。\n\n\nposition\n指定开始正则表达式匹配的起始位置，取值是一个正整数，为可选项。默认值是 1，表示从第一个字符开始搜索 source_char。\n\n\noccurrence\n指定替换操作的第几个匹配项，是一个非负整数。 \n      \n如果指定 0，则 OceanBase 数据库替换所有匹配项。\n如果指定一个正整数 n，则 OceanBase 数据库将替换第 n 次出现的匹配项。\n\n\n\nmatch_param\n数据类型 VARCHAR2 或 CHAR 的字符表达式，它允许您更改函数的默认匹配行为。 \n      \ni 表示大小写不敏感。\nc 表示大小写敏感。\nn 表示句点 . 可以匹配换行符。\nm 表示多行模式。\nx 表示忽略空格字符，默认情况下，空格字符会相互匹配。\n\n\n\n",
+        "返回结果与 source_char 的数据类型相同。"
+    ],
+    "Examples": [
+        "obclient> SELECT REGEXP_REPLACE('OCEANBASE database', '(A|B){1}', '*',1,0) AS \"REGEXP_REPLACE\" FROM DUAL;\n+--------------------+\n| REGEXP_REPLACE     |\n+--------------------+\n| OCE*N**SE database |\n+--------------------+\n1 row in set\n"
+    ],
+    "Category": [
+        "Character Functions Returning CharacterValues"
+    ]
+}

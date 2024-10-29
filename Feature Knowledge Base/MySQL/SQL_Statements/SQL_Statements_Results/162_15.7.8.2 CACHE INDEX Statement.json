@@ -1,0 +1,43 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/cache-index.html"
+    ],
+    "Title": [
+        "15.7.8.2 CACHE INDEX Statement"
+    ],
+    "Feature": [
+        "CACHE INDEX {\n      tbl_index_list [, tbl_index_list] ...\n    | tbl_name PARTITION (partition_list)\n  }\n  IN key_cache_name\n\ntbl_index_list:\n  tbl_name [{INDEX|KEY} (index_name[, index_name] ...)]\n\npartition_list: {\n    partition_name[, partition_name] ...\n  | ALL\n}"
+    ],
+    "Description": [
+        "\n        The CACHE INDEX statement assigns\n        table indexes to a specific key cache. It applies only to\n        MyISAM tables, including partitioned\n        MyISAM tables. After the indexes have been\n        assigned, they can be preloaded into the cache if desired with\n        LOAD INDEX INTO\n        CACHE.\n      ",
+        "\n        The following statement assigns indexes from the tables\n        t1, t2, and\n        t3 to the key cache named\n        hot_cache:\n      ",
+        "Press CTRL+C to copy mysql> CACHE INDEX t1, t2, t3 IN hot_cache;\n+---------+--------------------+----------+----------+\n| Table   | Op                 | Msg_type | Msg_text |\n+---------+--------------------+----------+----------+\n| test.t1 | assign_to_keycache | status   | OK       |\n| test.t2 | assign_to_keycache | status   | OK       |\n| test.t3 | assign_to_keycache | status   | OK       |\n+---------+--------------------+----------+----------+",
+        "\n        The syntax of CACHE INDEX enables\n        you to specify that only particular indexes from a table should\n        be assigned to the cache. However, the implementation assigns\n        all the table's indexes to the cache, so there is no reason to\n        specify anything other than the table name.\n      ",
+        "\n        The key cache referred to in a CACHE\n        INDEX statement can be created by setting its size\n        with a parameter setting statement or in the server parameter\n        settings. For example:\n      ",
+        "Press CTRL+C to copy SET GLOBAL keycache1.key_buffer_size=128*1024;",
+        "\n        Key cache parameters are accessed as members of a structured\n        system variable. See\n        Section\u00a07.1.9.5, \u201cStructured System Variables\u201d.\n      ",
+        "\n        A key cache must exist before you assign indexes to it, or an\n        error occurs:\n      ",
+        "Press CTRL+C to copy mysql> CACHE INDEX t1 IN non_existent_cache;\nERROR 1284 (HY000): Unknown key cache 'non_existent_cache'",
+        "\n        By default, table indexes are assigned to the main (default) key\n        cache created at the server startup. When a key cache is\n        destroyed, all indexes assigned to it are reassigned to the\n        default key cache.\n      ",
+        "\n        Index assignment affects the server globally: If one client\n        assigns an index to a given cache, this cache is used for all\n        queries involving the index, no matter which client issues the\n        queries.\n      ",
+        "\nCACHE INDEX is supported for\n        partitioned MyISAM tables. You can assign one\n        or more indexes for one, several, or all partitions to a given\n        key cache. For example, you can do the following:\n      ",
+        "Press CTRL+C to copy CREATE TABLE pt (c1 INT, c2 VARCHAR(50), INDEX i(c1))\n    ENGINE=MyISAM\n    PARTITION BY HASH(c1)\n    PARTITIONS 4;\n\nSET GLOBAL kc_fast.key_buffer_size = 128 * 1024;\nSET GLOBAL kc_slow.key_buffer_size = 128 * 1024;\n\nCACHE INDEX pt PARTITION (p0) IN kc_fast;\nCACHE INDEX pt PARTITION (p1, p3) IN kc_slow;",
+        "\n        The previous set of statements performs the following actions:\n",
+        "\n\n            Creates a partitioned table with 4 partitions; these\n            partitions are automatically named p0,\n            ..., p3; this table has an index named\n            i on column c1.\n          \n            Creates 2 key caches named kc_fast and\n            kc_slow\n\n            Assigns the index for partition p0 to the\n            kc_fast key cache and the index for\n            partitions p1 and p3\n            to the kc_slow key cache; the index for\n            the remaining partition (p2) uses the\n            server's default key cache.\n\n",
+        "\n        If you wish instead to assign the indexes for all partitions in\n        table pt to a single key cache named\n        kc_all, you can use either of the following\n        two statements:\n      ",
+        "Press CTRL+C to copy CACHE INDEX pt PARTITION (ALL) IN kc_all;\n\nCACHE INDEX pt IN kc_all;",
+        "\n        The two statements just shown are equivalent, and issuing either\n        one has exactly the same effect. In other words, if you wish to\n        assign indexes for all partitions of a partitioned table to the\n        same key cache, the PARTITION (ALL) clause is\n        optional.\n      ",
+        "\n        When assigning indexes for multiple partitions to a key cache,\n        the partitions need not be contiguous, and you need not list\n        their names in any particular order. Indexes for any partitions\n        not explicitly assigned to a key cache automatically use the\n        server default key cache.\n      ",
+        "\n        Index preloading is also supported for partitioned\n        MyISAM tables. For more information, see\n        Section\u00a015.7.8.5, \u201cLOAD INDEX INTO CACHE Statement\u201d.\n"
+    ],
+    "Examples": [
+        "mysql> CACHE INDEX t1, t2, t3 IN hot_cache;\n+---------+--------------------+----------+----------+\n| Table   | Op                 | Msg_type | Msg_text |\n+---------+--------------------+----------+----------+\n| test.t1 | assign_to_keycache | status   | OK       |\n| test.t2 | assign_to_keycache | status   | OK       |\n| test.t3 | assign_to_keycache | status   | OK       |\n+---------+--------------------+----------+----------+",
+        "SET GLOBAL keycache1.key_buffer_size=128*1024;",
+        "mysql> CACHE INDEX t1 IN non_existent_cache;\nERROR 1284 (HY000): Unknown key cache 'non_existent_cache'",
+        "CREATE TABLE pt (c1 INT, c2 VARCHAR(50), INDEX i(c1))\n    ENGINE=MyISAM\n    PARTITION BY HASH(c1)\n    PARTITIONS 4;\n\nSET GLOBAL kc_fast.key_buffer_size = 128 * 1024;\nSET GLOBAL kc_slow.key_buffer_size = 128 * 1024;\n\nCACHE INDEX pt PARTITION (p0) IN kc_fast;\nCACHE INDEX pt PARTITION (p1, p3) IN kc_slow;",
+        "CACHE INDEX pt PARTITION (ALL) IN kc_all;\n\nCACHE INDEX pt IN kc_all;"
+    ],
+    "Category": [
+        "Database Administration Statements"
+    ]
+}

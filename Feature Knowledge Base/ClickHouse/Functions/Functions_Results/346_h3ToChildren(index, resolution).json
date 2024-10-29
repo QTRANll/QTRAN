@@ -1,0 +1,27 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/geo/h3"
+    ],
+    "Title": [
+        "h3ToChildren"
+    ],
+    "Feature": [
+        "h3ToChildren(index, resolution)"
+    ],
+    "Description": [
+        "h3ToChildren",
+        "Returns an array of child indexes for the given H3 index.",
+        "Syntax",
+        "h3ToChildren(index, resolution)",
+        "Arguments",
+        "index \u2014 Hexagon index number. UInt64.resolution \u2014 Index resolution. Range: [0, 15]. UInt8.",
+        "Returned values",
+        "Array of the child H3-indexes. Array(UInt64)."
+    ],
+    "Examples": [
+        "SELECT h3ToChildren(599405990164561919, 6) AS children;"
+    ],
+    "Category": [
+        "Geo Functions"
+    ]
+}

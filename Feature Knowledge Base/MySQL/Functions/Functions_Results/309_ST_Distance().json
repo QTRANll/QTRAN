@@ -1,0 +1,37 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/built-in-function-reference.html",
+        "https://dev.mysql.com/doc/refman/8.4/en/spatial-function-reference.html"
+    ],
+    "Title": [
+        "14.1 Built-In Function and Operator Reference",
+        "14.16.1 Spatial Function Reference"
+    ],
+    "Feature": [
+        "ST_Distance(g1,\n            g2 [,\n            unit])"
+    ],
+    "Description": [
+        "The distance of one geometry from another",
+        "\nST_Distance(g1,\n            g2 [,\n            unit])\n",
+        "\n            Returns the distance between g1\n            and g2, measured in the length\n            unit of the spatial reference system (SRS) of the geometry\n            arguments, or in the unit of the optional\n            unit argument if that is\n            specified.\n          ",
+        "\n            This function processes geometry collections by returning\n            the shortest distance among all combinations of the\n            components of the two geometry arguments.\n          ",
+        "\nST_Distance() handles its\n            geometry arguments as described in the introduction to this\n            section, with these exceptions:\n",
+        "\n\nST_Distance() detects\n                arguments in a geographic (ellipsoidal) spatial\n                reference system and returns the geodetic distance on\n                the ellipsoid.\n                ST_Distance() supports\n                distance calculations for geographic SRS arguments of\n                all geometry types.\n              \n                If any argument is geometrically invalid, either the\n                result is an undefined distance (that is, it can be any\n                number), or an error occurs.\n              \n                If an intermediate or final result produces\n                NaN or a negative number, an\n                ER_GIS_INVALID_DATA\n                error occurs.\n\n",
+        "\nST_Distance() permits\n            specifying the linear unit for the returned distance value\n            with an optional unit argument\n            which ST_Distance() handles\n            as described in the introduction to this section.\n          ",
+        "Press CTRL+C to copy mysql> SET @g1 = ST_GeomFromText('POINT(1 1)');\nmysql> SET @g2 = ST_GeomFromText('POINT(2 2)');\nmysql> SELECT ST_Distance(@g1, @g2);\n+-----------------------+\n| ST_Distance(@g1, @g2) |\n+-----------------------+\n|    1.4142135623730951 |\n+-----------------------+\n\nmysql> SET @g1 = ST_GeomFromText('POINT(1 1)', 4326);\nmysql> SET @g2 = ST_GeomFromText('POINT(2 2)', 4326);\nmysql> SELECT ST_Distance(@g1, @g2);\n+-----------------------+\n| ST_Distance(@g1, @g2) |\n+-----------------------+\n|     156874.3859490455 |\n+-----------------------+\nmysql> SELECT ST_Distance(@g1, @g2, 'metre');\n+--------------------------------+\n| ST_Distance(@g1, @g2, 'metre') |\n+--------------------------------+\n|              156874.3859490455 |\n+--------------------------------+\nmysql> SELECT ST_Distance(@g1, @g2, 'foot');\n+-------------------------------+\n| ST_Distance(@g1, @g2, 'foot') |\n+-------------------------------+\n|             514679.7439273146 |\n+-------------------------------+",
+        "\n            For the special case of distance calculations on a sphere,\n            see the ST_Distance_Sphere()\n            function.\n          "
+    ],
+    "Examples": [
+        "mysql> SET @g1 = ST_GeomFromText('POINT(1 1)');\nmysql> SET @g2 = ST_GeomFromText('POINT(2 2)');\nmysql> SELECT ST_Distance(@g1, @g2);\n+-----------------------+\n| ST_Distance(@g1, @g2) |\n+-----------------------+\n|    1.4142135623730951 |\n+-----------------------+\n\nmysql> SET @g1 = ST_GeomFromText('POINT(1 1)', 4326);\nmysql> SET @g2 = ST_GeomFromText('POINT(2 2)', 4326);\nmysql> SELECT ST_Distance(@g1, @g2);\n+-----------------------+\n| ST_Distance(@g1, @g2) |\n+-----------------------+\n|     156874.3859490455 |\n+-----------------------+\nmysql> SELECT ST_Distance(@g1, @g2, 'metre');\n+--------------------------------+\n| ST_Distance(@g1, @g2, 'metre') |\n+--------------------------------+\n|              156874.3859490455 |\n+--------------------------------+\nmysql> SELECT ST_Distance(@g1, @g2, 'foot');\n+-------------------------------+\n| ST_Distance(@g1, @g2, 'foot') |\n+-------------------------------+\n|             514679.7439273146 |\n+-------------------------------+"
+    ],
+    "Category": [
+        "Built-In Functions",
+        "Spatial Analysis Functions"
+    ],
+    "Reference HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/spatial-relation-functions-object-shapes.html#function_st-distance"
+    ],
+    "Feature Type": [
+        "Function"
+    ]
+}

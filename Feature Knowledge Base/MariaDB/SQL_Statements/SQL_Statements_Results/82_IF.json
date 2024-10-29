@@ -1,0 +1,18 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/if/"
+    ],
+    "Title": [
+        "IF"
+    ],
+    "Feature": [
+        "IF search_condition THEN statement_list\n    [ELSEIF search_condition THEN statement_list] ...\n    [ELSE statement_list]\nEND IF;\n"
+    ],
+    "Description": [
+        "IF implements a basic conditional construct. If the search_condition\nevaluates to true, the corresponding SQL statement list is executed.\nIf no search_condition matches, the statement list in the ELSE clause\nis executed. Each statement_list consists of one or more statements."
+    ],
+    "Examples": [],
+    "Category": [
+        "Programmatic and Compound Statements"
+    ]
+}

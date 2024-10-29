@@ -1,0 +1,23 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000000823221"
+    ],
+    "Title": [
+        "HEXTORAW"
+    ],
+    "Feature": [
+        "HEXTORAW (char)\n"
+    ],
+    "Description": [
+        "该函数将十六进制字符串转换为 RAW。",
+        "参数 char 是十六进制的字符串。字符串类型可以为 CHAR、VARCHAR2、NCHAR 或 NVARCHAR2。",
+        "\n注意\n当 char 中出现比 F 大的字母时（以 A 为最小，Z 为最大）就会报错。\n",
+        "返回 RAW 类型的数据。"
+    ],
+    "Examples": [
+        "obclient> SELECT HEXTORAW('AAA') FROM DUAL;\n+-----------------+\n| HEXTORAW('AAA') |\n+-----------------+\n| 0AAA            |\n+-----------------+\n1 row in set\n"
+    ],
+    "Category": [
+        "Conversion Functions"
+    ]
+}

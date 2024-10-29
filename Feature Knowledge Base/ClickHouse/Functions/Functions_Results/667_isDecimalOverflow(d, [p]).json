@@ -1,0 +1,27 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/other-functions"
+    ],
+    "Title": [
+        "isDecimalOverflow"
+    ],
+    "Feature": [
+        "isDecimalOverflow(d, [p])"
+    ],
+    "Description": [
+        "isDecimalOverflow",
+        "Checks whether the Decimal value is outside its precision or outside the specified precision.",
+        "Syntax",
+        "isDecimalOverflow(d, [p])",
+        "Arguments",
+        "d \u2014 value. Decimal.p \u2014 precision. Optional. If omitted, the initial precision of the first argument is used. This parameter can be helpful to migrate data from/to another database or file. UInt8.",
+        "Returned values",
+        "1 \u2014 Decimal value has more digits then allowed by its precision,0 \u2014 Decimal value satisfies the specified precision."
+    ],
+    "Examples": [
+        "SELECT isDecimalOverflow(toDecimal32(1000000000, 0), 9),       isDecimalOverflow(toDecimal32(1000000000, 0)),       isDecimalOverflow(toDecimal32(-1000000000, 0), 9),       isDecimalOverflow(toDecimal32(-1000000000, 0));"
+    ],
+    "Category": [
+        "Other Functions"
+    ]
+}

@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/array-functions"
+    ],
+    "Title": [
+        "arrayUniq(arr, ...)"
+    ],
+    "Feature": [
+        "arrayUniq(arr, ...)"
+    ],
+    "Description": [
+        "arrayUniq(arr, ...)",
+        "If one argument is passed, it counts the number of different elements in the array.\nIf multiple arguments are passed, it counts the number of different tuples of elements at corresponding positions in multiple arrays.",
+        "If you want to get a list of unique items in an array, you can use arrayReduce(\u2018groupUniqArray\u2019, arr)."
+    ],
+    "Examples": [],
+    "Category": [
+        "Arrays Functions"
+    ]
+}

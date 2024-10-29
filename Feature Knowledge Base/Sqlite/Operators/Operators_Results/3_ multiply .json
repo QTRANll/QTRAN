@@ -1,0 +1,23 @@
+{
+    "HTML": [
+        "https://sqlite.org/lang_expr.html"
+    ],
+    "Title": [
+        "SQL Language Expressions"
+    ],
+    "Feature": [
+        "*"
+    ],
+    "Description": [
+        "The multiplication operator (*) multiplies two numeric expressions. Non-numeric operands are cast to numeric types for the multiplication operation.",
+        "Parameters: Two numeric expressions.",
+        "Returns: The product of the two numeric expressions."
+    ],
+    "Examples": [
+        "SELECT 5 * 4 AS result; -- Returns 20",
+        "SELECT price * quantity FROM orders; -- Calculates the total price by multiplying price and quantity"
+    ],
+    "Category": [
+        "Operators"
+    ]
+}

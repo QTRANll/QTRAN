@@ -1,0 +1,19 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/current/functions-aggregate.html"
+    ],
+    "Title": [
+        "json_agg"
+    ],
+    "Feature": [
+        "json_agg ( anyelement ORDER BY input_sort_columns ) → json",
+        "jsonb_agg ( anyelement ORDER BY input_sort_columns ) → jsonb"
+    ],
+    "Description": [
+        "Collects all the input values, including nulls, into a JSON array. Values are converted to JSON as per to_json or to_jsonb."
+    ],
+    "Examples": [],
+    "Category": [
+        "Aggregate Functions"
+    ]
+}

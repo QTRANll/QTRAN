@@ -1,0 +1,19 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/return.html"
+    ],
+    "Title": [
+        "15.6.5.7 RETURN Statement"
+    ],
+    "Feature": [
+        "RETURN expr"
+    ],
+    "Description": [
+        "\n        The RETURN statement terminates\n        execution of a stored function and returns the value\n        expr to the function caller. There\n        must be at least one RETURN\n        statement in a stored function. There may be more than one if\n        the function has multiple exit points.\n      ",
+        "\n        This statement is not used in stored procedures, triggers, or\n        events. The LEAVE statement can\n        be used to exit a stored program of those types.\n"
+    ],
+    "Examples": [],
+    "Category": [
+        "Compound Statement Syntax"
+    ]
+}

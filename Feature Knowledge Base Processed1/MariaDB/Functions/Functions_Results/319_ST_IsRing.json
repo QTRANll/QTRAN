@@ -1,0 +1,21 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/st_isring/"
+    ],
+    "Title": [
+        "ST_IsRing"
+    ],
+    "Feature": [
+        "ST_IsRing(g)\nIsRing(g)\n"
+    ],
+    "Description": [
+        "Returns true if a given LINESTRING is a ring, that is, both ST_IsClosed and ST_IsSimple. A simple curve does not pass through the same point more than once.  However, see MDEV-7510.",
+        "St_IsRing() and IsRing() are synonyms."
+    ],
+    "Examples": [
+        "SELECT ST_IsRing(geometry) FROM (SELECT ST_GeomFromText('LINESTRING(0 0, 1 1, 0 0)') AS geometry) AS temp;"
+    ],
+    "Category": [
+        "Geographic Functions"
+    ]
+}

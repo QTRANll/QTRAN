@@ -1,0 +1,23 @@
+{
+    "HTML": [
+        "https://docs.pingcap.com//zh/tidb/stable/sql-statement-show-databases"
+    ],
+    "Title": [
+        "SHOW DATABASES"
+    ],
+    "Feature": [
+        "ShowDatabasesStmt ::=\n    \"SHOW\" \"DATABASES\" ShowLikeOrWhere?\n\nShowLikeOrWhere ::=\n    \"LIKE\" SimpleExpr\n|   \"WHERE\" Expression\n"
+    ],
+    "Description": [
+        "SHOW DATABASES \u8bed\u53e5\u7528\u4e8e\u663e\u793a\u5f53\u524d\u7528\u6237\u6709\u6743\u8bbf\u95ee\u7684\u6570\u636e\u5e93\u5217\u8868\u3002\u5f53\u524d\u7528\u6237\u65e0\u6743\u8bbf\u95ee\u7684\u6570\u636e\u5e93\u5c06\u4ece\u5217\u8868\u4e2d\u9690\u85cf\u3002information_schema \u6570\u636e\u5e93\u59cb\u7ec8\u51fa\u73b0\u5728\u5217\u8868\u7684\u6700\u524d\u9762\u3002",
+        "SHOW SCHEMAS \u662f SHOW DATABASES \u8bed\u53e5\u7684\u522b\u540d\u3002"
+    ],
+    "Examples": [
+        "SHOW DATABASES;\n",
+        "CREATE DATABASE mynewdb;\n",
+        "SHOW DATABASES;\n"
+    ],
+    "Category": [
+        "Schema \u7ba1\u7406\u4e0e\u6570\u636e\u5b9a\u4e49\u8bed\u53e5 (DDL)"
+    ]
+}

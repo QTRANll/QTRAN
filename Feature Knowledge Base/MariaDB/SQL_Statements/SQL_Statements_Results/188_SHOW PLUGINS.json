@@ -1,0 +1,22 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/show-plugins/"
+    ],
+    "Title": [
+        "SHOW PLUGINS"
+    ],
+    "Feature": [
+        "SHOW PLUGINS;\n"
+    ],
+    "Description": [
+        " SHOW PLUGINS displays information about installed plugins. The Library column indicates the plugin library - if it is NULL, the plugin is built-in and cannot be uninstalled.",
+        "The PLUGINS table in the information_schema database contains more detailed information.",
+        "For specific information about storage engines (a particular type of plugin), see the information_schema.ENGINES table and the SHOW ENGINES statement."
+    ],
+    "Examples": [
+        "SHOW PLUGINS;\n+----------------------------+----------+--------------------+-------------+---------+\n| Name                       | Status   | Type               | Library     | License |\n+----------------------------+----------+--------------------+-------------+---------+\n| binlog                     | ACTIVE   | STORAGE ENGINE     | NULL        | GPL     |\n| mysql_native_password      | ACTIVE   | AUTHENTICATION     | NULL        | GPL     |\n| mysql_old_password         | ACTIVE   | AUTHENTICATION     | NULL        | GPL     |\n| MRG_MyISAM                 | ACTIVE   | STORAGE ENGINE     | NULL        | GPL     |\n| MyISAM                     | ACTIVE   | STORAGE ENGINE     | NULL        | GPL     |\n| CSV                        | ACTIVE   | STORAGE ENGINE     | NULL        | GPL     |\n| MEMORY                     | ACTIVE   | STORAGE ENGINE     | NULL        | GPL     |\n| FEDERATED                  | ACTIVE   | STORAGE ENGINE     | NULL        | GPL     |\n| PERFORMANCE_SCHEMA         | ACTIVE   | STORAGE ENGINE     | NULL        | GPL     |\n| Aria                       | ACTIVE   | STORAGE ENGINE     | NULL        | GPL     |\n| InnoDB                     | ACTIVE   | STORAGE ENGINE     | NULL        | GPL     |\n| INNODB_TRX                 | ACTIVE   | INFORMATION SCHEMA | NULL        | GPL     |\n...\n| INNODB_SYS_FOREIGN         | ACTIVE   | INFORMATION SCHEMA | NULL        | GPL     |\n| INNODB_SYS_FOREIGN_COLS    | ACTIVE   | INFORMATION SCHEMA | NULL        | GPL     |\n| SPHINX                     | ACTIVE   | STORAGE ENGINE     | NULL        | GPL     |\n| ARCHIVE                    | ACTIVE   | STORAGE ENGINE     | NULL        | GPL     |\n| BLACKHOLE                  | ACTIVE   | STORAGE ENGINE     | NULL        | GPL     |\n| FEEDBACK                   | DISABLED | INFORMATION SCHEMA | NULL        | GPL     |\n| partition                  | ACTIVE   | STORAGE ENGINE     | NULL        | GPL     |\n| pam                        | ACTIVE   | AUTHENTICATION     | auth_pam.so | GPL     |\n+----------------------------+----------+--------------------+-------------+---------+\n"
+    ],
+    "Category": [
+        "Administrative SQL Statements"
+    ]
+}

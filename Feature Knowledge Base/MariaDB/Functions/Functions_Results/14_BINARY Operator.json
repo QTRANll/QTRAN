@@ -1,0 +1,21 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/binary-operator/"
+    ],
+    "Title": [
+        "BINARY Operator"
+    ],
+    "Feature": [
+        "BINARY\n"
+    ],
+    "Description": [
+        "The BINARY operator casts the string following it to a binary string.  This is an easy way to force a column comparison to be done byte by byte rather than character by character. This causes the comparison to be case sensitive even if the column isn't defined as BINARY or BLOB.  ",
+        "BINARY also causes trailing spaces to be significant."
+    ],
+    "Examples": [
+        "SELECT 'a' = 'A';\n+-----------+\n| 'a' = 'A' |\n+-----------+\n|         1 |\n+-----------+\n\nSELECT BINARY 'a' = 'A';\n+------------------+\n| BINARY 'a' = 'A' |\n+------------------+\n|                0 |\n+------------------+\n\nSELECT 'a' = 'a ';\n+------------+\n| 'a' = 'a ' |\n+------------+\n|          1 |\n+------------+\n\nSELECT BINARY 'a' = 'a ';\n+-------------------+\n| BINARY 'a' = 'a ' |\n+-------------------+\n|                 0 |\n+-------------------+\n"
+    ],
+    "Category": [
+        "String Functions"
+    ]
+}

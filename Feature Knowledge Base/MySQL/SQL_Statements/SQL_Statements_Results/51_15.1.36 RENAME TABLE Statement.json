@@ -1,0 +1,55 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/rename-table.html"
+    ],
+    "Title": [
+        "15.1.36 RENAME TABLE Statement"
+    ],
+    "Feature": [
+        "RENAME TABLE\n    tbl_name TO new_tbl_name\n    [, tbl_name2 TO new_tbl_name2] ..."
+    ],
+    "Description": [
+        "\nRENAME TABLE renames one or more\n      tables. You must have ALTER and\n      DROP privileges for the original\n      table, and CREATE and\n      INSERT privileges for the new\n      table.\n    ",
+        "\n      For example, to rename a table named old_table\n      to new_table, use this statement:\n    ",
+        "Press CTRL+C to copy RENAME TABLE old_table TO new_table;",
+        "\n      That statement is equivalent to the following\n      ALTER TABLE statement:\n    ",
+        "Press CTRL+C to copy ALTER TABLE old_table RENAME new_table;",
+        "\nRENAME TABLE, unlike ALTER\n      TABLE, can rename multiple tables within a single\n      statement:\n    ",
+        "Press CTRL+C to copy RENAME TABLE old_table1 TO new_table1,\n             old_table2 TO new_table2,\n             old_table3 TO new_table3;",
+        "\n      Renaming operations are performed left to right. Thus, to swap two\n      table names, do this (assuming that a table with the intermediary\n      name tmp_table does not already exist):\n    ",
+        "Press CTRL+C to copy RENAME TABLE old_table TO tmp_table,\n             new_table TO old_table,\n             tmp_table TO new_table;",
+        "\n      Metadata locks on tables are acquired in name order, which in some\n      cases can make a difference in operation outcome when multiple\n      transactions execute concurrently. See\n      Section\u00a010.11.4, \u201cMetadata Locking\u201d.\n    ",
+        "\n      You can rename tables locked with a LOCK\n      TABLES statement, provided that they are locked with a\n      WRITE lock or are the product of renaming\n      WRITE-locked tables from earlier steps in a\n      multiple-table rename operation. For example, this is permitted:\n    ",
+        "Press CTRL+C to copy LOCK TABLE old_table1 WRITE;\nRENAME TABLE old_table1 TO new_table1,\n             new_table1 TO new_table2;",
+        "\n      This is not permitted:\n    ",
+        "Press CTRL+C to copy LOCK TABLE old_table1 READ;\nRENAME TABLE old_table1 TO new_table1,\n             new_table1 TO new_table2;",
+        "\n      With the transaction table locking conditions satisfied, the\n      rename operation is done atomically; no other session can access\n      any of the tables while the rename is in progress.\n    ",
+        "\n      If any errors occur during a RENAME TABLE, the\n      statement fails and no changes are made.\n    ",
+        "\n      You can use RENAME TABLE to move a table from\n      one database to another:\n    ",
+        "Press CTRL+C to copy RENAME TABLE current_db.tbl_name TO other_db.tbl_name;",
+        "\n      Using this method to move all tables from one database to a\n      different one in effect renames the database (an operation for\n      which MySQL has no single statement), except that the original\n      database continues to exist, albeit with no tables.\n    ",
+        "\n      Like RENAME TABLE, ALTER TABLE ...\n      RENAME can also be used to move a table to a different\n      database. Regardless of the statement used, if the rename\n      operation would move the table to a database located on a\n      different file system, the success of the outcome is platform\n      specific and depends on the underlying operating system calls used\n      to move table files.\n    ",
+        "\n      If a table has triggers, attempts to rename the table into a\n      different database fail with a Trigger in wrong\n      schema\n      (ER_TRG_IN_WRONG_SCHEMA) error.\n    ",
+        "\n      An unencrypted table can be moved to an encryption-enabled\n      database and vice versa. However, if the\n      table_encryption_privilege_check\n      variable is enabled, the\n      TABLE_ENCRYPTION_ADMIN privilege is\n      required if the table encryption setting differs from the default\n      database encryption.\n    ",
+        "\n      To rename TEMPORARY tables, RENAME\n      TABLE does not work. Use ALTER\n      TABLE instead.\n    ",
+        "\nRENAME TABLE works for views, except that views\n      cannot be renamed into a different database.\n    ",
+        "\n      Any privileges granted specifically for a renamed table or view\n      are not migrated to the new name. They must be changed manually.\n    ",
+        "\nRENAME TABLE tbl_name TO\n      new_tbl_name changes\n      internally generated foreign key constraint names and user-defined\n      foreign key constraint names that begin with the string\n      \u201ctbl_name_ibfk_\u201d to\n      reflect the new table name. InnoDB interprets\n      foreign key constraint names that begin with the string\n      \u201ctbl_name_ibfk_\u201d as\n      internally generated names.\n    ",
+        "\n      Foreign key constraint names that point to the renamed table are\n      automatically updated unless there is a conflict, in which case\n      the statement fails with an error. A conflict occurs if the\n      renamed constraint name already exists. In such cases, you must\n      drop and re-create the foreign keys for them to function properly.\n    ",
+        "\nRENAME TABLE tbl_name TO\n      new_tbl_name changes\n      internally generated and user-defined CHECK\n      constraint names that begin with the string\n      \u201ctbl_name_chk_\u201d to reflect\n      the new table name. MySQL interprets CHECK\n      constraint names that begin with the string\n      \u201ctbl_name_chk_\u201d as\n      internally generated names. Example:\n    ",
+        "Press CTRL+C to copy mysql> SHOW CREATE TABLE t1\\G\n*************************** 1. row ***************************\n       Table: t1\nCreate Table: CREATE TABLE `t1` (\n  `i1` int(11) DEFAULT NULL,\n  `i2` int(11) DEFAULT NULL,\n  CONSTRAINT `t1_chk_1` CHECK ((`i1` > 0)),\n  CONSTRAINT `t1_chk_2` CHECK ((`i2` < 0))\n) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci\n1 row in set (0.02 sec)\n\nmysql> RENAME TABLE t1 TO t3;\nQuery OK, 0 rows affected (0.03 sec)\n\nmysql> SHOW CREATE TABLE t3\\G\n*************************** 1. row ***************************\n       Table: t3\nCreate Table: CREATE TABLE `t3` (\n  `i1` int(11) DEFAULT NULL,\n  `i2` int(11) DEFAULT NULL,\n  CONSTRAINT `t3_chk_1` CHECK ((`i1` > 0)),\n  CONSTRAINT `t3_chk_2` CHECK ((`i2` < 0))\n) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci\n1 row in set (0.01 sec)"
+    ],
+    "Examples": [
+        "RENAME TABLE old_table TO new_table;",
+        "ALTER TABLE old_table RENAME new_table;",
+        "RENAME TABLE old_table1 TO new_table1,\n             old_table2 TO new_table2,\n             old_table3 TO new_table3;",
+        "RENAME TABLE old_table TO tmp_table,\n             new_table TO old_table,\n             tmp_table TO new_table;",
+        "LOCK TABLE old_table1 WRITE;\nRENAME TABLE old_table1 TO new_table1,\n             new_table1 TO new_table2;",
+        "LOCK TABLE old_table1 READ;\nRENAME TABLE old_table1 TO new_table1,\n             new_table1 TO new_table2;",
+        "RENAME TABLE current_db.tbl_name TO other_db.tbl_name;",
+        "mysql> SHOW CREATE TABLE t1\\G\n*************************** 1. row ***************************\n       Table: t1\nCreate Table: CREATE TABLE `t1` (\n  `i1` int(11) DEFAULT NULL,\n  `i2` int(11) DEFAULT NULL,\n  CONSTRAINT `t1_chk_1` CHECK ((`i1` > 0)),\n  CONSTRAINT `t1_chk_2` CHECK ((`i2` < 0))\n) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci\n1 row in set (0.02 sec)\n\nmysql> RENAME TABLE t1 TO t3;\nQuery OK, 0 rows affected (0.03 sec)\n\nmysql> SHOW CREATE TABLE t3\\G\n*************************** 1. row ***************************\n       Table: t3\nCreate Table: CREATE TABLE `t3` (\n  `i1` int(11) DEFAULT NULL,\n  `i2` int(11) DEFAULT NULL,\n  CONSTRAINT `t3_chk_1` CHECK ((`i1` > 0)),\n  CONSTRAINT `t3_chk_2` CHECK ((`i2` < 0))\n) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci\n1 row in set (0.01 sec)"
+    ],
+    "Category": [
+        "Data Definition Statements"
+    ]
+}

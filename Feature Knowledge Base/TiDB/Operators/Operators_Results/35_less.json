@@ -1,0 +1,25 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/comparison-operators.html#operator_less-than"
+    ],
+    "Title": [
+        "<"
+    ],
+    "Feature": [
+        "<"
+    ],
+    "Description": [
+        "Less than operator",
+        "\n<\n",
+        "\n            Less than:\n          ",
+        "Press CTRL+C to copy mysql> SELECT 2 < 2;\n        -> 0",
+        "\n            For row comparisons, (a, b) < (x, y)\n            is equivalent to:\n          ",
+        "Press CTRL+C to copy (a < x) OR ((a = x) AND (b < y))"
+    ],
+    "Examples": [
+        "mysql> SELECT 2 < 2;\n        -> 0"
+    ],
+    "Category": [
+        "Comparison Operators"
+    ]
+}

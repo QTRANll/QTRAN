@@ -1,0 +1,26 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/date-and-time-functions.html#function_convert-tz"
+    ],
+    "Title": [
+        "CONVERT_TZ()"
+    ],
+    "Feature": [
+        "CONVERT_TZ(dt,from_tz,to_tz)"
+    ],
+    "Description": [
+        "Convert from one time zone to another",
+        "\nCONVERT_TZ(dt,from_tz,to_tz)\n",
+        "\nCONVERT_TZ() converts a\n          datetime value dt from the time\n          zone given by from_tz to the time\n          zone given by to_tz and returns the\n          resulting value. Time zones are specified as described in\n          Section\u00a07.1.15, \u201cMySQL Server Time Zone Support\u201d. This function returns\n          NULL if any of the arguments are invalid,\n          or if any of them are NULL.\n        ",
+        "\n          On 32-bit platforms, the supported range of values for this\n          function is the same as for the\n          TIMESTAMP type (see\n          Section\u00a013.2.1, \u201cDate and Time Data Type Syntax\u201d, for range\n          information). On 64-bit platforms, the maximum supported value\n          is '3001-01-18 23:59:59.999999' UTC.\n        ",
+        "\n          Regardless of platform or MySQL version, if the value falls\n          out of the supported range when converted from\n          from_tz to UTC, no conversion\n          occurs.\n        ",
+        "Press CTRL+C to copy mysql> SELECT CONVERT_TZ('2004-01-01 12:00:00','GMT','MET');\n        -> '2004-01-01 13:00:00'\nmysql> SELECT CONVERT_TZ('2004-01-01 12:00:00','+00:00','+10:00');\n        -> '2004-01-01 22:00:00'",
+        "\n\nNote\n\n\n            To use named time zones such as 'MET' or\n            'Europe/Amsterdam', the time zone tables\n            must be properly set up. For instructions, see\n            Section\u00a07.1.15, \u201cMySQL Server Time Zone Support\u201d.\n\n"
+    ],
+    "Examples": [
+        "mysql> SELECT CONVERT_TZ('2004-01-01 12:00:00','GMT','MET');\n        -> '2004-01-01 13:00:00'\nmysql> SELECT CONVERT_TZ('2004-01-01 12:00:00','+00:00','+10:00');\n        -> '2004-01-01 22:00:00'"
+    ],
+    "Category": [
+        "Date and Time Functions"
+    ]
+}

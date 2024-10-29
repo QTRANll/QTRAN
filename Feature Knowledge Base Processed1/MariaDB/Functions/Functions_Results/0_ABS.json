@@ -1,0 +1,22 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/abs/"
+    ],
+    "Title": [
+        "ABS"
+    ],
+    "Feature": [
+        "ABS(X)\n"
+    ],
+    "Description": [
+        "Returns the absolute (non-negative) value of X. If X is not a number, it is converted to a numeric type."
+    ],
+    "Examples": [
+        "SELECT ABS(42);",
+        "SELECT ABS(-42);",
+        "SELECT ABS(DATE '1994-01-01');"
+    ],
+    "Category": [
+        "Numeric Functions"
+    ]
+}

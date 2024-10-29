@@ -1,0 +1,27 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/reset-replica/"
+    ],
+    "Title": [
+        "RESET REPLICA"
+    ],
+    "Feature": [
+        "RESET REPLICA [\"connection_name\"] [ALL]  [FOR CHANNEL \"connection_name\"] -- from MariaDB 10.5.1         \nRESET SLAVE [\"connection_name\"] [ALL]  [FOR CHANNEL \"connection_name\"]              \n"
+    ],
+    "Description": [
+        "RESET REPLICA (RESET SLAVE) makes the replica forget its replication position in the\nmaster's binary log. This statement is meant to be used for a clean\nstart. It deletes the master.info and relay-log.info files, all the\nrelay log files, and starts a new relay log file. To use RESET REPLICA,\nthe replica threads must be stopped (use STOP REPLICA if\nnecessary).",
+        "Note: All relay log files are deleted, even if they have not been\ncompletely executed by the slave SQL thread. (This is a condition\nlikely to exist on a replication slave if you have issued a STOP REPLICA\nstatement or if the slave is highly loaded.)\n",
+        "Note: RESET REPLICA does not reset the global\ngtid_slave_pos variable. This means that a replica\nserver configured with CHANGE MASTER TO MASTER_USE_GTID=slave_pos\nwill not receive events with GTIDs occurring before the state saved in\ngtid_slave_pos. If the intent is to reprocess these events,\ngtid_slave_pos must be manually reset, e.g. by executing\nset global gtid_slave_pos=\"\".\n",
+        "Connection information stored in the master.info file is immediately\nreset using any values specified in the corresponding startup options.\nThis information includes values such as master host, master port,\nmaster user, and master password. If the replica SQL thread was in the\nmiddle of replicating temporary tables when it was stopped, and RESET\nREPLICA is issued, these replicated temporary tables are deleted on the\nslave.",
+        "The ALL also resets the PORT, HOST, USER and PASSWORD parameters for the slave. If you are using a connection name, it will permanently delete it and it will not show up anymore in SHOW ALL REPLICAS STATUS.",
+        "connection_name",
+        "The connection_name option is used for multi-source replication.",
+        "If there is only one nameless primary, or the default primary (as specified by the default_master_connection system variable) is intended, connection_name can be omitted. If provided, the RESET REPLICA statement will apply to the specified primary. connection_name is case-insensitive.",
+        "MariaDB starting with 10.7.0The FOR CHANNEL keyword was added for MySQL compatibility. This is identical as\nusing the channel_name directly after RESET REPLICA.\n",
+        "MariaDB starting with 11.6.0From MariaDB 11.6, RESET REPLICA resets the Master/Slave_last_event_time values (see SHOW REPLICA STATUS).\n"
+    ],
+    "Examples": [],
+    "Category": [
+        "Administrative SQL Statements"
+    ]
+}

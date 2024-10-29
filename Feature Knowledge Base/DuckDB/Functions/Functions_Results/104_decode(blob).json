@@ -1,0 +1,21 @@
+{
+    "HTML": [
+        "https://duckdb.org/docs/sql/functions/blob"
+    ],
+    "Title": [
+        "decode(blob)"
+    ],
+    "Feature": [
+        "decode(blob)"
+    ],
+    "Description": [
+        "Converts blob to VARCHAR. Fails if blob is not valid UTF-8.",
+        "Convert blob to VARCHAR. Fails if blob is not valid UTF-8."
+    ],
+    "Examples": [
+        "decode('\\xC3\\xBC'::BLOB)"
+    ],
+    "Category": [
+        "Blob Functions"
+    ]
+}

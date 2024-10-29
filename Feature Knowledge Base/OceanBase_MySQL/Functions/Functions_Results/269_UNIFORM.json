@@ -1,0 +1,44 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000000823326"
+    ],
+    "Title": [
+        "UNIFORM"
+    ],
+    "Feature": [
+        "UNIFORM(<min> , <max> , <gen>)\n"
+    ],
+    "Description": [
+        "该函数返回一个符合均匀分布（Uniform Distribution）的整数或浮点数。",
+        "min",
+        ", ",
+        "max",
+        " 的取值必须是标量值，不随行迭代而变。例如，常量、标量函数等。PL 里还可以是 ",
+        "@v1",
+        "、",
+        "1+@v3",
+        " 等。",
+        "MySQL 模式下，当 ",
+        "min",
+        " 或 ",
+        "max",
+        " 均为整数时，",
+        "UNIFORM()",
+        " 函数的输出结果为整数；否则，",
+        "UNIFORM()",
+        " 函数的输出结果为浮点数。",
+        "gen",
+        " 是一个数值生成函数，通常使用 ",
+        "RANDOM()",
+        " 函数生成。如果传入值是一个常量，则 ",
+        "UNIFORM()",
+        " 函数返回值也为一个定值。"
+    ],
+    "Examples": [
+        "obclient> SELECT v, COUNT(*) FROM (SELECT UNIFORM(1, 10, RANDOM()) v FROM TABLE(GENERATOR(1000000))) x GROUP BY v ORDER BY v;\n+------+----------+\n| v    | count(*) |\n+------+----------+\n|    1 |   100738 |\n|    2 |   100119 |\n|    3 |   100223 |\n|    4 |    99537 |\n|    5 |   100125 |\n|    6 |   100001 |\n|    7 |   100275 |\n|    8 |    99235 |\n|    9 |    99837 |\n|   10 |    99910 |\n+------+----------+\n10 rows in set\n",
+        "obclient> SELECT UNIFORM(0.0, 10, RANDOM()) FROM TABLE(GENERATOR(4)) ORDER BY 1;\n+----------------------------+\n| UNIFORM(0.0, 10, RANDOM()) |\n+----------------------------+\n|         2.3520877625884653 |\n|          4.155845987385725 |\n|          8.323930497420852 |\n|          9.844002748532109 |\n+----------------------------+\n4 rows in set\n\nobclient> SELECT UNIFORM(0, 10, RANDOM()) FROM TABLE(GENERATOR(4)) ORDER BY 1;\n+--------------------------+\n| UNIFORM(0, 10, RANDOM()) |\n+--------------------------+\n|                        0 |\n|                        4 |\n|                        8 |\n|                        9 |\n+--------------------------+\n4 rows in set\n"
+    ],
+    "Category": [
+        "Mathematical Functions"
+    ]
+}

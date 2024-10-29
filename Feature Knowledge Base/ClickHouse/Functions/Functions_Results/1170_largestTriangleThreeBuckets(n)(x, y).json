@@ -1,0 +1,31 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/aggregate-functions/reference/largestTriangleThreeBuckets"
+    ],
+    "Title": [
+        "largestTriangleThreeBuckets"
+    ],
+    "Feature": [
+        "largestTriangleThreeBuckets(n)(x, y)"
+    ],
+    "Description": [
+        "largestTriangleThreeBuckets",
+        "Applies the Largest-Triangle-Three-Buckets algorithm to the input data.\nThe algorithm is used for downsampling time series data for visualization. It is designed to operate on series sorted by x coordinate.\nIt works by dividing the sorted series into buckets and then finding the largest triangle in each bucket. The number of buckets is equal to the number of points in the resulting series.\nthe function will sort data by x and then apply the downsampling algorithm to the sorted data.",
+        "Syntax",
+        "largestTriangleThreeBuckets(n)(x, y)",
+        "Alias: lttb.",
+        "Arguments",
+        "x \u2014 x coordinate. Integer , Float , Decimal  , Date, Date32, DateTime, DateTime64.y \u2014 y coordinate. Integer , Float , Decimal  , Date, Date32, DateTime, DateTime64.",
+        "NaNs are ignored in the provided series, meaning that any NaN values will be excluded from the analysis. This ensures that the function operates only on valid numerical data.",
+        "Parameters",
+        "n \u2014 number of points in the resulting series. UInt64.",
+        "Returned values",
+        "Array of Tuple with two elements:"
+    ],
+    "Examples": [
+        "SELECT largestTriangleThreeBuckets(4)(x, y) FROM largestTriangleThreeBuckets_test;"
+    ],
+    "Category": [
+        "Aggregate Functions"
+    ]
+}

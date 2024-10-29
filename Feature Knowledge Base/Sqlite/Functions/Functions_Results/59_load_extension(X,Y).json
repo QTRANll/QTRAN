@@ -1,0 +1,18 @@
+{
+    "HTML": [
+        "https://sqlite.org/lang_corefunc.html#load_extension"
+    ],
+    "Title": [
+        "Built-In Scalar SQL Functions"
+    ],
+    "Feature": [
+        "load_extension(X,Y)"
+    ],
+    "Description": [
+        "The load_extension(X,Y) function loadsSQLite extensionsout of the shared\n  library file named X using the entry point Y.  The result of load_extension()\n  is always a NULL.  If Y is omitted then the default entry point name is used.\n  The load_extension() function raises an exception if the extension fails to\n  load or initialize correctly.The load_extension() function will fail if the extension attempts to \n  modify or delete an SQL function or collating sequence.  The\n  extension can add new functions or collating sequences, but cannot\n  modify or delete existing functions or collating sequences because\n  those functions and/or collating sequences might be used elsewhere\n  in the currently running SQL statement.  To load an extension that\n  changes or deletes functions or collating sequences, use thesqlite3_load_extension()C-language API.For security reasons, extension loading is disabled by default and must\n  be enabled by a prior call tosqlite3_enable_load_extension()."
+    ],
+    "Examples": [],
+    "Category": [
+        "Built-In Scalar SQL Functions"
+    ]
+}

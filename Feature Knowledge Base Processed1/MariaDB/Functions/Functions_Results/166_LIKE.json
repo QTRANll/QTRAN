@@ -1,0 +1,28 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/like/"
+    ],
+    "Title": [
+        "LIKE"
+    ],
+    "Feature": [
+        "expr LIKE pat [ESCAPE 'escape_char']\nexpr NOT LIKE pat [ESCAPE 'escape_char']\n"
+    ],
+    "Description": [
+        "Tests whether expr matches the pattern pat. Returns either 1 (TRUE) or 0 (FALSE).\nBoth expr and pat may be any valid expression and are evaluated to strings.\nPatterns may use the following wildcard characters:",
+        "% matches any number of characters, including zero.\n_ matches any single character.\n",
+        "Use NOT LIKE to test if a string does not match a pattern. This is equivalent to using\nthe NOT operator on the entire LIKE expression.",
+        "If either the expression or the pattern is NULL, the result is NULL.",
+        "LIKE performs case-insensitive substring matches if the collation for the\nexpression and pattern is case-insensitive. For case-sensitive matches, declare either argument\nto use a binary collation using COLLATE, or coerce either of them to a BINARY\nstring using CAST. Use SHOW COLLATION to get a list of\navailable collations. Collations ending in _bin are case-sensitive.",
+        "Numeric arguments are coerced to binary strings.",
+        "The _ wildcard matches a single character, not byte. It will only match a multi-byte character\nif it is valid in the expression's character set. For example, _ will match _utf8\"\u20ac\", but it\nwill not match _latin1\"\u20ac\" because the Euro sign is not a valid latin1 character. If necessary,\nuse CONVERT to use the expression in a different character set.",
+        "If you need to match the characters _ or %, you must escape them. By default,\nyou can prefix the wildcard characters the backslash character \\ to escape them.\nThe backslash is used both to encode special characters like newlines when a string is\nparsed as well as to escape wildcards in a pattern after parsing. Thus, to match an\nactual backslash, you sometimes need to double-escape it as \"\\\\\\\\\".",
+        "To avoid difficulties with the backslash character, you can change the wildcard escape\ncharacter using ESCAPE in a LIKE expression. The argument to ESCAPE\nmust be a single-character string."
+    ],
+    "Examples": [
+        "SELECT * FROM dialect_recognize_table WHERE dialect_name LIKE 'Canto%';"
+    ],
+    "Category": [
+        "String Functions"
+    ]
+}

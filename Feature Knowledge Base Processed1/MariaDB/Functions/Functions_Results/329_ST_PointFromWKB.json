@@ -1,0 +1,21 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/pointfromwkb/"
+    ],
+    "Title": [
+        "ST_PointFromWKB"
+    ],
+    "Feature": [
+        "ST_PointFromWKB(wkb[,srid])\nPointFromWKB(wkb[,srid])\n"
+    ],
+    "Description": [
+        "Constructs a POINT value using its WKB representation and SRID.",
+        "ST_PointFromWKB() and PointFromWKB() are synonyms."
+    ],
+    "Examples": [
+        "SELECT ST_AsText(ST_PointFromWKB(@g)) AS p;"
+    ],
+    "Category": [
+        "Geographic Functions"
+    ]
+}

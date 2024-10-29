@@ -1,0 +1,27 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/hash-functions"
+    ],
+    "Title": [
+        "javaHash"
+    ],
+    "Feature": [
+        "SELECT javaHash('')"
+    ],
+    "Description": [
+        "javaHash",
+        "Calculates JavaHash from a string,\nByte,\nShort,\nInteger,\nLong.\nThis hash function is neither fast nor having a good quality. The only reason to use it is when this algorithm is already used in another system and you have to calculate exactly the same result.",
+        "Note that Java only support calculating signed integers hash, so if you want to calculate unsigned integers hash you must cast it to proper signed ClickHouse types.",
+        "Syntax",
+        "SELECT javaHash('')",
+        "Returned value",
+        "A Int32 data type hash value."
+    ],
+    "Examples": [
+        "SELECT javaHash(toInt32(123));",
+        "SELECT javaHash('Hello, world!');"
+    ],
+    "Category": [
+        "Hash Functions"
+    ]
+}

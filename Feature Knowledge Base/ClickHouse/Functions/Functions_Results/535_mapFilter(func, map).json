@@ -1,0 +1,27 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/tuple-map-functions"
+    ],
+    "Title": [
+        "mapFilter"
+    ],
+    "Feature": [
+        "mapFilter(func, map)"
+    ],
+    "Description": [
+        "mapFilter",
+        "Filters a map by applying a function to each map element.",
+        "Syntax",
+        "mapFilter(func, map)",
+        "Arguments",
+        "func  - Lambda function.map \u2014 Map.",
+        "Returned value",
+        "Returns a map containing only the elements in map for which func(map1[i], ..., mapN[i]) returns something other than 0."
+    ],
+    "Examples": [
+        "SELECT mapFilter((k, v) -> ((v % 2) = 0), _map) AS rFROM(    SELECT map('key1', number, 'key2', number * 2) AS _map    FROM numbers(3))"
+    ],
+    "Category": [
+        "Maps Functions"
+    ]
+}

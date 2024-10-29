@@ -1,0 +1,39 @@
+{
+    "HTML": "https://mariadb.com//kb/en/to_char/",
+    "Title": "TO_CHAR",
+    "Feature": [
+        "TO_CHAR(expr[, fmt])\n"
+    ],
+    "Description": [
+        "The TO_CHAR function converts an expr of type date, datetime, time or timestamp to a string. The optional fmt argument supports YYYY/YYY/YY/RRRR/RR/MM/MON/MONTH/MI/DD/DY/HH/HH12/HH24/SS and special characters. The default value is \"YYYY-MM-DD HH24:MI:SS\".",
+        "In Oracle, TO_CHAR can also be used to convert numbers to strings, but this is not supported in MariaDB and will give an error."
+    ],
+    "Examples": [
+        "SELECT TO_CHAR('1980-01-11 04:50:39', 'YYYY-MM-DD');\n+----------------------------------------------+\n| TO_CHAR('1980-01-11 04:50:39', 'YYYY-MM-DD') |\n+----------------------------------------------+\n| 1980-01-11                                   |\n+----------------------------------------------+\n\nSELECT TO_CHAR('1980-01-11 04:50:39', 'HH24-MI-SS');\n+----------------------------------------------+\n| TO_CHAR('1980-01-11 04:50:39', 'HH24-MI-SS') |\n+----------------------------------------------+\n| 04-50-39                                     |\n+----------------------------------------------+\n\nSELECT TO_CHAR('00-01-01 00:00:00', 'YY-MM-DD HH24:MI:SS');\n+-----------------------------------------------------+\n| TO_CHAR('00-01-01 00:00:00', 'YY-MM-DD HH24:MI:SS') |\n+-----------------------------------------------------+\n| 00-01-01 00:00:00                                   |\n+-----------------------------------------------------+\n\nSELECT TO_CHAR('99-12-31 23:59:59', 'YY-MM-DD HH24:MI:SS');\n+-----------------------------------------------------+\n| TO_CHAR('99-12-31 23:59:59', 'YY-MM-DD HH24:MI:SS') |\n+-----------------------------------------------------+\n| 99-12-31 23:59:59                                   |\n+-----------------------------------------------------+\n\nSELECT TO_CHAR('9999-12-31 23:59:59', 'YY-MM-DD HH24:MI:SS');\n+-------------------------------------------------------+\n| TO_CHAR('9999-12-31 23:59:59', 'YY-MM-DD HH24:MI:SS') |\n+-------------------------------------------------------+\n| 99-12-31 23:59:59                                     |\n+-------------------------------------------------------+\n\nSELECT TO_CHAR('21-01-03 08:30:00', 'Y-MONTH-DY HH:MI:SS');\n+-----------------------------------------------------+\n| TO_CHAR('21-01-03 08:30:00', 'Y-MONTH-DY HH:MI:SS') |\n+-----------------------------------------------------+\n| 1-January  -Sun 08:30:00                            |\n+-----------------------------------------------------+\n"
+    ],
+    "Category": [
+        "String Functions"
+    ],
+    "Effective SQLs Refined": [
+        "SELECT TO_CHAR('1980-01-11 04:50:39', 'YYYY-MM-DD');",
+        "SELECT TO_CHAR('1980-01-11 04:50:39', 'HH24-MI-SS');",
+        "SELECT TO_CHAR('00-01-01 00:00:00', 'YY-MM-DD HH24:MI:SS');",
+        "SELECT TO_CHAR('99-12-31 23:59:59', 'YY-MM-DD HH24:MI:SS');",
+        "SELECT TO_CHAR('9999-12-31 23:59:59', 'YY-MM-DD HH24:MI:SS');",
+        "SELECT TO_CHAR('21-01-03 08:30:00', 'Y-MONTH-DY HH:MI:SS');"
+    ],
+    "Ineffective SQLs Refined": [],
+    "Wrong Messages from Ineffective SQLs Refined": [],
+    "SQLs Generated1": [],
+    "SQLs Generated Costs1": [],
+    "SQLs Generated ExecResults1": [],
+    "SQLs Generated ExecTimes1": [],
+    "SQLs Generated ErrorMessages1": [],
+    "Effective SQLs Generated1": [],
+    "SQLs Generated2": [],
+    "SQLs Generated Costs2": [],
+    "SQLs Generated ExecResults2": [],
+    "SQLs Generated ExecTimes2": [],
+    "SQLs Generated ErrorMessages2": [],
+    "Effective SQLs Generated2": []
+}

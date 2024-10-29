@@ -1,0 +1,27 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/other-functions"
+    ],
+    "Title": [
+        "getSizeOfEnumType"
+    ],
+    "Feature": [
+        "getSizeOfEnumType(value)"
+    ],
+    "Description": [
+        "getSizeOfEnumType",
+        "Returns the number of fields in Enum.\nAn exception is thrown if the type is not Enum.",
+        "Syntax",
+        "getSizeOfEnumType(value)",
+        "Arguments:",
+        "value \u2014 Value of type Enum.",
+        "Returned values",
+        "The number of fields with Enum input values."
+    ],
+    "Examples": [
+        "SELECT getSizeOfEnumType( CAST('a' AS Enum8('a' = 1, 'b' = 2) ) ) AS x"
+    ],
+    "Category": [
+        "Other Functions"
+    ]
+}

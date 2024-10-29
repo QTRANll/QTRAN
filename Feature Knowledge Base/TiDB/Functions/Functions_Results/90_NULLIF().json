@@ -1,0 +1,21 @@
+{
+    "HTML": [
+        "https://docs.pingcap.com/zh/tidb/stable/control-flow-functions#nullif"
+    ],
+    "Title": [
+        "NULLIF()"
+    ],
+    "Feature": [
+        "NULLIF()"
+    ],
+    "Description": [
+        "NULLIF()",
+        "NULLIF(expr1,expr2) \u51fd\u6570\u7528\u4e8e\u5728\u4e24\u4e2a\u53c2\u6570\u76f8\u540c\u6216\u7b2c\u4e00\u4e2a\u53c2\u6570\u4e3a NULL \u65f6\u8fd4\u56de NULL\u3002\u5426\u5219\uff0c\u8fd4\u56de\u7b2c\u4e00\u4e2a\u53c2\u6570\u3002"
+    ],
+    "Examples": [
+        "WITH RECURSIVE d AS (SELECT 1 AS n UNION ALL SELECT n+1 FROM d WHERE n<10)\nSELECT n, NULLIF(n+n, n+2) FROM d;\n"
+    ],
+    "Category": [
+        "Flow Control Functions"
+    ]
+}

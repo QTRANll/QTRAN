@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/st_distance_sphere/"
+    ],
+    "Title": [
+        "ST_DISTANCE_SPHERE"
+    ],
+    "Feature": [
+        "ST_DISTANCE_SPHERE(g1,g2,[r])\n"
+    ],
+    "Description": [
+        "Returns the spherical distance between two geometries (point or multipoint) on a sphere with the optional radius r (default is the Earth radius if r is not specified), or NULL if not given valid inputs."
+    ],
+    "Examples": [
+        "SELECT ST_Distance_Sphere(@zenica, @sarajevo);"
+    ],
+    "Category": [
+        "Geographic Functions"
+    ]
+}

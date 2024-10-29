@@ -1,0 +1,26 @@
+{
+    "HTML": [
+        "https://docs.pingcap.com//zh/tidb/stable/sql-statement-drop-table"
+    ],
+    "Title": [
+        "DROP TABLE"
+    ],
+    "Feature": [
+        "DropTableStmt ::=\n    'DROP' OptTemporary TableOrTables IfExists TableNameList RestrictOrCascadeOpt\n\nOptTemporary ::=\n    ( 'TEMPORARY' | ('GLOBAL' 'TEMPORARY') )?\n\nTableOrTables ::=\n    'TABLE'\n|   'TABLES'\n\nTableNameList ::=\n    TableName ( ',' TableName )*\n"
+    ],
+    "Description": [
+        "DROP TABLE \u8bed\u53e5\u7528\u4e8e\u4ece\u5f53\u524d\u6240\u9009\u7684\u6570\u636e\u5e93\u4e2d\u5220\u9664\u8868\u3002\u5982\u679c\u8868\u4e0d\u5b58\u5728\u5219\u4f1a\u62a5\u9519\uff0c\u9664\u975e\u4f7f\u7528 IF EXISTS \u4fee\u9970\u7b26\u3002"
+    ],
+    "Examples": [
+        "CREATE TABLE t1 (a INT);\n",
+        "DROP TABLE t1;\n",
+        "DROP TABLE table_not_exists;\n",
+        "DROP TABLE IF EXISTS table_not_exists;\n",
+        "SHOW WARNINGS;\n",
+        "CREATE VIEW v1 AS SELECT 1;\n",
+        "DROP TABLE v1;\n"
+    ],
+    "Category": [
+        "Schema \u7ba1\u7406\u4e0e\u6570\u636e\u5b9a\u4e49\u8bed\u53e5 (DDL)"
+    ]
+}

@@ -1,0 +1,23 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/mathematical-functions.html#function_sign"
+    ],
+    "Title": [
+        "SIGN()"
+    ],
+    "Feature": [
+        "SIGN(X)"
+    ],
+    "Description": [
+        "Return the sign of the argument",
+        "\nSIGN(X)\n",
+        "\n            Returns the sign of the argument as -1,\n            0, or 1, depending on\n            whether X is negative, zero, or\n            positive. Returns NULL if\n            X is NULL.\n          ",
+        "Press CTRL+C to copy mysql> SELECT SIGN(-32);\n        -> -1\nmysql> SELECT SIGN(0);\n        -> 0\nmysql> SELECT SIGN(234);\n        -> 1"
+    ],
+    "Examples": [
+        "mysql> SELECT SIGN(-32);\n        -> -1\nmysql> SELECT SIGN(0);\n        -> 0\nmysql> SELECT SIGN(234);\n        -> 1"
+    ],
+    "Category": [
+        "Mathematical Functions"
+    ]
+}

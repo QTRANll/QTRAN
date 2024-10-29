@@ -1,0 +1,24 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/date-and-time-functions.html#function_utc-time"
+    ],
+    "Title": [
+        "UTC_TIME()"
+    ],
+    "Feature": [
+        "UTC_TIME"
+    ],
+    "Description": [
+        "Return the current UTC time",
+        "\nUTC_TIME,\n          UTC_TIME([fsp])\n",
+        "\n          Returns the current UTC time as a value in\n          'hh:mm:ss' or\n          hhmmss format, depending on whether\n          the function is used in string or numeric context.\n        ",
+        "\n          If the fsp argument is given to\n          specify a fractional seconds precision from 0 to 6, the return\n          value includes a fractional seconds part of that many digits.\n        ",
+        "Press CTRL+C to copy mysql> SELECT UTC_TIME(), UTC_TIME() + 0;\n        -> '18:07:53', 180753.000000"
+    ],
+    "Examples": [
+        "mysql> SELECT UTC_TIME(), UTC_TIME() + 0;\n        -> '18:07:53', 180753.000000"
+    ],
+    "Category": [
+        "Date and Time Functions"
+    ]
+}

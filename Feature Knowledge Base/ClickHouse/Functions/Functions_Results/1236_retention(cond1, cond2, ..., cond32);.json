@@ -1,0 +1,33 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/aggregate-functions/parametric-functions"
+    ],
+    "Title": [
+        "retention"
+    ],
+    "Feature": [
+        "retention(cond1, cond2, ..., cond32);"
+    ],
+    "Description": [
+        "retention",
+        "The function takes as arguments a set of conditions from 1 to 32 arguments of type UInt8 that indicate whether a certain condition was met for the event.\nAny condition can be specified as an argument (as in WHERE).",
+        "The conditions, except the first, apply in pairs: the result of the second will be true if the first and second are true, of the third if the first and third are true, etc.",
+        "Syntax",
+        "retention(cond1, cond2, ..., cond32);",
+        "Arguments",
+        "cond \u2014 An expression that returns a UInt8 result (1 or 0).",
+        "Returned value",
+        "The array of 1 or 0.",
+        "1 \u2014 Condition was met for the event.0 \u2014 Condition wasn\u2019t met for the event.",
+        "Type: UInt8."
+    ],
+    "Examples": [
+        "CREATE TABLE retention_test(date Date, uid Int32) ENGINE = Memory;INSERT INTO retention_test SELECT '2020-01-01', number FROM numbers(5);INSERT INTO retention_test SELECT '2020-01-02', number FROM numbers(10);INSERT INTO retention_test SELECT '2020-01-03', number FROM numbers(15);",
+        "SELECT * FROM retention_test",
+        "SELECT    uid,    retention(date = '2020-01-01', date = '2020-01-02', date = '2020-01-03') AS rFROM retention_testWHERE date IN ('2020-01-01', '2020-01-02', '2020-01-03')GROUP BY uidORDER BY uid ASC",
+        "SELECT    sum(r[1]) AS r1,    sum(r[2]) AS r2,    sum(r[3]) AS r3FROM(    SELECT        uid,        retention(date = '2020-01-01', date = '2020-01-02', date = '2020-01-03') AS r    FROM retention_test    WHERE date IN ('2020-01-01', '2020-01-02', '2020-01-03')    GROUP BY uid)"
+    ],
+    "Category": [
+        "Aggregate Functions"
+    ]
+}

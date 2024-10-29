@@ -1,0 +1,72 @@
+{
+    "HTML": "https://mariadb.com//kb/en/vec_fromtext/",
+    "Title": "VEC_FromText",
+    "Feature": [
+        "VEC_FromText(s)\n"
+    ],
+    "Description": [
+        "VEC_FromText converts a text representation of the vector (json array of numbers) to a vector (little-endian IEEE float sequence of bytes, 4 bytes per float). "
+    ],
+    "Examples": [
+        "select hex(vec_fromtext('[1,2,3]')); \n+------------------------------+\n| hex(vec_fromtext('[1,2,3]')) |\n+------------------------------+\n| 0000803F0000004000004040     |\n+------------------------------+\n"
+    ],
+    "Category": [
+        "Vector Functions"
+    ],
+    "Effective SQLs Refined": [],
+    "Ineffective SQLs Refined": [
+        "select hex(vec_fromtext('[1,2,3]'));"
+    ],
+    "Wrong Messages from Ineffective SQLs Refined": [
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION PINOLO_MariaDB.vec_fromtext does not exist')\n[SQL: select hex(vec_fromtext('[1,2,3]'));]\n(Background on this error at: https://sqlalche.me/e/20/e3q8)"
+    ],
+    "SQLs Generated1": [
+        {
+            "Example SQL": "SELECT VEC_FromText('[1.0, 2.0, 3.0]');"
+        },
+        {
+            "Example SQL": "SELECT VEC_FromText('[1.0, 2.0, 3.0]') AS vector;"
+        },
+        {
+            "Example SQL": "SELECT CAST('[1.0, 2.0, 3.0]' AS CHAR);"
+        }
+    ],
+    "SQLs Generated Costs1": [
+        {
+            "Total Tokens": 311,
+            "Prompt Tokens": 277,
+            "Completion Tokens": 34,
+            "Total Cost (USD)": 6.195e-05
+        },
+        {
+            "Total Tokens": 481,
+            "Prompt Tokens": 445,
+            "Completion Tokens": 36,
+            "Total Cost (USD)": 8.834999999999999e-05
+        },
+        {
+            "Total Tokens": 648,
+            "Prompt Tokens": 615,
+            "Completion Tokens": 33,
+            "Total Cost (USD)": 0.00011204999999999999
+        }
+    ],
+    "SQLs Generated ExecResults1": [
+        "None",
+        "None",
+        "[('[1.0, 2.0, 3.0]',)]"
+    ],
+    "SQLs Generated ExecTimes1": [
+        "0",
+        "0",
+        "0.019314050674438477"
+    ],
+    "SQLs Generated ErrorMessages1": [
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION PINOLO_MariaDB.VEC_FromText does not exist')\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION PINOLO_MariaDB.VEC_FromText does not exist')\n",
+        "None"
+    ],
+    "Effective SQLs Generated1": [
+        "SELECT CAST('[1.0, 2.0, 3.0]' AS CHAR);"
+    ]
+}

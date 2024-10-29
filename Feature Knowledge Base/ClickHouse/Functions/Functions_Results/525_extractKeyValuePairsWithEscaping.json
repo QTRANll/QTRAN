@@ -1,0 +1,25 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/tuple-map-functions"
+    ],
+    "Title": [
+        "extractKeyValuePairsWithEscaping"
+    ],
+    "Feature": [
+        "extractKeyValuePairsWithEscaping"
+    ],
+    "Description": [
+        "extractKeyValuePairsWithEscaping",
+        "Same as extractKeyValuePairs but supports escaping.",
+        "Supported escape sequences: \\x, \\N, \\a, \\b, \\e, \\f, \\n, \\r, \\t, \\v and \\0.\nNon standard escape sequences are returned as it is (including the backslash) unless they are one of the following:\n\\\\, ', \", backtick, /, = or ASCII control characters (c <= 31).",
+        "This function will satisfy the use case where pre-escaping and post-escaping are not suitable. For instance, consider the following\ninput string: a: \"aaaa\\\"bbb\". The expected output is: a: aaaa\\\"bbbb.",
+        "Pre-escaping: Pre-escaping it will output: a: \"aaaa\"bbb\" and extractKeyValuePairs will then output: a: aaaaPost-escaping: extractKeyValuePairs will output a: aaaa\\ and post-escaping will keep it as it is.",
+        "Leading escape sequences will be skipped in keys and will be considered invalid for values."
+    ],
+    "Examples": [
+        "SELECT extractKeyValuePairsWithEscaping('age:a\\\\x0A\\\\n\\\\0') AS kv"
+    ],
+    "Category": [
+        "Maps Functions"
+    ]
+}

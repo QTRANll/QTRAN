@@ -1,0 +1,25 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/other-functions"
+    ],
+    "Title": [
+        "defaultRoles"
+    ],
+    "Feature": [
+        "defaultRoles()"
+    ],
+    "Description": [
+        "defaultRoles",
+        "Returns the roles which are enabled by default for the current user when he logs in. Initially these are all roles granted to the current user (see GRANT), but that can be changed with the SET DEFAULT ROLE statement.",
+        "Syntax",
+        "defaultRoles()",
+        "Returned value",
+        "List of the default roles for the current user. Array(String)."
+    ],
+    "Examples": [
+        "defaultRoles()"
+    ],
+    "Category": [
+        "Other Functions"
+    ]
+}

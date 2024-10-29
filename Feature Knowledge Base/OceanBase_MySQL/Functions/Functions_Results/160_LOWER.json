@@ -1,0 +1,21 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000000823477"
+    ],
+    "Title": [
+        "LOWER"
+    ],
+    "Feature": [
+        "LOWER(str)\n"
+    ],
+    "Description": [
+        "将字符串中的大写字母转化为小写字母。",
+        "该函数是 LCASE() 的同义词。"
+    ],
+    "Examples": [
+        "obclient> SELECT LOWER('OBCLIENT您好！');\n+-----------------------------+\n| LOWER('OBCLIENT您好！') |\n+-----------------------------+\n| obclient您好！          |\n+-----------------------------+\n1 row in set\n"
+    ],
+    "Category": [
+        "String Functions"
+    ]
+}

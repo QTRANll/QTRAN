@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000000822977"
+    ],
+    "Title": [
+        "ICU_VERSION"
+    ],
+    "Feature": [
+        "ICU_VERSION()\n"
+    ],
+    "Description": [
+        "该函数返回支持正则表达式操作的 ICU 库的版本。 OceanBase 数据库使用 International Components for Unicode (ICU) 实现对正则表达式的支持，ICU 提供完整的 Unicode 支持并且是多字节安全的。"
+    ],
+    "Examples": [
+        "obclient> SELECT ICU_VERSION();\n+---------------+\n| ICU_VERSION() |\n+---------------+\n| 69.1          |\n+---------------+\n1 row in set\n"
+    ],
+    "Category": [
+        "Information Functions"
+    ]
+}

@@ -1,0 +1,42 @@
+{
+    "HTML": "https://mariadb.com//kb/en/ceil/",
+    "Title": "CEIL",
+    "Feature": [
+        "CEIL(X)\n"
+    ],
+    "Description": [
+        "CEIL() is a synonym for CEILING()."
+    ],
+    "Examples": [],
+    "Category": [
+        "Numeric Functions"
+    ],
+    "Effective SQLs Refined": [],
+    "Ineffective SQLs Refined": [],
+    "Wrong Messages from Ineffective SQLs Refined": [],
+    "SQLs Generated1": [
+        {
+            "Example SQL": "SELECT CEIL(3.14);"
+        }
+    ],
+    "SQLs Generated Costs1": [
+        {
+            "Total Tokens": 264,
+            "Prompt Tokens": 243,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 4.905e-05
+        }
+    ],
+    "SQLs Generated ExecResults1": [
+        "[(4,)]"
+    ],
+    "SQLs Generated ExecTimes1": [
+        "0.004385471343994141"
+    ],
+    "SQLs Generated ErrorMessages1": [
+        "None"
+    ],
+    "Effective SQLs Generated1": [
+        "SELECT CEIL(3.14);"
+    ]
+}

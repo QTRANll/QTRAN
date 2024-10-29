@@ -1,0 +1,22 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000000822987"
+    ],
+    "Title": [
+        "ENCRYPT"
+    ],
+    "Feature": [
+        "ENCRYPT(str[,salt])\n"
+    ],
+    "Description": [
+        "ENCRYPT() 使用 Unix crypt() 调用加密 str 并返回二进制字符串。salt 参数必须是至少包含两个字符的字符串，否则结果为 NULL。如果没有指定 salt 参数，则使用随机值。",
+        "因为系统调用需要一个以零字节结尾的字符串，所以不建议将 ENCRYPT() 与 ucs2、utf16、utf16le 或 utf32 多字节字符集一起使用。",
+        "如果系统不支持 crypt()，则 ENCRYPT() 始终返回 NULL。"
+    ],
+    "Examples": [
+        "obclient> SELECT ENCRYPT('hello');\n+------------------+\n| ENCRYPT('hello') |\n+------------------+\n| XROflfjMAx1GA    |\n+------------------+\n1 row in set\n"
+    ],
+    "Category": [
+        "Encryption Functions"
+    ]
+}

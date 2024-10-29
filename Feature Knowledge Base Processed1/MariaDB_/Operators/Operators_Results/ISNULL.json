@@ -1,0 +1,35 @@
+{
+    "HTML": "https://mariadb.com//kb/en/isnull/",
+    "Title": "ISNULL",
+    "Feature": [
+        "ISNULL(expr)\n"
+    ],
+    "Description": [
+        "If expr is NULL, ISNULL() returns 1, otherwise it returns 0.",
+        "See also NULL Values in MariaDB."
+    ],
+    "Examples": [
+        "SELECT ISNULL(1+1);\n+-------------+\n| ISNULL(1+1) |\n+-------------+\n|           0 |\n+-------------+\n\nSELECT ISNULL(1/0);\n+-------------+\n| ISNULL(1/0) |\n+-------------+\n|           1 |\n+-------------+\n"
+    ],
+    "Category": [
+        "Comparison Operators"
+    ],
+    "Effective SQLs Refined": [
+        "SELECT ISNULL(1+1);",
+        "SELECT ISNULL(1/0);"
+    ],
+    "Ineffective SQLs Refined": [],
+    "Wrong Messages from Ineffective SQLs Refined": [],
+    "SQLs Generated1": [],
+    "SQLs Generated Costs1": [],
+    "SQLs Generated ExecResults1": [],
+    "SQLs Generated ExecTimes1": [],
+    "SQLs Generated ErrorMessages1": [],
+    "Effective SQLs Generated1": [],
+    "SQLs Generated2": [],
+    "SQLs Generated Costs2": [],
+    "SQLs Generated ExecResults2": [],
+    "SQLs Generated ExecTimes2": [],
+    "SQLs Generated ErrorMessages2": [],
+    "Effective SQLs Generated2": []
+}

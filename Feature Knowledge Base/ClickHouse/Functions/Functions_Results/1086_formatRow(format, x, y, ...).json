@@ -1,0 +1,28 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/type-conversion-functions"
+    ],
+    "Title": [
+        "formatRow"
+    ],
+    "Feature": [
+        "formatRow(format, x, y, ...)"
+    ],
+    "Description": [
+        "formatRow",
+        "Converts arbitrary expressions into a string via given format.",
+        "Syntax",
+        "formatRow(format, x, y, ...)",
+        "Arguments",
+        "format \u2014 Text format. For example, CSV, TSV.x,y, ... \u2014 Expressions.",
+        "Returned value",
+        "A formatted string. (for text formats it's usually terminated with the new line character)."
+    ],
+    "Examples": [
+        "SELECT formatRow('CSV', number, 'good')FROM numbers(3);",
+        "SELECT formatRow('CustomSeparated', number, 'good')FROM numbers(3)SETTINGS format_custom_result_before_delimiter='<prefix>\\n', format_custom_result_after_delimiter='<suffix>'"
+    ],
+    "Category": [
+        "Type Conversion Functions"
+    ]
+}

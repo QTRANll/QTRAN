@@ -1,0 +1,18 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/current/functions-admin.html"
+    ],
+    "Title": [
+        "pg_column_toast_chunk_id"
+    ],
+    "Feature": [
+        "pg_column_toast_chunk_id ( \"any\" ) → oid"
+    ],
+    "Description": [
+        "Shows the chunk_id of an on-disk TOASTed value. Returns NULL if the value is un-TOASTed or not on-disk. See Section 65.2 for more information about TOAST."
+    ],
+    "Examples": [],
+    "Category": [
+        "System Administration Functions"
+    ]
+}

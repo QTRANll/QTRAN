@@ -1,0 +1,27 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/math-functions"
+    ],
+    "Title": [
+        "erf"
+    ],
+    "Feature": [
+        "erf(x)"
+    ],
+    "Description": [
+        "erf",
+        "If x is non-negative, then erf(x\u03c32)erf(\\frac{x}{\\sigma\\sqrt{2}})erf(\u03c32x) is the probability that a random variable having a normal distribution with standard deviation \u03c3\\sigma\u03c3 takes the value that is separated from the expected value by more than x.",
+        "Syntax",
+        "erf(x)",
+        "Arguments",
+        "x - (U)Int*, Float* or Decimal*.",
+        "Returned value",
+        "Type: Float*."
+    ],
+    "Examples": [
+        "SELECT erf(3 / sqrt(2));"
+    ],
+    "Category": [
+        "Mathematical Functions"
+    ]
+}

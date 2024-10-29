@@ -1,0 +1,53 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000000823350"
+    ],
+    "Title": [
+        "ZIPF"
+    ],
+    "Feature": [
+        "ZIPF(<s> , <N> , <gen>)\n"
+    ],
+    "Description": [
+        "该函数返回一个符合齐夫分布（Zipf-distributed）的整数，取值范围为 [0, N)，分区的特征指数为 s。",
+        "s",
+        " 为特征指数，",
+        "s",
+        " 越大生成的序列越倾斜。将序列绘制成曲线时，曲线越陡峭。",
+        "s",
+        " 和 ",
+        "N",
+        " 取值要求：必须是一个标量值，不随行迭代而变。例如，整形或浮点型常量、标量函数等，PL 里还可以是 ",
+        "@v1",
+        "、",
+        "1+@v3",
+        " 等。",
+        "s",
+        " 的取值范围为 [1, +∞)，",
+        "N",
+        " 的取值范围为 [1，16777215]。",
+        "zipf",
+        " 算法实现时消耗的存储、计算资源和 ",
+        "N",
+        " 的取值相关。算法空间复杂度为 ",
+        "O(N)",
+        "，每生成一个整数的时间复杂度为 ",
+        "O(logN)",
+        "。所以，",
+        "N",
+        " 的取值范围被限制为 [1, 16777215]。",
+        "gen",
+        " 是一个数值生成函数，通常使用 ",
+        "RANDOM()",
+        " 函数生成。如果传入值是一个常量，则 ",
+        "zipf()",
+        " 函数返回值也为一个定值。"
+    ],
+    "Examples": [
+        "obclient> SELECT ZIPF(1, 10, RANDOM()) FROM TABLE(GENERATOR(6));\n+-----------------------+\n| ZIPF(1, 10, RANDOM()) |\n+-----------------------+\n|                     4 |\n|                     5 |\n|                     2 |\n|                     1 |\n|                     0 |\n|                     2 |\n+-----------------------+\n6 rows in set\n\nobclient> SELECT ZIPF(1, 10, 0415) FROM TABLE(GENERATOR(6));\n+-------------------+\n| ZIPF(1, 10, 0415) |\n+-------------------+\n|                 8 |\n|                 8 |\n|                 8 |\n|                 8 |\n|                 8 |\n|                 8 |\n+-------------------+\n6 rows in set\n\nobclient> SELECT ZIPF(ABS(-1), 23, RANDOM()) FROM DUAL;\n+-----------------------------+\n| ZIPF(ABS(-1), 23, RANDOM()) |\n+-----------------------------+\n|                           1 |\n+-----------------------------+\n1 row in set\n",
+        "obclient> SELECT  COUNT(*), ZIPF(1, 10, RANDOM()) v FROM TABLE(GENERATOR(10000)) GROUP BY v ORDER BY 1;\n+----------+------+\n| COUNT(*) | v    |\n+----------+------+\n|      350 |    9 |\n|      369 |    8 |\n|      450 |    7 |\n|      488 |    6 |\n|      559 |    5 |\n|      727 |    4 |\n|      877 |    3 |\n|     1100 |    2 |\n|     1755 |    1 |\n|     3325 |    0 |\n+----------+------+\n10 rows in set\n\nobclient> SELECT COUNT(*), ZIPF(2, 10, RANDOM()) v FROM TABLE(GENERATOR(10000)) GROUP BY v ORDER BY 1;\n+----------+------+\n| COUNT(*) | v    |\n+----------+------+\n|       69 |    9 |\n|       73 |    8 |\n|      102 |    7 |\n|      118 |    6 |\n|      187 |    5 |\n|      260 |    4 |\n|      419 |    3 |\n|      679 |    2 |\n|     1632 |    1 |\n|     6461 |    0 |\n+----------+------+\n10 rows in set\n\nobclient> SELECT COUNT(*), ZIPF(3, 10, RANDOM()) v FROM TABLE(GENERATOR(10000)) GROUP BY v ORDER BY 1;\n+----------+------+\n| COUNT(*) | v    |\n+----------+------+\n|        6 |    9 |\n|       12 |    8 |\n|       15 |    7 |\n|       35 |    5 |\n|       40 |    6 |\n|       77 |    4 |\n|      118 |    3 |\n|      292 |    2 |\n|     1106 |    1 |\n|     8299 |    0 |\n+----------+------+\n10 rows in set\n\nobclient> SELECT COUNT(*), ZIPF(4, 10, RANDOM()) v FROM TABLE(GENERATOR(10000)) GROUP BY v ORDER BY 1;\n+----------+------+\n| COUNT(*) | v    |\n+----------+------+\n|        1 |    8 |\n|        1 |    7 |\n|        1 |    9 |\n|        2 |    5 |\n|        6 |    6 |\n|       19 |    4 |\n|       35 |    3 |\n|      120 |    2 |\n|      548 |    1 |\n|     9267 |    0 |\n+----------+------+\n10 rows in set\n\nobclient> SELECT COUNT(*), ZIPF(5, 10, RANDOM()) v FROM TABLE(GENERATOR(10000)) GROUP BY v ORDER BY 1;\n+----------+------+\n| COUNT(*) | v    |\n+----------+------+\n|        2 |    5 |\n|        3 |    4 |\n|       18 |    3 |\n|       31 |    2 |\n|      309 |    1 |\n|     9637 |    0 |\n+----------+------+\n6 rows in set\n"
+    ],
+    "Category": [
+        "Mathematical Functions"
+    ]
+}

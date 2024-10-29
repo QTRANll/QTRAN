@@ -1,0 +1,28 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/aggregate-functions/reference/grouparraysorted"
+    ],
+    "Title": [
+        "groupArraySorted"
+    ],
+    "Feature": [
+        "groupArraySorted"
+    ],
+    "Description": [
+        "groupArraySorted",
+        " Returns an array with the first N items in ascending order.",
+        "groupArraySorted(N)(column)",
+        " Arguments",
+        "N \u2013 The number of elements to return.column \u2013 The value (Integer, String, Float and other Generic types).ExampleGets the first 10 numbers:SELECT groupArraySorted(10)(number) FROM numbers(100)\u250c\u2500groupArraySorted(10)(number)\u2500\u2510\u2502 [0,1,2,3,4,5,6,7,8,9]        \u2502\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518",
+        " Gets all the String implementations of all numbers in column:",
+        "SELECT groupArraySorted(5)(str) FROM (SELECT toString(number) as str FROM numbers(5));",
+        "\u250c\u2500groupArraySorted(5)(str)\u2500\u2510\u2502 ['0','1','2','3','4']    \u2502\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518"
+    ],
+    "Examples": [
+        "groupArraySorted(N)(column)",
+        "SELECT groupArraySorted(5)(str) FROM (SELECT toString(number) as str FROM numbers(5));"
+    ],
+    "Category": [
+        "Aggregate Functions"
+    ]
+}

@@ -1,0 +1,33 @@
+{
+    "HTML": "https://mariadb.com//kb/en/shift-left/",
+    "Title": "<<",
+    "Feature": [
+        "value1 << value2\n"
+    ],
+    "Description": [
+        "Converts a longlong (BIGINT) number (value1) to binary and shifts value2 units to the left."
+    ],
+    "Examples": [
+        "SELECT 1 << 2;\n+--------+\n| 1 << 2 |\n+--------+\n|      4 |\n+--------+\n"
+    ],
+    "Category": [
+        "Bit Functions and Operators"
+    ],
+    "Effective SQLs Refined": [
+        "SELECT 1 << 2;"
+    ],
+    "Ineffective SQLs Refined": [],
+    "Wrong Messages from Ineffective SQLs Refined": [],
+    "SQLs Generated1": [],
+    "SQLs Generated Costs1": [],
+    "SQLs Generated ExecResults1": [],
+    "SQLs Generated ExecTimes1": [],
+    "SQLs Generated ErrorMessages1": [],
+    "Effective SQLs Generated1": [],
+    "SQLs Generated2": [],
+    "SQLs Generated Costs2": [],
+    "SQLs Generated ExecResults2": [],
+    "SQLs Generated ExecTimes2": [],
+    "SQLs Generated ErrorMessages2": [],
+    "Effective SQLs Generated2": []
+}

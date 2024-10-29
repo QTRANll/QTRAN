@@ -1,0 +1,21 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000000823396"
+    ],
+    "Title": [
+        "NOW"
+    ],
+    "Feature": [
+        "NOW([scale])\n"
+    ],
+    "Description": [
+        "返回当前日期时间，考虑时区设置。该函数为 CURRENT_TIMESTAMP() 的别名。",
+        "scale 表示微秒部分精度，有效值为 0 到 6 的整数，默认值为 0。"
+    ],
+    "Examples": [
+        "obclient> SELECT NOW(6);\n+----------------------------+\n| NOW(6)                     |\n+----------------------------+\n| 2021-07-20 16:30:54.816317 |\n+----------------------------+\n1 row in set\n"
+    ],
+    "Category": [
+        "Date and Time Functions"
+    ]
+}

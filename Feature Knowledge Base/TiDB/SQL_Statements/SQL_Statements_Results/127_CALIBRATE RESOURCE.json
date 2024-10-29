@@ -1,0 +1,25 @@
+{
+    "HTML": [
+        "https://docs.pingcap.com//zh/tidb/stable/sql-statement-calibrate-resource"
+    ],
+    "Title": [
+        "CALIBRATE RESOURCE"
+    ],
+    "Feature": [
+        "CalibrateResourceStmt ::= 'CALIBRATE' 'RESOURCE' CalibrateOption\n\nCalibrateOption ::=\n('START_TIME' 'TIMESTAMP' ('DURATION' stringLit | 'END_TIME' 'TIMESTAMP')?)\n| ('WORKLOAD' ('TPCC' | 'OLTP_READ_WRITE' | 'OLTP_READ_ONLY' | 'OLTP_WRITE_ONLY'))?\n\n"
+    ],
+    "Description": [
+        "CALIBRATE RESOURCE \u8bed\u53e5\u7528\u4e8e\u9884\u4f30\u5e76\u8f93\u51fa\u5f53\u524d\u96c6\u7fa4\u7684 Request Unit (RU) \u7684\u5bb9\u91cf\u3002"
+    ],
+    "Examples": [
+        "CALIBRATE RESOURCE START_TIME '2023-04-18 08:00:00' DURATION '20m';\n+-------+\n| QUOTA |\n+-------+\n| 27969 |\n+-------+\n1 row in set (0.01 sec)\n",
+        "CALIBRATE RESOURCE START_TIME '2023-04-18 08:00:00' END_TIME '2023-04-18 08:20:00';\n+-------+\n| QUOTA |\n+-------+\n| 27969 |\n+-------+\n1 row in set (0.01 sec)\n",
+        "CALIBRATE RESOURCE START_TIME '2023-04-18 08:00:00' DURATION '25h';\nERROR 1105 (HY000): the duration of calibration is too long, which could lead to inaccurate output. Please make the duration between 10m0s and 24h0m0s\nCALIBRATE RESOURCE START_TIME '2023-04-18 08:00:00' DURATION '9m';\nERROR 1105 (HY000): the duration of calibration is too short, which could lead to inaccurate output. Please make the duration between 10m0s and 24h0m0s\n",
+        "CALIBRATE RESOURCE START_TIME '2023-04-18 08:00:00' DURATION '60m';\nError 1105 (HY000): There is no CPU quota metrics, metrics 'tikv_cpu_quota' is empty\n",
+        "CALIBRATE RESOURCE START_TIME '2023-04-18 08:00:00' DURATION '60m';\nERROR 1105 (HY000): The workload in selected time window is too low, with which TiDB is unable to reach a capacity estimation; please select another time window with higher workload, or calibrate resource by hardware instead\n",
+        "CALIBRATE RESOURCE;\n+-------+\n| QUOTA |\n+-------+\n| 190470 |\n+-------+\n1 row in set (0.01 sec)\n\nCALIBRATE RESOURCE WORKLOAD OLTP_WRITE_ONLY;\n+-------+\n| QUOTA |\n+-------+\n| 27444 |\n+-------+\n1 row in set (0.01 sec)\n"
+    ],
+    "Category": [
+        "\u8d44\u6e90\u7ec4"
+    ]
+}

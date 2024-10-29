@@ -1,0 +1,27 @@
+{
+    "HTML": [
+        "https://sqlite.org/windowfunctions.html"
+    ],
+    "Title": [
+        "Window Chaining in SQLite"
+    ],
+    "Feature": [
+        "WindowChaining"
+    ],
+    "Description": [
+        "Window chaining is a shorthand that allows one window to be defined in terms of another, enabling the new window to implicitly copy the PARTITION BY and optionally the ORDER BY clauses of the base window.",
+        "The new window definition must not include a PARTITION BY clause; it must be supplied by the base window specification.",
+        "If the base window has an ORDER BY clause, it is copied into the new window, which must not specify an ORDER BY clause in this case. If the base window lacks an ORDER BY clause, a new one may be specified.",
+        "The base window may not specify a frame specification; this must be provided in the new window specification.",
+        "The two SQL fragments provided are similar but not entirely equivalent; the latter will fail if the definition of window 'win' contains a frame specification."
+    ],
+    "Examples": [
+        {
+            "SQL": "SELECT group_concat(b, '.') OVER (win) FROM t1 WINDOW win AS (PARTITION BY a ORDER BY c);",
+            "Description": "Example of window chaining where the new window implicitly copies the PARTITION BY and ORDER BY clauses from the base window 'win'."
+        }
+    ],
+    "Category": [
+        "SQLite Window Function Shorthand"
+    ]
+}

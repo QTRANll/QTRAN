@@ -1,0 +1,23 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000000823325"
+    ],
+    "Title": [
+        "IFNULL"
+    ],
+    "Feature": [
+        "IFNULL(expr1, expr2)\n"
+    ],
+    "Description": [
+        "假设 expr1 不为 NULL，则 IFNULL() 的返回值为 expr1；否则其返回值为 expr2。IFNULL() 的返回值是数值或字符串，具体情况取决于其所使用的语境。",
+        "IFNULL() 的默认返回值类型按照以下方式计算：",
+        "\n\n\n表达式\n返回值\n\n\n\n\nexpr1 或 expr2 返回值为一个字符串。\n字符串\n\n\nexpr1 或 expr2 返回值为一个浮点值。\n浮点\n\n\nexpr1 或 expr2 返回值为一个整数。\n整数\n\n\n",
+        "假如 expr1 和 expr2 都是字符串，且其中任何一个字符串区分大小写，则返回结果是区分大小写。"
+    ],
+    "Examples": [
+        "obclient> SELECT IFNULL('abc', null), IFNULL(NULL+1, NULL+2), IFNULL(1/0, 0/1);\n+---------------------+------------------------+------------------+\n| IFNULL('abc', null) | IFNULL(NULL+1, NULL+2) | IFNULL(1/0, 0/1) |\n+---------------------+------------------------+------------------+\n| abc                 |                   NULL |           0.0000 |\n+---------------------+------------------------+------------------+\n1 row in set\n"
+    ],
+    "Category": [
+        "Flow Control Functions"
+    ]
+}

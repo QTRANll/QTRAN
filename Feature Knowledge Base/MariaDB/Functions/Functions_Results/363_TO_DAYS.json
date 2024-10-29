@@ -1,0 +1,22 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/to_days/"
+    ],
+    "Title": [
+        "TO_DAYS"
+    ],
+    "Feature": [
+        "TO_DAYS(date)\n"
+    ],
+    "Description": [
+        "Given a date date, returns the number of days since the start of the current calendar (0000-00-00).",
+        "The function is not designed for use with dates before the advent of the Gregorian calendar in October 1582. Results will not be reliable since it doesn't account for the lost days when the calendar changed from the Julian calendar.",
+        "This is the converse of the FROM_DAYS() function."
+    ],
+    "Examples": [
+        "SELECT TO_DAYS('2007-10-07');\n+-----------------------+\n| TO_DAYS('2007-10-07') |\n+-----------------------+\n|                733321 |\n+-----------------------+\n\nSELECT TO_DAYS('0000-01-01');\n+-----------------------+\n| TO_DAYS('0000-01-01') |\n+-----------------------+\n|                     1 |\n+-----------------------+\n\nSELECT TO_DAYS(950501);\n+-----------------+\n| TO_DAYS(950501) |\n+-----------------+\n|          728779 |\n+-----------------+\n"
+    ],
+    "Category": [
+        "Date & Time Functions"
+    ]
+}

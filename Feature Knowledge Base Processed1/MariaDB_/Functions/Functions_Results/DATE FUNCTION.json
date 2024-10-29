@@ -1,0 +1,33 @@
+{
+    "HTML": "https://mariadb.com//kb/en/date-function/",
+    "Title": "DATE FUNCTION",
+    "Feature": [
+        "DATE(expr)\n"
+    ],
+    "Description": [
+        "Extracts the date part of the date or datetime expression expr. Returns NULL and throws a warning when passed an invalid date."
+    ],
+    "Examples": [
+        "SELECT DATE('2013-07-18 12:21:32');\n+-----------------------------+\n| DATE('2013-07-18 12:21:32') |\n+-----------------------------+\n| 2013-07-18                  |\n+-----------------------------+\n"
+    ],
+    "Category": [
+        "Date & Time Functions"
+    ],
+    "Effective SQLs Refined": [
+        "SELECT DATE('2013-07-18 12:21:32');"
+    ],
+    "Ineffective SQLs Refined": [],
+    "Wrong Messages from Ineffective SQLs Refined": [],
+    "SQLs Generated1": [],
+    "SQLs Generated Costs1": [],
+    "SQLs Generated ExecResults1": [],
+    "SQLs Generated ExecTimes1": [],
+    "SQLs Generated ErrorMessages1": [],
+    "Effective SQLs Generated1": [],
+    "SQLs Generated2": [],
+    "SQLs Generated Costs2": [],
+    "SQLs Generated ExecResults2": [],
+    "SQLs Generated ExecTimes2": [],
+    "SQLs Generated ErrorMessages2": [],
+    "Effective SQLs Generated2": []
+}

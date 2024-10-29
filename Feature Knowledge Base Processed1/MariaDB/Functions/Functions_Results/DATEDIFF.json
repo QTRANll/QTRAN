@@ -1,0 +1,40 @@
+{
+    "HTML": "https://mariadb.com//kb/en/datediff/",
+    "Title": "DATEDIFF",
+    "Feature": [
+        "DATEDIFF(expr1,expr2)\n"
+    ],
+    "Description": [
+        "DATEDIFF() returns (expr1 \u2013 expr2) expressed\nas a value in days from one date to the other. expr1 and expr2 are date\nor date-and-time expressions. Only the date parts of the values are used in the\ncalculation."
+    ],
+    "Examples": [
+        "SELECT DATEDIFF('2007-12-31 23:59:59','2007-12-30');\n+----------------------------------------------+\n| DATEDIFF('2007-12-31 23:59:59','2007-12-30') |\n+----------------------------------------------+\n|                                            1 |\n+----------------------------------------------+\n\nSELECT DATEDIFF('2010-11-30 23:59:59','2010-12-31');\n+----------------------------------------------+\n| DATEDIFF('2010-11-30 23:59:59','2010-12-31') |\n+----------------------------------------------+\n|                                          -31 |\n+----------------------------------------------+\n",
+        "CREATE TABLE t1 (d DATETIME);\nINSERT INTO t1 VALUES\n    (\"2007-01-30 21:31:07\"),\n    (\"1983-10-15 06:42:51\"),\n    (\"2011-04-21 12:34:56\"),\n    (\"2011-10-30 06:31:41\"),\n    (\"2011-01-30 14:03:25\"),\n    (\"2004-10-07 11:19:34\");\n",
+        "SELECT NOW();\n+---------------------+\n| NOW()               |\n+---------------------+\n| 2011-05-23 10:56:05 |\n+---------------------+\n\nSELECT d, DATEDIFF(NOW(),d) FROM t1;\n+---------------------+-------------------+\n| d                   | DATEDIFF(NOW(),d) |\n+---------------------+-------------------+\n| 2007-01-30 21:31:07 |              1574 |\n| 1983-10-15 06:42:51 |             10082 |\n| 2011-04-21 12:34:56 |                32 |\n| 2011-10-30 06:31:41 |              -160 |\n| 2011-01-30 14:03:25 |               113 |\n| 2004-10-07 11:19:34 |              2419 |\n+---------------------+-------------------+\n"
+    ],
+    "Category": [
+        "Date & Time Functions"
+    ],
+    "Effective SQLs Refined": [
+        "SELECT DATEDIFF('2007-12-31 23:59:59','2007-12-30');",
+        "SELECT DATEDIFF('2010-11-30 23:59:59','2010-12-31');"
+    ],
+    "Ineffective SQLs Refined": [
+        "SELECT d, DATEDIFF(NOW(),d) FROM t1;"
+    ],
+    "Wrong Messages from Ineffective SQLs Refined": [
+        "(pymysql.err.OperationalError) (1054, \"Unknown column 'd' in 'field list'\")\n[SQL: SELECT d, DATEDIFF(NOW(),d) FROM t1;]\n(Background on this error at: https://sqlalche.me/e/20/e3q8)"
+    ],
+    "SQLs Generated1": [],
+    "SQLs Generated Costs1": [],
+    "SQLs Generated ExecResults1": [],
+    "SQLs Generated ExecTimes1": [],
+    "SQLs Generated ErrorMessages1": [],
+    "Effective SQLs Generated1": [],
+    "SQLs Generated2": [],
+    "SQLs Generated Costs2": [],
+    "SQLs Generated ExecResults2": [],
+    "SQLs Generated ExecTimes2": [],
+    "SQLs Generated ErrorMessages2": [],
+    "Effective SQLs Generated2": []
+}

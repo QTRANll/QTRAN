@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000000823041"
+    ],
+    "Title": [
+        "CUME_DIST"
+    ],
+    "Feature": [
+        "CUME_DIST() OVER ([ query_partition_clause ] order_by_clause)\n"
+    ],
+    "Description": [
+        "该函数计算一个值的分布，返回值为大于 0 小于等于 1 的值。作为一个分析函数，CUME_DIST() 在升序情况下计算比当前行的特定列数值小的数据的占比。"
+    ],
+    "Examples": [
+        "obclient> CREATE TABLE EXPLOYEES(LAST_NAME CHAR(10), SALARY DECIMAL, JOB_ID CHAR(32));\nINSERT INTO EXPLOYEES VALUES('JIM', 2000, 'CLEANER');\nINSERT INTO EXPLOYEES VALUES('MIKE', 12000, 'ENGINEERING');\nINSERT INTO EXPLOYEES VALUES('LILY', 13000, 'ENGINEERING');\nINSERT INTO EXPLOYEES VALUES('IRIS', 11000, 'ENGINEERING');\nINSERT INTO EXPLOYEES VALUES('TOM', 11000, 'ENGINEERING');\nCOMMIT;\nQuery OK, 1 row affected\n\nobclient> SELECT LAST_NAME, CUME_DIST() OVER(PARTITION BY JOB_ID ORDER BY SALARY) CUME_DIST FROM EXPLOYEES;\n+-----------+----------------------------------+\n| LAST_NAME | CUME_DIST                        |\n+-----------+----------------------------------+\n| JIM       | 1.000000000000000000000000000000 |\n| TOM       | 0.500000000000000000000000000000 |\n| IRIS      | 0.500000000000000000000000000000 |\n| MIKE      | 0.750000000000000000000000000000 |\n| LILY      | 1.000000000000000000000000000000 |\n+-----------+----------------------------------+\n5 rows in set\n"
+    ],
+    "Category": [
+        "Analysis Functions"
+    ]
+}

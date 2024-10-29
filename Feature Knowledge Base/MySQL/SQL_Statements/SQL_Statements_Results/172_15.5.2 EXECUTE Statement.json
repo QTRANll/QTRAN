@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/execute.html"
+    ],
+    "Title": [
+        "15.5.2 EXECUTE Statement"
+    ],
+    "Feature": [
+        "EXECUTE stmt_name\n    [USING @var_name [, @var_name] ...]"
+    ],
+    "Description": [
+        "\n      After preparing a statement with\n      PREPARE, you execute it with an\n      EXECUTE statement that refers to\n      the prepared statement name. If the prepared statement contains\n      any parameter markers, you must supply a USING\n      clause that lists user variables containing the values to be bound\n      to the parameters. Parameter values can be supplied only by user\n      variables, and the USING clause must name\n      exactly as many variables as the number of parameter markers in\n      the statement.\n    ",
+        "\n      You can execute a given prepared statement multiple times, passing\n      different variables to it or setting the variables to different\n      values before each execution.\n    ",
+        "\n      For examples, see Section\u00a015.5, \u201cPrepared Statements\u201d.\n"
+    ],
+    "Examples": [],
+    "Category": [
+        "Prepared Statements"
+    ]
+}

@@ -1,0 +1,27 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/geo/s2"
+    ],
+    "Title": [
+        "s2CapContains"
+    ],
+    "Feature": [
+        "s2CapContains(center, degrees, point)"
+    ],
+    "Description": [
+        "s2CapContains",
+        "Determines if a cap contains a S2 point. A cap represents a part of the sphere that has been cut off by a plane. It is defined by a point on a sphere and a radius in degrees.",
+        "Syntax",
+        "s2CapContains(center, degrees, point)",
+        "Arguments",
+        "center \u2014 S2 point index corresponding to the cap. UInt64.degrees \u2014 Radius of the cap in degrees. Float64.point \u2014 S2 point index. UInt64.",
+        "Returned value",
+        "1 \u2014 If the cap contains the S2 point index. UInt8.0 \u2014 If the cap doesn't contain the S2 point index. UInt8."
+    ],
+    "Examples": [
+        "SELECT s2CapContains(1157339245694594829, 1.0, 1157347770437378819) AS capContains;"
+    ],
+    "Category": [
+        "Geo Functions"
+    ]
+}

@@ -1,0 +1,23 @@
+{
+    "HTML": [
+        "https://sqlite.org/lang_expr.html"
+    ],
+    "Title": [
+        "SQL Language Expressions"
+    ],
+    "Feature": [
+        "BETWEEN"
+    ],
+    "Description": [
+        "The BETWEEN operator is used to filter the result set within a range. It includes the boundary values in the range. The range can be specified with two values, and the operator returns true if the value falls within this range.",
+        "Parameters: An expression and two boundary values.",
+        "Returns: True if the expression value is within the specified range, inclusive of the boundaries."
+    ],
+    "Examples": [
+        "SELECT * FROM products WHERE price BETWEEN 50 AND 100; -- Finds products with prices between 50 and 100",
+        "SELECT * FROM orders WHERE order_date BETWEEN '2024-01-01' AND '2024-12-31'; -- Finds orders placed within the year 2024"
+    ],
+    "Category": [
+        "Operators"
+    ]
+}

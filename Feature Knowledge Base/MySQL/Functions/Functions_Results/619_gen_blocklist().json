@@ -1,0 +1,35 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/loadable-function-reference.html"
+    ],
+    "Title": [
+        "14.2 Loadable Function Reference"
+    ],
+    "Feature": [
+        "gen_blocklist(str,\n              from_dictionary_name,\n              to_dictionary_name)"
+    ],
+    "Description": [
+        "Perform dictionary term replacement",
+        "\ngen_blocklist(str,\n              from_dictionary_name,\n              to_dictionary_name)\n",
+        "\n              Replaces a term present in one dictionary with a term from\n              a second dictionary and returns the replacement term. This\n              masks the original term by substitution.\n            ",
+        "\n              Arguments:\n",
+        "\n\nterm: A string that\n                  indicates the term to replace. This argument is\n                  converted to the utf8mb4 character\n                  set.\n                \nfrom_dictionary_name: A\n                  string that names the dictionary containing the term\n                  to replace. This argument is converted to the\n                  utf8mb4 character set.\n                \nto_dictionary_name: A\n                  string that names the dictionary from which to choose\n                  the replacement term. This argument is converted to\n                  the utf8mb4 character set.\n\n",
+        "\n              Return value:\n            ",
+        "\n              A string encoded in the utf8mb4\n              character set randomly chosen from\n              to_dictionary_name as a\n              replacement for term, or\n              term if it does not appear in\n              from_dictionary_name, or an\n              error if either dictionary name is not in the dictionary\n              registry.\n",
+        "\n\nNote\n\n\n                If the term to replace appears in both dictionaries, it\n                is possible for the return value to be the same term.\n\n",
+        "\n              Example:\n            ",
+        "Press CTRL+C to copy mysql> SELECT gen_blocklist('Berlin', 'DE_Cities', 'US_Cities');\n+---------------------------------------------------+\n| gen_blocklist('Berlin', 'DE_Cities', 'US_Cities') |\n+---------------------------------------------------+\n| Phoenix                                           |\n+---------------------------------------------------+"
+    ],
+    "Examples": [
+        "mysql> SELECT gen_blocklist('Berlin', 'DE_Cities', 'US_Cities');\n+---------------------------------------------------+\n| gen_blocklist('Berlin', 'DE_Cities', 'US_Cities') |\n+---------------------------------------------------+\n| Phoenix                                           |\n+---------------------------------------------------+"
+    ],
+    "Category": [
+        "Loadable Functions"
+    ],
+    "Reference HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/data-masking-component-functions.html#function_gen-blocklist"
+    ],
+    "Feature Type": [
+        "Function"
+    ]
+}

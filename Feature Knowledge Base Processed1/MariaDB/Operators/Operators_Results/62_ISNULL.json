@@ -1,0 +1,22 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/isnull/"
+    ],
+    "Title": [
+        "ISNULL"
+    ],
+    "Feature": [
+        "ISNULL(expr)\n"
+    ],
+    "Description": [
+        "If expr is NULL, ISNULL() returns 1, otherwise it returns 0.",
+        "See also NULL Values in MariaDB."
+    ],
+    "Examples": [
+        "SELECT ISNULL(1+1);",
+        "SELECT ISNULL(1/0);"
+    ],
+    "Category": [
+        "Comparison Operators"
+    ]
+}

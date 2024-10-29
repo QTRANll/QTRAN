@@ -1,0 +1,21 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/show-index-statistics/"
+    ],
+    "Title": [
+        "SHOW INDEX_STATISTICS"
+    ],
+    "Feature": [
+        "SHOW INDEX_STATISTICS\n"
+    ],
+    "Description": [
+        "The SHOW INDEX_STATISTICS statement was introduced in MariaDB 5.2 as part of the User Statistics feature. It was removed as a separate statement in MariaDB 10.1.1, but effectively replaced by the generic SHOW information_schema_table statement. The information_schema.INDEX_STATISTICS table shows statistics on index usage and makes it possible to do such things as locating unused indexes and generating the commands to remove them. ",
+        "The userstat system variable must be set to 1 to activate this feature. See the User Statistics and information_schema.INDEX_STATISTICS table for more information."
+    ],
+    "Examples": [
+        "SHOW INDEX_STATISTICS;\n+--------------+-------------------+------------+-----------+\n| Table_schema | Table_name        | Index_name | Rows_read |\n+--------------+-------------------+------------+-----------+\n| test         | employees_example | PRIMARY    |         1 |\n+--------------+-------------------+------------+-----------+\n"
+    ],
+    "Category": [
+        "Administrative SQL Statements"
+    ]
+}

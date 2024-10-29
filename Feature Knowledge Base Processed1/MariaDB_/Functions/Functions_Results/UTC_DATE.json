@@ -1,0 +1,33 @@
+{
+    "HTML": "https://mariadb.com//kb/en/utc_date/",
+    "Title": "UTC_DATE",
+    "Feature": [
+        "UTC_DATE, UTC_DATE()\n"
+    ],
+    "Description": [
+        "Returns the current UTC date as a value in 'YYYY-MM-DD' or YYYYMMDD\nformat, depending on whether the function is used in a string or numeric context. "
+    ],
+    "Examples": [
+        "SELECT UTC_DATE(), UTC_DATE() + 0;\n+------------+----------------+\n| UTC_DATE() | UTC_DATE() + 0 |\n+------------+----------------+\n| 2010-03-27 |       20100327 |\n+------------+----------------+\n"
+    ],
+    "Category": [
+        "Date & Time Functions"
+    ],
+    "Effective SQLs Refined": [
+        "SELECT UTC_DATE(), UTC_DATE() + 0;"
+    ],
+    "Ineffective SQLs Refined": [],
+    "Wrong Messages from Ineffective SQLs Refined": [],
+    "SQLs Generated1": [],
+    "SQLs Generated Costs1": [],
+    "SQLs Generated ExecResults1": [],
+    "SQLs Generated ExecTimes1": [],
+    "SQLs Generated ErrorMessages1": [],
+    "Effective SQLs Generated1": [],
+    "SQLs Generated2": [],
+    "SQLs Generated Costs2": [],
+    "SQLs Generated ExecResults2": [],
+    "SQLs Generated ExecTimes2": [],
+    "SQLs Generated ErrorMessages2": [],
+    "Effective SQLs Generated2": []
+}

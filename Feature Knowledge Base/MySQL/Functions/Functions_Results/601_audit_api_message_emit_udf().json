@@ -1,0 +1,43 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/loadable-function-reference.html"
+    ],
+    "Title": [
+        "14.2 Loadable Function Reference"
+    ],
+    "Feature": [
+        "audit_api_message_emit_udf(component,\n            producer,\n            message[,\n            key,\n            value] ...)"
+    ],
+    "Description": [
+        "Add message event to audit log",
+        "\naudit_api_message_emit_udf(component,\n            producer,\n            message[,\n            key,\n            value] ...)\n",
+        "\n            Adds a message event to the audit log. Message events\n            include component, producer, and message strings of the\n            caller's choosing, and optionally a set of key-value pairs.\n          ",
+        "\n            An event posted by this function is sent to all enabled\n            plugins of audit type, each of which handles the event\n            according to its own rules. If no plugin of audit type is\n            enabled, posting the event has no effect.\n          ",
+        "\n            Arguments:\n",
+        "\n\ncomponent: A string that\n                specifies a component name.\n              \nproducer: A string that\n                specifies a producer name.\n              \nmessage: A string that\n                specifies the event message.\n              \nkey,\n                value: Events may include 0\n                or more key-value pairs that specify an arbitrary\n                application-provided data map. Each\n                key argument is a string that\n                specifies a name for its immediately following\n                value argument. Each\n                value argument specifies a\n                value for its immediately following\n                key argument. Each\n                value can be a string or\n                numeric value, or NULL.\n\n",
+        "\n            Return value:\n          ",
+        "\n            The string OK to indicate success. An\n            error occurs if the function fails.\n          ",
+        "\n            Example:\n          ",
+        "Press CTRL+C to copy mysql> SELECT audit_api_message_emit_udf('component_text',\n                                         'producer_text',\n                                         'message_text',\n                                         'key1', 'value1',\n                                         'key2', 123,\n                                         'key3', NULL) AS 'Message';\n+---------+\n| Message |\n+---------+\n| OK      |\n+---------+",
+        "\n            Additional information:\n          ",
+        "\n            Each audit plugin that receives an event posted by\n            audit_api_message_emit_udf()\n            logs the event in plugin-specific format. For example, the\n            audit_log plugin (see\n            Section\u00a08.4.5, \u201cMySQL Enterprise Audit\u201d) logs message values as follows,\n            depending on the log format configured by the\n            audit_log_format system\n            variable:\n",
+        "\n\n                JSON format\n                (audit_log_format=JSON):\n              Press CTRL+C to copy {\n  ...\n  \"class\": \"message\",\n  \"event\": \"user\",\n  ...\n  \"message_data\": {\n    \"component\": \"component_text\",\n    \"producer\": \"producer_text\",\n    \"message\": \"message_text\",\n    \"map\": {\n      \"key1\": \"value1\",\n      \"key2\": 123,\n      \"key3\": null\n    }\n  }\n}\n                New-style XML format\n                (audit_log_format=NEW):\n              Press CTRL+C to copy <AUDIT_RECORD>\n ...\n <NAME>Message</NAME>\n ...\n <COMMAND_CLASS>user</COMMAND_CLASS>\n <COMPONENT>component_text</COMPONENT>\n <PRODUCER>producer_text</PRODUCER>\n <MESSAGE>message_text</MESSAGE>\n <MAP>\n   <ELEMENT>\n     <KEY>key1</KEY>\n     <VALUE>value1</VALUE>\n   </ELEMENT>\n   <ELEMENT>\n     <KEY>key2</KEY>\n     <VALUE>123</VALUE>\n   </ELEMENT>\n   <ELEMENT>\n     <KEY>key3</KEY>\n     <VALUE/>\n   </ELEMENT>\n </MAP>\n</AUDIT_RECORD>\n                Old-style XML format\n                (audit_log_format=OLD):\n              Press CTRL+C to copy <AUDIT_RECORD\n  ...\n  NAME=\"Message\"\n  ...\n  COMMAND_CLASS=\"user\"\n  COMPONENT=\"component_text\"\n  PRODUCER=\"producer_text\"\n  MESSAGE=\"message_text\"/>\n\n\nNote\n\n\n                  Message events logged in old-style XML format do not\n                  include the key-value map due to representational\n                  constraints imposed by this format.\n\n\n\n",
+        "\n            Messages posted by\n            audit_api_message_emit_udf()\n            have an event class of\n            MYSQL_AUDIT_MESSAGE_CLASS and a subclass\n            of MYSQL_AUDIT_MESSAGE_USER. (Internally\n            generated audit messages have the same class and a subclass\n            of MYSQL_AUDIT_MESSAGE_INTERNAL; this\n            subclass currently is unused.) To refer to such events in\n            audit_log filtering rules, use a\n            class element with a\n            name value of message.\n            For example:\n          ",
+        "Press CTRL+C to copy {\n  \"filter\": {\n    \"class\": {\n      \"name\": \"message\"\n    }\n  }\n}",
+        "\n            Should it be necessary to distinguish user-generated and\n            internally generated message events, test the\n            subclass value against\n            user or internal.\n          ",
+        "\n            Filtering based on the contents of the key-value map is not\n            supported.\n          ",
+        "\n            For information about writing filtering rules, see\n            Section\u00a08.4.5.7, \u201cAudit Log Filtering\u201d.\n"
+    ],
+    "Examples": [
+        "mysql> SELECT audit_api_message_emit_udf('component_text',\n                                         'producer_text',\n                                         'message_text',\n                                         'key1', 'value1',\n                                         'key2', 123,\n                                         'key3', NULL) AS 'Message';\n+---------+\n| Message |\n+---------+\n| OK      |\n+---------+"
+    ],
+    "Category": [
+        "Loadable Functions"
+    ],
+    "Reference HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/audit-api-message-emit.html#function_audit-api-message-emit-udf"
+    ],
+    "Feature Type": [
+        "Function"
+    ]
+}

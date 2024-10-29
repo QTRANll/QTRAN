@@ -1,0 +1,32 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/type-conversion-functions"
+    ],
+    "Title": [
+        "toDecimal256OrNull"
+    ],
+    "Feature": [
+        "toDecimal256OrNull(expr, S)"
+    ],
+    "Description": [
+        "toDecimal256OrNull",
+        "Like toDecimal256, this function converts an input value to a value of type Nullable(Decimal(76, S)) but returns 0 in case of an error.",
+        "Syntax",
+        "toDecimal256OrNull(expr, S)",
+        "Arguments",
+        "expr \u2014 A String representation of a number. String.S \u2014 Scale parameter between 0 and 76, specifying how many digits the fractional part of a number can have. UInt8.",
+        "Supported arguments:",
+        "String representations of type (U)Int8/16/32/64/128/256.String representations of type Float32/64.",
+        "Unsupported arguments:",
+        "String representations of Float32/64 values NaN and Inf.String representations of binary and hexadecimal values, e.g. SELECT toDecimal256OrNull('0xc0fe', 1);.",
+        "NoteAn overflow can occur if the value of expr exceeds the bounds of Decimal256: ( -1 * 10^(76 - S), 1 * 10^(76 - S) ).\nExcessive digits in a fraction are discarded (not rounded).\nExcessive digits in the integer part will lead to an error.",
+        "Returned value",
+        "Value of type Nullable(Decimal(76, S)) if successful, otherwise value NULL of the same type. Decimal256(S)."
+    ],
+    "Examples": [
+        "SELECT    toDecimal256OrNull(toString(1/42), 76) AS a,    toTypeName(a),    toDecimal256OrNull(toString('Inf'), 76) as b,    toTypeName(b)FORMAT Vertical;"
+    ],
+    "Category": [
+        "Type Conversion Functions"
+    ]
+}

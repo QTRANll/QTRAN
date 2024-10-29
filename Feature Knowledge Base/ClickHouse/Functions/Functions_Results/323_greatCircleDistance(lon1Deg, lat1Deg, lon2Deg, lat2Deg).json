@@ -1,0 +1,28 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/geo/coordinates"
+    ],
+    "Title": [
+        "greatCircleDistance"
+    ],
+    "Feature": [
+        "greatCircleDistance(lon1Deg, lat1Deg, lon2Deg, lat2Deg)"
+    ],
+    "Description": [
+        "greatCircleDistance",
+        "Calculates the distance between two points on the Earth\u2019s surface using the great-circle formula.",
+        "greatCircleDistance(lon1Deg, lat1Deg, lon2Deg, lat2Deg)",
+        "Input parameters",
+        "lon1Deg \u2014 Longitude of the first point in degrees. Range: [-180\u00b0, 180\u00b0].lat1Deg \u2014 Latitude of the first point in degrees. Range: [-90\u00b0, 90\u00b0].lon2Deg \u2014 Longitude of the second point in degrees. Range: [-180\u00b0, 180\u00b0].lat2Deg \u2014 Latitude of the second point in degrees. Range: [-90\u00b0, 90\u00b0].",
+        "Positive values correspond to North latitude and East longitude, and negative values correspond to South latitude and West longitude.",
+        "Returned value",
+        "The distance between two points on the Earth\u2019s surface, in meters.",
+        "Generates an exception when the input parameter values fall outside of the range."
+    ],
+    "Examples": [
+        "SELECT greatCircleDistance(55.755831, 37.617673, -55.755831, -37.617673) AS greatCircleDistance"
+    ],
+    "Category": [
+        "Geo Functions"
+    ]
+}

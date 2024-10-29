@@ -1,0 +1,23 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/type-conversion-functions"
+    ],
+    "Title": [
+        "accurateCast(x, T)"
+    ],
+    "Feature": [
+        "accurateCast(x, T)"
+    ],
+    "Description": [
+        "accurateCast(x, T)",
+        "Converts x to the T data type.",
+        "The difference from cast is that accurateCast does not allow overflow of numeric types during cast if type value x does not fit the bounds of type T. For example, accurateCast(-1, 'UInt8') throws an exception."
+    ],
+    "Examples": [
+        "SELECT cast(-1, 'UInt8') as uint8;",
+        "SELECT accurateCast(-1, 'UInt8') as uint8;"
+    ],
+    "Category": [
+        "Type Conversion Functions"
+    ]
+}

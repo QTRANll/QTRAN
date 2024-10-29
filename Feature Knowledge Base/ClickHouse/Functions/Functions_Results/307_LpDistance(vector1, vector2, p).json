@@ -1,0 +1,28 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/distance-functions"
+    ],
+    "Title": [
+        "LpDistance"
+    ],
+    "Feature": [
+        "LpDistance(vector1, vector2, p)"
+    ],
+    "Description": [
+        "LpDistance",
+        "Calculates the distance between two points (the values of the vectors are the coordinates) in Lp space (p-norm distance).",
+        "Syntax",
+        "LpDistance(vector1, vector2, p)",
+        "Alias: distanceLp.",
+        "Arguments",
+        "vector1 \u2014 First vector. Tuple or Array.vector2 \u2014 Second vector. Tuple or Array.p \u2014 The power. Possible values: real number from [1; inf). UInt or Float.",
+        "Returned value",
+        "p-norm distance. Float."
+    ],
+    "Examples": [
+        "SELECT LpDistance((1, 2), (2, 3), 3);"
+    ],
+    "Category": [
+        "Distance Functions"
+    ]
+}

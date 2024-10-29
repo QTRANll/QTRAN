@@ -1,0 +1,25 @@
+{
+    "HTML": [
+        "https://docs.pingcap.com//zh/tidb/stable/sql-statement-revoke-role"
+    ],
+    "Title": [
+        "REVOKE <role>"
+    ],
+    "Feature": [
+        "RevokeRoleStmt ::=\n    'REVOKE' RolenameList 'FROM' UsernameList\n\nRolenameList ::=\n    Rolename ( ',' Rolename )*\n\nUsernameList ::=\n    Username ( ',' Username )*\n"
+    ],
+    "Description": [
+        "REVOKE <role> \u8bed\u53e5\u7528\u4e8e\u4ece\u6307\u5b9a\u7684\u7528\u6237\uff08\u6216\u7528\u6237\u5217\u8868\uff09\u4e2d\u6536\u56de\u4e4b\u524d\u6388\u4e88\u7684\u89d2\u8272\u3002"
+    ],
+    "Examples": [
+        "CREATE ROLE analyticsteam;\nQuery OK, 0 rows affected (0.02 sec)\n\nGRANT SELECT ON test.* TO analyticsteam;\nQuery OK, 0 rows affected (0.02 sec)\n\nCREATE USER jennifer;\nQuery OK, 0 rows affected (0.01 sec)\n\nGRANT analyticsteam TO jennifer;\nQuery OK, 0 rows affected (0.01 sec)\n",
+        "SHOW GRANTS;\n+---------------------------------------------+\n| Grants for User                             |\n+---------------------------------------------+\n| GRANT USAGE ON *.* TO 'jennifer'@'%'        |\n| GRANT 'analyticsteam'@'%' TO 'jennifer'@'%' |\n+---------------------------------------------+\n2 rows in set (0.00 sec)\n\nSHOW TABLES in test;\nERROR 1044 (42000): Access denied for user 'jennifer'@'%' to database 'test'\nSET ROLE analyticsteam;\nQuery OK, 0 rows affected (0.00 sec)\n\nSHOW GRANTS;\n+---------------------------------------------+\n| Grants for User                             |\n+---------------------------------------------+\n| GRANT USAGE ON *.* TO 'jennifer'@'%'        |\n| GRANT SELECT ON test.* TO 'jennifer'@'%'    |\n| GRANT 'analyticsteam'@'%' TO 'jennifer'@'%' |\n+---------------------------------------------+\n3 rows in set (0.00 sec)\n\nSHOW TABLES IN test;\n+----------------+\n| Tables_in_test |\n+----------------+\n| t1             |\n+----------------+\n1 row in set (0.00 sec)\n",
+        "SET DEFAULT ROLE analyticsteam TO jennifer;\nQuery OK, 0 rows affected (0.02 sec)\n",
+        "SHOW GRANTS;\n+---------------------------------------------+\n| Grants for User                             |\n+---------------------------------------------+\n| GRANT USAGE ON *.* TO 'jennifer'@'%'        |\n| GRANT SELECT ON test.* TO 'jennifer'@'%'    |\n| GRANT 'analyticsteam'@'%' TO 'jennifer'@'%' |\n+---------------------------------------------+\n3 rows in set (0.00 sec)\n\nSHOW TABLES IN test;\n+----------------+\n| Tables_in_test |\n+----------------+\n| t1             |\n+----------------+\n1 row in set (0.00 sec)\n",
+        "REVOKE analyticsteam FROM jennifer;\nQuery OK, 0 rows affected (0.01 sec)\n",
+        "SHOW GRANTS;\n+--------------------------------------+\n| Grants for User                      |\n+--------------------------------------+\n| GRANT USAGE ON *.* TO 'jennifer'@'%' |\n+--------------------------------------+\n1 row in set (0.00 sec)\n"
+    ],
+    "Category": [
+        "\u8d26\u6237\u7ba1\u7406\u4e0e\u6570\u636e\u63a7\u5236\u8bed\u8a00 (DCL)"
+    ]
+}

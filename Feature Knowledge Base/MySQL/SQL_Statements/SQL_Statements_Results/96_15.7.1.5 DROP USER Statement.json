@@ -1,0 +1,30 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/drop-user.html"
+    ],
+    "Title": [
+        "15.7.1.5 DROP USER Statement"
+    ],
+    "Feature": [
+        "DROP USER [IF EXISTS] user [, user] ..."
+    ],
+    "Description": [
+        "\n        The DROP USER statement removes\n        one or more MySQL accounts and their privileges. It removes\n        privilege rows for the account from all grant tables.\n      ",
+        "\n        Roles named in the\n        mandatory_roles system variable\n        value cannot be dropped.\n      ",
+        "\n        To use DROP USER, you must have\n        the global CREATE USER privilege,\n        or the DELETE privilege for the\n        mysql system schema. When the\n        read_only system variable is\n        enabled, DROP USER additionally\n        requires the CONNECTION_ADMIN\n        privilege (or the deprecated\n        SUPER privilege).\n      ",
+        "\nDROP USER fails with an error if\n        any account to be dropped is named as the\n        DEFINER attribute for any stored object.\n        (That is, the statement fails if dropping an account would cause\n        a stored object to become orphaned.) To perform the operation\n        anyway, you must have the\n        SET_ANY_DEFINER or\n        ALLOW_NONEXISTENT_DEFINER\n        privilege; in this case, the statement succeeds with a warning\n        rather than failing with an error. For additional information,\n        including how to identify which objects name a given account as\n        the DEFINER attribute, see\n        Orphan Stored Objects.\n      ",
+        "\nDROP USER either succeeds for all\n        named users or rolls back and has no effect if any error occurs.\n        By default, an error occurs if you try to drop a user that does\n        not exist. If the IF EXISTS clause is given,\n        the statement produces a warning for each named user that does\n        not exist, rather than an error.\n      ",
+        "\n        The statement is written to the binary log if it succeeds, but\n        not if it fails; in that case, rollback occurs and no changes\n        are made. A statement written to the binary log includes all\n        named users. If the IF EXISTS clause is\n        given, this includes even users that do not exist and were not\n        dropped.\n      ",
+        "\n        Each account name uses the format described in\n        Section\u00a08.2.4, \u201cSpecifying Account Names\u201d. For example:\n      ",
+        "Press CTRL+C to copy DROP USER 'jeffrey'@'localhost';",
+        "\n        The host name part of the account name, if omitted, defaults to\n        '%'.\n",
+        "\n\nImportant\n\n\nDROP USER does not\n          automatically close any open user sessions. Rather, in the\n          event that a user with an open session is dropped, the\n          statement does not take effect until that user's session is\n          closed. Once the session is closed, the user is dropped, and\n          that user's next attempt to log in fails. This\n          is by design.\n\n",
+        "\nDROP USER does not automatically\n        drop or invalidate databases or objects within them that the old\n        user created. This includes stored programs or views for which\n        the DEFINER attribute names the dropped user.\n        Attempts to access such objects may produce an error if they\n        execute in definer security context. (For information about\n        security context, see\n        Section\u00a027.6, \u201cStored Object Access Control\u201d.)\n"
+    ],
+    "Examples": [
+        "DROP USER 'jeffrey'@'localhost';"
+    ],
+    "Category": [
+        "Database Administration Statements"
+    ]
+}

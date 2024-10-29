@@ -1,0 +1,22 @@
+{
+    "HTML": [
+        "https://www.monetdb.org/documentation-Aug2024/user-guide/sql-functions/date-time-functions"
+    ],
+    "Title": [
+        "timestampadd(dt_ts_tm, interval)"
+    ],
+    "Feature": [
+        "timestampadd(dt_ts_tm, interval)"
+    ],
+    "Description": [
+        "Return type: ",
+        "timestamp or timestamptz",
+        "add interval (month or day or second) to a timestamp (with time zone) or date or time"
+    ],
+    "Examples": [
+        "select timestampadd(timestamp '2021-12-31 18:00:00', interval '2' month)"
+    ],
+    "Category": [
+        "Date Time Functions"
+    ]
+}

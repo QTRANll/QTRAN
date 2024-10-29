@@ -1,0 +1,33 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/built-in-function-reference.html",
+        "https://dev.mysql.com/doc/refman/8.4/en/date-and-time-functions.html"
+    ],
+    "Title": [
+        "14.1 Built-In Function and Operator Reference",
+        "14.7 Date and Time Functions"
+    ],
+    "Feature": [
+        "DATEDIFF(expr1,expr2)"
+    ],
+    "Description": [
+        "Subtract two dates",
+        "\nDATEDIFF(expr1,expr2)\n",
+        "\nDATEDIFF() returns\n          expr1 \u2212\n          expr2 expressed as a value in days\n          from one date to the other. expr1\n          and expr2 are date or date-and-time\n          expressions. Only the date parts of the values are used in the\n          calculation.\n        ",
+        "Press CTRL+C to copy mysql> SELECT DATEDIFF('2007-12-31 23:59:59','2007-12-30');\n        -> 1\nmysql> SELECT DATEDIFF('2010-11-30 23:59:59','2010-12-31');\n        -> -31",
+        "\n          This function returns NULL if\n          expr1 or\n          expr2 is NULL.\n        "
+    ],
+    "Examples": [
+        "mysql> SELECT DATEDIFF('2007-12-31 23:59:59','2007-12-30');\n        -> 1\nmysql> SELECT DATEDIFF('2010-11-30 23:59:59','2010-12-31');\n        -> -31"
+    ],
+    "Category": [
+        "Built-In Functions",
+        "Date and Time Functions"
+    ],
+    "Reference HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/date-and-time-functions.html#function_datediff"
+    ],
+    "Feature Type": [
+        "Function"
+    ]
+}

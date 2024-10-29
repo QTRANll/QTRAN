@@ -1,0 +1,22 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/conditional-functions"
+    ],
+    "Title": [
+        "Using Conditional Results Directly"
+    ],
+    "Feature": [
+        "Using Conditional Results Directly"
+    ],
+    "Description": [
+        "Using Conditional Results Directly",
+        "Conditionals always result to 0, 1 or NULL. So you can use conditional results directly like this:",
+        "SELECT left < right AS is_smallFROM LEFT_RIGHT\u250c\u2500is_small\u2500\u2510\u2502     \u1d3a\u1d41\u1d38\u1d38 \u2502\u2502        1 \u2502\u2502        0 \u2502\u2502        0 \u2502\u2502     \u1d3a\u1d41\u1d38\u1d38 \u2502\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518"
+    ],
+    "Examples": [
+        "SELECT left < right AS is_smallFROM LEFT_RIGHT\u250c\u2500is_small\u2500\u2510\u2502     \u1d3a\u1d41\u1d38\u1d38 \u2502\u2502        1 \u2502\u2502        0 \u2502\u2502        0 \u2502\u2502     \u1d3a\u1d41\u1d38\u1d38 \u2502\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518"
+    ],
+    "Category": [
+        "Conditional Functions"
+    ]
+}

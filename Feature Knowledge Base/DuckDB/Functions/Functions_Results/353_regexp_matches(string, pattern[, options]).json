@@ -1,0 +1,21 @@
+{
+    "HTML": [
+        "https://duckdb.org/docs/sql/functions/regular_expressions"
+    ],
+    "Title": [
+        "regexp_matches(string, pattern[, options])"
+    ],
+    "Feature": [
+        "regexp_matches(string, pattern[, options])"
+    ],
+    "Description": [
+        "Returns true if  string contains the regexp pattern, false otherwise.",
+        "Returns true if  string contains the regexp pattern, false otherwise. A set of optional options can be set."
+    ],
+    "Examples": [
+        "regexp_matches('anabanana', '(an)*')"
+    ],
+    "Category": [
+        "Regular Expressions"
+    ]
+}

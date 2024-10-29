@@ -1,0 +1,37 @@
+{
+    "HTML": "https://mariadb.com//kb/en/not-equal/",
+    "Title": "Not Equal Operator: !=",
+    "Feature": [
+        "<>, !=\n"
+    ],
+    "Description": [
+        "Not equal operator.  Evaluates both SQL expressions and returns 1 if they are not equal and 0 if they are equal, or NULL if either expression is NULL.  If the expressions return different data types, (for instance, a number and a string), performs type conversion.",
+        "When used in row comparisons these two queries return the same results:",
+        "SELECT (t1.a, t1.b) != (t2.x, t2.y) \nFROM t1 INNER JOIN t2;\n\nSELECT (t1.a != t2.x) OR (t1.b != t2.y)\nFROM t1 INNER JOIN t2;\n"
+    ],
+    "Examples": [
+        "SELECT '.01' <> '0.01';\n+-----------------+\n| '.01' <> '0.01' |\n+-----------------+\n|               1 |\n+-----------------+\n\nSELECT .01 <> '0.01';\n+---------------+\n| .01 <> '0.01' |\n+---------------+\n|             0 |\n+---------------+\n\nSELECT 'zapp' <> 'zappp';\n+-------------------+\n| 'zapp' <> 'zappp' |\n+-------------------+\n|                 1 |\n+-------------------+\n"
+    ],
+    "Category": [
+        "Comparison Operators"
+    ],
+    "Effective SQLs Refined": [
+        "SELECT '.01' <> '0.01';",
+        "SELECT .01 <> '0.01';",
+        "SELECT 'zapp' <> 'zappp';"
+    ],
+    "Ineffective SQLs Refined": [],
+    "Wrong Messages from Ineffective SQLs Refined": [],
+    "SQLs Generated1": [],
+    "SQLs Generated Costs1": [],
+    "SQLs Generated ExecResults1": [],
+    "SQLs Generated ExecTimes1": [],
+    "SQLs Generated ErrorMessages1": [],
+    "Effective SQLs Generated1": [],
+    "SQLs Generated2": [],
+    "SQLs Generated Costs2": [],
+    "SQLs Generated ExecResults2": [],
+    "SQLs Generated ExecTimes2": [],
+    "SQLs Generated ErrorMessages2": [],
+    "Effective SQLs Generated2": []
+}

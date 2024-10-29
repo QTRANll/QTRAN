@@ -1,0 +1,27 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/date-time-functions"
+    ],
+    "Title": [
+        "now64"
+    ],
+    "Feature": [
+        "now64([scale], [timezone])"
+    ],
+    "Description": [
+        "now64",
+        "Returns the current date and time with sub-second precision at the moment of query analysis. The function is a constant expression.",
+        "Syntax",
+        "now64([scale], [timezone])",
+        "Arguments",
+        "scale - Tick size (precision): 10-precision seconds. Valid range: [ 0 : 9 ]. Typically, are used - 3 (default) (milliseconds), 6 (microseconds), 9 (nanoseconds).timezone \u2014 Timezone name for the returned value (optional). String.",
+        "Returned value",
+        "Current date and time with sub-second precision. DateTime64."
+    ],
+    "Examples": [
+        "SELECT now64(), now64(9, 'Asia/Istanbul');"
+    ],
+    "Category": [
+        "Dates and Times Functions"
+    ]
+}

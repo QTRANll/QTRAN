@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/current/functions-net.html"
+    ],
+    "Title": [
+        "trunc"
+    ],
+    "Feature": [
+        "trunc ( macaddr8 ) → macaddr8"
+    ],
+    "Description": [
+        "Sets the last 5 bytes of the address to zero. The remaining prefix can be associated with a particular manufacturer (using data not included in PostgreSQL)."
+    ],
+    "Examples": [
+        "trunc(macaddr8 '12:34:56:78:90:ab:cd:ef') → 12:34:56:00:00:00:00:00"
+    ],
+    "Category": [
+        "Network Address Functions and Operators"
+    ]
+}

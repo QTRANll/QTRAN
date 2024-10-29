@@ -1,0 +1,35 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/loadable-function-reference.html"
+    ],
+    "Title": [
+        "14.2 Loadable Function Reference"
+    ],
+    "Feature": [
+        "audit_log_filter_remove_filter(filter_name)"
+    ],
+    "Description": [
+        "Remove audit log filter",
+        "\naudit_log_filter_remove_filter(filter_name)\n",
+        "\n              Given a filter name, removes the filter from the current\n              set of filters. It is not an error for the filter not to\n              exist.\n            ",
+        "\n              If a removed filter is assigned to any user accounts,\n              those users stop being filtered (they are removed from the\n              audit_log_user table). Termination of\n              filtering includes any current sessions for those users:\n              They are detached from the filter and no longer logged.\n            ",
+        "\n              Arguments:\n",
+        "\n\nfilter_name: A string that\n                  specifies the filter name.\n\n",
+        "\n              Return value:\n            ",
+        "\n              A string that indicates whether the operation succeeded.\n              OK indicates success. ERROR:\n              message indicates\n              failure.\n            ",
+        "\n              Example:\n            ",
+        "Press CTRL+C to copy mysql> SELECT audit_log_filter_remove_filter('SomeFilter');\n+----------------------------------------------+\n| audit_log_filter_remove_filter('SomeFilter') |\n+----------------------------------------------+\n| OK                                           |\n+----------------------------------------------+"
+    ],
+    "Examples": [
+        "mysql> SELECT audit_log_filter_remove_filter('SomeFilter');\n+----------------------------------------------+\n| audit_log_filter_remove_filter('SomeFilter') |\n+----------------------------------------------+\n| OK                                           |\n+----------------------------------------------+"
+    ],
+    "Category": [
+        "Loadable Functions"
+    ],
+    "Reference HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/audit-log-reference.html#function_audit-log-filter-remove-filter"
+    ],
+    "Feature Type": [
+        "Function"
+    ]
+}

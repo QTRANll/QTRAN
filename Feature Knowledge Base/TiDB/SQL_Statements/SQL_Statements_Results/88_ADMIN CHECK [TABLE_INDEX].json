@@ -1,0 +1,25 @@
+{
+    "HTML": [
+        "https://docs.pingcap.com//zh/tidb/stable/sql-statement-admin-check-table-index"
+    ],
+    "Title": [
+        "ADMIN CHECK [TABLE|INDEX]"
+    ],
+    "Feature": [
+        "AdminCheckStmt ::=\n    'ADMIN' 'CHECK' ( 'TABLE' TableNameList | 'INDEX' TableName Identifier ( HandleRange ( ',' HandleRange )* )? )\n\nTableNameList ::=\n    TableName ( ',' TableName )*\n\nHandleRange ::= '(' Int64Num ',' Int64Num ')'\n"
+    ],
+    "Description": [
+        "ADMIN CHECK [TABLE|INDEX] \u8bed\u53e5\u7528\u4e8e\u6821\u9a8c\u8868\u4e2d\u6570\u636e\u548c\u5bf9\u5e94\u7d22\u5f15\u7684\u4e00\u81f4\u6027\u3002",
+        "\u8be5\u8bed\u53e5\u4e0d\u652f\u6301\uff1a",
+        "\u6821\u9a8c\u5916\u952e\u7ea6\u675f\u3002\u5f53\u4f7f\u7528\u805a\u7c07\u7d22\u5f15\u65f6\uff0c\u6821\u9a8c\u4e3b\u952e\u7d22\u5f15\u3002",
+        "\u5982\u679c\u6267\u884c ADMIN CHECK [TABLE|INDEX] \u53d1\u73b0\u4efb\u4f55\u95ee\u9898\uff0c\u4f60\u53ef\u4ee5\u5220\u9664\u5e76\u91cd\u65b0\u521b\u5efa\u7d22\u5f15\u6765\u89e3\u51b3\u3002\u5982\u679c\u95ee\u9898\u4ecd\u672a\u89e3\u51b3\uff0c\u4f60\u53ef\u4ee5\u5c1d\u8bd5 TiDB \u652f\u6301\u8d44\u6e90\u3002"
+    ],
+    "Examples": [
+        "ADMIN CHECK TABLE tbl_name [, tbl_name] ...;\n",
+        "ADMIN CHECK INDEX tbl_name idx_name;\n",
+        "ADMIN CHECK INDEX tbl_name idx_name (lower_val, upper_val) [, (lower_val, upper_val)] ...;\n"
+    ],
+    "Category": [
+        "\u7ba1\u7406\u8bed\u53e5"
+    ]
+}

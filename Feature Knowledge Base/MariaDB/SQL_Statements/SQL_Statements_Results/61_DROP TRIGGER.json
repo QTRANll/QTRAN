@@ -1,0 +1,25 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/drop-trigger/"
+    ],
+    "Title": [
+        "DROP TRIGGER"
+    ],
+    "Feature": [
+        "DROP TRIGGER [IF EXISTS] [schema_name.]trigger_name\n"
+    ],
+    "Description": [
+        "This statement drops a trigger. The schema (database) name is optional. If the\nschema is omitted, the trigger is dropped from the default schema.\nIts use requires the TRIGGER privilege for the table associated with the trigger.",
+        "Use IF EXISTS to prevent an error from occurring for a\ntrigger that does not exist. A NOTE is generated for a non-existent trigger\nwhen using IF EXISTS. See SHOW WARNINGS.",
+        "Note: Triggers for a table are also dropped if you drop the table.",
+        "Atomic DDL",
+        "MariaDB starting with 10.6.1MariaDB 10.6.1 supports Atomic DDL and DROP TRIGGER is atomic.\n"
+    ],
+    "Examples": [
+        "DROP TRIGGER test.example_trigger;\n",
+        "DROP TRIGGER IF EXISTS test.example_trigger;\nQuery OK, 0 rows affected, 1 warning (0.01 sec)\n\nSHOW WARNINGS;\n+-------+------+------------------------+\n| Level | Code | Message                |\n+-------+------+------------------------+\n| Note  | 1360 | Trigger does not exist |\n+-------+------+------------------------+\n"
+    ],
+    "Category": [
+        "Data Definition"
+    ]
+}

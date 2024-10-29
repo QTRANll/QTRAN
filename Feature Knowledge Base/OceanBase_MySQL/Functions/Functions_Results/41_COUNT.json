@@ -1,0 +1,22 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000000823029"
+    ],
+    "Title": [
+        "COUNT"
+    ],
+    "Feature": [
+        "COUNT([DISTINCT | ALL] expr)\n"
+    ],
+    "Description": [
+        "返回 SELECT 语句检索到的行中非 NULL 值的数目。如果找不到匹配的行，则返回 0。DISTINCT 选项可用于返回 expr 的不同值的数目。",
+        "COUNT(*) 的稍微不同之处在于，它返回检索行的数目，不论其是否包含 NULL 值。"
+    ],
+    "Examples": [
+        "obclient> SELECT * FROM test;\n+----+------+------+\n| id | ip   | ip2  |\n+----+------+------+\n|  1 |    4 | NULL |\n|  3 |    3 | NULL |\n|  4 |    3 | NULL |\n+----+------+------+\n3 rows in set\n\nobclient> SELECT COUNT(ip2), COUNT(ip), COUNT(DISTINCT(ip)), COUNT(*) FROM test;\n+------------+-----------+---------------------+----------+\n| count(ip2) | count(ip) | count(distinct(ip)) | count(*) |\n+------------+-----------+---------------------+----------+\n|          0 |         3 |                   2 |        3 |\n+------------+-----------+---------------------+----------+\n1 row in set\n"
+    ],
+    "Category": [
+        "Aggregate Functions",
+        "Analysis Functions"
+    ]
+}

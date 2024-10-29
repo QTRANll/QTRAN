@@ -1,0 +1,28 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/hash-functions"
+    ],
+    "Title": [
+        "sipHash128"
+    ],
+    "Feature": [
+        "sipHash128(par1,...)"
+    ],
+    "Description": [
+        "sipHash128",
+        "Like sipHash64 but produces a 128-bit hash value, i.e. the final xor-folding state is done up to 128 bits.",
+        "NoteThis 128-bit variant differs from the reference implementation and it's weaker.\nThis version exists because, when it was written, there was no official 128-bit extension for SipHash.\nNew projects should probably use sipHash128Reference.",
+        "Syntax",
+        "sipHash128(par1,...)",
+        "Arguments",
+        "Same as for sipHash64.",
+        "Returned value",
+        "A 128-bit SipHash hash value of type FixedString(16)."
+    ],
+    "Examples": [
+        "SELECT hex(sipHash128('foo', '\\x01', 3));"
+    ],
+    "Category": [
+        "Hash Functions"
+    ]
+}

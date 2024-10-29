@@ -1,0 +1,22 @@
+{
+    "HTML": [
+        "https://docs.pingcap.com//zh/tidb/stable/sql-statement-show-character-set"
+    ],
+    "Title": [
+        "SHOW CHARACTER SET"
+    ],
+    "Feature": [
+        "ShowCharsetStmt ::=\n    \"SHOW\" ( (\"CHARACTER\" | \"CHAR\") \"SET\" | \"CHARSET\" ) ShowLikeOrWhere?\n\nShowLikeOrWhere ::=\n    \"LIKE\" SimpleExpr\n|   \"WHERE\" Expression\n"
+    ],
+    "Description": [
+        "SHOW CHARACTER SET \u8bed\u53e5\u63d0\u4f9b TiDB \u4e2d\u53ef\u7528\u5b57\u7b26\u96c6\u7684\u9759\u6001\u5217\u8868\u3002\u6b64\u5217\u8868\u4e0d\u53cd\u6620\u5f53\u524d\u8fde\u63a5\u6216\u7528\u6237\u7684\u4efb\u4f55\u5c5e\u6027\u3002"
+    ],
+    "Examples": [
+        "SHOW CHARACTER SET;\n",
+        "SHOW CHARACTER SET LIKE 'utf8%';\n",
+        "SHOW CHARACTER SET WHERE Description='UTF-8 Unicode';\n"
+    ],
+    "Category": [
+        "\u663e\u793a\u8bed\u53e5"
+    ]
+}

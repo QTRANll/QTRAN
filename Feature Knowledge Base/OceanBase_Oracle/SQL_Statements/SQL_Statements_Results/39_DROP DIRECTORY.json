@@ -1,0 +1,22 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000001054346"
+    ],
+    "Title": [
+        "DROP DIRECTORY"
+    ],
+    "Feature": [
+        "DROP DIRECTORY directory_name;\n"
+    ],
+    "Description": [
+        "该语句用来删除路径对象。",
+        "\n说明\n删除路径对象必须具有 DROP ANY DIRECTORY 系统权限。\n",
+        "\n\n\n参数\n描述\n\n\n\n\ndirectory_name\n指定要删除的路径对象。删除路径对象时，不会删除系统中相关联的共享文件系统路径。\n\n\n"
+    ],
+    "Examples": [
+        "obclient> DROP DIRECTORY sql_file_dir;\nQuery OK, 1 row affected\n"
+    ],
+    "Category": [
+        "DDL"
+    ]
+}

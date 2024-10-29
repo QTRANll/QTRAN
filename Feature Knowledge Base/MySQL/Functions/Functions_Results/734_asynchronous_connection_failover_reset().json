@@ -1,0 +1,41 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/built-in-function-reference.html",
+        "https://dev.mysql.com/doc/refman/8.4/en/replication-functions.html"
+    ],
+    "Title": [
+        "14.1 Built-In Function and Operator Reference",
+        "14.18 Replication Functions"
+    ],
+    "Feature": [
+        "asynchronous_connection_failover_reset()"
+    ],
+    "Description": [
+        "Remove all settings relating to group replication asynchronous",
+        "\nasynchronous_connection_failover_reset()\n",
+        "\n            Remove all settings relating to the asynchronous connection\n            failover mechanism. The function clears the Performance\n            Schema tables\n            replication_asynchronous_connection_failover\n            and\n            replication_asynchronous_connection_failover_managed.\n          ",
+        "\nasynchronous_connection_failover_reset()\n            can be used only on a server that is not currently part of a\n            group, and that does not have any replication channels\n            running. You can use this function to clean up a server that\n            is no longer being used in a managed group.\n          ",
+        "\n            Syntax:\n          ",
+        "Press CTRL+C to copy STRING asynchronous_connection_failover_reset()",
+        "\n            Arguments:\n          ",
+        "\n            None.\n          ",
+        "\n            Return value:\n          ",
+        "\n            A string containing the result of the operation, for example\n            whether it was successful or not.\n          ",
+        "\n            Example:\n          ",
+        "Press CTRL+C to copy mysql> SELECT asynchronous_connection_failover_reset();\n+-------------------------------------------------------------------------+\n| asynchronous_connection_failover_reset()                                |\n+-------------------------------------------------------------------------+\n| The UDF asynchronous_connection_failover_reset() executed successfully. |\n+-------------------------------------------------------------------------+\n1 row in set (0.00 sec)",
+        "\n            For more information, see\n            Section\u00a019.4.9, \u201cSwitching Sources and Replicas with Asynchronous Connection Failover\u201d.\n"
+    ],
+    "Examples": [
+        "mysql> SELECT asynchronous_connection_failover_reset();\n+-------------------------------------------------------------------------+\n| asynchronous_connection_failover_reset()                                |\n+-------------------------------------------------------------------------+\n| The UDF asynchronous_connection_failover_reset() executed successfully. |\n+-------------------------------------------------------------------------+\n1 row in set (0.00 sec)"
+    ],
+    "Category": [
+        "Built-In Functions",
+        "Replication Functions"
+    ],
+    "Reference HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/replication-functions-async-failover.html#function_asynchronous-connection-failover-reset"
+    ],
+    "Feature Type": [
+        "Function"
+    ]
+}

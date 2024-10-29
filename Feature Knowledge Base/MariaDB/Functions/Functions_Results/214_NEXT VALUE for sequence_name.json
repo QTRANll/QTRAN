@@ -1,0 +1,27 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/next-value-for-sequence_name/"
+    ],
+    "Title": [
+        "NEXT VALUE for sequence_name"
+    ],
+    "Feature": [
+        "NEXT VALUE FOR sequence\n",
+        "or",
+        "NEXTVAL(sequence_name)\n",
+        "or in Oracle mode (SQL_MODE=ORACLE)",
+        "sequence_name.nextval\n",
+        "NEXT VALUE FOR is ANSI SQL syntax while NEXTVAL() is PostgreSQL syntax."
+    ],
+    "Description": [
+        "Generate next value for a SEQUENCE.",
+        "You can greatly speed up NEXT VALUE by creating the sequence with the CACHE option. If not, every NEXT VALUE usage will cause changes in the stored SEQUENCE table.\nWhen using NEXT VALUE the value will be reserved at once and will not be reused, except if the SEQUENCE was created with CYCLE. This means that when you are using SEQUENCEs you have to expect gaps in the generated sequence numbers.\nIf one updates the SEQUENCE with SETVAL() or ALTER SEQUENCE ... RESTART, NEXT VALUE FOR will notice this and start from the next requested value.\nFLUSH TABLES will close the sequence and the next sequence number generated will be according to what's stored in the SEQUENCE object. In effect, this will discard the cached values.\nA server restart (or closing the current connection) also causes a drop of all cached values. The cached sequence numbers are reserved only for the current connection.\nNEXT VALUE requires the INSERT privilege.\nYou can also use NEXT VALUE FOR sequence for column DEFAULT.\n",
+        "Once the sequence is complete, unless the sequence has been created with the CYCLE attribute (not the default), calling the function will result in Error 4084: Sequence has run out."
+    ],
+    "Examples": [
+        "CREATE OR REPLACE SEQUENCE s MAXVALUE=2;\n\nSELECT NEXTVAL(s);\n+------------+\n| NEXTVAL(s) |\n+------------+\n|          1 |\n+------------+\n\nSELECT NEXTVAL(s);\n+------------+\n| NEXTVAL(s) |\n+------------+\n|          2 |\n+------------+\n\nSELECT NEXTVAL(s);\nERROR 4084 (HY000): Sequence 'test.s' has run out\n\nALTER SEQUENCE s MAXVALUE=2 CYCLE;\n\nSELECT NEXTVAL(s);\n+------------+\n| NEXTVAL(s) |\n+------------+\n|          1 |\n+------------+\n"
+    ],
+    "Category": [
+        "SEQUENCE Functions"
+    ]
+}

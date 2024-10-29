@@ -1,0 +1,29 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/type-conversion-functions"
+    ],
+    "Title": [
+        "toBool"
+    ],
+    "Feature": [
+        "toBool(expr)"
+    ],
+    "Description": [
+        "toBool",
+        "Converts an input value to a value of type Bool. Throws an exception in case of an error.",
+        "Syntax",
+        "toBool(expr)",
+        "Arguments",
+        "expr \u2014 Expression returning a number or a string. Expression.",
+        "Supported arguments:",
+        "Values of type (U)Int8/16/32/64/128/256.Values of type Float32/64.Strings true or false (case-insensitive).",
+        "Returned value",
+        "Returns true or false based on evaluation of the argument. Bool."
+    ],
+    "Examples": [
+        "SELECT    toBool(toUInt8(1)),    toBool(toInt8(-1)),    toBool(toFloat32(1.01)),    toBool('true'),    toBool('false'),    toBool('FALSE')FORMAT Vertical"
+    ],
+    "Category": [
+        "Type Conversion Functions"
+    ]
+}

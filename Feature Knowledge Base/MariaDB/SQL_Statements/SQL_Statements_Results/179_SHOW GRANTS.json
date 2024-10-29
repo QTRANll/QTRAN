@@ -1,0 +1,31 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/show-grants/"
+    ],
+    "Title": [
+        "SHOW GRANTS"
+    ],
+    "Feature": [
+        "SHOW GRANTS [FOR user|role]\n"
+    ],
+    "Description": [
+        "The SHOW GRANTS statement lists privileges granted to a particular user or role.",
+        "Users",
+        "The statement lists the GRANT statement or\nstatements that must be issued to duplicate the privileges that are granted to\na MariaDB user account. The account is named using the same format as for the\nGRANT statement; for example,\n'jeffrey'@'localhost'. If you specify only the user name part\nof the account name, a host name part of '%' is used.  For\nadditional information about specifying account names, see\nGRANT.",
+        "SHOW GRANTS FOR 'root'@'localhost';\n+---------------------------------------------------------------------+\n| Grants for root@localhost                                           |\n+---------------------------------------------------------------------+\n| GRANT ALL PRIVILEGES ON *.* TO 'root'@'localhost' WITH GRANT OPTION |\n+---------------------------------------------------------------------+\n",
+        "To list the privileges granted to the account that you are using to\nconnect to the server, you can use any of the following statements:",
+        "SHOW GRANTS;\nSHOW GRANTS FOR CURRENT_USER;\nSHOW GRANTS FOR CURRENT_USER();\n",
+        "If SHOW GRANTS FOR CURRENT_USER (or any\nof the equivalent syntaxes) is used in DEFINER context (such\nas within a stored procedure that is defined with \n SQL SECURITY DEFINER), the grants displayed are those of the\ndefiner and not the invoker.",
+        "Note that the DELETE HISTORY privilege, introduced in MariaDB 10.3.4, was displayed as DELETE VERSIONING ROWS when running SHOW GRANTS until MariaDB 10.3.15 (MDEV-17655).",
+        "Roles",
+        "SHOW GRANTS can also be used to view the privileges granted to a role.",
+        "Example",
+        "SHOW GRANTS FOR journalist;\n+------------------------------------------+\n| Grants for journalist                    |\n+------------------------------------------+\n| GRANT USAGE ON *.* TO 'journalist'       |\n| GRANT DELETE ON `test`.* TO 'journalist' |\n+------------------------------------------+\n",
+        "FOR PUBLIC",
+        "MariaDB starting with 10.11GRANT ... TO PUBLIC was introduced in MariaDB 10.11 to grant privileges to all users. SHOW GRANTS FOR PUBLIC shows all these grants.\nSHOW GRANTS FOR public;\n+------------------------------------------------+\n| Grants for PUBLIC                              |\n+------------------------------------------------+\n| GRANT ALL PRIVILEGES ON `dev_db`.* TO `PUBLIC` |\n+------------------------------------------------+\n"
+    ],
+    "Examples": [],
+    "Category": [
+        "Administrative SQL Statements"
+    ]
+}

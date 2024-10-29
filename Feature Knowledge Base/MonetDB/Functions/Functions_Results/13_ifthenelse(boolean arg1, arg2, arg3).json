@@ -1,0 +1,22 @@
+{
+    "HTML": [
+        "https://www.monetdb.org/documentation-Aug2024/user-guide/sql-functions/comparison-functions"
+    ],
+    "Title": [
+        "ifthenelse(boolean arg1, arg2, arg3)"
+    ],
+    "Feature": [
+        "ifthenelse(boolean arg1, arg2, arg3)"
+    ],
+    "Description": [
+        "Return type: ",
+        "same as arg2 or arg3",
+        "when arg1 expression evaluates to true then return arg2 else arg3"
+    ],
+    "Examples": [
+        "ifthenelse(('a' = 'b'), 1, 2)"
+    ],
+    "Category": [
+        "Comparison Functions"
+    ]
+}

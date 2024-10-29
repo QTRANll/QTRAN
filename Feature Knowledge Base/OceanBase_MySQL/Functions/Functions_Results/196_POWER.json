@@ -1,0 +1,21 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000000823332"
+    ],
+    "Title": [
+        "POWER"
+    ],
+    "Feature": [
+        "POWER(X,Y)\n"
+    ],
+    "Description": [
+        "返回 X 的 Y 次方，该函数是 POW() 的别名。",
+        "X 与 Y 中任何一个参数为 NULL，返回值都为 NULL。"
+    ],
+    "Examples": [
+        "obclient> SELECT POWER(2,8);\n+------------+\n| POWER(2,8) |\n+------------+\n|        256 |\n+------------+\n1 row in set\n"
+    ],
+    "Category": [
+        "Mathematical Functions"
+    ]
+}

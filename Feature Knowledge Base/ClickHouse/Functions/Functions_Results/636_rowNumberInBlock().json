@@ -1,0 +1,25 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/other-functions"
+    ],
+    "Title": [
+        "rowNumberInBlock"
+    ],
+    "Feature": [
+        "rowNumberInBlock()"
+    ],
+    "Description": [
+        "rowNumberInBlock",
+        "Returns for each block processed by rowNumberInBlock the number of the current row.\nThe returned number starts for each block at 0.",
+        "Syntax",
+        "rowNumberInBlock()",
+        "Returned value",
+        "Ordinal number of the row in the data block starting from 0. UInt64."
+    ],
+    "Examples": [
+        "SELECT rowNumberInBlock()FROM(    SELECT *    FROM system.numbers_mt    LIMIT 10) SETTINGS max_block_size = 2"
+    ],
+    "Category": [
+        "Other Functions"
+    ]
+}

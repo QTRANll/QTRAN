@@ -1,0 +1,27 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000000823513"
+    ],
+    "Title": [
+        "XMLTABLE"
+    ],
+    "Feature": [
+        "XMLTABLE( [ XMLnamespaces_clause , ] XQuery_string XMLTABLE_options )\n\nXMLnamespaces_clause：\n XMLNAMESPACES( { string AS identifier } | { DEFAULT string } [, { string AS identifier } | { DEFAULT string } ]...)\n\nXMLTABLE_options：\n  [ XML_passing_clause ]\n  [ COLUMNS XML_table_column [, XML_table_column]...]\n\nXML_passing_clause：\n  PASSING [ BY VALUE ] expr [ AS identifier ]\n\nXML_table_column：\n  column { FOR ORDINALITY \n          | { datatype | XMLTYPE } [ PATH string ] [ DEFAULT expr ]\n  }\n"
+    ],
+    "Description": [
+        "该函数用于将 Xpath 返回的结果映射到关系表的行和列中。您可以使用 SQL 查询函数返回的结果作为虚拟关系表。",
+        "XMLTABLE 功能的关键能力包括：",
+        "数据提取能力：通过在 XMLTABLE 中指定适当的 XPath 表达式，可以精准地从复杂的 XML 文档中提取所需的数据部分。",
+        "数据结构化：XMLTABLE 能够将 XML 数据的特定部分映射到关系型表的行和列上，从而将半结构化的 XML 数据转换成结构化的表格形式，使其易于进行 SQL 查询和分析。",
+        "表格转换：你可以利用 XMLTABLE 产生的结构化数据建立虚拟表，并且可以将这些表数据用于生成新的表格或视图，从而在数据库中保存或进一步操作这些处理过的数据。",
+        "\n\n\n字段\n说明\n\n\n\n\nXMLnamespaces_clause\n定义命名空间前缀和 URI，用于在 XML 查询中引用具有命名空间的元素和属性。该子句包含一组 XML 命名空间声明，这些声明被 XML_table_column 的 PATH 子句中的 XPath 表达式引用，该表达式计算整个 XMLTable 函数的列。如果您想在 COLUMNS 子句的 PATH 表达式中使用限定名称，则需要指定该子句。\n\n\nXQuery_string\n指定 XQuery 表达式，用于从 XML 数据中选择需要转换的数据。XQuery 是一种 XML 查询语言，用于从 XML 文档中提取数据和实现复杂的查询操作，这个参数允许你使用 XQuery 语法来定义从 XML 数据中提取哪些元素或属性的指令。 \n      \n注意\nOceanBase 数据库当前版本暂不支持 XQuery。\n\n\n\nXML_passing_clause\n通过 PASSING 关键字指定传递给 XQuery 的 XML 数据。可以指定按值传递以及传递数据的别名。具体如下： \n      \nPASSING: 用来带出 XML_passing_clause 的开始。PASSING 子句的内容是 XMLTABLE 的输入。\nBY VALUE: 可选关键字，表示传递的数据将按值传递，而不是按引用传递。在大多数情况下，可以省略这个选项，因为按值传递是默认的行为。\nexpr: 是一个返回 XMLType 或 SQL 标量数据类型实例的表达式，其结果是要传递给 XQuery 的 XML 数据。这个表达式通常是一个返回 XML 类型数据的列名、变量或者更复杂的表达式。PASSING 子句当前在当前版本仅支持指定一个 expr。\nAS identifier: 可选项，它为 expr 参数结果指定一个别名（即标识符）。在 XQuery 表达式中，可以使用这个别名来引用传递的数据。\n\n\n\nCOLUMNS\n可选的 COLUMNS 子句定义了由 XMLTable 创建的虚拟表的列。 如果您省略 COLUMNS 子句，则 XMLTable 返回一个带有名为 COLUMN_VALUE 的单个 XMLType 伪列的行。\n\n\nXML_table_column\n定义要生成的表列，可以是普通数据类型列或 XMLTYPE 列。还可以指定列值的 XPath 路径和默认值。FOR ORDINALITY 用于生成行号。具体如下： \n      \nFOR ORDINALITY：指定该列将是生成的行号列。最多只能有一个 FOR ORDINALITY 子句。它被创建为一个 NUMBER 列。\ndatatype 或 XMLTYPE：除了 FOR ORDINALITY 列之外，对于每个结果列，您必须指定列的数据类型，可以是 XMLType 或任何其他数据类型。如果列的数据类型是 XMLType，则需要指定 XMLTYPE 子句。 通过引用返回 XMLType 数据可以让您指定其他列，其路径定位的节点在源数据中位于列的 PATH 表达式所定位的节点之外。如果列的数据类型是任何其他数据类型，则需要指定数据类型。 \n        \nPATH string：可选项，指定由 XQuery 表达式字符串处理的 XQuery 结果的部分将用作列内容。如果省略 PATH，则假定为 XQuery 表达式列。例如：XMLTable(... COLUMNS xyz)。\nDEFAULT expr：可选项，指定在 PATH 表达式结果为空序列时要使用的值。其 expr 是一个 XQuery 表达式，用于生成默认值。\n\n\n\n\n",
+        "返回的数据类型取决于 XMLTable 函数中指定的列的数据类型。"
+    ],
+    "Examples": [
+        "SELECT *\nFROM XMLTABLE(\n       XMLNAMESPACES(DEFAULT 'http://www.example.com/employees'),\n       '/employees/employee'\n       PASSING XMLTYPE('\n          <employees xmlns=\"http://www.example.com/employees\">\n               <employee>\n                    <emp_id>1</emp_id>\n                    <name>John Doe</name>\n                    <position>Developer</position>\n                    <salary>5000</salary>\n               </employee>\n               <employee>\n                    <emp_id>2</emp_id>\n                    <name>Jane Smith</name>\n                    <position>Manager</position>\n                    <salary>6500</salary>\n               </employee>\n          </employees>'\n     )\n     COLUMNS\n          employee_id    INT           PATH 'emp_id',\n          employee_name  VARCHAR2(100) PATH 'name',\n          position       VARCHAR2(50)  PATH 'position',\n          salary         NUMBER        PATH 'salary'\n) AS emp_tab;\n",
+        "+-------------+---------------+-----------+--------+\n| EMPLOYEE_ID | EMPLOYEE_NAME | POSITION  | SALARY |\n+-------------+---------------+-----------+--------+\n|           1 | John Doe      | Developer |   5000 |\n|           2 | Jane Smith    | Manager   |   6500 |\n+-------------+---------------+-----------+--------+\n2 rows in set\n"
+    ],
+    "Category": [
+        "XML Functions"
+    ]
+}

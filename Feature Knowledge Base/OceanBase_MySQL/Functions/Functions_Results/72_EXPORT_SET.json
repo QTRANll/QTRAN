@@ -1,0 +1,21 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000000823430"
+    ],
+    "Title": [
+        "EXPORT_SET"
+    ],
+    "Feature": [
+        "EXPORT_SET(bits,on,off[,separator[,number_of_bits]])\n"
+    ],
+    "Description": [
+        "返回一个字符串，对于在 bits 值中设置的位，会得到一个 on 字符串；对于未在 bits 值中设置的位，都会得到一个 off 字符串。从右到左检查 bits 中的位（即从低位到高位）。",
+        "字符串从左到右添加到结果中，由 separator 字符串分隔（默认为逗号字符\",\"）。检查的位数由 number_of_bits 给出，如果未指定，则默认为 64 位。如果大于 64 位，则 number_of_bits 将被静默剪裁为 64 位。number_of_bits 被视为无符号整数，因此值 -1 与 64 实际上相同。"
+    ],
+    "Examples": [
+        "obclient> SELECT EXPORT_SET(6, '1','0',',', 10);\n+--------------------------------+\n| EXPORT_SET(6, '1','0',',', 10) |\n+--------------------------------+\n| 0,1,1,0,0,0,0,0,0,0            |\n+--------------------------------+\n1 row in set\n"
+    ],
+    "Category": [
+        "String Functions"
+    ]
+}

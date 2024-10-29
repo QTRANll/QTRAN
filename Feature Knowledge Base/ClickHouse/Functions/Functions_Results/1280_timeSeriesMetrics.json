@@ -1,0 +1,28 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/table-functions/timeSeriesMetrics"
+    ],
+    "Title": [
+        "timeSeriesMetrics"
+    ],
+    "Feature": [
+        "timeSeriesMetrics"
+    ],
+    "Description": [
+        "timeSeriesMetrics",
+        "timeSeriesMetrics(db_name.time_series_table) - Returns the metrics table\nused by table db_name.time_series_table which table engine is TimeSeries:",
+        "CREATE TABLE db_name.time_series_table ENGINE=TimeSeries METRICS metrics_table",
+        "The function also works if the metrics table is inner:",
+        "CREATE TABLE db_name.time_series_table ENGINE=TimeSeries METRICS INNER UUID '01234567-89ab-cdef-0123-456789abcdef'",
+        "The following queries are equivalent:",
+        "SELECT * FROM timeSeriesMetrics(db_name.time_series_table);SELECT * FROM timeSeriesMetrics('db_name.time_series_table');SELECT * FROM timeSeriesMetrics('db_name', 'time_series_table');"
+    ],
+    "Examples": [
+        "CREATE TABLE db_name.time_series_table ENGINE=TimeSeries METRICS metrics_table",
+        "CREATE TABLE db_name.time_series_table ENGINE=TimeSeries METRICS INNER UUID '01234567-89ab-cdef-0123-456789abcdef'",
+        "SELECT * FROM timeSeriesMetrics(db_name.time_series_table);SELECT * FROM timeSeriesMetrics('db_name.time_series_table');SELECT * FROM timeSeriesMetrics('db_name', 'time_series_table');"
+    ],
+    "Category": [
+        "Table Functions"
+    ]
+}

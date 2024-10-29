@@ -1,0 +1,37 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/built-in-function-reference.html",
+        "https://dev.mysql.com/doc/refman/8.4/en/string-functions.html"
+    ],
+    "Title": [
+        "14.1 Built-In Function and Operator Reference",
+        "14.8 String Functions and Operators"
+    ],
+    "Feature": [
+        "CONCAT(str1,str2,...)"
+    ],
+    "Description": [
+        "Return concatenated string",
+        "\nCONCAT(str1,str2,...)\n",
+        "\n          Returns the string that results from concatenating the\n          arguments. May have one or more arguments. If all arguments\n          are nonbinary strings, the result is a nonbinary string. If\n          the arguments include any binary strings, the result is a\n          binary string. A numeric argument is converted to its\n          equivalent nonbinary string form.\n        ",
+        "\nCONCAT() returns\n          NULL if any argument is\n          NULL.\n        ",
+        "Press CTRL+C to copy mysql> SELECT CONCAT('My', 'S', 'QL');\n        -> 'MySQL'\nmysql> SELECT CONCAT('My', NULL, 'QL');\n        -> NULL\nmysql> SELECT CONCAT(14.3);\n        -> '14.3'",
+        "\n          For quoted strings, concatenation can be performed by placing\n          the strings next to each other:\n        ",
+        "Press CTRL+C to copy mysql> SELECT 'My' 'S' 'QL';\n        -> 'MySQL'",
+        "\n          If CONCAT() is invoked from\n          within the mysql client, binary string\n          results display using hexadecimal notation, depending on the\n          value of the --binary-as-hex.\n          For more information about that option, see\n          Section\u00a06.5.1, \u201cmysql \u2014 The MySQL Command-Line Client\u201d.\n        "
+    ],
+    "Examples": [
+        "mysql> SELECT CONCAT('My', 'S', 'QL');\n        -> 'MySQL'\nmysql> SELECT CONCAT('My', NULL, 'QL');\n        -> NULL\nmysql> SELECT CONCAT(14.3);\n        -> '14.3'",
+        "mysql> SELECT 'My' 'S' 'QL';\n        -> 'MySQL'"
+    ],
+    "Category": [
+        "Built-In Functions",
+        "String Functions"
+    ],
+    "Reference HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/string-functions.html#function_concat"
+    ],
+    "Feature Type": [
+        "Function"
+    ]
+}

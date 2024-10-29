@@ -1,0 +1,21 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/ps_thread_trx_info/"
+    ],
+    "Title": [
+        "ps_thread_trx_info"
+    ],
+    "Feature": [
+        "sys.ps_thread_trx_info(thread_id)\n"
+    ],
+    "Description": [
+        "ps_thread_trx_info is a stored function available with the Sys Schema.",
+        "It returns a JSON object with information about the thread specified by the given thread_id. This information includes:",
+        "the current transaction\nexecuted statements (derived from the Performance Schema events_transactions_current Table and the Performance Schema events_statements_history Table (full data will only returned if the consumers for those tables are enabled).\n",
+        "The maximum length of the returned JSON object is determined by the value of the ps_thread_trx_info.max_length sys_config option (by default 65535). If the returned value exceeds this length, a JSON object error is returned."
+    ],
+    "Examples": [],
+    "Category": [
+        "Administrative SQL Statements"
+    ]
+}

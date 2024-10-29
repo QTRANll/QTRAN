@@ -1,0 +1,28 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/math-functions"
+    ],
+    "Title": [
+        "cosh"
+    ],
+    "Feature": [
+        "cosh(x)"
+    ],
+    "Description": [
+        "cosh",
+        "Returns the hyperbolic cosine of the argument.",
+        "Syntax",
+        "cosh(x)",
+        "Arguments",
+        "x \u2014 The angle, in radians. Values from the interval: \u2212\u221e<x<+\u221e-\\infty \\lt x \\lt +\\infty\u2212\u221e<x<+\u221e. (U)Int*, Float* or Decimal*.",
+        "Returned value",
+        "Values from the interval: 1\u2264cosh(x)<+\u221e1 \\le cosh(x) \\lt +\\infty1\u2264cosh(x)<+\u221e.",
+        "Type: Float64."
+    ],
+    "Examples": [
+        "SELECT cosh(0);"
+    ],
+    "Category": [
+        "Mathematical Functions"
+    ]
+}

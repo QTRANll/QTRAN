@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://duckdb.org/docs/sql/functions/timestamp"
+    ],
+    "Title": [
+        "try_strptime(text, format-list)"
+    ],
+    "Feature": [
+        "try_strptime(text, format-list)"
+    ],
+    "Description": [
+        "Converts the string text to timestamp applying the format strings in the list until one succeeds. Returns NULL on failure."
+    ],
+    "Examples": [
+        "try_strptime('4/15/2023 10:56:00', ['%d/%m/%Y %H:%M:%S', '%m/%d/%Y %H:%M:%S'])"
+    ],
+    "Category": [
+        "Timestamp Functions"
+    ]
+}

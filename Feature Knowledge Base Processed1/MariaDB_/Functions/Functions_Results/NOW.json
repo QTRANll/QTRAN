@@ -1,0 +1,42 @@
+{
+    "HTML": "https://mariadb.com//kb/en/now/",
+    "Title": "NOW",
+    "Feature": [
+        "NOW([precision])\nCURRENT_TIMESTAMP\nCURRENT_TIMESTAMP([precision])\nLOCALTIME, LOCALTIME([precision])\nLOCALTIMESTAMP\nLOCALTIMESTAMP([precision])\n"
+    ],
+    "Description": [
+        "Returns the current date and time as a value in 'YYYY-MM-DD HH:MM:SS'\nor YYYYMMDDHHMMSS.uuuuuu format, depending on whether the function is\nused in a string or numeric context. The value is expressed in the\ncurrent time zone.",
+        "The optional precision determines the microsecond precision. See Microseconds in MariaDB.",
+        "NOW() (or its synonyms) can be used as the default value for TIMESTAMP columns as well as, since MariaDB 10.0.1, DATETIME columns. Before MariaDB 10.0.1, it was only possible for a single TIMESTAMP column per table to contain the CURRENT_TIMESTAMP as its default.",
+        "When displayed in the INFORMATION_SCHEMA.COLUMNS table, a default CURRENT TIMESTAMP is displayed as CURRENT_TIMESTAMP up until MariaDB 10.2.2, and as current_timestamp() from MariaDB 10.2.3, due to to MariaDB 10.2 accepting expressions in the DEFAULT clause.",
+        "Changing the timestamp system variable with a SET timestamp statement affects the value returned by NOW(), but not by SYSDATE()."
+    ],
+    "Examples": [
+        "SELECT NOW();\n+---------------------+\n| NOW()               |\n+---------------------+\n| 2010-03-27 13:13:25 |\n+---------------------+\n\nSELECT NOW() + 0;\n+-----------------------+\n| NOW() + 0             |\n+-----------------------+\n| 20100327131329.000000 |\n+-----------------------+\n",
+        "SELECT CURRENT_TIMESTAMP(2);\n+------------------------+\n| CURRENT_TIMESTAMP(2)   |\n+------------------------+\n| 2018-07-10 09:47:26.24 |\n+------------------------+\n",
+        "CREATE TABLE t (createdTS TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP);\n",
+        "SELECT * FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA='test'\n  AND COLUMN_NAME LIKE '%ts%'\\G\n*************************** 1. row ***************************\n           TABLE_CATALOG: def\n            TABLE_SCHEMA: test\n              TABLE_NAME: t\n             COLUMN_NAME: ts\n        ORDINAL_POSITION: 1\n          COLUMN_DEFAULT: current_timestamp()\n...\n",
+        "SELECT * FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA='test'\n  AND COLUMN_NAME LIKE '%ts%'\\G\n*************************** 1. row ***************************\n           TABLE_CATALOG: def\n            TABLE_SCHEMA: test\n              TABLE_NAME: t\n             COLUMN_NAME: createdTS\n        ORDINAL_POSITION: 1\n          COLUMN_DEFAULT: CURRENT_TIMESTAMP\n...\n"
+    ],
+    "Category": [
+        "Date & Time Functions"
+    ],
+    "Effective SQLs Refined": [
+        "SELECT NOW();",
+        "SELECT NOW() + 0;"
+    ],
+    "Ineffective SQLs Refined": [],
+    "Wrong Messages from Ineffective SQLs Refined": [],
+    "SQLs Generated1": [],
+    "SQLs Generated Costs1": [],
+    "SQLs Generated ExecResults1": [],
+    "SQLs Generated ExecTimes1": [],
+    "SQLs Generated ErrorMessages1": [],
+    "Effective SQLs Generated1": [],
+    "SQLs Generated2": [],
+    "SQLs Generated Costs2": [],
+    "SQLs Generated ExecResults2": [],
+    "SQLs Generated ExecTimes2": [],
+    "SQLs Generated ErrorMessages2": [],
+    "Effective SQLs Generated2": []
+}

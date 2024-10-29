@@ -1,0 +1,21 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/shutdown.html"
+    ],
+    "Title": [
+        "15.7.8.9 SHUTDOWN Statement"
+    ],
+    "Feature": [
+        "SHUTDOWN"
+    ],
+    "Description": [
+        "\n        This statement stops the MySQL server. It requires the\n        SHUTDOWN privilege.\n      ",
+        "\nSHUTDOWN provides an SQL-level\n        interface to the same functionality available using the\n        mysqladmin shutdown command. A successful\n        SHUTDOWN sequence consists of\n        checking the privileges, validating the arguments, and sending\n        an OK packet to the client. Then the server is shut down.\n      ",
+        "\n        The\n        Com_shutdown\n        status variable tracks the number of\n        SHUTDOWN statements. Because\n        status variables are initialized for each server startup and do\n        not persist across restarts, Com_shutdown\n        normally has a value of zero, but can be nonzero if\n        SHUTDOWN statements were executed\n        but failed.\n      ",
+        "\n        Another way to stop the server is to send it a\n        SIGTERM signal, which can be done by\n        root or the account that owns the server\n        process. SIGTERM enables server shutdown to\n        be performed without having to connect to the server. See\n        Section\u00a06.10, \u201cUnix Signal Handling in MySQL\u201d.\n"
+    ],
+    "Examples": [],
+    "Category": [
+        "Database Administration Statements"
+    ]
+}

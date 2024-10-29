@@ -1,0 +1,24 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000001053504"
+    ],
+    "Title": [
+        "PURGE"
+    ],
+    "Feature": [
+        " PURGE {TENANT | DATABASE | TABLE | INDEX} object_name;\n\nobject_name:\n    tenant_name\n  | database_name\n  | table_name\n  | index_name\n"
+    ],
+    "Description": [
+        "该语句用于删除回收站中的数据库对象，只支持删除租户、数据库、表与索引。",
+        "\n\n\n参数\n描述\n\n\n\n\ntenant_name\n指定要删除的租户名称。可以使用删除前的原始租户名，也可以使用在回收站中的名字。回收站中的名字具有唯一性，可以指定确定的租户；原始租户名可能会重复，此时删除的是最早进入回收站的租户。\n\n\ndatabase_name\n指定要删除的数据库在回收站中的名称，不支持直接指定数据库的名称。\n\n\ntable_name\n指定要删除的表在回收站中的名称，不支持直接指定表的名称。\n\n\nindex_name\n指定要删除的索引在回收站中的名称，不支持直接指定索引的名称。\n\n\n"
+    ],
+    "Examples": [
+        "obclient> SHOW RECYCLEBIN;\n+--------------------------------+---------------+--------+----------------------------+\n| OBJECT_NAME                    | ORIGINAL_NAME | TYPE   | CREATETIME                 |\n+--------------------------------+---------------+--------+----------------------------+\n| __recycle_$_1_1599722585571328 | mysql         | TENANT | 2020-09-10 15:36:54.712101 |\n+--------------------------------+---------------+--------+----------------------------+\n1 row in set\n\nobclient> PURGE TENANT mysql;\nQuery OK, 0 rows affected\n\nobclient> SHOW RECYCLEBIN;\nEmpty set\n",
+        "obclient> CREATE DATABASE db1;\nQuery OK, 1 row affected\n\nobclient> DROP DATABASE db1;\nQuery OK, 0 rows affected\n\nobclient> SHOW RECYCLEBIN;\n+--------------------------------+---------------+----------+----------------------------+\n| OBJECT_NAME                    | ORIGINAL_NAME | TYPE     | CREATETIME                 |\n+--------------------------------+---------------+----------+----------------------------+\n| __recycle_$_1_1597384386029184 | db1           | DATABASE | 2020-08-14 13:53:06.029367 |\n+--------------------------------+---------------+----------+----------------------------+\n1 row in set\n\nobclient> PURGE DATABASE __recycle_$_1_1597384386029184;\nQuery OK, 0 rows affected\n\nobclient> SHOW RECYCLEBIN;\nEmpty set\n",
+        "obclient> CREATE TABLE test(c1 INT);\nQuery OK, 0 rows affected\n\nobclient> DROP TABLE test;\nQuery OK, 0 rows affected\n\nobclient> SHOW RECYCLEBIN;\n+-------------------------------------------+---------------+-------+----------------------------+\n| OBJECT_NAME                               | ORIGINAL_NAME | TYPE  | CREATETIME                 |\n+-------------------------------------------+---------------+-------+----------------------------+\n| __recycle_$_1_1099511628776_1099511677778 | test          | TABLE | 2017-10-20 17:40:22.304025 |\n+-------------------------------------------+---------------+-------+----------------------------+\n1 row in set\n\nobclient> PURGE TABLE __recycle_$_1_1099511628776_1099511677778;\nQuery OK, 0 rows affected\n\nobclient> SHOW RECYCLEBIN;\nEmpty set\n",
+        "obclient> CREATE TABLE t1(c1 INT);\nQuery OK, 0 rows affected\n\nobclient> CREATE INDEX idx ON t1(c1);\nQuery OK, 0 rows affected\n\nobclient> DROP TABLE t1;\nQuery OK, 0 rows affected\n\nobclient> SHOW RECYCLEBIN;\n+--------------------------------+----------------------------+-------+----------------------------+\n| OBJECT_NAME                    | ORIGINAL_NAME              | TYPE  | CREATETIME                 |\n+--------------------------------+----------------------------+-------+----------------------------+\n| __recycle_$_1_1597387726700872 | __idx_1101710651081557_idx | INDEX | 2020-08-14 14:48:46.699145 |\n| __recycle_$_1_1597387726712976 | t1                         | TABLE | 2020-08-14 14:48:46.712643 |\n+--------------------------------+----------------------------+-------+----------------------------+\n2 rows in set\n\nobclient> PURGE INDEX __recycle_$_1_1597387726700872;\nQuery OK, 0 rows affected\n\nobclient> SHOW RECYCLEBIN;\n+--------------------------------+----------------------------+-------+----------------------------+\n| OBJECT_NAME                    | ORIGINAL_NAME              | TYPE  | CREATETIME                 |\n+--------------------------------+----------------------------+-------+----------------------------+\n| __recycle_$_1_1597387726700872 | __idx_1101710651081557_idx | INDEX | 2020-08-14 14:48:46.699145 |\n+--------------------------------+----------------------------+-------+----------------------------+\n1 rows in set\n"
+    ],
+    "Category": [
+        "No Category"
+    ]
+}

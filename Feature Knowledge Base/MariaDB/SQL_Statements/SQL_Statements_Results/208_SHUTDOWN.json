@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/shutdown/"
+    ],
+    "Title": [
+        "SHUTDOWN"
+    ],
+    "Feature": [
+        "SHUTDOWN [WAIT FOR ALL { SLAVES | REPLICAS } ]\n"
+    ],
+    "Description": [
+        "The SHUTDOWN command shuts the server down. "
+    ],
+    "Examples": [
+        "CREATE EVENT `test`.`shutd`\n    ON SCHEDULE\n        EVERY 1 DAY\n        STARTS '2014-01-01 20:00:00'\n    COMMENT 'Shutdown Maria when the office is closed'\nDO BEGIN\n    SHUTDOWN;\nEND;\n"
+    ],
+    "Category": [
+        "Administrative SQL Statements"
+    ]
+}

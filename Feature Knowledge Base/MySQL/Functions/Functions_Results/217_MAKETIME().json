@@ -1,0 +1,33 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/built-in-function-reference.html",
+        "https://dev.mysql.com/doc/refman/8.4/en/date-and-time-functions.html"
+    ],
+    "Title": [
+        "14.1 Built-In Function and Operator Reference",
+        "14.7 Date and Time Functions"
+    ],
+    "Feature": [
+        "MAKETIME(hour,minute,second)"
+    ],
+    "Description": [
+        "Create time from hour, minute, second",
+        "\nMAKETIME(hour,minute,second)\n",
+        "\n          Returns a time value calculated from the\n          hour,\n          minute, and\n          second arguments. Returns\n          NULL if any of its arguments are\n          NULL.\n        ",
+        "\n          The second argument can have a\n          fractional part.\n        ",
+        "Press CTRL+C to copy mysql> SELECT MAKETIME(12,15,30);\n        -> '12:15:30'"
+    ],
+    "Examples": [
+        "mysql> SELECT MAKETIME(12,15,30);\n        -> '12:15:30'"
+    ],
+    "Category": [
+        "Built-In Functions",
+        "Date and Time Functions"
+    ],
+    "Reference HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/date-and-time-functions.html#function_maketime"
+    ],
+    "Feature Type": [
+        "Function"
+    ]
+}

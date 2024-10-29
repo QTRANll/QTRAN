@@ -1,0 +1,25 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/mathematical-functions.html#function_abs"
+    ],
+    "Title": [
+        "ABS()"
+    ],
+    "Feature": [
+        "ABS(X)"
+    ],
+    "Description": [
+        "Return the absolute value",
+        "\nABS(X)\n",
+        "\n            Returns the absolute value of X,\n            or NULL if X\n            is NULL.\n          ",
+        "\n            The result type is derived from the argument type. An\n            implication of this is that\n            ABS(-9223372036854775808)\n            produces an error because the result cannot be stored in a\n            signed BIGINT value.\n          ",
+        "Press CTRL+C to copy mysql> SELECT ABS(2);\n        -> 2\nmysql> SELECT ABS(-32);\n        -> 32",
+        "\n            This function is safe to use with\n            BIGINT values.\n          "
+    ],
+    "Examples": [
+        "mysql> SELECT ABS(2);\n        -> 2\nmysql> SELECT ABS(-32);\n        -> 32"
+    ],
+    "Category": [
+        "Mathematical Functions"
+    ]
+}

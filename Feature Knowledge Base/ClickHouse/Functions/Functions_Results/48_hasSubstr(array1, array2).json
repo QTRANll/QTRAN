@@ -1,0 +1,30 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/array-functions"
+    ],
+    "Title": [
+        "hasSubstr"
+    ],
+    "Feature": [
+        "hasSubstr(array1, array2)"
+    ],
+    "Description": [
+        "hasSubstr",
+        "Checks whether all the elements of array2 appear in array1 in the same exact order. Therefore, the function will return 1, if and only if array1 = prefix + array2 + suffix.",
+        "hasSubstr(array1, array2)",
+        "In other words, the functions will check whether all the elements of array2 are contained in array1 like\nthe hasAll function. In addition, it will check that the elements are observed in the same order in both array1 and array2.",
+        "For Example:",
+        "hasSubstr([1,2,3,4], [2,3]) returns 1. However, hasSubstr([1,2,3,4], [3,2]) will return 0.hasSubstr([1,2,3,4], [1,2,3]) returns 1. However, hasSubstr([1,2,3,4], [1,2,4]) will return 0.",
+        "Arguments",
+        "array1 \u2013 Array of any type with a set of elements.array2 \u2013 Array of any type with a set of elements.",
+        "Return values",
+        "1, if array1 contains array2.0, otherwise.",
+        "Raises an exception NO_COMMON_TYPE if the array1 and array2 elements do not share a common supertype.",
+        "Peculiar properties",
+        "The function will return 1 if array2 is empty.Null processed as a value. In other words hasSubstr([1, 2, NULL, 3, 4], [2,3]) will return 0. However, hasSubstr([1, 2, NULL, 3, 4], [2,NULL,3]) will return 1Order of values in both of arrays does matter."
+    ],
+    "Examples": [],
+    "Category": [
+        "Arrays Functions"
+    ]
+}

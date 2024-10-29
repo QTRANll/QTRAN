@@ -1,0 +1,19 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/load-index/"
+    ],
+    "Title": [
+        "LOAD INDEX"
+    ],
+    "Feature": [
+        "LOAD INDEX INTO CACHE\n  tbl_index_list [, tbl_index_list] ...\n\ntbl_index_list:\n  tbl_name\n    [[INDEX|KEY] (index_name[, index_name] ...)]\n    [IGNORE LEAVES]\n"
+    ],
+    "Description": [
+        "The LOAD INDEX INTO CACHE statement preloads a table index into the key\ncache to which it has been assigned by an explicit CACHE INDEX\nstatement, or into the default key cache otherwise. \nLOAD INDEX INTO CACHE is used only for MyISAM or Aria tables.",
+        "The IGNORE LEAVES modifier causes only blocks for the nonleaf nodes of\nthe index to be preloaded."
+    ],
+    "Examples": [],
+    "Category": [
+        "Data Manipulation"
+    ]
+}

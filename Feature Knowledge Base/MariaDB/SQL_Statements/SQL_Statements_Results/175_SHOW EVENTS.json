@@ -1,0 +1,23 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/show-events/"
+    ],
+    "Title": [
+        "SHOW EVENTS"
+    ],
+    "Feature": [
+        "SHOW EVENTS [{FROM | IN} schema_name]\n    [LIKE 'pattern' | WHERE expr]\n"
+    ],
+    "Description": [
+        "Shows information about Event Manager events (created with CREATE EVENT). Requires the EVENT privilege. Without any arguments, SHOW EVENTS lists all of the events in the current schema:",
+        "SELECT CURRENT_USER(), SCHEMA();\n+----------------+----------+\n| CURRENT_USER() | SCHEMA() |\n+----------------+----------+\n| jon@ghidora    | myschema |\n+----------------+----------+\n\nSHOW EVENTS\\G\n*************************** 1. row ***************************\n                  Db: myschema\n                Name: e_daily\n             Definer: jon@ghidora\n           Time zone: SYSTEM\n                Type: RECURRING\n          Execute at: NULL\n      Interval value: 10\n      Interval field: SECOND\n              Starts: 2006-02-09 10:41:23\n                Ends: NULL\n              Status: ENABLED\n          Originator: 0\ncharacter_set_client: latin1\ncollation_connection: latin1_swedish_ci\n  Database Collation: latin1_swedish_ci\n",
+        "To see the event action, use SHOW CREATE EVENT instead, or look at the information_schema.EVENTS table.",
+        "To see events for a specific schema, use the FROM clause.\nFor example, to see events for the test schema, use the following statement:",
+        "SHOW EVENTS FROM test;\n",
+        "The LIKE clause, if present, indicates which event names to\nmatch. The WHERE clause can be given to select rows using\nmore general conditions, as discussed in Extended Show."
+    ],
+    "Examples": [],
+    "Category": [
+        "Administrative SQL Statements"
+    ]
+}

@@ -1,0 +1,34 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/loadable-function-reference.html"
+    ],
+    "Title": [
+        "14.2 Loadable Function Reference"
+    ],
+    "Feature": [
+        "keyring_key_remove(key_id)"
+    ],
+    "Description": [
+        "Remove keyring key",
+        "\nkeyring_key_remove(key_id)\n",
+        "\n              Removes the key with a given ID from the keyring.\n            ",
+        "\n              Arguments:\n",
+        "\n\nkey_id: A string that\n                  specifies the key ID.\n\n",
+        "\n              Return value:\n            ",
+        "\n              Returns 1 for success, or NULL for\n              failure.\n            ",
+        "\n              Example:\n            ",
+        "Press CTRL+C to copy mysql> SELECT keyring_key_remove('AES_key');\n+-------------------------------+\n| keyring_key_remove('AES_key') |\n+-------------------------------+\n|                             1 |\n+-------------------------------+"
+    ],
+    "Examples": [
+        "mysql> SELECT keyring_key_remove('AES_key');\n+-------------------------------+\n| keyring_key_remove('AES_key') |\n+-------------------------------+\n|                             1 |\n+-------------------------------+"
+    ],
+    "Category": [
+        "Loadable Functions"
+    ],
+    "Reference HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/keyring-functions-general-purpose.html#function_keyring-key-remove"
+    ],
+    "Feature Type": [
+        "Function"
+    ]
+}

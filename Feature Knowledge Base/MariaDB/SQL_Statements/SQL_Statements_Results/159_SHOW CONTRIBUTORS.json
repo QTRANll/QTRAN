@@ -1,0 +1,21 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/show-contributors/"
+    ],
+    "Title": [
+        "SHOW CONTRIBUTORS"
+    ],
+    "Feature": [
+        "SHOW CONTRIBUTORS"
+    ],
+    "Description": [
+        "The SHOW CONTRIBUTORS statement displays information about\nthe companies and people who financially contribute to MariaDB. For each contributor, it displays Name, Location, and Comment values. All columns are encoded as latin1.",
+        "It displays all members and sponsors of the MariaDB Foundation as well as other financial contributors."
+    ],
+    "Examples": [
+        "SHOW CONTRIBUTORS;\n+---------------------+-------------------------------+-------------------------------------------------------------+\n| Name                | Location                      | Comment                                                     |\n+---------------------+-------------------------------+-------------------------------------------------------------+\n| Alibaba Cloud       | https://www.alibabacloud.com/ | Platinum Sponsor of the MariaDB Foundation                  |\n| Tencent Cloud       | https://cloud.tencent.com     | Platinum Sponsor of the MariaDB Foundation                  |\n| Microsoft           | https://microsoft.com/        | Platinum Sponsor of the MariaDB Foundation                  |\n| MariaDB Corporation | https://mariadb.com           | Founding member, Platinum Sponsor of the MariaDB Foundation |\n| ServiceNow          | https://servicenow.com        | Platinum Sponsor of the MariaDB Foundation                  |\n| Intel               | https://www.intel.com         | Platinum Sponsor of the MariaDB Foundation                  |\n| SIT                 | https://sit.org               | Platinum Sponsor of the MariaDB Foundation                  |\n| Visma               | https://visma.com             | Gold Sponsor of the MariaDB Foundation                      |\n| DBS                 | https://dbs.com               | Gold Sponsor of the MariaDB Foundation                      |\n| IBM                 | https://www.ibm.com           | Gold Sponsor of the MariaDB Foundation                      |\n| Automattic          | https://automattic.com        | Silver Sponsor of the MariaDB Foundation                    |\n| Percona             | https://www.percona.com/      | Sponsor of the MariaDB Foundation                           |\n| Galera Cluster      | https://galeracluster.com     | Sponsor of the MariaDB Foundation                           |\n| Google              | USA                           | Sponsoring encryption, parallel replication and GTID        |\n| Facebook            | USA                           | Sponsoring non-blocking API, LIMIT ROWS EXAMINED etc        |\n| Ronald Bradford     | Brisbane, Australia           | EFF contribution for UC2006 Auction                         |\n| Sheeri Kritzer      | Boston, Mass. USA             | EFF contribution for UC2006 Auction                         |\n| Mark Shuttleworth   | London, UK.                   | EFF contribution for UC2006 Auction                         |\n+---------------------+-------------------------------+-------------------------------------------------------------+\n"
+    ],
+    "Category": [
+        "Administrative SQL Statements"
+    ]
+}

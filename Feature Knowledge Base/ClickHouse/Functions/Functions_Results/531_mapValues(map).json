@@ -1,0 +1,28 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/tuple-map-functions"
+    ],
+    "Title": [
+        "mapValues"
+    ],
+    "Feature": [
+        "mapValues(map)"
+    ],
+    "Description": [
+        "mapValues",
+        "Returns the values of a given map.",
+        "This function can be optimized by enabling setting optimize_functions_to_subcolumns.\nWith enabled setting, the function only reads the values subcolumn instead the whole map.\nThe query SELECT mapValues(m) FROM table is transformed to SELECT m.values FROM table.",
+        "Syntax",
+        "mapValues(map)",
+        "Arguments",
+        "map \u2014 Map. Map.",
+        "Returned value",
+        "Array containing all the values from map. Array."
+    ],
+    "Examples": [
+        "CREATE TABLE tab (a Map(String, String)) ENGINE = Memory;INSERT INTO tab VALUES ({'name':'eleven','age':'11'}), ({'number':'twelve','position':'6.0'});SELECT mapValues(a) FROM tab;"
+    ],
+    "Category": [
+        "Maps Functions"
+    ]
+}

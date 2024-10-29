@@ -1,0 +1,21 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/locking-functions.html#function_release-all-locks"
+    ],
+    "Title": [
+        "RELEASE_ALL_LOCKS()"
+    ],
+    "Feature": [
+        "RELEASE_ALL_LOCKS()"
+    ],
+    "Description": [
+        "Release all current named locks",
+        "\nRELEASE_ALL_LOCKS()\n",
+        "\n          Releases all named locks held by the current session and\n          returns the number of locks released (0 if there were none)\n        ",
+        "\n          This function is unsafe for statement-based replication. A\n          warning is logged if you use this function when\n          binlog_format is set to\n          STATEMENT.\n        "
+    ],
+    "Examples": [],
+    "Category": [
+        "Locking Functions"
+    ]
+}

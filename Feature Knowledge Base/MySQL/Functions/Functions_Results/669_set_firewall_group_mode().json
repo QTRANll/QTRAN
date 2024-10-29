@@ -1,0 +1,33 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/loadable-function-reference.html"
+    ],
+    "Title": [
+        "14.2 Loadable Function Reference"
+    ],
+    "Feature": [
+        "set_firewall_group_mode(group,\n              mode[,\n              user])"
+    ],
+    "Description": [
+        "Establish firewall group profile operational mode",
+        "\nset_firewall_group_mode(group,\n              mode[,\n              user])\n",
+        "\n              This function manages the group profile cache, establishes\n              the profile operational mode, and optionally specifies the\n              profile training account. It requires the\n              FIREWALL_ADMIN privilege.\n            ",
+        "\n              If the optional user argument\n              is not given, any previous user\n              setting for the profile remains unchanged. To change the\n              setting, call the function with a third argument.\n            ",
+        "\n              If the optional user argument\n              is given, it specifies the training account for the group\n              profile, to be used when the profile is in\n              RECORDING mode. The value is\n              NULL, or a non-NULL\n              account that has the format\n              user_name@host_name:\n",
+        "\n\n                  If the value is NULL, the firewall\n                  records allowlist rules for statements received from\n                  any account that is a member of the group.\n                \n                  If the value is non-NULL, the\n                  firewall records allowlist rules only for statements\n                  received from the named account (which should be a\n                  member of the group).\n\n",
+        "\n              Example:\n            ",
+        "Press CTRL+C to copy SELECT set_firewall_group_mode('g', 'DETECTING');"
+    ],
+    "Examples": [
+        "SELECT set_firewall_group_mode('g', 'DETECTING');"
+    ],
+    "Category": [
+        "Loadable Functions"
+    ],
+    "Reference HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/firewall-reference.html#function_set-firewall-group-mode"
+    ],
+    "Feature Type": [
+        "Function"
+    ]
+}

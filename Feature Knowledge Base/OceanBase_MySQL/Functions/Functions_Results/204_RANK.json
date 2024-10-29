@@ -1,0 +1,21 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000000823040"
+    ],
+    "Title": [
+        "RANK"
+    ],
+    "Feature": [
+        "RANK() OVER ([ query_partition_clause ] order_by_clause\n"
+    ],
+    "Description": [
+        "计算每一行数据在某列的秩，该列由 order_by_clause 中的列决定。",
+        "对于秩相同的行，返回值会产生跳跃。"
+    ],
+    "Examples": [
+        "obclient> CREATE TABLE EXPLOYEES(LAST_NAME CHAR(10), SALARY DECIMAL, JOB_ID CHAR(32));\nINSERT INTO EXPLOYEES VALUES('JIM', 2000, 'CLEANER');\nINSERT INTO EXPLOYEES VALUES('MIKE', 12000, 'ENGINEERING');\nINSERT INTO EXPLOYEES VALUES('LILY', 13000, 'ENGINEERING');\nINSERT INTO EXPLOYEES VALUES('IRIS', 11000, 'ENGINEERING');\nINSERT INTO EXPLOYEES VALUES('TOM', 11000, 'ENGINEERING');\nCOMMIT;\nQuery OK, 1 row affected\n\nobclient> SELECT LAST_NAME, RANK() OVER(PARTITION BY JOB_ID ORDER BY SALARY) RANK, DENSE_RANK() OVER(PARTITION BY JOB_ID ORDER BY SALARY) DENSE_RANK, PERCENT_RANK() OVER(PARTITION BY JOB_ID ORDER BY SALARY) PERCENT_RANK FROM EXPLOYEES;\n+-----------+------+------------+----------------------------------+\n| LAST_NAME | RANK | DENSE_RANK | PERCENT_RANK                     |\n+-----------+------+------------+----------------------------------+\n| JIM       |    1 |          1 | 0.000000000000000000000000000000 |\n| TOM       |    1 |          1 | 0.000000000000000000000000000000 |\n| IRIS      |    1 |          1 | 0.000000000000000000000000000000 |\n| MIKE      |    3 |          2 | 0.666666666666666666666666666667 |\n| LILY      |    4 |          3 | 1.000000000000000000000000000000 |\n+-----------+------+------------+----------------------------------+\n5 rows in set\n"
+    ],
+    "Category": [
+        "Analysis Functions"
+    ]
+}

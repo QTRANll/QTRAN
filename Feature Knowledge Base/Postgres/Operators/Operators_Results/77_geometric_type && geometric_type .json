@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/current/functions-geometry.html"
+    ],
+    "Title": [
+        "geometric_type && geometric_type"
+    ],
+    "Feature": [
+        "geometric_type && geometric_type → boolean"
+    ],
+    "Description": [
+        "Do these objects overlap? (One point in common makes this true.) Available for box, polygon, circle."
+    ],
+    "Examples": [
+        "box '(1,1),(0,0)' && box '(2,2),(0,0)' → t"
+    ],
+    "Category": [
+        "Geometric Functions and Operators"
+    ]
+}

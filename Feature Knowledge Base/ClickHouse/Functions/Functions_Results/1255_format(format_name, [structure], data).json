@@ -1,0 +1,29 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/table-functions/format"
+    ],
+    "Title": [
+        "format"
+    ],
+    "Feature": [
+        "format(format_name, [structure], data)"
+    ],
+    "Description": [
+        "format",
+        "Parses data from arguments according to specified input format. If structure argument is not specified, it's extracted from the data.",
+        "Syntax",
+        "format(format_name, [structure], data)",
+        "Parameters",
+        "format_name \u2014 The format of the data.structure - Structure of the table. Optional. Format 'column1_name column1_type, column2_name column2_type, ...'.data \u2014 String literal or constant expression that returns a string containing data in specified format",
+        "Returned value",
+        "A table with data parsed from data argument according to specified format and specified or extracted structure."
+    ],
+    "Examples": [
+        "SELECT * FROM format(JSONEachRow,$${\"a\": \"Hello\", \"b\": 111}{\"a\": \"World\", \"b\": 123}{\"a\": \"Hello\", \"b\": 112}{\"a\": \"World\", \"b\": 124}$$)",
+        "DESC format(JSONEachRow,$${\"a\": \"Hello\", \"b\": 111}{\"a\": \"World\", \"b\": 123}{\"a\": \"Hello\", \"b\": 112}{\"a\": \"World\", \"b\": 124}$$)",
+        "SELECT * FROM format(JSONEachRow, 'a String, b UInt32',$${\"a\": \"Hello\", \"b\": 111}{\"a\": \"World\", \"b\": 123}{\"a\": \"Hello\", \"b\": 112}{\"a\": \"World\", \"b\": 124}$$)"
+    ],
+    "Category": [
+        "Table Functions"
+    ]
+}

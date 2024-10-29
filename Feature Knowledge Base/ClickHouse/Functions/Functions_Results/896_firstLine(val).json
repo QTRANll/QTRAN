@@ -1,0 +1,27 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/string-functions"
+    ],
+    "Title": [
+        "firstLine"
+    ],
+    "Feature": [
+        "firstLine(val)"
+    ],
+    "Description": [
+        "firstLine",
+        "Returns the first line from a multi-line string.",
+        "Syntax",
+        "firstLine(val)",
+        "Arguments",
+        "val \u2014 Input value. String",
+        "Returned value",
+        "The first line of the input value or the whole value if there is no line\nseparators. String"
+    ],
+    "Examples": [
+        "select firstLine('foo\\nbar\\nbaz');"
+    ],
+    "Category": [
+        "Strings Functions"
+    ]
+}

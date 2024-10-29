@@ -1,0 +1,26 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000000823438"
+    ],
+    "Title": [
+        "REGEXP_SUBSTR"
+    ],
+    "Feature": [
+        "REGEXP_SUBSTR(str,pattern,[position[,occurrence[,match_param[,subexpr]]]])\n"
+    ],
+    "Description": [
+        "在 str 中搜索匹配正则表达式 pattern 的子串，如果子串不存在，则返回 NULL。该函数支持多字节字元。除 match_param 外，其他任意参数为 NULL，结果为 NULL。参数解释如下：",
+        "str 表示待搜索的字符串，支持多字节字元。",
+        "pattern 表示正则表达式，正则表达式规则兼容 MySQL 数据库。",
+        "position 表示搜索的开始位置。必须是大于 0 的正整数，小于等于 0 报错，输入为 NULL 返回 NULL，默认值为 1，表示从第一个字符开始搜索。",
+        "occurrence 表示返回第几次匹配的值。必须是大于等于 0 的正整数，小于等于 0 报错，输入为 NULL 返回 NULL，默认值是 1，表示返回第一次匹配的结果。",
+        "match_param 表示匹配规则，字符串类型。有关匹配规则的详细信息，请参见 REGEXP_LIKE。",
+        "subexpr 表示返回正则表达式中第几个组的值。大于等于 0 的整数，小于 0 则报错。默认值是 0，表示返回满足整个 pattern 的子串。"
+    ],
+    "Examples": [
+        "obclient> SELECT REGEXP_SUBSTR('I have 2 apples and 100 bucks!', '[[:blank:]][[:alnum:]]*', 1, 1) FROM DUAL;\n+----------------------------------------------------------------------------------+\n| regexp_substr('I have 2 apples and 100 bucks!', '[[:blank:]][[:alnum:]]*', 1, 1) |\n+----------------------------------------------------------------------------------+\n|  have                                                                            |\n+----------------------------------------------------------------------------------+\n1 row in set\n\nobclient> SELECT REGEXP_SUBSTR('foothebar', 'foo(.*)(bar)', 1, 1, 'c', 1) FROM DUAL;\n+----------------------------------------------------------+\n| regexp_substr('foothebar', 'foo(.*)(bar)', 1, 1, 'c', 1) |\n+----------------------------------------------------------+\n| the                                                      |\n+----------------------------------------------------------+\n1 row in set\n"
+    ],
+    "Category": [
+        "String Functions"
+    ]
+}

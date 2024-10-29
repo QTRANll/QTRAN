@@ -1,0 +1,25 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/nlp-functions"
+    ],
+    "Title": [
+        "stem"
+    ],
+    "Feature": [
+        "stem('language', word)"
+    ],
+    "Description": [
+        "stem",
+        "Performs stemming on a given word.",
+        "Syntax",
+        "stem('language', word)",
+        "Arguments",
+        "language \u2014 Language which rules will be applied. Use the two letter ISO 639-1 code.word \u2014 word that needs to be stemmed. Must be in lowercase. String."
+    ],
+    "Examples": [
+        "SELECT arrayMap(x -> stem('en', x), ['I', 'think', 'it', 'is', 'a', 'blessing', 'in', 'disguise']) as res;"
+    ],
+    "Category": [
+        "NLP (experimental) Functions"
+    ]
+}

@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/current/functions-array.html"
+    ],
+    "Title": [
+        "anyarray <@ anyarray"
+    ],
+    "Feature": [
+        "anyarray <@ anyarray → boolean"
+    ],
+    "Description": [
+        "Is the first array contained by the second?"
+    ],
+    "Examples": [
+        "ARRAY[2,2,7] <@ ARRAY[1,7,4,2,6] → t"
+    ],
+    "Category": [
+        "Array Functions and Operators"
+    ]
+}

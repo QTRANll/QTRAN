@@ -1,0 +1,18 @@
+{
+    "HTML": [
+        "https://sqlite.org/lang_aggfunc.html#avg"
+    ],
+    "Title": [
+        "Built-in Aggregate Functions"
+    ],
+    "Feature": [
+        "avg(X)"
+    ],
+    "Description": [
+        "The avg() function\n  returns the average value of all non-NULLXwithin a\n  group.  String and BLOB values that do not look like numbers are\n  interpreted as 0.\n  The result of avg() is always a floating point value whenever\n  there is at least one non-NULL input even if all\n  inputs are integers.  The result of avg() is NULL if\n  there are no non-NULL inputs.  The result of avg() is computed\n  astotal()/count()so all of the constraints that apply tototal()also apply to avg()."
+    ],
+    "Examples": [],
+    "Category": [
+        "Built-in Aggregate Functions"
+    ]
+}

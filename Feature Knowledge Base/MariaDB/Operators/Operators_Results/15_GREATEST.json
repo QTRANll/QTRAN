@@ -1,0 +1,22 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/greatest/"
+    ],
+    "Title": [
+        "GREATEST"
+    ],
+    "Feature": [
+        "GREATEST(value1,value2,...)\n"
+    ],
+    "Description": [
+        "With two or more arguments, returns the largest (maximum-valued)\nargument. The arguments are compared using the same rules as for\nLEAST()."
+    ],
+    "Examples": [
+        "SELECT GREATEST(2,0);\n+---------------+\n| GREATEST(2,0) |\n+---------------+\n|             2 |\n+---------------+\n",
+        "SELECT GREATEST(34.0,3.0,5.0,767.0);\n+------------------------------+\n| GREATEST(34.0,3.0,5.0,767.0) |\n+------------------------------+\n|                        767.0 |\n+------------------------------+\n",
+        "SELECT GREATEST('B','A','C');\n+-----------------------+\n| GREATEST('B','A','C') |\n+-----------------------+\n| C                     |\n+-----------------------+\n"
+    ],
+    "Category": [
+        "Comparison Operators"
+    ]
+}

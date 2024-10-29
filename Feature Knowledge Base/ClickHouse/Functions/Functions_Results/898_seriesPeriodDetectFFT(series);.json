@@ -1,0 +1,28 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/time-series-functions"
+    ],
+    "Title": [
+        "seriesPeriodDetectFFT"
+    ],
+    "Feature": [
+        "seriesPeriodDetectFFT(series);"
+    ],
+    "Description": [
+        "seriesPeriodDetectFFT",
+        "Finds the period of the given series data data using FFT\nFFT - Fast Fourier transform",
+        "Syntax",
+        "seriesPeriodDetectFFT(series);",
+        "Arguments",
+        "series - An array of numeric values",
+        "Returned value",
+        "A real value equal to the period of series data. NaN when number of data points are less than four. Float64."
+    ],
+    "Examples": [
+        "SELECT seriesPeriodDetectFFT([1, 4, 6, 1, 4, 6, 1, 4, 6, 1, 4, 6, 1, 4, 6, 1, 4, 6, 1, 4, 6]) AS print_0;",
+        "SELECT seriesPeriodDetectFFT(arrayMap(x -> abs((x % 6) - 3), range(1000))) AS print_0;"
+    ],
+    "Category": [
+        "Time Series Functions"
+    ]
+}

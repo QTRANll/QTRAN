@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/current/functions-string.html"
+    ],
+    "Title": [
+        "replace"
+    ],
+    "Feature": [
+        "replace ( string text, from text, to text ) → text"
+    ],
+    "Description": [
+        "Replaces all occurrences in string of substring from with substring to."
+    ],
+    "Examples": [
+        "replace('abcdefabcdef', 'cd', 'XX') → abXXefabXXef"
+    ],
+    "Category": [
+        "String Functions and Operators"
+    ]
+}

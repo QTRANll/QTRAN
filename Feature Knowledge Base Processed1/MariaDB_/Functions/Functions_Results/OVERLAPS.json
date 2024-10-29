@@ -1,0 +1,160 @@
+{
+    "HTML": "https://mariadb.com//kb/en/overlaps/",
+    "Title": "OVERLAPS",
+    "Feature": [
+        "OVERLAPS(g1,g2)\n"
+    ],
+    "Description": [
+        "Returns 1 or 0 to indicate whether g1 spatially overlaps g2.\nThe term spatially overlaps is used if two geometries intersect and their\nintersection results in a geometry of the same dimension but not equal to\neither of the given geometries.",
+        "OVERLAPS() is based on the original MySQL implementation and uses object bounding rectangles, while ST_OVERLAPS() uses object shapes."
+    ],
+    "Examples": [],
+    "Category": [
+        "Geographic Functions"
+    ],
+    "Effective SQLs Refined": [],
+    "Ineffective SQLs Refined": [],
+    "Wrong Messages from Ineffective SQLs Refined": [],
+    "SQLs Generated1": [
+        {
+            "Example SQL": "SELECT OVERLAPS(geometry1, geometry2);"
+        },
+        {
+            "Example SQL": "SELECT OVERLAPS(geomA, geomB);"
+        },
+        {
+            "Example SQL": "SELECT OVERLAPS(geometry1, geometry2);"
+        },
+        {
+            "Example SQL": "SELECT OVERLAPS(geom1, geom2);"
+        },
+        {
+            "Example SQL": "SELECT OVERLAPS(geometryA, geometryB);"
+        }
+    ],
+    "SQLs Generated Costs1": [
+        {
+            "Total Tokens": 348,
+            "Prompt Tokens": 324,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 6.3e-05
+        },
+        {
+            "Total Tokens": 501,
+            "Prompt Tokens": 477,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 8.594999999999999e-05
+        },
+        {
+            "Total Tokens": 654,
+            "Prompt Tokens": 630,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 0.00010889999999999999
+        },
+        {
+            "Total Tokens": 807,
+            "Prompt Tokens": 783,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 0.00013185
+        },
+        {
+            "Total Tokens": 960,
+            "Prompt Tokens": 936,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 0.0001548
+        }
+    ],
+    "SQLs Generated ExecResults1": [
+        "None",
+        "None",
+        "None",
+        "None",
+        "None"
+    ],
+    "SQLs Generated ExecTimes1": [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+    ],
+    "SQLs Generated ErrorMessages1": [
+        "(pymysql.err.OperationalError) (1054, \"Unknown column 'geometry1' in 'field list'\")\n",
+        "(pymysql.err.OperationalError) (1054, \"Unknown column 'geomA' in 'field list'\")\n",
+        "(pymysql.err.OperationalError) (1054, \"Unknown column 'geometry1' in 'field list'\")\n",
+        "(pymysql.err.OperationalError) (1054, \"Unknown column 'geom1' in 'field list'\")\n",
+        "(pymysql.err.OperationalError) (1054, \"Unknown column 'geometryA' in 'field list'\")\n"
+    ],
+    "Effective SQLs Generated1": [],
+    "SQLs Generated2": [
+        {
+            "Example SQL": "SELECT OVERLAPS(region, description) FROM dialect_recognize_table;"
+        },
+        {
+            "Example SQL": "SELECT OVERLAPS(geometry_column1, geometry_column2) FROM dialect_recognize_table;"
+        },
+        {
+            "Example SQL": "SELECT OVERLAPS(id, speaker_count) FROM dialect_recognize_table;"
+        },
+        {
+            "Example SQL": "SELECT OVERLAPS(dialect_name, region) FROM dialect_recognize_table;"
+        },
+        {
+            "Example SQL": "SELECT OVERLAPS(geometry_column1, geometry_column2) FROM dialect_recognize_table;"
+        }
+    ],
+    "SQLs Generated Costs2": [
+        {
+            "Total Tokens": 801,
+            "Prompt Tokens": 774,
+            "Completion Tokens": 27,
+            "Total Cost (USD)": 0.0001323
+        },
+        {
+            "Total Tokens": 964,
+            "Prompt Tokens": 932,
+            "Completion Tokens": 32,
+            "Total Cost (USD)": 0.000159
+        },
+        {
+            "Total Tokens": 1122,
+            "Prompt Tokens": 1094,
+            "Completion Tokens": 28,
+            "Total Cost (USD)": 0.0001809
+        },
+        {
+            "Total Tokens": 1282,
+            "Prompt Tokens": 1253,
+            "Completion Tokens": 29,
+            "Total Cost (USD)": 0.00020534999999999995
+        },
+        {
+            "Total Tokens": 1445,
+            "Prompt Tokens": 1413,
+            "Completion Tokens": 32,
+            "Total Cost (USD)": 0.00023114999999999998
+        }
+    ],
+    "SQLs Generated ExecResults2": [
+        "None",
+        "None",
+        "None",
+        "None",
+        "None"
+    ],
+    "SQLs Generated ExecTimes2": [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+    ],
+    "SQLs Generated ErrorMessages2": [
+        "(pymysql.err.OperationalError) (4079, \"Illegal parameter data type varchar for operation 'mbroverlaps'\")\n",
+        "(pymysql.err.OperationalError) (1054, \"Unknown column 'geometry_column1' in 'field list'\")\n",
+        "(pymysql.err.OperationalError) (4079, \"Illegal parameter data type int for operation 'mbroverlaps'\")\n",
+        "(pymysql.err.OperationalError) (4079, \"Illegal parameter data type varchar for operation 'mbroverlaps'\")\n",
+        "(pymysql.err.OperationalError) (1054, \"Unknown column 'geometry_column1' in 'field list'\")\n"
+    ],
+    "Effective SQLs Generated2": []
+}

@@ -1,0 +1,21 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000000822944"
+    ],
+    "Title": [
+        "COALESCE"
+    ],
+    "Feature": [
+        "COALESCE(expr, expr, expr,...)\n"
+    ],
+    "Description": [
+        "依次参考各参数表达式，遇到非 NULL 值即停止并返回该值。如果所有的表达式都是空值，最终将返回一个空值。",
+        "所有表达式必须是相同类型，或者可以隐性转换为相同的类型。"
+    ],
+    "Examples": [
+        "obclient> SELECT COALESCE(NULL,NULL,3,4,5), COALESCE(NULL,NULL,NULL);\n+---------------------------+--------------------------+\n| COALESCE(NULL,NULL,3,4,5) | COALESCE(NULL,NULL,NULL) |\n+---------------------------+--------------------------+\n|                         3 |                     NULL |\n+---------------------------+--------------------------+\n1 row in set\n"
+    ],
+    "Category": [
+        "Miscellaneous Functions"
+    ]
+}

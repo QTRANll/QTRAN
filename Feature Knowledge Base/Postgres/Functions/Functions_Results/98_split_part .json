@@ -1,0 +1,21 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/current/functions-string.html"
+    ],
+    "Title": [
+        "split_part"
+    ],
+    "Feature": [
+        "split_part ( string text, delimiter text, n integer ) → text"
+    ],
+    "Description": [
+        "Splits string at occurrences of delimiter and returns the n'th field (counting from one), or when n is negative, returns the |n|'th-from-last field."
+    ],
+    "Examples": [
+        "split_part('abc~@~def~@~ghi', '~@~', 2) → def",
+        "split_part('abc,def,ghi,jkl', ',', -2) → ghi"
+    ],
+    "Category": [
+        "String Functions and Operators"
+    ]
+}

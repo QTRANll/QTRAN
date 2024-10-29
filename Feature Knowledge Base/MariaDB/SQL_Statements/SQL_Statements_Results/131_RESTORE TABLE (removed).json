@@ -1,0 +1,21 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/restore-table-removed/"
+    ],
+    "Title": [
+        "RESTORE TABLE (removed)"
+    ],
+    "Feature": [
+        "RESTORE TABLE tbl_name [, tbl_name] ... FROM '/path/to/backup/directory'"
+    ],
+    "Description": [
+        "Note: Like BACKUP TABLE, this command was not reliable and has been removed in current versions of MariaDB. For doing a backup of MariaDB use mysqldump, mysqlhotcopy or XtraBackup. See Backing Up and Restoring.\n",
+        "RESTORE TABLE restores the table or tables from a backup\nthat was made with BACKUP TABLE. The\ndirectory should be specified as a full path name.",
+        "Existing tables are not overwritten; if you try to restore over an existing\ntable, an error occurs. Just as for BACKUP TABLE,\nRESTORE TABLE works only for MyISAM tables.\nRestored tables are not replicated from master to slave.",
+        "The backup for each table consists of its .frm format file and .MYD\ndata file. The restore operation restores those files, and then uses\nthem to rebuild the .MYI index file. Restoring takes longer than\nbacking up due to the need to rebuild the indexes. The more indexes the\ntable has, the longer it takes."
+    ],
+    "Examples": [],
+    "Category": [
+        "Table Statements"
+    ]
+}

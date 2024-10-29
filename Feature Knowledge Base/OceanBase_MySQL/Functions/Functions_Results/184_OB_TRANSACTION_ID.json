@@ -1,0 +1,26 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000000822982"
+    ],
+    "Title": [
+        "OB_TRANSACTION_ID"
+    ],
+    "Feature": [
+        "OB_TRANSACTION_ID()\n"
+    ],
+    "Description": [
+        "当前会话处于活跃事务中，则返回所处的事务 ID 整数值，大于 0。",
+        "当前会话如果未处于活跃事务中，返回 0。"
+    ],
+    "Examples": [
+        "obclient [test]> BEGIN;\n",
+        "obclient [test]> SELECT OB_TRANSACTION_ID();\n",
+        "+---------------------+\n| OB_TRANSACTION_ID() |\n+---------------------+\n|            14565563 |\n+---------------------+\n1 row in set\n",
+        "obclient [test]> COMMIT;\n",
+        "obclient [test]> SELECT OB_TRANSACTION_ID();\n",
+        "+---------------------+\n| OB_TRANSACTION_ID() |\n+---------------------+\n|                   0 |\n+---------------------+\n1 row in set\n"
+    ],
+    "Category": [
+        "Information Functions"
+    ]
+}

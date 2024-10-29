@@ -1,0 +1,34 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/built-in-function-reference.html",
+        "https://dev.mysql.com/doc/refman/8.4/en/json-function-reference.html"
+    ],
+    "Title": [
+        "14.1 Built-In Function and Operator Reference",
+        "14.17.1 JSON Function Reference"
+    ],
+    "Feature": [
+        "JSON_ARRAY_APPEND(json_doc,\n          path,\n          val[,\n          path,\n          val] ...)"
+    ],
+    "Description": [
+        "Append data to JSON document",
+        "\nJSON_ARRAY_APPEND(json_doc,\n          path,\n          val[,\n          path,\n          val] ...)\n",
+        "\n          Appends values to the end of the indicated arrays within a\n          JSON document and returns the result. Returns\n          NULL if any argument is\n          NULL. An error occurs if the\n          json_doc argument is not a valid\n          JSON document or any path argument\n          is not a valid path expression or contains a\n          * or ** wildcard.\n        ",
+        "\n          The path-value pairs are evaluated left to right. The document\n          produced by evaluating one pair becomes the new value against\n          which the next pair is evaluated.\n        ",
+        "\n          If a path selects a scalar or object value, that value is\n          autowrapped within an array and the new value is added to that\n          array. Pairs for which the path does not identify any value in\n          the JSON document are ignored.\n        ",
+        "Press CTRL+C to copy mysql> SET @j = '[\"a\", [\"b\", \"c\"], \"d\"]';\nmysql> SELECT JSON_ARRAY_APPEND(@j, '$[1]', 1);\n+----------------------------------+\n| JSON_ARRAY_APPEND(@j, '$[1]', 1) |\n+----------------------------------+\n| [\"a\", [\"b\", \"c\", 1], \"d\"]        |\n+----------------------------------+\nmysql> SELECT JSON_ARRAY_APPEND(@j, '$[0]', 2);\n+----------------------------------+\n| JSON_ARRAY_APPEND(@j, '$[0]', 2) |\n+----------------------------------+\n| [[\"a\", 2], [\"b\", \"c\"], \"d\"]      |\n+----------------------------------+\nmysql> SELECT JSON_ARRAY_APPEND(@j, '$[1][0]', 3);\n+-------------------------------------+\n| JSON_ARRAY_APPEND(@j, '$[1][0]', 3) |\n+-------------------------------------+\n| [\"a\", [[\"b\", 3], \"c\"], \"d\"]         |\n+-------------------------------------+\n\nmysql> SET @j = '{\"a\": 1, \"b\": [2, 3], \"c\": 4}';\nmysql> SELECT JSON_ARRAY_APPEND(@j, '$.b', 'x');\n+------------------------------------+\n| JSON_ARRAY_APPEND(@j, '$.b', 'x')  |\n+------------------------------------+\n| {\"a\": 1, \"b\": [2, 3, \"x\"], \"c\": 4} |\n+------------------------------------+\nmysql> SELECT JSON_ARRAY_APPEND(@j, '$.c', 'y');\n+--------------------------------------+\n| JSON_ARRAY_APPEND(@j, '$.c', 'y')    |\n+--------------------------------------+\n| {\"a\": 1, \"b\": [2, 3], \"c\": [4, \"y\"]} |\n+--------------------------------------+\n\nmysql> SET @j = '{\"a\": 1}';\nmysql> SELECT JSON_ARRAY_APPEND(@j, '$', 'z');\n+---------------------------------+\n| JSON_ARRAY_APPEND(@j, '$', 'z') |\n+---------------------------------+\n| [{\"a\": 1}, \"z\"]                 |\n+---------------------------------+"
+    ],
+    "Examples": [
+        "mysql> SET @j = '[\"a\", [\"b\", \"c\"], \"d\"]';\nmysql> SELECT JSON_ARRAY_APPEND(@j, '$[1]', 1);\n+----------------------------------+\n| JSON_ARRAY_APPEND(@j, '$[1]', 1) |\n+----------------------------------+\n| [\"a\", [\"b\", \"c\", 1], \"d\"]        |\n+----------------------------------+\nmysql> SELECT JSON_ARRAY_APPEND(@j, '$[0]', 2);\n+----------------------------------+\n| JSON_ARRAY_APPEND(@j, '$[0]', 2) |\n+----------------------------------+\n| [[\"a\", 2], [\"b\", \"c\"], \"d\"]      |\n+----------------------------------+\nmysql> SELECT JSON_ARRAY_APPEND(@j, '$[1][0]', 3);\n+-------------------------------------+\n| JSON_ARRAY_APPEND(@j, '$[1][0]', 3) |\n+-------------------------------------+\n| [\"a\", [[\"b\", 3], \"c\"], \"d\"]         |\n+-------------------------------------+\n\nmysql> SET @j = '{\"a\": 1, \"b\": [2, 3], \"c\": 4}';\nmysql> SELECT JSON_ARRAY_APPEND(@j, '$.b', 'x');\n+------------------------------------+\n| JSON_ARRAY_APPEND(@j, '$.b', 'x')  |\n+------------------------------------+\n| {\"a\": 1, \"b\": [2, 3, \"x\"], \"c\": 4} |\n+------------------------------------+\nmysql> SELECT JSON_ARRAY_APPEND(@j, '$.c', 'y');\n+--------------------------------------+\n| JSON_ARRAY_APPEND(@j, '$.c', 'y')    |\n+--------------------------------------+\n| {\"a\": 1, \"b\": [2, 3], \"c\": [4, \"y\"]} |\n+--------------------------------------+\n\nmysql> SET @j = '{\"a\": 1}';\nmysql> SELECT JSON_ARRAY_APPEND(@j, '$', 'z');\n+---------------------------------+\n| JSON_ARRAY_APPEND(@j, '$', 'z') |\n+---------------------------------+\n| [{\"a\": 1}, \"z\"]                 |\n+---------------------------------+"
+    ],
+    "Category": [
+        "Built-In Functions",
+        "JSON Functions"
+    ],
+    "Reference HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/json-modification-functions.html#function_json-array-append"
+    ],
+    "Feature Type": [
+        "Function"
+    ]
+}

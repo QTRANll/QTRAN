@@ -1,0 +1,23 @@
+{
+    "HTML": [
+        "https://docs.pingcap.com/zh/tidb/stable/json-functions-modify#json_array_insert"
+    ],
+    "Title": [
+        "JSON_ARRAY_INSERT()"
+    ],
+    "Feature": [
+        "JSON_ARRAY_INSERT()"
+    ],
+    "Description": [
+        "JSON_ARRAY_INSERT()",
+        "JSON_ARRAY_INSERT(json_array, path, value [,path, value] ...) \u51fd\u6570\u5c06 value \u63d2\u5165 path \u4e2d json_array \u7684\u6307\u5b9a\u4f4d\u7f6e\uff0c\u5e76\u8fd4\u56de\u7ed3\u679c\u3002",
+        "\u8be5\u51fd\u6570\u53ef\u63a5\u53d7\u6210\u5bf9\u7684 path \u548c value \u53c2\u6570\u3002"
+    ],
+    "Examples": [
+        "SELECT JSON_ARRAY_INSERT('[\"Car\", \"Boat\", \"Train\"]', '$[0]', \"Airplane\") AS \"Transport options\";\n",
+        "SELECT JSON_ARRAY_INSERT('[\"Car\", \"Boat\", \"Train\"]', '$[1]', \"Airplane\") AS \"Transport options\";\n"
+    ],
+    "Category": [
+        "JSON Functions"
+    ]
+}

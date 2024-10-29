@@ -1,0 +1,27 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/geo/coordinates"
+    ],
+    "Title": [
+        "pointInEllipses"
+    ],
+    "Feature": [
+        "pointInEllipses(x, y, x\u2080, y\u2080, a\u2080, b\u2080,...,x\u2099, y\u2099, a\u2099, b\u2099)"
+    ],
+    "Description": [
+        "pointInEllipses",
+        "Checks whether the point belongs to at least one of the ellipses.\nCoordinates are geometric in the Cartesian coordinate system.",
+        "pointInEllipses(x, y, x\u2080, y\u2080, a\u2080, b\u2080,...,x\u2099, y\u2099, a\u2099, b\u2099)",
+        "Input parameters",
+        "x, y \u2014 Coordinates of a point on the plane.x\u1d62, y\u1d62 \u2014 Coordinates of the center of the i-th ellipsis.a\u1d62, b\u1d62 \u2014 Axes of the i-th ellipsis in units of x, y coordinates.",
+        "The input parameters must be 2+4\u22c5n, where n is the number of ellipses.",
+        "Returned values",
+        "1 if the point is inside at least one of the ellipses; 0if it is not."
+    ],
+    "Examples": [
+        "SELECT pointInEllipses(10., 10., 10., 9.1, 1., 0.9999)"
+    ],
+    "Category": [
+        "Geo Functions"
+    ]
+}

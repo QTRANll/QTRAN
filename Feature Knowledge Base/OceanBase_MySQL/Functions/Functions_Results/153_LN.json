@@ -1,0 +1,21 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000000823353"
+    ],
+    "Title": [
+        "LN"
+    ],
+    "Feature": [
+        "LN(X)\n"
+    ],
+    "Description": [
+        "返回 X 的自然对数，即 X 的以 e 为底的对数。如果 X 小于或等于 0，则返回 NULL，并上报警告 Invalid argument for logarithm。",
+        "此函数与 LOG(X) 同义。"
+    ],
+    "Examples": [
+        "obclient> SELECT LN(-10), LN(0), LN(10), LN(-3.14), LN(3.14);\n+---------+-------+-------------------+-----------+-------------------+\n| LN(-10) | LN(0) | LN(10)            | LN(-3.14) | LN(3.14)          |\n+---------+-------+-------------------+-----------+-------------------+\n|    NULL |  NULL | 2.302585092994046 |      NULL | 1.144222799920162 |\n+---------+-------+-------------------+-----------+-------------------+\n1 row in set, 3 warnings\n\nobclient> SHOW WARNINGS;\n+---------+------+--------------------------------+\n| Level   | Code | Message                        |\n+---------+------+--------------------------------+\n| Warning | 3020 | Invalid argument for logarithm |\n| Warning | 3020 | Invalid argument for logarithm |\n| Warning | 3020 | Invalid argument for logarithm |\n+---------+------+--------------------------------+\n3 rows in set\n"
+    ],
+    "Category": [
+        "Mathematical Functions"
+    ]
+}

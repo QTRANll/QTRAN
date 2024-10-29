@@ -1,0 +1,28 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/aggregate-functions/reference/entropy"
+    ],
+    "Title": [
+        "entropy"
+    ],
+    "Feature": [
+        "entropy(val)"
+    ],
+    "Description": [
+        "entropy",
+        "Calculates Shannon entropy of a column of values.",
+        "Syntax",
+        "entropy(val)",
+        "Arguments",
+        "val \u2014 Column of values of any type.",
+        "Returned value",
+        "Shannon entropy.",
+        "Type: Float64."
+    ],
+    "Examples": [
+        "CREATE TABLE entropy (`vals` UInt32,`strings` String) ENGINE = Memory;INSERT INTO entropy VALUES (1, 'A'), (1, 'A'), (1,'A'), (1,'A'), (2,'B'), (2,'B'), (2,'C'), (2,'D');SELECT entropy(vals), entropy(strings) FROM entropy;"
+    ],
+    "Category": [
+        "Aggregate Functions"
+    ]
+}

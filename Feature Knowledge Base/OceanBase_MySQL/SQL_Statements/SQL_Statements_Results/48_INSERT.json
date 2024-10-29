@@ -1,0 +1,28 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000001053510"
+    ],
+    "Title": [
+        "INSERT"
+    ],
+    "Feature": [
+        "INSERT {into_table_insert | overwrite_table_insert};\n\ninto_table_insert:\n    [/*+ [APPEND | direct(bool, int, [load_mode])] enable_parallel_dml PARALLEL(N) */]\n    [IGNORE] [INTO]\n    single_table_insert\n    [ON DUPLICATE KEY UPDATE update_asgn_list]\n\nload_mode:\n    'full' \n    | 'inc_replace'\n\nsingle_table_insert:\n    {dml_table_name values_clause\n     | dml_table_name '(' ')' values_clause\n     | dml_table_name '(' column_list ')' values_clause\n     | dml_table_name SET update_asgn_list}\n\ndml_table_name:\n    table_name [PARTITION (partition_name,...)]\n\nvalues_clause:\n     {{VALUES | VALUE} ({expr | DEFAULT},...) [, ...]\n      | select_stmt}\n\ncolumn_list\n    column_name [, ...]\n\nupdate_asgn_list:\n     column_name = expr [, ...]\n\noverwrite_table_insert:\n    [/*+PARALLEL(N)*/] OVERWRITE table_name select_stmt;\n"
+    ],
+    "Description": [
+        "该语句用于向表中添加一个或多个记录。",
+        "不支持直接对子查询进行插入操作，例如 INSERT INTO (SELECT * FROM t1) VALUES(1, 1)。",
+        "\n\n\n参数\n描述\n\n\n\n\nAPPEND | direct()\n使用 Hint 启用旁路导入功能。 \n      \n注意\n在执行旁路导入任务的过程中，不建议同时进行 OceanBase 数据库的升级操作，因为这可能导致旁路导入任务失败。\n\n\nAPPEND Hint 默认等同于使用的 direct(true, 0)，同时可以实现在线收集统计信息（GATHER_OPTIMIZER_STATISTICS Hint）的功能。\ndirect() 参数解释如下： \n        \nbool：表示写入的数据是否需要排序，true 表示需要排序，false 表示不需要排序。\nint：表示最大容忍的错误行数。\nload_mode：可选参数，表示旁路导入的模式。取值须使用英文单引号包起来，取值如下： \n          \nfull：默认值，表示全量导入。\ninc：表示增量导入，支持 INSERT 和 IGNORE 语义。\ninc_replace：表示增量导入，但不检查主键是否重复，相当于 REPLACE 语义的增量导入。 \n            \n注意\n当 load_mode 取值为 inc_replace 时，INSERT 语句中不允许有 IGNORE 关键字。\n\n\n\n 更多使用 INSERT INTO 旁路导入的信息，参见 使用 INSERT INTO SELECT 语句旁路导入数据。\n\n\nenable_parallel_dml parallel(N)\n加载数据的并行度，N 默认为 4。 \n      \n说明\n一般情况下，enable_parallel_dml Hint 和 parallel Hint 必须配合使用才能开启并行 DML。不过，当目标表的 Schema 上指定了表级别的并行度时，仅需指定 enable_parallel_dml Hint。\n\n\n\nIGNORE\n在 INSERT 语句执行过程中发生的错误将会被忽略。\n\n\ncolumn_list\n用于指定插入数据的列，同时插入多列时以逗号（,）分隔。\n\n\ntable_name\n指定要插入的表名。\n\n\npartition_name\n插入表指定的分区名。\n\n\nupdate_asgn_list\n赋值语句，例如 c1 = 2。\n\n\nON DUPLICATE KEY UPDATE\n指定对重复主键或唯一键的处理。如果指定了 ON DUPLICATE KEY UPDATE，当要插入的主键或唯一键有重复时，会用配置值替换待插入的值；如果不指定 ON DUPLICATE KEY UPDATE，当要插入的主键或唯一键有重复时，插入报错。\n\n\noverwrite_table_insert\n用于将查询结果替换表中的现有数据，即该语句会先清空表中的旧数据，再将新数据批量写入到表中。有关使用 INSERT OVERWRITE SELECT 语句的示例信息，参见 插入数据 中的 使用 INSERT OVERWRITE SELECT 语句插入数据 章节。 \n      \n注意\n该语句无法在多行事务中操作。因此，为确保操作顺利进行，需先执行 SET autocommit = on; 命令开启自动提交事务。\n\n\n\nselect_stmt\n指定 SELECT 子句。有关查询语句的详细信息，参见 SELECT 语句。\n\n\n"
+    ],
+    "Examples": [
+        "obclient> CREATE TABLE t1(c1 INT PRIMARY KEY, c2 INT) PARTITION BY KEY(c1) PARTITIONS 4;\nQuery OK, 0 rows affected\n\nobclient> CREATE TABLE t2(c1 INT PRIMARY KEY, c2 INT);\nQuery OK, 0 rows affected\nobclient> SELECT * FROM t2;\n+----+------+\n| c1 | c2   |\n+----+------+\n|  1 |    1 |\n|  2 |    2 |\n|  3 |    3 |\n|  4 |    4 |\n+----+------+\n4 rows in set\n",
+        "obclient>  INSERT INTO t1 VALUES(1,1);\nQuery OK, 1 row affected\n\nobclient> SELECT * FROM t1;\n+----+------+\n| c1 | c2   |\n+----+------+\n|  1 |    1 |\n+----+------+\n1 row in set\n",
+        "obclient> INSERT t1 VALUES(1,1),(2,DEFAULT),(2+2,3*4);\nQuery OK, 3 rows affected\nRecords: 3  Duplicates: 0  Warnings: 0\n\nobclient> SELECT * FROM t1;\n+----+------+\n| c1 | c2   |\n+----+------+\n|  1 |    1 |\n|  2 | NULL |\n|  4 |   12 |\n+----+------+\n3 rows in set\n",
+        "obclient> INSERT INTO t1 PARTITION(p0) (c1) VALUES(5);\nQuery OK, 1 row affected\nobclient> SELECT * FROM t1 PARTITION(p0);\n+----+------+\n| c1 | c2   |\n+----+------+\n|  5 | NULL |\n+----+------+\n1 row in set\n",
+        "obclient> INSERT INTO t1 VALUES(1,1),(1,2) ON DUPLICATE KEY UPDATE c1=100;\nQuery OK, 3 rows affected\nRecords: 2  Duplicates: 1  Warnings: 0\n\nobclient> SELECT * FROM t1;\n+-----+------+\n| c1  | c2   |\n+-----+------+\n| 100 |    1 |\n+-----+------+\n1 row in set\n",
+        "obclient> CREATE VIEW v AS SELECT * FROM t1;\nQuery OK, 0 rows affected\nobclient> INSERT INTO v VALUES (1,1);\nQuery OK, 1 row affected\n\nobclient> SELECT * FROM v;\n+----+------+\n| c1 | c2   |\n+----+------+\n|  1 |    1 |\n+----+------+\n1 row in set\n",
+        "obclient> INSERT INTO t1 SELECT * FROM t2 WHERE c1>2;\nQuery OK, 2 rows affected\nRecords: 2  Duplicates: 0  Warnings: 0\n\nobclient> SELECT * FROM t1;\n+----+------+\n| c1 | c2   |\n+----+------+\n|  3 |    3 |\n|  4 |    4 |\n+----+------+\n2 rows in set\n"
+    ],
+    "Category": [
+        "No Category"
+    ]
+}

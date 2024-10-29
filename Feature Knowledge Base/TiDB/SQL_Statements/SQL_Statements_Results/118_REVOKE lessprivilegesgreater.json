@@ -1,0 +1,26 @@
+{
+    "HTML": [
+        "https://docs.pingcap.com//zh/tidb/stable/sql-statement-revoke-privileges"
+    ],
+    "Title": [
+        "REVOKE <privileges>"
+    ],
+    "Feature": [
+        "GrantStmt ::=\n    'GRANT' PrivElemList 'ON' ObjectType PrivLevel 'TO' UserSpecList RequireClauseOpt WithGrantOptionOpt\n\nPrivElemList ::=\n    PrivElem ( ',' PrivElem )*\n\nPrivElem ::=\n    PrivType ( '(' ColumnNameList ')' )?\n\nPrivType ::=\n    'ALL' 'PRIVILEGES'?\n|   'ALTER' 'ROUTINE'?\n|   'CREATE' ( 'USER' | 'TEMPORARY' 'TABLES' | 'VIEW' | 'ROLE' | 'ROUTINE' )?\n|    'TRIGGER'\n|   'DELETE'\n|    'DROP' 'ROLE'?\n|    'PROCESS'\n|    'EXECUTE'\n|   'INDEX'\n|   'INSERT'\n|   'SELECT'\n|   'SUPER'\n|    'SHOW' ( 'DATABASES' | 'VIEW' )\n|   'UPDATE'\n|   'GRANT' 'OPTION'\n|   'REFERENCES'\n|   'REPLICATION' ( 'SLAVE' | 'CLIENT' )\n|   'USAGE'\n|    'RELOAD'\n|   'FILE'\n|   'CONFIG'\n|   'LOCK' 'TABLES'\n|    'EVENT'\n|   'SHUTDOWN'\n\nObjectType ::=\n    'TABLE'?\n\nPrivLevel ::=\n    '*' ( '.' '*' )?\n|    Identifier ( '.' ( '*' | Identifier ) )?\n\nUserSpecList ::=\n    UserSpec ( ',' UserSpec )*\n\nRequireClauseOpt ::= ('REQUIRE' ('NONE' | 'SSL' | 'X509' | RequireListElement ('AND'? RequireListElement)*))?\n\nRequireListElement ::= 'ISSUER' Issuer | 'SUBJECT' Subject | 'CIPHER' Cipher | 'SAN' SAN | 'TOKEN_ISSUER' TokenIssuer\n"
+    ],
+    "Description": [
+        "REVOKE <privileges> \u8bed\u53e5\u7528\u4e8e\u5220\u9664\u5df2\u6709\u7528\u6237\u7684\u6743\u9650\u3002\u6267\u884c REVOKE <privileges> \u8bed\u53e5\u9700\u8981\u62e5\u6709\u5206\u914d\u7684\u6743\u9650\uff0c\u5e76\u4e14\u62e5\u6709 GRANT OPTION \u6743\u9650\u3002"
+    ],
+    "Examples": [
+        "CREATE USER 'newuser' IDENTIFIED BY 'mypassword';\n",
+        "GRANT ALL ON test.* TO 'newuser';\n",
+        "SHOW GRANTS FOR 'newuser';\n",
+        "REVOKE ALL ON test.* FROM 'newuser';\n",
+        "SHOW GRANTS FOR 'newuser';\n",
+        "DROP USER 'newuser';\n",
+        "SHOW GRANTS FOR 'newuser';\n"
+    ],
+    "Category": [
+        "\u8d26\u6237\u7ba1\u7406\u4e0e\u6570\u636e\u63a7\u5236\u8bed\u8a00 (DCL)"
+    ]
+}

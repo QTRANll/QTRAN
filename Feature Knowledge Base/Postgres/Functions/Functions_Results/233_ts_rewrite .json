@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/current/functions-textsearch.html"
+    ],
+    "Title": [
+        "ts_rewrite"
+    ],
+    "Feature": [
+        "ts_rewrite ( query tsquery, select text ) → tsquery"
+    ],
+    "Description": [
+        "Replaces portions of the query according to target(s) and substitute(s) obtained by executing a SELECT command. See Section 12.4.2.1 for details."
+    ],
+    "Examples": [
+        "SELECT ts_rewrite('a & b'::tsquery, 'SELECT t,s FROM aliases') → 'b' & ( 'foo' | 'bar' )"
+    ],
+    "Category": [
+        "Text Search Functions and Operators"
+    ]
+}

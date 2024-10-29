@@ -1,0 +1,23 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/json_merge/"
+    ],
+    "Title": [
+        "JSON_MERGE"
+    ],
+    "Feature": [
+        "JSON_MERGE(json_doc, json_doc[, json_doc] ...)\n"
+    ],
+    "Description": [
+        "Merges the given JSON documents.",
+        "Returns the merged result,or NULL if any argument is NULL.",
+        "An error occurs if any of the arguments are not valid JSON documents.",
+        "JSON_MERGE has been deprecated since MariaDB 10.2.25, MariaDB 10.3.16 and MariaDB 10.4.5. JSON_MERGE_PATCH is an RFC 7396-compliant replacement, and JSON_MERGE_PRESERVE is a synonym."
+    ],
+    "Examples": [
+        "SELECT JSON_MERGE(@json1,@json2);"
+    ],
+    "Category": [
+        "JSON Functions"
+    ]
+}

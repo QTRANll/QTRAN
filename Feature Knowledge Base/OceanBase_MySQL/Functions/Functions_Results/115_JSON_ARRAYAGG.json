@@ -1,0 +1,23 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000000823303"
+    ],
+    "Title": [
+        "JSON_ARRAYAGG"
+    ],
+    "Feature": [
+        "JSON_ARRAYAGG(col_or_expr)[over_clause]\n"
+    ],
+    "Description": [
+        "该函数将结果集聚合为单个 JSON 数组，其元素由行组成。此数组中元素的顺序未定义。",
+        "该函数作用于计算为单个值的列或表达式。",
+        "参数 col_or_expr 为列或表达式。如果结果不包含行，或者出现错误，则返回 NULL。",
+        "\n注意\n该函数暂不支持窗口函数，即 OVER 子句。\n"
+    ],
+    "Examples": [
+        "obclient> CREATE TABLE tbl1 (oid INT, attr VARCHAR(100), value VARCHAR(100));\nQuery OK, 0 rows affected\n\nobclient> INSERT INTO tbl1 VALUES (2, 'color', 'red'),(2, 'fabric', 'silk'),(3,'color','green'),(3,'shape','square');\nQuery OK, 4 rows affected\nRecords: 4  Duplicates: 0  Warnings: 0\n\nobclient> SELECT oid, JSON_ARRAYAGG(attr) AS attributes FROM tbl1 GROUP BY oid;\n+------+---------------------+\n| oid  | attributes          |\n+------+---------------------+\n|    2 | [\"color\", \"fabric\"] |\n|    3 | [\"color\", \"shape\"]  |\n+------+---------------------+\n2 rows in set\n\nobclient> INSERT INTO tbl1 SELECT * FROM tbl1;\nQuery OK, 4 rows affected\nRecords: 4  Duplicates: 0  Warnings: 0\n\nobclient> SELECT oid, JSON_ARRAYAGG(attr) AS attributes FROM tbl1 GROUP BY oid;\n+------+----------------------------------------+\n| oid  | attributes                             |\n+------+----------------------------------------+\n|    2 | [\"color\", \"fabric\", \"color\", \"fabric\"] |\n|    3 | [\"color\", \"shape\", \"color\", \"shape\"]   |\n+------+----------------------------------------+\n2 rows in set\n"
+    ],
+    "Category": [
+        "JSON Functions"
+    ]
+}

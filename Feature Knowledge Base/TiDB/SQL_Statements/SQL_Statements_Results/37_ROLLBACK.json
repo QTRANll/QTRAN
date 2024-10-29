@@ -1,0 +1,24 @@
+{
+    "HTML": [
+        "https://docs.pingcap.com//zh/tidb/stable/sql-statement-rollback"
+    ],
+    "Title": [
+        "ROLLBACK"
+    ],
+    "Feature": [
+        "RollbackStmt ::=\n    'ROLLBACK' CompletionTypeWithinTransaction?\n\nCompletionTypeWithinTransaction ::=\n    'AND' ( 'CHAIN' ( 'NO' 'RELEASE' )? | 'NO' 'CHAIN' ( 'NO'? 'RELEASE' )? )\n|   'NO'? 'RELEASE'\n"
+    ],
+    "Description": [
+        "ROLLBACK \u8bed\u53e5\u7528\u4e8e\u8fd8\u539f TiDB \u5185\u5f53\u524d\u4e8b\u52a1\u4e2d\u7684\u6240\u6709\u66f4\u6539\uff0c\u4f5c\u7528\u4e0e COMMIT \u8bed\u53e5\u76f8\u53cd\u3002"
+    ],
+    "Examples": [
+        "CREATE TABLE t1 (a INT NOT NULL PRIMARY KEY);\n",
+        "BEGIN;\n",
+        "INSERT INTO t1 VALUES (1);\n",
+        "ROLLBACK;\n",
+        "SELECT * FROM t1;\n"
+    ],
+    "Category": [
+        "\u4e8b\u52a1\u8bed\u53e5"
+    ]
+}

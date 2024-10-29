@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/dense_rank/"
+    ],
+    "Title": [
+        "DENSE_RANK"
+    ],
+    "Feature": [
+        "DENSE_RANK() OVER (\n  [ PARTITION BY partition_expression ]\n  [ ORDER BY order_list ]\n) \n"
+    ],
+    "Description": [
+        "DENSE_RANK() is a window function that displays the number of a given row, starting at one and following the ORDER BY sequence of the window function, with identical values receiving the same result. Unlike the  RANK() function, there are no skipped values if the preceding results are identical. It is also similar to the ROW_NUMBER() function except that in that function, identical values will receive a different row number for each result."
+    ],
+    "Examples": [
+        "SELECT DENSE_RANK() OVER (ORDER BY 1) AS rank_value"
+    ],
+    "Category": [
+        "Window Functions"
+    ]
+}

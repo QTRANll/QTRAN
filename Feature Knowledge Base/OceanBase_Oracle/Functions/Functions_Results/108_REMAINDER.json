@@ -1,0 +1,23 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000000823155"
+    ],
+    "Title": [
+        "REMAINDER"
+    ],
+    "Feature": [
+        "REMAINDER (x, y)\n"
+    ],
+    "Description": [
+        "该函数返回 x 除以 y 的余数。",
+        "\n注意\n该函数在用 REMAINDER (x,y) 和 MOD (x,y) 函数在进行运算时，都用了一个公式 result=x-y*(x/y)，区别在于计算 x/y 时的处理方式不同。在 REMAINDER (x,y) 函数中，采用 ROUND(x/y)，而在 MOD (x,y) 函数中采用 FLOOR(x/y)。\n在 REMAINDER 函数中，当 ROUND(x/y) 的参数 x/y 的值的小数部分恰好为 0.5 时，如果 x/y 的值的整数部分为偶数，不向前一位进位；如果 x/y 的值的整数部分为奇数，向前一位进位。例如，ROUND(1.5)=2、ROUND(2.5)=2、ROUND(3.5)=4、ROUND(4.5)=4。\n",
+        "\n\n\n参数\n说明\n\n\n\n\nx\n被除数，为数值类型（NUMBER、FLOAT、BINARY_FLOAT 和 BINARY_DOUBLE）表达式。\n\n\ny\n除数，为数值类型（NUMBER、FLOAT、BINARY_FLOAT 和 BINARY_DOUBLE）表达式。 注意 参数 y 不能为 0。\n\n\n",
+        "返回类型与数值优先级高的参数的数据类型相同。"
+    ],
+    "Examples": [
+        "obclient> SELECT MOD(1.5,1),REMAINDER(1.5,1) FROM DUAL;\n+------------+------------------+\n| MOD(1.5,1) | REMAINDER(1.5,1) |\n+------------+------------------+\n|         .5 |              -.5 |\n+------------+------------------+\n1 row in set\n"
+    ],
+    "Category": [
+        "Numeric Functions"
+    ]
+}

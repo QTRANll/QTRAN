@@ -1,0 +1,25 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/substring_index/"
+    ],
+    "Title": [
+        "SUBSTRING_INDEX"
+    ],
+    "Feature": [
+        "SUBSTRING_INDEX(str,delim,count)\n"
+    ],
+    "Description": [
+        "Returns the substring from string str before count occurrences of the\ndelimiter delim. If count is positive, everything to the left\nof the final delimiter (counting from the left) is returned. If count\nis negative, everything to the right of the final delimiter (counting from the\nright) is returned. SUBSTRING_INDEX() performs a case-sensitive match when\nsearching for delim.",
+        "If any argument is NULL, returns NULL.",
+        "For example",
+        "SUBSTRING_INDEX('www.mariadb.org', '.', 2)\n",
+        "means \"Return all of the characters up to the 2nd occurrence of .\""
+    ],
+    "Examples": [
+        "SELECT SUBSTRING_INDEX('www.mariadb.org', '.', 2);",
+        "SELECT SUBSTRING_INDEX('www.mariadb.org', '.', -2);"
+    ],
+    "Category": [
+        "String Functions"
+    ]
+}

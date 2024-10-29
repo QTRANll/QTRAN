@@ -1,0 +1,24 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000000823345"
+    ],
+    "Title": [
+        "CEIL"
+    ],
+    "Feature": [
+        "CEIL(expr)\n"
+    ],
+    "Description": [
+        "返回大于等于 expr 的最小整数。",
+        "支持比较运算，结果为 BOOL 值，被转化为数字类型处理，产生的结果为 1(TRUE)、0 (FALSE)。",
+        "如果输入 NULL，返回值为 NULL。",
+        "如果输入纯数字的字符串，支持自动转换成数字类型。",
+        "返回值会被转化为一个 BIGINT。"
+    ],
+    "Examples": [
+        "obclient> SELECT CEIL(1.2), CEIL(-1.2), CEIL(1+1.5), CEIL(1=1),CEIL(1<1),CEIL(null);\n+-----------+------------+-------------+-----------+-----------+------------+\n| CEIL(1.2) | CEIL(-1.2) | CEIL(1+1.5) | CEIL(1=1) | CEIL(1<1) | CEIL(null) |\n+-----------+------------+-------------+-----------+-----------+------------+\n|         2 |         -1 |           3 |         1 |         0 |       NULL |\n+-----------+------------+-------------+-----------+-----------+------------+\n1 row in set\n\nobclient> SELECT CEIL(name);\nERROR 1054 (42S22): Unknown column 'name' in 'field list'\n\nobclient> SELECT CEIL('2');\n+-----------+\n| CEIL('2') |\n+-----------+\n|         2 |\n+-----------+\n1 row in set\n"
+    ],
+    "Category": [
+        "Mathematical Functions"
+    ]
+}

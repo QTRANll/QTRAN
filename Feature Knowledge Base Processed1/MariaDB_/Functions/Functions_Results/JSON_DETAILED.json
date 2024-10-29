@@ -1,0 +1,34 @@
+{
+    "HTML": "https://mariadb.com//kb/en/json_detailed/",
+    "Title": "JSON_DETAILED",
+    "Feature": [
+        "JSON_DETAILED(json_doc[, tab_size])\nJSON_PRETTY(json_doc[, tab_size])\n"
+    ],
+    "Description": [
+        "Represents JSON in the most understandable way emphasizing nested structures. ",
+        "JSON_PRETTY was added as an alias for JSON_DETAILED in MariaDB 10.10.3, MariaDB 10.9.5, MariaDB 10.8.7, MariaDB 10.7.8, MariaDB 10.6.12, MariaDB 10.5.19 and MariaDB 10.4.28."
+    ],
+    "Examples": [
+        "SET @j = '{ \"A\":1,\"B\":[2,3]}';\n\nSELECT @j;\n+--------------------+\n| @j                 |\n+--------------------+\n| { \"A\":1,\"B\":[2,3]} |\n+--------------------+\n\nSELECT JSON_DETAILED(@j);\n+------------------------------------------------------------+\n| JSON_DETAILED(@j)                                          |\n+------------------------------------------------------------+\n| {\n    \"A\": 1,\n    \"B\": \n    [\n        2,\n        3\n    ]\n} |\n+------------------------------------------------------------+\n"
+    ],
+    "Category": [
+        "JSON Functions"
+    ],
+    "Effective SQLs Refined": [
+        "SELECT JSON_DETAILED(@j);"
+    ],
+    "Ineffective SQLs Refined": [],
+    "Wrong Messages from Ineffective SQLs Refined": [],
+    "SQLs Generated1": [],
+    "SQLs Generated Costs1": [],
+    "SQLs Generated ExecResults1": [],
+    "SQLs Generated ExecTimes1": [],
+    "SQLs Generated ErrorMessages1": [],
+    "Effective SQLs Generated1": [],
+    "SQLs Generated2": [],
+    "SQLs Generated Costs2": [],
+    "SQLs Generated ExecResults2": [],
+    "SQLs Generated ExecTimes2": [],
+    "SQLs Generated ErrorMessages2": [],
+    "Effective SQLs Generated2": []
+}

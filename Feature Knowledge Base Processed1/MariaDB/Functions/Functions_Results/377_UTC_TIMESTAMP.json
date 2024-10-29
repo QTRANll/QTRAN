@@ -1,0 +1,22 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/utc_timestamp/"
+    ],
+    "Title": [
+        "UTC_TIMESTAMP"
+    ],
+    "Feature": [
+        "UTC_TIMESTAMP\nUTC_TIMESTAMP([precision])\n"
+    ],
+    "Description": [
+        "Returns the current UTC date and time as a value in 'YYYY-MM-DD\nHH:MM:SS' or YYYYMMDDHHMMSS.uuuuuu format, depending on whether the\nfunction is used in a string or numeric context.",
+        "The optional precision determines the microsecond precision. See Microseconds in MariaDB."
+    ],
+    "Examples": [
+        "SELECT UTC_TIMESTAMP(), UTC_TIMESTAMP() + 0;",
+        "SELECT UTC_TIMESTAMP(4);"
+    ],
+    "Category": [
+        "Date & Time Functions"
+    ]
+}

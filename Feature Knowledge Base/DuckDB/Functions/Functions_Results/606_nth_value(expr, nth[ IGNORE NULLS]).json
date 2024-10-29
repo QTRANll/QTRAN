@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://duckdb.org/docs/sql/functions/window_functions"
+    ],
+    "Title": [
+        "nth_value(column, 2)"
+    ],
+    "Feature": [
+        "nth_value(column, 2)"
+    ],
+    "Description": [
+        "nth_value(expr, nth[ IGNORE NULLS])",
+        "Returns expr evaluated at the nth row (among rows with a non-null value of expr if IGNORE NULLS is set) of the window frame (counting from 1); NULL if no such row.",
+        "Same type as expr"
+    ],
+    "Examples": [],
+    "Category": [
+        "Window Functions"
+    ]
+}

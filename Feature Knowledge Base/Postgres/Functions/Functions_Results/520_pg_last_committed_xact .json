@@ -1,0 +1,18 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/current/functions-info.html"
+    ],
+    "Title": [
+        "pg_last_committed_xact"
+    ],
+    "Feature": [
+        "pg_last_committed_xact () → record ( xid xid, timestamp timestamp with time zone, roident oid )"
+    ],
+    "Description": [
+        "Returns the transaction ID, commit timestamp and replication origin of the latest committed transaction."
+    ],
+    "Examples": [],
+    "Category": [
+        "System Information Functions and Operators"
+    ]
+}

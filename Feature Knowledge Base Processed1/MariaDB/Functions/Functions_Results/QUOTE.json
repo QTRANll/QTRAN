@@ -1,0 +1,34 @@
+{
+    "HTML": "https://mariadb.com//kb/en/quote/",
+    "Title": "QUOTE",
+    "Feature": [
+        "QUOTE(str)\n"
+    ],
+    "Description": [
+        "Quotes a string to produce a result that can be used as a properly escaped data\nvalue in an SQL statement. The string is returned enclosed by single quotes and\nwith each instance of single quote (\"'\"), backslash (\"\\\"),\nASCII NUL, and Control-Z preceded by a backslash. If the argument\nis NULL, the return value is the word \"NULL\" without enclosing single\nquotes."
+    ],
+    "Examples": [
+        "SELECT QUOTE(\"Don't!\");\n+-----------------+\n| QUOTE(\"Don't!\") |\n+-----------------+\n| 'Don\\'t!'       |\n+-----------------+\n\nSELECT QUOTE(NULL); \n+-------------+\n| QUOTE(NULL) |\n+-------------+\n| NULL        |\n+-------------+\n"
+    ],
+    "Category": [
+        "String Functions"
+    ],
+    "Effective SQLs Refined": [
+        "SELECT QUOTE(\"Don't!\");",
+        "SELECT QUOTE(NULL);"
+    ],
+    "Ineffective SQLs Refined": [],
+    "Wrong Messages from Ineffective SQLs Refined": [],
+    "SQLs Generated1": [],
+    "SQLs Generated Costs1": [],
+    "SQLs Generated ExecResults1": [],
+    "SQLs Generated ExecTimes1": [],
+    "SQLs Generated ErrorMessages1": [],
+    "Effective SQLs Generated1": [],
+    "SQLs Generated2": [],
+    "SQLs Generated Costs2": [],
+    "SQLs Generated ExecResults2": [],
+    "SQLs Generated ExecTimes2": [],
+    "SQLs Generated ErrorMessages2": [],
+    "Effective SQLs Generated2": []
+}

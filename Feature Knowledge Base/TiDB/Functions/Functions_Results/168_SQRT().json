@@ -1,0 +1,23 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/mathematical-functions.html#function_sqrt"
+    ],
+    "Title": [
+        "SQRT()"
+    ],
+    "Feature": [
+        "SQRT(X)"
+    ],
+    "Description": [
+        "Return the square root of the argument",
+        "\nSQRT(X)\n",
+        "\n            Returns the square root of a nonnegative number\n            X. If\n            X is NULL, the\n            function returns NULL.\n          ",
+        "Press CTRL+C to copy mysql> SELECT SQRT(4);\n        -> 2\nmysql> SELECT SQRT(20);\n        -> 4.4721359549996\nmysql> SELECT SQRT(-16);\n        -> NULL"
+    ],
+    "Examples": [
+        "mysql> SELECT SQRT(4);\n        -> 2\nmysql> SELECT SQRT(20);\n        -> 4.4721359549996\nmysql> SELECT SQRT(-16);\n        -> NULL"
+    ],
+    "Category": [
+        "Mathematical Functions"
+    ]
+}

@@ -1,0 +1,27 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/date-time-functions"
+    ],
+    "Title": [
+        "timestamp"
+    ],
+    "Feature": [
+        "timestamp(expr[, expr_time])"
+    ],
+    "Description": [
+        "timestamp",
+        "Converts the first argument 'expr' to type DateTime64(6).\nIf a second argument 'expr_time' is provided, it adds the specified time to the converted value.",
+        "Syntax",
+        "timestamp(expr[, expr_time])",
+        "Alias: TIMESTAMP",
+        "Arguments",
+        "expr - Date or date with time. String.expr_time - Optional parameter. Time to add. String."
+    ],
+    "Examples": [
+        "SELECT timestamp('2023-12-31') as ts;",
+        "SELECT timestamp('2023-12-31 12:00:00', '12:00:00.11') as ts;"
+    ],
+    "Category": [
+        "Dates and Times Functions"
+    ]
+}

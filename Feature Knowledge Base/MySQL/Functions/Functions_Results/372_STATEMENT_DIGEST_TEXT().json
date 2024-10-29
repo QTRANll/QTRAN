@@ -1,0 +1,29 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/built-in-function-reference.html",
+        "https://dev.mysql.com/doc/refman/8.4/en/encryption-functions.html"
+    ],
+    "Title": [
+        "14.1 Built-In Function and Operator Reference",
+        "14.13 Encryption and Compression Functions"
+    ],
+    "Feature": [
+        "STATEMENT_DIGEST_TEXT(statement)"
+    ],
+    "Description": [
+        "Compute normalized statement digest",
+        "\nSTATEMENT_DIGEST_TEXT(statement)\n",
+        "\n          Given an SQL statement as a string, returns the normalized\n          statement digest as a string in the connection character set,\n          or NULL if the argument is\n          NULL. For additional discussion and\n          examples, see the description of the related\n          STATEMENT_DIGEST() function.\n        "
+    ],
+    "Examples": [],
+    "Category": [
+        "Built-In Functions",
+        "Encryption and Compression Functions"
+    ],
+    "Reference HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/encryption-functions.html#function_statement-digest-text"
+    ],
+    "Feature Type": [
+        "Function"
+    ]
+}

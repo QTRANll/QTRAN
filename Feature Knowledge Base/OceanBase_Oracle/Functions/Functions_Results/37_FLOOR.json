@@ -1,0 +1,22 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000000823166"
+    ],
+    "Title": [
+        "FLOOR"
+    ],
+    "Feature": [
+        "FLOOR (numeric_expression)\n"
+    ],
+    "Description": [
+        "该函数返回小于等于数值 numeric_expression 的最大整数。",
+        "numeric_expression 是数值数据类型（NUMBER、FLOAT、BINARY_FLOAT 和 BINARY_DOUBLE）或可以隐式转换为数值数据类型的参数。",
+        "返回类型与参数 numeric_expression 的数据类型相同。"
+    ],
+    "Examples": [
+        "obclient> SELECT FLOOR(-1.5),FLOOR(1.5),FLOOR(2),FLOOR(6-9.5) FROM DUAL;\n+-------------+------------+----------+--------------+\n| FLOOR(-1.5) | FLOOR(1.5) | FLOOR(2) | FLOOR(6-9.5) |\n+-------------+------------+----------+--------------+\n|          -2 |          1 |        2 |           -4 |\n+-------------+------------+----------+--------------+\n1 row in set\n"
+    ],
+    "Category": [
+        "Numeric Functions"
+    ]
+}

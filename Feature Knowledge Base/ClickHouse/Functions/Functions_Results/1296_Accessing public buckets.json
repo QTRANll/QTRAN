@@ -1,0 +1,22 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/table-functions/s3"
+    ],
+    "Title": [
+        "Accessing public buckets"
+    ],
+    "Feature": [
+        "Accessing public buckets"
+    ],
+    "Description": [
+        "Accessing public buckets",
+        "ClickHouse tries to fetch credentials from many different types of sources.\nSometimes, it can produce problems when accessing some buckets that are public causing the client to return 403 error code.\nThis issue can be avoided by using NOSIGN keyword, forcing the client to ignore all the credentials, and not sign the requests.",
+        "SELECT *FROM s3(   'https://datasets-documentation.s3.eu-west-3.amazonaws.com/aapl_stock.csv',   NOSIGN,   'CSVWithNames')LIMIT 5;"
+    ],
+    "Examples": [
+        "SELECT *FROM s3(   'https://datasets-documentation.s3.eu-west-3.amazonaws.com/aapl_stock.csv',   NOSIGN,   'CSVWithNames')LIMIT 5;"
+    ],
+    "Category": [
+        "Table Functions"
+    ]
+}

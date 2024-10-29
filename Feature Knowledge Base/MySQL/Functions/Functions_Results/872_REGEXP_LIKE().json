@@ -1,0 +1,46 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/built-in-function-reference.html",
+        "https://dev.mysql.com/doc/refman/8.4/en/string-functions.html",
+        "https://dev.mysql.com/doc/refman/8.4/en/regexp.html"
+    ],
+    "Title": [
+        "14.1 Built-In Function and Operator Reference",
+        "14.8 String Functions and Operators",
+        "14.8.2 Regular Expressions"
+    ],
+    "Feature": [
+        "REGEXP_LIKE(expr,\n              pat[,\n              match_type])"
+    ],
+    "Description": [
+        "Whether string matches regular expression",
+        "\nREGEXP_LIKE(expr,\n              pat[,\n              match_type])\n",
+        "\n              Returns 1 if the string expr\n              matches the regular expression specified by the pattern\n              pat, 0 otherwise. If\n              expr or\n              pat is NULL,\n              the return value is NULL.\n            ",
+        "\n              The pattern can be an extended regular expression, the\n              syntax for which is discussed in\n              Regular Expression Syntax. The pattern need not be a\n              literal string. For example, it can be specified as a\n              string expression or table column.\n            ",
+        "\n              The optional match_type\n              argument is a string that may contain any or all the\n              following characters specifying how to perform matching:\n",
+        "\n\nc: Case-sensitive matching.\n                \ni: Case-insensitive matching.\n                \nm: Multiple-line mode. Recognize\n                  line terminators within the string. The default\n                  behavior is to match line terminators only at the\n                  start and end of the string expression.\n                \nn: The .\n                  character matches line terminators. The default is for\n                  . matching to stop at the end of a\n                  line.\n                \nu: Unix-only line endings. Only the\n                  newline character is recognized as a line ending by\n                  the ., ^, and\n                  $ match operators.\n\n",
+        "\n              If characters specifying contradictory options are\n              specified within match_type,\n              the rightmost one takes precedence.\n            ",
+        "\n              By default, regular expression operations use the\n              character set and collation of the\n              expr and\n              pat arguments when deciding the\n              type of a character and performing the comparison. If the\n              arguments have different character sets or collations,\n              coercibility rules apply as described in\n              Section\u00a012.8.4, \u201cCollation Coercibility in Expressions\u201d.\n              Arguments may be specified with explicit collation\n              indicators to change comparison behavior.\n            ",
+        "mysql> SELECT REGEXP_LIKE('CamelCase', 'CAMELCASE');\n+---------------------------------------+\n| REGEXP_LIKE('CamelCase', 'CAMELCASE') |\n+---------------------------------------+\n|                                     1 |\n+---------------------------------------+\nmysql> SELECT REGEXP_LIKE('CamelCase', 'CAMELCASE' COLLATE utf8mb4_0900_as_cs);\n+------------------------------------------------------------------+\n| REGEXP_LIKE('CamelCase', 'CAMELCASE' COLLATE utf8mb4_0900_as_cs) |\n+------------------------------------------------------------------+\n|                                                                0 |\n+------------------------------------------------------------------+",
+        "\nmatch_type may be specified\n              with the c or i\n              characters to override the default case sensitivity.\n              Exception: If either argument is a binary string, the\n              arguments are handled in case-sensitive fashion as binary\n              strings, even if match_type\n              contains the i character.\n",
+        "\n\nNote\n\n\n                MySQL uses C escape syntax in strings (for example,\n                \\n to represent the newline\n                character). If you want your\n                expr or\n                pat argument to contain a\n                literal \\, you must double it.\n                (Unless the\n                NO_BACKSLASH_ESCAPES\n                SQL mode is enabled, in which case no escape character\n                is used.)\n\n",
+        "mysql> SELECT REGEXP_LIKE('Michael!', '.*');\n+-------------------------------+\n| REGEXP_LIKE('Michael!', '.*') |\n+-------------------------------+\n|                             1 |\n+-------------------------------+\nmysql> SELECT REGEXP_LIKE('new*\\n*line', 'new\\\\*.\\\\*line');\n+----------------------------------------------+\n| REGEXP_LIKE('new*\\n*line', 'new\\\\*.\\\\*line') |\n+----------------------------------------------+\n|                                            0 |\n+----------------------------------------------+\nmysql> SELECT REGEXP_LIKE('a', '^[a-d]');\n+----------------------------+\n| REGEXP_LIKE('a', '^[a-d]') |\n+----------------------------+\n|                          1 |\n+----------------------------+",
+        "mysql> SELECT REGEXP_LIKE('abc', 'ABC');\n+---------------------------+\n| REGEXP_LIKE('abc', 'ABC') |\n+---------------------------+\n|                         1 |\n+---------------------------+\nmysql> SELECT REGEXP_LIKE('abc', 'ABC', 'c');\n+--------------------------------+\n| REGEXP_LIKE('abc', 'ABC', 'c') |\n+--------------------------------+\n|                              0 |\n+--------------------------------+"
+    ],
+    "Examples": [
+        "mysql> SELECT REGEXP_LIKE('CamelCase', 'CAMELCASE');\n+---------------------------------------+\n| REGEXP_LIKE('CamelCase', 'CAMELCASE') |\n+---------------------------------------+\n|                                     1 |\n+---------------------------------------+\nmysql> SELECT REGEXP_LIKE('CamelCase', 'CAMELCASE' COLLATE utf8mb4_0900_as_cs);\n+------------------------------------------------------------------+\n| REGEXP_LIKE('CamelCase', 'CAMELCASE' COLLATE utf8mb4_0900_as_cs) |\n+------------------------------------------------------------------+\n|                                                                0 |\n+------------------------------------------------------------------+",
+        "mysql> SELECT REGEXP_LIKE('Michael!', '.*');\n+-------------------------------+\n| REGEXP_LIKE('Michael!', '.*') |\n+-------------------------------+\n|                             1 |\n+-------------------------------+\nmysql> SELECT REGEXP_LIKE('new*\\n*line', 'new\\\\*.\\\\*line');\n+----------------------------------------------+\n| REGEXP_LIKE('new*\\n*line', 'new\\\\*.\\\\*line') |\n+----------------------------------------------+\n|                                            0 |\n+----------------------------------------------+\nmysql> SELECT REGEXP_LIKE('a', '^[a-d]');\n+----------------------------+\n| REGEXP_LIKE('a', '^[a-d]') |\n+----------------------------+\n|                          1 |\n+----------------------------+",
+        "mysql> SELECT REGEXP_LIKE('abc', 'ABC');\n+---------------------------+\n| REGEXP_LIKE('abc', 'ABC') |\n+---------------------------+\n|                         1 |\n+---------------------------+\nmysql> SELECT REGEXP_LIKE('abc', 'ABC', 'c');\n+--------------------------------+\n| REGEXP_LIKE('abc', 'ABC', 'c') |\n+--------------------------------+\n|                              0 |\n+--------------------------------+"
+    ],
+    "Category": [
+        "Built-In Functions",
+        "String Functions",
+        "String Functions"
+    ],
+    "Reference HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/regexp.html#function_regexp-like"
+    ],
+    "Feature Type": [
+        "Function"
+    ]
+}

@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/current/functions-geometry.html"
+    ],
+    "Title": [
+        "geometric_type - point"
+    ],
+    "Feature": [
+        "geometric_type - point → geometric_type"
+    ],
+    "Description": [
+        "Subtracts the coordinates of the second point from those of each point of the first argument, thus performing translation. Available for point, box, path, circle."
+    ],
+    "Examples": [
+        "box '(1,1),(0,0)' - point '(2,0)' → (-1,1),(-2,0)"
+    ],
+    "Category": [
+        "Geometric Functions and Operators"
+    ]
+}

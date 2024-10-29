@@ -1,0 +1,27 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/tuple-functions"
+    ],
+    "Title": [
+        "tupleModulo"
+    ],
+    "Feature": [
+        "tupleModulo(tuple_num, tuple_mod)"
+    ],
+    "Description": [
+        "tupleModulo",
+        "Returns a tuple of the moduli (remainders) of division operations of two tuples.",
+        "Syntax",
+        "tupleModulo(tuple_num, tuple_mod)",
+        "Parameters",
+        "tuple_num: Tuple of numerator values. Tuple of numeric type.tuple_div: Tuple of modulus values. Tuple of numeric type.",
+        "Returned value",
+        "Tuple of the remainders of division of tuple_num and tuple_div. Tuple of non-zero integer values.An error is thrown for division by zero."
+    ],
+    "Examples": [
+        "SELECT tupleModulo((15, 10, 5), (5, 3, 2));"
+    ],
+    "Category": [
+        "Tuples Functions"
+    ]
+}

@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/row_number/"
+    ],
+    "Title": [
+        "ROW_NUMBER"
+    ],
+    "Feature": [
+        "ROW_NUMBER() OVER (\n  [ PARTITION BY partition_expression ]\n  [ ORDER BY order_list ]\n) \n"
+    ],
+    "Description": [
+        "ROW_NUMBER() is a window function that displays the number of a given row, starting at one and following the ORDER BY sequence of the window function, with identical values receiving different row numbers. It is similar to the RANK() and DENSE_RANK() functions except that in that function, identical values will receive the same rank for each result."
+    ],
+    "Examples": [
+        "SELECT ROW_NUMBER() OVER (ORDER BY 1) AS row_num;"
+    ],
+    "Category": [
+        "Window Functions"
+    ]
+}

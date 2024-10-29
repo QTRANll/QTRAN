@@ -1,0 +1,32 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/built-in-function-reference.html",
+        "https://dev.mysql.com/doc/refman/8.4/en/json-function-reference.html"
+    ],
+    "Title": [
+        "14.1 Built-In Function and Operator Reference",
+        "14.17.1 JSON Function Reference"
+    ],
+    "Feature": [
+        "JSON_ARRAY([val[,\n          val] ...])"
+    ],
+    "Description": [
+        "Create JSON array",
+        "\nJSON_ARRAY([val[,\n          val] ...])\n",
+        "\n          Evaluates a (possibly empty) list of values and returns a JSON\n          array containing those values.\n        ",
+        "Press CTRL+C to copy mysql> SELECT JSON_ARRAY(1, \"abc\", NULL, TRUE, CURTIME());\n+---------------------------------------------+\n| JSON_ARRAY(1, \"abc\", NULL, TRUE, CURTIME()) |\n+---------------------------------------------+\n| [1, \"abc\", null, true, \"11:30:24.000000\"]   |\n+---------------------------------------------+"
+    ],
+    "Examples": [
+        "mysql> SELECT JSON_ARRAY(1, \"abc\", NULL, TRUE, CURTIME());\n+---------------------------------------------+\n| JSON_ARRAY(1, \"abc\", NULL, TRUE, CURTIME()) |\n+---------------------------------------------+\n| [1, \"abc\", null, true, \"11:30:24.000000\"]   |\n+---------------------------------------------+"
+    ],
+    "Category": [
+        "Built-In Functions",
+        "JSON Functions"
+    ],
+    "Reference HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/json-creation-functions.html#function_json-array"
+    ],
+    "Feature Type": [
+        "Function"
+    ]
+}

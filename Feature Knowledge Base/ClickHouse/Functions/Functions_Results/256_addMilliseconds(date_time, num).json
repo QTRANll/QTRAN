@@ -1,0 +1,27 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/date-time-functions"
+    ],
+    "Title": [
+        "addMilliseconds"
+    ],
+    "Feature": [
+        "addMilliseconds(date_time, num)"
+    ],
+    "Description": [
+        "addMilliseconds",
+        "Adds a specified number of milliseconds to a date with time or a string-encoded date with time.",
+        "Syntax",
+        "addMilliseconds(date_time, num)",
+        "Parameters",
+        "date_time: Date with time to add specified number of milliseconds to. DateTime/DateTime64, String.num: Number of milliseconds to add. (U)Int*, Float*.",
+        "Returned value",
+        "Returns date_time plus num milliseconds. DateTime64."
+    ],
+    "Examples": [
+        "WITH    toDateTime('2024-01-01 00:00:00') AS date_time,    '2024-01-01 00:00:00' AS date_time_stringSELECT    addMilliseconds(date_time, 1000) AS add_milliseconds_with_date_time,    addMilliseconds(date_time_string, 1000) AS add_milliseconds_with_date_time_string"
+    ],
+    "Category": [
+        "Dates and Times Functions"
+    ]
+}

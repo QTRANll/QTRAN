@@ -1,0 +1,138 @@
+{
+    "HTML": "https://mariadb.com//kb/en/binlog_gtid_pos/",
+    "Title": "BINLOG_GTID_POS",
+    "Feature": [
+        "BINLOG_GTID_POS(binlog_filename,binlog_offset)\n"
+    ],
+    "Description": [
+        "The BINLOG_GTID_POS() function takes as input an old-style binary log position in the form of a file name and a file offset. It looks up the position in the current binlog, and returns a string representation of the corresponding GTID position. If the position is not found in the current binlog, NULL is returned."
+    ],
+    "Examples": [
+        "SELECT BINLOG_GTID_POS(\"master-bin.000001\", 600);\n"
+    ],
+    "Category": [
+        "Information Functions"
+    ],
+    "Effective SQLs Refined": [],
+    "Ineffective SQLs Refined": [
+        "SELECT BINLOG_GTID_POS(\"master-bin.000001\", 600);"
+    ],
+    "Wrong Messages from Ineffective SQLs Refined": [
+        "(pymysql.err.OperationalError) (1381, 'You are not using binary logging')\n[SQL: SELECT BINLOG_GTID_POS(\"master-bin.000001\", 600);]\n(Background on this error at: https://sqlalche.me/e/20/e3q8)"
+    ],
+    "SQLs Generated1": [
+        {
+            "Example SQL": "SELECT BINLOG_GTID_POS('mysql-bin.000001', 12345);"
+        },
+        {
+            "Example SQL": "SELECT BINLOG_GTID_POS('mysql-bin.000001', 12345) WHERE @@global.binlog_format IS NOT NULL;"
+        },
+        {
+            "Example SQL": "SELECT BINLOG_GTID_POS('mysql-bin.000001', 12345) WHERE @@global.binlog_format = 'ROW';"
+        },
+        {
+            "Example SQL": "SELECT BINLOG_GTID_POS('mysql-bin.000001', 12345) WHERE @@global.binlog_format IS NULL;"
+        },
+        {
+            "Example SQL": "SELECT BINLOG_GTID_POS('mysql-bin.000001', 12345);"
+        }
+    ],
+    "SQLs Generated Costs1": [
+        {
+            "Total Tokens": 349,
+            "Prompt Tokens": 319,
+            "Completion Tokens": 30,
+            "Total Cost (USD)": 6.585e-05
+        },
+        {
+            "Total Tokens": 515,
+            "Prompt Tokens": 476,
+            "Completion Tokens": 39,
+            "Total Cost (USD)": 9.479999999999999e-05
+        },
+        {
+            "Total Tokens": 682,
+            "Prompt Tokens": 642,
+            "Completion Tokens": 40,
+            "Total Cost (USD)": 0.0001203
+        },
+        {
+            "Total Tokens": 847,
+            "Prompt Tokens": 809,
+            "Completion Tokens": 38,
+            "Total Cost (USD)": 0.00014415
+        },
+        {
+            "Total Tokens": 1004,
+            "Prompt Tokens": 974,
+            "Completion Tokens": 30,
+            "Total Cost (USD)": 0.00016409999999999998
+        }
+    ],
+    "SQLs Generated ExecResults1": [
+        "None",
+        "None",
+        "None",
+        "None",
+        "None"
+    ],
+    "SQLs Generated ExecTimes1": [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+    ],
+    "SQLs Generated ErrorMessages1": [
+        "(pymysql.err.OperationalError) (1381, 'You are not using binary logging')\n",
+        "(pymysql.err.OperationalError) (1381, 'You are not using binary logging')\n",
+        "(pymysql.err.OperationalError) (1381, 'You are not using binary logging')\n",
+        "(pymysql.err.OperationalError) (1381, 'You are not using binary logging')\n",
+        "(pymysql.err.OperationalError) (1381, 'You are not using binary logging')\n"
+    ],
+    "Effective SQLs Generated1": [],
+    "SQLs Generated2": [
+        {
+            "Example SQL": [
+                "SET GLOBAL gtid_mode = ON;",
+                "SET GLOBAL enforce-gtid-consistency = ON;",
+                "SHOW VARIABLES LIKE 'gtid_mode';",
+                "SHOW VARIABLES LIKE 'enforce-gtid-consistency';",
+                "SELECT @@GLOBAL.BINLOG_GTID_POS;"
+            ]
+        },
+        {
+            "Example SQL": [
+                "SET GLOBAL gtid_mode = 'ON';",
+                "SET GLOBAL enforce-gtid-consistency = 'ON';",
+                "SHOW VARIABLES LIKE 'gtid_mode';",
+                "SHOW VARIABLES LIKE 'enforce-gtid-consistency';",
+                "SELECT @@GLOBAL.BINLOG_GTID_POS;"
+            ]
+        }
+    ],
+    "SQLs Generated Costs2": [
+        {
+            "Total Tokens": 245,
+            "Prompt Tokens": 165,
+            "Completion Tokens": 80,
+            "Total Cost (USD)": 7.274999999999999e-05
+        },
+        {
+            "Total Tokens": 436,
+            "Prompt Tokens": 352,
+            "Completion Tokens": 84,
+            "Total Cost (USD)": 0.00010319999999999999
+        }
+    ],
+    "SQLs Generated ExecResults2": [
+        "[None, None, [], [], None]",
+        "[None, None, [], [], None]"
+    ],
+    "SQLs Generated ExecTimes2": [
+        "[0, 0, 0.030301570892333984, 0.004724264144897461, 0]",
+        "[0, 0, 0.0042705535888671875, 0.026371240615844727, 0]"
+    ],
+    "SQLs Generated ErrorMessages2": [],
+    "Effective SQLs Generated2": []
+}

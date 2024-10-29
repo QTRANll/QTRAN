@@ -1,0 +1,5 @@
+SELECT ROUND(0.1, 1000); -- -nan
+
+
+SELECT ROUND(0.1::numeric, 1000);
+SELECT ROUND(0.1::numeric, 1000) FROM pg_catalog.pg_tables WHERE true UNION ALL SELECT ROUND(0.1::numeric, 1000) FROM pg_catalog.pg_tables WHERE NOT (true) UNION ALL SELECT ROUND(0.1::numeric, 1000) FROM pg_catalog.pg_tables WHERE (true) IS NULL;

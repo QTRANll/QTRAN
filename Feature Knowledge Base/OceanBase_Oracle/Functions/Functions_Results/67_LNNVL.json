@@ -1,0 +1,24 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000000823253"
+    ],
+    "Title": [
+        "LNNVL"
+    ],
+    "Feature": [
+        "LNNVL (condition)\n"
+    ],
+    "Description": [
+        "该函数功能是当条件中的一个或者两个操作数可能为空时，提供判断方法。将条件作为参数，如果条件为 FALSE 或 UNKNOWN，则返回 TRUE；如果条件为 TRUE，则返回 FALSE。",
+        "该函数可以在 WHERE 子句中使用，也可以作为 CASE 表达式中的 WHEN 条件。",
+        "condition 是指判断条件。假设 a = 2，b 值为 NULL，下表显示了 LNNVL 函数的返回值。",
+        "\n\n\n条件\n条件判断结果\nLNNVL 返回值\n\n\n\n\na = 1\nFALSE\nTRUE\n\n\na = 2\nTRUE\nFALSE\n\n\na IS NULL\nFALSE\nTRUE\n\n\nb = 1\nUNKNOWN\nTRUE\n\n\nb IS NULL\nTRUE\nFALSE\n\n\na = b\nUNKNOWN\nTRUE\n\n\n",
+        "返回布尔型 TRUE 或 FALSE。"
+    ],
+    "Examples": [
+        "obclient> CREATE TABLE tbl1 (col1 INT,col2 INT);\nQuery OK, 0 rows affected\n\nobclient> INSERT INTO tbl1 VALUES (1,30),(2,null),(3,50),(4,80),(5,10);\nQuery OK, 5 rows affected\nRecords: 5  Duplicates: 0  Warnings: 0\n\nobclient> SELECT * FROM tbl1 WHERE LNNVL(col2 >= 50);\n+------+------+\n| COL1 | COL2 |\n+------+------+\n|    1 |   30 |\n|    2 | NULL |\n|    5 |   10 |\n+------+------+\n3 rows in set\n"
+    ],
+    "Category": [
+        "NULL-Related Functions"
+    ]
+}

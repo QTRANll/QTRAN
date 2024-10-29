@@ -1,0 +1,29 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/string-search-functions"
+    ],
+    "Title": [
+        "hasTokenCaseInsensitive"
+    ],
+    "Feature": [
+        "hasTokenCaseInsensitive(haystack, token)"
+    ],
+    "Description": [
+        "hasTokenCaseInsensitive",
+        "Returns 1 if a given token is present in a haystack, 0 otherwise. Ignores case.",
+        "Syntax",
+        "hasTokenCaseInsensitive(haystack, token)",
+        "Parameters",
+        "haystack: String in which the search is performed. String.token: Maximal length substring between two non alphanumeric ASCII characters (or boundaries of haystack).",
+        "Returned value",
+        "1, if the token is present in the haystack, 0 otherwise. UInt8.",
+        "Implementation details",
+        "Token must be a constant string. Supported by tokenbf_v1 index specialization."
+    ],
+    "Examples": [
+        "SELECT hasTokenCaseInsensitive('Hello World','hello');"
+    ],
+    "Category": [
+        "Searching in Strings Functions"
+    ]
+}

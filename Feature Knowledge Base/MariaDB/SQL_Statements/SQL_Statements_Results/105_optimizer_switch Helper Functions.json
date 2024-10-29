@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/optimizer_switch-helper-functions/"
+    ],
+    "Title": [
+        "optimizer_switch Helper Functions"
+    ],
+    "Feature": [
+        "optimizer_switch_on()\noptimizer_switch_off()\noptimizer_switch_choice(\"on\" | \"off\")\n"
+    ],
+    "Description": [
+        "The above procedures can be used to check which optimizer_switch options are on or off.\nThe result set is sorted according to optimizer_switch option name."
+    ],
+    "Examples": [
+        "select @@optimizer_switch\\G\n*************************** 1. row ***************************\nindex_merge=on,index_merge_union=on,index_merge_sort_union=on,index_merge_intersection=on,\nindex_merge_sort_intersection=off,engine_condition_pushdown=off,index_condition_pushdown=on,\nderived_merge=on,derived_with_keys=on,firstmatch=on,loosescan=on,materialization=on,\nin_to_exists=on,semijoin=on,partial_match_rowid_merge=on,partial_match_table_scan=on,\nsubquery_cache=on,mrr=off,mrr_cost_based=off,mrr_sort_keys=off,outer_join_with_cache=on,\nsemijoin_with_cache=on,join_cache_incremental=on,join_cache_hashed=on,join_cache_bka=on,\noptimize_join_buffer_size=on,table_elimination=on,extended_keys=on,exists_to_in=on,\norderby_uses_equalities=on,condition_pushdown_for_derived=on,split_materialized=on,\ncondition_pushdown_for_subquery=on,rowid_filter=on,condition_pushdown_from_having=on,\nnot_null_range_scan=off\n\ncall sys.optimizer_switch_on();\n+---------------------------------+------+\n| option                          | opt  |\n+---------------------------------+------+\n| condition_pushdown_for_derived  | on   |\n| condition_pushdown_for_subquery | on   |\n| condition_pushdown_from_having  | on   |\n| derived_merge                   | on   |\n| derived_with_keys               | on   |\n| exists_to_in                    | on   |\n| extended_keys                   | on   |\n| firstmatch                      | on   |\n| index_condition_pushdown        | on   |\n| index_merge                     | on   |\n| index_merge_intersection        | on   |\n| index_merge_sort_union          | on   |\n| index_merge_union               | on   |\n| in_to_exists                    | on   |\n| join_cache_bka                  | on   |\n| join_cache_hashed               | on   |\n| join_cache_incremental          | on   |\n| loosescan                       | on   |\n| materialization                 | on   |\n| optimize_join_buffer_size       | on   |\n| orderby_uses_equalities         | on   |\n| outer_join_with_cache           | on   |\n| partial_match_rowid_merge       | on   |\n| partial_match_table_scan        | on   |\n| rowid_filter                    | on   |\n| semijoin                        | on   |\n| semijoin_with_cache             | on   |\n| split_materialized              | on   |\n| subquery_cache                  | on   |\n| table_elimination               | on   |\n+---------------------------------+------+\n\n\ncall sys.optimizer_switch_off();\n+-------------------------------+------+\n| option                        | opt  |\n+-------------------------------+------+\n| engine_condition_pushdown     | off  |\n| index_merge_sort_intersection | off  |\n| mrr                           | off  |\n| mrr_cost_based                | off  |\n| mrr_sort_keys                 | off  |\n| not_null_range_scan           | off  |\n+-------------------------------+------+\n"
+    ],
+    "Category": [
+        "Administrative SQL Statements"
+    ]
+}

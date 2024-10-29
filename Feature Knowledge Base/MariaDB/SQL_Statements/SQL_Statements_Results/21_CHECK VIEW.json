@@ -1,0 +1,18 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/check-view/"
+    ],
+    "Title": [
+        "CHECK VIEW"
+    ],
+    "Feature": [
+        "CHECK VIEW view_name\n"
+    ],
+    "Description": [
+        "The CHECK VIEW statement was introduced in MariaDB 10.0.18 to assist with fixing MDEV-6916, an issue introduced in MariaDB 5.2 where the view algorithms were swapped. It checks whether the view algorithm is correct. It is run as part of mariadb-upgrade, and should not normally be required in regular use."
+    ],
+    "Examples": [],
+    "Category": [
+        "Table Statements"
+    ]
+}

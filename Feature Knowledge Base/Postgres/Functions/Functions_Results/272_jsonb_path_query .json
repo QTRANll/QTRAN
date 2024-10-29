@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/current/functions-json.html"
+    ],
+    "Title": [
+        "jsonb_path_query"
+    ],
+    "Feature": [
+        "jsonb_path_query ( target jsonb, path jsonpath [, vars jsonb [, silent boolean ]] ) → setof jsonb"
+    ],
+    "Description": [
+        "Returns all JSON items returned by the JSON path for the specified JSON value. For SQL-standard JSON path expressions it returns the JSON values selected from target. For predicate check expressions it returns the result of the predicate check: true, false, or null. The optional vars and silent arguments act the same as for jsonb_path_exists."
+    ],
+    "Examples": [
+        "select * from jsonb_path_query('{\"a\":[1,2,3,4,5]}', '$.a[*] ? (@ >= $min && @ <= $max)', '{\"min\":2, \"max\":4}') →"
+    ],
+    "Category": [
+        "JSON Functions and Operators"
+    ]
+}

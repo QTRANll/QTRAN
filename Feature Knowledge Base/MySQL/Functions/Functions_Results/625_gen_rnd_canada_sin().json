@@ -1,0 +1,35 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/loadable-function-reference.html"
+    ],
+    "Title": [
+        "14.2 Loadable Function Reference"
+    ],
+    "Feature": [
+        "gen_rnd_canada_sin()"
+    ],
+    "Description": [
+        "Generate random Canada Social Insurance Number",
+        "\ngen_rnd_canada_sin()\n",
+        "\n              Generates a random Canada Social Insurance Number (SIN) in\n              AAA-BBB-CCC\n              format. The generated number passes the Luhn check\n              algorithm, which ensures the consistency of this number.\n",
+        "\n\nWarning\n\n\n                Values returned from\n                gen_rnd_canada_sin()\n                should be used only for test purposes, and are not\n                suitable for publication. There is no way to guarantee\n                that a given return value is not assigned to a\n                legitimate Canada SIN. Should it be necessary to publish\n                a gen_rnd_canada_sin()\n                result, consider masking it with\n                mask_canada_sin().\n\n",
+        "\n              Arguments:\n            ",
+        "\n              None.\n            ",
+        "\n              Return value:\n            ",
+        "\n              A random Canada SIN as a string encoded in the\n              utf8mb4 character set.\n            ",
+        "\n              Example:\n            ",
+        "Press CTRL+C to copy mysql> SELECT gen_rnd_canada_sin();\n+----------------------+\n| gen_rnd_canada_sin() |\n+----------------------+\n| 046-454-286          |\n+----------------------+"
+    ],
+    "Examples": [
+        "mysql> SELECT gen_rnd_canada_sin();\n+----------------------+\n| gen_rnd_canada_sin() |\n+----------------------+\n| 046-454-286          |\n+----------------------+"
+    ],
+    "Category": [
+        "Loadable Functions"
+    ],
+    "Reference HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/data-masking-component-functions.html#function_gen-rnd-canada-sin"
+    ],
+    "Feature Type": [
+        "Function"
+    ]
+}

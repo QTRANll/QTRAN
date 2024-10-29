@@ -1,0 +1,28 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/set-role.html"
+    ],
+    "Title": [
+        "15.7.1.11 SET ROLE Statement"
+    ],
+    "Feature": [
+        "SET ROLE {\n    DEFAULT\n  | NONE\n  | ALL\n  | ALL EXCEPT role [, role ] ...\n  | role [, role ] ...\n}"
+    ],
+    "Description": [
+        "\nSET ROLE modifies the current\n        user's effective privileges within the current session by\n        specifying which of its granted roles are active. Granted roles\n        include those granted explicitly to the user and those named in\n        the mandatory_roles system\n        variable value.\n      ",
+        "\n        Examples:\n      ",
+        "Press CTRL+C to copy SET ROLE DEFAULT;\nSET ROLE 'role1', 'role2';\nSET ROLE ALL;\nSET ROLE ALL EXCEPT 'role1', 'role2';",
+        "\n        Each role name uses the format described in\n        Section\u00a08.2.5, \u201cSpecifying Role Names\u201d. The host name part of the role\n        name, if omitted, defaults to '%'.\n      ",
+        "\n        Privileges that the user has been granted directly (rather than\n        through roles) remain unaffected by changes to the active roles.\n      ",
+        "\n        The statement permits these role specifiers:\n",
+        "\n\nDEFAULT: Activate the account default\n            roles. Default roles are those specified with\n            SET DEFAULT ROLE.\n          \n            When a user connects to the server and authenticates\n            successfully, the server determines which roles to activate\n            as the default roles. If the\n            activate_all_roles_on_login\n            system variable is enabled, the server activates all granted\n            roles. Otherwise, the server executes\n            SET ROLE\n            DEFAULT implicitly. The server activates only\n            default roles that can be activated. The server writes\n            warnings to its error log for default roles that cannot be\n            activated, but the client receives no warnings.\n          \n            If a user executes\n            SET ROLE\n            DEFAULT during a session, an error occurs if any\n            default role cannot be activated (for example, if it does\n            not exist or is not granted to the user). In this case, the\n            current active roles are not changed.\n          \nNONE: Set the active roles to\n            NONE (no active roles).\n          \nALL: Activate all roles granted to the\n            account.\n          \nALL EXCEPT role [,\n            role ] ...: Activate\n            all roles granted to the account except those named. The\n            named roles need not exist or be granted to the account.\n          \nrole [,\n            role ] ...: Activate\n            the named roles, which must be granted to the account.\n\n",
+        "\n\nNote\n\n\nSET DEFAULT ROLE and\n          SET ROLE\n          DEFAULT are different statements:\n\n\n\nSET DEFAULT ROLE defines\n              which account roles to activate by default within account\n              sessions.\n            \nSET ROLE\n              DEFAULT sets the active roles within the current\n              session to the current account default roles.\n\n\n",
+        "\n        For role usage examples, see Section\u00a08.2.10, \u201cUsing Roles\u201d.\n"
+    ],
+    "Examples": [
+        "SET ROLE DEFAULT;\nSET ROLE 'role1', 'role2';\nSET ROLE ALL;\nSET ROLE ALL EXCEPT 'role1', 'role2';"
+    ],
+    "Category": [
+        "Database Administration Statements"
+    ]
+}

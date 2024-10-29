@@ -1,0 +1,23 @@
+{
+    "HTML": [
+        "https://docs.pingcap.com//zh/tidb/stable/sql-statement-show-variables"
+    ],
+    "Title": [
+        "SHOW [GLOBAL|SESSION] VARIABLES"
+    ],
+    "Feature": [
+        "ShowVariablesStmt ::=\n    \"SHOW\" (\"GLOBAL\" | \"SESSION\")? VARIABLES ShowLikeOrWhere?\n\nShowLikeOrWhere ::=\n    \"LIKE\" SimpleExpr\n|   \"WHERE\" Expression\n"
+    ],
+    "Description": [
+        "SHOW [GLOBAL|SESSION] VARIABLES \u8bed\u53e5\u7528\u4e8e\u663e\u793a GLOBAL \u6216 SESSION \u8303\u56f4\u7684\u53d8\u91cf\u5217\u8868\u3002\u5982\u679c\u672a\u6307\u5b9a\u8303\u56f4\uff0c\u5219\u5e94\u7528\u9ed8\u8ba4\u8303\u56f4 SESSION\u3002"
+    ],
+    "Examples": [
+        "SHOW GLOBAL VARIABLES LIKE 'tidb%';\n",
+        "SHOW GLOBAL VARIABLES LIKE 'time_zone%';\n",
+        "SHOW VARIABLES WHERE Variable_name=\"tidb_window_concurrency\";\n",
+        "SHOW VARIABLES WHERE Value=300;\n"
+    ],
+    "Category": [
+        "\u663e\u793a\u8bed\u53e5"
+    ]
+}

@@ -1,0 +1,36 @@
+{
+    "HTML": "https://mariadb.com//kb/en/tan/",
+    "Title": "TAN",
+    "Feature": [
+        "TAN(X)\n"
+    ],
+    "Description": [
+        "Returns the tangent of X, where X is given in radians."
+    ],
+    "Examples": [
+        "SELECT TAN(0.7853981633974483);\n+-------------------------+\n| TAN(0.7853981633974483) |\n+-------------------------+\n|      0.9999999999999999 |\n+-------------------------+\n\nSELECT TAN(PI());\n+-----------------------+\n| TAN(PI())             |\n+-----------------------+\n| -1.22460635382238e-16 |\n+-----------------------+\n\nSELECT TAN(PI()+1);\n+-----------------+\n| TAN(PI()+1)     |\n+-----------------+\n| 1.5574077246549 |\n+-----------------+\n\nSELECT TAN(RADIANS(PI()));\n+--------------------+\n| TAN(RADIANS(PI())) |\n+--------------------+\n| 0.0548861508080033 |\n+--------------------+\n"
+    ],
+    "Category": [
+        "Numeric Functions"
+    ],
+    "Effective SQLs Refined": [
+        "SELECT TAN(0.7853981633974483);",
+        "SELECT TAN(PI());",
+        "SELECT TAN(PI()+1);",
+        "SELECT TAN(RADIANS(PI()));"
+    ],
+    "Ineffective SQLs Refined": [],
+    "Wrong Messages from Ineffective SQLs Refined": [],
+    "SQLs Generated1": [],
+    "SQLs Generated Costs1": [],
+    "SQLs Generated ExecResults1": [],
+    "SQLs Generated ExecTimes1": [],
+    "SQLs Generated ErrorMessages1": [],
+    "Effective SQLs Generated1": [],
+    "SQLs Generated2": [],
+    "SQLs Generated Costs2": [],
+    "SQLs Generated ExecResults2": [],
+    "SQLs Generated ExecTimes2": [],
+    "SQLs Generated ErrorMessages2": [],
+    "Effective SQLs Generated2": []
+}

@@ -1,0 +1,21 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000001054309"
+    ],
+    "Title": [
+        "ALTER SYSTEM KILL SESSION"
+    ],
+    "Feature": [
+        "ALTER SYSTEM KILL SESSION 'session_id, serial#';\n\nALTER SYSTEM KILL SESSION 'session_id' [IMMEDIATE];\n"
+    ],
+    "Description": [
+        "该语句用于终止一个会话。该语句需要用户具备 ALTER SYSTEM 权限才能执行。",
+        "\n\n\n参数\n描述\n\n\n\n\nsession_id\n当前会话的 Client Session ID，该 ID 是会话在客户端中的唯一标识。 \n      \n说明\n可以通过 SQL 语句 SHOW PROCESSLIST; 查看 session_id。\n\n\n\nserial#\n当前版本未实现语义，仅作语法兼容。\n\n\nIMMEDIATE\n立即切回指定 Session 实现 KILL，为可选项。当前版本未实现语义，仅作语法兼容。\n\n\n"
+    ],
+    "Examples": [
+        "obclient [SYS]> CREATE USER kill_user IDENTIFIED BY killuser123;\nQuery OK, 0 rows affected\n\nobclient [SYS]> GRANT CREATE SESSION TO kill_user;\nQuery OK, 0 rows affected\n\nobclient [SYS]> GRANT ALTER SYSTEM TO kill_user;\nQuery OK, 0 rows affected\n\nobclient [KILL_USER]> SHOW PROCESSLIST;\n+------------+-----------+----------------------+-----------+---------+------+--------+------------------+\n| ID         | USER      | HOST                 | DB        | COMMAND | TIME | STATE  | INFO             |\n+------------+-----------+----------------------+-----------+---------+------+--------+------------------+\n| 3221487726 | KILL_USER | 100.xx.xxx.xxx:34803 | KILL_USER | Query   |    0 | ACTIVE | SHOW PROCESSLIST |\n| 3221487722 | SYS       | 100.xx.xxx.xxx:40025 | SYS       | Sleep   |   93 | SLEEP  | NULL             |\n+------------+-----------+----------------------+-----------+---------+------+--------+------------------+\n1 row in set\n\nobclient [KILL_USER]> ALTER SYSTEM KILL SESSION '3221487726';\nQuery OK, 0 rows affected\n"
+    ],
+    "Category": [
+        "DCL"
+    ]
+}

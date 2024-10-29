@@ -1,0 +1,30 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/built-in-function-reference.html",
+        "https://dev.mysql.com/doc/refman/8.4/en/spatial-function-reference.html"
+    ],
+    "Title": [
+        "14.1 Built-In Function and Operator Reference",
+        "14.16.1 Spatial Function Reference"
+    ],
+    "Feature": [
+        "ST_Contains(g1,\n            g2)"
+    ],
+    "Description": [
+        "Whether one geometry contains another",
+        "\nST_Contains(g1,\n            g2)\n",
+        "\n            Returns 1 or 0 to indicate whether\n            g1 completely contains\n            g2. This tests the opposite\n            relationship as ST_Within().\n          ",
+        "\nST_Contains() handles its\n            arguments as described in the introduction to this section.\n          "
+    ],
+    "Examples": [],
+    "Category": [
+        "Built-In Functions",
+        "Spatial Analysis Functions"
+    ],
+    "Reference HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/spatial-relation-functions-object-shapes.html#function_st-contains"
+    ],
+    "Feature Type": [
+        "Function"
+    ]
+}

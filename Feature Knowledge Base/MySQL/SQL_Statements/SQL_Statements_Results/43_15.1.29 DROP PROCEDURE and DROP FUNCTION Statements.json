@@ -1,0 +1,22 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/drop-procedure.html"
+    ],
+    "Title": [
+        "15.1.29 DROP PROCEDURE and DROP FUNCTION Statements"
+    ],
+    "Feature": [
+        "DROP {PROCEDURE | FUNCTION} [IF EXISTS] sp_name"
+    ],
+    "Description": [
+        "\n      These statements are used to drop a stored routine (a stored\n      procedure or function). That is, the specified routine is removed\n      from the server. (DROP FUNCTION is also used to\n      drop loadable functions; see\n      Section\u00a015.7.4.2, \u201cDROP FUNCTION Statement for Loadable Functions\u201d.)\n    ",
+        "\n      To drop a stored routine, you must have the\n      ALTER ROUTINE privilege for it. (If\n      the automatic_sp_privileges\n      system variable is enabled, that privilege and\n      EXECUTE are granted automatically\n      to the routine creator when the routine is created and dropped\n      from the creator when the routine is dropped. See\n      Section\u00a027.2.2, \u201cStored Routines and MySQL Privileges\u201d.)\n    ",
+        "\n      In addition, if the definer of the routine has the\n      SYSTEM_USER privilege, the user\n      dropping it must also have this privilege.\n    ",
+        "\n      The IF EXISTS clause is a MySQL extension. It\n      prevents an error from occurring if the procedure or function does\n      not exist. A warning is produced that can be viewed with\n      SHOW WARNINGS.\n    ",
+        "\nDROP FUNCTION is also used to drop\n      loadable functions (see Section\u00a015.7.4.2, \u201cDROP FUNCTION Statement for Loadable Functions\u201d).\n"
+    ],
+    "Examples": [],
+    "Category": [
+        "Data Definition Statements"
+    ]
+}

@@ -1,0 +1,23 @@
+{
+    "HTML": [
+        "https://docs.pingcap.com/zh/tidb/stable/json-functions-search#member-of"
+    ],
+    "Title": [
+        "MEMBER OF()"
+    ],
+    "Feature": [
+        "MEMBER OF()"
+    ],
+    "Description": [
+        "MEMBER OF()",
+        "str MEMBER OF (json_array) \u51fd\u6570\u6d4b\u8bd5\u4f20\u5165\u7684 str \u503c\u662f\u5426\u662f json_array \u7684\u5143\u7d20\uff0c\u5982\u679c\u662f\u5219\u8fd4\u56de 1\uff0c\u5426\u5219\u8fd4\u56de 0\u3002\u5982\u679c\u4efb\u4e00\u53c2\u6570\u4e3a NULL\uff0c\u5219\u8fd4\u56de NULL\u3002",
+        "SELECT '\ud83c\udf4d' MEMBER OF ('[\"\ud83c\udf4d\",\"\ud83e\udd65\",\"\ud83e\udd6d\"]') AS 'Contains pineapple';\n",
+        "+--------------------+\n| Contains pineapple |\n+--------------------+\n|                  1 |\n+--------------------+\n1 row in set (0.00 sec)\n\n"
+    ],
+    "Examples": [
+        "SELECT '\ud83c\udf4d' MEMBER OF ('[\"\ud83c\udf4d\",\"\ud83e\udd65\",\"\ud83e\udd6d\"]') AS 'Contains pineapple';\n"
+    ],
+    "Category": [
+        "JSON Functions"
+    ]
+}

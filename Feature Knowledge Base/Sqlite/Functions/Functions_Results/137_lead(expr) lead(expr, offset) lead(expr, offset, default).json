@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://sqlite.org/windowfunctions.html"
+    ],
+    "Title": [
+        "Built-In Window Function"
+    ],
+    "Feature": [
+        "lead(expr)\nlead(expr, offset)\nlead(expr, offset, default)"
+    ],
+    "Description": [
+        "The first form of the lead() function returns the result of evaluating expression expr against the next row in the partition. Or, if there is no next row (because the current row is the last), NULL.",
+        "If the offset argument is provided, then it must be a non-negative integer. In this case the value returned is the result of evaluating expr against the row offset rows after the current row within the partition. If offset is 0, then expr is evaluated against the current row. If there is no row offset rows after the current row, NULL is returned.",
+        "If default is also provided, then it is returned instead of NULL if the row identified by offset does not exist."
+    ],
+    "Examples": [],
+    "Category": [
+        "Built-In Window Functions"
+    ]
+}

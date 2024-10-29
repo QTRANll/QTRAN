@@ -1,0 +1,24 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000001053523"
+    ],
+    "Title": [
+        "OPTIMIZE"
+    ],
+    "Feature": [
+        "OPTIMIZE {\n     TABLE table_list\n   | TENANT {ALL | tenant_list}\n};\n\ntable_list:\n   table_name [,table_name ...]\n\ntenant_list:\n    tenant_name [,tenant_name ...]\n"
+    ],
+    "Description": [
+        "该语句用于控制开启一轮渐进合并。",
+        "渐进合并的轮数由表的 progressive_merge_num 决定，如果没有为表配置 progressive_merge_num，则会使用租户的默认值。",
+        "对于租户级合并，仅 sys 租户中可以对其他业务租户发起合并。",
+        "对于表级合并，可以在业务租户对本租户的表发起合并。",
+        "\n\n\n参数\n描述\n\n\n\n\ntable_name\n进行渐进合并的表名。\n\n\ntenant_name\n进行渐进合并的租户名。ALL 表示所有租户。\n\n\n"
+    ],
+    "Examples": [
+        "obclient> OPTIMIZE TABLE t1;\nQuery OK, 0 rows affected\n"
+    ],
+    "Category": [
+        "No Category"
+    ]
+}

@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000000823496"
+    ],
+    "Title": [
+        "JSON_OBJECTAGG"
+    ],
+    "Feature": [
+        "JSON_OBJECTAGG([KEY] key_expr [VALUE] value_expr\n                              [ABSENT|NULL ON NULL,]\n                              [RETURNING  CLOB|BLOB|JSON|VARCHAR2|VARCHAR2[size],]\n                              [STRICT,]\n                          [WITH UNIQUE KEYS]);\n\n"
+    ],
+    "Description": [
+        "JSON_OBJECTAGG() 函数将输入参数作为 key-value 对, 其中的 key 和 value 都是列表达式，将所有的 key-value 对组合到一个JSON 对象中，并将该对象返回。"
+    ],
+    "Examples": [
+        "# 使用默认参数\nCREATE TABLE t (a int, k VARCHAR(10), v VARCHAR(10));\nINSERT INTO t VALUES (1, 'key1', '\"alfa\"');\nINSERT INTO t VALUES (1, 'key3', 'null');\nINSERT INTO t VALUES (1, 'key4', 'false');\nINSERT INTO t VALUES (2, 'key6', '124');\nobclient> SELECT a, JSON_OBJECTAGG(k VALUE v) FROM t GROUP BY a;\n+------+--------------------------------------------------+\n| A    | JSON_OBJECTAGG(KVALUEV)                          |\n+------+--------------------------------------------------+\n|    1 | {\"key1\":\"\\\"alfa\\\"\",\"key3\":\"null\",\"key4\":\"false\"} |\n|    2 | {\"key6\":\"124\"}                                   |\n+------+--------------------------------------------------+\n\n# 使用 FORMAT JSON 子句\nobclient> SELECT a, JSON_OBJECTAGG(k VALUE v FORMAT JSON) FROM t GROUP BY a;\n+------+------------------------------------------+\n| A    | JSON_OBJECTAGG(KVALUEVFORMATJSON)        |\n+------+------------------------------------------+\n|    1 | {\"key1\":\"alfa\",\"key3\":null,\"key4\":false} |\n|    2 | {\"key6\":124}                             |\n+------+------------------------------------------+\n\n# 使用 NULL|ABSENT ON NULL 子句\nobclient> INSERT INTO t VALUES (2, 'key7', null);\nobclient> SELECT a, JSON_OBJECTAGG(k VALUE v NULL ON NULL) FROM t GROUP BY a;\n+------+--------------------------------------------------+\n| A    | JSON_OBJECTAGG(KVALUEVNULLONNULL)                |\n+------+--------------------------------------------------+\n|    1 | {\"key1\":\"\\\"alfa\\\"\",\"key3\":\"null\",\"key4\":\"false\"} |\n|    2 | {\"key6\":\"124\",\"key7\":\"null\"}                     |\n+------+--------------------------------------------------+\nobclient> SELECT a, JSON_OBJECTAGG(k VALUE v ABSENT ON NULL) FROM t GROUP BY a;\n+------+--------------------------------------------------+\n| A    | JSON_OBJECTAGG(KVALUEVABSENTONNULL)              |\n+------+--------------------------------------------------+\n|    1 | {\"key1\":\"\\\"alfa\\\"\",\"key3\":\"null\",\"key4\":\"false\"} |\n|    2 | {\"key6\":\"124\"}                                   |\n+------+--------------------------------------------------+\n\n# 使用 RETURNING 子句\nobclient> SELECT a, JSON_OBJECTAGG(k VALUE v returning varchar2) FROM t GROUP BY a;\n+------+--------------------------------------------------+\n| A    | JSON_OBJECTAGG(KVALUEVRETURNINGVARCHAR2)         |\n+------+--------------------------------------------------+\n|    1 | {\"key1\":\"\\\"alfa\\\"\",\"key3\":\"null\",\"key4\":\"false\"} |\n|    2 | {\"key6\":\"124\"}                                   |\n+------+--------------------------------------------------+\n2 rows in set\n"
+    ],
+    "Category": [
+        "JSON Functions"
+    ]
+}

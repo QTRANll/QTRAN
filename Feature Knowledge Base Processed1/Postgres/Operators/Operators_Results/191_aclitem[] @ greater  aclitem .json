@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/current/functions-info.html"
+    ],
+    "Title": [
+        "aclitem[] @> aclitem"
+    ],
+    "Feature": [
+        "aclitem[] @> aclitem → boolean"
+    ],
+    "Description": [
+        "Does array contain the specified privileges? (This is true if there is an array entry that matches the aclitem's grantee and grantor, and has at least the specified set of privileges.)"
+    ],
+    "Examples": [
+        "'{calvin=r*w/hobbes,hobbes=r*w*/postgres}'::aclitem[] @> 'calvin=r*/hobbes'::aclitem → t"
+    ],
+    "Category": [
+        "System Information Functions and Operators"
+    ]
+}

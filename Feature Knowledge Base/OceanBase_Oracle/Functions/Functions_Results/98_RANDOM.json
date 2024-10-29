@@ -1,0 +1,30 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000000823169"
+    ],
+    "Title": [
+        "RANDOM"
+    ],
+    "Feature": [
+        "RANDOM(seed)\n"
+    ],
+    "Description": [
+        "该函数生成一个 64 位的整数伪随机值。",
+        "seed",
+        " 为整数类型，不同 ",
+        "seed",
+        " 可以生成不同的随机数值序列。",
+        "RANDOM()",
+        " 使用了 MT19937 伪随机数生成算法，其随机空间非常大，生成 2",
+        "19937",
+        " - 1 个随机元素后才会重复生成相同序列。"
+    ],
+    "Examples": [
+        "obclient> SELECT RANDOM(4) FROM TABLE(GENERATOR(3));\n+---------------------+\n| RANDOM(4)           |\n+---------------------+\n| 5267436225003336391 |\n| -851690886662571060 |\n| 1738617244330437274 |\n+---------------------+\n3 rows in set\n",
+        "obclient> SELECT UNIFORM(1, 100, RANDOM()) FROM TABLE(GENERATOR(4));\n+-------------------------+\n| UNIFORM(1,100,RANDOM()) |\n+-------------------------+\n|       73.61272325544115 |\n|       40.25665028115364 |\n|       66.83183914022183 |\n|       70.22767627040167 |\n+-------------------------+\n4 rows in set\n",
+        "obclient> SELECT * FROM t1;\n+------+\n| c1   |\n+------+\n|    3 |\n|    4 |\n|    5 |\n|    1 |\n|    1 |\n+------+\n5 rows in set\n\nobclient> SELECT t1.c1, RANDOM(t1.c1) FROM TABLE(GENERATOR(1)), t1;\n+------+----------------------+\n| c1   | RANDOM(t1.c1)        |\n+------+----------------------+\n|    3 | 1084041170817055659  |\n|    4 | 5267436225003336391  |\n|    5 | 192483991702052534   |\n|    1 | -6753783847308464280 |\n|    1 | -6753783847308464280 |\n+------+----------------------+\n5 rows in set\n"
+    ],
+    "Category": [
+        "Numeric Functions"
+    ]
+}

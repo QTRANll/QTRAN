@@ -1,0 +1,28 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/string-functions"
+    ],
+    "Title": [
+        "initcap"
+    ],
+    "Feature": [
+        "initcap(val)"
+    ],
+    "Description": [
+        "initcap",
+        "Convert the first letter of each word to upper case and the rest to lower case. Words are sequences of alphanumeric characters separated by non-alphanumeric characters.",
+        "NoteBecause initCap converts only the first letter of each word to upper case you may observe unexpected behaviour for words containing apostrophes or capital letters. For example:SELECT initCap('mother''s daughter'), initCap('joe McAdam');will return\u250c\u2500initCap('mother\\'s daughter')\u2500\u252c\u2500initCap('joe McAdam')\u2500\u2510\u2502 Mother'S Daughter             \u2502 Joe Mcadam            \u2502\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518This is a known behaviour, with no plans currently to fix it.",
+        "Syntax",
+        "initcap(val)",
+        "Arguments",
+        "val \u2014 Input value. String.",
+        "Returned value",
+        "val with the first letter of each word converted to upper case. String."
+    ],
+    "Examples": [
+        "SELECT initcap('building for fast');"
+    ],
+    "Category": [
+        "Strings Functions"
+    ]
+}

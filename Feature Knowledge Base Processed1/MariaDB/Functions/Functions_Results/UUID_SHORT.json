@@ -1,0 +1,43 @@
+{
+    "HTML": "https://mariadb.com//kb/en/uuid_short/",
+    "Title": "UUID_SHORT",
+    "Feature": [
+        "UUID_SHORT()\n"
+    ],
+    "Description": [
+        "Returns a \"short\" universally unique identifier as a 64-bit unsigned integer (rather\nthan a string-form 128-bit identifier as returned by the UUID() function).",
+        "The value of UUID_SHORT() is guaranteed to be unique if the\nfollowing conditions hold:",
+        "The server_id of the current host is unique among your set of master and\n  slave servers\nserver_id is between 0 and 255\nYou don't set back your system time for your server between mariadbd restarts\nYou do not invoke UUID_SHORT() on average more than 16\n  million times per second between mariadbd restarts\n",
+        "The UUID_SHORT() return value is constructed this way:",
+        "  (server_id & 255) << 56\n+ (server_startup_time_in_seconds << 24)\n+ incremented_variable++;\n",
+        "Statements using the UUID_SHORT() function are not safe for statement-based replication."
+    ],
+    "Examples": [
+        "SELECT UUID_SHORT();\n+-------------------+\n| UUID_SHORT()      |\n+-------------------+\n| 21517162376069120 |\n+-------------------+\n",
+        "create table t1 (a bigint unsigned default(uuid_short()) primary key);\ninsert into t1 values(),();\nselect * from t1;\n+-------------------+\n| a                 |\n+-------------------+\n| 98113699159474176 |\n| 98113699159474177 |\n+-------------------+\n"
+    ],
+    "Category": [
+        "Miscellaneous Functions"
+    ],
+    "Effective SQLs Refined": [
+        "SELECT UUID_SHORT();"
+    ],
+    "Ineffective SQLs Refined": [
+        "create table t1 (a bigint unsigned default(uuid_short()) primary key);"
+    ],
+    "Wrong Messages from Ineffective SQLs Refined": [
+        "(pymysql.err.OperationalError) (1050, \"Table 't1' already exists\")\n[SQL: create table t1 (a bigint unsigned default(uuid_short()) primary key);]\n(Background on this error at: https://sqlalche.me/e/20/e3q8)"
+    ],
+    "SQLs Generated1": [],
+    "SQLs Generated Costs1": [],
+    "SQLs Generated ExecResults1": [],
+    "SQLs Generated ExecTimes1": [],
+    "SQLs Generated ErrorMessages1": [],
+    "Effective SQLs Generated1": [],
+    "SQLs Generated2": [],
+    "SQLs Generated Costs2": [],
+    "SQLs Generated ExecResults2": [],
+    "SQLs Generated ExecTimes2": [],
+    "SQLs Generated ErrorMessages2": [],
+    "Effective SQLs Generated2": []
+}

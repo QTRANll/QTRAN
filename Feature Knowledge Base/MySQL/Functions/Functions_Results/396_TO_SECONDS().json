@@ -1,0 +1,38 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/built-in-function-reference.html",
+        "https://dev.mysql.com/doc/refman/8.4/en/date-and-time-functions.html"
+    ],
+    "Title": [
+        "14.1 Built-In Function and Operator Reference",
+        "14.7 Date and Time Functions"
+    ],
+    "Feature": [
+        "TO_SECONDS(expr)"
+    ],
+    "Description": [
+        "Return the date or datetime argument converted to seconds since",
+        "\nTO_SECONDS(expr)\n",
+        "\n          Given a date or datetime expr,\n          returns the number of seconds since the year 0. If\n          expr is not a valid date or\n          datetime value (including NULL), it returns\n          NULL.\n        ",
+        "Press CTRL+C to copy mysql> SELECT TO_SECONDS(950501);\n        -> 62966505600\nmysql> SELECT TO_SECONDS('2009-11-29');\n        -> 63426672000\nmysql> SELECT TO_SECONDS('2009-11-29 13:43:32');\n        -> 63426721412\nmysql> SELECT TO_SECONDS( NOW() );\n        -> 63426721458",
+        "\n          Like TO_DAYS(),\n          TO_SECONDS() is not intended for use with\n          values that precede the advent of the Gregorian calendar\n          (1582), because it does not take into account the days that\n          were lost when the calendar was changed. For dates before 1582\n          (and possibly a later year in other locales), results from\n          this function are not reliable. See\n          Section\u00a013.2.7, \u201cWhat Calendar Is Used By MySQL?\u201d, for details.\n        ",
+        "\n          Like TO_DAYS(),\n          TO_SECONDS(), converts two-digit year\n          values in dates to four-digit form using the rules in\n          Section\u00a013.2, \u201cDate and Time Data Types\u201d.\n        ",
+        "\n          In MySQL, the zero date is defined as\n          '0000-00-00', even though this date is\n          itself considered invalid. This means that, for\n          '0000-00-00' and\n          '0000-01-01',\n          TO_SECONDS() returns the values\n          shown here:\n        ",
+        "Press CTRL+C to copy mysql> SELECT TO_SECONDS('0000-00-00');\n+--------------------------+\n| TO_SECONDS('0000-00-00') |\n+--------------------------+\n|                     NULL |\n+--------------------------+\n1 row in set, 1 warning (0.00 sec)\n\nmysql> SHOW WARNINGS;\n+---------+------+----------------------------------------+\n| Level   | Code | Message                                |\n+---------+------+----------------------------------------+\n| Warning | 1292 | Incorrect datetime value: '0000-00-00' |\n+---------+------+----------------------------------------+\n1 row in set (0.00 sec)\n\n\nmysql> SELECT TO_SECONDS('0000-01-01');\n+--------------------------+\n| TO_SECONDS('0000-01-01') |\n+--------------------------+\n|                    86400 |\n+--------------------------+\n1 row in set (0.00 sec)",
+        "\n          This is true whether or not the\n          ALLOW_INVALID_DATES SQL\n          server mode is enabled.\n        "
+    ],
+    "Examples": [
+        "mysql> SELECT TO_SECONDS(950501);\n        -> 62966505600\nmysql> SELECT TO_SECONDS('2009-11-29');\n        -> 63426672000\nmysql> SELECT TO_SECONDS('2009-11-29 13:43:32');\n        -> 63426721412\nmysql> SELECT TO_SECONDS( NOW() );\n        -> 63426721458",
+        "mysql> SELECT TO_SECONDS('0000-00-00');\n+--------------------------+\n| TO_SECONDS('0000-00-00') |\n+--------------------------+\n|                     NULL |\n+--------------------------+\n1 row in set, 1 warning (0.00 sec)\n\nmysql> SHOW WARNINGS;\n+---------+------+----------------------------------------+\n| Level   | Code | Message                                |\n+---------+------+----------------------------------------+\n| Warning | 1292 | Incorrect datetime value: '0000-00-00' |\n+---------+------+----------------------------------------+\n1 row in set (0.00 sec)\n\n\nmysql> SELECT TO_SECONDS('0000-01-01');\n+--------------------------+\n| TO_SECONDS('0000-01-01') |\n+--------------------------+\n|                    86400 |\n+--------------------------+\n1 row in set (0.00 sec)"
+    ],
+    "Category": [
+        "Built-In Functions",
+        "Date and Time Functions"
+    ],
+    "Reference HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/date-and-time-functions.html#function_to-seconds"
+    ],
+    "Feature Type": [
+        "Function"
+    ]
+}

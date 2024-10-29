@@ -1,0 +1,21 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/asbinary/"
+    ],
+    "Title": [
+        "ST_AsBinary"
+    ],
+    "Feature": [
+        "ST_AsBinary(g)\nAsBinary(g)\nST_AsWKB(g)\nAsWKB(g)\n"
+    ],
+    "Description": [
+        "Converts a value in internal geometry format to its WKB representation and returns the binary result.",
+        "ST_AsBinary(), AsBinary(), ST_AsWKB() and AsWKB() are synonyms,"
+    ],
+    "Examples": [
+        "SELECT ST_AsBinary(@poly);"
+    ],
+    "Category": [
+        "Geographic Functions"
+    ]
+}

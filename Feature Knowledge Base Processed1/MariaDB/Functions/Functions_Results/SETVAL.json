@@ -1,0 +1,203 @@
+{
+    "HTML": "https://mariadb.com//kb/en/setval/",
+    "Title": "SETVAL",
+    "Feature": [
+        "SETVAL(sequence_name, next_value, [is_used, [round]])\n"
+    ],
+    "Description": [
+        "Set the next value to be returned for a SEQUENCE.",
+        "This function is compatible with PostgreSQL syntax, extended\nwith the round argument.",
+        "If the is_used argument is not given or is 1 or true, then the next used value will\none after the given value. If is_used is 0 or false then the next generated value\nwill be the given value.",
+        "If round is used then it will set the round value (or the internal cycle count, starting at zero) for the sequence.\nIf round is not used, it's assumed to be 0.",
+        "next_value must be an integer literal.",
+        "For SEQUENCE tables defined with CYCLE (see CREATE SEQUENCE) one should use both next_value and round to define the next value. In this case the\ncurrent sequence value is defined to be round, next_value.",
+        "The result returned by SETVAL() is next_value or NULL if the given next_value and round  is smaller than the current value.",
+        "SETVAL() will not set the SEQUENCE value to a something that is less than\nits current value. This is needed to ensure that SETVAL()\nis replication safe.  If you want to set the SEQUENCE to a smaller number\nuse ALTER SEQUENCE.",
+        "If CYCLE is used, first round and then next_value are compared\nto see if the value is bigger than the current value.",
+        "Internally, in the MariaDB server, SETVAL() is used to inform\nreplicas that a SEQUENCE has changed value.  The replica may get\nSETVAL() statements out of order, but this is ok as only the\nbiggest one will have an effect.",
+        "SETVAL requires the INSERT privilege."
+    ],
+    "Examples": [
+        "SELECT setval(foo, 42);           -- Next nextval will return 43\nSELECT setval(foo, 42, true);     -- Same as above\nSELECT setval(foo, 42, false);    -- Next nextval will return 42\n",
+        "SELECT NEXTVAL(s);\n+------------+\n| NEXTVAL(s) |\n+------------+\n|         50 |\n+------------+\n\nSELECT SETVAL(s, 100);\n+----------------+\n| SETVAL(s, 100) |\n+----------------+\n|            100 |\n+----------------+\n\nSELECT NEXTVAL(s);\n+------------+\n| NEXTVAL(s) |\n+------------+\n|        110 |\n+------------+\n\nSELECT SETVAL(s, 50);\n+---------------+\n| SETVAL(s, 50) |\n+---------------+\n|          NULL |\n+---------------+\n\nSELECT NEXTVAL(s);\n+------------+\n| NEXTVAL(s) |\n+------------+\n|        120 |\n+------------+\n",
+        "CREATE OR REPLACE SEQUENCE s1\n  START WITH 1\n  MINVALUE 1\n  MAXVALUE 99\n  INCREMENT BY 1 \n  CACHE 20 \n  CYCLE;\n\nSELECT SETVAL(s1, 99, 1, 0);\n+----------------------+\n| SETVAL(s1, 99, 1, 0) |\n+----------------------+\n|                   99 |\n+----------------------+\n\nSELECT NEXTVAL(s1);\n+-------------+\n| NEXTVAL(s1) |\n+-------------+\n|           1 |\n+-------------+\n",
+        "SELECT SETVAL(s1, 99, 1, 0);\n+----------------------+\n| SETVAL(s1, 99, 1, 0) |\n+----------------------+\n|                 NULL |\n+----------------------+\n\nSELECT NEXTVAL(s1);\n+-------------+\n| NEXTVAL(s1) |\n+-------------+\n|           2 |\n+-------------+\n",
+        "SELECT SETVAL(s1, 99, 1, 1);\n+----------------------+\n| SETVAL(s1, 99, 1, 1) |\n+----------------------+\n|                   99 |\n+----------------------+\n\nSELECT NEXTVAL(s1);\n+-------------+\n| NEXTVAL(s1) |\n+-------------+\n|           1 |\n+-------------+\n"
+    ],
+    "Category": [
+        "SEQUENCE Functions"
+    ],
+    "Effective SQLs Refined": [],
+    "Ineffective SQLs Refined": [
+        "SELECT setval(foo, 42);",
+        "SELECT setval(foo, 42, true);",
+        "SELECT setval(foo, 42, false);",
+        "SELECT SETVAL(s, 100);",
+        "SETVAL(s, 100) |\n+----------------+\n|            100 |\n+----------------+\n\nSELECT NEXTVAL(s);",
+        "SELECT SETVAL(s, 50);",
+        "SETVAL(s, 50) |\n+---------------+\n|          NULL |\n+---------------+\n\nSELECT NEXTVAL(s);",
+        "SELECT SETVAL(s1, 99, 1, 0);",
+        "SETVAL(s1, 99, 1, 0) |\n+----------------------+\n|                   99 |\n+----------------------+\n\nSELECT NEXTVAL(s1);",
+        "SELECT SETVAL(s1, 99, 1, 0);",
+        "SETVAL(s1, 99, 1, 0) |\n+----------------------+\n|                 NULL |\n+----------------------+\n\nSELECT NEXTVAL(s1);",
+        "SELECT SETVAL(s1, 99, 1, 1);",
+        "SETVAL(s1, 99, 1, 1) |\n+----------------------+\n|                   99 |\n+----------------------+\n\nSELECT NEXTVAL(s1);"
+    ],
+    "Wrong Messages from Ineffective SQLs Refined": [
+        "(pymysql.err.OperationalError) (4091, \"Unknown SEQUENCE: 'foo'\")\n[SQL: SELECT setval(foo, 42);]\n(Background on this error at: https://sqlalche.me/e/20/e3q8)",
+        "(pymysql.err.OperationalError) (4091, \"Unknown SEQUENCE: 'foo'\")\n[SQL: SELECT setval(foo, 42, true);]\n(Background on this error at: https://sqlalche.me/e/20/e3q8)",
+        "(pymysql.err.OperationalError) (4091, \"Unknown SEQUENCE: 'foo'\")\n[SQL: SELECT setval(foo, 42, false);]\n(Background on this error at: https://sqlalche.me/e/20/e3q8)",
+        "(pymysql.err.OperationalError) (4091, \"Unknown SEQUENCE: 's'\")\n[SQL: SELECT SETVAL(s, 100);]\n(Background on this error at: https://sqlalche.me/e/20/e3q8)",
+        "(pymysql.err.ProgrammingError) (1064, \"You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'SETVAL(s, 100) |\\n+----------------+\\n|            100 |\\n+----------------+\\n\\nSE...' at line 1\")\n[SQL: SETVAL(s, 100) |\n+----------------+\n|            100 |\n+----------------+\n\nSELECT NEXTVAL(s);]\n(Background on this error at: https://sqlalche.me/e/20/f405)",
+        "(pymysql.err.OperationalError) (4091, \"Unknown SEQUENCE: 's'\")\n[SQL: SELECT SETVAL(s, 50);]\n(Background on this error at: https://sqlalche.me/e/20/e3q8)",
+        "(pymysql.err.ProgrammingError) (1064, \"You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'SETVAL(s, 50) |\\n+---------------+\\n|          NULL |\\n+---------------+\\n\\nSELECT...' at line 1\")\n[SQL: SETVAL(s, 50) |\n+---------------+\n|          NULL |\n+---------------+\n\nSELECT NEXTVAL(s);]\n(Background on this error at: https://sqlalche.me/e/20/f405)",
+        "(pymysql.err.OperationalError) (4091, \"Unknown SEQUENCE: 's1'\")\n[SQL: SELECT SETVAL(s1, 99, 1, 0);]\n(Background on this error at: https://sqlalche.me/e/20/e3q8)",
+        "(pymysql.err.ProgrammingError) (1064, \"You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'SETVAL(s1, 99, 1, 0) |\\n+----------------------+\\n|                   99 |\\n+---...' at line 1\")\n[SQL: SETVAL(s1, 99, 1, 0) |\n+----------------------+\n|                   99 |\n+----------------------+\n\nSELECT NEXTVAL(s1);]\n(Background on this error at: https://sqlalche.me/e/20/f405)",
+        "(pymysql.err.OperationalError) (4091, \"Unknown SEQUENCE: 's1'\")\n[SQL: SELECT SETVAL(s1, 99, 1, 0);]\n(Background on this error at: https://sqlalche.me/e/20/e3q8)",
+        "(pymysql.err.ProgrammingError) (1064, \"You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'SETVAL(s1, 99, 1, 0) |\\n+----------------------+\\n|                 NULL |\\n+---...' at line 1\")\n[SQL: SETVAL(s1, 99, 1, 0) |\n+----------------------+\n|                 NULL |\n+----------------------+\n\nSELECT NEXTVAL(s1);]\n(Background on this error at: https://sqlalche.me/e/20/f405)",
+        "(pymysql.err.OperationalError) (4091, \"Unknown SEQUENCE: 's1'\")\n[SQL: SELECT SETVAL(s1, 99, 1, 1);]\n(Background on this error at: https://sqlalche.me/e/20/e3q8)",
+        "(pymysql.err.ProgrammingError) (1064, \"You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'SETVAL(s1, 99, 1, 1) |\\n+----------------------+\\n|                   99 |\\n+---...' at line 1\")\n[SQL: SETVAL(s1, 99, 1, 1) |\n+----------------------+\n|                   99 |\n+----------------------+\n\nSELECT NEXTVAL(s1);]\n(Background on this error at: https://sqlalche.me/e/20/f405)"
+    ],
+    "SQLs Generated1": [
+        {
+            "Example SQL": "SETVAL('my_sequence', 10)"
+        },
+        {
+            "Example SQL": "ALTER SEQUENCE my_sequence RESTART WITH 10"
+        },
+        {
+            "Example SQL": "SET @next_value = 10"
+        },
+        {
+            "Example SQL": "SET @next_value = 10; SELECT @next_value;"
+        },
+        {
+            "Example SQL": "SET @next_value = 10"
+        }
+    ],
+    "SQLs Generated Costs1": [
+        {
+            "Total Tokens": 618,
+            "Prompt Tokens": 597,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 0.00010214999999999999
+        },
+        {
+            "Total Tokens": 800,
+            "Prompt Tokens": 777,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 0.00013035
+        },
+        {
+            "Total Tokens": 938,
+            "Prompt Tokens": 918,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 0.00014969999999999998
+        },
+        {
+            "Total Tokens": 1081,
+            "Prompt Tokens": 1056,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 0.00017339999999999999
+        },
+        {
+            "Total Tokens": 1256,
+            "Prompt Tokens": 1236,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 0.00019739999999999997
+        }
+    ],
+    "SQLs Generated ExecResults1": [
+        "None",
+        "None",
+        "None",
+        "None",
+        "None"
+    ],
+    "SQLs Generated ExecTimes1": [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+    ],
+    "SQLs Generated ErrorMessages1": [
+        "(pymysql.err.ProgrammingError) (1064, \"You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'SETVAL('my_sequence', 10)' at line 1\")\n",
+        "This result object does not return rows. It has been closed automatically.",
+        "This result object does not return rows. It has been closed automatically.",
+        "(pymysql.err.ProgrammingError) (1064, \"You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'SELECT @next_value' at line 1\")\n",
+        "This result object does not return rows. It has been closed automatically."
+    ],
+    "Effective SQLs Generated1": [],
+    "SQLs Generated2": [
+        {
+            "Example SQL": "SETVAL('dialect_recognize_table_id_seq', 6);"
+        },
+        {
+            "Example SQL": "ALTER SEQUENCE dialect_recognize_table_id_seq RESTART WITH 6;"
+        },
+        {
+            "Example SQL": "SET @next_id = (SELECT COALESCE(MAX(id), 0) + 1 FROM dialect_recognize_table);"
+        },
+        {
+            "Example SQL": "SET @next_id = (SELECT IFNULL(MAX(id), 0) + 1 FROM dialect_recognize_table);"
+        },
+        {
+            "Example SQL": "SET @next_id = (SELECT MAX(id) + 1 FROM dialect_recognize_table);"
+        }
+    ],
+    "SQLs Generated Costs2": [
+        {
+            "Total Tokens": 1075,
+            "Prompt Tokens": 1047,
+            "Completion Tokens": 28,
+            "Total Cost (USD)": 0.00017384999999999997
+        },
+        {
+            "Total Tokens": 1268,
+            "Prompt Tokens": 1240,
+            "Completion Tokens": 28,
+            "Total Cost (USD)": 0.0002028
+        },
+        {
+            "Total Tokens": 1425,
+            "Prompt Tokens": 1386,
+            "Completion Tokens": 39,
+            "Total Cost (USD)": 0.00023129999999999996
+        },
+        {
+            "Total Tokens": 1581,
+            "Prompt Tokens": 1543,
+            "Completion Tokens": 38,
+            "Total Cost (USD)": 0.00025425
+        },
+        {
+            "Total Tokens": 1732,
+            "Prompt Tokens": 1699,
+            "Completion Tokens": 33,
+            "Total Cost (USD)": 0.00027465
+        }
+    ],
+    "SQLs Generated ExecResults2": [
+        "None",
+        "None",
+        "None",
+        "None",
+        "None"
+    ],
+    "SQLs Generated ExecTimes2": [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+    ],
+    "SQLs Generated ErrorMessages2": [
+        "(pymysql.err.ProgrammingError) (1064, \"You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'SETVAL('dialect_recognize_table_id_seq', 6)' at line 1\")\n",
+        "This result object does not return rows. It has been closed automatically.",
+        "This result object does not return rows. It has been closed automatically.",
+        "This result object does not return rows. It has been closed automatically.",
+        "This result object does not return rows. It has been closed automatically."
+    ],
+    "Effective SQLs Generated2": []
+}

@@ -1,0 +1,23 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000000823339"
+    ],
+    "Title": [
+        "ABS"
+    ],
+    "Feature": [
+        "ABS(expr)\n"
+    ],
+    "Description": [
+        "绝对值函数，求表达式绝对值，函数返回值类型与数值表达式的数据类型相同。",
+        "支持比较运算，结果为 BOOL 值，被转化为数字类型处理，产生的结果为 1(TRUE)、0 (FALSE)。",
+        "如果输入 NULL，返回值为 NULL。",
+        "如果输入纯数字的字符串，支持自动转换成数字类型。返回值会被转化为一个 BIGINT。"
+    ],
+    "Examples": [
+        "obclient> SELECT ABS(5), ABS(-5.777), ABS(0), ABS(1/2), ABS(1-5);\n+--------+-------------+--------+----------+----------+\n| ABS(5) | ABS(-5.777) | ABS(0) | ABS(1/2) | ABS(1-5) |\n+--------+-------------+--------+----------+----------+\n|      5 |       5.777 |      0 |   0.5000 |        4 |\n+--------+-------------+--------+----------+----------+\n1 row in set\n"
+    ],
+    "Category": [
+        "Mathematical Functions"
+    ]
+}

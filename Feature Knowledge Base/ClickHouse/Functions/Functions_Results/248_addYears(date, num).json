@@ -1,0 +1,27 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/date-time-functions"
+    ],
+    "Title": [
+        "addYears"
+    ],
+    "Feature": [
+        "addYears(date, num)"
+    ],
+    "Description": [
+        "addYears",
+        "Adds a specified number of years to a date, a date with time or a string-encoded date / date with time.",
+        "Syntax",
+        "addYears(date, num)",
+        "Parameters",
+        "date: Date / date with time to add specified number of years to. Date/Date32/DateTime/DateTime64, String.num: Number of years to add. (U)Int*, Float*.",
+        "Returned value",
+        "Returns date plus num years. Date/Date32/DateTime/DateTime64."
+    ],
+    "Examples": [
+        "WITH    toDate('2024-01-01') AS date,    toDateTime('2024-01-01 00:00:00') AS date_time,    '2024-01-01 00:00:00' AS date_time_stringSELECT    addYears(date, 1) AS add_years_with_date,    addYears(date_time, 1) AS add_years_with_date_time,    addYears(date_time_string, 1) AS add_years_with_date_time_string"
+    ],
+    "Category": [
+        "Dates and Times Functions"
+    ]
+}

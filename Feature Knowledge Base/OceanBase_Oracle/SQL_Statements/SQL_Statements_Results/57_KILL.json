@@ -1,0 +1,22 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000001054306"
+    ],
+    "Title": [
+        "KILL"
+    ],
+    "Feature": [
+        "KILL [CONNECTION | QUERY] 'session_id'\n"
+    ],
+    "Description": [
+        "该语句用来终止一个会话。",
+        "\n说明\n如果用户拥有 PROCESS 权限，则用户可以查看所有会话。如果用户拥有 SUPER 权限，用户可以终止所有会话和 SQL 语句。否则，用户只能查看和终止自己的会话和 SQL 语句。\n",
+        "\n\n\n参数\n描述\n\n\n\n\nKILL CONNECTION\n与不含修改符的 KILL 一样，可终止指定的 Client Session ID。\n\n\nKILL QUERY\n可终止连接当前正在执行的语句，但是会保持会话的连接状态。\n\n\nsession_id\n当前会话的 Client Session ID，该 ID 是会话在客户端中的唯一标识。可以通过 SHOW PROCESSLIST 或者 SHOW FULL PROCESSLIST 命令查询。\n\n\n"
+    ],
+    "Examples": [
+        "obclient> SHOW PROCESSLIST;\n+------------+------+----------------------+------+---------+------+--------+------------------+\n| ID         | USER | HOST                 | DB   | COMMAND | TIME | STATE  | INFO             |\n+------------+------+----------------------+------+---------+------+--------+------------------+\n| 3221849635 | SYS  | 10.10.10.10:49142 | SYS  | Sleep   |  426 | SLEEP  | NULL             |\n| 3221656012 | SYS  | 10.10.10.10:57140 | SYS  | Sleep   |  426 | SLEEP  | NULL             |\n| 3221671483 | SYS  | 10.10.10.10:43154 | SYS  | Query   |    0 | ACTIVE | show processlist |\n+------------+------+----------------------+------+---------+------+--------+------------------+\n3 rows in set\n\nobclient> KILL 3221849635;\nQuery OK, 0 rows affected\n\nobclient> KILL QUERY 3221656012;\nQuery OK, 0 rows affected\n\nobclient> KILL CONNECTION 3221671483;\nQuery OK, 0 rows affected\n"
+    ],
+    "Category": [
+        "DCL"
+    ]
+}

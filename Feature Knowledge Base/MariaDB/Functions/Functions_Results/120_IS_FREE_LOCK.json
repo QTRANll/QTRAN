@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/is_free_lock/"
+    ],
+    "Title": [
+        "IS_FREE_LOCK"
+    ],
+    "Feature": [
+        "IS_FREE_LOCK(str)\n"
+    ],
+    "Description": [
+        "Checks whether the lock named str is free to use (that is, not locked).\nReturns 1 if the lock is free (no one is using the lock),\n 0 if the lock is in use, and NULL if an\nerror occurs (such as an incorrect argument, like an empty string or NULL). str is case insensitive.",
+        "If the metadata_lock_info plugin is installed, the Information Schema metadata_lock_info table contains information about locks of this kind (as well as metadata locks).",
+        "Statements using the IS_FREE_LOCK function are not safe for statement-based replication."
+    ],
+    "Examples": [],
+    "Category": [
+        "Miscellaneous Functions"
+    ]
+}

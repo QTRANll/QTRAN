@@ -1,0 +1,31 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/type-conversion-functions"
+    ],
+    "Title": [
+        "toFloat64"
+    ],
+    "Feature": [
+        "toFloat64(expr)"
+    ],
+    "Description": [
+        "toFloat64",
+        "Converts an input value to a value of type Float64. Throws an exception in case of an error.",
+        "Syntax",
+        "toFloat64(expr)",
+        "Arguments",
+        "expr \u2014 Expression returning a number or a string representation of a number. Expression.",
+        "Supported arguments:",
+        "Values of type (U)Int8/16/32/64/128/256.String representations of (U)Int8/16/32/128/256.Values of type Float32/64, including NaN and Inf.String representations of type Float32/64, including NaN and Inf (case-insensitive).",
+        "Unsupported arguments:",
+        "String representations of binary and hexadecimal values, e.g. SELECT toFloat64('0xc0fe');.",
+        "Returned value",
+        "64-bit floating point value. Float64."
+    ],
+    "Examples": [
+        "SELECT    toFloat64(42.7),    toFloat64('42.7'),    toFloat64('NaN')FORMAT Vertical;"
+    ],
+    "Category": [
+        "Type Conversion Functions"
+    ]
+}

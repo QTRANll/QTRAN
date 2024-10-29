@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/current/functions-string.html"
+    ],
+    "Title": [
+        "chr"
+    ],
+    "Feature": [
+        "chr ( integer ) → text"
+    ],
+    "Description": [
+        "Returns the character with the given code. In UTF8 encoding the argument is treated as a Unicode code point. In other multibyte encodings the argument must designate an ASCII character. chr(0) is disallowed because text data types cannot store that character."
+    ],
+    "Examples": [
+        "chr(65) → A"
+    ],
+    "Category": [
+        "String Functions and Operators"
+    ]
+}

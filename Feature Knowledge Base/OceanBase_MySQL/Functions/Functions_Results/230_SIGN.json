@@ -1,0 +1,25 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000000823362"
+    ],
+    "Title": [
+        "SIGN"
+    ],
+    "Feature": [
+        "SIGN(X)\n"
+    ],
+    "Description": [
+        "SIGN(X) 返回参数的符号，该符号取决于 X 的值为负、零或正。支持浮点数与十六进制数。返回结果为：",
+        "负值：-1",
+        "零值：0",
+        "正值：1",
+        "该函数支持比较运算，结果会被转换为数字类型处理，生成的结果为 1(TRUE)或 0 (FALSE)。",
+        "如果输入 NULL，返回值为 NULL。"
+    ],
+    "Examples": [
+        "obclient> SELECT SIGN(-32), SIGN(0), SIGN(234);\n+-----------+---------+-----------+\n| SIGN(-32) | SIGN(0) | SIGN(234) |\n+-----------+---------+-----------+\n|        -1 |       0 |         1 |\n+-----------+---------+-----------+\n1 row in set\n\nobclient> SELECT SIGN(NULL),SIGN(FALSE),SIGN(0X01);\n+------------+-------------+------------+\n| SIGN(NULL) | SIGN(FALSE) | SIGN(0X01) |\n+------------+-------------+------------+\n|       NULL |           0 |          1 |\n+------------+-------------+------------+\n1 row in set\n"
+    ],
+    "Category": [
+        "Mathematical Functions"
+    ]
+}

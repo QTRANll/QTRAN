@@ -1,0 +1,21 @@
+{
+    "HTML": [
+        "https://duckdb.org/docs/sql/functions/utility"
+    ],
+    "Title": [
+        "nullif(a, b)"
+    ],
+    "Feature": [
+        "nullif(a, b)"
+    ],
+    "Description": [
+        "Return NULL if a = b, else return a. Equivalent to CASE WHEN a = b THEN NULL ELSE a END.",
+        "Return null if a = b, else return a. Equivalent to CASE WHEN a = b THEN NULL ELSE a END."
+    ],
+    "Examples": [
+        "nullif(1+1, 2)"
+    ],
+    "Category": [
+        "Utility Functions"
+    ]
+}

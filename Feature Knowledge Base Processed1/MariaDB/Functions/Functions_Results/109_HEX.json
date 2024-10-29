@@ -1,0 +1,24 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/hex/"
+    ],
+    "Title": [
+        "HEX"
+    ],
+    "Feature": [
+        "HEX(N_or_S)\n"
+    ],
+    "Description": [
+        "If N_or_S is a number, returns a string representation of the hexadecimal\nvalue of N, where N is a longlong (BIGINT) number. This is equivalent to CONV(N,10,16).",
+        "If N_or_S is a string, returns a hexadecimal string representation of\nN_or_S where each byte of each character in N_or_S is converted to two hexadecimal\ndigits. If N_or_S is NULL, returns NULL. The inverse of this operation is performed by the UNHEX()\nfunction.",
+        "MariaDB starting with 10.5.0HEX() with an INET6 argument returns a hexadecimal representation of the underlying 16-byte binary string.\n"
+    ],
+    "Examples": [
+        "SELECT HEX(255);",
+        "SELECT HEX('MariaDB');",
+        "SELECT HEX(CAST('2001:db8::ff00:42:8329' AS INET6));"
+    ],
+    "Category": [
+        "String Functions"
+    ]
+}

@@ -1,0 +1,27 @@
+{
+    "HTML": [
+        "https://docs.pingcap.com//zh/tidb/stable/sql-statement-analyze-table"
+    ],
+    "Title": [
+        "ANALYZE"
+    ],
+    "Feature": [
+        "AnalyzeTableStmt ::=\n    'ANALYZE' ( 'TABLE' ( TableNameList ( 'ALL COLUMNS' | 'PREDICATE COLUMNS' ) | TableName ( 'INDEX' IndexNameList? | AnalyzeColumnOption | 'PARTITION' PartitionNameList ( 'INDEX' IndexNameList? | AnalyzeColumnOption )? )? ) ) AnalyzeOptionListOpt\n\nAnalyzeOptionListOpt ::=\n( WITH AnalyzeOptionList )?\n\nAnalyzeOptionList ::=\nAnalyzeOption ( ',' AnalyzeOption )*\n\nAnalyzeOption ::=\n( NUM ( 'BUCKETS' | 'TOPN' | ( 'CMSKETCH' ( 'DEPTH' | 'WIDTH' ) ) | 'SAMPLES' ) ) | ( FLOATNUM 'SAMPLERATE' )\n\nAnalyzeColumnOption ::=\n( 'ALL COLUMNS' | 'PREDICATE COLUMNS' | 'COLUMNS' ColumnNameList )\n\nTableNameList ::=\n    TableName (',' TableName)*\n\nTableName ::=\n    Identifier ( '.' Identifier )?\n\nColumnNameList ::=\n    Identifier ( ',' Identifier )*\n\nIndexNameList ::=\n    Identifier ( ',' Identifier )*\n\nPartitionNameList ::=\n    Identifier ( ',' Identifier )*\n"
+    ],
+    "Description": [
+        "ANALYZE \u8bed\u53e5\u7528\u4e8e\u66f4\u65b0 TiDB \u5728\u8868\u548c\u7d22\u5f15\u4e0a\u7559\u4e0b\u7684\u7edf\u8ba1\u4fe1\u606f\u3002\u6267\u884c\u5927\u6279\u91cf\u66f4\u65b0\u6216\u5bfc\u5165\u8bb0\u5f55\u540e\uff0c\u6216\u67e5\u8be2\u6267\u884c\u8ba1\u5212\u4e0d\u662f\u6700\u4f73\u65f6\uff0c\u5efa\u8bae\u8fd0\u884c ANALYZE\u3002",
+        "\u5f53 TiDB \u9010\u6e10\u53d1\u73b0\u8fd9\u4e9b\u7edf\u8ba1\u6570\u636e\u4e0e\u9884\u4f30\u4e0d\u4e00\u81f4\u65f6\uff0c\u4e5f\u4f1a\u81ea\u52a8\u66f4\u65b0\u5176\u7edf\u8ba1\u6570\u636e\u3002",
+        "\u76ee\u524d TiDB \u6536\u96c6\u7edf\u8ba1\u4fe1\u606f\u4e3a\u5168\u91cf\u6536\u96c6\uff0c\u901a\u8fc7 ANALYZE TABLE \u8bed\u53e5\u6765\u5b9e\u73b0\u3002\u5173\u4e8e\u8be5\u8bed\u53e5\u7684\u8be6\u7ec6\u4f7f\u7528\u65b9\u5f0f\uff0c\u53ef\u53c2\u8003\u5e38\u89c4\u7edf\u8ba1\u4fe1\u606f\u3002"
+    ],
+    "Examples": [
+        "CREATE TABLE t1 (id INT NOT NULL PRIMARY KEY AUTO_INCREMENT, c1 INT NOT NULL);\n",
+        "INSERT INTO t1 (c1) VALUES (1),(2),(3),(4),(5);\n",
+        "ALTER TABLE t1 ADD INDEX (c1);\n",
+        "EXPLAIN SELECT * FROM t1 WHERE c1 = 3;\n",
+        "ANALYZE TABLE t1;\n",
+        "EXPLAIN SELECT * FROM t1 WHERE c1 = 3;\n"
+    ],
+    "Category": [
+        "\u7edf\u8ba1\u4fe1\u606f\u548c\u6267\u884c\u8ba1\u5212\u7ba1\u7406"
+    ]
+}

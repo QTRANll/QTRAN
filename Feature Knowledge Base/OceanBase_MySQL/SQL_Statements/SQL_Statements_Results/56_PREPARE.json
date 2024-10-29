@@ -1,0 +1,22 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000001053528"
+    ],
+    "Title": [
+        "PREPARE"
+    ],
+    "Feature": [
+        "PREPARE stmt_name FROM preparable_stmt\n"
+    ],
+    "Description": [
+        "该语句用于准备一个语句并为其指定一个名称，用于稍后引用该语句。可以使用 EXECUTE 执行 Prepared 语句，并使用 DEALLOCATE PREPARE 释放该语句。",
+        "\n说明\n\nPrepared 语句仅在当前会话中生效，不适用于其他会话。当会话结束时，所创建的 Prepared 语句不再存在。\n在存储例程中创建的 Prepared 语句具有全局性，则在程序执行完毕后不会释放它。但是在存储程序上下文中的 Prepared 语句不能引用存储过程或函数的参数或局部变量，否则会导致该语句无法在程序外执行。\n\n",
+        "\n\n\n参数\n描述\n\n\n\n\nstmt_name\n指定准备语句的名称。语句名称不区分大小写。\n\n\npreparable_stmt\n指定要准备执行的 SQL 语句。该参数是字符串字面量或包含 SQL 语句文本的用户变量，文本必须表示单个语句，而不是多个语句。该参数可以包含存储过程调用的字符串字面量或用户变量，但用户变量交互时，不能将出参直接赋给用户变量。\n\n\n"
+    ],
+    "Examples": [
+        "/* 使用 SELECT 语句构成 Prepared 语句 */\nobclient> PREPARE stmt1 FROM 'SELECT SQRT(POW(?,2) + POW(?,2)) AS hypotenuse';\nQuery OK, 0 rows affected\n\n/* 设置用户变量 a 和 b */\nobclient> SET @a = 3;\nQuery OK, 0 rows affected\n\nobclient> SET @b = 4;\nQuery OK, 0 rows affected\n\n/* 应用用户变量的值执行 Prepared 语句 */\nobclient> EXECUTE stmt1 USING @a, @b;\n+------------+\n| hypotenuse |\n+------------+\n|          5 |\n+------------+\n1 row in set\n"
+    ],
+    "Category": [
+        "No Category"
+    ]
+}

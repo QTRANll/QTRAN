@@ -1,0 +1,37 @@
+{
+    "HTML": "https://mariadb.com//kb/en/radians/",
+    "Title": "RADIANS",
+    "Feature": [
+        "RADIANS(X)\n"
+    ],
+    "Description": [
+        "Returns the argument X, converted from degrees to radians. Note that\n\u03c0 radians equals 180 degrees. ",
+        "This is the converse of the DEGREES() function."
+    ],
+    "Examples": [
+        "SELECT RADIANS(45);\n+-------------------+\n| RADIANS(45)       |\n+-------------------+\n| 0.785398163397448 |\n+-------------------+\n\nSELECT RADIANS(90);\n+-----------------+\n| RADIANS(90)     |\n+-----------------+\n| 1.5707963267949 |\n+-----------------+\n\nSELECT RADIANS(PI());\n+--------------------+\n| RADIANS(PI())      |\n+--------------------+\n| 0.0548311355616075 |\n+--------------------+\n\nSELECT RADIANS(180);\n+------------------+\n| RADIANS(180)     |\n+------------------+\n| 3.14159265358979 |\n+------------------+\n"
+    ],
+    "Category": [
+        "Numeric Functions"
+    ],
+    "Effective SQLs Refined": [
+        "SELECT RADIANS(45);",
+        "SELECT RADIANS(90);",
+        "SELECT RADIANS(PI());",
+        "SELECT RADIANS(180);"
+    ],
+    "Ineffective SQLs Refined": [],
+    "Wrong Messages from Ineffective SQLs Refined": [],
+    "SQLs Generated1": [],
+    "SQLs Generated Costs1": [],
+    "SQLs Generated ExecResults1": [],
+    "SQLs Generated ExecTimes1": [],
+    "SQLs Generated ErrorMessages1": [],
+    "Effective SQLs Generated1": [],
+    "SQLs Generated2": [],
+    "SQLs Generated Costs2": [],
+    "SQLs Generated ExecResults2": [],
+    "SQLs Generated ExecTimes2": [],
+    "SQLs Generated ErrorMessages2": [],
+    "Effective SQLs Generated2": []
+}

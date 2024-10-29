@@ -1,0 +1,21 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/show-create-function/"
+    ],
+    "Title": [
+        "SHOW CREATE FUNCTION"
+    ],
+    "Feature": [
+        "SHOW CREATE FUNCTION func_name\n"
+    ],
+    "Description": [
+        "This statement is similar to SHOW CREATE PROCEDURE but for\nstored functions.",
+        "SHOW CREATE FUNCTION quotes identifiers according to the value of the sql_quote_show_create system variable. Prior to MariaDB 10.6.5, MariaDB 10.5.13 and MariaDB 10.4.22, the output of this statement was unreliably affected by the sql_quote_show_create system variable."
+    ],
+    "Examples": [
+        "SHOW CREATE FUNCTION VatCents\\G\n*************************** 1. row ***************************\n            Function: VatCents\n            sql_mode: \n     Create Function: CREATE DEFINER=`root`@`localhost` FUNCTION `VatCents`(price DECIMAL(10,2)) RETURNS int(11)\n    DETERMINISTIC\nBEGIN\n DECLARE x INT;\n SET x = price * 114;\n RETURN x;\nEND\ncharacter_set_client: utf8\ncollation_connection: utf8_general_ci\n  Database Collation: latin1_swedish_ci\n"
+    ],
+    "Category": [
+        "Administrative SQL Statements"
+    ]
+}

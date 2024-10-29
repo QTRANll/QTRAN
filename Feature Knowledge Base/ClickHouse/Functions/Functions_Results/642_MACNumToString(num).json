@@ -1,0 +1,23 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/other-functions"
+    ],
+    "Title": [
+        "MACNumToString"
+    ],
+    "Feature": [
+        "MACNumToString(num)"
+    ],
+    "Description": [
+        "MACNumToString",
+        "Interprets a UInt64 number as a MAC address in big endian format. Returns the corresponding MAC address in format AA:BB:CC:DD:EE:FF (colon-separated numbers in hexadecimal form) as string.",
+        "Syntax",
+        "MACNumToString(num)"
+    ],
+    "Examples": [
+        "MACNumToString(num)"
+    ],
+    "Category": [
+        "Other Functions"
+    ]
+}

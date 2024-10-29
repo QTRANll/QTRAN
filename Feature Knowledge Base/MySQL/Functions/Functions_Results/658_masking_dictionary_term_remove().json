@@ -1,0 +1,35 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/loadable-function-reference.html"
+    ],
+    "Title": [
+        "14.2 Loadable Function Reference"
+    ],
+    "Feature": [
+        "masking_dictionary_term_remove(dictionary_name,\n              term_name)"
+    ],
+    "Description": [
+        "Remove existing term from the dictionary",
+        "\nmasking_dictionary_term_remove(dictionary_name,\n              term_name)\n",
+        "\n              Removes one term from the named dictionary. This function\n              requires the\n              MASKING_DICTIONARIES_ADMIN\n              privilege.\n            ",
+        "\n              Arguments:\n",
+        "\n\ndictionary_name: A string\n                  that provides a name for the dictionary. This argument\n                  is converted to the utf8mb4\n                  character set.\n                \nterm_name: A string that\n                  specifies the term name in the dictionary table. This\n                  argument is converted to the\n                  utf8mb4 character set.\n\n",
+        "\n              Return value:\n            ",
+        "\n              A string that indicates whether the remove term operation\n              succeeded. 1 indicates success.\n              NULL indicates failure. Term remove\n              failure can occur for several reasons, including:\n",
+        "\n\n                  A term with the given name is not found.\n                \n                  The dictionary name is not found.\n\n",
+        "\n              Example:\n            ",
+        "Press CTRL+C to copy mysql> SELECT masking_dictionary_term_add('mydict','newterm');\n+-------------------------------------------------+\n| masking_dictionary_term_add('mydict','newterm') |\n+-------------------------------------------------+\n|                                               1 |\n+-------------------------------------------------+\nmysql> SELECT masking_dictionary_term_remove('mydict','');\n+---------------------------------------------+\n| masking_dictionary_term_remove('mydict','') |\n+---------------------------------------------+\n|                                        NULL |\n+---------------------------------------------+"
+    ],
+    "Examples": [
+        "mysql> SELECT masking_dictionary_term_add('mydict','newterm');\n+-------------------------------------------------+\n| masking_dictionary_term_add('mydict','newterm') |\n+-------------------------------------------------+\n|                                               1 |\n+-------------------------------------------------+\nmysql> SELECT masking_dictionary_term_remove('mydict','');\n+---------------------------------------------+\n| masking_dictionary_term_remove('mydict','') |\n+---------------------------------------------+\n|                                        NULL |\n+---------------------------------------------+"
+    ],
+    "Category": [
+        "Loadable Functions"
+    ],
+    "Reference HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/data-masking-component-functions.html#function_masking-dictionary-term-remove"
+    ],
+    "Feature Type": [
+        "Function"
+    ]
+}

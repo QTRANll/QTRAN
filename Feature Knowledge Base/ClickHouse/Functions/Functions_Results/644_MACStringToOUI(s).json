@@ -1,0 +1,23 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/other-functions"
+    ],
+    "Title": [
+        "MACStringToOUI"
+    ],
+    "Feature": [
+        "MACStringToOUI(s)"
+    ],
+    "Description": [
+        "MACStringToOUI",
+        "Given a MAC address in format AA:BB:CC:DD:EE:FF (colon-separated numbers in hexadecimal form), returns the first three octets as a UInt64 number. If the MAC address has an invalid format, it returns 0.",
+        "Syntax",
+        "MACStringToOUI(s)"
+    ],
+    "Examples": [
+        "MACStringToOUI(s)"
+    ],
+    "Category": [
+        "Other Functions"
+    ]
+}

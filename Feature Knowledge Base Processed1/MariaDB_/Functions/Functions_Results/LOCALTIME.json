@@ -1,0 +1,42 @@
+{
+    "HTML": "https://mariadb.com//kb/en/localtime/",
+    "Title": "LOCALTIME",
+    "Feature": [
+        "LOCALTIME\nLOCALTIME([precision])\n"
+    ],
+    "Description": [
+        "LOCALTIME and LOCALTIME() are synonyms for NOW()."
+    ],
+    "Examples": [],
+    "Category": [
+        "Date & Time Functions"
+    ],
+    "Effective SQLs Refined": [],
+    "Ineffective SQLs Refined": [],
+    "Wrong Messages from Ineffective SQLs Refined": [],
+    "SQLs Generated1": [
+        {
+            "Example SQL": "SELECT LOCALTIME;"
+        }
+    ],
+    "SQLs Generated Costs1": [
+        {
+            "Total Tokens": 265,
+            "Prompt Tokens": 249,
+            "Completion Tokens": 16,
+            "Total Cost (USD)": 4.695e-05
+        }
+    ],
+    "SQLs Generated ExecResults1": [
+        "[(datetime.datetime(2024, 9, 23, 12, 16, 10),)]"
+    ],
+    "SQLs Generated ExecTimes1": [
+        "0.030176401138305664"
+    ],
+    "SQLs Generated ErrorMessages1": [
+        "None"
+    ],
+    "Effective SQLs Generated1": [
+        "SELECT LOCALTIME;"
+    ]
+}

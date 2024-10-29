@@ -1,0 +1,22 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000000823173"
+    ],
+    "Title": [
+        "EXP"
+    ],
+    "Feature": [
+        "EXP (numeric_expression)\n"
+    ],
+    "Description": [
+        "该函数是以自然常数 e 为底的指数函数，用于返回 e 的 numeric_expression 次方，其中 e = 2.71828183...。",
+        "numeric_expression 是数值数据类型（NUMBER、FLOAT、BINARY_FLOAT 和 BINARY_DOUBLE）或可以隐式转换为数值数据类型的参数。",
+        "当参数为 BINARY_FLOAT 数据类型时，返回类型为 BINARY_DOUBLE，其他情况下返回类型与参数 numeric_expression 的数据类型相同。"
+    ],
+    "Examples": [
+        "obclient> SELECT EXP(4),EXP(3+2.5) FROM DUAL;\n+-------------------------------------------+------------------------------------------+\n| EXP(4)                                    | EXP(3+2.5)                               |\n+-------------------------------------------+------------------------------------------+\n| 54.59815003314423907811026120286087840279 | 244.691932264220387915188949511839350184 |\n+-------------------------------------------+------------------------------------------+\n1 row in set\n"
+    ],
+    "Category": [
+        "Numeric Functions"
+    ]
+}

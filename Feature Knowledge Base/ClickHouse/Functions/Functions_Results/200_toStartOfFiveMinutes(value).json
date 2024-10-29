@@ -1,0 +1,27 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/date-time-functions"
+    ],
+    "Title": [
+        "toStartOfFiveMinutes"
+    ],
+    "Feature": [
+        "toStartOfFiveMinutes(value)"
+    ],
+    "Description": [
+        "toStartOfFiveMinutes",
+        "Rounds down a date with time to the start of the five-minute interval.",
+        "Syntax",
+        "toStartOfFiveMinutes(value)",
+        "Arguments",
+        "value - a  DateTime or DateTime64",
+        "Returned value",
+        "The start of the five-minute interval of the given date/time. DateTime."
+    ],
+    "Examples": [
+        "SELECT    toStartOfFiveMinutes(toDateTime('2023-04-21 10:17:00')),    toStartOfFiveMinutes(toDateTime('2023-04-21 10:20:00')),    toStartOfFiveMinutes(toDateTime('2023-04-21 10:23:00'))FORMAT Vertical"
+    ],
+    "Category": [
+        "Dates and Times Functions"
+    ]
+}

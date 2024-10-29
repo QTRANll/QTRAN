@@ -1,0 +1,22 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/uninstall-plugin.html"
+    ],
+    "Title": [
+        "15.7.4.6 UNINSTALL PLUGIN Statement"
+    ],
+    "Feature": [
+        "UNINSTALL PLUGIN plugin_name"
+    ],
+    "Description": [
+        "\n        This statement removes an installed server plugin.\n        UNINSTALL PLUGIN is the\n        complement of INSTALL PLUGIN. It\n        requires the DELETE privilege for\n        the mysql.plugin system table because it\n        removes the row from that table that registers the plugin.\n      ",
+        "\nplugin_name must be the name of some\n        plugin that is listed in the mysql.plugin\n        table. The server executes the plugin's deinitialization\n        function and removes the row for the plugin from the\n        mysql.plugin system table, so that subsequent\n        server restarts do not load and initialize the plugin.\n        UNINSTALL PLUGIN does not remove\n        the plugin's shared library file.\n      ",
+        "\n        You cannot uninstall a plugin if any table that uses it is open.\n      ",
+        "\n        Plugin removal has implications for the use of associated\n        tables. For example, if a full-text parser plugin is associated\n        with a FULLTEXT index on the table,\n        uninstalling the plugin makes the table unusable. Any attempt to\n        access the table results in an error. The table cannot even be\n        opened, so you cannot drop an index for which the plugin is\n        used. This means that uninstalling a plugin is something to do\n        with care unless you do not care about the table contents. If\n        you are uninstalling a plugin with no intention of reinstalling\n        it later and you care about the table contents, you should dump\n        the table with mysqldump and remove the\n        WITH PARSER clause from the dumped\n        CREATE TABLE statement so that\n        you can reload the table later. If you do not care about the\n        table, DROP TABLE can be used\n        even if any plugins associated with the table are missing.\n      ",
+        "\n        For additional information about plugin loading, see\n        Section\u00a07.6.1, \u201cInstalling and Uninstalling Plugins\u201d.\n"
+    ],
+    "Examples": [],
+    "Category": [
+        "Database Administration Statements"
+    ]
+}

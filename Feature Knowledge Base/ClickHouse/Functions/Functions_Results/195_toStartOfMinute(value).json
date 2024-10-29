@@ -1,0 +1,27 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/date-time-functions"
+    ],
+    "Title": [
+        "toStartOfMinute"
+    ],
+    "Feature": [
+        "toStartOfMinute(value)"
+    ],
+    "Description": [
+        "toStartOfMinute",
+        "Rounds down a date with time to the start of the minute.",
+        "Syntax",
+        "toStartOfMinute(value)",
+        "Arguments",
+        "value - a  DateTime or DateTime64",
+        "Returned value",
+        "The start of the minute of the given date/time. DateTime."
+    ],
+    "Examples": [
+        "SELECT    toStartOfMinute(toDateTime('2023-04-21 10:20:30')),    toStartOfMinute(toDateTime64('2023-04-21 10:20:30.5300', 8))FORMAT Vertical"
+    ],
+    "Category": [
+        "Dates and Times Functions"
+    ]
+}

@@ -1,0 +1,21 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/aggregate-functions/reference/quantiletimingweighted"
+    ],
+    "Title": [
+        "quantilesTimingWeighted"
+    ],
+    "Feature": [
+        "quantilesTimingWeighted"
+    ],
+    "Description": [
+        "quantilesTimingWeighted",
+        "Same as quantileTimingWeighted, but accept multiple parameters with quantile levels and return an Array filled with many values of that quantiles."
+    ],
+    "Examples": [
+        "SELECT quantilesTimingWeighted(0,5, 0.99)(response_time, weight) FROM t"
+    ],
+    "Category": [
+        "Aggregate Functions"
+    ]
+}

@@ -1,0 +1,29 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000001053493"
+    ],
+    "Title": [
+        "CREATE RESTORE POINT"
+    ],
+    "Feature": [
+        "CREATE RESTORE POINT restore_point;\n"
+    ],
+    "Description": [
+        "该语句用来创建还原点（Restore Point）。使用该功能可以保留当前时刻的数据快照，并在之后指定在这个数据快照上进行查询。目前还不支持将数据回滚到该还原点。",
+        "创建还原点后，可以在 V$RESTORE_POINT 视图中查询到该还原点的 SNAPSHOT 值，然后通过 SELECT * FROM table_name AS OF SNAPSHOT snapshot; 查询数据快照中的值。",
+        "\n注意\n\n\nV4.x 版本暂不支持 CREATE RESTORE POINT 语句。\n系统租户不支持创建和删除还原点。\n\n\n",
+        "\n\n\n参数\n描述\n\n\n\n\nrestore_point\n指定还原点名称。\n\n\n"
+    ],
+    "Examples": [
+        "obclient> CREATE TABLE test1 (c1 INT,c2 INT);\n",
+        "obclient> INSERT INTO test1(c1,c2) values (1,1);\n",
+        "obclient> CREATE RESTORE POINT rp1;\n",
+        "obclient> INSERT INTO test1(c1,c2) values (2, 2),(3,3);\nobclient> commit;\n",
+        "obclient> SELECT * FROM test1;\n+------+------+\n| c1   | c2   |\n+------+------+\n|    1 |    1 |\n|    2 |    2 |\n|    3 |    3 |\n+------+------+\n3 rows in set\n",
+        "obclient> SELECT * FROM V$RESTORE_POINT;\n",
+        "+-----------+------------------+----------------------------+------+\n| TENANT_ID | SNAPSHOT         | TIME                       | NAME |\n+-----------+------------------+----------------------------+------+\n|      1001 | 1630407064663511 | 2021-08-31 18:51:04.665692 | rp1  |\n+-----------+------------------+----------------------------+------+\n1 row in set\n\nobclient> SELECT * FROM test1 AS OF SNAPSHOT 1630407064663511;\n+------+------+\n| c1   | c2   |\n+------+------+\n|    1 |    1 |\n+------+------+\n1 row in set\n"
+    ],
+    "Category": [
+        "No Category"
+    ]
+}

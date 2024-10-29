@@ -1,0 +1,25 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/common-oceanbase-database-cn-1000000000822070"
+    ],
+    "Title": [
+        "[NOT] BETWEEN AND"
+    ],
+    "Feature": [
+        "[NOT] BETWEEN AND"
+    ],
+    "Description": [
+        "是否在区间内",
+        "BETWEEN AND 语法如下：",
+        "expr BETWEEN min AND max\n",
+        "NOT BETWEEN AND 语法等同于 NOT (expr BETWEEN min AND max) 即 expr NOT BETWEEN min AND max。",
+        "对于 BETWEEN AND 运算，如果 expr 大于或等于 min 且 expr 小于或等于 max，则 BETWEEN 返回 1，否则返回 0。如果所有参数都为同类型，等效于表达式 (min <= expr AND expr <= max)。",
+        "当 expr 为 NULL，或者 min 和 max 都为 NULL 时，结果为 NULL。当 expr 不为 NULL，而且只有 min 或 max 为 NULL 时，如果只通过 expr 和 min/max 就能确定运算结果，则直接使用这个结果，否则返回 NULL。"
+    ],
+    "Examples": [
+        "SELECT 1 BETWEEN 0 AND NULL, 1 BETWEEN 2 AND NULL;\n+----------------------+----------------------+\n| 1 BETWEEN 0 AND NULL | 1 BETWEEN 2 AND NULL |\n+----------------------+----------------------+\n|                 NULL |                    0 |\n+----------------------+----------------------+\n1 row in set\n"
+    ],
+    "Category": [
+        "Comparison Operators"
+    ]
+}

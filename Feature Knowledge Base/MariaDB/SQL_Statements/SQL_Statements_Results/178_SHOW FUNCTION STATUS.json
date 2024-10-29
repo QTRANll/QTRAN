@@ -1,0 +1,25 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/show-function-status/"
+    ],
+    "Title": [
+        "SHOW FUNCTION STATUS"
+    ],
+    "Feature": [
+        "SHOW FUNCTION STATUS\n    [LIKE 'pattern' | WHERE expr]\n"
+    ],
+    "Description": [
+        "This statement is similar to \nSHOW PROCEDURE STATUS but for\nstored functions.",
+        "The LIKE clause, if present on its own, indicates which function names to match. ",
+        "The WHERE and LIKE clauses can be given to select rows using more general conditions, as discussed in Extended SHOW.",
+        "The information_schema.ROUTINES table contains more detailed information."
+    ],
+    "Examples": [
+        "SHOW FUNCTION STATUS\\G\n*************************** 1. row ***************************\n                  Db: test\n                Name: VatCents\n                Type: FUNCTION\n             Definer: root@localhost\n            Modified: 2013-06-01 12:40:31\n             Created: 2013-06-01 12:40:31\n       Security_type: DEFINER\n             Comment: \ncharacter_set_client: utf8\ncollation_connection: utf8_general_ci\n  Database Collation: latin1_swedish_ci\n",
+        "SHOW FUNCTION STATUS LIKE 'V%' \\G\n*************************** 1. row ***************************\n                  Db: test\n                Name: VatCents\n                Type: FUNCTION\n             Definer: root@localhost\n            Modified: 2013-06-01 12:40:31\n             Created: 2013-06-01 12:40:31\n       Security_type: DEFINER\n             Comment: \ncharacter_set_client: utf8\ncollation_connection: utf8_general_ci\n  Database Collation: latin1_swedish_ci\n",
+        "SHOW FUNCTION STATUS WHERE Security_type LIKE 'DEFINER' \\G\n*************************** 1. row ***************************\n                  Db: test\n                Name: VatCents\n                Type: FUNCTION\n             Definer: root@localhost\n            Modified: 2013-06-01 12:40:31\n             Created: 2013-06-01 12:40:31\n       Security_type: DEFINER\n             Comment: \ncharacter_set_client: utf8\ncollation_connection: utf8_general_ci\n  Database Collation: latin1_swedish_ci\n"
+    ],
+    "Category": [
+        "Administrative SQL Statements"
+    ]
+}

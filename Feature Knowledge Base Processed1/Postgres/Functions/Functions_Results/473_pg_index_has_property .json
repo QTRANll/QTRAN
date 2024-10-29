@@ -1,0 +1,18 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/current/functions-info.html"
+    ],
+    "Title": [
+        "pg_index_has_property"
+    ],
+    "Feature": [
+        "pg_index_has_property ( index regclass, property text ) → boolean"
+    ],
+    "Description": [
+        "Tests whether an index has the named property. Common index properties are listed in Table 9.76. (Note that extension access methods can define additional property names for their indexes.) NULL is returned if the property name is not known or does not apply to the particular object, or if the OID does not identify a valid object."
+    ],
+    "Examples": [],
+    "Category": [
+        "System Information Functions and Operators"
+    ]
+}

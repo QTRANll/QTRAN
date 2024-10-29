@@ -1,0 +1,23 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/st_convexhull/"
+    ],
+    "Title": [
+        "ST_CONVEXHULL"
+    ],
+    "Feature": [
+        "ST_ConvexHull(g)\nConvexHull(g)\n"
+    ],
+    "Description": [
+        "Given a geometry, returns a geometry that is the minimum convex geometry enclosing all geometries within the set. Returns NULL if the geometry value is NULL or an empty value.",
+        "ST_ConvexHull() and ConvexHull() are synonyms."
+    ],
+    "Examples": [
+        "SELECT ST_ASTEXT(ST_CONVEXHULL(@g));",
+        "SELECT ST_ASTEXT(ST_CONVEXHULL(@g));",
+        "SELECT ST_ASTEXT(ST_CONVEXHULL(@g));"
+    ],
+    "Category": [
+        "Geographic Functions"
+    ]
+}

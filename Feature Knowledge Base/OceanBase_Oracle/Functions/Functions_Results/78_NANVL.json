@@ -1,0 +1,29 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000000823174"
+    ],
+    "Title": [
+        "NANVL"
+    ],
+    "Feature": [
+        "NANVL(n1,n2)\n"
+    ],
+    "Description": [
+        "该函数用于判断输入值参数 n1 是不是 NaN（表示非数字），并返回结果。",
+        "如果 n1 是 NaN，则返回参数 n2。",
+        "如果 n1 不是 NaN，则返回参数 n1。",
+        "\n注意\n该函数仅适用于 BINARY_FLOAT 或 BINARY_DOUBLE 数据类型。\n",
+        "\n\n\n参数\n说明\n\n\n\n\nn1\n属于数值数据类型（BINARY_FLOAT、BINARY_DOUBLE）或可以隐式转换为数值数据类型的表达式。\n\n\nn2\n属于数值数据类型（BINARY_FLOAT、BINARY_DOUBLE）或可以隐式转换为数值数据类型的表达式。\n\n\n",
+        "如果有任意一个参数类型是 BINARY_DOUBLE，则返回 BINARY_DOUBLE 数据类型。",
+        "如果有参数类型都是 BINARY_FLOAT，则返回 BINARY_FLOAT 数据类型。",
+        "如果有任意一个参数为空，则返回 NULL。"
+    ],
+    "Examples": [
+        "obclient> CREATE TABLE tbl1 (col1 NUMBER(10,2), col2 BINARY_DOUBLE, col3 BINARY_FLOAT);\nQuery OK, 0 rows affected\n\nobclient> INSERT INTO tbl1 VALUES(1,1,1),(2,'NaN',2),(3,3,'NaN');\nQuery OK, 3 rows affected\nRecords: 3  Duplicates: 0  Warnings: 0\n\nobclient> SELECT * FROM tbl1;\n+------+----------+----------+\n| COL1 | COL2     | COL3     |\n+------+----------+----------+\n|    1 | 1.0E+000 | 1.0E+000 |\n|    2 |      Nan | 2.0E+000 |\n|    3 | 3.0E+000 |      Nan |\n+------+----------+----------+\n3 rows in set\n\nobclient> SELECT col2,NANVL(col2,0) FROM tbl1;\n+----------+---------------+\n| COL2     | NANVL(COL2,0) |\n+----------+---------------+\n| 1.0E+000 |      1.0E+000 |\n|      Nan |             0 |\n| 3.0E+000 |      3.0E+000 |\n+----------+---------------+\n3 rows in set\n",
+        "obclient> SELECT NANVL('',1),NANVL(2,'') FROM DUAL;\n+-------------+-------------+\n| NANVL('',1) | NANVL(2,'') |\n+-------------+-------------+\n|        NULL |        NULL |\n+-------------+-------------+\n1 row in set\n"
+    ],
+    "Category": [
+        "Numeric Functions",
+        "NULL-Related Functions"
+    ]
+}

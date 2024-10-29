@@ -1,0 +1,21 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/subtime/"
+    ],
+    "Title": [
+        "SUBTIME"
+    ],
+    "Feature": [
+        "SUBTIME(expr1,expr2)\n"
+    ],
+    "Description": [
+        "SUBTIME() returns expr1 - expr2 expressed as a value in the same\nformat as expr1. expr1 is a time or datetime expression, and expr2 is\na time expression."
+    ],
+    "Examples": [
+        "SELECT SUBTIME('2007-12-31 23:59:59.999999','1 1:1:1.000002');",
+        "SELECT SUBTIME('01:00:00.999999', '02:00:00.999998');"
+    ],
+    "Category": [
+        "Date & Time Functions"
+    ]
+}

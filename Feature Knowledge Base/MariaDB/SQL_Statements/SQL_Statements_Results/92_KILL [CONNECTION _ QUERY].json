@@ -1,0 +1,36 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/kill/"
+    ],
+    "Title": [
+        "KILL [CONNECTION |\u00a0QUERY]"
+    ],
+    "Feature": [
+        "KILL [HARD | SOFT] { {CONNECTION|QUERY} thread_id | QUERY ID query_id | USER user_name }\n\n"
+    ],
+    "Description": [
+        "Each connection to mariadbd runs in a separate thread. You can see which threads\nare running with the SHOW PROCESSLIST statement and kill a\nthread with the KILL thread_id statement.                             \nKILL allows the optional CONNECTION or\nQUERY modifier:",
+        "KILL CONNECTION is the same as KILL with no\n  modifier: It terminates the connection associated with the given thread or query id.\nKILL QUERY terminates the statement that the connection thread_id is\n  currently executing, but leaves the connection itself intact.\nKILL QUERY ID terminates the query by query_id, leaving the connection intact.\n",
+        "If a connection is terminated that has an active transaction, the transaction will be rolled back. If only a query is killed, the current transaction will stay active. See also idle_transaction_timeout.",
+        "If you have the PROCESS privilege, you can see all threads. If\nyou have the SUPER privilege, or, from MariaDB 10.5.2, the CONNECTION ADMIN privilege, you can kill all threads and\nstatements. Otherwise, you can see and kill only your own threads and\nstatements.",
+        "Killing queries that repair or create indexes on MyISAM and Aria tables may result in corrupted tables. Use the SOFT option to avoid this!\n",
+        "The HARD option (default) kills a command as soon as possible.  If you use\nSOFT, then critical operations that may leave a table in an\ninconsistent state will not be interrupted. Such operations include REPAIR and INDEX creation for MyISAM and Aria tables (REPAIR TABLE, OPTIMIZE TABLE).",
+        "KILL ... USER username will kill all connections/queries for a\ngiven user. USER can be specified one of the following ways:",
+        "username  (Kill without regard to hostname)\nusername@hostname\nCURRENT_USER or CURRENT_USER()\n",
+        "If you specify a thread id and that thread does not exist, you get the following error:",
+        "ERROR 1094 (HY000): Unknown thread id: <thread_id>\n",
+        "If you specify a query id that doesn't exist, you get the following error:",
+        "ERROR 1957 (HY000): Unknown query id: <query_id>\n",
+        "However, if you specify a user name, no error is issued for non-connected (or even non-existing) users. To check if the connection/query has been killed, you can use the ROW_COUNT() function.",
+        "A client whose connection is killed receives the following error:",
+        "ERROR 1317 (70100): Query execution was interrupted\n",
+        "To obtain a list of existing sessions, use the SHOW PROCESSLIST statement or query the Information Schema PROCESSLIST table.",
+        "Note: You cannot use KILL with the Embedded MariaDB Server\nlibrary because the embedded server merely runs inside the threads of the host\napplication. It does not create any connection threads of its own.",
+        "Note: You can also use \nmariadb-admin kill thread_id [,thread_id...]\nto kill connections. To get a list of running queries,\nuse mariadb-admin processlist. See mariadb-admin.",
+        "Percona Toolkit contains a program, pt-kill that can be used to automatically kill connections that match certain criteria. For example, it can be used to terminate idle connections, or connections that have been busy for more than 60 seconds."
+    ],
+    "Examples": [],
+    "Category": [
+        "Administrative SQL Statements"
+    ]
+}

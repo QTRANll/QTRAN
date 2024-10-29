@@ -1,0 +1,27 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/drop-user/"
+    ],
+    "Title": [
+        "DROP USER"
+    ],
+    "Feature": [
+        "DROP USER [IF EXISTS] user_name [, user_name] ...\n"
+    ],
+    "Description": [
+        "The DROP USER statement removes one or more MariaDB accounts. It removes\nprivilege rows for the account from all grant tables. To use this statement,\nyou must have the global CREATE USER privilege\nor the DELETE privilege for the mysql database.\nEach account is named using the same format as for the CREATE USER\nstatement; for example, 'jeffrey'@'localhost'.  If you specify\nonly the user name part of the account name, a host name part of '%' is\nused. For additional information about specifying account names, see\nCREATE USER.",
+        "Note that, if you specify an account that is currently connected, it will not\nbe deleted until the connection is closed. The connection will not be\nautomatically closed.",
+        "If any of the specified user accounts do not exist, ERROR 1396 (HY000)\nresults. If an error occurs, DROP USER will still drop the accounts that do\nnot result in an error. Only one error is produced for all users which have not\nbeen dropped:",
+        "ERROR 1396 (HY000): Operation DROP USER failed for 'u1'@'%','u2'@'%'\n",
+        "Failed CREATE or DROP operations, for both users and roles, produce the\nsame error code.",
+        "IF EXISTS",
+        "If the IF EXISTS clause is used, MariaDB will return a note instead of an error if the user does not exist."
+    ],
+    "Examples": [
+        "DROP USER bob;\n\nDROP USER foo2@localhost,foo2@'127.%';\n",
+        "DROP USER bob;\nERROR 1396 (HY000): Operation DROP USER failed for 'bob'@'%'\n\nDROP USER IF EXISTS bob;\nQuery OK, 0 rows affected, 1 warning (0.00 sec)\n\nSHOW WARNINGS;\n+-------+------+---------------------------------------------+\n| Level | Code | Message                                     |\n+-------+------+---------------------------------------------+\n| Note  | 1974 | Can't drop user 'bob'@'%'; it doesn't exist |\n+-------+------+---------------------------------------------+\n"
+    ],
+    "Category": [
+        "Account Management SQL Commands"
+    ]
+}

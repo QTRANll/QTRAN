@@ -1,0 +1,23 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000000823455"
+    ],
+    "Title": [
+        "REGEXP_REPLACE"
+    ],
+    "Feature": [
+        "REGEXP_REPLACE(expr, pat, repl[, pos[, occurrence[, match_type]]])\n"
+    ],
+    "Description": [
+        "将字符串 expr 中匹配 pat 的子字符串替换为 repl 指定的字符串，并返回替换后的字符串。如果 expr、pat 或 repl 为 NULL，则该函数返回 NULL。",
+        "pos 表示从表达式 expr 的第几个字符开始搜索，缺省为 1。",
+        "occurrence 表示将第几次匹配替换为 repl，默认为 0，表示替换所有匹配的子字符串。",
+        "match_type 表示匹配规则。有关匹配规则的详细信息，请参见 REGEXP_LIKE。"
+    ],
+    "Examples": [
+        "obclient> SELECT REGEXP_REPLACE('OceanBase', 'a', '2');\n+---------------------------------------+\n| REGEXP_REPLACE('OceanBase', 'a', '2') |\n+---------------------------------------+\n| Oce2nB2se                             |\n+---------------------------------------+\n1 row in set\n\nobclient> SELECT REGEXP_REPLACE('OceanBase', 'a', '2',7);\n+-----------------------------------------+\n| REGEXP_REPLACE('OceanBase', 'a', '2',7) |\n+-----------------------------------------+\n| OceanB2se                               |\n+-----------------------------------------+\n1 row in set\n\nobclient> SELECT REGEXP_REPLACE('OceanBase', 'a', '2',1,2);\n+-------------------------------------------+\n| REGEXP_REPLACE('OceanBase', 'a', '2',1,2) |\n+-------------------------------------------+\n| OceanB2se                                 |\n+-------------------------------------------+\n1 row in set\n"
+    ],
+    "Category": [
+        "String Functions"
+    ]
+}

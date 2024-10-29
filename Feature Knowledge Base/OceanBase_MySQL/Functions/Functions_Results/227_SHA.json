@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000000822997"
+    ],
+    "Title": [
+        "SHA"
+    ],
+    "Feature": [
+        "SHA(str)\n"
+    ],
+    "Description": [
+        "计算并返回给定字符串的 SHA-1 160 位校验和，该值以 40 个十六进制数字的字符串形式返回。等效于 SHA1() 函数。"
+    ],
+    "Examples": [
+        "obclient [test]> SELECT SHA('OB');\n+------------------------------------------+\n| SHA('OB')                                |\n+------------------------------------------+\n| 29a6de2fd8618f31afb281a608c57995b7eb105d |\n+------------------------------------------+\n1 row in set\n"
+    ],
+    "Category": [
+        "Encryption Functions"
+    ]
+}

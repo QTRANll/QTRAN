@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/current/functions-binarystring.html"
+    ],
+    "Title": [
+        "rtrim"
+    ],
+    "Feature": [
+        "rtrim ( bytes bytea, bytesremoved bytea ) → bytea"
+    ],
+    "Description": [
+        "Removes the longest string containing only bytes appearing in bytesremoved from the end of bytes."
+    ],
+    "Examples": [
+        "rtrim('\\x1234567890'::bytea, '\\x9012'::bytea) → \\x12345678"
+    ],
+    "Category": [
+        "Binary String Functions and Operators"
+    ]
+}

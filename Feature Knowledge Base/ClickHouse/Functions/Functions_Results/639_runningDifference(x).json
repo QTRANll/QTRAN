@@ -1,0 +1,28 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/other-functions"
+    ],
+    "Title": [
+        "runningDifference"
+    ],
+    "Feature": [
+        "runningDifference(x)"
+    ],
+    "Description": [
+        "runningDifference",
+        "Calculates the difference between two consecutive row values in the data block.\nReturns 0 for the first row, and for subsequent rows the difference to the previous row.",
+        "NoteOnly returns differences inside the currently processed data block.\nBecause of this error-prone behavior the function is DEPRECATED, please use proper window functions instead.",
+        "The result of the function depends on the affected data blocks and the order of data in the block.",
+        "The order of rows during calculation of runningDifference() can differ from the order of rows returned to the user.\nTo prevent that you can create a subquery with ORDER BY and call the function from outside the subquery.",
+        "Syntax",
+        "runningDifference(x)"
+    ],
+    "Examples": [
+        "SELECT    EventID,    EventTime,    runningDifference(EventTime) AS deltaFROM(    SELECT        EventID,        EventTime    FROM events    WHERE EventDate = '2016-11-24'    ORDER BY EventTime ASC    LIMIT 5)",
+        "SELECT    number,    runningDifference(number + 1) AS diffFROM numbers(100000)WHERE diff != 1",
+        "set max_block_size=100000 -- default value is 65536!SELECT    number,    runningDifference(number + 1) AS diffFROM numbers(100000)WHERE diff != 1"
+    ],
+    "Category": [
+        "Other Functions"
+    ]
+}

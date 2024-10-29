@@ -1,0 +1,22 @@
+{
+    "HTML": [
+        "https://docs.pingcap.com/zh/tidb/stable/miscellaneous-functions#values"
+    ],
+    "Title": [
+        "VALUES()"
+    ],
+    "Feature": [
+        "VALUES()"
+    ],
+    "Description": [
+        "VALUES()",
+        "VALUES(col_name) \u51fd\u6570\u7528\u4e8e\u5728 INSERT \u8bed\u53e5\u7684 ON DUPLICATE KEY UPDATE \u5b50\u53e5\u4e2d\u5f15\u7528\u7279\u5b9a\u5217\u7684\u503c\u3002",
+        "CREATE TABLE t1 (id INT PRIMARY KEY, c1 INT);\nQuery OK, 0 rows affected (0.17 sec)\n\nINSERT INTO t1 VALUES (1,51),(2,52),(3,53),(4,54),(5,55);\nQuery OK, 5 rows affected (0.01 sec)\nRecords: 5  Duplicates: 0  Warnings: 0\n\nINSERT INTO t1 VALUES(2,22),(4,44) ON DUPLICATE KEY UPDATE c1=VALUES(id)+100;\nQuery OK, 4 rows affected (0.01 sec)\nRecords: 2  Duplicates: 2  Warnings: 0\n\nTABLE t1;\n+----+------+\n| id | c1   |\n+----+------+\n|  1 |   51 |\n|  2 |  102 |\n|  3 |   53 |\n|  4 |  104 |\n|  5 |   55 |\n+----+------+\n5 rows in set (0.00 sec)\n"
+    ],
+    "Examples": [
+        "CREATE TABLE t1 (id INT PRIMARY KEY, c1 INT);\nQuery OK, 0 rows affected (0.17 sec)\n\nINSERT INTO t1 VALUES (1,51),(2,52),(3,53),(4,54),(5,55);\nQuery OK, 5 rows affected (0.01 sec)\nRecords: 5  Duplicates: 0  Warnings: 0\n\nINSERT INTO t1 VALUES(2,22),(4,44) ON DUPLICATE KEY UPDATE c1=VALUES(id)+100;\nQuery OK, 4 rows affected (0.01 sec)\nRecords: 2  Duplicates: 2  Warnings: 0\n\nTABLE t1;\n+----+------+\n| id | c1   |\n+----+------+\n|  1 |   51 |\n|  2 |  102 |\n|  3 |   53 |\n|  4 |  104 |\n|  5 |   55 |\n+----+------+\n5 rows in set (0.00 sec)\n"
+    ],
+    "Category": [
+        "Miscellaneous Functions"
+    ]
+}

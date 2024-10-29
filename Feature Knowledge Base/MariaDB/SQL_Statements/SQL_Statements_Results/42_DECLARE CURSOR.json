@@ -1,0 +1,31 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/declare-cursor/"
+    ],
+    "Title": [
+        "DECLARE CURSOR"
+    ],
+    "Feature": [
+        "<= MariaDB 10.2",
+        "DECLARE cursor_name CURSOR FOR select_statement\n",
+        "From MariaDB 10.3",
+        "DECLARE cursor_name CURSOR [(cursor_formal_parameter[,...])] FOR select_statement\n\ncursor_formal_parameter:\n    name type [collate clause]\n",
+        "From MariaDB 10.8",
+        "DECLARE cursor_name CURSOR [(cursor_formal_parameter[,...])] FOR select_statement\n\ncursor_formal_parameter:\n    [IN] name type [collate clause]\n"
+    ],
+    "Description": [
+        "This statement declares a cursor. Multiple cursors may be declared in a stored program, but each cursor in a given block must have a unique name.",
+        "select_statement is not executed until the OPEN statement is executed. It is important to remember this if the query produces an error, or calls functions which have side effects.",
+        "A SELECT associated to a cursor can use variables, but the query itself cannot be a variable, and cannot be dynamically composed. The SELECT statement cannot have an INTO clause.",
+        "Cursors must be declared before HANDLERs, but after local variables and CONDITIONs.",
+        "Parameters",
+        "From MariaDB 10.3.0, cursors can have parameters. This is a non-standard SQL extension. Cursor parameters can appear in any part of the DECLARE CURSOR select_statement where a stored procedure variable is allowed (select list, WHERE, HAVING, LIMIT etc).",
+        "IN",
+        "MariaDB starting with 10.8.0From MariaDB 10.8.0 preview release, the IN qualifier is supported in the cursor_format_parameter part of the syntax.\n",
+        "See Cursor Overview for an example."
+    ],
+    "Examples": [],
+    "Category": [
+        "Programmatic and Compound Statements"
+    ]
+}

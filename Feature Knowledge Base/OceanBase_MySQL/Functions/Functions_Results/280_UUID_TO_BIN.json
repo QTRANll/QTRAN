@@ -1,0 +1,35 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000000822955"
+    ],
+    "Title": [
+        "UUID_TO_BIN"
+    ],
+    "Feature": [
+        "UUID_TO_BIN(string_uuid), UUID_TO_BIN(string_uuid, swap_flag)\n"
+    ],
+    "Description": [
+        "UUID_TO_BIN() 将字符串 UUID 转换为二进制 UUID 并返回结果。有关字符串 UUID 格式的详细信息，请参见 **IS_UUID()**。 UUID_TO_BIN() 返回的二进制 UUID 是一个 VARBINARY(16) 值。如果 UUID 参数为 NULL，则返回值为 NULL。如果某一参数无效，则会发生报错。 UUID_TO_BIN() 的语法包括单参数和双参数两种形式，说明如下：",
+        "单参数形式指定字符串 UUID 值。二进制结果与字符串参数的顺序相同。",
+        "双参数形式指定字符串 UUID 值和 ",
+        "swap_flag",
+        " 值： \n    ",
+        "\n如果 swap_flag 为 0，则双参数形式等同于单参数形式，返回的二进制结果与字符串参数的顺序相同。\n如果 swap_flag 为 1，则返回值的格式是不同的，会将时间低和时间高部分（分别是十六进制数字的第一组和第三组）进行交换，即将变化较快的部分向右移动。如果结果存储在索引列中，可以提高索引的效率。\n",
+        "如果 ",
+        "swap_flag",
+        " 为 0，则双参数形式等同于单参数形式，返回的二进制结果与字符串参数的顺序相同。",
+        "如果 ",
+        "swap_flag",
+        " 为 1，则返回值的格式是不同的，会将时间低和时间高部分（分别是十六进制数字的第一组和第三组）进行交换，即将变化较快的部分向右移动。如果结果存储在索引列中，可以提高索引的效率。",
+        "时间部分的交换被假定为使用 UUID 版本 1 的值，例如由 UUID() 函数生成的值。对于不遵循版本 1 格式的其他方式生成的 UUID 值，时间部分的交换是不适用的。"
+    ],
+    "Examples": [
+        "SET @uuid = '6ccd780c-abcd-1026-9564-5b8c656024db';\n",
+        "obclient> SELECT HEX(UUID_TO_BIN(@uuid));\n+----------------------------------+\n| HEX(UUID_TO_BIN(@uuid))          |\n+----------------------------------+\n| 6CCD780CABCD102695645B8C656024DB |\n+----------------------------------+\n1 row in set\n\nobclient> SELECT HEX(UUID_TO_BIN(@uuid, 0));\n+----------------------------------+\n| HEX(UUID_TO_BIN(@uuid, 0))       |\n+----------------------------------+\n| 6CCD780CABCD102695645B8C656024DB |\n+----------------------------------+\n1 row in set\n\nobclient> SELECT HEX(UUID_TO_BIN(@uuid, 1));\n+----------------------------------+\n| HEX(UUID_TO_BIN(@uuid, 1))       |\n+----------------------------------+\n| 1026ABCD6CCD780C95645B8C656024DB |\n+----------------------------------+\n1 row in set\n",
+        "obclient> SELECT BIN_TO_UUID(UUID_TO_BIN(@uuid));\n+--------------------------------------+\n| BIN_TO_UUID(UUID_TO_BIN(@uuid))      |\n+--------------------------------------+\n| 6ccd780c-abcd-1026-9564-5b8c656024db |\n+--------------------------------------+\n1 row in set\n\nobclient> SELECT BIN_TO_UUID(UUID_TO_BIN(@uuid,0),0);\n+--------------------------------------+\n| BIN_TO_UUID(UUID_TO_BIN(@uuid,0),0)  |\n+--------------------------------------+\n| 6ccd780c-abcd-1026-9564-5b8c656024db |\n+--------------------------------------+\n1 row in set\n\nobclient> SELECT BIN_TO_UUID(UUID_TO_BIN(@uuid,1),1);\n+--------------------------------------+\n| BIN_TO_UUID(UUID_TO_BIN(@uuid,1),1)  |\n+--------------------------------------+\n| 6ccd780c-abcd-1026-9564-5b8c656024db |\n+--------------------------------------+\n1 row in set\n",
+        "obclient> SELECT BIN_TO_UUID(UUID_TO_BIN(@uuid,0),1);\n+--------------------------------------+\n| BIN_TO_UUID(UUID_TO_BIN(@uuid,0),1)  |\n+--------------------------------------+\n| abcd1026-780c-6ccd-9564-5b8c656024db |\n+--------------------------------------+\n1 row in set\n\nobclient> SELECT BIN_TO_UUID(UUID_TO_BIN(@uuid,1),0);\n+--------------------------------------+\n| BIN_TO_UUID(UUID_TO_BIN(@uuid,1),0)  |\n+--------------------------------------+\n| 1026abcd-6ccd-780c-9564-5b8c656024db |\n+--------------------------------------+\n1 row in set\n"
+    ],
+    "Category": [
+        "Miscellaneous Functions"
+    ]
+}

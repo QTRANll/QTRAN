@@ -1,0 +1,34 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/built-in-function-reference.html",
+        "https://dev.mysql.com/doc/refman/8.4/en/json-function-reference.html"
+    ],
+    "Title": [
+        "14.1 Built-In Function and Operator Reference",
+        "14.17.1 JSON Function Reference"
+    ],
+    "Feature": [
+        "JSON_REMOVE(json_doc,\n          path[,\n          path] ...)"
+    ],
+    "Description": [
+        "Remove data from JSON document",
+        "\nJSON_REMOVE(json_doc,\n          path[,\n          path] ...)\n",
+        "\n          Removes data from a JSON document and returns the result.\n          Returns NULL if any argument is\n          NULL. An error occurs if the\n          json_doc argument is not a valid\n          JSON document or any path argument\n          is not a valid path expression or is $ or\n          contains a * or **\n          wildcard.\n        ",
+        "\n          The path arguments are evaluated\n          left to right. The document produced by evaluating one path\n          becomes the new value against which the next path is\n          evaluated.\n        ",
+        "\n          It is not an error if the element to be removed does not exist\n          in the document; in that case, the path does not affect the\n          document.\n        ",
+        "Press CTRL+C to copy mysql> SET @j = '[\"a\", [\"b\", \"c\"], \"d\"]';\nmysql> SELECT JSON_REMOVE(@j, '$[1]');\n+-------------------------+\n| JSON_REMOVE(@j, '$[1]') |\n+-------------------------+\n| [\"a\", \"d\"]              |\n+-------------------------+"
+    ],
+    "Examples": [
+        "mysql> SET @j = '[\"a\", [\"b\", \"c\"], \"d\"]';\nmysql> SELECT JSON_REMOVE(@j, '$[1]');\n+-------------------------+\n| JSON_REMOVE(@j, '$[1]') |\n+-------------------------+\n| [\"a\", \"d\"]              |\n+-------------------------+"
+    ],
+    "Category": [
+        "Built-In Functions",
+        "JSON Functions"
+    ],
+    "Reference HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/json-modification-functions.html#function_json-remove"
+    ],
+    "Feature Type": [
+        "Function"
+    ]
+}

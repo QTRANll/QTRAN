@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/current/functions-textsearch.html"
+    ],
+    "Title": [
+        "ts_debug"
+    ],
+    "Feature": [
+        "ts_debug ( [ config regconfig, ] document text ) → setof record ( alias text, description text, token text, dictionaries regdictionary[], dictionary regdictionary, lexemes text[] )"
+    ],
+    "Description": [
+        "Extracts and normalizes tokens from the document according to the specified or default text search configuration, and returns information about how each token was processed. See Section 12.8.1 for details."
+    ],
+    "Examples": [
+        "ts_debug('english', 'The Brightest supernovaes') → (asciiword,\"Word, all ASCII\",The,{english_stem},english_stem,{}) ..."
+    ],
+    "Category": [
+        "Text Search Functions and Operators"
+    ]
+}

@@ -1,0 +1,23 @@
+{
+    "HTML": [
+        "https://docs.pingcap.com/zh/tidb/stable/json-functions-search#json_overlaps"
+    ],
+    "Title": [
+        "JSON_OVERLAPS()"
+    ],
+    "Feature": [
+        "JSON_OVERLAPS()"
+    ],
+    "Description": [
+        "JSON_OVERLAPS()",
+        "JSON_OVERLAPS(json_doc, json_doc) \u51fd\u6570\u68c0\u67e5\u4e24\u4e2a JSON \u6587\u6863\u662f\u5426\u6709\u91cd\u53e0\u90e8\u5206\u3002\u5982\u679c\u6709\u91cd\u53e0\uff0c\u5219\u8fd4\u56de 1\uff0c\u5982\u679c\u6ca1\u6709\u91cd\u53e0\uff0c\u5219\u8fd4\u56de 0\u3002\u5982\u679c\u4efb\u4e00\u53c2\u6570\u4e3a NULL\uff0c\u5219\u8fd4\u56de NULL\u3002"
+    ],
+    "Examples": [
+        "SELECT JSON_OVERLAPS(\n    '{\"languages\": [\"Go\",\"Rust\",\"C#\"]}',\n    '{\"languages\": [\"Go\",\"Rust\"]}'\n) AS 'Overlaps';\n",
+        "SELECT JSON_OVERLAPS(\n    '{\"languages\": [\"Go\",\"Rust\",\"C#\"]}',\n    '{\"languages\": [\"Go\",\"Rust\",\"C#\"]}'\n) AS 'Overlaps';\n",
+        "SELECT JSON_OVERLAPS(\n    '{\"languages\": [\"Go\",\"Rust\",\"C#\"]}',\n    '{\"languages\": [\"Go\",\"Rust\",\"C#\"], \"arch\": [\"arm64\"]}'\n) AS 'Overlaps';\n"
+    ],
+    "Category": [
+        "JSON Functions"
+    ]
+}

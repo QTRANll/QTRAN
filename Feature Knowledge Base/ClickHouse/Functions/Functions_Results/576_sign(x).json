@@ -1,0 +1,30 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/math-functions"
+    ],
+    "Title": [
+        "sign"
+    ],
+    "Feature": [
+        "sign(x)"
+    ],
+    "Description": [
+        "sign",
+        "Returns the sign of a real number.",
+        "Syntax",
+        "sign(x)",
+        "Arguments",
+        "x \u2014 Values from \u2212\u221e-\\infty\u2212\u221e to +\u221e+\\infty+\u221e. Supports all numeric types in ClickHouse.",
+        "Returned value",
+        "-1 for x < 00 for x = 01 for x > 0",
+        "Type: Int8."
+    ],
+    "Examples": [
+        "SELECT sign(0);",
+        "SELECT sign(1);",
+        "SELECT sign(-1);"
+    ],
+    "Category": [
+        "Mathematical Functions"
+    ]
+}

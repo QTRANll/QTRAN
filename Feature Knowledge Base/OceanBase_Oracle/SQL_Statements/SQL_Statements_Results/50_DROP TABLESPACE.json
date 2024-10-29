@@ -1,0 +1,21 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000001054355"
+    ],
+    "Title": [
+        "DROP TABLESPACE"
+    ],
+    "Feature": [
+        "DROP TABLESPACE tablespace_name;\n"
+    ],
+    "Description": [
+        "该语句用来删除 TableSpace 逻辑对象，仅在 TableSpace下没有表时可以删除成功。",
+        "\n\n\n参数\n描述\n\n\n\n\ntablespace_name\n指定要删除的 TableSpace 名称。\n\n\n"
+    ],
+    "Examples": [
+        "obclient>  DROP TABLESPACE tblspace1;\nQuery OK, 0 rows affected\n"
+    ],
+    "Category": [
+        "DDL"
+    ]
+}

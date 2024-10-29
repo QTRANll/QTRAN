@@ -1,0 +1,21 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/geomfromwkb/"
+    ],
+    "Title": [
+        "ST_GeomFromWKB"
+    ],
+    "Feature": [
+        "ST_GeomFromWKB(wkb[,srid])\nST_GeometryFromWKB(wkb[,srid])\nGeomFromWKB(wkb[,srid])\nGeometryFromWKB(wkb[,srid])\n"
+    ],
+    "Description": [
+        "Constructs a geometry value of any type using its WKB  representation and SRID.",
+        "ST_GeomFromWKB(), ST_GeometryFromWKB(), GeomFromWKB() and GeometryFromWKB() are synonyms."
+    ],
+    "Examples": [
+        "SELECT ST_AsText(ST_GeomFromWKB(@g));"
+    ],
+    "Category": [
+        "Geographic Functions"
+    ]
+}

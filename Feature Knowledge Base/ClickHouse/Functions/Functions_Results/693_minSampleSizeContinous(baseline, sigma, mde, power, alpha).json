@@ -1,0 +1,30 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/other-functions"
+    ],
+    "Title": [
+        "minSampleSizeContinuous"
+    ],
+    "Feature": [
+        "minSampleSizeContinous(baseline, sigma, mde, power, alpha)"
+    ],
+    "Description": [
+        "minSampleSizeContinuous",
+        "Calculates minimum required sample size for an A/B test comparing means of a continuous metric in two samples.",
+        "Syntax",
+        "minSampleSizeContinous(baseline, sigma, mde, power, alpha)",
+        "Alias: minSampleSizeContinous",
+        "Uses the formula described in this article. Assumes equal sizes of treatment and control groups. Returns the required sample size for one group (i.e. the sample size required for the whole experiment is twice the returned value). Also assumes equal variance of the test metric in treatment and control groups.",
+        "Arguments",
+        "baseline \u2014 Baseline value of a metric. Integer or Float.sigma \u2014 Baseline standard deviation of a metric. Integer or Float.mde \u2014 Minimum detectable effect (MDE) as percentage of the baseline value (e.g. for a baseline value 112.25 the MDE 0.03 means an expected change to 112.25 \u00b1 112.25*0.03). Integer or Float.power \u2014 Required statistical power of a test (1 - probability of Type II error). Integer or Float.alpha \u2014 Required significance level of a test (probability of Type I error). Integer or Float.",
+        "Returned value",
+        "A named Tuple with 3 elements:",
+        "\"minimum_sample_size\" \u2014 Required sample size. Float64.\"detect_range_lower\" \u2014 Lower bound of the range of values not detectable with the returned required sample size (i.e. all values less than or equal to \"detect_range_lower\" are detectable with the provided alpha and power). Calculated as baseline * (1 - mde). Float64.\"detect_range_upper\" \u2014 Upper bound of the range of values not detectable with the returned required sample size (i.e. all values greater than or equal to \"detect_range_upper\" are detectable with the provided alpha and power). Calculated as baseline * (1 + mde). Float64."
+    ],
+    "Examples": [
+        "SELECT minSampleSizeContinous(112.25, 21.1, 0.03, 0.80, 0.05) AS sample_size;"
+    ],
+    "Category": [
+        "Other Functions"
+    ]
+}

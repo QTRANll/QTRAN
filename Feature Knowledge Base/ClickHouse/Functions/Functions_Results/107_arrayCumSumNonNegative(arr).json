@@ -1,0 +1,31 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/array-functions"
+    ],
+    "Title": [
+        "arrayCumSumNonNegative([func,] arr1, ...)"
+    ],
+    "Feature": [
+        "arrayCumSumNonNegative(arr)"
+    ],
+    "Description": [
+        "arrayCumSumNonNegative([func,] arr1, ...)",
+        "Same as arrayCumSum, returns an array of the partial (running) sums of the elements in the source array. If func is specified, then the sum is computed from applying func to arr1, arr2, ..., arrN, i.e. func(arr1[i], ..., arrN[i]). Unlike arrayCumSum, if the current running sum is smaller than 0, it is replaced by 0.",
+        "Syntax",
+        "arrayCumSumNonNegative(arr)",
+        "Arguments",
+        "arr \u2014 Array of numeric values.",
+        "Returned value",
+        "Returns an array of non-negative partial sums of elements in the source array. UInt*, Int*, Float*.",
+        "SELECT arrayCumSumNonNegative([1, 1, -4, 1]) AS res",
+        "\u250c\u2500res\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\u2502 [1,2,0,1] \u2502\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518",
+        "Note that the arraySumNonNegative is a higher-order function. You can pass a lambda function to it as the first argument."
+    ],
+    "Examples": [
+        "arrayCumSumNonNegative(arr)",
+        "SELECT arrayCumSumNonNegative([1, 1, -4, 1]) AS res"
+    ],
+    "Category": [
+        "Arrays Functions"
+    ]
+}

@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/current/functions-json.html"
+    ],
+    "Title": [
+        "+ number"
+    ],
+    "Feature": [
+        "+ number → number"
+    ],
+    "Description": [
+        "Unary plus (no operation); unlike addition, this can iterate over multiple values"
+    ],
+    "Examples": [
+        "jsonb_path_query_array('{\"x\": [2,3,4]}', '+ $.x') → [2, 3, 4]"
+    ],
+    "Category": [
+        "JSON Functions and Operators"
+    ]
+}

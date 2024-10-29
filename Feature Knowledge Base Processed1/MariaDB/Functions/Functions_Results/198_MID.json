@@ -1,0 +1,22 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/mid/"
+    ],
+    "Title": [
+        "MID"
+    ],
+    "Feature": [
+        "MID(str,pos,len)\n"
+    ],
+    "Description": [
+        "MID(str,pos,len) is a synonym for SUBSTRING(str,pos,len)."
+    ],
+    "Examples": [
+        "SELECT MID('abcd',4,1);",
+        "SELECT MID('abcd',2,2);",
+        "SELECT MID('abcd',-2,4);"
+    ],
+    "Category": [
+        "String Functions"
+    ]
+}

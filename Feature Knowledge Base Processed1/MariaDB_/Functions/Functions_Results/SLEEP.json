@@ -1,0 +1,34 @@
+{
+    "HTML": "https://mariadb.com//kb/en/sleep/",
+    "Title": "SLEEP",
+    "Feature": [
+        "SLEEP(duration)\n"
+    ],
+    "Description": [
+        "Sleeps (pauses) for the number of seconds given by the duration argument, then\nreturns 0. If SLEEP() is interrupted, it\nreturns 1. The duration may have a fractional part given in\nmicroseconds.",
+        "Statements using the SLEEP() function are not safe for statement-based replication."
+    ],
+    "Examples": [
+        "SELECT SLEEP(5.5);\n+------------+\n| SLEEP(5.5) |\n+------------+\n|          0 |\n+------------+\n1 row in set (5.50 sec)\n"
+    ],
+    "Category": [
+        "Miscellaneous Functions"
+    ],
+    "Effective SQLs Refined": [
+        "SELECT SLEEP(5.5);"
+    ],
+    "Ineffective SQLs Refined": [],
+    "Wrong Messages from Ineffective SQLs Refined": [],
+    "SQLs Generated1": [],
+    "SQLs Generated Costs1": [],
+    "SQLs Generated ExecResults1": [],
+    "SQLs Generated ExecTimes1": [],
+    "SQLs Generated ErrorMessages1": [],
+    "Effective SQLs Generated1": [],
+    "SQLs Generated2": [],
+    "SQLs Generated Costs2": [],
+    "SQLs Generated ExecResults2": [],
+    "SQLs Generated ExecTimes2": [],
+    "SQLs Generated ErrorMessages2": [],
+    "Effective SQLs Generated2": []
+}

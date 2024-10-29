@@ -1,0 +1,26 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/subquery-errors.html"
+    ],
+    "Title": [
+        "15.2.15.10 Subquery Errors"
+    ],
+    "Feature": [
+        "SELECT * FROM t1 WHERE s1 IN (SELECT s2 FROM t2 ORDER BY s1 LIMIT 1)"
+    ],
+    "Description": [
+        "\n        There are some errors that apply only to subqueries. This\n        section describes them.\n",
+        "\n\n            Unsupported subquery syntax:\n          Press CTRL+C to copy ERROR 1235 (ER_NOT_SUPPORTED_YET)\nSQLSTATE = 42000\nMessage = \"This version of MySQL doesn't yet support\n'LIMIT & IN/ALL/ANY/SOME subquery'\"\n            This means that MySQL does not support statements like the\n            following:\n          Press CTRL+C to copy SELECT * FROM t1 WHERE s1 IN (SELECT s2 FROM t2 ORDER BY s1 LIMIT 1)\n            Incorrect number of columns from subquery:\n          Press CTRL+C to copy ERROR 1241 (ER_OPERAND_COL)\nSQLSTATE = 21000\nMessage = \"Operand should contain 1 column(s)\"\n            This error occurs in cases like this:\n          Press CTRL+C to copy SELECT (SELECT column1, column2 FROM t2) FROM t1;\n            You may use a subquery that returns multiple columns, if the\n            purpose is row comparison. In other contexts, the subquery\n            must be a scalar operand. See\n            Section\u00a015.2.15.5, \u201cRow Subqueries\u201d.\n          \n            Incorrect number of rows from subquery:\n          Press CTRL+C to copy ERROR 1242 (ER_SUBSELECT_NO_1_ROW)\nSQLSTATE = 21000\nMessage = \"Subquery returns more than 1 row\"\n            This error occurs for statements where the subquery must\n            return at most one row but returns multiple rows. Consider\n            the following example:\n          Press CTRL+C to copy SELECT * FROM t1 WHERE column1 = (SELECT column1 FROM t2);\n            If SELECT column1 FROM t2 returns just\n            one row, the previous query works. If the subquery returns\n            more than one row, error 1242 occurs. In that case, the\n            query should be rewritten as:\n          Press CTRL+C to copy SELECT * FROM t1 WHERE column1 = ANY (SELECT column1 FROM t2);\n            Incorrectly used table in subquery:\n          Press CTRL+C to copy Error 1093 (ER_UPDATE_TABLE_USED)\nSQLSTATE = HY000\nMessage = \"You can't specify target table 'x'\nfor update in FROM clause\"\n            This error occurs in cases such as the following, which\n            attempts to modify a table and select from the same table in\n            the subquery:\n          Press CTRL+C to copy UPDATE t1 SET column2 = (SELECT MAX(column1) FROM t1);\n            You can use a common table expression or derived table to\n            work around this. See\n            Section\u00a015.2.15.12, \u201cRestrictions on Subqueries\u201d.\n\n",
+        "\n        All of the errors described in this section also apply when\n        using TABLE in subqueries.\n      ",
+        "\n        For transactional storage engines, the failure of a subquery\n        causes the entire statement to fail. For nontransactional\n        storage engines, data modifications made before the error was\n        encountered are preserved.\n"
+    ],
+    "Examples": [
+        "SELECT (SELECT column1, column2 FROM t2) FROM t1;",
+        "SELECT * FROM t1 WHERE column1 = (SELECT column1 FROM t2);",
+        "SELECT * FROM t1 WHERE column1 = ANY (SELECT column1 FROM t2);",
+        "UPDATE t1 SET column2 = (SELECT MAX(column1) FROM t1);"
+    ],
+    "Category": [
+        "Data Manipulation Statements"
+    ]
+}

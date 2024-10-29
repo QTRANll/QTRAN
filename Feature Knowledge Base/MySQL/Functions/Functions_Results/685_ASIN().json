@@ -1,0 +1,34 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/built-in-function-reference.html",
+        "https://dev.mysql.com/doc/refman/8.4/en/numeric-functions.html",
+        "https://dev.mysql.com/doc/refman/8.4/en/mathematical-functions.html"
+    ],
+    "Title": [
+        "14.1 Built-In Function and Operator Reference",
+        "14.6 Numeric Functions and Operators",
+        "14.6.2 Mathematical Functions"
+    ],
+    "Feature": [
+        "ASIN(X)"
+    ],
+    "Description": [
+        "Return the arc sine",
+        "\nASIN(X)\n",
+        "\n            Returns the arc sine of X, that\n            is, the value whose sine is X.\n            Returns NULL if\n            X is not in the range\n            -1 to 1, or if\n            X is NULL.\n          ",
+        "Press CTRL+C to copy mysql> SELECT ASIN(0.2);\n        -> 0.20135792079033\nmysql> SELECT ASIN('foo');\n\n+-------------+\n| ASIN('foo') |\n+-------------+\n|           0 |\n+-------------+\n1 row in set, 1 warning (0.00 sec)\n\nmysql> SHOW WARNINGS;\n+---------+------+-----------------------------------------+\n| Level   | Code | Message                                 |\n+---------+------+-----------------------------------------+\n| Warning | 1292 | Truncated incorrect DOUBLE value: 'foo' |\n+---------+------+-----------------------------------------+"
+    ],
+    "Examples": [
+        "mysql> SELECT ASIN(0.2);\n        -> 0.20135792079033\nmysql> SELECT ASIN('foo');\n\n+-------------+\n| ASIN('foo') |\n+-------------+\n|           0 |\n+-------------+\n1 row in set, 1 warning (0.00 sec)\n\nmysql> SHOW WARNINGS;\n+---------+------+-----------------------------------------+\n| Level   | Code | Message                                 |\n+---------+------+-----------------------------------------+\n| Warning | 1292 | Truncated incorrect DOUBLE value: 'foo' |\n+---------+------+-----------------------------------------+"
+    ],
+    "Category": [
+        "Built-In Functions",
+        "Mathematical Functions"
+    ],
+    "Reference HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/mathematical-functions.html#function_asin"
+    ],
+    "Feature Type": [
+        "Function"
+    ]
+}

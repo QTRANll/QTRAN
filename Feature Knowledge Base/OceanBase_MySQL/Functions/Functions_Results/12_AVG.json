@@ -1,0 +1,21 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000000823021"
+    ],
+    "Title": [
+        "AVG"
+    ],
+    "Feature": [
+        "AVG([DISTINCT | ALL] expr)\n"
+    ],
+    "Description": [
+        "返回指定组中的平均值，空值被忽略。DISTINCT 选项可用于返回 expr 的不同值的平均值。如果找不到匹配的行，则 AVG() 返回 NULL。"
+    ],
+    "Examples": [
+        "obclient> SELECT * FROM oceanbasetest;\n+----+------+------+\n| id | ip   | ip2  |\n+----+------+------+\n|  1 |    4 | NULL |\n|  3 |    3 | NULL |\n|  4 |    3 | NULL |\n+----+------+------+\n3 rows in set\n\nobclient> SELECT avg(ip2), avg(ip), avg(distinct(ip)) FROM oceanbasetest;\n+----------+---------+-------------------+\n| avg(ip2) | avg(ip) | avg(distinct(ip)) |\n+----------+---------+-------------------+\n|     NULL |  3.3333 |            3.5000 |\n+----------+---------+-------------------+\n1 row in set\n\nobclient> SELECT avg(distinct(ip)),avg(ip),avg(ip2) FROM oceanbasetest;\n+-------------------+---------+----------+\n| avg(distinct(ip)) | avg(ip) | avg(ip2) |\n+-------------------+---------+----------+\n|            3.5000 |  3.3333 |     NULL |\n+-------------------+---------+----------+\n1 row in set\n"
+    ],
+    "Category": [
+        "Aggregate Functions",
+        "Analysis Functions"
+    ]
+}

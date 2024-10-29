@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/mbrdisjoint/"
+    ],
+    "Title": [
+        "MBRDisjoint"
+    ],
+    "Feature": [
+        "MBRDisjoint(g1,g2)\n"
+    ],
+    "Description": [
+        "Returns 1 or 0 to indicate whether the Minimum Bounding Rectangles of the two geometries g1 and g2 are disjoint. Two geometries are disjoint if they do not intersect, that is touch or overlap."
+    ],
+    "Examples": [
+        "SELECT mbrdisjoint(@g1,@g2);"
+    ],
+    "Category": [
+        "Geographic Functions"
+    ]
+}

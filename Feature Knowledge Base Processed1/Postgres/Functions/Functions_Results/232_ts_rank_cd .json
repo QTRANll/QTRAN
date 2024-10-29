@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/current/functions-textsearch.html"
+    ],
+    "Title": [
+        "ts_rank_cd"
+    ],
+    "Feature": [
+        "ts_rank_cd ( [ weights real[], ] vector tsvector, query tsquery [, normalization integer ] ) → real"
+    ],
+    "Description": [
+        "Computes a score showing how well the vector matches the query, using a cover density algorithm. See Section 12.3.3 for details."
+    ],
+    "Examples": [
+        "ts_rank_cd(to_tsvector('raining cats and dogs'), 'cat') → 0.1"
+    ],
+    "Category": [
+        "Text Search Functions and Operators"
+    ]
+}

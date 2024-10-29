@@ -1,0 +1,27 @@
+{
+    "HTML": [
+        "https://docs.pingcap.com//zh/tidb/stable/sql-statement-create-view"
+    ],
+    "Title": [
+        "CREATE VIEW"
+    ],
+    "Feature": [
+        "CreateViewStmt ::=\n    'CREATE' OrReplace ViewAlgorithm ViewDefiner ViewSQLSecurity 'VIEW' ViewName ViewFieldList 'AS' CreateViewSelectOpt ViewCheckOption\n\nOrReplace ::=\n    ( 'OR' 'REPLACE' )?\n\nViewAlgorithm ::=\n    ( 'ALGORITHM' '=' ( 'UNDEFINED' | 'MERGE' | 'TEMPTABLE' ) )?\n\nViewDefiner ::=\n    ( 'DEFINER' '=' Username )?\n\nViewSQLSecurity ::=\n    ( 'SQL' 'SECURITY' ( 'DEFINER' | 'INVOKER' ) )?\n\nViewName ::= TableName\n\nViewFieldList ::=\n    ( '(' Identifier ( ',' Identifier )* ')' )?\n\nViewCheckOption ::=\n    ( 'WITH' ( 'CASCADED' | 'LOCAL' ) 'CHECK' 'OPTION' )?\n"
+    ],
+    "Description": [
+        "\u4f7f\u7528 CREATE VIEW \u8bed\u53e5\u5c06 SELECT \u8bed\u53e5\u4fdd\u5b58\u4e3a\u7c7b\u4f3c\u4e8e\u8868\u7684\u53ef\u67e5\u8be2\u5bf9\u8c61\u3002TiDB \u4e2d\u7684\u89c6\u56fe\u662f\u975e\u7269\u5316\u7684\uff0c\u8fd9\u610f\u5473\u7740\u5728\u67e5\u8be2\u89c6\u56fe\u65f6\uff0cTiDB \u5c06\u5728\u5185\u90e8\u91cd\u5199\u67e5\u8be2\uff0c\u4ee5\u5c06\u89c6\u56fe\u5b9a\u4e49\u4e0e SQL \u67e5\u8be2\u7ed3\u5408\u8d77\u6765\u3002"
+    ],
+    "Examples": [
+        "CREATE TABLE t1 (id INT NOT NULL PRIMARY KEY AUTO_INCREMENT, c1 INT NOT NULL);\n",
+        "INSERT INTO t1 (c1) VALUES (1),(2),(3),(4),(5);\n",
+        "CREATE VIEW v1 AS SELECT * FROM t1 WHERE c1 > 2;\n",
+        "SELECT * FROM t1;\n",
+        "SELECT * FROM v1;\n",
+        "INSERT INTO t1 (c1) VALUES (6);\n",
+        "SELECT * FROM v1;\n",
+        "INSERT INTO v1 (c1) VALUES (7);\n"
+    ],
+    "Category": [
+        "Schema \u7ba1\u7406\u4e0e\u6570\u636e\u5b9a\u4e49\u8bed\u53e5 (DDL)"
+    ]
+}

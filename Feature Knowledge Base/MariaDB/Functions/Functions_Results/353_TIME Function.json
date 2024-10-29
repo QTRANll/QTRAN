@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/time-function/"
+    ],
+    "Title": [
+        "TIME Function"
+    ],
+    "Feature": [
+        "TIME(expr)\n"
+    ],
+    "Description": [
+        "Extracts the time part of the time or datetime expression expr and\nreturns it as a string."
+    ],
+    "Examples": [
+        "SELECT TIME('2003-12-31 01:02:03');\n+-----------------------------+\n| TIME('2003-12-31 01:02:03') |\n+-----------------------------+\n| 01:02:03                    |\n+-----------------------------+\n\nSELECT TIME('2003-12-31 01:02:03.000123');\n+------------------------------------+\n| TIME('2003-12-31 01:02:03.000123') |\n+------------------------------------+\n| 01:02:03.000123                    |\n+------------------------------------+\n"
+    ],
+    "Category": [
+        "Date & Time Functions"
+    ]
+}

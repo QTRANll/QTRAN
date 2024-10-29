@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/current/functions-array.html"
+    ],
+    "Title": [
+        "anycompatible || anycompatiblearray"
+    ],
+    "Feature": [
+        "anycompatible || anycompatiblearray → anycompatiblearray"
+    ],
+    "Description": [
+        "Concatenates an element onto the front of an array (which must be empty or one-dimensional)."
+    ],
+    "Examples": [
+        "3 || ARRAY[4,5,6] → {3,4,5,6}"
+    ],
+    "Category": [
+        "Array Functions and Operators"
+    ]
+}

@@ -1,0 +1,26 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000000823210"
+    ],
+    "Title": [
+        "LEAST"
+    ],
+    "Feature": [
+        "LEAST(expr [, expr ]...)\n"
+    ],
+    "Description": [
+        "该函数返回一个或多个表达式列表中的最小值。",
+        "参数 expr 是一个表达式或多个表达式的列表。数据类型可以是 NUMBER、FLOAT、BINARY_FLOAT、BINARY_DOUBLE、CHAR、VARCHAR2、NCHAR、NVARCHAR2或 CLOB。",
+        "数据库使用第一个参数 expr 来确定返回类型。如果其余参数的数据类型和第一个参数 expr 的数据类型不同，则数据库将第一个参数 expr 之后的每个参数隐式转换为第一个 expr 的数据类型。",
+        "如果第一个参数 expr 的数据类型为 NUMBER、FLOAT、BINARY_FLOAT 或 BINARY_DOUBLE，则返回与第一个参数 expr 相同的数据类型。",
+        "如果第一个参数 expr 的数据类型为 CHAR、VARCHAR2 或 CLOB，则返回 VARCHAR2 类型。",
+        "如果第一个参数 expr 的数据类型为 NCHAR 或 NVARCHAR2，则返回 NVARCHAR2 类型。"
+    ],
+    "Examples": [
+        "obclient> SELECT LEAST('AC','BB','C') \"MIN\" FROM DUAL;\n+-----+\n| MIN |\n+-----+\n| AC  |\n+-----+\n1 row in set\n",
+        "obclient> SELECT LEAST (1,'6','5.555') \"MIN\" FROM DUAL;\n+-----+\n| MIN |\n+-----+\n|   1 |\n+-----+\n1 row in set\n"
+    ],
+    "Category": [
+        "General Comparison Functions"
+    ]
+}

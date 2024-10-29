@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/current/functions-net.html"
+    ],
+    "Title": [
+        "set_masklen"
+    ],
+    "Feature": [
+        "set_masklen ( cidr, integer ) → cidr"
+    ],
+    "Description": [
+        "Sets the netmask length for a cidr value. Address bits to the right of the new netmask are set to zero."
+    ],
+    "Examples": [
+        "set_masklen(cidr '192.168.1.0/24', 16) → 192.168.0.0/16"
+    ],
+    "Category": [
+        "Network Address Functions and Operators"
+    ]
+}

@@ -1,0 +1,31 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/loadable-function-reference.html"
+    ],
+    "Title": [
+        "14.2 Loadable Function Reference"
+    ],
+    "Feature": [
+        "set_firewall_mode(user,\n              mode)"
+    ],
+    "Description": [
+        "Establish firewall account profile operational mode",
+        "\nset_firewall_mode(user,\n              mode)\n",
+        "\n              This function manages the account profile cache and\n              establishes the profile operational mode. It requires the\n              FIREWALL_ADMIN privilege or\n              the deprecated SUPER\n              privilege.\n            ",
+        "\n              Example:\n            ",
+        "Press CTRL+C to copy SELECT set_firewall_mode('fwuser@localhost', 'RECORDING');",
+        "\n              This function is deprecated, and subject to removal in a\n              future MySQL version. See\n              Migrating Account Profiles to Group Profiles.\n"
+    ],
+    "Examples": [
+        "SELECT set_firewall_mode('fwuser@localhost', 'RECORDING');"
+    ],
+    "Category": [
+        "Loadable Functions"
+    ],
+    "Reference HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/firewall-reference.html#function_set-firewall-mode"
+    ],
+    "Feature Type": [
+        "Function"
+    ]
+}

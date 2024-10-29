@@ -1,0 +1,26 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000000823434"
+    ],
+    "Title": [
+        "CHAR"
+    ],
+    "Feature": [
+        "CHAR(value1,... [USING charset_name])\n"
+    ],
+    "Description": [
+        "将每个参数转换为整数，并返回由这些整数的代码值所给出的字符组成的字符串，并跳过 NULL 值。",
+        "此外，如果参数大于 255，则会将该参数被转换为多个结果字节。例如，CHAR(256) 等价于 CHAR(1,0)，CHAR(256*256) 等价于 CHAR(1,0,0)。",
+        "默认情况下，CHAR() 返回的字符串的字符集是 binary，您可以通过 USING 子句来指定返回的字符集。",
+        "obclient> select CHARSET(char('')), CHARSET(char('' USING utf8mb4));\n+-------------------+---------------------------------+\n| CHARSET(char('')) | CHARSET(char('' USING utf8mb4)) |\n+-------------------+---------------------------------+\n| binary            | utf8mb4                         |\n+-------------------+---------------------------------+\n1 row in set\n",
+        "如果返回的值在指定的字符集中是非法的，则会抛出一个 WARNING 提示。特别地，如果 sql_mode 设置为 STRICT_ALL_TABLES 或 STRICT_TRANS_TABLES 时，如果返回的值在指定的字符集中非法，则会返回 NULL。",
+        "有关 sql_mode 的详细信息，请参见 sql_mode。",
+        "obclient> SET SESSION sql_mode='STRICT_ALL_TABLES';\nobclient> SELECT CHAR(399 USING utf8);\n+----------------------+\n| CHAR(399 USING utf8) |\n+----------------------+\n| NULL                 |\n+----------------------+\n1 row in set, 1 warning\n"
+    ],
+    "Examples": [
+        "obclient> SELECT CHAR(79,99,101,97,110,66,97.4,115,'101');\n+------------------------------------------+\n| CHAR(79,99,101,97,110,66,97.4,115,'101') |\n+------------------------------------------+\n| OceanBase                                |\n+------------------------------------------+\n1 row in set\n"
+    ],
+    "Category": [
+        "String Functions"
+    ]
+}

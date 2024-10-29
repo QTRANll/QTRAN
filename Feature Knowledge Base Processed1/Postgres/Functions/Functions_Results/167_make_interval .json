@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/current/functions-datetime.html"
+    ],
+    "Title": [
+        "make_interval"
+    ],
+    "Feature": [
+        "make_interval ( [ years int [, months int [, weeks int [, days int [, hours int [, mins int [, secs double precision ]]]]]]] ) → interval"
+    ],
+    "Description": [
+        "Create interval from years, months, weeks, days, hours, minutes and seconds fields, each of which can default to zero"
+    ],
+    "Examples": [
+        "make_interval(days => 10) → 10 days"
+    ],
+    "Category": [
+        "Date divide Time Functions and Operators"
+    ]
+}

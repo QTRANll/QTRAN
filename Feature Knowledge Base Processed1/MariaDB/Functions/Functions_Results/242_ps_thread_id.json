@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/ps_thread_id/"
+    ],
+    "Title": [
+        "ps_thread_id"
+    ],
+    "Feature": [
+        "sys.ps_thread_id(connection_id)\n"
+    ],
+    "Description": [
+        "ps_thread_id is a stored function available with the Sys Schema that returns the thread_id associated with the given connection_id. If the connection_id is NULL, returns the thread_id for the current connection. "
+    ],
+    "Examples": [
+        "SELECT sys.ps_thread_id(NULL);"
+    ],
+    "Category": [
+        "No Category"
+    ]
+}

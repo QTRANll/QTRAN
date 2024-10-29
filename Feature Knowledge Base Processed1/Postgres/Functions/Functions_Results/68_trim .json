@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/current/functions-string.html"
+    ],
+    "Title": [
+        "trim"
+    ],
+    "Feature": [
+        "trim ( [ LEADING | TRAILING | BOTH ] [ FROM ] string text [, characters text ] ) → text"
+    ],
+    "Description": [
+        "This is a non-standard syntax for trim()."
+    ],
+    "Examples": [
+        "trim(both from 'yxTomxx', 'xyz') → Tom"
+    ],
+    "Category": [
+        "String Functions and Operators"
+    ]
+}

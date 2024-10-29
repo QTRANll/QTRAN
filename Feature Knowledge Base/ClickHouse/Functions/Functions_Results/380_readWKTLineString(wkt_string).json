@@ -1,0 +1,27 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/geo/polygons"
+    ],
+    "Title": [
+        "readWKTLineString"
+    ],
+    "Feature": [
+        "readWKTLineString(wkt_string)"
+    ],
+    "Description": [
+        "readWKTLineString",
+        "Parses a Well-Known Text (WKT) representation of a LineString geometry and returns it in the internal ClickHouse format.",
+        "Syntax",
+        "readWKTLineString(wkt_string)",
+        "Arguments",
+        "wkt_string: The input WKT string representing a LineString geometry.",
+        "Returned value",
+        "The function returns a ClickHouse internal representation of the linestring geometry."
+    ],
+    "Examples": [
+        "SELECT readWKTLineString('LINESTRING (1 1, 2 2, 3 3, 1 1)');"
+    ],
+    "Category": [
+        "Geo Functions"
+    ]
+}

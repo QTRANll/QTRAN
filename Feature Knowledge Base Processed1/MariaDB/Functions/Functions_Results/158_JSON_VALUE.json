@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/json_value/"
+    ],
+    "Title": [
+        "JSON_VALUE"
+    ],
+    "Feature": [
+        "JSON_VALUE(json_doc, path)\n"
+    ],
+    "Description": [
+        "Given a JSON document, returns the scalar specified by the path. Returns NULL if not given a valid JSON document, or if there is no match."
+    ],
+    "Examples": [
+        "SELECT JSON_VALUE(@json,'$.key1') AS Name , json_value(@json,'$.key2') as ID;"
+    ],
+    "Category": [
+        "JSON Functions"
+    ]
+}

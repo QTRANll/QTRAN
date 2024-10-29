@@ -1,0 +1,28 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/other-functions"
+    ],
+    "Title": [
+        "replicate"
+    ],
+    "Feature": [
+        "replicate(x, arr)"
+    ],
+    "Description": [
+        "replicate",
+        "Creates an array with a single value.",
+        "NoteThis function is used for the internal implementation of arrayJoin.",
+        "Syntax",
+        "replicate(x, arr)",
+        "Arguments",
+        "x \u2014 The value to fill the result array with.arr \u2014 An array. Array.",
+        "Returned value",
+        "An array of the lame length as arr filled with value x. Array."
+    ],
+    "Examples": [
+        "SELECT replicate(1, ['a', 'b', 'c']);"
+    ],
+    "Category": [
+        "Other Functions"
+    ]
+}

@@ -1,0 +1,23 @@
+{
+    "HTML": [
+        "https://sqlite.org/lang_expr.html"
+    ],
+    "Title": [
+        "SQL Language Expressions"
+    ],
+    "Feature": [
+        "AND"
+    ],
+    "Description": [
+        "The AND operator is used to combine two or more boolean expressions. It returns true if all expressions evaluate to true; otherwise, it returns false.",
+        "Parameters: Two or more boolean expressions.",
+        "Returns: True if all expressions are true; otherwise, false."
+    ],
+    "Examples": [
+        "SELECT * FROM orders WHERE status = 'shipped' AND order_date > '2024-01-01'; -- Finds orders that are shipped and placed after January 1, 2024",
+        "SELECT * FROM employees WHERE department_id = 1 AND salary > 50000; -- Finds employees in department 1 with a salary above 50,000"
+    ],
+    "Category": [
+        "Operators"
+    ]
+}

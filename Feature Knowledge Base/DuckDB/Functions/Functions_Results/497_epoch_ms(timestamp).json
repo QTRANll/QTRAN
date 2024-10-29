@@ -1,0 +1,22 @@
+{
+    "HTML": [
+        "https://duckdb.org/docs/sql/functions/timestamp"
+    ],
+    "Title": [
+        "epoch_ms(timestamp)"
+    ],
+    "Feature": [
+        "epoch_ms(timestamp)"
+    ],
+    "Description": [
+        "Return the total number of milliseconds since the epoch.",
+        "Converts a timestamp to milliseconds since the epoch."
+    ],
+    "Examples": [
+        "epoch_ms('2022-11-07 08:43:04.123456'::TIMESTAMP);",
+        "epoch_ms(timestamp '2021-08-03 11:59:44.123456')"
+    ],
+    "Category": [
+        "Timestamp Functions"
+    ]
+}

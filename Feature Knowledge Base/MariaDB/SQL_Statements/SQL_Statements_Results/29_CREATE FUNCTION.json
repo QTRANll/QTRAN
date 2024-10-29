@@ -1,0 +1,64 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/create-function/"
+    ],
+    "Title": [
+        "CREATE FUNCTION"
+    ],
+    "Feature": [
+        "CREATE [OR REPLACE]\n    [DEFINER = {user | CURRENT_USER | role | CURRENT_ROLE }]\n    [AGGREGATE] FUNCTION [IF NOT EXISTS] func_name ([func_parameter[,...]])\n    RETURNS type\n    [characteristic ...]\n    RETURN func_body\nfunc_parameter:\n    [ IN | OUT | INOUT | IN OUT ]  param_name type\ntype:\n    Any valid MariaDB data type\ncharacteristic:\n    LANGUAGE SQL\n  | [NOT] DETERMINISTIC\n  | { CONTAINS SQL | NO SQL | READS SQL DATA | MODIFIES SQL DATA }\n  | SQL SECURITY { DEFINER | INVOKER }\n  | COMMENT 'string'\nfunc_body:\n    Valid SQL procedure statement"
+    ],
+    "Description": [
+        "Use the CREATE FUNCTION statement to create a new stored function. You must have\nthe CREATE ROUTINE database privilege to use CREATE FUNCTION.\nA function takes any number of arguments and returns a value from the function body. The\nfunction body can be any valid SQL expression as you would use, for example, in any select\nexpression. If you have the appropriate privileges, you can call the function exactly as you\nwould any built-in function. See Security below for details on privileges.",
+        "You can also use a variant of the CREATE FUNCTION statement to install a user-defined\nfunction (UDF) defined by a plugin. See CREATE FUNCTION (UDF)\nfor details.",
+        "You can use a SELECT statement for the function body by enclosing it in\nparentheses, exactly as you would to use a subselect for any other expression. The SELECT\nstatement must return a single value. If more than one column is returned when the function is called,\nerror 1241 results. If more than one row is returned when the function is called, error 1242\nresults. Use a LIMIT clause to ensure only one row is returned.",
+        "You can also replace the RETURN clause with a BEGIN...END compound\nstatement. The compound statement must contain a RETURN statement. When the function is\ncalled, the RETURN statement immediately returns its result, and any statements after RETURN\nare effectively ignored.",
+        "By default, a function is associated with the current database. To associate the function explicitly\nwith a given database, specify the fully-qualified name as db_name.func_name\nwhen you create it. If the function name is the same as the name of a built-in function, you must\nuse the fully qualified name when you call it.",
+        "The parameter list enclosed within parentheses must always be present.\nIf there are no parameters, an empty parameter list of () should be\nused. Parameter names are not case sensitive.",
+        "Each parameter can be declared to use any valid data type, except that\nthe COLLATE attribute cannot be used.",
+        "For valid identifiers to use as function names, see Identifier Names.",
+        "IN | OUT | INOUT | IN OUT",
+        "MariaDB starting with 10.8.0The function parameter qualifiers for IN, OUT, INOUT, and IN OUT were added in a 10.8.0 preview release. Prior to 10.8.0 quantifiers were supported only in procedures.\n",
+        "OUT, INOUT and its equivalent IN OUT, are only valid if called from SET and not SELECT. These quantifiers are especially useful for creating functions with more than one return value. This allows functions to be more complex and nested.",
+        "DELIMITER $$\nCREATE FUNCTION add_func3(IN a INT, IN b INT, OUT c INT) RETURNS INT\nBEGIN\n  SET c = 100;\n  RETURN a + b;\nEND;\n$$\nDELIMITER ;\n \nSET @a = 2;\nSET @b = 3;\nSET @c = 0;\nSET @res= add_func3(@a, @b, @c);\n\nSELECT add_func3(@a, @b, @c);\nERROR 4186 (HY000): OUT or INOUT argument 3 for function add_func3 is not allowed here\n\nDELIMITER $$\nCREATE FUNCTION add_func4(IN a INT, IN b INT, d INT) RETURNS INT\nBEGIN\n  DECLARE c, res INT;\n  SET res = add_func3(a, b, c) + d;\n  if (c > 99) then\n    return  3;\n  else\n    return res;\n  end if;\nEND;\n$$\n\nDELIMITER ;\n\nSELECT add_func4(1,2,3);\n+------------------+\n| add_func4(1,2,3) |\n+------------------+\n|                3 |\n+------------------+\n",
+        "AGGREGATE",
+        "It is possible to create stored aggregate functions as well. See Stored Aggregate Functions for details.",
+        "RETURNS",
+        "The RETURNS clause specifies the return type of the function. NULL values are permitted with all return types.",
+        "What happens if the RETURN clause returns a value of a different type? It depends on the SQL_MODE in effect at the moment of the function creation.",
+        "If the SQL_MODE is strict (STRICT_ALL_TABLES or STRICT_TRANS_TABLES flags are specified), a 1366 error will be produced.",
+        "Otherwise, the value is coerced to the proper type. For example, if a function\nspecifies an ENUM or SET value in the RETURNS clause, but the RETURN\nclause returns an integer, the value returned from the function is the string for the corresponding ENUM\nmember of set of SET members.",
+        "MariaDB stores the SQL_MODE system variable setting that is in effect at the\ntime a routine is created, and always executes the routine with this setting in\nforce, regardless of the server SQL mode in effect when the routine is invoked.",
+        "LANGUAGE SQL",
+        "LANGUAGE SQL is a standard SQL clause, and it can be used in MariaDB for portability. However that clause has no meaning, because SQL is the only supported language for stored functions.",
+        "A function is deterministic if it can produce only one result for a given list of parameters. If the result may be affected by stored data, server variables, random numbers or any value that is not explicitly passed, then the function is not deterministic. Also, a function is non-deterministic if it uses non-deterministic functions like NOW() or CURRENT_TIMESTAMP(). The optimizer may choose a faster execution plan if it known that the function is deterministic. In such cases, you should declare the routine using the DETERMINISTIC keyword. If you want to explicitly state that the function is not deterministic (which is the default) you can use the NOT DETERMINISTIC keywords.",
+        "If you declare a non-deterministic function as DETERMINISTIC, you may get incorrect results. If you declare a deterministic function as NOT DETERMINISTIC, in some cases the queries will be slower.",
+        "OR REPLACE",
+        "If the optional OR REPLACE clause is used, it acts as a shortcut for:",
+        "DROP FUNCTION IF EXISTS function_name;\nCREATE FUNCTION function_name ...;\n",
+        "with the exception that any existing privileges for the function are not dropped.",
+        "IF NOT EXISTS",
+        "If the IF NOT EXISTS clause is used, MariaDB will return a warning instead of an error if the function already exists. Cannot be used together with OR REPLACE.",
+        "[NOT] DETERMINISTIC",
+        "The [NOT] DETERMINISTIC clause also affects binary logging, because the STATEMENT format can not be used to store or replicate non-deterministic statements.",
+        "CONTAINS SQL, NO SQL, READS SQL DATA, and MODIFIES SQL DATA are informative clauses that tell the server what the function does. MariaDB does not check in any way whether the specified clause is correct. If none of these clauses are specified, CONTAINS SQL is used by default.",
+        "MODIFIES SQL DATA",
+        "MODIFIES SQL DATA means that the function contains statements that may modify data stored in databases. This happens if the function contains statements like DELETE, UPDATE, INSERT, REPLACE or DDL.",
+        "READS SQL DATA",
+        "READS SQL DATA means that the function reads data stored in databases, but does not modify any data. This happens if SELECT statements are used, but there no write operations are executed.",
+        "CONTAINS SQL",
+        "CONTAINS SQL means that the function contains at least one SQL statement, but it does not read or write any data stored in a database. Examples include SET or DO.",
+        "NO SQL",
+        "NO SQL means nothing, because MariaDB does not currently support any language other than SQL.",
+        "Oracle Mode",
+        "A subset of Oracle's PL/SQL language is supported in addition to the traditional SQL/PSM-based MariaDB syntax. See Oracle mode for details on changes when running Oracle mode."
+    ],
+    "Examples": [
+        "CREATE FUNCTION hello (s CHAR(20))\n    RETURNS CHAR(50) DETERMINISTIC\n    RETURN CONCAT('Hello, ',s,'!');\n\nSELECT hello('world');\n+----------------+\n| hello('world') |\n+----------------+\n| Hello, world!  |\n+----------------+\n",
+        "CREATE TEMPORARY TABLE counter (c INT);\nINSERT INTO counter VALUES (0);\nDELIMITER //\nCREATE FUNCTION counter () RETURNS INT\n  BEGIN\n    UPDATE counter SET c = c + 1;\n    RETURN (SELECT c FROM counter LIMIT 1);\n  END //\nDELIMITER ;\n",
+        "CREATE FUNCTION hello2 (s CHAR(20))\n  RETURNS CHAR(50) CHARACTER SET 'utf8' COLLATE 'utf8_bin' DETERMINISTIC\n  RETURN CONCAT('Hello, ',s,'!');\n"
+    ],
+    "Category": [
+        "Data Definition"
+    ]
+}

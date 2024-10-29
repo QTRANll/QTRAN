@@ -1,0 +1,31 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/date-and-time-functions.html#function_to-days"
+    ],
+    "Title": [
+        "TO_DAYS()"
+    ],
+    "Feature": [
+        "TO_DAYS(date)"
+    ],
+    "Description": [
+        "Return the date argument converted to days",
+        "\nTO_DAYS(date)\n",
+        "\n          Given a date date, returns a day\n          number (the number of days since year 0). Returns\n          NULL if date is\n          NULL.\n        ",
+        "Press CTRL+C to copy mysql> SELECT TO_DAYS(950501);\n        -> 728779\nmysql> SELECT TO_DAYS('2007-10-07');\n        -> 733321",
+        "\nTO_DAYS() is not intended for\n          use with values that precede the advent of the Gregorian\n          calendar (1582), because it does not take into account the\n          days that were lost when the calendar was changed. For dates\n          before 1582 (and possibly a later year in other locales),\n          results from this function are not reliable. See\n          Section\u00a013.2.7, \u201cWhat Calendar Is Used By MySQL?\u201d, for details.\n        ",
+        "\n          Remember that MySQL converts two-digit year values in dates to\n          four-digit form using the rules in\n          Section\u00a013.2, \u201cDate and Time Data Types\u201d. For example,\n          '2008-10-07' and\n          '08-10-07' are seen as identical dates:\n        ",
+        "Press CTRL+C to copy mysql> SELECT TO_DAYS('2008-10-07'), TO_DAYS('08-10-07');\n        -> 733687, 733687",
+        "\n          In MySQL, the zero date is defined as\n          '0000-00-00', even though this date is\n          itself considered invalid. This means that, for\n          '0000-00-00' and\n          '0000-01-01',\n          TO_DAYS() returns the values\n          shown here:\n        ",
+        "Press CTRL+C to copy mysql> SELECT TO_DAYS('0000-00-00');\n+-----------------------+\n| to_days('0000-00-00') |\n+-----------------------+\n|                  NULL |\n+-----------------------+\n1 row in set, 1 warning (0.00 sec)\n\nmysql> SHOW WARNINGS;\n+---------+------+----------------------------------------+\n| Level   | Code | Message                                |\n+---------+------+----------------------------------------+\n| Warning | 1292 | Incorrect datetime value: '0000-00-00' |\n+---------+------+----------------------------------------+\n1 row in set (0.00 sec)\n\n\nmysql> SELECT TO_DAYS('0000-01-01');\n+-----------------------+\n| to_days('0000-01-01') |\n+-----------------------+\n|                     1 |\n+-----------------------+\n1 row in set (0.00 sec)",
+        "\n          This is true whether or not the\n          ALLOW_INVALID_DATES SQL\n          server mode is enabled.\n        "
+    ],
+    "Examples": [
+        "mysql> SELECT TO_DAYS(950501);\n        -> 728779\nmysql> SELECT TO_DAYS('2007-10-07');\n        -> 733321",
+        "mysql> SELECT TO_DAYS('2008-10-07'), TO_DAYS('08-10-07');\n        -> 733687, 733687",
+        "mysql> SELECT TO_DAYS('0000-00-00');\n+-----------------------+\n| to_days('0000-00-00') |\n+-----------------------+\n|                  NULL |\n+-----------------------+\n1 row in set, 1 warning (0.00 sec)\n\nmysql> SHOW WARNINGS;\n+---------+------+----------------------------------------+\n| Level   | Code | Message                                |\n+---------+------+----------------------------------------+\n| Warning | 1292 | Incorrect datetime value: '0000-00-00' |\n+---------+------+----------------------------------------+\n1 row in set (0.00 sec)\n\n\nmysql> SELECT TO_DAYS('0000-01-01');\n+-----------------------+\n| to_days('0000-01-01') |\n+-----------------------+\n|                     1 |\n+-----------------------+\n1 row in set (0.00 sec)"
+    ],
+    "Category": [
+        "Date and Time Functions"
+    ]
+}

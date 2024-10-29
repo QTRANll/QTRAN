@@ -1,0 +1,32 @@
+{
+    "HTML": [
+        "https://docs.pingcap.com/zh/tidb/stable/tidb-functions#tidb_row_checksum"
+    ],
+    "Title": [
+        "TIDB_ROW_CHECKSUM"
+    ],
+    "Feature": [
+        "TIDB_ROW_CHECKSUM"
+    ],
+    "Description": [
+        "TIDB_ROW_CHECKSUM",
+        "TIDB_ROW_CHECKSUM() \u51fd\u6570\u7528\u4e8e\u67e5\u8be2\u884c\u6570\u636e\u7684 Checksum \u503c\u3002\u8be5\u51fd\u6570\u53ea\u80fd\u7528\u4e8e FastPlan \u6d41\u7a0b\u7684 SELECT \u8bed\u53e5\uff0c\u5373\u4f60\u53ef\u901a\u8fc7\u5f62\u5982 SELECT TIDB_ROW_CHECKSUM() FROM t WHERE id = ? \u6216 SELECT TIDB_ROW_CHECKSUM() FROM t WHERE id IN (?, ?, ...) \u7684\u8bed\u53e5\u8fdb\u884c\u67e5\u8be2\u3002",
+        "\u5728 TiDB \u4e2d\u5f00\u542f\u884c\u6570\u636e Checksum \u529f\u80fd tidb_enable_row_level_checksum\uff1a",
+        "SET GLOBAL tidb_enable_row_level_checksum = ON;\n",
+        "\u4e0a\u8ff0\u914d\u7f6e\u4ec5\u5bf9\u65b0\u521b\u5efa\u7684\u4f1a\u8bdd\u751f\u6548\uff0c\u56e0\u6b64\u9700\u8981\u91cd\u65b0\u8fde\u63a5 TiDB\u3002",
+        "\u521b\u5efa\u8868 t \u5e76\u63d2\u5165\u6570\u636e\uff1a",
+        "USE test;\nCREATE TABLE t (id INT PRIMARY KEY, k INT, c CHAR(1));\nINSERT INTO t VALUES (1, 10, 'a');\n",
+        "\u67e5\u8be2\u8868 t \u4e2d id = 1 \u7684\u884c\u6570\u636e\u7684 Checksum \u503c\uff1a",
+        "SELECT *, TIDB_ROW_CHECKSUM() FROM t WHERE id = 1;\n",
+        "\u8f93\u51fa\u7ed3\u679c\u5982\u4e0b\uff1a",
+        "+----+------+------+---------------------+\n| id | k    | c    | TIDB_ROW_CHECKSUM() |\n+----+------+------+---------------------+\n|  1 |   10 | a    | 3813955661          |\n+----+------+------+---------------------+\n1 row in set (0.000 sec)\n"
+    ],
+    "Examples": [
+        "SET GLOBAL tidb_enable_row_level_checksum = ON;\n",
+        "USE test;\nCREATE TABLE t (id INT PRIMARY KEY, k INT, c CHAR(1));\nINSERT INTO t VALUES (1, 10, 'a');\n",
+        "SELECT *, TIDB_ROW_CHECKSUM() FROM t WHERE id = 1;\n"
+    ],
+    "Category": [
+        "TiDB Specific Functions"
+    ]
+}

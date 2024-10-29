@@ -1,0 +1,28 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/math-functions"
+    ],
+    "Title": [
+        "proportionsZTest"
+    ],
+    "Feature": [
+        "proportionsZTest(successes_x, successes_y, trials_x, trials_y, conf_level, pool_type)"
+    ],
+    "Description": [
+        "proportionsZTest",
+        "Returns test statistics for the two proportion Z-test - a statistical test for comparing the proportions from two populations x and y.",
+        "Syntax",
+        "proportionsZTest(successes_x, successes_y, trials_x, trials_y, conf_level, pool_type)",
+        "Arguments",
+        "successes_x: Number of successes in population x. UInt64.successes_y: Number of successes in population y. UInt64.trials_x: Number of trials in population x. UInt64.trials_y: Number of trials in population y. UInt64.conf_level: Confidence level for the test. Float64.pool_type: Selection of pooling (way in which the standard error is estimated). Can be either unpooled or pooled. String. ",
+        "NoteFor argument pool_type: In the pooled version, the two proportions are averaged, and only one proportion is used to estimate the standard error. In the unpooled version, the two proportions are used separately.",
+        "Returned value",
+        "z_stat: Z statistic. Float64.p_val: P value. Float64.ci_low: The lower confidence interval. Float64.ci_high: The upper confidence interval. Float64."
+    ],
+    "Examples": [
+        "SELECT proportionsZTest(10, 11, 100, 101, 0.95, 'unpooled');"
+    ],
+    "Category": [
+        "Mathematical Functions"
+    ]
+}

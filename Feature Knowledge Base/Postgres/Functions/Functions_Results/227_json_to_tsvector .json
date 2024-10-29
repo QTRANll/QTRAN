@@ -1,0 +1,22 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/current/functions-textsearch.html"
+    ],
+    "Title": [
+        "json_to_tsvector"
+    ],
+    "Feature": [
+        "json_to_tsvector ( [ config regconfig, ] document json, filter jsonb ) → tsvector",
+        "jsonb_to_tsvector ( [ config regconfig, ] document jsonb, filter jsonb ) → tsvector"
+    ],
+    "Description": [
+        "Selects each item in the JSON document that is requested by the filter and converts each one to a tsvector, normalizing words according to the specified or default configuration. The results are then concatenated in document order to produce the output. Position information is generated as though one stopword exists between each pair of selected items. (Beware that “document order” of the fields of a JSON object is implementation-dependent when the input is jsonb.) The filter must be a jsonb array containing zero or more of these keywords: \"string\" (to include all string values), \"numeric\" (to include all numeric values), \"boolean\" (to include all boolean values), \"key\" (to include all keys), or \"all\" (to include all the above). As a special case, the filter can also be a simple JSON value that is one of these keywords."
+    ],
+    "Examples": [
+        "json_to_tsvector('english', '{\"a\": \"The Fat Rats\", \"b\": 123}'::json, '[\"string\", \"numeric\"]') → '123':5 'fat':2 'rat':3",
+        "json_to_tsvector('english', '{\"cat\": \"The Fat Rats\", \"dog\": 123}'::json, '\"all\"') → '123':9 'cat':1 'dog':7 'fat':4 'rat':5"
+    ],
+    "Category": [
+        "Text Search Functions and Operators"
+    ]
+}

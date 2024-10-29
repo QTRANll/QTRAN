@@ -1,0 +1,24 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/show-engines.html"
+    ],
+    "Title": [
+        "15.7.7.17 SHOW ENGINES Statement"
+    ],
+    "Feature": [
+        "SHOW [STORAGE] ENGINES",
+        "mysql> SHOW ENGINES\\G\n*************************** 1. row ***************************\n      Engine: MEMORY\n     Support: YES\n     Comment: Hash based, stored in memory, useful for temporary tables\nTransactions: NO\n          XA: NO\n  Savepoints: NO\n*************************** 2. row ***************************\n      Engine: InnoDB\n     Support: DEFAULT\n     Comment: Supports transactions, row-level locking, and foreign keys\nTransactions: YES\n          XA: YES\n  Savepoints: YES\n*************************** 3. row ***************************\n      Engine: PERFORMANCE_SCHEMA\n     Support: YES\n     Comment: Performance Schema\nTransactions: NO\n          XA: NO\n  Savepoints: NO\n*************************** 4. row ***************************\n      Engine: MyISAM\n     Support: YES\n     Comment: MyISAM storage engine\nTransactions: NO\n          XA: NO\n  Savepoints: NO\n*************************** 5. row ***************************\n      Engine: MRG_MYISAM\n     Support: YES\n     Comment: Collection of identical MyISAM tables\nTransactions: NO\n          XA: NO\n  Savepoints: NO\n*************************** 6. row ***************************\n      Engine: BLACKHOLE\n     Support: YES\n     Comment: /dev/null storage engine (anything you write to it disappears)\nTransactions: NO\n          XA: NO\n  Savepoints: NO\n*************************** 7. row ***************************\n      Engine: CSV\n     Support: YES\n     Comment: CSV storage engine\nTransactions: NO\n          XA: NO\n  Savepoints: NO\n*************************** 8. row ***************************\n      Engine: ARCHIVE\n     Support: YES\n     Comment: Archive storage engine\nTransactions: NO\n          XA: NO\n  Savepoints: NO"
+    ],
+    "Description": [
+        "\nSHOW ENGINES displays status\n        information about the server's storage engines. This is\n        particularly useful for checking whether a storage engine is\n        supported, or to see what the default engine is.\n      ",
+        "\n        For information about MySQL storage engines, see\n        Chapter\u00a017, The InnoDB Storage Engine, and\n        Chapter\u00a018, Alternative Storage Engines.\n      ",
+        "\n        The output from SHOW ENGINES may vary\n        according to the MySQL version used and other factors.\n      ",
+        "\nSHOW ENGINES output has these columns:\n",
+        "\n\nEngine\n\n            The name of the storage engine.\n          \nSupport\n\n            The server's level of support for the storage engine,\n            as shown in the following table.\n\n\n\nValue\nMeaning\n\nYES\nThe engine is supported and is active\n\nDEFAULT\nLike YES, plus this is the default engine\n\nNO\nThe engine is not supported\n\nDISABLED\nThe engine is supported but has been disabled\n\n\n\n            A value of NO means that the server was\n            compiled without support for the engine, so it cannot be\n            enabled at runtime.\n          \n            A value of DISABLED occurs either because\n            the server was started with an option that disables the\n            engine, or because not all options required to enable it\n            were given. In the latter case, the error log should contain\n            a reason indicating why the option is disabled. See\n            Section\u00a07.4.2, \u201cThe Error Log\u201d.\n          \n            You might also see DISABLED for a storage\n            engine if the server was compiled to support it, but was\n            started with a\n            --skip-engine_name\n            option. For the NDB storage\n            engine, DISABLED means the server was\n            compiled with support for NDB Cluster, but was not started\n            with the --ndbcluster option.\n          \n            All MySQL servers support MyISAM tables.\n            It is not possible to disable MyISAM.\n          \nComment\n\n            A brief description of the storage engine.\n          \nTransactions\n\n            Whether the storage engine supports transactions.\n          \nXA\n\n            Whether the storage engine supports XA transactions.\n          \nSavepoints\n\n            Whether the storage engine supports savepoints.\n\n",
+        "\n        Storage engine information is also available from the\n        INFORMATION_SCHEMA\nENGINES table. See\n        Section\u00a028.3.13, \u201cThe INFORMATION_SCHEMA ENGINES Table\u201d.\n"
+    ],
+    "Examples": [],
+    "Category": [
+        "Database Administration Statements"
+    ]
+}

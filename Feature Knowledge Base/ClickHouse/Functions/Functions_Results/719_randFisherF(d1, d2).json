@@ -1,0 +1,27 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/random-functions"
+    ],
+    "Title": [
+        "randFisherF"
+    ],
+    "Feature": [
+        "randFisherF(d1, d2)"
+    ],
+    "Description": [
+        "randFisherF",
+        "Returns a random Float64 drawn from a F-distribution.",
+        "Syntax",
+        "randFisherF(d1, d2)",
+        "Arguments",
+        "d1 - Float64 - d1 degree of freedom in X = (S1 / d1) / (S2 / d2),d2 - Float64 - d2 degree of freedom in X = (S1 / d1) / (S2 / d2),",
+        "Returned value",
+        "Random number. Float64."
+    ],
+    "Examples": [
+        "SELECT randFisherF(10, 3) FROM numbers(5)"
+    ],
+    "Category": [
+        "Random Numbers Functions"
+    ]
+}

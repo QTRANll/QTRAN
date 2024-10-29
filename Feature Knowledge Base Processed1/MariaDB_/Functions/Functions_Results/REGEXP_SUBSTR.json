@@ -1,0 +1,48 @@
+{
+    "HTML": "https://mariadb.com//kb/en/regexp_substr/",
+    "Title": "REGEXP_SUBSTR",
+    "Feature": [
+        "REGEXP_SUBSTR(subject,pattern)\n"
+    ],
+    "Description": [
+        "Returns the part of the string subject that matches the regular expression pattern, or an empty string if pattern was not found.",
+        "The function follows the case sensitivity rules of the effective collation. Matching is performed case insensitively for case insensitive collations, and case sensitively for case sensitive collations and for binary data.",
+        "The collation case sensitivity can be overwritten using the (?i) and (?-i) PCRE flags.",
+        "MariaDB uses the PCRE regular expression library for enhanced regular expression performance, and REGEXP_SUBSTR was introduced as part of this enhancement.",
+        "The default_regex_flags variable addresses the remaining compatibilities between PCRE and the old regex library. "
+    ],
+    "Examples": [
+        "SELECT REGEXP_SUBSTR('ab12cd','[0-9]+');\n-> 12\n\nSELECT REGEXP_SUBSTR(\n  'See https://mariadb.org/en/foundation/ for details',\n  'https?://[^/]*');\n-> https://mariadb.org\n",
+        "SELECT REGEXP_SUBSTR('ABC','b');\n-> B\n\nSELECT REGEXP_SUBSTR('ABC' COLLATE utf8_bin,'b');\n->\n\nSELECT REGEXP_SUBSTR(BINARY'ABC','b');\n->\n\nSELECT REGEXP_SUBSTR('ABC','(?i)b');\n-> B\n\nSELECT REGEXP_SUBSTR('ABC' COLLATE utf8_bin,'(?+i)b');\n-> B\n"
+    ],
+    "Category": [
+        "Regular Expressions Functions"
+    ],
+    "Effective SQLs Refined": [
+        "SELECT REGEXP_SUBSTR('ab12cd','[0-9]+');",
+        "SELECT REGEXP_SUBSTR(\n  'See https://mariadb.org/en/foundation/ for details',\n  'https?://[^/]*');",
+        "SELECT REGEXP_SUBSTR('ABC','b');",
+        "SELECT REGEXP_SUBSTR(BINARY'ABC','b');",
+        "SELECT REGEXP_SUBSTR('ABC','(?i)b');"
+    ],
+    "Ineffective SQLs Refined": [
+        "SELECT REGEXP_SUBSTR('ABC' COLLATE utf8_bin,'b');",
+        "SELECT REGEXP_SUBSTR('ABC' COLLATE utf8_bin,'(?+i)b');"
+    ],
+    "Wrong Messages from Ineffective SQLs Refined": [
+        "(pymysql.err.OperationalError) (1253, \"COLLATION 'utf8mb3_bin' is not valid for CHARACTER SET 'utf8mb4'\")\n[SQL: SELECT REGEXP_SUBSTR('ABC' COLLATE utf8_bin,'b');]\n(Background on this error at: https://sqlalche.me/e/20/e3q8)",
+        "(pymysql.err.OperationalError) (1253, \"COLLATION 'utf8mb3_bin' is not valid for CHARACTER SET 'utf8mb4'\")\n[SQL: SELECT REGEXP_SUBSTR('ABC' COLLATE utf8_bin,'(?+i)b');]\n(Background on this error at: https://sqlalche.me/e/20/e3q8)"
+    ],
+    "SQLs Generated1": [],
+    "SQLs Generated Costs1": [],
+    "SQLs Generated ExecResults1": [],
+    "SQLs Generated ExecTimes1": [],
+    "SQLs Generated ErrorMessages1": [],
+    "Effective SQLs Generated1": [],
+    "SQLs Generated2": [],
+    "SQLs Generated Costs2": [],
+    "SQLs Generated ExecResults2": [],
+    "SQLs Generated ExecTimes2": [],
+    "SQLs Generated ErrorMessages2": [],
+    "Effective SQLs Generated2": []
+}

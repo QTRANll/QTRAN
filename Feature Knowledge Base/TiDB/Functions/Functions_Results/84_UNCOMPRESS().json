@@ -1,0 +1,23 @@
+{
+    "HTML": [
+        "https://docs.pingcap.com/zh/tidb/stable/encryption-and-compression-functions#uncompress"
+    ],
+    "Title": [
+        "UNCOMPRESS()"
+    ],
+    "Feature": [
+        "UNCOMPRESS()"
+    ],
+    "Description": [
+        "UNCOMPRESS()",
+        "UNCOMPRESS(data) \u51fd\u6570\u89e3\u538b\u7f29\u4f7f\u7528 COMPRESS() \u51fd\u6570\u538b\u7f29\u7684\u6570\u636e\u3002",
+        "SELECT UNCOMPRESS(0x03000000789C72747206040000FFFF018D00C7);\n",
+        "+------------------------------------------------------------------------------------------------------------+\n| UNCOMPRESS(0x03000000789C72747206040000FFFF018D00C7)                                                       |\n+------------------------------------------------------------------------------------------------------------+\n| 0x414243                                                                                                   |\n+------------------------------------------------------------------------------------------------------------+\n1 row in set (0.00 sec)\n"
+    ],
+    "Examples": [
+        "SELECT UNCOMPRESS(0x03000000789C72747206040000FFFF018D00C7);\n"
+    ],
+    "Category": [
+        "Encryption and Compression Functions"
+    ]
+}

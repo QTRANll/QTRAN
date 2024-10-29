@@ -1,0 +1,25 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/date-time-functions"
+    ],
+    "Title": [
+        "fromUnixTimestamp"
+    ],
+    "Feature": [
+        "fromUnixTimestamp"
+    ],
+    "Description": [
+        "fromUnixTimestamp",
+        "This function converts a Unix timestamp to a calendar date and a time of a day.",
+        "It can be called in two ways:",
+        "When given a single argument of type Integer, it returns a value of type DateTime, i.e. behaves like toDateTime.",
+        "Alias: FROM_UNIXTIME."
+    ],
+    "Examples": [
+        "SELECT fromUnixTimestamp(423543535);",
+        "SELECT fromUnixTimestamp(1234334543, '%Y-%m-%d %R:%S') AS DateTime;"
+    ],
+    "Category": [
+        "Dates and Times Functions"
+    ]
+}

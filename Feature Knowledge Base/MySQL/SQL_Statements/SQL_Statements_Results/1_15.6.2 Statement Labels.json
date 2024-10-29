@@ -1,0 +1,24 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/statement-labels.html"
+    ],
+    "Title": [
+        "15.6.2 Statement Labels"
+    ],
+    "Feature": [
+        "[begin_label:] BEGIN\n    [statement_list]\nEND [end_label]\n\n[begin_label:] LOOP\n    statement_list\nEND LOOP [end_label]\n\n[begin_label:] REPEAT\n    statement_list\nUNTIL search_condition\nEND REPEAT [end_label]\n\n[begin_label:] WHILE search_condition DO\n    statement_list\nEND WHILE [end_label]"
+    ],
+    "Description": [
+        "\n      Labels are permitted for\n      BEGIN ... END\n      blocks and for the LOOP,\n      REPEAT, and\n      WHILE statements. Label use for\n      those statements follows these rules:\n",
+        "\n\nbegin_label must be followed by a\n          colon.\n        \nbegin_label can be given without\n          end_label. If\n          end_label is present, it must be\n          the same as begin_label.\n        \nend_label cannot be given without\n          begin_label.\n        \n          Labels at the same nesting level must be distinct.\n        \n          Labels can be up to 16 characters long.\n\n",
+        "\n      To refer to a label within the labeled construct, use an\n      ITERATE or\n      LEAVE statement. The following\n      example uses those statements to continue iterating or terminate\n      the loop:\n    ",
+        "Press CTRL+C to copy CREATE PROCEDURE doiterate(p1 INT)\nBEGIN\n  label1: LOOP\n    SET p1 = p1 + 1;\n    IF p1 < 10 THEN ITERATE label1; END IF;\n    LEAVE label1;\n  END LOOP label1;\nEND;",
+        "\n      The scope of a block label does not include the code for handlers\n      declared within the block. For details, see\n      Section\u00a015.6.7.2, \u201cDECLARE ... HANDLER Statement\u201d.\n"
+    ],
+    "Examples": [
+        "CREATE PROCEDURE doiterate(p1 INT)\nBEGIN\n  label1: LOOP\n    SET p1 = p1 + 1;\n    IF p1 < 10 THEN ITERATE label1; END IF;\n    LEAVE label1;\n  END LOOP label1;\nEND;"
+    ],
+    "Category": [
+        "Compound Statement Syntax"
+    ]
+}

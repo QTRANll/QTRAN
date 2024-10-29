@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/current/functions-json.html"
+    ],
+    "Title": [
+        "value . boolean"
+    ],
+    "Feature": [
+        "value . boolean() → boolean"
+    ],
+    "Description": [
+        "Boolean value converted from a JSON boolean, number, or string"
+    ],
+    "Examples": [
+        "jsonb_path_query_array('[1, \"yes\", false]', '$[*].boolean()') → [true, true, false]"
+    ],
+    "Category": [
+        "JSON Functions and Operators"
+    ]
+}

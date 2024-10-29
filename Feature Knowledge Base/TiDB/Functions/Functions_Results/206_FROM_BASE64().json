@@ -1,0 +1,24 @@
+{
+    "HTML": [
+        "https://docs.pingcap.com/zh/tidb/stable/string-functions#from_base64"
+    ],
+    "Title": [
+        "FROM_BASE64()"
+    ],
+    "Feature": [
+        "FROM_BASE64()"
+    ],
+    "Description": [
+        "FROM_BASE64()",
+        "FROM_BASE64(str) \u51fd\u6570\u7528\u4e8e\u5bf9 Base64 \u7f16\u7801\u7684\u5b57\u7b26\u4e32\u8fdb\u884c\u89e3\u7801\uff0c\u5e76\u5c06\u89e3\u7801\u7ed3\u679c\u4ee5\u5341\u516d\u8fdb\u5236\u5b57\u7b26\u4e32\u7684\u5f62\u5f0f\u8fd4\u56de\u3002",
+        "\u6b64\u51fd\u6570\u63a5\u53d7\u4e00\u4e2a\u5355\u4e00\u53c2\u6570\uff0c\u5373\u9700\u8981\u89e3\u7801\u7684 Base64 \u7f16\u7801\u5b57\u7b26\u4e32\u3002\u5982\u679c\u8f93\u5165\u53c2\u6570\u4e3a NULL \u6216\u65e0\u6548\u7684 Base64 \u7f16\u7801\u5b57\u7b26\u4e32\uff0cFROM_BASE64() \u51fd\u6570\u5c06\u8fd4\u56de NULL\u3002"
+    ],
+    "Examples": [
+        "mysql> SELECT TO_BASE64('Hello TiDB');\n+-------------------------+\n| TO_BASE64('Hello TiDB') |\n+-------------------------+\n| SGVsbG8gVGlEQg==        |\n+-------------------------+\n\nmysql> SELECT FROM_BASE64('SGVsbG8gVGlEQg==');\n+------------------------------------------------------------------+\n| FROM_BASE64('SGVsbG8gVGlEQg==')                                  |\n+------------------------------------------------------------------+\n| 0x48656C6C6F2054694442                                           |\n+------------------------------------------------------------------+\n",
+        "mysql> SELECT CONVERT(FROM_BASE64('SGVsbG8gVGlEQg==') USING utf8mb4);\n+--------------------------------------------------------+\n| CONVERT(FROM_BASE64('SGVsbG8gVGlEQg==') USING utf8mb4) |\n+--------------------------------------------------------+\n| Hello TiDB                                             |\n+--------------------------------------------------------+\n",
+        "mysql> SELECT FROM_BASE64('MTIzNDU2');\n+--------------------------------------------------+\n| FROM_BASE64('MTIzNDU2')                          |\n+--------------------------------------------------+\n| 0x313233343536                                   |\n+--------------------------------------------------+\n"
+    ],
+    "Category": [
+        "String Functions"
+    ]
+}

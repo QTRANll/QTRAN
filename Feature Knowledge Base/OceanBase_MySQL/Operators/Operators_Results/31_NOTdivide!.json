@@ -1,0 +1,22 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/common-oceanbase-database-cn-1000000000822076"
+    ],
+    "Title": [
+        "NOT/!"
+    ],
+    "Feature": [
+        "NOT/!"
+    ],
+    "Description": [
+        "逻辑非",
+        "如果操作数为 0，则计算结果为 1。如果操作数为非零，则计算结果为 0，并且 NOT NULL 返回 NULL。",
+        "示例如下："
+    ],
+    "Examples": [
+        "SELECT NOT NULL;\n+----------+\n| NOT NULL |\n+----------+\n|     NULL |\n+----------+\n1 row in set\n\nSELECT ! (1+1);\n+---------+\n| ! (1+1) |\n+---------+\n|       0 |\n+---------+\n1 row in set\n"
+    ],
+    "Category": [
+        "Logical Operators"
+    ]
+}

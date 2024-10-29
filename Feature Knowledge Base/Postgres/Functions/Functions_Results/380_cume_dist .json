@@ -1,0 +1,18 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/current/functions-aggregate.html"
+    ],
+    "Title": [
+        "cume_dist"
+    ],
+    "Feature": [
+        "cume_dist ( args ) WITHIN GROUP ( ORDER BY sorted_args ) → double precision"
+    ],
+    "Description": [
+        "Computes the cumulative distribution, that is (number of rows preceding or peers with hypothetical row) / (total rows). The value thus ranges from 1/N to 1."
+    ],
+    "Examples": [],
+    "Category": [
+        "Aggregate Functions"
+    ]
+}

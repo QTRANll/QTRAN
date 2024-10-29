@@ -1,0 +1,23 @@
+{
+    "HTML": [
+        "https://docs.pingcap.com/zh/tidb/stable/json-functions-modify#json_unquote"
+    ],
+    "Title": [
+        "JSON_UNQUOTE()"
+    ],
+    "Feature": [
+        "JSON_UNQUOTE()"
+    ],
+    "Description": [
+        "JSON_UNQUOTE()",
+        "JSON_UNQUOTE(json) \u51fd\u6570\u53bb\u6389 JSON \u503c\u7684\u5f15\u53f7\uff0c\u5e76\u4ee5\u5b57\u7b26\u4e32\u5f62\u5f0f\u8fd4\u56de\u7ed3\u679c\u3002\u8be5\u51fd\u6570\u4e0e JSON_QUOTE() \u51fd\u6570\u4f5c\u7528\u76f8\u53cd\u3002"
+    ],
+    "Examples": [
+        "SELECT JSON_UNQUOTE('\"foo\"');\n",
+        "SELECT JSON_EXTRACT('{\"database\": \"TiDB\"}', '$.database');\n",
+        "SELECT JSON_UNQUOTE(JSON_EXTRACT('{\"database\": \"TiDB\"}', '$.database'));\n"
+    ],
+    "Category": [
+        "JSON Functions"
+    ]
+}

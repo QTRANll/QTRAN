@@ -1,0 +1,22 @@
+{
+    "HTML": [
+        "https://docs.pingcap.com/zh/tidb/stable/tidb-functions#tidb_decode_plan"
+    ],
+    "Title": [
+        "TIDB_DECODE_PLAN"
+    ],
+    "Feature": [
+        "TIDB_DECODE_PLAN"
+    ],
+    "Description": [
+        "TIDB_DECODE_PLAN",
+        "\u4f60\u53ef\u4ee5\u5728\u6162\u67e5\u8be2\u65e5\u5fd7\u4e2d\u627e\u5230\u7f16\u7801\u5f62\u5f0f\u7684 TiDB \u6267\u884c\u8ba1\u5212\uff0c\u7136\u540e\u4f7f\u7528 TIDB_DECODE_PLAN() \u51fd\u6570\u5c06\u7f16\u7801\u7684\u6267\u884c\u8ba1\u5212\u89e3\u7801\u4e3a\u6613\u8bfb\u7684\u5f62\u5f0f\u3002",
+        "\u8be5\u51fd\u6570\u5f88\u6709\u7528\uff0c\u56e0\u4e3a\u5728\u6267\u884c\u8bed\u53e5\u65f6 TiDB \u4f1a\u6355\u83b7\u6267\u884c\u8ba1\u5212\u3002\u91cd\u65b0\u6267\u884c EXPLAIN \u4e2d\u7684\u8bed\u53e5\u53ef\u80fd\u4f1a\u4ea7\u751f\u4e0d\u540c\u7684\u7ed3\u679c\uff0c\u56e0\u4e3a\u6570\u636e\u5206\u5e03\u548c\u7edf\u8ba1\u6570\u636e\u4f1a\u968f\u7740\u65f6\u95f4\u7684\u63a8\u79fb\u800c\u53d8\u5316\u3002",
+        "SELECT tidb_decode_plan('8QIYMAkzMV83CQEH8E85LjA0CWRhdGE6U2VsZWN0aW9uXzYJOTYwCXRpbWU6NzEzLjHCtXMsIGxvb3BzOjIsIGNvcF90YXNrOiB7bnVtOiAxLCBtYXg6IDU2OC41wgErRHByb2Nfa2V5czogMCwgcnBjXxEpAQwFWBAgNTQ5LglZyGNvcHJfY2FjaGVfaGl0X3JhdGlvOiAwLjAwfQkzLjk5IEtCCU4vQQoxCTFfNgkxXzAJMwm2SGx0KHRlc3QudC5hLCAxMDAwMCkNuQRrdgmiAHsFbBQzMTMuOMIBmQnEDDk2MH0BUgEEGAoyCTQzXzUFVwX1oGFibGU6dCwga2VlcCBvcmRlcjpmYWxzZSwgc3RhdHM6cHNldWRvCTk2ISE2aAAIMTUzXmYA')\\G\n",
+        "*************************** 1. row ***************************\n  tidb_decode_plan('8QIYMAkzMV83CQEH8E85LjA0CWRhdGE6U2VsZWN0aW9uXzYJOTYwCXRpbWU6NzEzLjHCtXMsIGxvb3BzOjIsIGNvcF90YXNrOiB7bnVtOiAxLCBtYXg6IDU2OC41wgErRHByb2Nfa2V5czogMCwgcnBjXxEpAQwFWBAgNTQ5LglZyGNvcHJfY2FjaGVfaGl0X3JhdGlvOiAwLjAwfQkzLjk5IEtCCU4vQQoxCTFfNgkxXz:     id                     task         estRows    operator info                              actRows    execution info                                                                                                                         memory     disk\n    TableReader_7          root         319.04     data:Selection_6                           960        time:713.1\u00b5s, loops:2, cop_task: {num: 1, max: 568.5\u00b5s, proc_keys: 0, rpc_num: 1, rpc_time: 549.1\u00b5s, copr_cache_hit_ratio: 0.00}    3.99 KB    N/A\n    \u2514\u2500Selection_6          cop[tikv]    319.04     lt(test.t.a, 10000)                        960        tikv_task:{time:313.8\u00b5s, loops:960}                                                                                                   N/A        N/A\n      \u2514\u2500TableFullScan_5    cop[tikv]    960        table:t, keep order:false, stats:pseudo    960        tikv_task:{time:153\u00b5s, loops:960}                                                                                                     N/A        N/A\n"
+    ],
+    "Examples": [],
+    "Category": [
+        "TiDB Specific Functions"
+    ]
+}

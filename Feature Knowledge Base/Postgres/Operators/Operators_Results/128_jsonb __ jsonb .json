@@ -1,0 +1,25 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/current/functions-json.html"
+    ],
+    "Title": [
+        "jsonb || jsonb"
+    ],
+    "Feature": [
+        "jsonb || jsonb → jsonb"
+    ],
+    "Description": [
+        "Concatenates two jsonb values. Concatenating two arrays generates an array containing all the elements of each input. Concatenating two objects generates an object containing the union of their keys, taking the second object's value when there are duplicate keys. All other cases are treated by converting a non-array input into a single-element array, and then proceeding as for two arrays. Does not operate recursively: only the top-level array or object structure is merged.",
+        "To append an array to another array as a single entry, wrap it in an additional layer of array, for example:"
+    ],
+    "Examples": [
+        "'[\"a\", \"b\"]'::jsonb || '[\"a\", \"d\"]'::jsonb → [\"a\", \"b\", \"a\", \"d\"]",
+        "'{\"a\": \"b\"}'::jsonb || '{\"c\": \"d\"}'::jsonb → {\"a\": \"b\", \"c\": \"d\"}",
+        "'[1, 2]'::jsonb || '3'::jsonb → [1, 2, 3]",
+        "'{\"a\": \"b\"}'::jsonb || '42'::jsonb → [{\"a\": \"b\"}, 42]",
+        "'[1, 2]'::jsonb || jsonb_build_array('[3, 4]'::jsonb) → [1, 2, [3, 4]]"
+    ],
+    "Category": [
+        "JSON Functions and Operators"
+    ]
+}

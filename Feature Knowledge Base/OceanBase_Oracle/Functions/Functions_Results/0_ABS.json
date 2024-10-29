@@ -1,0 +1,22 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000000823164"
+    ],
+    "Title": [
+        "ABS"
+    ],
+    "Feature": [
+        "ABS(numeric_expression)\n"
+    ],
+    "Description": [
+        "该函数返回 numeric_expression 的绝对值。ABS 将负值更改为正值，对零或正值没有影响。",
+        "\n\n\n参数\n说明\n\n\n\n\nnumeric_expression\n精确数值或近似数值数据类型（NUMBER、FLOAT、BINARY_FLOAT 和 BINARY_DOUBLE）的表达式。\n\n\n",
+        "返回与 numeric_expression 相同的数据类型。"
+    ],
+    "Examples": [
+        "obclient> SELECT ABS(-1.0), ABS(0), ABS(6.66), ABS(3-6) FROM DUAL;\n+-----------+--------+-----------+----------+\n| ABS(-1.0) | ABS(0) | ABS(6.66) | ABS(3-6) |\n+-----------+--------+-----------+----------+\n|         1 |      0 |      6.66 |        3 |\n+-----------+--------+-----------+----------+\n1 row in set\n"
+    ],
+    "Category": [
+        "Numeric Functions"
+    ]
+}

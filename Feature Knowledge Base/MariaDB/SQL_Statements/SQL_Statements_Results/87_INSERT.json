@@ -1,0 +1,34 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/insert/"
+    ],
+    "Title": [
+        "INSERT"
+    ],
+    "Feature": [
+        "INSERT [LOW_PRIORITY | DELAYED | HIGH_PRIORITY] [IGNORE]\n [INTO] tbl_name [PARTITION (partition_list)] [(col,...)]\n {VALUES | VALUE} ({expr | DEFAULT},...),(...),...\n [ ON DUPLICATE KEY UPDATE\n   col=expr\n     [, col=expr] ... ] [RETURNING select_expr \n      [, select_expr ...]]\n",
+        "Or:",
+        "INSERT [LOW_PRIORITY | DELAYED | HIGH_PRIORITY] [IGNORE]\n    [INTO] tbl_name [PARTITION (partition_list)]\n    SET col={expr | DEFAULT}, ...\n    [ ON DUPLICATE KEY UPDATE\n      col=expr\n        [, col=expr] ... ] [RETURNING select_expr \n      [, select_expr ...]]\n",
+        "Or:",
+        "INSERT [LOW_PRIORITY | HIGH_PRIORITY] [IGNORE]\n    [INTO] tbl_name [PARTITION (partition_list)] [(col,...)]\n    SELECT ...\n    [ ON DUPLICATE KEY UPDATE\n      col=expr\n        [, col=expr] ... ] [RETURNING select_expr \n      [, select_expr ...]]\n",
+        "The INSERT statement is used to insert new rows into an existing table. The INSERT ... VALUES\nand INSERT ... SET forms of the statement insert rows based on explicitly specified values. The INSERT ... SELECT form inserts rows selected from another table or tables. INSERT ... SELECT is discussed further in the INSERT ... SELECT article.",
+        "The table name can be specified in the form db_name.tbl_name or, if a default database is selected, in the form tbl_name (see Identifier Qualifiers). This allows to use INSERT ... SELECT to copy rows between different databases.",
+        "The PARTITION clause can be used in both the INSERT and the SELECT part. See Partition Pruning and Selection for details.",
+        "MariaDB starting with 10.5The RETURNING clause was introduced in MariaDB 10.5.\n",
+        "The columns list is optional. It specifies which values are explicitly inserted, and in which order. If this clause is not specified, all values must be explicitly specified, in the same order they are listed in the table definition.",
+        "The list of value follow the VALUES or VALUE keyword (which are interchangeable, regardless how much values you want to insert), and is wrapped by parenthesis. The values must be listed in the same order as the columns list. It is possible to specify more than one list to insert more than one rows with a single statement. If many rows are inserted, this is a speed optimization.",
+        "For one-row statements, the SET clause may be more simple, because you don't need to remember the columns order. All values are specified in the form col = expr.",
+        "Values can also be specified in the form of a SQL expression or subquery. However, the subquery cannot access the same table that is named in the INTO clause.",
+        "If you use the LOW_PRIORITY keyword, execution of the INSERT is delayed until no other clients are reading from the table. If you use the HIGH_PRIORITY keyword, the statement has the same priority as SELECTs. This affects only storage engines that use only table-level locking (MyISAM, MEMORY, MERGE). However, if one of these keywords is specified, concurrent inserts cannot be used. See HIGH_PRIORITY and LOW_PRIORITY clauses for details."
+    ],
+    "Description": [],
+    "Examples": [
+        "INSERT INTO person (first_name, last_name) VALUES ('John', 'Doe');\n",
+        "INSERT INTO tbl_name VALUES (1, \"row 1\"), (2, \"row 2\");\n",
+        "INSERT INTO person SET first_name = 'John', last_name = 'Doe';\n",
+        "INSERT INTO contractor SELECT * FROM person WHERE status = 'c';\n"
+    ],
+    "Category": [
+        "Data Manipulation"
+    ]
+}

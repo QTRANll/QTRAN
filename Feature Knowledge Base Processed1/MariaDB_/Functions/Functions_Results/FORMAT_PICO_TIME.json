@@ -1,0 +1,38 @@
+{
+    "HTML": "https://mariadb.com//kb/en/format_pico_time/",
+    "Title": "FORMAT_PICO_TIME",
+    "Feature": [
+        "FORMAT_PICO_TIME(time_val)\n"
+    ],
+    "Description": [
+        "Given a time in picoseconds, returns a human-readable time value and unit indicator. Resulting unit is dependent on the length of the argument, and can be:",
+        "ps - picoseconds\nns - nanoseconds\nus - microseconds\nms - milliseconds\ns - seconds\nmin - minutes\nh - hours\nd - days\n",
+        "With the exception of results under one nanosecond, which are not rounded and are represented as whole numbers, the result is rounded to 2 decimal places, with a minimum of 3 significant digits.",
+        "Returns NULL if the argument is NULL.",
+        "This function is very similar to the Sys Schema FORMAT_TIME function, but with the following differences:",
+        "Represents minutes as min rather than m.\nDoes not represent weeks.\n"
+    ],
+    "Examples": [
+        "SELECT\n    FORMAT_PICO_TIME(43) AS ps,\n    FORMAT_PICO_TIME(4321) AS ns, \n    FORMAT_PICO_TIME(43211234) AS us,\n    FORMAT_PICO_TIME(432112344321) AS ms,\n    FORMAT_PICO_TIME(43211234432123) AS s,\n    FORMAT_PICO_TIME(432112344321234) AS m,\n    FORMAT_PICO_TIME(4321123443212345) AS h,\n    FORMAT_PICO_TIME(432112344321234545) AS d;\n+--------+---------+----------+-----------+---------+----------+--------+--------+\n| ps     | ns      | us       | ms        | s       | m        | h      | d      |\n+--------+---------+----------+-----------+---------+----------+--------+--------+\n|  43 ps | 4.32 ns | 43.21 us | 432.11 ms | 43.21 s | 7.20 min | 1.20 h | 5.00 d |\n+--------+---------+----------+-----------+---------+----------+--------+--------+\n"
+    ],
+    "Category": [
+        "Date & Time Functions"
+    ],
+    "Effective SQLs Refined": [
+        "SELECT\n    FORMAT_PICO_TIME(43) AS ps,\n    FORMAT_PICO_TIME(4321) AS ns, \n    FORMAT_PICO_TIME(43211234) AS us,\n    FORMAT_PICO_TIME(432112344321) AS ms,\n    FORMAT_PICO_TIME(43211234432123) AS s,\n    FORMAT_PICO_TIME(432112344321234) AS m,\n    FORMAT_PICO_TIME(4321123443212345) AS h,\n    FORMAT_PICO_TIME(432112344321234545) AS d;"
+    ],
+    "Ineffective SQLs Refined": [],
+    "Wrong Messages from Ineffective SQLs Refined": [],
+    "SQLs Generated1": [],
+    "SQLs Generated Costs1": [],
+    "SQLs Generated ExecResults1": [],
+    "SQLs Generated ExecTimes1": [],
+    "SQLs Generated ErrorMessages1": [],
+    "Effective SQLs Generated1": [],
+    "SQLs Generated2": [],
+    "SQLs Generated Costs2": [],
+    "SQLs Generated ExecResults2": [],
+    "SQLs Generated ExecTimes2": [],
+    "SQLs Generated ErrorMessages2": [],
+    "Effective SQLs Generated2": []
+}

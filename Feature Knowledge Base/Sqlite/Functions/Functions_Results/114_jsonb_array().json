@@ -1,0 +1,18 @@
+{
+    "HTML": [
+        "https://sqlite.org/json1.html#jarrayb"
+    ],
+    "Title": [
+        "JSON Functions"
+    ],
+    "Feature": [
+        "jsonb_array()"
+    ],
+    "Description": [
+        "The jsonb_array() SQL function operates similarly to the json_array() function, with a key distinction in the output format. While json_array() produces a JSON array in the standard RFC 8259 text format, jsonb_array() returns the constructed JSON array in SQLite's private binary JSONB format. This binary format can offer performance advantages for certain operations involving JSON data within SQLite."
+    ],
+    "Examples": [],
+    "Category": [
+        "JSON Functions"
+    ]
+}

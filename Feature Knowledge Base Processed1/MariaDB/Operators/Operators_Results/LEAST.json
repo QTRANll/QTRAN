@@ -1,0 +1,39 @@
+{
+    "HTML": "https://mariadb.com//kb/en/least/",
+    "Title": "LEAST",
+    "Feature": [
+        "LEAST(value1,value2,...)\n"
+    ],
+    "Description": [
+        "With two or more arguments, returns the smallest (minimum-valued)\nargument. The arguments are compared using the following rules:",
+        "If the return value is used in an INTEGER context or all arguments are integer-valued, they are compared as integers.\nIf the return value is used in a REAL context or all arguments are real-valued, they are compared as reals.\nIf any argument is a case-sensitive string, the arguments are compared as case-sensitive strings.\nIn all other cases, the arguments are compared as case-insensitive strings.\n",
+        "LEAST() returns NULL if any argument is NULL."
+    ],
+    "Examples": [
+        "SELECT LEAST(2,0);\n+------------+\n| LEAST(2,0) |\n+------------+\n|          0 |\n+------------+\n",
+        "SELECT LEAST(34.0,3.0,5.0,767.0);\n+---------------------------+\n| LEAST(34.0,3.0,5.0,767.0) |\n+---------------------------+\n|                       3.0 |\n+---------------------------+\n",
+        "SELECT LEAST('B','A','C');\n+--------------------+\n| LEAST('B','A','C') |\n+--------------------+\n| A                  |\n+--------------------+\n"
+    ],
+    "Category": [
+        "Comparison Operators"
+    ],
+    "Effective SQLs Refined": [
+        "SELECT LEAST(2,0);",
+        "SELECT LEAST(34.0,3.0,5.0,767.0);",
+        "SELECT LEAST('B','A','C');"
+    ],
+    "Ineffective SQLs Refined": [],
+    "Wrong Messages from Ineffective SQLs Refined": [],
+    "SQLs Generated1": [],
+    "SQLs Generated Costs1": [],
+    "SQLs Generated ExecResults1": [],
+    "SQLs Generated ExecTimes1": [],
+    "SQLs Generated ErrorMessages1": [],
+    "Effective SQLs Generated1": [],
+    "SQLs Generated2": [],
+    "SQLs Generated Costs2": [],
+    "SQLs Generated ExecResults2": [],
+    "SQLs Generated ExecTimes2": [],
+    "SQLs Generated ErrorMessages2": [],
+    "Effective SQLs Generated2": []
+}

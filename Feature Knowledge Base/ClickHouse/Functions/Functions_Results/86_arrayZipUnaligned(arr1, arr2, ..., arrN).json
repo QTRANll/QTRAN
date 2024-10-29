@@ -1,0 +1,28 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/array-functions"
+    ],
+    "Title": [
+        "arrayZipUnaligned"
+    ],
+    "Feature": [
+        "arrayZipUnaligned(arr1, arr2, ..., arrN)"
+    ],
+    "Description": [
+        "arrayZipUnaligned",
+        "Combines multiple arrays into a single array, allowing for unaligned arrays. The resulting array contains the corresponding elements of the source arrays grouped into tuples in the listed order of arguments.",
+        "Syntax",
+        "arrayZipUnaligned(arr1, arr2, ..., arrN)",
+        "Arguments",
+        "arrN \u2014 Array.",
+        "The function can take any number of arrays of different types.",
+        "Returned value",
+        "Array with elements from the source arrays grouped into tuples. Data types in the tuple are the same as types of the input arrays and in the same order as arrays are passed. Array. If the arrays have different sizes, the shorter arrays will be padded with null values."
+    ],
+    "Examples": [
+        "SELECT arrayZipUnaligned(['a'], [1, 2, 3]);"
+    ],
+    "Category": [
+        "Arrays Functions"
+    ]
+}

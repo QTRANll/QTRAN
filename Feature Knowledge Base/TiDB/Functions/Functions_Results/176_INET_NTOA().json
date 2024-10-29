@@ -1,0 +1,23 @@
+{
+    "HTML": [
+        "https://docs.pingcap.com/zh/tidb/stable/miscellaneous-functions#inet_ntoa"
+    ],
+    "Title": [
+        "INET_NTOA()"
+    ],
+    "Feature": [
+        "INET_NTOA()"
+    ],
+    "Description": [
+        "INET_NTOA()",
+        "INET_NTOA() \u51fd\u6570\u7528\u4e8e\u5c06\u4e8c\u8fdb\u5236 IPv4 \u5730\u5740\u8f6c\u6362\u4e3a\u70b9\u5206\u5341\u8fdb\u5236\u8868\u793a\u5f62\u5f0f\u3002",
+        "SELECT INET_NTOA(2130706433);\n",
+        "+-----------------------+\n| INET_NTOA(2130706433) |\n+-----------------------+\n| 127.0.0.1             |\n+-----------------------+\n1 row in set (0.00 sec)\n"
+    ],
+    "Examples": [
+        "SELECT INET_NTOA(2130706433);\n"
+    ],
+    "Category": [
+        "Miscellaneous Functions"
+    ]
+}

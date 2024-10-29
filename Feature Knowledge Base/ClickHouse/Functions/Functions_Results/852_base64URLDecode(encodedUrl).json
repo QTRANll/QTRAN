@@ -1,0 +1,27 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/string-functions"
+    ],
+    "Title": [
+        "base64URLDecode"
+    ],
+    "Feature": [
+        "base64URLDecode(encodedUrl)"
+    ],
+    "Description": [
+        "base64URLDecode",
+        "Accepts a base64-encoded URL and decodes it from base64 with URL-specific modifications, according to RFC 4648. Throws an exception in case of an error.",
+        "Syntax",
+        "base64URLDecode(encodedUrl)",
+        "Arguments",
+        "encodedURL \u2014 String column or constant. If the string is not a valid Base64-encoded value with URL-specific modifications, an exception is thrown.",
+        "Returned value",
+        "A string containing the decoded value of the argument."
+    ],
+    "Examples": [
+        "SELECT base64URLDecode('aHR0cDovL2NsaWNraG91c2UuY29t');"
+    ],
+    "Category": [
+        "Strings Functions"
+    ]
+}

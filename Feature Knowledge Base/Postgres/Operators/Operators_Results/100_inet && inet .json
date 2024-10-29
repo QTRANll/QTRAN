@@ -1,0 +1,21 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/current/functions-net.html"
+    ],
+    "Title": [
+        "inet && inet"
+    ],
+    "Feature": [
+        "inet && inet → boolean"
+    ],
+    "Description": [
+        "Does either subnet contain or equal the other?"
+    ],
+    "Examples": [
+        "inet '192.168.1/24' && inet '192.168.1.80/28' → t",
+        "inet '192.168.1/24' && inet '192.168.2.0/28' → f"
+    ],
+    "Category": [
+        "Network Address Functions and Operators"
+    ]
+}

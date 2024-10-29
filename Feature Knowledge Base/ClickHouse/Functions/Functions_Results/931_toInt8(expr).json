@@ -1,0 +1,33 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/type-conversion-functions"
+    ],
+    "Title": [
+        "toInt8"
+    ],
+    "Feature": [
+        "toInt8(expr)"
+    ],
+    "Description": [
+        "toInt8",
+        "Converts an input value to a value of type Int8. Throws an exception in case of an error.",
+        "Syntax",
+        "toInt8(expr)",
+        "Arguments",
+        "expr \u2014 Expression returning a number or a string representation of a number. Expression.",
+        "Supported arguments:",
+        "Values or string representations of type (U)Int8/16/32/64/128/256.Values of type Float32/64.",
+        "Unsupported arguments:",
+        "String representations of Float32/64 values, including NaN and Inf.String representations of binary and hexadecimal values, e.g. SELECT toInt8('0xc0fe');.",
+        "NoteIf the input value cannot be represented within the bounds of Int8, overflow or underflow of the result occurs.\nThis is not considered an error.\nFor example: SELECT toInt8(128) == -128;.",
+        "Returned value",
+        "8-bit integer value. Int8.",
+        "NoteThe function uses rounding towards zero, meaning it truncates fractional digits of numbers."
+    ],
+    "Examples": [
+        "SELECT    toInt8(-8),    toInt8(-8.8),    toInt8('-8')FORMAT Vertical;"
+    ],
+    "Category": [
+        "Type Conversion Functions"
+    ]
+}

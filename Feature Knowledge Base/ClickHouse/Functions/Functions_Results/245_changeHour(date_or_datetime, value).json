@@ -1,0 +1,27 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/date-time-functions"
+    ],
+    "Title": [
+        "changeHour"
+    ],
+    "Feature": [
+        "changeHour(date_or_datetime, value)"
+    ],
+    "Description": [
+        "changeHour",
+        "Changes the hour component of a date or date time.",
+        "Syntax",
+        "changeHour(date_or_datetime, value)",
+        "Arguments",
+        "date_or_datetime - a Date, Date32, DateTime or DateTime64value - a new value of the hour. Integer.",
+        "Returned value",
+        "Returns a value of same type as date_or_datetime. If the input is a Date, return DateTime. If the input is a Date32, return DateTime64."
+    ],
+    "Examples": [
+        "SELECT changeHour(toDate('1999-01-01'), 14), changeHour(toDateTime64('1999-01-01 00:00:00.000', 3), 14);"
+    ],
+    "Category": [
+        "Dates and Times Functions"
+    ]
+}

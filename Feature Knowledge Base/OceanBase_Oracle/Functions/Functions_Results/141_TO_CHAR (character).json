@@ -1,0 +1,23 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000000823243"
+    ],
+    "Title": [
+        "TO_CHAR (character)"
+    ],
+    "Feature": [
+        "TO_CHAR(character)\n"
+    ],
+    "Description": [
+        "该函数将 NCHAR、NVARCHAR2 或 CLOB 类型的数据转换为 VARCHAR2 数据类型。",
+        "\n说明\n当函数将字符 LOB 转换为数据库字符集时，如果要转换的 LOB 值大于目标类型，则数据库返回错误。\n",
+        "参数 character 指定要转换为 VARCHAR2 数据类型表达式，数据类型可以是 NCHAR、NVARCHAR2 或 CLOB。",
+        "返回 VARCHAR2 数据类型。"
+    ],
+    "Examples": [
+        "obclient> SELECT TO_CHAR('010101') FROM DUAL;\n+-------------------+\n| TO_CHAR('010101') |\n+-------------------+\n| 010101            |\n+-------------------+\n1 row in set\n"
+    ],
+    "Category": [
+        "Conversion Functions"
+    ]
+}

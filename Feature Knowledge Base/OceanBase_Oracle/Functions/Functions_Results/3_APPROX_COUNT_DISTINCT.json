@@ -1,0 +1,26 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000000822863"
+    ],
+    "Title": [
+        "APPROX_COUNT_DISTINCT"
+    ],
+    "Feature": [
+        "APPROX_COUNT_DISTINCT(expr)\n"
+    ],
+    "Description": [
+        "该函数对参数列去重后的行数进行计算，返回行数值，且该值是近似值，该函数可以用于进一步计算被引用的列的选择性。",
+        "与函数 COUNT(DISTINCT x) 相比，APPROX_COUNT_DISTINCT 返回的是近似值，所以计算速度极快。在处理大量级的数据时 COUNT(DISTINCT x) 经常要花费很长的时间，使用 APPROX_COUNT_DISTINCT 牺牲了少量的精确度，却换来了计算效率的极大提升。",
+        "expr 表示去重的数值列。",
+        "返回 NUMBER 类型数据。"
+    ],
+    "Examples": [
+        "obclient> CREATE TABLE tbl1 (col1 INT,col2 INT,col3 varchar(10));\nQuery OK, 0 rows affected\n\nobclient> INSERT INTO tbl1 VALUES (1,10,'a'),(2,20,'b'),(3,30,'c'),\n    (4,40,'a'),(5,50,'c'),(1,10,'a'),(2,20,'b'),(3,30,'c'),(4,30,'a'),(5,40,'b');\nQuery OK, 10 rows affected\nRecords: 10  Duplicates: 0  Warnings: 0\n",
+        "obclient> SELECT APPROX_COUNT_DISTINCT(col2) FROM tbl1;\n+-----------------------------+\n| APPROX_COUNT_DISTINCT(COL2) |\n+-----------------------------+\n|                           5 |\n+-----------------------------+\n1 row in set\n",
+        "obclient> SELECT col1,APPROX_COUNT_DISTINCT(col2) FROM tbl1 GROUP BY col1;\n+------+-----------------------------+\n| COL1 | APPROX_COUNT_DISTINCT(COL2) |\n+------+-----------------------------+\n|    1 |                           1 |\n|    2 |                           1 |\n|    3 |                           1 |\n|    4 |                           2 |\n|    5 |                           2 |\n+------+-----------------------------+\n5 rows in set\n",
+        "obclient> SELECT col1,col3,APPROX_COUNT_DISTINCT(col2) FROM tbl1 GROUP BY col1,col3;\n+------+------+-----------------------------+\n| COL1 | COL3 | APPROX_COUNT_DISTINCT(COL2) |\n+------+------+-----------------------------+\n|    1 | a    |                           1 |\n|    2 | b    |                           1 |\n|    3 | c    |                           1 |\n|    4 | a    |                           2 |\n|    5 | b    |                           1 |\n|    5 | c    |                           1 |\n+------+------+-----------------------------+\n6 rows in set\n"
+    ],
+    "Category": [
+        "Aggregate Functions"
+    ]
+}

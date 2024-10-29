@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000000823340"
+    ],
+    "Title": [
+        "LOG2"
+    ],
+    "Feature": [
+        "LOG2(X)\n"
+    ],
+    "Description": [
+        "返回以 2 为底的 X 的指数。"
+    ],
+    "Examples": [
+        "obclient> SELECT LOG2(65536);\n+-------------+\n| LOG2(65536) |\n+-------------+\n|          16 |\n+-------------+\n1 row in set\n\nobclient> SELECT LOG2(-65536);\n+--------------+\n| LOG2(-65536) |\n+--------------+\n|         NULL |\n+--------------+\n1 row in set, 1 warning\n"
+    ],
+    "Category": [
+        "Mathematical Functions"
+    ]
+}

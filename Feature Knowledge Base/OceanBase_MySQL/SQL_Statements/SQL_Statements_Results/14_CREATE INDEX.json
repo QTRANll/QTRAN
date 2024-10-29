@@ -1,0 +1,61 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000001053496"
+    ],
+    "Title": [
+        "CREATE INDEX"
+    ],
+    "Feature": [
+        "CREATE [hint_options] [SPATIAL | UNIQUE] INDEX [IF NOT EXISTS] index_name \n    [USING BTREE] ON table_name (sort_column_key [, sort_column_key... ]) \n    [index_option...] [partition_option] [index_column_group_option]\n\nsort_column_key:\n      column_name [(integer)] [ASC] [ID id]\n    | (index_expr) [ASC] [ID id]\n\nindex_option:  \n      GLOBAL \n    | LOCAL \n    | BLOCK_SIZE integer \n    | COMMENT STRING_VALUE \n    | STORING (column_name [, column_name...]) \n    | WITH_ROWID \n    | WITH PARSER STRING_VALUE \n    | index_using_algorithm \n    | visibility_option \n    | DATA_TABLE_ID data_table_id \n    | INDEX_TABLE_ID index_table_id \n    | VIRTUAL_COLUMN_ID virtual_column_id \n    | MAX_USED_PART_ID used_part_id \n\nindex_column_group_option：\n    WITH COLUMN GROUP([all columns, ]each column)\n"
+    ],
+    "Description": [
+        "该语句用来创建索引。索引是创建在表上的，对数据库表中一列或多列的值进行排序的一种结构。其作用主要在于提高查询的速度，降低数据库系统的性能开销。",
+        "OceanBase 数据库当前版本支持的索引类型包含唯一索引和非唯一索引，创建索引时可以通过 STORING(column_name,...) 指定索引表上的冗余列。索引表的冗余列除了包含用户指定添加的列外，还会自动添加上主键表的主键列（如果无主键表则包含 Hidden PK），存储额外的列在索引中可以为数据库优化器提供更多的选择。",
+        "\n说明\n在 OceanBase 数据库 MySQL 模式下，如果删除表中的所有索引列，则所创建的索引失效。\n",
+        "\n\n\n参数项\n描述\n\n\n\n\nhint_options\n指定 Hint 选项，为可选项。目前仅支持使用 parallel，如 /*+ parallel(10) */。\n\n\n[SPATIAL | UNIQUE]\n可选项，指定索引的类型。 \n      \nSPATIAL 关键字用于创建空间索引。\nUNIQUE 关键字用于创建唯一索引。\n\n\n\nIF NOT EXISTS\n用于指示如果索引已经存在，则不进行创建。创建索引时，如果索引存在且没有指定 IF NOT EXISTS，则会报错。\n\n\nindex_name\n指定待创建的索引名称。\n\n\nUSING BTREE\n可选项，表示创建索引时使用 B-tree 索引结构。 \n      \n说明\n目前仅支持指定为 USING BTREE。\n\n\n\ntable_name\n指定要在其上创建索引的表，可以直接指定表的名字，也可使用 schema_name.table_name 格式指定表名和表所属的数据库名。\n\n\nsort_column_key\n指定一个排序列的键，创建索引时可以指定多个排序列，多个排序列使用英文逗号（,）分开，详细介绍可参见下文 sort_column_key。\n\n\nindex_option\n指定索引选项，创建索引时可以指定多个索引选项，多个索引选项使用英文空格分开，详细介绍可参见下文 index_option。\n\n\npartition_option\n指定创建索引分区的选项，支持指定哈希分区、键分区、范围分区、列表分区以及外部表分区。\n\n\nindex_column_group_option\n指定索引选项。详细介绍可参见下文 index_column_group_option。\n\n\n",
+        "sort_column_key",
+        "column_name [(integer)] [ASC] [ID id]：表示指定一个列名作为排序键。",
+        "\ncolumn_name：表示要排序的列名。\ninteger：可选项，表示排序键的长度限制。\nASC：可选项，表示按升序排序，目前暂不支持降序（DESC）排列。\nID id：可选项，表示排序键的 ID 号。\n",
+        "例如，在名为 t3 的表上创建一个名为 index3 的索引，并指定该索引在 c1 列上按升序进行排序。",
+        "CREATE INDEX index3 ON t3 (c1 ASC);\n",
+        "column_name：表示要排序的列名。",
+        "integer：可选项，表示排序键的长度限制。",
+        "ASC：可选项，表示按升序排序，目前暂不支持降序（DESC）排列。",
+        "ID id：可选项，表示排序键的 ID 号。",
+        "(index_expr) [ASC] [ID id]：表示指定一个索引表达式作为排序键。索引表达式可以使用表达式或函数来定义。它可以包含以下选项：",
+        "\n(index_expr)：表示索引表达式，且允许是布尔表达式，例如 c1=c1。OceanBase 数据库当前版本禁止创建生成列上的函数索引。函数索引所支持的表达式参见 函数索引支持的系统函数列表。\nASC：可选项，表示按升序排序，目前暂不支持降序（DESC）排列。\nID id：可选项，表示排序键的 ID 号。\n",
+        "例如，在名为 t4 的表上创建一个名为 index4 的索引，指定 c1+c2 作为索引表达式，并按升序进行排序。",
+        "CREATE INDEX index4 ON t4 ((c1 + c2) ASC);\n",
+        "(index_expr)：表示索引表达式，且允许是布尔表达式，例如 c1=c1。OceanBase 数据库当前版本禁止创建生成列上的函数索引。函数索引所支持的表达式参见 函数索引支持的系统函数列表。",
+        "ASC：可选项，表示按升序排序，目前暂不支持降序（DESC）排列。",
+        "ID id：可选项，表示排序键的 ID 号。",
+        "创建索引时可指定多个排序列，多个排序列使用英文逗号(,)分开。例如，在名为 t5 的表上创建一个名为 index5 的索引，并指定使用 c1 列和 c2+c3 表达式作为索引的排序键。",
+        "CREATE INDEX index5 ON t5 (c1, (c2+c3));\n",
+        "index_option",
+        "GLOBAL：表示创建全局索引。",
+        "LOCAL：表示创建局部索引。",
+        "BLOCK_SIZE integer：指定索引块的大小，即每个索引块中的字节数。",
+        "COMMENT STRING_VALUE：为索引添加注释。",
+        "STORING (column_name [, column_name...])：指定要存储在索引中的列，多个列使用英文逗号（,）分开。",
+        "WITH_ROWID：创建包含行标识符的索引。",
+        "WITH PARSER STRING_VALUE：指定索引所需的解析器。",
+        "index_using_algorithm：指定索引所使用的算法。",
+        "visibility_option：指定索引的可见性。",
+        "DATA_TABLE_ID data_table_id：指定索引所属的数据表 ID。",
+        "INDEX_TABLE_ID index_table_id：指定索引表的 ID。",
+        "VIRTUAL_COLUMN_ID virtual_column_id：指定虚拟列的 ID。",
+        "MAX_USED_PART_ID used_part_id：指定索引的最大使用分区 ID。",
+        "index_column_group_option",
+        "WITH COLUMN GROUP(all columns, each column)",
+        "：指定创建行存列存冗余的索引。",
+        "WITH COLUMN GROUP(each column)",
+        "：指定创建列存索引。"
+    ],
+    "Examples": [
+        "CREATE TABLE test_tbl1 (col1 INT, col2 VARCHAR(50));\n",
+        "CREATE INDEX idx1_test_tbl1 ON test_tbl1 (col1) WITH COLUMN GROUP(each column);\n"
+    ],
+    "Category": [
+        "No Category"
+    ]
+}

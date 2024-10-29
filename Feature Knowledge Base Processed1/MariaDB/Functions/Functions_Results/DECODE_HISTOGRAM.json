@@ -1,0 +1,43 @@
+{
+    "HTML": "https://mariadb.com//kb/en/decode_histogram/",
+    "Title": "DECODE_HISTOGRAM",
+    "Feature": [
+        "DECODE_HISTOGRAM(hist_type,histogram)\n"
+    ],
+    "Description": [
+        "Returns a string of comma separated numeric values corresponding to a probability distribution represented by the histogram of type hist_type (SINGLE_PREC_HB or DOUBLE_PREC_HB). The hist_type and histogram would be commonly used from the mysql.column_stats table.",
+        "See Histogram Based Statistics for details."
+    ],
+    "Examples": [],
+    "Category": [
+        "Information Functions"
+    ],
+    "Effective SQLs Refined": [],
+    "Ineffective SQLs Refined": [],
+    "Wrong Messages from Ineffective SQLs Refined": [],
+    "SQLs Generated1": [
+        {
+            "Example SQL": "SELECT DECODE_HISTOGRAM('SINGLE_PREC_HB', histogram) FROM mysql.column_stats;"
+        }
+    ],
+    "SQLs Generated Costs1": [
+        {
+            "Total Tokens": 343,
+            "Prompt Tokens": 310,
+            "Completion Tokens": 33,
+            "Total Cost (USD)": 6.63e-05
+        }
+    ],
+    "SQLs Generated ExecResults1": [
+        "[]"
+    ],
+    "SQLs Generated ExecTimes1": [
+        "0.022382736206054688"
+    ],
+    "SQLs Generated ErrorMessages1": [
+        "None"
+    ],
+    "Effective SQLs Generated1": [
+        "SELECT DECODE_HISTOGRAM('SINGLE_PREC_HB', histogram) FROM mysql.column_stats;"
+    ]
+}

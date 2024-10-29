@@ -1,0 +1,25 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/uuid-functions"
+    ],
+    "Title": [
+        "serverUUID"
+    ],
+    "Feature": [
+        "serverUUID()"
+    ],
+    "Description": [
+        "serverUUID",
+        "Returns the random UUID generated during the first start of the ClickHouse server. The UUID is stored in file uuid in the ClickHouse server directory (e.g. /var/lib/clickhouse/) and retained between server restarts.",
+        "Syntax",
+        "serverUUID()",
+        "Returned value",
+        "The UUID of the server. UUID."
+    ],
+    "Examples": [
+        "serverUUID()"
+    ],
+    "Category": [
+        "UUIDs Functions"
+    ]
+}

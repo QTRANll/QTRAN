@@ -1,0 +1,21 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000001053511"
+    ],
+    "Title": [
+        "EXECUTE"
+    ],
+    "Feature": [
+        "EXECUTE stmt_name\n[USING @var_name [, @var_name] ...]\n"
+    ],
+    "Description": [
+        "该语句用于执行准备的语句。",
+        "\n\n\n参数\n描述\n\n\n\n\nstmt_name\n准备语句的名称。\n\n\n@var_name\n按顺序填入 stmt_name 中的变量。\n\n\n"
+    ],
+    "Examples": [
+        "obclient> PREPARE stmt1 FROM 'SELECT SQRT(POW(?,2) + POW(?,2)) AS hypotenuse';\nQuery OK, 0 rows affected\n\nobclient> SET @a = 3;\nQuery OK, 0 rows affected\n\nobclient> SET @b = 4;\nQuery OK, 0 rows affected\n\nobclient> EXECUTE stmt1 USING @a, @b;\nQuery OK, 0 rows affected\n"
+    ],
+    "Category": [
+        "No Category"
+    ]
+}

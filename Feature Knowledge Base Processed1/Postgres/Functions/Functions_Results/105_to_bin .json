@@ -1,0 +1,22 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/current/functions-string.html"
+    ],
+    "Title": [
+        "to_bin"
+    ],
+    "Feature": [
+        "to_bin ( integer ) → text",
+        "to_bin ( bigint ) → text"
+    ],
+    "Description": [
+        "Converts the number to its equivalent two's complement binary representation."
+    ],
+    "Examples": [
+        "to_bin(2147483647) → 1111111111111111111111111111111",
+        "to_bin(-1234) → 11111111111111111111101100101110"
+    ],
+    "Category": [
+        "String Functions and Operators"
+    ]
+}

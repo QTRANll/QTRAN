@@ -1,0 +1,117 @@
+{
+    "HTML": "https://mariadb.com//kb/en/values-value/",
+    "Title": "VALUES / VALUE",
+    "Feature": [
+        "MariaDB starting with 10.3.3VALUE(col_name) \n",
+        "MariaDB until 10.3.2VALUES(col_name) \n"
+    ],
+    "Description": [
+        "In an INSERT ... ON DUPLICATE KEY UPDATE statement, you can use the VALUES(col_name) function in the  UPDATE clause to refer to column values from the  INSERT portion of the statement. In other words,  VALUES(col_name) in the UPDATE clause refers to the value of col_name that would be inserted, had no duplicate-key conflict occurred. This function is especially useful in multiple-row inserts.",
+        "The VALUES() function is meaningful only in INSERT ... ON DUPLICATE KEY UPDATE statements and returns NULL otherwise.",
+        "In MariaDB 10.3.3 this function was renamed to VALUE(), because it's incompatible with the standard Table Value Constructors syntax, implemented in MariaDB 10.3.3.",
+        "The VALUES() function can still be used even from MariaDB 10.3.3, but only in INSERT ... ON DUPLICATE KEY UPDATE statements; it's a syntax error otherwise."
+    ],
+    "Examples": [],
+    "Category": [
+        "Miscellaneous Functions"
+    ],
+    "Effective SQLs Refined": [],
+    "Ineffective SQLs Refined": [],
+    "Wrong Messages from Ineffective SQLs Refined": [],
+    "SQLs Generated1": [
+        {
+            "Example SQL": "INSERT INTO table_name (col1, col2) VALUES (value1, value2) ON DUPLICATE KEY UPDATE col2 = VALUES(col2);"
+        },
+        {
+            "Example SQL": "INSERT INTO your_table (col1, col2) VALUES (value1, value2) ON DUPLICATE KEY UPDATE col2 = VALUES(col2);"
+        },
+        {
+            "Example SQL": "INSERT INTO example_table (col1, col2) VALUES (value1, value2) ON DUPLICATE KEY UPDATE col2 = VALUES(col2);"
+        },
+        {
+            "Example SQL": "INSERT INTO example_table (col1, col2) VALUES ('new_value1', 'new_value2') ON DUPLICATE KEY UPDATE col2 = VALUES(col2);"
+        },
+        {
+            "Example SQL": "INSERT INTO example_table (new_col1, new_col2) VALUES ('new_value1', 'new_value2') ON DUPLICATE KEY UPDATE new_col2 = VALUES(new_col2);"
+        }
+    ],
+    "SQLs Generated Costs1": [
+        {
+            "Total Tokens": 492,
+            "Prompt Tokens": 447,
+            "Completion Tokens": 45,
+            "Total Cost (USD)": 9.404999999999998e-05
+        },
+        {
+            "Total Tokens": 669,
+            "Prompt Tokens": 624,
+            "Completion Tokens": 45,
+            "Total Cost (USD)": 0.00012059999999999999
+        },
+        {
+            "Total Tokens": 847,
+            "Prompt Tokens": 802,
+            "Completion Tokens": 45,
+            "Total Cost (USD)": 0.0001473
+        },
+        {
+            "Total Tokens": 1024,
+            "Prompt Tokens": 976,
+            "Completion Tokens": 48,
+            "Total Cost (USD)": 0.00017519999999999998
+        },
+        {
+            "Total Tokens": 1205,
+            "Prompt Tokens": 1153,
+            "Completion Tokens": 52,
+            "Total Cost (USD)": 0.00020414999999999997
+        }
+    ],
+    "SQLs Generated ExecResults1": [
+        "None",
+        "None",
+        "None",
+        "None",
+        "None"
+    ],
+    "SQLs Generated ExecTimes1": [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+    ],
+    "SQLs Generated ErrorMessages1": [
+        "(pymysql.err.ProgrammingError) (1146, \"Table 'PINOLO_MariaDB.table_name' doesn't exist\")\n",
+        "(pymysql.err.ProgrammingError) (1146, \"Table 'PINOLO_MariaDB.your_table' doesn't exist\")\n",
+        "(pymysql.err.OperationalError) (1054, \"Unknown column 'value1' in 'field list'\")\n",
+        "(pymysql.err.OperationalError) (1054, \"Unknown column 'col1' in 'field list'\")\n",
+        "(pymysql.err.OperationalError) (1054, \"Unknown column 'new_col1' in 'field list'\")\n"
+    ],
+    "Effective SQLs Generated1": [],
+    "SQLs Generated2": [
+        {
+            "Example SQL": "INSERT INTO dialect_recognize_table (dialect_name, region, speaker_count, description, is_endangered) VALUES ('Italian', 'Italy', 85000000, 'A Romance language spoken mainly in Italy.', FALSE);"
+        }
+    ],
+    "SQLs Generated Costs2": [
+        {
+            "Total Tokens": 956,
+            "Prompt Tokens": 897,
+            "Completion Tokens": 59,
+            "Total Cost (USD)": 0.00016994999999999998
+        }
+    ],
+    "SQLs Generated ExecResults2": [
+        "None"
+    ],
+    "SQLs Generated ExecTimes2": [
+        "0.00686335563659668"
+    ],
+    "SQLs Generated ErrorMessages2": [
+        "None"
+    ],
+    "Effective SQLs Generated2": [
+        "INSERT INTO dialect_recognize_table (dialect_name, region, speaker_count, description, is_endangered) VALUES ('Italian', 'Italy', 85000000, 'A Romance language spoken mainly in Italy.', FALSE);"
+    ]
+}

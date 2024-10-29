@@ -1,0 +1,33 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/built-in-function-reference.html",
+        "https://dev.mysql.com/doc/refman/8.4/en/information-functions.html"
+    ],
+    "Title": [
+        "14.1 Built-In Function and Operator Reference",
+        "14.15 Information Functions"
+    ],
+    "Feature": [
+        "DATABASE()"
+    ],
+    "Description": [
+        "Return the default (current) database name",
+        "\nDATABASE()\n",
+        "\n          Returns the default (current) database name as a string in the\n          utf8mb3 character set. If there is no\n          default database, DATABASE()\n          returns NULL. Within a stored routine, the\n          default database is the database that the routine is\n          associated with, which is not necessarily the same as the\n          database that is the default in the calling context.\n        ",
+        "Press CTRL+C to copy mysql> SELECT DATABASE();\n        -> 'test'",
+        "\n          If there is no default database,\n          DATABASE() returns\n          NULL.\n        "
+    ],
+    "Examples": [
+        "mysql> SELECT DATABASE();\n        -> 'test'"
+    ],
+    "Category": [
+        "Built-In Functions",
+        "Information Functions"
+    ],
+    "Reference HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/information-functions.html#function_database"
+    ],
+    "Feature Type": [
+        "Function"
+    ]
+}

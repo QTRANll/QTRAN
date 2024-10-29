@@ -1,0 +1,21 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/geomfromtext/"
+    ],
+    "Title": [
+        "ST_GeomFromText"
+    ],
+    "Feature": [
+        "ST_GeomFromText(wkt[,srid])\nST_GeometryFromText(wkt[,srid])\nGeomFromText(wkt[,srid])\nGeometryFromText(wkt[,srid])\n"
+    ],
+    "Description": [
+        "Constructs a geometry value of any type using its WKT representation and SRID.",
+        "GeomFromText(), GeometryFromText(), ST_GeomFromText() and ST_GeometryFromText() are all synonyms."
+    ],
+    "Examples": [
+        "SELECT ST_GeomFromText('POINT(1 1)', 4326);"
+    ],
+    "Category": [
+        "Geographic Functions"
+    ]
+}

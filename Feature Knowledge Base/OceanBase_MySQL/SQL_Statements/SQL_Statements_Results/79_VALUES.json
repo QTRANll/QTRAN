@@ -1,0 +1,27 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000001053480"
+    ],
+    "Title": [
+        "VALUES"
+    ],
+    "Feature": [
+        "VALUES row_constructor_list [ORDER BY column_designator] [LIMIT number]\n\nrow_constructor_list:\n    ROW(value_list)[, ROW(value_list)][, ...]\n\nvalue_list:\n    value[, value][, ...]\n\ncolumn_designator:\n    column_index\n"
+    ],
+    "Description": [
+        "该语句用于返回一组单行或多行数据作为表。",
+        "VALUES 是一个表值构造函数，也可用作独立的 SQL 语句与 UNION、EXCEPT 和 INTERSECT 等结合使用。",
+        "\n\n\n参数\n描述\n\n\n\n\nrow_constructor_list\n行构造函数的列表，由 ROW() 行构造函数子句组成，以逗号分隔。ROW() 不能为空，但其包含在括号中每个标量值都可以为 NULL。\n\n\nvalue_list\n一个或多个标量值的列表。标量值可以是字面量或解析为标量值的表达式。同一 VALUES 语句中的每个 ROW() 所包含的 value_list 中必须具有相同数量的值。\n\n\ncolumn_designator\n指定列，列的命名规则为 column_0，column_1，…。使用可选的 ORDER BY 子句按该指定列对行进行排序。\n\n\n"
+    ],
+    "Examples": [
+        "obclient> VALUES ROW(4,6,8), ROW(5,7,9), ROW(1,-2,3) ORDER BY column_0;\n",
+        "+----------+----------+----------+\n| column_0 | column_1 | column_2 |\n+----------+----------+----------+\n|        1 |       -2 |        3 |\n|        4 |        6 |        8 |\n|        5 |        7 |        9 |\n+----------+----------+----------+\n3 rows in set\n",
+        "obclient> VALUES ROW(\"q\", 23, '2022-12-18'),  ROW(87, \"x+z\", 92.6), ROW(25.0009, \"Well Smith\", '{\"a\": 11, \"b\": 55}');\n",
+        "+----------+------------+--------------------+\n| column_0 | column_1   | column_2           |\n+----------+------------+--------------------+\n| q        | 23         | 2022-12-18         |\n| 87       | x+z        | 92.6               |\n| 25.0009  | Well Smith | {\"a\": 11, \"b\": 55} |\n+----------+------------+--------------------+\n",
+        "obclient> SELECT 11,22 UNION SELECT 33,44;\n+------+------+\n| 11   | 22   |\n+------+------+\n|   11 |   22 |\n|   33 |   44 |\n+------+------+\n2 rows in set\n\nobclient> VALUES ROW(11,22) UNION VALUES ROW(33,44);\n",
+        "+----------+----------+\n| column_0 | column_1 |\n+----------+----------+\n|       11 |       22 |\n|       33 |       44 |\n+----------+----------+\n2 rows in set"
+    ],
+    "Category": [
+        "No Category"
+    ]
+}

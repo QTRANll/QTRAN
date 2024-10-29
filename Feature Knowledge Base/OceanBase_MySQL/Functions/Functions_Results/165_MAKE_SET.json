@@ -1,0 +1,21 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000000823436"
+    ],
+    "Title": [
+        "MAKE_SET"
+    ],
+    "Feature": [
+        "MAKE_SET(bits,str1,str2,...)\n"
+    ],
+    "Description": [
+        "返回将 bits 指定位为 1 的字符串的集合，以逗号（,）分隔。str1 对应 2^0^ 位，str2 对应 2^1^ 位，以此类推。如果对应位的 strn 不存在，则返回 NULL。",
+        "例如，将 bits 指定为 5，换算为二进制为 0101，则返回 str1 与 str3。"
+    ],
+    "Examples": [
+        "obclient> SELECT MAKE_SET(1,'a','b','c');\n+-------------------------+\n| MAKE_SET(1,'a','b','c') |\n+-------------------------+\n| a                       |\n+-------------------------+\n1 row in set\n\nobclient> SELECT MAKE_SET(1 | 4,'hello','ocean','base');\n+----------------------------------------+\n| MAKE_SET(1 | 4,'hello','ocean','base') |\n+----------------------------------------+\n| hello,base                             |\n+----------------------------------------+\n1 row in set\n\nobclient> SELECT MAKE_SET(1 | 4,'hello','ocean',NULL,'base');\n+---------------------------------------------+\n| MAKE_SET(1 | 4,'hello','ocean',NULL,'base') |\n+---------------------------------------------+\n| hello                                       |\n+---------------------------------------------+\n1 row in set\n"
+    ],
+    "Category": [
+        "String Functions"
+    ]
+}

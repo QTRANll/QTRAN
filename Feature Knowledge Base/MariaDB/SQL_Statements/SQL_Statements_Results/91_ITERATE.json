@@ -1,0 +1,21 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/iterate/"
+    ],
+    "Title": [
+        "ITERATE"
+    ],
+    "Feature": [
+        "ITERATE label\n",
+        "ITERATE can appear only within LOOP, REPEAT, and WHILE statements.\nITERATE means \"do the loop again\", and uses the statement's label to determine which statements to repeat. The label must be in the same stored program, not in a caller procedure.",
+        "If you try to use ITERATE with a non-existing label, or if the label is associated to a construct which is not a loop, the following error will be produced:",
+        "ERROR 1308 (42000): ITERATE with no matching label: <label_name>\n",
+        "Below is an example of how ITERATE might be used:",
+        "CREATE PROCEDURE doiterate(p1 INT)\nBEGIN\n  label1: LOOP\n    SET p1 = p1 + 1;\n    IF p1 < 10 THEN ITERATE label1; END IF;\n    LEAVE label1;\n  END LOOP label1;\n  SET @x = p1;\nEND\n"
+    ],
+    "Description": [],
+    "Examples": [],
+    "Category": [
+        "Programmatic and Compound Statements"
+    ]
+}

@@ -1,0 +1,24 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/savepoint.html"
+    ],
+    "Title": [
+        "15.3.4 SAVEPOINT, ROLLBACK TO SAVEPOINT, and RELEASE SAVEPOINT Statements"
+    ],
+    "Feature": [
+        "SAVEPOINT identifier\nROLLBACK [WORK] TO [SAVEPOINT] identifier\nRELEASE SAVEPOINT identifier"
+    ],
+    "Description": [
+        "\nInnoDB supports the SQL statements\n      SAVEPOINT,\n      ROLLBACK TO\n      SAVEPOINT,\n      RELEASE\n      SAVEPOINT and the optional WORK\n      keyword for\n      ROLLBACK.\n    ",
+        "\n      The SAVEPOINT statement sets a\n      named transaction savepoint with a name of\n      identifier. If the current transaction\n      has a savepoint with the same name, the old savepoint is deleted\n      and a new one is set.\n    ",
+        "\n      The ROLLBACK TO\n      SAVEPOINT statement rolls back a transaction to the\n      named savepoint without terminating the transaction. Modifications\n      that the current transaction made to rows after the savepoint was\n      set are undone in the rollback, but InnoDB does\n      not release the row locks that were stored in\n      memory after the savepoint. (For a new inserted row, the lock\n      information is carried by the transaction ID stored in the row;\n      the lock is not separately stored in memory. In this case, the row\n      lock is released in the undo.) Savepoints that were set at a later\n      time than the named savepoint are deleted.\n    ",
+        "\n      If the ROLLBACK TO\n      SAVEPOINT statement returns the following error, it\n      means that no savepoint with the specified name exists:\n    ",
+        "\n      The RELEASE\n      SAVEPOINT statement removes the named savepoint from the\n      set of savepoints of the current transaction. No commit or\n      rollback occurs. It is an error if the savepoint does not exist.\n    ",
+        "\n      All savepoints of the current transaction are deleted if you\n      execute a COMMIT, or a\n      ROLLBACK that\n      does not name a savepoint.\n    ",
+        "\n      A new savepoint level is created when a stored function is invoked\n      or a trigger is activated. The savepoints on previous levels\n      become unavailable and thus do not conflict with savepoints on the\n      new level. When the function or trigger terminates, any savepoints\n      it created are released and the previous savepoint level is\n      restored.\n"
+    ],
+    "Examples": [],
+    "Category": [
+        "Transactional and Locking Statements"
+    ]
+}

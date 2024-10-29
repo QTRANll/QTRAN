@@ -1,0 +1,159 @@
+{
+    "HTML": "https://mariadb.com//kb/en/column_exists/",
+    "Title": "COLUMN_EXISTS",
+    "Feature": [
+        "COLUMN_EXISTS(dyncol_blob, column_nr);\nCOLUMN_EXISTS(dyncol_blob, column_name);\n"
+    ],
+    "Description": [
+        "Checks if a column with name column_name exists in dyncol_blob. If yes, return 1, otherwise return 0. See dynamic columns for more information."
+    ],
+    "Examples": [],
+    "Category": [
+        "Dynamic Columns Functions"
+    ],
+    "Effective SQLs Refined": [],
+    "Ineffective SQLs Refined": [],
+    "Wrong Messages from Ineffective SQLs Refined": [],
+    "SQLs Generated1": [
+        {
+            "Example SQL": "COLUMN_EXISTS(dyncol_blob, column_name);"
+        },
+        {
+            "Example SQL": "SELECT COLUMN_EXISTS('dyncol_blob', 'column_name');"
+        },
+        {
+            "Example SQL": "SELECT COLUMN_EXISTS(dyncol_blob, 'column_name');"
+        },
+        {
+            "Example SQL": "SELECT COLUMN_EXISTS('dyncol_blob', 'column_name');"
+        },
+        {
+            "Example SQL": "SELECT COLUMN_EXISTS(CONVERT('dyncol_blob' USING utf8), 'column_name');"
+        }
+    ],
+    "SQLs Generated Costs1": [
+        {
+            "Total Tokens": 306,
+            "Prompt Tokens": 283,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 5.624999999999999e-05
+        },
+        {
+            "Total Tokens": 491,
+            "Prompt Tokens": 466,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 8.489999999999999e-05
+        },
+        {
+            "Total Tokens": 642,
+            "Prompt Tokens": 617,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 0.00010754999999999999
+        },
+        {
+            "Total Tokens": 796,
+            "Prompt Tokens": 771,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 0.00013065
+        },
+        {
+            "Total Tokens": 953,
+            "Prompt Tokens": 922,
+            "Completion Tokens": 31,
+            "Total Cost (USD)": 0.0001569
+        }
+    ],
+    "SQLs Generated ExecResults1": [
+        "None",
+        "None",
+        "None",
+        "None",
+        "None"
+    ],
+    "SQLs Generated ExecTimes1": [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+    ],
+    "SQLs Generated ErrorMessages1": [
+        "(pymysql.err.ProgrammingError) (1064, \"You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'COLUMN_EXISTS(dyncol_blob, column_name)' at line 1\")\n",
+        "(pymysql.err.OperationalError) (1919, 'Encountered illegal format of dynamic column string')\n",
+        "(pymysql.err.OperationalError) (1054, \"Unknown column 'dyncol_blob' in 'field list'\")\n",
+        "(pymysql.err.OperationalError) (1919, 'Encountered illegal format of dynamic column string')\n",
+        "(pymysql.err.OperationalError) (1919, 'Encountered illegal format of dynamic column string')\n"
+    ],
+    "Effective SQLs Generated1": [],
+    "SQLs Generated2": [
+        {
+            "Example SQL": "SELECT COLUMN_EXISTS(dialect_recognize_table, 'dialect_name');"
+        },
+        {
+            "Example SQL": "SELECT COLUMN_EXISTS('dialect_recognize_table', 'dialect_name');"
+        },
+        {
+            "Example SQL": "SELECT COLUMN_EXISTS(dyncol_blob, 'dialect_name');"
+        },
+        {
+            "Example SQL": "SELECT COLUMN_EXISTS('dialect_recognize_table', 'dialect_name');"
+        },
+        {
+            "Example SQL": "SELECT COLUMN_EXISTS('dialect_recognize_table', 'dialect_name');"
+        }
+    ],
+    "SQLs Generated Costs2": [
+        {
+            "Total Tokens": 761,
+            "Prompt Tokens": 733,
+            "Completion Tokens": 28,
+            "Total Cost (USD)": 0.00012675
+        },
+        {
+            "Total Tokens": 922,
+            "Prompt Tokens": 893,
+            "Completion Tokens": 29,
+            "Total Cost (USD)": 0.00015135
+        },
+        {
+            "Total Tokens": 1074,
+            "Prompt Tokens": 1048,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 0.0001728
+        },
+        {
+            "Total Tokens": 1232,
+            "Prompt Tokens": 1203,
+            "Completion Tokens": 29,
+            "Total Cost (USD)": 0.00019784999999999998
+        },
+        {
+            "Total Tokens": 1387,
+            "Prompt Tokens": 1358,
+            "Completion Tokens": 29,
+            "Total Cost (USD)": 0.00022109999999999998
+        }
+    ],
+    "SQLs Generated ExecResults2": [
+        "None",
+        "None",
+        "None",
+        "None",
+        "None"
+    ],
+    "SQLs Generated ExecTimes2": [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+    ],
+    "SQLs Generated ErrorMessages2": [
+        "(pymysql.err.OperationalError) (1054, \"Unknown column 'dialect_recognize_table' in 'field list'\")\n",
+        "(pymysql.err.OperationalError) (1919, 'Encountered illegal format of dynamic column string')\n",
+        "(pymysql.err.OperationalError) (1054, \"Unknown column 'dyncol_blob' in 'field list'\")\n",
+        "(pymysql.err.OperationalError) (1919, 'Encountered illegal format of dynamic column string')\n",
+        "(pymysql.err.OperationalError) (1919, 'Encountered illegal format of dynamic column string')\n"
+    ],
+    "Effective SQLs Generated2": []
+}

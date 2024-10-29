@@ -1,0 +1,27 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/hash-functions"
+    ],
+    "Title": [
+        "sqidDecode"
+    ],
+    "Feature": [
+        "sqidDecode(sqid)"
+    ],
+    "Description": [
+        "sqidDecode",
+        "Decodes a Sqid back into its original numbers.\nReturns an empty array in case the input string is not a valid sqid.",
+        "Syntax",
+        "sqidDecode(sqid)",
+        "Arguments",
+        "A sqid - String",
+        "Returned Value",
+        "The sqid transformed to numbers Array(UInt64)."
+    ],
+    "Examples": [
+        "SELECT sqidDecode('gXHfJ1C6dN');"
+    ],
+    "Category": [
+        "Hash Functions"
+    ]
+}

@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/sign/"
+    ],
+    "Title": [
+        "SIGN"
+    ],
+    "Feature": [
+        "SIGN(X)\n"
+    ],
+    "Description": [
+        "Returns the sign of the argument as -1, 0, or 1, depending on whether\nX is negative, zero, or positive."
+    ],
+    "Examples": [
+        "SELECT SIGN(-32);\n+-----------+\n| SIGN(-32) |\n+-----------+\n|        -1 |\n+-----------+\n\nSELECT SIGN(0);\n+---------+\n| SIGN(0) |\n+---------+\n|       0 |\n+---------+\n\nSELECT SIGN(234);\n+-----------+\n| SIGN(234) |\n+-----------+\n|         1 |\n+-----------+\n"
+    ],
+    "Category": [
+        "Numeric Functions"
+    ]
+}

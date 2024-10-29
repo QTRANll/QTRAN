@@ -1,0 +1,22 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000000823118"
+    ],
+    "Title": [
+        "SYSTIMESTAMP"
+    ],
+    "Feature": [
+        "SYSTIMESTAMP\n"
+    ],
+    "Description": [
+        "该函数返回系统当前日期和时间，返回值的秒的小数位包含 6 位精度，且包含当前时区信息。",
+        "\n注意\n该函数不依赖于当前会话时区，而是依赖于当前数据库服务器所在操作系统的时区。\n",
+        "返回 TIMESTAMP WITH TIME ZONE 数据类型。"
+    ],
+    "Examples": [
+        "obclient> SELECT SYSTIMESTAMP FROM DUAL;\n+-------------------------------------+\n| SYSTIMESTAMP                        |\n+-------------------------------------+\n| 18-NOV-21 10.32.27.176575 AM +08:00 |\n+-------------------------------------+\n1 row in set\n"
+    ],
+    "Category": [
+        "Datetime Functions"
+    ]
+}

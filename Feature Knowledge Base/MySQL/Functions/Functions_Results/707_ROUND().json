@@ -1,0 +1,45 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/built-in-function-reference.html",
+        "https://dev.mysql.com/doc/refman/8.4/en/numeric-functions.html",
+        "https://dev.mysql.com/doc/refman/8.4/en/mathematical-functions.html"
+    ],
+    "Title": [
+        "14.1 Built-In Function and Operator Reference",
+        "14.6 Numeric Functions and Operators",
+        "14.6.2 Mathematical Functions"
+    ],
+    "Feature": [
+        "ROUND(X)"
+    ],
+    "Description": [
+        "Round the argument",
+        "\nROUND(X),\n            ROUND(X,D)\n",
+        "\n            Rounds the argument X to\n            D decimal places. The rounding\n            algorithm depends on the data type of\n            X. D\n            defaults to 0 if not specified. D\n            can be negative to cause D digits\n            left of the decimal point of the value\n            X to become zero. The maximum\n            absolute value for D is 30; any\n            digits in excess of 30 (or -30) are truncated. If\n            X or D\n            is NULL, the function returns\n            NULL.\n          ",
+        "Press CTRL+C to copy mysql> SELECT ROUND(-1.23);\n        -> -1\nmysql> SELECT ROUND(-1.58);\n        -> -2\nmysql> SELECT ROUND(1.58);\n        -> 2\nmysql> SELECT ROUND(1.298, 1);\n        -> 1.3\nmysql> SELECT ROUND(1.298, 0);\n        -> 1\nmysql> SELECT ROUND(23.298, -1);\n        -> 20\nmysql> SELECT ROUND(.12345678901234567890123456789012345, 35);\n        -> 0.123456789012345678901234567890",
+        "\n            The return value has the same type as the first argument\n            (assuming that it is integer, double, or decimal). This\n            means that for an integer argument, the result is an integer\n            (no decimal places):\n          ",
+        "Press CTRL+C to copy mysql> SELECT ROUND(150.000,2), ROUND(150,2);\n+------------------+--------------+\n| ROUND(150.000,2) | ROUND(150,2) |\n+------------------+--------------+\n|           150.00 |          150 |\n+------------------+--------------+",
+        "\nROUND() uses the following\n            rules depending on the type of the first argument:\n",
+        "\n\n                For exact-value numbers,\n                ROUND() uses the\n                \u201cround half away from zero\u201d or \u201cround\n                toward nearest\u201d rule: A value with a fractional\n                part of .5 or greater is rounded up to the next integer\n                if positive or down to the next integer if negative. (In\n                other words, it is rounded away from zero.) A value with\n                a fractional part less than .5 is rounded down to the\n                next integer if positive or up to the next integer if\n                negative.\n              \n                For approximate-value numbers, the result depends on the\n                C library. On many systems, this means that\n                ROUND() uses the\n                \u201cround to nearest even\u201d rule: A value with\n                a fractional part exactly halfway between two integers\n                is rounded to the nearest even integer.\n\n",
+        "\n            The following example shows how rounding differs for exact\n            and approximate values:\n          ",
+        "Press CTRL+C to copy mysql> SELECT ROUND(2.5), ROUND(25E-1);\n+------------+--------------+\n| ROUND(2.5) | ROUND(25E-1) |\n+------------+--------------+\n| 3          |            2 |\n+------------+--------------+",
+        "\n            For more information, see Section\u00a014.24, \u201cPrecision Math\u201d.\n          ",
+        "\n            The data type returned by ROUND() (and\n            TRUNCATE()) is determined\n            according to the rules listed here:\n",
+        "\n\n                When the first argument is of any integer type, the\n                return type is always\n                BIGINT.\n              \n                When the first argument is of any floating-point type or\n                of any non-numeric type, the return type is always\n                DOUBLE.\n              \n                When the first argument is a\n                DECIMAL value, the return\n                type is also DECIMAL.\n              \n                The type attributes for the return value are also copied\n                from the first argument, except in the case of\n                DECIMAL, when the second argument is\n                a constant value.\n              \n                When the desired number of decimal places is less than\n                the scale of the argument, the scale and the precision\n                of the result are adjusted accordingly.\n              \n                In addition, for ROUND() (but not for\n                the TRUNCATE() function),\n                the precision is extended by one place to accommodate\n                rounding that increases the number of significant\n                digits. If the second argument is negative, the return\n                type is adjusted such that its scale is 0, with a\n                corresponding precision. For example,\n                ROUND(99.999, 2) returns\n                100.00\u2014the first argument is\n                DECIMAL(5, 3), and the return type is\n                DECIMAL(5, 2).\n              \n                If the second argument is negative, the return type has\n                scale 0 and a corresponding precision;\n                ROUND(99.999, -1) returns\n                100, which is DECIMAL(3,\n                0).\n\n"
+    ],
+    "Examples": [
+        "mysql> SELECT ROUND(-1.23);\n        -> -1\nmysql> SELECT ROUND(-1.58);\n        -> -2\nmysql> SELECT ROUND(1.58);\n        -> 2\nmysql> SELECT ROUND(1.298, 1);\n        -> 1.3\nmysql> SELECT ROUND(1.298, 0);\n        -> 1\nmysql> SELECT ROUND(23.298, -1);\n        -> 20\nmysql> SELECT ROUND(.12345678901234567890123456789012345, 35);\n        -> 0.123456789012345678901234567890",
+        "mysql> SELECT ROUND(150.000,2), ROUND(150,2);\n+------------------+--------------+\n| ROUND(150.000,2) | ROUND(150,2) |\n+------------------+--------------+\n|           150.00 |          150 |\n+------------------+--------------+",
+        "mysql> SELECT ROUND(2.5), ROUND(25E-1);\n+------------+--------------+\n| ROUND(2.5) | ROUND(25E-1) |\n+------------+--------------+\n| 3          |            2 |\n+------------+--------------+"
+    ],
+    "Category": [
+        "Built-In Functions",
+        "Mathematical Functions"
+    ],
+    "Reference HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/mathematical-functions.html#function_round"
+    ],
+    "Feature Type": [
+        "Function"
+    ]
+}

@@ -1,0 +1,25 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000001053490"
+    ],
+    "Title": [
+        "ALTER SEQUENCE"
+    ],
+    "Feature": [
+        "ALTER SEQUENCE [ schema. ] sequence_name\n{ RESTART [ START WITH int_value ]\n|[ MINVALUE int_value | NOMINVALUE ]\n|[ MAXVALUE int_value | NOMAXVALUE ]\n|[ INCREMENT BY int_value ]\n|[ CACHE int_value | NOCACHE ]\n|[ ORDER | NOORDER ]\n|[ CYCLE | NOCYCLE]\n}\n;\n"
+    ],
+    "Description": [
+        "该语句用于更改现有序列的增量、最小值和最大值、缓存数量和行为，对应操作仅影响后续的序列号。",
+        "\n说明\n用户只能操作属于自己 Schema 中的序列，或者拥有该序列的有 ALTER 对象权限。\n",
+        "\n\n\n字段\n描述\n\n\n\n\nschema.\n指定包含序列的 Schema。如果省略 Schema，则数据库会在用户当前所在的 Schema 中更改序列。\n\n\nsequence_name\n要更改的序列名称。\n\n\nRESTART\n重置序列值。升序时从 MINVALUE 重新开始取值；降序时从 MAXVALUE 重新开始取值；或者，使用 START WITH int_value 从 int_value 处开始取值。\n\n\nMINVALUE int_value\n更改序列的最小值，int_value 的取值范围是 [-(1027-1) ~ (1027-1)]。\n\n\nNOMINVALUE\n如果更改为 NOMINVALUE，则升序时最小值为 1，降序时最小值为 -(1027-1)。\n\n\nMAXVALUE int_value\n更改序列的最大值，int_value 的取值范围是 [(-1027+1) ~ (1028-1)]。新指定的 MAXVALUE 不能小于当前序列号的值。 注意 同时指定 MINVALUE 和 MAXVALUE 时，MINVALUE 必须小于 MAXVALUE。 MAXVALUE 和 MINVALUE 之差必须大于等于 INCREMENT BY 中 的 int_value。\n\n\nNOMAXVALUE\n如果更改为 NOMAXVALUE，则升序时最大值为(1028-1)，降序时最大值为 -1。\n\n\nINCREMENT BY int_value\n更改序列的自增步数。int_value 不可以为 0。如果指定为正数，则序列为升序；如果指定为负数，则序列为降序。不指定时缺省值为 1。\n\n\nCACHE int_value\n更改在内存中预分配的自增值个数，int_value 默认为 20。CACHE int_value 的值必须大于 1，如果 CACHE INT_VALUE 的值为 1，则等价于 NOCACHE。\n\n\nNOCACHE\n更改序列的值为未预先分配。如果同时省略 CACHE 和 NOCACHE，则数据库默认缓存 20 个序列号。\n\n\nORDER\n更改序列的值为按顺序生成。\n\n\nNOORDER\n如果更改为 NOORDER，则指定不保证序列的值按顺序生成。\n\n\nCYCLE\n更改序列的值为循环生成，即序列在达到其最大值或最小值后继续生成值。在升序达到最大值后，它会生成最小值。在降序序列达到其最小值后，它会生成其最大值。 注意\n\n如果指定了 CYCLE，而且 INCREMENT BY 中的 int_value 小于 0 时，必须指定 MINVALUE。\n如果指定了 CYCLE，CACHE 的数量不能超过一个 CYCLE。\n\n\n\nNOCYCLE\nNOCYCLE 为默认值，如果更改为 NOCYCLE，则指定序列在达到其最大值或最小值后无法生成更多值。\n\n\n"
+    ],
+    "Examples": [
+        "obclient> ALTER SEQUENCE seq1 MAXVALUE 1024 CYCLE;\nQuery OK, 0 rows affected\n",
+        "obclient> ALTER SEQUENCE seq3 MAXVALUE 1500 INCREMENT BY 5 CYCLE NOCACHE ORDER;\nQuery OK, 0 rows affected\n",
+        "obclient> ALTER SEQUENCE seq3 RESTART;\nQuery OK, 0 rows affected\n\nobclient> ALTER SEQUENCE seq3 RESTART START WITH 3;\nQuery OK, 0 rows affected\n",
+        "obclient> ALTER SEQUENCE seq3 START WITH 3 RESTART MINVALUE  -100 CYCLE;\nQuery OK, 0 rows affected\n\nobclient> ALTER SEQUENCE seq3 RESTAR START WITH 3 T MINVALUE  -100 CYCLE;\nQuery OK, 0 rows affected\n"
+    ],
+    "Category": [
+        "No Category"
+    ]
+}

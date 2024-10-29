@@ -1,0 +1,159 @@
+{
+    "HTML": "https://mariadb.com//kb/en/column_delete/",
+    "Title": "COLUMN_DELETE",
+    "Feature": [
+        "COLUMN_DELETE(dyncol_blob, column_nr, column_nr...);\nCOLUMN_DELETE(dyncol_blob, column_name, column_name...);\n"
+    ],
+    "Description": [
+        "Deletes a dynamic column with the specified name. Multiple names can be given. The return value is a dynamic column blob after the modification."
+    ],
+    "Examples": [],
+    "Category": [
+        "Dynamic Columns Functions"
+    ],
+    "Effective SQLs Refined": [],
+    "Ineffective SQLs Refined": [],
+    "Wrong Messages from Ineffective SQLs Refined": [],
+    "SQLs Generated1": [
+        {
+            "Example SQL": "COLUMN_DELETE(dyncol_blob, 'column_name1', 'column_name2');"
+        },
+        {
+            "Example SQL": "SELECT COLUMN_DELETE(dyncol_blob, 'column_name1', 'column_name2');"
+        },
+        {
+            "Example SQL": "COLUMN_DELETE(dynamic_column_blob, 'column_name1', 'column_name2');"
+        },
+        {
+            "Example SQL": "CALL COLUMN_DELETE('dyncol_blob', 'column_name1', 'column_name2');"
+        },
+        {
+            "Example SQL": "SET @result = COLUMN_DELETE('dyncol_blob', 'column_name1', 'column_name2');"
+        }
+    ],
+    "SQLs Generated Costs1": [
+        {
+            "Total Tokens": 315,
+            "Prompt Tokens": 285,
+            "Completion Tokens": 30,
+            "Total Cost (USD)": 6.074999999999999e-05
+        },
+        {
+            "Total Tokens": 514,
+            "Prompt Tokens": 483,
+            "Completion Tokens": 31,
+            "Total Cost (USD)": 9.104999999999999e-05
+        },
+        {
+            "Total Tokens": 672,
+            "Prompt Tokens": 643,
+            "Completion Tokens": 29,
+            "Total Cost (USD)": 0.00011385
+        },
+        {
+            "Total Tokens": 870,
+            "Prompt Tokens": 839,
+            "Completion Tokens": 31,
+            "Total Cost (USD)": 0.00014445
+        },
+        {
+            "Total Tokens": 1036,
+            "Prompt Tokens": 1002,
+            "Completion Tokens": 34,
+            "Total Cost (USD)": 0.0001707
+        }
+    ],
+    "SQLs Generated ExecResults1": [
+        "None",
+        "None",
+        "None",
+        "None",
+        "None"
+    ],
+    "SQLs Generated ExecTimes1": [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+    ],
+    "SQLs Generated ErrorMessages1": [
+        "(pymysql.err.ProgrammingError) (1064, \"You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'COLUMN_DELETE(dyncol_blob, 'column_name1', 'column_name2')' at line 1\")\n",
+        "(pymysql.err.OperationalError) (1054, \"Unknown column 'dyncol_blob' in 'field list'\")\n",
+        "(pymysql.err.ProgrammingError) (1064, \"You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'COLUMN_DELETE(dynamic_column_blob, 'column_name1', 'column_name2')' at line 1\")\n",
+        "(pymysql.err.OperationalError) (1305, 'PROCEDURE PINOLO_MariaDB.COLUMN_DELETE does not exist')\n",
+        "(pymysql.err.OperationalError) (1919, 'Encountered illegal format of dynamic column string')\n"
+    ],
+    "Effective SQLs Generated1": [],
+    "SQLs Generated2": [
+        {
+            "Example SQL": "COLUMN_DELETE(dyncol_blob, 'dialect_name');"
+        },
+        {
+            "Example SQL": "SELECT COLUMN_DELETE(dyncol_blob, 'dialect_name') FROM dialect_recognize_table;"
+        },
+        {
+            "Example SQL": "COLUMN_DELETE(dialect_recognize_table, 'dialect_name');"
+        },
+        {
+            "Example SQL": "ALTER TABLE dialect_recognize_table DROP COLUMN dialect_name;"
+        },
+        {
+            "Example SQL": "ALTER TABLE dialect_recognize_table DROP COLUMN dialect_name;"
+        }
+    ],
+    "SQLs Generated Costs2": [
+        {
+            "Total Tokens": 760,
+            "Prompt Tokens": 735,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 0.00012524999999999998
+        },
+        {
+            "Total Tokens": 955,
+            "Prompt Tokens": 923,
+            "Completion Tokens": 32,
+            "Total Cost (USD)": 0.00015765
+        },
+        {
+            "Total Tokens": 1111,
+            "Prompt Tokens": 1084,
+            "Completion Tokens": 27,
+            "Total Cost (USD)": 0.00017879999999999998
+        },
+        {
+            "Total Tokens": 1300,
+            "Prompt Tokens": 1276,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 0.0002058
+        },
+        {
+            "Total Tokens": 1442,
+            "Prompt Tokens": 1418,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 0.00022709999999999996
+        }
+    ],
+    "SQLs Generated ExecResults2": [
+        "None",
+        "None",
+        "None",
+        "None",
+        "None"
+    ],
+    "SQLs Generated ExecTimes2": [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+    ],
+    "SQLs Generated ErrorMessages2": [
+        "(pymysql.err.ProgrammingError) (1064, \"You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'COLUMN_DELETE(dyncol_blob, 'dialect_name')' at line 1\")\n",
+        "(pymysql.err.OperationalError) (1054, \"Unknown column 'dyncol_blob' in 'field list'\")\n",
+        "(pymysql.err.ProgrammingError) (1064, \"You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'COLUMN_DELETE(dialect_recognize_table, 'dialect_name')' at line 1\")\n",
+        "This result object does not return rows. It has been closed automatically.",
+        "This result object does not return rows. It has been closed automatically."
+    ],
+    "Effective SQLs Generated2": []
+}

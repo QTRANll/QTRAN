@@ -1,0 +1,27 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000000823298"
+    ],
+    "Title": [
+        "JSON_REPLACE"
+    ],
+    "Feature": [
+        "JSON_REPLACE(json_doc, path, val[, path, val] ...)\n"
+    ],
+    "Description": [
+        "该函数用于替换 JSON 文档中的现有值并返回结果。",
+        "json_doc 参数用于指定 JSON 文档，path 为路径参数。如果任何参数为 NULL，则返回 NULL。",
+        "以下情况都会发生报错：",
+        "json_doc 参数不是有效的 JSON 文档。",
+        "path 参数不是有效的路径表达式。",
+        "path 参数包含 * 或 ** 通配符。",
+        "路径值对 path-value 按照从左到右的顺序进行评估。通过 path-value 对所生成的文档作为评估下一对的新值。",
+        "文档中现有路径的 path-value 对会用新值覆盖现有文档值。文档中不存在路径的 path-value 将被忽略且无效。"
+    ],
+    "Examples": [
+        "obclient> SET @jn = '{ \"a\": 1, \"b\": [2, 3, 4]}';\nQuery OK, 0 rows affected\n\nobclient> SELECT JSON_REPLACE(@jn, '$.a', 10, '$.c', '[true, false]');\n+------------------------------------------------------+\n| JSON_REPLACE(@jn, '$.a', 10, '$.c', '[true, false]') |\n+------------------------------------------------------+\n| {\"a\": 10, \"b\": [2, 3, 4]}                            |\n+------------------------------------------------------+\n1 row in set\n"
+    ],
+    "Category": [
+        "JSON Functions"
+    ]
+}

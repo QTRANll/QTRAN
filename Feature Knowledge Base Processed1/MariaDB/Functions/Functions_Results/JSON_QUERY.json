@@ -1,0 +1,50 @@
+{
+    "HTML": "https://mariadb.com//kb/en/json_query/",
+    "Title": "JSON_QUERY",
+    "Feature": [
+        "JSON_QUERY(json_doc, path)\n"
+    ],
+    "Description": [
+        "Given a JSON document, returns an object or array specified by the path. Returns NULL if not given a valid JSON document, or if there is no match."
+    ],
+    "Examples": [
+        "select json_query('{\"key1\":{\"a\":1, \"b\":[1,2]}}', '$.key1');\n+-----------------------------------------------------+\n| json_query('{\"key1\":{\"a\":1, \"b\":[1,2]}}', '$.key1') |\n+-----------------------------------------------------+\n| {\"a\":1, \"b\":[1,2]}                                  |\n+-----------------------------------------------------+\n\nselect json_query('{\"key1\":123, \"key1\": [1,2,3]}', '$.key1');\n+-------------------------------------------------------+\n| json_query('{\"key1\":123, \"key1\": [1,2,3]}', '$.key1') |\n+-------------------------------------------------------+\n| [1,2,3]                                               |\n+-------------------------------------------------------+\n"
+    ],
+    "Category": [
+        "JSON Functions"
+    ],
+    "Effective SQLs Refined": [],
+    "Ineffective SQLs Refined": [
+        "select json_query('{\"key1\":{\"a\":1, \"b\":[1,2]}}', '$.key1');",
+        "select json_query('{\"key1\":123, \"key1\": [1,2,3]}', '$.key1');"
+    ],
+    "Wrong Messages from Ineffective SQLs Refined": [
+        "(sqlalchemy.exc.InvalidRequestError) A value is required for bind parameter '1'\n[SQL: select json_query('{\"key1\":{\"a\"%(1)s, \"b\":[1,2]}}', '$.key1');]\n(Background on this error at: https://sqlalche.me/e/20/cd3x)",
+        "(sqlalchemy.exc.InvalidRequestError) A value is required for bind parameter '123'\n[SQL: select json_query('{\"key1\"%(123)s, \"key1\": [1,2,3]}', '$.key1');]\n(Background on this error at: https://sqlalche.me/e/20/cd3x)"
+    ],
+    "SQLs Generated1": [
+        {
+            "Example SQL": "SELECT JSON_QUERY('{\"key\": \"value\"}', '$.key')"
+        }
+    ],
+    "SQLs Generated Costs1": [
+        {
+            "Total Tokens": 428,
+            "Prompt Tokens": 400,
+            "Completion Tokens": 28,
+            "Total Cost (USD)": 7.68e-05
+        }
+    ],
+    "SQLs Generated ExecResults1": [
+        "[(None,)]"
+    ],
+    "SQLs Generated ExecTimes1": [
+        "0.004753828048706055"
+    ],
+    "SQLs Generated ErrorMessages1": [
+        "None"
+    ],
+    "Effective SQLs Generated1": [
+        "SELECT JSON_QUERY('{\"key\": \"value\"}', '$.key')"
+    ]
+}

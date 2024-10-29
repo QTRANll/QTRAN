@@ -1,0 +1,24 @@
+{
+    "HTML": [
+        "https://docs.pingcap.com//zh/tidb/stable/sql-statement-set-transaction"
+    ],
+    "Title": [
+        "SET TRANSACTION"
+    ],
+    "Feature": [
+        "\nSetStmt ::=\n    'SET' ( VariableAssignmentList | \n    'PASSWORD' ('FOR' Username)? '=' PasswordOpt | \n    ( 'GLOBAL'| 'SESSION' )? 'TRANSACTION' TransactionChars | \n    'CONFIG' ( Identifier | stringLit) ConfigItemName EqOrAssignmentEq SetExpr )\n\nTransactionChars ::=\n    ( 'ISOLATION' 'LEVEL' IsolationLevel | 'READ' 'WRITE' | 'READ' 'ONLY' AsOfClause? )\n\nIsolationLevel ::=\n    ( 'REPEATABLE' 'READ' | 'READ' ( 'COMMITTED' | 'UNCOMMITTED' ) | 'SERIALIZABLE' )\n\nAsOfClause ::=\n    ( 'AS' 'OF' 'TIMESTAMP' Expression)\n"
+    ],
+    "Description": [
+        "SET TRANSACTION \u8bed\u53e5\u7528\u4e8e\u5728 GLOBAL \u6216 SESSION \u7684\u57fa\u7840\u4e0a\u66f4\u6539\u5f53\u524d\u7684\u9694\u79bb\u7ea7\u522b\uff0c\u662f SET transaction_isolation ='new-value' \u7684\u66ff\u4ee3\u8bed\u53e5\uff0c\u63d0\u4f9b MySQL \u548c SQL \u6807\u51c6\u7684\u517c\u5bb9\u6027\u3002"
+    ],
+    "Examples": [
+        "SHOW SESSION VARIABLES LIKE 'transaction_isolation';\n",
+        "SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED;\n",
+        "SHOW SESSION VARIABLES LIKE 'transaction_isolation';\n",
+        "SET SESSION transaction_isolation = 'REPEATABLE-READ';\n",
+        "SHOW SESSION VARIABLES LIKE 'transaction_isolation';\n"
+    ],
+    "Category": [
+        "\u4e8b\u52a1\u8bed\u53e5"
+    ]
+}

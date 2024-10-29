@@ -1,0 +1,23 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/show-create-procedure.html"
+    ],
+    "Title": [
+        "15.7.7.10 SHOW CREATE PROCEDURE Statement"
+    ],
+    "Feature": [
+        "SHOW CREATE PROCEDURE proc_name"
+    ],
+    "Description": [
+        "\n        This statement is a MySQL extension. It returns the exact string\n        that can be used to re-create the named stored procedure. A\n        similar statement, SHOW CREATE\n        FUNCTION, displays information about stored functions\n        (see Section\u00a015.7.7.9, \u201cSHOW CREATE FUNCTION Statement\u201d).\n      ",
+        "\n        To use either statement, you must be the user named as the\n        routine DEFINER, have the\n        SHOW_ROUTINE privilege, have the\n        SELECT privilege at the global\n        level, or have the CREATE\n        ROUTINE, ALTER ROUTINE,\n        or EXECUTE privilege granted at a\n        scope that includes the routine. The value displayed for the\n        Create Procedure or Create\n        Function field is NULL if you have\n        only CREATE ROUTINE,\n        ALTER ROUTINE, or\n        EXECUTE.\n      ",
+        "Press CTRL+C to copy mysql> SHOW CREATE PROCEDURE test.citycount\\G\n*************************** 1. row ***************************\n           Procedure: citycount\n            sql_mode: ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,\n                      NO_ZERO_IN_DATE,NO_ZERO_DATE,\n                      ERROR_FOR_DIVISION_BY_ZERO,\n                      NO_ENGINE_SUBSTITUTION\n    Create Procedure: CREATE DEFINER=`me`@`localhost`\n                      PROCEDURE `citycount`(IN country CHAR(3), OUT cities INT)\n                      BEGIN\n                        SELECT COUNT(*) INTO cities FROM world.city\n                        WHERE CountryCode = country;\n                      END\ncharacter_set_client: utf8mb4\ncollation_connection: utf8mb4_0900_ai_ci\n  Database Collation: utf8mb4_0900_ai_ci\n\nmysql> SHOW CREATE FUNCTION test.hello\\G\n*************************** 1. row ***************************\n            Function: hello\n            sql_mode: ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,\n                      NO_ZERO_IN_DATE,NO_ZERO_DATE,\n                      ERROR_FOR_DIVISION_BY_ZERO,\n                      NO_ENGINE_SUBSTITUTION\n     Create Function: CREATE DEFINER=`me`@`localhost`\n                      FUNCTION `hello`(s CHAR(20))\n                      RETURNS char(50) CHARSET utf8mb4\n                      DETERMINISTIC\n                      RETURN CONCAT('Hello, ',s,'!')\ncharacter_set_client: utf8mb4\ncollation_connection: utf8mb4_0900_ai_ci\n  Database Collation: utf8mb4_0900_ai_ci",
+        "\ncharacter_set_client is the session value of\n        the character_set_client system\n        variable when the routine was created.\n        collation_connection is the session value of\n        the collation_connection system\n        variable when the routine was created. Database\n        Collation is the collation of the database with which\n        the routine is associated.\n"
+    ],
+    "Examples": [
+        "mysql> SHOW CREATE PROCEDURE test.citycount\\G\n*************************** 1. row ***************************\n           Procedure: citycount\n            sql_mode: ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,\n                      NO_ZERO_IN_DATE,NO_ZERO_DATE,\n                      ERROR_FOR_DIVISION_BY_ZERO,\n                      NO_ENGINE_SUBSTITUTION\n    Create Procedure: CREATE DEFINER=`me`@`localhost`\n                      PROCEDURE `citycount`(IN country CHAR(3), OUT cities INT)\n                      BEGIN\n                        SELECT COUNT(*) INTO cities FROM world.city\n                        WHERE CountryCode = country;\n                      END\ncharacter_set_client: utf8mb4\ncollation_connection: utf8mb4_0900_ai_ci\n  Database Collation: utf8mb4_0900_ai_ci\n\nmysql> SHOW CREATE FUNCTION test.hello\\G\n*************************** 1. row ***************************\n            Function: hello\n            sql_mode: ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,\n                      NO_ZERO_IN_DATE,NO_ZERO_DATE,\n                      ERROR_FOR_DIVISION_BY_ZERO,\n                      NO_ENGINE_SUBSTITUTION\n     Create Function: CREATE DEFINER=`me`@`localhost`\n                      FUNCTION `hello`(s CHAR(20))\n                      RETURNS char(50) CHARSET utf8mb4\n                      DETERMINISTIC\n                      RETURN CONCAT('Hello, ',s,'!')\ncharacter_set_client: utf8mb4\ncollation_connection: utf8mb4_0900_ai_ci\n  Database Collation: utf8mb4_0900_ai_ci"
+    ],
+    "Category": [
+        "Database Administration Statements"
+    ]
+}

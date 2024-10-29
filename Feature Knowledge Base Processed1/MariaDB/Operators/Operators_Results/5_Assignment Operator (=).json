@@ -1,0 +1,22 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/assignment-operators-assignment-operator/"
+    ],
+    "Title": [
+        "Assignment Operator (=)"
+    ],
+    "Feature": [
+        "identifier = expr\n"
+    ],
+    "Description": [
+        "The equal sign is used as both an assignment operator in certain contexts, and as a comparison operator. When used as assignment operator, the value on the right is assigned to the variable (or column, in some contexts) on the left.",
+        "Since its use can be ambiguous, unlike the := assignment operator, the = assignment operator cannot be used in all contexts, and is only valid as part of a SET statement, or the SET clause of an UPDATE statement",
+        "This operator works with both user-defined variables and local variables."
+    ],
+    "Examples": [
+        "UPDATE dialect_recognize_table SET speaker_count = 100000 WHERE dialect_name = 'Mandarin';"
+    ],
+    "Category": [
+        "Assignment Operators"
+    ]
+}

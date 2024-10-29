@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/month/"
+    ],
+    "Title": [
+        "MONTH"
+    ],
+    "Feature": [
+        "MONTH(date)\n"
+    ],
+    "Description": [
+        "Returns the month for date in the range 1 to 12 for January to\nDecember, or 0 for dates such as '0000-00-00' or '2008-00-00' that\nhave a zero month part."
+    ],
+    "Examples": [
+        "SELECT MONTH('2019-01-03');\n+---------------------+\n| MONTH('2019-01-03') |\n+---------------------+\n|                   1 |\n+---------------------+\n\nSELECT MONTH('2019-00-03');\n+---------------------+\n| MONTH('2019-00-03') |\n+---------------------+\n|                   0 |\n+---------------------+\n"
+    ],
+    "Category": [
+        "Date & Time Functions"
+    ]
+}

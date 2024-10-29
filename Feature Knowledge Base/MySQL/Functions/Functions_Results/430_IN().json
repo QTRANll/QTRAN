@@ -1,0 +1,51 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/built-in-function-reference.html",
+        "https://dev.mysql.com/doc/refman/8.4/en/non-typed-operators.html",
+        "https://dev.mysql.com/doc/refman/8.4/en/comparison-operators.html"
+    ],
+    "Title": [
+        "14.1 Built-In Function and Operator Reference",
+        "14.4 Operators",
+        "14.4.2 Comparison Functions and Operators"
+    ],
+    "Feature": [
+        "expr\n            IN (value,...)"
+    ],
+    "Description": [
+        "Whether a value is within a set of values",
+        "\nexpr\n            IN (value,...)\n",
+        "\n            Returns 1 (true) if\n            expr is equal to any of the\n            values in the IN() list, else returns\n            0 (false).\n          ",
+        "\n            Type conversion takes place according to the rules described\n            in Section\u00a014.3, \u201cType Conversion in Expression Evaluation\u201d, applied to all the\n            arguments. If no type conversion is needed for the values in\n            the IN() list, they are all\n            non-JSON constants of the same type, and\n            expr can be compared to each of\n            them as a value of the same type (possibly after type\n            conversion), an optimization takes place. The values the\n            list are sorted and the search for\n            expr is done using a binary\n            search, which makes the IN() operation\n            very quick.\n          ",
+        "Press CTRL+C to copy mysql> SELECT 2 IN (0,3,5,7);\n        -> 0\nmysql> SELECT 'wefwf' IN ('wee','wefwf','weg');\n        -> 1",
+        "\nIN() can be used to compare row\n            constructors:\n          ",
+        "Press CTRL+C to copy mysql> SELECT (3,4) IN ((1,2), (3,4));\n        -> 1\nmysql> SELECT (3,4) IN ((1,2), (3,5));\n        -> 0",
+        "\n            You should never mix quoted and unquoted values in an\n            IN() list because the comparison rules\n            for quoted values (such as strings) and unquoted values\n            (such as numbers) differ. Mixing types may therefore lead to\n            inconsistent results. For example, do not write an\n            IN() expression like this:\n          ",
+        "Press CTRL+C to copy SELECT val1 FROM tbl1 WHERE val1 IN (1,2,'a');",
+        "\n            Instead, write it like this:\n          ",
+        "Press CTRL+C to copy SELECT val1 FROM tbl1 WHERE val1 IN ('1','2','a');",
+        "\n            Implicit type conversion may produce nonintuitive results:\n          ",
+        "Press CTRL+C to copy mysql> SELECT 'a' IN (0), 0 IN ('b');\n        -> 1, 1",
+        "\n            In both cases, the comparison values are converted to\n            floating-point values, yielding 0.0 in each case, and a\n            comparison result of 1 (true).\n          ",
+        "\n            The number of values in the IN() list is\n            only limited by the\n            max_allowed_packet value.\n          ",
+        "\n            To comply with the SQL standard, IN()\n            returns NULL not only if the expression\n            on the left hand side is NULL, but also\n            if no match is found in the list and one of the expressions\n            in the list is NULL.\n          ",
+        "\nIN() syntax can also be used to write\n            certain types of subqueries. See\n            Section\u00a015.2.15.3, \u201cSubqueries with ANY, IN, or SOME\u201d.\n          "
+    ],
+    "Examples": [
+        "mysql> SELECT 2 IN (0,3,5,7);\n        -> 0\nmysql> SELECT 'wefwf' IN ('wee','wefwf','weg');\n        -> 1",
+        "mysql> SELECT (3,4) IN ((1,2), (3,4));\n        -> 1\nmysql> SELECT (3,4) IN ((1,2), (3,5));\n        -> 0",
+        "SELECT val1 FROM tbl1 WHERE val1 IN (1,2,'a');",
+        "SELECT val1 FROM tbl1 WHERE val1 IN ('1','2','a');",
+        "mysql> SELECT 'a' IN (0), 0 IN ('b');\n        -> 1, 1"
+    ],
+    "Category": [
+        "Built-In Functions",
+        "Comparison Functions"
+    ],
+    "Reference HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/comparison-operators.html#operator_in"
+    ],
+    "Feature Type": [
+        "Function"
+    ]
+}

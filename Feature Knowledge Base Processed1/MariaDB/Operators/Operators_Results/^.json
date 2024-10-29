@@ -1,0 +1,35 @@
+{
+    "HTML": "https://mariadb.com//kb/en/bitwise-xor/",
+    "Title": "^",
+    "Feature": [
+        "^\n"
+    ],
+    "Description": [
+        "Bitwise XOR. Converts the values to binary and compares bits. If one (and only one) of the corresponding bits is 1 is the resulting bit also 1."
+    ],
+    "Examples": [
+        "SELECT 1 ^ 1;\n+-------+\n| 1 ^ 1 |\n+-------+\n|     0 |\n+-------+\n\nSELECT 1 ^ 0;\n+-------+\n| 1 ^ 0 |\n+-------+\n|     1 |\n+-------+\n\nSELECT 11 ^ 3;\n+--------+\n| 11 ^ 3 |\n+--------+\n|      8 |\n+--------+\n"
+    ],
+    "Category": [
+        "Bit Functions and Operators"
+    ],
+    "Effective SQLs Refined": [
+        "SELECT 1 ^ 1;",
+        "SELECT 1 ^ 0;",
+        "SELECT 11 ^ 3;"
+    ],
+    "Ineffective SQLs Refined": [],
+    "Wrong Messages from Ineffective SQLs Refined": [],
+    "SQLs Generated1": [],
+    "SQLs Generated Costs1": [],
+    "SQLs Generated ExecResults1": [],
+    "SQLs Generated ExecTimes1": [],
+    "SQLs Generated ErrorMessages1": [],
+    "Effective SQLs Generated1": [],
+    "SQLs Generated2": [],
+    "SQLs Generated Costs2": [],
+    "SQLs Generated ExecResults2": [],
+    "SQLs Generated ExecTimes2": [],
+    "SQLs Generated ErrorMessages2": [],
+    "Effective SQLs Generated2": []
+}

@@ -1,0 +1,22 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000000823482"
+    ],
+    "Title": [
+        "ELT"
+    ],
+    "Feature": [
+        "ELT(N, str1, str2, str3,...)\n"
+    ],
+    "Description": [
+        "返回检索的字符串的索引。",
+        "如果 N=1，则返回值为 str1；如果 N=2，则返回值为 str2；以此类推。如果 N 小于 1 或大于参数的数目，则返回值为 NULL。",
+        "ELT() 是 FIELD() 的补数。"
+    ],
+    "Examples": [
+        "obclient> SELECT ELT(3, 'abc1', 'abc2', 'abc', 'abc4', 'abc'), ELT(0, 'null1', NULL);\n+----------------------------------------------+-----------------------+\n| ELT(3, 'abc1', 'abc2', 'abc', 'abc4', 'abc') | ELT(0, 'NULL1', NULL) |\n+----------------------------------------------+-----------------------+\n| abc                                          | NULL                  |\n+----------------------------------------------+-----------------------+\n1 row in set\n"
+    ],
+    "Category": [
+        "String Functions"
+    ]
+}

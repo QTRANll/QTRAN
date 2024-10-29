@@ -1,0 +1,23 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/curtime/"
+    ],
+    "Title": [
+        "CURTIME"
+    ],
+    "Feature": [
+        "CURTIME([precision])\n"
+    ],
+    "Description": [
+        "Returns the current time as a value in 'HH:MM:SS' or HHMMSS.uuuuuu format, depending on whether the function is used in a string or numeric context. The value is expressed in the current time zone.",
+        "The optional precision determines the microsecond precision. See Microseconds in MariaDB."
+    ],
+    "Examples": [
+        "SELECT CURTIME();",
+        "SELECT CURTIME() + 0;",
+        "SELECT CURTIME(2);"
+    ],
+    "Category": [
+        "Date & Time Functions"
+    ]
+}

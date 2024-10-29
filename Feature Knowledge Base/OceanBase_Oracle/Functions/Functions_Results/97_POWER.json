@@ -1,0 +1,22 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000000823145"
+    ],
+    "Title": [
+        "POWER"
+    ],
+    "Feature": [
+        "POWER (x, y)\n"
+    ],
+    "Description": [
+        "该函数作用是返回指定数字的乘幂。",
+        "\n\n\n参数\n说明\n\n\n\n\nx\n表示底数，属于数值类型（NUMBER、FLOAT、BINARY_FLOAT 和 BINARY_DOUBLE）表达式。\n\n\ny\n表示指数，属于数值类型（NUMBER、FLOAT、BINARY_FLOAT 和 BINARY_DOUBLE）表达式。如果 x 是负数，则 y 必须是整数。\n\n\n",
+        "当参数为 BINARY_FLOAT 和 BINARY_DOUBLE 数据类型时，返回类型为 BINARY_DOUBLE，其他情况下返回类型为 NUMBER。"
+    ],
+    "Examples": [
+        "obclient> SELECT POWER(3,2),POWER(-3,3),POWER(4,-2) FROM DUAL;\n+------------+-------------+-------------+\n| POWER(3,2) | POWER(-3,3) | POWER(4,-2) |\n+------------+-------------+-------------+\n|          9 |         -27 |       .0625 |\n+------------+-------------+-------------+\n1 row in set\n"
+    ],
+    "Category": [
+        "Numeric Functions"
+    ]
+}

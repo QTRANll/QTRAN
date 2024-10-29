@@ -1,0 +1,23 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/period_diff/"
+    ],
+    "Title": [
+        "PERIOD_DIFF"
+    ],
+    "Feature": [
+        "PERIOD_DIFF(P1,P2)\n"
+    ],
+    "Description": [
+        "Returns the number of months between periods P1 and P2. P1 and P2 \ncan be in the format YYMM or YYYYMM, and are not date values.",
+        "If P1 or P2 contains a two-digit year, values from 00 to 69 are converted to from 2000 to 2069, while values from 70 are converted to 1970 upwards."
+    ],
+    "Examples": [
+        "SELECT PERIOD_DIFF(200802,200703);",
+        "SELECT PERIOD_DIFF(6902,6803);",
+        "SELECT PERIOD_DIFF(7002,6803);"
+    ],
+    "Category": [
+        "Date & Time Functions"
+    ]
+}

@@ -1,0 +1,27 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/string-functions"
+    ],
+    "Title": [
+        "normalizeUTF8NFKC"
+    ],
+    "Feature": [
+        "normalizeUTF8NFKC(words)"
+    ],
+    "Description": [
+        "normalizeUTF8NFKC",
+        "Converts a string to NFKC normalized form, assuming the string is valid UTF8-encoded text.",
+        "Syntax",
+        "normalizeUTF8NFKC(words)",
+        "Arguments",
+        "words \u2014 UTF8-encoded input string. String.",
+        "Returned value",
+        "String transformed to NFKC normalization form. String."
+    ],
+    "Examples": [
+        "SELECT length('\u00e2'), normalizeUTF8NFKC('\u00e2') AS nfkc, length(nfkc) AS nfkc_len;"
+    ],
+    "Category": [
+        "Strings Functions"
+    ]
+}

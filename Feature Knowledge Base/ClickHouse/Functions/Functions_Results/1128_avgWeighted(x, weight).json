@@ -1,0 +1,32 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/aggregate-functions/reference/avgweighted"
+    ],
+    "Title": [
+        "avgWeighted"
+    ],
+    "Feature": [
+        "avgWeighted(x, weight)"
+    ],
+    "Description": [
+        "avgWeighted",
+        "Calculates the weighted arithmetic mean.",
+        "Syntax",
+        "avgWeighted(x, weight)",
+        "Arguments",
+        "x \u2014 Values.weight \u2014 Weights of the values.",
+        "x and weight must both be\nInteger or floating-point,\nbut may have different types.",
+        "Returned value",
+        "NaN if all the weights are equal to 0 or the supplied weights parameter is empty.Weighted mean otherwise.",
+        "Return type is always Float64."
+    ],
+    "Examples": [
+        "SELECT avgWeighted(x, w)FROM values('x Int8, w Int8', (4, 1), (1, 0), (10, 2))",
+        "SELECT avgWeighted(x, w)FROM values('x Int8, w Float64', (4, 1), (1, 0), (10, 2))",
+        "SELECT avgWeighted(x, w)FROM values('x Int8, w Int8', (0, 0), (1, 0), (10, 0))",
+        "CREATE table test (t UInt8) ENGINE = Memory;SELECT avgWeighted(t) FROM test"
+    ],
+    "Category": [
+        "Aggregate Functions"
+    ]
+}

@@ -1,0 +1,36 @@
+{
+    "HTML": "https://mariadb.com//kb/en/date_sub/",
+    "Title": "DATE_SUB",
+    "Feature": [
+        "DATE_SUB(date,INTERVAL expr unit)\n"
+    ],
+    "Description": [
+        "Performs date arithmetic. The date argument specifies the\nstarting date or datetime value. expr is an expression specifying the\ninterval value to be subtracted from the starting date. expr is a\nstring; it may start with a \"-\" for negative intervals. unit is a\nkeyword indicating the units in which the expression should be interpreted. See Date and Time Units for a complete list of permitted units. ",
+        "See also DATE_ADD()."
+    ],
+    "Examples": [
+        "SELECT DATE_SUB('1998-01-02', INTERVAL 31 DAY);\n+-----------------------------------------+\n| DATE_SUB('1998-01-02', INTERVAL 31 DAY) |\n+-----------------------------------------+\n| 1997-12-02                              |\n+-----------------------------------------+\n",
+        "SELECT DATE_SUB('2005-01-01 00:00:00', INTERVAL '1 1:1:1' DAY_SECOND);\n+----------------------------------------------------------------+\n| DATE_SUB('2005-01-01 00:00:00', INTERVAL '1 1:1:1' DAY_SECOND) |\n+----------------------------------------------------------------+\n| 2004-12-30 22:58:59                                            |\n+----------------------------------------------------------------+\n"
+    ],
+    "Category": [
+        "Date & Time Functions"
+    ],
+    "Effective SQLs Refined": [
+        "SELECT DATE_SUB('1998-01-02', INTERVAL 31 DAY);",
+        "SELECT DATE_SUB('2005-01-01 00:00:00', INTERVAL '1 1:1:1' DAY_SECOND);"
+    ],
+    "Ineffective SQLs Refined": [],
+    "Wrong Messages from Ineffective SQLs Refined": [],
+    "SQLs Generated1": [],
+    "SQLs Generated Costs1": [],
+    "SQLs Generated ExecResults1": [],
+    "SQLs Generated ExecTimes1": [],
+    "SQLs Generated ErrorMessages1": [],
+    "Effective SQLs Generated1": [],
+    "SQLs Generated2": [],
+    "SQLs Generated Costs2": [],
+    "SQLs Generated ExecResults2": [],
+    "SQLs Generated ExecTimes2": [],
+    "SQLs Generated ErrorMessages2": [],
+    "Effective SQLs Generated2": []
+}

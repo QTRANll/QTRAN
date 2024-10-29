@@ -1,0 +1,21 @@
+{
+    "HTML": [
+        "https://duckdb.org/docs/sql/functions/regular_expressions"
+    ],
+    "Title": [
+        "regexp_full_match(string, regex[, options])"
+    ],
+    "Feature": [
+        "regexp_full_match(string, regex[, options])"
+    ],
+    "Description": [
+        "Returns true if the entire string matches the regex.",
+        "Returns true if the entire string matches the regex. A set of optional options can be set."
+    ],
+    "Examples": [
+        "regexp_full_match('anabanana', '(an)*')"
+    ],
+    "Category": [
+        "Regular Expressions"
+    ]
+}

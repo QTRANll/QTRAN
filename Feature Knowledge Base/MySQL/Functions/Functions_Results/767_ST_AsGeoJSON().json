@@ -1,0 +1,36 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/built-in-function-reference.html",
+        "https://dev.mysql.com/doc/refman/8.4/en/spatial-function-reference.html"
+    ],
+    "Title": [
+        "14.1 Built-In Function and Operator Reference",
+        "14.16.1 Spatial Function Reference"
+    ],
+    "Feature": [
+        "ST_AsGeoJSON(g\n          [, max_dec_digits [,\n          options]])"
+    ],
+    "Description": [
+        "Generate GeoJSON object from geometry",
+        "\nST_AsGeoJSON(g\n          [, max_dec_digits [,\n          options]])\n",
+        "\n          Generates a GeoJSON object from the geometry\n          g. The object string has the\n          connection character set and collation.\n        ",
+        "\n          If any argument is NULL, the return value\n          is NULL. If any non-NULL\n          argument is invalid, an error occurs.\n        ",
+        "\nmax_dec_digits, if specified,\n          limits the number of decimal digits for coordinates and causes\n          rounding of output. If not specified, this argument defaults\n          to its maximum value of 232 \u2212\n          1. The minimum is 0.\n        ",
+        "\noptions, if specified, is a\n          bitmask. The following table shows the permitted flag values.\n          If the geometry argument has an SRID of 0, no CRS object is\n          produced even for those flag values that request one.\n",
+        "\n\nFlag Value\nMeaning\n\n0\nNo options. This is the default if options is\n                not specified.\n\n1\nAdd a bounding box to the output.\n\n2\nAdd a short-format CRS URN to the output. The default format is a short\n                format\n                (EPSG:srid).\n\n4\nAdd a long-format CRS URN\n                (urn:ogc:def:crs:EPSG::srid).\n                This flag overrides flag 2. For example, option values\n                of 5 and 7 mean the same (add a bounding box and a\n                long-format CRS URN).\n\n",
+        "Press CTRL+C to copy mysql> SELECT ST_AsGeoJSON(ST_GeomFromText('POINT(11.11111 12.22222)'),2);\n+-------------------------------------------------------------+\n| ST_AsGeoJSON(ST_GeomFromText('POINT(11.11111 12.22222)'),2) |\n+-------------------------------------------------------------+\n| {\"type\": \"Point\", \"coordinates\": [11.11, 12.22]}            |\n+-------------------------------------------------------------+"
+    ],
+    "Examples": [
+        "mysql> SELECT ST_AsGeoJSON(ST_GeomFromText('POINT(11.11111 12.22222)'),2);\n+-------------------------------------------------------------+\n| ST_AsGeoJSON(ST_GeomFromText('POINT(11.11111 12.22222)'),2) |\n+-------------------------------------------------------------+\n| {\"type\": \"Point\", \"coordinates\": [11.11, 12.22]}            |\n+-------------------------------------------------------------+"
+    ],
+    "Category": [
+        "Built-In Functions",
+        "Spatial Analysis Functions"
+    ],
+    "Reference HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/spatial-geojson-functions.html#function_st-asgeojson"
+    ],
+    "Feature Type": [
+        "Function"
+    ]
+}

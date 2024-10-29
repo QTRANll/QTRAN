@@ -1,0 +1,30 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/tuple-functions"
+    ],
+    "Title": [
+        "untuple"
+    ],
+    "Feature": [
+        "untuple(x)"
+    ],
+    "Description": [
+        "untuple",
+        "Performs syntactic substitution of tuple elements in the call location.",
+        "The names of the result columns are implementation-specific and subject to change. Do not assume specific column names after untuple.",
+        "Syntax",
+        "untuple(x)",
+        "You can use the EXCEPT expression to skip columns as a result of the query.",
+        "Arguments",
+        "x \u2014 A tuple function, column, or tuple of elements. Tuple.",
+        "Returned value",
+        "None."
+    ],
+    "Examples": [
+        "SELECT untuple(v6) FROM kv;",
+        "SELECT untuple((* EXCEPT (v2, v3),)) FROM kv;"
+    ],
+    "Category": [
+        "Tuples Functions"
+    ]
+}

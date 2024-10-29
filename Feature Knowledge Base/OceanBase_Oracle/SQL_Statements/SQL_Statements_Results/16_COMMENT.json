@@ -1,0 +1,26 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000001054336"
+    ],
+    "Title": [
+        "COMMENT"
+    ],
+    "Feature": [
+        "COMMENT ON COLUMN\n    [schema.]{table_name. | view_name.}column_name IS 'string';\nCOMMENT ON TABLE\n    [schema.]{table_name | view_name} IS 'string';\n"
+    ],
+    "Description": [
+        "该语句将有关表或表列、视图或视图列的注释添加到数据字典中。",
+        "\n\n\n参数\n描述\n\n\n\n\nschema\n指定 Schema。如果省略 schema.，则 OceanBase 数据库默认表等要添加注释的对象在当前的 Schema 中。\n\n\ntable_name\n指定表名。\n\n\nview_name\n指定视图名。\n\n\ncolumn_name\n指定列名。\n\n\nstring\n指定注释的文本。如果将 string 设置为空字符串（''），则表示从数据库中删除注释。\n\n\n"
+    ],
+    "Examples": [
+        "obclient> COMMENT ON TABLE tbl1 IS 'Comment of the tbl1';\n",
+        "obclient> COMMENT ON COLUMN tbl1.name IS 'Name of person in table tbl1';\n",
+        "obclient> COMMENT ON COLUMN tbl1.name IS '';\n",
+        "obclient> COMMENT ON TABLE view1 IS 'Comment of the view1';\n",
+        "obclient> COMMENT ON COLUMN view1.name IS 'Name of person in view view1';\n",
+        "obclient> COMMENT ON COLUMN view1.name IS '';\n"
+    ],
+    "Category": [
+        "DDL"
+    ]
+}

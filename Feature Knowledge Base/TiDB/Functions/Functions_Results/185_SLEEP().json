@@ -1,0 +1,23 @@
+{
+    "HTML": [
+        "https://docs.pingcap.com/zh/tidb/stable/miscellaneous-functions#sleep"
+    ],
+    "Title": [
+        "SLEEP()"
+    ],
+    "Feature": [
+        "SLEEP()"
+    ],
+    "Description": [
+        "SLEEP()",
+        "SLEEP() \u51fd\u6570\u7528\u4e8e\u5c06\u67e5\u8be2\u6682\u505c\u6267\u884c\u51e0\u79d2\u3002",
+        "SELECT SLEEP(1.5);\n",
+        "+------------+\n| SLEEP(1.5) |\n+------------+\n|          0 |\n+------------+\n1 row in set (1.50 sec)\n"
+    ],
+    "Examples": [
+        "SELECT SLEEP(1.5);\n"
+    ],
+    "Category": [
+        "Miscellaneous Functions"
+    ]
+}

@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/current/functions-binarystring.html"
+    ],
+    "Title": [
+        "encode"
+    ],
+    "Feature": [
+        "encode ( bytes bytea, format text ) → text"
+    ],
+    "Description": [
+        "Encodes binary data into a textual representation; supported format values are: base64, escape, hex."
+    ],
+    "Examples": [
+        "encode('123\\000\\001', 'base64') → MTIzAAE="
+    ],
+    "Category": [
+        "Binary String Functions and Operators"
+    ]
+}

@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/current/functions-string.html"
+    ],
+    "Title": [
+        "regexp_count"
+    ],
+    "Feature": [
+        "regexp_count ( string text, pattern text [, start integer [, flags text ] ] ) → integer"
+    ],
+    "Description": [
+        "Returns the number of times the POSIX regular expression pattern matches in the string; see Section 9.7.3."
+    ],
+    "Examples": [
+        "regexp_count('123456789012', '\\d\\d\\d', 2) → 3"
+    ],
+    "Category": [
+        "String Functions and Operators"
+    ]
+}

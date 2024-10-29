@@ -1,0 +1,28 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/string-functions"
+    ],
+    "Title": [
+        "base64Encode"
+    ],
+    "Feature": [
+        "base64Encode(plaintext)"
+    ],
+    "Description": [
+        "base64Encode",
+        "Encodes a String or FixedString as base64, according to RFC 4648.",
+        "Alias: TO_BASE64.",
+        "Syntax",
+        "base64Encode(plaintext)",
+        "Arguments",
+        "plaintext \u2014 String column or constant.",
+        "Returned value",
+        "A string containing the encoded value of the argument."
+    ],
+    "Examples": [
+        "SELECT base64Encode('clickhouse');"
+    ],
+    "Category": [
+        "Strings Functions"
+    ]
+}

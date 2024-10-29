@@ -1,0 +1,33 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/type-conversion-functions"
+    ],
+    "Title": [
+        "toDecimal32OrDefault"
+    ],
+    "Feature": [
+        "toDecimal32OrDefault(expr, S[, default])"
+    ],
+    "Description": [
+        "toDecimal32OrDefault",
+        "Like toDecimal32, this function converts an input value to a value of type Decimal(9, S) but returns the default value in case of an error.",
+        "Syntax",
+        "toDecimal32OrDefault(expr, S[, default])",
+        "Arguments",
+        "expr \u2014 A String representation of a number. String.S \u2014 Scale parameter between 0 and 9, specifying how many digits the fractional part of a number can have. UInt8.default (optional) \u2014 The default value to return if parsing to type Decimal32(S) is unsuccessful. Decimal32(S).",
+        "Supported arguments:",
+        "String representations of type (U)Int8/16/32/64/128/256.String representations of type Float32/64.",
+        "Unsupported arguments:",
+        "String representations of Float32/64 values NaN and Inf.String representations of binary and hexadecimal values, e.g. SELECT toDecimal32OrDefault('0xc0fe', 1);.",
+        "NoteAn overflow can occur if the value of expr exceeds the bounds of Decimal32: ( -1 * 10^(9 - S), 1 * 10^(9 - S) ).\nExcessive digits in a fraction are discarded (not rounded).\nExcessive digits in the integer part will lead to an error.",
+        "DangerConversions drop extra digits and could operate in an unexpected way when working with Float32/Float64 inputs as the operations are performed using floating point instructions.\nFor example: toDecimal32OrDefault(1.15, 2) is equal to 1.14 because 1.15 * 100 in floating point is 114.99.\nYou can use a String input so the operations use the underlying integer type: toDecimal32OrDefault('1.15', 2) = 1.15",
+        "Returned value",
+        "Value of type Decimal(9, S) if successful, otherwise returns the default value if passed or 0 if not. Decimal32(S)."
+    ],
+    "Examples": [
+        "SELECT    toDecimal32OrDefault(toString(0.0001), 5) AS a,    toTypeName(a),    toDecimal32OrDefault('Inf', 0, CAST('-1', 'Decimal32(0)')) AS b,    toTypeName(b)FORMAT Vertical;"
+    ],
+    "Category": [
+        "Type Conversion Functions"
+    ]
+}

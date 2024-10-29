@@ -1,0 +1,22 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000000823206"
+    ],
+    "Title": [
+        "REGEXP_INSTR"
+    ],
+    "Feature": [
+        "REGEXP_INSTR (source_char, pattern\n                [, position[, occurrence[, return_opt[, match_param[, subexpr] ] ] ] ]\n             )\n"
+    ],
+    "Description": [
+        "该函数作用是返回正则表达式匹配值在源字符串中的位置。",
+        "\n\n\n参数\n说明\n\n\n\n\nsource_char\n指定用作搜索值的字符表达式，数据类型可为 CHAR、VARCHAR2、NCHAR、NVARCHAR2 或 CLOB。\n\n\npattern\n指定正则表达式截取规则。它通常是一个文本文字，字符类型可为 CHAR、VARCHAR2、NCHAR 或 NVARCHAR2。\n\n\nposition\n指定开始正则表达式匹配的起始位置，取值是一个正整数，为可选项。默认值是 1，表示从第一个字符开始搜索 source_char。\n\n\noccurrence\n指定 source_char 中第几个正则表达式匹配位置，为可选项。默认值为 1。如果 occurrence 大于 1，则从第一次匹配后的第一个字符开始搜索第二次正则表达式匹配，依此类推。\n\n\nreturn_opt\n指定返回出现匹配值位置选项，为可选项。默认值为 0。 \n      \n如果指定 0，则返回匹配的第一个字符的位置。\n如果指定 1，则返回匹配的最后字符后一位的位置。\n\n\n\nmatch_param\n指定更改正则表达式默认匹配方式，为可选项。是数据类型 VARCHAR2 或 CHAR 的字符表达式。 \n      \ni 表示大小写不敏感。\nc 表示大小写敏感。\nn 表示句点 . 可以匹配换行符。\nm 表示多行模式。\nx 表示忽略空格字符，默认情况下，空格字符会相互匹配。\n\n\n\nsubexpr\n指示 pattern 要返回的子表达式，是一个从 0 到 9 的非负整数，为可选项。默认值为 0，表示返回第一个子表达式出现的位置。\n\n\n",
+        "返回 NUMBER 数据类型。"
+    ],
+    "Examples": [
+        "obclient> SELECT REGEXP_INSTR('OceanBase', '(Oc)(e(anB)(ase))',1, 1, 0, 'i', 3) \"first\",\n            REGEXP_INSTR('OceanBase', '(Oc)(e(anB)(ase))', 1, 1, 1, 'i', 3)-1 \"last\"\n          FROM DUAL;\n+-------+------+\n| first | last |\n+-------+------+\n|     4 |    6 |\n+-------+------+\n1 row in set\n"
+    ],
+    "Category": [
+        "Character Functions Returning NumberValues"
+    ]
+}

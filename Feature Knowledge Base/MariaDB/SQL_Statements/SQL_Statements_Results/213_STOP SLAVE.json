@@ -1,0 +1,29 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/stop-replica/"
+    ],
+    "Title": [
+        "STOP SLAVE"
+    ],
+    "Feature": [
+        "STOP SLAVE [\"connection_name\"] [thread_type [, thread_type] ... ] [FOR CHANNEL \"connection_name\"]\n\nSTOP ALL SLAVES [thread_type [, thread_type]]\n\nSTOP REPLICA [\"connection_name\"] [thread_type [, thread_type] ... ] -- from 10.5.1\n\nSTOP ALL REPLICAS [thread_type [, thread_type]] -- from 10.5.1\n\nthread_type: IO_THREAD | SQL_THREAD\n"
+    ],
+    "Description": [
+        "Stops the replica threads. STOP SLAVE requires the SUPER privilege, or, from MariaDB 10.5.2, the REPLICATION SLAVE ADMIN privilege.",
+        "Like START SLAVE, this statement may be used with the IO_THREAD and\nSQL_THREAD options to name the thread or threads to be stopped. In almost all cases, one never need to use the thread_type options.",
+        "STOP SLAVE waits until any current replication event group affecting\none or more non-transactional tables has finished executing (if there\nis any such replication group), or until the user issues a KILL QUERY or KILL CONNECTION statement.",
+        "Note that STOP SLAVE doesn't delete the connection permanently.  Next time you execute START SLAVE or the MariaDB server restarts, the replica connection is restored with it's original arguments. If you want to delete a connection, you should execute RESET SLAVE.",
+        "STOP ALL SLAVES",
+        "STOP ALL SLAVES stops all your running replicas. It will give you a note for every stopped connection. You can check the notes with SHOW WARNINGS.",
+        "connection_name",
+        "The connection_name option is used for multi-source replication.",
+        "If there is only one nameless master, or the default master (as specified by the default_master_connection system variable) is intended, connection_name can be omitted. If provided, the STOP SLAVE statement will apply to the specified master. connection_name is case-insensitive.",
+        "MariaDB starting with 10.7.0The FOR CHANNEL keyword was added for MySQL compatibility. This is identical as\nusing the channel_name directly after STOP SLAVE.\n",
+        "STOP REPLICA",
+        "MariaDB starting with 10.5.1STOP REPLICA is an alias for STOP SLAVE from MariaDB 10.5.1. \n"
+    ],
+    "Examples": [],
+    "Category": [
+        "Administrative SQL Statements"
+    ]
+}

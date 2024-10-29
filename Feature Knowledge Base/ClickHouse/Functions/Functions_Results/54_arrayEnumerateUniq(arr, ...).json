@@ -1,0 +1,30 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/array-functions"
+    ],
+    "Title": [
+        "arrayEnumerateUniq(arr, ...)"
+    ],
+    "Feature": [
+        "arrayEnumerateUniq(arr, ...)"
+    ],
+    "Description": [
+        "arrayEnumerateUniq(arr, ...)",
+        "Returns an array the same size as the source array, indicating for each element what its position is among elements with the same value.\nFor example: arrayEnumerateUniq([10, 20, 10, 30]) = [1, 1, 2, 1].",
+        "This function is useful when using ARRAY JOIN and aggregation of array elements.\nExample:",
+        "SELECT    Goals.ID AS GoalID,    sum(Sign) AS Reaches,    sumIf(Sign, num = 1) AS VisitsFROM test.visitsARRAY JOIN    Goals,    arrayEnumerateUniq(Goals.ID) AS numWHERE CounterID = 160656GROUP BY GoalIDORDER BY Reaches DESCLIMIT 10",
+        "\u250c\u2500\u2500GoalID\u2500\u252c\u2500Reaches\u2500\u252c\u2500Visits\u2500\u2510\u2502   53225 \u2502    3214 \u2502   1097 \u2502\u2502 2825062 \u2502    3188 \u2502   1097 \u2502\u2502   56600 \u2502    2803 \u2502    488 \u2502\u2502 1989037 \u2502    2401 \u2502    365 \u2502\u2502 2830064 \u2502    2396 \u2502    910 \u2502\u2502 1113562 \u2502    2372 \u2502    373 \u2502\u2502 3270895 \u2502    2262 \u2502    812 \u2502\u2502 1084657 \u2502    2262 \u2502    345 \u2502\u2502   56599 \u2502    2260 \u2502    799 \u2502\u2502 3271094 \u2502    2256 \u2502    812 \u2502\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518",
+        "In this example, each goal ID has a calculation of the number of conversions (each element in the Goals nested data structure is a goal that was reached, which we refer to as a conversion) and the number of sessions. Without ARRAY JOIN, we would have counted the number of sessions as sum(Sign). But in this particular case, the rows were multiplied by the nested Goals structure, so in order to count each session one time after this, we apply a condition to the value of the arrayEnumerateUniq(Goals.ID) function.",
+        "The arrayEnumerateUniq function can take multiple arrays of the same size as arguments. In this case, uniqueness is considered for tuples of elements in the same positions in all the arrays.",
+        "SELECT arrayEnumerateUniq([1, 1, 1, 2, 2, 2], [1, 1, 2, 1, 1, 2]) AS res",
+        "\u250c\u2500res\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\u2502 [1,2,1,1,2,1] \u2502\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518",
+        "This is necessary when using ARRAY JOIN with a nested data structure and further aggregation across multiple elements in this structure."
+    ],
+    "Examples": [
+        "SELECT    Goals.ID AS GoalID,    sum(Sign) AS Reaches,    sumIf(Sign, num = 1) AS VisitsFROM test.visitsARRAY JOIN    Goals,    arrayEnumerateUniq(Goals.ID) AS numWHERE CounterID = 160656GROUP BY GoalIDORDER BY Reaches DESCLIMIT 10",
+        "SELECT arrayEnumerateUniq([1, 1, 1, 2, 2, 2], [1, 1, 2, 1, 1, 2]) AS res"
+    ],
+    "Category": [
+        "Arrays Functions"
+    ]
+}

@@ -1,0 +1,23 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/envelope/"
+    ],
+    "Title": [
+        "ST_ENVELOPE"
+    ],
+    "Feature": [
+        "ST_ENVELOPE(g)\nENVELOPE(g)\n"
+    ],
+    "Description": [
+        "Returns the Minimum Bounding Rectangle (MBR) for the geometry value g.  The result is returned as a Polygon value.",
+        "The polygon is defined by the corner points of the bounding box:",
+        "POLYGON((MINX MINY, MAXX MINY, MAXX MAXY, MINX MAXY, MINX MINY))\n",
+        "ST_ENVELOPE() and ENVELOPE() are synonyms."
+    ],
+    "Examples": [
+        "SELECT AsText(ST_ENVELOPE(GeomFromText('LineString(1 1,4 4)')));"
+    ],
+    "Category": [
+        "Geographic Functions"
+    ]
+}

@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://duckdb.org/docs/sql/functions/aggregates"
+    ],
+    "Title": [
+        "bitstring_agg(arg)"
+    ],
+    "Feature": [
+        "bitstring_agg(arg)"
+    ],
+    "Description": [
+        "Returns a bitstring whose length corresponds to the range of the non-null (integer) values, with bits set at the location of each (distinct) value."
+    ],
+    "Examples": [
+        "bitstring_agg(A)"
+    ],
+    "Category": [
+        "Aggregate Functions"
+    ]
+}

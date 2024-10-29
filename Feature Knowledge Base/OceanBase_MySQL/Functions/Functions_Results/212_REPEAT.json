@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000000823483"
+    ],
+    "Title": [
+        "REPEAT"
+    ],
+    "Feature": [
+        "REPEAT(str, count)\n"
+    ],
+    "Description": [
+        "返回 str 重复 count 次组成的字符串。count 小于等于 0 时，返回空字符串。参数中包含 NULL 时，返回 NULL。"
+    ],
+    "Examples": [
+        "obclient> SELECT\n     REPEAT('1', -1),\n     REPEAT(null, null),\n     REPEAT('Abc', 4)\n     \\G\n*************************** 1. row ***************************\n   REPEAT('1', -1):\nREPEAT(null, null): NULL\n  REPEAT('Abc', 4): AbcAbcAbcAbc\n1 row in set\n"
+    ],
+    "Category": [
+        "String Functions"
+    ]
+}

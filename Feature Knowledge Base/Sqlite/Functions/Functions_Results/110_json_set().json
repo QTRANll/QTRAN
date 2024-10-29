@@ -1,0 +1,30 @@
+{
+    "HTML": [
+        "https://sqlite.org/json1.html#jrepl"
+    ],
+    "Title": [
+        "JSON Functions"
+    ],
+    "Feature": [
+        "json_set()"
+    ],
+    "Description": [
+        "The json_insert(), json_replace(), and json_set() functions are used to modify JSON data. They take a JSON value as the first argument, followed by path/value pairs that determine the modifications to be made to the JSON structure. The primary difference between the functions lies in their behavior regarding existing and new values: json_insert() will create new values without overwriting existing ones, json_replace() will overwrite existing values but will not create new ones, and json_set() will both overwrite existing values and create new ones if necessary. The functions process edits from left to right, with each edit potentially affecting the outcome of subsequent ones. If a path/value pair's value is a TEXT type, it is treated as a quoted JSON string unless it is derived from another JSON function or operator, in which case it retains its JSON structure. An error is thrown for malformed JSON or PATH arguments or if any argument is a BLOB."
+    ],
+    "Examples": [
+        "json_insert('[1,2,3,4]', '$[#]', 99) returns '[1,2,3,4,99]'",
+        "json_insert('[1,[2,3],4]', '$[1][#]', 99) returns '[1,[2,3,99],4]'",
+        "json_insert('{\"a\":2,\"c\":4}', '$.a', 99) does not modify the original JSON",
+        "json_insert('{\"a\":2,\"c\":4}', '$.e', 99) returns '{\"a\":2,\"c\":4,\"e\":99}'",
+        "json_replace('{\"a\":2,\"c\":4}', '$.a', 99) returns '{\"a\":99,\"c\":4}'",
+        "json_replace('{\"a\":2,\"c\":4}', '$.e', 99) does not modify the original JSON",
+        "json_set('{\"a\":2,\"c\":4}', '$.a', 99) returns '{\"a\":99,\"c\":4}'",
+        "json_set('{\"a\":2,\"c\":4}', '$.e', 99) returns '{\"a\":2,\"c\":4,\"e\":99}'",
+        "json_set('{\"a\":2,\"c\":4}', '$.c', '[97,96]') returns '{\"a\":2,\"c\":\"[97,96]\"}'",
+        "json_set('{\"a\":2,\"c\":4}', '$.c', json('[97,96]')) returns '{\"a\":2,\"c\":[97,96]}'",
+        "json_set('{\"a\":2,\"c\":4}', '$.c', json_array(97,96)) returns '{\"a\":2,\"c\":[97,96]}'"
+    ],
+    "Category": [
+        "JSON Functions"
+    ]
+}

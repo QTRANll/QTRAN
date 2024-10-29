@@ -1,0 +1,27 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/type-conversion-functions"
+    ],
+    "Title": [
+        "toDateTime64OrDefault"
+    ],
+    "Feature": [
+        "toDateTime64OrNull(expr, scale, [timezone, default])"
+    ],
+    "Description": [
+        "toDateTime64OrDefault",
+        "Like toDateTime64, this function converts an input value to a value of type DateTime64,\nbut returns either the default value of DateTime64\nor the provided default if an invalid argument is received.",
+        "Syntax",
+        "toDateTime64OrNull(expr, scale, [timezone, default])",
+        "Arguments",
+        "expr \u2014 The value. String, UInt32, Float or DateTime.scale - Tick size (precision): 10-precision seconds. Valid range: [ 0 : 9 ].timezone (optional) - Time zone of the specified DateTime64 object.default (optional) - Default value to return if an invalid argument is received. DateTime64.",
+        "Returned value",
+        "A calendar date and time of day, with sub-second precision, otherwise the minimum value of DateTime64 or the default value if provided. DateTime64."
+    ],
+    "Examples": [
+        "SELECT    toDateTime64OrDefault('1976-10-18 00:00:00 30', 3) AS invalid_arg,    toDateTime64OrDefault('1976-10-18 00:00:00 30', 3, 'UTC', toDateTime64('2001-01-01 00:00:00.00',3)) AS invalid_arg_with_default"
+    ],
+    "Category": [
+        "Type Conversion Functions"
+    ]
+}

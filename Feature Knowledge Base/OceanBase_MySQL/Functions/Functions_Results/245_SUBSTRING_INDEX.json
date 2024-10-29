@@ -1,0 +1,26 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000000823441"
+    ],
+    "Title": [
+        "SUBSTRING_INDEX"
+    ],
+    "Feature": [
+        "SUBSTRING_INDEX(str, delim, count)\n"
+    ],
+    "Description": [
+        "在定界符 delim 以及 count 出现前，从字符串 str 返回字符串。",
+        "如果 count 为正值，则返回最终定界符（从左边开始）左边的一切内容。",
+        "如果 count 为负值，则返回定界符（从右边开始）右边的一切内容。",
+        "如果任意一个参数为 NULL，返回 NULL；",
+        "如果 str 或 delim 为空字符串，则返回空串；",
+        "如果 count=0，也返回空串。",
+        "*str、delim 和 count 参数支持数值与字符串的隐式转换。"
+    ],
+    "Examples": [
+        "obclient> SELECT SUBSTRING_INDEX('ABCDABC', 'ABC', 0), SUBSTRING_INDEX('ABCDABC', 'ABC', 1), SUBSTRING_INDEX('ABCDABC', 'ABC', 2), SUBSTRING_INDEX('ABCDABC', 'ABC', 3), SUBSTRING_INDEX('ABCDABC', 'ABC', -1), SUBSTRING_INDEX('ABCDABC', 'ABC', -2), SUBSTRING_INDEX('ABCDABC', 'ABC', -3)\\G\n*************************** 1. row ***************************\n SUBSTRING_INDEX('ABCDABC', 'ABC', 0):\n SUBSTRING_INDEX('ABCDABC', 'ABC', 1):\n SUBSTRING_INDEX('ABCDABC', 'ABC', 2): ABCD\n SUBSTRING_INDEX('ABCDABC', 'ABC', 3): ABCDABC\nSUBSTRING_INDEX('ABCDABC', 'ABC', -1):\nSUBSTRING_INDEX('ABCDABC', 'ABC', -2): DABC\nSUBSTRING_INDEX('ABCDABC', 'ABC', -3): ABCDABC\n1 row in set\n"
+    ],
+    "Category": [
+        "String Functions"
+    ]
+}

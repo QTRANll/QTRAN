@@ -1,0 +1,27 @@
+{
+    "HTML": [
+        "https://docs.pingcap.com/zh/tidb/stable/string-functions#regexp_replace"
+    ],
+    "Title": [
+        "REGEXP_REPLACE()"
+    ],
+    "Feature": [
+        "REGEXP_REPLACE()"
+    ],
+    "Description": [
+        "REGEXP_REPLACE()",
+        "\u66ff\u6362\u6ee1\u8db3\u6b63\u5219\u8868\u8fbe\u5f0f\u7684\u5b50\u5b57\u7b26\u4e32\uff08\u4e0e MySQL \u4e0d\u5b8c\u5168\u517c\u5bb9\uff0c\u5177\u4f53\u8bf7\u53c2\u8003\u6b63\u5219\u51fd\u6570\u4e0e MySQL \u7684\u517c\u5bb9\u6027\uff09",
+        "REGEXP_REPLACE(str, regexp, replace, [start, [match, [match_type]]]) \u51fd\u6570\u53ef\u4ee5\u7528\u4e8e\u57fa\u4e8e\u6b63\u5219\u8868\u8fbe\u5f0f\u66ff\u6362\u5b57\u7b26\u4e32\u3002"
+    ],
+    "Examples": [
+        "SELECT REGEXP_REPLACE('TooDB', 'o{2}', 'i');\n",
+        "SELECT REGEXP_REPLACE('TooDB', 'o{2}', 'i',3);\n",
+        "SELECT REGEXP_REPLACE('TooDB', 'o', 'i',1,1);\n",
+        "SELECT REGEXP_REPLACE('TooDB', 'o', 'i',1,2);\n",
+        "SELECT REGEXP_REPLACE('TooDB', 'O{2}','i',1,1);\n",
+        "SELECT REGEXP_REPLACE('TooDB', 'O{2}','i',1,1,'i');\n"
+    ],
+    "Category": [
+        "String Functions"
+    ]
+}

@@ -1,0 +1,33 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/other-functions"
+    ],
+    "Title": [
+        "neighbor"
+    ],
+    "Feature": [
+        "neighbor(column, offset[, default_value])"
+    ],
+    "Description": [
+        "neighbor",
+        "The window function that provides access to a row at a specified offset before or after the current row of a given column.",
+        "Syntax",
+        "neighbor(column, offset[, default_value])",
+        "The result of the function depends on the affected data blocks and the order of data in the block.",
+        "NoteOnly returns neighbor inside the currently processed data block.\nBecause of this error-prone behavior the function is DEPRECATED, please use proper window functions instead.",
+        "The order of rows during calculation of neighbor() can differ from the order of rows returned to the user.\nTo prevent that you can create a subquery with ORDER BY and call the function from outside the subquery.",
+        "Arguments",
+        "column \u2014 A column name or scalar expression.offset \u2014 The number of rows to look before or ahead of the current row in column. Int64.default_value \u2014 Optional. The returned value if offset is beyond the block boundaries. Type of data blocks affected.",
+        "Returned values",
+        "Value of column with offset distance from current row, if offset is not outside the block boundaries.The default value of column or default_value (if given), if offset is outside the block boundaries.",
+        "NoteThe return type will be that of the data blocks affected or the default value type."
+    ],
+    "Examples": [
+        "SELECT number, neighbor(number, 2) FROM system.numbers LIMIT 10;",
+        "SELECT number, neighbor(number, 2, 999) FROM system.numbers LIMIT 10;",
+        "WITH toDate('2018-01-01') AS start_dateSELECT    toStartOfMonth(start_date + (number * 32)) AS month,    toInt32(month) % 100 AS money,    neighbor(money, -12) AS prev_year,    round(prev_year / money, 2) AS year_over_yearFROM numbers(16)"
+    ],
+    "Category": [
+        "Other Functions"
+    ]
+}

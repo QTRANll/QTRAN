@@ -1,0 +1,22 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000000823167"
+    ],
+    "Title": [
+        "TRUNC"
+    ],
+    "Feature": [
+        "TRUNC (numeric[,precision])\n"
+    ],
+    "Description": [
+        "该函数返回参数 numeric 按精度 precision 截取后的值。",
+        "\n\n\n参数\n说明\n\n\n\n\nnumeric\n表示被截取的数字，属于数值类型（NUMBER、FLOAT、BINARY_FLOAT 和 BINARY_DOUBLE）表达式。\n\n\nprecision\n表示精度，为可选项，默认值为 0。属于数值类型（NUMBER、FLOAT、BINARY_FLOAT 和 BINARY_DOUBLE）表达式。 \n      \n如果 precision 不为整数，则按 precision 的整数部分作精度截取 numeric。\n如果 precision 大于 0，则截取 numeric 到 precision 位小数。\n如果 precision 小于 0，则截取到 numeric 小数点向左第 precision 位。\n如果 precision 等于 0，则截取到 numeric 的整数部分，小数部分舍去。\n\n\n\n",
+        "不指定 precision 时，返回类型与参数 numeric 的数据类型相同。指定 precision 时，返回类型为 NUMBER。"
+    ],
+    "Examples": [
+        "obclient> SELECT TRUNC(555.666,2.2),TRUNC(555.666,-2),TRUNC(555.666) FROM DUAL;\n+--------------------+-------------------+----------------+\n| TRUNC(555.666,2.2) | TRUNC(555.666,-2) | TRUNC(555.666) |\n+--------------------+-------------------+----------------+\n|             555.66 |               500 |            555 |\n+--------------------+-------------------+----------------+\n1 row in set\n"
+    ],
+    "Category": [
+        "Numeric Functions"
+    ]
+}

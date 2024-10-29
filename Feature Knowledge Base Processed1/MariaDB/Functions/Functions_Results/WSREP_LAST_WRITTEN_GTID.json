@@ -1,0 +1,42 @@
+{
+    "HTML": "https://mariadb.com//kb/en/wsrep_last_written_gtid/",
+    "Title": "WSREP_LAST_WRITTEN_GTID",
+    "Feature": [
+        "WSREP_LAST_WRITTEN_GTID()\n"
+    ],
+    "Description": [
+        "Returns the Global Transaction ID of the most recent write transaction performed by the client."
+    ],
+    "Examples": [],
+    "Category": [
+        "Galera Functions"
+    ],
+    "Effective SQLs Refined": [],
+    "Ineffective SQLs Refined": [],
+    "Wrong Messages from Ineffective SQLs Refined": [],
+    "SQLs Generated1": [
+        {
+            "Example SQL": "SELECT WSREP_LAST_WRITTEN_GTID();"
+        }
+    ],
+    "SQLs Generated Costs1": [
+        {
+            "Total Tokens": 295,
+            "Prompt Tokens": 272,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 5.46e-05
+        }
+    ],
+    "SQLs Generated ExecResults1": [
+        "[(b'0-0-0',)]"
+    ],
+    "SQLs Generated ExecTimes1": [
+        "0.025676965713500977"
+    ],
+    "SQLs Generated ErrorMessages1": [
+        "None"
+    ],
+    "Effective SQLs Generated1": [
+        "SELECT WSREP_LAST_WRITTEN_GTID();"
+    ]
+}

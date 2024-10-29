@@ -1,0 +1,21 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000000823462"
+    ],
+    "Title": [
+        "LENGTH"
+    ],
+    "Feature": [
+        "LENGTH(str)\n"
+    ],
+    "Description": [
+        "返回 str 的字节长度。",
+        "多字节的字符会被计算为多个字符。例如，输入 5 个 2 字节字符，CHAR_LENGTH() 返回 5，而 LENGTH() 则返回 10。"
+    ],
+    "Examples": [
+        "obclient> SELECT LENGTH('中国'), LENGTH('hello');\n+------------------+-----------------+\n| LENGTH('中国') | LENGTH('hello') |\n+------------------+-----------------+\n|                6 |               5 |\n+------------------+-----------------+\n1 row in set\n"
+    ],
+    "Category": [
+        "String Functions"
+    ]
+}

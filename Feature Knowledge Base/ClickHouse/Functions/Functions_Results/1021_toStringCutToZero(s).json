@@ -1,0 +1,24 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/type-conversion-functions"
+    ],
+    "Title": [
+        "toStringCutToZero"
+    ],
+    "Feature": [
+        "toStringCutToZero(s)"
+    ],
+    "Description": [
+        "toStringCutToZero",
+        "Accepts a String or FixedString argument. Returns the String with the content truncated at the first zero byte found.",
+        "Syntax",
+        "toStringCutToZero(s)"
+    ],
+    "Examples": [
+        "SELECT toFixedString('foo', 8) AS s, toStringCutToZero(s) AS s_cut;",
+        "SELECT toFixedString('foo\\0bar', 8) AS s, toStringCutToZero(s) AS s_cut;"
+    ],
+    "Category": [
+        "Type Conversion Functions"
+    ]
+}

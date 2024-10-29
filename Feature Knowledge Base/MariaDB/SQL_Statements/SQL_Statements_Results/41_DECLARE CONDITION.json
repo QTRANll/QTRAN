@@ -1,0 +1,22 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/declare-condition/"
+    ],
+    "Title": [
+        "DECLARE CONDITION"
+    ],
+    "Feature": [
+        "DECLARE condition_name CONDITION FOR condition_value\n\ncondition_value:\n    SQLSTATE [VALUE] sqlstate_value\n  | mysql_error_code\n"
+    ],
+    "Description": [
+        "The DECLARE ... CONDITION statement defines a named error condition.\nIt specifies a condition that needs specific handling and associates a\nname with that condition. Later, the name can be used in a DECLARE ... HANDLER, SIGNAL or RESIGNAL statement (as long as the statement is located in the same BEGIN ... END block).",
+        "Conditions must be declared after local variables, but before CURSORs and HANDLERs.",
+        "A condition_value for DECLARE ... CONDITION can be an SQLSTATE value (a\n5-character string literal) or a MySQL error code (a number). You should not\nuse SQLSTATE value '00000' or MySQL error code 0, because those indicate sucess\nrather than an error condition. If you try, or if you specify an invalid SQLSTATE value, an error like this is produced:",
+        "ERROR 1407 (42000): Bad SQLSTATE: '00000'\n",
+        "For a list of SQLSTATE values and MariaDB error\ncodes, see MariaDB Error Codes."
+    ],
+    "Examples": [],
+    "Category": [
+        "Programmatic and Compound Statements"
+    ]
+}

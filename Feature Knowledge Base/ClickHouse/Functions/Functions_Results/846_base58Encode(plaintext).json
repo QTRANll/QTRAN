@@ -1,0 +1,27 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/string-functions"
+    ],
+    "Title": [
+        "base58Encode"
+    ],
+    "Feature": [
+        "base58Encode(plaintext)"
+    ],
+    "Description": [
+        "base58Encode",
+        "Encodes a String using Base58 in the \"Bitcoin\" alphabet.",
+        "Syntax",
+        "base58Encode(plaintext)",
+        "Arguments",
+        "plaintext \u2014 String column or constant.",
+        "Returned value",
+        "A string containing the encoded value of the argument. String."
+    ],
+    "Examples": [
+        "SELECT base58Encode('Encoded');"
+    ],
+    "Category": [
+        "Strings Functions"
+    ]
+}

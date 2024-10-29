@@ -1,0 +1,34 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/alter-logfile-group.html"
+    ],
+    "Title": [
+        "15.1.6 ALTER LOGFILE GROUP Statement"
+    ],
+    "Feature": [
+        "ALTER LOGFILE GROUP logfile_group\n    ADD UNDOFILE 'file_name'\n    [INITIAL_SIZE [=] size]\n    [WAIT]\n    ENGINE [=] engine_name"
+    ],
+    "Description": [
+        "\n      This statement adds an UNDO file named\n      'file_name' to an existing log file\n      group logfile_group. An\n      ALTER LOGFILE GROUP statement has\n      one and only one ADD UNDOFILE clause. No\n      DROP UNDOFILE clause is currently supported.\n",
+        "\n\nNote\n\n\n        All NDB Cluster Disk Data objects share the same namespace. This\n        means that each Disk Data object must be\n        uniquely named (and not merely each Disk Data object of a given\n        type). For example, you cannot have a tablespace and an undo log\n        file with the same name, or an undo log file and a data file\n        with the same name.\n\n",
+        "\n      The optional INITIAL_SIZE parameter sets the\n      UNDO file's initial size in bytes; if not\n      specified, the initial size defaults to 134217728 (128 MB). You\n      may optionally follow size with a\n      one-letter abbreviation for an order of magnitude, similar to\n      those used in my.cnf. Generally, this is one\n      of the letters M (megabytes) or\n      G (gigabytes). (Bug #13116514, Bug #16104705,\n      Bug #62858)\n    ",
+        "\n      On 32-bit systems, the maximum supported value for\n      INITIAL_SIZE is 4294967296 (4 GB). (Bug #29186)\n    ",
+        "\n      The minimum allowed value for INITIAL_SIZE is\n      1048576 (1 MB). (Bug #29574)\n",
+        "\n\nNote\n\n\nWAIT is parsed but otherwise ignored. This\n        keyword currently has no effect, and is intended for future\n        expansion.\n\n",
+        "\n      The ENGINE clause (required) determines the\n      storage engine which is used by this log file group, with\n      engine_name being the name of the\n      storage engine. Currently, the only accepted values for\n      engine_name are\n      \u201cNDBCLUSTER\u201d and\n      \u201cNDB\u201d. The two values\n      are equivalent.\n    ",
+        "\n      Here is an example, which assumes that the log file group\n      lg_3 has already been created using\n      CREATE LOGFILE GROUP (see\n      Section\u00a015.1.16, \u201cCREATE LOGFILE GROUP Statement\u201d):\n    ",
+        "Press CTRL+C to copy ALTER LOGFILE GROUP lg_3\n    ADD UNDOFILE 'undo_10.dat'\n    INITIAL_SIZE=32M\n    ENGINE=NDBCLUSTER;",
+        "\n      When ALTER LOGFILE GROUP is used\n      with ENGINE = NDBCLUSTER (alternatively,\n      ENGINE = NDB), an undo log file is created on\n      each NDB Cluster data node. You can verify that the undo files\n      were created and obtain information about them by querying the\n      Information Schema FILES table. For\n      example:\n    ",
+        "Press CTRL+C to copy mysql> SELECT FILE_NAME, LOGFILE_GROUP_NUMBER, EXTRA\n    -> FROM INFORMATION_SCHEMA.FILES\n    -> WHERE LOGFILE_GROUP_NAME = 'lg_3';\n+-------------+----------------------+----------------+\n| FILE_NAME   | LOGFILE_GROUP_NUMBER | EXTRA          |\n+-------------+----------------------+----------------+\n| newdata.dat |                    0 | CLUSTER_NODE=3 |\n| newdata.dat |                    0 | CLUSTER_NODE=4 |\n| undo_10.dat |                   11 | CLUSTER_NODE=3 |\n| undo_10.dat |                   11 | CLUSTER_NODE=4 |\n+-------------+----------------------+----------------+\n4 rows in set (0.01 sec)",
+        "\n      (See Section\u00a028.3.15, \u201cThe INFORMATION_SCHEMA FILES Table\u201d.)\n    ",
+        "\n      Memory used for UNDO_BUFFER_SIZE comes from the\n      global pool whose size is determined by the value of the\n      SharedGlobalMemory data\n      node configuration parameter. This includes any default value\n      implied for this option by the setting of the\n      InitialLogFileGroup data\n      node configuration parameter.\n    ",
+        "\nALTER LOGFILE GROUP is useful only\n      with Disk Data storage for NDB Cluster. For more information, see\n      Section\u00a025.6.11, \u201cNDB Cluster Disk Data Tables\u201d.\n"
+    ],
+    "Examples": [
+        "ALTER LOGFILE GROUP lg_3\n    ADD UNDOFILE 'undo_10.dat'\n    INITIAL_SIZE=32M\n    ENGINE=NDBCLUSTER;",
+        "mysql> SELECT FILE_NAME, LOGFILE_GROUP_NUMBER, EXTRA\n    -> FROM INFORMATION_SCHEMA.FILES\n    -> WHERE LOGFILE_GROUP_NAME = 'lg_3';\n+-------------+----------------------+----------------+\n| FILE_NAME   | LOGFILE_GROUP_NUMBER | EXTRA          |\n+-------------+----------------------+----------------+\n| newdata.dat |                    0 | CLUSTER_NODE=3 |\n| newdata.dat |                    0 | CLUSTER_NODE=4 |\n| undo_10.dat |                   11 | CLUSTER_NODE=3 |\n| undo_10.dat |                   11 | CLUSTER_NODE=4 |\n+-------------+----------------------+----------------+\n4 rows in set (0.01 sec)"
+    ],
+    "Category": [
+        "Data Definition Statements"
+    ]
+}

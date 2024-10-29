@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/current/functions-array.html"
+    ],
+    "Title": [
+        "cardinality"
+    ],
+    "Feature": [
+        "cardinality ( anyarray ) → integer"
+    ],
+    "Description": [
+        "Returns the total number of elements in the array, or 0 if the array is empty."
+    ],
+    "Examples": [
+        "cardinality(ARRAY[[1,2],[3,4]]) → 4"
+    ],
+    "Category": [
+        "Array Functions and Operators"
+    ]
+}

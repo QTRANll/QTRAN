@@ -1,0 +1,27 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000000822882"
+    ],
+    "Title": [
+        "PERCENT_RANK"
+    ],
+    "Feature": [
+        "/*聚合语法*/\nPERCENT_RANK(expr [, expr ...]) WITHIN GROUP\n               ( ORDER BY expr_col [ DESC | ASC ][ NULLS { FIRST | LAST } ]\n                          [,expr_col [ DESC | ASC ][ NULLS { FIRST | LAST } ]]...\n               )\n\n/*分析语法*/\nPERCENT_RANK( ) OVER ([query_partition_clause] order_by_clause)\n"
+    ],
+    "Description": [
+        "该函数用来计算一组值中的某个值的累积分布。类似于 CUME_DIST 函数。可以将此函数用作聚合或分析函数。",
+        "\n说明\n\n作为聚合函数，PERCENT_RANK 计算某一个数在一个集合中的对应位置百分比，它的返回值范围为 (0, 1]。如果有 N 行数据，expr 的值，大于第二行的值而小于第三行的值，那么位置百分比等于 2/N。常量参数表达式和 ORDER BY 聚合子句中的表达式按位置匹配。因此，参数的数量必须相同，并且它们的类型必须兼容。如果指定值与分组序列中某值重复，则将两个相同的值视为一个值处理。\n作为分析函数，PERCENT_RANK 计算某列或某列组合后每行的百分比排序，它的返回值范围为 [0, 1]。当有相同排序值时，将会有相同的排名，并且值相同的行数会被记录到下个排名中。任何集合中的第一行的 PERCENT_RANK 函数为 0，位置百分比的计算公式为：位置百分比=序号/最大序号，具体示例请参见如下表格：\n\n",
+        "\n\n\nN\n序号\n位置百分比\n\n\n\n\nA\n0\n0\n\n\nB\n1\n0.25\n\n\nC\n2\n0.5\n\n\nD\n3\n0.75\n\n\nE\n4\n1\n\n\n",
+        "\n\n\n参数\n说明\n\n\n\n\nexpr\n指定要查询的值。\n\n\nexpr_col\n指定要查询的值对应的列名。\n\n\nDESC | ASC\n指定列表的排序方式，为可选项。 \n      \nASC 为升序排序，为默认值。\nDESC 为降序排序。\n\n\n\nNULLS { FIRST | LAST }\n排序后 expr_col 中 NULL 值的位置，为可选项。 \n      \nNULLS FIRST 表示 NULL 值排在非空值的前面。\nNULLS LAST 表示 NULL 值排在非空值的后面，为默认值。\n\n\n\nOVER\n使用 OVER 子句定义窗口进行计算。详细信息请参见 分析函数说明。\n\n\n",
+        "返回 NUMBER 数据类型。"
+    ],
+    "Examples": [
+        "obclient> SELECT * FROM emp_msg;\n+--------+--------+------+------+\n| DEPTNO | ENAME  | SAL  | MGR  |\n+--------+--------+------+------+\n|     10 | CLARK  | 2750 | 7839 |\n|     10 | KING   | 5300 | NULL |\n|     10 | MILLER | 1600 | 7782 |\n|     20 | ADAMS  | 1400 | 7788 |\n|     20 | FORD   | 3300 | 7566 |\n|     20 | JONES  | 3275 | 7839 |\n|     20 | SCOTT  | 3300 | 7566 |\n|     20 | SMITH  | 1100 | 7902 |\n|     30 | ALLEN  | 1900 | 7698 |\n|     30 | BLAKE  | 3150 | 7839 |\n|     30 | JAMES  | 1250 | 7698 |\n|     30 | MARTIN | 1550 | 7698 |\n|     30 | TURNER | 1800 | 7698 |\n|     30 | WARD   | 1550 | 7698 |\n|     30 | SCLARK | 1750 | 7839 |\n+--------+--------+------+------+\n15 rows in set\n",
+        "obclient> SELECT PERCENT_RANK(3300) WITHIN GROUP (ORDER BY sal) FROM emp_msg;\n+-------------------------------------------+\n| PERCENT_RANK(3300)WITHINGROUP(ORDERBYSAL) |\n+-------------------------------------------+\n|                                        .8 |\n+-------------------------------------------+\n1 row in set\n",
+        "obclient> SELECT deptno,ename,sal,\n              PERCENT_RANK() OVER (PARTITION BY deptno ORDER BY sal DESC) AS pr1\n          FROM emp_msg;\n+--------+--------+------+-------------------------------------------+\n| DEPTNO | ENAME  | SAL  | PR1                                       |\n+--------+--------+------+-------------------------------------------+\n|     10 | KING   | 5300 |                                         0 |\n|     10 | CLARK  | 2750 |                                        .5 |\n|     10 | MILLER | 1600 |                                         1 |\n|     20 | FORD   | 3300 |                                         0 |\n|     20 | SCOTT  | 3300 |                                         0 |\n|     20 | JONES  | 3275 |                                        .5 |\n|     20 | ADAMS  | 1400 |                                       .75 |\n|     20 | SMITH  | 1100 |                                         1 |\n|     30 | BLAKE  | 3150 |                                         0 |\n|     30 | ALLEN  | 1900 | .1666666666666666666666666666666666666667 |\n|     30 | TURNER | 1800 | .3333333333333333333333333333333333333333 |\n|     30 | SCLARK | 1750 |                                        .5 |\n|     30 | MARTIN | 1550 | .6666666666666666666666666666666666666667 |\n|     30 | WARD   | 1550 | .6666666666666666666666666666666666666667 |\n|     30 | JAMES  | 1250 |                                         1 |\n+--------+--------+------+-------------------------------------------+\n15 rows in set\n"
+    ],
+    "Category": [
+        "Aggregate Functions",
+        "Analytic Functions"
+    ]
+}

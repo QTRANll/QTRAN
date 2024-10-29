@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://duckdb.org/docs/sql/functions/utility"
+    ],
+    "Title": [
+        "repeat_row(varargs, num_rows)"
+    ],
+    "Feature": [
+        "repeat_row(varargs, num_rows)"
+    ],
+    "Description": [
+        "Returns a table with num_rows rows, each containing the fields defined in varargs."
+    ],
+    "Examples": [
+        "repeat_row(1, 2, 'foo', num_rows = 3)"
+    ],
+    "Category": [
+        "Utility Functions"
+    ]
+}

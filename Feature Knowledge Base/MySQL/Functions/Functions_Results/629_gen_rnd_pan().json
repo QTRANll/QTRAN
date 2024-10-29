@@ -1,0 +1,38 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/loadable-function-reference.html",
+        "https://dev.mysql.com/doc/refman/8.4/en/loadable-function-reference.html"
+    ],
+    "Title": [
+        "14.2 Loadable Function Reference",
+        "14.2 Loadable Function Reference"
+    ],
+    "Feature": [
+        "gen_rnd_pan([size])"
+    ],
+    "Description": [
+        "Generate random payment card Primary Account Number",
+        "\ngen_rnd_pan([size])\n",
+        "\n              Generates a random payment card Primary Account Number.\n              The number passes the Luhn check (an algorithm that\n              performs a checksum verification against a check digit).\n",
+        "\n\nWarning\n\n\n                Values returned from\n                gen_rnd_pan() should be\n                used only for test purposes, and are not suitable for\n                publication. There is no way to guarantee that a given\n                return value is not assigned to a legitimate payment\n                account. Should it be necessary to publish a\n                gen_rnd_pan() result,\n                consider masking it with\n                mask_pan() or\n                mask_pan_relaxed().\n\n",
+        "\n              Arguments:\n",
+        "\n\nsize: (Optional) An integer\n                  that specifies the size of the result. The default is\n                  16 if size is not given. If\n                  given, size must be an\n                  integer in the range from 12 to 19.\n\n",
+        "\n              Return value:\n            ",
+        "\n              A random payment number as a string, or an error if a\n              size argument outside the\n              permitted range is given.\n            ",
+        "\n              Example:\n            ",
+        "Press CTRL+C to copy mysql> SELECT mask_pan(gen_rnd_pan());\n+-------------------------+\n| mask_pan(gen_rnd_pan()) |\n+-------------------------+\n| XXXXXXXXXXXX5805        |\n+-------------------------+\nmysql> SELECT mask_pan(gen_rnd_pan(19));\n+---------------------------+\n| mask_pan(gen_rnd_pan(19)) |\n+---------------------------+\n| XXXXXXXXXXXXXXX5067       |\n+---------------------------+\nmysql> SELECT mask_pan_relaxed(gen_rnd_pan());\n+---------------------------------+\n| mask_pan_relaxed(gen_rnd_pan()) |\n+---------------------------------+\n| 398403XXXXXX9547                |\n+---------------------------------+\nmysql> SELECT mask_pan_relaxed(gen_rnd_pan(19));\n+-----------------------------------+\n| mask_pan_relaxed(gen_rnd_pan(19)) |\n+-----------------------------------+\n| 578416XXXXXXXXX6509               |\n+-----------------------------------+\nmysql> SELECT gen_rnd_pan(20);\nERROR 1123 (HY000): Can't initialize function 'gen_rnd_pan'; Minimal value of argument 0 is 14."
+    ],
+    "Examples": [
+        "mysql> SELECT mask_pan(gen_rnd_pan());\n+-------------------------+\n| mask_pan(gen_rnd_pan()) |\n+-------------------------+\n| XXXXXXXXXXXX5805        |\n+-------------------------+\nmysql> SELECT mask_pan(gen_rnd_pan(19));\n+---------------------------+\n| mask_pan(gen_rnd_pan(19)) |\n+---------------------------+\n| XXXXXXXXXXXXXXX5067       |\n+---------------------------+\nmysql> SELECT mask_pan_relaxed(gen_rnd_pan());\n+---------------------------------+\n| mask_pan_relaxed(gen_rnd_pan()) |\n+---------------------------------+\n| 398403XXXXXX9547                |\n+---------------------------------+\nmysql> SELECT mask_pan_relaxed(gen_rnd_pan(19));\n+-----------------------------------+\n| mask_pan_relaxed(gen_rnd_pan(19)) |\n+-----------------------------------+\n| 578416XXXXXXXXX6509               |\n+-----------------------------------+\nmysql> SELECT gen_rnd_pan(20);\nERROR 1123 (HY000): Can't initialize function 'gen_rnd_pan'; Minimal value of argument 0 is 14."
+    ],
+    "Category": [
+        "Loadable Functions",
+        "Loadable Functions"
+    ],
+    "Reference HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/data-masking-component-functions.html#function_gen-rnd-pan"
+    ],
+    "Feature Type": [
+        "Function"
+    ]
+}

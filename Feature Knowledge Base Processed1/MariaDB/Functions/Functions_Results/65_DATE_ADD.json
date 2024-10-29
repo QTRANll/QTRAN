@@ -1,0 +1,26 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/date_add/"
+    ],
+    "Title": [
+        "DATE_ADD"
+    ],
+    "Feature": [
+        "DATE_ADD(date,INTERVAL expr unit)\n"
+    ],
+    "Description": [
+        "Performs date arithmetic. The date argument specifies the\nstarting date or datetime value. expr is an expression specifying the\ninterval value to be added to the starting date. expr is a\nstring; it may start with a \"-\" for negative intervals. unit is a\nkeyword indicating the units in which the expression should be interpreted. See Date and Time Units for a complete list of permitted units. ",
+        "The result type of DATE_ADD() is determined as follows:",
+        "if the first argument is of the type DATETIME, the function returns DATETIME\nif the first argument is DATE and the interval uses HOUR or smaller units, the function returns DATETIME\nif the first argument is DATE and the interval uses DAY or larger units, the function returns DATE\nsimilarly, if the first argument is TIME and the interval uses DAY or smaller units the function returns TIME, if the interval uses anything larger, the function returns DATETIME\nif the first argument isn't a temporal type, the function returns a string\n"
+    ],
+    "Examples": [
+        "SELECT DATE_ADD('2000-12-31 23:59:59', INTERVAL 1 SECOND);",
+        "SELECT DATE_ADD('2010-12-31 23:59:59', INTERVAL 1 DAY);",
+        "SELECT DATE_ADD('2100-12-31 23:59:59', INTERVAL '1:1' MINUTE_SECOND);",
+        "SELECT DATE_ADD('1900-01-01 00:00:00', INTERVAL '-1 10' DAY_HOUR);",
+        "SELECT DATE_ADD('1992-12-31 23:59:59.000002', INTERVAL '1.999999' SECOND_MICROSECOND);"
+    ],
+    "Category": [
+        "Date & Time Functions"
+    ]
+}

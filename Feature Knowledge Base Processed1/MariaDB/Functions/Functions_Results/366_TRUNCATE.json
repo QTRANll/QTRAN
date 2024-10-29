@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/truncate/"
+    ],
+    "Title": [
+        "TRUNCATE"
+    ],
+    "Feature": [
+        "TRUNCATE(X,D)\n"
+    ],
+    "Description": [
+        "Returns the number X, truncated to D decimal places. If D is 0, the\nresult has no decimal point or fractional part. D can be negative to\ncause D digits left of the decimal point of the value X to become\nzero."
+    ],
+    "Examples": [
+        "SELECT TRUNCATE(1.223,1);"
+    ],
+    "Category": [
+        "Numeric Functions"
+    ]
+}

@@ -1,0 +1,22 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000001053454"
+    ],
+    "Title": [
+        "DROP DATABASE"
+    ],
+    "Feature": [
+        "drop_database_stmt:\nDROP DATABASE [IF EXISTS] database_name;\n"
+    ],
+    "Description": [
+        "该语句用于删除数据库。",
+        "\n\n\n参数\n描述\n\n\n\n\nIF EXISTS\n用于防止当数据库不存在时发生错误。\n\n\ndatabase_name\n指定待删除的数据库名。\n\n\n"
+    ],
+    "Examples": [
+        "obclient> DROP DATABASE test2;\nQuery OK, 0 rows affected\n",
+        "obclient> DROP DATABASE notest;\nERROR 1008 (HY000): Can't drop database 'notest'; database doesn't exist\n\nobclient> DROP DATABASE IF EXISTS notest;\nQuery OK, 0 rows affected, 1 warning\n\nobclient> SHOW WARNINGS;\n+-------+------+------------------------------------------------------+\n| Level | Code | Message                                              |\n+-------+------+------------------------------------------------------+\n| Note  | 1008 | Can't drop database 'notest'; database doesn't exist |\n+-------+------+------------------------------------------------------+\n1 row in set\n"
+    ],
+    "Category": [
+        "No Category"
+    ]
+}

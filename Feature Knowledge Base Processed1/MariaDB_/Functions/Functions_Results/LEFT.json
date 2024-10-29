@@ -1,0 +1,33 @@
+{
+    "HTML": "https://mariadb.com//kb/en/left/",
+    "Title": "LEFT",
+    "Feature": [
+        "LEFT(str,len)\n"
+    ],
+    "Description": [
+        "Returns the leftmost len characters from the string str, or NULL if\nany argument is NULL."
+    ],
+    "Examples": [
+        "SELECT LEFT('MariaDB', 5);\n+--------------------+\n| LEFT('MariaDB', 5) |\n+--------------------+\n| Maria              |\n+--------------------+\n"
+    ],
+    "Category": [
+        "String Functions"
+    ],
+    "Effective SQLs Refined": [
+        "SELECT LEFT('MariaDB', 5);"
+    ],
+    "Ineffective SQLs Refined": [],
+    "Wrong Messages from Ineffective SQLs Refined": [],
+    "SQLs Generated1": [],
+    "SQLs Generated Costs1": [],
+    "SQLs Generated ExecResults1": [],
+    "SQLs Generated ExecTimes1": [],
+    "SQLs Generated ErrorMessages1": [],
+    "Effective SQLs Generated1": [],
+    "SQLs Generated2": [],
+    "SQLs Generated Costs2": [],
+    "SQLs Generated ExecResults2": [],
+    "SQLs Generated ExecTimes2": [],
+    "SQLs Generated ErrorMessages2": [],
+    "Effective SQLs Generated2": []
+}

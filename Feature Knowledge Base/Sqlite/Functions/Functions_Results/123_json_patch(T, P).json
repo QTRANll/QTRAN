@@ -1,0 +1,24 @@
+{
+    "HTML": [
+        "https://sqlite.org/json1.html#jpatch"
+    ],
+    "Title": [
+        "JSON Functions"
+    ],
+    "Feature": [
+        "json_patch(T, P)"
+    ],
+    "Description": [
+        "The json_patch() SQL function implements the RFC-7396 MergePatch algorithm to apply a patch P to an input JSON object T. It returns a patched copy of T. The MergePatch algorithm can add, modify, or delete elements within a JSON object, making json_patch() a versatile tool for updating JSON data. However, it treats JSON arrays as immutable, meaning it cannot modify elements within an array but only replace the entire array. This function is particularly useful for generalizing replacements and removals within JSON objects but has limitations when dealing with arrays."
+    ],
+    "Examples": [
+        "json_patch('{\"a\":1,\"b\":2}', '{\"c\":3,\"d\":4}') returns '{\"a\":1,\"b\":2,\"c\":3,\"d\":4}'",
+        "json_patch('{\"a\":[1,2],\"b\":2}', '{\"a\":9}') returns '{\"a\":9,\"b\":2}'",
+        "json_patch('{\"a\":[1,2],\"b\":2}', '{\"a\":null}') returns '{\"b\":2}'",
+        "json_patch('{\"a\":1,\"b\":2}', '{\"a\":9,\"b\":null,\"c\":8}') returns '{\"a\":9,\"c\":8}'",
+        "json_patch('{\"a\":{\"x\":1,\"y\":2},\"b\":3}', '{\"a\":{\"y\":9},\"c\":8}') returns '{\"a\":{\"x\":1,\"y\":9},\"b\":3,\"c\":8}'"
+    ],
+    "Category": [
+        "JSON Functions"
+    ]
+}

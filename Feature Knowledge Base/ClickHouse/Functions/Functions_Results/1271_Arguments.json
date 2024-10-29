@@ -1,0 +1,22 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/table-functions/iceberg"
+    ],
+    "Title": [
+        "Arguments"
+    ],
+    "Feature": [
+        "Arguments"
+    ],
+    "Description": [
+        "Arguments",
+        "Description of the arguments coincides with description of arguments in table functions s3, azureBlobStorage, HDFS and file correspondingly.\nformat stands for the format of data files in the Iceberg table.",
+        "Returned value\nA table with the specified structure for reading data in the specified Iceberg table."
+    ],
+    "Examples": [
+        "SELECT * FROM icebergS3('http://test.s3.amazonaws.com/clickhouse-bucket/test_table', 'test', 'test')"
+    ],
+    "Category": [
+        "Table Functions"
+    ]
+}

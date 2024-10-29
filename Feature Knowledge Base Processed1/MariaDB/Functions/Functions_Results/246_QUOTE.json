@@ -1,0 +1,21 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/quote/"
+    ],
+    "Title": [
+        "QUOTE"
+    ],
+    "Feature": [
+        "QUOTE(str)\n"
+    ],
+    "Description": [
+        "Quotes a string to produce a result that can be used as a properly escaped data\nvalue in an SQL statement. The string is returned enclosed by single quotes and\nwith each instance of single quote (\"'\"), backslash (\"\\\"),\nASCII NUL, and Control-Z preceded by a backslash. If the argument\nis NULL, the return value is the word \"NULL\" without enclosing single\nquotes."
+    ],
+    "Examples": [
+        "SELECT QUOTE(\"Don't!\");",
+        "SELECT QUOTE(NULL);"
+    ],
+    "Category": [
+        "String Functions"
+    ]
+}

@@ -1,0 +1,23 @@
+{
+    "HTML": [
+        "https://docs.pingcap.com/zh/tidb/stable/encryption-and-compression-functions#uncompressed_length"
+    ],
+    "Title": [
+        "UNCOMPRESSED_LENGTH()"
+    ],
+    "Feature": [
+        "UNCOMPRESSED_LENGTH()"
+    ],
+    "Description": [
+        "UNCOMPRESSED_LENGTH()",
+        "UNCOMPRESSED_LENGTH(data) \u51fd\u6570\u8fd4\u56de\u538b\u7f29\u6570\u636e\u7684\u524d 4 \u4e2a\u5b57\u8282\uff0c\u5373\u5b57\u7b26\u4e32\u5728\u4f7f\u7528 COMPRESS() \u51fd\u6570\u538b\u7f29\u4e4b\u524d\u7684\u957f\u5ea6\u3002",
+        "SELECT UNCOMPRESSED_LENGTH(0x03000000789C72747206040000FFFF018D00C7);\n",
+        "+---------------------------------------------------------------+\n| UNCOMPRESSED_LENGTH(0x03000000789C72747206040000FFFF018D00C7) |\n+---------------------------------------------------------------+\n|                                                             3 |\n+---------------------------------------------------------------+\n1 row in set (0.00 sec)\n"
+    ],
+    "Examples": [
+        "SELECT UNCOMPRESSED_LENGTH(0x03000000789C72747206040000FFFF018D00C7);\n"
+    ],
+    "Category": [
+        "Encryption and Compression Functions"
+    ]
+}

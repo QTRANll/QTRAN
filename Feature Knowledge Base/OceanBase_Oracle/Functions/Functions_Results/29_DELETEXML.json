@@ -1,0 +1,25 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000000823514"
+    ],
+    "Title": [
+        "DELETEXML"
+    ],
+    "Feature": [
+        "DELETEXML( XMLType_instance, XPath_string [, namespace_string ])\n"
+    ],
+    "Description": [
+        "该函数用于删除 XPath 表达式在 XML 中匹配的一个或多个节点。",
+        "\n\n\n字段\n说明\n\n\n\n\nXMLType_instance\n指定一个 XMLType 实例，表示目标 XML 文档。\n\n\nXPath_string\n指定一个 XPath 表达式，指示要删除的一个或多个节点。可以使用绝对路径（以斜杠开头）或相对路径（省略初始斜杠）。如果省略初始斜杠，则相对路径的上下文默认为根节点。XPath_string 指定的节点的所有子节点也将被删除。\n\n\nnamespace_string\n可选项，用于为 XPath_string 提供命名空间信息。\n\n\n",
+        "返回 XMLType 数据类型。"
+    ],
+    "Examples": [
+        "SELECT DELETEXML(\n        XMLtype('<bookstore>\n                  <book att=\"old\"></book>\n                  <author>carrot</author>\n                </bookstore>'),\n        '/bookstore/author'\n      ) AS result\nFROM dual;\n",
+        "+-----------------------------------------------+\n| RESULT                                        |\n+-----------------------------------------------+\n| <bookstore>\n  <book att=\"old\"/>\n</bookstore>\n|\n+-----------------------------------------------+\n1 row in set\n",
+        "SELECT\n  DELETEXML(\n    xmltype(\n      '<a xmlns=\"ns1\" xmlns:f=\"ns2\">\n        <f:b b1=\"b1\" b2=\"b2\">bbb1</f:b>\n        <b b1=\"b1\" b2=\"b2\">bbb2</b>\n      </a>'\n    ),\n    '/a/*',\n    'xmlns=\"ns1\"'\n  )\nFROM dual;\n",
+        "+----------------------------------------------------------------------------------------------------------------------------------+\n| DELETEXML(XMLTYPE('<AXMLNS=\"NS1\"XMLNS:F=\"NS2\"><F:BB1=\"B1\"B2=\"B2\">BBB1</F:B><BB1=\"B1\"B2=\"B2\">BBB2</B></A>'),'/A/*','XMLNS=\"NS1\"') |\n+----------------------------------------------------------------------------------------------------------------------------------+\n| <a xmlns=\"ns1\" xmlns:f=\"ns2\"/>\n                                                                                                  |\n+----------------------------------------------------------------------------------------------------------------------------------+\n1 row in set\n"
+    ],
+    "Category": [
+        "XML Functions"
+    ]
+}

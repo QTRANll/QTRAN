@@ -1,0 +1,23 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000001054318"
+    ],
+    "Title": [
+        "CREATE OUTLINE"
+    ],
+    "Feature": [
+        "/* 使用 SQL_TEXT 创建 Outline */\nCREATE [OR REPLACE] OUTLINE outline_name ON stmt [ TO target_stmt ]\n\n/* 使用 SQL_ID 创建 Outline */\nCREATE OUTLINE outline_name ON sql_id USING HINT  hint;\n"
+    ],
+    "Description": [
+        "该语句用来创建 Outline。可以通过两种方式创建 Outline，一种是通过 SQL_TEXT（用户执行的带参数的原始语句），另一种是通过 SQL_ID 创建。",
+        "\n注意\n创建 Outline 需要进入对应的用户下执行。\n",
+        "\n\n\n参数\n描述\n\n\n\n\noutline_name\n指定要创建的 Outline 名称。\n\n\nOR REPLACE\n指定 OR REPLACE 后，如果要创建的 Outline 已存在，则会替换原有的 Outline。\n\n\nstmt\n一般为一个带有 hint 和原始参数的 DML 语句。\n\n\nTO target_stmt\n如果不指定 TO target_stmt，则表示如果数据库接受的 SQL 参数化后与 stmt 去掉 hint 参数化文本相同，则将该 SQL 绑定 stmt 中 hint 生成执行计划；如果期望对含有 hint 的语句进行固定计划，则需要 TO target_stmt 来指明原始的 SQL。 注意 在使用 target_stmt 时，严格要求 stmt 与 target_stmt 在去掉 hint 后完全匹配。\n\n\nsql_id\n如果 sql_id 对应的 SQL 语句已经有 hint，则创建Outline 指定的 hint 会覆盖原始语句中所有 hint。\n\n\nhint\n格式为 /*+ xxx */。有关 Hint 语法的详细信息，请参见 《OceanBase 数据库 SQL 调优指南》中 Optimizer Hint 章节。\n\n\n"
+    ],
+    "Examples": [
+        "obclient> CREATE OUTLINE outline1\nON SELECT/*+ index(tbl1 idx_col2)*/ * FROM tbl1 WHERE col2 = 1;\n",
+        "obclient> CREATE OUTLINE outline2\nON 'ED570339F2C856BA96008A29EDF04C74'\nUSING HINT /*+ index(tbl1 idx_col2)*/ ;\n"
+    ],
+    "Category": [
+        "DDL"
+    ]
+}

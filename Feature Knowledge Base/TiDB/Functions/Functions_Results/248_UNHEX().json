@@ -1,0 +1,22 @@
+{
+    "HTML": [
+        "https://docs.pingcap.com/zh/tidb/stable/string-functions#unhex"
+    ],
+    "Title": [
+        "UNHEX()"
+    ],
+    "Feature": [
+        "UNHEX()"
+    ],
+    "Description": [
+        "UNHEX()",
+        "UNHEX() \u51fd\u6570\u6267\u884c HEX() \u51fd\u6570\u7684\u9006\u8fd0\u7b97\uff0c\u5c06\u53c2\u6570\u4e2d\u7684\u6bcf\u5bf9\u5b57\u7b26\u89c6\u4e3a\u5341\u516d\u8fdb\u5236\u6570\u5b57\uff0c\u5e76\u5c06\u5176\u8f6c\u6362\u4e3a\u8be5\u6570\u5b57\u8868\u793a\u7684\u5b57\u7b26\uff0c\u8fd4\u56de\u503c\u4e3a\u4e8c\u8fdb\u5236\u5b57\u7b26\u4e32\u3002",
+        "\u6ce8\u610f\u4f20\u5165\u7684\u5b57\u7b26\u4e32\u5fc5\u987b\u662f\u5408\u6cd5\u7684\u5341\u516d\u8fdb\u5236\u6570\u503c\uff0c\u5305\u542b 0~9\u3001A~F\u3001a~f\uff0c\u5982\u679c\u4e3a NULL \u6216\u8d85\u51fa\u8be5\u8303\u56f4\uff0c\u5219\u8fd4\u56de NULL\u3002"
+    ],
+    "Examples": [
+        "SELECT UNHEX('54694442');\n"
+    ],
+    "Category": [
+        "String Functions"
+    ]
+}

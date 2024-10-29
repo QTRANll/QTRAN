@@ -1,0 +1,1266 @@
+{"Using Compound Statements Outside of Stored Programs": "https://mariadb.com//kb/en/using-compound-statements-outside-of-stored-programs/"}
+{"BEGIN END": "https://mariadb.com//kb/en/begin-end/"}
+{"CASE Statement": "https://mariadb.com//kb/en/case-statement/"}
+{"DECLARE CONDITION": "https://mariadb.com//kb/en/declare-condition/"}
+{"DECLARE HANDLER": "https://mariadb.com//kb/en/declare-handler/"}
+{"DECLARE Variable": "https://mariadb.com//kb/en/declare-variable/"}
+{"FOR": "https://mariadb.com//kb/en/for/"}
+{"GOTO": "https://mariadb.com//kb/en/goto/"}
+{"IF": "https://mariadb.com//kb/en/if/"}
+{"ITERATE": "https://mariadb.com//kb/en/iterate/"}
+{"Labels": "https://mariadb.com//kb/en/labels/"}
+{"LEAVE": "https://mariadb.com//kb/en/leave/"}
+{"LOOP": "https://mariadb.com//kb/en/loop/"}
+{"REPEAT LOOP": "https://mariadb.com//kb/en/repeat-loop/"}
+{"RESIGNAL": "https://mariadb.com//kb/en/resignal/"}
+{"RETURN": "https://mariadb.com//kb/en/return/"}
+{"SELECT INTO": "https://mariadb.com//kb/en/selectinto/"}
+{"SET Variable": "https://mariadb.com//kb/en/set-variable/"}
+{"SIGNAL": "https://mariadb.com//kb/en/signal/"}
+{"WHILE": "https://mariadb.com//kb/en/while/"}
+{"Cursor Overview": "https://mariadb.com//kb/en/cursor-overview/"}
+{"DECLARE CURSOR": "https://mariadb.com//kb/en/declare-cursor/"}
+{"OPEN": "https://mariadb.com//kb/en/open/"}
+{"FETCH": "https://mariadb.com//kb/en/fetch/"}
+{"CLOSE": "https://mariadb.com//kb/en/close/"}
+{"MariaDB Error Code Reference": "https://mariadb.com//kb/en/mariadb-error-code-reference/"}
+{"Operating System Error Codes": "https://mariadb.com//kb/en/operating-system-error-codes/"}
+{"SQLSTATE": "https://mariadb.com//kb/en/sqlstate/"}
+{"Error 1000: hashchk": "https://mariadb.com//kb/en/e1000/"}
+{"Error 1001: isamchk": "https://mariadb.com//kb/en/e1001/"}
+{"Error 1002: NO": "https://mariadb.com//kb/en/e1002/"}
+{"Error 1003: YES": "https://mariadb.com//kb/en/e1003/"}
+{"Error 1004: Can't create file": "https://mariadb.com//kb/en/e1004/"}
+{"Error 1005: Can't create table": "https://mariadb.com//kb/en/e1005/"}
+{"Error 1006: Can't create database": "https://mariadb.com//kb/en/e1006/"}
+{"Error 1007: Can't create database, database exists": "https://mariadb.com//kb/en/e1007/"}
+{"Error 1008: Can't drop database; database doesn't exist": "https://mariadb.com//kb/en/e1008/"}
+{"Error 1009: Error dropping database (can't delete)": "https://mariadb.com//kb/en/e1009/"}
+{"Error 1010: Error dropping database (can't rmdir)": "https://mariadb.com//kb/en/e1010/"}
+{"Error 1011: Error on delete of": "https://mariadb.com//kb/en/e1011/"}
+{"Error 1012: Can't read record in system table": "https://mariadb.com//kb/en/e1012/"}
+{"Error 1013: Can't get status of": "https://mariadb.com//kb/en/e1013/"}
+{"Error 1014: Can't get working directory": "https://mariadb.com//kb/en/e1014/"}
+{"Error 1015: Can't lock file": "https://mariadb.com//kb/en/e1015/"}
+{"Error 1016: Can't open file": "https://mariadb.com//kb/en/e1016/"}
+{"Error 1017: Can't find file": "https://mariadb.com//kb/en/e1017/"}
+{"Error 1018: Can't read dir of": "https://mariadb.com//kb/en/e1018/"}
+{"Error 1019: Can't change dir to": "https://mariadb.com//kb/en/e1019/"}
+{"Error 1020: Record has changed since last read in table": "https://mariadb.com//kb/en/e1020/"}
+{"Error 1021: Disk full (%s); waiting for someone to free some space": "https://mariadb.com//kb/en/e1021/"}
+{"Error 1022: Can't write; duplicate key in table": "https://mariadb.com//kb/en/e1022/"}
+{"Error 1023: Error on close of": "https://mariadb.com//kb/en/e1023/"}
+{"Error 1024: Error reading file": "https://mariadb.com//kb/en/e1024/"}
+{"Error 1025: Error on rename of": "https://mariadb.com//kb/en/e1025/"}
+{"Error 1026: Error writing file": "https://mariadb.com//kb/en/e1026/"}
+{"Error 1027: is locked against change": "https://mariadb.com//kb/en/e1027/"}
+{"Error 1028: Sort aborted": "https://mariadb.com//kb/en/e1028/"}
+{"Error 1029: View doesn't exist for": "https://mariadb.com//kb/en/e1029/"}
+{"Error 1030: Got error from storage engine": "https://mariadb.com//kb/en/e1030/"}
+{"Error 1031: Table storage engine doesn't have this option": "https://mariadb.com//kb/en/e1031/"}
+{"Error 1032: Can't find record in": "https://mariadb.com//kb/en/e1032/"}
+{"Error 1033: Incorrect information in file": "https://mariadb.com//kb/en/e1033/"}
+{"Error 1034: Incorrect key file for table; try to repair it": "https://mariadb.com//kb/en/e1034/"}
+{"Error 1035: Old key file for table; repair it!": "https://mariadb.com//kb/en/e1035/"}
+{"Error 1036: Table is read only": "https://mariadb.com//kb/en/e1036/"}
+{"Error 1037: Out of memory; restart server and try again": "https://mariadb.com//kb/en/e1037/"}
+{"Error 1038: Out of sort memory, consider increasing server sort buffer size": "https://mariadb.com//kb/en/e1038/"}
+{"Error 1039: Unexpected EOF found when reading file": "https://mariadb.com//kb/en/e1039/"}
+{"Error 1040: Too many connections": "https://mariadb.com//kb/en/e1040/"}
+{"Error 1041: Out of memory": "https://mariadb.com//kb/en/e1041/"}
+{"Error 1042: Can't get hostname for your address": "https://mariadb.com//kb/en/e1042/"}
+{"Error 1043: Bad handshake": "https://mariadb.com//kb/en/e1043/"}
+{"Error 1044: Access denied for user": "https://mariadb.com//kb/en/e1044/"}
+{"Error 1045: Access denied for user (using password)": "https://mariadb.com//kb/en/e1045/"}
+{"Error 1046: No database selected": "https://mariadb.com//kb/en/e1046/"}
+{"Error 1047: Unknown command": "https://mariadb.com//kb/en/e1047/"}
+{"Error 1048: Column cannot be null": "https://mariadb.com//kb/en/e1048/"}
+{"Error 1049: Unknown database": "https://mariadb.com//kb/en/e1049/"}
+{"Error 1050: Table already exists": "https://mariadb.com//kb/en/e1050/"}
+{"Error 1051: Unknown table": "https://mariadb.com//kb/en/e1051/"}
+{"Error 1052: Column is ambiguous": "https://mariadb.com//kb/en/e1052/"}
+{"Error 1053: Server shutdown in progress": "https://mariadb.com//kb/en/e1053/"}
+{"Error 1054: Unknown column": "https://mariadb.com//kb/en/e1054/"}
+{"Error 1055: isn't in GROUP BY": "https://mariadb.com//kb/en/e1055/"}
+{"Error 1056: Can't group on": "https://mariadb.com//kb/en/e1056/"}
+{"Error 1057: Statement has sum functions and columns in same statement": "https://mariadb.com//kb/en/e1057/"}
+{"Error 1058: Column count doesn't match value count": "https://mariadb.com//kb/en/e1058/"}
+{"Error 1059: Identifier name is too long": "https://mariadb.com//kb/en/e1059/"}
+{"Error 1060: Duplicate column name": "https://mariadb.com//kb/en/e1060/"}
+{"Error 1061: Duplicate key name": "https://mariadb.com//kb/en/e1061/"}
+{"Error 1062: Duplicate entry for key": "https://mariadb.com//kb/en/e1062/"}
+{"Error 1063: Incorrect column specifier for column": "https://mariadb.com//kb/en/e1063/"}
+{"Error 1064: near at line": "https://mariadb.com//kb/en/e1064/"}
+{"Error 1065: Query was empty": "https://mariadb.com//kb/en/e1065/"}
+{"Error 1066: Not unique table/alias": "https://mariadb.com//kb/en/e1066/"}
+{"Error 1067: Invalid default value for": "https://mariadb.com//kb/en/e1067/"}
+{"Error 1068: Multiple primary key defined": "https://mariadb.com//kb/en/e1068/"}
+{"Error 1069: Too many keys specified; max keys allowed": "https://mariadb.com//kb/en/e1069/"}
+{"Error 1070: Too many key parts specified; max parts allowed": "https://mariadb.com//kb/en/e1070/"}
+{"Error 1071: Specified key was too long; max key length is": "https://mariadb.com//kb/en/e1071/"}
+{"Error 1072: Key column doesn't exist in table": "https://mariadb.com//kb/en/e1072/"}
+{"Error 1073: BLOB column can't be used in key specification with the used table type": "https://mariadb.com//kb/en/e1073/"}
+{"Error 1074: Column length too big for column; use BLOB or TEXT instead": "https://mariadb.com//kb/en/e1074/"}
+{"Error 1075: Incorrect table definition; there can be only one auto column and it must be defined as a key": "https://mariadb.com//kb/en/e1075/"}
+{"Error 1076: ready for connections": "https://mariadb.com//kb/en/e1076/"}
+{"Error 1077: Normal shutdown": "https://mariadb.com//kb/en/e1077/"}
+{"Error 1078: Got signal. Aborting!": "https://mariadb.com//kb/en/e1078/"}
+{"Error 1079: Shutdown complete": "https://mariadb.com//kb/en/e1079/"}
+{"Error 1080: Forcing close of thread": "https://mariadb.com//kb/en/e1080/"}
+{"Error 1081: Can't create IP socket": "https://mariadb.com//kb/en/e1081/"}
+{"Error 1082: Table has no index like the one used in CREATE INDEX; recreate the table": "https://mariadb.com//kb/en/e1082/"}
+{"Error 1083: Field separator argument is not what is expected; check the manual": "https://mariadb.com//kb/en/e1083/"}
+{"Error 1084: You can't use fixed rowlength with BLOBs; please use 'fields terminated by'": "https://mariadb.com//kb/en/e1084/"}
+{"Error 1085: The file must be in the database directory or be readable by all": "https://mariadb.com//kb/en/e1085/"}
+{"Error 1086: File already exists": "https://mariadb.com//kb/en/e1086/"}
+{"Error 1087: Records Deleted Skipped Warnings": "https://mariadb.com//kb/en/e1087/"}
+{"Error 1088: Records Duplicates": "https://mariadb.com//kb/en/e1088/"}
+{"Error 1089: Incorrect prefix key; the used key part isn't a string, the used length is longer than the key part, or the storage engine doesn't support unique prefix keys": "https://mariadb.com//kb/en/e1089/"}
+{"Error 1090: You can't delete all columns with ALTER TABLE; use DROP TABLE instead": "https://mariadb.com//kb/en/e1090/"}
+{"Error 1091: Can't DROP; check that column/key exists": "https://mariadb.com//kb/en/e1091/"}
+{"Error 1092: Records Duplicates Warnings": "https://mariadb.com//kb/en/e1092/"}
+{"Error 1093: You can't specify target table for update in FROM clause": "https://mariadb.com//kb/en/e1093/"}
+{"Error 1094: Unknown thread id": "https://mariadb.com//kb/en/e1094/"}
+{"Error 1095: You are not owner of thread": "https://mariadb.com//kb/en/e1095/"}
+{"Error 1096: No tables used": "https://mariadb.com//kb/en/e1096/"}
+{"Error 1097: Too many strings for column and SET": "https://mariadb.com//kb/en/e1097/"}
+{"Error 1098: Can't generate a unique log-filename": "https://mariadb.com//kb/en/e1098/"}
+{"Error 1099: Table was locked with a READ lock and can't be updated": "https://mariadb.com//kb/en/e1099/"}
+{"Error 1100: Table was not locked with LOCK TABLES": "https://mariadb.com//kb/en/e1100/"}
+{"Error 1101: You should never see it": "https://mariadb.com//kb/en/e1101/"}
+{"Error 1102: Incorrect database name": "https://mariadb.com//kb/en/e1102/"}
+{"Error 1103: Incorrect table name": "https://mariadb.com//kb/en/e1103/"}
+{"Error 1104: The SELECT would examine more than MAX_JOIN_SIZE rows": "https://mariadb.com//kb/en/e1104/"}
+{"Error 1105: Unknown error": "https://mariadb.com//kb/en/e1105/"}
+{"Error 1106: Unknown procedure": "https://mariadb.com//kb/en/e1106/"}
+{"Error 1107: Incorrect parameter count to procedure": "https://mariadb.com//kb/en/e1107/"}
+{"Error 1108: Incorrect parameters to procedure": "https://mariadb.com//kb/en/e1108/"}
+{"Error 1109: Unknown table": "https://mariadb.com//kb/en/e1109/"}
+{"Error 1110: Column specified twice": "https://mariadb.com//kb/en/e1110/"}
+{"Error 1111: Invalid use of group function": "https://mariadb.com//kb/en/e1111/"}
+{"Error 1112: Table uses an extension that doesn't exist in this MariaDB version": "https://mariadb.com//kb/en/e1112/"}
+{"Error 1113: A table must have at least 1 column": "https://mariadb.com//kb/en/e1113/"}
+{"Error 1114: The table is full": "https://mariadb.com//kb/en/e1114/"}
+{"Error 1115: Unknown character set": "https://mariadb.com//kb/en/e1115/"}
+{"Error 1116: Too many tables; MariaDB can only use tables in a join": "https://mariadb.com//kb/en/e1116/"}
+{"Error 1117: Too many columns": "https://mariadb.com//kb/en/e1117/"}
+{"Error 1118: Row size too large": "https://mariadb.com//kb/en/e1118/"}
+{"Error 1119: Thread stack overrun": "https://mariadb.com//kb/en/e1119/"}
+{"Error 1120: Cross dependency found in OUTER JOIN; examine your ON conditions": "https://mariadb.com//kb/en/e1120/"}
+{"Error 1121: Table handler doesn't support NULL in given index": "https://mariadb.com//kb/en/e1121/"}
+{"Error 1122: Can't load function": "https://mariadb.com//kb/en/e1122/"}
+{"Error 1123: Can't initialize function": "https://mariadb.com//kb/en/e1123/"}
+{"Error 1124: No paths allowed for shared library": "https://mariadb.com//kb/en/e1124/"}
+{"Error 1125: Function already exists": "https://mariadb.com//kb/en/e1125/"}
+{"Error 1126: Can't open shared library": "https://mariadb.com//kb/en/e1126/"}
+{"Error 1127: Can't find symbol in library": "https://mariadb.com//kb/en/e1127/"}
+{"Error 1128: Function is not defined": "https://mariadb.com//kb/en/e1128/"}
+{"Error 1129: Host is blocked because of many connection errors": "https://mariadb.com//kb/en/e1129/"}
+{"Error 1130: Host is not allowed to connect to this MariaDB server": "https://mariadb.com//kb/en/e1130/"}
+{"Error 1131: You are using MariaDB as an anonymous user": "https://mariadb.com//kb/en/e1131/"}
+{"Error 1132: You must have privileges to update tables in the mysql database": "https://mariadb.com//kb/en/e1132/"}
+{"Error 1133: Can't find any matching row in the user table": "https://mariadb.com//kb/en/e1133/"}
+{"Error 1134: Rows matched Changed Warnings": "https://mariadb.com//kb/en/e1134/"}
+{"Error 1135: Can't create a new thread": "https://mariadb.com//kb/en/e1135/"}
+{"Error 1136: Column count doesn't match value count at row": "https://mariadb.com//kb/en/e1136/"}
+{"Error 1137: Can't reopen table": "https://mariadb.com//kb/en/e1137/"}
+{"Error 1138: Invalid use of NULL value": "https://mariadb.com//kb/en/e1138/"}
+{"Error 1139: Got error from regexp": "https://mariadb.com//kb/en/e1139/"}
+{"Error 1140: Mixing of GROUP columns with no GROUP columns": "https://mariadb.com//kb/en/e1140/"}
+{"Error 1141: There is no such grant defined for user on host": "https://mariadb.com//kb/en/e1141/"}
+{"Error 1142: command denied to user for table": "https://mariadb.com//kb/en/e1142/"}
+{"Error 1143: command denied to user for column in table": "https://mariadb.com//kb/en/e1143/"}
+{"Error 1144: Illegal GRANT/REVOKE command": "https://mariadb.com//kb/en/e1144/"}
+{"Error 1145: The host or user argument to GRANT is too long": "https://mariadb.com//kb/en/e1145/"}
+{"Error 1146: Table doesn't exist": "https://mariadb.com//kb/en/e1146/"}
+{"Error 1147: There is no such grant defined for user on host on table": "https://mariadb.com//kb/en/e1147/"}
+{"Error 1148: The used command is not allowed with this MariaDB version": "https://mariadb.com//kb/en/e1148/"}
+{"Error 1149: You have an error in your SQL syntax": "https://mariadb.com//kb/en/e1149/"}
+{"Error 1150: Delayed insert thread couldn't get requested lock for table": "https://mariadb.com//kb/en/e1150/"}
+{"Error 1151: Too many delayed threads in use": "https://mariadb.com//kb/en/e1151/"}
+{"Error 1152: Aborted connection to db user": "https://mariadb.com//kb/en/e1152/"}
+{"Error 1153: Got a packet bigger than 'max_allowed_packet' bytes": "https://mariadb.com//kb/en/e1153/"}
+{"Error 1154: Got a read error from the connection pipe": "https://mariadb.com//kb/en/e1154/"}
+{"Error 1155: Got an error from fcntl()": "https://mariadb.com//kb/en/e1155/"}
+{"Error 1156: Got packets out of order": "https://mariadb.com//kb/en/e1156/"}
+{"Error 1157: Couldn't uncompress communication packet": "https://mariadb.com//kb/en/e1157/"}
+{"Error 1158: Got an error reading communication packets": "https://mariadb.com//kb/en/e1158/"}
+{"Error 1159: Got timeout reading communication packets": "https://mariadb.com//kb/en/e1159/"}
+{"Error 1160: Got an error writing communication packets": "https://mariadb.com//kb/en/e1160/"}
+{"Error 1161: Got timeout writing communication packets": "https://mariadb.com//kb/en/e1161/"}
+{"Error 1162: Result string is longer than 'max_allowed_packet' bytes": "https://mariadb.com//kb/en/e1162/"}
+{"Error 1163: The used table type doesn't support BLOB/TEXT columns": "https://mariadb.com//kb/en/e1163/"}
+{"Error 1164: The used table type doesn't support AUTO_INCREMENT columns": "https://mariadb.com//kb/en/e1164/"}
+{"Error 1165: INSERT DELAYED can't be used with table because it is locked": "https://mariadb.com//kb/en/e1165/"}
+{"Error 1166: Incorrect column name": "https://mariadb.com//kb/en/e1166/"}
+{"Error 1167: The used storage engine can't index column": "https://mariadb.com//kb/en/e1167/"}
+{"Error 1168: Unable to open underlying table which is differently defined or of non-MyISAM type or doesn't exist": "https://mariadb.com//kb/en/e1168/"}
+{"Error 1169: Can't write, because of unique constraint, to table": "https://mariadb.com//kb/en/e1169/"}
+{"Error 1170: BLOB/TEXT column used in key specification without a key length": "https://mariadb.com//kb/en/e1170/"}
+{"Error 1171: All parts of a PRIMARY KEY must be NOT NULL": "https://mariadb.com//kb/en/e1171/"}
+{"Error 1172: Result consisted of more than one row": "https://mariadb.com//kb/en/e1172/"}
+{"Error 1173: This table type requires a primary key": "https://mariadb.com//kb/en/e1173/"}
+{"Error 1174: This version of MariaDB is not compiled with RAID support": "https://mariadb.com//kb/en/e1174/"}
+{"Error 1175: You are using safe update mode and you tried to update a table without a WHERE that uses a KEY column": "https://mariadb.com//kb/en/e1175/"}
+{"Error 1176: Key doesn't exist in table": "https://mariadb.com//kb/en/e1176/"}
+{"Error 1177: Can't open table": "https://mariadb.com//kb/en/e1177/"}
+{"Error 1178: The storage engine for the table doesn't support": "https://mariadb.com//kb/en/e1178/"}
+{"Error 1179: You are not allowed to execute this command in a transaction": "https://mariadb.com//kb/en/e1179/"}
+{"Error 1180: Got error during COMMIT": "https://mariadb.com//kb/en/e1180/"}
+{"Error 1181: Got error during ROLLBACK": "https://mariadb.com//kb/en/e1181/"}
+{"Error 1182: Got error during FLUSH_LOGS": "https://mariadb.com//kb/en/e1182/"}
+{"Error 1183: Got error during CHECKPOINT": "https://mariadb.com//kb/en/e1183/"}
+{"Error 1184: Aborted connection to db user host": "https://mariadb.com//kb/en/e1184/"}
+{"Error 1185: You should never see it": "https://mariadb.com//kb/en/e1185/"}
+{"Error 1186: Binlog closed, cannot RESET MASTER": "https://mariadb.com//kb/en/e1186/"}
+{"Error 1187: Failed rebuilding the index of dumped table": "https://mariadb.com//kb/en/e1187/"}
+{"Error 1188: Error from master": "https://mariadb.com//kb/en/e1188/"}
+{"Error 1189: Net error reading from master": "https://mariadb.com//kb/en/e1189/"}
+{"Error 1190: Net error writing to master": "https://mariadb.com//kb/en/e1190/"}
+{"Error 1191: Can't find FULLTEXT index matching the column list": "https://mariadb.com//kb/en/e1191/"}
+{"Error 1192: Can't execute the given command because you have active locked tables or an active transaction": "https://mariadb.com//kb/en/e1192/"}
+{"Error 1193: Unknown system variable": "https://mariadb.com//kb/en/e1193/"}
+{"Error 1194: Table is marked as crashed and should be repaired": "https://mariadb.com//kb/en/e1194/"}
+{"Error 1195: Table is marked as crashed and last (automatic?) repair failed": "https://mariadb.com//kb/en/e1195/"}
+{"Error 1196: Some non-transactional changed tables couldn't be rolled back": "https://mariadb.com//kb/en/e1196/"}
+{"Error 1197: Multi-statement transaction required more than 'max_binlog_cache_size' bytes of storage": "https://mariadb.com//kb/en/e1197/"}
+{"Error 1198: This operation cannot be performed with a running slave; run STOP SLAVE first": "https://mariadb.com//kb/en/e1198/"}
+{"Error 1199: This operation requires a running slave; configure slave and do START SLAVE": "https://mariadb.com//kb/en/e1199/"}
+{"Error 1200: The server is not configured as slave": "https://mariadb.com//kb/en/e1200/"}
+{"Error 1201: Could not initialize master info structure": "https://mariadb.com//kb/en/e1201/"}
+{"Error 1202: Could not create slave thread; check system resources": "https://mariadb.com//kb/en/e1202/"}
+{"Error 1203: User already has more than 'max_user_connections' active connections": "https://mariadb.com//kb/en/e1203/"}
+{"Error 1204: You may only use constant expressions with SET": "https://mariadb.com//kb/en/e1204/"}
+{"Error 1205: Lock wait timeout exceeded; try restarting transaction": "https://mariadb.com//kb/en/e1205/"}
+{"Error 1206: The total number of locks exceeds the lock table size": "https://mariadb.com//kb/en/e1206/"}
+{"Error 1207: Update locks cannot be acquired during a READ UNCOMMITTED transaction": "https://mariadb.com//kb/en/e1207/"}
+{"Error 1208: DROP DATABASE not allowed while thread is holding global read lock": "https://mariadb.com//kb/en/e1208/"}
+{"Error 1209: CREATE DATABASE not allowed while thread is holding global read lock": "https://mariadb.com//kb/en/e1209/"}
+{"Error 1210: Incorrect arguments to": "https://mariadb.com//kb/en/e1210/"}
+{"Error 1211: is not allowed to create new users": "https://mariadb.com//kb/en/e1211/"}
+{"Error 1212: Incorrect table definition; all MERGE tables must be in the same database": "https://mariadb.com//kb/en/e1212/"}
+{"Error 1213: Deadlock found when trying to get lock; try restarting transaction": "https://mariadb.com//kb/en/e1213/"}
+{"Error 1214: The used table type doesn't support FULLTEXT indexes": "https://mariadb.com//kb/en/e1214/"}
+{"Error 1215: Cannot add foreign key constraint": "https://mariadb.com//kb/en/e1215/"}
+{"Error 1216: Cannot add or update a child row: a foreign key constraint fails": "https://mariadb.com//kb/en/e1216/"}
+{"Error 1217: Cannot delete or update a parent row: a foreign key constraint fails": "https://mariadb.com//kb/en/e1217/"}
+{"Error 1218: Error connecting to master": "https://mariadb.com//kb/en/e1218/"}
+{"Error 1219: Error running query on master": "https://mariadb.com//kb/en/e1219/"}
+{"Error 1220: Error when executing command": "https://mariadb.com//kb/en/e1220/"}
+{"Error 1221: Incorrect usage of": "https://mariadb.com//kb/en/e1221/"}
+{"Error 1222: The used SELECT statements have a different number of columns": "https://mariadb.com//kb/en/e1222/"}
+{"Error 1223: Can't execute the query because you have a conflicting read lock": "https://mariadb.com//kb/en/e1223/"}
+{"Error 1224: Mixing of transactional and non-transactional tables is disabled": "https://mariadb.com//kb/en/e1224/"}
+{"Error 1225: Option used twice in statement": "https://mariadb.com//kb/en/e1225/"}
+{"Error 1226: User has exceeded the resource": "https://mariadb.com//kb/en/e1226/"}
+{"Error 1227: Access denied; you need (at least one of) the privilege(s) for this operation": "https://mariadb.com//kb/en/e1227/"}
+{"Error 1228: Variable is a SESSION variable and can't be used with SET GLOBAL": "https://mariadb.com//kb/en/e1228/"}
+{"Error 1229: Variable is a GLOBAL variable and should be set with SET GLOBAL": "https://mariadb.com//kb/en/e1229/"}
+{"Error 1230: Variable doesn't have a default value": "https://mariadb.com//kb/en/e1230/"}
+{"Error 1231: Variable can't be set to the value of": "https://mariadb.com//kb/en/e1231/"}
+{"Error 1232: Incorrect argument type to variable": "https://mariadb.com//kb/en/e1232/"}
+{"Error 1233: Variable can only be set, not read": "https://mariadb.com//kb/en/e1233/"}
+{"Error 1234: Incorrect usage/placement": "https://mariadb.com//kb/en/e1234/"}
+{"Error 1235: This version of MariaDB doesn't yet support": "https://mariadb.com//kb/en/e1235/"}
+{"Error 1236: Got fatal error from master when reading data from binary log": "https://mariadb.com//kb/en/e1236/"}
+{"Error 1237: Slave SQL thread ignored the query because of replicate-*-table rules": "https://mariadb.com//kb/en/e1237/"}
+{"Error 1238: Variable is a": "https://mariadb.com//kb/en/e1238/"}
+{"Error 1239: Incorrect foreign key definition": "https://mariadb.com//kb/en/e1239/"}
+{"Error 1240: Key reference and table reference don't match": "https://mariadb.com//kb/en/e1240/"}
+{"Error 1241: Operand should contain column(s)": "https://mariadb.com//kb/en/e1241/"}
+{"Error 1242: Subquery returns more than 1 row": "https://mariadb.com//kb/en/e1242/"}
+{"Error 1243: Unknown prepared statement handler given": "https://mariadb.com//kb/en/e1243/"}
+{"Error 1244: Help database is corrupt or does not exist": "https://mariadb.com//kb/en/e1244/"}
+{"Error 1245: Cyclic reference on subqueries": "https://mariadb.com//kb/en/e1245/"}
+{"Error 1246: Converting column from to": "https://mariadb.com//kb/en/e1246/"}
+{"Error 1247: Reference not supported": "https://mariadb.com//kb/en/e1247/"}
+{"Error 1248: Every derived table must have its own alias": "https://mariadb.com//kb/en/e1248/"}
+{"Error 1249: Select was reduced during optimization": "https://mariadb.com//kb/en/e1249/"}
+{"Error 1250: Table from one of the SELECTs cannot be used": "https://mariadb.com//kb/en/e1250/"}
+{"Error 1251: Client does not support authentication protocol requested by server": "https://mariadb.com//kb/en/e1251/"}
+{"Error 1252: All parts of a SPATIAL index must be NOT NULL": "https://mariadb.com//kb/en/e1252/"}
+{"Error 1253: COLLATION is not valid for CHARACTER SET": "https://mariadb.com//kb/en/e1253/"}
+{"Error 1254: Slave is already running": "https://mariadb.com//kb/en/e1254/"}
+{"Error 1255: Slave already has been stopped": "https://mariadb.com//kb/en/e1255/"}
+{"Error 1256: Uncompressed data size too large": "https://mariadb.com//kb/en/e1256/"}
+{"Error 1257: ZLIB: Not enough memory": "https://mariadb.com//kb/en/e1257/"}
+{"Error 1258: ZLIB: Not enough room in the output buffer": "https://mariadb.com//kb/en/e1258/"}
+{"Error 1259: ZLIB: Input data corrupted": "https://mariadb.com//kb/en/e1259/"}
+{"Error 1260: Row was cut by GROUP_CONCAT()": "https://mariadb.com//kb/en/e1260/"}
+{"Error 1261: Row doesn't contain data for all columns": "https://mariadb.com//kb/en/e1261/"}
+{"Error 1262: Row was truncated; it contained more data than there were input columns": "https://mariadb.com//kb/en/e1262/"}
+{"Error 1263: Column set to default value; NULL supplied to NOT NULL columnError 1263: Column set to default value; NULL supplied to NOT NULL column": "https://mariadb.com//kb/en/e1263/"}
+{"Error 1264: Out of range value for column": "https://mariadb.com//kb/en/e1264/"}
+{"Error 1265: Data truncated for column": "https://mariadb.com//kb/en/e1265/"}
+{"Error 1266: Using storage engine for table": "https://mariadb.com//kb/en/e1266/"}
+{"Error 1267: Illegal mix of collations for operation": "https://mariadb.com//kb/en/e1267/"}
+{"Error 1268: Cannot drop one or more of the requested users": "https://mariadb.com//kb/en/e1268/"}
+{"Error 1269: Can't revoke all privileges for one or more of the requested users": "https://mariadb.com//kb/en/e1269/"}
+{"Error 1270: Illegal mix of collations for operation": "https://mariadb.com//kb/en/e1270/"}
+{"Error 1271: Illegal mix of collations for operation": "https://mariadb.com//kb/en/e1271/"}
+{"Error 1272: Variable is not a variable component (can't be used as XXXX.variable_name)": "https://mariadb.com//kb/en/e1272/"}
+{"Error 1273: Unknown collation": "https://mariadb.com//kb/en/e1273/"}
+{"Error 1274: SSL parameters in CHANGE MASTER are ignored because this MariaDB slave was compiled without SSL support": "https://mariadb.com//kb/en/e1274/"}
+{"Error 1275: Server is running in --secure-auth mode, but has a password in the old format": "https://mariadb.com//kb/en/e1275/"}
+{"Error 1276: Field or reference of SELECT was resolved in SELECT": "https://mariadb.com//kb/en/e1276/"}
+{"Error 1277: Incorrect parameter or combination of parameters for START SLAVE UNTIL": "https://mariadb.com//kb/en/e1277/"}
+{"Error 1278: It is recommended to use --skip-slave-start when doing step-by-step replication with START SLAVE UNTIL": "https://mariadb.com//kb/en/e1278/"}
+{"Error 1279: SQL thread is not to be started so UNTIL options are ignored": "https://mariadb.com//kb/en/e1279/"}
+{"Error 1280: Incorrect index name": "https://mariadb.com//kb/en/e1280/"}
+{"Error 1281: Incorrect catalog name": "https://mariadb.com//kb/en/e1281/"}
+{"Error 1282: Query cache failed to set size; new query cache size is": "https://mariadb.com//kb/en/e1282/"}
+{"Error 1283: Column cannot be part of FULLTEXT index": "https://mariadb.com//kb/en/e1283/"}
+{"Error 1284: Unknown key cache": "https://mariadb.com//kb/en/e1284/"}
+{"Error 1285: MariaDB is started in --skip-name-resolve mode": "https://mariadb.com//kb/en/e1285/"}
+{"Error 1286: Unknown storage engine": "https://mariadb.com//kb/en/e1286/"}
+{"Error 1287: is deprecated and will be removed in a future release. Please use instead": "https://mariadb.com//kb/en/e1287/"}
+{"Error 1288: The target table of the is not updatable": "https://mariadb.com//kb/en/e1288/"}
+{"Error 1289: The feature is disabled; you need MariaDB built with to have it working": "https://mariadb.com//kb/en/e1289/"}
+{"Error 1290: The MariaDB server is running with the option so it cannot execute this statement": "https://mariadb.com//kb/en/e1290/"}
+{"Error 1291: Column has duplicated value": "https://mariadb.com//kb/en/e1291/"}
+{"Error 1292: Truncated incorrect value": "https://mariadb.com//kb/en/e1292/"}
+{"Error 1293: Incorrect table definition; there can be only one TIMESTAMP column with CURRENT_TIMESTAMP in DEFAULT or ON UPDATE clause": "https://mariadb.com//kb/en/e1293/"}
+{"Error 1294: Invalid ON UPDATE clause": "https://mariadb.com//kb/en/e1294/"}
+{"Error 1295: This command is not supported in the prepared statement protocol yet": "https://mariadb.com//kb/en/e1295/"}
+{"Error 1296: Got error from": "https://mariadb.com//kb/en/e1296/"}
+{"Error 1297: Got temporary error from": "https://mariadb.com//kb/en/e1297/"}
+{"Error 1298: Unknown or incorrect time zone": "https://mariadb.com//kb/en/e1298/"}
+{"Error 1299: Invalid TIMESTAMP value in column at row": "https://mariadb.com//kb/en/e1299/"}
+{"Error 1300: Invalid character string": "https://mariadb.com//kb/en/e1300/"}
+{"Error 1301: Result was larger than max_allowed_packet - truncated": "https://mariadb.com//kb/en/e1301/"}
+{"Error 1302: Conflicting declarations": "https://mariadb.com//kb/en/e1302/"}
+{"Error 1303: Can't create from within another stored routine": "https://mariadb.com//kb/en/e1303/"}
+{"Error 1304: already exists": "https://mariadb.com//kb/en/e1304/"}
+{"Error 1305: does not exist": "https://mariadb.com//kb/en/e1305/"}
+{"Error 1306: Failed to DROP": "https://mariadb.com//kb/en/e1306/"}
+{"Error 1307: Failed to CREATE": "https://mariadb.com//kb/en/e1307/"}
+{"Error 1308: with no matching label": "https://mariadb.com//kb/en/e1308/"}
+{"Error 1309: Redefining label": "https://mariadb.com//kb/en/e1309/"}
+{"Error 1310: End-label without match": "https://mariadb.com//kb/en/e1310/"}
+{"Error 1311: Referring to uninitialized variable": "https://mariadb.com//kb/en/e1311/"}
+{"Error 1312: PROCEDURE can't return a result set in the given context": "https://mariadb.com//kb/en/e1312/"}
+{"Error 1313: RETURN is only allowed in a FUNCTION": "https://mariadb.com//kb/en/e1313/"}
+{"Error 1314: is not allowed in stored procedures": "https://mariadb.com//kb/en/e1314/"}
+{"Error 1315: The update log is deprecated and replaced by the binary log": "https://mariadb.com//kb/en/e1315/"}
+{"Error 1316: The update log is deprecated and replaced by the binary log; SET SQL_LOG_UPDATE has been translated to SET SQL_LOG_BIN": "https://mariadb.com//kb/en/e1316/"}
+{"Error 1317: Query execution was interrupted": "https://mariadb.com//kb/en/e1317/"}
+{"Error 1318: Incorrect number of arguments; expected, got": "https://mariadb.com//kb/en/e1318/"}
+{"Error 1319: Undefined CONDITION": "https://mariadb.com//kb/en/e1319/"}
+{"Error 1320: No RETURN found in FUNCTION": "https://mariadb.com//kb/en/e1320/"}
+{"Error 1321: FUNCTION ended without RETURN": "https://mariadb.com//kb/en/e1321/"}
+{"Error 1322: Cursor statement must be a SELECT": "https://mariadb.com//kb/en/e1322/"}
+{"Error 1323: Cursor SELECT must not have INTO": "https://mariadb.com//kb/en/e1323/"}
+{"Error 1324: Undefined CURSOR": "https://mariadb.com//kb/en/e1324/"}
+{"Error 1325: Cursor is already open": "https://mariadb.com//kb/en/e1325/"}
+{"Error 1326: Cursor is not open": "https://mariadb.com//kb/en/e1326/"}
+{"Error 1327: Undeclared variable": "https://mariadb.com//kb/en/e1327/"}
+{"Error 1328: Incorrect number of FETCH variables": "https://mariadb.com//kb/en/e1328/"}
+{"Error 1329: No data - zero rows fetched, selected, or processed": "https://mariadb.com//kb/en/e1329/"}
+{"Error 1330: Duplicate parameter": "https://mariadb.com//kb/en/e1330/"}
+{"Error 1331: Duplicate variable": "https://mariadb.com//kb/en/e1331/"}
+{"Error 1332: Duplicate condition": "https://mariadb.com//kb/en/e1332/"}
+{"Error 1333: Duplicate cursor": "https://mariadb.com//kb/en/e1333/"}
+{"Error 1334: Failed to ALTER": "https://mariadb.com//kb/en/e1334/"}
+{"Error 1335: Subquery value not supported": "https://mariadb.com//kb/en/e1335/"}
+{"Error 1336: is not allowed in stored function or trigger": "https://mariadb.com//kb/en/e1336/"}
+{"Error 1337: Variable or condition declaration after cursor or handler declaration": "https://mariadb.com//kb/en/e1337/"}
+{"Error 1338: Cursor declaration after handler declaration": "https://mariadb.com//kb/en/e1338/"}
+{"Error 1339: Case not found for CASE statement": "https://mariadb.com//kb/en/e1339/"}
+{"Error 1340: Configuration file is too big": "https://mariadb.com//kb/en/e1340/"}
+{"Error 1341: Malformed file type header in file": "https://mariadb.com//kb/en/e1341/"}
+{"Error 1342: Unexpected end of file while parsing comment": "https://mariadb.com//kb/en/e1342/"}
+{"Error 1343: Error while parsing parameter": "https://mariadb.com//kb/en/e1343/"}
+{"Error 1344: Unexpected end of file while skipping unknown parameter": "https://mariadb.com//kb/en/e1344/"}
+{"Error 1345: EXPLAIN/SHOW can not be issued; lacking privileges for underlying table": "https://mariadb.com//kb/en/e1345/"}
+{"Error 1346: File has unknown type in its header": "https://mariadb.com//kb/en/e1346/"}
+{"Error 1347: '%s.%s' is not %s": "https://mariadb.com//kb/en/e1347/"}
+{"Error 1348: Column is not updatable": "https://mariadb.com//kb/en/e1348/"}
+{"Error 1349: View's SELECT contains a subquery in the FROM clause": "https://mariadb.com//kb/en/e1349/"}
+{"Error 1350: View's SELECT contains clause": "https://mariadb.com//kb/en/e1350/"}
+{"Error 1351: View's SELECT contains a variable or parameter": "https://mariadb.com//kb/en/e1351/"}
+{"Error 1352: View's SELECT refers to a temporary table'": "https://mariadb.com//kb/en/e1352/"}
+{"Error 1353: View's SELECT and view's field list have different column counts": "https://mariadb.com//kb/en/e1353/"}
+{"Error 1354: View merge algorithm can't be used here for now": "https://mariadb.com//kb/en/e1354/"}
+{"Error 1355: View being updated does not have complete key of underlying table in it": "https://mariadb.com//kb/en/e1355/"}
+{"Error 1356: View references invalid table(s) or column(s) or function(s) or definer/invoker of view lack rights to use them": "https://mariadb.com//kb/en/e1356/"}
+{"Error 1357: Can't drop or alter from within another stored routine": "https://mariadb.com//kb/en/e1357/"}
+{"Error 1358: GOTO is not allowed in a stored procedure handler": "https://mariadb.com//kb/en/e1358/"}
+{"Error 1359: Trigger already exists": "https://mariadb.com//kb/en/e1359/"}
+{"Error 1360: Trigger does not exist": "https://mariadb.com//kb/en/e1360/"}
+{"Error 1361: Trigger's is view or temporary table": "https://mariadb.com//kb/en/e1361/"}
+{"Error 1362: Updating of row is not allowed in trigger": "https://mariadb.com//kb/en/e1362/"}
+{"Error 1363: There is no row in trigger": "https://mariadb.com//kb/en/e1363/"}
+{"Error 1364: Field doesn't have a default value": "https://mariadb.com//kb/en/e1364/"}
+{"Error 1365: Division by 0": "https://mariadb.com//kb/en/e1365/"}
+{"Error 1366: Incorrect value for column at row": "https://mariadb.com//kb/en/e1366/"}
+{"Error 1367: Illegal value found during parsing": "https://mariadb.com//kb/en/e1367/"}
+{"Error 1368: CHECK OPTION on non-updatable view": "https://mariadb.com//kb/en/e1368/"}
+{"Error 1369: CHECK OPTION failed": "https://mariadb.com//kb/en/e1369/"}
+{"Error 1370: command denied to user for routine": "https://mariadb.com//kb/en/e1370/"}
+{"Error 1371: Failed purging old relay logs": "https://mariadb.com//kb/en/e1371/"}
+{"Error 1372: Password hash should be a %d-digit hexadecimal number": "https://mariadb.com//kb/en/e1372/"}
+{"Error 1373: Target log not found in binlog index": "https://mariadb.com//kb/en/e1373/"}
+{"Error 1374: I/O error reading log index file": "https://mariadb.com//kb/en/e1374/"}
+{"Error 1375: Server configuration does not permit binlog purge": "https://mariadb.com//kb/en/e1375/"}
+{"Error 1376: Failed on fseek()": "https://mariadb.com//kb/en/e1376/"}
+{"Error 1377: Fatal error during log purge": "https://mariadb.com//kb/en/e1377/"}
+{"Error 1378: A purgeable log is in use, will not purge": "https://mariadb.com//kb/en/e1378/"}
+{"Error 1379: Unknown error during log purge": "https://mariadb.com//kb/en/e1379/"}
+{"Error 1380: Failed initializing relay log position": "https://mariadb.com//kb/en/e1380/"}
+{"Error 1381: You are not using binary logging": "https://mariadb.com//kb/en/e1381/"}
+{"Error 1382: The syntax is reserved for purposes internal to the MariaDB server": "https://mariadb.com//kb/en/e1382/"}
+{"Error 1383: WSAStartup Failed": "https://mariadb.com//kb/en/e1383/"}
+{"Error 1384: Can't handle procedures with different groups yet": "https://mariadb.com//kb/en/e1384/"}
+{"Error 1385: Select must have a group with this procedure": "https://mariadb.com//kb/en/e1385/"}
+{"Error 1386: Can't use ORDER clause with this procedure": "https://mariadb.com//kb/en/e1386/"}
+{"Error 1387: Binary logging and replication forbid changing the global server": "https://mariadb.com//kb/en/e1387/"}
+{"Error 1388: Can't map file": "https://mariadb.com//kb/en/e1388/"}
+{"Error 1389: Wrong magic in": "https://mariadb.com//kb/en/e1389/"}
+{"Error 1390: Prepared statement contains too many placeholders": "https://mariadb.com//kb/en/e1390/"}
+{"Error 1391: Key part length cannot be 0": "https://mariadb.com//kb/en/e1391/"}
+{"Error 1392: View text checksum failed": "https://mariadb.com//kb/en/e1392/"}
+{"Error 1393: Can not modify more than one base table through a join view": "https://mariadb.com//kb/en/e1393/"}
+{"Error 1394: Can not insert into join view without fields list": "https://mariadb.com//kb/en/e1394/"}
+{"Error 1395: Can not delete from join view": "https://mariadb.com//kb/en/e1395/"}
+{"Error 1396: Operation failed for": "https://mariadb.com//kb/en/e1396/"}
+{"Error 1397: XAER_NOTA: Unknown XID": "https://mariadb.com//kb/en/e1397/"}
+{"Error 1398: XAER_INVAL: Invalid arguments (or unsupported command)": "https://mariadb.com//kb/en/e1398/"}
+{"Error 1399: XAER_RMFAIL: The command cannot be executed when global transaction is in the state": "https://mariadb.com//kb/en/e1399/"}
+{"Error 1400: XAER_OUTSIDE: Some work is done outside global transaction": "https://mariadb.com//kb/en/e1400/"}
+{"Error 1401: XAER_RMERR: Fatal error occurred in the transaction branch - check your data for consistency": "https://mariadb.com//kb/en/e1401/"}
+{"Error 1402: XA_RBROLLBACK: Transaction branch was rolled back": "https://mariadb.com//kb/en/e1402/"}
+{"Error 1403: There is no such grant defined for user on host on routine": "https://mariadb.com//kb/en/e1403/"}
+{"Error 1404: Failed to grant EXECUTE and ALTER ROUTINE privileges": "https://mariadb.com//kb/en/e1404/"}
+{"Error 1405: Failed to revoke all privileges to dropped routine": "https://mariadb.com//kb/en/e1405/"}
+{"Error 1406: Data too long for column at row": "https://mariadb.com//kb/en/e1406/"}
+{"Error 1407: Bad SQLSTATE": "https://mariadb.com//kb/en/e1407/"}
+{"Error 1408: ready for connections. Version: socket: port:": "https://mariadb.com//kb/en/e1408/"}
+{"Error 1409: Can't load value from file with fixed size rows to variable": "https://mariadb.com//kb/en/e1409/"}
+{"Error 1410: You are not allowed to create a user with GRANT": "https://mariadb.com//kb/en/e1410/"}
+{"Error 1411: Incorrect value for function": "https://mariadb.com//kb/en/e1411/"}
+{"Error 1412: Table definition has changed, please retry transaction": "https://mariadb.com//kb/en/e1412/"}
+{"Error 1413: Duplicate handler declared in the same block": "https://mariadb.com//kb/en/e1413/"}
+{"Error 1414: OUT or INOUT argument for routine is not a variable or NEW pseudo-variable in BEFORE trigger": "https://mariadb.com//kb/en/e1414/"}
+{"Error 1415: Not allowed to return a result set from": "https://mariadb.com//kb/en/e1415/"}
+{"Error 1416: Cannot get geometry object from data you send to the GEOMETRY field": "https://mariadb.com//kb/en/e1416/"}
+{"Error 1417: A routine failed and has neither NO SQL nor READS SQL DATA in its declaration": "https://mariadb.com//kb/en/e1417/"}
+{"Error 1418: This function has none of DETERMINISTIC, NO SQL, or READS SQL DATA in its declaration and binary logging is enabled": "https://mariadb.com//kb/en/e1418/"}
+{"Error 1419: You do not have the SUPER privilege and binary logging is enabled": "https://mariadb.com//kb/en/e1419/"}
+{"Error 1420: You can't execute a prepared statement which has an open cursor associated with it": "https://mariadb.com//kb/en/e1420/"}
+{"Error 1421: The statement has no open cursor": "https://mariadb.com//kb/en/e1421/"}
+{"Error 1422: Explicit or implicit commit is not allowed in stored function or trigger": "https://mariadb.com//kb/en/e1422/"}
+{"Error 1423: Field of view underlying table doesn't have a default value": "https://mariadb.com//kb/en/e1423/"}
+{"Error 1424: Recursive stored functions and triggers are not allowed.": "https://mariadb.com//kb/en/e1424/"}
+{"Error 1425: Too big scale specified for column": "https://mariadb.com//kb/en/e1425/"}
+{"Error 1426: Too big precision specified for column": "https://mariadb.com//kb/en/e1426/"}
+{"Error 1427: For float(M,D, double(M,D or decimal(M,D, M must be >= D": "https://mariadb.com//kb/en/e1427/"}
+{"Error 1428: You can't combine write-locking of system tables with other tables or lock types": "https://mariadb.com//kb/en/e1428/"}
+{"Error 1429: Unable to connect to foreign data source": "https://mariadb.com//kb/en/e1429/"}
+{"Error 1430: There was a problem processing the query on the foreign data source": "https://mariadb.com//kb/en/e1430/"}
+{"Error 1431: The foreign data source you are trying to reference does not exist": "https://mariadb.com//kb/en/e1431/"}
+{"Error 1432: Can't create federated table. The data source connection string is not in the correct format": "https://mariadb.com//kb/en/e1432/"}
+{"Error 1433: The data source connection string is not in the correct format": "https://mariadb.com//kb/en/e1433/"}
+{"Error 1434: Can't create federated table. Foreign data src error": "https://mariadb.com//kb/en/e1434/"}
+{"Error 1435: Trigger in wrong schema": "https://mariadb.com//kb/en/e1435/"}
+{"Error 1436: Thread stack overrun": "https://mariadb.com//kb/en/e1436/"}
+{"Error 1437: Routine body is too long": "https://mariadb.com//kb/en/e1437/"}
+{"Error 1438: Cannot drop default keycache": "https://mariadb.com//kb/en/e1438/"}
+{"Error 1439: Display width out of range for column": "https://mariadb.com//kb/en/e1439/"}
+{"Error 1440: XAER_DUPID: The XID already exists": "https://mariadb.com//kb/en/e1440/"}
+{"Error 1441: Datetime function: field overflow": "https://mariadb.com//kb/en/e1441/"}
+{"Error 1442: Can't update table in stored function/trigger because it is already used by statement which invoked this stored function/trigger": "https://mariadb.com//kb/en/e1442/"}
+{"Error 1443: The definition of table prevents operation on table": "https://mariadb.com//kb/en/e1443/"}
+{"Error 1444: The prepared statement contains a stored routine call that refers to that same statement": "https://mariadb.com//kb/en/e1444/"}
+{"Error 1445: Not allowed to set autocommit from a stored function or trigger": "https://mariadb.com//kb/en/e1445/"}
+{"Error 1446: Definer is not fully qualified": "https://mariadb.com//kb/en/e1446/"}
+{"Error 1447: View has no definer information (old table format)": "https://mariadb.com//kb/en/e1447/"}
+{"Error 1448: You need the SUPER privilege for creation view with definer": "https://mariadb.com//kb/en/e1448/"}
+{"Error 1449: The user specified as a definer does not exist": "https://mariadb.com//kb/en/e1449/"}
+{"Error 1450: Changing schema from is not allowed.": "https://mariadb.com//kb/en/e1450/"}
+{"Error 1451: Cannot delete or update a parent row: a foreign key constraint fails": "https://mariadb.com//kb/en/e1451/"}
+{"Error 1452: Cannot add or update a child row: a foreign key constraint fails": "https://mariadb.com//kb/en/e1452/"}
+{"Error 1453: Variable must be quoted with `...`, or renamed": "https://mariadb.com//kb/en/e1453/"}
+{"Error 1454: No definer attribute for trigger": "https://mariadb.com//kb/en/e1454/"}
+{"Error 1455: has an old format, you should re-create the object(s)": "https://mariadb.com//kb/en/e1455/"}
+{"Error 1456: Recursive limit (as set by the max_sp_recursion_depth variable) was exceeded for routine": "https://mariadb.com//kb/en/e1456/"}
+{"Error 1457: Failed to load routine": "https://mariadb.com//kb/en/e1457/"}
+{"Error 1458: Incorrect routine name": "https://mariadb.com//kb/en/e1458/"}
+{"Error 1459: Table upgrade required. Please do \"REPAIR TABLE\" or dump/reload to fix it!": "https://mariadb.com//kb/en/e1459/"}
+{"Error 1460: AGGREGATE is not supported for stored functions": "https://mariadb.com//kb/en/e1460/"}
+{"Error 1461: Can't create more than max_prepared_stmt_count statements": "https://mariadb.com//kb/en/e1461/"}
+{"Error 1462: contains view recursion": "https://mariadb.com//kb/en/e1462/"}
+{"Error 1463: Non-grouping field is used in clause": "https://mariadb.com//kb/en/e1463/"}
+{"Error 1464: The used table type doesn't support SPATIAL indexes": "https://mariadb.com//kb/en/e1464/"}
+{"Error 1465: Triggers can not be created on system tables": "https://mariadb.com//kb/en/e1465/"}
+{"Error 1466: Leading spaces are removed from name": "https://mariadb.com//kb/en/e1466/"}
+{"Error 1467: Failed to read auto-increment value from storage engine": "https://mariadb.com//kb/en/e1467/"}
+{"Error 1468: user name": "https://mariadb.com//kb/en/e1468/"}
+{"Error 1469: host name": "https://mariadb.com//kb/en/e1469/"}
+{"Error 1470: String is too long for (should be no longer than )": "https://mariadb.com//kb/en/e1470/"}
+{"Error 1471: The target table of the is not insertable-into": "https://mariadb.com//kb/en/e1471/"}
+{"Error 1472: Table is differently defined or of non-MyISAM type or doesn't exist": "https://mariadb.com//kb/en/e1472/"}
+{"Error 1473: Too high level of nesting for select": "https://mariadb.com//kb/en/e1473/"}
+{"Error 1474: Name has become ''": "https://mariadb.com//kb/en/e1474/"}
+{"Error 1475: First character of the FIELDS TERMINATED string is ambiguous": "https://mariadb.com//kb/en/e1475/"}
+{"Error 1476: The foreign server you are trying to create already exists": "https://mariadb.com//kb/en/e1476/"}
+{"Error 1477: The foreign server name you are trying to reference does not exist. Data source error": "https://mariadb.com//kb/en/e1477/"}
+{"Error 1478: Table storage engine does not support the create option": "https://mariadb.com//kb/en/e1478/"}
+{"Error 1479: Syntax error: PARTITIONING requires definition of VALUES for each partition": "https://mariadb.com//kb/en/e1479/"}
+{"Error 1480: Only PARTITIONING can use VALUES in partition definition": "https://mariadb.com//kb/en/e1480/"}
+{"Error 1481: MAXVALUE can only be used in last partition definition": "https://mariadb.com//kb/en/e1481/"}
+{"Error 1482: Subpartitions can only be hash partitions and by key": "https://mariadb.com//kb/en/e1482/"}
+{"Error 1483: Must define subpartitions on all partitions if on one partition": "https://mariadb.com//kb/en/e1483/"}
+{"Error 1484: Wrong number of partitions defined, mismatch with previous setting": "https://mariadb.com//kb/en/e1484/"}
+{"Error 1485: Wrong number of subpartitions defined, mismatch with previous setting": "https://mariadb.com//kb/en/e1485/"}
+{"Error 1486: Constant/Random expression in (sub)partitioning function is not allowed": "https://mariadb.com//kb/en/e1486/"}
+{"Error 1487: Expression in RANGE/LIST VALUES must be constant": "https://mariadb.com//kb/en/e1487/"}
+{"Error 1488: Field in list of fields for partition function not found in table": "https://mariadb.com//kb/en/e1488/"}
+{"Error 1489: List of fields is only allowed in KEY partitions": "https://mariadb.com//kb/en/e1489/"}
+{"Error 1490: The partition info in the frm file is not consistent with what can be written into the frm file": "https://mariadb.com//kb/en/e1490/"}
+{"Error 1491: The function returns the wrong type": "https://mariadb.com//kb/en/e1491/"}
+{"Error 1492: For partitions each partition must be defined": "https://mariadb.com//kb/en/e1492/"}
+{"Error 1493: VALUES LESS THAN value must be strictly increasing for each partition": "https://mariadb.com//kb/en/e1493/"}
+{"Error 1494: VALUES value must be of same type as partition function": "https://mariadb.com//kb/en/e1494/"}
+{"Error 1495: Multiple definition of same constant in list partitioning": "https://mariadb.com//kb/en/e1495/"}
+{"Error 1496: Partitioning can not be used stand-alone in query": "https://mariadb.com//kb/en/e1496/"}
+{"Error 1497: The mix of handlers in the partitions is not allowed in this version of MariaDB": "https://mariadb.com//kb/en/e1497/"}
+{"Error 1498: For the partitioned engine it is necessary to define all": "https://mariadb.com//kb/en/e1498/"}
+{"Error 1499: Too many partitions (including subpartitions) were defined": "https://mariadb.com//kb/en/e1499/"}
+{"Error 1500: It is only possible to mix RANGE/LIST partitioning with HASH/KEY partitioning for subpartitioning": "https://mariadb.com//kb/en/e1500/"}
+{"Error 1501: Failed to create specific handler file": "https://mariadb.com//kb/en/e1501/"}
+{"Error 1502: A BLOB field is not allowed in partition function": "https://mariadb.com//kb/en/e1502/"}
+{"Error 1503: must include all columns in the table's partitioning function": "https://mariadb.com//kb/en/e1503/"}
+{"Error 1504: Number of = 0 is not an allowed value": "https://mariadb.com//kb/en/e1504/"}
+{"Error 1505: Partition management on a not partitioned table is not possible": "https://mariadb.com//kb/en/e1505/"}
+{"Error 1506: Foreign key clause is not yet supported in conjunction with partitioning": "https://mariadb.com//kb/en/e1506/"}
+{"Error 1507: Error in list of partitions to": "https://mariadb.com//kb/en/e1507/"}
+{"Error 1508: Cannot remove all partitions, use DROP TABLE instead": "https://mariadb.com//kb/en/e1508/"}
+{"Error 1509: COALESCE PARTITION can only be used on HASH/KEY partitions": "https://mariadb.com//kb/en/e1509/"}
+{"Error 1510: REORGANIZE PARTITION can only be used to reorganize partitions not to change their numbers": "https://mariadb.com//kb/en/e1510/"}
+{"Error 1511: REORGANIZE PARTITION without parameters can only be used on auto-partitioned tables using HASH PARTITIONs": "https://mariadb.com//kb/en/e1511/"}
+{"Error 1512: PARTITION can only be used on RANGE/LIST partitions": "https://mariadb.com//kb/en/e1512/"}
+{"Error 1513: Trying to Add partition(s) with wrong number of subpartitions": "https://mariadb.com//kb/en/e1513/"}
+{"Error 1514: At least one partition must be added": "https://mariadb.com//kb/en/e1514/"}
+{"Error 1515: At least one partition must be coalesced": "https://mariadb.com//kb/en/e1515/"}
+{"Error 1516: More partitions to reorganize than there are partitions": "https://mariadb.com//kb/en/e1516/"}
+{"Error 1517: Duplicate partition name": "https://mariadb.com//kb/en/e1517/"}
+{"Error 1518: It is not allowed to shut off binlog on this command": "https://mariadb.com//kb/en/e1518/"}
+{"Error 1519: When reorganizing a set of partitions they must be in consecutive order": "https://mariadb.com//kb/en/e1519/"}
+{"Error 1520: Reorganize of range partitions cannot change total ranges except for last partition where it can extend the range": "https://mariadb.com//kb/en/e1520/"}
+{"Error 1521: Partition function not supported in this version for this handler": "https://mariadb.com//kb/en/e1521/"}
+{"Error 1522: Partition state cannot be defined from CREATE/ALTER TABLE": "https://mariadb.com//kb/en/e1522/"}
+{"Error 1523: The handler only supports 32 bit integers in VALUES": "https://mariadb.com//kb/en/e1523/"}
+{"Error 1524: Plugin is not loaded": "https://mariadb.com//kb/en/e1524/"}
+{"Error 1525: Incorrect value": "https://mariadb.com//kb/en/e1525/"}
+{"Error 1526: Table has no partition for value": "https://mariadb.com//kb/en/e1526/"}
+{"Error 1527: It is not allowed to specify more than once": "https://mariadb.com//kb/en/e1527/"}
+{"Error 1528: Failed to create": "https://mariadb.com//kb/en/e1528/"}
+{"Error 1529: Failed to drop": "https://mariadb.com//kb/en/e1529/"}
+{"Error 1530: The handler doesn't support autoextend of tablespaces": "https://mariadb.com//kb/en/e1530/"}
+{"Error 1531: A size parameter was incorrectly specified, either number or on the form 10M": "https://mariadb.com//kb/en/e1531/"}
+{"Error 1532: The size number was correct but we don't allow the digit part to be more than 2 billion": "https://mariadb.com//kb/en/e1532/"}
+{"Error 1533: Failed to alter": "https://mariadb.com//kb/en/e1533/"}
+{"Error 1534: Writing one row to the row-based binary log failed": "https://mariadb.com//kb/en/e1534/"}
+{"Error 1535: Table definition on master and slave does not match": "https://mariadb.com//kb/en/e1535/"}
+{"Error 1536: Slave running with --log-slave-updates must use row-based binary logging to be able to replicate row-based binary log events": "https://mariadb.com//kb/en/e1536/"}
+{"Error 1537: Event already exists": "https://mariadb.com//kb/en/e1537/"}
+{"Error 1538: Failed to store event. Error code from storage engine.": "https://mariadb.com//kb/en/e1538/"}
+{"Error 1539: Unknown event": "https://mariadb.com//kb/en/e1539/"}
+{"Error 1540: Failed to alter event": "https://mariadb.com//kb/en/e1540/"}
+{"Error 1541: Failed to drop": "https://mariadb.com//kb/en/e1541/"}
+{"Error 1542: INTERVAL is either not positive or too big": "https://mariadb.com//kb/en/e1542/"}
+{"Error 1543: ENDS is either invalid or before STARTS": "https://mariadb.com//kb/en/e1543/"}
+{"Error 1544: Event execution time is in the past. Event has been disabled": "https://mariadb.com//kb/en/e1544/"}
+{"Error 1545: Failed to open mysql.event": "https://mariadb.com//kb/en/e1545/"}
+{"Error 1546: No datetime expression provided": "https://mariadb.com//kb/en/e1546/"}
+{"Error 1547: Column count is wrong. Expected found. The table is probably corrupted": "https://mariadb.com//kb/en/e1547/"}
+{"Error 1548: Cannot load from mysql. The table is probably corrupted": "https://mariadb.com//kb/en/e1548/"}
+{"Error 1549: Failed to delete the event from mysql.event": "https://mariadb.com//kb/en/e1549/"}
+{"Error 1550: Error during compilation of event's body": "https://mariadb.com//kb/en/e1550/"}
+{"Error 1551: Same old and new event name": "https://mariadb.com//kb/en/e1551/"}
+{"Error 1552: Data for column too long": "https://mariadb.com//kb/en/e1552/"}
+{"Error 1553: Cannot drop index needed in a foreign key constraint": "https://mariadb.com//kb/en/e1553/"}
+{"Error 1554: The syntax is deprecated and will be removed in MariaDB": "https://mariadb.com//kb/en/e1554/"}
+{"Error 1555: You can't write-lock a log table. Only read access is possible": "https://mariadb.com//kb/en/e1555/"}
+{"Error 1556: You can't use locks with log tables": "https://mariadb.com//kb/en/e1556/"}
+{"Error 1557: Upholding foreign key constraints for table, entry, key would lead to a duplicate entry": "https://mariadb.com//kb/en/e1557/"}
+{"Error 1558: Column count is wrong. Expected found. Created with MariaDB now running. Please use mysql_upgrade to fix this error.": "https://mariadb.com//kb/en/e1558/"}
+{"Error 1559: Cannot switch out of the row-based binary log format when the session has open temporary tables": "https://mariadb.com//kb/en/e1559/"}
+{"Error 1560: Cannot change the binary logging format inside a stored function or trigger": "https://mariadb.com//kb/en/e1560/"}
+{"Error 1561: You should never see it": "https://mariadb.com//kb/en/e1561/"}
+{"Error 1562: Cannot create temporary table with partitions": "https://mariadb.com//kb/en/e1562/"}
+{"Error 1563: Partition constant is out of partition function domain": "https://mariadb.com//kb/en/e1563/"}
+{"Error 1564: This partition function is not allowed": "https://mariadb.com//kb/en/e1564/"}
+{"Error 1565: Error in DDL log": "https://mariadb.com//kb/en/e1565/"}
+{"Error 1566: Not allowed to use NULL value in VALUES LESS THAN": "https://mariadb.com//kb/en/e1566/"}
+{"Error 1567: Incorrect partition name": "https://mariadb.com//kb/en/e1567/"}
+{"Error 1568: Transaction isolation level can't be changed while a transaction is in progress": "https://mariadb.com//kb/en/e1568/"}
+{"Error 1569: ALTER TABLE causes auto_increment resequencing, resulting in duplicate entry for key": "https://mariadb.com//kb/en/e1569/"}
+{"Error 1570: Internal scheduler error": "https://mariadb.com//kb/en/e1570/"}
+{"Error 1571: Error during starting/stopping of the scheduler": "https://mariadb.com//kb/en/e1571/"}
+{"Error 1572: Engine cannot be used in partitioned tables": "https://mariadb.com//kb/en/e1572/"}
+{"Error 1573: Cannot activate log": "https://mariadb.com//kb/en/e1573/"}
+{"Error 1574: The server was not built with row-based replication": "https://mariadb.com//kb/en/e1574/"}
+{"Error 1575: Decoding of base64 string failed": "https://mariadb.com//kb/en/e1575/"}
+{"Error 1576: Recursion of EVENT DDL statements is forbidden when body is present": "https://mariadb.com//kb/en/e1576/"}
+{"Error 1577: Cannot proceed because system tables used by Event Scheduler were found damaged at server start": "https://mariadb.com//kb/en/e1577/"}
+{"Error 1578: Only integers allowed as number here": "https://mariadb.com//kb/en/e1578/"}
+{"Error 1579: This storage engine cannot be used for log tables": "https://mariadb.com//kb/en/e1579/"}
+{"Error 1580: You cannot '%s' a log table if logging is enabled": "https://mariadb.com//kb/en/e1580/"}
+{"Error 1581: Cannot rename. When logging enabled, rename to/from log table must rename two tables": "https://mariadb.com//kb/en/e1581/"}
+{"Error 1582: Incorrect parameter count in the call to native function": "https://mariadb.com//kb/en/e1582/"}
+{"Error 1583: Incorrect parameters in the call to native function": "https://mariadb.com//kb/en/e1583/"}
+{"Error 1584: Incorrect parameters in the call to stored function": "https://mariadb.com//kb/en/e1584/"}
+{"Error 1585: This function has the same name as a native function": "https://mariadb.com//kb/en/e1585/"}
+{"Error 1586: Duplicate entry for key": "https://mariadb.com//kb/en/e1586/"}
+{"Error 1587: Too many files opened, please execute the command again": "https://mariadb.com//kb/en/e1587/"}
+{"Error 1588: Event execution time is in the past and ON COMPLETION NOT PRESERVE is set": "https://mariadb.com//kb/en/e1588/"}
+{"Error 1589: Event execution time is in the past and ON COMPLETION NOT PRESERVE is set": "https://mariadb.com//kb/en/e1589/"}
+{"Error 1590: The incident occured on the master": "https://mariadb.com//kb/en/e1590/"}
+{"Error 1591: Table has no partition for some existing values": "https://mariadb.com//kb/en/e1591/"}
+{"Error 1592: Unsafe statement written to the binary log using statement format since BINLOG_FORMAT = STATEMENT": "https://mariadb.com//kb/en/e1592/"}
+{"Error 1593: Fatal error": "https://mariadb.com//kb/en/e1593/"}
+{"Error 1594: Relay log read failure": "https://mariadb.com//kb/en/e1594/"}
+{"Error 1595: Relay log write failure": "https://mariadb.com//kb/en/e1595/"}
+{"Error 1596: Failed to create": "https://mariadb.com//kb/en/e1596/"}
+{"Error 1597: Master command failed": "https://mariadb.com//kb/en/e1597/"}
+{"Error 1598: Binary logging not possible": "https://mariadb.com//kb/en/e1598/"}
+{"Error 1599: View has no creation context": "https://mariadb.com//kb/en/e1599/"}
+{"Error 1600: Creation context of view is invalid": "https://mariadb.com//kb/en/e1600/"}
+{"Error 1601: Creation context of stored routine is invalid": "https://mariadb.com//kb/en/e1601/"}
+{"Error 1602: Corrupted TRG file for table": "https://mariadb.com//kb/en/e1602/"}
+{"Error 1603: Triggers for table have no creation context": "https://mariadb.com//kb/en/e1603/"}
+{"Error 1604: Trigger creation context of table is invalid": "https://mariadb.com//kb/en/e1604/"}
+{"Error 1605: Creation context of event is invalid": "https://mariadb.com//kb/en/e1605/"}
+{"Error 1606: Cannot open table for trigger": "https://mariadb.com//kb/en/e1606/"}
+{"Error 1607: Cannot create stored routine. Check warnings": "https://mariadb.com//kb/en/e1607/"}
+{"Error 1608: You should never see it": "https://mariadb.com//kb/en/e1608/"}
+{"Error 1609: The BINLOG statement of type was not preceded by a format description BINLOG statement.": "https://mariadb.com//kb/en/e1609/"}
+{"Error 1610: Corrupted replication event was detected": "https://mariadb.com//kb/en/e1610/"}
+{"Error 1611: Invalid column reference in LOAD DATA": "https://mariadb.com//kb/en/e1611/"}
+{"Error 1612: Being purged log was not found": "https://mariadb.com//kb/en/e1612/"}
+{"Error 1613: XA_RBTIMEOUT: Transaction branch was rolled back: took too long": "https://mariadb.com//kb/en/e1613/"}
+{"Error 1614: XA_RBDEADLOCK: Transaction branch was rolled back: deadlock was detected": "https://mariadb.com//kb/en/e1614/"}
+{"Error 1615: Prepared statement needs to be re-prepared": "https://mariadb.com//kb/en/e1615/"}
+{"Error 1616: DELAYED option not supported for table": "https://mariadb.com//kb/en/e1616/"}
+{"Error 1617: The master info structure does not exist": "https://mariadb.com//kb/en/e1617/"}
+{"Error 1618: option ignored": "https://mariadb.com//kb/en/e1618/"}
+{"Error 1619: Built-in plugins cannot be deleted": "https://mariadb.com//kb/en/e1619/"}
+{"Error 1620: Plugin is busy and will be uninstalled on shutdown": "https://mariadb.com//kb/en/e1620/"}
+{"Error 1621: variable is read-only. Use SET to assign the value": "https://mariadb.com//kb/en/e1621/"}
+{"Error 1622: Storage engine does not support rollback for this statement": "https://mariadb.com//kb/en/e1622/"}
+{"Error 1623: Unexpected master's heartbeat data": "https://mariadb.com//kb/en/e1623/"}
+{"Error 1624: The requested value for the heartbeat period is either negative or exceeds the maximum allowed": "https://mariadb.com//kb/en/e1624/"}
+{"Error 1625: You should never see it": "https://mariadb.com//kb/en/e1625/"}
+{"Error 1626: Error in parsing conflict function": "https://mariadb.com//kb/en/e1626/"}
+{"Error 1627: Write to exceptions table failed": "https://mariadb.com//kb/en/e1627/"}
+{"Error 1628: Comment for table is too long": "https://mariadb.com//kb/en/e1628/"}
+{"Error 1629: Comment for field is too long": "https://mariadb.com//kb/en/e1629/"}
+{"Error 1630: FUNCTION does not exist. Check the 'Function Name Parsing and Resolution' section in the Reference Manual": "https://mariadb.com//kb/en/e1630/"}
+{"Error 1631: Database": "https://mariadb.com//kb/en/e1631/"}
+{"Error 1632: Table": "https://mariadb.com//kb/en/e1632/"}
+{"Error 1633: Partition": "https://mariadb.com//kb/en/e1633/"}
+{"Error 1634: Subpartition": "https://mariadb.com//kb/en/e1634/"}
+{"Error 1635: Temporary": "https://mariadb.com//kb/en/e1635/"}
+{"Error 1636: Renamed": "https://mariadb.com//kb/en/e1636/"}
+{"Error 1637: Too many active concurrent transactions": "https://mariadb.com//kb/en/e1637/"}
+{"Error 1638: Non-ASCII separator arguments are not fully supported": "https://mariadb.com//kb/en/e1638/"}
+{"Error 1639: debug sync point wait timed out": "https://mariadb.com//kb/en/e1639/"}
+{"Error 1640: debug sync point hit limit reached": "https://mariadb.com//kb/en/e1640/"}
+{"Error 1641: Duplicate condition information item": "https://mariadb.com//kb/en/e1641/"}
+{"Error 1642: Unhandled user-defined warning condition": "https://mariadb.com//kb/en/e1642/"}
+{"Error 1643: Unhandled user-defined not found condition": "https://mariadb.com//kb/en/e1643/"}
+{"Error 1644: Unhandled user-defined exception condition": "https://mariadb.com//kb/en/e1644/"}
+{"Error 1645: RESIGNAL when handler not active": "https://mariadb.com//kb/en/e1645/"}
+{"Error 1646: SIGNAL/RESIGNAL can only use a CONDITION defined with SQLSTATE": "https://mariadb.com//kb/en/e1646/"}
+{"Error 1647: Data truncated for condition item": "https://mariadb.com//kb/en/e1647/"}
+{"Error 1648: Data too long for condition item": "https://mariadb.com//kb/en/e1648/"}
+{"Error 1649: Unknown locale": "https://mariadb.com//kb/en/e1649/"}
+{"Error 1650: The requested server id clashes with the slave startup option --replicate-same-server-id": "https://mariadb.com//kb/en/e1650/"}
+{"Error 1651: Query cache is disabled; restart the server with query_cache_type=1 to enable it": "https://mariadb.com//kb/en/e1651/"}
+{"Error 1652: Duplicate partition field name": "https://mariadb.com//kb/en/e1652/"}
+{"Error 1653: Inconsistency in usage of column lists for partitioning": "https://mariadb.com//kb/en/e1653/"}
+{"Error 1654: Partition column values of incorrect type": "https://mariadb.com//kb/en/e1654/"}
+{"Error 1655: Too many fields": "https://mariadb.com//kb/en/e1655/"}
+{"Error 1656: Cannot use MAXVALUE as value in VALUES IN": "https://mariadb.com//kb/en/e1656/"}
+{"Error 1657: Cannot have more than one value for this type of partitioning": "https://mariadb.com//kb/en/e1657/"}
+{"Error 1658: Row expressions in VALUES IN only allowed for multi-field column partitioning": "https://mariadb.com//kb/en/e1658/"}
+{"Error 1659: Field is of a not allowed type for this type of partitioning": "https://mariadb.com//kb/en/e1659/"}
+{"Error 1660: The total length of the partitioning fields is too large": "https://mariadb.com//kb/en/e1660/"}
+{"Error 1661: Cannot execute statement: impossible to write to binary log since both row-incapable engines and statement-incapable engines are involved.": "https://mariadb.com//kb/en/e1661/"}
+{"Error 1662: Cannot execute statement: impossible to write to binary log since BINLOG_FORMAT = ROW and at least one table uses a storage engine limited to statement-based logging.": "https://mariadb.com//kb/en/e1662/"}
+{"Error 1663: Cannot execute statement: impossible to write to binary log since statement is unsafe, storage engine is limited to statement-based logging, and BINLOG_FORMAT = MIXED": "https://mariadb.com//kb/en/e1663/"}
+{"Error 1664: Cannot execute statement: impossible to write to binary log since statement is in row format and at least one table uses a storage engine limited to statement-based logging": "https://mariadb.com//kb/en/e1664/"}
+{"Error 1665: Cannot execute statement: impossible to write to binary log since BINLOG_FORMAT = STATEMENT and at least one table uses a storage engine limited to row-based logging": "https://mariadb.com//kb/en/e1665/"}
+{"Error 1666: Cannot execute statement: impossible to write to binary log since statement is in row format and BINLOG_FORMAT = STATEMENT": "https://mariadb.com//kb/en/e1666/"}
+{"Error 1667: Cannot execute statement: impossible to write to binary log since more than one engine is involved and at least one engine is self-logging": "https://mariadb.com//kb/en/e1667/"}
+{"Error 1668: The statement is unsafe because it uses a LIMIT clause. This is unsafe because the set of rows included cannot be predicted": "https://mariadb.com//kb/en/e1668/"}
+{"Error 1669: The statement is unsafe because it uses INSERT DELAYED. This is unsafe because the times when rows are inserted cannot be predicted": "https://mariadb.com//kb/en/e1669/"}
+{"Error 1670: The statement is unsafe because it uses the general log, slow query log, or performance_schema table(s). This is unsafe because system tables may differ on slaves": "https://mariadb.com//kb/en/e1670/"}
+{"Error 1671: Statement is unsafe because it invokes a trigger or a stored function that inserts into an AUTO_INCREMENT column. Inserted values cannot be logged correctly": "https://mariadb.com//kb/en/e1671/"}
+{"Error 1672: Statement is unsafe because it uses a UDF which may not return the same value on the slave": "https://mariadb.com//kb/en/e1672/"}
+{"Error 1673: Statement is unsafe because it uses a system variable that may have a different value on the slave": "https://mariadb.com//kb/en/e1673/"}
+{"Error 1674: Statement is unsafe because it uses a system function that may return a different value on the slave": "https://mariadb.com//kb/en/e1674/"}
+{"Error 1675: Statement is unsafe because it accesses a non-transactional table after accessing a transactional table within the same transaction": "https://mariadb.com//kb/en/e1675/"}
+{"Error 1676: Statement": "https://mariadb.com//kb/en/e1676/"}
+{"Error 1677: Column of table cannot be converted from type to type": "https://mariadb.com//kb/en/e1677/"}
+{"Error 1678: Can't create conversion table for table": "https://mariadb.com//kb/en/e1678/"}
+{"Error 1679: Cannot modify @@session.binlog_format inside a transaction": "https://mariadb.com//kb/en/e1679/"}
+{"Error 1680: The path specified is too long": "https://mariadb.com//kb/en/e1680/"}
+{"Error 1681: is deprecated and will be removed in a future release.": "https://mariadb.com//kb/en/e1681/"}
+{"Error 1682: Native table has the wrong structure": "https://mariadb.com//kb/en/e1682/"}
+{"Error 1683: Invalid performance_schema usage": "https://mariadb.com//kb/en/e1683/"}
+{"Error 1684: Table was skipped since its definition is being modified by concurrent DDL statement": "https://mariadb.com//kb/en/e1684/"}
+{"Error 1685: Cannot modify @@session.binlog_direct_non_transactional_updates inside a transaction": "https://mariadb.com//kb/en/e1685/"}
+{"Error 1686: Cannot change the binlog direct flag inside a stored function or trigger": "https://mariadb.com//kb/en/e1686/"}
+{"Error 1687: A SPATIAL index may only contain a geometrical type column": "https://mariadb.com//kb/en/e1687/"}
+{"Error 1688: Comment for index is too long": "https://mariadb.com//kb/en/e1688/"}
+{"Error 1689: Wait on a lock was aborted due to a pending exclusive lock": "https://mariadb.com//kb/en/e1689/"}
+{"Error 1690: value is out of range in": "https://mariadb.com//kb/en/e1690/"}
+{"Error 1691: A variable of a non-integer based type in LIMIT clause": "https://mariadb.com//kb/en/e1691/"}
+{"Error 1692: Mixing self-logging and non-self-logging engines in a statement is unsafe.": "https://mariadb.com//kb/en/e1692/"}
+{"Error 1693: Statement accesses nontransactional table as well as transactional or temporary table, and writes to any of them.": "https://mariadb.com//kb/en/e1693/"}
+{"Error 1694: Cannot modify @@session.sql_log_bin inside a transaction": "https://mariadb.com//kb/en/e1694/"}
+{"Error 1695: Cannot change the sql_log_bin inside a stored function or trigger": "https://mariadb.com//kb/en/e1695/"}
+{"Error 1696: Failed to read from the .par file": "https://mariadb.com//kb/en/e1696/"}
+{"Error 1697: VALUES value for partition must have type INT": "https://mariadb.com//kb/en/e1697/"}
+{"Error 1698: Access denied for user": "https://mariadb.com//kb/en/e1698/"}
+{"Error 1699: SET PASSWORD has no significance for users authenticating via plugins": "https://mariadb.com//kb/en/e1699/"}
+{"Error 1700: GRANT with IDENTIFIED WITH is illegal because the user already exists": "https://mariadb.com//kb/en/e1700/"}
+{"Error 1701: Cannot truncate a table referenced in a foreign key constraint": "https://mariadb.com//kb/en/e1701/"}
+{"Error 1702: Plugin is force_plus_permanent and can not be unloaded": "https://mariadb.com//kb/en/e1702/"}
+{"Error 1703: The requested value for the heartbeat period is less than 1 millisecond": "https://mariadb.com//kb/en/e1703/"}
+{"Error 1704: The requested value for the heartbeat period exceeds the value of slave_net_timeout seconds": "https://mariadb.com//kb/en/e1704/"}
+{"Error 1705: Multi-row statements required more than 'max_binlog_stmt_cache_size' bytes of storage; increase this mysqld variable and try again": "https://mariadb.com//kb/en/e1705/"}
+{"Error 1706: Primary key/partition key update is not allowed since the table is updated both as and": "https://mariadb.com//kb/en/e1706/"}
+{"Error 1707: Table rebuild required. Please do \"ALTER TABLE FORCE\" or dump/reload to fix it!": "https://mariadb.com//kb/en/e1707/"}
+{"Error 1708: The value of should be no less than the value of": "https://mariadb.com//kb/en/e1708/"}
+{"Error 1709: Index column size too large. The maximum column size is bytes.": "https://mariadb.com//kb/en/e1709/"}
+{"Error 1710: Trigger has an error in its body": "https://mariadb.com//kb/en/e1710/"}
+{"Error 1711: Unknown trigger has an error in its body": "https://mariadb.com//kb/en/e1711/"}
+{"Error 1712: Index is corrupted": "https://mariadb.com//kb/en/e1712/"}
+{"Error 1713: Undo log record is too big": "https://mariadb.com//kb/en/e1713/"}
+{"Error 1714: INSERT IGNORE... SELECT is unsafe because the order in which rows are retrieved by the SELECT determines which (if any) rows are ignored": "https://mariadb.com//kb/en/e1714/"}
+{"Error 1715: INSERT... SELECT... ON DUPLICATE KEY UPDATE is unsafe because the order in which rows are retrieved by the SELECT determines which (if any) rows are updated": "https://mariadb.com//kb/en/e1715/"}
+{"Error 1716: REPLACE... SELECT is unsafe because the order in which rows are retrieved by the SELECT determines which (if any) rows are replaced": "https://mariadb.com//kb/en/e1716/"}
+{"Error 1717: CREATE... IGNORE SELECT is unsafe because the order in which rows are retrieved by the SELECT determines which (if any) rows are ignored": "https://mariadb.com//kb/en/e1717/"}
+{"Error 1718: CREATE... REPLACE SELECT is unsafe because the order in which rows are retrieved by the SELECT determines which (if any) rows are replaced": "https://mariadb.com//kb/en/e1718/"}
+{"Error 1719: UPDATE IGNORE is unsafe because the order in which rows are updated determines which (if any) rows are ignored": "https://mariadb.com//kb/en/e1719/"}
+{"Error 1720: You should never see it": "https://mariadb.com//kb/en/e1720/"}
+{"Error 1721: You should never see it": "https://mariadb.com//kb/en/e1721/"}
+{"Error 1722: Statements writing to a table with an auto-increment column after selecting from another table are unsafe": "https://mariadb.com//kb/en/e1722/"}
+{"Error 1723: CREATE TABLE... SELECT... on a table with an auto-increment column is unsafe because the order in which rows are retrieved by the SELECT determines which (if any) rows are inserted": "https://mariadb.com//kb/en/e1723/"}
+{"Error 1724: INSERT... ON DUPLICATE KEY UPDATE on a table with more than one UNIQUE KEY is unsafe": "https://mariadb.com//kb/en/e1724/"}
+{"Error 1725: Table is being used in foreign key check.": "https://mariadb.com//kb/en/e1725/"}
+{"Error 1726: Storage engine does not support system tables": "https://mariadb.com//kb/en/e1726/"}
+{"Error 1727: INSERT into autoincrement field which is not the first part in the composed primary key is unsafe": "https://mariadb.com//kb/en/e1727/"}
+{"Error 1728: Cannot load from. The table is probably corrupted": "https://mariadb.com//kb/en/e1728/"}
+{"Error 1729: The requested value for the master delay exceeds the maximum": "https://mariadb.com//kb/en/e1729/"}
+{"Error 1730: Only Format_description_log_event and row events are allowed in BINLOG statements": "https://mariadb.com//kb/en/e1730/"}
+{"Error 1731: Non matching attribute between partition and table": "https://mariadb.com//kb/en/e1731/"}
+{"Error 1732: Table to exchange with partition is partitioned": "https://mariadb.com//kb/en/e1732/"}
+{"Error 1733: Table to exchange with partition is temporary": "https://mariadb.com//kb/en/e1733/"}
+{"Error 1734: Subpartitioned table, use subpartition instead of partition": "https://mariadb.com//kb/en/e1734/"}
+{"Error 1735: Unknown partition in table": "https://mariadb.com//kb/en/e1735/"}
+{"Error 1736: Tables have different definitions": "https://mariadb.com//kb/en/e1736/"}
+{"Error 1737: Found a row that does not match the partition": "https://mariadb.com//kb/en/e1737/"}
+{"Error 1738: Option binlog_cache_size is greater than max_binlog_cache_size; setting binlog_cache_size equal to max_binlog_cache_size.": "https://mariadb.com//kb/en/e1738/"}
+{"Error 1739: Cannot use access on index due to type or collation conversion on field": "https://mariadb.com//kb/en/e1739/"}
+{"Error 1740: Table to exchange with partition has foreign key references": "https://mariadb.com//kb/en/e1740/"}
+{"Error 1741: Key value was not found in table": "https://mariadb.com//kb/en/e1741/"}
+{"Error 1742: Data for column too long": "https://mariadb.com//kb/en/e1742/"}
+{"Error 1743: Replication event checksum verification failed while reading from network.": "https://mariadb.com//kb/en/e1743/"}
+{"Error 1744: Replication event checksum verification failed while reading from a log file": "https://mariadb.com//kb/en/e1744/"}
+{"Error 1745: Option binlog_stmt_cache_size is greater than max_binlog_stmt_cache_size": "https://mariadb.com//kb/en/e1745/"}
+{"Error 1746: Can't update table while is being created": "https://mariadb.com//kb/en/e1746/"}
+{"Error 1747: PARTITION () clause on non partitioned table": "https://mariadb.com//kb/en/e1747/"}
+{"Error 1748: Found a row not matching the given partition set": "https://mariadb.com//kb/en/e1748/"}
+{"Error 1749: partition doesn't exist": "https://mariadb.com//kb/en/e1749/"}
+{"Error 1750: Failure while changing the type of replication repository": "https://mariadb.com//kb/en/e1750/"}
+{"Error 1751: The creation of some temporary tables could not be rolled back.": "https://mariadb.com//kb/en/e1751/"}
+{"Error 1752: Some temporary tables were dropped, but these operations could not be rolled back.": "https://mariadb.com//kb/en/e1752/"}
+{"Error 1753: is not supported in multi-threaded slave mode": "https://mariadb.com//kb/en/e1753/"}
+{"Error 1754: The number of modified databases exceeds the maximum": "https://mariadb.com//kb/en/e1754/"}
+{"Error 1755: Cannot execute the current event group in the parallel mode": "https://mariadb.com//kb/en/e1755/"}
+{"Error 1756: %s": "https://mariadb.com//kb/en/e1756/"}
+{"Error 1757: FULLTEXT index is not supported for partitioned tables": "https://mariadb.com//kb/en/e1757/"}
+{"Error 1758: Invalid condition number": "https://mariadb.com//kb/en/e1758/"}
+{"Error 1759: Sending passwords in plain text without SSL/TLS is extremely insecure": "https://mariadb.com//kb/en/e1759/"}
+{"Error 1760: Storing MariaDB user name or password information in the master.info repository is not secure": "https://mariadb.com//kb/en/e1760/"}
+{"Error 1761: Foreign key constraint for table, record would lead to a duplicate entry in table": "https://mariadb.com//kb/en/e1761/"}
+{"Error 1762: Foreign key constraint for table, record would lead to a duplicate entry in a child table": "https://mariadb.com//kb/en/e1762/"}
+{"Error 1763: Setting authentication options is not possible when only the Slave SQL Thread is being started": "https://mariadb.com//kb/en/e1763/"}
+{"Error 1764: The table does not have FULLTEXT index to support this query": "https://mariadb.com//kb/en/e1764/"}
+{"Error 1765: The system variable cannot be set in stored functions or triggers": "https://mariadb.com//kb/en/e1765/"}
+{"Error 1766: The system variable cannot be set when there is an ongoing transaction": "https://mariadb.com//kb/en/e1766/"}
+{"Error 1767: The system variable @@SESSION.GTID_NEXT has the value which is not listed in @@SESSION.GTID_NEXT_LIST": "https://mariadb.com//kb/en/e1767/"}
+{"Error 1768: The system variable @@SESSION.GTID_NEXT cannot change inside a transaction": "https://mariadb.com//kb/en/e1768/"}
+{"Error 1769: The statement 'SET' cannot invoke a stored function": "https://mariadb.com//kb/en/e1769/"}
+{"Error 1770: The system variable @@SESSION.GTID_NEXT cannot be 'AUTOMATIC' when @@SESSION.GTID_NEXT_LIST is non-NULL": "https://mariadb.com//kb/en/e1770/"}
+{"Error 1771: Skipping transaction because it has already been executed and logged": "https://mariadb.com//kb/en/e1771/"}
+{"Error 1772: Malformed GTID set specification": "https://mariadb.com//kb/en/e1772/"}
+{"Error 1773: Malformed GTID set encoding": "https://mariadb.com//kb/en/e1773/"}
+{"Error 1774: Malformed GTID specification": "https://mariadb.com//kb/en/e1774/"}
+{"Error 1775: Impossible to generate Global Transaction Identifier: the integer component reached the maximal value": "https://mariadb.com//kb/en/e1775/"}
+{"Error 1776: Parameters MASTER_LOG_FILE, MASTER_LOG_POS, RELAY_LOG_FILE and RELAY_LOG_POS cannot be set when MASTER_AUTO_POSITION is active": "https://mariadb.com//kb/en/e1776/"}
+{"Error 1777: CHANGE MASTER TO MASTER_AUTO_POSITION = 1 can only be executed when @@GLOBAL.GTID_MODE = ON": "https://mariadb.com//kb/en/e1777/"}
+{"Error 1778: Cannot execute statements with implicit commit inside a transaction when @@SESSION.GTID_NEXT != AUTOMATIC": "https://mariadb.com//kb/en/e1778/"}
+{"Error 1779: GTID_MODE = ON or GTID_MODE = UPGRADE_STEP_2 requires DISABLE_GTID_UNSAFE_STATEMENTS = 1": "https://mariadb.com//kb/en/e1779/"}
+{"Error 1780: @@GLOBAL.GTID_MODE = ON or UPGRADE_STEP_1 or UPGRADE_STEP_2 requires --log-bin and --log-slave-updates": "https://mariadb.com//kb/en/e1780/"}
+{"Error 1781: @@SESSION.GTID_NEXT cannot be set to UUID:NUMBER when @@GLOBAL.GTID_MODE = OFF": "https://mariadb.com//kb/en/e1781/"}
+{"Error 1782: @@SESSION.GTID_NEXT cannot be set to ANONYMOUS when @@GLOBAL.GTID_MODE = ON": "https://mariadb.com//kb/en/e1782/"}
+{"Error 1783: @@SESSION.GTID_NEXT_LIST cannot be set to a non-NULL value when @@GLOBAL.GTID_MODE = OFF": "https://mariadb.com//kb/en/e1783/"}
+{"Error 1784: Found a Gtid_log_event or Previous_gtids_log_event when @@GLOBAL.GTID_MODE = OFF": "https://mariadb.com//kb/en/e1784/"}
+{"Error 1785: When @@GLOBAL.ENFORCE_GTID_CONSISTENCY = 1, updates to non-transactional tables can only be done in either autocommitted statements or single-statement transactions": "https://mariadb.com//kb/en/e1785/"}
+{"Error 1786: CREATE TABLE ... SELECT is forbidden when @@GLOBAL.ENFORCE_GTID_CONSISTENCY = 1": "https://mariadb.com//kb/en/e1786/"}
+{"Error 1787: When @@GLOBAL.ENFORCE_GTID_CONSISTENCY = 1, the statements CREATE TEMPORARY TABLE and DROP TEMPORARY TABLE can be executed in a non-transactional context only": "https://mariadb.com//kb/en/e1787/"}
+{"Error 1788: The value of @@GLOBAL.GTID_MODE can only change one step at a time": "https://mariadb.com//kb/en/e1788/"}
+{"Error 1789: The slave is connecting using CHANGE MASTER TO MASTER_AUTO_POSITION = 1, but the master has purged binary logs containing GTIDs that the slave requires": "https://mariadb.com//kb/en/e1789/"}
+{"Error 1790: @@SESSION.GTID_NEXT cannot be changed by a client that owns a GTID": "https://mariadb.com//kb/en/e1790/"}
+{"Error 1791: Unknown EXPLAIN format name": "https://mariadb.com//kb/en/e1791/"}
+{"Error 1792: Cannot execute statement in a READ ONLY transaction": "https://mariadb.com//kb/en/e1792/"}
+{"Error 1793: Comment for table partition is too long": "https://mariadb.com//kb/en/e1793/"}
+{"Error 1794: Slave is not configured or failed to initialize properly. You must at least set --server-id to enable either a master or a slave": "https://mariadb.com//kb/en/e1794/"}
+{"Error 1795: InnoDB presently supports one FULLTEXT index creation at a time": "https://mariadb.com//kb/en/e1795/"}
+{"Error 1796: Cannot create FULLTEXT index on temporary InnoDB table": "https://mariadb.com//kb/en/e1796/"}
+{"Error 1797: Column is of wrong type for an InnoDB FULLTEXT index": "https://mariadb.com//kb/en/e1797/"}
+{"Error 1798: Index '%s' is of wrong type for an InnoDB FULLTEXT index": "https://mariadb.com//kb/en/e1798/"}
+{"Error 1799: Creating index required more than 'innodb_online_alter_log_max_size' bytes of modification log": "https://mariadb.com//kb/en/e1799/"}
+{"Error 1800: Unknown ALGORITHM": "https://mariadb.com//kb/en/e1800/"}
+{"Error 1801: Unknown LOCK type": "https://mariadb.com//kb/en/e1801/"}
+{"Error 1802: CHANGE MASTER cannot be executed when the slave was stopped with an error or killed in MTS mode": "https://mariadb.com//kb/en/e1802/"}
+{"Error 1803: Cannot recover after SLAVE errored out in parallel execution mode": "https://mariadb.com//kb/en/e1803/"}
+{"Error 1804: Cannot clean up worker info tables": "https://mariadb.com//kb/en/e1804/"}
+{"Error 1805: Column count of is wrong. Expected, found. The table is probably corrupted": "https://mariadb.com//kb/en/e1805/"}
+{"Error 1806: Slave must silently retry current transaction": "https://mariadb.com//kb/en/e1806/"}
+{"Error 1807: There is a foreign key check running on table": "https://mariadb.com//kb/en/e1807/"}
+{"Error 1808: Schema mismatch": "https://mariadb.com//kb/en/e1808/"}
+{"Error 1809: Table in system tablespace": "https://mariadb.com//kb/en/e1809/"}
+{"Error 1810: IO Read error": "https://mariadb.com//kb/en/e1810/"}
+{"Error 1811: IO Write error": "https://mariadb.com//kb/en/e1811/"}
+{"Error 1812: Tablespace is missing for table": "https://mariadb.com//kb/en/e1812/"}
+{"Error 1813: Tablespace for table exists. Please DISCARD the tablespace before IMPORT": "https://mariadb.com//kb/en/e1813/"}
+{"Error 1814: Tablespace has been discarded for table": "https://mariadb.com//kb/en/e1814/"}
+{"Error 1815: Internal error": "https://mariadb.com//kb/en/e1815/"}
+{"Error 1816: ALTER TABLE IMPORT TABLESPACE failed with error": "https://mariadb.com//kb/en/e1816/"}
+{"Error 1817: Index corrupt": "https://mariadb.com//kb/en/e1817/"}
+{"Error 1818: YEAR(%lu) column type is deprecated. Creating YEAR(4) column instead.": "https://mariadb.com//kb/en/e1818/"}
+{"Error 1819: Your password does not satisfy the current policy requirements": "https://mariadb.com//kb/en/e1819/"}
+{"Error 1820: You must SET PASSWORD before executing this statement": "https://mariadb.com//kb/en/e1820/"}
+{"Error 1821: Failed to add the foreign key constaint. Missing index for constraint in the foreign table": "https://mariadb.com//kb/en/e1821/"}
+{"Error 1822: Failed to add the foreign key constaint. Missing index for constraint in the referenced table": "https://mariadb.com//kb/en/e1822/"}
+{"Error 1823: Failed to add the foreign key constraint to system tables": "https://mariadb.com//kb/en/e1823/"}
+{"Error 1824: Failed to open the referenced table": "https://mariadb.com//kb/en/e1824/"}
+{"Error 1825: Failed to add the foreign key constraint on table. Incorrect options in FOREIGN KEY constraint": "https://mariadb.com//kb/en/e1825/"}
+{"Error 1826: Duplicate foreign key constraint name": "https://mariadb.com//kb/en/e1826/"}
+{"Error 1827: The password hash doesn't have the expected format": "https://mariadb.com//kb/en/e1827/"}
+{"Error 1828: Cannot drop column:  needed in a foreign key constraint": "https://mariadb.com//kb/en/e1828/"}
+{"Error 1829: Cannot drop column: needed in a foreign key constraint of table": "https://mariadb.com//kb/en/e1829/"}
+{"Error 1830: Column cannot be NOT NULL: needed in a foreign key constraint SET NULL": "https://mariadb.com//kb/en/e1830/"}
+{"Error 1831: Duplicate index defined on the table. This is deprecated and will be disallowed in a future release.": "https://mariadb.com//kb/en/e1831/"}
+{"Error 1832: Cannot change column: used in a foreign key constraint": "https://mariadb.com//kb/en/e1832/"}
+{"Error 1833: Cannot change column: used in a foreign key constraint of table": "https://mariadb.com//kb/en/e1833/"}
+{"Error 1834: Cannot delete rows from table which is parent in a foreign key constraint of table": "https://mariadb.com//kb/en/e1834/"}
+{"Error 1835: Malformed communication packet.": "https://mariadb.com//kb/en/e1835/"}
+{"Error 1836: Running in read-only mode": "https://mariadb.com//kb/en/e1836/"}
+{"Error 1837: When GTID_NEXT is set to a GTID, you must explicitly set it again after a COMMIT or ROLLBACK": "https://mariadb.com//kb/en/e1837/"}
+{"Error 1838: The system variable cannot be set in stored procedures": "https://mariadb.com//kb/en/e1838/"}
+{"Error 1839: @@GLOBAL.GTID_PURGED can only be set when @@GLOBAL.GTID_MODE = ON": "https://mariadb.com//kb/en/e1839/"}
+{"Error 1840: @@GLOBAL.GTID_PURGED can only be set when @@GLOBAL.GTID_EXECUTED is empty": "https://mariadb.com//kb/en/e1840/"}
+{"Error 1841: @@GLOBAL.GTID_PURGED can only be set when there are no ongoing transactions (not even in other clients)": "https://mariadb.com//kb/en/e1841/"}
+{"Error 1842: @@GLOBAL.GTID_PURGED was changed from to": "https://mariadb.com//kb/en/e1842/"}
+{"Error 1843: @@GLOBAL.GTID_EXECUTED was changed from to": "https://mariadb.com//kb/en/e1843/"}
+{"Error 1844: Cannot execute statement: impossible to write to binary log since BINLOG_FORMAT = STATEMENT, and both replicated and non replicated tables are written to": "https://mariadb.com//kb/en/e1844/"}
+{"Error 1845: is not supported for this operation. Try": "https://mariadb.com//kb/en/e1845/"}
+{"Error 1846: is not supported. Reason: Try": "https://mariadb.com//kb/en/e1846/"}
+{"Error 1847: COPY algorithm requires a lock": "https://mariadb.com//kb/en/e1847/"}
+{"Error 1848: Partition specific operations do not yet support LOCK/ALGORITHM": "https://mariadb.com//kb/en/e1848/"}
+{"Error 1849: Columns participating in a foreign key are renamed": "https://mariadb.com//kb/en/e1849/"}
+{"Error 1850: Cannot change column type INPLACE": "https://mariadb.com//kb/en/e1850/"}
+{"Error 1851: Adding foreign keys needs foreign_key_checks=OFF": "https://mariadb.com//kb/en/e1851/"}
+{"Error 1852: Creating unique indexes with IGNORE requires COPY algorithm to remove duplicate rows": "https://mariadb.com//kb/en/e1852/"}
+{"Error 1853: Dropping a primary key is not allowed without also adding a new primary key": "https://mariadb.com//kb/en/e1853/"}
+{"Error 1854: Adding an auto-increment column requires a lock": "https://mariadb.com//kb/en/e1854/"}
+{"Error 1855: Cannot replace hidden FTS_DOC_ID with a user-visible one": "https://mariadb.com//kb/en/e1855/"}
+{"Error 1856: Cannot drop or rename FTS_DOC_ID": "https://mariadb.com//kb/en/e1856/"}
+{"Error 1857: Fulltext index creation requires a lock": "https://mariadb.com//kb/en/e1857/"}
+{"Error 1858: sql_slave_skip_counter can not be set when the server is running with @@GLOBAL.GTID_MODE = ON": "https://mariadb.com//kb/en/e1858/"}
+{"Error 1859: Duplicate entry for key": "https://mariadb.com//kb/en/e1859/"}
+{"Error 1860: Long database name and identifier for object resulted in path length exceeding characters": "https://mariadb.com//kb/en/e1860/"}
+{"Error 1861: cannot silently convert NULL values, as required in this SQL_MODE": "https://mariadb.com//kb/en/e1861/"}
+{"Error 1862: Your password has expired. To log in you must change it using a client that supports expired passwords": "https://mariadb.com//kb/en/e1862/"}
+{"Error 1863: Found a row in wrong partition": "https://mariadb.com//kb/en/e1863/"}
+{"Error 1864: Cannot schedule event, relay-log name, position to Worker thread because its size exceeds of slave_pending_jobs_size_max": "https://mariadb.com//kb/en/e1864/"}
+{"Error 1865: Cannot CREATE FULLTEXT INDEX WITH PARSER on InnoDB table": "https://mariadb.com//kb/en/e1865/"}
+{"Error 1866: The binary log file is logically corrupted": "https://mariadb.com//kb/en/e1866/"}
+{"Error 1867: file was not purged because it was being read by thread(s), purged only out of": "https://mariadb.com//kb/en/e1867/"}
+{"Error 1868: file was not purged because it is the active log file": "https://mariadb.com//kb/en/e1868/"}
+{"Error 1869: Auto-increment value in UPDATE conflicts with internally generated values": "https://mariadb.com//kb/en/e1869/"}
+{"Error 1870: Row events are not logged for statements that modify BLACKHOLE tables in row format": "https://mariadb.com//kb/en/e1870/"}
+{"Error 1871: Slave failed to initialize master info structure from the repository": "https://mariadb.com//kb/en/e1871/"}
+{"Error 1872: Slave failed to initialize relay log info structure from the repository": "https://mariadb.com//kb/en/e1872/"}
+{"Error 1873: Access denied trying to change to user (using password). Disconnecting.": "https://mariadb.com//kb/en/e1873/"}
+{"Error 1874: InnoDB is in read only mode": "https://mariadb.com//kb/en/e1874/"}
+{"Error 1875: STOP SLAVE command execution is incomplete: Slave SQL thread got the stop signal": "https://mariadb.com//kb/en/e1875/"}
+{"Error 1876: STOP SLAVE command execution is incomplete: Slave IO thread got the stop signal": "https://mariadb.com//kb/en/e1876/"}
+{"Error 1877: Operation cannot be performed. The table is missing, corrupt or contains bad data": "https://mariadb.com//kb/en/e1877/"}
+{"Error 1878: Temporary file write failure": "https://mariadb.com//kb/en/e1878/"}
+{"Error 1879: Upgrade index name failed, please use create index(alter table) algorithm copy to rebuild index": "https://mariadb.com//kb/en/e1879/"}
+{"Error 1880: \"": "https://mariadb.com//kb/en/e1880/"}
+{"Error 1900: \"": "https://mariadb.com//kb/en/e1900/"}
+{"Error 1901: Function or expression cannot be used in the clause of": "https://mariadb.com//kb/en/e1901/"}
+{"Error 1902: \"": "https://mariadb.com//kb/en/e1902/"}
+{"Error 1903: Primary key cannot be defined upon a generated column": "https://mariadb.com//kb/en/e1903/"}
+{"Error 1904: Key/Index cannot be defined on a virtual generated column": "https://mariadb.com//kb/en/e1904/"}
+{"Error 1905: Cannot define foreign key with clause on a generated column": "https://mariadb.com//kb/en/e1905/"}
+{"Error 1906: The value specified for generated column in table has been ignored": "https://mariadb.com//kb/en/e1906/"}
+{"Error 1907: This is not yet supported for generated columns": "https://mariadb.com//kb/en/e1907/"}
+{"Error 1908: \"": "https://mariadb.com//kb/en/e1908/"}
+{"Error 1909: \"": "https://mariadb.com//kb/en/e1909/"}
+{"Error 1910: storage engine does not support generated columns": "https://mariadb.com//kb/en/e1910/"}
+{"Error 1911: Unknown option": "https://mariadb.com//kb/en/e1911/"}
+{"Error 1912: Incorrect value for option": "https://mariadb.com//kb/en/e1912/"}
+{"Error 1913: You should never see it": "https://mariadb.com//kb/en/e1913/"}
+{"Error 1914: You should never see it": "https://mariadb.com//kb/en/e1914/"}
+{"Error 1915: You should never see it": "https://mariadb.com//kb/en/e1915/"}
+{"Error 1916: Got overflow when converting to. Value truncated": "https://mariadb.com//kb/en/e1916/"}
+{"Error 1917: Truncated value when converting to": "https://mariadb.com//kb/en/e1917/"}
+{"Error 1918: Encountered illegal value when converting to": "https://mariadb.com//kb/en/e1918/"}
+{"Error 1919: Encountered illegal format of dynamic column string": "https://mariadb.com//kb/en/e1919/"}
+{"Error 1920: Dynamic column implementation limit reached": "https://mariadb.com//kb/en/e1920/"}
+{"Error 1921: Illegal value used as argument of dynamic column function": "https://mariadb.com//kb/en/e1921/"}
+{"Error 1922: Dynamic column contains unknown character set": "https://mariadb.com//kb/en/e1922/"}
+{"Error 1923: At least one of the 'in_to_exists' or 'materialization' optimizer_switch flags must be 'on'.": "https://mariadb.com//kb/en/e1923/"}
+{"Error 1924: Query cache is disabled (resize or similar command in progress); repeat this command later": "https://mariadb.com//kb/en/e1924/"}
+{"Error 1925: Query cache is globally disabled and you can't enable it only for this session": "https://mariadb.com//kb/en/e1925/"}
+{"Error 1926: View ORDER BY clause ignored because there is other ORDER BY clause already": "https://mariadb.com//kb/en/e1926/"}
+{"Error 1927: Connection was killed": "https://mariadb.com//kb/en/e1927/"}
+{"Error 1928: You should never see it": "https://mariadb.com//kb/en/e1928/"}
+{"Error 1929: Cannot modify @@session.skip_replication inside a transaction": "https://mariadb.com//kb/en/e1929/"}
+{"Error 1930: Cannot modify @@session.skip_replication inside a stored function or trigger": "https://mariadb.com//kb/en/e1930/"}
+{"Error 1931: Query execution was interrupted. The query exceeded. The query result may be incomplete": "https://mariadb.com//kb/en/e1931/"}
+{"Error 1932: Table doesn't exist in engine": "https://mariadb.com//kb/en/e1932/"}
+{"Error 1933: Target is not running an EXPLAINable command": "https://mariadb.com//kb/en/e1933/"}
+{"Error 1934: Connection conflicts with existing connection": "https://mariadb.com//kb/en/e1934/"}
+{"Error 1935: Master": "https://mariadb.com//kb/en/e1935/"}
+{"Error 1936: Can't %s SLAVE": "https://mariadb.com//kb/en/e1936/"}
+{"Error 1937: SLAVE started": "https://mariadb.com//kb/en/e1937/"}
+{"Error 1938: SLAVE stopped": "https://mariadb.com//kb/en/e1938/"}
+{"Error 1939: Engine failed to discover table with": "https://mariadb.com//kb/en/e1939/"}
+{"Error 1940: Failed initializing replication GTID state": "https://mariadb.com//kb/en/e1940/"}
+{"Error 1941: Could not parse GTID list": "https://mariadb.com//kb/en/e1941/"}
+{"Error 1942: Could not update replication slave gtid state": "https://mariadb.com//kb/en/e1942/"}
+{"Error 1943: GTID conflict (duplicate domain id)": "https://mariadb.com//kb/en/e1943/"}
+{"Error 1944: Failed to open": "https://mariadb.com//kb/en/e1944/"}
+{"Error 1945: Connecting slave requested to start from GTID, which is not in the master's binlog": "https://mariadb.com//kb/en/e1945/"}
+{"Error 1946: Failed to load replication slave GTID position from table": "https://mariadb.com//kb/en/e1946/"}
+{"Error 1947: Specified GTID conflicts with the binary log which contains a more recent GTID": "https://mariadb.com//kb/en/e1947/"}
+{"Error 1948: Specified value for @@gtid_slave_pos contains no value for replication domain": "https://mariadb.com//kb/en/e1948/"}
+{"Error 1949: START SLAVE UNTIL master_gtid_pos requires that slave is using GTID": "https://mariadb.com//kb/en/e1949/"}
+{"Error 1950: An attempt was made to binlog GTID which would create an out-of-order sequence number with existing GTID": "https://mariadb.com//kb/en/e1950/"}
+{"Error 1951: The binlog on the master is missing the GTID requested by the slave": "https://mariadb.com//kb/en/e1951/"}
+{"Error 1952: Unexpected GTID received from master after reconnect": "https://mariadb.com//kb/en/e1952/"}
+{"Error 1953: Cannot modify @@session.gtid_domain_id or @@session.gtid_seq_no inside a transaction": "https://mariadb.com//kb/en/e1953/"}
+{"Error 1954: Cannot modify @@session.gtid_domain_id or @@session.gtid_seq_no inside a stored function or trigger": "https://mariadb.com//kb/en/e1954/"}
+{"Error 1955: Connecting slave requested to start from GTID which is not in the master's binlog": "https://mariadb.com//kb/en/e1955/"}
+{"Error 1956: This operation is not allowed if any GTID has been logged to the binary log": "https://mariadb.com//kb/en/e1956/"}
+{"Error 1957: Unknown query id": "https://mariadb.com//kb/en/e1957/"}
+{"Error 1958: Bad base64 data as position": "https://mariadb.com//kb/en/e1958/"}
+{"Error 1959: Invalid role specification": "https://mariadb.com//kb/en/e1959/"}
+{"Error 1960: The current user is invalid": "https://mariadb.com//kb/en/e1960/"}
+{"Error 1961: Cannot grant role to": "https://mariadb.com//kb/en/e1961/"}
+{"Error 1962: Cannot revoke role from": "https://mariadb.com//kb/en/e1962/"}
+{"Error 1963: Cannot change @@slave_parallel_threads while another change is in progress": "https://mariadb.com//kb/en/e1963/"}
+{"Error 1964: Commit failed due to failure of an earlier commit on which this one depends": "https://mariadb.com//kb/en/e1964/"}
+{"Error 1965: is a view": "https://mariadb.com//kb/en/e1965/"}
+{"Error 1966: When using GTID, @@sql_slave_skip_counter can not be used": "https://mariadb.com//kb/en/e1966/"}
+{"Error 1967: The definition for table is too big": "https://mariadb.com//kb/en/e1967/"}
+{"Error 1968: Plugin already installed": "https://mariadb.com//kb/en/e1968/"}
+{"Error 1969: Query execution was interrupted (max_statement_time exceeded)": "https://mariadb.com//kb/en/e1969/"}
+{"Error 1970: does not support subqueries or stored functions": "https://mariadb.com//kb/en/e1970/"}
+{"Error 1971: The system variable cannot be set in SET STATEMENT": "https://mariadb.com//kb/en/e1971/"}
+{"Error 1972: You should never see it": "https://mariadb.com//kb/en/e1972/"}
+{"Error 1973: Can't create user; it already exists": "https://mariadb.com//kb/en/e1973/"}
+{"Error 1974: Can't drop user; it doesn't exist": "https://mariadb.com//kb/en/e1974/"}
+{"Error 1975: Can't create role; it already exists": "https://mariadb.com//kb/en/e1975/"}
+{"Error 1976: Can't drop role; it doesn't exist": "https://mariadb.com//kb/en/e1976/"}
+{"Error 1977: Cannot convert character to": "https://mariadb.com//kb/en/e1977/"}
+{"Error 1978: Incorrect default value for column": "https://mariadb.com//kb/en/e1978/"}
+{"Error 1979: You are not owner of query": "https://mariadb.com//kb/en/e1979/"}
+{"Error 1980: Engine-independent statistics are not collected for column": "https://mariadb.com//kb/en/e1980/"}
+{"Error 1981: Aggregate function of SELECT belongs to SELECT": "https://mariadb.com//kb/en/e1981/"}
+{"Error 1982: option ignored for InnoDB partition": "https://mariadb.com//kb/en/e1982/"}
+{"Error 3000: File is corrupted": "https://mariadb.com//kb/en/e3000/"}
+{"Error 3001: Query partially completed on the master (error on master) and was aborted": "https://mariadb.com//kb/en/e3001/"}
+{"Error 3002: Query caused different errors on master and slave": "https://mariadb.com//kb/en/e3002/"}
+{"Error 3003: Storage engine for table is not loaded": "https://mariadb.com//kb/en/e3003/"}
+{"Error 3004: GET STACKED DIAGNOSTICS when handler not active": "https://mariadb.com//kb/en/e3004/"}
+{"Error 3005: is no longer supported. The statement was converted to": "https://mariadb.com//kb/en/e3005/"}
+{"Error 3006: Statement is unsafe because it uses a fulltext parser plugin which may not return the same value on the slave": "https://mariadb.com//kb/en/e3006/"}
+{"Error 3007: Cannot DISCARD/IMPORT tablespace associated with temporary table": "https://mariadb.com//kb/en/e3007/"}
+{"Error 3008: Foreign key cascade delete/update exceeds max depth of": "https://mariadb.com//kb/en/e3008/"}
+{"Error 3009: Column count of is wrong": "https://mariadb.com//kb/en/e3009/"}
+{"Error 3010: Trigger does not have CREATED attribute": "https://mariadb.com//kb/en/e3010/"}
+{"Error 3011: Referenced trigger for the given action time and event type does not exist": "https://mariadb.com//kb/en/e3011/"}
+{"Error 3012: EXPLAIN FOR CONNECTION command is supported only for SELECT/UPDATE/INSERT/DELETE/REPLACE": "https://mariadb.com//kb/en/e3012/"}
+{"Error 3013: Invalid size for column": "https://mariadb.com//kb/en/e3013/"}
+{"Error 3014: Table storage engine found required create option missing": "https://mariadb.com//kb/en/e3014/"}
+{"Error 3015: Out of memory in storage engine": "https://mariadb.com//kb/en/e3015/"}
+{"Error 3016: The password for anonymous user cannot be expired": "https://mariadb.com//kb/en/e3016/"}
+{"Error 3017: This operation cannot be performed with a running slave sql thread": "https://mariadb.com//kb/en/e3017/"}
+{"Error 3018: Cannot create FULLTEXT index on materialized subquery": "https://mariadb.com//kb/en/e3018/"}
+{"Error 3019: Undo Log error": "https://mariadb.com//kb/en/e3019/"}
+{"Error 3020: Invalid argument for logarithm": "https://mariadb.com//kb/en/e3020/"}
+{"Error 3021: This operation cannot be performed with a running slave io thread": "https://mariadb.com//kb/en/e3021/"}
+{"Error 3022: This operation may not be safe when the slave has temporary tables": "https://mariadb.com//kb/en/e3022/"}
+{"Error 3023: CHANGE MASTER TO with a MASTER_LOG_FILE clause but no MASTER_LOG_POS clause may not be safe": "https://mariadb.com//kb/en/e3023/"}
+{"Error 3024: Query execution was interrupted, maximum statement execution time exceeded": "https://mariadb.com//kb/en/e3024/"}
+{"Error 3025: Select is not a read only statement, disabling timer": "https://mariadb.com//kb/en/e3025/"}
+{"Error 3026: Duplicate entry": "https://mariadb.com//kb/en/e3026/"}
+{"Error 3027: mode no longer has any effect. Use STRICT_ALL_TABLES or STRICT_TRANS_TABLES instead.": "https://mariadb.com//kb/en/e3027/"}
+{"Error 3028: Expression of ORDER BY contains aggregate function and applies to a UNION": "https://mariadb.com//kb/en/e3028/"}
+{"Error 3029: Expression of ORDER BY contains aggregate function and applies to the result of a non-aggregated query": "https://mariadb.com//kb/en/e3029/"}
+{"Error 3030: Slave worker has stopped after at least one previous worker encountered an error when slave-preserve-commit-order was enabled": "https://mariadb.com//kb/en/e3030/"}
+{"Error 3031: slave_preserve_commit_order is not supported": "https://mariadb.com//kb/en/e3031/"}
+{"Error 3032: The server is currently in offline mode": "https://mariadb.com//kb/en/e3032/"}
+{"Error 3033: Binary geometry function given two geometries of different srids": "https://mariadb.com//kb/en/e3033/"}
+{"Error 3034: Calling geometry function with unsupported types of arguments": "https://mariadb.com//kb/en/e3034/"}
+{"Error 3035: Unknown GIS error occurred in function": "https://mariadb.com//kb/en/e3035/"}
+{"Error 3036: Unknown exception caught in GIS function": "https://mariadb.com//kb/en/e3036/"}
+{"Error 3037: Invalid GIS data provided to function": "https://mariadb.com//kb/en/e3037/"}
+{"Error 3038: The geometry has no data in function": "https://mariadb.com//kb/en/e3038/"}
+{"Error 3039: Unable to calculate centroid because geometry is empty in function": "https://mariadb.com//kb/en/e3039/"}
+{"Error 3040: Geometry overlay calculation error: geometry data is invalid in function": "https://mariadb.com//kb/en/e3040/"}
+{"Error 3041: Geometry turn info calculation error: geometry data is invalid in function": "https://mariadb.com//kb/en/e3041/"}
+{"Error 3042: Analysis procedures of intersection points interrupted unexpectedly in function": "https://mariadb.com//kb/en/e3042/"}
+{"Error 3043: Unknown exception thrown in function": "https://mariadb.com//kb/en/e3043/"}
+{"Error 3044: Memory allocation error": "https://mariadb.com//kb/en/e3044/"}
+{"Error 3045: Domain error": "https://mariadb.com//kb/en/e3045/"}
+{"Error 3046: Length error": "https://mariadb.com//kb/en/e3046/"}
+{"Error 3047: Invalid argument error": "https://mariadb.com//kb/en/e3047/"}
+{"Error 3048: Out of range error": "https://mariadb.com//kb/en/e3048/"}
+{"Error 3049: Overflow error error": "https://mariadb.com//kb/en/e3049/"}
+{"Error 3050: Range error": "https://mariadb.com//kb/en/e3050/"}
+{"Error 3051: Underflow error": "https://mariadb.com//kb/en/e3051/"}
+{"Error 3052: Logic error": "https://mariadb.com//kb/en/e3052/"}
+{"Error 3053: Runtime error": "https://mariadb.com//kb/en/e3053/"}
+{"Error 3054: Unknown exception": "https://mariadb.com//kb/en/e3054/"}
+{"Error 3055: Geometry byte string must be little endian": "https://mariadb.com//kb/en/e3055/"}
+{"Error 3056: The password provided for the replication user exceeds the maximum length of 32 characters": "https://mariadb.com//kb/en/e3056/"}
+{"Error 3057: Incorrect user-level lock name": "https://mariadb.com//kb/en/e3057/"}
+{"Error 3058: Deadlock found when trying to get user-level lock": "https://mariadb.com//kb/en/e3058/"}
+{"Error 3059: REPLACE cannot be executed as it requires deleting rows that are not in the view": "https://mariadb.com//kb/en/e3059/"}
+{"Error 3060: Do not support online operation on table with GIS index": "https://mariadb.com//kb/en/e3060/"}
+{"Error 4000: COM_MULTI can't return a result set in the given context": "https://mariadb.com//kb/en/e4000/"}
+{"Error 4001: Command is not allowed for COM_MULTI": "https://mariadb.com//kb/en/e4001/"}
+{"Error 4002: WITH column list and SELECT field list have different column counts": "https://mariadb.com//kb/en/e4002/"}
+{"Error 4003: Too many WITH elements in WITH clause": "https://mariadb.com//kb/en/e4003/"}
+{"Error 4004: Duplicate query name in WITH clause": "https://mariadb.com//kb/en/e4004/"}
+{"Error 4005: No anchors for recursive WITH element": "https://mariadb.com//kb/en/e4005/"}
+{"Error 4006: Unacceptable mutual recursion with anchored table": "https://mariadb.com//kb/en/e4006/"}
+{"Error 4007: Reference to recursive WITH table in materialized derived": "https://mariadb.com//kb/en/e4007/"}
+{"Error 4008: Restrictions imposed on recursive definitions are violated for table": "https://mariadb.com//kb/en/e4008/"}
+{"Error 4009: Window specification with name is not defined": "https://mariadb.com//kb/en/e4009/"}
+{"Error 4010: Multiple window specifications with the same name": "https://mariadb.com//kb/en/e4010/"}
+{"Error 4011: Window specification referencing another one cannot contain partition list": "https://mariadb.com//kb/en/e4011/"}
+{"Error 4012: Referenced window specification already contains order list": "https://mariadb.com//kb/en/e4012/"}
+{"Error 4013: Referenced window specification cannot contain window frame": "https://mariadb.com//kb/en/e4013/"}
+{"Error 4014: Unacceptable combination of window frame bound specifications": "https://mariadb.com//kb/en/e4014/"}
+{"Error 4015: Window function is allowed only in SELECT list and ORDER BY clause": "https://mariadb.com//kb/en/e4015/"}
+{"Error 4016: Window function is not allowed in window specification": "https://mariadb.com//kb/en/e4016/"}
+{"Error 4017: Window frame is not allowed with": "https://mariadb.com//kb/en/e4017/"}
+{"Error 4018: No order list in window specification for": "https://mariadb.com//kb/en/e4018/"}
+{"Error 4019: RANGE-type frame requires ORDER BY clause with single sort key": "https://mariadb.com//kb/en/e4019/"}
+{"Error 4020: Integer is required for ROWS-type frame": "https://mariadb.com//kb/en/e4020/"}
+{"Error 4021: Numeric datatype is required for RANGE-type frame": "https://mariadb.com//kb/en/e4021/"}
+{"Error 4022: Frame exclusion is not supported yet": "https://mariadb.com//kb/en/e4022/"}
+{"Error 4023: This window function may not have a window frame": "https://mariadb.com//kb/en/e4023/"}
+{"Error 4024: Argument of NTILE must be greater than 0": "https://mariadb.com//kb/en/e4024/"}
+{"Error 4025: CONSTRAINT failed for": "https://mariadb.com//kb/en/e4025/"}
+{"Error 4026: Expression in the clause is too big": "https://mariadb.com//kb/en/e4026/"}
+{"Error 4027: Got an error evaluating stored expression": "https://mariadb.com//kb/en/e4027/"}
+{"Error 4028: Got an error when calculating default value for": "https://mariadb.com//kb/en/e4028/"}
+{"Error 4029: Expression for field is referring to uninitialized field": "https://mariadb.com//kb/en/e4029/"}
+{"Error 4030: Only one DEFAULT partition allowed": "https://mariadb.com//kb/en/e4030/"}
+{"Error 4031: Referenced trigger for the given action time and event type does not exist": "https://mariadb.com//kb/en/e4031/"}
+{"Error 4032: Default/ignore value is not supported for such parameter usage": "https://mariadb.com//kb/en/e4032/"}
+{"Error 4033: Only row based replication supported for bulk operations": "https://mariadb.com//kb/en/e4033/"}
+{"Error 4034: Uncompress the compressed binlog failed": "https://mariadb.com//kb/en/e4034/"}
+{"Error 4035: Broken JSON string in argument to function at position": "https://mariadb.com//kb/en/e4035/"}
+{"Error 4036: Character disallowed in JSON in argument to function at position": "https://mariadb.com//kb/en/e4036/"}
+{"Error 4037: Unexpected end of JSON text in argument to function": "https://mariadb.com//kb/en/e4037/"}
+{"Error 4038: Syntax error in JSON text in argument to function at position": "https://mariadb.com//kb/en/e4038/"}
+{"Error 4039: Incorrect escaping in JSON text in argument to function at position": "https://mariadb.com//kb/en/e4039/"}
+{"Error 4040: Limit on JSON nested strucures depth is reached in argument to function at position": "https://mariadb.com//kb/en/e4040/"}
+{"Error 4041: Unexpected end of JSON path in argument to function": "https://mariadb.com//kb/en/e4041/"}
+{"Error 4042: Syntax error in JSON path in argument to function at position": "https://mariadb.com//kb/en/e4042/"}
+{"Error 4043: Limit on JSON path depth is reached in argument to function at position": "https://mariadb.com//kb/en/e4043/"}
+{"Error 4044: Wildcards in JSON path not allowed in argument to function": "https://mariadb.com//kb/en/e4044/"}
+{"Error 4045: JSON path should end with an array identifier in argument to function": "https://mariadb.com//kb/en/e4045/"}
+{"Error 4046: Argument 2 to function must be \"one\" or \"all\".": "https://mariadb.com//kb/en/e4046/"}
+{"Error 4047: CREATE TEMPORARY TABLE is not allowed with ROW_FORMAT=COMPRESSED or KEY_BLOCK_SIZE.": "https://mariadb.com//kb/en/e4047/"}
+{"Error 4048: Incorrect GeoJSON format specified for st_geomfromgeojson function": "https://mariadb.com//kb/en/e4048/"}
+{"Error 4049: Incorrect GeoJSON format - too few points for linestring specified": "https://mariadb.com//kb/en/e4049/"}
+{"Error 4050: Incorrect GeoJSON format - polygon not closed": "https://mariadb.com//kb/en/e4050/"}
+{"Error 4051: Path expression '$' is not allowed in argument to function": "https://mariadb.com//kb/en/e4051/"}
+{"Error 4052: A slave with the same server_uuid/server_id as this slave has connected to the master": "https://mariadb.com//kb/en/e4052/"}
+{"Error 4053: Flashback does not support": "https://mariadb.com//kb/en/e4053/"}
+{"Error 4054: Keys are out order during bulk load": "https://mariadb.com//kb/en/e4054/"}
+{"Error 4055: Bulk load rows overlap existing rows": "https://mariadb.com//kb/en/e4055/"}
+{"Error 4056: Can't execute updates on master with binlog_format != ROW": "https://mariadb.com//kb/en/e4056/"}
+{"Error 4057: MyRocks supports only READ COMMITTED and REPEATABLE READ isolation levels": "https://mariadb.com//kb/en/e4057/"}
+{"Error 4058: When unique checking is disabled in MyRocks, INSERT,UPDATE,LOAD statements with clauses that update or replace the key are not allowed": "https://mariadb.com//kb/en/e4058/"}
+{"Error 4059: Can't execute updates when you started a transaction with START TRANSACTION WITH CONSISTENT [ROCKSDB] SNAPSHOT": "https://mariadb.com//kb/en/e4059/"}
+{"Error 4060: This transaction was rolled back and cannot be committed. Only supported operation is to roll it back, so all pending changes will be discarded": "https://mariadb.com//kb/en/e4060/"}
+{"Error 4061: MyRocks currently does not support ROLLBACK TO SAVEPOINT if modifying rows": "https://mariadb.com//kb/en/e4061/"}
+{"Error 4062: Only REPEATABLE READ isolation level is supported for START TRANSACTION WITH CONSISTENT SNAPSHOT in RocksDB Storage Engine": "https://mariadb.com//kb/en/e4062/"}
+{"Error 4063: Unsupported collation on string indexed column": "https://mariadb.com//kb/en/e4063/"}
+{"Error 4064: Table '%s' does not exist, but metadata information exists inside MyRocks. This is a sign of data inconsistency. Please check if frm exists, and try to restore it if it does not exist": "https://mariadb.com//kb/en/e4064/"}
+{"Error 4065: Column family flag is different from an existing flag": "https://mariadb.com//kb/en/e4065/"}
+{"Error 4066: TTL duration in MyRocks must be an unsigned non-null 64-bit integer": "https://mariadb.com//kb/en/e4066/"}
+{"Error 4067: Status error received from RocksDB": "https://mariadb.com//kb/en/e4067/"}
+{"Error 4068: Status error received from RocksDB": "https://mariadb.com//kb/en/e4068/"}
+{"Error 4069: TTL support is currently disabled when table has a hidden PK": "https://mariadb.com//kb/en/e4069/"}
+{"Error 4070: TTL column in MyRocks must be an unsigned non-null 64-bit integer, exist inside the table, and have an accompanying ttl duration": "https://mariadb.com//kb/en/e4070/"}
+{"Error 4071: The per-index column family option has been deprecated": "https://mariadb.com//kb/en/e4071/"}
+{"Error 4072: MyRocks failed creating new key definitions during alter": "https://mariadb.com//kb/en/e4072/"}
+{"Error 4073: MyRocks failed populating secondary key during alter": "https://mariadb.com//kb/en/e4073/"}
+{"Error 4074: Window functions can not be used as arguments to group functions": "https://mariadb.com//kb/en/e4074/"}
+{"Error 4075: OK packet too large": "https://mariadb.com//kb/en/e4075/"}
+{"Error 4076: Incorrect GeoJSON format - empty 'coordinates' array": "https://mariadb.com//kb/en/e4076/"}
+{"Error 4077: MyRocks doesn't currently support collations with \"No pad\" attribute": "https://mariadb.com//kb/en/e4077/"}
+{"Error 4078: Illegal parameter data types for operation": "https://mariadb.com//kb/en/e4078/"}
+{"Error 4079: Illegal parameter data type for operation": "https://mariadb.com//kb/en/e4079/"}
+{"Error 4080: Incorrect parameter count to cursor": "https://mariadb.com//kb/en/e4080/"}
+{"Error 4081: Unknown structured system variable or ROW routine variable": "https://mariadb.com//kb/en/e4081/"}
+{"Error 4082: Row variable does not have a field": "https://mariadb.com//kb/en/e4082/"}
+{"Error 4083: END identifier does not match": "https://mariadb.com//kb/en/e4083/"}
+{"Error 4084: Sequence has run out": "https://mariadb.com//kb/en/e4084/"}
+{"Error 4085: Sequence values are conflicting": "https://mariadb.com//kb/en/e4085/"}
+{"Error 4086: Sequence table structure is invalid": "https://mariadb.com//kb/en/e4086/"}
+{"Error 4087: Sequence access error": "https://mariadb.com//kb/en/e4087/"}
+{"Error 4088: Sequences requires binlog_format mixed or row": "https://mariadb.com//kb/en/e4088/"}
+{"Error 4089: is not a SEQUENCE": "https://mariadb.com//kb/en/e4089/"}
+{"Error 4090: is not a SEQUENCE": "https://mariadb.com//kb/en/e4090/"}
+{"Error 4091: Unknown SEQUENCE": "https://mariadb.com//kb/en/e4091/"}
+{"Error 4092: Unknown VIEW": "https://mariadb.com//kb/en/e4092/"}
+{"Error 4093: Wrong INSERT into a SEQUENCE. One can only do single table INSERT into a sequence object": "https://mariadb.com//kb/en/e4093/"}
+{"Error 4094: At line in": "https://mariadb.com//kb/en/e4094/"}
+{"Error 4095: Subroutine is declared in the package specification but is not defined in the package body": "https://mariadb.com//kb/en/e4095/"}
+{"Error 4096: Subroutine has a forward declaration but is not defined": "https://mariadb.com//kb/en/e4096/"}
+{"Error 4097: Compressed column can't be used in key specification": "https://mariadb.com//kb/en/e4097/"}
+{"Error 4098: Unknown compression method": "https://mariadb.com//kb/en/e4098/"}
+{"Error 4099: The used table value constructor has a different number of values": "https://mariadb.com//kb/en/e4099/"}
+{"Error 4100: Field reference can't be used in table value constructor": "https://mariadb.com//kb/en/e4100/"}
+{"Error 4101: Numeric datatype is required for function": "https://mariadb.com//kb/en/e4101/"}
+{"Error 4102: Argument to the function is not a constant for a partition": "https://mariadb.com//kb/en/e4102/"}
+{"Error 4103: Argument to the function does not belong to the range [0,1]": "https://mariadb.com//kb/en/e4103/"}
+{"Error 4104: function only accepts arguments that can be converted to numerical types": "https://mariadb.com//kb/en/e4104/"}
+{"Error 4105: Aggregate specific instruction (FETCH GROUP NEXT ROW) used in a wrong context": "https://mariadb.com//kb/en/e4105/"}
+{"Error 4106: Aggregate specific instruction(FETCH GROUP NEXT ROW) missing from the aggregate function": "https://mariadb.com//kb/en/e4106/"}
+{"Error 4107: Limit only accepts integer values": "https://mariadb.com//kb/en/e4107/"}
+{"Error 4108: Invisible column must have a default value": "https://mariadb.com//kb/en/e4108/"}
+{"Error 4109: Rows matched: Changed: Inserted: Warnings:": "https://mariadb.com//kb/en/e4109/"}
+{"Error 4110: must be of type for system-versioned table": "https://mariadb.com//kb/en/e4110/"}
+{"Error 4111: Transaction-precise system versioning for is not supported": "https://mariadb.com//kb/en/e4111/"}
+{"Error 4112: You should never see it": "https://mariadb.com//kb/en/e4112/"}
+{"Error 4113: Wrong partitioning type, expected type": "https://mariadb.com//kb/en/e4113/"}
+{"Error 4114: Versioned table last HISTORY partition is out of, need more HISTORY partitions": "https://mariadb.com//kb/en/e4114/"}
+{"Error 4115: Maybe missing parameters": "https://mariadb.com//kb/en/e4115/"}
+{"Error 4116: Can only drop oldest partitions when rotating by INTERVAL": "https://mariadb.com//kb/en/e4116/"}
+{"Error 4117: You should never see it": "https://mariadb.com//kb/en/e4117/"}
+{"Error 4118: Partition contains non-historical data": "https://mariadb.com//kb/en/e4118/"}
+{"Error 4119: Not allowed for system-versioned. Change @@system_versioning_alter_history to proceed with ALTER": "https://mariadb.com//kb/en/e4119/"}
+{"Error 4120: Not allowed for system-versioned. Change to/from native system versioning engine is not supported": "https://mariadb.com//kb/en/e4120/"}
+{"Error 4121: SYSTEM_TIME range selector is not allowed": "https://mariadb.com//kb/en/e4121/"}
+{"Error 4122: Conflicting FOR SYSTEM_TIME clauses in WITH RECURSIVE": "https://mariadb.com//kb/en/e4122/"}
+{"Error 4123: Table must have at least one versioned column": "https://mariadb.com//kb/en/e4123/"}
+{"Error 4124: Table is not system-versioned": "https://mariadb.com//kb/en/e4124/"}
+{"Error 4125: Wrong parameters for: missing": "https://mariadb.com//kb/en/e4125/"}
+{"Error 4126: PERIOD FOR SYSTEM_TIME must use columns": "https://mariadb.com//kb/en/e4126/"}
+{"Error 4127: Wrong parameters for partitioned: wrong value for": "https://mariadb.com//kb/en/e4127/"}
+{"Error 4128: Wrong partitions for: must have at least one HISTORY and exactly one last CURRENT": "https://mariadb.com//kb/en/e4128/"}
+{"Error 4129: TRX_ID not found in `mysql.transaction_registry`": "https://mariadb.com//kb/en/e4129/"}
+{"Error 4130: Can not change system versioning field": "https://mariadb.com//kb/en/e4130/"}
+{"Error 4131: Can not DROP SYSTEM VERSIONING for table partitioned BY SYSTEM_TIME": "https://mariadb.com//kb/en/e4131/"}
+{"Error 4132: System-versioned tables in the database are not supported": "https://mariadb.com//kb/en/e4132/"}
+{"Error 4133: Transaction registry is disabled": "https://mariadb.com//kb/en/e4133/"}
+{"Error 4134: Duplicate ROW column": "https://mariadb.com//kb/en/e4134/"}
+{"Error 4135: Table is already system-versioned": "https://mariadb.com//kb/en/e4135/"}
+{"Error 4136: You should never see it": "https://mariadb.com//kb/en/e4136/"}
+{"Error 4137: System-versioned tables do not support": "https://mariadb.com//kb/en/e4137/"}
+{"Error 4138: Transaction-precise system-versioned tables do not support partitioning by ROW START or ROW END": "https://mariadb.com//kb/en/e4138/"}
+{"Error 4139: The index file for table is full": "https://mariadb.com//kb/en/e4139/"}
+{"Error 4140: The column cannot be changed more than once in a single UPDATE statement": "https://mariadb.com//kb/en/e4140/"}
+{"Error 4141: Row with no elements is not allowed in table value constructor in this context": "https://mariadb.com//kb/en/e4141/"}
+{"Error 4142: SYSTEM_TIME partitions in table does not support historical query": "https://mariadb.com//kb/en/e4142/"}
+{"Error 4143: index does not support this operation": "https://mariadb.com//kb/en/e4143/"}
+{"Error 4144: Changing table options requires the table to be rebuilt": "https://mariadb.com//kb/en/e4144/"}
+{"Error 4145: Can't execute the command as you have a BACKUP STAGE active": "https://mariadb.com//kb/en/e4145/"}
+{"Error 4146: You must start backup with \"BACKUP STAGE START\"": "https://mariadb.com//kb/en/e4146/"}
+{"Error 4147: Backup stage is same or before current backup stage": "https://mariadb.com//kb/en/e4147/"}
+{"Error 4148: Backup stage failed": "https://mariadb.com//kb/en/e4148/"}
+{"Error 4149: Unknown backup stage: Stage should be one of START, FLUSH, BLOCK_DDL, BLOCK_COMMIT or END": "https://mariadb.com//kb/en/e4149/"}
+{"Error 4150: User is blocked because of too many credential errors; unblock with 'FLUSH PRIVILEGES'": "https://mariadb.com//kb/en/e4150/"}
+{"Error 4151: Access denied, this account is locked": "https://mariadb.com//kb/en/e4151/"}
+{"Error 4152: Application-time period table cannot be temporary": "https://mariadb.com//kb/en/e4152/"}
+{"Error 4153: Fields of PERIOD FOR have different types": "https://mariadb.com//kb/en/e4153/"}
+{"Error 4154: Cannot specify more than one application-time period": "https://mariadb.com//kb/en/e4154/"}
+{"Error 4155: Period field cannot be": "https://mariadb.com//kb/en/e4155/"}
+{"Error 4156: Period is not found in table": "https://mariadb.com//kb/en/e4156/"}
+{"Error 4157: Column used in period specified in update SET list": "https://mariadb.com//kb/en/e4157/"}
+{"Error 4158: Can't DROP CONSTRAINT. Use DROP PERIOD for this": "https://mariadb.com//kb/en/e4158/"}
+{"Error 4159: Specified key part was too long; max key part length is": "https://mariadb.com//kb/en/e4159/"}
+{"Error 4160: Comment for database is too long": "https://mariadb.com//kb/en/e4160/"}
+{"Error 4161: Unknown data type": "https://mariadb.com//kb/en/e4161/"}
+{"Error 4162: Operator does not exists": "https://mariadb.com//kb/en/e4162/"}
+{"Error 4163: Table history row start is later than row end": "https://mariadb.com//kb/en/e4163/"}
+{"Error 4164: STARTS is later than query time, first history partition may exceed INTERVAL value": "https://mariadb.com//kb/en/e4164/"}
+{"Error 4165: DDL-statement is forbidden as table storage engine does not support Galera replication": "https://mariadb.com//kb/en/e4165/"}
+{"Error 4166: The used command is not allowed because the MariaDB server or client has disabled the local infile capability": "https://mariadb.com//kb/en/e4166/"}
+{"Error 4167: No secure transports are configured, unable to set --require_secure_transport=ON": "https://mariadb.com//kb/en/e4167/"}
+{"Error 4168: Slave SQL thread ignored the '%s' because table is shared": "https://mariadb.com//kb/en/e4168/"}
+{"Error 4169: AUTO_INCREMENT column cannot be used in the UNIQUE index": "https://mariadb.com//kb/en/e4169/"}
+{"Error 4170: Key cannot explicitly include column": "https://mariadb.com//kb/en/e4170/"}
+{"Error 4171: Key cannot have WITHOUT OVERLAPS": "https://mariadb.com//kb/en/e4171/"}
+{"Error 4172: is not allowed in this context": "https://mariadb.com//kb/en/e4172/"}
+{"Error 4173: Engine does not support rollback. Changes where commited during rollback call": "https://mariadb.com//kb/en/e4173/"}
+{"Error 4174: A primary key cannot be marked as IGNORE": "https://mariadb.com//kb/en/e4174/"}
+{"Error 4175: SKIP LOCKED makes this statement unsafe": "https://mariadb.com//kb/en/e4175/"}
+{"Error 4176: Field can't be set for JSON_TABLE": "https://mariadb.com//kb/en/e4176/"}
+{"Error 4177: Every table function must have an alias": "https://mariadb.com//kb/en/e4177/"}
+{"Error 4178: Can't store an array or an object in the scalar column of JSON_TABLE": "https://mariadb.com//kb/en/e4178/"}
+{"Error 4179: Can't store multiple matches of the path in the column of JSON_TABLE": "https://mariadb.com//kb/en/e4179/"}
+{"Error 4180: FETCH ... WITH TIES requires ORDER BY clause to be present": "https://mariadb.com//kb/en/e4180/"}
+{"Error 4181: Dropped orphan trigger, originally created for table": "https://mariadb.com//kb/en/e4181/"}
+{"Error 4182: Storage engine is disabled": "https://mariadb.com//kb/en/e4182/"}
+{"Error 4183: SFORMAT error": "https://mariadb.com//kb/en/e4183/"}
+{"Error 4184: Convert partition is not supported for subpartitioned table": "https://mariadb.com//kb/en/e4184/"}
+{"Error 4185: MariaDB tried to use the %s, but its provider plugin is not loaded": "https://mariadb.com//kb/en/e4185/"}
+{"Error 4186: Failed to parse histogram for table at offset": "https://mariadb.com//kb/en/e4186/"}
+{"Error 4187: OUT or INOUT argument for function is not allowed here": "https://mariadb.com//kb/en/e4187/"}
+{"Error 4188: Replicated query table can not be temporary": "https://mariadb.com//kb/en/e4188/"}
+{"Error 4189: Versioned table: adding HISTORY partition(s) failed": "https://mariadb.com//kb/en/e4189/"}
+{"Error 4190: is implicitly changing the value of  from to": "https://mariadb.com//kb/en/e4190/"}
+{"Error 4191: CHANGE MASTER TO option is missing requirement": "https://mariadb.com//kb/en/e4191/"}
+{"Error 4192: Slave log event execution was interrupted (slave_max_statement_time exceeded)": "https://mariadb.com//kb/en/e4192/"}
+{"Error 4193: Invalid value for keyword": "https://mariadb.com//kb/en/e4193/"}
+{"Error 4194: keyword is not supported": "https://mariadb.com//kb/en/e4194/"}
+{"Error 4195: Variable schema is not supported": "https://mariadb.com//kb/en/e4195/"}
+{"Error 4196: Wrong number of columns": "https://mariadb.com//kb/en/e4196/"}
+{"Error 4197: Sequence tables cannot have any keys": "https://mariadb.com//kb/en/e4197/"}
+{"Error 4198: Sequence tables cannot have any constraints": "https://mariadb.com//kb/en/e4198/"}
+{"Error 4199: ORDER BY": "https://mariadb.com//kb/en/e4199/"}
+{"Error 4200: The variable is ignored": "https://mariadb.com//kb/en/e4200/"}
+{"Error 4201: Invalid binary vector format": "https://mariadb.com//kb/en/e4201/"}
+{"Error 4202: Invalid vector format at offset": "https://mariadb.com//kb/en/e4202/"}
+{"DECLARE CONDITION": "https://mariadb.com//kb/en/declare-condition/"}
+{"DECLARE HANDLER": "https://mariadb.com//kb/en/declare-handler/"}
+{"Diagnostics Area": "https://mariadb.com//kb/en/diagnostics-area/"}
+{"GET DIAGNOSTICS": "https://mariadb.com//kb/en/get-diagnostics/"}
+{"RESIGNAL": "https://mariadb.com//kb/en/resignal/"}
+{"SHOW ERRORS": "https://mariadb.com//kb/en/show-errors/"}
+{"SHOW WARNINGS": "https://mariadb.com//kb/en/show-warnings/"}
+{"SIGNAL": "https://mariadb.com//kb/en/signal/"}
+{"SQL Error Log Plugin": "https://mariadb.com//kb/en/sql-error-log-plugin/"}
+{"SQLSTATE": "https://mariadb.com//kb/en/sqlstate/"}

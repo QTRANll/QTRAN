@@ -1,0 +1,31 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/built-in-function-reference.html",
+        "https://dev.mysql.com/doc/refman/8.4/en/aggregate-functions.html"
+    ],
+    "Title": [
+        "14.1 Built-In Function and Operator Reference",
+        "14.19.1 Aggregate Function Descriptions"
+    ],
+    "Feature": [
+        "VAR_POP(expr)\n            [over_clause]"
+    ],
+    "Description": [
+        "Return the population standard variance",
+        "\nVAR_POP(expr)\n            [over_clause]\n",
+        "\n            Returns the population standard variance of\n            expr. It considers rows as the\n            whole population, not as a sample, so it has the number of\n            rows as the denominator. You can also use\n            VARIANCE(), which is\n            equivalent but is not standard SQL.\n          ",
+        "\n            If there are no matching rows, or if\n            expr is NULL,\n            VAR_POP() returns\n            NULL.\n          ",
+        "\n            This function executes as a window function if\n            over_clause is present.\n            over_clause is as described in\n            Section\u00a014.20.2, \u201cWindow Function Concepts and Syntax\u201d.\n          "
+    ],
+    "Examples": [],
+    "Category": [
+        "Built-In Functions",
+        "Aggregate Functions"
+    ],
+    "Reference HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/aggregate-functions.html#function_var-pop"
+    ],
+    "Feature Type": [
+        "Function"
+    ]
+}

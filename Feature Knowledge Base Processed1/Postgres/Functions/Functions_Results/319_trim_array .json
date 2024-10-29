@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/current/functions-array.html"
+    ],
+    "Title": [
+        "trim_array"
+    ],
+    "Feature": [
+        "trim_array ( array anyarray, n integer ) → anyarray"
+    ],
+    "Description": [
+        "Trims an array by removing the last n elements. If the array is multidimensional, only the first dimension is trimmed."
+    ],
+    "Examples": [
+        "trim_array(ARRAY[1,2,3,4,5,6], 2) → {1,2,3,4}"
+    ],
+    "Category": [
+        "Array Functions and Operators"
+    ]
+}

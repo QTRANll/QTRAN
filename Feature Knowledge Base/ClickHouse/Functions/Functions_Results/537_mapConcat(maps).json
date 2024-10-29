@@ -1,0 +1,28 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/tuple-map-functions"
+    ],
+    "Title": [
+        "mapConcat"
+    ],
+    "Feature": [
+        "mapConcat(maps)"
+    ],
+    "Description": [
+        "mapConcat",
+        "Concatenates multiple maps based on the equality of their keys.\nIf elements with the same key exist in more than one input map, all elements are added to the result map, but only the first one is accessible via operator []",
+        "Syntax",
+        "mapConcat(maps)",
+        "Arguments",
+        "maps \u2013 Arbitrarily many Maps.",
+        "Returned value",
+        "Returns a map with concatenated maps passed as arguments."
+    ],
+    "Examples": [
+        "SELECT mapConcat(map('key1', 1, 'key3', 3), map('key2', 2)) AS map;",
+        "SELECT mapConcat(map('key1', 1, 'key2', 2), map('key1', 3)) AS map, map['key1'];"
+    ],
+    "Category": [
+        "Maps Functions"
+    ]
+}

@@ -1,0 +1,33 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/alter-database/"
+    ],
+    "Title": [
+        "ALTER DATABASE"
+    ],
+    "Feature": [
+        "ALTER {DATABASE | SCHEMA} [db_name]\n    alter_specification ...\nALTER {DATABASE | SCHEMA} db_name\n    UPGRADE DATA DIRECTORY NAME\n\nalter_specification:\n    [DEFAULT] CHARACTER SET [=] charset_name\n  | [DEFAULT] COLLATE [=] collation_name\n  | COMMENT [=] 'comment'\n"
+    ],
+    "Description": [
+        "ALTER DATABASE enables you to change the overall characteristics of a\ndatabase. These characteristics are stored in the db.opt file in the\ndatabase directory. To use ALTER DATABASE, you need the ALTER\nprivilege on the database. ALTER SCHEMA is a synonym for ALTER\nDATABASE.",
+        "The CHARACTER SET clause changes the default database character set.\nThe COLLATE clause changes the default database collation. See Character Sets and Collations for more.",
+        "You can see what character sets and collations are available using,\nrespectively, the SHOW CHARACTER SET and SHOW COLLATION statements.",
+        "Changing the default character set/collation of a database does not change the character set/collation of any stored procedures or stored functions that were previously created, and relied on the defaults. These need to be dropped and recreated in order to apply the character set/collation changes.",
+        "The database name can be omitted from the first syntax, in which case\nthe statement applies to the default database.",
+        "The syntax that includes the UPGRADE DATA DIRECTORY NAME clause was\nadded in MySQL 5.1.23. It updates the name of the directory associated\nwith the database to use the encoding implemented in MySQL 5.1 for\nmapping database names to database directory names (see\nIdentifier to File Name Mapping). This\nclause is for use under these conditions:",
+        "It is intended when upgrading MySQL to 5.1 or later from older versions.\nIt is intended to update a database directory name to the current encoding format if the name contains special characters that need encoding.\nThe statement is used by mariadb-check (as invoked by mariadb-upgrade).\n",
+        "For example,if a database in MySQL 5.0 has a name of a-b-c, the name\ncontains instance of the `-' character. In 5.0, the database directory\nis also named a-b-c, which is not necessarily safe for all file\nsystems. In MySQL 5.1 and up, the same database name is encoded as\na@002db@002dc to produce a file system-neutral directory name.",
+        "When a MySQL installation is upgraded to MySQL 5.1 or later from an\nolder version,the server displays a name such as a-b-c (which is in\nthe old format) as #mysql50#a-b-c, and you must refer to the name\nusing the #mysql50# prefix. Use UPGRADE DATA DIRECTORY NAME in this\ncase to explicitly tell the server to re-encode the database directory\nname to the current encoding format:",
+        "ALTER DATABASE `#mysql50#a-b-c` UPGRADE DATA DIRECTORY NAME;\n",
+        "After executing this statement, you can refer to the database as a-b-c\nwithout the special #mysql50# prefix.",
+        "COMMENT",
+        "MariaDB starting with 10.5.0From MariaDB 10.5.0, it is possible to add a comment of a maximum of 1024 bytes. If the comment length exceeds this length, a error/warning code 4144 is thrown. The database comment is also added to the db.opt file, as well as to the information_schema.schemata table.\n"
+    ],
+    "Examples": [
+        "ALTER DATABASE test CHARACTER SET='utf8'  COLLATE='utf8_bin';\n",
+        "ALTER DATABASE p COMMENT='Presentations';\n"
+    ],
+    "Category": [
+        "Data Definition"
+    ]
+}

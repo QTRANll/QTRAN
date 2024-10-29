@@ -1,0 +1,26 @@
+{
+    "HTML": [
+        "https://docs.pingcap.com//zh/tidb/stable/sql-statement-add-column"
+    ],
+    "Title": [
+        "ADD COLUMN"
+    ],
+    "Feature": [
+        "AlterTableStmt\n         ::= 'ALTER' 'IGNORE'? 'TABLE' TableName AddColumnSpec ( ',' AddColumnSpec )*\n\nTableName ::=\n    Identifier ('.' Identifier)?\n\nAddColumnSpec\n         ::= 'ADD' 'COLUMN' 'IF NOT EXISTS'? ColumnName ColumnType ColumnOption+ ( 'FIRST' | 'AFTER' ColumnName )?\n\nColumnType\n         ::= NumericType\n           | StringType\n           | DateAndTimeType\n           | 'SERIAL'\n\nColumnOption\n         ::= 'NOT'? 'NULL'\n           | 'AUTO_INCREMENT'\n           | 'PRIMARY'? 'KEY' ( 'CLUSTERED' | 'NONCLUSTERED' )?\n           | 'UNIQUE' 'KEY'?\n           | 'DEFAULT' ( NowSymOptionFraction | SignedLiteral | NextValueForSequence )\n           | 'SERIAL' 'DEFAULT' 'VALUE'\n           | 'ON' 'UPDATE' NowSymOptionFraction\n           | 'COMMENT' stringLit\n           | ( 'CONSTRAINT' Identifier? )? 'CHECK' '(' Expression ')' ( 'NOT'? ( 'ENFORCED' | 'NULL' ) )?\n           | 'GENERATED' 'ALWAYS' 'AS' '(' Expression ')' ( 'VIRTUAL' | 'STORED' )?\n           | 'REFERENCES' TableName ( '(' IndexPartSpecificationList ')' )? Match? OnDeleteUpdateOpt\n           | 'COLLATE' CollationName\n           | 'COLUMN_FORMAT' ColumnFormat\n           | 'STORAGE' StorageMedia\n           | 'AUTO_RANDOM' ( '(' LengthNum ')' )?\n"
+    ],
+    "Description": [
+        "ALTER TABLE.. ADD COLUMN \u8bed\u53e5\u7528\u4e8e\u5728\u5df2\u6709\u8868\u4e2d\u6dfb\u52a0\u5217\u3002\u5728 TiDB \u4e2d\uff0cADD COLUMN \u4e3a\u5728\u7ebf\u64cd\u4f5c\uff0c\u4e0d\u4f1a\u963b\u585e\u8868\u4e2d\u7684\u6570\u636e\u8bfb\u5199\u3002"
+    ],
+    "Examples": [
+        "CREATE TABLE t1 (id INT NOT NULL PRIMARY KEY AUTO_INCREMENT);\n",
+        "INSERT INTO t1 VALUES (NULL);\n",
+        "SELECT * FROM t1;\n",
+        "ALTER TABLE t1 ADD COLUMN c1 INT NOT NULL;\n",
+        "SELECT * FROM t1;\n",
+        "ALTER TABLE t1 ADD c2 INT NOT NULL AFTER c1;\n",
+        "SELECT * FROM t1;\n"
+    ],
+    "Category": [
+        "Schema \u7ba1\u7406\u4e0e\u6570\u636e\u5b9a\u4e49\u8bed\u53e5 (DDL)"
+    ]
+}

@@ -1,0 +1,21 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000000823389"
+    ],
+    "Title": [
+        "LOCALTIME"
+    ],
+    "Feature": [
+        "LOCALTIME\nLOCALTIME([scale])\n"
+    ],
+    "Description": [
+        "返回当前日期时间。LOCALTIME 和 LOCALTIME() 是 NOW() 的同义词。",
+        "scale 表示微秒部分的精度，有效值为 0 到 6 的整数，默认值为 0。"
+    ],
+    "Examples": [
+        "obclient> SELECT LOCALTIME(0);\n+---------------------+\n| LOCALTIME(0)        |\n+---------------------+\n| 2021-08-25 17:20:31 |\n+---------------------+\n1 row in set\n\nobclient> SELECT LOCALTIME(6);\n+----------------------------+\n| LOCALTIME(6)               |\n+----------------------------+\n| 2021-08-25 17:20:41.358574 |\n+----------------------------+\n1 row in set\n"
+    ],
+    "Category": [
+        "Date and Time Functions"
+    ]
+}

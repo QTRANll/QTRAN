@@ -1,0 +1,23 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/mathematical-functions.html#function_atan2"
+    ],
+    "Title": [
+        "ATAN2(), ATAN()"
+    ],
+    "Feature": [
+        "ATAN(Y,X)"
+    ],
+    "Description": [
+        "Return the arc tangent of the two arguments",
+        "\nATAN(Y,X),\n            ATAN2(Y,X)\n",
+        "\n            Returns the arc tangent of the two variables\n            X and\n            Y. It is similar to calculating\n            the arc tangent of Y /\n            X, except that the\n            signs of both arguments are used to determine the quadrant\n            of the result. Returns NULL if\n            X or Y\n            is NULL.\n          ",
+        "Press CTRL+C to copy mysql> SELECT ATAN(-2,2);\n        -> -0.78539816339745\nmysql> SELECT ATAN2(PI(),0);\n        -> 1.5707963267949"
+    ],
+    "Examples": [
+        "mysql> SELECT ATAN(-2,2);\n        -> -0.78539816339745\nmysql> SELECT ATAN2(PI(),0);\n        -> 1.5707963267949"
+    ],
+    "Category": [
+        "Mathematical Functions"
+    ]
+}

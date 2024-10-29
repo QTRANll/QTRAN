@@ -1,0 +1,23 @@
+{
+    "HTML": [
+        "https://docs.pingcap.com/zh/tidb/stable/json-functions-modify#json_set"
+    ],
+    "Title": [
+        "JSON_SET()"
+    ],
+    "Feature": [
+        "JSON_SET()"
+    ],
+    "Description": [
+        "JSON_SET()",
+        "JSON_SET(json_doc,path,value[,path,value] ...) \u51fd\u6570\u5728 JSON \u6587\u6863\u4e2d\u63d2\u5165\u6216\u66f4\u65b0\u6570\u636e\uff0c\u5e76\u8fd4\u56de\u7ed3\u679c\u3002",
+        "\u8be5\u51fd\u6570\u53ef\u63a5\u53d7\u6210\u5bf9\u7684 path \u548c value \u53c2\u6570\u3002"
+    ],
+    "Examples": [
+        "SELECT JSON_SET('{\"version\": 1.1, \"name\": \"example\"}','$.version',1.2);\n",
+        "SELECT JSON_SET('{\"version\": 1.1, \"name\": \"example\"}','$.version',1.2,'$.branch', \"main\");\n"
+    ],
+    "Category": [
+        "JSON Functions"
+    ]
+}

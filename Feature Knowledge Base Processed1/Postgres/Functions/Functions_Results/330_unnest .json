@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/current/functions-range.html"
+    ],
+    "Title": [
+        "unnest"
+    ],
+    "Feature": [
+        "unnest ( anymultirange ) → setof anyrange"
+    ],
+    "Description": [
+        "Expands a multirange into a set of ranges in ascending order."
+    ],
+    "Examples": [
+        "unnest('{[1,2), [3,4)}'::int4multirange) →"
+    ],
+    "Category": [
+        "Range divide Multirange Functions and Operators"
+    ]
+}

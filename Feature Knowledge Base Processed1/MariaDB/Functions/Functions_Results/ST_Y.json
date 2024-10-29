@@ -1,0 +1,57 @@
+{
+    "HTML": "https://mariadb.com//kb/en/st_y/",
+    "Title": "ST_Y",
+    "Feature": [
+        "ST_Y(p)\nY(p)\n"
+    ],
+    "Description": [
+        "Returns the Y-coordinate value for the point p as a double-precision number.",
+        "ST_Y() and Y() are synonyms."
+    ],
+    "Examples": [
+        "SET @pt = 'Point(56.7 53.34)';\n\nSELECT Y(GeomFromText(@pt));\n+----------------------+\n| Y(GeomFromText(@pt)) |\n+----------------------+\n|                53.34 |\n+----------------------+\n"
+    ],
+    "Category": [
+        "Geographic Functions"
+    ],
+    "Effective SQLs Refined": [],
+    "Ineffective SQLs Refined": [],
+    "Wrong Messages from Ineffective SQLs Refined": [],
+    "SQLs Generated1": [
+        {
+            "Example SQL": "SELECT ST_Y(point) AS y_coordinate;"
+        },
+        {
+            "Example SQL": "SELECT ST_Y(POINT(1, 2)) AS y_coordinate;"
+        }
+    ],
+    "SQLs Generated Costs1": [
+        {
+            "Total Tokens": 284,
+            "Prompt Tokens": 263,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 5.205e-05
+        },
+        {
+            "Total Tokens": 438,
+            "Prompt Tokens": 411,
+            "Completion Tokens": 27,
+            "Total Cost (USD)": 7.785e-05
+        }
+    ],
+    "SQLs Generated ExecResults1": [
+        "None",
+        "[(2.0,)]"
+    ],
+    "SQLs Generated ExecTimes1": [
+        "0",
+        "0.0041942596435546875"
+    ],
+    "SQLs Generated ErrorMessages1": [
+        "(pymysql.err.OperationalError) (1054, \"Unknown column 'point' in 'field list'\")\n",
+        "None"
+    ],
+    "Effective SQLs Generated1": [
+        "SELECT ST_Y(POINT(1, 2)) AS y_coordinate;"
+    ]
+}

@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://www.monetdb.org/documentation-Aug2024/user-guide/sql-functions/window-functions"
+    ],
+    "Title": [
+        "lag(value any [, offset integer [, default any]])"
+    ],
+    "Feature": [
+        "lag(value any [, offset integer [, default any]])"
+    ],
+    "Description": [
+        "Return type: ",
+        "same type as value",
+        "returns value evaluated at the row that is offset rows before the current row within the partition; if there is no such row, instead return default (which must be of the same type as value). Both offset and default are evaluated with respect to the current row. If omitted, offset defaults to 1 and default to null."
+    ],
+    "Examples": [],
+    "Category": [
+        "Window Functions"
+    ]
+}

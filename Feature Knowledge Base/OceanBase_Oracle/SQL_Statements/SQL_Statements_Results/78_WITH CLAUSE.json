@@ -1,0 +1,21 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000001054668"
+    ],
+    "Title": [
+        "WITH CLAUSE"
+    ],
+    "Feature": [
+        "with_clause_select:\n    with_clause simple_select\n\nwith_clause:\n    WITH query_table_name [opt_column_alias_name_list] AS ( select_clause )\n\nselect_clause:\n    simple_select | select_clause_set\n\nopt_column_alias_name_list:\n    (column_name_list)\n\ncolumn_name_list:\n    column_name [,column_name...]\n"
+    ],
+    "Description": [
+        "如果查询语句中有多个相同的子查询，可以把相同的子查询放在 WITH CLAUSE 中作为公共表达式，在主体查询中直接引用即可。",
+        "\n\n\n参数\n描述\n\n\n\n\nquery_table_name\n指定子查询的名称。\n\n\ncolumn_name\n指定列名称。\n\n\n"
+    ],
+    "Examples": [
+        "obclient> CREATE TABLE tbl1(col1 INT,col2 INT,col3 INT);\nQuery OK, 0 rows affected\n\nobclient> INSERT INTO tbl1 VALUES(1,1,1),(2,2,2),(3,3,3);\nQuery OK, 3 rows affected\nRecords: 3  Duplicates: 0  Warnings: 0\n\n/*直接使用表 tbl1 的列名作为 w_tbl1 的列名*/\nobclient> WITH w_tbl1 AS(SELECT * FROM tbl1) SELECT * FROM  w_tbl1;\n+------+------+------+\n| COL1 | COL2 | COL3 |\n+------+------+------+\n|    1 |    1 |    1 |\n|    2 |    2 |    2 |\n|    3 |    3 |    3 |\n+------+------+------+\n3 rows in set\n\n/*直接给 w_tbl1 命名列名*/\n\nobclient> WITH w_tbl1(c1,c2,c3) AS(SELECT * FROM tbl1) SELECT * FROM  w_tbl1;\n+------+------+------+\n| C1   | C2   | C3   |\n+------+------+------+\n|    1 |    1 |    1 |\n|    2 |    2 |    2 |\n|    3 |    3 |    3 |\n+------+------+------+\n3 rows in set\n"
+    ],
+    "Category": [
+        "DML"
+    ]
+}

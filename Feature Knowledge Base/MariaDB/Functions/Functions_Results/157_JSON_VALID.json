@@ -1,0 +1,21 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/json_valid/"
+    ],
+    "Title": [
+        "JSON_VALID"
+    ],
+    "Feature": [
+        "JSON_VALID(value)\n"
+    ],
+    "Description": [
+        "Indicates whether the given value is a valid JSON document or not. Returns 1 if valid, 0 if not, and NULL if the argument is NULL.",
+        "From MariaDB 10.4.3, the JSON_VALID function is automatically used as a CHECK constraint for the JSON data type alias in order to ensure that a valid json document is inserted. "
+    ],
+    "Examples": [
+        "SELECT JSON_VALID('{\"id\": 1, \"name\": \"Monty\"}');\n+------------------------------------------+\n| JSON_VALID('{\"id\": 1, \"name\": \"Monty\"}') |\n+------------------------------------------+\n|                                        1 |\n+------------------------------------------+\n\nSELECT JSON_VALID('{\"id\": 1, \"name\": \"Monty\", \"oddfield\"}');\n+------------------------------------------------------+\n| JSON_VALID('{\"id\": 1, \"name\": \"Monty\", \"oddfield\"}') |\n+------------------------------------------------------+\n|                                                    0 |\n+------------------------------------------------------+\n"
+    ],
+    "Category": [
+        "JSON Functions"
+    ]
+}

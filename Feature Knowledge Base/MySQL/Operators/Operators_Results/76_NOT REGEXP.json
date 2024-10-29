@@ -1,0 +1,34 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/built-in-function-reference.html",
+        "https://dev.mysql.com/doc/refman/8.4/en/non-typed-operators.html",
+        "https://dev.mysql.com/doc/refman/8.4/en/string-functions.html",
+        "https://dev.mysql.com/doc/refman/8.4/en/regexp.html"
+    ],
+    "Title": [
+        "14.1 Built-In Function and Operator Reference",
+        "14.4 Operators",
+        "14.8 String Functions and Operators",
+        "14.8.2 Regular Expressions"
+    ],
+    "Feature": [
+        "expr\n              NOT REGEXP pat"
+    ],
+    "Description": [
+        "Negation of REGEXP",
+        "\nexpr\n              NOT REGEXP pat,\n              expr\n              NOT RLIKE pat\n",
+        "\n              This is the same as NOT\n              (expr REGEXP\n              pat).\n            "
+    ],
+    "Examples": [],
+    "Category": [
+        "Built-In Operators",
+        "String Operators",
+        "String Operators"
+    ],
+    "Reference HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/regexp.html#operator_not-regexp"
+    ],
+    "Feature Type": [
+        "Operator"
+    ]
+}

@@ -1,0 +1,27 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/drop-resource-group.html"
+    ],
+    "Title": [
+        "15.7.2.3 DROP RESOURCE GROUP Statement"
+    ],
+    "Feature": [
+        "DROP RESOURCE GROUP group_name [FORCE]"
+    ],
+    "Description": [
+        "\nDROP RESOURCE GROUP is used for\n        resource group management (see\n        Section\u00a07.1.16, \u201cResource Groups\u201d). This statement drops a\n        resource group. It requires the\n        RESOURCE_GROUP_ADMIN privilege.\n      ",
+        "\ngroup_name identifies which resource\n        group to drop. If the group does not exist, an error occurs.\n      ",
+        "\n        The FORCE modifier determines statement\n        behavior if the resource group has any threads assigned to it:\n",
+        "\n\n            If FORCE is not given and any threads are\n            assigned to the group, an error occurs.\n          \n            If FORCE is given, existing threads in\n            the group are moved to their respective default group\n            (system threads to SYS_default, user\n            threads to USR_default).\n\n",
+        "\n        Examples:\n",
+        "\n\n            Drop a group, failing if the group contains any threads:\n          Press CTRL+C to copy DROP RESOURCE GROUP rg1;\n            Drop a group and move existing threads to the default\n            groups:\n          Press CTRL+C to copy DROP RESOURCE GROUP rg2 FORCE;\n",
+        "\n        Resource group management is local to the server on which it\n        occurs. DROP RESOURCE GROUP\n        statements are not written to the binary log and are not\n        replicated.\n"
+    ],
+    "Examples": [
+        "DROP RESOURCE GROUP rg1;",
+        "DROP RESOURCE GROUP rg2 FORCE;"
+    ],
+    "Category": [
+        "Database Administration Statements"
+    ]
+}

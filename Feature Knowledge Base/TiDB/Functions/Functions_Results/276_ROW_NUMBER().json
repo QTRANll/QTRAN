@@ -1,0 +1,23 @@
+{
+    "HTML": [
+        "https://docs.pingcap.com/zh/tidb/stable/window-functions#row_number"
+    ],
+    "Title": [
+        "ROW_NUMBER()"
+    ],
+    "Feature": [
+        "ROW_NUMBER()"
+    ],
+    "Description": [
+        "ROW_NUMBER()",
+        "ROW_NUMBER() \u8fd4\u56de\u7ed3\u679c\u96c6\u4e2d\u5f53\u524d\u884c\u7684\u884c\u53f7\u3002",
+        "WITH RECURSIVE cte(n) AS (\n    SELECT\n        1\n    UNION\n    SELECT\n        n+3\n    FROM\n        cte\n    WHERE\n        n<30\n)\nSELECT\n    n,\n    ROW_NUMBER() OVER ()\nFROM\n    cte;\n",
+        "+------+----------------------+\n| n    | ROW_NUMBER() OVER () |\n+------+----------------------+\n|    1 |                    1 |\n|    4 |                    2 |\n|    7 |                    3 |\n|   10 |                    4 |\n|   13 |                    5 |\n|   16 |                    6 |\n|   19 |                    7 |\n|   22 |                    8 |\n|   25 |                    9 |\n|   28 |                   10 |\n|   31 |                   11 |\n+------+----------------------+\n11 rows in set (0.00 sec)\n"
+    ],
+    "Examples": [
+        "WITH RECURSIVE cte(n) AS (\n    SELECT\n        1\n    UNION\n    SELECT\n        n+3\n    FROM\n        cte\n    WHERE\n        n<30\n)\nSELECT\n    n,\n    ROW_NUMBER() OVER ()\nFROM\n    cte;\n"
+    ],
+    "Category": [
+        "Window Functions"
+    ]
+}

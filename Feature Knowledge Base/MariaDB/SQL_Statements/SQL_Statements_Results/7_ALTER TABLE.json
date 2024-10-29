@@ -1,0 +1,35 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/alter-table/"
+    ],
+    "Title": [
+        "ALTER TABLE"
+    ],
+    "Feature": [
+        "ALTER [ONLINE] [IGNORE] TABLE [IF EXISTS] tbl_name\n    [WAIT n | NOWAIT]\n    alter_specification [, alter_specification] ...\nalter_specification:\n    table_option ...\n  | ADD [COLUMN] [IF NOT EXISTS] col_name column_definition\n        [FIRST | AFTER col_name ]\n  | ADD [COLUMN] [IF NOT EXISTS] (col_name column_definition,...)\n  | ADD {INDEX|KEY} [IF NOT EXISTS] [index_name]\n        [index_type] (index_col_name,...) [index_option] ...\n  | ADD [CONSTRAINT [symbol]] PRIMARY KEY\n        [index_type] (index_col_name,...) [index_option] ...\n  | ADD [CONSTRAINT [symbol]]\n        UNIQUE [INDEX|KEY] [index_name]\n        [index_type] (index_col_name,...) [index_option] ...\n  | ADD FULLTEXT [INDEX|KEY] [index_name]\n        (index_col_name,...) [index_option] ...\n  | ADD SPATIAL [INDEX|KEY] [index_name]\n        (index_col_name,...) [index_option] ...\n  | ADD [CONSTRAINT [symbol]]\n        FOREIGN KEY [IF NOT EXISTS] [index_name] (index_col_name,...)\n        reference_definition\n  | ADD PERIOD FOR [time_period_name|SYSTEM_TIME] (start_column_name, end_column_name)\n  | ALTER [COLUMN] col_name SET DEFAULT literal |\u00a0(expression)\n  | ALTER [COLUMN] col_name DROP DEFAULT\n  | ALTER {INDEX|KEY} index_name [NOT] INVISIBLE\n  | CHANGE [COLUMN] [IF EXISTS] old_col_name new_col_name column_definition\n        [FIRST|AFTER col_name]\n  | MODIFY [COLUMN] [IF EXISTS] col_name column_definition\n        [FIRST | AFTER col_name]\n  | DROP [COLUMN] [IF EXISTS] col_name [RESTRICT|CASCADE]\n  | DROP PRIMARY KEY\n  | DROP {INDEX|KEY} [IF EXISTS] index_name\n  | DROP FOREIGN KEY [IF EXISTS] fk_symbol\n  | DROP CONSTRAINT [IF EXISTS] constraint_name\n  | DISABLE KEYS\n  | ENABLE KEYS\n  | RENAME [TO] new_tbl_name\n  | ORDER BY col_name [, col_name] ...\n  | RENAME COLUMN old_col_name TO new_col_name\n  | RENAME {INDEX|KEY} old_index_name TO new_index_name\n  | CONVERT TO CHARACTER SET charset_name [COLLATE collation_name]\n  | [DEFAULT] CHARACTER SET [=] charset_name\n  | [DEFAULT] COLLATE [=] collation_name\n  | DISCARD TABLESPACE\n  | IMPORT TABLESPACE\n  | ALGORITHM [=] {DEFAULT|INPLACE|COPY|NOCOPY|INSTANT}\n  | LOCK [=] {DEFAULT|NONE|SHARED|EXCLUSIVE}\n  | FORCE\n  | partition_options\n  | CONVERT TABLE normal_table TO partition_definition [{WITH | WITHOUT} VALIDATION]\n  | CONVERT PARTITION partition_name TO TABLE tbl_name\n  | ADD PARTITION [IF NOT EXISTS] (partition_definition)\n  | DROP PARTITION [IF EXISTS] partition_names\n  | TRUNCATE PARTITION partition_names\n  | COALESCE PARTITION number\n  | REORGANIZE PARTITION [partition_names INTO (partition_definitions)]\n  | ANALYZE PARTITION partition_names\n  | CHECK PARTITION partition_names\n  | OPTIMIZE PARTITION partition_names\n  | REBUILD PARTITION partition_names\n  | REPAIR PARTITION partition_names\n  | EXCHANGE PARTITION partition_name WITH TABLE tbl_name [{WITH | WITHOUT} VALIDATION]\n  | REMOVE PARTITIONING\n  | ADD SYSTEM VERSIONING\n  | DROP SYSTEM VERSIONING\nindex_col_name:\n    col_name [(length)] [ASC | DESC]\nindex_type:\n    USING {BTREE | HASH | RTREE}\nindex_option:\n    [ KEY_BLOCK_SIZE [=] value\n  | index_type\n  | WITH PARSER parser_name\n  | VISIBLE\n  | COMMENT 'string'\n  | CLUSTERING={YES| NO} ]\n  [ IGNORED | NOT IGNORED ]\ntable_options:\n    table_option [[,] table_option] ..."
+    ],
+    "Description": [
+        "ALTER TABLE enables you to change the structure of an existing table.\nFor example, you can add or delete columns, create or destroy indexes,\nchange the type of existing columns, or rename columns or the table\nitself. You can also change the comment for the table and the storage engine of the\ntable.",
+        "If another connection is using the table, a metadata lock is active, and this statement will wait until the lock is released. This is also true for non-transactional tables.",
+        "When adding a UNIQUE index on a column (or a set of columns) which have duplicated values, an error will be produced and the statement will be stopped. To suppress the error and force the creation of UNIQUE indexes, discarding duplicates, the IGNORE option can be specified. This can be useful if a column (or a set of columns) should be UNIQUE but it contains duplicate values; however, this technique provides no control on which rows are preserved and which are deleted. Also, note that IGNORE is accepted but ignored in ALTER TABLE ... EXCHANGE PARTITION statements.",
+        "This statement can also be used to rename a table. For details see RENAME TABLE.",
+        "When an index is created, the storage engine may use a configurable buffer in the process. Incrementing the buffer speeds up the index creation. Aria and MyISAM allocate a buffer whose size is defined by aria_sort_buffer_size or myisam_sort_buffer_size, also used for REPAIR TABLE. InnoDB allocates three buffers whose size is defined by innodb_sort_buffer_size."
+    ],
+    "Examples": [
+        "ALTER TABLE t1 ADD x INT;\n",
+        "ALTER TABLE t1 DROP x;\n",
+        "ALTER TABLE t1 MODIFY x bigint unsigned;\n",
+        "ALTER TABLE t1 CHANGE a b bigint unsigned auto_increment;\n",
+        "ALTER TABLE t1 DROP x, ADD x2 INT,  CHANGE y y2 INT;\n",
+        "ALTER TABLE t1 \n  ENGINE = InnoDB \n  COMMENT = 'First of three tables containing usage info';\n",
+        "ALTER TABLE t1 FORCE;\n",
+        "ALTER TABLE rooms DROP INDEX u;\n",
+        "ALTER TABLE rooms ADD UNIQUE INDEX u(room_number);\n",
+        "ALTER TABLE rooms ADD PRIMARY KEY(room_number, p WITHOUT OVERLAPS);\n",
+        "SET @@SESSION.binlog_alter_two_phase = true;\n",
+        "| master-bin.000001 | 495 | Gtid              |         1 |         537 | GTID 0-1-2 START ALTER                                        |\n| master-bin.000001 | 537 | Query             |         1 |         655 | use `test`; alter table t add column b int, algorithm=inplace |\n| master-bin.000001 | 655 | Gtid              |         1 |         700 | GTID 0-1-3 COMMIT ALTER id=2                                  |\n| master-bin.000001 | 700 | Query             |         1 |         835 | use `test`; alter table t add column b int, algorithm=inplace |\n"
+    ],
+    "Category": [
+        "Data Definition"
+    ]
+}

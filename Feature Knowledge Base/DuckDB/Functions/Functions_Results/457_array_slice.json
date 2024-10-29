@@ -1,0 +1,22 @@
+{
+    "HTML": [
+        "https://duckdb.org/docs/sql/functions/char"
+    ],
+    "Title": [
+        "array_slice"
+    ],
+    "Feature": [
+        "array_slice"
+    ],
+    "Description": [
+        "string[begin:end]",
+        "Extract a string using slice conventions, see slicing.",
+        "Extract a string using slice conventions similar to Python. Missing begin or end arguments are interpreted as the beginning or end of the list respectively. Negative values are accepted."
+    ],
+    "Examples": [
+        "'DuckDB'[:4]"
+    ],
+    "Category": [
+        "Text Functions"
+    ]
+}

@@ -1,0 +1,23 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000001054302"
+    ],
+    "Title": [
+        "FLASHBACK TABLE BEFORE DROP"
+    ],
+    "Feature": [
+        " FLASHBACK TABLE original_name TO BEFORE DROP [RENAME TO database_name.table_name];\n"
+    ],
+    "Description": [
+        "用于从回收站中恢复被删除的表。",
+        "\n说明\n\n回收站中的表并没有被实际删除，仍然会占用资源。如果需要彻底删除回收站中的内容，可以执行 SQL 语句 PURGE RECYCLEBIN;。\n回收站需要处于开启状态，被删除的表才会进入回收站。 \n     \n可以通过执行 SQL 语句 SHOW VARIABLES LIKE 'recyclebin'; 来查看回收站是否开启。\n可以通过执行 SQL 语句 SET RECYCLEBIN = ON; 来开启回收站。\n\n\n",
+        "\n\n\n参数\n描述\n\n\n\n\noriginal_name\n指定要恢复表名。 说明 恢复表时，也会同步恢复和表相关的索引。\n\n\nRENAME TO\n修改表名和表所属的库。 如果省略 RENAME TO database_name.table_name，则恢复表的表名为原来的名称。\n\n\n"
+    ],
+    "Examples": [
+        "obclient> SHOW RECYCLEBIN;\n+-----------------------------------+---------------+-------+------------------------------+\n| OBJECT_NAME                       | ORIGINAL_NAME | TYPE  | CREATETIME                   |\n+-----------------------------------+---------------+-------+------------------------------+\n| RECYCLE_$_100004_1634807168766392 | TBL1          | TABLE | 21-OCT-21 05.06.08.767109 PM |\n| RECYCLE_$_100004_1634807177792816 | TBL2          | TABLE | 21-OCT-21 05.06.17.791967 PM |\n+-----------------------------------+---------------+-------+------------------------------+\n2 rows in set (0.00 sec)\n\nobclient> FLASHBACK TABLE tbl1 TO BEFORE DROP;\nQuery OK, 0 rows affected\n\nobclient> SELECT * FROM tbl1;\n+------+------+\n| COL1 | COL2 |\n+------+------+\n|    1 |    1 |\n+------+------+\n1 row in set\n",
+        "obclient> SHOW RECYCLEBIN;\n+-----------------------------------+---------------+-------+------------------------------+\n| OBJECT_NAME                       | ORIGINAL_NAME | TYPE  | CREATETIME                   |\n+-----------------------------------+---------------+-------+------------------------------+\n| RECYCLE_$_100004_1634807168766392 | TBL1          | TABLE | 21-OCT-21 05.06.08.767109 PM |\n| RECYCLE_$_100004_1634807177792816 | TBL2          | TABLE | 21-OCT-21 05.06.17.791967 PM |\n+-----------------------------------+---------------+-------+------------------------------+\n2 rows in set (0.00 sec)\n\nobclient> FLASHBACK TABLE tbl2 TO BEFORE DROP RENAME TO user1.tbl_test;\nQuery OK, 0 rows affected\n\nobclient> SELECT * FROM user1.tbl_test;\n+------+------+\n| COL1 | COL2 |\n+------+------+\n|    1 |    1 |\n+------+------+\n1 row in set\n"
+    ],
+    "Category": [
+        "DCL"
+    ]
+}

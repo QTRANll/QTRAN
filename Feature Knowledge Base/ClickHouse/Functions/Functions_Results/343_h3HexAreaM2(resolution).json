@@ -1,0 +1,27 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/geo/h3"
+    ],
+    "Title": [
+        "h3HexAreaM2"
+    ],
+    "Feature": [
+        "h3HexAreaM2(resolution)"
+    ],
+    "Description": [
+        "h3HexAreaM2",
+        "Returns average hexagon area in square meters at the given resolution.",
+        "Syntax",
+        "h3HexAreaM2(resolution)",
+        "Parameter",
+        "resolution \u2014 Index resolution. Range: [0, 15]. UInt8.",
+        "Returned value",
+        "Area in square meters. Float64."
+    ],
+    "Examples": [
+        "SELECT h3HexAreaM2(13) AS area;"
+    ],
+    "Category": [
+        "Geo Functions"
+    ]
+}

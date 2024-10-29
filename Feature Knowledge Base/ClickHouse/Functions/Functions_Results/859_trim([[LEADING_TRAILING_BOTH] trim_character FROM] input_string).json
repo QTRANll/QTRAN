@@ -1,0 +1,27 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/string-functions"
+    ],
+    "Title": [
+        "trim"
+    ],
+    "Feature": [
+        "trim([[LEADING|TRAILING|BOTH] trim_character FROM] input_string)"
+    ],
+    "Description": [
+        "trim",
+        "Removes the specified characters from the start or end of a string. If not specified otherwise, the function removes whitespace (ASCII-character 32).",
+        "Syntax",
+        "trim([[LEADING|TRAILING|BOTH] trim_character FROM] input_string)",
+        "Arguments",
+        "trim_character \u2014 Specified characters for trim. String.input_string \u2014 String for trim. String.",
+        "Returned value",
+        "A string without leading and/or trailing specified characters. String."
+    ],
+    "Examples": [
+        "SELECT trim(BOTH ' ()' FROM '(   Hello, world!   )');"
+    ],
+    "Category": [
+        "Strings Functions"
+    ]
+}

@@ -1,0 +1,50 @@
+{
+    "HTML": "https://mariadb.com//kb/en/regexp_instr/",
+    "Title": "REGEXP_INSTR",
+    "Feature": [
+        "REGEXP_INSTR(subject, pattern)\n",
+        "Returns the position of the first occurrence of the regular expression pattern in the string subject, or 0 if pattern was not found.",
+        "The positions start with 1 and are measured in characters (i.e. not in bytes), which is important for multi-byte character sets. You can cast a multi-byte character set to BINARY to get offsets in bytes.",
+        "The function follows the case sensitivity rules of the effective collation. Matching is performed case insensitively for case insensitive collations, and case sensitively for case sensitive collations and for binary data.",
+        "The collation case sensitivity can be overwritten using the (?i) and (?-i) PCRE flags.",
+        "MariaDB uses the PCRE regular expression library for enhanced regular expression performance, and REGEXP_INSTR was introduced as part of this enhancement."
+    ],
+    "Description": [],
+    "Examples": [
+        "SELECT REGEXP_INSTR('abc','b');\n-> 2\n\nSELECT REGEXP_INSTR('abc','x');\n-> 0\n\nSELECT REGEXP_INSTR('BJ\u00d6RN','N');\n-> 5\n",
+        "SELECT REGEXP_INSTR(BINARY 'BJ\u00d6RN','N') AS cast_utf8_to_binary;\n-> 6\n",
+        "SELECT REGEXP_INSTR('ABC','b');\n-> 2\n\nSELECT REGEXP_INSTR('ABC' COLLATE utf8_bin,'b');\n-> 0\n\nSELECT REGEXP_INSTR(BINARY'ABC','b');\n-> 0\n\nSELECT REGEXP_INSTR('ABC','(?-i)b');\n-> 0\n\nSELECT REGEXP_INSTR('ABC' COLLATE utf8_bin,'(?i)b');\n-> 2\n"
+    ],
+    "Category": [
+        "Regular Expressions Functions"
+    ],
+    "Effective SQLs Refined": [
+        "SELECT REGEXP_INSTR('abc','b');",
+        "SELECT REGEXP_INSTR('abc','x');",
+        "SELECT REGEXP_INSTR('BJ\u00d6RN','N');",
+        "SELECT REGEXP_INSTR(BINARY 'BJ\u00d6RN','N') AS cast_utf8_to_binary;",
+        "SELECT REGEXP_INSTR('ABC','b');",
+        "SELECT REGEXP_INSTR(BINARY'ABC','b');",
+        "SELECT REGEXP_INSTR('ABC','(?-i)b');"
+    ],
+    "Ineffective SQLs Refined": [
+        "SELECT REGEXP_INSTR('ABC' COLLATE utf8_bin,'b');",
+        "SELECT REGEXP_INSTR('ABC' COLLATE utf8_bin,'(?i)b');"
+    ],
+    "Wrong Messages from Ineffective SQLs Refined": [
+        "(pymysql.err.OperationalError) (1253, \"COLLATION 'utf8mb3_bin' is not valid for CHARACTER SET 'utf8mb4'\")\n[SQL: SELECT REGEXP_INSTR('ABC' COLLATE utf8_bin,'b');]\n(Background on this error at: https://sqlalche.me/e/20/e3q8)",
+        "(pymysql.err.OperationalError) (1253, \"COLLATION 'utf8mb3_bin' is not valid for CHARACTER SET 'utf8mb4'\")\n[SQL: SELECT REGEXP_INSTR('ABC' COLLATE utf8_bin,'(?i)b');]\n(Background on this error at: https://sqlalche.me/e/20/e3q8)"
+    ],
+    "SQLs Generated1": [],
+    "SQLs Generated Costs1": [],
+    "SQLs Generated ExecResults1": [],
+    "SQLs Generated ExecTimes1": [],
+    "SQLs Generated ErrorMessages1": [],
+    "Effective SQLs Generated1": [],
+    "SQLs Generated2": [],
+    "SQLs Generated Costs2": [],
+    "SQLs Generated ExecResults2": [],
+    "SQLs Generated ExecTimes2": [],
+    "SQLs Generated ErrorMessages2": [],
+    "Effective SQLs Generated2": []
+}

@@ -1,0 +1,37 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/loadable-function-reference.html"
+    ],
+    "Title": [
+        "14.2 Loadable Function Reference"
+    ],
+    "Feature": [
+        "masking_dictionary_term_add(dictionary_name,\n              term_name)"
+    ],
+    "Description": [
+        "Add new term to the dictionary",
+        "\nmasking_dictionary_term_add(dictionary_name,\n              term_name)\n",
+        "\n              Adds one term to the named dictionary. This function\n              requires the\n              MASKING_DICTIONARIES_ADMIN\n              privilege.\n",
+        "\n\nImportant\n\n\n                Dictionaries and their terms are persisted to a table in\n                the mysql schema. All of the terms in\n                a dictionary are accessible to any user account if that\n                user executes\n                gen_dictionary()\n                repeatedly. Avoid adding sensitive information to\n                dictionaries.\n\n",
+        "\n              Each term is defined by a named dictionary.\n              masking_dictionary_term_add()\n              permits you to add one dictionary term at a time.\n            ",
+        "\n              Arguments:\n",
+        "\n\ndictionary_name: A string\n                  that provides a name for the dictionary. This argument\n                  is converted to the utf8mb4\n                  character set.\n                \nterm_name: A string that\n                  specifies the term name in the dictionary table. This\n                  argument is converted to the\n                  utf8mb4 character set.\n\n",
+        "\n              Return value:\n            ",
+        "\n              A string that indicates whether the add term operation\n              succeeded. 1 indicates success.\n              NULL indicates failure. Term add\n              failure can occur for several reasons, including:\n",
+        "\n\n                  A term with the given name is already added.\n                \n                  The dictionary name is not found.\n\n",
+        "\n              Example:\n            ",
+        "Press CTRL+C to copy mysql> SELECT masking_dictionary_term_add('mydict','newterm');\n+-------------------------------------------------+\n| masking_dictionary_term_add('mydict','newterm') |\n+-------------------------------------------------+\n|                                               1 |\n+-------------------------------------------------+\nmysql> SELECT masking_dictionary_term_add('mydict','');\n+------------------------------------------+\n| masking_dictionary_term_add('mydict','') |\n+------------------------------------------+\n|                                     NULL |\n+------------------------------------------+"
+    ],
+    "Examples": [
+        "mysql> SELECT masking_dictionary_term_add('mydict','newterm');\n+-------------------------------------------------+\n| masking_dictionary_term_add('mydict','newterm') |\n+-------------------------------------------------+\n|                                               1 |\n+-------------------------------------------------+\nmysql> SELECT masking_dictionary_term_add('mydict','');\n+------------------------------------------+\n| masking_dictionary_term_add('mydict','') |\n+------------------------------------------+\n|                                     NULL |\n+------------------------------------------+"
+    ],
+    "Category": [
+        "Loadable Functions"
+    ],
+    "Reference HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/data-masking-component-functions.html#function_masking-dictionary-term-add"
+    ],
+    "Feature Type": [
+        "Function"
+    ]
+}

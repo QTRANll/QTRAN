@@ -1,0 +1,27 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/string-search-functions"
+    ],
+    "Title": [
+        "ngramDistanceUTF8"
+    ],
+    "Feature": [
+        "ngramDistanceUTF8(haystack, needle)"
+    ],
+    "Description": [
+        "ngramDistanceUTF8",
+        "Provides a UTF-8 variant of ngramDistance. Assumes that needle and haystack strings are UTF-8 encoded strings.",
+        "Syntax",
+        "ngramDistanceUTF8(haystack, needle)",
+        "Parameters",
+        "haystack: First UTF-8 encoded comparison string. String literalneedle: Second UTF-8 encoded comparison string. String literal",
+        "Returned value",
+        "Value between 0 and 1 representing the similarity between the two strings. Float32"
+    ],
+    "Examples": [
+        "SELECT ngramDistanceUTF8('abcde','cde');"
+    ],
+    "Category": [
+        "Searching in Strings Functions"
+    ]
+}

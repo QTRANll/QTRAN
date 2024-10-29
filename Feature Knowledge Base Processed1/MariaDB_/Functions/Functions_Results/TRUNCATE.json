@@ -1,0 +1,45 @@
+{
+    "HTML": "https://mariadb.com//kb/en/truncate/",
+    "Title": "TRUNCATE",
+    "Feature": [
+        "TRUNCATE(X,D)\n"
+    ],
+    "Description": [
+        "Returns the number X, truncated to D decimal places. If D is 0, the\nresult has no decimal point or fractional part. D can be negative to\ncause D digits left of the decimal point of the value X to become\nzero."
+    ],
+    "Examples": [
+        "SELECT TRUNCATE(1.223,1);\n+-------------------+\n| TRUNCATE(1.223,1) |\n+-------------------+\n|               1.2 |\n+-------------------+\n\nSELECT TRUNCATE(1.999,1);\n+-------------------+\n| TRUNCATE(1.999,1) |\n+-------------------+\n|               1.9 |\n+-------------------+\n\nSELECT TRUNCATE(1.999,0); \n+-------------------+\n| TRUNCATE(1.999,0) |\n+-------------------+\n|                 1 |\n+-------------------+\n\nSELECT TRUNCATE(-1.999,1);\n+--------------------+\n| TRUNCATE(-1.999,1) |\n+--------------------+\n|               -1.9 |\n+--------------------+\n\nSELECT TRUNCATE(122,-2);\n+------------------+\n| TRUNCATE(122,-2) |\n+------------------+\n|              100 |\n+------------------+\n\nSELECT TRUNCATE(10.28*100,0);\n+-----------------------+\n| TRUNCATE(10.28*100,0) |\n+-----------------------+\n|                  1028 |\n+-----------------------+\n"
+    ],
+    "Category": [
+        "Numeric Functions"
+    ],
+    "Effective SQLs Refined": [
+        "SELECT TRUNCATE(1.223,1);"
+    ],
+    "Ineffective SQLs Refined": [
+        "TRUNCATE(1.223,1) |\n+-------------------+\n|               1.2 |\n+-------------------+\n\nSELECT TRUNCATE(1.999,1);",
+        "TRUNCATE(1.999,1) |\n+-------------------+\n|               1.9 |\n+-------------------+\n\nSELECT TRUNCATE(1.999,0);",
+        "TRUNCATE(1.999,0) |\n+-------------------+\n|                 1 |\n+-------------------+\n\nSELECT TRUNCATE(-1.999,1);",
+        "TRUNCATE(-1.999,1) |\n+--------------------+\n|               -1.9 |\n+--------------------+\n\nSELECT TRUNCATE(122,-2);",
+        "TRUNCATE(122,-2) |\n+------------------+\n|              100 |\n+------------------+\n\nSELECT TRUNCATE(10.28*100,0);"
+    ],
+    "Wrong Messages from Ineffective SQLs Refined": [
+        "(pymysql.err.ProgrammingError) (1064, \"You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '(1.223,1) |\\n+-------------------+\\n|               1.2 |\\n+-------------------+...' at line 1\")\n[SQL: TRUNCATE(1.223,1) |\n+-------------------+\n|               1.2 |\n+-------------------+\n\nSELECT TRUNCATE(1.999,1);]\n(Background on this error at: https://sqlalche.me/e/20/f405)",
+        "(pymysql.err.ProgrammingError) (1064, \"You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '(1.999,1) |\\n+-------------------+\\n|               1.9 |\\n+-------------------+...' at line 1\")\n[SQL: TRUNCATE(1.999,1) |\n+-------------------+\n|               1.9 |\n+-------------------+\n\nSELECT TRUNCATE(1.999,0);]\n(Background on this error at: https://sqlalche.me/e/20/f405)",
+        "(pymysql.err.ProgrammingError) (1064, \"You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '(1.999,0) |\\n+-------------------+\\n|                 1 |\\n+-------------------+...' at line 1\")\n[SQL: TRUNCATE(1.999,0) |\n+-------------------+\n|                 1 |\n+-------------------+\n\nSELECT TRUNCATE(-1.999,1);]\n(Background on this error at: https://sqlalche.me/e/20/f405)",
+        "(pymysql.err.ProgrammingError) (1064, \"You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '(-1.999,1) |\\n+--------------------+\\n|               -1.9 |\\n+-----------------...' at line 1\")\n[SQL: TRUNCATE(-1.999,1) |\n+--------------------+\n|               -1.9 |\n+--------------------+\n\nSELECT TRUNCATE(122,-2);]\n(Background on this error at: https://sqlalche.me/e/20/f405)",
+        "(pymysql.err.ProgrammingError) (1064, \"You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '(122,-2) |\\n+------------------+\\n|              100 |\\n+------------------+\\n\\nSE...' at line 1\")\n[SQL: TRUNCATE(122,-2) |\n+------------------+\n|              100 |\n+------------------+\n\nSELECT TRUNCATE(10.28*100,0);]\n(Background on this error at: https://sqlalche.me/e/20/f405)"
+    ],
+    "SQLs Generated1": [],
+    "SQLs Generated Costs1": [],
+    "SQLs Generated ExecResults1": [],
+    "SQLs Generated ExecTimes1": [],
+    "SQLs Generated ErrorMessages1": [],
+    "Effective SQLs Generated1": [],
+    "SQLs Generated2": [],
+    "SQLs Generated Costs2": [],
+    "SQLs Generated ExecResults2": [],
+    "SQLs Generated ExecTimes2": [],
+    "SQLs Generated ErrorMessages2": [],
+    "Effective SQLs Generated2": []
+}

@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/multipolygon/"
+    ],
+    "Title": [
+        "MULTIPOLYGON"
+    ],
+    "Feature": [
+        "MultiPolygon(poly1,poly2,...)\n"
+    ],
+    "Description": [
+        "Constructs a WKB MultiPolygon value from a set of WKB Polygon arguments. If any argument is not a WKB Polygon, the return value is NULL."
+    ],
+    "Examples": [
+        "INSERT INTO gis_multi_polygon VALUES\n    (MultiPolygonFromText('MULTIPOLYGON(((28 26,28 0,84 0,84 42,28 26),(52 18,66 23,73 9,48 6,52 18)),\n     ((59 18,67 18,67 13,59 13,59 18)))')),\n    (MPolyFromText('MULTIPOLYGON(((28 26,28 0,84 0,84 42,28 26),(52 18,66 23,73 9,48 6,52 18)),\n        ((59 18,67 18,67 13,59 13,59 18)))')),\n    (MPolyFromWKB(AsWKB(MultiPolygon(Polygon(LineString(\n       Point(0, 3), Point(3, 3), Point(3, 0), Point(0, 3)))))));"
+    ],
+    "Category": [
+        "Geographic Functions"
+    ]
+}

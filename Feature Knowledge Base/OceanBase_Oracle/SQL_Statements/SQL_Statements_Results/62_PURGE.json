@@ -1,0 +1,24 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000001054293"
+    ],
+    "Title": [
+        "PURGE"
+    ],
+    "Feature": [
+        "PURGE  { {TABLE object_name | INDEX object_name }\n| RECYCLEBIN\n};\n"
+    ],
+    "Description": [
+        "该语句用来删除回收站中的表、索引或删除回收站中的全部内容。",
+        "\n\n\n参数\n描述\n\n\n\n\nobject_name\n指定要删除的表或索引在回收站中的名称，不支持直接指定表或索引名称。 说明\n\n目前直接删除索引，索引不会进入回收站。\n如果直接删除包含索引的表，那么表和索引都会进入回收站。当删除回收站中的表时，表关联的索引会一起被删除。\n\n\n\nRECYCLEBIN\n清空回收站。 注意 PURGE RECYCLEBIN 会清除回收站中的全部内容，操作时请谨慎。\n\n\n"
+    ],
+    "Examples": [
+        "obclient> CREATE TABLE tbl1(col1 INT,col2 INT);\nQuery OK, 0 rows affected\n\nobclient> CREATE TABLE tbl2(col1 INT,col2 INT);\nQuery OK, 0 rows affected\n\nobclient> CREATE INDEX tbl1_idx1 ON tbl1(col1);\nQuery OK, 0 rows affected\n\nobclient> CREATE INDEX tbl2_idx2 ON tbl2(col1);\nQuery OK, 0 rows affected\n\nobclient> DROP TABLE tbl1;\nQuery OK, 0 rows affected\n\nobclient> DROP TABLE tbl2;\nQuery OK, 0 rows affected\n\nobclient> SHOW RECYCLEBIN;\n+-----------------------------------+----------------------------------+-------+------------------------------+\n| OBJECT_NAME                       | ORIGINAL_NAME                    | TYPE  | CREATETIME                   |\n+-----------------------------------+----------------------------------+-------+------------------------------+\n| RECYCLE_$_100004_1634626847891416 | __idx_1101710651081601_TBL1_IDX1 | INDEX | 19-OCT-21 03.00.47.891270 PM |\n| RECYCLE_$_100004_1634626847895656 | TBL1                             | TABLE | 19-OCT-21 03.00.47.895431 PM |\n| RECYCLE_$_100004_1634626853379432 | __idx_1101710651081602_TBL2_IDX2 | INDEX | 19-OCT-21 03.00.53.378871 PM |\n| RECYCLE_$_100004_1634626853383304 | TBL2                             | TABLE | 19-OCT-21 03.00.53.383100 PM |\n+-----------------------------------+----------------------------------+-------+------------------------------+\n4 rows in set\n",
+        "obclient> PURGE INDEX RECYCLE_$_100004_1634626847891416;\nQuery OK, 0 rows affected\n\nobclient> SHOW RECYCLEBIN;\n+-----------------------------------+----------------------------------+-------+------------------------------+\n| OBJECT_NAME                       | ORIGINAL_NAME                    | TYPE  | CREATETIME                   |\n+-----------------------------------+----------------------------------+-------+------------------------------+\n| RECYCLE_$_100004_1634626847895656 | TBL1                             | TABLE | 19-OCT-21 03.00.47.895431 PM |\n| RECYCLE_$_100004_1634626853379432 | __idx_1101710651081602_TBL2_IDX2 | INDEX | 19-OCT-21 03.00.53.378871 PM |\n| RECYCLE_$_100004_1634626853383304 | TBL2                             | TABLE | 19-OCT-21 03.00.53.383100 PM |\n+-----------------------------------+----------------------------------+-------+------------------------------+\n3 rows in set\n",
+        "obclient> PURGE TABLE RECYCLE_$_100004_1634626853383304;\nQuery OK, 0 rows affected\n\nobclient> SHOW RECYCLEBIN;\n+-----------------------------------+---------------+-------+------------------------------+\n| OBJECT_NAME                       | ORIGINAL_NAME | TYPE  | CREATETIME                   |\n+-----------------------------------+---------------+-------+------------------------------+\n| RECYCLE_$_100004_1634626847895656 | TBL1          | TABLE | 19-OCT-21 03.00.47.895431 PM |\n+-----------------------------------+---------------+-------+------------------------------+\n1 row in set\n",
+        "obclient> PURGE RECYCLEBIN;\nQuery OK, 0 rows affected\n\nobclient> SHOW RECYCLEBIN;\nEmpty set\n"
+    ],
+    "Category": [
+        "DML"
+    ]
+}

@@ -1,0 +1,32 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/show-status.html"
+    ],
+    "Title": [
+        "15.7.7.36 SHOW STATUS Statement"
+    ],
+    "Feature": [
+        "SHOW [GLOBAL | SESSION] STATUS\n    [LIKE 'pattern' | WHERE expr]"
+    ],
+    "Description": [
+        "\nSHOW STATUS provides server\n        status information (see\n        Section\u00a07.1.10, \u201cServer Status Variables\u201d). This statement does\n        not require any privilege. It requires only the ability to\n        connect to the server.\n      ",
+        "\n        Status variable information is also available from these\n        sources:\n",
+        "\n\n            Performance Schema tables. See\n            Section\u00a029.12.15, \u201cPerformance Schema Status Variable Tables\u201d.\n          \n            The mysqladmin extended-status command.\n            See Section\u00a06.5.2, \u201cmysqladmin \u2014 A MySQL Server Administration Program\u201d.\n\n",
+        "\n        For SHOW STATUS, a\n        LIKE clause, if present, indicates\n        which variable names to match. A WHERE clause\n        can be given to select rows using more general conditions, as\n        discussed in Section\u00a028.8, \u201cExtensions to SHOW Statements\u201d.\n      ",
+        "\nSHOW STATUS accepts an optional\n        GLOBAL or SESSION variable\n        scope modifier:\n",
+        "\n\n            With a GLOBAL modifier, the statement\n            displays the global status values. A global status variable\n            may represent status for some aspect of the server itself\n            (for example, Aborted_connects), or the\n            aggregated status over all connections to MySQL (for\n            example, Bytes_received and\n            Bytes_sent). If a variable has no global\n            value, the session value is displayed.\n          \n            With a SESSION modifier, the statement\n            displays the status variable values for the current\n            connection. If a variable has no session value, the global\n            value is displayed. LOCAL is a synonym\n            for SESSION.\n          \n            If no modifier is present, the default is\n            SESSION.\n\n",
+        "\n        The scope for each status variable is listed at\n        Section\u00a07.1.10, \u201cServer Status Variables\u201d.\n      ",
+        "\n        Each invocation of the SHOW\n        STATUS statement uses an internal temporary table and\n        increments the global\n        Created_tmp_tables value.\n      ",
+        "\n        Partial output is shown here. The list of names and values may\n        differ for your server. The meaning of each variable is given in\n        Section\u00a07.1.10, \u201cServer Status Variables\u201d.\n      ",
+        "Press CTRL+C to copy mysql> SHOW STATUS;\n+--------------------------+------------+\n| Variable_name            | Value      |\n+--------------------------+------------+\n| Aborted_clients          | 0          |\n| Aborted_connects         | 0          |\n| Bytes_received           | 155372598  |\n| Bytes_sent               | 1176560426 |\n| Connections              | 30023      |\n| Created_tmp_disk_tables  | 0          |\n| Created_tmp_tables       | 8340       |\n| Created_tmp_files        | 60         |\n...\n| Open_tables              | 1          |\n| Open_files               | 2          |\n| Open_streams             | 0          |\n| Opened_tables            | 44600      |\n| Questions                | 2026873    |\n...\n| Table_locks_immediate    | 1920382    |\n| Table_locks_waited       | 0          |\n| Threads_cached           | 0          |\n| Threads_created          | 30022      |\n| Threads_connected        | 1          |\n| Threads_running          | 1          |\n| Uptime                   | 80380      |\n+--------------------------+------------+",
+        "\n        With a LIKE clause, the statement\n        displays only rows for those variables with names that match the\n        pattern:\n      ",
+        "Press CTRL+C to copy mysql> SHOW STATUS LIKE 'Key%';\n+--------------------+----------+\n| Variable_name      | Value    |\n+--------------------+----------+\n| Key_blocks_used    | 14955    |\n| Key_read_requests  | 96854827 |\n| Key_reads          | 162040   |\n| Key_write_requests | 7589728  |\n| Key_writes         | 3813196  |\n+--------------------+----------+"
+    ],
+    "Examples": [
+        "mysql> SHOW STATUS;\n+--------------------------+------------+\n| Variable_name            | Value      |\n+--------------------------+------------+\n| Aborted_clients          | 0          |\n| Aborted_connects         | 0          |\n| Bytes_received           | 155372598  |\n| Bytes_sent               | 1176560426 |\n| Connections              | 30023      |\n| Created_tmp_disk_tables  | 0          |\n| Created_tmp_tables       | 8340       |\n| Created_tmp_files        | 60         |\n...\n| Open_tables              | 1          |\n| Open_files               | 2          |\n| Open_streams             | 0          |\n| Opened_tables            | 44600      |\n| Questions                | 2026873    |\n...\n| Table_locks_immediate    | 1920382    |\n| Table_locks_waited       | 0          |\n| Threads_cached           | 0          |\n| Threads_created          | 30022      |\n| Threads_connected        | 1          |\n| Threads_running          | 1          |\n| Uptime                   | 80380      |\n+--------------------------+------------+",
+        "mysql> SHOW STATUS LIKE 'Key%';\n+--------------------+----------+\n| Variable_name      | Value    |\n+--------------------+----------+\n| Key_blocks_used    | 14955    |\n| Key_read_requests  | 96854827 |\n| Key_reads          | 162040   |\n| Key_write_requests | 7589728  |\n| Key_writes         | 3813196  |\n+--------------------+----------+"
+    ],
+    "Category": [
+        "Database Administration Statements"
+    ]
+}

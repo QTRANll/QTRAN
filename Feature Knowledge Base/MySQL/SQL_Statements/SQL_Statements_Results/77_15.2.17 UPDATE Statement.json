@@ -1,0 +1,74 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/update.html"
+    ],
+    "Title": [
+        "15.2.17 UPDATE Statement"
+    ],
+    "Feature": [
+        "UPDATE [LOW_PRIORITY] [IGNORE] table_reference\n    SET assignment_list\n    [WHERE where_condition]\n    [ORDER BY ...]\n    [LIMIT row_count]\n\nvalue:\n    {expr | DEFAULT}\n\nassignment:\n    col_name = value\n\nassignment_list:\n    assignment [, assignment] ...",
+        "UPDATE [LOW_PRIORITY] [IGNORE] table_references\n    SET assignment_list\n    [WHERE where_condition]"
+    ],
+    "Description": [
+        "\nUPDATE is a DML statement that\n      modifies rows in a table.\n    ",
+        "\n      An UPDATE statement can start with\n      a WITH clause to define common\n      table expressions accessible within the\n      UPDATE. See Section\u00a015.2.20, \u201cWITH (Common Table Expressions)\u201d.\n    ",
+        "\n      Single-table syntax:\n    ",
+        "\n      Multiple-table syntax:\n    ",
+        "\n      For the single-table syntax, the\n      UPDATE statement updates columns of\n      existing rows in the named table with new values. The\n      SET clause indicates which columns to modify\n      and the values they should be given. Each value can be given as an\n      expression, or the keyword DEFAULT to set a\n      column explicitly to its default value. The\n      WHERE clause, if given, specifies the\n      conditions that identify which rows to update. With no\n      WHERE clause, all rows are updated. If the\n      ORDER BY clause is specified, the rows are\n      updated in the order that is specified. The\n      LIMIT clause places a limit on the number of\n      rows that can be updated.\n    ",
+        "\n      For the multiple-table syntax,\n      UPDATE updates rows in each table\n      named in table_references that satisfy\n      the conditions. Each matching row is updated once, even if it\n      matches the conditions multiple times. For multiple-table syntax,\n      ORDER BY and LIMIT cannot be\n      used.\n    ",
+        "\n      For partitioned tables, both the single-single and multiple-table\n      forms of this statement support the use of a\n      PARTITION clause as part of a table reference.\n      This option takes a list of one or more partitions or\n      subpartitions (or both). Only the partitions (or subpartitions)\n      listed are checked for matches, and a row that is not in any of\n      these partitions or subpartitions is not updated, whether it\n      satisfies the where_condition or not.\n",
+        "\n\nNote\n\n\n        Unlike the case when using PARTITION with an\n        INSERT or\n        REPLACE statement, an otherwise\n        valid UPDATE ... PARTITION statement is\n        considered successful even if no rows in the listed partitions\n        (or subpartitions) match the\n        where_condition.\n\n",
+        "\n      For more information and examples, see\n      Section\u00a026.5, \u201cPartition Selection\u201d.\n    ",
+        "\nwhere_condition is an expression that\n      evaluates to true for each row to be updated. For expression\n      syntax, see Section\u00a011.5, \u201cExpressions\u201d.\n    ",
+        "\ntable_references and\n      where_condition are specified as\n      described in Section\u00a015.2.13, \u201cSELECT Statement\u201d.\n    ",
+        "\n      You need the UPDATE privilege only\n      for columns referenced in an UPDATE\n      that are actually updated. You need only the\n      SELECT privilege for any columns\n      that are read but not modified.\n    ",
+        "\n      The UPDATE statement supports the\n      following modifiers:\n",
+        "\n\n          With the LOW_PRIORITY modifier, execution\n          of the UPDATE is delayed until\n          no other clients are reading from the table. This affects only\n          storage engines that use only table-level locking (such as\n          MyISAM, MEMORY, and\n          MERGE).\n        \n          With the IGNORE modifier, the update\n          statement does not abort even if errors occur during the\n          update. Rows for which duplicate-key conflicts occur on a\n          unique key value are not updated. Rows updated to values that\n          would cause data conversion errors are updated to the closest\n          valid values instead. For more information, see\n          The Effect of IGNORE on Statement Execution.\n\n",
+        "\nUPDATE IGNORE\n      statements, including those having an ORDER BY\n      clause, are flagged as unsafe for statement-based replication.\n      (This is because the order in which the rows are updated\n      determines which rows are ignored.) Such statements produce a\n      warning in the error log when using statement-based mode and are\n      written to the binary log using the row-based format when using\n      MIXED mode. (Bug #11758262, Bug #50439) See\n      Section\u00a019.2.1.3, \u201cDetermination of Safe and Unsafe Statements in Binary Logging\u201d, for more\n      information.\n    ",
+        "\n      If you access a column from the table to be updated in an\n      expression, UPDATE uses the current\n      value of the column. For example, the following statement sets\n      col1 to one more than its current value:\n    ",
+        "Press CTRL+C to copy UPDATE t1 SET col1 = col1 + 1;",
+        "\n      The second assignment in the following statement sets\n      col2 to the current (updated)\n      col1 value, not the original\n      col1 value. The result is that\n      col1 and col2 have the same\n      value. This behavior differs from standard SQL.\n    ",
+        "Press CTRL+C to copy UPDATE t1 SET col1 = col1 + 1, col2 = col1;",
+        "\n      Single-table UPDATE assignments are\n      generally evaluated from left to right. For multiple-table\n      updates, there is no guarantee that assignments are carried out in\n      any particular order.\n    ",
+        "\n      If you set a column to the value it currently has, MySQL notices\n      this and does not update it.\n    ",
+        "\n      If you update a column that has been declared NOT\n      NULL by setting to NULL, an error\n      occurs if strict SQL mode is enabled; otherwise, the column is set\n      to the implicit default value for the column data type and the\n      warning count is incremented. The implicit default value is\n      0 for numeric types, the empty string\n      ('') for string types, and the\n      \u201czero\u201d value for date and time types. See\n      Section\u00a013.6, \u201cData Type Default Values\u201d.\n    ",
+        "\n      If a generated column is updated explicitly, the only permitted\n      value is DEFAULT. For information about\n      generated columns, see\n      Section\u00a015.1.20.8, \u201cCREATE TABLE and Generated Columns\u201d.\n    ",
+        "\nUPDATE returns the number of rows\n      that were actually changed. The\n      mysql_info() C API function\n      returns the number of rows that were matched and updated and the\n      number of warnings that occurred during the\n      UPDATE.\n    ",
+        "\n      You can use LIMIT\n      row_count to restrict the\n      scope of the UPDATE. A\n      LIMIT clause is a rows-matched restriction. The\n      statement stops as soon as it has found\n      row_count rows that satisfy the\n      WHERE clause, whether or not they actually were\n      changed.\n    ",
+        "\n      If an UPDATE statement includes an\n      ORDER BY clause, the rows are updated in the\n      order specified by the clause. This can be useful in certain\n      situations that might otherwise result in an error. Suppose that a\n      table t contains a column id\n      that has a unique index. The following statement could fail with a\n      duplicate-key error, depending on the order in which rows are\n      updated:\n    ",
+        "Press CTRL+C to copy UPDATE t SET id = id + 1;",
+        "\n      For example, if the table contains 1 and 2 in the\n      id column and 1 is updated to 2 before 2 is\n      updated to 3, an error occurs. To avoid this problem, add an\n      ORDER BY clause to cause the rows with larger\n      id values to be updated before those with\n      smaller values:\n    ",
+        "Press CTRL+C to copy UPDATE t SET id = id + 1 ORDER BY id DESC;",
+        "\n      You can also perform UPDATE\n      operations covering multiple tables. However, you cannot use\n      ORDER BY or LIMIT with a\n      multiple-table UPDATE. The\n      table_references clause lists the\n      tables involved in the join. Its syntax is described in\n      Section\u00a015.2.13.2, \u201cJOIN Clause\u201d. Here is an example:\n    ",
+        "Press CTRL+C to copy UPDATE items,month SET items.price=month.price\nWHERE items.id=month.id;",
+        "\n      The preceding example shows an inner join that uses the comma\n      operator, but multiple-table UPDATE\n      statements can use any type of join permitted in\n      SELECT statements, such as\n      LEFT JOIN.\n    ",
+        "\n      If you use a multiple-table UPDATE\n      statement involving InnoDB tables for which\n      there are foreign key constraints, the MySQL optimizer might\n      process tables in an order that differs from that of their\n      parent/child relationship. In this case, the statement fails and\n      rolls back. Instead, update a single table and rely on the\n      ON UPDATE capabilities that\n      InnoDB provides to cause the other tables to be\n      modified accordingly. See\n      Section\u00a015.1.20.5, \u201cFOREIGN KEY Constraints\u201d.\n    ",
+        "\n      You cannot update a table and select directly from the same table\n      in a subquery. You can work around this by using a multi-table\n      update in which one of the tables is derived from the table that\n      you actually wish to update, and referring to the derived table\n      using an alias. Suppose you wish to update a table named\n      items which is defined using the statement\n      shown here:\n    ",
+        "Press CTRL+C to copy CREATE TABLE items (\n    id BIGINT NOT NULL AUTO_INCREMENT PRIMARY KEY,\n    wholesale DECIMAL(6,2) NOT NULL DEFAULT 0.00,\n    retail DECIMAL(6,2) NOT NULL DEFAULT 0.00,\n    quantity BIGINT NOT NULL DEFAULT 0\n);",
+        "\n      To reduce the retail price of any items for which the markup is\n      30% or greater and of which you have fewer than one hundred in\n      stock, you might try to use an UPDATE statement\n      such as the one following, which uses a subquery in the\n      WHERE clause. As shown here, this statement\n      does not work:\n    ",
+        "Press CTRL+C to copy mysql> UPDATE items\n     > SET retail = retail * 0.9\n     > WHERE id IN\n     >     (SELECT id FROM items\n     >         WHERE retail / wholesale >= 1.3 AND quantity > 100);\nERROR 1093 (HY000): You can't specify target table 'items' for update in FROM clause",
+        "\n      Instead, you can employ a multi-table update in which the subquery\n      is moved into the list of tables to be updated, using an alias to\n      reference it in the outermost WHERE clause,\n      like this:\n    ",
+        "Press CTRL+C to copy UPDATE items,\n       (SELECT id FROM items\n        WHERE id IN\n            (SELECT id FROM items\n             WHERE retail / wholesale >= 1.3 AND quantity < 100))\n        AS discounted\nSET items.retail = items.retail * 0.9\nWHERE items.id = discounted.id;",
+        "\n      Because the optimizer tries by default to merge the derived table\n      discounted into the outermost query block, this\n      works only if you force materialization of the derived table. You\n      can do this by setting the\n      derived_merge flag of the\n      optimizer_switch system variable\n      to off before running the update, or by using\n      the NO_MERGE optimizer hint, as\n      shown here:\n    ",
+        "Press CTRL+C to copy UPDATE /*+ NO_MERGE(discounted) */ items,\n       (SELECT id FROM items\n        WHERE retail / wholesale >= 1.3 AND quantity < 100)\n        AS discounted\n    SET items.retail = items.retail * 0.9\n    WHERE items.id = discounted.id;",
+        "\n      The advantage of using the optimizer hint in such a case is that\n      it applies only within the query block where it is used, so that\n      it is not necessary to change the value of\n      optimizer_switch again after executing the\n      UPDATE.\n    ",
+        "\n      Another possibility is to rewrite the subquery so that it does not\n      use IN or EXISTS, like this:\n    ",
+        "Press CTRL+C to copy UPDATE items,\n       (SELECT id, retail / wholesale AS markup, quantity FROM items)\n       AS discounted\n    SET items.retail = items.retail * 0.9\n    WHERE discounted.markup >= 1.3\n    AND discounted.quantity < 100\n    AND items.id = discounted.id;",
+        "\n      In this case, the subquery is materialized by default rather than\n      merged, so it is not necessary to disable merging of the derived\n      table.\n"
+    ],
+    "Examples": [
+        "UPDATE t1 SET col1 = col1 + 1;",
+        "UPDATE t1 SET col1 = col1 + 1, col2 = col1;",
+        "UPDATE t SET id = id + 1;",
+        "UPDATE t SET id = id + 1 ORDER BY id DESC;",
+        "UPDATE items,month SET items.price=month.price\nWHERE items.id=month.id;",
+        "CREATE TABLE items (\n    id BIGINT NOT NULL AUTO_INCREMENT PRIMARY KEY,\n    wholesale DECIMAL(6,2) NOT NULL DEFAULT 0.00,\n    retail DECIMAL(6,2) NOT NULL DEFAULT 0.00,\n    quantity BIGINT NOT NULL DEFAULT 0\n);",
+        "mysql> UPDATE items\n     > SET retail = retail * 0.9\n     > WHERE id IN\n     >     (SELECT id FROM items\n     >         WHERE retail / wholesale >= 1.3 AND quantity > 100);\nERROR 1093 (HY000): You can't specify target table 'items' for update in FROM clause",
+        "UPDATE items,\n       (SELECT id FROM items\n        WHERE id IN\n            (SELECT id FROM items\n             WHERE retail / wholesale >= 1.3 AND quantity < 100))\n        AS discounted\nSET items.retail = items.retail * 0.9\nWHERE items.id = discounted.id;",
+        "UPDATE /*+ NO_MERGE(discounted) */ items,\n       (SELECT id FROM items\n        WHERE retail / wholesale >= 1.3 AND quantity < 100)\n        AS discounted\n    SET items.retail = items.retail * 0.9\n    WHERE items.id = discounted.id;",
+        "UPDATE items,\n       (SELECT id, retail / wholesale AS markup, quantity FROM items)\n       AS discounted\n    SET items.retail = items.retail * 0.9\n    WHERE discounted.markup >= 1.3\n    AND discounted.quantity < 100\n    AND items.id = discounted.id;"
+    ],
+    "Category": [
+        "Data Manipulation Statements"
+    ]
+}

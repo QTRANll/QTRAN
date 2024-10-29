@@ -1,0 +1,35 @@
+{
+    "HTML": "https://mariadb.com//kb/en/pow/",
+    "Title": "POW",
+    "Feature": [
+        "POW(X,Y)\n"
+    ],
+    "Description": [
+        "Returns the value of X raised to the power of Y.",
+        "POWER() is a synonym."
+    ],
+    "Examples": [
+        "SELECT POW(2,3);\n+----------+\n| POW(2,3) |\n+----------+\n|        8 |\n+----------+\n\nSELECT POW(2,-2);\n+-----------+\n| POW(2,-2) |\n+-----------+\n|      0.25 |\n+-----------+\n"
+    ],
+    "Category": [
+        "Numeric Functions"
+    ],
+    "Effective SQLs Refined": [
+        "SELECT POW(2,3);",
+        "SELECT POW(2,-2);"
+    ],
+    "Ineffective SQLs Refined": [],
+    "Wrong Messages from Ineffective SQLs Refined": [],
+    "SQLs Generated1": [],
+    "SQLs Generated Costs1": [],
+    "SQLs Generated ExecResults1": [],
+    "SQLs Generated ExecTimes1": [],
+    "SQLs Generated ErrorMessages1": [],
+    "Effective SQLs Generated1": [],
+    "SQLs Generated2": [],
+    "SQLs Generated Costs2": [],
+    "SQLs Generated ExecResults2": [],
+    "SQLs Generated ExecTimes2": [],
+    "SQLs Generated ErrorMessages2": [],
+    "Effective SQLs Generated2": []
+}

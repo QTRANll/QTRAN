@@ -1,0 +1,29 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/loadable-function-reference.html"
+    ],
+    "Title": [
+        "14.2 Loadable Function Reference"
+    ],
+    "Feature": [
+        "version_tokens_lock_exclusive(token_name[,\n              token_name] ...,\n              timeout)"
+    ],
+    "Description": [
+        "Acquire exclusive locks on version tokens",
+        "\nversion_tokens_lock_exclusive(token_name[,\n              token_name] ...,\n              timeout)\n",
+        "\n              Acquires exclusive locks on one or more version tokens,\n              specified by name as strings, timing out with an error if\n              the locks are not acquired within the given timeout value.\n            ",
+        "Press CTRL+C to copy mysql> SELECT version_tokens_lock_exclusive('lock1', 'lock2', 10);\n+-----------------------------------------------------+\n| version_tokens_lock_exclusive('lock1', 'lock2', 10) |\n+-----------------------------------------------------+\n|                                                   1 |\n+-----------------------------------------------------+"
+    ],
+    "Examples": [
+        "mysql> SELECT version_tokens_lock_exclusive('lock1', 'lock2', 10);\n+-----------------------------------------------------+\n| version_tokens_lock_exclusive('lock1', 'lock2', 10) |\n+-----------------------------------------------------+\n|                                                   1 |\n+-----------------------------------------------------+"
+    ],
+    "Category": [
+        "Loadable Functions"
+    ],
+    "Reference HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/version-tokens-reference.html#function_version-tokens-lock-exclusive"
+    ],
+    "Feature Type": [
+        "Function"
+    ]
+}

@@ -1,0 +1,22 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/engines/table-functions/executable"
+    ],
+    "Title": [
+        "Passing Query Results to a Script"
+    ],
+    "Feature": [
+        "Passing Query Results to a Script"
+    ],
+    "Description": [
+        "Passing Query Results to a Script",
+        "Be sure to check out the example in the Executable table engine on how to pass query results to a script. Here is how you execute the same script in that example using the executable table function:",
+        "SELECT * FROM executable(    'sentiment.py',    TabSeparated,    'id UInt64, sentiment Float32',    (SELECT id, comment FROM hackernews WHERE id > 0 AND comment != '' LIMIT 20));"
+    ],
+    "Examples": [
+        "SELECT * FROM executable(    'sentiment.py',    TabSeparated,    'id UInt64, sentiment Float32',    (SELECT id, comment FROM hackernews WHERE id > 0 AND comment != '' LIMIT 20));"
+    ],
+    "Category": [
+        "Table Functions"
+    ]
+}

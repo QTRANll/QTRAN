@@ -1,0 +1,31 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/aggregate-functions/reference/studentttest"
+    ],
+    "Title": [
+        "studentTTest"
+    ],
+    "Feature": [
+        "studentTTest([confidence_level])(sample_data, sample_index)"
+    ],
+    "Description": [
+        "studentTTest",
+        "Applies Student's t-test to samples from two populations.",
+        "Syntax",
+        "studentTTest([confidence_level])(sample_data, sample_index)",
+        "Values of both samples are in the sample_data column. If sample_index equals to 0 then the value in that row belongs to the sample from the first population. Otherwise it belongs to the sample from the second population.\nThe null hypothesis is that means of populations are equal. Normal distribution with equal variances is assumed.",
+        "Arguments",
+        "sample_data \u2014 Sample data. Integer, Float or Decimal.sample_index \u2014 Sample index. Integer.",
+        "Parameters",
+        "confidence_level \u2014 Confidence level in order to calculate confidence intervals. Float.",
+        "Returned values",
+        "Tuple with two or four elements (if the optional confidence_level is specified):",
+        "calculated t-statistic. Float64.calculated p-value. Float64.[calculated confidence-interval-low. Float64.][calculated confidence-interval-high. Float64.]"
+    ],
+    "Examples": [
+        "SELECT studentTTest(sample_data, sample_index) FROM student_ttest;"
+    ],
+    "Category": [
+        "Aggregate Functions"
+    ]
+}

@@ -1,0 +1,28 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/time-window-functions"
+    ],
+    "Title": [
+        "tumbleStart"
+    ],
+    "Feature": [
+        "tumbleStart(time_attr, interval [, timezone]);"
+    ],
+    "Description": [
+        "tumbleStart",
+        "Returns the inclusive lower bound of the corresponding tumbling window.",
+        "Syntax",
+        "tumbleStart(time_attr, interval [, timezone]);",
+        "Arguments",
+        "time_attr \u2014 Date and time. DateTime.interval \u2014 Window interval in Interval.timezone \u2014 Timezone name (optional).",
+        "The parameters above can also be passed to the function as a tuple.",
+        "Returned values",
+        "The inclusive lower bound of the corresponding tumbling window. DateTime, Tuple or UInt32."
+    ],
+    "Examples": [
+        "SELECT tumbleStart(now(), toIntervalDay('1'));"
+    ],
+    "Category": [
+        "Time Window Functions"
+    ]
+}

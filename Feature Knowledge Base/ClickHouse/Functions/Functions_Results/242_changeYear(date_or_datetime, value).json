@@ -1,0 +1,27 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/date-time-functions"
+    ],
+    "Title": [
+        "changeYear"
+    ],
+    "Feature": [
+        "changeYear(date_or_datetime, value)"
+    ],
+    "Description": [
+        "changeYear",
+        "Changes the year component of a date or date time.",
+        "Syntax",
+        "changeYear(date_or_datetime, value)",
+        "Arguments",
+        "date_or_datetime - a Date, Date32, DateTime or DateTime64value - a new value of the year. Integer.",
+        "Returned value",
+        "The same type as date_or_datetime."
+    ],
+    "Examples": [
+        "SELECT changeYear(toDate('1999-01-01'), 2000), changeYear(toDateTime64('1999-01-01 00:00:00.000', 3), 2000);"
+    ],
+    "Category": [
+        "Dates and Times Functions"
+    ]
+}

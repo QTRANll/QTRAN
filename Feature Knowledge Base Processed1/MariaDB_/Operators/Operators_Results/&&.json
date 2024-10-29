@@ -1,0 +1,38 @@
+{
+    "HTML": "https://mariadb.com//kb/en/and/",
+    "Title": "&&",
+    "Feature": [
+        "AND, &&\n"
+    ],
+    "Description": [
+        "Logical AND. Evaluates to 1 if all operands are non-zero and not NULL,\nto 0 if one or more operands are 0, otherwise NULL is returned.",
+        "For this operator, short-circuit evaluation can be used."
+    ],
+    "Examples": [
+        "SELECT 1 && 1;\n+--------+\n| 1 && 1 |\n+--------+\n|      1 |\n+--------+\n\nSELECT 1 && 0;\n+--------+\n| 1 && 0 |\n+--------+\n|      0 |\n+--------+\n\nSELECT 1 && NULL;\n+-----------+\n| 1 && NULL |\n+-----------+\n|      NULL |\n+-----------+\n\nSELECT 0 && NULL;\n+-----------+\n| 0 && NULL |\n+-----------+\n|         0 |\n+-----------+\n\nSELECT NULL && 0;\n+-----------+\n| NULL && 0 |\n+-----------+\n|         0 |\n+-----------+\n"
+    ],
+    "Category": [
+        "Logical Operators"
+    ],
+    "Effective SQLs Refined": [
+        "SELECT 1 && 1;",
+        "SELECT 1 && 0;",
+        "SELECT 1 && NULL;",
+        "SELECT 0 && NULL;",
+        "SELECT NULL && 0;"
+    ],
+    "Ineffective SQLs Refined": [],
+    "Wrong Messages from Ineffective SQLs Refined": [],
+    "SQLs Generated1": [],
+    "SQLs Generated Costs1": [],
+    "SQLs Generated ExecResults1": [],
+    "SQLs Generated ExecTimes1": [],
+    "SQLs Generated ErrorMessages1": [],
+    "Effective SQLs Generated1": [],
+    "SQLs Generated2": [],
+    "SQLs Generated Costs2": [],
+    "SQLs Generated ExecResults2": [],
+    "SQLs Generated ExecTimes2": [],
+    "SQLs Generated ErrorMessages2": [],
+    "Effective SQLs Generated2": []
+}

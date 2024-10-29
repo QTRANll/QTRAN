@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/current/functions-admin.html"
+    ],
+    "Title": [
+        "pg_read_binary_file"
+    ],
+    "Feature": [
+        "pg_read_binary_file ( filename text [, offset bigint, length bigint ] [, missing_ok boolean ] ) → bytea"
+    ],
+    "Description": [
+        "Returns all or part of a file. This function is identical to pg_read_file except that it can read arbitrary binary data, returning the result as bytea not text; accordingly, no encoding checks are performed.",
+        "This function is restricted to superusers by default, but other users can be granted EXECUTE to run the function.",
+        "In combination with the convert_from function, this function can be used to read a text file in a specified encoding and convert to the database's encoding:"
+    ],
+    "Examples": [],
+    "Category": [
+        "System Administration Functions"
+    ]
+}

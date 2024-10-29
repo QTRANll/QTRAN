@@ -1,0 +1,25 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/other-functions"
+    ],
+    "Title": [
+        "filesystemUnreserved"
+    ],
+    "Feature": [
+        "filesystemUnreserved()"
+    ],
+    "Description": [
+        "filesystemUnreserved",
+        "Returns the total amount of the free space on the filesystem hosting the database persistence. (previously filesystemFree). See also filesystemAvailable.",
+        "Syntax",
+        "filesystemUnreserved()",
+        "Returned value",
+        "The amount of free space in bytes. UInt64."
+    ],
+    "Examples": [
+        "SELECT formatReadableSize(filesystemUnreserved()) AS \"Free space\";"
+    ],
+    "Category": [
+        "Other Functions"
+    ]
+}

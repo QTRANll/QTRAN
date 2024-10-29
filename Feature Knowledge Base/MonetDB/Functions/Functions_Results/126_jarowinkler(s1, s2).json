@@ -1,0 +1,22 @@
+{
+    "HTML": [
+        "https://www.monetdb.org/documentation-Aug2024/user-guide/sql-functions/string-functions"
+    ],
+    "Title": [
+        "jarowinkler(s1, s2)"
+    ],
+    "Feature": [
+        "jarowinkler(s1, s2)"
+    ],
+    "Description": [
+        "Return type: ",
+        "double",
+        "compute the 'Jaro-Winkler similarity' between two strings returning a double between 0 (exact match) and 1 (no similarity)"
+    ],
+    "Examples": [
+        "jarowinkler('MonetDB', 'DB free')"
+    ],
+    "Category": [
+        "Character String Functions"
+    ]
+}

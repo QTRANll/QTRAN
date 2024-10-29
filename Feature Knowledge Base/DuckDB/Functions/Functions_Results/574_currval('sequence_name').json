@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://duckdb.org/docs/sql/functions/utility"
+    ],
+    "Title": [
+        "currval('sequence_name')"
+    ],
+    "Feature": [
+        "currval('sequence_name')"
+    ],
+    "Description": [
+        "Return the current value of the sequence. Note that nextval must be called at least once prior to calling currval."
+    ],
+    "Examples": [
+        "currval('my_sequence_name')"
+    ],
+    "Category": [
+        "Utility Functions"
+    ]
+}

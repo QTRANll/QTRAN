@@ -1,0 +1,25 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/math-functions"
+    ],
+    "Title": [
+        "exp"
+    ],
+    "Feature": [
+        "exp(x)"
+    ],
+    "Description": [
+        "exp",
+        "Returns exe^{x}ex, where x is the given argument to the function.",
+        "Syntax",
+        "exp(x)",
+        "Arguments",
+        "x - (U)Int*, Float* or Decimal*."
+    ],
+    "Examples": [
+        "SELECT round(exp(-1), 4);"
+    ],
+    "Category": [
+        "Mathematical Functions"
+    ]
+}

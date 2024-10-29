@@ -1,0 +1,60 @@
+{
+    "HTML": "https://mariadb.com//kb/en/get_lock/",
+    "Title": "GET_LOCK",
+    "Feature": [
+        "GET_LOCK(str,timeout)\n"
+    ],
+    "Description": [
+        "Tries to obtain a lock with a name given by the string str, using a timeout of timeout seconds. Returns 1 if the lock was obtained successfully, 0 if the attempt timed out (for example, because another client has previously locked the name), or  NULL if an error occurred (such as running out of memory or the thread was killed with mariadb-admin kill).",
+        "A lock is released with RELEASE_LOCK(), when the connection terminates (either normally or abnormally). A connection can hold multiple locks at the same time, so a lock that is no longer needed needs to be explicitly released.",
+        "The IS_FREE_LOCK function returns whether a specified lock a free or not, and the IS_USED_LOCK whether the function is in use or not.",
+        "Locks obtained with GET_LOCK() do not interact with transactions. That is, committing a transaction does not release any such locks obtained during the transaction.",
+        "It is also possible to recursively set the same lock. If a lock with the same name is set n times, it needs to be released n times as well. ",
+        "str is case insensitive for GET_LOCK() and related functions. If str is an empty string or NULL, GET_LOCK() returns NULL and does nothing. timeout supports microseconds.",
+        "If the metadata_lock_info plugin is installed, locks acquired with this function are visible in the Information Schema METADATA_LOCK_INFO table.",
+        "This function can be used to implement application locks or to simulate record locks. Names are locked on a server-wide basis. If a name has been locked by one client, GET_LOCK() blocks any request by another client for a lock with the same name. This allows clients that agree on a given lock name to use the name to perform cooperative advisory locking. But be aware that it also allows a client that is not among the set of cooperating clients to lock a name, either inadvertently or deliberately, and thus prevent any of the cooperating clients from locking that name. One way to reduce the likelihood of this is to use lock names that are database-specific or application-specific. For example, use lock names of the form db_name.str or app_name.str.",
+        "Statements using the GET_LOCK function are not safe for statement-based replication.",
+        "The patch to permit multiple locks was contributed by Konstantin \"Kostja\" Osipov (MDEV-3917)."
+    ],
+    "Examples": [
+        "SELECT GET_LOCK('lock1',10);\n+----------------------+\n| GET_LOCK('lock1',10) |\n+----------------------+\n|                    1 |\n+----------------------+\n\nSELECT IS_FREE_LOCK('lock1'), IS_USED_LOCK('lock1');\n+-----------------------+-----------------------+\n| IS_FREE_LOCK('lock1') | IS_USED_LOCK('lock1') |\n+-----------------------+-----------------------+\n|                     0 |                    46 |\n+-----------------------+-----------------------+\n\nSELECT IS_FREE_LOCK('lock2'), IS_USED_LOCK('lock2');\n+-----------------------+-----------------------+\n| IS_FREE_LOCK('lock2') | IS_USED_LOCK('lock2') |\n+-----------------------+-----------------------+\n|                     1 |                  NULL |\n+-----------------------+-----------------------+\n",
+        "SELECT GET_LOCK('lock2',10);\n+----------------------+\n| GET_LOCK('lock2',10) |\n+----------------------+\n|                    1 |\n+----------------------+\n\nSELECT IS_FREE_LOCK('lock1'), IS_FREE_LOCK('lock2');\n+-----------------------+-----------------------+\n| IS_FREE_LOCK('lock1') | IS_FREE_LOCK('lock2') |\n+-----------------------+-----------------------+\n|                     0 |                     0 |\n+-----------------------+-----------------------+\n\nSELECT RELEASE_LOCK('lock1'), RELEASE_LOCK('lock2');\n+-----------------------+-----------------------+\n| RELEASE_LOCK('lock1') | RELEASE_LOCK('lock2') |\n+-----------------------+-----------------------+\n|                     1 |                     1 |\n+-----------------------+-----------------------+\n",
+        "SELECT GET_LOCK('lock3',10);\n+----------------------+\n| GET_LOCK('lock3',10) |\n+----------------------+\n|                    1 |\n+----------------------+\n\nSELECT GET_LOCK('lock3',10);\n+----------------------+\n| GET_LOCK('lock3',10) |\n+----------------------+\n|                    1 |\n+----------------------+\n\nSELECT * FROM INFORMATION_SCHEMA.METADATA_LOCK_INFO;\n+-----------+---------------------+---------------+-----------+--------------+------------+\n| THREAD_ID | LOCK_MODE           | LOCK_DURATION | LOCK_TYPE | TABLE_SCHEMA | TABLE_NAME |\n+-----------+---------------------+---------------+-----------+--------------+------------+\n|        46 | MDL_SHARED_NO_WRITE | NULL          | User lock | lock3        |            |\n+-----------+---------------------+---------------+-----------+--------------+------------+\n\nSELECT RELEASE_LOCK('lock3');\n+-----------------------+\n| RELEASE_LOCK('lock3') |\n+-----------------------+\n|                     1 |\n+-----------------------+\n\nSELECT * FROM INFORMATION_SCHEMA.METADATA_LOCK_INFO;\n+-----------+---------------------+---------------+-----------+--------------+------------+\n| THREAD_ID | LOCK_MODE           | LOCK_DURATION | LOCK_TYPE | TABLE_SCHEMA | TABLE_NAME |\n+-----------+---------------------+---------------+-----------+--------------+------------+\n|        46 | MDL_SHARED_NO_WRITE | NULL          | User lock | lock3        |            |\n+-----------+---------------------+---------------+-----------+--------------+------------+\n\nSELECT RELEASE_LOCK('lock3');\n+-----------------------+\n| RELEASE_LOCK('lock3') |\n+-----------------------+\n|                     1 |\n+-----------------------+\n\nSELECT * FROM INFORMATION_SCHEMA.METADATA_LOCK_INFO;\nEmpty set (0.000 sec)\n",
+        "SELECT GET_LOCK('lock4',10);\n+----------------------+\n| GET_LOCK('lock4',10) |\n+----------------------+\n|                    1 |\n+----------------------+\n",
+        "SELECT GET_LOCK('lock4',10);\n",
+        "+----------------------+\n| GET_LOCK('lock4',10) |\n+----------------------+\n|                    0 |\n+----------------------+\n",
+        "SELECT GET_LOCK('lock5',10); \n+----------------------+\n| GET_LOCK('lock5',10) |\n+----------------------+\n|                    1 |\n+----------------------+\n",
+        "SELECT GET_LOCK('lock6',10);\n+----------------------+\n| GET_LOCK('lock6',10) |\n+----------------------+\n|                    1 |\n+----------------------+\n",
+        "SELECT GET_LOCK('lock6',10); \n+----------------------+\n| GET_LOCK('lock6',10) |\n+----------------------+\n|                    0 |\n+----------------------+\n",
+        "SELECT GET_LOCK('lock5',10);\nERROR 1213 (40001): Deadlock found when trying to get lock; try restarting transaction\n"
+    ],
+    "Category": [
+        "Miscellaneous Functions"
+    ],
+    "Effective SQLs Refined": [
+        "SELECT GET_LOCK('lock1',10);",
+        "SELECT GET_LOCK('lock2',10);",
+        "SELECT GET_LOCK('lock3',10);",
+        "SELECT GET_LOCK('lock3',10);",
+        "SELECT GET_LOCK('lock4',10);",
+        "SELECT GET_LOCK('lock4',10);",
+        "SELECT GET_LOCK('lock5',10);",
+        "SELECT GET_LOCK('lock6',10);",
+        "SELECT GET_LOCK('lock6',10);",
+        "SELECT GET_LOCK('lock5',10);"
+    ],
+    "Ineffective SQLs Refined": [],
+    "Wrong Messages from Ineffective SQLs Refined": [],
+    "SQLs Generated1": [],
+    "SQLs Generated Costs1": [],
+    "SQLs Generated ExecResults1": [],
+    "SQLs Generated ExecTimes1": [],
+    "SQLs Generated ErrorMessages1": [],
+    "Effective SQLs Generated1": [],
+    "SQLs Generated2": [],
+    "SQLs Generated Costs2": [],
+    "SQLs Generated ExecResults2": [],
+    "SQLs Generated ExecTimes2": [],
+    "SQLs Generated ErrorMessages2": [],
+    "Effective SQLs Generated2": []
+}

@@ -1,0 +1,19 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/array-functions"
+    ],
+    "Title": [
+        "array(x1, ...), operator [x1, ...]"
+    ],
+    "Feature": [
+        "array(x1, ...), operator [x1, ...]"
+    ],
+    "Description": [
+        "array(x1, ...), operator [x1, ...]",
+        "Creates an array from the function arguments.\nThe arguments must be constants and have types that have the smallest common type. At least one argument must be passed, because otherwise it isn\u2019t clear which type of array to create. That is, you can\u2019t use this function to create an empty array (to do that, use the \u2018emptyArray*\u2019 function described above).\nReturns an \u2018Array(T)\u2019 type result, where \u2018T\u2019 is the smallest common type out of the passed arguments."
+    ],
+    "Examples": [],
+    "Category": [
+        "Arrays Functions"
+    ]
+}

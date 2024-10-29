@@ -1,0 +1,24 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000000823122"
+    ],
+    "Title": [
+        "TO_CHAR (datetime)"
+    ],
+    "Feature": [
+        "TO_CHAR({ datetime | interval } [, fmt [, 'nlsparam' ] ])\n"
+    ],
+    "Description": [
+        "该函数将日期时间或时间间隔值 DATE、TIMESTAMP、TIMESTAMP WITH TIME ZONE、TIMESTAMP WITH LOCAL TIME ZONE、INTERVAL DAY TO SECOND 和 INTERVAL YEAR TO MONTH 等数据类型的值按照参数 fmt 指定的格式转换为 VARCHAR2 数据类型的值。",
+        "\n\n\n参数\n说明\n\n\n\n\ndatetime | interval\n指定转换的字符类型。 \n      \ndatetime 属于日期时间，DATE、TIMESTAMP、TIMESTAMP WITH TIME ZONE、TIMESTAMP WITH LOCAL TIME ZONE、INTERVAL DAY TO SECOND 和 INTERVAL YEAR TO MONTH 等数据类型的值。\ninterval 属于时间间隔值。\n\n\n\nfmt\n指定输出格式，为可选项。如果不指定参数 fmt，则参数 datetime 的值将按如下格式转换为 VARCHAR2 数据类型： \n      \nDATE、TIMESTAMP、TIMESTAMP WITH TIME ZONE 和 TIMESTAMP WITH LOCAL TIME ZONE 的值被转换为数据库中日期时间值的默认格式。您可在 日期时间和间隔数据类型 章节中查看各日期时间类型的默认格式。\nINTERVAL DAY TO SECOND 和 INTERVAL YEAR TO MONTH 数据类型的值转换为数字格式的间隔值。\n\n\n\nnlsparam\n用来控制返回的月份和日期所使用的语言。\n\n\n",
+        "返回 VARCHAR2 数据类型。"
+    ],
+    "Examples": [
+        "obclient> SELECT TO_CHAR(SYSDATE,'yyyy/mm/dd'),TO_CHAR(SYSDATE,'DS DL') FROM DUAL;\n+-------------------------------+----------------------------------------+\n| TO_CHAR(SYSDATE,'YYYY/MM/DD') | TO_CHAR(SYSDATE,'DSDL')                |\n+-------------------------------+----------------------------------------+\n| 2021/11/18                    | 11/18/2021 Thursday, November 18, 2021 |\n+-------------------------------+----------------------------------------+\n1 row in set\n",
+        "obclient> SELECT TO_CHAR(interval'1' year, 'SS-MI-HH', 'nls_language = AMERICAN') FROM DUAL;\n+-------------------------------------------------------------+\n| TO_CHAR(INTERVAL'1'YEAR,'SS-MI-HH','NLS_LANGUAGE=AMERICAN') |\n+-------------------------------------------------------------+\n| +01-00                                                      |\n+-------------------------------------------------------------+\n1 row in set\n"
+    ],
+    "Category": [
+        "Datetime Functions",
+        "Conversion Functions"
+    ]
+}

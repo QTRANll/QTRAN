@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000000823497"
+    ],
+    "Title": [
+        "JSON_OBJECT"
+    ],
+    "Feature": [
+        "JSON_OBJECT([KEY]'key_name': value_expr FORMAT JSON,\n                         'key_name' VALUE value_expr\n                         [ABSENT|NULL ON NULL,]\n                         [RETURNING  CLOB|BLOB|JSON|VARCHAR2|VARCHAR2[size],]\n                         [STRICT,]\n                         [WITH UNIQUE KEYS]);\n"
+    ],
+    "Description": [
+        "对于 SQL 输入的一系列 key-value 对，JSON_OBJECT() 函数将其转换成一个 JSON 格式的对象，包含了前面输入的所有 key-value 对。"
+    ],
+    "Examples": [
+        "# 入参是(a), (b)的场景\nSELECT JSON_OBJECT(\n'name' : first_name || ' ' || last_name,\n'email' : email,\n'phone' : phone_number,\n'hire_date' : hire_date\n)\n    FROM employees\n    WHERE employee_id = 140;\n\n# 入参是(f)的场景，使用通配符\nSELECT JSON_OBJECT(*) FROM employees WHERE employee_id = 140;\n---------------------------------------------------------------------\n{\n\"EMPLOYEE_ID\":140,\n\"FIRST_NAME\":\"Joshua\",\n\"LAST_NAME\":\"Patel\",\n\"EMAIL\":\"JPATEL\",\n\"PHONE_NUMBER\":\"650.121.1834\",\n\"HIRE_DATE\":\"2006-04-06T00:00:00\",\n\"JOB_ID\":\"ST_CLERK\",\n\"SALARY\":2500,\n\"COMMISSION_PCT\":null,\n\"MANAGER_ID\":123,\"DEPARTMENT_ID\":50\n}\n\n# 入参是(c), (d)的场景\nSELECT JSON_OBJECT('NAME' VALUE first_name, d.*)\n   FROM employees e, departments d\n      WHERE e.department_id = d.department_id AND e.employee_id =140\n\n# 使用 FORMAT JSON 子句\nSELECT JSON_OBJECT ('name' value 'Foo') FROM DUAL;\n+-------------------------------+\n| JSON_OBJECT('NAME'VALUE'FOO') |\n+-------------------------------+\n| {\"name\":\"Foo\"}                |\n+-------------------------------+\n\n\n# 场景(a), (b) 使用关键字 KEY VALUE\nSELECT JSON_OBJECT (\n    KEY 'deptno' VALUE d.department_id,\n    KEY 'deptname' VALUE d.department_name\n    ) \"Department Objects\"\n  FROM departments d\n  ORDER BY d.department_id;\n\nDepartment Objects\n----------------------------------------\n{\"deptno\":10,\"deptname\":\"Administration\"}\n{\"deptno\":20,\"deptname\":\"Marketing\"}\n{\"deptno\":30,\"deptname\":\"Purchasing\"}\n{\"deptno\":40,\"deptname\":\"Human Resources\"}\n{\"deptno\":50,\"deptname\":\"Shipping\"}\n\n# 入参(1),(2)\nSELECT JSON_OBJECT(\n'first_name' VALUE first_name,\n'last_name' VALUE last_name,\n'email' VALUE email,\n'hire_date' VALUE hire_date\n)\nFROM employees\nWHERE employee_id = 140;\n---------------------------------------------------------------------------\n{\n\"first_name\":\"Joshua\",\n\"last_name\":\"Patel\",\n\"email\":\"JPATEL\",\n\"hire_date\":\"2006-04-06T00:00:00\"\n}\n"
+    ],
+    "Category": [
+        "JSON Functions"
+    ]
+}

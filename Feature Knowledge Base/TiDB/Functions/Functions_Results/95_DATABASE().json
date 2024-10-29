@@ -1,0 +1,23 @@
+{
+    "HTML": [
+        "https://docs.pingcap.com/zh/tidb/stable/information-functions#database"
+    ],
+    "Title": [
+        "DATABASE()"
+    ],
+    "Feature": [
+        "DATABASE()"
+    ],
+    "Description": [
+        "DATABASE()",
+        "DATABASE() \u51fd\u6570\u8fd4\u56de\u5f53\u524d\u4f1a\u8bdd\u6b63\u5728\u4f7f\u7528\u7684\u6570\u636e\u5e93\u540d\u3002",
+        "SELECT DATABASE();\n",
+        "+------------+\n| DATABASE() |\n+------------+\n| test       |\n+------------+\n1 row in set (0.00 sec)\n"
+    ],
+    "Examples": [
+        "SELECT DATABASE();\n"
+    ],
+    "Category": [
+        "Information Functions"
+    ]
+}

@@ -1,0 +1,21 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/boundary/"
+    ],
+    "Title": [
+        "ST_BOUNDARY"
+    ],
+    "Feature": [
+        "ST_BOUNDARY(g)\nBOUNDARY(g)\n"
+    ],
+    "Description": [
+        "Returns a geometry that is the closure of the combinatorial boundary of the geometry value g.",
+        "BOUNDARY() is a synonym."
+    ],
+    "Examples": [
+        "SELECT ST_AsText(ST_Boundary(ST_GeomFromText('LINESTRING(3 3,0 0, -3 3)')));\n+----------------------------------------------------------------------+\n| ST_AsText(ST_Boundary(ST_GeomFromText('LINESTRING(3 3,0 0, -3 3)'))) |\n+----------------------------------------------------------------------+\n| MULTIPOINT(3 3,-3 3)                                                 |\n+----------------------------------------------------------------------+\n\nSELECT ST_AsText(ST_Boundary(ST_GeomFromText('POLYGON((3 3,0 0, -3 3, 3 3))')));\n+--------------------------------------------------------------------------+\n| ST_AsText(ST_Boundary(ST_GeomFromText('POLYGON((3 3,0 0, -3 3, 3 3))'))) |\n+--------------------------------------------------------------------------+\n| LINESTRING(3 3,0 0,-3 3,3 3)                                             |\n+--------------------------------------------------------------------------+\n"
+    ],
+    "Category": [
+        "Geographic Functions"
+    ]
+}

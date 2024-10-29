@@ -1,0 +1,18 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/current/functions-srf.html"
+    ],
+    "Title": [
+        "generate_subscripts"
+    ],
+    "Feature": [
+        "generate_subscripts ( array anyarray, dim integer, reverse boolean ) → setof integer"
+    ],
+    "Description": [
+        "Generates a series comprising the valid subscripts of the dim'th dimension of the given array. When reverse is true, returns the series in reverse order."
+    ],
+    "Examples": [],
+    "Category": [
+        "Set Returning Functions"
+    ]
+}

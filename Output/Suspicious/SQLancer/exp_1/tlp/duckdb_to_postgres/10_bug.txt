@@ -1,0 +1,5 @@
+SELECT SIN(1e1000); -- -nan
+
+
+SELECT SIN(1e308);
+SELECT SIN(1e308) FROM pg_catalog.pg_inherits WHERE TRUE UNION ALL SELECT SIN(1e308) FROM pg_catalog.pg_inherits WHERE NOT (TRUE) UNION ALL SELECT SIN(1e308) FROM pg_catalog.pg_inherits WHERE (TRUE) IS NULL;

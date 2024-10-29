@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://duckdb.org/docs/sql/functions/time"
+    ],
+    "Title": [
+        "datediff(part, starttime, endtime)"
+    ],
+    "Feature": [
+        "datediff(part, starttime, endtime)"
+    ],
+    "Description": [
+        "Alias of date_diff. The number of partition boundaries between the times."
+    ],
+    "Examples": [
+        "datediff('hour', TIME '01:02:03', TIME '06:01:03')"
+    ],
+    "Category": [
+        "Time Functions"
+    ]
+}

@@ -1,0 +1,79 @@
+{
+    "HTML": "https://mariadb.com//kb/en/st_isring/",
+    "Title": "ST_IsRing",
+    "Feature": [
+        "ST_IsRing(g)\nIsRing(g)\n"
+    ],
+    "Description": [
+        "Returns true if a given LINESTRING is a ring, that is, both ST_IsClosed and ST_IsSimple. A simple curve does not pass through the same point more than once.  However, see MDEV-7510.",
+        "St_IsRing() and IsRing() are synonyms."
+    ],
+    "Examples": [],
+    "Category": [
+        "Geographic Functions"
+    ],
+    "Effective SQLs Refined": [],
+    "Ineffective SQLs Refined": [],
+    "Wrong Messages from Ineffective SQLs Refined": [],
+    "SQLs Generated1": [
+        {
+            "Example SQL": "SELECT ST_IsRing(geometry);"
+        },
+        {
+            "Example SQL": "SELECT ST_IsRing(geom) FROM your_table;"
+        },
+        {
+            "Example SQL": "SELECT ST_IsRing(geom);"
+        },
+        {
+            "Example SQL": "SELECT ST_IsRing(geometry) FROM (SELECT ST_GeomFromText('LINESTRING(0 0, 1 1, 0 0)') AS geometry) AS temp;"
+        }
+    ],
+    "SQLs Generated Costs1": [
+        {
+            "Total Tokens": 321,
+            "Prompt Tokens": 301,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 5.714999999999999e-05
+        },
+        {
+            "Total Tokens": 472,
+            "Prompt Tokens": 449,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 8.115e-05
+        },
+        {
+            "Total Tokens": 625,
+            "Prompt Tokens": 605,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 0.00010274999999999998
+        },
+        {
+            "Total Tokens": 806,
+            "Prompt Tokens": 753,
+            "Completion Tokens": 53,
+            "Total Cost (USD)": 0.00014475
+        }
+    ],
+    "SQLs Generated ExecResults1": [
+        "None",
+        "None",
+        "None",
+        "[(1,)]"
+    ],
+    "SQLs Generated ExecTimes1": [
+        "0",
+        "0",
+        "0",
+        "0.006874799728393555"
+    ],
+    "SQLs Generated ErrorMessages1": [
+        "(pymysql.err.OperationalError) (1054, \"Unknown column 'geometry' in 'field list'\")\n",
+        "(pymysql.err.ProgrammingError) (1146, \"Table 'PINOLO_MariaDB.your_table' doesn't exist\")\n",
+        "(pymysql.err.OperationalError) (1054, \"Unknown column 'geom' in 'field list'\")\n",
+        "None"
+    ],
+    "Effective SQLs Generated1": [
+        "SELECT ST_IsRing(geometry) FROM (SELECT ST_GeomFromText('LINESTRING(0 0, 1 1, 0 0)') AS geometry) AS temp;"
+    ]
+}

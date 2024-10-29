@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/current/functions-net.html"
+    ],
+    "Title": [
+        "network"
+    ],
+    "Feature": [
+        "network ( inet ) → cidr"
+    ],
+    "Description": [
+        "Returns the network part of the address, zeroing out whatever is to the right of the netmask. (This is equivalent to casting the value to cidr.)"
+    ],
+    "Examples": [
+        "network(inet '192.168.1.5/24') → 192.168.1.0/24"
+    ],
+    "Category": [
+        "Network Address Functions and Operators"
+    ]
+}

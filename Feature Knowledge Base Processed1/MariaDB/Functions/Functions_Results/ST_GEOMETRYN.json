@@ -1,0 +1,69 @@
+{
+    "HTML": "https://mariadb.com//kb/en/geometryn/",
+    "Title": "ST_GEOMETRYN",
+    "Feature": [
+        "ST_GeometryN(gc,N)\nGeometryN(gc,N)\n"
+    ],
+    "Description": [
+        "Returns the N-th geometry in the GeometryCollection gc. Geometries are numbered beginning with 1.",
+        "ST_GeometryN() and GeometryN() are synonyms."
+    ],
+    "Examples": [
+        "SET @gc = 'GeometryCollection(Point(1 1),LineString(12 14, 9 11))';\n\nSELECT AsText(GeometryN(GeomFromText(@gc),1));\n+----------------------------------------+\n| AsText(GeometryN(GeomFromText(@gc),1)) |\n+----------------------------------------+\n| POINT(1 1)                             |\n+----------------------------------------+\n"
+    ],
+    "Category": [
+        "Geographic Functions"
+    ],
+    "Effective SQLs Refined": [],
+    "Ineffective SQLs Refined": [],
+    "Wrong Messages from Ineffective SQLs Refined": [],
+    "SQLs Generated1": [
+        {
+            "Example SQL": "SELECT ST_GeometryN(gc, 1);"
+        },
+        {
+            "Example SQL": "SELECT ST_GeometryN(GeometryCollection, 1);"
+        },
+        {
+            "Example SQL": "SELECT ST_GeometryN(ST_GeomFromText('GEOMETRYCOLLECTION(POINT(1 1), LINESTRING(0 0, 1 1))'), 1);"
+        }
+    ],
+    "SQLs Generated Costs1": [
+        {
+            "Total Tokens": 311,
+            "Prompt Tokens": 287,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 5.7449999999999994e-05
+        },
+        {
+            "Total Tokens": 467,
+            "Prompt Tokens": 441,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 8.175e-05
+        },
+        {
+            "Total Tokens": 652,
+            "Prompt Tokens": 598,
+            "Completion Tokens": 54,
+            "Total Cost (USD)": 0.00012209999999999999
+        }
+    ],
+    "SQLs Generated ExecResults1": [
+        "None",
+        "None",
+        "[(b'\\x00\\x00\\x00\\x00\\x01\\x01\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\xf0?\\x00\\x00\\x00\\x00\\x00\\x00\\xf0?',)]"
+    ],
+    "SQLs Generated ExecTimes1": [
+        "0",
+        "0",
+        "0.027254104614257812"
+    ],
+    "SQLs Generated ErrorMessages1": [
+        "(pymysql.err.OperationalError) (1054, \"Unknown column 'gc' in 'field list'\")\n",
+        "(pymysql.err.OperationalError) (1054, \"Unknown column 'GeometryCollection' in 'field list'\")\n",
+        "None"
+    ],
+    "Effective SQLs Generated1": [
+        "SELECT ST_GeometryN(ST_GeomFromText('GEOMETRYCOLLECTION(POINT(1 1), LINESTRING(0 0, 1 1))'), 1);"
+    ]
+}

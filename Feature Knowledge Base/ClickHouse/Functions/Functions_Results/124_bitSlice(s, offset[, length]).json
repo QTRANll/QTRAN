@@ -1,0 +1,27 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/bit-functions"
+    ],
+    "Title": [
+        "bitSlice(s, offset, length)"
+    ],
+    "Feature": [
+        "bitSlice(s, offset[, length])"
+    ],
+    "Description": [
+        "bitSlice(s, offset, length)",
+        "Returns a substring starting with the bit from the \u2018offset\u2019 index that is \u2018length\u2019 bits long. bits indexing starts from\n1",
+        "Syntax",
+        "bitSlice(s, offset[, length])",
+        "Arguments",
+        "s \u2014 s is String or FixedString.offset \u2014 The start index with bit, A positive value indicates an offset on the left, and a negative value is an indent on the right. Numbering of the bits begins with 1.length \u2014 The length of substring with bit. If you specify a negative value, the function returns an open substring [offset, array_length - length]. If you omit the value, the function returns the substring [offset, the_end_string]. If length exceeds s, it will be truncate.If length isn't multiple of 8, will fill 0 on the right.",
+        "Returned value",
+        "The substring. String"
+    ],
+    "Examples": [
+        "select bin('Hello'), bin(bitSlice('Hello', 1, 8))select bin('Hello'), bin(bitSlice('Hello', 1, 2))select bin('Hello'), bin(bitSlice('Hello', 1, 9))select bin('Hello'), bin(bitSlice('Hello', -4, 8))"
+    ],
+    "Category": [
+        "Bit Functions"
+    ]
+}

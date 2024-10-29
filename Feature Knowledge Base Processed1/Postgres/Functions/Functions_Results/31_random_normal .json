@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/current/functions-math.html"
+    ],
+    "Title": [
+        "random_normal"
+    ],
+    "Feature": [
+        "random_normal ( [ mean double precision [, stddev double precision ]] ) → double precision"
+    ],
+    "Description": [
+        "Returns a random value from the normal distribution with the given parameters; mean defaults to 0.0 and stddev defaults to 1.0"
+    ],
+    "Examples": [
+        "random_normal(0.0, 1.0) → 0.051285419"
+    ],
+    "Category": [
+        "Mathematical Functions and Operators"
+    ]
+}

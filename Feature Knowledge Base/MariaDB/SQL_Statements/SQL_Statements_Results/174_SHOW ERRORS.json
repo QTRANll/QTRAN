@@ -1,0 +1,25 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/show-errors/"
+    ],
+    "Title": [
+        "SHOW ERRORS"
+    ],
+    "Feature": [
+        "SHOW ERRORS [LIMIT [offset,] row_count]\nSHOW ERRORS [LIMIT row_count OFFSET offset]\nSHOW COUNT(*) ERRORS\n"
+    ],
+    "Description": [
+        "This statement is similar to SHOW WARNINGS, except that instead of\ndisplaying errors, warnings, and notes, it displays only errors.",
+        "The LIMIT clause has the same syntax as for the\nSELECT statement.",
+        "The SHOW COUNT(*) ERRORS statement displays the number of\nerrors. You can also retrieve this number from the error_count variable.",
+        "SHOW COUNT(*) ERRORS;\nSELECT @@error_count;\n",
+        "The value of error_count might be greater than the number of messages displayed by SHOW WARNINGS if the max_error_count system variable is set so low that not all messages are stored.",
+        "For a list of MariaDB error codes, see MariaDB Error Codes."
+    ],
+    "Examples": [
+        "SELECT f();\nERROR 1305 (42000): FUNCTION f does not exist\n\nSHOW COUNT(*) ERRORS;\n+-----------------------+\n| @@session.error_count |\n+-----------------------+\n|                     1 |\n+-----------------------+\n\nSHOW ERRORS;\n+-------+------+---------------------------+\n| Level | Code | Message                   |\n+-------+------+---------------------------+\n| Error | 1305 | FUNCTION f does not exist |\n+-------+------+---------------------------+\n"
+    ],
+    "Category": [
+        "Administrative SQL Statements"
+    ]
+}

@@ -1,0 +1,43 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/built-in-function-reference.html",
+        "https://dev.mysql.com/doc/refman/8.4/en/replication-functions.html",
+        "https://dev.mysql.com/doc/refman/8.4/en/loadable-function-reference.html"
+    ],
+    "Title": [
+        "14.1 Built-In Function and Operator Reference",
+        "14.18 Replication Functions",
+        "14.2 Loadable Function Reference"
+    ],
+    "Feature": [
+        "asynchronous_connection_failover_add_source()"
+    ],
+    "Description": [
+        "Add source server configuration information server to a",
+        "\nasynchronous_connection_failover_add_source()\n",
+        "\n            Add configuration information for a replication source\n            server to the source list for a replication channel.\n          ",
+        "\n            Syntax:\n          ",
+        "Press CTRL+C to copy asynchronous_connection_failover_add_source(channel, host, port, network_namespace, weight)",
+        "\n            Arguments:\n",
+        "\n\nchannel: The replication\n                channel for which this replication source server is part\n                of the source list.\n              \nhost: The host name for this\n                replication source server.\n              \nport: The port number for\n                this replication source server.\n              \nnetwork_namespace: The\n                network namespace for this replication source server.\n                Specify an empty string, as this parameter is reserved\n                for future use.\n              \nweight: The priority of this\n                replication source server in the replication channel's\n                source list. The priority is from 1 to 100, with 100\n                being the highest, and 50 being the default. When the\n                asynchronous connection failover mechanism activates,\n                the source with the highest priority setting among the\n                alternative sources listed in the source list for the\n                channel is chosen for the first connection attempt. If\n                this attempt does not work, the replica tries with all\n                the listed sources in descending order of priority, then\n                starts again from the highest priority source. If\n                multiple sources have the same priority, the replica\n                orders them randomly. The asynchronous connection\n                failover mechanism activates if the source currently\n                connected is not the highest weighted in the group.\n\n",
+        "\n            Return value:\n          ",
+        "\n            A string containing the result of the operation, for example\n            whether it was successful or not.\n          ",
+        "\n            Example:\n          ",
+        "Press CTRL+C to copy SELECT asynchronous_connection_failover_add_source('channel2', '127.0.0.1', 3310, '', 80);\n+-------------------------------------------------------------------------------------------------+\n| asynchronous_connection_failover_add_source('channel2', '127.0.0.1', 3310, '', 80)              |\n+-------------------------------------------------------------------------------------------------+\n| Source configuration details successfully inserted.                                             |\n+-------------------------------------------------------------------------------------------------+",
+        "\n            For more information, see\n            Section\u00a019.4.9, \u201cSwitching Sources and Replicas with Asynchronous Connection Failover\u201d.\n          "
+    ],
+    "Examples": [
+        "SELECT asynchronous_connection_failover_add_source('channel2', '127.0.0.1', 3310, '', 80);\n+-------------------------------------------------------------------------------------------------+\n| asynchronous_connection_failover_add_source('channel2', '127.0.0.1', 3310, '', 80)              |\n+-------------------------------------------------------------------------------------------------+\n| Source configuration details successfully inserted.                                             |\n+-------------------------------------------------------------------------------------------------+"
+    ],
+    "Category": [
+        "Built-In Functions",
+        "Replication Functions",
+        "Loadable Functions"
+    ],
+    "Reference HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/replication-functions-async-failover.html#function_asynchronous-connection-failover-add-source"
+    ],
+    "Feature Type": [
+        "Function"
+    ]
+}

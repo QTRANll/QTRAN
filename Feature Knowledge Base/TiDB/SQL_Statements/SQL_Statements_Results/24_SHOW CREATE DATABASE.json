@@ -1,0 +1,22 @@
+{
+    "HTML": [
+        "https://docs.pingcap.com//zh/tidb/stable/sql-statement-show-create-database"
+    ],
+    "Title": [
+        "SHOW CREATE DATABASE"
+    ],
+    "Feature": [
+        "ShowCreateDatabaseStmt ::=\n    \"SHOW\" \"CREATE\" (\"DATABASE\" | \"SCHEMA\") (\"IF\" \"NOT\" \"EXISTS\")? DBName\n"
+    ],
+    "Description": [
+        "SHOW CREATE DATABASE \u8bed\u53e5\u7528\u4e8e\u663e\u793a\u7528 SQL \u91cd\u65b0\u521b\u5efa\u5df2\u6709\u5e93\u7684\u786e\u5207\u8bed\u53e5\u3002SHOW CREATE SCHEMA \u4e0e\u5176\u540c\u4e49\u3002"
+    ],
+    "Examples": [
+        "CREATE DATABASE test;\n",
+        "SHOW CREATE DATABASE test;\n",
+        "SHOW CREATE SCHEMA IF NOT EXISTS test;\n"
+    ],
+    "Category": [
+        "Schema \u7ba1\u7406\u4e0e\u6570\u636e\u5b9a\u4e49\u8bed\u53e5 (DDL)"
+    ]
+}

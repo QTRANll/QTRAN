@@ -1,0 +1,35 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/built-in-function-reference.html",
+        "https://dev.mysql.com/doc/refman/8.4/en/encryption-functions.html"
+    ],
+    "Title": [
+        "14.1 Built-In Function and Operator Reference",
+        "14.13 Encryption and Compression Functions"
+    ],
+    "Feature": [
+        "SHA2(str,\n          hash_length)"
+    ],
+    "Description": [
+        "Calculate an SHA-2 checksum",
+        "\nSHA2(str,\n          hash_length)\n",
+        "\n          Calculates the SHA-2 family of hash functions (SHA-224,\n          SHA-256, SHA-384, and SHA-512). The first argument is the\n          plaintext string to be hashed. The second argument indicates\n          the desired bit length of the result, which must have a value\n          of 224, 256, 384, 512, or 0 (which is equivalent to 256). If\n          either argument is NULL or the hash length\n          is not one of the permitted values, the return value is\n          NULL. Otherwise, the function result is a\n          hash value containing the desired number of bits. See the\n          notes at the beginning of this section about storing hash\n          values efficiently.\n        ",
+        "\n          The return value is a string in the connection character set.\n        ",
+        "Press CTRL+C to copy mysql> SELECT SHA2('abc', 224);\n        -> '23097d223405d8228642a477bda255b32aadbce4bda0b3f7e36c9da7'",
+        "\n          This function works only if MySQL has been configured with SSL\n          support. See Section\u00a08.3, \u201cUsing Encrypted Connections\u201d.\n        ",
+        "\nSHA2() can be considered\n          cryptographically more secure than\n          MD5() or\n          SHA1().\n        "
+    ],
+    "Examples": [
+        "mysql> SELECT SHA2('abc', 224);\n        -> '23097d223405d8228642a477bda255b32aadbce4bda0b3f7e36c9da7'"
+    ],
+    "Category": [
+        "Built-In Functions",
+        "Encryption and Compression Functions"
+    ],
+    "Reference HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/encryption-functions.html#function_sha2"
+    ],
+    "Feature Type": [
+        "Function"
+    ]
+}

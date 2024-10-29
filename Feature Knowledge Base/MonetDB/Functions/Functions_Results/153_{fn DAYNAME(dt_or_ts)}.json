@@ -1,0 +1,22 @@
+{
+    "HTML": [
+        "https://www.monetdb.org/documentation-Aug2024/user-guide/sql-functions/date-time-functions"
+    ],
+    "Title": [
+        "{fn DAYNAME(dt_or_ts)}"
+    ],
+    "Feature": [
+        "{fn DAYNAME(dt_or_ts)}"
+    ],
+    "Description": [
+        "Return type: ",
+        "varchar",
+        "extract day name in current locale of a date or timestamp or timestamptz. This function requires the ODBC escape sequence notation."
+    ],
+    "Examples": [
+        "select {fn DAYNAME({d '2020-03-22'})}"
+    ],
+    "Category": [
+        "Date Time Functions"
+    ]
+}

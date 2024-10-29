@@ -1,0 +1,18 @@
+{
+    "HTML": [
+        "https://sqlite.org/lang_corefunc.html#sqlite_source_id"
+    ],
+    "Title": [
+        "Built-In Scalar SQL Functions"
+    ],
+    "Feature": [
+        "sqlite_source_id()"
+    ],
+    "Description": [
+        "The sqlite_source_id() function returns a string that identifies the\n  specific version of the source code that was used to build the SQLite\n  library.  The string returned by sqlite_source_id() is\n  the date and time that the source code was checked in followed by\n  the SHA3-256 hash for that check-in.  This function is\n  an SQL wrapper around thesqlite3_sourceid()C interface."
+    ],
+    "Examples": [],
+    "Category": [
+        "Built-In Scalar SQL Functions"
+    ]
+}

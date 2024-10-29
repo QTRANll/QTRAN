@@ -1,0 +1,39 @@
+{
+    "HTML": "https://mariadb.com//kb/en/multipoint/",
+    "Title": "MULTIPOINT",
+    "Feature": [
+        "MultiPoint(pt1,pt2,...)\n"
+    ],
+    "Description": [
+        "Constructs a WKB MultiPoint value using WKB Point arguments. If any argument is not a WKB Point, the return value is NULL."
+    ],
+    "Examples": [
+        "SET @g = ST_GEOMFROMTEXT('MultiPoint( 1 1, 2 2, 5 3, 7 2, 9 3, 8 4, 6 6, 6 9, 4 9, 1 5 )');\n\nCREATE TABLE gis_multi_point (g MULTIPOINT);\nINSERT INTO gis_multi_point VALUES\n    (MultiPointFromText('MULTIPOINT(0 0,10 10,10 20,20 20)')),\n    (MPointFromText('MULTIPOINT(1 1,11 11,11 21,21 21)')),\n    (MPointFromWKB(AsWKB(MultiPoint(Point(3, 6), Point(4, 10)))));\n"
+    ],
+    "Category": [
+        "Geographic Functions"
+    ],
+    "Effective SQLs Refined": [
+        "INSERT INTO gis_multi_point VALUES\n    (MultiPointFromText('MULTIPOINT(0 0,10 10,10 20,20 20)')),\n    (MPointFromText('MULTIPOINT(1 1,11 11,11 21,21 21)')),\n    (MPointFromWKB(AsWKB(MultiPoint(Point(3, 6), Point(4, 10)))));"
+    ],
+    "Ineffective SQLs Refined": [
+        "SET @g = ST_GEOMFROMTEXT('MultiPoint( 1 1, 2 2, 5 3, 7 2, 9 3, 8 4, 6 6, 6 9, 4 9, 1 5 )');",
+        "CREATE TABLE gis_multi_point (g MULTIPOINT);"
+    ],
+    "Wrong Messages from Ineffective SQLs Refined": [
+        "This result object does not return rows. It has been closed automatically.",
+        "(pymysql.err.OperationalError) (1050, \"Table 'gis_multi_point' already exists\")\n[SQL: CREATE TABLE gis_multi_point (g MULTIPOINT);]\n(Background on this error at: https://sqlalche.me/e/20/e3q8)"
+    ],
+    "SQLs Generated1": [],
+    "SQLs Generated Costs1": [],
+    "SQLs Generated ExecResults1": [],
+    "SQLs Generated ExecTimes1": [],
+    "SQLs Generated ErrorMessages1": [],
+    "Effective SQLs Generated1": [],
+    "SQLs Generated2": [],
+    "SQLs Generated Costs2": [],
+    "SQLs Generated ExecResults2": [],
+    "SQLs Generated ExecTimes2": [],
+    "SQLs Generated ErrorMessages2": [],
+    "Effective SQLs Generated2": []
+}

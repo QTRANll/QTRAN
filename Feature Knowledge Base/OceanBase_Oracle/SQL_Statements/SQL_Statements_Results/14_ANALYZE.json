@@ -1,0 +1,22 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000001054296"
+    ],
+    "Title": [
+        "ANALYZE"
+    ],
+    "Feature": [
+        "ANALYZE\n  TABLE [ schema. ]table_name\n    [ PARTITION (partition) | SUBPARTITION (subpartition) ]\n  { compute_statistics_clause | estimate_statistics_clause } ;\n\ncompute_statistics_clause:\n COMPUTE STATISTICS [ for_clause ]\n\nestimate_statistics_clause:\n     ESTIMATE STATISTICS [ for_clause ]\n     [ SAMPLE integer { ROWS | PERCENT } ]\n\nfor_clause:\n FOR\n     TABLE\n   | ALL [ INDEXED | HIDDEN ] COLUMNS [ SIZE integer ]\n   | COLUMNS [ SIZE integer ]\n     { column | attribute } [ SIZE integer ]\n       [ { column | attribute }\n         [ SIZE integer ]\n       ]\n   [ FOR\n    { TABLE\n    | ALL [ INDEXED | HIDDEN ] COLUMNS\n         [ SIZE integer ]\n    | COLUMNS [ SIZE integer ]\n      { column | attribute } [ SIZE integer ]\n        [ { column | attribute }\n          [ SIZE integer ]\n        ]...\n    }\n   ]...\n"
+    ],
+    "Description": [
+        "该语句用于收集表或表分区的统计信息。",
+        "\n\n\n参数\n描述\n\n\n\n\nschema\n指定表所属的 Schema。如果省略该参数，默认为当前 Schema。\n\n\ntable_name\n指定要分析的表。\n\n\nPARTITION | SUBPARTITION\n指定要收集统计信息的分区或子分区。如果指定的分区为一级分区，会同时分析该分区下所有子分区的信息。\n\n\ncompute_statistics_clause\n指定 COMPUTE STATISTICS 可以计算分析对象的精确统计信息，并将其存储在数据字典中。分析表时，会同时统计表和列的统计信息。\n\n\nfor_clause\n指定要分析整个表，或者只分析特定的列。 \n      \nFOR TABLE：指定仅收集表的统计信息。\nFOR COLUMNS：指定仅收集指定列和标量对象属性列的统计信息。其中，attribute 指定对象中的特定列名。\nFOR ALL COLUMNS：指定收集所有列和标量对象属性列的统计信息。\nFOR ALL INDEXED COLUMNS：指定收集所有索引列的列统计信息。列统计信息可以基于完整的列，也可以通过指定 SIZE 使用直方图。\nFOR ALL HIDDEN COLUMNS：指定收集所有隐藏列的列统计信息。列统计信息可以基于完整的列，也可以通过指定 SIZE 使用直方图。\nSIZE：指定直方图中的最大存储桶数。取值范围是 [1,2048]，默认值是 75。\n\n\n\nestimate_statistics_clause\n指定 ESTIMATE STATISTICS 可以估计分析对象的统计信息，并将其存储在数据字典中。\n\n\nSAMPLE\n指定用于估计统计信息使用的分析对象中的采样数据量。如果省略该参数，则对 1064 行进行采样。 \n      \nROWS：对表中的 integer 行进行采样。\nPERCENT：对表中行的 integer 百分比进行采样。\n\n\n\n"
+    ],
+    "Examples": [
+        "obclient> ANALYZE TABLE tbl1 COMPUTE STATISTICS;\nQuery OK, 0 rows affected\n",
+        "obclient> ANALYZE TABLE tbl1 COMPUTE STATISTICS FOR ALL INDEXED COLUMNS SIZE 100;\nQuery OK, 0 rows affected\n"
+    ],
+    "Category": [
+        "DCL"
+    ]
+}

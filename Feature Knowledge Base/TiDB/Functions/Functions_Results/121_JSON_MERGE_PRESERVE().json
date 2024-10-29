@@ -1,0 +1,21 @@
+{
+    "HTML": [
+        "https://docs.pingcap.com/zh/tidb/stable/json-functions-modify#json_merge_preserve"
+    ],
+    "Title": [
+        "JSON_MERGE_PRESERVE()"
+    ],
+    "Feature": [
+        "JSON_MERGE_PRESERVE()"
+    ],
+    "Description": [
+        "JSON_MERGE_PRESERVE()",
+        "JSON_MERGE_PRESERVE(json_doc, json_doc [,json_doc] ...) \u51fd\u6570\u901a\u8fc7\u4fdd\u7559\u6240\u6709\u952e\u503c\u7684\u65b9\u5f0f\u5408\u5e76\u4e24\u4e2a\u6216\u591a\u4e2a JSON \u6587\u6863\uff0c\u5e76\u8fd4\u56de\u5408\u5e76\u7ed3\u679c\u3002"
+    ],
+    "Examples": [
+        "SELECT JSON_MERGE_PRESERVE('{\"a\": 1, \"b\": 2}','{\"a\": 100}', '{\"c\": 300}');\n"
+    ],
+    "Category": [
+        "JSON Functions"
+    ]
+}

@@ -1,0 +1,60 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000001054326"
+    ],
+    "Title": [
+        "CREATE INDEX"
+    ],
+    "Feature": [
+        "CREATE [hint_options]  [UNIQUE] INDEX index_name\n    [USING BTREE] ON table_name (sort_column_key [, sort_column_key...])\n    [INDEXTYPE IS MDSYS.SPATIAL_INDEX] [index_option...] [partition_option] [index_column_group_option]\n\nsort_column_key:  \n    index_expr [ASC] opt_null_pos [ID id]\n\nopt_null_pos:  \n      empty\n    | NULLS LAST\n    | NULLS FIRST\n\nindex_option:  \n      GLOBAL\n    | LOCAL\n    | BLOCK_SIZE [=] integer\n    | COMMENT STRING_VALUE\n    | STORING (column_name_list)\n    | WITH ROWID\n    | WITH PARSER STRING_VALUE\n    | index_using_algorithm\n    | visibility_option\n    | DATA_TABLE_ID [=] data_table_id\n    | INDEX_TABLE_ID [=] index_table_id\n    | MAX_USED_PART_ID [=] used_part_id\n    | physical_attributes_option\n    | parallel_option\n\nparallel_option:  \n      PARALLEL [=] integer\n    | NOPARALLEL\n\nindex_column_group_option：\n    WITH COLUMN GROUP([all columns, ]each column)\n"
+    ],
+    "Description": [
+        "该语句用来创建索引。索引是创建在表上的，对数据库表中一列或多列的值进行排序的一种结构。其作用主要在于提高查询的速度，降低数据库系统的性能开销。",
+        "OceanBase 数据库当前版本支持的索引类型包含唯一索引和非唯一索引，创建索引时可以通过 STORING(column_name,...) 指定索引表上的冗余列。索引表的冗余列除了包含用户指定添加的列外，还会自动添加上主键表的主键列（如果无主键表则包含 Hidden PK），存储额外的列在索引中可以为数据库优化器提供更多的选择。",
+        "\n说明\n在 OceanBase 数据库 Oracle 模式下，如果删除表中的任一索引列，则所创建的索引失效。\n",
+        "\n\n\n参数项\n描述\n\n\n\n\nhint_options\n指定 Hint 选项，为可选项。目前仅支持使用 parallel，如 /*+ parallel(10) */。\n\n\n[UNIQUE]\n可选项，用于指定创建唯一索引。\n\n\nindex_name\n指定待创建的索引名称。\n\n\nUSING BTREE\n可选项，表示创建索引时使用 B-tree 索引结构。 \n      \n说明\n目前仅支持指定为 USING BTREE。\n\n\n\ntable_name\n指定要在其上创建索引的表，可以直接指定表的名字，也可使用 schema_name.table_name 格式指定表名和表所属的数据库名。\n\n\nsort_column_key\n指定一个排序列的键，创建索引时可以指定多个排序列，多个排序列使用英文逗号(,)分开，详细介绍可参见下文 sort_column_key。\n\n\nINDEXTYPE IS MDSYS.SPATIAL_INDEX\n指定创建空间索引。 \n      \n注意\n创建空间索引的列必须在建表时指定 SRID 信息，更多有关创建空间索引的信息，参见 创建空间索引。\n\n\n\nindex_option\n指定索引选项，创建索引时可以指定多个索引选项，多个索引选项使用英文空格分开，详细介绍可参见下文 index_option。\n\n\npartition_option\n指定创建索引分区的选项，支持指定哈希分区、范围分区、列表分区以及外部表分区。\n\n\nindex_column_group_option\n指定索引选项。详细介绍可参见下文 index_column_group_option。\n\n\n",
+        "sort_column_key",
+        "index_expr：指定排序所依据的列或表达式，但是不允许是布尔表达式，例如 c1=c1。OceanBase 数据库当前版本禁止创建生成列上的函数索引。函数索引所支持的表达式参见 函数索引支持的系统函数列表。",
+        "ASC：可选项，表示按升序排序，目前暂不支持降序（DESC）排列。",
+        "opt_null_pos：指定空值在排序中的位置，有如下三种取值。",
+        "\nempty：表示未指定空值位置，在默认情况下将遵循数据库管理系统的默认行为。\nNULLS LAST：指定空值在排序结果中出现在非空值之后。\nNULLS FIRST：指定空值在排序结果中出现在非空值之前。\n",
+        "empty：表示未指定空值位置，在默认情况下将遵循数据库管理系统的默认行为。",
+        "NULLS LAST：指定空值在排序结果中出现在非空值之后。",
+        "NULLS FIRST：指定空值在排序结果中出现在非空值之前。",
+        "ID id：可选项，表示排序键的 ID 号。",
+        "例如，在名为 t3 的表上创建一个名为 index3 的索引，指定该索引在 c1 列上按升序进行排序，并指定空值在排序结果中出现在非空值之后。",
+        "CREATE INDEX index3 ON t3 (c1 ASC NULLS LAST);\n",
+        "index_option",
+        "GLOBAL：表示创建全局索引。",
+        "LOCAL：表示创建局部索引。",
+        "BLOCK_SIZE [=] integer：指定索引块的大小，即每个索引块中的字节数。",
+        "COMMENT STRING_VALUE：为索引添加注释。",
+        "STORING (column_name_list)：指定要存储在索引中的列。",
+        "WITH ROWID：创建包含行标识符的索引。",
+        "WITH PARSER STRING_VALUE：指定索引所需的解析器。",
+        "index_using_algorithm：指定索引所使用的算法。",
+        "visibility_option：指定索引的可见性。",
+        "DATA_TABLE_ID [=] data_table_id：指定索引所属的数据表 ID。",
+        "INDEX_TABLE_ID [=] index_table_id：指定索引表的 ID。",
+        "MAX_USED_PART_ID [=] used_part_id：指定索引的最大已使用分区 ID。",
+        "physical_attributes_option：定义索引的物理属性选项。",
+        "parallel_option：指定索引的并行情况。",
+        "\nPARALLEL [=] integer：指定并行执行的级别，integer 是一个整数，表示执行的并行度。\nNOPARALLEL：指定禁用并行执行。\n",
+        "PARALLEL [=] integer：指定并行执行的级别，integer 是一个整数，表示执行的并行度。",
+        "NOPARALLEL：指定禁用并行执行。",
+        "index_column_group_option",
+        "WITH COLUMN GROUP(all columns, each column)",
+        "：指定创建行存列存冗余的索引。",
+        "WITH COLUMN GROUP(all columns)",
+        "：指定创建行存索引。",
+        "WITH COLUMN GROUP(each column)",
+        "：指定创建列存索引。"
+    ],
+    "Examples": [
+        "CREATE TABLE test_tbl1 (col1 NUMBER, col2 VARCHAR2(50));\n",
+        "CREATE INDEX idx1_test_tbl1 ON test_tbl1 (col1) WITH COLUMN GROUP(each column);\n"
+    ],
+    "Category": [
+        "DDL"
+    ]
+}

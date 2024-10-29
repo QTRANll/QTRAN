@@ -1,0 +1,36 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/built-in-function-reference.html",
+        "https://dev.mysql.com/doc/refman/8.4/en/spatial-function-reference.html"
+    ],
+    "Title": [
+        "14.1 Built-In Function and Operator Reference",
+        "14.16.1 Spatial Function Reference"
+    ],
+    "Feature": [
+        "ST_FrechetDistance(g1,\n            g2 [,\n            unit])"
+    ],
+    "Description": [
+        "The discrete Fr\u00e9chet distance of one geometry from another",
+        "\nST_FrechetDistance(g1,\n            g2 [,\n            unit])\n",
+        "\n            Returns the discrete Fr\u00e9chet distance between two\n            geometries, reflecting how similar the geometries are. The\n            result is a double-precision number measured in the length\n            unit of the spatial reference system (SRS) of the geometry\n            arguments, or in the length unit of the\n            unit argument if that argument is\n            given.\n          ",
+        "\n            This function implements the discrete Fr\u00e9chet distance,\n            which means it is restricted to distances between the points\n            of the geometries. For example, given two\n            LineString arguments, only the points\n            explicitly mentioned in the geometries are considered.\n            Points on the line segments between these points are not\n            considered.\n          ",
+        "\nST_FrechetDistance() handles\n            its geometry arguments as described in the introduction to\n            this section, with these exceptions:\n",
+        "\n\n                The geometries may have a Cartesian or geographic SRS,\n                but only LineString values are\n                supported. If the arguments are in the same Cartesian or\n                geographic SRS, but either is not a\n                LineString, an\n                ER_NOT_IMPLEMENTED_FOR_CARTESIAN_SRS\n                or\n                ER_NOT_IMPLEMENTED_FOR_GEOGRAPHIC_SRS\n                error occurs, depending on the SRS type.\n\n",
+        "\nST_FrechetDistance() handles\n            its optional unit argument as\n            described in the introduction to this section.\n          ",
+        "Press CTRL+C to copy mysql> SET @ls1 = ST_GeomFromText('LINESTRING(0 0,0 5,5 5)');\nmysql> SET @ls2 = ST_GeomFromText('LINESTRING(0 1,0 6,3 3,5 6)');\nmysql> SELECT ST_FrechetDistance(@ls1, @ls2);\n+--------------------------------+\n| ST_FrechetDistance(@ls1, @ls2) |\n+--------------------------------+\n|             2.8284271247461903 |\n+--------------------------------+\n\nmysql> SET @ls1 = ST_GeomFromText('LINESTRING(0 0,0 5,5 5)', 4326);\nmysql> SET @ls2 = ST_GeomFromText('LINESTRING(0 1,0 6,3 3,5 6)', 4326);\nmysql> SELECT ST_FrechetDistance(@ls1, @ls2);\n+--------------------------------+\n| ST_FrechetDistance(@ls1, @ls2) |\n+--------------------------------+\n|              313421.1999416798 |\n+--------------------------------+\nmysql> SELECT ST_FrechetDistance(@ls1, @ls2, 'foot');\n+----------------------------------------+\n| ST_FrechetDistance(@ls1, @ls2, 'foot') |\n+----------------------------------------+\n|                     1028284.7767115477 |\n+----------------------------------------+"
+    ],
+    "Examples": [
+        "mysql> SET @ls1 = ST_GeomFromText('LINESTRING(0 0,0 5,5 5)');\nmysql> SET @ls2 = ST_GeomFromText('LINESTRING(0 1,0 6,3 3,5 6)');\nmysql> SELECT ST_FrechetDistance(@ls1, @ls2);\n+--------------------------------+\n| ST_FrechetDistance(@ls1, @ls2) |\n+--------------------------------+\n|             2.8284271247461903 |\n+--------------------------------+\n\nmysql> SET @ls1 = ST_GeomFromText('LINESTRING(0 0,0 5,5 5)', 4326);\nmysql> SET @ls2 = ST_GeomFromText('LINESTRING(0 1,0 6,3 3,5 6)', 4326);\nmysql> SELECT ST_FrechetDistance(@ls1, @ls2);\n+--------------------------------+\n| ST_FrechetDistance(@ls1, @ls2) |\n+--------------------------------+\n|              313421.1999416798 |\n+--------------------------------+\nmysql> SELECT ST_FrechetDistance(@ls1, @ls2, 'foot');\n+----------------------------------------+\n| ST_FrechetDistance(@ls1, @ls2, 'foot') |\n+----------------------------------------+\n|                     1028284.7767115477 |\n+----------------------------------------+"
+    ],
+    "Category": [
+        "Built-In Functions",
+        "Spatial Analysis Functions"
+    ],
+    "Reference HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/spatial-relation-functions-object-shapes.html#function_st-frechetdistance"
+    ],
+    "Feature Type": [
+        "Function"
+    ]
+}

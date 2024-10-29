@@ -1,0 +1,18 @@
+{
+    "HTML": [
+        "https://sqlite.org/lang_corefunc.html#replace"
+    ],
+    "Title": [
+        "Built-In Scalar SQL Functions"
+    ],
+    "Feature": [
+        "replace(X,Y,Z)"
+    ],
+    "Description": [
+        "The replace(X,Y,Z) function returns a string formed by substituting\n  string Z for every occurrence of string Y in string X.  TheBINARYcollating sequence is used for comparisons.  If Y is an empty\n  string then return X unchanged.  If Z is not initially\n  a string, it is cast to a UTF-8 string prior to processing."
+    ],
+    "Examples": [],
+    "Category": [
+        "Built-In Scalar SQL Functions"
+    ]
+}

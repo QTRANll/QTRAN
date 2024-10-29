@@ -1,0 +1,29 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/loadable-function-reference.html"
+    ],
+    "Title": [
+        "14.2 Loadable Function Reference"
+    ],
+    "Feature": [
+        "version_tokens_show()"
+    ],
+    "Description": [
+        "Return version tokens list",
+        "\nversion_tokens_show()\n",
+        "\n              Returns the server's list of version tokens as a binary\n              string containing a semicolon-separated list of\n              name=value\n              pairs.\n            ",
+        "Press CTRL+C to copy mysql> SELECT version_tokens_show();\n+--------------------------+\n| version_tokens_show()    |\n+--------------------------+\n| tok2=value2;tok1=value1; |\n+--------------------------+"
+    ],
+    "Examples": [
+        "mysql> SELECT version_tokens_show();\n+--------------------------+\n| version_tokens_show()    |\n+--------------------------+\n| tok2=value2;tok1=value1; |\n+--------------------------+"
+    ],
+    "Category": [
+        "Loadable Functions"
+    ],
+    "Reference HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/version-tokens-reference.html#function_version-tokens-show"
+    ],
+    "Feature Type": [
+        "Function"
+    ]
+}

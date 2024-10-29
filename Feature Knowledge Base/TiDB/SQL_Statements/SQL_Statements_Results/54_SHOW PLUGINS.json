@@ -1,0 +1,21 @@
+{
+    "HTML": [
+        "https://docs.pingcap.com//zh/tidb/stable/sql-statement-show-plugins"
+    ],
+    "Title": [
+        "SHOW PLUGINS"
+    ],
+    "Feature": [
+        "ShowPluginsStmt ::=\n    \"SHOW\" \"PLUGINS\" ShowLikeOrWhere?\n"
+    ],
+    "Description": [
+        "SHOW PLUGINS \u7528\u4e8e\u67e5\u770b TiDB \u5b89\u88c5\u7684\u63d2\u4ef6\uff0c\u5404\u4e2a\u63d2\u4ef6\u8fd0\u884c\u7684\u72b6\u6001\u4ee5\u53ca\u63d2\u4ef6\u7248\u672c\u4fe1\u606f\u3002"
+    ],
+    "Examples": [
+        "SHOW PLUGINS;\n",
+        "SHOW PLUGINS LIKE 'a%';\n"
+    ],
+    "Category": [
+        "\u5b9e\u4f8b\u7ba1\u7406"
+    ]
+}

@@ -1,0 +1,23 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/locate/"
+    ],
+    "Title": [
+        "LOCATE"
+    ],
+    "Feature": [
+        "LOCATE(substr,str), LOCATE(substr,str,pos)\n"
+    ],
+    "Description": [
+        "The first syntax returns the position of the first occurrence of\nsubstring substr in string str. The second syntax returns the position\nof the first occurrence of substring substr in string str, starting at\nposition pos. Returns 0 if substr is not in str.",
+        "LOCATE() performs a case-insensitive search.",
+        "If any argument is NULL, returns NULL.",
+        "INSTR() is the same as the two-argument form of LOCATE(), except that the order of the arguments is reversed."
+    ],
+    "Examples": [
+        "SELECT LOCATE('bar', 'foobarbar');\n+----------------------------+\n| LOCATE('bar', 'foobarbar') |\n+----------------------------+\n|                          4 |\n+----------------------------+\n\nSELECT LOCATE('My', 'Maria');\n+-----------------------+\n| LOCATE('My', 'Maria') |\n+-----------------------+\n|                     0 |\n+-----------------------+\n\nSELECT LOCATE('bar', 'foobarbar', 5);\n+-------------------------------+\n| LOCATE('bar', 'foobarbar', 5) |\n+-------------------------------+\n|                             7 |\n+-------------------------------+\n"
+    ],
+    "Category": [
+        "String Functions"
+    ]
+}

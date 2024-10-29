@@ -1,0 +1,60 @@
+{
+    "HTML": "https://mariadb.com//kb/en/sounds-like/",
+    "Title": "SOUNDS LIKE",
+    "Feature": [
+        "expr1 SOUNDS LIKE expr2\n"
+    ],
+    "Description": [
+        "This is the same as SOUNDEX(expr1) = SOUNDEX(expr2)."
+    ],
+    "Examples": [
+        "SELECT givenname, surname FROM users WHERE givenname SOUNDS LIKE \"robert\";\n+-----------+---------+\n| givenname | surname |\n+-----------+---------+\n| Roberto   | Castro  |\n+-----------+---------+\n"
+    ],
+    "Category": [
+        "String Functions"
+    ],
+    "Effective SQLs Refined": [],
+    "Ineffective SQLs Refined": [
+        "SELECT givenname, surname FROM users WHERE givenname SOUNDS LIKE \"robert\";"
+    ],
+    "Wrong Messages from Ineffective SQLs Refined": [
+        "(pymysql.err.ProgrammingError) (1146, \"Table 'PINOLO_MariaDB.users' doesn't exist\")\n[SQL: SELECT givenname, surname FROM users WHERE givenname SOUNDS LIKE \"robert\";]\n(Background on this error at: https://sqlalche.me/e/20/f405)"
+    ],
+    "SQLs Generated1": [
+        {
+            "Example SQL": "SELECT * FROM table_name WHERE column_name SOUNDS LIKE 'example';"
+        },
+        {
+            "Example SQL": "SELECT * FROM information_schema.tables WHERE table_name SOUNDS LIKE 'example';"
+        }
+    ],
+    "SQLs Generated Costs1": [
+        {
+            "Total Tokens": 284,
+            "Prompt Tokens": 257,
+            "Completion Tokens": 27,
+            "Total Cost (USD)": 5.474999999999999e-05
+        },
+        {
+            "Total Tokens": 444,
+            "Prompt Tokens": 416,
+            "Completion Tokens": 28,
+            "Total Cost (USD)": 7.919999999999999e-05
+        }
+    ],
+    "SQLs Generated ExecResults1": [
+        "None",
+        "[]"
+    ],
+    "SQLs Generated ExecTimes1": [
+        "0",
+        "0.006956577301025391"
+    ],
+    "SQLs Generated ErrorMessages1": [
+        "(pymysql.err.ProgrammingError) (1146, \"Table 'PINOLO_MariaDB.table_name' doesn't exist\")\n",
+        "None"
+    ],
+    "Effective SQLs Generated1": [
+        "SELECT * FROM information_schema.tables WHERE table_name SOUNDS LIKE 'example';"
+    ]
+}

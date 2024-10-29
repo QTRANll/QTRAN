@@ -1,0 +1,30 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000000823289"
+    ],
+    "Title": [
+        "JSON_SET"
+    ],
+    "Feature": [
+        "JSON_SET(json_doc, path, val[, path, val] ...)\n"
+    ],
+    "Description": [
+        "该函数用于在 JSON 文档中插入或更新数据并返回结果。",
+        "json_doc 参数用于指定 JSON 文档，path 为路径参数。如果任何参数为 NULL 或 path（如果给定）未定位到对象，则返回 NULL。",
+        "以下情况都会发生报错：",
+        "json_doc 参数不是有效的 JSON 文档。",
+        "path 参数不是有效的路径表达式。",
+        "path 参数包含 * 或 ** 通配符。",
+        "路径值对 path-value 按照从左到右的顺序进行评估。通过 path-value 对所生成的文档作为评估下一对的新值。",
+        "文档中现有路径的 path-value 对会用新值覆盖现有文档值。如果路径标识的对象不存在，则文档中不存在路径的路径值对会按照如下规则添加到文档中：",
+        "现有对象中不存在的成员。该成员被添加到对象并与新值相关联。",
+        "超出现有数组末尾的位置。此时使用新值扩展数组。如果现有值不是数组，则将其自动包裹为数组，然后使用新值进行扩展。",
+        "否则，文档中不存在的路径的路径值对将被忽略且无效。"
+    ],
+    "Examples": [
+        "obclient> SET @jn = '{ \"a\": 1, \"b\": [2, 3]}';\nQuery OK, 0 rows affected\n\nobclient> SELECT JSON_SET(@jn, '$.a', 10, '$.c', '[true, false]');\n+--------------------------------------------------+\n| JSON_SET(@jn, '$.a', 10, '$.c', '[true, false]') |\n+--------------------------------------------------+\n| {\"a\": 10, \"b\": [2, 3], \"c\": \"[true, false]\"}     |\n+--------------------------------------------------+\n1 row in set\n"
+    ],
+    "Category": [
+        "JSON Functions"
+    ]
+}

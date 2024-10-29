@@ -1,0 +1,23 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000001053515"
+    ],
+    "Title": [
+        "CREATE DATABASE"
+    ],
+    "Feature": [
+        "CREATE {DATABASE | SCHEMA} [IF NOT EXISTS] database_name [database_option...]\n\ndatabase_option:  \n      [DEFAULT] {CHARACTER SET | CHARSET} charset_name \n    | [DEFAULT] COLLATE collate_name \n    | {READ ONLY | READ WRITE} \n    | [DEFAULT] TABLEGROUP {table_group_name | NULL}\n"
+    ],
+    "Description": [
+        "该语句用于创建数据库，并可以指定数据库的默认属性（如数据库默认字符集，校验规则等）。",
+        "\n说明\nCREATE DATABASE 与 CREATE SCHEMA 是等价的。\n",
+        "\n\n\n参数\n描述\n\n\n\n\nIF NOT EXISTS\n用于指示如果数据库已经存在，则不进行创建。创建数据库时，如果数据库存在且没有指定 IF NOT EXISTS，则会报错。\n\n\ndatabase_name\n指定待创建的数据库名称。\n\n\n[DEFAULT] {CHARACTER SET\nCHARSET} charset_name\n设置数据库的字符集（charset）。\n\n\n[DEFAULT] COLLATE collate_name\n设置数据库的校对规则（collation）。\n\n\n{READ ONLY\nREAD WRITE}\n指定数据库的读写属性。 \n      \nREAD ONLY：将数据库设置为只读模式，禁止对数据库进行写操作。\nREAD WRITE：将数据库设置为读写模式，允许对数据库进行读写操作。\n\n\n\n[DEFAULT] TABLEGROUP {table_group_name\nNULL}\n指定数据库的默认表组（tablegroup）。您可将其设置为指定的表组名称或取消数据库默认表组。\n\n\n"
+    ],
+    "Examples": [
+        "obclient> CREATE DATABASE IF NOT EXISTS test1 DEFAULT CHARACTER SET utf8;\n",
+        "obclient> CREATE DATABASE test2 READ WRITE;\n"
+    ],
+    "Category": [
+        "No Category"
+    ]
+}

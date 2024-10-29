@@ -1,0 +1,21 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/current/functions-array.html"
+    ],
+    "Title": [
+        "array_fill"
+    ],
+    "Feature": [
+        "array_fill ( anyelement, integer[] [, integer[] ] ) → anyarray"
+    ],
+    "Description": [
+        "Returns an array filled with copies of the given value, having dimensions of the lengths specified by the second argument. The optional third argument supplies lower-bound values for each dimension (which default to all 1)."
+    ],
+    "Examples": [
+        "array_fill(11, ARRAY[2,3]) → {{11,11,11},{11,11,11}}",
+        "array_fill(7, ARRAY[3], ARRAY[2]) → [2:4]={7,7,7}"
+    ],
+    "Category": [
+        "Array Functions and Operators"
+    ]
+}

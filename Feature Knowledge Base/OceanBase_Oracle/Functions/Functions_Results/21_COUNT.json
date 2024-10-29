@@ -1,0 +1,27 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000000822887"
+    ],
+    "Title": [
+        "COUNT"
+    ],
+    "Feature": [
+        "COUNT({ * | [ DISTINCT | UNIQUE | ALL ] expr }) [ OVER (analytic_clause) ]\n"
+    ],
+    "Description": [
+        "该函数用于返回查询 expr 的行数。可以将其用作聚合或分析函数。",
+        "\n说明\n\n作为分析函数使用时，需要使用 OVER 子句定义窗口进行计算。它对一组行的集合进行计算并返回多个值。\n作为聚合函数使用时，该函数对一组行的集合进行聚合计算，结果只能返回一个值，此时不需要加 OVER 子句。\n\n",
+        "\n\n\n参数\n说明\n\n\n\n\n*\n表示返回满足条件的所有行，且包含重复行和空行。\n\n\nDISTINCT | UNIQUE | ALL\n查询时是否去重。为可选项，默认值 ALL。 \n      \nALL：返回所有值，包含重复行，且忽略空行。\nDISTINCT：返回的行中去除重复行，且忽略空行。\nUNIQUE：返回的行中去除重复行，且忽略空行。\n\n\n\nexpr\n指定参与计算的列名。\n\n\nOVER\n使用 OVER 子句定义窗口进行计算。详细信息请参见 分析函数说明。\n\n\n",
+        "\n注意\n\n对于 COUNT 函数，从不返回 NULL，如果指定了 expr，即返回 expr 不为 NULL 的统计个数，如果指定 COUNT(*) 返回所有行的统计数目。使用参数 DISTINCT 、UNIQUE 或 ALL 时需要与 expr 用空格隔开。\n如果您指定了 DISTINCT 或 UNIQUE 关键字，则 analytic_clause 中不允许出现 order_by_clause 和 windowing_clause。\n\n",
+        "返回一个自然数。"
+    ],
+    "Examples": [
+        "obclient> CREATE TABLE tbl1 (col1 INT,col2 varchar(10),col3 INT);\nQuery OK, 0 rows affected\n\nobclient> INSERT INTO tbl1 VALUES\n    (1,'aa',10),(2,'bb',12),(3,'cc',15),(4,'dd',18),(5,'ee',20),\n    (6,'ff',23),(7,'gg',25),(8,'hh',30),(9,'ii',40),(10,'jj',15),\n    (11,'kk',NULL),(12,'oo',NULL);\nQuery OK, 12 rows affected\nRecords: 12  Duplicates: 0  Warnings: 0\n\nobclient> SELECT * FROM tbl1;\n+------+------+------+\n| COL1 | COL2 | COL3 |\n+------+------+------+\n|    1 | aa   |   10 |\n|    2 | bb   |   12 |\n|    3 | cc   |   15 |\n|    4 | dd   |   18 |\n|    5 | ee   |   20 |\n|    6 | ff   |   23 |\n|    7 | gg   |   25 |\n|    8 | hh   |   30 |\n|    9 | ii   |   40 |\n|   10 | jj   |   15 |\n|   11 | kk   | NULL |\n|   12 | oo   | NULL |\n+------+------+------+\n12 rows in set\n",
+        "obclient> SELECT COUNT(col3),COUNT(*) FROM tbl1;\n+-------------+----------+\n| COUNT(COL3) | COUNT(*) |\n+-------------+----------+\n|          10 |       12 |\n+-------------+----------+\n1 row in set\n",
+        "obclient> SELECT col1,col2,\n                 COUNT(*) OVER (ORDER BY col3 RANGE BETWEEN 1 PRECEDING AND 3 FOLLOWING) AS mov_count\n          FROM tbl1;\n+------+------+-----------+\n| COL1 | COL2 | MOV_COUNT |\n+------+------+-----------+\n|    1 | aa   |         2 |\n|    2 | bb   |         3 |\n|    3 | cc   |         3 |\n|   10 | jj   |         3 |\n|    4 | dd   |         2 |\n|    5 | ee   |         2 |\n|    6 | ff   |         2 |\n|    7 | gg   |         1 |\n|    8 | hh   |         1 |\n|    9 | ii   |         1 |\n|   11 | kk   |         2 |\n|   12 | oo   |         2 |\n+------+------+-----------+\n12 rows in set\n"
+    ],
+    "Category": [
+        "Aggregate Functions",
+        "Analytic Functions"
+    ]
+}

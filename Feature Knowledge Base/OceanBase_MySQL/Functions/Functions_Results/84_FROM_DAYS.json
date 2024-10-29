@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000000823401"
+    ],
+    "Title": [
+        "FROM_DAYS"
+    ],
+    "Feature": [
+        "FROM_DAYS(N)\n"
+    ],
+    "Description": [
+        "返回指定天数 N 对应的 DATE 值。天数指距离 0000-01-01 的天数。"
+    ],
+    "Examples": [
+        "obclient> SELECT FROM_DAYS(736271), FROM_DAYS(700000);\n+-------------------+-------------------+\n| FROM_DAYS(736271) | FROM_DAYS(700000) |\n+-------------------+-------------------+\n| 2015-11-04        | 1916-07-15        |\n+-------------------+-------------------+\n1 row in set\n"
+    ],
+    "Category": [
+        "Date and Time Functions"
+    ]
+}

@@ -1,0 +1,21 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/reset/"
+    ],
+    "Title": [
+        "RESET"
+    ],
+    "Feature": [
+        "RESET reset_option [, reset_option] ...\n"
+    ],
+    "Description": [
+        "The RESET statement is used to clear the state of various server\noperations. You must have the RELOAD privilege to execute\nRESET.",
+        "RESET acts as a stronger version of the FLUSH statement.",
+        "The different RESET options are:",
+        "OptionDescription\nSLAVE [\"connection_name\"] [ALL]Deletes all relay logs from the slave and reset the replication position in the master binary log.\nMASTERDeletes all old binary logs, makes the binary index file (--log-bin-index) empty and creates a new binary log file.  This is useful when you want to reset the master to an initial state. If you want to just delete old, not used binary logs, you should use the PURGE BINARY LOGS command.\nQUERY CACHERemoves all queries from the query cache. See also FLUSH QUERY CACHE.\n\n"
+    ],
+    "Examples": [],
+    "Category": [
+        "Administrative SQL Statements"
+    ]
+}

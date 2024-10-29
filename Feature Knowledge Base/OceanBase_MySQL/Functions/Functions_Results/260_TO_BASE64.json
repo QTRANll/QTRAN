@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000000823486"
+    ],
+    "Title": [
+        "TO_BASE64"
+    ],
+    "Feature": [
+        "TO_BASE64(str)\n"
+    ],
+    "Description": [
+        "将字符串参数转换为 base-64 编码形式。可以使用 FROM_BASE64 函数对 Base-64 编码的字符串进行解码，详细信息请参见 FROM_BASE64()。"
+    ],
+    "Examples": [
+        "obclient> SELECT TO_BASE64('OB');\n+-----------------+\n| TO_BASE64('OB')\n+-----------------+\n| T0I=            |\n+-----------------+\n1 row in set\n"
+    ],
+    "Category": [
+        "String Functions"
+    ]
+}

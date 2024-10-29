@@ -1,0 +1,21 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/pointfromtext/"
+    ],
+    "Title": [
+        "ST_PointFromText"
+    ],
+    "Feature": [
+        "ST_PointFromText(wkt[,srid])\nPointFromText(wkt[,srid])\n"
+    ],
+    "Description": [
+        "Constructs a POINT value using its WKT representation and SRID.",
+        "ST_PointFromText() and PointFromText() are synonyms."
+    ],
+    "Examples": [
+        "SELECT ST_PointFromText('POINT(1 1)', 4326);"
+    ],
+    "Category": [
+        "Geographic Functions"
+    ]
+}

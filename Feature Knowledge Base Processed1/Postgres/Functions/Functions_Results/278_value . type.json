@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/current/functions-json.html"
+    ],
+    "Title": [
+        "value . type"
+    ],
+    "Feature": [
+        "value . type() → string"
+    ],
+    "Description": [
+        "Type of the JSON item (see json_typeof)"
+    ],
+    "Examples": [
+        "jsonb_path_query_array('[1, \"2\", {}]', '$[*].type()') → [\"number\", \"string\", \"object\"]"
+    ],
+    "Category": [
+        "JSON Functions and Operators"
+    ]
+}

@@ -1,0 +1,23 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/table-functions/deltalake"
+    ],
+    "Title": [
+        "Arguments"
+    ],
+    "Feature": [
+        "Arguments"
+    ],
+    "Description": [
+        "Arguments",
+        "url \u2014 Bucket url with path to existing Delta Lake table in S3.aws_access_key_id, aws_secret_access_key - Long-term credentials for the AWS account user.  You can use these to authenticate your requests. These parameters are optional. If credentials are not specified, they are used from the ClickHouse configuration. For more information see Using S3 for Data Storage.format \u2014 The format of the file.structure \u2014 Structure of the table. Format 'column1_name column1_type, column2_name column2_type, ...'.compression \u2014 Parameter is optional. Supported values: none, gzip/gz, brotli/br, xz/LZMA, zstd/zst. By default, compression will be autodetected by the file extension.",
+        "Returned value",
+        "A table with the specified structure for reading data in the specified Delta Lake table in S3."
+    ],
+    "Examples": [
+        "SELECT    URL,    UserAgentFROM deltaLake('https://clickhouse-public-datasets.s3.amazonaws.com/delta_lake/hits/')WHERE URL IS NOT NULLLIMIT 2"
+    ],
+    "Category": [
+        "Table Functions"
+    ]
+}

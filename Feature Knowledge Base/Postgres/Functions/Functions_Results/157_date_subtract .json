@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/current/functions-datetime.html"
+    ],
+    "Title": [
+        "date_subtract"
+    ],
+    "Feature": [
+        "date_subtract ( timestamp with time zone, interval [, text ] ) → timestamp with time zone"
+    ],
+    "Description": [
+        "Subtract an interval from a timestamp with time zone, computing times of day and daylight-savings adjustments according to the time zone named by the third argument, or the current TimeZone setting if that is omitted. The form with two arguments is equivalent to the timestamp with time zone - interval operator."
+    ],
+    "Examples": [
+        "date_subtract('2021-11-01 00:00:00+01'::timestamptz, '1 day'::interval, 'Europe/Warsaw') → 2021-10-30 22:00:00+00"
+    ],
+    "Category": [
+        "Date divide Time Functions and Operators"
+    ]
+}

@@ -1,0 +1,19 @@
+{
+    "HTML": [
+        "https://duckdb.org/docs/sql/functions/aggregates"
+    ],
+    "Title": [
+        "covar_pop(y, x)"
+    ],
+    "Feature": [
+        "covar_pop(y, x)"
+    ],
+    "Description": [
+        "The population covariance, which does not include bias correction.",
+        "(sum(x*y) - sum(x) * sum(y) / regr_count(y, x)) / regr_count(y, x), covar_samp(y, x) * (1 - 1 / regr_count(y, x))"
+    ],
+    "Examples": [],
+    "Category": [
+        "Aggregate Functions"
+    ]
+}

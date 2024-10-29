@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/st_intersection/"
+    ],
+    "Title": [
+        "ST_INTERSECTION"
+    ],
+    "Feature": [
+        "ST_INTERSECTION(g1,g2)\n"
+    ],
+    "Description": [
+        "Returns a geometry that is the intersection, or shared portion, of geometry g1 and geometry g2."
+    ],
+    "Examples": [
+        "SELECT ASTEXT(ST_INTERSECTION(@g1,@g2));"
+    ],
+    "Category": [
+        "Geographic Functions"
+    ]
+}

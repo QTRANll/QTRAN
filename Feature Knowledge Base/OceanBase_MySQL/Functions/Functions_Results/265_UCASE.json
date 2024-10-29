@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000000823431"
+    ],
+    "Title": [
+        "UCASE"
+    ],
+    "Feature": [
+        "UCASE(str)\n"
+    ],
+    "Description": [
+        "将字符串 str 中的小写字母转化为大写字母。该函数是 UPPER() 函数的同义词。"
+    ],
+    "Examples": [
+        "obclient> SELECT UCASE('obclient您好！');\n+----------------------------+\n| UCASE('obclient您好！')    |\n+----------------------------+\n| OBCLIENT您好！             |\n+----------------------------+\n1 row in set\n"
+    ],
+    "Category": [
+        "String Functions"
+    ]
+}

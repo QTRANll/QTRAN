@@ -1,0 +1,33 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/install-soname/"
+    ],
+    "Title": [
+        "INSTALL SONAME"
+    ],
+    "Feature": [
+        "INSTALL SONAME 'plugin_library'"
+    ],
+    "Description": [
+        "This statement is a variant of INSTALL PLUGIN. It installs all plugins from a given plugin_library. See INSTALL PLUGIN for details.",
+        "plugin_library is the name of the shared library that\ncontains the plugin code. The file name extension (for\nexample, libmyplugin.so or libmyplugin.dll) can be omitted (which makes the statement look the same on all architectures).",
+        "The shared library must be located in the plugin directory (that is,\nthe directory named by the plugin_dir system variable). The library must be in the plugin directory itself, not in a subdirectory. By\ndefault, plugin_dir is plugin directory under the directory named by\nthe pkglibdir configuration variable, but it can be changed by setting\nthe value of plugin_dir at server startup. For example, set\nits value in a my.cnf file:",
+        "[mariadbd]\nplugin_dir=/path/to/plugin/directory",
+        "If the value of plugin_dir is a relative path name, it is\ntaken to be relative to the MySQL base directory (the value of the basedir\nsystem variable).",
+        "INSTALL SONAME adds one or more lines to the mysql.plugin table that\ndescribes the plugin. This table contains the plugin name and library file\nname.",
+        "INSTALL SONAME causes the server to read\noption (my.cnf) files just as during server startup. This enables the plugin to\npick up any relevant options from those files. It is possible to add plugin\noptions to an option file even before loading a plugin (if the loose prefix is\nused). It is also possible to uninstall a plugin, edit my.cnf, and install the\nplugin again. Restarting the plugin this way enables it to the new option\nvalues without a server restart.",
+        "INSTALL SONAME also loads and initializes the plugin code to\nmake the plugin available for use. A plugin is initialized by executing its\ninitialization function, which handles any setup that the plugin must perform\nbefore it can be used.",
+        "To use INSTALL SONAME, you must have the\nINSERT privilege for the mysql.plugin table.",
+        "At server startup, the server loads and initializes any plugin that is\nlisted in the mysql.plugin table. This means that a plugin is installed\nwith INSTALL SONAME only once, not every time the server\nstarts. Plugin loading at startup does not occur if the server is started with\nthe --skip-grant-tables option.",
+        "When the server shuts down, it executes the de-initialization function\nfor each plugin that is loaded so that the plugin has a chance to\nperform any final cleanup.",
+        "If you need to load plugins for a single server startup when the\n--skip-grant-tables option is given (which tells the server\nnot to read system tables), use the \n--plugin-load mariadbd option.",
+        "If you need to install only one plugin from a library, use the INSTALL PLUGIN statement."
+    ],
+    "Examples": [
+        "INSTALL SONAME 'locales';\n",
+        "INSTALL SONAME 'ha_sequence';\n"
+    ],
+    "Category": [
+        "Administrative SQL Statements"
+    ]
+}

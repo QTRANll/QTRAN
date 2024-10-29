@@ -1,0 +1,38 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/loadable-function-reference.html"
+    ],
+    "Title": [
+        "14.2 Loadable Function Reference"
+    ],
+    "Feature": [
+        "audit_log_read_bookmark()"
+    ],
+    "Description": [
+        "Bookmark for most recent audit log event",
+        "\naudit_log_read_bookmark()\n",
+        "\n              Returns a JSON string\n              representing a bookmark for the most recently written\n              audit log event. If the audit log format is not\n              JSON, an error occurs.\n            ",
+        "\n              The bookmark is a JSON hash\n              with timestamp and\n              id items that uniquely identify the\n              position of an event within the audit log. It is suitable\n              for passing to\n              audit_log_read() to\n              indicate to that function the position at which to begin\n              reading.\n            ",
+        "\n              For additional details about the audit log-reading\n              process, see Section\u00a08.4.5.6, \u201cReading Audit Log Files\u201d.\n            ",
+        "\n              Arguments:\n            ",
+        "\n              None.\n            ",
+        "\n              Return value:\n            ",
+        "\n              A JSON string containing a\n              bookmark for success, or NULL and an\n              error for failure.\n            ",
+        "\n              Example:\n            ",
+        "Press CTRL+C to copy mysql> SELECT audit_log_read_bookmark();\n+-------------------------------------------------+\n| audit_log_read_bookmark()                       |\n+-------------------------------------------------+\n| { \"timestamp\": \"2019-10-03 21:03:44\", \"id\": 0 } |\n+-------------------------------------------------+",
+        "\n              Notes:\n            ",
+        "\n              Prior to MySQL 8.4, string return values\n              could be binary JSON\n              strings. For information about converting such values to\n              nonbinary strings, see\n              Section\u00a08.4.5.6, \u201cReading Audit Log Files\u201d.\n            "
+    ],
+    "Examples": [
+        "mysql> SELECT audit_log_read_bookmark();\n+-------------------------------------------------+\n| audit_log_read_bookmark()                       |\n+-------------------------------------------------+\n| { \"timestamp\": \"2019-10-03 21:03:44\", \"id\": 0 } |\n+-------------------------------------------------+"
+    ],
+    "Category": [
+        "Loadable Functions"
+    ],
+    "Reference HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/audit-log-reference.html#function_audit-log-read-bookmark"
+    ],
+    "Feature Type": [
+        "Function"
+    ]
+}

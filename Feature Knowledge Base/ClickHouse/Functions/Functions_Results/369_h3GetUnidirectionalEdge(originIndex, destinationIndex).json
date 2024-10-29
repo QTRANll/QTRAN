@@ -1,0 +1,27 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/geo/h3"
+    ],
+    "Title": [
+        "h3GetUnidirectionalEdge"
+    ],
+    "Feature": [
+        "h3GetUnidirectionalEdge(originIndex, destinationIndex)"
+    ],
+    "Description": [
+        "h3GetUnidirectionalEdge",
+        "Returns a unidirectional edge H3 index based on the provided origin and destination and returns 0 on error.",
+        "Syntax",
+        "h3GetUnidirectionalEdge(originIndex, destinationIndex)",
+        "Parameter",
+        "originIndex \u2014 Origin Hexagon index number. UInt64.destinationIndex \u2014 Destination Hexagon index number. UInt64.",
+        "Returned value",
+        "Unidirectional Edge Hexagon Index number. UInt64."
+    ],
+    "Examples": [
+        " SELECT h3GetUnidirectionalEdge(599686042433355775, 599686043507097599) as edge;"
+    ],
+    "Category": [
+        "Geo Functions"
+    ]
+}

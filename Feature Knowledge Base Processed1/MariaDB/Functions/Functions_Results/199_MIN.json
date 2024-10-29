@@ -1,0 +1,26 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/min/"
+    ],
+    "Title": [
+        "MIN"
+    ],
+    "Feature": [
+        "MIN([DISTINCT] expr)\n"
+    ],
+    "Description": [
+        "Returns the minimum value of expr. MIN() may take a string\nargument, in which case it returns the minimum string value. The DISTINCT\nkeyword can be used to find the minimum of the distinct values of expr,\nhowever, this produces the same result as omitting DISTINCT.",
+        "Note that SET and ENUM fields are currently compared by their string value rather than their relative position in the set, so MIN() may produce a different lowest result than ORDER BY ASC.",
+        "It is an aggregate function, and so can be used with the GROUP BY clause.",
+        "MIN() can be used as a window function.",
+        "MIN() returns NULL if there were no matching rows."
+    ],
+    "Examples": [
+        "SELECT name, MIN(score) FROM student GROUP BY name;",
+        "SELECT MIN(name) FROM student;",
+        "SELECT name,test,MIN(score) FROM student;"
+    ],
+    "Category": [
+        "Aggregate Functions"
+    ]
+}

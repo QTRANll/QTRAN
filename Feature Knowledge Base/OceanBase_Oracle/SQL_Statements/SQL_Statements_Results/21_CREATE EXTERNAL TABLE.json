@@ -1,0 +1,26 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000001054328"
+    ],
+    "Title": [
+        "CREATE EXTERNAL TABLE"
+    ],
+    "Feature": [
+        "CREATE EXTERNAL TABLE <table_name>\n    ( [ <column_name> <column_type> [AS <expr>] ]\n      [ , <column_name> <column_type> [AS <expr>] ]\n      [ , ... ] )\n    LOCATION = '<string>'\n    formatTypeOptions\n    [ PARTITION BY ( <column_name> [, <column_name> ... ] ) ]\n    [ PARTITION_TYPE = USER_SPECIFIED ]\n    [ PATTERN = '<regex_pattern>' ]\n    [AUTO_REFRESH = 'xx']\nformatTypeOptions:\n    FORMAT = (\n      TYPE = 'CSV'\n      LINE_DELIMITER = '<string>' | <expr>\n      FIELD_DELIMITER = '<string>' | <expr>\n      ESCAPE = '<character>' | <expr>\n      FIELD_OPTIONALLY_ENCLOSED_BY = '<character>' | <expr>\n      ENCODING = 'charset'\n      NULL_IF = ('<string>' | <expr>, '<string>' | <expr> ...)\n      SKIP_HEADER = <int>\n      SKIP_BLANK_LINES = { TRUE | FALSE }\n      TRIM_SPACE = { TRUE | FALSE }\n      EMPTY_FIELD_AS_NULL = { TRUE | FALSE }\n    )\n    | FORMAT = (TYPE = 'PARQUET')\n"
+    ],
+    "Description": [
+        "该语句用来在数据库中创建一张新的外表。",
+        "外表是数据库管理系统中的一项关键功能，通常数据库中的表存放于数据库的存储空间中，而外表的数据存储于外部存储服务中。",
+        "创建外表时需要定义数据的文件路径和文件格式，之后用户可以通过外表从外部存储服务中读取文件的数据。外表是只读的，可以在查询语句使用，但是不能执行 DML 操作。外表不支持定义约束和创建索引。",
+        "\n\n\n参数\n描述\n\n\n\n\ntable_name\n要创建的外表的名称。\n\n\ncolumn_name\n外表的列名称。默认情况下，文件中的数据列和外表定义的列是自动按顺序对应起来的。\n\n\ncolumn_type\n定义外表的列类型，但是不能定义约束（例如，DEFAULT、NOT NULL、UNIQUE、CHECK、PRIMARY KEY、FOREIGN KEY 等）。\n\n\nAS \n用于手动指定列映射。当文件中的列顺序与外表的列所定义顺序不一致时，可以通过 metadata$filecol{N} 所表示的伪列来指定外表的列与文件中的第 N 列的对应关系。例如，c2 INT AS (metadata$filecol4) 表示外表的 c2 列对应文件中的第 4 列。需要注意的是，如果指定了手动列映射，那么自动映射关系将会失效，而且所有的列都需要手动定义映射关系。\n\n\nLOCATION\n指定外表文件存放的路径。通常外表的数据文件存放于单独一个目录中，文件夹中可以包含子目录，在创建表时，外表会自动收集该目录中的所有文件。 \n      \n本地 LOCATION 格式为 LOCATION = '[file://] local_file_path'，其中local_file_path 可以为相对路径，也可以为绝对路径。如果填写的是相对路径，则当前目录必须为 OceanBase 数据库的安装目录；secure_file_priv 用于配置 OBServer 节点有权限访问的文件路径。local_file_path 只能是 secure_file_priv 路径的子路径。\n远程 LOCATION 格式为 LOCATION = '{oss\\|cos\\|s3}://$ACCESS_ID:$ACCESS_KEY@$HOST/remote_file_path'，其中 $ACCESS_ID、$ACCESS_KEY 和 $HOST 是访问 OSS、COS 和 S3 时需要配置的访问信息，这些敏感的访问信息会以加密的方式存放在数据库的系统表中。\n\n\n\nFORMAT = ( TYPE = ‘CSV’… )\n指定外部文件的格式为 CSV 类型。LINE_DELIMITER：指定 CSV 文件的行分隔符。默认值为 LINE_DELIMITER='\\n'FIELD_DELIMITER：指定 CSV 文件的列分隔符。默认值为 FIELD_DELIMITER='\\t'。ESCAPE：指定 CSV 文件的转义符号，只能为 1 个字节。默认值为 ESCAPE ='\\'。FIELD_OPTIONALLY_ENCLOSED_BY：指定 CSV 文件中包裹字段值的符号。默认值为空。ENCODING：指定文件的字符集编码格式，当前 Oracle 模式支持的所有字符集请参见 字符集。如果不指定，默认值为 UTF8MB4。NULL_IF：指定被当作 NULL 处理的字符串。默认值为空。SKIP_HEADER：跳过文件头，并指定跳过的行数。SKIP_BLANK_LINES：指定是否跳过空白行。默认值为 FALSE，表示不跳过空白的行。TRIM_SPACE：指定是否删除文件中字段的头部和尾部空格。默认值为 FALSE，表示不删除文件中字段头尾的空格。EMPTY_FIELD_AS_NULL：指定是否将空字符串当作 NULL 处理。默认值为 FALSE，表示不将空字符串当做 NULL 处理。\n\n\nFORMAT = ( TYPE = ‘PARQUET’… )\n指定外部文件的格式为 PARQUET 类型。\n\n\nPATTERN\n指定一个正则模式串，用于过滤 LOCATION 目录下的文件。对于每个 LOCATION 目录下的文件路径，如果能够匹配该模式串，外表会访问这个文件，否则外表会跳过这个文件。如果不指定该参数，则默认可以访问 LOCATION 目录下的所有文件。外表会将LOCATION 指定路径下满足 PATTERN 的文件列表保存在数据库系统表中，外表扫描时会根据这个列表来访问外部的文件。\n\n\nPARTITION_TYPE = USER_SPECIFIED\n当您需要自己手动添加和删除分区，而不是让外表自动管理分区时，需要指定 PARTITION_TYPE = USER_SPECIFIED 字段。\n\n\nAUTO_REFRESH = ‘xx’\n用于外表自动刷新，目前有三个取值。OFF：默认值，表示关闭自动刷新。INTERVAL：让该外表可以通过 dbms_external_table 来管理自动刷新规则。IMMEDIATE：代表每次 SQL 访问外表时，需要去刷新一次该 SQL 相关的外表 META。\n\n\n"
+    ],
+    "Examples": [
+        "obclient> SET GLOBAL secure_file_priv = \"\"\nQuery OK, 0 rows affected\nobclinet> \\q\nBye\n",
+        "1,'Dave','Smith','dsmith@outlook.com','friend',32\n2,'Xena','Johnson','xjonson@outlook.com','contact',45\n3,'Fred','Jackon','fjackson@outlook.com','co-worker',19\n4,'Alma','Tyler','atyler@outlook.com','friend',53\n",
+        "obclient> CREATE EXTERNAL TABLE contacts (\n    id    INT,\n    firstname  VARCHAR(100),\n    lastname   VARCHAR(100),\n    email      VARCHAR(255),\n    category   CHAR(30),\n    age        NUMBER )\n   LOCATION = '/home/admin/test/'\n   FORMAT = (\n     TYPE = 'CSV'\n     FIELD_DELIMITER = ','\n     FIELD_OPTIONALLY_ENCLOSED_BY =''''\n    )PATTERN ='extdata.csv';\n",
+        "obclient> SELECT * FROM contacts;\n+------+-----------+----------+----------------------+--------------------------------+------+\n| ID   | FIRSTNAME | LASTNAME | EMAIL                | CATEGORY                       | AGE  |\n+------+-----------+----------+----------------------+--------------------------------+------+\n|    1 | Dave      | Smith    | dsmith@outlook.com   | friend                         |   32 |\n|    2 | Xena      | Johnson  | xjonson@outlook.com  | contact                        |   45 |\n|    3 | Fred      | Jackon   | fjackson@outlook.com | co-worker                      |   19 |\n|    4 | Alma      | Tyler    | atyler@outlook.com   | friend                         |   53 |\n+------+-----------+----------+----------------------+--------------------------------+------+\n4 rows in set  \n"
+    ],
+    "Category": [
+        "DDL"
+    ]
+}

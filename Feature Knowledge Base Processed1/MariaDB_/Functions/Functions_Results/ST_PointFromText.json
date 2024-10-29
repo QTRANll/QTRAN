@@ -1,0 +1,45 @@
+{
+    "HTML": "https://mariadb.com//kb/en/pointfromtext/",
+    "Title": "ST_PointFromText",
+    "Feature": [
+        "ST_PointFromText(wkt[,srid])\nPointFromText(wkt[,srid])\n"
+    ],
+    "Description": [
+        "Constructs a POINT value using its WKT representation and SRID.",
+        "ST_PointFromText() and PointFromText() are synonyms."
+    ],
+    "Examples": [
+        "CREATE TABLE gis_point  (g POINT);\nSHOW FIELDS FROM gis_point;\nINSERT INTO gis_point VALUES\n    (PointFromText('POINT(10 10)')),\n    (PointFromText('POINT(20 10)')),\n    (PointFromText('POINT(20 20)')),\n    (PointFromWKB(AsWKB(PointFromText('POINT(10 20)'))));\n"
+    ],
+    "Category": [
+        "Geographic Functions"
+    ],
+    "Effective SQLs Refined": [],
+    "Ineffective SQLs Refined": [],
+    "Wrong Messages from Ineffective SQLs Refined": [],
+    "SQLs Generated1": [
+        {
+            "Example SQL": "SELECT ST_PointFromText('POINT(1 1)', 4326);"
+        }
+    ],
+    "SQLs Generated Costs1": [
+        {
+            "Total Tokens": 314,
+            "Prompt Tokens": 285,
+            "Completion Tokens": 29,
+            "Total Cost (USD)": 6.015e-05
+        }
+    ],
+    "SQLs Generated ExecResults1": [
+        "[(b'\\xe6\\x10\\x00\\x00\\x01\\x01\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\xf0?\\x00\\x00\\x00\\x00\\x00\\x00\\xf0?',)]"
+    ],
+    "SQLs Generated ExecTimes1": [
+        "0.030250072479248047"
+    ],
+    "SQLs Generated ErrorMessages1": [
+        "None"
+    ],
+    "Effective SQLs Generated1": [
+        "SELECT ST_PointFromText('POINT(1 1)', 4326);"
+    ]
+}

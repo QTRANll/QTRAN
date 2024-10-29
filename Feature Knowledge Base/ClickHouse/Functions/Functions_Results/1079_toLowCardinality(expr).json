@@ -1,0 +1,28 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/type-conversion-functions"
+    ],
+    "Title": [
+        "toLowCardinality"
+    ],
+    "Feature": [
+        "toLowCardinality(expr)"
+    ],
+    "Description": [
+        "toLowCardinality",
+        "Converts input parameter to the LowCardinality version of same data type.",
+        "To convert data from the LowCardinality data type use the CAST function. For example, CAST(x as String).",
+        "Syntax",
+        "toLowCardinality(expr)",
+        "Arguments",
+        "expr \u2014 Expression resulting in one of the supported data types.",
+        "Returned values",
+        "Result of expr. LowCardinality of the type of expr."
+    ],
+    "Examples": [
+        "SELECT toLowCardinality('1');"
+    ],
+    "Category": [
+        "Type Conversion Functions"
+    ]
+}

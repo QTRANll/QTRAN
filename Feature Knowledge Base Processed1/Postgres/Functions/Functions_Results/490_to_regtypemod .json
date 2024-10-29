@@ -1,0 +1,21 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/current/functions-info.html"
+    ],
+    "Title": [
+        "to_regtypemod"
+    ],
+    "Feature": [
+        "to_regtypemod ( text ) → integer"
+    ],
+    "Description": [
+        "Parses a string of text, extracts a potential type name from it, and translates its type modifier, if any. A syntax error in the string will result in an error; but if the string is a syntactically valid type name that happens not to be found in the catalogs, the result is NULL. The result is -1 if no type modifier is present.",
+        "to_regtypemod can be combined with to_regtype to produce appropriate inputs for format_type, allowing a string representing a type name to be canonicalized."
+    ],
+    "Examples": [
+        "format_type(to_regtype('varchar(32)'), to_regtypemod('varchar(32)')) → character varying(32)"
+    ],
+    "Category": [
+        "System Information Functions and Operators"
+    ]
+}

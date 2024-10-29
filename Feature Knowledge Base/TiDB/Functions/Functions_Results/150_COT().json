@@ -1,0 +1,23 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/mathematical-functions.html#function_cot"
+    ],
+    "Title": [
+        "COT()"
+    ],
+    "Feature": [
+        "COT(X)"
+    ],
+    "Description": [
+        "Return the cotangent",
+        "\nCOT(X)\n",
+        "\n            Returns the cotangent of X.\n            Returns NULL if\n            X is NULL.\n          ",
+        "Press CTRL+C to copy mysql> SELECT COT(12);\n        -> -1.5726734063977\nmysql> SELECT COT(0);\n        -> out-of-range error"
+    ],
+    "Examples": [
+        "mysql> SELECT COT(12);\n        -> -1.5726734063977\nmysql> SELECT COT(0);\n        -> out-of-range error"
+    ],
+    "Category": [
+        "Mathematical Functions"
+    ]
+}

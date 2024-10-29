@@ -1,0 +1,40 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/parenthesized-query-expressions.html"
+    ],
+    "Title": [
+        "15.2.11 Parenthesized Query Expressions"
+    ],
+    "Feature": [
+        "parenthesized_query_expression:\n    ( query_expression [order_by_clause] [limit_clause] )\n      [order_by_clause]\n      [limit_clause]\n      [into_clause]\n\nquery_expression:\n    query_block [set_op query_block [set_op query_block ...]]\n      [order_by_clause]\n      [limit_clause]\n      [into_clause]\n\nquery_block:\n    SELECT ... | TABLE | VALUES\n\norder_by_clause:\n    ORDER BY as for SELECT\n\nlimit_clause:\n    LIMIT as for SELECT\n\ninto_clause:\n    INTO as for SELECT\n\nset_op:\n    UNION | INTERSECT | EXCEPT"
+    ],
+    "Description": [
+        "\n      MySQL 8.4 supports parenthesized query expressions\n      according to the preceding syntax. At its simplest, a\n      parenthesized query expression contains a single\n      SELECT or other statement returning\n      a result set and no following optional clauses:\n    ",
+        "Press CTRL+C to copy (SELECT 1);\n(SELECT * FROM INFORMATION_SCHEMA.SCHEMATA WHERE SCHEMA_NAME = 'mysql');\n\nTABLE t;\n\nVALUES ROW(2, 3, 4), ROW(1, -2, 3);",
+        "\n      A parenthesized query expression can also contain queries linked\n      by one or more set operations such as\n      UNION, and end with any or all of\n      the optional clauses:\n    ",
+        "Press CTRL+C to copy mysql> (SELECT 1 AS result UNION SELECT 2);\n+--------+\n| result |\n+--------+\n|      1 |\n|      2 |\n+--------+\nmysql> (SELECT 1 AS result UNION SELECT 2) LIMIT 1;\n+--------+\n| result |\n+--------+\n|      1 |\n+--------+\nmysql> (SELECT 1 AS result UNION SELECT 2) LIMIT 1 OFFSET 1;\n+--------+\n| result |\n+--------+\n|      2 |\n+--------+\nmysql> (SELECT 1 AS result UNION SELECT 2)\n       ORDER BY result DESC LIMIT 1;\n+--------+\n| result |\n+--------+\n|      2 |\n+--------+\nmysql> (SELECT 1 AS result UNION SELECT 2)\n       ORDER BY result DESC LIMIT 1 OFFSET 1;\n+--------+\n| result |\n+--------+\n|      1 |\n+--------+\nmysql> (SELECT 1 AS result UNION SELECT 3 UNION SELECT 2)\n       ORDER BY result LIMIT 1 OFFSET 1 INTO @var;\nmysql> SELECT @var;\n+------+\n| @var |\n+------+\n|    2 |\n+------+",
+        "\nINTERSECT acts before UNION\n      and EXCEPT, so that the following two\n      statements are equivalent:\n    ",
+        "Press CTRL+C to copy SELECT a FROM t1 EXCEPT SELECT b FROM t2 INTERSECT SELECT c FROM t3;\n\nSELECT a FROM t1 EXCEPT (SELECT b FROM t2 INTERSECT SELECT c FROM t3);",
+        "\n      Parenthesized query expressions are also used as query\n      expressions, so a query expression, usually composed of query\n      blocks, may also consist of parenthesized query expressions:\n    ",
+        "Press CTRL+C to copy (TABLE t1 ORDER BY a) UNION (TABLE t2 ORDER BY b) ORDER BY z;",
+        "\n      Query blocks may have trailing ORDER BY and\n      LIMIT clauses, which are applied before the\n      outer set operation, ORDER BY, and\n      LIMIT.\n    ",
+        "\n      You cannot have a query block with a trailing ORDER\n      BY or LIMIT without wrapping it in\n      parentheses but parentheses may be used for enforcement in various\n      ways:\n",
+        "\n\n          To enforce LIMIT on each query block:\n        Press CTRL+C to copy (SELECT 1 LIMIT 1) UNION (VALUES ROW(2) LIMIT 1);\n\n(VALUES ROW(1), ROW(2) LIMIT 2) EXCEPT (SELECT 2 LIMIT 1);\n          To enforce LIMIT on both query blocks and\n          the entire query expression:\n        Press CTRL+C to copy (SELECT 1 LIMIT 1) UNION (SELECT 2 LIMIT 1) LIMIT 1;\n          To enforce LIMIT on the entire query\n          expression (with no parentheses):\n        Press CTRL+C to copy VALUES ROW(1), ROW(2) INTERSECT VALUES ROW(2), ROW(1) LIMIT 1;\n          Hybrid enforcement: LIMIT on the first\n          query block and on the entire query expression:\n        Press CTRL+C to copy (SELECT 1 LIMIT 1) UNION SELECT 2 LIMIT 1;\n",
+        "\n      The syntax described in this section is subject to certain\n      restrictions:\n",
+        "\n\n          A trailing INTO clause for a query\n          expression is not permitted if there is another\n          INTO clause inside parentheses.\n        \n          An ORDER BY or LIMIT\n          within a parenthesized query expression which is also applied\n          in the outer query is handled in accordance with the SQL\n          standard.\n        \n          Nested parenthesized query expressions are permitted. The\n          maximum level of nesting supported is 63; this is after any\n          simplifications or merges have been performed by the parser.\n        \n          An example of such a statement is shown here:\n        Press CTRL+C to copy mysql> (SELECT 'a' UNION SELECT 'b' LIMIT 2) LIMIT 3;\n+---+\n| a |\n+---+\n| a |\n| b |\n+---+\n2 rows in set (0.00 sec)\n          You should be aware that, when collapsing parenthesized\n          expression bodies, MySQL follows SQL standard semantics, so\n          that a higher outer limit cannot override an inner lower one.\n          For example, (SELECT ... LIMIT 5) LIMIT 10\n          can return no more than five rows.\n\n"
+    ],
+    "Examples": [
+        "(SELECT 1);\n(SELECT * FROM INFORMATION_SCHEMA.SCHEMATA WHERE SCHEMA_NAME = 'mysql');\n\nTABLE t;\n\nVALUES ROW(2, 3, 4), ROW(1, -2, 3);",
+        "mysql> (SELECT 1 AS result UNION SELECT 2);\n+--------+\n| result |\n+--------+\n|      1 |\n|      2 |\n+--------+\nmysql> (SELECT 1 AS result UNION SELECT 2) LIMIT 1;\n+--------+\n| result |\n+--------+\n|      1 |\n+--------+\nmysql> (SELECT 1 AS result UNION SELECT 2) LIMIT 1 OFFSET 1;\n+--------+\n| result |\n+--------+\n|      2 |\n+--------+\nmysql> (SELECT 1 AS result UNION SELECT 2)\n       ORDER BY result DESC LIMIT 1;\n+--------+\n| result |\n+--------+\n|      2 |\n+--------+\nmysql> (SELECT 1 AS result UNION SELECT 2)\n       ORDER BY result DESC LIMIT 1 OFFSET 1;\n+--------+\n| result |\n+--------+\n|      1 |\n+--------+\nmysql> (SELECT 1 AS result UNION SELECT 3 UNION SELECT 2)\n       ORDER BY result LIMIT 1 OFFSET 1 INTO @var;\nmysql> SELECT @var;\n+------+\n| @var |\n+------+\n|    2 |\n+------+",
+        "SELECT a FROM t1 EXCEPT SELECT b FROM t2 INTERSECT SELECT c FROM t3;\n\nSELECT a FROM t1 EXCEPT (SELECT b FROM t2 INTERSECT SELECT c FROM t3);",
+        "(TABLE t1 ORDER BY a) UNION (TABLE t2 ORDER BY b) ORDER BY z;",
+        "(SELECT 1 LIMIT 1) UNION (VALUES ROW(2) LIMIT 1);\n\n(VALUES ROW(1), ROW(2) LIMIT 2) EXCEPT (SELECT 2 LIMIT 1);",
+        "(SELECT 1 LIMIT 1) UNION (SELECT 2 LIMIT 1) LIMIT 1;",
+        "VALUES ROW(1), ROW(2) INTERSECT VALUES ROW(2), ROW(1) LIMIT 1;",
+        "(SELECT 1 LIMIT 1) UNION SELECT 2 LIMIT 1;",
+        "mysql> (SELECT 'a' UNION SELECT 'b' LIMIT 2) LIMIT 3;\n+---+\n| a |\n+---+\n| a |\n| b |\n+---+\n2 rows in set (0.00 sec)"
+    ],
+    "Category": [
+        "Data Manipulation Statements"
+    ]
+}

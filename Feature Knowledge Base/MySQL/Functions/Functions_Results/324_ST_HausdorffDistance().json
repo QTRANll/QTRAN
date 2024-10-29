@@ -1,0 +1,36 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/built-in-function-reference.html",
+        "https://dev.mysql.com/doc/refman/8.4/en/spatial-function-reference.html"
+    ],
+    "Title": [
+        "14.1 Built-In Function and Operator Reference",
+        "14.16.1 Spatial Function Reference"
+    ],
+    "Feature": [
+        "ST_HausdorffDistance(g1,\n            g2 [,\n            unit])"
+    ],
+    "Description": [
+        "The discrete Hausdorff distance of one geometry from another",
+        "\nST_HausdorffDistance(g1,\n            g2 [,\n            unit])\n",
+        "\n            Returns the discrete Hausdorff distance between two\n            geometries, reflecting how similar the geometries are. The\n            result is a double-precision number measured in the length\n            unit of the spatial reference system (SRS) of the geometry\n            arguments, or in the length unit of the\n            unit argument if that argument is\n            given.\n          ",
+        "\n            This function implements the discrete Hausdorff distance,\n            which means it is restricted to distances between the points\n            of the geometries. For example, given two\n            LineString arguments, only the points\n            explicitly mentioned in the geometries are considered.\n            Points on the line segments between these points are not\n            considered.\n          ",
+        "\nST_HausdorffDistance()\n            handles its geometry arguments as described in the\n            introduction to this section, with these exceptions:\n",
+        "\n\n                If the geometry arguments are in the same Cartesian or\n                geographic SRS, but are not in a supported combination,\n                an\n                ER_NOT_IMPLEMENTED_FOR_CARTESIAN_SRS\n                or\n                ER_NOT_IMPLEMENTED_FOR_GEOGRAPHIC_SRS\n                error occurs, depending on the SRS type. These\n                combinations are supported:\n\n\n\nLineString and\n                    LineString\n\nPoint and\n                    MultiPoint\n\nLineString and\n                    MultiLineString\n\nMultiPoint and\n                    MultiPoint\n\nMultiLineString and\n                    MultiLineString\n\n\n\n",
+        "\nST_HausdorffDistance()\n            handles its optional unit\n            argument as described in the introduction to this section.\n          ",
+        "Press CTRL+C to copy mysql> SET @ls1 = ST_GeomFromText('LINESTRING(0 0,0 5,5 5)');\nmysql> SET @ls2 = ST_GeomFromText('LINESTRING(0 1,0 6,3 3,5 6)');\nmysql> SELECT ST_HausdorffDistance(@ls1, @ls2);\n+----------------------------------+\n| ST_HausdorffDistance(@ls1, @ls2) |\n+----------------------------------+\n|                                1 |\n+----------------------------------+\n\nmysql> SET @ls1 = ST_GeomFromText('LINESTRING(0 0,0 5,5 5)', 4326);\nmysql> SET @ls2 = ST_GeomFromText('LINESTRING(0 1,0 6,3 3,5 6)', 4326);\nmysql> SELECT ST_HausdorffDistance(@ls1, @ls2);\n+----------------------------------+\n| ST_HausdorffDistance(@ls1, @ls2) |\n+----------------------------------+\n|               111319.49079326246 |\n+----------------------------------+\nmysql> SELECT ST_HausdorffDistance(@ls1, @ls2, 'foot');\n+------------------------------------------+\n| ST_HausdorffDistance(@ls1, @ls2, 'foot') |\n+------------------------------------------+\n|                        365221.4264870815 |\n+------------------------------------------+"
+    ],
+    "Examples": [
+        "mysql> SET @ls1 = ST_GeomFromText('LINESTRING(0 0,0 5,5 5)');\nmysql> SET @ls2 = ST_GeomFromText('LINESTRING(0 1,0 6,3 3,5 6)');\nmysql> SELECT ST_HausdorffDistance(@ls1, @ls2);\n+----------------------------------+\n| ST_HausdorffDistance(@ls1, @ls2) |\n+----------------------------------+\n|                                1 |\n+----------------------------------+\n\nmysql> SET @ls1 = ST_GeomFromText('LINESTRING(0 0,0 5,5 5)', 4326);\nmysql> SET @ls2 = ST_GeomFromText('LINESTRING(0 1,0 6,3 3,5 6)', 4326);\nmysql> SELECT ST_HausdorffDistance(@ls1, @ls2);\n+----------------------------------+\n| ST_HausdorffDistance(@ls1, @ls2) |\n+----------------------------------+\n|               111319.49079326246 |\n+----------------------------------+\nmysql> SELECT ST_HausdorffDistance(@ls1, @ls2, 'foot');\n+------------------------------------------+\n| ST_HausdorffDistance(@ls1, @ls2, 'foot') |\n+------------------------------------------+\n|                        365221.4264870815 |\n+------------------------------------------+"
+    ],
+    "Category": [
+        "Built-In Functions",
+        "Spatial Analysis Functions"
+    ],
+    "Reference HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/spatial-relation-functions-object-shapes.html#function_st-hausdorffdistance"
+    ],
+    "Feature Type": [
+        "Function"
+    ]
+}

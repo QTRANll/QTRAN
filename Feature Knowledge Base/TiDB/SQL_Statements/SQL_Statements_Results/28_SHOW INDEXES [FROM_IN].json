@@ -1,0 +1,23 @@
+{
+    "HTML": [
+        "https://docs.pingcap.com//zh/tidb/stable/sql-statement-show-indexes"
+    ],
+    "Title": [
+        "SHOW INDEXES [FROM|IN]"
+    ],
+    "Feature": [
+        "ShowIndexStmt ::=\n    \"SHOW\" ( \"INDEX\" | \"INDEXES\" | \"KEYS\" ) (\"FROM\" | \"IN\" ) TableName ((\"FROM\" | \"IN\") SchemaName )? ShowLikeOrWhere?\n\nShowLikeOrWhere ::=\n    \"LIKE\" SimpleExpr\n|   \"WHERE\" Expression\n"
+    ],
+    "Description": [
+        "SHOW INDEXES [FROM|IN] \u8bed\u53e5\u7528\u4e8e\u5217\u51fa\u6307\u5b9a\u8868\u4e0a\u7684\u7d22\u5f15\u3002SHOW INDEX [FROM | IN] \u548c SHOW KEYS [FROM | IN] \u662f\u8be5\u8bed\u53e5\u7684\u522b\u540d\u3002\u5305\u542b\u8be5\u8bed\u53e5\u63d0\u4f9b\u4e86 MySQL \u517c\u5bb9\u6027\u3002"
+    ],
+    "Examples": [
+        "CREATE TABLE t1 (id int not null primary key AUTO_INCREMENT, col1 INT, INDEX(col1));\n",
+        "SHOW INDEXES FROM t1;\n",
+        "SHOW INDEX FROM t1;\n",
+        "SHOW KEYS FROM t1;\n"
+    ],
+    "Category": [
+        "Schema \u7ba1\u7406\u4e0e\u6570\u636e\u5b9a\u4e49\u8bed\u53e5 (DDL)"
+    ]
+}

@@ -1,0 +1,26 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/aggregate-functions/reference/groupbitand"
+    ],
+    "Title": [
+        "groupBitAnd"
+    ],
+    "Feature": [
+        "groupBitAnd(expr)"
+    ],
+    "Description": [
+        "groupBitAnd",
+        "Applies bit-wise AND for series of numbers.",
+        "groupBitAnd(expr)",
+        "Arguments",
+        "expr \u2013 An expression that results in UInt* or Int* type.",
+        "Return value",
+        "Value of the UInt* or Int* type."
+    ],
+    "Examples": [
+        "SELECT groupBitAnd(num) FROM t"
+    ],
+    "Category": [
+        "Aggregate Functions"
+    ]
+}

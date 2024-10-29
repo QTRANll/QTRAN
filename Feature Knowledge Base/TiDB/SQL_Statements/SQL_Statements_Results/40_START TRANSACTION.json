@@ -1,0 +1,24 @@
+{
+    "HTML": [
+        "https://docs.pingcap.com//zh/tidb/stable/sql-statement-start-transaction"
+    ],
+    "Title": [
+        "START TRANSACTION"
+    ],
+    "Feature": [
+        "BeginTransactionStmt ::= \n    'BEGIN' ( 'PESSIMISTIC' | 'OPTIMISTIC' )?\n|   'START' 'TRANSACTION' ( 'READ' ( 'WRITE' | 'ONLY' ( ( 'WITH' 'TIMESTAMP' 'BOUND' TimestampBound )? | AsOfClause ) ) | 'WITH' 'CONSISTENT' 'SNAPSHOT' | 'WITH' 'CAUSAL' 'CONSISTENCY' 'ONLY' )?\n\nAsOfClause ::=\n    ( 'AS' 'OF' 'TIMESTAMP' Expression)\n"
+    ],
+    "Description": [
+        "START TRANSACTION \u8bed\u53e5\u7528\u4e8e\u5728 TiDB \u5185\u90e8\u542f\u52a8\u65b0\u4e8b\u52a1\u3002\u5b83\u7c7b\u4f3c\u4e8e\u8bed\u53e5 BEGIN\u3002",
+        "\u5728\u6ca1\u6709 START TRANSACTION \u8bed\u53e5\u7684\u60c5\u51b5\u4e0b\uff0c\u6bcf\u4e2a\u8bed\u53e5\u90fd\u4f1a\u5728\u5404\u81ea\u7684\u4e8b\u52a1\u4e2d\u81ea\u52a8\u63d0\u4ea4\uff0c\u8fd9\u6837\u53ef\u786e\u4fdd MySQL \u517c\u5bb9\u6027\u3002"
+    ],
+    "Examples": [
+        "CREATE TABLE t1 (a int NOT NULL PRIMARY KEY);\n",
+        "START TRANSACTION;\n",
+        "INSERT INTO t1 VALUES (1);\n",
+        "COMMIT;\n"
+    ],
+    "Category": [
+        "\u4e8b\u52a1\u8bed\u53e5"
+    ]
+}

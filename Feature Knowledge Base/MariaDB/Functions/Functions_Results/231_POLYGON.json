@@ -1,0 +1,22 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/polygon/"
+    ],
+    "Title": [
+        "POLYGON"
+    ],
+    "Feature": [
+        "Polygon(ls1,ls2,...)\n"
+    ],
+    "Description": [
+        "Constructs a WKB Polygon value from a number of WKB LineString\narguments. If any argument does not represent the WKB of a LinearRing (that is,\nnot a closed and simple LineString) the return value is NULL.",
+        "Note that according to the OpenGIS standard, a POLYGON should have exactly one ExteriorRing and all other rings should lie within that ExteriorRing and thus be the InteriorRings. Practically, however, some systems, including MariaDB's, permit polygons to have several 'ExteriorRings'. In the case of there being multiple, non-overlapping exterior rings ST_NUMINTERIORRINGS() will return 1."
+    ],
+    "Examples": [
+        "SET @g = ST_GEOMFROMTEXT('POLYGON((1 1,1 5,4 9,6 9,9 3,7 2,1 1))');\n\nCREATE TABLE gis_polygon   (g POLYGON);\nINSERT INTO gis_polygon VALUES\n    (PolygonFromText('POLYGON((10 10,20 10,20 20,10 20,10 10))')),\n    (PolyFromText('POLYGON((0 0,50 0,50 50,0 50,0 0), (10 10,20 10,20 20,10 20,10 10))')),\n    (PolyFromWKB(AsWKB(Polygon(LineString(Point(0, 0), Point(30, 0), Point(30, 30), Point(0, 0))))));\n",
+        "SELECT ST_NumInteriorRings(ST_PolyFromText('POLYGON((0 0,10 0,10 10,0 10,0 0),\n  (-1 -1,-5 -1,-5 -5,-1 -5,-1 -1))')) AS NumInteriorRings;\n+------------------+\n| NumInteriorRings |\n+------------------+\n|                1 |\n+------------------+\n"
+    ],
+    "Category": [
+        "Geographic Functions"
+    ]
+}

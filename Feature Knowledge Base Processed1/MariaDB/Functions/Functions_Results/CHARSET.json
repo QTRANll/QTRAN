@@ -1,0 +1,39 @@
+{
+    "HTML": "https://mariadb.com//kb/en/charset/",
+    "Title": "CHARSET",
+    "Feature": [
+        "CHARSET(str)\n"
+    ],
+    "Description": [
+        "Returns the character set of the string argument. If str is not a string, it is considered as a binary string (so the function returns 'binary'). This applies to NULL, too.  The return value is a string in the utf8 character set."
+    ],
+    "Examples": [
+        "SELECT CHARSET('abc');\n+----------------+\n| CHARSET('abc') |\n+----------------+\n| latin1         |\n+----------------+\n\nSELECT CHARSET(CONVERT('abc' USING utf8));\n+------------------------------------+\n| CHARSET(CONVERT('abc' USING utf8)) |\n+------------------------------------+\n| utf8                               |\n+------------------------------------+\n\nSELECT CHARSET(USER());\n+-----------------+\n| CHARSET(USER()) |\n+-----------------+\n| utf8            |\n+-----------------+\n"
+    ],
+    "Category": [
+        "Information Functions"
+    ],
+    "Effective SQLs Refined": [
+        "SELECT CHARSET('abc');"
+    ],
+    "Ineffective SQLs Refined": [
+        "SET('abc') |\n+----------------+\n| latin1         |\n+----------------+\n\nSELECT CHARSET(CONVERT('abc' USING utf8));",
+        "SET(CONVERT('abc' USING utf8)) |\n+------------------------------------+\n| utf8                               |\n+------------------------------------+\n\nSELECT CHARSET(USER());"
+    ],
+    "Wrong Messages from Ineffective SQLs Refined": [
+        "(pymysql.err.ProgrammingError) (1064, \"You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '('abc') |\\n+----------------+\\n| latin1         |\\n+----------------+\\n\\nSELECT CH...' at line 1\")\n[SQL: SET('abc') |\n+----------------+\n| latin1         |\n+----------------+\n\nSELECT CHARSET(CONVERT('abc' USING utf8));]\n(Background on this error at: https://sqlalche.me/e/20/f405)",
+        "(pymysql.err.ProgrammingError) (1064, \"You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '(CONVERT('abc' USING utf8)) |\\n+------------------------------------+\\n| utf8  ...' at line 1\")\n[SQL: SET(CONVERT('abc' USING utf8)) |\n+------------------------------------+\n| utf8                               |\n+------------------------------------+\n\nSELECT CHARSET(USER());]\n(Background on this error at: https://sqlalche.me/e/20/f405)"
+    ],
+    "SQLs Generated1": [],
+    "SQLs Generated Costs1": [],
+    "SQLs Generated ExecResults1": [],
+    "SQLs Generated ExecTimes1": [],
+    "SQLs Generated ErrorMessages1": [],
+    "Effective SQLs Generated1": [],
+    "SQLs Generated2": [],
+    "SQLs Generated Costs2": [],
+    "SQLs Generated ExecResults2": [],
+    "SQLs Generated ExecTimes2": [],
+    "SQLs Generated ErrorMessages2": [],
+    "Effective SQLs Generated2": []
+}

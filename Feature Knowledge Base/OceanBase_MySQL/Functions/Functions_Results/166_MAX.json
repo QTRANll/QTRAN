@@ -1,0 +1,22 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000000823017"
+    ],
+    "Title": [
+        "MAX"
+    ],
+    "Feature": [
+        "MAX([DISTINCT | ALL] expr)\n"
+    ],
+    "Description": [
+        "返回指定数据中的最大值。",
+        "MAX() 的取值可以是一个字符串参数，在这些情况下，它们返回最大字符串值。DISTINCT 关键字表示只计算不同值，缺省为 ALL。"
+    ],
+    "Examples": [
+        "obclient> SELECT MAX(num) FROM a;\n+-----------------+\n| MAX(num)        |\n+-----------------+\n|              30 |\n+-----------------+\n1 row in set\n"
+    ],
+    "Category": [
+        "Aggregate Functions",
+        "Analysis Functions"
+    ]
+}

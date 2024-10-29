@@ -1,0 +1,39 @@
+{
+    "HTML": [
+        "https://docs.pingcap.com/zh/tidb/stable/string-functions#locate"
+    ],
+    "Title": [
+        "LOCATE()"
+    ],
+    "Feature": [
+        "LOCATE()"
+    ],
+    "Description": [
+        "LOCATE()",
+        "LOCATE(substr, str[, pos]) \u51fd\u6570\u7528\u4e8e\u8fd4\u56de\u5b50\u5b57\u7b26\u4e32 substr \u5728\u5b57\u7b26\u4e32 str \u4e2d\u7b2c\u4e00\u6b21\u51fa\u73b0\u7684\u4f4d\u7f6e\u3002pos \u53c2\u6570\u662f\u53ef\u9009\u7684\uff0c\u7528\u4e8e\u6307\u5b9a\u67e5\u627e\u7684\u8d77\u59cb\u4f4d\u7f6e\u3002",
+        "\u5982\u679c\u5b50\u5b57\u7b26\u4e32 substr \u4e0d\u5728\u5b57\u7b26\u4e32 str \u4e2d\uff0c\u8be5\u51fd\u6570\u8fd4\u56de 0\u3002\u5982\u679c\u4efb\u4e00\u53c2\u6570\u4e3a NULL\uff0c\u8be5\u51fd\u6570\u8fd4\u56de NULL\u3002\u8be5\u51fd\u6570\u662f\u591a\u5b57\u8282\u5b89\u5168\u7684\uff0c\u5e76\u4e14\u53ea\u6709\u5f53\u81f3\u5c11\u4e00\u4e2a\u53c2\u6570\u662f\u4e8c\u8fdb\u5236\u5b57\u7b26\u4e32\u65f6\uff0c\u624d\u6267\u884c\u533a\u5206\u5927\u5c0f\u5199\u7684\u67e5\u627e\u3002"
+    ],
+    "Examples": [
+        "SET collation_connection='utf8mb4_bin';\nSHOW VARIABLES LIKE 'collation_connection';\n+----------------------+-------------+\n| Variable_name        | Value       |\n+----------------------+-------------+\n| collation_connection | utf8mb4_bin |\n+----------------------+-------------+\n",
+        "SELECT LOCATE('bar', 'foobarbar');\n+----------------------------+\n| LOCATE('bar', 'foobarbar') |\n+----------------------------+\n|                          4 |\n+----------------------------+\n",
+        "SELECT LOCATE('baz', 'foobarbar');\n+----------------------------+\n| LOCATE('baz', 'foobarbar') |\n+----------------------------+\n|                          0 |\n+----------------------------+\n",
+        "SELECT LOCATE('bar', 'fooBARBAR');\n+----------------------------+\n| LOCATE('bar', 'fooBARBAR') |\n+----------------------------+\n|                          0 |\n+----------------------------+\n",
+        "SELECT LOCATE('bar', 'foobarBAR', 100);\n+---------------------------------+\n| LOCATE('bar', 'foobarBAR', 100) |\n+---------------------------------+\n|                               0 |\n+---------------------------------+\n",
+        "SELECT LOCATE('bar', 'foobarbar', 5);\n+-------------------------------+\n| LOCATE('bar', 'foobarbar', 5) |\n+-------------------------------+\n|                             7 |\n+-------------------------------+\n",
+        "SELECT LOCATE('bar', NULL);\n+---------------------+\n| LOCATE('bar', NULL) |\n+---------------------+\n|                NULL |\n+---------------------+\n",
+        "SELECT LOCATE('DB', 'TiDB tidb \u6570\u636e\u5e93');\n+-------------------------------------+\n| LOCATE('DB', 'TiDB tidb \u6570\u636e\u5e93')    |\n+-------------------------------------+\n|                                   3 |\n+-------------------------------------+\n",
+        "SELECT LOCATE('DB', 'TiDB tidb \u6570\u636e\u5e93', 4);\n+----------------------------------------+\n| LOCATE('DB', 'TiDB tidb \u6570\u636e\u5e93', 4)    |\n+----------------------------------------+\n|                                      0 |\n+----------------------------------------+\n",
+        "SET collation_connection='utf8mb4_unicode_ci';\nSHOW VARIABLES LIKE 'collation_connection';\n+----------------------+--------------------+\n| Variable_name        | Value              |\n+----------------------+--------------------+\n| collation_connection | utf8mb4_unicode_ci |\n+----------------------+--------------------+\n",
+        "SELECT LOCATE('DB', 'TiDB tidb \u6570\u636e\u5e93', 4);\n+----------------------------------------+\n| LOCATE('DB', 'TiDB tidb \u6570\u636e\u5e93', 4)    |\n+----------------------------------------+\n|                                      8 |\n+----------------------------------------+\n",
+        "SELECT LOCATE('\ud83c\udf7a', '\ud83c\udf63\ud83c\udf63\ud83c\udf63\ud83c\udf7a\ud83c\udf7a');\n+----------------------------------------+\n| LOCATE('\ud83c\udf7a', '\ud83c\udf63\ud83c\udf63\ud83c\udf63\ud83c\udf7a\ud83c\udf7a')            |\n+----------------------------------------+\n|                                      1 |\n+----------------------------------------+\n",
+        "SET collation_connection='utf8mb4_bin';\nSHOW VARIABLES LIKE 'collation_connection';\n+----------------------+-------------+\n| Variable_name        | Value       |\n+----------------------+-------------+\n| collation_connection | utf8mb4_bin |\n+----------------------+-------------+\n",
+        "SELECT LOCATE('\ud83c\udf7a', '\ud83c\udf63\ud83c\udf63\ud83c\udf63\ud83c\udf7a\ud83c\udf7a');\n+----------------------------------------+\n| LOCATE('\ud83c\udf7a', '\ud83c\udf63\ud83c\udf63\ud83c\udf63\ud83c\udf7a\ud83c\udf7a')                         |\n+----------------------------------------+\n|                                      4 |\n+----------------------------------------+\n",
+        "SELECT LOCATE('b', _binary'aBcde');\n+-----------------------------+\n| LOCATE('b', _binary'aBcde') |\n+-----------------------------+\n|                           0 |\n+-----------------------------+\n",
+        "SELECT LOCATE('B', _binary'aBcde');\n+-----------------------------+\n| LOCATE('B', _binary'aBcde') |\n+-----------------------------+\n|                           2 |\n+-----------------------------+\n",
+        "SELECT LOCATE(_binary'b', 'aBcde');\n+-----------------------------+\n| LOCATE(_binary'b', 'aBcde') |\n+-----------------------------+\n|                           0 |\n+-----------------------------+\n",
+        "SELECT LOCATE(_binary'B', 'aBcde');\n+-----------------------------+\n| LOCATE(_binary'B', 'aBcde') |\n+-----------------------------+\n|                           2 |\n+-----------------------------+\n"
+    ],
+    "Category": [
+        "String Functions"
+    ]
+}

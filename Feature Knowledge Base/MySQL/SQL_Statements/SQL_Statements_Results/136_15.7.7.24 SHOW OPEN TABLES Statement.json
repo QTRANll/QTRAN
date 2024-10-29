@@ -1,0 +1,21 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/show-open-tables.html"
+    ],
+    "Title": [
+        "15.7.7.24 SHOW OPEN TABLES Statement"
+    ],
+    "Feature": [
+        "SHOW OPEN TABLES\n    [{FROM | IN} db_name]\n    [LIKE 'pattern' | WHERE expr]"
+    ],
+    "Description": [
+        "\nSHOW OPEN TABLES lists the\n        non-TEMPORARY tables that are currently open\n        in the table cache. See Section\u00a010.4.3.1, \u201cHow MySQL Opens and Closes Tables\u201d. The\n        FROM clause, if present, restricts the tables\n        shown to those present in the db_name\n        database. The LIKE clause, if\n        present, indicates which table names to match. The\n        WHERE clause can be given to select rows\n        using more general conditions, as discussed in\n        Section\u00a028.8, \u201cExtensions to SHOW Statements\u201d.\n      ",
+        "\nSHOW OPEN TABLES output has these\n        columns:\n",
+        "\n\nDatabase\n\n            The database containing the table.\n          \nTable\n\n            The table name.\n          \nIn_use\n\n            The number of table locks or lock requests there are for the\n            table. For example, if one client acquires a lock for a\n            table using LOCK TABLE t1 WRITE,\n            In_use is 1. If another client issues\n            LOCK TABLE t1 WRITE while the table\n            remains locked, the client blocks, waiting for the lock, but\n            the lock request causes In_use to be 2.\n            If the count is zero, the table is open but not currently\n            being used. In_use is also increased by\n            the HANDLER ...\n            OPEN statement and decreased by\n            HANDLER ...\n            CLOSE.\n          \nName_locked\n\n            Whether the table name is locked. Name locking is used for\n            operations such as dropping or renaming tables.\n\n",
+        "\n        If you have no privileges for a table, it does not show up in\n        the output from SHOW OPEN TABLES.\n"
+    ],
+    "Examples": [],
+    "Category": [
+        "Database Administration Statements"
+    ]
+}

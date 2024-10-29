@@ -1,0 +1,21 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/is-not/"
+    ],
+    "Title": [
+        "IS NOT"
+    ],
+    "Feature": [
+        "IS NOT boolean_value\n"
+    ],
+    "Description": [
+        "Tests a value against a boolean value, where boolean_value can be\nTRUE, FALSE, or UNKNOWN. "
+    ],
+    "Examples": [
+        "SELECT 1 IS NOT UNKNOWN, 0 IS NOT UNKNOWN, NULL IS NOT UNKNOWN;",
+        "SELECT NULL IS NOT TRUE, NULL IS NOT FALSE;"
+    ],
+    "Category": [
+        "Comparison Operators"
+    ]
+}

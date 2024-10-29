@@ -1,0 +1,27 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/string-functions"
+    ],
+    "Title": [
+        "idnaEncode"
+    ],
+    "Feature": [
+        "idnaEncode(val)"
+    ],
+    "Description": [
+        "idnaEncode",
+        "Returns the ASCII representation (ToASCII algorithm) of a domain name according to the Internationalized Domain Names in Applications (IDNA) mechanism.\nThe input string must be UTF-encoded and translatable to an ASCII string, otherwise an exception is thrown.\nNote: No percent decoding or trimming of tabs, spaces or control characters is performed.",
+        "Syntax",
+        "idnaEncode(val)",
+        "Arguments",
+        "val \u2014 Input value. String",
+        "Returned value",
+        "A ASCII representation according to the IDNA mechanism of the input value. String"
+    ],
+    "Examples": [
+        "select idnaEncode('stra\u00dfe.m\u00fcnchen.de');"
+    ],
+    "Category": [
+        "Strings Functions"
+    ]
+}

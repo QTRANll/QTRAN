@@ -1,0 +1,35 @@
+{
+    "HTML": "https://mariadb.com//kb/en/quote_identifier/",
+    "Title": "quote_identifier",
+    "Feature": [
+        "sys.quote_identifier(str)\n"
+    ],
+    "Description": [
+        "quote_identifier is a stored function available with the Sys Schema.",
+        "It quotes a string to produce a result that can be used as an identifier in an\nSQL statement. The string is returned enclosed by backticks (\"`\") and\nwith each instance of backtick (\"`\") doubled. If the argument\nis NULL, the return value is the word \"NULL\" without enclosing\nbackticks."
+    ],
+    "Examples": [
+        "SELECT sys.quote_identifier(\"Identifier with spaces\");\n+------------------------------------------------+\n| sys.quote_identifier(\"Identifier with spaces\") |\n+------------------------------------------------+\n| `Identifier with spaces`                       |\n+------------------------------------------------+\n\nSELECT sys.quote_identifier(\"Identifier` containing `backticks\");\n+-----------------------------------------------------------+\n| sys.quote_identifier(\"Identifier` containing `backticks\") |\n+-----------------------------------------------------------+\n| `Identifier`` containing ``backticks`                     |\n+-----------------------------------------------------------+\n"
+    ],
+    "Category": [
+        "No Category"
+    ],
+    "Effective SQLs Refined": [
+        "SELECT sys.quote_identifier(\"Identifier with spaces\");",
+        "SELECT sys.quote_identifier(\"Identifier` containing `backticks\");"
+    ],
+    "Ineffective SQLs Refined": [],
+    "Wrong Messages from Ineffective SQLs Refined": [],
+    "SQLs Generated1": [],
+    "SQLs Generated Costs1": [],
+    "SQLs Generated ExecResults1": [],
+    "SQLs Generated ExecTimes1": [],
+    "SQLs Generated ErrorMessages1": [],
+    "Effective SQLs Generated1": [],
+    "SQLs Generated2": [],
+    "SQLs Generated Costs2": [],
+    "SQLs Generated ExecResults2": [],
+    "SQLs Generated ExecTimes2": [],
+    "SQLs Generated ErrorMessages2": [],
+    "Effective SQLs Generated2": []
+}

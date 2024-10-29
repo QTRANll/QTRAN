@@ -1,0 +1,23 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/date-time-functions"
+    ],
+    "Title": [
+        "timeSlots"
+    ],
+    "Feature": [
+        "timeSlots(StartTime, Duration,\\[, Size\\])"
+    ],
+    "Description": [
+        "timeSlots",
+        "For a time interval starting at \u2018StartTime\u2019 and continuing for \u2018Duration\u2019 seconds, it returns an array of moments in time, consisting of points from this interval rounded down to the \u2018Size\u2019 in seconds. \u2018Size\u2019 is an optional parameter set to 1800 (30 minutes) by default.\nThis is necessary, for example, when searching for pageviews in the corresponding session.\nAccepts DateTime and DateTime64 as \u2019StartTime\u2019 argument. For DateTime, \u2019Duration\u2019 and \u2019Size\u2019 arguments must be UInt32. For \u2019DateTime64\u2019 they must be Decimal64.\nReturns an array of DateTime/DateTime64 (return type matches the type of \u2019StartTime\u2019). For DateTime64, the return value's scale can differ from the scale of \u2019StartTime\u2019 --- the highest scale among all given arguments is taken.",
+        "Syntax",
+        "timeSlots(StartTime, Duration,\\[, Size\\])"
+    ],
+    "Examples": [
+        "SELECT timeSlots(toDateTime('2012-01-01 12:20:00'), toUInt32(600));SELECT timeSlots(toDateTime('1980-12-12 21:01:02', 'UTC'), toUInt32(600), 299);SELECT timeSlots(toDateTime64('1980-12-12 21:01:02.1234', 4, 'UTC'), toDecimal64(600.1, 1), toDecimal64(299, 0));"
+    ],
+    "Category": [
+        "Dates and Times Functions"
+    ]
+}

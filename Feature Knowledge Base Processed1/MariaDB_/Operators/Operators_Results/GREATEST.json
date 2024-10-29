@@ -1,0 +1,37 @@
+{
+    "HTML": "https://mariadb.com//kb/en/greatest/",
+    "Title": "GREATEST",
+    "Feature": [
+        "GREATEST(value1,value2,...)\n"
+    ],
+    "Description": [
+        "With two or more arguments, returns the largest (maximum-valued)\nargument. The arguments are compared using the same rules as for\nLEAST()."
+    ],
+    "Examples": [
+        "SELECT GREATEST(2,0);\n+---------------+\n| GREATEST(2,0) |\n+---------------+\n|             2 |\n+---------------+\n",
+        "SELECT GREATEST(34.0,3.0,5.0,767.0);\n+------------------------------+\n| GREATEST(34.0,3.0,5.0,767.0) |\n+------------------------------+\n|                        767.0 |\n+------------------------------+\n",
+        "SELECT GREATEST('B','A','C');\n+-----------------------+\n| GREATEST('B','A','C') |\n+-----------------------+\n| C                     |\n+-----------------------+\n"
+    ],
+    "Category": [
+        "Comparison Operators"
+    ],
+    "Effective SQLs Refined": [
+        "SELECT GREATEST(2,0);",
+        "SELECT GREATEST(34.0,3.0,5.0,767.0);",
+        "SELECT GREATEST('B','A','C');"
+    ],
+    "Ineffective SQLs Refined": [],
+    "Wrong Messages from Ineffective SQLs Refined": [],
+    "SQLs Generated1": [],
+    "SQLs Generated Costs1": [],
+    "SQLs Generated ExecResults1": [],
+    "SQLs Generated ExecTimes1": [],
+    "SQLs Generated ErrorMessages1": [],
+    "Effective SQLs Generated1": [],
+    "SQLs Generated2": [],
+    "SQLs Generated Costs2": [],
+    "SQLs Generated ExecResults2": [],
+    "SQLs Generated ExecTimes2": [],
+    "SQLs Generated ErrorMessages2": [],
+    "Effective SQLs Generated2": []
+}

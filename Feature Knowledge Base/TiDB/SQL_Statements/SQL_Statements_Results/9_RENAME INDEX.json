@@ -1,0 +1,23 @@
+{
+    "HTML": [
+        "https://docs.pingcap.com//zh/tidb/stable/sql-statement-rename-index"
+    ],
+    "Title": [
+        "RENAME INDEX"
+    ],
+    "Feature": [
+        "AlterTableStmt\n         ::= 'ALTER' 'IGNORE'? 'TABLE' TableName RenameIndexSpec ( ',' RenameIndexSpec )*\n\nRenameIndexSpec\n         ::= 'RENAME' ( 'KEY' | 'INDEX' ) Identifier 'TO' Identifier\n"
+    ],
+    "Description": [
+        "ALTER TABLE .. RENAME INDEX \u8bed\u53e5\u7528\u4e8e\u5bf9\u5df2\u6709\u7d22\u5f15\u8fdb\u884c\u91cd\u547d\u540d\u3002\u8fd9\u5728 TiDB \u4e2d\u662f\u5373\u65f6\u64cd\u4f5c\u7684\uff0c\u4ec5\u9700\u66f4\u6539\u5143\u6570\u636e\u3002"
+    ],
+    "Examples": [
+        "CREATE TABLE t1 (id INT NOT NULL PRIMARY KEY AUTO_INCREMENT, c1 INT NOT NULL, INDEX col1 (c1));\n",
+        "SHOW CREATE TABLE t1;\n",
+        "ALTER TABLE t1 RENAME INDEX col1 TO c1;\n",
+        "SHOW CREATE TABLE t1;\n"
+    ],
+    "Category": [
+        "Schema \u7ba1\u7406\u4e0e\u6570\u636e\u5b9a\u4e49\u8bed\u53e5 (DDL)"
+    ]
+}

@@ -1,0 +1,22 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000000823024"
+    ],
+    "Title": [
+        "MIN"
+    ],
+    "Feature": [
+        "MIN([DISTINCT | ALL] expr)\n"
+    ],
+    "Description": [
+        "返回指定数据中的最小值。",
+        "MIN() 的取值可以是字符串参数，结果返回最小字符串值。DISTINCT 关键字表示只计算不同值，缺省为 ALL。"
+    ],
+    "Examples": [
+        "obclient> SELECT MIN(num) FROM a;\n+----------------+\n| MIN(num)       |\n+----------------+\n|             10 |\n+----------------+\n1 row in set\n"
+    ],
+    "Category": [
+        "Aggregate Functions",
+        "Analysis Functions"
+    ]
+}

@@ -1,0 +1,21 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/position/"
+    ],
+    "Title": [
+        "POSITION"
+    ],
+    "Feature": [
+        "POSITION(substr IN str)\n"
+    ],
+    "Description": [
+        "POSITION(substr IN str) is a synonym for LOCATE(substr,str).",
+        "It's part of ODBC 3.0."
+    ],
+    "Examples": [
+        "SELECT POSITION('abc' IN 'abcdef')"
+    ],
+    "Category": [
+        "String Functions"
+    ]
+}

@@ -1,0 +1,21 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/geo/polygons"
+    ],
+    "Title": [
+        "polygonsEqualsCartesian"
+    ],
+    "Feature": [
+        "polygonsEqualsCartesian"
+    ],
+    "Description": [
+        "polygonsEqualsCartesian",
+        "Returns true if two polygons are equal"
+    ],
+    "Examples": [
+        "SELECT polygonsEqualsCartesian([[[(1., 1.), (1., 4.), (4., 4.), (4., 1.)]]], [[[(1., 1.), (1., 4.), (4., 4.), (4., 1.), (1., 1.)]]])"
+    ],
+    "Category": [
+        "Geo Functions"
+    ]
+}

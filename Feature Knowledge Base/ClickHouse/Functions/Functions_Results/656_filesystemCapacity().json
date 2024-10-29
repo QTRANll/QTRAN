@@ -1,0 +1,25 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/other-functions"
+    ],
+    "Title": [
+        "filesystemCapacity"
+    ],
+    "Feature": [
+        "filesystemCapacity()"
+    ],
+    "Description": [
+        "filesystemCapacity",
+        "Returns the capacity of the filesystem in bytes. Needs the path to the data directory to be configured.",
+        "Syntax",
+        "filesystemCapacity()",
+        "Returned value",
+        "Capacity of the filesystem in bytes. UInt64."
+    ],
+    "Examples": [
+        "SELECT formatReadableSize(filesystemCapacity()) AS \"Capacity\";"
+    ],
+    "Category": [
+        "Other Functions"
+    ]
+}

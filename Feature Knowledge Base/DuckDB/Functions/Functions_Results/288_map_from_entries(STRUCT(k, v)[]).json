@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://duckdb.org/docs/sql/functions/map"
+    ],
+    "Title": [
+        "map_from_entries(STRUCT(k, v)[])"
+    ],
+    "Feature": [
+        "map_from_entries(STRUCT(k, v)[])"
+    ],
+    "Description": [
+        "Returns a map created from the entries of the array."
+    ],
+    "Examples": [
+        "map_from_entries([{k: 5, v: 'val1'}, {k: 3, v: 'val2'}])"
+    ],
+    "Category": [
+        "Map Functions"
+    ]
+}

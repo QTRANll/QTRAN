@@ -1,0 +1,24 @@
+{
+    "HTML": [
+        "https://sqlite.org/json1.html#jquote"
+    ],
+    "Title": [
+        "JSON Functions"
+    ],
+    "Feature": [
+        "json_quote(X)"
+    ],
+    "Description": [
+        "The json_quote(X) function converts the SQL value X, which can be a number or a string, into its corresponding JSON representation. If the input X is already a JSON value returned by another JSON function, then json_quote() has no effect and returns the JSON value as is."
+    ],
+    "Examples": [
+        "json_quote(3.14159) \u2192 3.14159",
+        "json_quote('verdant') \u2192 '\"verdant\"'",
+        "json_quote('[1]') \u2192 '\"[1]\"'",
+        "json_quote(json('[1]')) \u2192 '[1]'",
+        "json_quote('[1,') \u2192 '\"[1,\"'"
+    ],
+    "Category": [
+        "JSON Functions"
+    ]
+}

@@ -1,0 +1,21 @@
+{
+    "HTML": [
+        "https://docs.pingcap.com//zh/tidb/stable/sql-statement-show-create-user"
+    ],
+    "Title": [
+        "SHOW CREATE USER"
+    ],
+    "Feature": [
+        "ShowCreateUserStmt ::=\n    \"SHOW\" \"CREATE\" \"USER\" (Username (\"@\" Hostname)? | \"CURRENT_USER\" ( \"(\" \")\" )? )\n"
+    ],
+    "Description": [
+        "SHOW CREATE USER \u8bed\u53e5\u7528\u4e8e\u663e\u793a\u5982\u4f55\u4f7f\u7528 CREATE USER \u8bed\u6cd5\u6765\u91cd\u65b0\u521b\u5efa\u7528\u6237\u3002"
+    ],
+    "Examples": [
+        "SHOW CREATE USER 'root';\n",
+        "+--------------------------------------------------------------------------------------------------------------------------+\n| CREATE USER for root@%                                                                                                   |\n+--------------------------------------------------------------------------------------------------------------------------+\n| CREATE USER 'root'@'%' IDENTIFIED WITH 'mysql_native_password' AS '' REQUIRE NONE PASSWORD EXPIRE DEFAULT ACCOUNT UNLOCK |\n+--------------------------------------------------------------------------------------------------------------------------+\n1 row in set (0.00 sec)\n\nmysql> SHOW GRANTS FOR 'root';\n+-------------------------------------------+\n| Grants for root@%                         |\n+-------------------------------------------+\n| GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' |\n+-------------------------------------------+\n1 row in set (0.00 sec)\n"
+    ],
+    "Category": [
+        "\u8d26\u6237\u7ba1\u7406\u4e0e\u6570\u636e\u63a7\u5236\u8bed\u8a00 (DCL)"
+    ]
+}

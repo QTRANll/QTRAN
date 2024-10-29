@@ -1,0 +1,27 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/geo/h3"
+    ],
+    "Title": [
+        "stringToH3"
+    ],
+    "Feature": [
+        "stringToH3(index_str)"
+    ],
+    "Description": [
+        "stringToH3",
+        "Converts the string representation to the H3Index (UInt64) representation.",
+        "Syntax",
+        "stringToH3(index_str)",
+        "Parameter",
+        "index_str \u2014 String representation of the H3 index. String.",
+        "Returned value",
+        "Hexagon index number. Returns 0 on error. UInt64."
+    ],
+    "Examples": [
+        "SELECT stringToH3('89184926cc3ffff') AS index;"
+    ],
+    "Category": [
+        "Geo Functions"
+    ]
+}

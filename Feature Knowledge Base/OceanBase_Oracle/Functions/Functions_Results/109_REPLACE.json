@@ -1,0 +1,24 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000000823198"
+    ],
+    "Title": [
+        "REPLACE"
+    ],
+    "Feature": [
+        "REPLACE(char1,char2[,char3])\n"
+    ],
+    "Description": [
+        "该函数将字符串 char1 中与 char2 匹配的子字符串替换为 char3。",
+        "\n\n\n参数\n说明\n\n\n\n\nchar1\n指定等待替换的字符串。数据类型可以是 CHAR 、VARCHAR2、NCHAR、NVARCHAR2 和 CLOB。\n\n\nchar2\n指定需要替换的字符串。数据类型可以是 CHAR 、VARCHAR2、NCHAR、NVARCHAR2 和 CLOB。\n\n\nchar3\n指定替换字符串，默认为空，表示删除，不是空格。数据类型可以是 CHAR 、VARCHAR2、NCHAR、NVARCHAR2 和 CLOB。 说明 如果 char3 缺省或者为 NULL，那么所有 char1 中出现的 char2 都将被移除。如果 char2 为空值，那么结果就是 char1。\n\n\n",
+        "返回的字符串与 char1 的字符集相同。",
+        "如果 char1 是 LOB 数据类型，则函数返回 CLOB 数据类型。",
+        "如果 char1 不是 LOB 数据类型，则函数返回 VARCHA2 数据类型。"
+    ],
+    "Examples": [
+        "obclient> SELECT REPLACE('Oceanbase','b','B') \"replace\" FROM DUAL;\n+-----------+\n| replace   |\n+-----------+\n| OceanBase |\n+-----------+\n1 row in set\n"
+    ],
+    "Category": [
+        "Character Functions Returning CharacterValues"
+    ]
+}

@@ -1,0 +1,26 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000000822994"
+    ],
+    "Title": [
+        "DES_ENCRYPT"
+    ],
+    "Feature": [
+        "DES_ENCRYPT(str[,{key_num|key_str}])\n"
+    ],
+    "Description": [
+        "此功能仅在 OceanBase 数据库已配置为支持 SSL 时才有效。",
+        "key_str 参数用于传递加密密钥，用于加密 str。如果没有指定该参数，则使用 DES 密钥文件中的第一个密钥。key_num 参数的取值是 DES 密钥文件中的密钥编号（0 到 9）。",
+        "返回字符串是一个二进制字符串，其中第一个字符是 CHAR(128 | key_num)。如果发生错误，DES_ENCRYPT() 返回 NULL。128 是为了更容易识别加密密钥。如果使用字符串密钥，则 key_num 为 127。",
+        "结果中的字符串长度根据以下公式计算得出：",
+        "new_len = orig_len + (8 - (orig_len % 8)) + 1\n",
+        "DES 密钥文件中的每一行的格式为 key_num des_key_str_。每个 key_num 值必须是 0 到 9 范围内的数字。文件中的行可以按任何顺序排列。des_key_str 是用于加密信息的字符串。 数字和密钥之间至少应有一个空格。如果您没有为 DES_ENCRYPT() 指定任何密钥参数，则第一个密钥作为默认密钥。",
+        "\n说明\nOceanBase 数据库当前版本还不支持用 --des_key_file 编辑 DES 密钥文件，所以目前 DES_ENCRYPT() 和 DES_DECRYPT() 从密钥文件中读到的密钥是和 MySQL 8.0 的默认密钥文件一样的。\n"
+    ],
+    "Examples": [
+        "obclient [test]> SELECT DES_ENCRYPT('text', CONCAT('ob_random_salt','ob_secret_password'));\n+--------------------------------------------------------------------+\n| DES_ENCRYPT('text', CONCAT('ob_random_salt','ob_secret_password')) |\n+--------------------------------------------------------------------+\n| ]\u0005UA                                                              |\n+--------------------------------------------------------------------+\n1 row in set\n"
+    ],
+    "Category": [
+        "Encryption Functions"
+    ]
+}

@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000000823369"
+    ],
+    "Title": [
+        "TO_SECONDS"
+    ],
+    "Feature": [
+        "TO_SECONDS(expr)\n"
+    ],
+    "Description": [
+        "返回时间或日期时间表达式 expr 自公元零年起的秒数。如果 expr 为 NULL，则返回 NULL。"
+    ],
+    "Examples": [
+        "obclient> SELECT TO_SECONDS(950501);\n+--------------------+\n| TO_SECONDS(950501) |\n+--------------------+\n|        62966505600 |\n+--------------------+\n1 row in set\n\nobclient> SELECT TO_SECONDS('2021-07-15');\n+--------------------------+\n| TO_SECONDS('2021-07-15') |\n+--------------------------+\n|              63793526400 |\n+--------------------------+\n1 row in set\n"
+    ],
+    "Category": [
+        "Date and Time Functions"
+    ]
+}

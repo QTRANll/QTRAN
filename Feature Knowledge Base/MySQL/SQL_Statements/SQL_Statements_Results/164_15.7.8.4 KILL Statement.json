@@ -1,0 +1,29 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/kill.html"
+    ],
+    "Title": [
+        "15.7.8.4 KILL Statement"
+    ],
+    "Feature": [
+        "KILL [CONNECTION | QUERY] processlist_id"
+    ],
+    "Description": [
+        "\n        Each connection to mysqld runs in a separate\n        thread. You can kill a thread with the KILL\n        processlist_id statement.\n      ",
+        "\n        Thread processlist identifiers can be determined from the\n        ID column of the\n        INFORMATION_SCHEMA\nPROCESSLIST table, the\n        Id column of SHOW\n        PROCESSLIST output, and the\n        PROCESSLIST_ID column of the Performance\n        Schema threads table. The value for\n        the current thread is returned by the\n        CONNECTION_ID() function.\n      ",
+        "\nKILL permits an optional\n        CONNECTION or QUERY\n        modifier:\n",
+        "\n\nKILL\n            CONNECTION is the same as\n            KILL with no modifier: It\n            terminates the connection associated with the given\n            processlist_id, after terminating\n            any statement the connection is executing.\n          \nKILL QUERY\n            terminates the statement the connection is currently\n            executing, but leaves the connection itself intact.\n\n",
+        "\n        The ability to see which threads are available to be killed\n        depends on the PROCESS privilege:\n",
+        "\n\n            Without PROCESS, you can see\n            only your own threads.\n          \n            With PROCESS, you can see all\n            threads.\n\n",
+        "\n        The ability to kill threads and statements depends on the\n        CONNECTION_ADMIN privilege and\n        the deprecated SUPER privilege:\n",
+        "\n\n            Without CONNECTION_ADMIN or\n            SUPER, you can kill only your\n            own threads and statements.\n          \n            With CONNECTION_ADMIN or\n            SUPER, you can kill all\n            threads and statements, except that to affect a thread or\n            statement that is executing with the\n            SYSTEM_USER privilege, your\n            own session must additionally have the\n            SYSTEM_USER privilege.\n\n",
+        "\n        You can also use the mysqladmin processlist\n        and mysqladmin kill commands to examine and\n        kill threads.\n      ",
+        "\n        When you use KILL, a\n        thread-specific kill flag is set for the thread. In most cases,\n        it might take some time for the thread to die because the kill\n        flag is checked only at specific intervals:\n",
+        "\n\n            During SELECT operations, for\n            ORDER BY and GROUP BY\n            loops, the flag is checked after reading a block of rows. If\n            the kill flag is set, the statement is aborted.\n          \nALTER TABLE operations that\n            make a table copy check the kill flag periodically for each\n            few copied rows read from the original table. If the kill\n            flag was set, the statement is aborted and the temporary\n            table is deleted.\n          \n            The KILL statement returns\n            without waiting for confirmation, but the kill flag check\n            aborts the operation within a reasonably small amount of\n            time. Aborting the operation to perform any necessary\n            cleanup also takes some time.\n          \n            During UPDATE or\n            DELETE operations, the kill\n            flag is checked after each block read and after each updated\n            or deleted row. If the kill flag is set, the statement is\n            aborted. If you are not using transactions, the changes are\n            not rolled back.\n          \nGET_LOCK() aborts and returns\n            NULL.\n          \n            If the thread is in the table lock handler (state:\n            Locked), the table lock is quickly\n            aborted.\n          \n            If the thread is waiting for free disk space in a write\n            call, the write is aborted with a \u201cdisk full\u201d\n            error message.\n          \nEXPLAIN ANALYZE aborts and\n            prints the first row of output.\n\n",
+        "\n\nWarning\n\n\n          Killing a REPAIR TABLE or\n          OPTIMIZE TABLE operation on a\n          MyISAM table results in a table that is\n          corrupted and unusable. Any reads or writes to such a table\n          fail until you optimize or repair it again (without\n          interruption).\n\n"
+    ],
+    "Examples": [],
+    "Category": [
+        "Database Administration Statements"
+    ]
+}

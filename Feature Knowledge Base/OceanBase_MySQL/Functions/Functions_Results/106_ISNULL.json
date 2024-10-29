@@ -1,0 +1,21 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000000823367"
+    ],
+    "Title": [
+        "ISNULL"
+    ],
+    "Feature": [
+        "ISNULL(expr)\n"
+    ],
+    "Description": [
+        "如果参数 expr 为 NULL，那么 ISNULL() 的返回值为 1，否则返回值为 0。",
+        "ISNULL() 函数可以用来代替等号（=）判断一个值是否为 NULL。（使用等号将一个值与 NULL 比较总是返回 NULL）ISNULL() 函数同 IS NULL 比较操作符具有一些相同的特性，有关比较操作符，请参见 比较运算符。"
+    ],
+    "Examples": [
+        "obclient> SELECT ISNULL(null), ISNULL('test'), ISNULL(123.456), ISNULL('10:00');\n+--------------+----------------+-----------------+-----------------+\n| ISNULL(null) | ISNULL('test') | ISNULL(123.456) | ISNULL('10:00') |\n+--------------+----------------+-----------------+-----------------+\n|            1 |              0 |               0 |               0 |\n+--------------+----------------+-----------------+-----------------+\n1 row in set\n\nobclient> SELECT ISNULL(null+1);\n+----------------+\n| ISNULL(null+1) |\n+----------------+\n|              1 |\n+----------------+\n1 row in set\n"
+    ],
+    "Category": [
+        "Comparison Functions"
+    ]
+}

@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://docs.pingcap.com//zh/tidb/stable/sql-statement-alter-instance"
+    ],
+    "Title": [
+        "ALTER INSTANCE"
+    ],
+    "Feature": [
+        "AlterInstanceStmt ::=\n    'ALTER' 'INSTANCE' InstanceOption\n\nInstanceOption ::=\n    'RELOAD' 'TLS' ('NO' 'ROLLBACK' 'ON' 'ERROR')?\n"
+    ],
+    "Description": [
+        "ALTER INSTANCE \u8bed\u53e5\u7528\u4e8e\u5bf9\u5355\u4e2a TiDB \u5b9e\u4f8b\u8fdb\u884c\u53d8\u66f4\u64cd\u4f5c\u3002\u76ee\u524d TiDB \u4ec5\u652f\u6301 RELOAD TLS \u5b50\u53e5\u3002"
+    ],
+    "Examples": [
+        "ALTER INSTANCE RELOAD TLS;\n"
+    ],
+    "Category": [
+        "\u5b9e\u4f8b\u7ba1\u7406"
+    ]
+}

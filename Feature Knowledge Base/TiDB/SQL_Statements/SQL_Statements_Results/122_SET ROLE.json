@@ -1,0 +1,24 @@
+{
+    "HTML": [
+        "https://docs.pingcap.com//zh/tidb/stable/sql-statement-set-role"
+    ],
+    "Title": [
+        "SET ROLE"
+    ],
+    "Feature": [
+        "SetRoleStmt ::=\n    \"SET\" \"ROLE\" ( \"DEFAULT\" | \"ALL\" ( \"EXCEPT\" Rolename (\",\" Rolename)* )? | \"NONE\" | Rolename (\",\" Rolename)* )?\n"
+    ],
+    "Description": [
+        "SET ROLE \u7528\u4e8e\u5728\u5f53\u524d\u7528\u6237\u4f1a\u8bdd\u4e2d\u542f\u7528\u89d2\u8272\u3002\u4f7f\u7528 SET ROLE \u542f\u7528\u89d2\u8272\u540e\uff0c\u7528\u6237\u53ef\u4ee5\u4f7f\u7528\u8fd9\u4e9b\u89d2\u8272\u7684\u6743\u9650\u3002"
+    ],
+    "Examples": [
+        "CREATE USER 'u1'@'%';\nCREATE ROLE 'r1', 'r2', 'r3';\nGRANT 'r1', 'r2', 'r3' TO 'u1'@'%';\nSET DEFAULT ROLE 'r1' TO 'u1'@'%';\n",
+        "SET ROLE ALL;\nSELECT CURRENT_ROLE();\n",
+        "SET ROLE 'r2', 'r3';\nSELECT CURRENT_ROLE();\n",
+        "SET ROLE DEFAULT;\nSELECT CURRENT_ROLE();\n",
+        "SET ROLE NONE;\nSELECT CURRENT_ROLE();\n"
+    ],
+    "Category": [
+        "\u8d26\u6237\u7ba1\u7406\u4e0e\u6570\u636e\u63a7\u5236\u8bed\u8a00 (DCL)"
+    ]
+}

@@ -1,0 +1,27 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/random-functions"
+    ],
+    "Title": [
+        "randomPrintableASCII"
+    ],
+    "Feature": [
+        "randomPrintableASCII(length)"
+    ],
+    "Description": [
+        "randomPrintableASCII",
+        "Generates a string with a random set of ASCII characters. All characters are printable.\nIf you pass length < 0, the behavior of the function is undefined.",
+        "Syntax",
+        "randomPrintableASCII(length)",
+        "Arguments",
+        "length \u2014 String length in bytes. Positive integer.",
+        "Returned value",
+        "String with a random set of ASCII printable characters. String"
+    ],
+    "Examples": [
+        "SELECT number, randomPrintableASCII(30) as str, length(str) FROM system.numbers LIMIT 3"
+    ],
+    "Category": [
+        "Random Numbers Functions"
+    ]
+}

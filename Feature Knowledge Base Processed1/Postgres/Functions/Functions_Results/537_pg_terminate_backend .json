@@ -1,0 +1,19 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/current/functions-admin.html"
+    ],
+    "Title": [
+        "pg_terminate_backend"
+    ],
+    "Feature": [
+        "pg_terminate_backend ( pid integer, timeout bigint DEFAULT 0 ) → boolean"
+    ],
+    "Description": [
+        "Terminates the session whose backend process has the specified process ID. This is also allowed if the calling role is a member of the role whose backend is being terminated or the calling role has privileges of pg_signal_backend, however only superusers can terminate superuser backends.",
+        "If timeout is not specified or zero, this function returns true whether the process actually terminates or not, indicating only that the sending of the signal was successful. If the timeout is specified (in milliseconds) and greater than zero, the function waits until the process is actually terminated or until the given time has passed. If the process is terminated, the function returns true. On timeout, a warning is emitted and false is returned."
+    ],
+    "Examples": [],
+    "Category": [
+        "System Administration Functions"
+    ]
+}

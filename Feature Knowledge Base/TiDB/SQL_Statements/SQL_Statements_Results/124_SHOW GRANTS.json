@@ -1,0 +1,24 @@
+{
+    "HTML": [
+        "https://docs.pingcap.com//zh/tidb/stable/sql-statement-show-grants"
+    ],
+    "Title": [
+        "SHOW GRANTS"
+    ],
+    "Feature": [
+        "ShowGrantsStmt ::=\n    \"SHOW\" \"GRANTS\" (\"FOR\" Username (\"USING\" RolenameList)?)?\n\nUsername ::=\n    \"CURRENT_USER\" ( \"(\" \")\" )?\n| Username (\"@\" Hostname)?\n\nRolenameList ::=\n    Rolename (\"@\" Hostname)? (\",\" Rolename (\"@\" Hostname)? )*\n"
+    ],
+    "Description": [
+        "SHOW GRANTS \u8bed\u53e5\u7528\u4e8e\u663e\u793a\u4e0e\u7528\u6237\u5173\u8054\u7684\u6743\u9650\u5217\u8868\u3002\u4e0e\u5728 MySQL \u4e2d\u4e00\u6837\uff0cUSAGE \u6743\u9650\u8868\u793a\u767b\u5f55 TiDB \u7684\u80fd\u529b\u3002"
+    ],
+    "Examples": [
+        "SHOW GRANTS;\n",
+        "SHOW GRANTS FOR 'u1';\n",
+        "CREATE USER u1;\n",
+        "GRANT SELECT ON test.* TO u1;\n",
+        "SHOW GRANTS FOR u1;\n"
+    ],
+    "Category": [
+        "\u8d26\u6237\u7ba1\u7406\u4e0e\u6570\u636e\u63a7\u5236\u8bed\u8a00 (DCL)"
+    ]
+}

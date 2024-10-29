@@ -1,0 +1,26 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000001053484"
+    ],
+    "Title": [
+        "CREATE VIEW"
+    ],
+    "Feature": [
+        "create_view_stmt:\n  CREATE [OR REPLACE] VIEW view_name [(column_name_list)] AS select_stmt [WHERE condition WITH {LOCAL | CASCADED} CHECK OPTION];\n\ncolumn_name_list:\n    column_name [, column_name ...]\n"
+    ],
+    "Description": [
+        "该语句用于创建视图，如果指定了 OR REPLACE 子句，该语句能够替换已有的视图。",
+        "视图在数据库中实际上并不是以表的形式存在，视图是作为在 CREATE VIEW 语句中指定的 SELECT 语句的结果而派生出来的，每次使用时视图就会派生。",
+        "如果 FROM 子句中引用了两个或多个表或视图，则称该视图为连接视图（Join View）。一个可更新的连接视图，也称为可修改的连接视图，涉及两个或多个基表或视图，并允许 DML 操作。可更新的视图不受限于 WITH READ ONLY 子句。",
+        "要实现可更新，视图必须满足多个条件。例如，其中一条通用规则就是对于连接视图的 INSERT、UPDATE 或 DELETE 操作一次只能修改一个基表。",
+        "\n\n\n参数\n描述\n\n\n\n\nOR REPLACE\n表示如果要创建的视图名称已存在，则使用新的定义重新创建视图。\n\n\nview_name\n视图名。\n\n\nselect_stmt\n是一种 SELECT 语句。它给出了视图的定义。该语句可以从基表或其他视图进行选择。\n\n\ncolumn_name_list\n视图必须具有唯一的列名，不得有重复，就像基表那样。缺省情况下，由 SELECT 语句检索的列名将用作视图列名。要想为视图列定义明确的名称，可使用可选的 column_name_list 子句，ID 之间使用逗号分隔。column_name_list 中的名称数目必须等于 SELECT语句检索的列数。SELECT 语句检索的列可以是对表列的简单引用。也可以是使用函数、常量值、运算符等的表达式。\n\n\nWHERE condition WITH CHECK OPTION\nWITH CHECK OPTION 是一种用于创建视图的语法，它用于确保插入或更新的数据满足视图的定义条件。在 MySQL 模式中，WITH CHECK OPTION 子句还可以与 LOCAL/CASCADED 关键字一起使用，以进一步指定数据检查的范围。这两种关键字的区别在于数据检查的范围： \n      \nWITH LOCAL CHECK OPTION ：对本视图进行检查，是否对引用的视图进行检查取决于被引用视图的定义。\nWITH CASCADED CHECK OPTION ：对本视图进行检查，并递归地对引用的所有视图进行检查。\n\n\n\n"
+    ],
+    "Examples": [
+        "obclient> CREATE OR REPLACE VIEW v(vc1, vc2) AS SELECT c1, c2 FROM t;\n",
+        "obclient> create table test99(a int);\nQuery OK, 0 rows affected (0.090 sec)\n\nobclient> insert into test99 values(0), (1), (2), (3);\nQuery OK, 4 rows affected (0.046 sec)\nRecords: 4  Duplicates: 0  Warnings: 0\n\nobclient> CREATE OR REPLACE VIEW view1 AS SELECT * FROM test99 WHERE a > 0 WITH LOCAL CHECK OPTION;\nQuery OK, 0 rows affected (0.065 sec)\n",
+        "obclient> CREATE OR REPLACE VIEW view2 AS SELECT * FROM view1 WHERE a > 1 WITH CASCADED CHECK OPTION;\nQuery OK, 0 rows affected (0.073 sec)\n"
+    ],
+    "Category": [
+        "No Category"
+    ]
+}

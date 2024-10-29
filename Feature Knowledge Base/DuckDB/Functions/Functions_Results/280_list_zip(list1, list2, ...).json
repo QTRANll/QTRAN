@@ -1,0 +1,21 @@
+{
+    "HTML": [
+        "https://duckdb.org/docs/sql/functions/list"
+    ],
+    "Title": [
+        "array_zip"
+    ],
+    "Feature": [
+        "array_zip"
+    ],
+    "Description": [
+        "list_zip(list1, list2, ...)",
+        "Zips k LISTs to a new LIST whose length will be that of the longest list. Its elements are structs of k elements from each list list_1, \u2026, list_k, missing elements are replaced with NULL. If truncate is set, all lists are truncated to the smallest list length."
+    ],
+    "Examples": [
+        "list_zip([1, 2], [3, 4], [5, 6])"
+    ],
+    "Category": [
+        "List Functions"
+    ]
+}

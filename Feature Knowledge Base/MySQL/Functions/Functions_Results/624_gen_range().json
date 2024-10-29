@@ -1,0 +1,38 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/loadable-function-reference.html",
+        "https://dev.mysql.com/doc/refman/8.4/en/loadable-function-reference.html"
+    ],
+    "Title": [
+        "14.2 Loadable Function Reference",
+        "14.2 Loadable Function Reference"
+    ],
+    "Feature": [
+        "gen_range(lower,\n              upper)"
+    ],
+    "Description": [
+        "Generate random number within range",
+        "\ngen_range(lower,\n              upper)\n",
+        "\n              Generates a random number chosen from a specified range.\n            ",
+        "\n              Arguments:\n",
+        "\n\nlower: An integer that\n                  specifies the lower boundary of the range.\n                \nupper: An integer that\n                  specifies the upper boundary of the range, which must\n                  not be less than the lower boundary.\n\n",
+        "\n              Return value:\n            ",
+        "\n              A random integer (encoded in the\n              utf8mb4 character set) in the range\n              from lower to\n              upper, inclusive, or\n              NULL if the\n              upper argument is less than\n              lower.\n",
+        "\n\nNote\n\n\n                For better quality of random values, use\n                RAND() instead of this\n                function.\n\n",
+        "\n              Example:\n            ",
+        "Press CTRL+C to copy mysql> SELECT gen_range(100, 200), gen_range(-1000, -800);\n+---------------------+------------------------+\n| gen_range(100, 200) | gen_range(-1000, -800) |\n+---------------------+------------------------+\n|                 177 |                   -917 |\n+---------------------+------------------------+\nmysql> SELECT gen_range(1, 0);\n+-----------------+\n| gen_range(1, 0) |\n+-----------------+\n|            NULL |\n+-----------------+"
+    ],
+    "Examples": [
+        "mysql> SELECT gen_range(100, 200), gen_range(-1000, -800);\n+---------------------+------------------------+\n| gen_range(100, 200) | gen_range(-1000, -800) |\n+---------------------+------------------------+\n|                 177 |                   -917 |\n+---------------------+------------------------+\nmysql> SELECT gen_range(1, 0);\n+-----------------+\n| gen_range(1, 0) |\n+-----------------+\n|            NULL |\n+-----------------+"
+    ],
+    "Category": [
+        "Loadable Functions",
+        "Loadable Functions"
+    ],
+    "Reference HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/data-masking-component-functions.html#function_gen-range"
+    ],
+    "Feature Type": [
+        "Function"
+    ]
+}

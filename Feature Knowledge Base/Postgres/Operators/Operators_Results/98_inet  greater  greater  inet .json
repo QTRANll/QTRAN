@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/current/functions-net.html"
+    ],
+    "Title": [
+        "inet >> inet"
+    ],
+    "Feature": [
+        "inet >> inet → boolean"
+    ],
+    "Description": [
+        "Does subnet strictly contain subnet?"
+    ],
+    "Examples": [
+        "inet '192.168.1/24' >> inet '192.168.1.5' → t"
+    ],
+    "Category": [
+        "Network Address Functions and Operators"
+    ]
+}

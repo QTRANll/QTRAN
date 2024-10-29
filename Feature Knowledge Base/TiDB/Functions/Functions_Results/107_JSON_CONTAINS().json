@@ -1,0 +1,25 @@
+{
+    "HTML": [
+        "https://docs.pingcap.com/zh/tidb/stable/json-functions-search#json_contains"
+    ],
+    "Title": [
+        "JSON_CONTAINS()"
+    ],
+    "Feature": [
+        "JSON_CONTAINS()"
+    ],
+    "Description": [
+        "JSON_CONTAINS()",
+        "\u901a\u8fc7\u8fd4\u56de 1 \u6216 0\uff0cJSON_CONTAINS(json_doc, candidate [,path]) \u51fd\u6570\u7528\u4e8e\u786e\u8ba4\u6307\u5b9a\u7684 JSON \u6587\u6863 candidate \u662f\u5426\u5305\u542b\u5728\u76ee\u6807 JSON \u6587\u6863\u4e2d\u3002"
+    ],
+    "Examples": [
+        "SELECT JSON_CONTAINS('[\"a\",\"b\",\"c\"]','\"a\"');\n",
+        "SELECT JSON_CONTAINS('[\"a\",\"b\",\"c\"]','\"e\"');\n",
+        "SELECT JSON_CONTAINS('{\"foo\": \"bar\", \"aaa\": 5}','{\"foo\": \"bar\"}');\n",
+        "SELECT JSON_CONTAINS('{\"foo\": \"bar\", \"aaa\": 5}','\"bar\"');\n",
+        "SELECT JSON_CONTAINS('{\"foo\": \"bar\", \"aaa\": 5}','\"bar\"', '$.foo');\n"
+    ],
+    "Category": [
+        "JSON Functions"
+    ]
+}

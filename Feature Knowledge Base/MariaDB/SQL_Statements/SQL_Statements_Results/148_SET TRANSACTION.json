@@ -1,0 +1,53 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/set-transaction/"
+    ],
+    "Title": [
+        "SET TRANSACTION"
+    ],
+    "Feature": [
+        "SET [GLOBAL | SESSION] TRANSACTION\n    transaction_property [, transaction_property] ...\n\ntransaction_property:\n    ISOLATION LEVEL level\n  | READ WRITE\n  | READ ONLY\n\nlevel:\n     REPEATABLE READ\n   | READ COMMITTED\n   | READ UNCOMMITTED\n   | SERIALIZABLE\n"
+    ],
+    "Description": [
+        "This statement sets the transaction isolation level or the transaction access mode globally, for the current session, or for the next transaction:",
+        "With the GLOBAL keyword, the statement sets the default\n  transaction level globally for all subsequent sessions. Existing sessions are\n  unaffected.\nWith the SESSION keyword, the statement sets the default\n  transaction level for all subsequent transactions performed within the\n  current session.\nWithout any SESSION or GLOBAL keyword,\n  the statement sets the isolation level for only the next (not started) transaction\n  performed within the current session. After that it reverts to using the session value. \n",
+        "A change to the global default isolation level requires the \nSUPER privilege. Any session is free to change its\nsession isolation level (even in the middle of a transaction), or the isolation\nlevel for its next transaction.",
+        "Isolation Level",
+        "To set the global default isolation level at server startup, use the\n--transaction-isolation=level option on the command line or in an option file. Values of level for this option use dashes\nrather than spaces, so the allowable values are READ_UNCOMMITTED,\nREAD-COMMITTED, REPEATABLE-READ, or\nSERIALIZABLE. For example, to set the default isolation\nlevel to REPEATABLE READ, use these lines in the [mariadb]\nsection of an option file:",
+        "[mariadb]\ntransaction-isolation = REPEATABLE-READ",
+        "To determine the global and session transaction isolation levels at\nruntime, check the value of the tx_isolation system variable (note that the variable has been renamed transaction_isolation from MariaDB 11.1.1, to match the option, and the old name deprecated).",
+        "SELECT @@GLOBAL.tx_isolation, @@tx_isolation;\n",
+        "From MariaDB 11.1.1:",
+        "SELECT @@GLOBAL.transaction_isolation, @@transaction_isolation;\n",
+        "InnoDB supports each of the translation isolation levels described here\nusing different locking strategies. The default level is \nREPEATABLE READ. For additional information about InnoDB\nrecord-level locks and how it uses them to execute various types of statements,\nsee InnoDB Lock Modes,\nand http://dev.mysql.com/doc/refman/en/innodb-locks-set.html.",
+        "Isolation Levels",
+        "The following sections describe how MariaDB supports the different transaction levels.",
+        "READ UNCOMMITTED",
+        "SELECT statements are performed in a non-locking fashion,\nbut a possible earlier version of a row might be used. Thus, using this\nisolation level, such reads are not consistent. This is also called a \"dirty\nread.\" Otherwise, this isolation level works like \nREAD COMMITTED.",
+        "READ COMMITTED",
+        "A somewhat Oracle-like isolation level with respect to consistent\n(non-locking) reads: Each consistent read, even within the same\ntransaction, sets and reads its own fresh snapshot. See\nhttp://dev.mysql.com/doc/refman/en/innodb-consistent-read.html.",
+        "For locking reads (SELECT with FOR UPDATE\nor LOCK IN SHARE MODE), InnoDB locks only index records, not\nthe gaps before them, and thus allows the free insertion of new records next to\nlocked records. For UPDATE and DELETE\nstatements, locking depends on whether the statement uses a unique index with a\nunique search condition (such as WHERE id = 100), or a\nrange-type search condition (such as WHERE id > 100). For a\nunique index with a unique search condition, InnoDB locks only the index record\nfound, not the gap before it. For range-type searches, InnoDB locks the index\nrange scanned, using gap locks or next-key (gap plus index-record) locks to\nblock insertions by other sessions into the gaps covered by the range. This is\nnecessary because \"phantom rows\" must be blocked for MariaDB replication and\nrecovery to work.",
+        "Note: If the READ COMMITTED isolation\nlevel is used or the innodb_locks_unsafe_for_binlog system variable is enabled,\nthere is no InnoDB gap locking except for foreign-key constraint checking and\nduplicate-key checking. Also, record locks for non-matching rows are released\nafter MariaDB has evaluated the WHERE condition.If you use READ COMMITTED or enable innodb_locks_unsafe_for_binlog, you must use row-based binary logging.",
+        "REPEATABLE READ",
+        "This is the default isolation level for InnoDB. For consistent reads,\nthere is an important difference from the READ COMMITTED\nisolation level: All consistent reads within the same transaction read the\nsnapshot established by the first read. This convention means that if you issue\nseveral plain (non-locking) SELECT statements within the\nsame transaction, these SELECT statements are consistent\nalso with respect to each other. See\nhttp://dev.mysql.com/doc/refman/en/innodb-consistent-read.html.",
+        "For locking reads (SELECT with FOR UPDATE or LOCK IN SHARE MODE),\nUPDATE, and DELETE statements, locking depends on whether the\nstatement uses a unique index with a unique search condition, or a\nrange-type search condition. Prior to MariaDB 10.3.38, MariaDB 10.4.28, MariaDB 10.5.19, MariaDB 10.6.12, MariaDB 10.7.8, MariaDB 10.8.7, MariaDB 10.9.5, MariaDB 10.10.3, MariaDB 10.11.2 and MariaDB 11.0.0, for a unique index with a unique search condition, InnoDB locks only the index record found, not the gap\nbefore it. From these versions, MariaDB no longer relaxes the gap locking for unique indexes.",
+        "For other search conditions, InnoDB locks the index range scanned, using gap locks or next-key (gap plus index-record) locks to block insertions by other sessions into the gaps covered by the range.",
+        "This is the minimum isolation level for non-distributed XA transactions.",
+        "SERIALIZABLE",
+        "This level is like REPEATABLE READ, but InnoDB implicitly converts all\nplain SELECT statements to SELECT ... LOCK IN SHARE MODE if autocommit\nis disabled. If autocommit is enabled, the SELECT is its own\ntransaction. It therefore is known to be read only and can be\nserialized if performed as a consistent (non-locking) read and need\nnot block for other transactions. (This means that to force a plain\nSELECT to block if other transactions have modified the selected rows,\nyou should disable autocommit.)",
+        "Distributed XA transactions should always use this isolation level.",
+        "innodb_snapshop_isolation",
+        "If the innodb_snapshot_isolation system variable is not set to ON, strictly-speaking anything other than READ UNCOMMITTED is not clearly defined. innodb_snapshot_isolation was introduced in MariaDB 10.6.18, MariaDB 10.11.8, MariaDB 11.0.6, MariaDB 11.1.5, MariaDB 11.2.4, MariaDB 11.4.2 to address this, but defaults to OFF for backwards compatibility. Setting to ON will result in attempts to acquire a lock on a record that does not exist in the current read view raising an error, and the transaction being rolled back.",
+        "Access Mode",
+        "The access mode specifies whether the transaction is allowed to write data or not. By default, transactions are in READ WRITE mode (see the tx_read_only system variable). READ ONLY mode allows the storage engine to apply optimizations that cannot be used for transactions which write data. Note that unlike the global read_only mode, READ_ONLY ADMIN (and SUPER before MariaDB 10.11.0) privilege doesn't allow writes and DDL statements on temporary tables are not allowed either.",
+        "It is not permitted to specify both READ WRITE and READ ONLY in the same statement.",
+        "READ WRITE and READ ONLY can also be specified in the START TRANSACTION statement, in which case the specified mode is only valid for one transaction."
+    ],
+    "Examples": [
+        "SET GLOBAL TRANSACTION ISOLATION LEVEL SERIALIZABLE;\n",
+        "START TRANSACTION;\n\nSET TRANSACTION ISOLATION LEVEL SERIALIZABLE;\nERROR 1568 (25001): Transaction characteristics can't be changed while a transaction is in progress\n"
+    ],
+    "Category": [
+        "Transactions"
+    ]
+}

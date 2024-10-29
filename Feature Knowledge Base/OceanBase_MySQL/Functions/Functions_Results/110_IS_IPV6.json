@@ -1,0 +1,21 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000000822941"
+    ],
+    "Title": [
+        "IS_IPV6"
+    ],
+    "Feature": [
+        "IS_IPV6(expr)\n"
+    ],
+    "Description": [
+        "如果参数 expr 是有效的 IPv6 地址字符串，则返回 1，否则返回 0。此函数不会将 IPv4 地址视为有效的 IPv6 地址。",
+        "对于指定的参数，如果 IS_IPV6() 返回 1，则 INET6_ATON() 返回非 NULL。"
+    ],
+    "Examples": [
+        "obclient> SELECT IS_IPV6('10.x.x.x'), IS_IPV6('::1');\n+---------------------+----------------+\n| IS_IPV6('10.x.x.x') | IS_IPV6('::1') |\n+---------------------+----------------+\n|                   0 |              1 |\n+---------------------+----------------+\n1 row in set\n"
+    ],
+    "Category": [
+        "Miscellaneous Functions"
+    ]
+}

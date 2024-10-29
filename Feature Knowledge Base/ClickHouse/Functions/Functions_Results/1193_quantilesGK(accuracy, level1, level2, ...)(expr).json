@@ -1,0 +1,27 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/aggregate-functions/reference/quantiles"
+    ],
+    "Title": [
+        "quantilesGK"
+    ],
+    "Feature": [
+        "quantilesGK(accuracy, level1, level2, ...)(expr)"
+    ],
+    "Description": [
+        "quantilesGK",
+        "quantilesGK works similarly with quantileGK but allows us to calculate quantities at different levels simultaneously and returns an array.",
+        "Syntax",
+        "quantilesGK(accuracy, level1, level2, ...)(expr)",
+        "Returned value",
+        "Array of quantiles of the specified levels.",
+        "Type of array values:",
+        "Float64 for numeric data type input.Date if input values have the Date type.DateTime if input values have the DateTime type."
+    ],
+    "Examples": [
+        "SELECT quantilesGK(1, 0.25, 0.5, 0.75)(number + 1)FROM numbers(1000)\u250c\u2500quantilesGK(1, 0.25, 0.5, 0.75)(plus(number, 1))\u2500\u2510\u2502 [1,1,1]                                          \u2502\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518SELECT quantilesGK(10, 0.25, 0.5, 0.75)(number + 1)FROM numbers(1000)\u250c\u2500quantilesGK(10, 0.25, 0.5, 0.75)(plus(number, 1))\u2500\u2510\u2502 [156,413,659]                                     \u2502\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518SELECT quantilesGK(100, 0.25, 0.5, 0.75)(number + 1)FROM numbers(1000)\u250c\u2500quantilesGK(100, 0.25, 0.5, 0.75)(plus(number, 1))\u2500\u2510\u2502 [251,498,741]                                      \u2502\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518SELECT quantilesGK(1000, 0.25, 0.5, 0.75)(number + 1)FROM numbers(1000)\u250c\u2500quantilesGK(1000, 0.25, 0.5, 0.75)(plus(number, 1))\u2500\u2510\u2502 [249,499,749]                                       \u2502\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518"
+    ],
+    "Category": [
+        "Aggregate Functions"
+    ]
+}

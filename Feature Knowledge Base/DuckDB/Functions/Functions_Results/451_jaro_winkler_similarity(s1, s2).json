@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://duckdb.org/docs/sql/functions/char"
+    ],
+    "Title": [
+        "jaro_winkler_similarity(s1, s2)"
+    ],
+    "Feature": [
+        "jaro_winkler_similarity(s1, s2)"
+    ],
+    "Description": [
+        "The Jaro-Winkler similarity between two strings. Characters of different cases (e.g., a and A) are considered different. Returns a number between 0 and 1."
+    ],
+    "Examples": [
+        "jaro_winkler_similarity('duck', 'duckdb')"
+    ],
+    "Category": [
+        "Text Functions"
+    ]
+}

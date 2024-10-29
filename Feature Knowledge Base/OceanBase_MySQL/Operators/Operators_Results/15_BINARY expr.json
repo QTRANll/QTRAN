@@ -1,0 +1,29 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/common-oceanbase-database-cn-1000000000822074"
+    ],
+    "Title": [
+        "BINARY expr\n"
+    ],
+    "Feature": [
+        "BINARY expr\n"
+    ],
+    "Description": [
+        "",
+        "BINARY 运算符的语法如下：",
+        "BINARY expr\n",
+        "BINARY 运算符将表达式 expr 转换为二进制字符串（即具有二进制字符集和二进制排序规则的字符串）。 在字符串比较中，BINARY常用于比较字符串的二进制值而不是逐字符的比较，而且比较中需要考虑尾随空格。示例如下：",
+        "在 OceanBase 数据库中，可以使用如下三种方式将字符串表达式转换为二进制字符串：",
+        "CONVERT(expr USING BINARY)\nCAST(expr AS BINARY)\nBINARY expr\n",
+        "需要注意的是，表达式中的 BINARY 运算符与字符列定义中的 BINARY 数据类型具有不同的效果。对于使用 BINARY 属性定义的列，数据库将分配给表默认的字符集和该字符集的二进制 (_bin) 排序规则。每个非二进制字符集都有一个_bin 排序规则。例如，如果表默认字符集是 gbk，则如下的两种列定义是等效的：",
+        "CHAR(5) BINARY\n<=>\nCHAR(5) CHARACTER SET gbk COLLATE gbk_bin\n",
+        "如果在 CHAR、VARCHAR 或 TEXT 列的定义中使用 CHARACTER SET binary 会导致该列被视为相应的二进制字符串数据类型。如下示例中的定义是等效的：",
+        "CHAR(5) CHARACTER SET binary\n<=>\nBINARY(5)\n\nVARCHAR(10) CHARACTER SET binary\n<=>\nVARBINARY(10)\n\nTEXT CHARACTER SET binary\n<=>\nBLOB\n"
+    ],
+    "Examples": [
+        "SELECT 'aa' = 'AA';\n+-------------+\n| 'aa' = 'AA' |\n+-------------+\n|           1 |\n+-------------+\n1 row in set\n\nSELECT BINARY 'aa' = 'AA';\n+--------------------+\n| BINARY 'aa' = 'AA' |\n+--------------------+\n|                  0 |\n+--------------------+\n1 row in set\n\nSELECT 'aa' = 'aa ';\n+--------------+\n| 'aa' = 'aa ' |\n+--------------+\n|            1 |\n+--------------+\n1 row in set\n\nSELECT BINARY 'aa' = 'aa ';\n+---------------------+\n| BINARY 'aa' = 'aa ' |\n+---------------------+\n|                   0 |\n+---------------------+\n1 row in set\n"
+    ],
+    "Category": [
+        "Cast Operators"
+    ]
+}

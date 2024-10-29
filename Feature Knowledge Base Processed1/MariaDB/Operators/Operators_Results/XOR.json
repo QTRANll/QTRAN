@@ -1,0 +1,37 @@
+{
+    "HTML": "https://mariadb.com//kb/en/xor/",
+    "Title": "XOR",
+    "Feature": [
+        "XOR\n"
+    ],
+    "Description": [
+        "XOR stands for eXclusive OR. Returns NULL if either operand is NULL. For non-NULL\noperands, evaluates to 1 if an odd number of operands is non-zero,\notherwise 0 is returned."
+    ],
+    "Examples": [
+        "SELECT 1 XOR 1;\n+---------+\n| 1 XOR 1 |\n+---------+\n|       0 |\n+---------+\n\nSELECT 1 XOR 0;\n+---------+\n| 1 XOR 0 |\n+---------+\n|       1 |\n+---------+\n\nSELECT 1 XOR NULL;\n+------------+\n| 1 XOR NULL |\n+------------+\n|       NULL |\n+------------+\n",
+        "SELECT 1 XOR 1 XOR 1;\n+---------------+\n| 1 XOR 1 XOR 1 |\n+---------------+\n|             1 |\n+---------------+\n"
+    ],
+    "Category": [
+        "Logical Operators"
+    ],
+    "Effective SQLs Refined": [
+        "SELECT 1 XOR 1;",
+        "SELECT 1 XOR 0;",
+        "SELECT 1 XOR NULL;",
+        "SELECT 1 XOR 1 XOR 1;"
+    ],
+    "Ineffective SQLs Refined": [],
+    "Wrong Messages from Ineffective SQLs Refined": [],
+    "SQLs Generated1": [],
+    "SQLs Generated Costs1": [],
+    "SQLs Generated ExecResults1": [],
+    "SQLs Generated ExecTimes1": [],
+    "SQLs Generated ErrorMessages1": [],
+    "Effective SQLs Generated1": [],
+    "SQLs Generated2": [],
+    "SQLs Generated Costs2": [],
+    "SQLs Generated ExecResults2": [],
+    "SQLs Generated ExecTimes2": [],
+    "SQLs Generated ErrorMessages2": [],
+    "Effective SQLs Generated2": []
+}

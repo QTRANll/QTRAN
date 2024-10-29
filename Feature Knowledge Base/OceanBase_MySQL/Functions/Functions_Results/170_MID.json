@@ -1,0 +1,24 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000000823473"
+    ],
+    "Title": [
+        "MID"
+    ],
+    "Feature": [
+        "MID(str,pos,len)\n"
+    ],
+    "Description": [
+        "返回 str 的子字符串，起始位置为 pos，长度为 len。参数中包含 NULL 时，返回 NULL。",
+        "不指定 len 时，返回的子字符串从 pos 位置开始到 str 结尾。",
+        "pos 值为负数时，从 str 尾部向头部倒序确定起始位置。",
+        "len 小于等于 0，或 pos 指定的起始位置非法时，返回空字符串。",
+        "该函数是 SUBSTRING(str,pos,len) 的别名。"
+    ],
+    "Examples": [
+        "obclient> SELECT MID('OceanBase',6);\n+--------------------+\n| MID('OceanBase',6) |\n+--------------------+\n| Base               |\n+--------------------+\n1 row in set\n"
+    ],
+    "Category": [
+        "String Functions"
+    ]
+}

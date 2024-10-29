@@ -1,0 +1,27 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/tuple-functions"
+    ],
+    "Title": [
+        "tupleMultiplyByNumber"
+    ],
+    "Feature": [
+        "tupleMultiplyByNumber(tuple, number)"
+    ],
+    "Description": [
+        "tupleMultiplyByNumber",
+        "Returns a tuple with all values multiplied by a number.",
+        "Syntax",
+        "tupleMultiplyByNumber(tuple, number)",
+        "Arguments",
+        "tuple \u2014 Tuple.number \u2014 Multiplier. Int/UInt, Float or Decimal.",
+        "Returned value",
+        "Tuple with multiplied values. Tuple."
+    ],
+    "Examples": [
+        "SELECT tupleMultiplyByNumber((1, 2), -2.1);"
+    ],
+    "Category": [
+        "Tuples Functions"
+    ]
+}

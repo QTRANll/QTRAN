@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000000823410"
+    ],
+    "Title": [
+        "QUARTER"
+    ],
+    "Feature": [
+        "QUARTER(date)\n"
+    ],
+    "Description": [
+        "返回指定日期的季度值，取值范围为 [1,4]。"
+    ],
+    "Examples": [
+        "obclient> SELECT QUARTER(NOW()), NOW();\n+----------------+---------------------+\n| QUARTER(NOW()) | NOW()               |\n+----------------+---------------------+\n|              3 | 2021-07-12 19:45:01 |\n+----------------+---------------------+\n1 row in set\n"
+    ],
+    "Category": [
+        "Date and Time Functions"
+    ]
+}

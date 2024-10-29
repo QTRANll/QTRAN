@@ -1,0 +1,22 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000001054321"
+    ],
+    "Title": [
+        "CREATE USER"
+    ],
+    "Feature": [
+        "CREATE USER user_name\n    IDENTIFIED BY [VALUES] password\n    [REQUIRE {NONE | SSL | X509 | tls_option}]\n    [PROFILE profile_name]\n    [DEFAULT TABLESPACE tablespace_name];\n\ntls_option:\n      CIPHER cipher_name\n    | ISSUER issuer_name\n    | SUBJECT subject_name\n"
+    ],
+    "Description": [
+        "CREATE USER 语句用于创建新的 OceanBase 数据库用户。创建新用户后，可以使用新用户连接 OceanBase 数据库。",
+        "\n\n\n参数\n描述\n\n\n\n\nuser_name\n用户名，新建用户后，dba_users 表会新增一行该用户的表项。如果同名用户已经存在将会报错。\n\n\nIDENTIFIED BY\n为待创建的用户创建一个密码，此处密码为明文，存入 dba_users 表后，服务器端会变为密文存储下来。如果密码中包含特殊字符 ~!@#%^&*_-+=`|(){}[]:;’,.?/，需使用英文双引号（\"）包含。\n\n\nIDENTIFIED BY VALUES\n为待创建的用户创建一个密码，此处密码为密文，将直接存入 dba_users 表。\n\n\nREQUIRE\n指定用户的密码验证要求，有如下几种取值。 \n      \nNONE：表示用户没有密码验证要求，意味着用户可以使用任何密码或不设置密码。\nSSL：表示用户必须使用 SSL 连接进行身份验证。\nX509：表示用户必须使用 X509 证书进行身份验证。\ntls_option：表示用户必须满足指定的 TLS（Transport Layer Security）要求。\n\n\n\ntls_option\n指定 TLS 要求的具体选项。 \n      \nCIPHER：用于指定 TLS 连接使用的加密算法或密码套件。\nISSUER：用于指定 TLS 证书的发行者（Issuer）。\nSUBJECT：用于指定 TLS 证书的主题（Subject）。\n\n\n\nPROFILE\n指定用户配置文件，用户配置文件是一组预定义的权限和限制，可以应用于创建的用户。\n\n\nDEFAULT TABLESPACE\n指定用户的默认表空间。表空间是用于存储用户数据的逻辑结构。\n\n\n"
+    ],
+    "Examples": [
+        "obclient [SYS]> CREATE USER test1 IDENTIFIED BY \"********\";\n",
+        "obclient [SYS]> CREATE USER test2 IDENTIFIED BY VALUES \"********\" REQUIRE SSL;\n"
+    ],
+    "Category": [
+        "DDL"
+    ]
+}

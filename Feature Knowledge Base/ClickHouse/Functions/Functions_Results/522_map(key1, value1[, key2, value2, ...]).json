@@ -1,0 +1,27 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/tuple-map-functions"
+    ],
+    "Title": [
+        "map"
+    ],
+    "Feature": [
+        "map(key1, value1[, key2, value2, ...])"
+    ],
+    "Description": [
+        "map",
+        "Creates a value of type Map(key, value) from key-value pairs.",
+        "Syntax",
+        "map(key1, value1[, key2, value2, ...])",
+        "Arguments",
+        "key_n \u2014 The keys of the map entries. Any type supported as key type of Map.value_n \u2014 The values of the map entries. Any type supported as value type of Map.",
+        "Returned value",
+        "A map containing key:value pairs. Map(key, value)."
+    ],
+    "Examples": [
+        "SELECT map('key1', number, 'key2', number * 2) FROM numbers(3);"
+    ],
+    "Category": [
+        "Maps Functions"
+    ]
+}

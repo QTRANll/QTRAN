@@ -1,0 +1,25 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/current_role/"
+    ],
+    "Title": [
+        "CURRENT_ROLE"
+    ],
+    "Feature": [
+        "CURRENT_ROLE, CURRENT_ROLE()\n"
+    ],
+    "Description": [
+        "Returns the current role name. This determines your access privileges. The return value is a string in the\nutf8 character set.",
+        "If there is no current role, NULL is returned.",
+        "The output of SELECT CURRENT_ROLE is equivalent to the contents of the ENABLED_ROLES Information Schema table.",
+        "USER() returns the combination of user and host used to login. CURRENT_USER() returns the account used to determine current connection's privileges.",
+        "Statements using the CURRENT_ROLE function are not safe for statement-based replication."
+    ],
+    "Examples": [
+        "SELECT CURRENT_ROLE;",
+        "SELECT CURRENT_ROLE;"
+    ],
+    "Category": [
+        "Information Functions"
+    ]
+}

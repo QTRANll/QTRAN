@@ -1,0 +1,28 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000001053462"
+    ],
+    "Title": [
+        "ALTER USER"
+    ],
+    "Feature": [
+        "ALTER USER 'user_name' IDENTIFIED BY 'password';\nALTER USER 'user_name' [ACCOUNT LOCK | ACCOUNT UNLOCK];\nALTER USER user_name DEFAULT ROLE {NONE | ALL | role_name [, role_name ...]};\n"
+    ],
+    "Description": [
+        "该语句主要用于执行以下操作：",
+        "修改 OceanBase 数据库用户的密码。",
+        "锁定或者解锁用户，且被锁定的用户不允许登录数据库。",
+        "\n说明\n除了修改当前用户的口令之外，必须拥有 CREATE USER 的权限，才可以执行本命令。\n",
+        "设置用户在登录时默认激活的角色。",
+        "\n\n\n参数\n描述\n\n\n\n\nuser_name\n指定用户名称。\n\n\npassword\n指定新密码。\n\n\nACCOUNT LOCK\n指定锁定用户。\n\n\nACCOUNT UNLOCK\n指定解锁用户。\n\n\nNONE\n指定停用用户被授予的所有角色。\n\n\nALL\n指定激活用户下所有的角色。\n\n\nrole_name\n指定角色的名称，激活多个角色时，角色名用英文逗号（,）隔开。\n\n\n"
+    ],
+    "Examples": [
+        "obclient> ALTER USER 'sqluser01' IDENTIFIED BY '******';\n",
+        "obclient> ALTER USER 'obsqluser01' ACCOUNT LOCK;\n",
+        "obclient> ALTER USER 'obsqluser01' ACCOUNT UNLOCK;\n",
+        "ALTER USER user001 DEFAULT ROLE role001, role002;\n"
+    ],
+    "Category": [
+        "No Category"
+    ]
+}

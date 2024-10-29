@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://duckdb.org/docs/sql/functions/timestamptz"
+    ],
+    "Title": [
+        "time_bucket(bucket_width, timestamptz[, offset])"
+    ],
+    "Feature": [
+        "time_bucket(bucket_width, timestamptz[, offset])"
+    ],
+    "Description": [
+        "Truncate timestamptz by the specified interval bucket_width. Buckets are offset by offset interval."
+    ],
+    "Examples": [
+        "time_bucket(INTERVAL '10 minutes', TIMESTAMPTZ '1992-04-20 15:26:00-07', INTERVAL '5 minutes')"
+    ],
+    "Category": [
+        "Timestamp with Time Zone Functions"
+    ]
+}

@@ -1,0 +1,27 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/string-search-functions"
+    ],
+    "Title": [
+        "multiSearchFirstPositionCaseInsensitive"
+    ],
+    "Feature": [
+        "multiSearchFirstPositionCaseInsensitive(haystack, [needle1, needle2, ..., needleN])"
+    ],
+    "Description": [
+        "multiSearchFirstPositionCaseInsensitive",
+        "Like multiSearchFirstPosition but ignores case.",
+        "Syntax",
+        "multiSearchFirstPositionCaseInsensitive(haystack, [needle1, needle2, ..., needleN])",
+        "Parameters",
+        "haystack \u2014 String in which the search is performed. String.needle \u2014 Array of substrings to be searched. Array.",
+        "Returned value",
+        "Leftmost offset in a haystack string which matches any of multiple needle strings.0, if there was no match."
+    ],
+    "Examples": [
+        "SELECT multiSearchFirstPositionCaseInsensitive('HELLO WORLD',['wor', 'ld', 'ello']);"
+    ],
+    "Category": [
+        "Searching in Strings Functions"
+    ]
+}

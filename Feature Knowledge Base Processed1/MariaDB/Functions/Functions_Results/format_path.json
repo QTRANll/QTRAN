@@ -1,0 +1,35 @@
+{
+    "HTML": "https://mariadb.com//kb/en/format_path/",
+    "Title": "format_path",
+    "Feature": [
+        "sys.format_path(path)\n"
+    ],
+    "Description": [
+        "format_path is a stored function available with the Sys Schema that, given a path, returns a modified path after replacing subpaths matching the values of various system variables with the variable name.",
+        "The system variables that are matched are, in order: ",
+        "datadir\ntmpdir\nslave_load_tmpdir\ninnodb_data_home_dir\ninnodb_log_group_home_dir\ninnodb_undo_directory\nbasedir\n"
+    ],
+    "Examples": [
+        "SELECT @@tmpdir;\n+------------------------------------+\n| @@tmpdir                           |\n+------------------------------------+\n| /home/ian/sandboxes/msb_10_8_2/tmp |\n+------------------------------------+\n\nSELECT sys.format_path('/home/ian/sandboxes/msb_10_8_2/tmp/testdb.ibd');\n+------------------------------------------------------------------+\n| sys.format_path('/home/ian/sandboxes/msb_10_8_2/tmp/testdb.ibd') |\n+------------------------------------------------------------------+\n| @@tmpdir/testdb.ibd                                              |\n+------------------------------------------------------------------+\n"
+    ],
+    "Category": [
+        "No Category"
+    ],
+    "Effective SQLs Refined": [
+        "SELECT sys.format_path('/home/ian/sandboxes/msb_10_8_2/tmp/testdb.ibd');"
+    ],
+    "Ineffective SQLs Refined": [],
+    "Wrong Messages from Ineffective SQLs Refined": [],
+    "SQLs Generated1": [],
+    "SQLs Generated Costs1": [],
+    "SQLs Generated ExecResults1": [],
+    "SQLs Generated ExecTimes1": [],
+    "SQLs Generated ErrorMessages1": [],
+    "Effective SQLs Generated1": [],
+    "SQLs Generated2": [],
+    "SQLs Generated Costs2": [],
+    "SQLs Generated ExecResults2": [],
+    "SQLs Generated ExecTimes2": [],
+    "SQLs Generated ErrorMessages2": [],
+    "Effective SQLs Generated2": []
+}

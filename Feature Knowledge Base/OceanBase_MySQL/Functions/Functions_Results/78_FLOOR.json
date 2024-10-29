@@ -1,0 +1,24 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000000823349"
+    ],
+    "Title": [
+        "FLOOR"
+    ],
+    "Feature": [
+        "FLOOR(expr)\n"
+    ],
+    "Description": [
+        "和 CEIL(expr) 函数功能类似，返回小于或者等于指定表达式的最大整数。",
+        "支持比较运算，结果为 BOOLEAN 值，被转化为数字类型处理，产生的结果为 1(TRUE)、0 (FALSE)。",
+        "如果输入 NULL，返回值为 NULL。",
+        "如果输入纯数字的字符串，支持自动转换成数字类型。",
+        "返回值会被转化为一个 BIGINT。"
+    ],
+    "Examples": [
+        "obclient> SELECT FLOOR(1.2), FLOOR(-1.2), FLOOR(1+1.5), FLOOR(1=1),FLOOR(1<1),FLOOR(null);\n+------------+-------------+--------------+------------+------------+-------------+\n| FLOOR(1.2) | FLOOR(-1.2) | FLOOR(1+1.5) | FLOOR(1=1) | FLOOR(1<1) | FLOOR(null) |\n+------------+-------------+--------------+------------+------------+-------------+\n|          1 |          -2 |            2 |          1 |          0 |        NULL |\n+------------+-------------+--------------+------------+------------+-------------+\n1 row in set\n\nobclient> SELECT FLOOR('2');\n+------------+\n| FLOOR('2') |\n+------------+\n|          2 |\n+------------+\n1 row in set\n"
+    ],
+    "Category": [
+        "Mathematical Functions"
+    ]
+}

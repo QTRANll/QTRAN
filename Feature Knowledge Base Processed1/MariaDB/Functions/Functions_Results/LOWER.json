@@ -1,0 +1,36 @@
+{
+    "HTML": "https://mariadb.com//kb/en/lower/",
+    "Title": "LOWER",
+    "Feature": [
+        "LOWER(str)\nLCASE(str)\n"
+    ],
+    "Description": [
+        "Returns the string str with all characters changed to lowercase\naccording to the current character set mapping. The default is latin1\n(cp1252 West European).",
+        "LCASE is a synonym for LOWER"
+    ],
+    "Examples": [
+        " SELECT LOWER('QUADRATICALLY');\n+------------------------+\n| LOWER('QUADRATICALLY') |\n+------------------------+\n| quadratically          |\n+------------------------+\n",
+        "SET @str = BINARY 'North Carolina';\n\nSELECT LOWER(@str), LOWER(CONVERT(@str USING latin1));\n+----------------+-----------------------------------+\n| LOWER(@str)    | LOWER(CONVERT(@str USING latin1)) |\n+----------------+-----------------------------------+\n| North Carolina | north carolina                    |\n+----------------+-----------------------------------+\n"
+    ],
+    "Category": [
+        "String Functions"
+    ],
+    "Effective SQLs Refined": [
+        "SELECT LOWER('QUADRATICALLY');",
+        "SELECT LOWER(@str), LOWER(CONVERT(@str USING latin1));"
+    ],
+    "Ineffective SQLs Refined": [],
+    "Wrong Messages from Ineffective SQLs Refined": [],
+    "SQLs Generated1": [],
+    "SQLs Generated Costs1": [],
+    "SQLs Generated ExecResults1": [],
+    "SQLs Generated ExecTimes1": [],
+    "SQLs Generated ErrorMessages1": [],
+    "Effective SQLs Generated1": [],
+    "SQLs Generated2": [],
+    "SQLs Generated Costs2": [],
+    "SQLs Generated ExecResults2": [],
+    "SQLs Generated ExecTimes2": [],
+    "SQLs Generated ErrorMessages2": [],
+    "Effective SQLs Generated2": []
+}

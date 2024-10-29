@@ -1,0 +1,23 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/var_samp/"
+    ],
+    "Title": [
+        "VAR_SAMP"
+    ],
+    "Feature": [
+        "VAR_SAMP(expr)\n"
+    ],
+    "Description": [
+        "Returns the sample variance of expr. That is, the denominator is the number of rows minus one.",
+        "It is an aggregate function, and so can be used with the GROUP BY clause.",
+        "VAR_SAMP() can be used as a window function.",
+        "VAR_SAMP() returns NULL if there were no matching rows."
+    ],
+    "Examples": [
+        "SELECT VAR_SAMP(1);"
+    ],
+    "Category": [
+        "Aggregate Functions"
+    ]
+}

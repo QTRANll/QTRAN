@@ -1,0 +1,34 @@
+{
+    "HTML": "https://mariadb.com//kb/en/uncompress/",
+    "Title": "UNCOMPRESS",
+    "Feature": [
+        "UNCOMPRESS(string_to_uncompress)\n"
+    ],
+    "Description": [
+        "Uncompresses a string compressed by the COMPRESS() function. If the\nargument is not a compressed value, the result is NULL. This function\nrequires MariaDB to have been compiled with a compression library such\nas zlib. Otherwise, the return value is always NULL. The have_compress server system variable indicates whether a compression library is present. "
+    ],
+    "Examples": [
+        "SELECT UNCOMPRESS(COMPRESS('a string'));\n+----------------------------------+\n| UNCOMPRESS(COMPRESS('a string')) |\n+----------------------------------+\n| a string                         |\n+----------------------------------+\n\nSELECT UNCOMPRESS('a string');\n+------------------------+\n| UNCOMPRESS('a string') |\n+------------------------+\n| NULL                   |\n+------------------------+\n"
+    ],
+    "Category": [
+        "Encryption, Hashing and Compression Functions"
+    ],
+    "Effective SQLs Refined": [
+        "SELECT UNCOMPRESS(COMPRESS('a string'));",
+        "SELECT UNCOMPRESS('a string');"
+    ],
+    "Ineffective SQLs Refined": [],
+    "Wrong Messages from Ineffective SQLs Refined": [],
+    "SQLs Generated1": [],
+    "SQLs Generated Costs1": [],
+    "SQLs Generated ExecResults1": [],
+    "SQLs Generated ExecTimes1": [],
+    "SQLs Generated ErrorMessages1": [],
+    "Effective SQLs Generated1": [],
+    "SQLs Generated2": [],
+    "SQLs Generated Costs2": [],
+    "SQLs Generated ExecResults2": [],
+    "SQLs Generated ExecTimes2": [],
+    "SQLs Generated ErrorMessages2": [],
+    "Effective SQLs Generated2": []
+}

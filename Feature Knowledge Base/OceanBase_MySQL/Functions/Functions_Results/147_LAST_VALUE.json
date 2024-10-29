@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000000823056"
+    ],
+    "Title": [
+        "LAST_VALUE"
+    ],
+    "Feature": [
+        "LAST_VALUE { (expr) [ {RESPECT | IGNORE} NULLS ] | (expr [ {RESPECT | IGNORE} NULLS ])} OVER (analytic_clause)\n"
+    ],
+    "Description": [
+        "返回表达式 expr 的最后一个值。"
+    ],
+    "Examples": [
+        "obclient> CREATE TABLE EXPLOYEES(LAST_NAME CHAR(10), SALARY DECIMAL, JOB_ID CHAR(32));\nQuery OK, 0 rows affected\n\nobclient> INSERT INTO EXPLOYEES VALUES('JIM', 2000, 'CLEANER');\nQuery OK, 1 row affected\n\nobclient> INSERT INTO EXPLOYEES VALUES('MIKE', 12000, 'ENGINEERING');\nQuery OK, 1 row affected\n\nobclient> INSERT INTO EXPLOYEES VALUES('LILY', 13000, 'ENGINEERING');\nQuery OK, 1 row affected\n\nobclient> INSERT INTO EXPLOYEES VALUES('TOM', 11000, 'ENGINEERING');\nQuery OK, 1 row affected\n\nobclient> SELECT LAST_NAME, FIRST_VALUE(SALARY) OVER(PARTITION BY JOB_ID) FIRST_S, LAST_VALUE(SALARY) OVER(PARTITION BY JOB_ID) LAST_S, NTH_VALUE(SALARY,2) OVER(PARTITION BY JOB_ID) 2ND_S FROM EXPLOYEES;\n+-----------+---------+--------+-------+\n| LAST_NAME | FIRST_S | LAST_S | 2ND_S |\n+-----------+---------+--------+-------+\n| JIM       |    2000 |   2000 |  NULL |\n| MIKE      |   12000 |  11000 | 13000 |\n| LILY      |   12000 |  11000 | 13000 |\n| TOM       |   12000 |  11000 | 13000 |\n+-----------+---------+--------+-------+\n4 rows in set\n"
+    ],
+    "Category": [
+        "Analysis Functions"
+    ]
+}

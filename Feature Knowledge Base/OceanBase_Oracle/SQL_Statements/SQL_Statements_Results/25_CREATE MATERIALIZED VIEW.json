@@ -1,0 +1,64 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000001054359"
+    ],
+    "Title": [
+        "CREATE MATERIALIZED VIEW"
+    ],
+    "Feature": [
+        "CREATE MATERIALIZED VIEW view_name [([column_list] [PRIMARY KEY(column_list)])] [table_option_list] [partition_option] [refresh_clause [query_rewrite_clause] [on_query_computation_clause]] AS view_select_stmt;\n\ncolumn_list:\n    column_name [, column_name ...]\n\nrefresh_clause:\n    REFRESH [COMPLETE | FAST | FORCE] [mv_refresh_on_clause]\n    | NEVER REFRESH\n\nmv_refresh_on_clause:\n    [ON DEMAND] [[START WITH expr] [NEXT expr]]\n\nquery_rewrite_clause:\n    DISABLE QUERY REWRITE\n    | ENABLE QUERY REWRITE\n\non_query_computation_clause:\n    DISABLE ON QUERY COMPUTATION\n    | ENABLE ON QUERY COMPUTATION\n"
+    ],
+    "Description": [
+        "该语句用来创建物化视图。",
+        "物化视图是一种特殊类型的数据库对象，它存储查询结果的副本，并定期刷新（也可以手动刷新）以保持数据的最新状态。物化视图可以包含聚合，连接和子查询等操作，并且可以被索引和分区，以进一步提高性能。",
+        "\n说明\n在创建物化视图的语句中，不能直接创建索引。要为物化视图创建索引，需要单独使用 CREATE INDEX 语句。\n",
+        "\n\n\n参数\n描述\n\n\n\n\nview_name\n指定待创建的物化视图的名称。\n\n\ncolumn_list\n可选项，指定物化视图的列列表。如果想要为视图列指定明确的名称，可以使用 column_list 子句，并在其中使用逗号分隔的列名。 \n      \n说明\n\n\n视图必须具有唯一的列名，不得有重复，就像基表一样。缺省情况下，视图的列名将使用 SELECT 语句中检索的列名。 \n         \n在 column_list 中指定的列名数量必须与 SELECT 语句中检索的列数相同。\n\n\n\n\n\ncolumn_name\n指定物化视图的列名称。缺省情况下，由 SELECT 语句检索的列名将用作视图列名。\n\n\nPRIMARY KEY\n用于指定物化视图的主键。 \n      \n注意\n\n\n如果未指定物化视图的列名称，那么在物化视图的主键中所使用的列名应与 SELECT 语句所检索的列名相同。\n当为物化视图指定列名称时，列名称的列表末尾与 PRIMARY KEY 定义之间应以英文逗号进行分隔。\n\n\n\n\n\ntable_option_list\n可选项，指定物化视图的表选项。与普通表一样，物化视图可以单独设置 Table Option，更多参数信息，请参见 CREATE TABLE。\n\n\npartition_option\n可选项，指定物化视图的分区选项。与普通表一样，物化视图可以单独设置分区，更多参数信息，请参见 CREATE TABLE。\n\n\nrefresh_clause\n可选项，指定物化视图的刷新方式。详细介绍可参见下文 refresh_clause。\n\n\nmv_refresh_on_clause\n可选项，指定物化视图的模式，即刷新时机。详细介绍可参见下文 mv_refresh_on_clause。\n\n\nquery_rewrite_clause\n可选项，指定当前物化视图是否开启自动改写。详细介绍可参见下文 query_rewrite_clause。\n\n\non_query_computation_clause\n可选项，指定当前物化视图是否是实时物化视图。详细介绍可参见下文 on_query_computation_clause。\n\n\nview_select_stmt\n用于定义物化视图数据的查询（SELECT）语句。该语句用于从基表（普通表）中检索数据，并将结果存储到物化视图中。view_select_stmt 的语法与常规 SELECT 语句相同，语法信息请参见 SIMPLE SELECT。\n\n\n",
+        "refresh_clause",
+        "REFRESH [FAST | COMPLETE | FORCE] [mv_refresh_on_clause]：表示刷新物化视图的方式。",
+        "\n[COMPLETE | FAST | FORCE]：指定物化视图的刷新方式。可选项，如果不指定任何刷新方式默认是 FORCE。\n\nCOMPLETE：表示进行全量刷新，即重新计算整个物化视图的数据，确保视图中的数据与源表完全一致。\nFAST：表示进行增量刷新，即只刷新与源表变化相关的数据，避免对整个视图进行完全计算。\n\n注意\n当使用 REFRESH FAST 子句刷新物化视图时，需要在创建物化视图之前提前创建基表的物化视图日志。有关创建物化视图日志的信息，请参见 创建物化视图日志。\n\nFORCE：默认值，表示进行混合刷新，首先尝试增量刷新，如果增量刷新失败，则执行全量刷新。\n\n",
+        "[COMPLETE | FAST | FORCE]：指定物化视图的刷新方式。可选项，如果不指定任何刷新方式默认是 FORCE。",
+        "\nCOMPLETE：表示进行全量刷新，即重新计算整个物化视图的数据，确保视图中的数据与源表完全一致。\nFAST：表示进行增量刷新，即只刷新与源表变化相关的数据，避免对整个视图进行完全计算。\n\n注意\n当使用 REFRESH FAST 子句刷新物化视图时，需要在创建物化视图之前提前创建基表的物化视图日志。有关创建物化视图日志的信息，请参见 创建物化视图日志。\n\nFORCE：默认值，表示进行混合刷新，首先尝试增量刷新，如果增量刷新失败，则执行全量刷新。\n",
+        "COMPLETE：表示进行全量刷新，即重新计算整个物化视图的数据，确保视图中的数据与源表完全一致。",
+        "FAST：表示进行增量刷新，即只刷新与源表变化相关的数据，避免对整个视图进行完全计算。",
+        "\n注意\n当使用 REFRESH FAST 子句刷新物化视图时，需要在创建物化视图之前提前创建基表的物化视图日志。有关创建物化视图日志的信息，请参见 创建物化视图日志。\n",
+        "FORCE：默认值，表示进行混合刷新，首先尝试增量刷新，如果增量刷新失败，则执行全量刷新。",
+        "NEVER REFRESH：指定物化视图不需要刷新。即表示物化视图只在创建时进行刷新，并在创建后不允许再次刷新。",
+        "mv_refresh_on_clause",
+        "\n说明\n除了使用 mv_refresh_on_clause 子句来定义刷新计划，您还可以通过调用 dbms_mviews.refresh 存储过程来手动刷新物化视图。\n",
+        "ON DEMAND：可选项，表示按需刷新物化视图。",
+        "[[START WITH expr] [NEXT expr]]：可选项，表示定义刷新间隔。",
+        "\n[START WITH expr]：可选项，表示刷新计划开始的时间表达式。\n[NEXT expr]：可选项，表示下一次刷新的时间表达式。\n\n注意\n如果使用了 NEXT 子句，刷新计划的时间表达式必须设定在未来的时间点，否则会引发错误。\n\n",
+        "[START WITH expr]：可选项，表示刷新计划开始的时间表达式。",
+        "[NEXT expr]：可选项，表示下一次刷新的时间表达式。",
+        "\n注意\n如果使用了 NEXT 子句，刷新计划的时间表达式必须设定在未来的时间点，否则会引发错误。\n",
+        "建议使用 current_date 表示当前时区时间，时间表达式示例如下：",
+        "从当前时间（current_date）开始，每隔 10 秒刷新一次物化视图。",
+        "START WITH current_date NEXT current_date + INTERVAL '10' SECOND\n",
+        "从当前时间（current_date）开始，每隔 10 小时刷新一次物化视图。",
+        "START WITH current_date NEXT current_date + INTERVAL '10' HOUR\n",
+        "表示从当前时间（current_date）开始，每隔 1 天刷新一次物化视图。",
+        "START WITH current_date NEXT current_date + 1\n",
+        "query_rewrite_clause",
+        "\n注意\n\n\n本功能需要物化视图仅包含 SELECT JOIN 与 WHERE 子句，即 SPJ 查询。对于不满足条件的物化视图，不会报错，但不会被用于改写。\nOceanBase 数据库 Oracle 模式下，创建支持改写的物化视图时必须指定刷新方式（refresh_clause）。\n\n\n",
+        "DISABLE QUERY REWRITE",
+        "：默认值，指定当前物化视图不开启自动改写。",
+        "ENABLE QUERY REWRITE",
+        "：指定当前物化视图开启自动改写。",
+        "更多物化视图改写的信息，参见 物化视图查询改写。",
+        "on_query_computation_clause",
+        "\n注意\nOceanBase 数据库 Oracle 模式下，创建实时物化视图必须指定刷新方式（refresh_clause）。\n",
+        "DISABLE ON QUERY COMPUTATION",
+        "：默认值，指定创建普通物化视图。",
+        "ENABLE ON QUERY COMPUTATION",
+        "：指定创建实时物化视图。",
+        "更多实时物化视图的信息，参见 创建物化视图 中 创建实时物化视图 章节。"
+    ],
+    "Examples": [
+        "CREATE TABLE test_tbl1 (col1 NUMBER PRIMARY KEY, col2 VARCHAR2(20), col3 NUMBER, col4 NUMBER);\n",
+        "CREATE MATERIALIZED VIEW mv_test_tbl1\n  PARTITION BY HASH(col1) PARTITIONS 8\n  REFRESH COMPLETE START WITH current_date NEXT current_date + 1\n  AS SELECT col1, col2, col3\n    FROM test_tbl1\n    WHERE col3 >= 30;\n",
+        "CREATE MATERIALIZED VIEW mv_test_tbl1(c1, c2, c3, PRIMARY KEY(c1))\n      AS SELECT col1, col2, col3\n        FROM test_tbl1;\n"
+    ],
+    "Category": [
+        "DDL"
+    ]
+}

@@ -1,0 +1,18 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/current/functions-admin.html"
+    ],
+    "Title": [
+        "pg_drop_replication_slot"
+    ],
+    "Feature": [
+        "pg_drop_replication_slot ( slot_name name ) → void"
+    ],
+    "Description": [
+        "Drops the physical or logical replication slot named slot_name. Same as replication protocol command DROP_REPLICATION_SLOT. For logical slots, this must be called while connected to the same database the slot was created on."
+    ],
+    "Examples": [],
+    "Category": [
+        "System Administration Functions"
+    ]
+}

@@ -1,0 +1,22 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/st_equals/"
+    ],
+    "Title": [
+        "ST_EQUALS"
+    ],
+    "Feature": [
+        "ST_EQUALS(g1,g2)\n"
+    ],
+    "Description": [
+        "Returns 1 or 0 to indicate whether geometry g1 is spatially equal to geometry g2.",
+        "ST_EQUALS() uses object shapes, while EQUALS(), based on the original MySQL implementation, uses object bounding rectangles."
+    ],
+    "Examples": [
+        "SELECT ST_EQUALS(@g1,@g2);",
+        "SELECT ST_EQUALS(@g1,@g2);"
+    ],
+    "Category": [
+        "Geographic Functions"
+    ]
+}

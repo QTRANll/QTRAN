@@ -1,0 +1,18 @@
+{
+    "HTML": [
+        "https://sqlite.org/lang_corefunc.html#likelihood"
+    ],
+    "Title": [
+        "Built-In Scalar SQL Functions"
+    ],
+    "Feature": [
+        "likelihood(X,Y)"
+    ],
+    "Description": [
+        "The likelihood(X,Y) function returns argument X unchanged.\n  The value Y in likelihood(X,Y) must be a floating point constant\n  between 0.0 and 1.0, inclusive.\n  The likelihood(X) function is a no-op that the code generator\n  optimizes away so that it consumes no CPU cycles during run-time\n  (that is, during calls tosqlite3_step()).\n  The purpose of the likelihood(X,Y) function is to provide a hint\n  to the query planner that the argument X is a boolean that is\n  true with a probability of approximately Y.\n  Theunlikely(X)function is short-hand for likelihood(X,0.0625).\n  Thelikely(X)function is short-hand for likelihood(X,0.9375)."
+    ],
+    "Examples": [],
+    "Category": [
+        "Built-In Scalar SQL Functions"
+    ]
+}

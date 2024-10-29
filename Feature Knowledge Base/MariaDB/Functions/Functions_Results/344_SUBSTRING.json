@@ -1,0 +1,26 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/substring/"
+    ],
+    "Title": [
+        "SUBSTRING"
+    ],
+    "Feature": [
+        "SUBSTRING(str,pos), \nSUBSTRING(str FROM pos), \nSUBSTRING(str,pos,len),\nSUBSTRING(str FROM pos FOR len)\n\nSUBSTR(str,pos), \nSUBSTR(str FROM pos), \nSUBSTR(str,pos,len),\nSUBSTR(str FROM pos FOR len)\n"
+    ],
+    "Description": [
+        "The forms without a len argument return a substring from string str starting at position pos.",
+        "The forms with a len argument return a substring len characters long from string str, starting at position pos.",
+        "The forms that use FROM are standard SQL syntax.",
+        "It is also possible to use a negative value for pos. In this case, the beginning of the substring is pos characters from the end of the string, rather than the beginning. A negative value may be used for pos in any of the forms of this function.",
+        "By default, the position of the first character in the string from which the substring is to be extracted is reckoned as 1. For Oracle-compatibility, from MariaDB 10.3.3, when sql_mode is set to 'oracle', position zero is treated as position 1 (although the first character is still reckoned as 1).",
+        "If any argument is NULL, returns NULL."
+    ],
+    "Examples": [
+        "SELECT SUBSTRING('Knowledgebase',5);\n+------------------------------+\n| SUBSTRING('Knowledgebase',5) |\n+------------------------------+\n| ledgebase                    |\n+------------------------------+\n\nSELECT SUBSTRING('MariaDB' FROM 6);\n+-----------------------------+\n| SUBSTRING('MariaDB' FROM 6) |\n+-----------------------------+\n| DB                          |\n+-----------------------------+\n\nSELECT SUBSTRING('Knowledgebase',3,7);\n+--------------------------------+\n| SUBSTRING('Knowledgebase',3,7) |\n+--------------------------------+\n| owledge                        |\n+--------------------------------+\n\nSELECT SUBSTRING('Knowledgebase', -4);\n+--------------------------------+\n| SUBSTRING('Knowledgebase', -4) |\n+--------------------------------+\n| base                           |\n+--------------------------------+\n\nSELECT SUBSTRING('Knowledgebase', -8, 4);\n+-----------------------------------+\n| SUBSTRING('Knowledgebase', -8, 4) |\n+-----------------------------------+\n| edge                              |\n+-----------------------------------+\n\nSELECT SUBSTRING('Knowledgebase' FROM -8 FOR 4);\n+------------------------------------------+\n| SUBSTRING('Knowledgebase' FROM -8 FOR 4) |\n+------------------------------------------+\n| edge                                     |\n+------------------------------------------+\n",
+        "SELECT SUBSTR('abc',0,3);\n+-------------------+\n| SUBSTR('abc',0,3) |\n+-------------------+\n|                   |\n+-------------------+\n\nSELECT SUBSTR('abc',1,2);\n+-------------------+\n| SUBSTR('abc',1,2) |\n+-------------------+\n| ab                |\n+-------------------+\n\nSET sql_mode='oracle';\n\nSELECT SUBSTR('abc',0,3);\n+-------------------+\n| SUBSTR('abc',0,3) |\n+-------------------+\n| abc               |\n+-------------------+\n\nSELECT SUBSTR('abc',1,2);\n+-------------------+\n| SUBSTR('abc',1,2) |\n+-------------------+\n| ab                |\n+-------------------+\n"
+    ],
+    "Category": [
+        "String Functions"
+    ]
+}

@@ -1,0 +1,25 @@
+{
+    "HTML": [
+        "https://docs.pingcap.com/zh/tidb/stable/string-functions#hex"
+    ],
+    "Title": [
+        "HEX()"
+    ],
+    "Feature": [
+        "HEX()"
+    ],
+    "Description": [
+        "HEX()",
+        "HEX() \u51fd\u6570\u7528\u4e8e\u5c06\u8f93\u5165\u7684\u53c2\u6570\u8f6c\u6362\u4e3a\u5176\u5341\u516d\u8fdb\u5236\u503c\u7684\u5b57\u7b26\u4e32\u8868\u793a\u5f62\u5f0f\u3002\u8be5\u53c2\u6570\u53ef\u4ee5\u4e3a\u5b57\u7b26\u4e32\u6216\u6570\u5b57\u3002",
+        "\u5982\u679c\u8f93\u5165\u53c2\u6570\u4e3a\u5b57\u7b26\u4e32\uff0cHEX(str) \u8fd4\u56de str \u7684\u5341\u516d\u8fdb\u5236\u5b57\u7b26\u4e32\u8868\u793a\u3002\u8be5\u51fd\u6570\u5c06 str \u4e2d\u6bcf\u4e2a\u5b57\u7b26\u7684\u6bcf\u4e2a\u5b57\u8282\u8f6c\u6362\u4e3a\u4e24\u4e2a\u5341\u516d\u8fdb\u5236\u6570\u5b57\u3002\u4f8b\u5982\uff0c\u5728 UTF-8 \u6216 ASCII \u5b57\u7b26\u96c6\u4e2d\uff0c\u5b57\u7b26 a \u7684\u4e8c\u8fdb\u5236\u8868\u793a\u4e3a 00111101\uff0c\u5341\u516d\u8fdb\u5236\u8868\u793a\u4e3a 61\u3002\u5982\u679c\u8f93\u5165\u53c2\u6570\u4e3a\u6570\u5b57\uff0cHEX(n) \u8fd4\u56de n \u7684\u5341\u516d\u8fdb\u5236\u5b57\u7b26\u4e32\u8868\u793a\u3002\u8be5\u51fd\u6570\u5c06\u53c2\u6570 n \u89c6\u4e3a BIGINT \u6570\u5b57\uff0c\u76f8\u5f53\u4e8e CONV(n, 10, 16)\u3002\u5982\u679c\u8f93\u5165\u53c2\u6570\u4e3a NULL\uff0c\u8be5\u51fd\u6570\u8fd4\u56de NULL\u3002"
+    ],
+    "Examples": [
+        "SELECT X'616263', HEX('abc'), UNHEX(HEX('abc')), 0x616263;\n+-----------+------------+-------------------+----------+\n| X'616263' | HEX('abc') | UNHEX(HEX('abc')) | 0x616263 |\n+-----------+------------+-------------------+----------+\n| abc       | 616263     | abc               | abc      |\n+-----------+------------+-------------------+----------+\n",
+        "SELECT X'F09F8DA3', HEX('\ud83c\udf63'), UNHEX(HEX('\ud83c\udf63')), 0xF09F8DA3;\n+-------------+-------------+--------------------+------------+\n| X'F09F8DA3' | HEX('\ud83c\udf63')     | UNHEX(HEX('\ud83c\udf63'))     | 0xF09F8DA3 |\n+-------------+-------------+--------------------+------------+\n| \ud83c\udf63            | F09F8DA3    | \ud83c\udf63                   | \ud83c\udf63           |\n+-------------+-------------+--------------------+------------+\n",
+        "SELECT HEX(255), CONV(HEX(255), 16, 10);\n+----------+------------------------+\n| HEX(255) | CONV(HEX(255), 16, 10) |\n+----------+------------------------+\n| FF       | 255                    |\n+----------+------------------------+\n",
+        "SELECT HEX(NULL);\n+-----------+\n| HEX(NULL) |\n+-----------+\n| NULL      |\n+-----------+\n"
+    ],
+    "Category": [
+        "String Functions"
+    ]
+}

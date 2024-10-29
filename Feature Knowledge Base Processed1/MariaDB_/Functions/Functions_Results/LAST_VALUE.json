@@ -1,0 +1,82 @@
+{
+    "HTML": "https://mariadb.com//kb/en/last_value/",
+    "Title": "LAST_VALUE",
+    "Feature": [
+        "LAST_VALUE(expr,[expr,...])\n",
+        "LAST_VALUE(expr) OVER (\n  [ PARTITION BY partition_expression ]\n  [ ORDER BY order_list ]\n) \n"
+    ],
+    "Description": [
+        "LAST_VALUE() evaluates all expressions and returns the last.",
+        "This is useful together with setting user variables to a value with @var:=expr, for example when you want to get data of rows updated/deleted without having to do two queries against the table.",
+        "LAST_VALUE can be used as a window function.",
+        "Returns NULL if no last value exists."
+    ],
+    "Examples": [
+        "CREATE TABLE t1 (a int, b int);\nINSERT INTO t1 VALUES(1,10),(2,20);\nDELETE FROM t1 WHERE a=1 AND last_value(@a:=a,@b:=b,1);\nSELECT @a,@b;\n+------+------+\n| @a   | @b   |\n+------+------+\n|    1 |   10 |\n+------+------+\n",
+        "CREATE TABLE t1 (\n  pk int primary key,\n  a int,\n  b int,\n  c char(10),\n  d decimal(10, 3),\n  e real\n);\n\nINSERT INTO t1 VALUES\n( 1, 0, 1,    'one',    0.1,  0.001),\n( 2, 0, 2,    'two',    0.2,  0.002),\n( 3, 0, 3,    'three',  0.3,  0.003),\n( 4, 1, 2,    'three',  0.4,  0.004),\n( 5, 1, 1,    'two',    0.5,  0.005),\n( 6, 1, 1,    'one',    0.6,  0.006),\n( 7, 2, NULL, 'n_one',  0.5,  0.007),\n( 8, 2, 1,    'n_two',  NULL, 0.008),\n( 9, 2, 2,    NULL,     0.7,  0.009),\n(10, 2, 0,    'n_four', 0.8,  0.010),\n(11, 2, 10,   NULL,     0.9,  NULL);\n\nSELECT pk, FIRST_VALUE(pk) OVER (ORDER BY pk) AS first_asc,\n           LAST_VALUE(pk) OVER (ORDER BY pk) AS last_asc,\n           FIRST_VALUE(pk) OVER (ORDER BY pk DESC) AS first_desc,\n           LAST_VALUE(pk) OVER (ORDER BY pk DESC) AS last_desc\nFROM t1\nORDER BY pk DESC;\n\n+----+-----------+----------+------------+-----------+\n| pk | first_asc | last_asc | first_desc | last_desc |\n+----+-----------+----------+------------+-----------+\n| 11 |         1 |       11 |         11 |        11 |\n| 10 |         1 |       10 |         11 |        10 |\n|  9 |         1 |        9 |         11 |         9 |\n|  8 |         1 |        8 |         11 |         8 |\n|  7 |         1 |        7 |         11 |         7 |\n|  6 |         1 |        6 |         11 |         6 |\n|  5 |         1 |        5 |         11 |         5 |\n|  4 |         1 |        4 |         11 |         4 |\n|  3 |         1 |        3 |         11 |         3 |\n|  2 |         1 |        2 |         11 |         2 |\n|  1 |         1 |        1 |         11 |         1 |\n+----+-----------+----------+------------+-----------+\n",
+        "CREATE OR REPLACE TABLE t1 (i int);\nINSERT INTO t1 VALUES (1),(2),(3),(4),(5),(6),(7),(8),(9),(10);\n\nSELECT i,\n  FIRST_VALUE(i) OVER (ORDER BY i ROWS BETWEEN CURRENT ROW and 1 FOLLOWING) AS f_1f,\n  LAST_VALUE(i) OVER (ORDER BY i ROWS BETWEEN CURRENT ROW and 1 FOLLOWING) AS l_1f,\n  FIRST_VALUE(i) OVER (ORDER BY i ROWS BETWEEN 1 PRECEDING AND 1 FOLLOWING) AS f_1p1f,\n  LAST_VALUE(i) OVER (ORDER BY i ROWS BETWEEN 1 PRECEDING AND 1 FOLLOWING) AS l_1p1f,\n  FIRST_VALUE(i) OVER (ORDER BY i ROWS BETWEEN 2 PRECEDING AND 1 PRECEDING) AS f_2p1p,\n  LAST_VALUE(i) OVER (ORDER BY i ROWS BETWEEN 2 PRECEDING AND 1 PRECEDING) AS l_2p1p,\n  FIRST_VALUE(i) OVER (ORDER BY i ROWS BETWEEN 1 FOLLOWING AND 2 FOLLOWING) AS f_1f2f,\n  LAST_VALUE(i) OVER (ORDER BY i ROWS BETWEEN 1 FOLLOWING AND 2 FOLLOWING) AS l_1f2f\nFROM t1;\n\n+------+------+------+--------+--------+--------+--------+--------+--------+\n| i    | f_1f | l_1f | f_1p1f | l_1p1f | f_2p1p | l_2p1p | f_1f2f | l_1f2f |\n+------+------+------+--------+--------+--------+--------+--------+--------+\n|    1 |    1 |    2 |      1 |      2 |   NULL |   NULL |      2 |      3 |\n|    2 |    2 |    3 |      1 |      3 |      1 |      1 |      3 |      4 |\n|    3 |    3 |    4 |      2 |      4 |      1 |      2 |      4 |      5 |\n|    4 |    4 |    5 |      3 |      5 |      2 |      3 |      5 |      6 |\n|    5 |    5 |    6 |      4 |      6 |      3 |      4 |      6 |      7 |\n|    6 |    6 |    7 |      5 |      7 |      4 |      5 |      7 |      8 |\n|    7 |    7 |    8 |      6 |      8 |      5 |      6 |      8 |      9 |\n|    8 |    8 |    9 |      7 |      9 |      6 |      7 |      9 |     10 |\n|    9 |    9 |   10 |      8 |     10 |      7 |      8 |     10 |     10 |\n|   10 |   10 |   10 |      9 |     10 |      8 |      9 |   NULL |   NULL |\n+------+------+------+--------+--------+--------+--------+--------+--------+\n"
+    ],
+    "Category": [
+        "Information Functions"
+    ],
+    "Effective SQLs Refined": [],
+    "Ineffective SQLs Refined": [
+        "DELETE FROM t1 WHERE a=1 AND last_value(@a:=a,@b:=b,1);",
+        "SELECT pk, FIRST_VALUE(pk) OVER (ORDER BY pk) AS first_asc,\n           LAST_VALUE(pk) OVER (ORDER BY pk) AS last_asc,\n           FIRST_VALUE(pk) OVER (ORDER BY pk DESC) AS first_desc,\n           LAST_VALUE(pk) OVER (ORDER BY pk DESC) AS last_desc\nFROM t1\nORDER BY pk DESC;",
+        "SELECT i,\n  FIRST_VALUE(i) OVER (ORDER BY i ROWS BETWEEN CURRENT ROW and 1 FOLLOWING) AS f_1f,\n  LAST_VALUE(i) OVER (ORDER BY i ROWS BETWEEN CURRENT ROW and 1 FOLLOWING) AS l_1f,\n  FIRST_VALUE(i) OVER (ORDER BY i ROWS BETWEEN 1 PRECEDING AND 1 FOLLOWING) AS f_1p1f,\n  LAST_VALUE(i) OVER (ORDER BY i ROWS BETWEEN 1 PRECEDING AND 1 FOLLOWING) AS l_1p1f,\n  FIRST_VALUE(i) OVER (ORDER BY i ROWS BETWEEN 2 PRECEDING AND 1 PRECEDING) AS f_2p1p,\n  LAST_VALUE(i) OVER (ORDER BY i ROWS BETWEEN 2 PRECEDING AND 1 PRECEDING) AS l_2p1p,\n  FIRST_VALUE(i) OVER (ORDER BY i ROWS BETWEEN 1 FOLLOWING AND 2 FOLLOWING) AS f_1f2f,\n  LAST_VALUE(i) OVER (ORDER BY i ROWS BETWEEN 1 FOLLOWING AND 2 FOLLOWING) AS l_1f2f\nFROM t1;"
+    ],
+    "Wrong Messages from Ineffective SQLs Refined": [
+        "(pymysql.err.OperationalError) (1054, \"Unknown column 'b' in 'where clause'\")\n[SQL: DELETE FROM t1 WHERE a=1 AND last_value(@a:=a,@b:=b,1);]\n(Background on this error at: https://sqlalche.me/e/20/e3q8)",
+        "(pymysql.err.OperationalError) (1054, \"Unknown column 'pk' in 'field list'\")\n[SQL: SELECT pk, FIRST_VALUE(pk) OVER (ORDER BY pk) AS first_asc,\n           LAST_VALUE(pk) OVER (ORDER BY pk) AS last_asc,\n           FIRST_VALUE(pk) OVER (ORDER BY pk DESC) AS first_desc,\n           LAST_VALUE(pk) OVER (ORDER BY pk DESC) AS last_desc\nFROM t1\nORDER BY pk DESC;]\n(Background on this error at: https://sqlalche.me/e/20/e3q8)",
+        "(pymysql.err.OperationalError) (1054, \"Unknown column 'i' in 'field list'\")\n[SQL: SELECT i,\n  FIRST_VALUE(i) OVER (ORDER BY i ROWS BETWEEN CURRENT ROW and 1 FOLLOWING) AS f_1f,\n  LAST_VALUE(i) OVER (ORDER BY i ROWS BETWEEN CURRENT ROW and 1 FOLLOWING) AS l_1f,\n  FIRST_VALUE(i) OVER (ORDER BY i ROWS BETWEEN 1 PRECEDING AND 1 FOLLOWING) AS f_1p1f,\n  LAST_VALUE(i) OVER (ORDER BY i ROWS BETWEEN 1 PRECEDING AND 1 FOLLOWING) AS l_1p1f,\n  FIRST_VALUE(i) OVER (ORDER BY i ROWS BETWEEN 2 PRECEDING AND 1 PRECEDING) AS f_2p1p,\n  LAST_VALUE(i) OVER (ORDER BY i ROWS BETWEEN 2 PRECEDING AND 1 PRECEDING) AS l_2p1p,\n  FIRST_VALUE(i) OVER (ORDER BY i ROWS BETWEEN 1 FOLLOWING AND 2 FOLLOWING) AS f_1f2f,\n  LAST_VALUE(i) OVER (ORDER BY i ROWS BETWEEN 1 FOLLOWING AND 2 FOLLOWING) AS l_1f2f\nFROM t1;]\n(Background on this error at: https://sqlalche.me/e/20/e3q8)"
+    ],
+    "SQLs Generated1": [
+        {
+            "Example SQL": "SELECT LAST_VALUE(column_name) OVER (ORDER BY some_column) AS last_value_result;"
+        },
+        {
+            "Example SQL": "SELECT LAST_VALUE(some_value) OVER (ORDER BY some_order_column) AS last_value_result;"
+        },
+        {
+            "Example SQL": "SELECT LAST_VALUE(1) OVER (ORDER BY 1) AS last_value_result;"
+        }
+    ],
+    "SQLs Generated Costs1": [
+        {
+            "Total Tokens": 370,
+            "Prompt Tokens": 340,
+            "Completion Tokens": 30,
+            "Total Cost (USD)": 6.9e-05
+        },
+        {
+            "Total Tokens": 530,
+            "Prompt Tokens": 498,
+            "Completion Tokens": 32,
+            "Total Cost (USD)": 9.39e-05
+        },
+        {
+            "Total Tokens": 688,
+            "Prompt Tokens": 658,
+            "Completion Tokens": 30,
+            "Total Cost (USD)": 0.00011669999999999999
+        }
+    ],
+    "SQLs Generated ExecResults1": [
+        "None",
+        "None",
+        "[(1,)]"
+    ],
+    "SQLs Generated ExecTimes1": [
+        "0",
+        "0",
+        "0.021780014038085938"
+    ],
+    "SQLs Generated ErrorMessages1": [
+        "(pymysql.err.OperationalError) (1054, \"Unknown column 'column_name' in 'field list'\")\n",
+        "(pymysql.err.OperationalError) (1054, \"Unknown column 'some_value' in 'field list'\")\n",
+        "None"
+    ],
+    "Effective SQLs Generated1": [
+        "SELECT LAST_VALUE(1) OVER (ORDER BY 1) AS last_value_result;"
+    ]
+}

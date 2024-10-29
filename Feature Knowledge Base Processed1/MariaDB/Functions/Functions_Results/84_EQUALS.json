@@ -1,0 +1,24 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/equals/"
+    ],
+    "Title": [
+        "EQUALS"
+    ],
+    "Feature": [
+        "Equals(g1,g2)\n",
+        "From MariaDB 10.2.3:",
+        "MBREQUALS(g1,g2)\n"
+    ],
+    "Description": [
+        "Returns 1 or 0 to indicate whether g1 is spatially equal to g2.",
+        "EQUALS() is based on the original MySQL implementation and uses object bounding rectangles, while ST_EQUALS() uses object shapes.",
+        "From MariaDB 10.2.3, MBREQUALS is a synonym for Equals."
+    ],
+    "Examples": [
+        "SELECT Equals(GeomFromText('POINT(1 1)'), GeomFromText('POINT(1 1)'));"
+    ],
+    "Category": [
+        "Geographic Functions"
+    ]
+}

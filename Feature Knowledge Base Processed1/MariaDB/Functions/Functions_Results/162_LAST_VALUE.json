@@ -1,0 +1,24 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/last_value/"
+    ],
+    "Title": [
+        "LAST_VALUE"
+    ],
+    "Feature": [
+        "LAST_VALUE(expr,[expr,...])\n",
+        "LAST_VALUE(expr) OVER (\n  [ PARTITION BY partition_expression ]\n  [ ORDER BY order_list ]\n) \n"
+    ],
+    "Description": [
+        "LAST_VALUE() evaluates all expressions and returns the last.",
+        "This is useful together with setting user variables to a value with @var:=expr, for example when you want to get data of rows updated/deleted without having to do two queries against the table.",
+        "LAST_VALUE can be used as a window function.",
+        "Returns NULL if no last value exists."
+    ],
+    "Examples": [
+        "SELECT LAST_VALUE(1) OVER (ORDER BY 1) AS last_value_result;"
+    ],
+    "Category": [
+        "Information Functions"
+    ]
+}

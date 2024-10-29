@@ -1,0 +1,22 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/array-functions"
+    ],
+    "Title": [
+        "arrayFilter(func, arr1, ...)"
+    ],
+    "Feature": [
+        "arrayFilter(func, arr1, ...)"
+    ],
+    "Description": [
+        "arrayFilter(func, arr1, ...)",
+        "Returns an array containing only the elements in arr1 for which func(arr1[i], ..., arrN[i]) returns something other than 0."
+    ],
+    "Examples": [
+        "SELECT arrayFilter(x -> x LIKE '%World%', ['Hello', 'abc World']) AS res",
+        "SELECT    arrayFilter(        (i, x) -> x LIKE '%World%',        arrayEnumerate(arr),        ['Hello', 'abc World'] AS arr)    AS res"
+    ],
+    "Category": [
+        "Arrays Functions"
+    ]
+}

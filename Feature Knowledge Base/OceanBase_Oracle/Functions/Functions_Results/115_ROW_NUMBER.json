@@ -1,0 +1,22 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000000822842"
+    ],
+    "Title": [
+        "ROW_NUMBER"
+    ],
+    "Feature": [
+        "ROW_NUMBER( ) OVER ([ query_partition_clause ] order_by_clause)\n"
+    ],
+    "Description": [
+        "该函数是一个分析函数，作用是为每一条行（分组）记录返回一个唯一的序号，该序号按照 order_by_clause 中指定列进行的排序，从 1 开始。当遇到相同的数据时，排名按照记录集中记录的顺序依次递增，对于不同数据进行依次排名。",
+        "使用 OVER 子句定义窗口进行计算。详细信息请参见 分析函数说明。",
+        "返回数值类型数据。"
+    ],
+    "Examples": [
+        "obclient> SELECT * FROM emp_msg;\n+--------+--------+------+------+\n| DEPTNO | ENAME  | SAL  | MGR  |\n+--------+--------+------+------+\n|     10 | CLARK  | 2750 | 7839 |\n|     10 | KING   | 5300 | NULL |\n|     10 | MILLER | 1600 | 7782 |\n|     20 | ADAMS  | 1400 | 7788 |\n|     20 | FORD   | 3300 | 7566 |\n|     20 | JONES  | 3275 | 7839 |\n|     20 | SCOTT  | 3300 | 7566 |\n|     20 | SMITH  | 1100 | 7902 |\n|     30 | ALLEN  | 1900 | 7698 |\n|     30 | BLAKE  | 3150 | 7839 |\n|     30 | JAMES  | 1250 | 7698 |\n|     30 | MARTIN | 1550 | 7698 |\n|     30 | TURNER | 1800 | 7698 |\n|     30 | WARD   | 1550 | 7698 |\n|     30 | SCLARK | 1750 | 7839 |\n+--------+--------+------+------+\n15 rows in set\n\nobclient> SELECT deptno,ename,sal,\n                 ROW_NUMBER() OVER (PARTITION BY deptno ORDER BY sal DESC)\n          FROM emp_msg;\n+--------+--------+------+---------------------------------------------------+\n| DEPTNO | ENAME  | SAL  | ROW_NUMBER()OVER(PARTITIONBYDEPTNOORDERBYSALDESC) |\n+--------+--------+------+---------------------------------------------------+\n|     10 | KING   | 5300 |                                                 1 |\n|     10 | CLARK  | 2750 |                                                 2 |\n|     10 | MILLER | 1600 |                                                 3 |\n|     20 | FORD   | 3300 |                                                 1 |\n|     20 | SCOTT  | 3300 |                                                 2 |\n|     20 | JONES  | 3275 |                                                 3 |\n|     20 | ADAMS  | 1400 |                                                 4 |\n|     20 | SMITH  | 1100 |                                                 5 |\n|     30 | BLAKE  | 3150 |                                                 1 |\n|     30 | ALLEN  | 1900 |                                                 2 |\n|     30 | TURNER | 1800 |                                                 3 |\n|     30 | SCLARK | 1750 |                                                 4 |\n|     30 | MARTIN | 1550 |                                                 5 |\n|     30 | WARD   | 1550 |                                                 6 |\n|     30 | JAMES  | 1250 |                                                 7 |\n+--------+--------+------+---------------------------------------------------+\n15 rows in set\n"
+    ],
+    "Category": [
+        "Analytic Functions"
+    ]
+}

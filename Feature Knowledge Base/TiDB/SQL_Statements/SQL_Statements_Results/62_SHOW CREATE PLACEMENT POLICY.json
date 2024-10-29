@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://docs.pingcap.com//zh/tidb/stable/sql-statement-show-create-placement-policy"
+    ],
+    "Title": [
+        "SHOW CREATE PLACEMENT POLICY"
+    ],
+    "Feature": [
+        "ShowCreatePlacementPolicyStmt ::=\n    \"SHOW\" \"CREATE\" \"PLACEMENT\" \"POLICY\" PolicyName\n\nPolicyName ::=\n    Identifier\n"
+    ],
+    "Description": [
+        "SHOW CREATE PLACEMENT POLICY \u8bed\u53e5\u53ef\u7528\u4e8e\u67e5\u770b\u653e\u7f6e\u7b56\u7565\u5f53\u524d\u7684\u5b9a\u4e49\uff0c\u5e76\u5728\u53e6\u4e00\u4e2a TiDB \u96c6\u7fa4\u4e2d\u91cd\u65b0\u521b\u5efa\u8be5\u7b56\u7565\u3002"
+    ],
+    "Examples": [
+        "CREATE PLACEMENT POLICY p1 PRIMARY_REGION=\"us-east-1\" REGIONS=\"us-east-1,us-west-1\" FOLLOWERS=4;\nCREATE TABLE t1 (a INT) PLACEMENT POLICY=p1;\nSHOW CREATE PLACEMENT POLICY p1\\G\n"
+    ],
+    "Category": [
+        "\u653e\u7f6e\u7b56\u7565"
+    ]
+}

@@ -1,0 +1,24 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/mathematical-functions.html#function_pi"
+    ],
+    "Title": [
+        "PI()"
+    ],
+    "Feature": [
+        "PI()"
+    ],
+    "Description": [
+        "Return the value of pi",
+        "\nPI()\n",
+        "\n            Returns the value of \u03c0 (pi). The default number of\n            decimal places displayed is seven, but MySQL uses the full\n            double-precision value internally.\n          ",
+        "\n            Because the return value of this function is a\n            double-precision value, its exact representation may vary\n            between platforms or implementations. This also applies to\n            any expressions making use of PI(). See\n            Section\u00a013.1.4, \u201cFloating-Point Types (Approximate Value) - FLOAT, DOUBLE\u201d.\n          ",
+        "Press CTRL+C to copy mysql> SELECT PI();\n        -> 3.141593\nmysql> SELECT PI()+0.000000000000000000;\n        -> 3.141592653589793000"
+    ],
+    "Examples": [
+        "mysql> SELECT PI();\n        -> 3.141593\nmysql> SELECT PI()+0.000000000000000000;\n        -> 3.141592653589793000"
+    ],
+    "Category": [
+        "Mathematical Functions"
+    ]
+}

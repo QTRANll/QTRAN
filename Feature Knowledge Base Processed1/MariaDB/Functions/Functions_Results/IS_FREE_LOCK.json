@@ -1,0 +1,44 @@
+{
+    "HTML": "https://mariadb.com//kb/en/is_free_lock/",
+    "Title": "IS_FREE_LOCK",
+    "Feature": [
+        "IS_FREE_LOCK(str)\n"
+    ],
+    "Description": [
+        "Checks whether the lock named str is free to use (that is, not locked).\nReturns 1 if the lock is free (no one is using the lock),\n 0 if the lock is in use, and NULL if an\nerror occurs (such as an incorrect argument, like an empty string or NULL). str is case insensitive.",
+        "If the metadata_lock_info plugin is installed, the Information Schema metadata_lock_info table contains information about locks of this kind (as well as metadata locks).",
+        "Statements using the IS_FREE_LOCK function are not safe for statement-based replication."
+    ],
+    "Examples": [],
+    "Category": [
+        "Miscellaneous Functions"
+    ],
+    "Effective SQLs Refined": [],
+    "Ineffective SQLs Refined": [],
+    "Wrong Messages from Ineffective SQLs Refined": [],
+    "SQLs Generated1": [
+        {
+            "Example SQL": "SELECT IS_FREE_LOCK('my_lock');"
+        }
+    ],
+    "SQLs Generated Costs1": [
+        {
+            "Total Tokens": 377,
+            "Prompt Tokens": 356,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 6.599999999999999e-05
+        }
+    ],
+    "SQLs Generated ExecResults1": [
+        "[(1,)]"
+    ],
+    "SQLs Generated ExecTimes1": [
+        "0.02254462242126465"
+    ],
+    "SQLs Generated ErrorMessages1": [
+        "None"
+    ],
+    "Effective SQLs Generated1": [
+        "SELECT IS_FREE_LOCK('my_lock');"
+    ]
+}

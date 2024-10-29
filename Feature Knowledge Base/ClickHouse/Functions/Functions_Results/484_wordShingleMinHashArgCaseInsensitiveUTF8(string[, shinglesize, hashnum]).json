@@ -1,0 +1,27 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/hash-functions"
+    ],
+    "Title": [
+        "wordShingleMinHashArgCaseInsensitiveUTF8"
+    ],
+    "Feature": [
+        "wordShingleMinHashArgCaseInsensitiveUTF8(string[, shinglesize, hashnum])"
+    ],
+    "Description": [
+        "wordShingleMinHashArgCaseInsensitiveUTF8",
+        "Splits a UTF-8 string into parts (shingles) of shinglesize words each and returns the shingles with minimum and maximum word hashes, calculated by the wordShingleMinHashCaseInsensitiveUTF8 function with the same input. Is case insensitive.",
+        "Syntax",
+        "wordShingleMinHashArgCaseInsensitiveUTF8(string[, shinglesize, hashnum])",
+        "Arguments",
+        "string \u2014 String. String.shinglesize \u2014 The size of a word shingle. Optional. Possible values: any number from 1 to 25. Default value: 3. UInt8.hashnum \u2014 The number of minimum and maximum hashes used to calculate the result. Optional. Possible values: any number from 1 to 25. Default value: 6. UInt8.",
+        "Returned value",
+        "Tuple with two tuples with hashnum word shingles each. Tuple(Tuple(String), Tuple(String))."
+    ],
+    "Examples": [
+        "SELECT wordShingleMinHashArgCaseInsensitiveUTF8('ClickHouse\u00ae is a column-oriented database management system (DBMS) for online analytical processing of queries (OLAP).', 1, 3) AS Tuple;"
+    ],
+    "Category": [
+        "Hash Functions"
+    ]
+}

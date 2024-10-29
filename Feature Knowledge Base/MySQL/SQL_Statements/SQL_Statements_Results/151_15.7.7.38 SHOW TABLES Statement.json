@@ -1,0 +1,23 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/show-tables.html"
+    ],
+    "Title": [
+        "15.7.7.38 SHOW TABLES Statement"
+    ],
+    "Feature": [
+        "SHOW [EXTENDED] [FULL] TABLES\n    [{FROM | IN} db_name]\n    [LIKE 'pattern' | WHERE expr]"
+    ],
+    "Description": [
+        "\nSHOW TABLES lists the\n        non-TEMPORARY tables in a given database. You\n        can also get this list using the mysqlshow\n        db_name command. The\n        LIKE clause, if present, indicates\n        which table names to match. The WHERE clause\n        can be given to select rows using more general conditions, as\n        discussed in Section\u00a028.8, \u201cExtensions to SHOW Statements\u201d.\n      ",
+        "\n        Matching performed by the LIKE clause is\n        dependent on the setting of the\n        lower_case_table_names system\n        variable.\n      ",
+        "\n        The optional EXTENDED modifier causes\n        SHOW TABLES to list hidden tables\n        created by failed ALTER TABLE\n        statements. These temporary tables have names beginning with\n        #sql and can be dropped using\n        DROP TABLE.\n      ",
+        "\n        This statement also lists any views in the database. The\n        optional FULL modifier causes\n        SHOW TABLES to display a second\n        output column with values of BASE TABLE for a\n        table, VIEW for a view, or SYSTEM\n        VIEW for an INFORMATION_SCHEMA\n        table.\n      ",
+        "\n        If you have no privileges for a base table or view, it does not\n        show up in the output from SHOW\n        TABLES or mysqlshow db_name.\n      ",
+        "\n        Table information is also available from the\n        INFORMATION_SCHEMA\nTABLES table. See\n        Section\u00a028.3.38, \u201cThe INFORMATION_SCHEMA TABLES Table\u201d.\n"
+    ],
+    "Examples": [],
+    "Category": [
+        "Database Administration Statements"
+    ]
+}

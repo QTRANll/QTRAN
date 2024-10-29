@@ -1,0 +1,38 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/loadable-function-reference.html"
+    ],
+    "Title": [
+        "14.2 Loadable Function Reference"
+    ],
+    "Feature": [
+        "gen_dictionary_load(dictionary_path,\n              dictionary_name)"
+    ],
+    "Description": [
+        "Load dictionary into registry",
+        "\ngen_dictionary_load(dictionary_path,\n              dictionary_name)\n",
+        "\n              Loads a file into the dictionary registry and assigns the\n              dictionary a name to be used with other functions that\n              require a dictionary name argument.\n            ",
+        "\n              This function requires the\n              SUPER privilege.\n",
+        "\n\nImportant\n\n\n                Dictionaries are not persistent. Any dictionary used by\n                applications must be loaded for each server startup.\n\n",
+        "\n              Once loaded into the registry, a dictionary is used as is,\n              even if the underlying dictionary file changes. To reload\n              a dictionary, first drop it with\n              gen_dictionary_drop(),\n              then load it again with\n              gen_dictionary_load().\n            ",
+        "\n              Arguments:\n",
+        "\n\ndictionary_path: A string\n                  that specifies the path name of the dictionary file.\n                \ndictionary_name: A string\n                  that provides a name for the dictionary.\n\n",
+        "\n              Return value:\n            ",
+        "\n              A string that indicates whether the load operation\n              succeeded. Dictionary load success\n              indicates success. Dictionary load\n              error indicates failure. Dictionary load failure\n              can occur for several reasons, including:\n",
+        "\n\n                  A dictionary with the given name is already loaded.\n                \n                  The dictionary file is not found.\n                \n                  The dictionary file contains no terms.\n                \n                  The secure_file_priv\n                  system variable is set and the dictionary file is not\n                  located in the directory named by the variable.\n\n",
+        "\n              Example:\n            ",
+        "Press CTRL+C to copy mysql> SELECT gen_dictionary_load('/usr/local/mysql/mysql-files/mydict','mydict');\n+---------------------------------------------------------------------+\n| gen_dictionary_load('/usr/local/mysql/mysql-files/mydict','mydict') |\n+---------------------------------------------------------------------+\n| Dictionary load success                                             |\n+---------------------------------------------------------------------+\nmysql> SELECT gen_dictionary_load('/dev/null','null');\n+-----------------------------------------+\n| gen_dictionary_load('/dev/null','null') |\n+-----------------------------------------+\n| Dictionary load error                   |\n+-----------------------------------------+"
+    ],
+    "Examples": [
+        "mysql> SELECT gen_dictionary_load('/usr/local/mysql/mysql-files/mydict','mydict');\n+---------------------------------------------------------------------+\n| gen_dictionary_load('/usr/local/mysql/mysql-files/mydict','mydict') |\n+---------------------------------------------------------------------+\n| Dictionary load success                                             |\n+---------------------------------------------------------------------+\nmysql> SELECT gen_dictionary_load('/dev/null','null');\n+-----------------------------------------+\n| gen_dictionary_load('/dev/null','null') |\n+-----------------------------------------+\n| Dictionary load error                   |\n+-----------------------------------------+"
+    ],
+    "Category": [
+        "Loadable Functions"
+    ],
+    "Reference HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/data-masking-plugin-functions.html#function_gen-dictionary-load-plugin"
+    ],
+    "Feature Type": [
+        "Function"
+    ]
+}

@@ -1,0 +1,38 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/rename-table/"
+    ],
+    "Title": [
+        "RENAME TABLE"
+    ],
+    "Feature": [
+        "RENAME TABLE[S] [IF EXISTS] tbl_name \n  [WAIT n | NOWAIT]\n  TO new_tbl_name\n    [, tbl_name2 TO new_tbl_name2] ...\n"
+    ],
+    "Description": [
+        "This statement renames one or more tables or views, but not the privileges associated with them.",
+        "IF EXISTS",
+        "MariaDB starting with 10.5.2If this directive is used, one will not get an error if the table to be renamed doesn't exist.\n",
+        "The rename operation is done atomically, which means that no other session can\naccess any of the tables while the rename is running. For example, if you have\nan existing table old_table, you can create another table\nnew_table that has the same structure but is empty, and then\nreplace the existing table with the empty one as follows (assuming that\nbackup_table does not already exist):",
+        "CREATE TABLE new_table (...);\nRENAME TABLE old_table TO backup_table, new_table TO old_table;\n",
+        "tbl_name can optionally be specified as db_name.tbl_name. See Identifier Qualifiers. This allows to use RENAME to move a table from a database to another (as long as they are on the same filesystem):",
+        "RENAME TABLE db1.t TO db2.t;\n",
+        "Note that moving a table to another database is not possible if it has some triggers. Trying to do so produces the following error:",
+        "ERROR 1435 (HY000): Trigger in wrong schema\n",
+        "Also, views cannot be moved to another database:",
+        "ERROR 1450 (HY000): Changing schema from 'old_db' to 'new_db' is not allowed.\n",
+        "Multiple tables can be renamed in a single statement. The presence or absence of the optional S (RENAME TABLE or RENAME TABLES) has no impact, whether a single or multiple tables are being renamed.",
+        "If a RENAME TABLE renames more than one table and one renaming fails, all renames executed by the same statement are rolled back.",
+        "Renames are always executed in the specified order. Knowing this, it is also possible to swap two tables' names:",
+        "RENAME TABLE t1 TO tmp_table,\n    t2 TO t1,\n    tmp_table TO t2;\n",
+        "WAIT/NOWAIT",
+        "Set the lock wait timeout. See WAIT and NOWAIT.",
+        "Privileges",
+        "Executing the RENAME TABLE statement requires the DROP, CREATE and INSERT privileges for the table or the database.",
+        "Atomic RENAME TABLE",
+        "MariaDB starting with 10.6.1From MariaDB 10.6, RENAME TABLE is atomic for most engines, including InnoDB, MyRocks, MyISAM and Aria (MDEV-23842).\nThis means that if there is a crash (server down or power outage) during RENAME TABLE, all tables will revert to their original names and any changes to trigger files will be reverted.\nIn older MariaDB version there was a small chance that, during a server crash happening in the middle of RENAME TABLE, some tables could have been renamed (in the worst case partly) while others would not be renamed.\nSee Atomic DDL for more information.\n"
+    ],
+    "Examples": [],
+    "Category": [
+        "Data Definition"
+    ]
+}

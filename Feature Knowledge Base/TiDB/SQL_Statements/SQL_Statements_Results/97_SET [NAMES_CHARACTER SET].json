@@ -1,0 +1,24 @@
+{
+    "HTML": [
+        "https://docs.pingcap.com//zh/tidb/stable/sql-statement-set-names"
+    ],
+    "Title": [
+        "SET [NAMES|CHARACTER SET]"
+    ],
+    "Feature": [
+        "SetNamesStmt ::=\n    \"SET\" (\"NAMES\" (\"DEFAULT\" | CharsetName (\"COLLATE\" (\"DEFAULT\" | CollationName))?) | (\"CHARSET\" | (\"CHAR\" | \"CHARACTER\") \"SET\") (\"DEFAULT\" | CharsetName))\n"
+    ],
+    "Description": [
+        "SET NAMES\uff0cSET CHARACTER SET \u548c SET CHARSET \u8bed\u53e5\u7528\u4e8e\u4fee\u6539\u5f53\u524d\u8fde\u63a5\u7684\u53d8\u91cf character_set_client\uff0ccharacter_set_results \u548c character_set_connection\u3002"
+    ],
+    "Examples": [
+        "SHOW VARIABLES LIKE 'character_set%';\n",
+        "SET NAMES utf8;\n",
+        "SHOW VARIABLES LIKE 'character_set%';\n",
+        "SET CHARACTER SET utf8mb4;\n",
+        "SHOW VARIABLES LIKE 'character_set%';\n"
+    ],
+    "Category": [
+        "\u7ba1\u7406\u8bed\u53e5"
+    ]
+}

@@ -1,0 +1,27 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/other-functions"
+    ],
+    "Title": [
+        "getSettingOrDefault"
+    ],
+    "Feature": [
+        "getSettingOrDefault('custom_setting', default_value);"
+    ],
+    "Description": [
+        "getSettingOrDefault",
+        "Returns the current value of a custom setting or returns the default value specified in the 2nd argument if the custom setting is not set in the current profile.",
+        "Syntax",
+        "getSettingOrDefault('custom_setting', default_value);",
+        "Parameter",
+        "custom_setting \u2014 The setting name. String.default_value \u2014 Value to return if custom_setting is not set. Value may be of any data type or Null.",
+        "Returned value",
+        "The setting's current value or default_value if setting is not set."
+    ],
+    "Examples": [
+        "SELECT getSettingOrDefault('custom_undef1', 'my_value');SELECT getSettingOrDefault('custom_undef2', 100);SELECT getSettingOrDefault('custom_undef3', NULL);"
+    ],
+    "Category": [
+        "Other Functions"
+    ]
+}

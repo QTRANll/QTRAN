@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/current/functions-range.html"
+    ],
+    "Title": [
+        "anyrange @> anyelement"
+    ],
+    "Feature": [
+        "anyrange @> anyelement → boolean"
+    ],
+    "Description": [
+        "Does the range contain the element?"
+    ],
+    "Examples": [
+        "'[2011-01-01,2011-03-01)'::tsrange @> '2011-01-10'::timestamp → t"
+    ],
+    "Category": [
+        "Range divide Multirange Functions and Operators"
+    ]
+}

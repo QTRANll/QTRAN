@@ -1,0 +1,27 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/create-role.html"
+    ],
+    "Title": [
+        "15.7.1.2 CREATE ROLE Statement"
+    ],
+    "Feature": [
+        "CREATE ROLE [IF NOT EXISTS] role [, role ] ..."
+    ],
+    "Description": [
+        "\nCREATE ROLE creates one or more\n        roles, which are named collections of privileges. To use this\n        statement, you must have the global CREATE\n        ROLE or CREATE USER\n        privilege. When the read_only\n        system variable is enabled, CREATE\n        ROLE additionally requires the\n        CONNECTION_ADMIN privilege (or\n        the deprecated SUPER privilege).\n      ",
+        "\n        A role when created is locked, has no password, and is assigned\n        the default authentication plugin. (These role attributes can be\n        changed later with the ALTER USER\n        statement, by users who have the global\n        CREATE USER privilege.)\n      ",
+        "\nCREATE ROLE either succeeds for\n        all named roles or rolls back and has no effect if any error\n        occurs. By default, an error occurs if you try to create a role\n        that already exists. If the IF NOT EXISTS\n        clause is given, the statement produces a warning for each named\n        role that already exists, rather than an error.\n      ",
+        "\n        The statement is written to the binary log if it succeeds, but\n        not if it fails; in that case, rollback occurs and no changes\n        are made. A statement written to the binary log includes all\n        named roles. If the IF NOT EXISTS clause is\n        given, this includes even roles that already exist and were not\n        created.\n      ",
+        "\n        Each role name uses the format described in\n        Section\u00a08.2.5, \u201cSpecifying Role Names\u201d. For example:\n      ",
+        "Press CTRL+C to copy CREATE ROLE 'admin', 'developer';\nCREATE ROLE 'webapp'@'localhost';",
+        "\n        The host name part of the role name, if omitted, defaults to\n        '%'.\n      ",
+        "\n        For role usage examples, see Section\u00a08.2.10, \u201cUsing Roles\u201d.\n"
+    ],
+    "Examples": [
+        "CREATE ROLE 'admin', 'developer';\nCREATE ROLE 'webapp'@'localhost';"
+    ],
+    "Category": [
+        "Database Administration Statements"
+    ]
+}

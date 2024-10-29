@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000000823476"
+    ],
+    "Title": [
+        "RTRIM"
+    ],
+    "Feature": [
+        "RTRIM(str)\n"
+    ],
+    "Description": [
+        "删除字符串 str 右侧的空格。"
+    ],
+    "Examples": [
+        "obclient> SELECT RTRIM('    obclient    ') AS rtrim;\n+--------------+\n| rtrim        |\n+--------------+\n|     obclient |\n+--------------+\n1 row in set\n"
+    ],
+    "Category": [
+        "String Functions"
+    ]
+}

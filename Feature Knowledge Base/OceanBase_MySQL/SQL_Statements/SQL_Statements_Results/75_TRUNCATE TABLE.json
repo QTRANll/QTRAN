@@ -1,0 +1,28 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000001053475"
+    ],
+    "Title": [
+        "TRUNCATE TABLE"
+    ],
+    "Feature": [
+        "TRUNCATE [TABLE] table_name;\n"
+    ],
+    "Description": [
+        "该语句用于完全清空指定表，但是保留表结构，包括表中定义的 Partition 信息。从逻辑上说，该语句与用于删除所有行的 DELETE FROM 语句相同。",
+        "执行 TRUNCATE 语句，必须具有表的删除（DROP）权限。它属于 DDL 语句。",
+        "TRUNCATE TABLE 语句与 DELETE FROM 语句有以下不同：",
+        "TRUNCATE 操作删除并重新创建表，这比逐行删除要快得多，特别是对于大表。",
+        "TRUNCATE TABLE 语句执行结果显示影响行数始终显示为 0 行。",
+        "使用 TRUNCATE TABLE 语句，表管理程序不记得最后被使用的 AUTO_INCREMENT 值，但是会从头开始计数。",
+        "TRUNCATE 语句不能在进行事务处理和表锁定的过程中进行，如果使用，将会报错。",
+        "只要表定义文件是合法的，则可以使用 TRUNCATE TABLE 把表重新创建为一个空表，即使数据或索引文件已经被破坏。",
+        "\n\n\n参数\n描述\n\n\n\n\ntable_name\n指定表名。\n\n\n"
+    ],
+    "Examples": [
+        "obclient> TRUNCATE TABLE a;\nQuery OK, 0 rows affected\n"
+    ],
+    "Category": [
+        "No Category"
+    ]
+}

@@ -1,0 +1,21 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/mbrequal/"
+    ],
+    "Title": [
+        "MBREqual"
+    ],
+    "Feature": [
+        "MBREqual(g1,g2)\n"
+    ],
+    "Description": [
+        "Returns 1 or 0 to indicate whether the Minimum Bounding Rectangles of\nthe two geometries g1 and g2 are the same."
+    ],
+    "Examples": [
+        "SELECT MbrEqual(@g1,@g2);",
+        "SELECT MbrEqual(@g1,@g2);"
+    ],
+    "Category": [
+        "Geographic Functions"
+    ]
+}

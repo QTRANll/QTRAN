@@ -1,0 +1,120 @@
+{
+    "HTML": "https://mariadb.com//kb/en/spider_bg_direct_sql/",
+    "Title": "SPIDER_BG_DIRECT_SQL",
+    "Feature": [
+        "SPIDER_BG_DIRECT_SQL('sql', 'tmp_table_list', 'parameters')\n"
+    ],
+    "Description": [
+        "Executes the given SQL statement in the background on the remote server, as defined in the parameters listing.  If the query returns a result-set, it sttores the results in the given temporary table.  When the given SQL statement executes successfully, this function returns the number of called UDF's.  It returns 0 when the given SQL statement fails.",
+        "This function is a UDF installed with the Spider storage engine."
+    ],
+    "Examples": [
+        "SELECT SPIDER_BG_DIRECT_SQL('SELECT * FROM example_table',  '', \n   'srv \"node1\", port \"8607\"') AS \"Direct Query\";\n+--------------+\n| Direct Query | \n+--------------+\n|            1 |\n+--------------+\n"
+    ],
+    "Category": [
+        "Spider Functions"
+    ],
+    "Effective SQLs Refined": [],
+    "Ineffective SQLs Refined": [
+        "SELECT SPIDER_BG_DIRECT_SQL('SELECT * FROM example_table',  '', \n   'srv \"node1\", port \"8607\"') AS \"Direct Query\";"
+    ],
+    "Wrong Messages from Ineffective SQLs Refined": [
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION PINOLO_MariaDB.SPIDER_BG_DIRECT_SQL does not exist')\n[SQL: SELECT SPIDER_BG_DIRECT_SQL('SELECT * FROM example_table',  '', \n   'srv \"node1\", port \"8607\"') AS \"Direct Query\";]\n(Background on this error at: https://sqlalche.me/e/20/e3q8)"
+    ],
+    "SQLs Generated1": [
+        {
+            "Example SQL": "SPIDER_BG_DIRECT_SQL('SELECT * FROM my_table', 'temp_table', 'param1, param2')"
+        },
+        {
+            "Example SQL": "SELECT SPIDER_BG_DIRECT_SQL('SELECT * FROM my_table', 'temp_table', 'param1, param2')"
+        },
+        {
+            "Example SQL": "SELECT * FROM temp_table"
+        },
+        {
+            "Example SQL": "SPIDER_BG_DIRECT_SQL('SELECT 1', '', '')"
+        },
+        {
+            "Example SQL": "SELECT SPIDER_BG_DIRECT_SQL('SELECT 1', '', '')"
+        }
+    ],
+    "SQLs Generated Costs1": [
+        {
+            "Total Tokens": 378,
+            "Prompt Tokens": 342,
+            "Completion Tokens": 36,
+            "Total Cost (USD)": 7.29e-05
+        },
+        {
+            "Total Tokens": 592,
+            "Prompt Tokens": 555,
+            "Completion Tokens": 37,
+            "Total Cost (USD)": 0.00010545
+        },
+        {
+            "Total Tokens": 747,
+            "Prompt Tokens": 729,
+            "Completion Tokens": 18,
+            "Total Cost (USD)": 0.00012014999999999999
+        },
+        {
+            "Total Tokens": 906,
+            "Prompt Tokens": 881,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 0.00014714999999999997
+        },
+        {
+            "Total Tokens": 1098,
+            "Prompt Tokens": 1072,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 0.0001764
+        }
+    ],
+    "SQLs Generated ExecResults1": [
+        "None",
+        "None",
+        "None",
+        "None",
+        "None"
+    ],
+    "SQLs Generated ExecTimes1": [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+    ],
+    "SQLs Generated ErrorMessages1": [
+        "(pymysql.err.ProgrammingError) (1064, \"You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'SPIDER_BG_DIRECT_SQL('SELECT * FROM my_table', 'temp_table', 'param1, param2')' at line 1\")\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION PINOLO_MariaDB.SPIDER_BG_DIRECT_SQL does not exist')\n",
+        "(pymysql.err.ProgrammingError) (1146, \"Table 'PINOLO_MariaDB.temp_table' doesn't exist\")\n",
+        "(pymysql.err.ProgrammingError) (1064, \"You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'SPIDER_BG_DIRECT_SQL('SELECT 1', '', '')' at line 1\")\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION PINOLO_MariaDB.SPIDER_BG_DIRECT_SQL does not exist')\n"
+    ],
+    "Effective SQLs Generated1": [],
+    "SQLs Generated2": [
+        {
+            "Example SQL": "SELECT * FROM dialect_recognize_table WHERE is_endangered = TRUE;"
+        }
+    ],
+    "SQLs Generated Costs2": [
+        {
+            "Total Tokens": 819,
+            "Prompt Tokens": 792,
+            "Completion Tokens": 27,
+            "Total Cost (USD)": 0.000135
+        }
+    ],
+    "SQLs Generated ExecResults2": [
+        "[(2, 'Cantonese', 'China', 87000000, 'A dialect spoken in Guangdong province and Hong Kong.', 1), (4, 'Scottish Gaelic', 'Scotland', 58000, 'A Celtic language native to Scotland.', 1), (5, 'Hmong', 'Southeast Asia', 4000000, 'A language spoken by the Hmong people in various countries.', 1)]"
+    ],
+    "SQLs Generated ExecTimes2": [
+        "0.005823373794555664"
+    ],
+    "SQLs Generated ErrorMessages2": [
+        "None"
+    ],
+    "Effective SQLs Generated2": [
+        "SELECT * FROM dialect_recognize_table WHERE is_endangered = TRUE;"
+    ]
+}

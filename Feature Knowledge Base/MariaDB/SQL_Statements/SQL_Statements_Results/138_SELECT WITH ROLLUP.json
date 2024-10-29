@@ -1,0 +1,26 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/select-with-rollup/"
+    ],
+    "Title": [
+        "SELECT WITH ROLLUP"
+    ],
+    "Feature": [
+        "See SELECT for the full syntax."
+    ],
+    "Description": [
+        "The WITH ROLLUP modifier adds extra rows to the resultset that represent super-aggregate summaries. The super-aggregated column is represented by a NULL value. Multiple aggregates over different columns will be added if there are multiple GROUP BY columns.",
+        "The LIMIT clause can be used at the same time, and is applied after the WITH ROLLUP rows have been added.",
+        "WITH ROLLUP cannot be used with ORDER BY. Some sorting is still possible by using ASC or DESC clauses with the GROUP BY column, although the super-aggregate rows will always be added last."
+    ],
+    "Examples": [
+        "CREATE TABLE booksales ( \n  country VARCHAR(35), genre ENUM('fiction','non-fiction'), year YEAR, sales INT);\n\nINSERT INTO booksales VALUES\n  ('Senegal','fiction',2014,12234), ('Senegal','fiction',2015,15647),\n  ('Senegal','non-fiction',2014,64980), ('Senegal','non-fiction',2015,78901),\n  ('Paraguay','fiction',2014,87970), ('Paraguay','fiction',2015,76940),\n  ('Paraguay','non-fiction',2014,8760), ('Paraguay','non-fiction',2015,9030);\n",
+        "SELECT year, SUM(sales) FROM booksales GROUP BY year;\n+------+------------+\n| year | SUM(sales) |\n+------+------------+\n| 2014 |     173944 |\n| 2015 |     180518 |\n+------+------------+\n2 rows in set (0.08 sec)\n\nSELECT year, SUM(sales) FROM booksales GROUP BY year WITH ROLLUP;\n+------+------------+\n| year | SUM(sales) |\n+------+------------+\n| 2014 |     173944 |\n| 2015 |     180518 |\n| NULL |     354462 |\n+------+------------+\n",
+        "SELECT country, year, genre, SUM(sales) \n  FROM booksales GROUP BY country, year, genre;\n+----------+------+-------------+------------+\n| country  | year | genre       | SUM(sales) |\n+----------+------+-------------+------------+\n| Paraguay | 2014 | fiction     |      87970 |\n| Paraguay | 2014 | non-fiction |       8760 |\n| Paraguay | 2015 | fiction     |      76940 |\n| Paraguay | 2015 | non-fiction |       9030 |\n| Senegal  | 2014 | fiction     |      12234 |\n| Senegal  | 2014 | non-fiction |      64980 |\n| Senegal  | 2015 | fiction     |      15647 |\n| Senegal  | 2015 | non-fiction |      78901 |\n+----------+------+-------------+------------+\n\nSELECT country, year, genre, SUM(sales) \n  FROM booksales GROUP BY country, year, genre WITH ROLLUP;\n+----------+------+-------------+------------+\n| country  | year | genre       | SUM(sales) |\n+----------+------+-------------+------------+\n| Paraguay | 2014 | fiction     |      87970 |\n| Paraguay | 2014 | non-fiction |       8760 |\n| Paraguay | 2014 | NULL        |      96730 |\n| Paraguay | 2015 | fiction     |      76940 |\n| Paraguay | 2015 | non-fiction |       9030 |\n| Paraguay | 2015 | NULL        |      85970 |\n| Paraguay | NULL | NULL        |     182700 |\n| Senegal  | 2014 | fiction     |      12234 |\n| Senegal  | 2014 | non-fiction |      64980 |\n| Senegal  | 2014 | NULL        |      77214 |\n| Senegal  | 2015 | fiction     |      15647 |\n| Senegal  | 2015 | non-fiction |      78901 |\n| Senegal  | 2015 | NULL        |      94548 |\n| Senegal  | NULL | NULL        |     171762 |\n| NULL     | NULL | NULL        |     354462 |\n+----------+------+-------------+------------+\n",
+        "SELECT country, year, genre, SUM(sales) \n  FROM booksales GROUP BY country, year, genre WITH ROLLUP LIMIT 4;\n+----------+------+-------------+------------+\n| country  | year | genre       | SUM(sales) |\n+----------+------+-------------+------------+\n| Paraguay | 2014 | fiction     |      87970 |\n| Paraguay | 2014 | non-fiction |       8760 |\n| Paraguay | 2014 | NULL        |      96730 |\n| Paraguay | 2015 | fiction     |      76940 |\n+----------+------+-------------+------------+\n",
+        "SELECT country, year, genre, SUM(sales) \n  FROM booksales GROUP BY country, year DESC, genre WITH ROLLUP;\n+----------+------+-------------+------------+\n| country  | year | genre       | SUM(sales) |\n+----------+------+-------------+------------+\n| Paraguay | 2015 | fiction     |      76940 |\n| Paraguay | 2015 | non-fiction |       9030 |\n| Paraguay | 2015 | NULL        |      85970 |\n| Paraguay | 2014 | fiction     |      87970 |\n| Paraguay | 2014 | non-fiction |       8760 |\n| Paraguay | 2014 | NULL        |      96730 |\n| Paraguay | NULL | NULL        |     182700 |\n| Senegal  | 2015 | fiction     |      15647 |\n| Senegal  | 2015 | non-fiction |      78901 |\n| Senegal  | 2015 | NULL        |      94548 |\n| Senegal  | 2014 | fiction     |      12234 |\n| Senegal  | 2014 | non-fiction |      64980 |\n| Senegal  | 2014 | NULL        |      77214 |\n| Senegal  | NULL | NULL        |     171762 |\n| NULL     | NULL | NULL        |     354462 |\n+----------+------+-------------+------------+\n"
+    ],
+    "Category": [
+        "Data Manipulation"
+    ]
+}

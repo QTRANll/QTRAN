@@ -1,0 +1,46 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/built-in-function-reference.html",
+        "https://dev.mysql.com/doc/refman/8.4/en/built-in-function-reference.html",
+        "https://dev.mysql.com/doc/refman/8.4/en/non-typed-operators.html",
+        "https://dev.mysql.com/doc/refman/8.4/en/non-typed-operators.html",
+        "https://dev.mysql.com/doc/refman/8.4/en/comparison-operators.html",
+        "https://dev.mysql.com/doc/refman/8.4/en/assignment-operators.html"
+    ],
+    "Title": [
+        "14.1 Built-In Function and Operator Reference",
+        "14.1 Built-In Function and Operator Reference",
+        "14.4 Operators",
+        "14.4 Operators",
+        "14.4.2 Comparison Functions and Operators",
+        "14.4.4 Assignment Operators"
+    ],
+    "Feature": [
+        "="
+    ],
+    "Description": [
+        "Assign a value (as part of a",
+        "\n=\n",
+        "\n            This operator is used to perform value assignments in two\n            cases, described in the next two paragraphs.\n          ",
+        "\n            Within a\n            SET\n            statement, = is treated as an assignment\n            operator that causes the user variable on the left hand side\n            of the operator to take on the value to its right. (In other\n            words, when used in a\n            SET\n            statement, = is treated identically to\n            :=.)\n            The value on the right hand side may be a literal value,\n            another variable storing a value, or any legal expression\n            that yields a scalar value, including the result of a query\n            (provided that this value is a scalar value). You can\n            perform multiple assignments in the same\n            SET\n            statement.\n          ",
+        "\n            In the SET clause of an\n            UPDATE statement,\n            = also acts as an assignment operator; in\n            this case, however, it causes the column named on the left\n            hand side of the operator to assume the value given to the\n            right, provided any WHERE conditions that\n            are part of the UPDATE are\n            met. You can make multiple assignments in the same\n            SET clause of an\n            UPDATE statement.\n          ",
+        "\n            In any other context, = is treated as a\n            comparison operator.\n          ",
+        "Press CTRL+C to copy mysql> SELECT @var1, @var2;\n        -> NULL, NULL\nmysql> SELECT @var1 := 1, @var2;\n        -> 1, NULL\nmysql> SELECT @var1, @var2;\n        -> 1, NULL\nmysql> SELECT @var1, @var2 := @var1;\n        -> 1, 1\nmysql> SELECT @var1, @var2;\n        -> 1, 1",
+        "\n            For more information, see Section\u00a015.7.6.1, \u201cSET Syntax for Variable Assignment\u201d,\n            Section\u00a015.2.17, \u201cUPDATE Statement\u201d, and Section\u00a015.2.15, \u201cSubqueries\u201d.\n"
+    ],
+    "Examples": [
+        "mysql> SELECT @var1, @var2;\n        -> NULL, NULL\nmysql> SELECT @var1 := 1, @var2;\n        -> 1, NULL\nmysql> SELECT @var1, @var2;\n        -> 1, NULL\nmysql> SELECT @var1, @var2 := @var1;\n        -> 1, 1\nmysql> SELECT @var1, @var2;\n        -> 1, 1"
+    ],
+    "Category": [
+        "Built-In Operators",
+        "Built-In Operators",
+        "Comparison Operators",
+        "Assignment Operators"
+    ],
+    "Reference HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/assignment-operators.html#operator_assign-equal"
+    ],
+    "Feature Type": [
+        "Operator"
+    ]
+}

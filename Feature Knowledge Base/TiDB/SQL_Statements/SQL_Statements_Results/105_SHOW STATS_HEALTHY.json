@@ -1,0 +1,26 @@
+{
+    "HTML": [
+        "https://docs.pingcap.com//zh/tidb/stable/sql-statement-show-stats-healthy"
+    ],
+    "Title": [
+        "SHOW STATS_HEALTHY"
+    ],
+    "Feature": [
+        "ShowStatsHealthyStmt ::=\n    \"SHOW\" \"STATS_HEALTHY\" ShowLikeOrWhere?\n\nShowLikeOrWhere ::=\n    \"LIKE\" SimpleExpr\n|   \"WHERE\" Expression\n"
+    ],
+    "Description": [
+        "SHOW STATS_HEALTHY \u8bed\u53e5\u53ef\u4ee5\u9884\u4f30\u7edf\u8ba1\u4fe1\u606f\u7684\u51c6\u786e\u5ea6\uff0c\u4e5f\u5c31\u662f\u5065\u5eb7\u5ea6\u3002\u5065\u5eb7\u5ea6\u4f4e\u7684\u8868\u53ef\u80fd\u4f1a\u751f\u6210\u6b21\u4f18\u67e5\u8be2\u6267\u884c\u8ba1\u5212\u3002",
+        "\u53ef\u4ee5\u901a\u8fc7\u6267\u884c ANALYZE \u8bed\u53e5\u6765\u6539\u5584\u8868\u7684\u5065\u5eb7\u5ea6\u3002\u5f53\u8868\u7684\u5065\u5eb7\u5ea6\u4e0b\u964d\u5230\u4f4e\u4e8e tidb_auto_analyze_ratio \u65f6\uff0c\u5219\u4f1a\u81ea\u52a8\u6267\u884c ANALYZE \u8bed\u53e5\u3002",
+        "\u76ee\u524d\uff0cSHOW STATS_HEALTHY \u8bed\u53e5\u8fd4\u56de\u4ee5\u4e0b\u5217\uff1a",
+        "\u5217\u540d\u8bf4\u660eDb_name\u6570\u636e\u5e93\u540dTable_name\u8868\u540dPartition_name\u5206\u533a\u540dHealthy\u5065\u5eb7\u5ea6\uff0c0~100 \u4e4b\u95f4"
+    ],
+    "Examples": [
+        "CREATE TABLE t1 (\n id INT NOT NULL PRIMARY KEY auto_increment,\n b INT NOT NULL,\n pad VARBINARY(255),\n INDEX(b)\n);\nINSERT INTO t1 SELECT NULL, FLOOR(RAND()*1000), RANDOM_BYTES(255) FROM dual;\nINSERT INTO t1 SELECT NULL, FLOOR(RAND()*1000), RANDOM_BYTES(255) FROM t1 a JOIN t1 b JOIN t1 c LIMIT 100000;\nINSERT INTO t1 SELECT NULL, FLOOR(RAND()*1000), RANDOM_BYTES(255) FROM t1 a JOIN t1 b JOIN t1 c LIMIT 100000;\nINSERT INTO t1 SELECT NULL, FLOOR(RAND()*1000), RANDOM_BYTES(255) FROM t1 a JOIN t1 b JOIN t1 c LIMIT 100000;\nINSERT INTO t1 SELECT NULL, FLOOR(RAND()*1000), RANDOM_BYTES(255) FROM t1 a JOIN t1 b JOIN t1 c LIMIT 100000;\nINSERT INTO t1 SELECT NULL, FLOOR(RAND()*1000), RANDOM_BYTES(255) FROM t1 a JOIN t1 b JOIN t1 c LIMIT 100000;\nINSERT INTO t1 SELECT NULL, FLOOR(RAND()*1000), RANDOM_BYTES(255) FROM t1 a JOIN t1 b JOIN t1 c LIMIT 100000;\nSELECT SLEEP(1);\nANALYZE TABLE t1;\nSHOW STATS_HEALTHY; # should be 100% healthy\n",
+        "SHOW STATS_HEALTHY;\n",
+        "DELETE FROM t1 WHERE id BETWEEN 101010 AND 201010; # delete about 30% of records\nSHOW STATS_HEALTHY;\n",
+        "SHOW STATS_HEALTHY;\n+---------+------------+----------------+---------+\n| Db_name | Table_name | Partition_name | Healthy |\n+---------+------------+----------------+---------+\n| test    | t1         |                |      50 |\n+---------+------------+----------------+---------+\n1 row in set (0.00 sec)\n"
+    ],
+    "Category": [
+        "\u7edf\u8ba1\u4fe1\u606f\u548c\u6267\u884c\u8ba1\u5212\u7ba1\u7406"
+    ]
+}

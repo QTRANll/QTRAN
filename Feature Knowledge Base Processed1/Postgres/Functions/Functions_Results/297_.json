@@ -1,0 +1,29 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/current/functions-json.html"
+    ],
+    "Title": [
+        ""
+    ],
+    "Feature": [
+        "",
+        ""
+    ],
+    "Description": [
+        "Returns the result of applying the SQL/JSON path_expression to the context_item.",
+        "Only use JSON_VALUE() if the extracted value is expected to be a single SQL/JSON scalar item; getting multiple values will be treated as an error. If you expect that extracted value might be an object or an array, use the JSON_QUERY function instead.",
+        "By default, the result, which must be a single scalar value, is returned as a value of type text, though the RETURNING clause can be used to return as some other type to which it can be successfully coerced.",
+        "The ON ERROR and ON EMPTY clauses have similar semantics as mentioned in the description of JSON_QUERY, except the set of values returned in lieu of throwing an error is different.",
+        "Note that scalar strings returned by JSON_VALUE always have their quotes removed, equivalent to specifying OMIT QUOTES in JSON_QUERY.",
+        "Examples:"
+    ],
+    "Examples": [
+        "JSON_VALUE(jsonb '\"123.45\"', '$' RETURNING float) → 123.45",
+        "JSON_VALUE(jsonb '\"03:04 2015-02-01\"', '$.datetime(\"HH24:MI YYYY-MM-DD\")' RETURNING date) → 2015-02-01",
+        "JSON_VALUE(jsonb '[1,2]', 'strict $[$off]' PASSING 1 as off) → 2",
+        "JSON_VALUE(jsonb '[1,2]', 'strict $[*]' DEFAULT 9 ON ERROR) → 9"
+    ],
+    "Category": [
+        "JSON Functions and Operators"
+    ]
+}

@@ -1,0 +1,25 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/uuid_short/"
+    ],
+    "Title": [
+        "UUID_SHORT"
+    ],
+    "Feature": [
+        "UUID_SHORT()\n"
+    ],
+    "Description": [
+        "Returns a \"short\" universally unique identifier as a 64-bit unsigned integer (rather\nthan a string-form 128-bit identifier as returned by the UUID() function).",
+        "The value of UUID_SHORT() is guaranteed to be unique if the\nfollowing conditions hold:",
+        "The server_id of the current host is unique among your set of master and\n  slave servers\nserver_id is between 0 and 255\nYou don't set back your system time for your server between mariadbd restarts\nYou do not invoke UUID_SHORT() on average more than 16\n  million times per second between mariadbd restarts\n",
+        "The UUID_SHORT() return value is constructed this way:",
+        "  (server_id & 255) << 56\n+ (server_startup_time_in_seconds << 24)\n+ incremented_variable++;\n",
+        "Statements using the UUID_SHORT() function are not safe for statement-based replication."
+    ],
+    "Examples": [
+        "SELECT UUID_SHORT();"
+    ],
+    "Category": [
+        "Miscellaneous Functions"
+    ]
+}

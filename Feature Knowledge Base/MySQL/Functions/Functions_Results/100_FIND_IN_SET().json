@@ -1,0 +1,32 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/built-in-function-reference.html",
+        "https://dev.mysql.com/doc/refman/8.4/en/string-functions.html"
+    ],
+    "Title": [
+        "14.1 Built-In Function and Operator Reference",
+        "14.8 String Functions and Operators"
+    ],
+    "Feature": [
+        "FIND_IN_SET(str,strlist)"
+    ],
+    "Description": [
+        "Index (position) of first argument within second argument",
+        "\nFIND_IN_SET(str,strlist)\n",
+        "\n          Returns a value in the range of 1 to\n          N if the string\n          str is in the string list\n          strlist consisting of\n          N substrings. A string list is a\n          string composed of substrings separated by\n          , characters. If the first argument is a\n          constant string and the second is a column of type\n          SET, the\n          FIND_IN_SET() function is\n          optimized to use bit arithmetic. Returns 0\n          if str is not in\n          strlist or if\n          strlist is the empty string.\n          Returns NULL if either argument is\n          NULL. This function does not work properly\n          if the first argument contains a comma (,)\n          character.\n        ",
+        "Press CTRL+C to copy mysql> SELECT FIND_IN_SET('b','a,b,c,d');\n        -> 2"
+    ],
+    "Examples": [
+        "mysql> SELECT FIND_IN_SET('b','a,b,c,d');\n        -> 2"
+    ],
+    "Category": [
+        "Built-In Functions",
+        "String Functions"
+    ],
+    "Reference HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/string-functions.html#function_find-in-set"
+    ],
+    "Feature Type": [
+        "Function"
+    ]
+}

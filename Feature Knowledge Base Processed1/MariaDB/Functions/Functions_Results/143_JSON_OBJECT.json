@@ -1,0 +1,21 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/json_object/"
+    ],
+    "Title": [
+        "JSON_OBJECT"
+    ],
+    "Feature": [
+        "JSON_OBJECT([key, value[, key, value] ...])\n"
+    ],
+    "Description": [
+        "Returns a JSON object containing the given key/value pairs. The key/value list can be empty.",
+        "An error will occur if there are an odd number of arguments, or any key name is NULL."
+    ],
+    "Examples": [
+        "SELECT JSON_OBJECT(\"id\", 1, \"name\", \"Monty\");"
+    ],
+    "Category": [
+        "JSON Functions"
+    ]
+}

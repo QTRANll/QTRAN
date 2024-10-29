@@ -1,0 +1,27 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/distance-functions"
+    ],
+    "Title": [
+        "cosineDistance"
+    ],
+    "Feature": [
+        "cosineDistance(vector1, vector2)"
+    ],
+    "Description": [
+        "cosineDistance",
+        "Calculates the cosine distance between two vectors (the values of the tuples are the coordinates). The smaller the returned value is, the more similar are the vectors.",
+        "Syntax",
+        "cosineDistance(vector1, vector2)",
+        "Arguments",
+        "vector1 \u2014 First tuple. Tuple or Array.vector2 \u2014 Second tuple. Tuple or Array.",
+        "Returned value",
+        "Cosine of the angle between two vectors subtracted from one. Float."
+    ],
+    "Examples": [
+        "SELECT cosineDistance((1, 2), (2, 3));"
+    ],
+    "Category": [
+        "Distance Functions"
+    ]
+}

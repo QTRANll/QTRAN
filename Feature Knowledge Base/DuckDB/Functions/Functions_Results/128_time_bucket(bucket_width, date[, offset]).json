@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://duckdb.org/docs/sql/functions/date"
+    ],
+    "Title": [
+        "time_bucket(bucket_width, date[, offset])"
+    ],
+    "Feature": [
+        "time_bucket(bucket_width, date[, offset])"
+    ],
+    "Description": [
+        "Truncate date by the specified interval bucket_width. Buckets are offset by offset interval."
+    ],
+    "Examples": [
+        "time_bucket(INTERVAL '2 months', DATE '1992-04-20', INTERVAL '1 month')"
+    ],
+    "Category": [
+        "Date Functions"
+    ]
+}

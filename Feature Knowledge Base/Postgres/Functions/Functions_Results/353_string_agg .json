@@ -1,0 +1,19 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/current/functions-aggregate.html"
+    ],
+    "Title": [
+        "string_agg"
+    ],
+    "Feature": [
+        "string_agg ( value text, delimiter text ) → text",
+        "string_agg ( value bytea, delimiter bytea ORDER BY input_sort_columns ) → bytea"
+    ],
+    "Description": [
+        "Concatenates the non-null input values into a string. Each value after the first is preceded by the corresponding delimiter (if it's not null)."
+    ],
+    "Examples": [],
+    "Category": [
+        "Aggregate Functions"
+    ]
+}

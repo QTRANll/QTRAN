@@ -1,0 +1,55 @@
+{
+    "HTML": "https://mariadb.com//kb/en/column_check/",
+    "Title": "COLUMN_CHECK",
+    "Feature": [
+        "COLUMN_CHECK(dyncol_blob);\n"
+    ],
+    "Description": [
+        "Check if dyncol_blob is a valid packed dynamic columns blob. Return value of 1 means the blob is valid, return value of 0 means it is not.",
+        "Rationale:\nNormally, one works with valid dynamic column blobs. Functions like COLUMN_CREATE, COLUMN_ADD, COLUMN_DELETE always return valid dynamic column blobs. However, if a dynamic column blob is accidentally truncated, or transcoded from one character set to another, it will be corrupted. This function can be used to check if a value in a blob field is a valid dynamic column blob."
+    ],
+    "Examples": [],
+    "Category": [
+        "Dynamic Columns Functions"
+    ],
+    "Effective SQLs Refined": [],
+    "Ineffective SQLs Refined": [],
+    "Wrong Messages from Ineffective SQLs Refined": [],
+    "SQLs Generated1": [
+        {
+            "Example SQL": "SELECT COLUMN_CHECK(dyncol_blob);"
+        },
+        {
+            "Example SQL": "SELECT COLUMN_CHECK(@dyncol_blob);"
+        }
+    ],
+    "SQLs Generated Costs1": [
+        {
+            "Total Tokens": 370,
+            "Prompt Tokens": 349,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 6.494999999999999e-05
+        },
+        {
+            "Total Tokens": 520,
+            "Prompt Tokens": 499,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 8.744999999999998e-05
+        }
+    ],
+    "SQLs Generated ExecResults1": [
+        "None",
+        "[(None,)]"
+    ],
+    "SQLs Generated ExecTimes1": [
+        "0",
+        "0.0047512054443359375"
+    ],
+    "SQLs Generated ErrorMessages1": [
+        "(pymysql.err.OperationalError) (1054, \"Unknown column 'dyncol_blob' in 'field list'\")\n",
+        "None"
+    ],
+    "Effective SQLs Generated1": [
+        "SELECT COLUMN_CHECK(@dyncol_blob);"
+    ]
+}

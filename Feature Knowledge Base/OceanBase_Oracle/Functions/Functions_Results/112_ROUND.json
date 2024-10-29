@@ -1,0 +1,23 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000000823165"
+    ],
+    "Title": [
+        "ROUND"
+    ],
+    "Feature": [
+        "ROUND (numeric[,decimal])\n"
+    ],
+    "Description": [
+        "该函数返回参数 numeric 四舍五入后的值。",
+        "\n\n\n参数\n说明\n\n\n\n\nnumeric\n数值类型的（NUMBER、FLOAT、BINARY_FLOAT 和 BINARY_DOUBLE）表达式。\n\n\ndecimal\n\n\n如果 decimal 大于等于 0 则将 numeric 四舍五入到 decimal 位小数。\n如果 decimal 小于 0 则四舍五入到小数点向左第 decimal 位。\n当 decimal 不为整数时，截取 decimal 的整数部分。\n不指定 decimal 时，将 numeric 四舍五入到整数位。\n\n\n\n",
+        "不指定 decimal 时，返回类型与参数 numeric 的类型相同。",
+        "指定 decimal 时，返回类型为 NUMBER 数据类型。"
+    ],
+    "Examples": [
+        "obclient> SELECT ROUND(666.666,1),ROUND(666.666,-1),ROUND(666.666,2.1),ROUND(666.666) FROM DUAL;\n+------------------+-------------------+--------------------+----------------+\n| ROUND(666.666,1) | ROUND(666.666,-1) | ROUND(666.666,2.1) | ROUND(666.666) |\n+------------------+-------------------+--------------------+----------------+\n|            666.7 |               670 |             666.67 |            667 |\n+------------------+-------------------+--------------------+----------------+\n1 row in set\n"
+    ],
+    "Category": [
+        "Numeric Functions"
+    ]
+}

@@ -1,0 +1,25 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/bitmap-functions"
+    ],
+    "Title": [
+        "bitmapSubsetInRange"
+    ],
+    "Feature": [
+        "bitmapSubsetInRange(bitmap, range_start, range_end)"
+    ],
+    "Description": [
+        "bitmapSubsetInRange",
+        "Returns the subset of a bitmap with bits within a value interval.",
+        "Syntax",
+        "bitmapSubsetInRange(bitmap, range_start, range_end)",
+        "Arguments",
+        "bitmap \u2013 Bitmap object.range_start \u2013 Start of the range (inclusive). UInt32.range_end \u2013 End of the range (exclusive). UInt32."
+    ],
+    "Examples": [
+        "SELECT bitmapToArray(bitmapSubsetInRange(bitmapBuild([0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,100,200,500]), toUInt32(30), toUInt32(200))) AS res;"
+    ],
+    "Category": [
+        "Bitmap Functions"
+    ]
+}

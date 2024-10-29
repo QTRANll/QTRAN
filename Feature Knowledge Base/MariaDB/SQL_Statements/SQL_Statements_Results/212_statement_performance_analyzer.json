@@ -1,0 +1,21 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/statement_performance_analyzer/"
+    ],
+    "Title": [
+        "statement_performance_analyzer"
+    ],
+    "Feature": [
+        "statement_performance_analyzer(in_action,in_table, in_views)\n\n# in_action ENUM('snapshot', 'overall', 'delta', 'create_tmp', \n                 'create_table', 'save', 'cleanup')\n# in_table VARCHAR(129)\n# in_views SET ('with_runtimes_in_95th_percentile', 'analysis', \n                'with_errors_or_warnings', 'with_full_table_scans', \n                'with_sorting', 'with_temp_tables', 'custom')\n"
+    ],
+    "Description": [
+        "statement_performance_analyzer is a stored procedure available with the Sys Schema which returns a report on running statements.",
+        "The following options from the sys_config table impact the output:",
+        "statement_performance_analyzer.limit - maximum number of rows (default 100) returned for views that have no built-in limit.\nstatement_performance_analyzer.view - custom query/view to be used (default NULL). If the statement_performance_analyzer.limit configuration option is greater than 0, there can't be a LIMIT clause in the query/view definition\n",
+        "If the debug option is set (default OFF), the procedure will also produce debugging output."
+    ],
+    "Examples": [],
+    "Category": [
+        "Administrative SQL Statements"
+    ]
+}

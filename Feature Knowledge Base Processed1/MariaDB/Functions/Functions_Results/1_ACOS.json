@@ -1,0 +1,23 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/acos/"
+    ],
+    "Title": [
+        "ACOS"
+    ],
+    "Feature": [
+        "ACOS(X)\n"
+    ],
+    "Description": [
+        "Returns the arc cosine of X, that is, the value whose cosine is X.\nReturns NULL if X is not in the range -1 to 1."
+    ],
+    "Examples": [
+        "SELECT ACOS(1);",
+        "SELECT ACOS(1.0001);",
+        "SELECT ACOS(0);",
+        "SELECT ACOS(0.234);"
+    ],
+    "Category": [
+        "Numeric Functions"
+    ]
+}

@@ -1,0 +1,46 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/built-in-function-reference.html",
+        "https://dev.mysql.com/doc/refman/8.4/en/replication-functions.html",
+        "https://dev.mysql.com/doc/refman/8.4/en/replication-functions-async-failover.html",
+        "https://dev.mysql.com/doc/refman/8.4/en/loadable-function-reference.html"
+    ],
+    "Title": [
+        "14.1 Built-In Function and Operator Reference",
+        "14.18 Replication Functions",
+        "14.18.3 Asynchronous Replication Channel Failover Functions",
+        "14.2 Loadable Function Reference"
+    ],
+    "Feature": [
+        "asynchronous_connection_failover_delete_managed()"
+    ],
+    "Description": [
+        "Remove a managed group from a replication channel source list",
+        "\nasynchronous_connection_failover_delete_managed()\n",
+        "\n            Remove an entire managed group from the source list for a\n            replication channel. When you use this function, all the\n            replication source servers defined in the managed group are\n            removed from the channel's source list.\n          ",
+        "\n            Syntax:\n          ",
+        "Press CTRL+C to copy asynchronous_connection_failover_delete_managed(channel, managed_name)",
+        "\n            Arguments:\n",
+        "\n\nchannel: The replication\n                channel for which this replication source server was\n                part of the source list.\n              \nmanaged_name: The identifier\n                for the managed group that the server is a part of. For\n                the GroupReplication managed service,\n                the identifier is the value of the\n                group_replication_group_name\n                system variable.\n\n",
+        "\n            Return value:\n          ",
+        "\n            A string containing the result of the operation, for example\n            whether it was successful or not.\n          ",
+        "\n            Example:\n          ",
+        "Press CTRL+C to copy SELECT asynchronous_connection_failover_delete_managed('channel2', 'aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa');\n+-----------------------------------------------------------------------------------------------------+\n| asynchronous_connection_failover_delete_managed('channel2', 'aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa') |\n+-----------------------------------------------------------------------------------------------------+\n| Source managed configuration details successfully deleted.                                          |\n+-----------------------------------------------------------------------------------------------------+",
+        "\n            For more information, see\n            Section\u00a019.4.9, \u201cSwitching Sources and Replicas with Asynchronous Connection Failover\u201d.\n          "
+    ],
+    "Examples": [
+        "SELECT asynchronous_connection_failover_delete_managed('channel2', 'aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa');\n+-----------------------------------------------------------------------------------------------------+\n| asynchronous_connection_failover_delete_managed('channel2', 'aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa') |\n+-----------------------------------------------------------------------------------------------------+\n| Source managed configuration details successfully deleted.                                          |\n+-----------------------------------------------------------------------------------------------------+"
+    ],
+    "Category": [
+        "Built-In Functions",
+        "Replication Functions",
+        "Replication Functions",
+        "Loadable Functions"
+    ],
+    "Reference HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/replication-functions-async-failover.html#function_asynchronous-connection-failover-delete-managed"
+    ],
+    "Feature Type": [
+        "Function"
+    ]
+}

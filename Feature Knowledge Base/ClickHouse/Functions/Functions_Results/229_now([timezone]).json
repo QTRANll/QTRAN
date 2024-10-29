@@ -1,0 +1,29 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/date-time-functions"
+    ],
+    "Title": [
+        "now"
+    ],
+    "Feature": [
+        "now([timezone])"
+    ],
+    "Description": [
+        "now",
+        "Returns the current date and time at the moment of query analysis. The function is a constant expression.",
+        "Alias: current_timestamp.",
+        "Syntax",
+        "now([timezone])",
+        "Arguments",
+        "timezone \u2014 Timezone name for the returned value (optional). String.",
+        "Returned value",
+        "Current date and time. DateTime."
+    ],
+    "Examples": [
+        "SELECT now();",
+        "SELECT now('Asia/Istanbul');"
+    ],
+    "Category": [
+        "Dates and Times Functions"
+    ]
+}

@@ -1,0 +1,23 @@
+{
+    "HTML": [
+        "https://docs.pingcap.com//zh/tidb/stable/sql-statement-create-database"
+    ],
+    "Title": [
+        "CREATE DATABASE"
+    ],
+    "Feature": [
+        "CreateDatabaseStmt ::=\n    'CREATE' 'DATABASE' IfNotExists DBName DatabaseOptionListOpt\n\nIfNotExists ::=\n    ( 'IF' 'NOT' 'EXISTS' )?\n\nDBName ::=\n    Identifier\n\nDatabaseOptionListOpt ::=\n    DatabaseOptionList?\n\nDatabaseOptionList ::=\n    DatabaseOption ( ','? DatabaseOption )*\n\nDatabaseOption ::=\n    DefaultKwdOpt ( CharsetKw '='? CharsetName | 'COLLATE' '='? CollationName | 'ENCRYPTION' '='? EncryptionOpt )\n|   DefaultKwdOpt PlacementPolicyOption\n\nPlacementPolicyOption ::=\n    \"PLACEMENT\" \"POLICY\" EqOpt PolicyName\n|   \"PLACEMENT\" \"POLICY\" (EqOpt | \"SET\") \"DEFAULT\"\n"
+    ],
+    "Description": [
+        "CREATE DATABASE \u8bed\u53e5\u7528\u4e8e\u5728 TiDB \u4e0a\u521b\u5efa\u65b0\u6570\u636e\u5e93\u3002\u6309\u7167 SQL \u6807\u51c6\uff0c\u201c\u6570\u636e\u5e93\u201d\u4e00\u8bcd\u5728 MySQL \u672f\u8bed\u4e2d\u6700\u63a5\u8fd1 \u201cschema\u201d\u3002"
+    ],
+    "Examples": [
+        "CREATE DATABASE mynewdatabase;\n",
+        "USE mynewdatabase;\n",
+        "CREATE TABLE t1 (a int);\n",
+        "SHOW TABLES;\n"
+    ],
+    "Category": [
+        "Schema \u7ba1\u7406\u4e0e\u6570\u636e\u5b9a\u4e49\u8bed\u53e5 (DDL)"
+    ]
+}

@@ -1,0 +1,46 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/built-in-function-reference.html",
+        "https://dev.mysql.com/doc/refman/8.4/en/replication-functions.html",
+        "https://dev.mysql.com/doc/refman/8.4/en/group-replication-functions.html",
+        "https://dev.mysql.com/doc/refman/8.4/en/loadable-function-reference.html"
+    ],
+    "Title": [
+        "14.1 Built-In Function and Operator Reference",
+        "14.18 Replication Functions",
+        "14.18.1 Group Replication Functions",
+        "14.2 Loadable Function Reference"
+    ],
+    "Feature": [
+        "group_replication_set_write_concurrency()"
+    ],
+    "Description": [
+        "Set maximum number of consensus instances that can be executed in",
+        "\ngroup_replication_set_write_concurrency()\n",
+        "\n              Configures the maximum number of consensus instances that\n              a group can execute in parallel. The\n              GROUP_REPLICATION_ADMIN\n              privilege is required to use this function.\n            ",
+        "\n              Syntax:\n            ",
+        "Press CTRL+C to copy STRING group_replication_set_write_concurrency(instances)",
+        "\n              Arguments:\n",
+        "\n\nmembers: Sets the maximum\n                  number of consensus instances that a group can execute\n                  in parallel. Default value is 10, valid values are\n                  integers in the range of 10 to 200.\n\n",
+        "\n              Return value:\n            ",
+        "\n              Any resulting error as a string.\n            ",
+        "\n              Example:\n            ",
+        "Press CTRL+C to copy SELECT group_replication_set_write_concurrency(instances);",
+        "\n              For more information, see\n              Section\u00a020.5.1.3, \u201cUsing Group Replication Group Write Consensus\u201d.\n"
+    ],
+    "Examples": [
+        "SELECT group_replication_set_write_concurrency(instances);"
+    ],
+    "Category": [
+        "Built-In Functions",
+        "Replication Functions",
+        "Replication Functions",
+        "Loadable Functions"
+    ],
+    "Reference HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/group-replication-functions-for-maximum-consensus.html#function_group-replication-set-write-concurrency"
+    ],
+    "Feature Type": [
+        "Function"
+    ]
+}

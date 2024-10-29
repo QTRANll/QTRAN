@@ -1,0 +1,38 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/built-in-function-reference.html",
+        "https://dev.mysql.com/doc/refman/8.4/en/performance-schema-functions.html"
+    ],
+    "Title": [
+        "14.1 Built-In Function and Operator Reference",
+        "14.21 Performance Schema Functions"
+    ],
+    "Feature": [
+        "PS_THREAD_ID(connection_id)"
+    ],
+    "Description": [
+        "Performance Schema thread ID for given thread",
+        "\nPS_THREAD_ID(connection_id)\n",
+        "\n          Given a connection ID, returns a BIGINT\n          UNSIGNED value representing the Performance Schema\n          thread ID assigned to the connection ID, or\n          NULL if no thread ID exists for the\n          connection ID. The latter can occur for threads that are not\n          instrumented, or if connection_id\n          is NULL.\n        ",
+        "\n          The connection ID argument is a value of the type given in the\n          PROCESSLIST_ID column of the Performance\n          Schema threads table or the\n          Id column of SHOW\n          PROCESSLIST output.\n        ",
+        "\n          The thread ID return value is a value of the type given in the\n          THREAD_ID column of Performance Schema\n          tables.\n        ",
+        "\n          Performance Schema configuration affects\n          PS_THREAD_ID() operation as\n          follows. (These remarks also apply to\n          PS_CURRENT_THREAD_ID().)\n",
+        "\n\n              Disabling the thread_instrumentation\n              consumer disables statistics from being collected and\n              aggregated at the thread level, but has no effect on\n              PS_THREAD_ID().\n            \n              If\n              performance_schema_max_thread_instances\n              is not 0, the Performance Schema allocates memory for\n              thread statistics and assigns an internal ID to each\n              thread for which instance memory is available. If there\n              are threads for which instance memory is not available,\n              PS_THREAD_ID() returns\n              NULL; in this case,\n              Performance_schema_thread_instances_lost\n              is nonzero.\n            \n              If\n              performance_schema_max_thread_instances\n              is 0, the Performance Schema allocates no thread memory\n              and PS_THREAD_ID() returns\n              NULL.\n            \n              If the Performance Schema itself is disabled,\n              PS_THREAD_ID() produces an\n              error.\n\n",
+        "Press CTRL+C to copy mysql> SELECT PS_THREAD_ID(6);\n+-----------------+\n| PS_THREAD_ID(6) |\n+-----------------+\n|              45 |\n+-----------------+",
+        "\nPS_THREAD_ID() may be used\n          instead of the sys schema\n          ps_thread_id() function, keeping\n          in mind this difference:\n",
+        "\n\n              With an argument of NULL,\n              sys.ps_thread_id() returns\n              the thread ID for the current connection, whereas\n              PS_THREAD_ID() returns\n              NULL. To obtain the current connection\n              thread ID, use\n              PS_CURRENT_THREAD_ID()\n              instead.\n\n"
+    ],
+    "Examples": [
+        "mysql> SELECT PS_THREAD_ID(6);\n+-----------------+\n| PS_THREAD_ID(6) |\n+-----------------+\n|              45 |\n+-----------------+"
+    ],
+    "Category": [
+        "Built-In Functions",
+        "Performance Schema Functions"
+    ],
+    "Reference HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/performance-schema-functions.html#function_ps-thread-id"
+    ],
+    "Feature Type": [
+        "Function"
+    ]
+}

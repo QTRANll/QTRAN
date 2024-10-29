@@ -1,0 +1,27 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/other-functions"
+    ],
+    "Title": [
+        "getSubcolumn"
+    ],
+    "Feature": [
+        "getSubcolumn(col_name, subcol_name)"
+    ],
+    "Description": [
+        "getSubcolumn",
+        "Takes a table expression or identifier and constant string with the name of the sub-column, and returns the requested sub-column extracted from the expression.",
+        "Syntax",
+        "getSubcolumn(col_name, subcol_name)",
+        "Arguments",
+        "col_name \u2014 Table expression or identifier. Expression, Identifier.subcol_name \u2014 The name of the sub-column. String.",
+        "Returned value",
+        "Returns the extracted sub-column."
+    ],
+    "Examples": [
+        "CREATE TABLE t_arr (arr Array(Tuple(subcolumn1 UInt32, subcolumn2 String))) ENGINE = MergeTree ORDER BY tuple();INSERT INTO t_arr VALUES ([(1, 'Hello'), (2, 'World')]), ([(3, 'This'), (4, 'is'), (5, 'subcolumn')]);SELECT getSubcolumn(arr, 'subcolumn1'), getSubcolumn(arr, 'subcolumn2') FROM t_arr;"
+    ],
+    "Category": [
+        "Other Functions"
+    ]
+}

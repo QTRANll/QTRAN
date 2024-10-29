@@ -1,0 +1,28 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/geo/h3"
+    ],
+    "Title": [
+        "h3HexRing"
+    ],
+    "Feature": [
+        "h3HexRing(index, k)"
+    ],
+    "Description": [
+        "h3HexRing",
+        "Returns the indexes of the hexagonal ring centered at the provided origin h3Index and length k.",
+        "Returns 0 if no pentagonal distortion was encountered.",
+        "Syntax",
+        "h3HexRing(index, k)",
+        "Parameter",
+        "index \u2014 Hexagon index number that represents the origin. UInt64.k \u2014 Distance. UInt64.",
+        "Returned values",
+        "Array of H3 indexes. Array(UInt64)."
+    ],
+    "Examples": [
+        " SELECT h3HexRing(590080540275638271, toUInt16(1)) AS hexRing;"
+    ],
+    "Category": [
+        "Geo Functions"
+    ]
+}

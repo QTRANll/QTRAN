@@ -1,0 +1,27 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/date-time-functions"
+    ],
+    "Title": [
+        "timeDiff"
+    ],
+    "Feature": [
+        "timeDiff(first_datetime, second_datetime)"
+    ],
+    "Description": [
+        "timeDiff",
+        "Returns the difference between two dates or dates with time values. The difference is calculated in units of seconds. It is same as dateDiff and was added only for MySQL support. dateDiff is preferred.",
+        "Syntax",
+        "timeDiff(first_datetime, second_datetime)",
+        "*Arguments**",
+        "first_datetime \u2014 A DateTime/DateTime64 type const value or an expression . DateTime/DateTime64 typessecond_datetime \u2014 A DateTime/DateTime64 type const value or an expression . DateTime/DateTime64 types",
+        "Returned value",
+        "The difference between two dates or dates with time values in seconds."
+    ],
+    "Examples": [
+        "timeDiff(toDateTime64('1927-01-01 00:00:00', 3), toDate32('1927-01-02'));"
+    ],
+    "Category": [
+        "Dates and Times Functions"
+    ]
+}

@@ -1,0 +1,27 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/random-functions"
+    ],
+    "Title": [
+        "randUniform"
+    ],
+    "Feature": [
+        "randUniform(min, max)"
+    ],
+    "Description": [
+        "randUniform",
+        "Returns a random Float64 drawn uniformly from interval [min, max].",
+        "Syntax",
+        "randUniform(min, max)",
+        "Arguments",
+        "min - Float64 - left boundary of the range,max - Float64 - right boundary of the range.",
+        "Returned value",
+        "A random number of type Float64."
+    ],
+    "Examples": [
+        "SELECT randUniform(5.5, 10) FROM numbers(5)"
+    ],
+    "Category": [
+        "Random Numbers Functions"
+    ]
+}

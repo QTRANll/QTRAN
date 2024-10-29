@@ -1,0 +1,23 @@
+{
+    "HTML": [
+        "https://docs.pingcap.com/zh/tidb/stable/string-functions#elt"
+    ],
+    "Title": [
+        "ELT()"
+    ],
+    "Feature": [
+        "ELT()"
+    ],
+    "Description": [
+        "ELT()",
+        "ELT() \u51fd\u6570\u8fd4\u56de\u7d22\u5f15\u53f7\u5bf9\u5e94\u7684\u5143\u7d20\u3002",
+        "SELECT ELT(3, 'This', 'is', 'TiDB');\n",
+        "+------------------------------+\n| ELT(3, 'This', 'is', 'TiDB') |\n+------------------------------+\n| TiDB                         |\n+------------------------------+\n1 row in set (0.00 sec)\n"
+    ],
+    "Examples": [
+        "SELECT ELT(3, 'This', 'is', 'TiDB');\n"
+    ],
+    "Category": [
+        "String Functions"
+    ]
+}

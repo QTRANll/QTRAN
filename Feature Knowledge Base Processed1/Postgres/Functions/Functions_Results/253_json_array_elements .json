@@ -1,0 +1,21 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/current/functions-json.html"
+    ],
+    "Title": [
+        "json_array_elements"
+    ],
+    "Feature": [
+        "json_array_elements ( json ) → setof json",
+        "jsonb_array_elements ( jsonb ) → setof jsonb"
+    ],
+    "Description": [
+        "Expands the top-level JSON array into a set of JSON values."
+    ],
+    "Examples": [
+        "select * from json_array_elements('[1,true, [2,false]]') →"
+    ],
+    "Category": [
+        "JSON Functions and Operators"
+    ]
+}

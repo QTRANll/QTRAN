@@ -1,0 +1,21 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/table-functions/urlCluster"
+    ],
+    "Title": [
+        "Globs in URL"
+    ],
+    "Feature": [
+        "Globs in URL"
+    ],
+    "Description": [
+        "Globs in URL",
+        "Patterns in curly brackets { } are used to generate a set of shards or to specify failover addresses. Supported pattern types and examples see in the description of the remote function.\nCharacter | inside patterns is used to specify failover addresses. They are iterated in the same order as listed in the pattern. The number of generated addresses is limited by glob_expansion_max_elements setting.",
+        "See Also",
+        "HDFS engineURL table function"
+    ],
+    "Examples": [],
+    "Category": [
+        "Table Functions"
+    ]
+}

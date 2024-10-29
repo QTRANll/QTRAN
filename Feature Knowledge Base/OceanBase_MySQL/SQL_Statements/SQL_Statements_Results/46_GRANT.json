@@ -1,0 +1,26 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000001053467"
+    ],
+    "Title": [
+        "GRANT"
+    ],
+    "Feature": [
+        "GRANT priv_type[(column_name_list)] [, priv_type[(column_name_list)] ...]\n    ON priv_level \n    TO {user [, user...]} \n    [WITH GRANT OPTION];\n\ncolumn_name_list:\n    column_name [, column_name ...]\n\nuser:\n      user_or_role\n    | user_name IDENTIFIED [WITH auth_plugin] BY password \n    | user_name IDENTIFIED [WITH auth_plugin] BY PASSWORD password\n\nuser_or_role:\n    user_name | role_name\nGRANT role_name [, role_name ...]\n    TO user_or_role [, user_or_role ...]\n    [WITH ADMIN OPTION];\n\nuser_or_role:\n    user_name | role_name\n"
+    ],
+    "Description": [
+        "该语句用于给指定的用户或角色授予相应的权限，或者将角色授予用户或角色。",
+        "\n\n\n参数\n描述\n\n\n\n\npriv_type\n指定授予的权限类型，可以授予多个权限，多个权限间使用英文逗号（,）隔开。具体的权限类型及其说明请参见 MySQL 模式下的权限分类。\n\n\ncolumn_name_list\n可选项，用于授予列级权限的列表，授予的权限仅作用于列出的列上。如果不指定，则权限适用于整个表或对象。详细介绍信息，参见 直接授予权限。\n\n\npriv_level\n指定授予权限的层级。可以指定在所有数据库和所有表上生效（*.*）、指定数据库或指定表生效（db_name.*，*.table_name）、或者特定的数据库中特定的表生效（db_name.table_name）。\n\n\nuser\n指定要授予权限的用户，可以是一个或多个用户，多个用户间使用英文逗号（,）隔开。如果用户不存在，该语句会直接创建用户。\n\n\nauth_plugin\n用于指定用户身份验证的方式，目前仅支持 mysql_native_password 身份验证插件。\n\n\nBY password\n为待授权的用户指定一个密码，此处密码为明文，存入 mysql.user 表后，服务器端会变为密文存储下来。如果密码中包含特殊字符 ~!@#%^&*_-+=`|(){}[]:;‘,.?/，需使用英文引号（’’ 或 \"\"）包含。\n\n\nBY PASSWORD password\n为待授权的用户指定一个密码，此处密码为密文，将直接存入 mysql.user 表。\n\n\nWITH GRANT OPTION\n指定权限是否允许转授，取消授权时级联。\n\n\nrole_name\n指定角色的名称。\n\n\nWITH ADMIN OPTION\n指定角色权限是否允许转授，取消授权时不级联。\n\n\n"
+    ],
+    "Examples": [
+        "GRANT CREATE VIEW ON db1.* TO user1 WITH GRANT OPTION;\n",
+        "GRANT CREATE ON db1.* TO user1 IDENTIFIED by '********';\n",
+        "GRANT CREATE ON db1.* TO user2 IDENTIFIED by '********';\n",
+        "GRANT SELECT(col1) ON test.tbl1 TO user001;\n",
+        "GRANT role001 TO role002 WITH ADMIN OPTION;\n",
+        "GRANT role001 TO user001 WITH ADMIN OPTION;\n"
+    ],
+    "Category": [
+        "No Category"
+    ]
+}

@@ -1,0 +1,35 @@
+{
+    "HTML": "https://mariadb.com//kb/en/log10/",
+    "Title": "LOG10",
+    "Feature": [
+        "LOG10(X)\n"
+    ],
+    "Description": [
+        "Returns the base-10 logarithm of X."
+    ],
+    "Examples": [
+        "SELECT LOG10(2);\n+-------------------+\n| LOG10(2)          |\n+-------------------+\n| 0.301029995663981 |\n+-------------------+\n\nSELECT LOG10(100);\n+------------+\n| LOG10(100) |\n+------------+\n|          2 |\n+------------+\n\nSELECT LOG10(-100);\n+-------------+\n| LOG10(-100) |\n+-------------+\n|        NULL |\n+-------------+\n"
+    ],
+    "Category": [
+        "Numeric Functions"
+    ],
+    "Effective SQLs Refined": [
+        "SELECT LOG10(2);",
+        "SELECT LOG10(100);",
+        "SELECT LOG10(-100);"
+    ],
+    "Ineffective SQLs Refined": [],
+    "Wrong Messages from Ineffective SQLs Refined": [],
+    "SQLs Generated1": [],
+    "SQLs Generated Costs1": [],
+    "SQLs Generated ExecResults1": [],
+    "SQLs Generated ExecTimes1": [],
+    "SQLs Generated ErrorMessages1": [],
+    "Effective SQLs Generated1": [],
+    "SQLs Generated2": [],
+    "SQLs Generated Costs2": [],
+    "SQLs Generated ExecResults2": [],
+    "SQLs Generated ExecTimes2": [],
+    "SQLs Generated ErrorMessages2": [],
+    "Effective SQLs Generated2": []
+}

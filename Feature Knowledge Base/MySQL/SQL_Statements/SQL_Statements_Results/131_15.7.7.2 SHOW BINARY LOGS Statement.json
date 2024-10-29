@@ -1,0 +1,22 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/show-binary-logs.html"
+    ],
+    "Title": [
+        "15.7.7.2 SHOW BINARY LOGS Statement"
+    ],
+    "Feature": [
+        "SHOW BINARY LOGS"
+    ],
+    "Description": [
+        "\n        Lists the binary log files on the server. This statement is used\n        as part of the procedure described in\n        Section\u00a015.4.1.1, \u201cPURGE BINARY LOGS Statement\u201d, that shows how to determine\n        which logs can be purged. SHOW BINARY\n        LOGS requires the REPLICATION\n        CLIENT privilege (or the deprecated\n        SUPER privilege).\n      ",
+        "\n        Encrypted binary log files have a 512-byte file header that\n        stores information required for encryption and decryption of the\n        file. This is included in the file size displayed by\n        SHOW BINARY LOGS. The\n        Encrypted column shows whether or not the\n        binary log file is encrypted. Binary log encryption is active if\n        binlog_encryption=ON is set for\n        the server. Existing binary log files are not encrypted or\n        decrypted if binary log encryption is activated or deactivated\n        while the server is running.\n      ",
+        "Press CTRL+C to copy mysql> SHOW BINARY LOGS;\n+---------------+-----------+-----------+\n| Log_name      | File_size | Encrypted |\n+---------------+-----------+-----------+\n| binlog.000015 |    724935 |       Yes |\n| binlog.000016 |    733481 |       Yes |\n+---------------+-----------+-----------+"
+    ],
+    "Examples": [
+        "mysql> SHOW BINARY LOGS;\n+---------------+-----------+-----------+\n| Log_name      | File_size | Encrypted |\n+---------------+-----------+-----------+\n| binlog.000015 |    724935 |       Yes |\n| binlog.000016 |    733481 |       Yes |\n+---------------+-----------+-----------+"
+    ],
+    "Category": [
+        "Database Administration Statements"
+    ]
+}

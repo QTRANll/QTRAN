@@ -1,0 +1,26 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/string-replace-functions"
+    ],
+    "Title": [
+        "replaceRegexpOne"
+    ],
+    "Feature": [
+        "replaceRegexpOne(haystack, pattern, replacement)"
+    ],
+    "Description": [
+        "replaceRegexpOne",
+        "Replaces the first occurrence of the substring matching the regular expression pattern (in re2 syntax) in haystack by the replacement string.",
+        "replacement can contain substitutions \\0-\\9.\nSubstitutions \\1-\\9 correspond to the 1st to 9th capturing group (submatch), substitution \\0 corresponds to the entire match.",
+        "To use a verbatim \\ character in the pattern or replacement strings, escape it using \\.\nAlso keep in mind that string literals require extra escaping.",
+        "Syntax",
+        "replaceRegexpOne(haystack, pattern, replacement)"
+    ],
+    "Examples": [
+        "SELECT DISTINCT    EventDate,    replaceRegexpOne(toString(EventDate), '(\\\\d{4})-(\\\\d{2})-(\\\\d{2})', '\\\\2/\\\\3/\\\\1') AS resFROM test.hitsLIMIT 7FORMAT TabSeparated",
+        "SELECT replaceRegexpOne('Hello, World!', '.*', '\\\\0\\\\0\\\\0\\\\0\\\\0\\\\0\\\\0\\\\0\\\\0\\\\0') AS res"
+    ],
+    "Category": [
+        "Replacing in Strings Functions"
+    ]
+}

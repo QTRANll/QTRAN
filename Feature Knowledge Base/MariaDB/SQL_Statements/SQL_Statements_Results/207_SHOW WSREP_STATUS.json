@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/show-wsrep_status/"
+    ],
+    "Title": [
+        "SHOW WSREP_STATUS"
+    ],
+    "Feature": [
+        "SHOW WSREP_STATUS\n"
+    ],
+    "Description": [
+        "The SHOW WSREP_STATUS statement returns Galera node and cluster status information. It returns the same information as found in the information_schema.WSREP_STATUS table. Only users with the SUPER privilege can access this information."
+    ],
+    "Examples": [
+        "SHOW WSREP_STATUS;\n+------------+-------------+----------------+--------------+\n| Node_Index | Node_Status | Cluster_Status | Cluster_Size |\n+------------+-------------+----------------+--------------+\n|          0 | Synced      | Primary        |            3 |\n+------------+-------------+----------------+--------------+\n"
+    ],
+    "Category": [
+        "Administrative SQL Statements"
+    ]
+}

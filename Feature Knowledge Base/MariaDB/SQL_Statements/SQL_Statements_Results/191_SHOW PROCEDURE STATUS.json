@@ -1,0 +1,22 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/show-procedure-status/"
+    ],
+    "Title": [
+        "SHOW PROCEDURE STATUS"
+    ],
+    "Feature": [
+        "SHOW PROCEDURE STATUS\n    [LIKE 'pattern' | WHERE expr]\n"
+    ],
+    "Description": [
+        "This statement is a MariaDB extension. It returns characteristics of a stored\nprocedure, such as the database, name, type, creator, creation and modification\ndates, and character set information. A similar statement, \n SHOW FUNCTION STATUS, displays\ninformation about stored functions.",
+        "The LIKE clause, if present, indicates which procedure or\nfunction names to match. The WHERE and LIKE clauses can be given to select rows using more general conditions, as discussed in Extended SHOW.",
+        "The ROUTINES table in the INFORMATION_SCHEMA database contains more detailed information."
+    ],
+    "Examples": [
+        "SHOW PROCEDURE STATUS LIKE 'p1'\\G\n*************************** 1. row ***************************\n                  Db: test\n                Name: p1\n                Type: PROCEDURE\n             Definer: root@localhost\n            Modified: 2010-08-23 13:23:03\n             Created: 2010-08-23 13:23:03\n       Security_type: DEFINER\n             Comment: \ncharacter_set_client: latin1\ncollation_connection: latin1_swedish_ci\n  Database Collation: latin1_swedish_ci\n"
+    ],
+    "Category": [
+        "Administrative SQL Statements"
+    ]
+}

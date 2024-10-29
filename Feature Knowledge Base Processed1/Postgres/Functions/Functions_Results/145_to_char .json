@@ -1,0 +1,22 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/current/functions-formatting.html"
+    ],
+    "Title": [
+        "to_char"
+    ],
+    "Feature": [
+        "to_char ( numeric_type, text ) → text"
+    ],
+    "Description": [
+        "Converts number to string according to the given format; available for integer, bigint, numeric, real, double precision."
+    ],
+    "Examples": [
+        "to_char(125, '999') → 125",
+        "to_char(125.8::real, '999D9') → 125.8",
+        "to_char(-125.8, '999D99S') → 125.80-"
+    ],
+    "Category": [
+        "Data Type Formatting Functions"
+    ]
+}

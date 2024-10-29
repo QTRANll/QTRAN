@@ -1,0 +1,29 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/aggregate-functions/reference/exponentialTimeDecayedSum"
+    ],
+    "Title": [
+        "exponentialTimeDecayedSum"
+    ],
+    "Feature": [
+        "exponentialTimeDecayedSum(x)(v, t)"
+    ],
+    "Description": [
+        "exponentialTimeDecayedSum",
+        "Returns the sum of exponentially smoothed moving average values of a time series at the index t in time.",
+        "Syntax",
+        "exponentialTimeDecayedSum(x)(v, t)",
+        "Arguments",
+        "v \u2014 Value. Integer, Float or Decimal.t \u2014 Time. Integer, Float or Decimal, DateTime, DateTime64.",
+        "Parameters",
+        "x \u2014 Half-life period. Integer, Float or Decimal.",
+        "Returned values",
+        "Returns the sum of exponentially smoothed moving average values at the given point in time. Float64."
+    ],
+    "Examples": [
+        "SELECT    value,    time,    round(exp_smooth, 3),    bar(exp_smooth, 0, 10, 50) AS barFROM    (    SELECT    (number = 0) OR (number >= 25) AS value,    number AS time,    exponentialTimeDecayedSum(10)(value, time) OVER (ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW) AS exp_smooth    FROM numbers(50)    );"
+    ],
+    "Category": [
+        "Aggregate Functions"
+    ]
+}

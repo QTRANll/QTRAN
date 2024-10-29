@@ -1,0 +1,21 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/mlinefromwkb/"
+    ],
+    "Title": [
+        "MLineFromWKB"
+    ],
+    "Feature": [
+        "MLineFromWKB(wkb[,srid])\nMultiLineStringFromWKB(wkb[,srid])\n"
+    ],
+    "Description": [
+        "Constructs a MULTILINESTRING value using its WKB  representation and SRID.",
+        "MLineFromWKB() and MultiLineStringFromWKB() are synonyms."
+    ],
+    "Examples": [
+        "SELECT ST_AsText(MLineFromWKB(@g));"
+    ],
+    "Category": [
+        "Geographic Functions"
+    ]
+}

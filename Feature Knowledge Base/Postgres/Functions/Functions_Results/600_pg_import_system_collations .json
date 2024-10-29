@@ -1,0 +1,18 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/current/functions-admin.html"
+    ],
+    "Title": [
+        "pg_import_system_collations"
+    ],
+    "Feature": [
+        "pg_import_system_collations ( schema regnamespace ) → integer"
+    ],
+    "Description": [
+        "Adds collations to the system catalog pg_collation based on all the locales it finds in the operating system. This is what initdb uses; see Section 23.2.2 for more details. If additional locales are installed into the operating system later on, this function can be run again to add collations for the new locales. Locales that match existing entries in pg_collation will be skipped. (But collation objects based on locales that are no longer present in the operating system are not removed by this function.) The schema parameter would typically be pg_catalog, but that is not a requirement; the collations could be installed into some other schema as well. The function returns the number of new collation objects it created. Use of this function is restricted to superusers."
+    ],
+    "Examples": [],
+    "Category": [
+        "System Administration Functions"
+    ]
+}

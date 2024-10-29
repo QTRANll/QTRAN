@@ -1,0 +1,140 @@
+{
+    "HTML": "https://mariadb.com//kb/en/numgeometries/",
+    "Title": "ST_NUMGEOMETRIES",
+    "Feature": [
+        "ST_NumGeometries(gc)\nNumGeometries(gc)\n"
+    ],
+    "Description": [
+        "Returns the number of geometries in the GeometryCollection gc.",
+        "ST_NumGeometries() and NumGeometries() are synonyms."
+    ],
+    "Examples": [
+        "SET @gc = 'GeometryCollection(Point(1 1),LineString(2 2, 3 3))';\n\nSELECT NUMGEOMETRIES(GeomFromText(@gc));\n+----------------------------------+\n| NUMGEOMETRIES(GeomFromText(@gc)) |\n+----------------------------------+\n|                                2 |\n+----------------------------------+\n"
+    ],
+    "Category": [
+        "Geographic Functions"
+    ],
+    "Effective SQLs Refined": [],
+    "Ineffective SQLs Refined": [],
+    "Wrong Messages from Ineffective SQLs Refined": [],
+    "SQLs Generated1": [
+        {
+            "Example SQL": "SELECT ST_NumGeometries(gc);"
+        },
+        {
+            "Example SQL": "SELECT ST_NumGeometries(geometry_column) FROM your_table;"
+        },
+        {
+            "Example SQL": "SELECT ST_NumGeometries(geometry_column);"
+        },
+        {
+            "Example SQL": "SELECT ST_NumGeometries(geometry);"
+        },
+        {
+            "Example SQL": "SELECT ST_NumGeometries(geometry_collection);"
+        }
+    ],
+    "SQLs Generated Costs1": [
+        {
+            "Total Tokens": 301,
+            "Prompt Tokens": 280,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 5.46e-05
+        },
+        {
+            "Total Tokens": 457,
+            "Prompt Tokens": 431,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 8.025e-05
+        },
+        {
+            "Total Tokens": 615,
+            "Prompt Tokens": 592,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 0.00010259999999999999
+        },
+        {
+            "Total Tokens": 768,
+            "Prompt Tokens": 746,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 0.0001251
+        },
+        {
+            "Total Tokens": 921,
+            "Prompt Tokens": 898,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 0.0001485
+        }
+    ],
+    "SQLs Generated ExecResults1": [
+        "None",
+        "None",
+        "None",
+        "None",
+        "None"
+    ],
+    "SQLs Generated ExecTimes1": [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+    ],
+    "SQLs Generated ErrorMessages1": [
+        "(pymysql.err.OperationalError) (1054, \"Unknown column 'gc' in 'field list'\")\n",
+        "(pymysql.err.ProgrammingError) (1146, \"Table 'PINOLO_MariaDB.your_table' doesn't exist\")\n",
+        "(pymysql.err.OperationalError) (1054, \"Unknown column 'geometry_column' in 'field list'\")\n",
+        "(pymysql.err.OperationalError) (1054, \"Unknown column 'geometry' in 'field list'\")\n",
+        "(pymysql.err.OperationalError) (1054, \"Unknown column 'geometry_collection' in 'field list'\")\n"
+    ],
+    "Effective SQLs Generated1": [],
+    "SQLs Generated2": [
+        {
+            "Example SQL": "SELECT ST_NumGeometries(geometry_column) FROM dialect_recognize_table;"
+        },
+        {
+            "Example SQL": "SELECT ST_NumGeometries(geometry_column) FROM dialect_recognize_table WHERE geometry_column IS NOT NULL;"
+        },
+        {
+            "Example SQL": "SELECT ST_NumGeometries(NULL) FROM dialect_recognize_table;"
+        }
+    ],
+    "SQLs Generated Costs2": [
+        {
+            "Total Tokens": 759,
+            "Prompt Tokens": 730,
+            "Completion Tokens": 29,
+            "Total Cost (USD)": 0.0001269
+        },
+        {
+            "Total Tokens": 925,
+            "Prompt Tokens": 890,
+            "Completion Tokens": 35,
+            "Total Cost (USD)": 0.0001545
+        },
+        {
+            "Total Tokens": 1083,
+            "Prompt Tokens": 1056,
+            "Completion Tokens": 27,
+            "Total Cost (USD)": 0.0001746
+        }
+    ],
+    "SQLs Generated ExecResults2": [
+        "None",
+        "None",
+        "[(None,), (None,), (None,), (None,), (None,)]"
+    ],
+    "SQLs Generated ExecTimes2": [
+        "0",
+        "0",
+        "0.005322933197021484"
+    ],
+    "SQLs Generated ErrorMessages2": [
+        "(pymysql.err.OperationalError) (1054, \"Unknown column 'geometry_column' in 'field list'\")\n",
+        "(pymysql.err.OperationalError) (1054, \"Unknown column 'geometry_column' in 'field list'\")\n",
+        "None"
+    ],
+    "Effective SQLs Generated2": [
+        "SELECT ST_NumGeometries(NULL) FROM dialect_recognize_table;"
+    ]
+}

@@ -1,0 +1,168 @@
+{
+    "HTML": "https://mariadb.com//kb/en/next-value-for-sequence_name/",
+    "Title": "NEXT VALUE for sequence_name",
+    "Feature": [
+        "NEXT VALUE FOR sequence\n",
+        "or",
+        "NEXTVAL(sequence_name)\n",
+        "or in Oracle mode (SQL_MODE=ORACLE)",
+        "sequence_name.nextval\n",
+        "NEXT VALUE FOR is ANSI SQL syntax while NEXTVAL() is PostgreSQL syntax."
+    ],
+    "Description": [
+        "Generate next value for a SEQUENCE.",
+        "You can greatly speed up NEXT VALUE by creating the sequence with the CACHE option. If not, every NEXT VALUE usage will cause changes in the stored SEQUENCE table.\nWhen using NEXT VALUE the value will be reserved at once and will not be reused, except if the SEQUENCE was created with CYCLE. This means that when you are using SEQUENCEs you have to expect gaps in the generated sequence numbers.\nIf one updates the SEQUENCE with SETVAL() or ALTER SEQUENCE ... RESTART, NEXT VALUE FOR will notice this and start from the next requested value.\nFLUSH TABLES will close the sequence and the next sequence number generated will be according to what's stored in the SEQUENCE object. In effect, this will discard the cached values.\nA server restart (or closing the current connection) also causes a drop of all cached values. The cached sequence numbers are reserved only for the current connection.\nNEXT VALUE requires the INSERT privilege.\nYou can also use NEXT VALUE FOR sequence for column DEFAULT.\n",
+        "Once the sequence is complete, unless the sequence has been created with the CYCLE attribute (not the default), calling the function will result in Error 4084: Sequence has run out."
+    ],
+    "Examples": [
+        "CREATE OR REPLACE SEQUENCE s MAXVALUE=2;\n\nSELECT NEXTVAL(s);\n+------------+\n| NEXTVAL(s) |\n+------------+\n|          1 |\n+------------+\n\nSELECT NEXTVAL(s);\n+------------+\n| NEXTVAL(s) |\n+------------+\n|          2 |\n+------------+\n\nSELECT NEXTVAL(s);\nERROR 4084 (HY000): Sequence 'test.s' has run out\n\nALTER SEQUENCE s MAXVALUE=2 CYCLE;\n\nSELECT NEXTVAL(s);\n+------------+\n| NEXTVAL(s) |\n+------------+\n|          1 |\n+------------+\n"
+    ],
+    "Category": [
+        "SEQUENCE Functions"
+    ],
+    "Effective SQLs Refined": [],
+    "Ineffective SQLs Refined": [
+        "SELECT NEXTVAL(s);",
+        "SELECT NEXTVAL(s);",
+        "SELECT NEXTVAL(s);",
+        "SELECT NEXTVAL(s);"
+    ],
+    "Wrong Messages from Ineffective SQLs Refined": [
+        "(pymysql.err.OperationalError) (4091, \"Unknown SEQUENCE: 's'\")\n[SQL: SELECT NEXTVAL(s);]\n(Background on this error at: https://sqlalche.me/e/20/e3q8)",
+        "(pymysql.err.OperationalError) (4091, \"Unknown SEQUENCE: 's'\")\n[SQL: SELECT NEXTVAL(s);]\n(Background on this error at: https://sqlalche.me/e/20/e3q8)",
+        "(pymysql.err.OperationalError) (4091, \"Unknown SEQUENCE: 's'\")\n[SQL: SELECT NEXTVAL(s);]\n(Background on this error at: https://sqlalche.me/e/20/e3q8)",
+        "(pymysql.err.OperationalError) (4091, \"Unknown SEQUENCE: 's'\")\n[SQL: SELECT NEXTVAL(s);]\n(Background on this error at: https://sqlalche.me/e/20/e3q8)"
+    ],
+    "SQLs Generated1": [
+        {
+            "Example SQL": "NEXT VALUE FOR sequence_name"
+        },
+        {
+            "Example SQL": "SELECT NEXTVAL(sequence_name)"
+        },
+        {
+            "Example SQL": "SELECT sequence_name.nextval"
+        },
+        {
+            "Example SQL": "SELECT NEXTVAL('sequence_name')"
+        },
+        {
+            "Example SQL": "SELECT NEXTVAL(sequence_name)"
+        }
+    ],
+    "SQLs Generated Costs1": [
+        {
+            "Total Tokens": 564,
+            "Prompt Tokens": 546,
+            "Completion Tokens": 18,
+            "Total Cost (USD)": 9.27e-05
+        },
+        {
+            "Total Tokens": 741,
+            "Prompt Tokens": 723,
+            "Completion Tokens": 18,
+            "Total Cost (USD)": 0.00011925
+        },
+        {
+            "Total Tokens": 887,
+            "Prompt Tokens": 869,
+            "Completion Tokens": 18,
+            "Total Cost (USD)": 0.00014115
+        },
+        {
+            "Total Tokens": 1037,
+            "Prompt Tokens": 1017,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 0.00016454999999999996
+        },
+        {
+            "Total Tokens": 1212,
+            "Prompt Tokens": 1194,
+            "Completion Tokens": 18,
+            "Total Cost (USD)": 0.00018989999999999998
+        }
+    ],
+    "SQLs Generated ExecResults1": [
+        "None",
+        "None",
+        "None",
+        "None",
+        "None"
+    ],
+    "SQLs Generated ExecTimes1": [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+    ],
+    "SQLs Generated ErrorMessages1": [
+        "(pymysql.err.ProgrammingError) (1064, \"You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'NEXT VALUE FOR sequence_name' at line 1\")\n",
+        "(pymysql.err.OperationalError) (4091, \"Unknown SEQUENCE: 'sequence_name'\")\n",
+        "(pymysql.err.OperationalError) (1109, \"Unknown table 'sequence_name' in field list\")\n",
+        "(pymysql.err.ProgrammingError) (1064, \"You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ''sequence_name')' at line 1\")\n",
+        "(pymysql.err.OperationalError) (4091, \"Unknown SEQUENCE: 'sequence_name'\")\n"
+    ],
+    "Effective SQLs Generated1": [],
+    "SQLs Generated2": [
+        {
+            "Example SQL": "NEXT VALUE FOR sequence_name"
+        },
+        {
+            "Example SQL": "SELECT NEXTVAL('sequence_name')"
+        },
+        {
+            "Example SQL": "SELECT NEXTVAL(sequence_name)"
+        },
+        {
+            "Example SQL": "SELECT AUTO_INCREMENT FROM information_schema.tables WHERE table_name = 'dialect_recognize_table'"
+        }
+    ],
+    "SQLs Generated Costs2": [
+        {
+            "Total Tokens": 1014,
+            "Prompt Tokens": 996,
+            "Completion Tokens": 18,
+            "Total Cost (USD)": 0.0001602
+        },
+        {
+            "Total Tokens": 1193,
+            "Prompt Tokens": 1173,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 0.00018795
+        },
+        {
+            "Total Tokens": 1368,
+            "Prompt Tokens": 1350,
+            "Completion Tokens": 18,
+            "Total Cost (USD)": 0.00021329999999999998
+        },
+        {
+            "Total Tokens": 1527,
+            "Prompt Tokens": 1496,
+            "Completion Tokens": 31,
+            "Total Cost (USD)": 0.00024299999999999997
+        }
+    ],
+    "SQLs Generated ExecResults2": [
+        "None",
+        "None",
+        "None",
+        "[(6,)]"
+    ],
+    "SQLs Generated ExecTimes2": [
+        "0",
+        "0",
+        "0",
+        "0.031058073043823242"
+    ],
+    "SQLs Generated ErrorMessages2": [
+        "(pymysql.err.ProgrammingError) (1064, \"You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'NEXT VALUE FOR sequence_name' at line 1\")\n",
+        "(pymysql.err.ProgrammingError) (1064, \"You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ''sequence_name')' at line 1\")\n",
+        "(pymysql.err.OperationalError) (4091, \"Unknown SEQUENCE: 'sequence_name'\")\n",
+        "None"
+    ],
+    "Effective SQLs Generated2": [
+        "SELECT AUTO_INCREMENT FROM information_schema.tables WHERE table_name = 'dialect_recognize_table'"
+    ]
+}

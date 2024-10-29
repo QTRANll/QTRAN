@@ -1,0 +1,26 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/show-status/"
+    ],
+    "Title": [
+        "SHOW STATUS"
+    ],
+    "Feature": [
+        "SHOW [GLOBAL | SESSION] STATUS\n    [LIKE 'pattern' | WHERE expr]\n"
+    ],
+    "Description": [
+        "SHOW STATUS provides server status information. This\ninformation also can be obtained using the mariadb-admin extended-status command, or by querying the Information Schema GLOBAL_STATUS and SESSION_STATUS tables.\nThe LIKE clause, if present, indicates which variable names\nto match. The WHERE clause can be given to select rows using\nmore general conditions.",
+        "With the GLOBAL modifier, SHOW STATUS\ndisplays the status values for all connections to MariaDB. With\nSESSION, it displays the status values\nfor the current connection. If no modifier is present, the default is\n SESSION. LOCAL is a synonym for\n SESSION. If you see a lot of 0 values, the reason is probably that you have used SHOW STATUS with a new connection instead of SHOW GLOBAL STATUS.",
+        "Some status variables have only a global value. For these, you get the\nsame value for both GLOBAL and SESSION.",
+        "See Server Status Variables for a full list, scope and description of the variables that can be viewed with SHOW STATUS.",
+        "The LIKE clause, if present on its own, indicates which variable name to match.",
+        "The WHERE and LIKE clauses can be given to select rows using more general conditions, as discussed in Extended SHOW."
+    ],
+    "Examples": [
+        "SHOW GLOBAL STATUS;\n+--------------------------------------------------------------+----------------------------------------+\n| Variable_name                                                | Value                                  |\n+--------------------------------------------------------------+----------------------------------------+\n| Aborted_clients                                              | 0                                      |\n| Aborted_connects                                             | 0                                      |\n| Access_denied_errors                                         | 0                                      |\n| Acl_column_grants                                            | 0                                      |\n| Acl_database_grants                                          | 2                                      |\n| Acl_function_grants                                          | 0                                      |\n| Acl_procedure_grants                                         | 0                                      |\n| Acl_proxy_users                                              | 2                                      |\n| Acl_role_grants                                              | 0                                      |\n| Acl_roles                                                    | 0                                      |\n| Acl_table_grants                                             | 0                                      |\n| Acl_users                                                    | 6                                      |\n| Aria_pagecache_blocks_not_flushed                            | 0                                      |\n| Aria_pagecache_blocks_unused                                 | 15706                                  |\n...\n| wsrep_local_index                                            | 18446744073709551615                   |\n| wsrep_provider_name                                          |                                        |\n| wsrep_provider_vendor                                        |                                        |\n| wsrep_provider_version                                       |                                        |\n| wsrep_ready                                                  | OFF                                    |\n| wsrep_thread_count                                           | 0                                      |\n+--------------------------------------------------------------+----------------------------------------+\n516 rows in set (0.00 sec)\n",
+        "SHOW STATUS LIKE 'Key%';\n+------------------------+--------+\n| Variable_name          | Value  |\n+------------------------+--------+\n| Key_blocks_not_flushed | 0      |\n| Key_blocks_unused      | 107163 |\n| Key_blocks_used        | 0      |\n| Key_blocks_warm        | 0      |\n| Key_read_requests      | 0      |\n| Key_reads              | 0      |\n| Key_write_requests     | 0      |\n| Key_writes             | 0      |\n+------------------------+--------+\n8 rows in set (0.00 sec)\n"
+    ],
+    "Category": [
+        "Administrative SQL Statements"
+    ]
+}

@@ -1,0 +1,42 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/create-trigger/"
+    ],
+    "Title": [
+        "CREATE TRIGGER"
+    ],
+    "Feature": [
+        "CREATE [OR REPLACE]\n    [DEFINER = { user | CURRENT_USER | role | CURRENT_ROLE }]\n    TRIGGER [IF NOT EXISTS] trigger_name trigger_time trigger_event\n    ON tbl_name FOR EACH ROW\n   [{ FOLLOWS | PRECEDES } other_trigger_name ]\n   trigger_stmt;\n\ntrigger time:\n    BEFORE\n  | AFTER\n\ntrigger_event:\n    INSERT\n  | UPDATE\n  | DELETE\n"
+    ],
+    "Description": [
+        "This statement creates a new trigger. A trigger is a named database\nobject that is associated with a table, and that activates when a\nparticular event occurs for the table. The trigger becomes associated\nwith the table named tbl_name, which must refer to a permanent table.\nYou cannot associate a trigger with a TEMPORARY table or a view.",
+        "CREATE TRIGGER requires the TRIGGER privilege for the table associated\nwith the trigger.",
+        "You can have multiple triggers for the same trigger_time and trigger_event.",
+        "For valid identifiers to use as trigger names, see Identifier Names.",
+        "OR REPLACE",
+        "If used and the trigger already exists, instead of an error being returned, the existing trigger will be dropped and replaced by the newly defined trigger.",
+        "DEFINER",
+        "The DEFINER clause determines the security context to be used when\nchecking access privileges at trigger activation time. Usage requires the SUPER privilege, or, from MariaDB 10.5.2, the SET USER privilege.",
+        "IF NOT EXISTS",
+        "If the IF NOT EXISTS clause is used, the trigger will only be created if a trigger of the same name does not exist. If the trigger already exists, by default a warning will be returned.",
+        "trigger_time",
+        "trigger_time is the trigger action time. It can be BEFORE or AFTER to\nindicate that the trigger activates before or after each row to be\nmodified.",
+        "trigger_event",
+        "trigger_event indicates the kind of statement that activates the\ntrigger. The trigger_event can be one of the following:",
+        "INSERT: The trigger is activated whenever a new row is inserted into the table; for example, through INSERT, LOAD DATA, and REPLACE statements.\nUPDATE: The trigger is activated whenever a row is modified; for example, through UPDATE statements.\nDELETE: The trigger is activated whenever a row is deleted from the table; for example, through DELETE and REPLACE statements. However, DROP TABLE and TRUNCATE statements on the table do not activate this trigger, because they do not use DELETE. Dropping a partition does not activate DELETE triggers, either.\n",
+        "FOLLOWS/PRECEDES other_trigger_name",
+        "The FOLLOWS other_trigger_name and PRECEDES other_trigger_name options were added in MariaDB 10.2.3 as part of supporting multiple triggers per action time.\nThis is the same syntax used by MySQL 5.7, although MySQL 5.7 does not have multi-trigger support.",
+        "FOLLOWS adds the new trigger after another trigger while PRECEDES adds the new trigger before another trigger.  If neither option is used, the new trigger is added last for the given action and time.",
+        "FOLLOWS and PRECEDES are not stored in the trigger definition. However the trigger order is guaranteed to not change over time. mariadb-dump and other backup methods will not change trigger order.\nYou can verify the trigger order from the ACTION_ORDER column in INFORMATION_SCHEMA.TRIGGERS table.",
+        "SELECT trigger_name, action_order FROM information_schema.triggers \n  WHERE event_object_table='t1';\n",
+        "Atomic DDL",
+        "MariaDB starting with 10.6.1MariaDB 10.6.1 supports Atomic DDL and CREATE TRIGGER is atomic.\n"
+    ],
+    "Examples": [
+        "CREATE DEFINER=`root`@`localhost` TRIGGER increment_animal\n  AFTER INSERT ON animals FOR EACH ROW \n   UPDATE animal_count SET animal_count.animals = animal_count.animals+1;\n",
+        "CREATE DEFINER=`root`@`localhost` TRIGGER increment_animal\n  AFTER INSERT ON animals FOR EACH ROW\n    UPDATE animal_count SET animal_count.animals = animal_count.animals+1;\nERROR 1359 (HY000): Trigger already exists\n\nCREATE OR REPLACE DEFINER=`root`@`localhost` TRIGGER increment_animal\n  AFTER INSERT ON animals  FOR EACH ROW\n    UPDATE animal_count SET animal_count.animals = animal_count.animals+1;\nQuery OK, 0 rows affected (0.12 sec)\n\nCREATE DEFINER=`root`@`localhost` TRIGGER IF NOT EXISTS increment_animal\n  AFTER INSERT ON animals FOR EACH ROW\n    UPDATE animal_count SET animal_count.animals = animal_count.animals+1;\nQuery OK, 0 rows affected, 1 warning (0.00 sec)\n\nSHOW WARNINGS;\n+-------+------+------------------------+\n| Level | Code | Message                |\n+-------+------+------------------------+\n| Note  | 1359 | Trigger already exists |\n+-------+------+------------------------+\n1 row in set (0.00 sec)\n"
+    ],
+    "Category": [
+        "Data Definition"
+    ]
+}

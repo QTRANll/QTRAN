@@ -1,0 +1,23 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/drop-function-loadable.html"
+    ],
+    "Title": [
+        "15.7.4.2 DROP FUNCTION Statement for Loadable Functions"
+    ],
+    "Feature": [
+        "DROP FUNCTION [IF EXISTS] function_name"
+    ],
+    "Description": [
+        "\n        This statement drops the loadable function named\n        function_name. (DROP\n        FUNCTION is also used to drop stored functions; see\n        Section\u00a015.1.29, \u201cDROP PROCEDURE and DROP FUNCTION Statements\u201d.)\n      ",
+        "\nDROP\n        FUNCTION is the complement of\n        CREATE\n        FUNCTION. It requires the\n        DELETE privilege for the\n        mysql system schema because it removes the\n        row from the mysql.func system table that\n        registers the function.\n      ",
+        "\nDROP\n        FUNCTION also removes the function from the\n        Performance Schema\n        user_defined_functions table that\n        provides runtime information about installed loadable functions.\n        See\n        Section\u00a029.12.22.10, \u201cThe user_defined_functions Table\u201d.\n      ",
+        "\n        During the normal startup sequence, the server loads functions\n        registered in the mysql.func table. Because\n        DROP\n        FUNCTION removes the mysql.func row\n        for the dropped function, the server does not load the function\n        during subsequent restarts.\n      ",
+        "\nDROP\n        FUNCTION cannot be used to drop a loadable function\n        that is installed automatically by components or plugins rather\n        than by using\n        CREATE\n        FUNCTION. Such a function is also dropped\n        automatically, when the component or plugin that installed it is\n        uninstalled.\n",
+        "\n\nNote\n\n\n          To upgrade the shared library associated with a loadable\n          function, issue a\n          DROP\n          FUNCTION statement, upgrade the shared library, and\n          then issue a\n          CREATE\n          FUNCTION statement. If you upgrade the shared\n          library first and then use\n          DROP\n          FUNCTION, the server may unexpectedly shut down.\n\n"
+    ],
+    "Examples": [],
+    "Category": [
+        "Database Administration Statements"
+    ]
+}

@@ -1,0 +1,27 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/geo/h3"
+    ],
+    "Title": [
+        "h3GetFaces"
+    ],
+    "Feature": [
+        "h3GetFaces(index)"
+    ],
+    "Description": [
+        "h3GetFaces",
+        "Returns icosahedron faces intersected by a given H3 index.",
+        "Syntax",
+        "h3GetFaces(index)",
+        "Parameter",
+        "index \u2014 Hexagon index number. UInt64.",
+        "Returned values",
+        "Array containing icosahedron faces intersected by a given H3 index. Array(UInt64)."
+    ],
+    "Examples": [
+        "SELECT h3GetFaces(599686042433355775) AS faces;"
+    ],
+    "Category": [
+        "Geo Functions"
+    ]
+}

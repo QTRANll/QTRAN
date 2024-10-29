@@ -1,0 +1,25 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/not/"
+    ],
+    "Title": [
+        "!"
+    ],
+    "Feature": [
+        "NOT, !\n"
+    ],
+    "Description": [
+        "Logical NOT. Evaluates to 1 if the operand is 0, to 0 if the operand\nis non-zero, and NOT NULL returns NULL.",
+        "By default, the ! operator has a higher precedence. If the HIGH_NOT_PRECEDENCE SQL_MODE flag is set, NOT and ! have the same precedence."
+    ],
+    "Examples": [
+        "SELECT NOT 10;",
+        "SELECT NOT 0;",
+        "SELECT NOT NULL;",
+        "SELECT ! (1+1);",
+        "SELECT ! 1+1;"
+    ],
+    "Category": [
+        "Logical Operators"
+    ]
+}

@@ -1,0 +1,43 @@
+{
+    "HTML": "https://mariadb.com//kb/en/bit_or/",
+    "Title": "BIT_OR",
+    "Feature": [
+        "BIT_OR(expr) [over_clause]\n"
+    ],
+    "Description": [
+        "Returns the bitwise OR of all bits in expr. The calculation is performed with 64-bit (BIGINT) precision. It is an aggregate function, and so can be used with the GROUP BY clause.",
+        "If no rows match, BIT_OR will return a value with all bits set to 0. NULL values have no effect on the result unless all results are NULL, which is treated as no match.",
+        "BIT_OR can be used as a window function with the addition of the over_clause."
+    ],
+    "Examples": [
+        "CREATE TABLE vals (x INT);\n\nINSERT INTO vals VALUES(111),(110),(100);\n\nSELECT BIT_AND(x), BIT_OR(x), BIT_XOR(x) FROM vals;\n+------------+-----------+------------+\n| BIT_AND(x) | BIT_OR(x) | BIT_XOR(x) |\n+------------+-----------+------------+\n|        100 |       111 |        101 |\n+------------+-----------+------------+\n",
+        "CREATE TABLE vals2 (category VARCHAR(1), x INT);\n\nINSERT INTO vals2 VALUES\n  ('a',111),('a',110),('a',100),\n  ('b','000'),('b',001),('b',011);\n\nSELECT category, BIT_AND(x), BIT_OR(x), BIT_XOR(x) \n  FROM vals GROUP BY category;\n+----------+------------+-----------+------------+\n| category | BIT_AND(x) | BIT_OR(x) | BIT_XOR(x) |\n+----------+------------+-----------+------------+\n| a        |        100 |       111 |        101 |\n| b        |          0 |        11 |         10 |\n+----------+------------+-----------+------------+\n",
+        "SELECT BIT_OR(NULL);\n+--------------+\n| BIT_OR(NULL) |\n+--------------+\n|            0 |\n+--------------+\n"
+    ],
+    "Category": [
+        "Aggregate Functions"
+    ],
+    "Effective SQLs Refined": [
+        "SELECT BIT_OR(NULL);"
+    ],
+    "Ineffective SQLs Refined": [
+        "SELECT BIT_AND(x), BIT_OR(x), BIT_XOR(x) FROM vals;",
+        "SELECT category, BIT_AND(x), BIT_OR(x), BIT_XOR(x) \n  FROM vals GROUP BY category;"
+    ],
+    "Wrong Messages from Ineffective SQLs Refined": [
+        "(pymysql.err.ProgrammingError) (1146, \"Table 'PINOLO_MariaDB.vals' doesn't exist\")\n[SQL: SELECT BIT_AND(x), BIT_OR(x), BIT_XOR(x) FROM vals;]\n(Background on this error at: https://sqlalche.me/e/20/f405)",
+        "(pymysql.err.ProgrammingError) (1146, \"Table 'PINOLO_MariaDB.vals' doesn't exist\")\n[SQL: SELECT category, BIT_AND(x), BIT_OR(x), BIT_XOR(x) \n  FROM vals GROUP BY category;]\n(Background on this error at: https://sqlalche.me/e/20/f405)"
+    ],
+    "SQLs Generated1": [],
+    "SQLs Generated Costs1": [],
+    "SQLs Generated ExecResults1": [],
+    "SQLs Generated ExecTimes1": [],
+    "SQLs Generated ErrorMessages1": [],
+    "Effective SQLs Generated1": [],
+    "SQLs Generated2": [],
+    "SQLs Generated Costs2": [],
+    "SQLs Generated ExecResults2": [],
+    "SQLs Generated ExecTimes2": [],
+    "SQLs Generated ErrorMessages2": [],
+    "Effective SQLs Generated2": []
+}

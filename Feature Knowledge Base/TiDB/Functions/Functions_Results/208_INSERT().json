@@ -1,0 +1,26 @@
+{
+    "HTML": [
+        "https://docs.pingcap.com/zh/tidb/stable/string-functions#insert"
+    ],
+    "Title": [
+        "INSERT()"
+    ],
+    "Feature": [
+        "INSERT()"
+    ],
+    "Description": [
+        "INSERT()",
+        "INSERT(str, pos, len, newstr) \u51fd\u6570\u7528\u4e8e\u5c06\u5b57\u7b26\u4e32 str \u4e2d\u7684\u4e00\u4e2a\u5b50\u5b57\u7b26\u4e32\uff08\u4ece\u4f4d\u7f6e pos \u5f00\u59cb\uff0c\u957f\u5ea6\u4e3a len\uff09\u66ff\u6362\u4e3a\u5b57\u7b26\u4e32 newstr\u3002\u8be5\u51fd\u6570\u662f\u591a\u5b57\u8282\u5b89\u5168\u7684\u3002",
+        "\u5982\u679c pos \u8d85\u8fc7\u4e86 str \u7684\u957f\u5ea6\uff0c\u51fd\u6570\u8fd4\u56de\u539f\u59cb\u5b57\u7b26\u4e32 str \u800c\u4e0d\u505a\u4fee\u6539\u3002\u5982\u679c len \u8d85\u8fc7\u4e86\u4ece\u4f4d\u7f6e pos \u5f00\u59cb\u7684 str \u7684\u5269\u4f59\u957f\u5ea6\uff0c\u51fd\u6570\u5c06\u4ece\u4f4d\u7f6e pos \u5f00\u59cb\u66ff\u6362\u5b57\u7b26\u4e32\u7684\u5176\u4f59\u90e8\u5206\u3002\u5982\u679c\u4efb\u4e00\u53c2\u6570\u4e3a NULL\uff0c\u8be5\u51fd\u6570\u8fd4\u56de NULL\u3002"
+    ],
+    "Examples": [
+        "SELECT INSERT('He likes tennis', 4, 5, 'plays');\n+------------------------------------------+\n| INSERT('He likes tennis', 4, 5, 'plays') |\n+------------------------------------------+\n| He plays tennis                          |\n+------------------------------------------+\n",
+        "SELECT INSERT('He likes tennis', -1, 5, 'plays');\n+-------------------------------------------+\n| INSERT('He likes tennis', -1, 5, 'plays') |\n+-------------------------------------------+\n| He likes tennis                           |\n+-------------------------------------------+\n",
+        "SELECT INSERT('He likes tennis', 4, 100, 'plays');\n+--------------------------------------------+\n| INSERT('He likes tennis', 4, 100, 'plays') |\n+--------------------------------------------+\n| He plays                                   |\n+--------------------------------------------+\n",
+        "SELECT INSERT('He likes tennis', 10, 100, '\ud83c\udf63');\n+-------------------------------------------+\n| INSERT('He likes tennis', 10, 100, '\ud83c\udf63')     |\n+-------------------------------------------+\n| He likes \ud83c\udf63                                 |\n+-------------------------------------------+\n",
+        "SELECT INSERT('PingCAP \u6570\u636e\u5e93', 1, 7, 'TiDB');\n+-------------------------------------------+\n| INSERT('PingCAP \u6570\u636e\u5e93', 1, 7, 'TiDB')    |\n+-------------------------------------------+\n| TiDB \u6570\u636e\u5e93                               |\n+-------------------------------------------+\n"
+    ],
+    "Category": [
+        "String Functions"
+    ]
+}

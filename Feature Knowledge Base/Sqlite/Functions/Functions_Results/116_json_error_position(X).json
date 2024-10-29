@@ -1,0 +1,18 @@
+{
+    "HTML": [
+        "https://sqlite.org/json1.html#jerr"
+    ],
+    "Title": [
+        "JSON Functions"
+    ],
+    "Feature": [
+        "json_error_position(X)"
+    ],
+    "Description": [
+        "The json_error_position(X) function is designed to identify syntax errors in JSON or JSON5 strings. It returns 0 if the input X is a well-formed JSON or JSON5 string, indicating no syntax errors are present. Conversely, if the input X contains syntax errors, the function returns the 1-based character position of the first syntax error encountered. For BLOB inputs, the function operates similarly, returning 0 for a well-formed JSONB blob and a positive value representing the approximate 1-based position of the first error if one exists. This function was introduced in SQLite version 3.42.0 (2023-05-16)."
+    ],
+    "Examples": [],
+    "Category": [
+        "JSON Functions"
+    ]
+}

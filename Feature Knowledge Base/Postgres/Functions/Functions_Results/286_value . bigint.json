@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/current/functions-json.html"
+    ],
+    "Title": [
+        "value . bigint"
+    ],
+    "Feature": [
+        "value . bigint() → bigint"
+    ],
+    "Description": [
+        "Big integer value converted from a JSON number or string"
+    ],
+    "Examples": [
+        "jsonb_path_query('{\"len\": \"9876543219\"}', '$.len.bigint()') → 9876543219"
+    ],
+    "Category": [
+        "JSON Functions and Operators"
+    ]
+}

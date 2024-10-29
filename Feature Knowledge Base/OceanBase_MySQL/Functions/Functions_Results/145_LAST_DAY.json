@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000000823408"
+    ],
+    "Title": [
+        "LAST_DAY"
+    ],
+    "Feature": [
+        "LAST_DAY(date)\n"
+    ],
+    "Description": [
+        "返回 date 当月最后一天的日期值。"
+    ],
+    "Examples": [
+        "obclient> SELECT LAST_DAY('2004-02-05');\n+------------------------+\n| LAST_DAY('2004-02-05') |\n+------------------------+\n| 2004-02-29             |\n+------------------------+\n1 row in set\n\nobclient> SELECT LAST_DAY('2004-01-01 01:01:01');\n+---------------------------------+\n| LAST_DAY('2004-01-01 01:01:01') |\n+---------------------------------+\n| 2004-01-31                      |\n+---------------------------------+\n1 row in set\n"
+    ],
+    "Category": [
+        "Date and Time Functions"
+    ]
+}

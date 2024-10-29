@@ -1,0 +1,23 @@
+{
+    "HTML": [
+        "https://sqlite.org/lang_expr.html"
+    ],
+    "Title": [
+        "SQL Language Expressions"
+    ],
+    "Feature": [
+        "NOT"
+    ],
+    "Description": [
+        "The NOT operator negates a boolean expression. It returns the opposite boolean value of the expression.",
+        "Parameters: A boolean expression.",
+        "Returns: The opposite boolean value."
+    ],
+    "Examples": [
+        "SELECT * FROM users WHERE NOT (status = 'inactive'); -- Finds users whose status is not 'inactive'",
+        "SELECT * FROM orders WHERE NOT EXISTS (SELECT 1 FROM canceled_orders WHERE orders.id = canceled_orders.id); -- Finds orders that are not canceled"
+    ],
+    "Category": [
+        "Operators"
+    ]
+}

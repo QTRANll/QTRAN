@@ -1,0 +1,37 @@
+{
+    "HTML": "https://mariadb.com//kb/en/exp/",
+    "Title": "EXP",
+    "Feature": [
+        "EXP(X)\n"
+    ],
+    "Description": [
+        "Returns the value of e (the base of natural logarithms) raised to the\npower of X. The inverse of this function is LOG() (using a single\nargument only) or LN().",
+        "If X is NULL, this function returns NULL."
+    ],
+    "Examples": [
+        "SELECT EXP(2);\n+------------------+\n| EXP(2)           |\n+------------------+\n| 7.38905609893065 |\n+------------------+\n\nSELECT EXP(-2);\n+--------------------+\n| EXP(-2)            |\n+--------------------+\n| 0.1353352832366127 |\n+--------------------+\n\nSELECT EXP(0);\n+--------+\n| EXP(0) |\n+--------+\n|      1 |\n+--------+\n\nSELECT EXP(NULL);\n+-----------+\n| EXP(NULL) |\n+-----------+\n|      NULL |\n+-----------+\n"
+    ],
+    "Category": [
+        "Numeric Functions"
+    ],
+    "Effective SQLs Refined": [
+        "SELECT EXP(2);",
+        "SELECT EXP(-2);",
+        "SELECT EXP(0);",
+        "SELECT EXP(NULL);"
+    ],
+    "Ineffective SQLs Refined": [],
+    "Wrong Messages from Ineffective SQLs Refined": [],
+    "SQLs Generated1": [],
+    "SQLs Generated Costs1": [],
+    "SQLs Generated ExecResults1": [],
+    "SQLs Generated ExecTimes1": [],
+    "SQLs Generated ErrorMessages1": [],
+    "Effective SQLs Generated1": [],
+    "SQLs Generated2": [],
+    "SQLs Generated Costs2": [],
+    "SQLs Generated ExecResults2": [],
+    "SQLs Generated ExecTimes2": [],
+    "SQLs Generated ErrorMessages2": [],
+    "Effective SQLs Generated2": []
+}

@@ -1,0 +1,21 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000000823503"
+    ],
+    "Title": [
+        "JSON_EQUAL"
+    ],
+    "Feature": [
+        "json_equal(expr,\n           expr\n          [TRUE|FALSE|ERROR ON ERROR]);\n"
+    ],
+    "Description": [
+        "JSON_EQUAL() 函数用于比较两个 JSON 值，如果相等则返回 Ture。如果两个值不相等，则返回 False。输入值必须是有效的 JSON 数据。比较忽略空格和对象成员顺序。例如，如果 JSON 对象具有相同的成员，则无论它们的顺序如何，都是相等的。",
+        "此外，IS JSON和 IS NOT JSON在 SQL 语句中作为 SQL 条件也用以校验表达式结果是否是合法的 JSON 数据格式。详细信息请参见 JSON 数据类型列的创建。"
+    ],
+    "Examples": [
+        "# WHEN CASE 中作为 SQL 条件使用 JSON_EQUAL() 函数\nobclient> SELECT CASE\n               WHEN JSON_EQUAL (\n       '{\"comparesAttributes\":\"and values\"}', '{\"inTwoJSONDocuments\": \"for equality\"}'\n               ) THEN 'THE SAME' ELSE 'DIFFERENT'\n             END JSON_COMPARE\n      FROM   DUAL;\n+--------------+\n| JSON_COMPARE |\n+--------------+\n|  DIFFERENT   |\n+--------------+\n1 row in set\n\n# 相同的输入\nobclient> SELECT 1 FROM DUAL WHERE JSON_EQUAL('[1,]', '[1]' FALSE ON ERROR);\n+---+\n| 1 |\n+---+\n| 1 |\n+---+\n1 row in set\n\nobclient> SELECT 1 FROM DUAL WHERE JSON_EQUAL('[1,]', '[1' TRUE ON ERROR);\n+---+\n| 1 |\n+---+\n| 1 |\n+---+\n1 row in set\n\n# 使用 ERROR 子句 FALSE ON ERROR\nobclient> SELECT 1 FROM DUAL WHERE JSON_EQUAL('[1,]', '[1' FALSE ON ERROR);\nEmpty set\n\n# 使用 ERROR 子句 ERROR ON ERROR\nobclient> SELECT 1 FROM DUAL WHERE JSON_EQUAL('[1,]', '[1' error on error);\nORA-40441: JSON syntax error\n"
+    ],
+    "Category": [
+        "JSON Functions"
+    ]
+}

@@ -1,0 +1,33 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000000822974"
+    ],
+    "Title": [
+        "COERCIBILITY"
+    ],
+    "Feature": [
+        "COERCIBILITY(str)\n"
+    ],
+    "Description": [
+        "返回字符串 str 在多语言排序时字符序的优先级。",
+        "相同字符集的两个变量在进行比较时，按字符序作为规则。但不同字符集的两个变量时，就需要规定不同字符集间的优先级。例如以下语句：",
+        "obclient> SELECT c1 FROM t WHERE c1 = 'Y';\n",
+        "如果 c1 与 'Y' 使用相同的字符序，则不会产生歧义。但如果表 t 在 table_option 指定了其他的字符序，或系统变量 collation_connection 使用了不同的字符序，则在比较时使用的哪种字符序，取决于两种字符序的优先级。",
+        "各类字符序的优先级如下表所示，值越小优先级越高。",
+        "\n\n\n取值\n描述\n例子\n\n\n\n\n0\n显式指定的字符序\n显式 COLLATE 子句。\n\n\n1\n无字符序\n不同字符序字符串的连接。\n\n\n2\n隐式指定的字符序\n列值、系统参数或变量。\n\n\n3\n系统常数\n系统函数例如 USER() 函数的返回值。\n\n\n4\n可降级值\n文字字符串。\n\n\n5\n数字型值\n数值或时间值。\n\n\n6\n可忽略的值\nNULL 或结果为 NULL 的表达式。\n\n\n",
+        "OceanBase 数据库使用 Coercibility 值和以下规则来解决歧义：",
+        "Coercibility 越小，优先级越高。",
+        "如果比较的双方具有相同的 Coercibility 的排序规则，则使用以下补充规则：",
+        "\n如果两种字符集都是 Unicode 或都不是 Unicode，字符序不同则返回错误。\n如果一侧字符集使用了 Unicode，另一侧字符集不是 Unicode，则 Unicode 的一侧具有更高的优先级。例如以下语句不会返回错误： obclient> SELECT CONCAT(t1.utf8_column, t2.gbk_column) FROM t1,t2;\n\n对于相同字符集，但字符序分别是 _bin 与 a_ci 或 _cs，则使用 _bin 字符序。\n",
+        "如果两种字符集都是 Unicode 或都不是 Unicode，字符序不同则返回错误。",
+        "如果一侧字符集使用了 Unicode，另一侧字符集不是 Unicode，则 Unicode 的一侧具有更高的优先级。例如以下语句不会返回错误：",
+        "obclient> SELECT CONCAT(t1.utf8_column, t2.gbk_column) FROM t1,t2;\n",
+        "对于相同字符集，但字符序分别是 _bin 与 a_ci 或 _cs，则使用 _bin 字符序。"
+    ],
+    "Examples": [
+        "obclient> SELECT COERCIBILITY('oceanbase' COLLATE utf8mb4_bin);\n+-----------------------------------------------+\n| COERCIBILITY('oceanbase' COLLATE utf8mb4_bin) |\n+-----------------------------------------------+\n|                                             0 |\n+-----------------------------------------------+\n1 row in set\n\nobclient> SELECT COERCIBILITY('oceanbase');\n+---------------------------+\n| COERCIBILITY('oceanbase') |\n+---------------------------+\n|                         4 |\n+---------------------------+\n1 row in set\n\nobclient> SELECT COERCIBILITY(user());\n+----------------------+\n| COERCIBILITY(user()) |\n+----------------------+\n|                    3 |\n+----------------------+\n1 row in set\n\nobclient> SELECT COERCIBILITY(1000);\n+--------------------+\n| COERCIBILITY(1000) |\n+--------------------+\n|                  5 |\n+--------------------+\n1 row in set\n"
+    ],
+    "Category": [
+        "Information Functions"
+    ]
+}

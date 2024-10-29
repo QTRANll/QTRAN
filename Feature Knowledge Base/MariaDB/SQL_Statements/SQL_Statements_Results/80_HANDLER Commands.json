@@ -1,0 +1,25 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/handler-commands/"
+    ],
+    "Title": [
+        "HANDLER Commands"
+    ],
+    "Feature": [
+        "HANDLER tbl_name OPEN [ [AS] alias]\nHANDLER tbl_name READ index_name { = | >= | <= | < } (value1,value2,...)\n    [ WHERE where_condition ] [LIMIT ... ]\nHANDLER tbl_name READ index_name { FIRST | NEXT | PREV | LAST }\n    [ WHERE where_condition ] [LIMIT ... ]\nHANDLER tbl_name READ { FIRST | NEXT }\n    [ WHERE where_condition ] [LIMIT ... ]\nHANDLER tbl_name CLOSE\n"
+    ],
+    "Description": [
+        "The HANDLER statement provides direct access to table\nstorage engine interfaces for key lookups and key or table scans. It is available for at least Aria, Memory, MyISAM and InnoDB tables (and should work with most 'normal' storage engines, but not with system tables, MERGE or views).",
+        "HANDLER ... OPEN opens a table, allowing it to be accessible to subsequent HANDLER ... READ statements. The table can either be opened using an alias, or a table name. If opened with an alias, references to this table by further HANDLER statements must use this alias, and not the table name. If opened with a table name qualified by database name, further references to this table must use the unqualified table name. For example, if a table is opened with db1.t1, further references must use t1. ",
+        "The table object is only closed when HANDLER ... CLOSE is called by the session, or the session closes, and is not shared by other sessions.",
+        "Prepared statements work with HANDLER READ, which gives a much higher performance (50% speedup) as there is no parsing and all data is transformed in binary (without conversions to text, as with the normal protocol).",
+        "The HANDLER command does not work with partitioned tables."
+    ],
+    "Examples": [
+        "CREATE TABLE t1 (f1 INT);\n\nINSERT INTO t1 VALUES (1),(2),(3);\n\nHANDLER t1 OPEN;\n\nHANDLER t1 READ NEXT;\n+------+\n| f1   |\n+------+\n|    1 |\n+------+\n\nHANDLER t1 READ NEXT;\n+------+\n| f1   |\n+------+\n|    2 |\n+------+\n",
+        "CREATE DATABASE db_new;\n\nCREATE TABLE db_new.t1 (id INT);\n\nINSERT INTO db_new.t1 VALUES (4),(5),(6);\n\nHANDLER db_new.t1 OPEN;\nERROR 1066 (42000): Not unique table/alias: 't1'\n\nHANDLER db_new.t1 OPEN AS db_new_t1;\n\nHANDLER db_new_t1 READ NEXT LIMIT 3;\n+------+\n| id   |\n+------+\n|    4 |\n|    5 |\n|    6 |\n+------+\n"
+    ],
+    "Category": [
+        "Data Manipulation"
+    ]
+}

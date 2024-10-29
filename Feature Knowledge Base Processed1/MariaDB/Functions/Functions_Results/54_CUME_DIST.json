@@ -1,0 +1,21 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/cume_dist/"
+    ],
+    "Title": [
+        "CUME_DIST"
+    ],
+    "Feature": [
+        "CUME_DIST() OVER ( \n  [ PARTITION BY partition_expression ] \n  [ ORDER BY order_list ]\n)\n"
+    ],
+    "Description": [
+        "CUME_DIST() is a window function that returns the cumulative distribution of a given row. The following formula is used to calculate the value:",
+        "(number of rows <= current row) / (total rows)\n"
+    ],
+    "Examples": [
+        "SELECT CUME_DIST() OVER (ORDER BY 1) FROM DUAL"
+    ],
+    "Category": [
+        "Window Functions"
+    ]
+}

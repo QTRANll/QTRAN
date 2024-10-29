@@ -1,0 +1,37 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/built-in-function-reference.html",
+        "https://dev.mysql.com/doc/refman/8.4/en/json-function-reference.html"
+    ],
+    "Title": [
+        "14.1 Built-In Function and Operator Reference",
+        "14.17.1 JSON Function Reference"
+    ],
+    "Feature": [
+        "JSON_CONTAINS(target,\n          candidate[,\n          path])"
+    ],
+    "Description": [
+        "Whether JSON document contains specific object at path",
+        "\nJSON_CONTAINS(target,\n          candidate[,\n          path])\n",
+        "\n          Indicates by returning 1 or 0 whether a given\n          candidate JSON document is\n          contained within a target JSON\n          document, or\u2014if a path\n          argument was supplied\u2014whether the candidate is found at\n          a specific path within the target. Returns\n          NULL if any argument is\n          NULL, or if the path argument does not\n          identify a section of the target document. An error occurs if\n          target or\n          candidate is not a valid JSON\n          document, or if the path argument\n          is not a valid path expression or contains a\n          * or ** wildcard.\n        ",
+        "\n          To check only whether any data exists at the path, use\n          JSON_CONTAINS_PATH() instead.\n        ",
+        "\n          The following rules define containment:\n",
+        "\n\n              A candidate scalar is contained in a target scalar if and\n              only if they are comparable and are equal. Two scalar\n              values are comparable if they have the same\n              JSON_TYPE() types, with the\n              exception that values of types INTEGER\n              and DECIMAL are also comparable to each\n              other.\n            \n              A candidate array is contained in a target array if and\n              only if every element in the candidate is contained in\n              some element of the target.\n            \n              A candidate nonarray is contained in a target array if and\n              only if the candidate is contained in some element of the\n              target.\n            \n              A candidate object is contained in a target object if and\n              only if for each key in the candidate there is a key with\n              the same name in the target and the value associated with\n              the candidate key is contained in the value associated\n              with the target key.\n\n",
+        "\n          Otherwise, the candidate value is not contained in the target\n          document.\n        ",
+        "\n          Queries using JSON_CONTAINS() on\n          InnoDB tables can be optimized\n          using multi-valued indexes; see\n          Multi-Valued Indexes, for more\n          information.\n        ",
+        "Press CTRL+C to copy mysql> SET @j = '{\"a\": 1, \"b\": 2, \"c\": {\"d\": 4}}';\nmysql> SET @j2 = '1';\nmysql> SELECT JSON_CONTAINS(@j, @j2, '$.a');\n+-------------------------------+\n| JSON_CONTAINS(@j, @j2, '$.a') |\n+-------------------------------+\n|                             1 |\n+-------------------------------+\nmysql> SELECT JSON_CONTAINS(@j, @j2, '$.b');\n+-------------------------------+\n| JSON_CONTAINS(@j, @j2, '$.b') |\n+-------------------------------+\n|                             0 |\n+-------------------------------+\n\nmysql> SET @j2 = '{\"d\": 4}';\nmysql> SELECT JSON_CONTAINS(@j, @j2, '$.a');\n+-------------------------------+\n| JSON_CONTAINS(@j, @j2, '$.a') |\n+-------------------------------+\n|                             0 |\n+-------------------------------+\nmysql> SELECT JSON_CONTAINS(@j, @j2, '$.c');\n+-------------------------------+\n| JSON_CONTAINS(@j, @j2, '$.c') |\n+-------------------------------+\n|                             1 |\n+-------------------------------+"
+    ],
+    "Examples": [
+        "mysql> SET @j = '{\"a\": 1, \"b\": 2, \"c\": {\"d\": 4}}';\nmysql> SET @j2 = '1';\nmysql> SELECT JSON_CONTAINS(@j, @j2, '$.a');\n+-------------------------------+\n| JSON_CONTAINS(@j, @j2, '$.a') |\n+-------------------------------+\n|                             1 |\n+-------------------------------+\nmysql> SELECT JSON_CONTAINS(@j, @j2, '$.b');\n+-------------------------------+\n| JSON_CONTAINS(@j, @j2, '$.b') |\n+-------------------------------+\n|                             0 |\n+-------------------------------+\n\nmysql> SET @j2 = '{\"d\": 4}';\nmysql> SELECT JSON_CONTAINS(@j, @j2, '$.a');\n+-------------------------------+\n| JSON_CONTAINS(@j, @j2, '$.a') |\n+-------------------------------+\n|                             0 |\n+-------------------------------+\nmysql> SELECT JSON_CONTAINS(@j, @j2, '$.c');\n+-------------------------------+\n| JSON_CONTAINS(@j, @j2, '$.c') |\n+-------------------------------+\n|                             1 |\n+-------------------------------+"
+    ],
+    "Category": [
+        "Built-In Functions",
+        "JSON Functions"
+    ],
+    "Reference HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/json-search-functions.html#function_json-contains"
+    ],
+    "Feature Type": [
+        "Function"
+    ]
+}

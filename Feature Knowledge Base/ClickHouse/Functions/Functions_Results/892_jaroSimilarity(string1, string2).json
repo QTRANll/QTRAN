@@ -1,0 +1,23 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/string-functions"
+    ],
+    "Title": [
+        "jaroSimilarity"
+    ],
+    "Feature": [
+        "jaroSimilarity(string1, string2)"
+    ],
+    "Description": [
+        "jaroSimilarity",
+        "Calculates the Jaro similarity between two byte strings.",
+        "Syntax",
+        "jaroSimilarity(string1, string2)"
+    ],
+    "Examples": [
+        "SELECT jaroSimilarity('clickhouse', 'click');"
+    ],
+    "Category": [
+        "Strings Functions"
+    ]
+}

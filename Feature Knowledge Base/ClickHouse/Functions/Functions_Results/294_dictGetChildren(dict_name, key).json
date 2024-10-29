@@ -1,0 +1,27 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/ext-dict-functions"
+    ],
+    "Title": [
+        "dictGetChildren"
+    ],
+    "Feature": [
+        "dictGetChildren(dict_name, key)"
+    ],
+    "Description": [
+        "dictGetChildren",
+        "Returns first-level children as an array of indexes. It is the inverse transformation for dictGetHierarchy.",
+        "Syntax",
+        "dictGetChildren(dict_name, key)",
+        "Arguments",
+        "dict_name \u2014 Name of the dictionary. String literal.key \u2014 Key value. Expression returning a UInt64-type value.",
+        "Returned values",
+        "First-level descendants for the key. Array(UInt64)."
+    ],
+    "Examples": [
+        "SELECT dictGetChildren('hierarchy_flat_dictionary', number) FROM system.numbers LIMIT 4;"
+    ],
+    "Category": [
+        "Dictionaries Functions"
+    ]
+}

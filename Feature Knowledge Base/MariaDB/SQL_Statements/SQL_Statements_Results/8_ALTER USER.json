@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/alter-user/"
+    ],
+    "Title": [
+        "ALTER USER"
+    ],
+    "Feature": [
+        "ALTER USER [IF EXISTS] \n user_specification [,user_specification] ...\n  [REQUIRE {NONE | tls_option [[AND] tls_option] ...}]\n  [WITH resource_option [resource_option] ...]\n  [lock_option] [password_option] \n\nuser_specification:\n  username [authentication_option]\n\nauthentication_option:\n  IDENTIFIED BY 'password' \n  | IDENTIFIED BY PASSWORD 'password_hash'\n  | IDENTIFIED {VIA|WITH} authentication_rule [OR authentication_rule] ... \n \nauthentication_rule:\n  authentication_plugin\n  | authentication_plugin {USING|AS} 'authentication_string'\n  | authentication_plugin {USING|AS} PASSWORD('password')\n\ntls_option\n  SSL \n  | X509\n  | CIPHER 'cipher'\n  | ISSUER 'issuer'\n  | SUBJECT 'subject'\n\nresource_option\n  MAX_QUERIES_PER_HOUR count\n  | MAX_UPDATES_PER_HOUR count\n  | MAX_CONNECTIONS_PER_HOUR count\n  | MAX_USER_CONNECTIONS count\n  | MAX_STATEMENT_TIME time\n\npassword_option:\n  PASSWORD EXPIRE\n  | PASSWORD EXPIRE DEFAULT\n  | PASSWORD EXPIRE NEVER\n  | PASSWORD EXPIRE INTERVAL N DAY\n\nlock_option:\n    ACCOUNT LOCK\n  | ACCOUNT UNLOCK\n}\n"
+    ],
+    "Description": [
+        "The ALTER USER statement modifies existing MariaDB accounts. To use it, you must have the global CREATE USER privilege or the UPDATE privilege for the mysql database. The global SUPER privilege is also required if the read_only system variable is enabled.",
+        "If any of the specified user accounts do not yet exist, an error results. If an error occurs, ALTER USER will still modify the accounts that do not result in an error. Only one error is produced for all users which have not been modified.",
+        "For renaming an existing account (user name and/or host), see RENAME USER."
+    ],
+    "Examples": [],
+    "Category": [
+        "Account Management SQL Commands"
+    ]
+}

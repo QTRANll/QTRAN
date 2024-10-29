@@ -1,0 +1,29 @@
+{
+    "HTML": [
+        "https://docs.pingcap.com//zh/tidb/stable/sql-statement-create-user"
+    ],
+    "Title": [
+        "CREATE USER"
+    ],
+    "Feature": [
+        "CreateUserStmt ::=\n    'CREATE' 'USER' IfNotExists UserSpecList RequireClauseOpt ConnectionOptions PasswordOption LockOption AttributeOption ResourceGroupNameOption\n\nIfNotExists ::=\n    ('IF' 'NOT' 'EXISTS')?\n\nUserSpecList ::=\n    UserSpec ( ',' UserSpec )*\n\nRequireClauseOpt ::=\n    ( 'REQUIRE' 'NONE' | 'REQUIRE' 'SSL' | 'REQUIRE' 'X509' | 'REQUIRE' RequireList )?  \n    \nRequireList ::=\n    ( \"ISSUER\" stringLit | \"SUBJECT\" stringLit | \"CIPHER\" stringLit | \"SAN\" stringLit | \"TOKEN_ISSUER\" stringLit )*\n\nUserSpec ::=\n    Username AuthOption\n\nAuthOption ::=\n    ( 'IDENTIFIED' ( 'BY' ( AuthString | 'PASSWORD' HashString ) | 'WITH' StringName ( 'BY' AuthString | 'AS' HashString )? ) )?\n\nStringName ::=\n    stringLit\n|   Identifier\n\nPasswordOption ::= ( 'PASSWORD' 'EXPIRE' ( 'DEFAULT' | 'NEVER' | 'INTERVAL' N 'DAY' )? | 'PASSWORD' 'HISTORY' ( 'DEFAULT' | N ) | 'PASSWORD' 'REUSE' 'INTERVAL' ( 'DEFAULT' | N 'DAY' ) | 'FAILED_LOGIN_ATTEMPTS' N | 'PASSWORD_LOCK_TIME' ( N | 'UNBOUNDED' ) )*\n\nLockOption ::= ( 'ACCOUNT' 'LOCK' | 'ACCOUNT' 'UNLOCK' )?\n\nAttributeOption ::= ( 'COMMENT' CommentString | 'ATTRIBUTE' AttributeString )?\n\nResourceGroupNameOption::= ( 'RESOURCE' 'GROUP' Identifier)?\n\nRequireClauseOpt ::= ('REQUIRE' ('NONE' | 'SSL' | 'X509' | RequireListElement ('AND'? RequireListElement)*))?\n\nRequireListElement ::= 'ISSUER' Issuer | 'SUBJECT' Subject | 'CIPHER' Cipher | 'SAN' SAN | 'TOKEN_ISSUER' TokenIssuer\n"
+    ],
+    "Description": [
+        "CREATE USER \u8bed\u53e5\u7528\u4e8e\u521b\u5efa\u5e26\u6709\u6307\u5b9a\u5bc6\u7801\u7684\u65b0\u7528\u6237\u3002\u548c MySQL \u4e00\u6837\uff0c\u5728 TiDB \u6743\u9650\u7cfb\u7edf\u4e2d\uff0c\u7528\u6237\u662f\u7528\u6237\u540d\u548c\u7528\u6237\u540d\u6240\u8fde\u63a5\u4e3b\u673a\u7684\u7ec4\u5408\u3002\u56e0\u6b64\uff0c\u53ef\u521b\u5efa\u4e00\u4e2a\u7528\u6237 'newuser2'@'192.168.1.1'\uff0c\u4f7f\u5176\u53ea\u80fd\u901a\u8fc7 IP \u5730\u5740 192.168.1.1 \u8fdb\u884c\u8fde\u63a5\u3002\u76f8\u540c\u7684\u7528\u6237\u540d\u4ece\u4e0d\u540c\u4e3b\u673a\u767b\u5f55\u65f6\u53ef\u80fd\u4f1a\u62e5\u6709\u4e0d\u540c\u7684\u6743\u9650\u3002"
+    ],
+    "Examples": [
+        "CREATE USER 'newuser' IDENTIFIED BY 'newuserpassword';\n",
+        "CREATE USER 'newuser2'@'192.168.1.1' IDENTIFIED BY 'newuserpassword';\n",
+        "CREATE USER 'newuser3'@'%' IDENTIFIED BY 'newuserpassword' REQUIRE SSL;\n",
+        "CREATE USER 'newuser4'@'%' IDENTIFIED BY 'newuserpassword' REQUIRE ISSUER '/C=US/ST=California/L=San Francisco/O=PingCAP';\n",
+        "CREATE USER 'newuser5'@'%' ACCOUNT LOCK;\n",
+        "CREATE USER 'newuser6'@'%' COMMENT 'This user is created only for test';\nSELECT * FROM information_schema.user_attributes;\n",
+        "CREATE USER 'newuser7'@'%' ATTRIBUTE '{\"email\": \"user@pingcap.com\"}';\nSELECT * FROM information_schema.user_attributes;\n",
+        "CREATE USER 'newuser8'@'%' PASSWORD HISTORY 5;\n",
+        "CREATE USER 'newuser9'@'%' PASSWORD EXPIRE;\n",
+        "CREATE USER 'newuser7'@'%' RESOURCE GROUP rg1;\nSELECT USER, HOST, USER_ATTRIBUTES FROM MYSQL.USER WHERE USER='newuser7';\n"
+    ],
+    "Category": [
+        "\u8d26\u6237\u7ba1\u7406\u4e0e\u6570\u636e\u63a7\u5236\u8bed\u8a00 (DCL)"
+    ]
+}

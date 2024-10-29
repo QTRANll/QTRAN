@@ -1,0 +1,38 @@
+{
+    "HTML": "https://mariadb.com//kb/en/cot/",
+    "Title": "COT",
+    "Feature": [
+        "COT(X)\n"
+    ],
+    "Description": [
+        "Returns the cotangent of X."
+    ],
+    "Examples": [
+        "SELECT COT(42);\n+--------------------+\n| COT(42)            |\n+--------------------+\n| 0.4364167060752729 |\n+--------------------+\n\nSELECT COT(12);\n+---------------------+\n| COT(12)             |\n+---------------------+\n| -1.5726734063976893 |\n+---------------------+\n\nSELECT COT(0);\nERROR 1690 (22003): DOUBLE value is out of range in 'cot(0)'\n"
+    ],
+    "Category": [
+        "Numeric Functions"
+    ],
+    "Effective SQLs Refined": [
+        "SELECT COT(42);",
+        "SELECT COT(12);"
+    ],
+    "Ineffective SQLs Refined": [
+        "SELECT COT(0);"
+    ],
+    "Wrong Messages from Ineffective SQLs Refined": [
+        "(pymysql.err.OperationalError) (1690, \"DOUBLE value is out of range in 'cot(0)'\")\n[SQL: SELECT COT(0);]\n(Background on this error at: https://sqlalche.me/e/20/e3q8)"
+    ],
+    "SQLs Generated1": [],
+    "SQLs Generated Costs1": [],
+    "SQLs Generated ExecResults1": [],
+    "SQLs Generated ExecTimes1": [],
+    "SQLs Generated ErrorMessages1": [],
+    "Effective SQLs Generated1": [],
+    "SQLs Generated2": [],
+    "SQLs Generated Costs2": [],
+    "SQLs Generated ExecResults2": [],
+    "SQLs Generated ExecTimes2": [],
+    "SQLs Generated ErrorMessages2": [],
+    "Effective SQLs Generated2": []
+}

@@ -1,0 +1,23 @@
+{
+    "HTML": [
+        "https://sqlite.org/lang_expr.html"
+    ],
+    "Title": [
+        "SQL Language Expressions"
+    ],
+    "Feature": [
+        "/"
+    ],
+    "Description": [
+        "The division operator (/) divides one numeric expression by another. If the divisor is zero, the result is NULL. Non-numeric operands are cast to numeric types before division.",
+        "Parameters: Two numeric expressions.",
+        "Returns: The quotient of the two numeric expressions."
+    ],
+    "Examples": [
+        "SELECT 20 / 4 AS result; -- Returns 5",
+        "SELECT total_amount / number_of_items FROM orders; -- Calculates average amount per item"
+    ],
+    "Category": [
+        "Operators"
+    ]
+}

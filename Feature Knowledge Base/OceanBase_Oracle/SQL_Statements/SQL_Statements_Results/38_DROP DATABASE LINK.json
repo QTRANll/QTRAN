@@ -1,0 +1,22 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000001054323"
+    ],
+    "Title": [
+        "DROP DATABASE LINK"
+    ],
+    "Feature": [
+        "DROP DATABASE LINK dblink_name;\n"
+    ],
+    "Description": [
+        "删除已创建的数据库链接（即 dblink）。",
+        "\n说明\n要删除已创建的数据库链接，您必须具有 DROP DATABASE LINK 系统权限。\n",
+        "dblink_name 为要删除的数据库链接的名称。"
+    ],
+    "Examples": [
+        "obclient> DROP DATABASE LINK ob_dblink;\nQuery OK, 1 row affected\n"
+    ],
+    "Category": [
+        "DDL"
+    ]
+}

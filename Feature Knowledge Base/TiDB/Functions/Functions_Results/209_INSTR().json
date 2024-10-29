@@ -1,0 +1,27 @@
+{
+    "HTML": [
+        "https://docs.pingcap.com/zh/tidb/stable/string-functions#instr"
+    ],
+    "Title": [
+        "INSTR()"
+    ],
+    "Feature": [
+        "INSTR()"
+    ],
+    "Description": [
+        "INSTR()",
+        "INSTR(str, substr) \u51fd\u6570\u7528\u4e8e\u83b7\u53d6\u5b50\u5b57\u7b26\u4e32 substr \u5728\u5b57\u7b26\u4e32 str \u4e2d\u7b2c\u4e00\u6b21\u51fa\u73b0\u7684\u4f4d\u7f6e\u3002substr \u548c str \u5747\u53ef\u4ee5\u4e3a\u5b57\u7b26\u4e32\u6216\u6570\u5b57\u3002\u8be5\u51fd\u6570\u4e0e LOCATE(substr, str) \u51fd\u6570\u7684\u4e24\u53c2\u6570\u7248\u672c\u529f\u80fd\u76f8\u540c\uff0c\u4f46\u53c2\u6570\u987a\u5e8f\u76f8\u53cd\u3002",
+        "\u6ce8\u610fINSTR(str, substr) \u51fd\u6570\u662f\u5426\u533a\u5206\u5927\u5c0f\u53d6\u51b3\u4e8e TiDB \u6240\u4f7f\u7528\u7684\u6392\u5e8f\u89c4\u5219\u3002\u4e8c\u8fdb\u5236\u6392\u5e8f\u89c4\u5219\uff08\u4ee5 _bin \u4e3a\u540e\u7f00\uff09\u533a\u5206\u5927\u5c0f\u5199\uff0c\u800c\u901a\u7528\u6392\u5e8f\u89c4\u5219\uff08\u4ee5 _general_ci \u6216 _ai_ci \u4e3a\u540e\u7f00\uff09\u4e0d\u533a\u5206\u5927\u5c0f\u5199\u3002",
+        "\u5982\u679c\u4efb\u4e00\u8f93\u5165\u53c2\u6570\u4e3a\u6570\u5b57\uff0c\u8be5\u51fd\u6570\u5c06\u6570\u5b57\u89c6\u4e3a\u5b57\u7b26\u4e32\u5904\u7406\u3002\u5982\u679c substr \u4e0d\u5728 str \u4e2d\uff0c\u51fd\u6570\u8fd4\u56de 0\u3002\u5426\u5219\uff0c\u8fd4\u56de substr \u5728 str \u4e2d\u7b2c\u4e00\u6b21\u51fa\u73b0\u7684\u4f4d\u7f6e\u3002\u5982\u679c\u4efb\u4e00\u53c2\u6570\u4e3a NULL\uff0c\u8be5\u51fd\u6570\u8fd4\u56de NULL\u3002"
+    ],
+    "Examples": [
+        "SELECT INSTR(\"pingcap.com\", \"tidb\");\n+------------------------------+\n| INSTR(\"pingcap.com\", \"tidb\") |\n+------------------------------+\n|                            0 |\n+------------------------------+\n",
+        "SELECT INSTR(\"pingcap.com/tidb\", \"tidb\");\n+-----------------------------------+\n| INSTR(\"pingcap.com/tidb\", \"tidb\") |\n+-----------------------------------+\n|                                13 |\n+-----------------------------------+\n",
+        "SELECT INSTR(\"pingcap.com/tidb\" COLLATE utf8mb4_bin, \"TiDB\");\n+-------------------------------------------------------+\n| INSTR(\"pingcap.com/tidb\" COLLATE utf8mb4_bin, \"TiDB\") |\n+-------------------------------------------------------+\n|                                                     0 |\n+-------------------------------------------------------+\n",
+        "SELECT INSTR(\"pingcap.com/tidb\" COLLATE utf8mb4_general_ci, \"TiDB\");\n+--------------------------------------------------------------+\n| INSTR(\"pingcap.com/tidb\" COLLATE utf8mb4_general_ci, \"TiDB\") |\n+--------------------------------------------------------------+\n|                                                           13 |\n+--------------------------------------------------------------+\n",
+        "SELECT INSTR(0123, \"12\");\n+-------------------+\n| INSTR(0123, \"12\") |\n+-------------------+\n|                 1 |\n+-------------------+\n"
+    ],
+    "Category": [
+        "String Functions"
+    ]
+}

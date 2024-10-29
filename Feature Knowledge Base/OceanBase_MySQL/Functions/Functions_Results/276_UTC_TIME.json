@@ -1,0 +1,21 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000000823393"
+    ],
+    "Title": [
+        "UTC_TIME"
+    ],
+    "Feature": [
+        "UTC_TIME([fsp])\n"
+    ],
+    "Description": [
+        "将当前 UTC 时间以 %H:%i:%s 格式返回。",
+        "fsp 参数用于指定分秒精度，有效值为 0 到 6 之间的整数。"
+    ],
+    "Examples": [
+        "obclient> SELECT UTC_TIME(), UTC_TIME() + 0, UTC_TIME() + 6;\n+------------+----------------+----------------+\n| UTC_TIME() | UTC_TIME() + 0 | UTC_TIME() + 6 |\n+------------+----------------+----------------+\n| 13:07:35   |         130735 |         130741 |\n+------------+----------------+----------------+\n1 row in set\n"
+    ],
+    "Category": [
+        "Date and Time Functions"
+    ]
+}

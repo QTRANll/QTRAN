@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/current/functions-datetime.html"
+    ],
+    "Title": [
+        "timestamp with time zone AT LOCAL"
+    ],
+    "Feature": [
+        "timestamp with time zone AT LOCAL → timestamp without time zone"
+    ],
+    "Description": [
+        "Converts given time stamp with time zone to time stamp without time zone, as the time would appear with the session's TimeZone value as time zone."
+    ],
+    "Examples": [
+        "timestamp with time zone '2001-02-16 20:38:40-05' at local → 2001-02-16 18:38:40"
+    ],
+    "Category": [
+        "Date divide Time Functions and Operators"
+    ]
+}

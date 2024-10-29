@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/current/functions-textsearch.html"
+    ],
+    "Title": [
+        "ts_delete"
+    ],
+    "Feature": [
+        "ts_delete ( vector tsvector, lexemes text[] ) → tsvector"
+    ],
+    "Description": [
+        "Removes any occurrences of the lexemes in lexemes from the vector. The strings in lexemes are taken as lexemes as-is, without further processing. Strings that do not match any lexeme in vector are ignored."
+    ],
+    "Examples": [
+        "ts_delete('fat:2,4 cat:3 rat:5A'::tsvector, ARRAY['fat','rat']) → 'cat':3"
+    ],
+    "Category": [
+        "Text Search Functions and Operators"
+    ]
+}

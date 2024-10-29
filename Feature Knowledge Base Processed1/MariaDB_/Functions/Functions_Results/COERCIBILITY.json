@@ -1,0 +1,42 @@
+{
+    "HTML": "https://mariadb.com//kb/en/coercibility/",
+    "Title": "COERCIBILITY",
+    "Feature": [
+        "COERCIBILITY(str)\n"
+    ],
+    "Description": [
+        "Returns the collation coercibility value of the string argument. Coercibility defines what will be converted to what in case of collation conflict, with an expression with higher coercibility being converted to the collation of an expression with lower coercibility.",
+        "CoercibilityDescriptionExample\n0ExplicitValue using a COLLATE clause\n1No collationConcatenated strings using different collations\n2ImplicitA string data type column value, CAST to a string data type\n3System constantDATABASE(), USER() return value\n4CoercibleLiteral string\n5NumericNumeric and temporal values\n6IgnorableNULL or derived from NULL\n\n"
+    ],
+    "Examples": [
+        "SELECT COERCIBILITY('abc' COLLATE latin1_swedish_ci);\n+-----------------------------------------------+\n| COERCIBILITY('abc' COLLATE latin1_swedish_ci) |\n+-----------------------------------------------+\n|                                             0 |\n+-----------------------------------------------+\n\nSELECT COERCIBILITY(CAST(1 AS CHAR));\n+-------------------------------+\n| COERCIBILITY(CAST(1 AS CHAR)) |\n+-------------------------------+\n|                             2 |\n+-------------------------------+\n\nSELECT COERCIBILITY(USER());\n+----------------------+\n| COERCIBILITY(USER()) |\n+----------------------+\n|                    3 |\n+----------------------+\n\nSELECT COERCIBILITY('abc');\n+---------------------+\n| COERCIBILITY('abc') |\n+---------------------+\n|                   4 |\n+---------------------+\n\nSELECT COERCIBILITY(1);\n+-----------------+\n| COERCIBILITY(1) |\n+-----------------+\n|               5 |\n+-----------------+\n\nSELECT COERCIBILITY(NULL);\n+--------------------+\n| COERCIBILITY(NULL) |\n+--------------------+\n|                  6 |\n+--------------------+\n"
+    ],
+    "Category": [
+        "Information Functions"
+    ],
+    "Effective SQLs Refined": [
+        "SELECT COERCIBILITY(CAST(1 AS CHAR));",
+        "SELECT COERCIBILITY(USER());",
+        "SELECT COERCIBILITY('abc');",
+        "SELECT COERCIBILITY(1);",
+        "SELECT COERCIBILITY(NULL);"
+    ],
+    "Ineffective SQLs Refined": [
+        "SELECT COERCIBILITY('abc' COLLATE latin1_swedish_ci);"
+    ],
+    "Wrong Messages from Ineffective SQLs Refined": [
+        "(pymysql.err.OperationalError) (1253, \"COLLATION 'latin1_swedish_ci' is not valid for CHARACTER SET 'utf8mb4'\")\n[SQL: SELECT COERCIBILITY('abc' COLLATE latin1_swedish_ci);]\n(Background on this error at: https://sqlalche.me/e/20/e3q8)"
+    ],
+    "SQLs Generated1": [],
+    "SQLs Generated Costs1": [],
+    "SQLs Generated ExecResults1": [],
+    "SQLs Generated ExecTimes1": [],
+    "SQLs Generated ErrorMessages1": [],
+    "Effective SQLs Generated1": [],
+    "SQLs Generated2": [],
+    "SQLs Generated Costs2": [],
+    "SQLs Generated ExecResults2": [],
+    "SQLs Generated ExecTimes2": [],
+    "SQLs Generated ErrorMessages2": [],
+    "Effective SQLs Generated2": []
+}

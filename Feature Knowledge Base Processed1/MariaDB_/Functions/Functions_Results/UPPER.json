@@ -1,0 +1,46 @@
+{
+    "HTML": "https://mariadb.com//kb/en/upper/",
+    "Title": "UPPER",
+    "Feature": [
+        "UPPER(str)\nUCASE(str)\n"
+    ],
+    "Description": [
+        "Returns the string str with all characters changed to uppercase\naccording to the current character set mapping. The default is latin1\n(cp1252 West European).",
+        "UCASE is a synonym.",
+        "SELECT UPPER(surname), givenname FROM users ORDER BY surname;\n+----------------+------------+\n| UPPER(surname) | givenname  |\n+----------------+------------+\n| ABEL           | Jacinto    |\n| CASTRO         | Robert     |\n| COSTA          | Phestos    |\n| MOSCHELLA      | Hippolytos |\n+----------------+------------+\n",
+        "UPPER() is ineffective when applied to binary strings (BINARY, VARBINARY, BLOB). The description of LOWER() shows how to perform lettercase conversion of binary strings.",
+        "Prior to MariaDB 11.3, the query optimizer did not handle queries of the format UCASE(varchar_col)=.... An optimizer_switch option, sargable_casefold=ON, was added in MariaDB 11.3.0 to handle this case. (MDEV-31496)"
+    ],
+    "Examples": [],
+    "Category": [
+        "String Functions"
+    ],
+    "Effective SQLs Refined": [],
+    "Ineffective SQLs Refined": [],
+    "Wrong Messages from Ineffective SQLs Refined": [],
+    "SQLs Generated1": [
+        {
+            "Example SQL": "SELECT UPPER('hello world');"
+        }
+    ],
+    "SQLs Generated Costs1": [
+        {
+            "Total Tokens": 487,
+            "Prompt Tokens": 467,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 8.204999999999999e-05
+        }
+    ],
+    "SQLs Generated ExecResults1": [
+        "[('HELLO WORLD',)]"
+    ],
+    "SQLs Generated ExecTimes1": [
+        "0.005381107330322266"
+    ],
+    "SQLs Generated ErrorMessages1": [
+        "None"
+    ],
+    "Effective SQLs Generated1": [
+        "SELECT UPPER('hello world');"
+    ]
+}

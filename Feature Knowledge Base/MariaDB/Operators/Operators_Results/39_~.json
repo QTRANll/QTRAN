@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/bitwise-not/"
+    ],
+    "Title": [
+        "~"
+    ],
+    "Feature": [
+        "~\n"
+    ],
+    "Description": [
+        "Bitwise NOT. Converts the value to 4 bytes binary and inverts all bits."
+    ],
+    "Examples": [
+        "SELECT 3 & ~1;\n+--------+\n| 3 & ~1 |\n+--------+\n|      2 |\n+--------+\n\nSELECT 5 & ~1;\n+--------+\n| 5 & ~1 |\n+--------+\n|      4 |\n+--------+\n"
+    ],
+    "Category": [
+        "Bit Functions and Operators"
+    ]
+}

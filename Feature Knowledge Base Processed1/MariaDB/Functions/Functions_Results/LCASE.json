@@ -1,0 +1,42 @@
+{
+    "HTML": "https://mariadb.com//kb/en/lcase/",
+    "Title": "LCASE",
+    "Feature": [
+        "LCASE(str)\n"
+    ],
+    "Description": [
+        "LCASE() is a synonym for LOWER()."
+    ],
+    "Examples": [],
+    "Category": [
+        "String Functions"
+    ],
+    "Effective SQLs Refined": [],
+    "Ineffective SQLs Refined": [],
+    "Wrong Messages from Ineffective SQLs Refined": [],
+    "SQLs Generated1": [
+        {
+            "Example SQL": "SELECT LCASE('HELLO WORLD');"
+        }
+    ],
+    "SQLs Generated Costs1": [
+        {
+            "Total Tokens": 263,
+            "Prompt Tokens": 242,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 4.8899999999999996e-05
+        }
+    ],
+    "SQLs Generated ExecResults1": [
+        "[('hello world',)]"
+    ],
+    "SQLs Generated ExecTimes1": [
+        "0.021046161651611328"
+    ],
+    "SQLs Generated ErrorMessages1": [
+        "None"
+    ],
+    "Effective SQLs Generated1": [
+        "SELECT LCASE('HELLO WORLD');"
+    ]
+}

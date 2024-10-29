@@ -1,0 +1,21 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/monthname/"
+    ],
+    "Title": [
+        "MONTHNAME"
+    ],
+    "Feature": [
+        "MONTHNAME(date)\n"
+    ],
+    "Description": [
+        "Returns the full name of the month for date. The language used for the name is controlled by the value of the lc_time_names system variable. See server locale for more on the supported locales."
+    ],
+    "Examples": [
+        "SELECT MONTHNAME('2019-02-03');",
+        "SELECT MONTHNAME('2019-05-21');"
+    ],
+    "Category": [
+        "Date & Time Functions"
+    ]
+}

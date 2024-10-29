@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/json_query/"
+    ],
+    "Title": [
+        "JSON_QUERY"
+    ],
+    "Feature": [
+        "JSON_QUERY(json_doc, path)\n"
+    ],
+    "Description": [
+        "Given a JSON document, returns an object or array specified by the path. Returns NULL if not given a valid JSON document, or if there is no match."
+    ],
+    "Examples": [
+        "SELECT JSON_QUERY('{\"key\": \"value\"}', '$.key')"
+    ],
+    "Category": [
+        "JSON Functions"
+    ]
+}

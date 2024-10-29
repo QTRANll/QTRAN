@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/current/functions-geometry.html"
+    ],
+    "Title": [
+        "bound_box"
+    ],
+    "Feature": [
+        "bound_box ( box, box ) → box"
+    ],
+    "Description": [
+        "Computes bounding box of two boxes."
+    ],
+    "Examples": [
+        "bound_box(box '(1,1),(0,0)', box '(4,4),(3,3)') → (4,4),(0,0)"
+    ],
+    "Category": [
+        "Geometric Functions and Operators"
+    ]
+}

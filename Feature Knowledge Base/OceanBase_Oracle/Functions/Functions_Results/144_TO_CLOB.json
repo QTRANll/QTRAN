@@ -1,0 +1,22 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000000823235"
+    ],
+    "Title": [
+        "TO_CLOB"
+    ],
+    "Feature": [
+        "TO_CLOB(lob_column | char)\n"
+    ],
+    "Description": [
+        "该函数将 LOB 列或其他字符串中的 NCLOB 值转换为 CLOB 值。",
+        "\n\n\n参数\n说明\n\n\n\n\nlob_column\n属于 LOB 列或其他字符串中的 NCLOB 值。\n\n\nchar\n属于 CHAR、VARCHAR2、NCHAR、NVARCHAR2、CLOB 或 NCLOB 类型的值。\n\n\n",
+        "返回 CLOB 类型。"
+    ],
+    "Examples": [
+        "obclient> DESC tbl_nclob;\n+----------+---------------+------+-----+---------+-------+\n| FIELD    | TYPE          | NULL | KEY | DEFAULT | EXTRA |\n+----------+---------------+------+-----+---------+-------+\n| COL1     | NUMBER(38)    | YES  | NULL | NULL    | NULL  |\n| COL_CHAR | VARCHAR2(100) | YES  | NULL | NULL    | NULL  |\n| COL_CLOB | CLOB          | YES  | NULL | NULL    | NULL  |\n+----------+---------------+------+-----+---------+-------+\n3 rows in set\n\nobclient> UPDATE tbl_nclob SET col_clob = TO_CLOB (col_char);\nQuery OK, 1 row affected\nRows matched: 1  Changed: 1  Warnings: 0\n"
+    ],
+    "Category": [
+        "Conversion Functions"
+    ]
+}

@@ -1,0 +1,29 @@
+{
+    "HTML": [
+        "https://docs.pingcap.com/zh/tidb/stable/tidb-functions#tidb_current_tso"
+    ],
+    "Title": [
+        "TIDB_CURRENT_TSO"
+    ],
+    "Feature": [
+        "TIDB_CURRENT_TSO"
+    ],
+    "Description": [
+        "TIDB_CURRENT_TSO",
+        "TIDB_CURRENT_TSO() \u51fd\u6570\u8fd4\u56de\u5f53\u524d\u4e8b\u52a1\u7684 TSO\uff0c\u7c7b\u4f3c\u4e8e tidb_current_ts \u53d8\u91cf\u3002",
+        "BEGIN;\n",
+        "Query OK, 0 rows affected (0.00 sec)\n",
+        "SELECT TIDB_CURRENT_TSO();\n",
+        "+--------------------+\n| TIDB_CURRENT_TSO() |\n+--------------------+\n| 450456244814610433 |\n+--------------------+\n1 row in set (0.00 sec)\n",
+        "SELECT @@tidb_current_ts;\n",
+        "+--------------------+\n| @@tidb_current_ts  |\n+--------------------+\n| 450456244814610433 |\n+--------------------+\n1 row in set (0.00 sec)\n"
+    ],
+    "Examples": [
+        "BEGIN;\n",
+        "SELECT TIDB_CURRENT_TSO();\n",
+        "SELECT @@tidb_current_ts;\n"
+    ],
+    "Category": [
+        "TiDB Specific Functions"
+    ]
+}

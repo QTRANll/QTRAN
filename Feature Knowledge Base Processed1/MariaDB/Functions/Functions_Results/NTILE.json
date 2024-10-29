@@ -1,0 +1,74 @@
+{
+    "HTML": "https://mariadb.com//kb/en/ntile/",
+    "Title": "NTILE",
+    "Feature": [
+        "NTILE (expr) OVER ( \n  [ PARTITION BY partition_expression ] \n  [ ORDER BY order_list ]\n)\n"
+    ],
+    "Description": [
+        "NTILE() is a window function that returns an integer indicating which group a given row falls into. The number of groups is specified in the argument (expr), starting at one. Ordered rows in the partition are divided into the specified number of groups with as equal a size as possible. "
+    ],
+    "Examples": [
+        "create table t1 (\n    pk int primary key,\n    a int,\n    b int\n  );\n\ninsert into t1 values\n    (11 , 0, 10),\n    (12 , 0, 10),\n    (13 , 1, 10),\n    (14 , 1, 10),\n    (18 , 2, 10),\n    (15 , 2, 20),\n    (16 , 2, 20),\n    (17 , 2, 20),\n    (19 , 4, 20),\n    (20 , 4, 20);\n\nselect pk, a, b,\n    ntile(1) over (order by pk)\n  from t1;\n+----+------+------+-----------------------------+\n| pk | a    | b    | ntile(1) over (order by pk) |\n+----+------+------+-----------------------------+\n| 11 |    0 |   10 |                           1 |\n| 12 |    0 |   10 |                           1 |\n| 13 |    1 |   10 |                           1 |\n| 14 |    1 |   10 |                           1 |\n| 15 |    2 |   20 |                           1 |\n| 16 |    2 |   20 |                           1 |\n| 17 |    2 |   20 |                           1 |\n| 18 |    2 |   10 |                           1 |\n| 19 |    4 |   20 |                           1 |\n| 20 |    4 |   20 |                           1 |\n+----+------+------+-----------------------------+\n\nselect pk, a, b,\n    ntile(4) over (order by pk)\n from t1;\n+----+------+------+-----------------------------+\n| pk | a    | b    | ntile(4) over (order by pk) |\n+----+------+------+-----------------------------+\n| 11 |    0 |   10 |                           1 |\n| 12 |    0 |   10 |                           1 |\n| 13 |    1 |   10 |                           1 |\n| 14 |    1 |   10 |                           2 |\n| 15 |    2 |   20 |                           2 |\n| 16 |    2 |   20 |                           2 |\n| 17 |    2 |   20 |                           3 |\n| 18 |    2 |   10 |                           3 |\n| 19 |    4 |   20 |                           4 |\n| 20 |    4 |   20 |                           4 |\n+----+------+------+-----------------------------+\n"
+    ],
+    "Category": [
+        "Window Functions"
+    ],
+    "Effective SQLs Refined": [],
+    "Ineffective SQLs Refined": [
+        "select pk, a, b,\n    ntile(1) over (order by pk)\n  from t1;",
+        "select pk, a, b,\n    ntile(4) over (order by pk)\n from t1;"
+    ],
+    "Wrong Messages from Ineffective SQLs Refined": [
+        "(pymysql.err.OperationalError) (1054, \"Unknown column 'pk' in 'field list'\")\n[SQL: select pk, a, b,\n    ntile(1) over (order by pk)\n  from t1;]\n(Background on this error at: https://sqlalche.me/e/20/e3q8)",
+        "(pymysql.err.OperationalError) (1054, \"Unknown column 'pk' in 'field list'\")\n[SQL: select pk, a, b,\n    ntile(4) over (order by pk)\n from t1;]\n(Background on this error at: https://sqlalche.me/e/20/e3q8)"
+    ],
+    "SQLs Generated1": [
+        {
+            "Example SQL": "SELECT NTILE(4) OVER (ORDER BY column_name) AS group_number;"
+        },
+        {
+            "Example SQL": "SELECT NTILE(4) OVER (ORDER BY some_existing_column) AS group_number;"
+        },
+        {
+            "Example SQL": "SELECT NTILE(4) OVER (ORDER BY 1) AS group_number;"
+        }
+    ],
+    "SQLs Generated Costs1": [
+        {
+            "Total Tokens": 344,
+            "Prompt Tokens": 315,
+            "Completion Tokens": 29,
+            "Total Cost (USD)": 6.465e-05
+        },
+        {
+            "Total Tokens": 502,
+            "Prompt Tokens": 472,
+            "Completion Tokens": 30,
+            "Total Cost (USD)": 8.879999999999999e-05
+        },
+        {
+            "Total Tokens": 660,
+            "Prompt Tokens": 631,
+            "Completion Tokens": 29,
+            "Total Cost (USD)": 0.00011205
+        }
+    ],
+    "SQLs Generated ExecResults1": [
+        "None",
+        "None",
+        "[(1,)]"
+    ],
+    "SQLs Generated ExecTimes1": [
+        "0",
+        "0",
+        "0.004300117492675781"
+    ],
+    "SQLs Generated ErrorMessages1": [
+        "(pymysql.err.OperationalError) (1054, \"Unknown column 'column_name' in 'order clause'\")\n",
+        "(pymysql.err.OperationalError) (1054, \"Unknown column 'some_existing_column' in 'order clause'\")\n",
+        "None"
+    ],
+    "Effective SQLs Generated1": [
+        "SELECT NTILE(4) OVER (ORDER BY 1) AS group_number;"
+    ]
+}

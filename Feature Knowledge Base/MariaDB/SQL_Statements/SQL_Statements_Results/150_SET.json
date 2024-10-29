@@ -1,0 +1,37 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/set/"
+    ],
+    "Title": [
+        "SET"
+    ],
+    "Feature": [
+        "SET variable_assignment [, variable_assignment] ...\n\nvariable_assignment:\n      user_var_name = expr\n    | [GLOBAL | SESSION] system_var_name = expr\n    | [@@global. | @@session. | @@]system_var_name = expr\n",
+        "One can also set a user variable in any expression with this syntax:",
+        "user_var_name:= expr\n"
+    ],
+    "Description": [
+        "The SET statement assigns values to different types of\nvariables that affect the operation of the server or your client. Older\nversions of MySQL employed SET OPTION, but this syntax was\ndeprecated in favor of SET without OPTION, and was removed in MariaDB 10.0.",
+        "Changing a system variable by using the SET statement does not make the change permanently. To do so, the change must be made in a configuration file.",
+        "For setting variables on a per-query basis, see SET STATEMENT.",
+        "See SHOW VARIABLES for documentation on viewing server system variables.",
+        "See Server System Variables for a list of all the system variables.",
+        "GLOBAL / SESSION",
+        "When setting a system variable, the scope can be specified as either GLOBAL or SESSION.",
+        "A global variable change affects all new sessions. It does not affect any currently open sessions, including the one that made the change. ",
+        "A session variable change affects the current session only.",
+        "If the variable has a session value, not specifying either GLOBAL or SESSION will be the same as specifying SESSION. If the variable only has a global value, not specifying GLOBAL or SESSION will apply to the change to the global value.",
+        "DEFAULT",
+        "Setting a global variable to DEFAULT will restore it to the server default, and setting a session variable to DEFAULT will restore it to the current global value."
+    ],
+    "Examples": [
+        "SELECT VARIABLE_NAME, SESSION_VALUE, GLOBAL_VALUE FROM\n INFORMATION_SCHEMA.SYSTEM_VARIABLES WHERE \n  VARIABLE_NAME IN ('max_error_count', 'skip_parallel_replication', 'innodb_sync_spin_loops');\n+---------------------------+---------------+--------------+\n| VARIABLE_NAME             | SESSION_VALUE | GLOBAL_VALUE |\n+---------------------------+---------------+--------------+\n| MAX_ERROR_COUNT           | 64            | 64           |\n| SKIP_PARALLEL_REPLICATION | OFF           | NULL         |\n| INNODB_SYNC_SPIN_LOOPS    | NULL          | 30           |\n+---------------------------+---------------+--------------+\n",
+        "SET max_error_count=128;Query OK, 0 rows affected (0.000 sec)\n\nSET skip_parallel_replication=ON;Query OK, 0 rows affected (0.000 sec)\n\nSET innodb_sync_spin_loops=60;\nERROR 1229 (HY000): Variable 'innodb_sync_spin_loops' is a GLOBAL variable \n  and should be set with SET GLOBAL\n\nSELECT VARIABLE_NAME, SESSION_VALUE, GLOBAL_VALUE FROM\n INFORMATION_SCHEMA.SYSTEM_VARIABLES WHERE \n  VARIABLE_NAME IN ('max_error_count', 'skip_parallel_replication', 'innodb_sync_spin_loops');\n+---------------------------+---------------+--------------+\n| VARIABLE_NAME             | SESSION_VALUE | GLOBAL_VALUE |\n+---------------------------+---------------+--------------+\n| MAX_ERROR_COUNT           | 128           | 64           |\n| SKIP_PARALLEL_REPLICATION | ON            | NULL         |\n| INNODB_SYNC_SPIN_LOOPS    | NULL          | 30           |\n+---------------------------+---------------+--------------+\n",
+        "SET GLOBAL max_error_count=256;\n\nSET GLOBAL skip_parallel_replication=ON;\nERROR 1228 (HY000): Variable 'skip_parallel_replication' is a SESSION variable \n  and can't be used with SET GLOBAL\n\nSET GLOBAL innodb_sync_spin_loops=120;\n\nSELECT VARIABLE_NAME, SESSION_VALUE, GLOBAL_VALUE FROM\n INFORMATION_SCHEMA.SYSTEM_VARIABLES WHERE \n  VARIABLE_NAME IN ('max_error_count', 'skip_parallel_replication', 'innodb_sync_spin_loops');\n+---------------------------+---------------+--------------+\n| VARIABLE_NAME             | SESSION_VALUE | GLOBAL_VALUE |\n+---------------------------+---------------+--------------+\n| MAX_ERROR_COUNT           | 128           | 256          |\n| SKIP_PARALLEL_REPLICATION | ON            | NULL         |\n| INNODB_SYNC_SPIN_LOOPS    | NULL          | 120          |\n+---------------------------+---------------+--------------+\n",
+        "SHOW VARIABLES LIKE 'max_error_count';\n+-----------------+-------+\n| Variable_name   | Value |\n+-----------------+-------+\n| max_error_count | 128   |\n+-----------------+-------+\n\nSHOW VARIABLES LIKE 'skip_parallel_replication';\n+---------------------------+-------+\n| Variable_name             | Value |\n+---------------------------+-------+\n| skip_parallel_replication | ON    |\n+---------------------------+-------+\n\nSHOW VARIABLES LIKE 'innodb_sync_spin_loops';\n+------------------------+-------+\n| Variable_name          | Value |\n+------------------------+-------+\n| innodb_sync_spin_loops | 120   |\n+------------------------+-------+\n",
+        "SELECT (@a:=1);\n+---------+\n| (@a:=1) |\n+---------+\n|       1 |\n+---------+\n\nSELECT @a;\n+------+\n| @a   |\n+------+\n|    1 |\n+------+\n"
+    ],
+    "Category": [
+        "Administrative SQL Statements"
+    ]
+}

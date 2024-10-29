@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://docs.pingcap.com//zh/tidb/stable/sql-statement-drop-placement-policy"
+    ],
+    "Title": [
+        "DROP PLACEMENT POLICY"
+    ],
+    "Feature": [
+        "DropPolicyStmt ::=\n    \"DROP\" \"PLACEMENT\" \"POLICY\" IfExists PolicyName\n\nPolicyName ::=\n    Identifier\n"
+    ],
+    "Description": [
+        "DROP PLACEMENT POLICY \u7528\u4e8e\u5220\u9664\u5df2\u521b\u5efa\u7684\u653e\u7f6e\u7b56\u7565\u3002"
+    ],
+    "Examples": [
+        "CREATE PLACEMENT POLICY p1 FOLLOWERS=4;\nCREATE TABLE t1 (a INT PRIMARY KEY) PLACEMENT POLICY=p1;\nDROP PLACEMENT POLICY p1;  -- \u8be5\u8bed\u53e5\u6267\u884c\u5931\u8d25\uff0c\u56e0\u4e3a\u653e\u7f6e\u89c4\u5219 p1 \u88ab\u5f15\u7528\u3002\n\n-- \u67e5\u770b\u5f15\u7528\u653e\u7f6e\u89c4\u5219\u7684\u8868\u548c\u5206\u533a\u3002\nSELECT table_schema, table_name FROM information_schema.tables WHERE tidb_placement_policy_name='p1';\nSELECT table_schema, table_name FROM information_schema.partitions WHERE tidb_placement_policy_name='p1';\n\nALTER TABLE t1 PLACEMENT POLICY=default;  -- \u79fb\u9664\u8868 t1 \u4e0a\u7684\u9ed8\u8ba4\u653e\u7f6e\u89c4\u5219\u3002\nDROP PLACEMENT POLICY p1;  -- \u6267\u884c\u6210\u529f\u3002\n"
+    ],
+    "Category": [
+        "\u653e\u7f6e\u7b56\u7565"
+    ]
+}

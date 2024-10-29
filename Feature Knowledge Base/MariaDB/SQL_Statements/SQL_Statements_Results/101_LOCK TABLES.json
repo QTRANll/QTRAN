@@ -1,0 +1,29 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/lock-tables/"
+    ],
+    "Title": [
+        "LOCK TABLES"
+    ],
+    "Feature": [
+        "LOCK TABLE[S]\n    tbl_name [[AS] alias] lock_type\n    [, tbl_name [[AS] alias] lock_type] ...\n    [WAIT n|NOWAIT]\n\nlock_type:\n    READ [LOCAL]\n  | [LOW_PRIORITY] WRITE\n  | WRITE CONCURRENT\n\nUNLOCK TABLES\n"
+    ],
+    "Description": [
+        "The lock_type can be one of:",
+        "OptionDescription\nREADRead lock, no writes allowed\nREAD LOCALRead lock, but allow concurrent inserts\nWRITEExclusive write lock. No other connections can read or write to this table\nLOW_PRIORITY WRITEExclusive write lock, but allow new read locks on the table until we get the write lock.\nWRITE CONCURRENTExclusive write lock, but allow READ LOCAL locks to the table.\n\n",
+        "MariaDB enables client sessions to acquire table locks explicitly for the\npurpose of cooperating with other sessions for access to tables, or to\nprevent other sessions from modifying tables during periods when a\nsession requires exclusive access to them. A session can acquire or\nrelease locks only for itself. One session cannot acquire locks for\nanother session or release locks held by another session.",
+        "Locks may be used to emulate transactions or to get more speed when\nupdating tables.",
+        "LOCK TABLES explicitly acquires table locks for the current client session.\nTable locks can be acquired for base tables or views. To use LOCK TABLES,\nyou must have the LOCK TABLES privilege, and the SELECT privilege for\neach object to be locked. See GRANT",
+        "For view locking, LOCK TABLES adds all base tables used in the view to the\nset of tables to be locked and locks them automatically. If you lock a table\nexplicitly with LOCK TABLES, any tables used in triggers are also locked\nimplicitly, as described in Triggers and Implicit Locks.",
+        "UNLOCK TABLES explicitly releases any table locks held by the\ncurrent session.",
+        "Aliases",
+        "Aliases need to correspond to the aliases used in prior SQL statements in the session. For example:",
+        "LOCK TABLE t1 AS t1_alias1 READ;\n\nSELECT * FROM t1;\nERROR 1100 (HY000): Table 't1' was not locked with LOCK TABLES\n\nSELECT * FROM t1 AS t1_alias2;\nERROR 1100 (HY000): Table 't1_alias2' was not locked with LOCK TABLES\n\nSELECT * FROM t1 AS t1_alias1;\n",
+        "WAIT/NOWAIT",
+        "Set the lock wait timeout. See WAIT and NOWAIT."
+    ],
+    "Examples": [],
+    "Category": [
+        "Transactions"
+    ]
+}

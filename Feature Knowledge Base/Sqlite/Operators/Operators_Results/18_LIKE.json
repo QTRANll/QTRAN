@@ -1,0 +1,23 @@
+{
+    "HTML": [
+        "https://sqlite.org/lang_expr.html"
+    ],
+    "Title": [
+        "SQL Language Expressions"
+    ],
+    "Feature": [
+        "LIKE"
+    ],
+    "Description": [
+        "The LIKE operator is used to match a pattern in a TEXT value. The pattern can include wildcards such as % (matches any number of characters) and _ (matches a single character). The ESCAPE clause can be used to specify an escape character for wildcards.",
+        "Parameters: A TEXT value and a pattern with wildcards.",
+        "Returns: True if the TEXT value matches the pattern; otherwise, false."
+    ],
+    "Examples": [
+        "SELECT * FROM products WHERE product_name LIKE 'Widget%'; -- Finds products with names starting with 'Widget'",
+        "SELECT * FROM users WHERE username LIKE '_admin'; -- Finds usernames where the second character is 'admin'"
+    ],
+    "Category": [
+        "Operators"
+    ]
+}

@@ -1,0 +1,22 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000000822852"
+    ],
+    "Title": [
+        "NTILE"
+    ],
+    "Feature": [
+        "NTILE (expr) OVER ([ query_partition_clause ] order_by_clause)\n"
+    ],
+    "Description": [
+        "该函数是一个分析函数，功能是将有序数据集划分为若干个组，并为每一行分配适当的组号。组编号为 1 到 expr。",
+        "\n\n\n参数\n说明\n\n\n\n\nexpr\n指定划分的组数。 \n      \nexpr 值必须解析为大于等于 1 的正数，如果 expr 是一个非整数常量，则数据库将会该值截断为整数。\n如果 expr 大于行数，则将填充与行数相等的多个组，其余组为空。\n 注意 不能通过使用 NTILE 或任何其他分析函数来嵌套分析函数。但是您可以在 expr 中使用其他内置函数表达式。\n\n\nOVER\n使用 OVER 子句定义窗口进行计算。详细信息请参见 分析函数说明。\n\n\n",
+        "返回 NUMERIC 类型数据。"
+    ],
+    "Examples": [
+        "obclient> SELECT * FROM emp_msg;\n+--------+--------+------+------+\n| DEPTNO | ENAME  | SAL  | MGR  |\n+--------+--------+------+------+\n|     10 | CLARK  | 2750 | 7839 |\n|     10 | KING   | 5300 | NULL |\n|     10 | MILLER | 1600 | 7782 |\n|     20 | ADAMS  | 1400 | 7788 |\n|     20 | FORD   | 3300 | 7566 |\n|     20 | JONES  | 3275 | 7839 |\n|     20 | SCOTT  | 3300 | 7566 |\n|     20 | SMITH  | 1100 | 7902 |\n|     30 | ALLEN  | 1900 | 7698 |\n|     30 | BLAKE  | 3150 | 7839 |\n|     30 | JAMES  | 1250 | 7698 |\n|     30 | MARTIN | 1550 | 7698 |\n|     30 | TURNER | 1800 | 7698 |\n|     30 | WARD   | 1550 | 7698 |\n|     30 | SCLARK | 1750 | 7839 |\n+--------+--------+------+------+\n15 rows in set\n\nobclient> SELECT ename,sal,NTILE(5) OVER (ORDER BY sal DESC) sal_ntile FROM emp_msg ORDER BY sal DESC;\n+--------+------+-----------+\n| ENAME  | SAL  | SAL_NTILE |\n+--------+------+-----------+\n| KING   | 5300 |         1 |\n| FORD   | 3300 |         1 |\n| SCOTT  | 3300 |         1 |\n| JONES  | 3275 |         2 |\n| BLAKE  | 3150 |         2 |\n| CLARK  | 2750 |         2 |\n| ALLEN  | 1900 |         3 |\n| TURNER | 1800 |         3 |\n| SCLARK | 1750 |         3 |\n| MILLER | 1600 |         4 |\n| MARTIN | 1550 |         4 |\n| WARD   | 1550 |         4 |\n| ADAMS  | 1400 |         5 |\n| JAMES  | 1250 |         5 |\n| SMITH  | 1100 |         5 |\n+--------+------+-----------+\n15 rows in set\n"
+    ],
+    "Category": [
+        "Analytic Functions"
+    ]
+}

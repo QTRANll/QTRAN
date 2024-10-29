@@ -1,0 +1,36 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/uuid-functions"
+    ],
+    "Title": [
+        "UUIDv7ToDateTime"
+    ],
+    "Feature": [
+        "UUIDv7ToDateTime(uuid[, timezone])"
+    ],
+    "Description": [
+        "UUIDv7ToDateTime",
+        "Returns the timestamp component of a UUID version 7.",
+        "Syntax",
+        "UUIDv7ToDateTime(uuid[, timezone])",
+        "Arguments",
+        "uuid \u2014 UUID of version 7.timezone \u2014 Timezone name for the returned value (optional). String.",
+        "Returned value",
+        "Timestamp with milliseconds precision. If the UUID is not a valid version 7 UUID, it returns 1970-01-01 00:00:00.000. DateTime64(3).",
+        "Usage examples",
+        "SELECT UUIDv7ToDateTime(toUUID('018f05c9-4ab8-7b86-b64e-c9f03fbd45d1'))",
+        "Result:",
+        "\u250c\u2500UUIDv7ToDateTime(toUUID('018f05c9-4ab8-7b86-b64e-c9f03fbd45d1'))\u2500\u2510\u2502                                          2024-04-22 15:30:29.048 \u2502\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518",
+        "SELECT UUIDv7ToDateTime(toUUID('018f05c9-4ab8-7b86-b64e-c9f03fbd45d1'), 'America/New_York')",
+        "Result:",
+        "\u250c\u2500UUIDv7ToDateTime(toUUID('018f05c9-4ab8-7b86-b64e-c9f03fbd45d1'), 'America/New_York')\u2500\u2510\u2502                                                              2024-04-22 08:30:29.048 \u2502\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518"
+    ],
+    "Examples": [
+        "UUIDv7ToDateTime(uuid[, timezone])",
+        "SELECT UUIDv7ToDateTime(toUUID('018f05c9-4ab8-7b86-b64e-c9f03fbd45d1'))",
+        "SELECT UUIDv7ToDateTime(toUUID('018f05c9-4ab8-7b86-b64e-c9f03fbd45d1'), 'America/New_York')"
+    ],
+    "Category": [
+        "UUIDs Functions"
+    ]
+}

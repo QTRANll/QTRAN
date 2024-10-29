@@ -1,0 +1,33 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/array-functions"
+    ],
+    "Title": [
+        "arrayResize"
+    ],
+    "Feature": [
+        "arrayResize"
+    ],
+    "Description": [
+        "arrayResize",
+        "Changes the length of the array.",
+        "arrayResize(array, size[, extender])",
+        "Arguments:",
+        "array \u2014 Array.size \u2014 Required length of the array.If size is less than the original size of the array, the array is truncated from the right.If size is larger than the initial size of the array, the array is extended to the right with extender values or default values for the data type of the array items.extender \u2014 Value for extending an array. Can be NULL.",
+        "Returned value:",
+        "An array of length size.",
+        "Examples of calls",
+        "SELECT arrayResize([1], 3);",
+        "\u250c\u2500arrayResize([1], 3)\u2500\u2510\u2502 [1,0,0]             \u2502\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518",
+        "SELECT arrayResize([1], 3, NULL);",
+        "\u250c\u2500arrayResize([1], 3, NULL)\u2500\u2510\u2502 [1,NULL,NULL]             \u2502\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518"
+    ],
+    "Examples": [
+        "arrayResize(array, size[, extender])",
+        "SELECT arrayResize([1], 3);",
+        "SELECT arrayResize([1], 3, NULL);"
+    ],
+    "Category": [
+        "Arrays Functions"
+    ]
+}

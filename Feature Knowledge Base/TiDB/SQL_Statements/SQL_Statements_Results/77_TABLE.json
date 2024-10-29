@@ -1,0 +1,24 @@
+{
+    "HTML": [
+        "https://docs.pingcap.com//zh/tidb/stable/sql-statement-table"
+    ],
+    "Title": [
+        "TABLE"
+    ],
+    "Feature": [
+        "TableStmt ::=\n    \"TABLE\" Table ( \"ORDER BY\" Column )? ( \"LIMIT\" NUM )?\n"
+    ],
+    "Description": [
+        "\u5f53\u4e0d\u9700\u8981\u805a\u5408\u6216\u590d\u6742\u7684\u8fc7\u6ee4\u64cd\u4f5c\u65f6\uff0c\u53ef\u4ee5\u7528 TABLE \u8bed\u53e5\u4ee3\u66ff SELECT * FROM\u3002"
+    ],
+    "Examples": [
+        "CREATE TABLE t1(id INT PRIMARY KEY);\n",
+        "INSERT INTO t1 VALUES (1),(2),(3);\n",
+        "TABLE t1;\n",
+        "TABLE t1 ORDER BY id DESC;\n",
+        "TABLE t1 LIMIT 1;\n"
+    ],
+    "Category": [
+        "\u6570\u636e\u64cd\u4f5c\u8bed\u53e5 (DML)"
+    ]
+}

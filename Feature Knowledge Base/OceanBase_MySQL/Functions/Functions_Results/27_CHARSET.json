@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000000822967"
+    ],
+    "Title": [
+        "CHARSET"
+    ],
+    "Feature": [
+        "CHARSET(str)\n"
+    ],
+    "Description": [
+        "返回字符串 str 使用的字符集。"
+    ],
+    "Examples": [
+        "obclient> SELECT CHARSET(\"oceanbaase\");\n+-----------------------+\n| CHARSET(\"oceanbaase\") |\n+-----------------------+\n| utf8mb4               |\n+-----------------------+\n1 row in set\n\nobclient> SELECT CHARSET(CONVERT(\"oceanbase\" USING binary));\n+--------------------------------------------+\n| CHARSET(CONVERT(\"oceanbase\" USING binary)) |\n+--------------------------------------------+\n| binary                                     |\n+--------------------------------------------+\n1 row in set\n"
+    ],
+    "Category": [
+        "Information Functions"
+    ]
+}

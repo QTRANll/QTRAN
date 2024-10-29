@@ -1,0 +1,23 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/degrees/"
+    ],
+    "Title": [
+        "DEGREES"
+    ],
+    "Feature": [
+        "DEGREES(X)\n"
+    ],
+    "Description": [
+        "Returns the argument X, converted from radians to degrees.",
+        "This is the converse of the RADIANS() function."
+    ],
+    "Examples": [
+        "SELECT DEGREES(PI());",
+        "SELECT DEGREES(PI() / 2);",
+        "SELECT DEGREES(45);"
+    ],
+    "Category": [
+        "Numeric Functions"
+    ]
+}

@@ -1,0 +1,34 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/built-in-function-reference.html",
+        "https://dev.mysql.com/doc/refman/8.4/en/numeric-functions.html",
+        "https://dev.mysql.com/doc/refman/8.4/en/mathematical-functions.html"
+    ],
+    "Title": [
+        "14.1 Built-In Function and Operator Reference",
+        "14.6 Numeric Functions and Operators",
+        "14.6.2 Mathematical Functions"
+    ],
+    "Feature": [
+        "CRC32(expr)"
+    ],
+    "Description": [
+        "Compute a cyclic redundancy check value",
+        "\nCRC32(expr)\n",
+        "\n            Computes a cyclic redundancy check value and returns a\n            32-bit unsigned value. The result is NULL\n            if the argument is NULL. The argument is\n            expected to be a string and (if possible) is treated as one\n            if it is not.\n          ",
+        "Press CTRL+C to copy mysql> SELECT CRC32('MySQL');\n        -> 3259397556\nmysql> SELECT CRC32('mysql');\n        -> 2501908538"
+    ],
+    "Examples": [
+        "mysql> SELECT CRC32('MySQL');\n        -> 3259397556\nmysql> SELECT CRC32('mysql');\n        -> 2501908538"
+    ],
+    "Category": [
+        "Built-In Functions",
+        "Mathematical Functions"
+    ],
+    "Reference HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/mathematical-functions.html#function_crc32"
+    ],
+    "Feature Type": [
+        "Function"
+    ]
+}

@@ -1,0 +1,25 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/show-databases/"
+    ],
+    "Title": [
+        "SHOW DATABASES"
+    ],
+    "Feature": [
+        "SHOW {DATABASES | SCHEMAS}\n    [LIKE 'pattern' | WHERE expr]\n"
+    ],
+    "Description": [
+        "SHOW DATABASES lists the databases on the MariaDB server host.\nSHOW SCHEMAS is a synonym for \nSHOW DATABASES. The LIKE clause, if\npresent on its own, indicates which database names to match. The WHERE and LIKE clauses can be given to select rows using more general conditions, as discussed in Extended SHOW.",
+        "You see only those databases for which you have some kind of\nprivilege, unless you have the global \nSHOW DATABASES privilege. You\ncan also get this list using the mariadb-show command.",
+        "If the server was started with the --skip-show-database\noption, you cannot use this statement at all unless you have the\nSHOW DATABASES privilege.",
+        "The list of results returned by SHOW DATABASES is based on directories in the data directory, which is how MariaDB implements databases. It's possible that output includes directories that do not correspond to actual databases.",
+        "The Information Schema SCHEMATA table also contains database information. "
+    ],
+    "Examples": [
+        "SHOW DATABASES;\n+--------------------+\n| Database           |\n+--------------------+\n| information_schema |\n| mysql              |\n| performance_schema |\n| test               |\n+--------------------+\n",
+        "SHOW DATABASES LIKE 'm%';\n+---------------+\n| Database (m%) |\n+---------------+\n| mysql         |\n+---------------+\n"
+    ],
+    "Category": [
+        "Administrative SQL Statements"
+    ]
+}

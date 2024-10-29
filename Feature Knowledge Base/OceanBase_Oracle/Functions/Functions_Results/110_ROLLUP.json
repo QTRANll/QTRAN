@@ -1,0 +1,29 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000000822878"
+    ],
+    "Title": [
+        "ROLLUP"
+    ],
+    "Feature": [
+        "SELECT ... GROUP BY ROLLUP(col_name [,col_name...])\n"
+    ],
+    "Description": [
+        "该函数是一个聚合函数，功能是可以为每个分组返回一个小计，同时为所有分组返回总计。它是 GROUP BY 语句的简单扩展，在数据统计和报表生成过程中比 GROUP BY 和 UNION 组合方法效率高。在涉及分组统计的任务中使用 ROLLUP 函数非常高效。例如，沿着时间或地理等层次维度进行小计，只需要查询 ROLLUP(y, m, day) 或 ROLLUP(country, state, city)。数据仓库管理员使用 ROLLUP 函数可以简化和加快汇总表的维护。",
+        "ROLLUP 函数的执行顺序如下：",
+        "根据参数指定的列从右到左递减分组。",
+        "对每个分组小计，再对所有分组合计。",
+        "按照 ORDER BY col1 (，col2，col3，col4 ...) 排序。",
+        "col_name 是指进行分组操作的列名。如果 ROLLUP 参数为 N 个 col_name，则相当于 N+1 个 GROUP BY 分组的 UNION 的结合。"
+    ],
+    "Examples": [
+        "obclient> CREATE TABLE group_tbl1 (group_id INT,job VARCHAR2(10),name VARCHAR2(10),salary INT);\nQuery OK, 0 rows affected\n\nobclient> INSERT INTO group_tbl1 VALUES\n    (10,'Coding','Bruce',1000),\n    (10,'Programmer','Clair',1000),\n    (20,'Coding','Jason',2000),\n    (20,'Programmer','Joey',2000),\n    (30,'Coding','Rebecca',3000),\n    (30,'Programmer','Rex',3000),\n    (40,'Coding','Samuel',4000),\n    (40,'Programmer','Susy',4000);\nQuery OK, 8 rows affected (0.01 sec)\nRecords: 8  Duplicates: 0  Warnings: 0\n\nobclient> SELECT * FROM group_tbl1;\n+----------+------------+---------+--------+\n| GROUP_ID | JOB        | NAME    | SALARY |\n+----------+------------+---------+--------+\n|       10 | Coding     | Bruce   |   1000 |\n|       10 | Programmer | Clair   |   1000 |\n|       20 | Coding     | Jason   |   2000 |\n|       20 | Programmer | Joey    |   2000 |\n|       30 | Coding     | Rebecca |   3000 |\n|       30 | Programmer | Rex     |   3000 |\n|       40 | Coding     | Samuel  |   4000 |\n|       40 | Programmer | Susy    |   4000 |\n+----------+------------+---------+--------+\n8 rows in set\n",
+        "obclient> SELECT group_id,SUM(salary) FROM group_tbl1 GROUP BY group_id;\n+----------+-------------+\n| GROUP_ID | SUM(SALARY) |\n+----------+-------------+\n|       10 |        2000 |\n|       20 |        4000 |\n|       30 |        6000 |\n|       40 |        8000 |\n+----------+-------------+\n4 rows in set\n",
+        "obclient> SELECT group_id,SUM(salary) FROM group_tbl1 GROUP BY ROLLUP (group_id);\n+----------+-------------+\n| GROUP_ID | SUM(SALARY) |\n+----------+-------------+\n|       10 |        2000 |\n|       20 |        4000 |\n|       30 |        6000 |\n|       40 |        8000 |\n|     NULL |       20000 |\n+----------+-------------+\n5 rows in set\n",
+        "obclient> SELECT group_id,job,SUM(salary) FROM group_tbl1 GROUP BY ROLLUP (group_id,job);\n+----------+------------+-------------+\n| GROUP_ID | JOB        | SUM(SALARY) |\n+----------+------------+-------------+\n|       10 | Coding     |        1000 |\n|       10 | Programmer |        1000 |\n|       10 | NULL       |        2000 |\n|       20 | Coding     |        2000 |\n|       20 | Programmer |        2000 |\n|       20 | NULL       |        4000 |\n|       30 | Coding     |        3000 |\n|       30 | Programmer |        3000 |\n|       30 | NULL       |        6000 |\n|       40 | Coding     |        4000 |\n|       40 | Programmer |        4000 |\n|       40 | NULL       |        8000 |\n|     NULL | NULL       |       20000 |\n+----------+------------+-------------+\n13 rows in set\n",
+        "obclient> SELECT group_id,job,SUM(salary) FROM group_tbl1 GROUP BY group_id, job\n    UNION ALL\n    SELECT group_id,NULL,SUM(salary) FROM group_tbl1 GROUP BY group_id\n    UNION ALL\n    SELECT NULL,NULL,SUM(salary) FROM group_tbl1 ORDER BY 1,2;\n+----------+------------+-------------+\n| GROUP_ID | JOB        | SUM(SALARY) |\n+----------+------------+-------------+\n|       10 | Coding     |        1000 |\n|       10 | Programmer |        1000 |\n|       10 | NULL       |        2000 |\n|       20 | Coding     |        2000 |\n|       20 | Programmer |        2000 |\n|       20 | NULL       |        4000 |\n|       30 | Coding     |        3000 |\n|       30 | Programmer |        3000 |\n|       30 | NULL       |        6000 |\n|       40 | Coding     |        4000 |\n|       40 | Programmer |        4000 |\n|       40 | NULL       |        8000 |\n|     NULL | NULL       |       20000 |\n+----------+------------+-------------+\n13 rows in set\n"
+    ],
+    "Category": [
+        "Aggregate Functions"
+    ]
+}

@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/current/functions-bitstring.html"
+    ],
+    "Title": [
+        "position"
+    ],
+    "Feature": [
+        "position ( substring bit IN bits bit ) → integer"
+    ],
+    "Description": [
+        "Returns first starting index of the specified substring within bits, or zero if it's not present."
+    ],
+    "Examples": [
+        "position(B'010' in B'000001101011') → 8"
+    ],
+    "Category": [
+        "Bit String Functions and Operators"
+    ]
+}

@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000000822976"
+    ],
+    "Title": [
+        "USER"
+    ],
+    "Feature": [
+        "USER()\n"
+    ],
+    "Description": [
+        "返回当前的用户名与主机名，返回值使用的字符集为 utf8mb4。"
+    ],
+    "Examples": [
+        "obclient> SELECT USER();\n+---------------------+\n| USER()              |\n+---------------------+\n| root@xxx.xx.xxx.xxx |\n+---------------------+\n1 row in set\n"
+    ],
+    "Category": [
+        "Information Functions"
+    ]
+}

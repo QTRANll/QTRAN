@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/sounds-like/"
+    ],
+    "Title": [
+        "SOUNDS LIKE"
+    ],
+    "Feature": [
+        "expr1 SOUNDS LIKE expr2\n"
+    ],
+    "Description": [
+        "This is the same as SOUNDEX(expr1) = SOUNDEX(expr2)."
+    ],
+    "Examples": [
+        "SELECT * FROM information_schema.tables WHERE table_name SOUNDS LIKE 'example';"
+    ],
+    "Category": [
+        "String Functions"
+    ]
+}

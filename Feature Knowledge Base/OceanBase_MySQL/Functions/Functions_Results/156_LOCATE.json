@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000000823447"
+    ],
+    "Title": [
+        "LOCATE"
+    ],
+    "Feature": [
+        "LOCATE(substr,str)\nLOCATE(substr,str,pos)\n"
+    ],
+    "Description": [
+        "第一个语法返回字符串 str 中子字符串 substr 的第一个出现位置。第二个语法返回字符串 str 中子字符串 substr 的第一个出现位置，起始位置在 pos。如果 substr 不在 str 中，则返回值为 0。"
+    ],
+    "Examples": [
+        "obclient> SELECT LOCATE('bar', 'foobarbar'), LOCATE('xbar', 'foobar'), LOCATE('bar', 'foobarbar',5);\n+----------------------------+--------------------------+------------------------------+\n| LOCATE('bar', 'foobarbar') | LOCATE('xbar', 'foobar') | LOCATE('bar', 'foobarbar',5) |\n+----------------------------+--------------------------+------------------------------+\n|                          4 |                        0 |                            7 |\n+----------------------------+--------------------------+------------------------------+\n1 row in set\n"
+    ],
+    "Category": [
+        "String Functions"
+    ]
+}

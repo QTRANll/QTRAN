@@ -1,0 +1,33 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/show-warnings/"
+    ],
+    "Title": [
+        "SHOW WARNINGS"
+    ],
+    "Feature": [
+        "SHOW WARNINGS [LIMIT [offset,] row_count]\nSHOW ERRORS [LIMIT row_count OFFSET offset]\nSHOW COUNT(*) WARNINGS\n"
+    ],
+    "Description": [
+        " SHOW WARNINGS shows the error, warning, and note messages\nthat resulted from the last statement that generated messages in the\ncurrent session.  It shows nothing if the last statement used a table\nand generated no messages. (That is, a statement that uses a table but\ngenerates no messages clears the message list.) Statements that do not\nuse tables and do not generate messages have no effect on the message\nlist.",
+        "A note is different to a warning in that it only appears if the sql_notes variable is set to 1 (the default), and is not converted to an error if strict mode is enabled.",
+        "A related statement, SHOW ERRORS, shows only the errors.",
+        "The SHOW COUNT(*) WARNINGS statement displays the total\nnumber of errors, warnings, and notes. You can also retrieve this number from\nthe warning_count variable:",
+        "SHOW COUNT(*) WARNINGS;\nSELECT @@warning_count;\n",
+        "The value of warning_count might be greater than the number of messages displayed by SHOW WARNINGS if the max_error_count system variable is set so low that not all messages are stored.",
+        "The LIMIT clause has the same syntax as for the\n SELECT statement.",
+        "SHOW WARNINGS can be used after EXPLAIN EXTENDED to see how a query is internally rewritten by MariaDB.",
+        "If the sql_notes server variable is set to 1, Notes are included in the output of SHOW WARNINGS; if it is set to 0, this statement will not show (or count) Notes.",
+        "The results of SHOW WARNINGS and SHOW COUNT(*) WARNINGS are directly sent to the client. If you need to access those information in a stored program, you can use the GET DIAGNOSTICS statement instead.",
+        "For a list of MariaDB error codes, see MariaDB Error Codes.",
+        "The mariadb client also has a number of options related to warnings.  The \\W command will show warnings after every statement, while \\w will disable this. Starting the client with the --show-warnings option will show warnings after every statement.",
+        "MariaDB implements a stored routine error stack trace. SHOW WARNINGS can also be used to show more information. See the example below."
+    ],
+    "Examples": [
+        "SELECT 1/0;\n+------+\n| 1/0  |\n+------+\n| NULL |\n+------+\n\nSHOW COUNT(*) WARNINGS;\n+-------------------------+\n| @@session.warning_count |\n+-------------------------+\n|                       1 |\n+-------------------------+\n\nSHOW WARNINGS;\n+---------+------+---------------+\n| Level   | Code | Message       |\n+---------+------+---------------+\n| Warning | 1365 | Division by 0 |\n+---------+------+---------------+\n",
+        "DELIMITER $$\nCREATE OR REPLACE PROCEDURE p1()\n  BEGIN\n    DECLARE c CURSOR FOR SELECT * FROM not_existing;\n    OPEN c;\n    CLOSE c;\n  END;\n$$\nCREATE OR REPLACE PROCEDURE p2()\n  BEGIN\n    CALL p1;\n  END;\n$$\nDELIMITER ;\nCALL p2;\nERROR 1146 (42S02): Table 'test.not_existing' doesn't exist\n\nSHOW WARNINGS;\n+-------+------+-----------------------------------------+\n| Level | Code | Message                                 |\n+-------+------+-----------------------------------------+\n| Error | 1146 | Table 'test.not_existing' doesn't exist |\n| Note  | 4091 | At line 6 in test.p1                    |\n| Note  | 4091 | At line 4 in test.p2                    |\n+-------+------+-----------------------------------------+\n"
+    ],
+    "Category": [
+        "Administrative SQL Statements"
+    ]
+}

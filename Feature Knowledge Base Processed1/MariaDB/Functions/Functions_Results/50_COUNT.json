@@ -1,0 +1,24 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/count/"
+    ],
+    "Title": [
+        "COUNT"
+    ],
+    "Feature": [
+        "COUNT(expr)\n"
+    ],
+    "Description": [
+        "Returns a count of the number of non-NULL values of expr in the rows retrieved by a SELECT statement. The result is a BIGINT value. It is an aggregate function, and so can be used with the GROUP BY clause.",
+        "COUNT(*) counts the total number of rows in a table.",
+        "COUNT() returns 0 if there were no matching rows.",
+        "COUNT() can be used as a window function."
+    ],
+    "Examples": [
+        "SELECT COUNT(*) FROM student;",
+        "SELECT COUNT(DISTINCT (name)) FROM student;"
+    ],
+    "Category": [
+        "Aggregate Functions"
+    ]
+}

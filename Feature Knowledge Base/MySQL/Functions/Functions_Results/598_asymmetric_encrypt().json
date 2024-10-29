@@ -1,0 +1,38 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/loadable-function-reference.html"
+    ],
+    "Title": [
+        "14.2 Loadable Function Reference"
+    ],
+    "Feature": [
+        "asymmetric_encrypt(algorithm,\n          data_str,\n          pub_key_str)"
+    ],
+    "Description": [
+        "Encrypt cleartext using private or public key",
+        "\nasymmetric_encrypt(algorithm,\n          data_str,\n          pub_key_str)\n",
+        "\n          Encrypts a string using the given algorithm and key string,\n          and returns the resulting ciphertext as a binary string. If\n          encryption fails, the result is NULL.\n        ",
+        "\n          For the legacy version of this function in use before MySQL\n          8.0.29, see\n          MySQL Enterprise Encryption Legacy Function Descriptions.\n        ",
+        "\nalgorithm is the encryption\n          algorithm used to create the key. The supported algorithm\n          value is 'RSA'.\n        ",
+        "\ndata_str is the string to encrypt.\n          The length of this string cannot be greater than the key\n          string length in bytes, minus 42 (to account for the padding).\n        ",
+        "\npub_key_str is a valid PEM encoded\n          RSA public key. The\n          asymmetric_encrypt() component\n          function only supports encryption using a public key.\n        ",
+        "\n          To recover the original unencrypted string, pass the encrypted\n          string to asymmetric_decrypt(),\n          along with the other part of the key pair used for encryption,\n          as in the following example:\n        ",
+        "Press CTRL+C to copy -- Generate private/public key pair\nSET @priv = create_asymmetric_priv_key('RSA', 2048);\nSET @pub = create_asymmetric_pub_key('RSA', @priv);\n\n-- Encrypt using public key, decrypt using private key\nSET @ciphertext = asymmetric_encrypt('RSA', 'The quick brown fox', @pub);\nSET @plaintext = asymmetric_decrypt('RSA', @ciphertext, @priv);",
+        "\n          Suppose that:\n        ",
+        "Press CTRL+C to copy SET @s = a string to be encrypted\nSET @priv = a valid private RSA key string in PEM format\nSET @pub = the corresponding public RSA key string in PEM format",
+        "\n          Then these identity relationships hold:\n        ",
+        "Press CTRL+C to copy asymmetric_decrypt('RSA', asymmetric_encrypt('RSA', @s, @pub), @priv) = @s"
+    ],
+    "Examples": [
+        "-- Generate private/public key pair\nSET @priv = create_asymmetric_priv_key('RSA', 2048);\nSET @pub = create_asymmetric_pub_key('RSA', @priv);\n\n-- Encrypt using public key, decrypt using private key\nSET @ciphertext = asymmetric_encrypt('RSA', 'The quick brown fox', @pub);\nSET @plaintext = asymmetric_decrypt('RSA', @ciphertext, @priv);"
+    ],
+    "Category": [
+        "Loadable Functions"
+    ],
+    "Reference HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/enterprise-encryption-functions.html#function_asymmetric-encrypt"
+    ],
+    "Feature Type": [
+        "Function"
+    ]
+}

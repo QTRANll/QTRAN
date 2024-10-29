@@ -1,0 +1,21 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/current/functions-json.html"
+    ],
+    "Title": [
+        "json_extract_path"
+    ],
+    "Feature": [
+        "json_extract_path ( from_json json, VARIADIC path_elems text[] ) → json",
+        "jsonb_extract_path ( from_json jsonb, VARIADIC path_elems text[] ) → jsonb"
+    ],
+    "Description": [
+        "Extracts JSON sub-object at the specified path. (This is functionally equivalent to the #> operator, but writing the path out as a variadic list can be more convenient in some cases.)"
+    ],
+    "Examples": [
+        "json_extract_path('{\"f2\":{\"f3\":1},\"f4\":{\"f5\":99,\"f6\":\"foo\"}}', 'f4', 'f6') → \"foo\""
+    ],
+    "Category": [
+        "JSON Functions and Operators"
+    ]
+}

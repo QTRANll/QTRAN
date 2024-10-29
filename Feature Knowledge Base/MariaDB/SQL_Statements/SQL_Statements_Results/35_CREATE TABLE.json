@@ -1,0 +1,27 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/create-table/"
+    ],
+    "Title": [
+        "CREATE TABLE"
+    ],
+    "Feature": [
+        "CREATE [OR REPLACE] [TEMPORARY] TABLE [IF NOT EXISTS] tbl_name\n    (create_definition,...) [table_options    ]... [partition_options]\nCREATE [OR REPLACE] [TEMPORARY] TABLE [IF NOT EXISTS] tbl_name\n    [(create_definition,...)] [table_options   ]... [partition_options]\n    select_statement\nCREATE [OR REPLACE] [TEMPORARY] TABLE [IF NOT EXISTS] tbl_name\n   { LIKE old_table_name | (LIKE old_table_name) }\nselect_statement:\n    [IGNORE | REPLACE] [AS] SELECT ...   (Some legal select statement)"
+    ],
+    "Description": [
+        "Use the CREATE TABLE statement to create a table with the given name.",
+        "In its most basic form, the CREATE TABLE statement provides a table name\nfollowed by a list of columns, indexes, and constraints. By default, the table\nis created in the default database. Specify a database with db_name.tbl_name.\nIf you quote the table name, you must quote the database name and table name\nseparately as `db_name`.`tbl_name`. This is particularly useful for CREATE TABLE ... SELECT, because it allows to create a table into a database, which contains data from other databases. See Identifier Qualifiers.",
+        "If a table with the same name exists, error 1050 results. Use IF NOT EXISTS\nto suppress this error and issue a note instead. Use SHOW WARNINGS\nto see notes.",
+        "The CREATE TABLE statement automatically commits the current transaction,\nexcept when using the TEMPORARY keyword.",
+        "For valid identifiers to use as table names, see Identifier Names.",
+        "Note: if the default_storage_engine is set to ColumnStore then it needs setting on all UMs. Otherwise when the tables using the default engine are replicated across UMs they will use the wrong engine. You should therefore not use this option as a session variable with ColumnStore.\n",
+        "Microsecond precision can be between 0-6. If no precision is specified it is assumed to be 0, for backward compatibility reasons."
+    ],
+    "Examples": [
+        "create table if not exists test (\na bigint auto_increment primary key,\nname varchar(128) charset utf8,\nkey name (name(32))\n) engine=InnoDB default charset latin1;\n",
+        "CREATE TABLE t1(\n  a int DEFAULT (1+1),\n  b int DEFAULT (a+1),\n  expires DATETIME DEFAULT(NOW() + INTERVAL 1 YEAR),\n  x BLOB DEFAULT USER()\n);\n"
+    ],
+    "Category": [
+        "Data Definition"
+    ]
+}

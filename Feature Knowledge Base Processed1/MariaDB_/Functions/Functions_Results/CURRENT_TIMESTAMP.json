@@ -1,0 +1,42 @@
+{
+    "HTML": "https://mariadb.com//kb/en/current_timestamp/",
+    "Title": "CURRENT_TIMESTAMP",
+    "Feature": [
+        "CURRENT_TIMESTAMP\nCURRENT_TIMESTAMP([precision])\n"
+    ],
+    "Description": [
+        "CURRENT_TIMESTAMP and CURRENT_TIMESTAMP() are synonyms for NOW()."
+    ],
+    "Examples": [],
+    "Category": [
+        "Date & Time Functions"
+    ],
+    "Effective SQLs Refined": [],
+    "Ineffective SQLs Refined": [],
+    "Wrong Messages from Ineffective SQLs Refined": [],
+    "SQLs Generated1": [
+        {
+            "Example SQL": "SELECT CURRENT_TIMESTAMP;"
+        }
+    ],
+    "SQLs Generated Costs1": [
+        {
+            "Total Tokens": 265,
+            "Prompt Tokens": 249,
+            "Completion Tokens": 16,
+            "Total Cost (USD)": 4.695e-05
+        }
+    ],
+    "SQLs Generated ExecResults1": [
+        "[(datetime.datetime(2024, 9, 23, 12, 7, 56),)]"
+    ],
+    "SQLs Generated ExecTimes1": [
+        "0.0042896270751953125"
+    ],
+    "SQLs Generated ErrorMessages1": [
+        "None"
+    ],
+    "Effective SQLs Generated1": [
+        "SELECT CURRENT_TIMESTAMP;"
+    ]
+}

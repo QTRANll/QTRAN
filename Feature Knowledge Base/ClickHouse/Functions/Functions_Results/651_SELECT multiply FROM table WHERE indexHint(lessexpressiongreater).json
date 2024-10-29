@@ -1,0 +1,29 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/other-functions"
+    ],
+    "Title": [
+        "indexHint"
+    ],
+    "Feature": [
+        "SELECT * FROM table WHERE indexHint(<expression>)"
+    ],
+    "Description": [
+        "indexHint",
+        "This function is intended for debugging and introspection. It ignores its argument and always returns 1. The arguments are not evaluated.",
+        "But during index analysis, the argument of this function is assumed to be not wrapped in indexHint. This allows to select data in index ranges by the corresponding condition but without further filtering by this condition. The index in ClickHouse is sparse and using indexHint will yield more data than specifying the same condition directly.",
+        "Syntax",
+        "SELECT * FROM table WHERE indexHint(<expression>)",
+        "Returned value",
+        "1. Uint8."
+    ],
+    "Examples": [
+        "SELECT count() FROM ontime",
+        "SELECT FlightDate AS k, count() FROM ontime GROUP BY k ORDER BY k",
+        "SELECT FlightDate AS k, count() FROM ontime WHERE k = '2017-09-15' GROUP BY k ORDER BY k",
+        "SELECT    FlightDate AS k,    count()FROM ontimeWHERE indexHint(k = '2017-09-15')GROUP BY kORDER BY k ASC"
+    ],
+    "Category": [
+        "Other Functions"
+    ]
+}

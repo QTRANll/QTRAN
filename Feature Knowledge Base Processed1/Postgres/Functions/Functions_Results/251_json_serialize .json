@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/current/functions-json.html"
+    ],
+    "Title": [
+        "json_serialize"
+    ],
+    "Feature": [
+        "json_serialize ( expression [ FORMAT JSON [ ENCODING UTF8 ] ] [ RETURNING data_type [ FORMAT JSON [ ENCODING UTF8 ] ] ] )"
+    ],
+    "Description": [
+        "Converts an SQL/JSON expression into a character or binary string. The expression can be of any JSON type, any character string type, or bytea in UTF8 encoding. The returned type used in RETURNING can be any character string type or bytea. The default is text."
+    ],
+    "Examples": [
+        "json_serialize('{ \"a\" : 1 } ' RETURNING bytea) → \\x7b20226122203a2031207d20"
+    ],
+    "Category": [
+        "JSON Functions and Operators"
+    ]
+}

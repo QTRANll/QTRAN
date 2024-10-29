@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/current/functions-geometry.html"
+    ],
+    "Title": [
+        "geometric_type # geometric_type"
+    ],
+    "Feature": [
+        "geometric_type # geometric_type → point"
+    ],
+    "Description": [
+        "Computes the point of intersection, or NULL if there is none. Available for lseg, line."
+    ],
+    "Examples": [
+        "lseg '[(0,0),(1,1)]' # lseg '[(1,0),(0,1)]' → (0.5,0.5)"
+    ],
+    "Category": [
+        "Geometric Functions and Operators"
+    ]
+}

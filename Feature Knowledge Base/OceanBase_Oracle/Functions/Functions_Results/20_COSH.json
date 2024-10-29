@@ -1,0 +1,22 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000000823156"
+    ],
+    "Title": [
+        "COSH"
+    ],
+    "Feature": [
+        "COSH(number)\n"
+    ],
+    "Description": [
+        "该函数是双曲余弦函数，返回数字参数的双曲余弦值。返回值范围是 [1,+∞)。",
+        "number 是数值数据类型（NUMBER、FLOAT、BINARY_FLOAT 和 BINARY_DOUBLE）或可以隐式转换为数值数据类型的参数。",
+        "如果参数 number 是 BINARY_FLOAT 类型，则返回类型是 BINARY_DOUBLE。否则，返回与参数 number 相同的数值数据类型。"
+    ],
+    "Examples": [
+        "obclient> SELECT COSH(0) FROM DUAL;\n+---------+\n| COSH(0) |\n+---------+\n|       1 |\n+---------+\n1 row in set\n"
+    ],
+    "Category": [
+        "Numeric Functions"
+    ]
+}

@@ -1,0 +1,21 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/compress/"
+    ],
+    "Title": [
+        "COMPRESS"
+    ],
+    "Feature": [
+        "COMPRESS(string_to_compress)\n"
+    ],
+    "Description": [
+        "Compresses a string and returns the result as a binary string. This\nfunction requires MariaDB to have been compiled with a compression\nlibrary such as zlib. Otherwise, the return value is always NULL. The\ncompressed string can be uncompressed with UNCOMPRESS().",
+        "The have_compress server system variable indicates whether a compression library is present. "
+    ],
+    "Examples": [
+        "SELECT LENGTH(COMPRESS(REPEAT('a',1000)));\n+------------------------------------+\n| LENGTH(COMPRESS(REPEAT('a',1000))) |\n+------------------------------------+\n|                                 21 |\n+------------------------------------+\n\nSELECT LENGTH(COMPRESS(''));\n+----------------------+\n| LENGTH(COMPRESS('')) |\n+----------------------+\n|                    0 |\n+----------------------+\n\nSELECT LENGTH(COMPRESS('a'));\n+-----------------------+\n| LENGTH(COMPRESS('a')) |\n+-----------------------+\n|                    13 |\n+-----------------------+\n\nSELECT LENGTH(COMPRESS(REPEAT('a',16)));\n+----------------------------------+\n| LENGTH(COMPRESS(REPEAT('a',16))) |\n+----------------------------------+\n|                               15 |\n+----------------------------------+\n"
+    ],
+    "Category": [
+        "Encryption, Hashing and Compression Functions"
+    ]
+}

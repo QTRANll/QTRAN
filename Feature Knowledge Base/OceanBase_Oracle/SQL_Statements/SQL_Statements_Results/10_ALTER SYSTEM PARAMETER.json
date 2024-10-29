@@ -1,0 +1,21 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000001054324"
+    ],
+    "Title": [
+        "ALTER SYSTEM PARAMETER"
+    ],
+    "Feature": [
+        "ALTER SYSTEM SET parameter_name = expression;\n"
+    ],
+    "Description": [
+        "该语句用来修改本租户的配置项信息。",
+        "\n\n\n参数\n描述\n\n\n\n\nparameter_name\n指定要修改的配置项名称。\n\n\nexpression\n指定修改后的配置项的值。\n\n\n"
+    ],
+    "Examples": [
+        "obclient> SHOW PARAMETERS LIKE 'log_disk_utilization_threshold';\n+-------+----------+----------------+----------+--------------------------------+-----------+-------+--------------------------------------------------------------------------------------------------------------------------------------+------------+--------+---------+-------------------+\n| zone  | svr_type | svr_ip         | svr_port | name                           | data_type | value | info                                                                                                                                 | section    | scope  | source  | edit_level        |\n+-------+----------+----------------+----------+--------------------------------+-----------+-------+--------------------------------------------------------------------------------------------------------------------------------------+------------+--------+---------+-------------------+\n| zone1 | observer | xx.xx.xx.xx    |     2882 | log_disk_utilization_threshold | NULL      | 80    | log disk utilization threshold before reuse log files, should be smaller than log_disk_utilization_limit_threshold. Range: [10, 100) | LOGSERVICE | TENANT | DEFAULT | DYNAMIC_EFFECTIVE |\n+-------+----------+----------------+----------+--------------------------------+-----------+-------+--------------------------------------------------------------------------------------------------------------------------------------+------------+--------+---------+-------------------+\n1 row in set\n\nobclient> ALTER SYSTEM SET log_disk_utilization_threshold = 20;\nQuery OK, 0 rows affected\n\nobclient> SHOW PARAMETERS LIKE 'log_disk_utilization_threshold';\n+-------+----------+----------------+----------+--------------------------------+-----------+-------+--------------------------------------------------------------------------------------------------------------------------------------+------------+--------+---------+-------------------+\n| zone  | svr_type | svr_ip         | svr_port | name                           | data_type | value | info                                                                                                                                 | section    | scope  | source  | edit_level        |\n+-------+----------+----------------+----------+--------------------------------+-----------+-------+--------------------------------------------------------------------------------------------------------------------------------------+------------+--------+---------+-------------------+\n| zone1 | observer | xx.xx.xx.xx    |     2882 | log_disk_utilization_threshold | NULL      | 20    | log disk utilization threshold before reuse log files, should be smaller than log_disk_utilization_limit_threshold. Range: [10, 100) | LOGSERVICE | TENANT | DEFAULT | DYNAMIC_EFFECTIVE |\n+-------+----------+----------------+----------+--------------------------------+-----------+-------+--------------------------------------------------------------------------------------------------------------------------------------+------------+--------+---------+-------------------+\n1 row in set\n"
+    ],
+    "Category": [
+        "DDL"
+    ]
+}

@@ -1,0 +1,38 @@
+{
+    "HTML": "https://mariadb.com//kb/en/null-safe-equal/",
+    "Title": "<=>",
+    "Feature": [
+        "<=>\n"
+    ],
+    "Description": [
+        "NULL-safe equal operator. It performs an equality comparison like\nthe = operator, but returns 1 rather than NULL if both operands are\nNULL, and 0 rather than NULL if one operand is NULL.",
+        "a <=> b is equivalent to a = b OR (a IS NULL AND b IS NULL).",
+        "When used in row comparisons these two queries return the same results:",
+        "SELECT (t1.a, t1.b) <=> (t2.x, t2.y) \nFROM t1 INNER JOIN t2;\n\nSELECT (t1.a <=> t2.x) AND (t1.b <=> t2.y)\nFROM t1 INNER JOIN t2;\n",
+        "See also NULL Values in MariaDB."
+    ],
+    "Examples": [
+        "SELECT 1 <=> 1, NULL <=> NULL, 1 <=> NULL;\n+---------+---------------+------------+\n| 1 <=> 1 | NULL <=> NULL | 1 <=> NULL |\n+---------+---------------+------------+\n|       1 |             1 |          0 |\n+---------+---------------+------------+\n\nSELECT 1 = 1, NULL = NULL, 1 = NULL;\n+-------+-------------+----------+\n| 1 = 1 | NULL = NULL | 1 = NULL |\n+-------+-------------+----------+\n|     1 |        NULL |     NULL |\n+-------+-------------+----------+\n"
+    ],
+    "Category": [
+        "Comparison Operators"
+    ],
+    "Effective SQLs Refined": [
+        "SELECT 1 <=> 1, NULL <=> NULL, 1 <=> NULL;",
+        "SELECT 1 = 1, NULL = NULL, 1 = NULL;"
+    ],
+    "Ineffective SQLs Refined": [],
+    "Wrong Messages from Ineffective SQLs Refined": [],
+    "SQLs Generated1": [],
+    "SQLs Generated Costs1": [],
+    "SQLs Generated ExecResults1": [],
+    "SQLs Generated ExecTimes1": [],
+    "SQLs Generated ErrorMessages1": [],
+    "Effective SQLs Generated1": [],
+    "SQLs Generated2": [],
+    "SQLs Generated Costs2": [],
+    "SQLs Generated ExecResults2": [],
+    "SQLs Generated ExecTimes2": [],
+    "SQLs Generated ErrorMessages2": [],
+    "Effective SQLs Generated2": []
+}

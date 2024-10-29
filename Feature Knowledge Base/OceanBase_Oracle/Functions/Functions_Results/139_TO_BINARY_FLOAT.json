@@ -1,0 +1,24 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000000823237"
+    ],
+    "Title": [
+        "TO_BINARY_FLOAT"
+    ],
+    "Feature": [
+        "TO_BINARY_FLOAT(expr [, fmt [, 'nlsparam' ] ])\n"
+    ],
+    "Description": [
+        "该函数返回一个单精度浮点数。",
+        "\n说明\n从字符串或 NUMBER 到 BINARY_FLOAT 的转换可能不精确，因为 NUMBER 和字符类型使用十进制精度表示数值，而 BINARY_FLOAT 使用二进制精度。如果 BINARY_DOUBLE 值使用的精度比BINARY_FLOAT 支持的精度高，则从 BINARY_DOUBLE 到 BINARY_FLOAT 的转换是不精确的。\n",
+        "\n\n\n参数\n说明\n\n\n\n\nexpr\n字符串或 NUMBER、BINARY_FLOAT 或 BINARY_DOUBLE 类型的数据。\n\n\nexpr\n输出格式参数，为可选项。如果省略 fmt，则 n 被转换为 VARCHAR2 值。取值信息请参见 fmt 参数列表。\n\n\nnlsparam\n定义十进制字符、组分隔符、当地货币符号和国际货币符号，为可选项。\n\n\n",
+        "\n说明\n当 expr 是字符串时，可选的 fmt 和 nlsparam 参数才有效。它们的作用与 TO_CHAR (number) 功能的作用相同。当 expr 为 BINARY_FLOAT，则函数返回 expr。\n",
+        "返回 BINARY_FLOAT 类型的数据。"
+    ],
+    "Examples": [
+        "obclient> SELECT TO_BINARY_FLOAT('123.123') FROM DUAL;\n+----------------------------+\n| TO_BINARY_FLOAT('123.123') |\n+----------------------------+\n|            1.23123001E+002 |\n+----------------------------+\n1 row in set\n"
+    ],
+    "Category": [
+        "Conversion Functions"
+    ]
+}

@@ -1,0 +1,31 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/date-time-functions"
+    ],
+    "Title": [
+        "toDayOfWeek"
+    ],
+    "Feature": [
+        "toDayOfWeek(t[, mode[, timezone]])"
+    ],
+    "Description": [
+        "toDayOfWeek",
+        "Returns the number of the day within the week of a date or date with time.",
+        "The two-argument form of toDayOfWeek() enables you to specify whether the week starts on Monday or Sunday, and whether the return value should be in the range from 0 to 6 or 1 to 7. If the mode argument is omitted, the default mode is 0. The time zone of the date can be specified as the third argument.",
+        "ModeFirst day of weekRange0Monday1-7: Monday = 1, Tuesday = 2, ..., Sunday = 71Monday0-6: Monday = 0, Tuesday = 1, ..., Sunday = 62Sunday0-6: Sunday = 0, Monday = 1, ..., Saturday = 63Sunday1-7: Sunday = 1, Monday = 2, ..., Saturday = 7",
+        "Syntax",
+        "toDayOfWeek(t[, mode[, timezone]])",
+        "Alias: DAYOFWEEK.",
+        "Arguments",
+        "t - a Date, Date32, DateTime or DateTime64mode - determines what the first day of the week is. Possible values are 0, 1, 2 or 3. See the table above for the differences.timezone - optional parameter, it behaves like any other conversion function",
+        "The first argument can also be specified as String in a format supported by parseDateTime64BestEffort(). Support for string arguments exists only for reasons of compatibility with MySQL which is expected by certain 3rd party tools. As string argument support may in future be made dependent on new MySQL-compatibility settings and because string parsing is generally slow, it is recommended to not use it.",
+        "Returned value",
+        "The day of the week (1-7), depending on the chosen mode, of the given date/time"
+    ],
+    "Examples": [
+        "SELECT    toDayOfWeek(toDateTime('2023-04-21')),    toDayOfWeek(toDateTime('2023-04-21'), 1)"
+    ],
+    "Category": [
+        "Dates and Times Functions"
+    ]
+}

@@ -1,0 +1,435 @@
+{"ALTER TABLE": "https://mariadb.com//kb/en/alter-table/"}
+{"ALTER DATABASE": "https://mariadb.com//kb/en/alter-database/"}
+{"ALTER EVENT": "https://mariadb.com//kb/en/alter-event/"}
+{"ALTER FUNCTION": "https://mariadb.com//kb/en/alter-function/"}
+{"ALTER LOGFILE GROUP": "https://mariadb.com//kb/en/alter-logfile-group/"}
+{"ALTER PROCEDURE": "https://mariadb.com//kb/en/alter-procedure/"}
+{"ALTER SEQUENCE": "https://mariadb.com//kb/en/alter-sequence/"}
+{"ALTER SERVER": "https://mariadb.com//kb/en/alter-server/"}
+{"ALTER TABLESPACE": "https://mariadb.com//kb/en/alter-tablespace/"}
+{"ALTER USER": "https://mariadb.com//kb/en/alter-user/"}
+{"ALTER VIEW": "https://mariadb.com//kb/en/alter-view/"}
+{"ANALYZE TABLE": "https://mariadb.com//kb/en/analyze-table/"}
+{"CHECK TABLE": "https://mariadb.com//kb/en/check-table/"}
+{"CHECK VIEW": "https://mariadb.com//kb/en/check-view/"}
+{"CHECKSUM TABLE": "https://mariadb.com//kb/en/checksum-table/"}
+{"CREATE TABLE": "https://mariadb.com//kb/en/create-table/"}
+{"DELETE": "https://mariadb.com//kb/en/delete/"}
+{"DROP TABLE": "https://mariadb.com//kb/en/drop-table/"}
+{"Installing System Tables (mariadb-install-db)": "https://mariadb.com//kb/en/installing-system-tables-mariadb-install-db/"}
+{"OPTIMIZE TABLE": "https://mariadb.com//kb/en/optimize-table/"}
+{"RENAME TABLE": "https://mariadb.com//kb/en/rename-table/"}
+{"REPAIR TABLE": "https://mariadb.com//kb/en/repair-table/"}
+{"REPAIR VIEW": "https://mariadb.com//kb/en/repair-view/"}
+{"REPLACE": "https://mariadb.com//kb/en/replace/"}
+{"SHOW COLUMNS": "https://mariadb.com//kb/en/show-columns/"}
+{"SHOW CREATE TABLE": "https://mariadb.com//kb/en/show-create-table/"}
+{"SHOW INDEX": "https://mariadb.com//kb/en/show-index/"}
+{"TRUNCATE TABLE": "https://mariadb.com//kb/en/truncate-table/"}
+{"UPDATE": "https://mariadb.com//kb/en/update/"}
+{"BACKUP TABLE (removed)": "https://mariadb.com//kb/en/backup-table-removed/"}
+{"RESTORE TABLE (removed)": "https://mariadb.com//kb/en/restore-table-removed/"}
+{"IGNORE": "https://mariadb.com//kb/en/ignore/"}
+{"System-Versioned Tables": "https://mariadb.com//kb/en/system-versioned-tables/"}
+{"ANALYZE FORMAT=JSON": "https://mariadb.com//kb/en/analyze-format-json/"}
+{"ANALYZE FORMAT=JSON Examples": "https://mariadb.com//kb/en/analyze-formatjson-examples/"}
+{"ANALYZE Statement": "https://mariadb.com//kb/en/analyze-statement/"}
+{"ANALYZE: Interpreting rows and filtered members": "https://mariadb.com//kb/en/analyze-interpreting-rows-and-filtered-members/"}
+{"EXPLAIN": "https://mariadb.com//kb/en/explain/"}
+{"EXPLAIN ANALYZE": "https://mariadb.com//kb/en/explain-analyze/"}
+{"EXPLAIN FORMAT=JSON": "https://mariadb.com//kb/en/explain-format-json/"}
+{"SHOW EXPLAIN": "https://mariadb.com//kb/en/show-explain/"}
+{"Using Buffer UPDATE Algorithm": "https://mariadb.com//kb/en/using-buffer-update-algorithm/"}
+{"BACKUP STAGE": "https://mariadb.com//kb/en/backup-stage/"}
+{"BACKUP LOCK": "https://mariadb.com//kb/en/backup-lock/"}
+{"Mariabackup and BACKUP STAGE Commands": "https://mariadb.com//kb/en/mariabackup-and-backup-stage-commands/"}
+{"Storage Snapshots and BACKUP STAGE Commands": "https://mariadb.com//kb/en/storage-snapshots-and-backup-stage-commands/"}
+{"FLUSH": "https://mariadb.com//kb/en/flush/"}
+{"FLUSH QUERY CACHE": "https://mariadb.com//kb/en/flush-query-cache/"}
+{"FLUSH TABLES FOR EXPORT": "https://mariadb.com//kb/en/flush-tables-for-export/"}
+{"CHANGE MASTER TO": "https://mariadb.com//kb/en/change-master-to/"}
+{"START SLAVE": "https://mariadb.com//kb/en/start-replica/"}
+{"STOP SLAVE": "https://mariadb.com//kb/en/stop-replica/"}
+{"RESET REPLICA": "https://mariadb.com//kb/en/reset-replica/"}
+{"SET GLOBAL SQL_SLAVE_SKIP_COUNTER": "https://mariadb.com//kb/en/set-global-sql_slave_skip_counter/"}
+{"SHOW RELAYLOG EVENTS": "https://mariadb.com//kb/en/show-relaylog-events/"}
+{"SHOW REPLICA STATUS": "https://mariadb.com//kb/en/show-replica-status/"}
+{"SHOW MASTER STATUS": "https://mariadb.com//kb/en/show-binlog-status/"}
+{"SHOW REPLICA HOSTS": "https://mariadb.com//kb/en/show-replica-hosts/"}
+{"RESET MASTER": "https://mariadb.com//kb/en/reset-master/"}
+{"SHOW PLUGINS": "https://mariadb.com//kb/en/show-plugins/"}
+{"SHOW PLUGINS SONAME": "https://mariadb.com//kb/en/show-plugins-soname/"}
+{"INSTALL PLUGIN": "https://mariadb.com//kb/en/install-plugin/"}
+{"UNINSTALL PLUGIN": "https://mariadb.com//kb/en/uninstall-plugin/"}
+{"INSTALL SONAME": "https://mariadb.com//kb/en/install-soname/"}
+{"UNINSTALL SONAME": "https://mariadb.com//kb/en/uninstall-soname/"}
+{"mysql_plugin": "https://mariadb.com//kb/en/mysql_plugin/"}
+{"SET": "https://mariadb.com//kb/en/set/"}
+{"SET CHARACTER SET": "https://mariadb.com//kb/en/set-character-set/"}
+{"SET GLOBAL SQL_SLAVE_SKIP_COUNTER": "https://mariadb.com//kb/en/set-global-sql_slave_skip_counter/"}
+{"SET NAMES": "https://mariadb.com//kb/en/set-names/"}
+{"SET PASSWORD": "https://mariadb.com//kb/en/set-password/"}
+{"SET ROLE": "https://mariadb.com//kb/en/set-role/"}
+{"SET SQL_LOG_BIN": "https://mariadb.com//kb/en/set-sql_log_bin/"}
+{"SET STATEMENT": "https://mariadb.com//kb/en/set-statement/"}
+{"SET TRANSACTION": "https://mariadb.com//kb/en/set-transaction/"}
+{"SET Variable": "https://mariadb.com//kb/en/set-variable/"}
+{"About SHOW": "https://mariadb.com//kb/en/about-show/"}
+{"Extended Show": "https://mariadb.com//kb/en/extended-show/"}
+{"SHOW ANALYZE": "https://mariadb.com//kb/en/show-analyze/"}
+{"SHOW AUTHORS": "https://mariadb.com//kb/en/show-authors/"}
+{"SHOW BINARY LOGS": "https://mariadb.com//kb/en/show-binary-logs/"}
+{"SHOW BINLOG EVENTS": "https://mariadb.com//kb/en/show-binlog-events/"}
+{"SHOW CHARACTER SET": "https://mariadb.com//kb/en/show-character-set/"}
+{"SHOW CLIENT_STATISTICS": "https://mariadb.com//kb/en/show-client-statistics/"}
+{"SHOW COLLATION": "https://mariadb.com//kb/en/show-collation/"}
+{"SHOW COLUMNS": "https://mariadb.com//kb/en/show-columns/"}
+{"SHOW CONTRIBUTORS": "https://mariadb.com//kb/en/show-contributors/"}
+{"SHOW CREATE DATABASE": "https://mariadb.com//kb/en/show-create-database/"}
+{"SHOW CREATE EVENT": "https://mariadb.com//kb/en/show-create-event/"}
+{"SHOW CREATE FUNCTION": "https://mariadb.com//kb/en/show-create-function/"}
+{"SHOW CREATE PACKAGE": "https://mariadb.com//kb/en/show-create-package/"}
+{"SHOW CREATE PACKAGE BODY": "https://mariadb.com//kb/en/show-create-package-body/"}
+{"SHOW CREATE PROCEDURE": "https://mariadb.com//kb/en/show-create-procedure/"}
+{"SHOW CREATE SEQUENCE": "https://mariadb.com//kb/en/show-create-sequence/"}
+{"SHOW CREATE TABLE": "https://mariadb.com//kb/en/show-create-table/"}
+{"SHOW CREATE TRIGGER": "https://mariadb.com//kb/en/show-create-trigger/"}
+{"SHOW CREATE USER": "https://mariadb.com//kb/en/show-create-user/"}
+{"SHOW CREATE VIEW": "https://mariadb.com//kb/en/show-create-view/"}
+{"SHOW DATABASES": "https://mariadb.com//kb/en/show-databases/"}
+{"SHOW ENGINE": "https://mariadb.com//kb/en/show-engine/"}
+{"SHOW ENGINE INNODB STATUS": "https://mariadb.com//kb/en/show-engine-innodb-status/"}
+{"SHOW ENGINES": "https://mariadb.com//kb/en/show-engines/"}
+{"SHOW ERRORS": "https://mariadb.com//kb/en/show-errors/"}
+{"SHOW EVENTS": "https://mariadb.com//kb/en/show-events/"}
+{"SHOW EXPLAIN": "https://mariadb.com//kb/en/show-explain/"}
+{"SHOW FUNCTION CODE": "https://mariadb.com//kb/en/show-function-code/"}
+{"SHOW FUNCTION STATUS": "https://mariadb.com//kb/en/show-function-status/"}
+{"SHOW GRANTS": "https://mariadb.com//kb/en/show-grants/"}
+{"SHOW INDEX": "https://mariadb.com//kb/en/show-index/"}
+{"SHOW INDEX_STATISTICS": "https://mariadb.com//kb/en/show-index-statistics/"}
+{"SHOW INNODB STATUS (removed)": "https://mariadb.com//kb/en/show-innodb-status-removed/"}
+{"SHOW LOCALES": "https://mariadb.com//kb/en/show-locales/"}
+{"SHOW MASTER STATUS": "https://mariadb.com//kb/en/show-binlog-status/"}
+{"SHOW OPEN TABLES": "https://mariadb.com//kb/en/show-open-tables/"}
+{"SHOW PACKAGE BODY STATUS": "https://mariadb.com//kb/en/show-package-body-status/"}
+{"SHOW PACKAGE STATUS": "https://mariadb.com//kb/en/show-package-status/"}
+{"SHOW PLUGINS": "https://mariadb.com//kb/en/show-plugins/"}
+{"SHOW PLUGINS SONAME": "https://mariadb.com//kb/en/show-plugins-soname/"}
+{"SHOW PRIVILEGES": "https://mariadb.com//kb/en/show-privileges/"}
+{"SHOW PROCEDURE CODE": "https://mariadb.com//kb/en/show-procedure-code/"}
+{"SHOW PROCEDURE STATUS": "https://mariadb.com//kb/en/show-procedure-status/"}
+{"SHOW PROCESSLIST": "https://mariadb.com//kb/en/show-processlist/"}
+{"SHOW PROFILE": "https://mariadb.com//kb/en/show-profile/"}
+{"SHOW PROFILES": "https://mariadb.com//kb/en/show-profiles/"}
+{"SHOW QUERY_RESPONSE_TIME": "https://mariadb.com//kb/en/show-query_response_time/"}
+{"SHOW RELAYLOG EVENTS": "https://mariadb.com//kb/en/show-relaylog-events/"}
+{"SHOW REPLICA HOSTS": "https://mariadb.com//kb/en/show-replica-hosts/"}
+{"SHOW REPLICA STATUS": "https://mariadb.com//kb/en/show-replica-status/"}
+{"SHOW STATUS": "https://mariadb.com//kb/en/show-status/"}
+{"SHOW TABLE STATUS": "https://mariadb.com//kb/en/show-table-status/"}
+{"SHOW TABLES": "https://mariadb.com//kb/en/show-tables/"}
+{"SHOW TABLE_STATISTICS": "https://mariadb.com//kb/en/show-table-statistics/"}
+{"SHOW TRIGGERS": "https://mariadb.com//kb/en/show-triggers/"}
+{"SHOW USER_STATISTICS": "https://mariadb.com//kb/en/show-user-statistics/"}
+{"SHOW VARIABLES": "https://mariadb.com//kb/en/show-variables/"}
+{"SHOW WARNINGS": "https://mariadb.com//kb/en/show-warnings/"}
+{"SHOW WSREP_MEMBERSHIP": "https://mariadb.com//kb/en/show-wsrep_membership/"}
+{"SHOW WSREP_STATUS": "https://mariadb.com//kb/en/show-wsrep_status/"}
+{"Information Schema INNODB_BUFFER_PAGE Table": "https://mariadb.com//kb/en/information-schema-innodb_buffer_page-table/"}
+{"Information Schema INNODB_BUFFER_PAGE_LRU Table": "https://mariadb.com//kb/en/information-schema-innodb_buffer_page_lru-table/"}
+{"Information Schema INNODB_BUFFER_POOL_PAGES Table": "https://mariadb.com//kb/en/information-schema-innodb_buffer_pool_pages-table/"}
+{"Information Schema INNODB_BUFFER_POOL_PAGES_BLOB Table": "https://mariadb.com//kb/en/information-schema-innodb_buffer_pool_pages_blob-table/"}
+{"Information Schema INNODB_BUFFER_POOL_PAGES_INDEX Table": "https://mariadb.com//kb/en/information-schema-innodb_buffer_pool_pages_index-table/"}
+{"Information Schema INNODB_BUFFER_POOL_STATS Table": "https://mariadb.com//kb/en/information-schema-innodb_buffer_pool_stats-table/"}
+{"Information Schema INNODB_CHANGED_PAGES Table": "https://mariadb.com//kb/en/information-schema-innodb_changed_pages-table/"}
+{"Information Schema INNODB_CMP and INNODB_CMP_RESET Tables": "https://mariadb.com//kb/en/information-schema-innodb_cmp-and-innodb_cmp_reset-tables/"}
+{"Information Schema INNODB_CMPMEM and INNODB_CMPMEM_RESET Tables": "https://mariadb.com//kb/en/information-schema-innodb_cmpmem-and-innodb_cmpmem_reset-tables/"}
+{"Information Schema INNODB_CMP_PER_INDEX and INNODB_CMP_PER_INDEX_RESET Tables": "https://mariadb.com//kb/en/information-schema-innodb-tables-information-schema-innodb_cmp_per_index-an/"}
+{"Information Schema INNODB_FT_BEING_DELETED Table": "https://mariadb.com//kb/en/information-schema-innodb_ft_being_deleted-table/"}
+{"Information Schema INNODB_FT_CONFIG Table": "https://mariadb.com//kb/en/information-schema-innodb_ft_config-table/"}
+{"Information Schema INNODB_FT_DEFAULT_STOPWORD Table": "https://mariadb.com//kb/en/information-schema-innodb_ft_default_stopword-table/"}
+{"Information Schema INNODB_FT_DELETED Table": "https://mariadb.com//kb/en/information-schema-innodb_ft_deleted-table/"}
+{"Information Schema INNODB_FT_INDEX_CACHE Table": "https://mariadb.com//kb/en/information-schema-innodb_ft_index_cache-table/"}
+{"Information Schema INNODB_FT_INDEX_TABLE Table": "https://mariadb.com//kb/en/information-schema-innodb_ft_index_table-table/"}
+{"Information Schema INNODB_LOCK_WAITS Table": "https://mariadb.com//kb/en/information-schema-innodb_lock_waits-table/"}
+{"Information Schema INNODB_LOCKS Table": "https://mariadb.com//kb/en/information-schema-innodb_locks-table/"}
+{"Information Schema INNODB_METRICS Table": "https://mariadb.com//kb/en/information-schema-innodb_metrics-table/"}
+{"Information Schema INNODB_MUTEXES Table": "https://mariadb.com//kb/en/information-schema-innodb_mutexes-table/"}
+{"Information Schema INNODB_SYS_COLUMNS Table": "https://mariadb.com//kb/en/information-schema-innodb_sys_columns-table/"}
+{"Information Schema INNODB_SYS_DATAFILES Table": "https://mariadb.com//kb/en/information-schema-innodb_sys_datafiles-table/"}
+{"Information Schema INNODB_SYS_FIELDS Table": "https://mariadb.com//kb/en/information-schema-innodb_sys_fields-table/"}
+{"Information Schema INNODB_SYS_FOREIGN Table": "https://mariadb.com//kb/en/information-schema-innodb_sys_foreign-table/"}
+{"Information Schema INNODB_SYS_FOREIGN_COLS Table": "https://mariadb.com//kb/en/information-schema-innodb_sys_foreign_cols-table/"}
+{"Information Schema INNODB_SYS_INDEXES Table": "https://mariadb.com//kb/en/information-schema-innodb_sys_indexes-table/"}
+{"Information Schema INNODB_SYS_SEMAPHORE_WAITS Table": "https://mariadb.com//kb/en/information-schema-innodb_sys_semaphore_waits-table/"}
+{"Information Schema INNODB_SYS_TABLES Table": "https://mariadb.com//kb/en/information-schema-innodb_sys_tables-table/"}
+{"Information Schema INNODB_SYS_TABLESPACES Table": "https://mariadb.com//kb/en/information-schema-innodb_sys_tablespaces-table/"}
+{"Information Schema INNODB_SYS_TABLESTATS Table": "https://mariadb.com//kb/en/information-schema-innodb_sys_tablestats-table/"}
+{"Information Schema INNODB_SYS_VIRTUAL Table": "https://mariadb.com//kb/en/information-schema-innodb_sys_virtual-table/"}
+{"Information Schema INNODB_TABLESPACES_ENCRYPTION Table": "https://mariadb.com//kb/en/information-schema-innodb_tablespaces_encryption-table/"}
+{"Information Schema INNODB_TABLESPACES_SCRUBBING Table": "https://mariadb.com//kb/en/information-schema-innodb_tablespaces_scrubbing-table/"}
+{"Information Schema INNODB_TRX Table": "https://mariadb.com//kb/en/information-schema-innodb_trx-table/"}
+{"Information Schema TEMP_TABLES_INFO Table": "https://mariadb.com//kb/en/information-schema-temp_tables_info-table/"}
+{"Information Schema ROCKSDB_CFSTATS Table": "https://mariadb.com//kb/en/information-schema-rocksdb_cfstats-table/"}
+{"Information Schema ROCKSDB_CF_OPTIONS Table": "https://mariadb.com//kb/en/information-schema-rocksdb_cf_options-table/"}
+{"Information Schema ROCKSDB_COMPACTION_STATS Table": "https://mariadb.com//kb/en/information-schema-rocksdb_compaction_stats-table/"}
+{"Information Schema ROCKSDB_DBSTATS Table": "https://mariadb.com//kb/en/information-schema-rocksdb_dbstats-table/"}
+{"Information Schema ROCKSDB_DDL Table": "https://mariadb.com//kb/en/information-schema-rocksdb_ddl-table/"}
+{"Information Schema ROCKSDB_DEADLOCK Table": "https://mariadb.com//kb/en/information-schema-rocksdb_deadlock-table/"}
+{"Information Schema ROCKSDB_GLOBAL_INFO Table": "https://mariadb.com//kb/en/information-schema-rocksdb_global_info-table/"}
+{"Information Schema ROCKSDB_INDEX_FILE_MAP Table": "https://mariadb.com//kb/en/information-schema-rocksdb_index_file_map-table/"}
+{"Information Schema ROCKSDB_LOCKS Table": "https://mariadb.com//kb/en/information-schema-rocksdb_locks-table/"}
+{"Information Schema ROCKSDB_PERF_CONTEXT Table": "https://mariadb.com//kb/en/information-schema-rocksdb_perf_context-table/"}
+{"Information Schema ROCKSDB_PERF_CONTEXT_GLOBAL Table": "https://mariadb.com//kb/en/information-schema-rocksdb_perf_context_global-table/"}
+{"Information Schema ROCKSDB_SST_PROPS Table": "https://mariadb.com//kb/en/information-schema-rocksdb_sst_props-table/"}
+{"Information Schema ROCKSDB_TRX Table": "https://mariadb.com//kb/en/information-schema-rocksdb_trx-table/"}
+{"Information Schema CHANGED_PAGE_BITMAPS Table": "https://mariadb.com//kb/en/information-schema-changed_page_bitmaps-table/"}
+{"Information Schema INNODB_BUFFER_POOL_PAGES Table": "https://mariadb.com//kb/en/information-schema-innodb_buffer_pool_pages-table/"}
+{"Information Schema INNODB_BUFFER_POOL_PAGES_BLOB Table": "https://mariadb.com//kb/en/information-schema-innodb_buffer_pool_pages_blob-table/"}
+{"Information Schema INNODB_BUFFER_POOL_PAGES_INDEX Table": "https://mariadb.com//kb/en/information-schema-innodb_buffer_pool_pages_index-table/"}
+{"Information Schema INNODB_UNDO_LOGS Table": "https://mariadb.com//kb/en/information-schema-innodb_undo_logs-table/"}
+{"Information Schema XTRADB_INTERNAL_HASH_TABLES Table": "https://mariadb.com//kb/en/information-schema-xtradb_internal_hash_tables-table/"}
+{"Information Schema XTRADB_READ_VIEW Table": "https://mariadb.com//kb/en/information-schema-xtradb_read_view-table/"}
+{"Information Schema XTRADB_RSEG Table": "https://mariadb.com//kb/en/information-schema-xtradb_rseg-table/"}
+{"ColumnStore Information Schema Tables": "https://mariadb.com//kb/en/columnstore-information-schema-tables/"}
+{"Information Schema ALL_PLUGINS Table": "https://mariadb.com//kb/en/all-plugins-table-information-schema/"}
+{"Information Schema APPLICABLE_ROLES Table": "https://mariadb.com//kb/en/information-schema-applicable_roles-table/"}
+{"Information Schema CATALOG Table": "https://mariadb.com//kb/en/information-schema-catalog-table/"}
+{"Information Schema CHARACTER_SETS Table": "https://mariadb.com//kb/en/information-schema-character_sets-table/"}
+{"Information Schema CHECK_CONSTRAINTS Table": "https://mariadb.com//kb/en/information-schema-check_constraints-table/"}
+{"Information Schema CLIENT_STATISTICS Table": "https://mariadb.com//kb/en/information-schema-client_statistics-table/"}
+{"Information Schema COLLATION_CHARACTER_SET_APPLICABILITY Table": "https://mariadb.com//kb/en/information-schema-collation_character_set_applicability-table/"}
+{"Information Schema COLLATIONS Table": "https://mariadb.com//kb/en/information-schema-collations-table/"}
+{"Information Schema COLUMN_PRIVILEGES Table": "https://mariadb.com//kb/en/information-schema-column_privileges-table/"}
+{"Information Schema COLUMNS Table": "https://mariadb.com//kb/en/information-schema-columns-table/"}
+{"Information Schema DISKS Table": "https://mariadb.com//kb/en/information-schema-disks-table/"}
+{"Information Schema ENABLED_ROLES Table": "https://mariadb.com//kb/en/information-schema-enabled_roles-table/"}
+{"Information Schema ENGINES Table": "https://mariadb.com//kb/en/information-schema-engines-table/"}
+{"Information Schema EVENTS Table": "https://mariadb.com//kb/en/information-schema-events-table/"}
+{"Information Schema FEEDBACK Table": "https://mariadb.com//kb/en/information-schema-feedback-table/"}
+{"Information Schema FILES Table": "https://mariadb.com//kb/en/information-schema-files-table/"}
+{"Information Schema GEOMETRY_COLUMNS Table": "https://mariadb.com//kb/en/information-schema-geometry_columns-table/"}
+{"Information Schema GLOBAL_STATUS and SESSION_STATUS Tables": "https://mariadb.com//kb/en/information-schema-global_status-and-session_status-tables/"}
+{"Information Schema GLOBAL_VARIABLES and SESSION_VARIABLES Tables": "https://mariadb.com//kb/en/information-schema-global_variables-and-session_variables-tables/"}
+{"Information Schema INDEX_STATISTICS Table": "https://mariadb.com//kb/en/information-schema-index_statistics-table/"}
+{"Information Schema KEY_CACHES Table": "https://mariadb.com//kb/en/information-schema-key_caches-table/"}
+{"Information Schema KEY_COLUMN_USAGE Table": "https://mariadb.com//kb/en/information-schema-key_column_usage-table/"}
+{"Information Schema KEY_PERIOD_USAGE Table": "https://mariadb.com//kb/en/information-schema-key_period_usage-table/"}
+{"Information Schema KEYWORDS Table": "https://mariadb.com//kb/en/information-schema-keywords-table/"}
+{"Information Schema LOCALES Table": "https://mariadb.com//kb/en/information-schema-locales-table/"}
+{"Information Schema METADATA_LOCK_INFO Table": "https://mariadb.com//kb/en/information-schema-metadata_lock_info-table/"}
+{"Information Schema MROONGA_STATS Table": "https://mariadb.com//kb/en/information-schema-mroonga_stats-table/"}
+{"Information Schema OPTIMIZER_TRACE Table": "https://mariadb.com//kb/en/information-schema-optimizer_trace-table/"}
+{"Information Schema PARAMETERS Table": "https://mariadb.com//kb/en/information-schema-parameters-table/"}
+{"Information Schema PARTITIONS Table": "https://mariadb.com//kb/en/information-schema-partitions-table/"}
+{"Information Schema PERIODS Table": "https://mariadb.com//kb/en/information-schema-periods-table/"}
+{"Information Schema PLUGINS Table": "https://mariadb.com//kb/en/plugins-table-information-schema/"}
+{"Information Schema PROCESSLIST Table": "https://mariadb.com//kb/en/information-schema-processlist-table/"}
+{"Information Schema PROFILING Table": "https://mariadb.com//kb/en/information-schema-profiling-table/"}
+{"Information Schema QUERY_CACHE_INFO Table": "https://mariadb.com//kb/en/information-schema-query_cache_info-table/"}
+{"Information Schema QUERY_RESPONSE_TIME Table": "https://mariadb.com//kb/en/information-schema-query_response_time-table/"}
+{"Information Schema REFERENTIAL_CONSTRAINTS Table": "https://mariadb.com//kb/en/information-schema-referential_constraints-table/"}
+{"Information Schema ROUTINES Table": "https://mariadb.com//kb/en/information-schema-routines-table/"}
+{"Information Schema SCHEMA_PRIVILEGES Table": "https://mariadb.com//kb/en/information-schema-schema_privileges-table/"}
+{"Information Schema SCHEMATA Table": "https://mariadb.com//kb/en/information-schema-schemata-table/"}
+{"Information Schema SEQUENCES Table": "https://mariadb.com//kb/en/information-schema-sequences-table/"}
+{"Information Schema SLAVE_STATUS Table": "https://mariadb.com//kb/en/information-schema-slave_status-table/"}
+{"Information Schema SPATIAL_REF_SYS Table": "https://mariadb.com//kb/en/information-schema-spatial_ref_sys-table/"}
+{"Information Schema SPIDER_ALLOC_MEM Table": "https://mariadb.com//kb/en/information-schema-spider_alloc_mem-table/"}
+{"Information Schema SPIDER_WRAPPER_PROTOCOLS Table": "https://mariadb.com//kb/en/information-schema-spider_wrapper_protocols-table/"}
+{"Information Schema SQL_FUNCTIONS Table": "https://mariadb.com//kb/en/information-schema-sql_functions-table/"}
+{"Information Schema STATISTICS Table": "https://mariadb.com//kb/en/information-schema-statistics-table/"}
+{"Information Schema SYSTEM_VARIABLES Table": "https://mariadb.com//kb/en/information-schema-system_variables-table/"}
+{"Information Schema TABLE_CONSTRAINTS Table": "https://mariadb.com//kb/en/information-schema-table_constraints-table/"}
+{"Information Schema TABLE_PRIVILEGES Table": "https://mariadb.com//kb/en/information-schema-table_privileges-table/"}
+{"Information Schema TABLE_STATISTICS Table": "https://mariadb.com//kb/en/information-schema-table_statistics-table/"}
+{"Information Schema TABLES Table": "https://mariadb.com//kb/en/information-schema-tables-table/"}
+{"Information Schema TABLESPACES Table": "https://mariadb.com//kb/en/information-schema-tablespaces-table/"}
+{"Information Schema THREAD_POOL_GROUPS Table": "https://mariadb.com//kb/en/information-schema-thread_pool_groups-table/"}
+{"Information Schema THREAD_POOL_QUEUES Table": "https://mariadb.com//kb/en/information-schema-thread_pool_queues-table/"}
+{"Information Schema THREAD_POOL_STATS Table": "https://mariadb.com//kb/en/information-schema-thread_pool_stats-table/"}
+{"Information Schema THREAD_POOL_WAITS Table": "https://mariadb.com//kb/en/information-schema-thread_pool_waits-table/"}
+{"Information Schema TRIGGERS Table": "https://mariadb.com//kb/en/information-schema-triggers-table/"}
+{"Information Schema USER_PRIVILEGES Table": "https://mariadb.com//kb/en/information-schema-user_privileges-table/"}
+{"Information Schema USER_STATISTICS Table": "https://mariadb.com//kb/en/information-schema-user_statistics-table/"}
+{"Information Schema USER_VARIABLES Table": "https://mariadb.com//kb/en/information-schema-user_variables-table/"}
+{"Information Schema USERS Table": "https://mariadb.com//kb/en/information-schema-users-table/"}
+{"Information Schema VIEWS Table": "https://mariadb.com//kb/en/information-schema-views-table/"}
+{"Information Schema WSREP_MEMBERSHIP Table": "https://mariadb.com//kb/en/information-schema-wsrep_membership-table/"}
+{"Information Schema WSREP_STATUS Table": "https://mariadb.com//kb/en/information-schema-wsrep_status-table/"}
+{"Extended Show": "https://mariadb.com//kb/en/extended-show/"}
+{"TIME_MS column in INFORMATION_SCHEMA.PROCESSLIST": "https://mariadb.com//kb/en/time_ms-column-in-information_schemaprocesslist/"}
+{"List of Performance Schema Tables": "https://mariadb.com//kb/en/list-of-performance-schema-tables/"}
+{"Performance Schema accounts Table": "https://mariadb.com//kb/en/performance-schema-accounts-table/"}
+{"Performance Schema cond_instances Table": "https://mariadb.com//kb/en/performance-schema-cond_instances-table/"}
+{"Performance Schema events_stages_current Table": "https://mariadb.com//kb/en/performance-schema-events_stages_current-table/"}
+{"Performance Schema events_stages_history Table": "https://mariadb.com//kb/en/performance-schema-events_stages_history-table/"}
+{"Performance Schema events_stages_history_long Table": "https://mariadb.com//kb/en/performance-schema-events_stages_history_long-table/"}
+{"Performance Schema events_stages_summary_by_account_by_event_name Table": "https://mariadb.com//kb/en/performance-schema-events_stages_summary_by_account_by_event_name-table/"}
+{"Performance Schema events_stages_summary_by_host_by_event_name Table": "https://mariadb.com//kb/en/performance-schema-events_stages_summary_by_host_by_event_name-table/"}
+{"Performance Schema events_stages_summary_by_thread_by_event_name Table": "https://mariadb.com//kb/en/performance-schema-events_stages_summary_by_thread_by_event_name-table/"}
+{"Performance Schema events_stages_summary_by_user_by_event_name Table": "https://mariadb.com//kb/en/performance-schema-events_stages_summary_by_user_by_event_name-table/"}
+{"Performance Schema events_stages_summary_global_by_event_name Table": "https://mariadb.com//kb/en/performance-schema-events_stages_summary_global_by_event_name-table/"}
+{"Performance Schema events_statements_current Table": "https://mariadb.com//kb/en/performance-schema-events_statements_current-table/"}
+{"Performance Schema events_statements_history Table": "https://mariadb.com//kb/en/performance-schema-events_statements_history-table/"}
+{"Performance Schema events_statements_history_long Table": "https://mariadb.com//kb/en/performance-schema-events_statements_history_long-table/"}
+{"Performance Schema events_statements_summary_by_account_by_event_name Table": "https://mariadb.com//kb/en/performance-schema-events_statements_summary_by_account_by_event_name-table/"}
+{"Performance Schema events_statements_summary_by_digest Table": "https://mariadb.com//kb/en/performance-schema-events_statements_summary_by_digest-table/"}
+{"Performance Schema events_statements_summary_by_host_by_event_name Table": "https://mariadb.com//kb/en/performance-schema-events_statements_summary_by_host_by_event_name-table/"}
+{"Performance Schema events_statements_summary_by_program Table": "https://mariadb.com//kb/en/performance-schema-events_statements_summary_by_program-table/"}
+{"Performance Schema events_statements_summary_by_thread_by_event_name Table": "https://mariadb.com//kb/en/performance-schema-events_statements_summary_by_thread_by_event_name-table/"}
+{"Performance Schema events_statements_summary_by_user_by_event_name Table": "https://mariadb.com//kb/en/performance-schema-events_statements_summary_by_user_by_event_name-table/"}
+{"Performance Schema events_statements_summary_global_by_event_name Table": "https://mariadb.com//kb/en/performance-schema-events_statements_summary_global_by_event_name-table/"}
+{"Performance Schema events_transactions_current Table": "https://mariadb.com//kb/en/performance-schema-events_transactions_current-table/"}
+{"Performance Schema events_transactions_history Table": "https://mariadb.com//kb/en/performance-schema-events_transactions_history-table/"}
+{"Performance Schema events_transactions_history_long Table": "https://mariadb.com//kb/en/performance-schema-events_transactions_history_long-table/"}
+{"Performance Schema events_transactions_summary_by_account_by_event_name Table": "https://mariadb.com//kb/en/performance-schema-tables-performance-schema-events_transactions_summary_by/"}
+{"Performance Schema events_transactions_summary_by_host_by_event_name Table": "https://mariadb.com//kb/en/performance-schema-events_transactions_summary_by_host_by_event_name-table/"}
+{"Performance Schema events_transactions_summary_by_thread_by_event_name Table": "https://mariadb.com//kb/en/performance-schema-events_transactions_summary_by_thread_by_event_name-tabl/"}
+{"Performance Schema events_transactions_summary_by_user_by_event_name Table": "https://mariadb.com//kb/en/performance-schema-events_transactions_summary_by_user_by_event_name-table/"}
+{"Performance Schema events_transactions_summary_global_by_event_name Table": "https://mariadb.com//kb/en/performance-schema-events_transactions_summary_global_by_event_name-table/"}
+{"Performance Schema events_waits_current Table": "https://mariadb.com//kb/en/performance-schema-events_waits_current-table/"}
+{"Performance Schema events_waits_history Table": "https://mariadb.com//kb/en/performance-schema-events_waits_history-table/"}
+{"Performance Schema events_waits_history_long Table": "https://mariadb.com//kb/en/performance-schema-events_waits_history_long-table/"}
+{"Performance Schema events_waits_summary_by_account_by_event_name Table": "https://mariadb.com//kb/en/performance-schema-events_waits_summary_by_account_by_event_name-table/"}
+{"Performance Schema events_waits_summary_by_host_by_event_name Table": "https://mariadb.com//kb/en/performance-schema-events_waits_summary_by_host_by_event_name-table/"}
+{"Performance Schema events_waits_summary_by_instance Table": "https://mariadb.com//kb/en/performance-schema-events_waits_summary_by_instance-table/"}
+{"Performance Schema events_waits_summary_by_thread_by_event_name Table": "https://mariadb.com//kb/en/performance-schema-events_waits_summary_by_thread_by_event_name-table/"}
+{"Performance Schema events_waits_summary_by_user_by_event_name Table": "https://mariadb.com//kb/en/performance-schema-events_waits_summary_by_user_by_event_name-table/"}
+{"Performance Schema events_waits_summary_global_by_event_name Table": "https://mariadb.com//kb/en/performance-schema-events_waits_summary_global_by_event_name-table/"}
+{"Performance Schema file_instances Table": "https://mariadb.com//kb/en/performance-schema-file_instances-table/"}
+{"Performance Schema file_summary_by_event_name Table": "https://mariadb.com//kb/en/performance-schema-file_summary_by_event_name-table/"}
+{"Performance Schema file_summary_by_instance Table": "https://mariadb.com//kb/en/performance-schema-file_summary_by_instance-table/"}
+{"Performance Schema global_status Table": "https://mariadb.com//kb/en/performance-schema-global_status-table/"}
+{"Performance Schema hosts Table": "https://mariadb.com//kb/en/performance-schema-hosts-table/"}
+{"Performance Schema host_cache Table": "https://mariadb.com//kb/en/performance-schema-host_cache-table/"}
+{"Performance Schema memory_summary_by_account_by_event_name Table": "https://mariadb.com//kb/en/performance-schema-memory_summary_by_account_by_event_name-table/"}
+{"Performance Schema memory_summary_by_host_by_event_name Table": "https://mariadb.com//kb/en/performance-schema-memory_summary_by_host_by_event_name-table/"}
+{"Performance Schema memory_summary_by_thread_by_event_name Table": "https://mariadb.com//kb/en/performance-schema-memory_summary_by_thread_by_event_name-table/"}
+{"Performance Schema memory_summary_by_user_by_event_name Table": "https://mariadb.com//kb/en/performance-schema-memory_summary_by_user_by_event_name-table/"}
+{"Performance Schema memory_summary_global_by_event_name Table": "https://mariadb.com//kb/en/performance-schema-memory_summary_global_by_event_name-table/"}
+{"Performance Schema metadata_locks Table": "https://mariadb.com//kb/en/performance-schema-metadata_locks-table/"}
+{"Performance Schema mutex_instances Table": "https://mariadb.com//kb/en/performance-schema-mutex_instances-table/"}
+{"Performance Schema objects_summary_global_by_type Table": "https://mariadb.com//kb/en/performance-schema-objects_summary_global_by_type-table/"}
+{"Performance Schema performance_timers Table": "https://mariadb.com//kb/en/performance-schema-performance_timers-table/"}
+{"Performance Schema prepared_statements_instances Table": "https://mariadb.com//kb/en/performance-schema-prepared_statements_instances-table/"}
+{"Performance Schema replication_applier_configuration Table": "https://mariadb.com//kb/en/performance-schema-replication_applier_configuration-table/"}
+{"Performance Schema replication_applier_status Table": "https://mariadb.com//kb/en/performance-schema-replication_applier_status-table/"}
+{"Performance Schema replication_applier_status_by_coordinator Table": "https://mariadb.com//kb/en/performance-schema-replication_applier_status_by_coordinator-table/"}
+{"Performance Schema replication_applier_status_by_worker Table": "https://mariadb.com//kb/en/performance-schema-replication_applier_status_by_worker-table/"}
+{"Performance Schema replication_connection_configuration Table": "https://mariadb.com//kb/en/performance-schema-replication_connection_configuration-table/"}
+{"Performance Schema rwlock_instances Table": "https://mariadb.com//kb/en/performance-schema-rwlock_instances-table/"}
+{"Performance Schema session_account_connect_attrs Table": "https://mariadb.com//kb/en/performance-schema-session_account_connect_attrs-table/"}
+{"Performance Schema session_connect_attrs Table": "https://mariadb.com//kb/en/performance-schema-session_connect_attrs-table/"}
+{"Performance Schema session_status Table": "https://mariadb.com//kb/en/performance-schema-session_status-table/"}
+{"Performance Schema setup_actors Table": "https://mariadb.com//kb/en/performance-schema-setup_actors-table/"}
+{"Performance Schema setup_consumers Table": "https://mariadb.com//kb/en/performance-schema-setup_consumers-table/"}
+{"Performance Schema setup_instruments Table": "https://mariadb.com//kb/en/performance-schema-setup_instruments-table/"}
+{"Performance Schema setup_objects Table": "https://mariadb.com//kb/en/performance-schema-setup_objects-table/"}
+{"Performance Schema setup_timers Table": "https://mariadb.com//kb/en/performance-schema-setup_timers-table/"}
+{"Performance Schema socket_instances Table": "https://mariadb.com//kb/en/performance-schema-socket_instances-table/"}
+{"Performance Schema socket_summary_by_event_name Table": "https://mariadb.com//kb/en/performance-schema-socket_summary_by_event_name-table/"}
+{"Performance Schema socket_summary_by_instance Table": "https://mariadb.com//kb/en/performance-schema-socket_summary_by_instance-table/"}
+{"Performance Schema status_by_account Table": "https://mariadb.com//kb/en/performance-schema-status_by_account-table/"}
+{"Performance Schema status_by_host Table": "https://mariadb.com//kb/en/performance-schema-status_by_host-table/"}
+{"Performance Schema status_by_thread Table": "https://mariadb.com//kb/en/performance-schema-status_by_thread-table/"}
+{"Performance Schema status_by_user Table": "https://mariadb.com//kb/en/performance-schema-status_by_user-table/"}
+{"Performance Schema table_handles Table": "https://mariadb.com//kb/en/performance-schema-table_handles-table/"}
+{"Performance Schema table_io_waits_summary_by_index_usage Table": "https://mariadb.com//kb/en/performance-schema-table_io_waits_summary_by_index_usage-table/"}
+{"Performance Schema table_io_waits_summary_by_table Table": "https://mariadb.com//kb/en/performance-schema-table_io_waits_summary_by_table-table/"}
+{"Performance Schema table_lock_waits_summary_by_table Table": "https://mariadb.com//kb/en/performance-schema-table_lock_waits_summary_by_table-table/"}
+{"Performance Schema threads Table": "https://mariadb.com//kb/en/performance-schema-threads-table/"}
+{"Performance Schema users Table": "https://mariadb.com//kb/en/performance-schema-users-table/"}
+{"Performance Schema user_variables_by_thread Table": "https://mariadb.com//kb/en/performance-schema-user_variables_by_thread-table/"}
+{"Performance Schema Overview": "https://mariadb.com//kb/en/performance-schema-overview/"}
+{"Performance Schema Status Variables": "https://mariadb.com//kb/en/performance-schema-status-variables/"}
+{"Performance Schema System Variables": "https://mariadb.com//kb/en/performance-schema-system-variables/"}
+{"Performance Schema Digests": "https://mariadb.com//kb/en/performance-schema-digests/"}
+{"PERFORMANCE_SCHEMA Storage Engine": "https://mariadb.com//kb/en/performance_schema-storage-engine/"}
+{"mysql.column_stats Table": "https://mariadb.com//kb/en/mysqlcolumn_stats-table/"}
+{"mysql.columns_priv Table": "https://mariadb.com//kb/en/mysqlcolumns_priv-table/"}
+{"mysql.db Table": "https://mariadb.com//kb/en/mysql-db-table/"}
+{"mysql.event Table": "https://mariadb.com//kb/en/mysqlevent-table/"}
+{"mysql.func Table": "https://mariadb.com//kb/en/mysqlfunc-table/"}
+{"mysql.general_log Table": "https://mariadb.com//kb/en/mysqlgeneral_log-table/"}
+{"mysql.global_priv Table": "https://mariadb.com//kb/en/mysql-global_priv-table/"}
+{"mysql.gtid_slave_pos Table": "https://mariadb.com//kb/en/mysqlgtid_slave_pos-table/"}
+{"mysql.help_category Table": "https://mariadb.com//kb/en/mysql-help_category-table/"}
+{"mysql.help_keyword Table": "https://mariadb.com//kb/en/mysql-help_keyword-table/"}
+{"mysql.help_relation Table": "https://mariadb.com//kb/en/mysql-help_relation-table/"}
+{"mysql.help_topic Table": "https://mariadb.com//kb/en/mysql-help_topic-table/"}
+{"mysql.index_stats Table": "https://mariadb.com//kb/en/mysqlindex_stats-table/"}
+{"mysql.innodb_index_stats": "https://mariadb.com//kb/en/mysqlinnodb_index_stats/"}
+{"mysql.innodb_table_stats": "https://mariadb.com//kb/en/mysqlinnodb_table_stats/"}
+{"mysql.password_reuse_check_history Table": "https://mariadb.com//kb/en/mysqlpassword_reuse_check_history-table/"}
+{"mysql.plugin Table": "https://mariadb.com//kb/en/mysql-plugin-table/"}
+{"mysql.proc Table": "https://mariadb.com//kb/en/mysqlproc-table/"}
+{"mysql.procs_priv Table": "https://mariadb.com//kb/en/mysqlprocs_priv-table/"}
+{"mysql.proxies_priv Table": "https://mariadb.com//kb/en/mysql-proxies_priv-table/"}
+{"mysql.roles_mapping Table": "https://mariadb.com//kb/en/mysqlroles_mapping-table/"}
+{"mysql.servers Table": "https://mariadb.com//kb/en/mysql-servers-table/"}
+{"mysql.slow_log Table": "https://mariadb.com//kb/en/mysqlslow_log-table/"}
+{"mysql.tables_priv Table": "https://mariadb.com//kb/en/mysqltables_priv-table/"}
+{"mysql.table_stats Table": "https://mariadb.com//kb/en/mysqltable_stats-table/"}
+{"mysql.time_zone Table": "https://mariadb.com//kb/en/mysql-time_zone-table/"}
+{"mysql.time_zone_leap_second Table": "https://mariadb.com//kb/en/mysql-time_zone_leap_second-table/"}
+{"mysql.time_zone_name Table": "https://mariadb.com//kb/en/mysql-time_zone_name-table/"}
+{"mysql.time_zone_transition Table": "https://mariadb.com//kb/en/mysql-time_zone_transition-table/"}
+{"mysql.time_zone_transition_type Table": "https://mariadb.com//kb/en/mysql-time_zone_transition_type-table/"}
+{"mysql.transaction_registry Table": "https://mariadb.com//kb/en/mysql-transaction_registry-table/"}
+{"mysql.user Table": "https://mariadb.com//kb/en/mysql-user-table/"}
+{"mysql.host Table": "https://mariadb.com//kb/en/mysqlhost-table/"}
+{"mysql.ndb_binlog_index Table": "https://mariadb.com//kb/en/mysqlndb_binlog_index-table/"}
+{"mysql.spider_link_failed_log Table": "https://mariadb.com//kb/en/mysqlspider_link_failed_log-table/"}
+{"mysql.spider_link_mon_servers Table": "https://mariadb.com//kb/en/mysqlspider_link_mon_servers-table/"}
+{"mysql.spider_tables Table": "https://mariadb.com//kb/en/mysqlspider_tables-table/"}
+{"mysql.spider_table_crd Table": "https://mariadb.com//kb/en/mysqlspider_table_crd-table/"}
+{"mysql.spider_table_position_for_recovery Table": "https://mariadb.com//kb/en/mysqlspider_table_position_for_recovery-table/"}
+{"mysql.spider_table_sts Table": "https://mariadb.com//kb/en/mysqlspider_table_sts-table/"}
+{"mysql.spider_xa Table": "https://mariadb.com//kb/en/mysqlspider_xa-table/"}
+{"mysql.spider_xa_failed_log Table": "https://mariadb.com//kb/en/mysqlspider_xa_failed_log-table/"}
+{"mysql.spider_xa_member Table": "https://mariadb.com//kb/en/mysqlspider_xa_member-table/"}
+{"Sys Schema sys_config Table": "https://mariadb.com//kb/en/sys-schema-sys_config-table/"}
+{"extract_schema_from_file_name": "https://mariadb.com//kb/en/extract_schema_from_file_name/"}
+{"extract_table_from_file_name": "https://mariadb.com//kb/en/extract_table_from_file_name/"}
+{"format_bytes": "https://mariadb.com//kb/en/format_bytes/"}
+{"format_path": "https://mariadb.com//kb/en/format_path/"}
+{"format_statement": "https://mariadb.com//kb/en/format_statement/"}
+{"format_time": "https://mariadb.com//kb/en/format_time/"}
+{"list_add": "https://mariadb.com//kb/en/list_add/"}
+{"list_drop": "https://mariadb.com//kb/en/list_drop/"}
+{"ps_is_account_enabled": "https://mariadb.com//kb/en/ps_is_account_enabled/"}
+{"ps_is_consumer_enabled": "https://mariadb.com//kb/en/ps_is_consumer_enabled/"}
+{"ps_is_instrument_default_enabled": "https://mariadb.com//kb/en/ps_is_instrument_default_enabled/"}
+{"ps_is_instrument_default_timed": "https://mariadb.com//kb/en/ps_is_instrument_default_timed/"}
+{"ps_is_thread_instrumented": "https://mariadb.com//kb/en/ps_is_thread_instrumented/"}
+{"ps_thread_account": "https://mariadb.com//kb/en/ps_thread_account/"}
+{"ps_thread_id": "https://mariadb.com//kb/en/ps_thread_id/"}
+{"ps_thread_stack": "https://mariadb.com//kb/en/ps_thread_stack/"}
+{"ps_thread_trx_info": "https://mariadb.com//kb/en/ps_thread_trx_info/"}
+{"quote_identifier": "https://mariadb.com//kb/en/quote_identifier/"}
+{"sys_get_config": "https://mariadb.com//kb/en/sys_get_config/"}
+{"version_major": "https://mariadb.com//kb/en/version_major/"}
+{"version_minor": "https://mariadb.com//kb/en/version_minor/"}
+{"version_patch": "https://mariadb.com//kb/en/version_patch/"}
+{"create_synonym_db": "https://mariadb.com//kb/en/create_synonym_db/"}
+{"optimizer_switch Helper Functions": "https://mariadb.com//kb/en/optimizer_switch-helper-functions/"}
+{"ps_trace_thread": "https://mariadb.com//kb/en/ps_trace_thread/"}
+{"ps_truncate_all_tables": "https://mariadb.com//kb/en/ps_truncate_all_tables/"}
+{"statement_performance_analyzer": "https://mariadb.com//kb/en/statement_performance_analyzer/"}
+{"table_exists": "https://mariadb.com//kb/en/table_exists/"}
+{"privileges_by_table_by_level": "https://mariadb.com//kb/en/privileges_by_table_by_level/"}
+{"mariadb_schema": "https://mariadb.com//kb/en/mariadb_schema/"}
+{"Writing Logs Into Tables": "https://mariadb.com//kb/en/writing-logs-into-tables/"}
+{"BINLOG": "https://mariadb.com//kb/en/binlog/"}
+{"PURGE BINARY LOGS": "https://mariadb.com//kb/en/purge-binary-logs/"}
+{"CACHE INDEX": "https://mariadb.com//kb/en/cache-index/"}
+{"DESCRIBE": "https://mariadb.com//kb/en/describe/"}
+{"EXECUTE Statement": "https://mariadb.com//kb/en/execute-statement/"}
+{"HELP Command": "https://mariadb.com//kb/en/help-command/"}
+{"KILL [CONNECTION |\u00a0QUERY]": "https://mariadb.com//kb/en/kill/"}
+{"LOAD INDEX": "https://mariadb.com//kb/en/load-index/"}
+{"RESET": "https://mariadb.com//kb/en/reset/"}
+{"SHUTDOWN": "https://mariadb.com//kb/en/shutdown/"}
+{"USE [DATABASE]": "https://mariadb.com//kb/en/use-database/"}

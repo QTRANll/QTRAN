@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/st_difference/"
+    ],
+    "Title": [
+        "ST_DIFFERENCE"
+    ],
+    "Feature": [
+        "ST_DIFFERENCE(g1,g2)\n"
+    ],
+    "Description": [
+        "Returns a geometry representing the point set difference of the given geometry values."
+    ],
+    "Examples": [
+        "SET @g1 = POINT(10,10), @g2 = POINT(20,20);\n\nSELECT ST_AsText(ST_Difference(@g1, @g2));\n+------------------------------------+\n| ST_AsText(ST_Difference(@g1, @g2)) |\n+------------------------------------+\n| POINT(10 10)                       |\n+------------------------------------+\n"
+    ],
+    "Category": [
+        "Geographic Functions"
+    ]
+}

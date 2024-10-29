@@ -1,0 +1,31 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/declare-handler/"
+    ],
+    "Title": [
+        "DECLARE HANDLER"
+    ],
+    "Feature": [
+        "DECLARE handler_type HANDLER\n    FOR condition_value [, condition_value] ...\n    statement\n\nhandler_type:\n    CONTINUE\n  | EXIT \n  | UNDO\n\ncondition_value:\n    SQLSTATE [VALUE] sqlstate_value\n  | condition_name\n  | SQLWARNING\n  | NOT FOUND\n  | SQLEXCEPTION\n  | mariadb_error_code\n"
+    ],
+    "Description": [
+        "The DECLARE ... HANDLER statement specifies handlers that each may\ndeal with one or more conditions. If one of these conditions occurs,\nthe specified statement is executed. statement can be a simple\nstatement (for example, SET var_name = value), or it can be a compound\nstatement written using BEGIN and END.",
+        "Handlers must be declared after local variables, a CONDITION and a CURSOR.",
+        "For a CONTINUE handler, execution of the current program continues\nafter execution of the handler statement. For an EXIT handler,\nexecution terminates for the BEGIN ... END compound statement in which\nthe handler is declared. (This is true even if the condition occurs in\nan inner block.) The UNDO handler type statement is not supported.",
+        "If a condition occurs for which no handler has been declared, the\ndefault action is EXIT.",
+        "A condition_value for DECLARE ... HANDLER can be any of the following\nvalues:",
+        "An SQLSTATE value (a 5-character string literal) or a MariaDB error\ncode (a number). You should not use SQLSTATE value '00000' or MariaDB\nerror code 0, because those indicate sucess rather than an error\ncondition. For a list of SQLSTATE values and MariaDB error codes, see\nMariaDB Error Codes.\nA condition name previously specified with DECLARE ... CONDITION. It must be in the same stored program. See DECLARE CONDITION.\nSQLWARNING is shorthand for the class of SQLSTATE values that begin\nwith '01'.\nNOT FOUND is shorthand for the class of SQLSTATE values that begin\nwith '02'. This is relevant only the context of cursors and is used to\ncontrol what happens when a cursor reaches the end of a data set. If\nno more rows are available, a No Data condition occurs with SQLSTATE\nvalue 02000. To detect this condition, you can set up a handler for it\n(or for a NOT FOUND condition). An example is shown in Cursor Overview. This condition also occurs for SELECT ... INTO var_list statements that retrieve no\nrows.\nSQLEXCEPTION is shorthand for the class of SQLSTATE values that do\nnot begin with '00', '01', or '02'.\n",
+        "When an error raises, in some cases it could be handled by multiple HANDLERs. For example, there may be an handler for 1050 error, a separate handler for the 42S01 SQLSTATE, and another separate handler for the SQLEXCEPTION class: in theory all occurrences of HANDLER may catch the 1050 error, but MariaDB chooses the HANDLER with the highest precedence. Here are the precedence rules:",
+        "Handlers which refer to an error code have the highest precedence.\nHandlers which refer to a SQLSTATE come next.\nHandlers which refer to an error class have the lowest precedence.\n",
+        "In some cases, a statement could produce multiple errors. If this happens, in some cases multiple handlers could have the highest precedence. In such cases, the choice of the handler is indeterminate.",
+        "Note that if an error occurs within a CONTINUE HANDLER block, it can be handled by another HANDLER. However, a HANDLER which is already in the stack (that is, it has been called to handle an error and its execution didn't finish yet) cannot handle new errors\u2014this prevents endless loops. For example, suppose that a stored procedure contains a CONTINUE HANDLER for SQLWARNING and another CONTINUE HANDLER for NOT FOUND. At some point, a NOT FOUND error occurs, and the execution enters the NOT FOUND HANDLER. But within that handler, a warning occurs, and the execution enters the SQLWARNING HANDLER. If another NOT FOUND error occurs, it cannot be handled again by the NOT FOUND HANDLER, because its execution is not finished.",
+        "When a DECLARE HANDLER block can handle more than one error condition, it may be useful to know which errors occurred. To do so, you can use the GET DIAGNOSTICS statement.",
+        "An error that is handled by a DECLARE HANDLER construct can be issued again using the RESIGNAL statement.",
+        "Below is an example using DECLARE HANDLER:",
+        "CREATE TABLE test.t (s1 INT, PRIMARY KEY (s1));\n\nDELIMITER //\n\nCREATE PROCEDURE handlerdemo ( )\n     BEGIN\n       DECLARE CONTINUE HANDLER FOR SQLSTATE '23000' SET @x2 = 1;\n       SET @x = 1;\n       INSERT INTO test.t VALUES (1);\n       SET @x = 2;\n       INSERT INTO test.t VALUES (1);\n       SET @x = 3;\n     END;\n     //\n\nDELIMITER ;\n\nCALL handlerdemo( );\n\nSELECT @x;\n+------+\n| @x   |\n+------+\n|    3 |\n+------+\n"
+    ],
+    "Examples": [],
+    "Category": [
+        "Programmatic and Compound Statements"
+    ]
+}

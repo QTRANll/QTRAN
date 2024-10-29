@@ -1,0 +1,28 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/array-functions"
+    ],
+    "Title": [
+        "arrayReduce"
+    ],
+    "Feature": [
+        "arrayReduce(agg_func, arr1, arr2, ..., arrN)"
+    ],
+    "Description": [
+        "arrayReduce",
+        "Applies an aggregate function to array elements and returns its result. The name of the aggregation function is passed as a string in single quotes 'max', 'sum'. When using parametric aggregate functions, the parameter is indicated after the function name in parentheses 'uniqUpTo(6)'.",
+        "Syntax",
+        "arrayReduce(agg_func, arr1, arr2, ..., arrN)",
+        "Arguments",
+        "agg_func \u2014 The name of an aggregate function which should be a constant string.arr \u2014 Any number of array type columns as the parameters of the aggregation function.",
+        "Returned value"
+    ],
+    "Examples": [
+        "SELECT arrayReduce('max', [1, 2, 3]);",
+        "SELECT arrayReduce('maxIf', [3, 5], [1, 0]);",
+        "SELECT arrayReduce('uniqUpTo(3)', [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);"
+    ],
+    "Category": [
+        "Arrays Functions"
+    ]
+}

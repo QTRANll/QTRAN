@@ -1,0 +1,22 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000001054288"
+    ],
+    "Title": [
+        "MERGE"
+    ],
+    "Feature": [
+        "MERGE [hint_options] INTO target_table_name [opt_alias]\n    USING source_table_name [opt_alias]\n    ON (expr)\n    [merge_update_clause] [merge_insert_clause]\n\nmerge_update_clause:\n    WHEN MATCHED THEN UPDATE SET update_asgn_list [WHERE expr] [DELETE WHERE expr]\n\nmerge_insert_clause:\n    WHEN NOT MATCHED THEN INSERT opt_insert_columns VALUES '(' insert_vals ')' [WHERE expr]\n"
+    ],
+    "Description": [
+        "该语句用来根据一张源表更新一张目标表的数据，可以对目标表进行插入、更新或者删除。",
+        "\n\n\n参数\n描述\n\n\n\n\nhint_options\n指定 Hint 选项，为可选项。\n\n\ntarget_table_name\n指定要更新或插入目标表的表名。\n\n\nsource_table_name\n指定要更新或插入的数据来源的表名。\n\n\nON (expr)\n源表和目标表的连接条件。\n\n\nupdate_asgn_list\n更新语句的赋值操作。\n\n\nWHERE expr\n触发更新、删除或者插入操作时的需要满足的条件。\n\n\n"
+    ],
+    "Examples": [
+        "obclient> CREATE TABLE tbl1 (col1 INT, col2 INT);\nQuery OK, 0 rows affected\n\nobclient> CREATE TABLE tbl2 (col1 INT, col2 INT);\nQuery OK, 0 rows affected\n\nobclient> INSERT INTO tbl1 VALUES(0, 0),(1, null),(2, null);\nQuery OK, 3 row affected\n\nobclient> INSERT INTO tbl2 VALUES(1, 1),(2, 20),(3, 3),(4, 40);\nQuery OK, 4 row affected\n\nobclient> SELECT * FROM tbl1;\n+------+------+\n| COL1 | COL2 |\n+------+------+\n|    0 |    0 |\n|    1 | NULL |\n|    2 | NULL |\n+------+------+\n3 rows in set\n\nobclient> SELECT * FROM tbl2;\n+------+------+\n| COL1 | COL2 |\n+------+------+\n|    1 |    1 |\n|    2 |   20 |\n|    3 |    3 |\n|    4 |   40 |\n+------+------+\n4 rows in set\n",
+        "obclient>MERGE INTO tbl1 USING tbl2 ON (tbl1.col1 = tbl2.col1)\n       WHEN MATCHED THEN UPDATE SET tbl1.col2 = tbl2.col2 WHERE tbl1.col2 IS NULL DELETE\n       WHERE tbl1.col2 >= 10\n       WHEN NOT MATCHED THEN INSERT VALUES(tbl2.col1, tbl2.col2)\n       WHERE tbl2.col2 < 10;\nQuery OK, 3 rows affected\n\nobclient> SELECT * FROM tbl1;\n+------+------+\n| COL1 | COL2 |\n+------+------+\n|    0 |    0 |\n|    1 |    1 |\n|    3 |    3 |\n+------+------+\n3 rows in set\n"
+    ],
+    "Category": [
+        "DML"
+    ]
+}

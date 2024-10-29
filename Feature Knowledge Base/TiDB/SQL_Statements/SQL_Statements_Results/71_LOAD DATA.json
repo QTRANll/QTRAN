@@ -1,0 +1,25 @@
+{
+    "HTML": [
+        "https://docs.pingcap.com//zh/tidb/stable/sql-statement-load-data"
+    ],
+    "Title": [
+        "LOAD DATA"
+    ],
+    "Feature": [
+        "LoadDataStmt ::=\n    'LOAD' 'DATA' LocalOpt 'INFILE' stringLit DuplicateOpt 'INTO' 'TABLE' TableName CharsetOpt Fields Lines IgnoreLines ColumnNameOrUserVarListOptWithBrackets LoadDataSetSpecOpt\n\nLocalOpt ::= ('LOCAL')?\n\nFields ::=\n    ('TERMINATED' 'BY' stringLit\n    | ('OPTIONALLY')? 'ENCLOSED' 'BY' stringLit\n    | 'ESCAPED' 'BY' stringLit\n    | 'DEFINED' 'NULL' 'BY' stringLit ('OPTIONALLY' 'ENCLOSED')?)?\n"
+    ],
+    "Description": [
+        "LOAD DATA \u8bed\u53e5\u7528\u4e8e\u5c06\u6570\u636e\u6279\u91cf\u52a0\u8f7d\u5230 TiDB \u8868\u4e2d\u3002",
+        "\u5728 v7.0.0 \u7248\u672c\u652f\u6301\u4ee5\u4e0b\u529f\u80fd\uff1a",
+        "\u652f\u6301\u4ece S3\u3001GCS \u5bfc\u5165\u6570\u636e\u65b0\u589e\u53c2\u6570 FIELDS DEFINED NULL BY",
+        ".css-1weqspv{padding-top:0.5rem;padding-bottom:0.5rem;}.css-1weqspv .MuiAlert-message p{margin-bottom:0px;margin-top:0px;}",
+        "\u8b66\u544av7.0.0 \u65b0\u589e\u652f\u6301\u4ece S3\u3001GCS \u5bfc\u5165\u6570\u636e\u548c FIELDS DEFINED NULL BY \u53c2\u6570\u4e3a\u5b9e\u9a8c\u7279\u6027\uff0c\u4e0d\u5efa\u8bae\u5728\u751f\u4ea7\u73af\u5883\u4e2d\u4f7f\u7528\u3002\u8be5\u529f\u80fd\u53ef\u80fd\u4f1a\u5728\u672a\u4e8b\u5148\u901a\u77e5\u7684\u60c5\u51b5\u4e0b\u53d1\u751f\u53d8\u5316\u6216\u5220\u9664\u3002\u5982\u679c\u53d1\u73b0 bug\uff0c\u8bf7\u5728 GitHub \u4e0a\u63d0 issue \u53cd\u9988\u3002"
+    ],
+    "Examples": [
+        "LOAD DATA LOCAL INFILE '/mnt/evo970/data-sets/bikeshare-data/2017Q4-capitalbikeshare-tripdata.csv' INTO TABLE trips FIELDS TERMINATED BY ',' ENCLOSED BY '\\\"' LINES TERMINATED BY '\\r\\n' IGNORE 1 LINES (duration, start_date, end_date, start_station_number, start_station, end_station_number, end_station, bike_number, member_type);\n",
+        "LOAD DATA LOCAL INFILE '/mnt/evo970/data-sets/bikeshare-data/2017Q4-capitalbikeshare-tripdata.csv' INTO TABLE trips FIELDS TERMINATED BY x'2c' ENCLOSED BY b'100010' LINES TERMINATED BY '\\r\\n' IGNORE 1 LINES (duration, start_date, end_date, start_station_number, start_station, end_station_number, end_station, bike_number, member_type);\n"
+    ],
+    "Category": [
+        "\u6570\u636e\u5bfc\u5165\u548c\u5bfc\u51fa"
+    ]
+}

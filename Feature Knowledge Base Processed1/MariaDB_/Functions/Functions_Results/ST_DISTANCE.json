@@ -1,0 +1,33 @@
+{
+    "HTML": "https://mariadb.com//kb/en/st_distance/",
+    "Title": "ST_DISTANCE",
+    "Feature": [
+        "ST_DISTANCE(g1,g2)\n"
+    ],
+    "Description": [
+        "Returns the distance between two geometries, or null if not given valid inputs."
+    ],
+    "Examples": [
+        "SELECT ST_Distance(POINT(1,2),POINT(2,2));\n+------------------------------------+\n| ST_Distance(POINT(1,2),POINT(2,2)) |\n+------------------------------------+\n|                                  1 |\n+------------------------------------+\n"
+    ],
+    "Category": [
+        "Geographic Functions"
+    ],
+    "Effective SQLs Refined": [
+        "SELECT ST_Distance(POINT(1,2),POINT(2,2));"
+    ],
+    "Ineffective SQLs Refined": [],
+    "Wrong Messages from Ineffective SQLs Refined": [],
+    "SQLs Generated1": [],
+    "SQLs Generated Costs1": [],
+    "SQLs Generated ExecResults1": [],
+    "SQLs Generated ExecTimes1": [],
+    "SQLs Generated ErrorMessages1": [],
+    "Effective SQLs Generated1": [],
+    "SQLs Generated2": [],
+    "SQLs Generated Costs2": [],
+    "SQLs Generated ExecResults2": [],
+    "SQLs Generated ExecTimes2": [],
+    "SQLs Generated ErrorMessages2": [],
+    "Effective SQLs Generated2": []
+}

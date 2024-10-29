@@ -1,0 +1,27 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/hash-functions"
+    ],
+    "Title": [
+        "sipHash64Keyed"
+    ],
+    "Feature": [
+        "sipHash64Keyed((k0, k1), par1,...)"
+    ],
+    "Description": [
+        "sipHash64Keyed",
+        "Same as sipHash64 but additionally takes an explicit key argument instead of using a fixed key.",
+        "Syntax",
+        "sipHash64Keyed((k0, k1), par1,...)",
+        "Arguments",
+        "Same as sipHash64, but the first argument is a tuple of two UInt64 values representing the key.",
+        "Returned value",
+        "A UInt64 data type hash value."
+    ],
+    "Examples": [
+        "SELECT sipHash64Keyed((506097522914230528, 1084818905618843912), array('e','x','a'), 'mple', 10, toDateTime('2019-06-15 23:00:00')) AS SipHash, toTypeName(SipHash) AS type;"
+    ],
+    "Category": [
+        "Hash Functions"
+    ]
+}

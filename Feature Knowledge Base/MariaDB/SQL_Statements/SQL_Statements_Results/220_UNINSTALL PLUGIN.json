@@ -1,0 +1,24 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/uninstall-plugin/"
+    ],
+    "Title": [
+        "UNINSTALL PLUGIN"
+    ],
+    "Feature": [
+        "UNINSTALL PLUGIN [IF EXISTS] plugin_name"
+    ],
+    "Description": [
+        "This statement removes a single installed plugin. To uninstall the whole library which contains the plugin, use UNINSTALL SONAME. You cannot uninstall a plugin if any table that uses it is open.",
+        "plugin_name must be the name of some plugin that is listed\nin the mysql.plugin table. The server executes the plugin's deinitialization\nfunction and removes the row for the plugin from the mysql.plugin\ntable, so that subsequent server restarts will not load and initialize\nthe plugin. UNINSTALL PLUGIN does not remove the plugin's\nshared library file.",
+        "To use UNINSTALL PLUGIN, you must have the\nDELETE privilege for the mysql.plugin table.",
+        "MariaDB starting with 10.4.0IF EXISTS\nIf the IF EXISTS clause is used, MariaDB will return a note instead of an error if the plugin does not exist. See SHOW WARNINGS.\n"
+    ],
+    "Examples": [
+        "UNINSTALL PLUGIN example;\n",
+        "UNINSTALL PLUGIN IF EXISTS example;\nQuery OK, 0 rows affected (0.099 sec)\n\nUNINSTALL PLUGIN IF EXISTS example;\nQuery OK, 0 rows affected, 1 warning (0.000 sec)\n\nSHOW WARNINGS;\n+-------+------+-------------------------------+\n| Level | Code | Message                       |\n+-------+------+-------------------------------+\n| Note  | 1305 | PLUGIN example does not exist |\n+-------+------+-------------------------------+\n"
+    ],
+    "Category": [
+        "Administrative SQL Statements"
+    ]
+}

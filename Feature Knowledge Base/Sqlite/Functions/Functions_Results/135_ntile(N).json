@@ -1,0 +1,18 @@
+{
+    "HTML": [
+        "https://sqlite.org/windowfunctions.html"
+    ],
+    "Title": [
+        "Built-In Window Function"
+    ],
+    "Feature": [
+        "ntile(N)"
+    ],
+    "Description": [
+        "Argument N is handled as an integer. This function divides the partition into N groups as evenly as possible and assigns an integer between 1 and N to each group, in the order defined by the ORDER BY clause, or in arbitrary order otherwise. If necessary, larger groups occur first. This function returns the integer value assigned to the group that the current row is a part of."
+    ],
+    "Examples": [],
+    "Category": [
+        "Built-In Window Functions"
+    ]
+}

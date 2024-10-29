@@ -1,0 +1,69 @@
+{
+    "HTML": "https://mariadb.com//kb/en/area/",
+    "Title": "ST_AREA",
+    "Feature": [
+        "ST_Area(poly)\nArea(poly)\n"
+    ],
+    "Description": [
+        "Returns as a double-precision number the area of the Polygon value poly, as measured in its spatial reference system.",
+        "ST_Area() and Area() are synonyms."
+    ],
+    "Examples": [
+        "SET @poly = 'Polygon((0 0,0 3,3 0,0 0),(1 1,1 2,2 1,1 1))';\n\nSELECT Area(GeomFromText(@poly));\n+---------------------------+\n| Area(GeomFromText(@poly)) |\n+---------------------------+\n|                         4 |\n+---------------------------+\n"
+    ],
+    "Category": [
+        "Geographic Functions"
+    ],
+    "Effective SQLs Refined": [],
+    "Ineffective SQLs Refined": [],
+    "Wrong Messages from Ineffective SQLs Refined": [],
+    "SQLs Generated1": [
+        {
+            "Example SQL": "SELECT ST_Area(poly) FROM your_table;"
+        },
+        {
+            "Example SQL": "SELECT ST_Area(poly);"
+        },
+        {
+            "Example SQL": "SELECT ST_Area(GeomFromText('POLYGON((...))'));"
+        }
+    ],
+    "SQLs Generated Costs1": [
+        {
+            "Total Tokens": 294,
+            "Prompt Tokens": 272,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 5.4e-05
+        },
+        {
+            "Total Tokens": 445,
+            "Prompt Tokens": 426,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 7.529999999999999e-05
+        },
+        {
+            "Total Tokens": 600,
+            "Prompt Tokens": 572,
+            "Completion Tokens": 28,
+            "Total Cost (USD)": 0.00010259999999999999
+        }
+    ],
+    "SQLs Generated ExecResults1": [
+        "None",
+        "None",
+        "[(None,)]"
+    ],
+    "SQLs Generated ExecTimes1": [
+        "0",
+        "0",
+        "0.026193857192993164"
+    ],
+    "SQLs Generated ErrorMessages1": [
+        "(pymysql.err.ProgrammingError) (1146, \"Table 'PINOLO_MariaDB.your_table' doesn't exist\")\n",
+        "(pymysql.err.OperationalError) (1054, \"Unknown column 'poly' in 'field list'\")\n",
+        "None"
+    ],
+    "Effective SQLs Generated1": [
+        "SELECT ST_Area(GeomFromText('POLYGON((...))'));"
+    ]
+}

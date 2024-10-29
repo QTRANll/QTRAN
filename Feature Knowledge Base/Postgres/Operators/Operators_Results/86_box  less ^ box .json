@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/current/functions-geometry.html"
+    ],
+    "Title": [
+        "box <^ box"
+    ],
+    "Feature": [
+        "box <^ box → boolean"
+    ],
+    "Description": [
+        "Is first object below second (allows edges to touch)?"
+    ],
+    "Examples": [
+        "box '((1,1),(0,0))' <^ box '((2,2),(1,1))' → t"
+    ],
+    "Category": [
+        "Geometric Functions and Operators"
+    ]
+}

@@ -1,0 +1,22 @@
+{
+    "HTML": [
+        "https://duckdb.org/docs/sql/functions/aggregates"
+    ],
+    "Title": [
+        "listagg(arg, sep)"
+    ],
+    "Feature": [
+        "listagg(arg, sep)"
+    ],
+    "Description": [
+        "group_concat(arg, sep)",
+        "string_agg(arg, sep)",
+        "Concatenates the column string values with a separator. This function is affected by ordering."
+    ],
+    "Examples": [
+        "string_agg(S, ',')"
+    ],
+    "Category": [
+        "Aggregate Functions"
+    ]
+}

@@ -1,0 +1,18 @@
+{
+    "HTML": [
+        "https://sqlite.org/json1.html#jpatchb"
+    ],
+    "Title": [
+        "JSON Functions"
+    ],
+    "Feature": [
+        "jsonb_patch(T, P)"
+    ],
+    "Description": [
+        "The jsonb_patch() function operates similarly to the json_patch() function, with a primary distinction in the format of the output. It implements the RFC-7396 MergePatch algorithm to apply a patch P to an input JSON object T. However, unlike json_patch(), which returns the patched JSON in text format, jsonb_patch() returns the patched JSON in the binary JSONB format. This binary format can offer performance improvements for applications that require efficient handling of JSON data within SQLite."
+    ],
+    "Examples": [],
+    "Category": [
+        "JSON Functions"
+    ]
+}

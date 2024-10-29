@@ -1,0 +1,26 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/aggregate-functions/reference/groupbitxor"
+    ],
+    "Title": [
+        "groupBitXor"
+    ],
+    "Feature": [
+        "groupBitXor(expr)"
+    ],
+    "Description": [
+        "groupBitXor",
+        "Applies bit-wise XOR for series of numbers.",
+        "groupBitXor(expr)",
+        "Arguments",
+        "expr \u2013 An expression that results in UInt* or Int* type.",
+        "Return value",
+        "Value of the UInt* or Int* type."
+    ],
+    "Examples": [
+        "SELECT groupBitXor(num) FROM t"
+    ],
+    "Category": [
+        "Aggregate Functions"
+    ]
+}

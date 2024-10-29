@@ -1,0 +1,28 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/type-conversion-functions"
+    ],
+    "Title": [
+        "accurateCastOrNull(x, T)"
+    ],
+    "Feature": [
+        "accurateCastOrNull(x, T)"
+    ],
+    "Description": [
+        "accurateCastOrNull(x, T)",
+        "Converts input value x to the specified data type T. Always returns Nullable type and returns NULL if the casted value is not representable in the target type.",
+        "Syntax",
+        "accurateCastOrNull(x, T)",
+        "Arguments",
+        "x \u2014 Input value.T \u2014 The name of the returned data type.",
+        "Returned value",
+        "The value, converted to the specified data type T."
+    ],
+    "Examples": [
+        "SELECT toTypeName(accurateCastOrNull(5, 'UInt8'));",
+        "SELECT    accurateCastOrNull(-1, 'UInt8') as uint8,    accurateCastOrNull(128, 'Int8') as int8,    accurateCastOrNull('Test', 'FixedString(2)') as fixed_string;"
+    ],
+    "Category": [
+        "Type Conversion Functions"
+    ]
+}

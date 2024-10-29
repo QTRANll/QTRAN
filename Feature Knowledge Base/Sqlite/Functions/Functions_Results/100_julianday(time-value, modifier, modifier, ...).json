@@ -1,0 +1,24 @@
+{
+    "HTML": [
+        "https://sqlite.org/lang_datefunc.html"
+    ],
+    "Title": [
+        "Date And Time Functions"
+    ],
+    "Feature": [
+        "julianday(time-value, modifier, modifier, ...)"
+    ],
+    "Description": [
+        "The julianday(time-value, modifier, modifier, ...) function returns the Julian day number - the fractional number of days since noon in Greenwich on November 24, 4714 B.C. (Proleptic Gregorian calendar). It accepts a time-value and zero or more modifiers.",
+        "Parameters: time-value (e.g., 'now', '2024-08-21'), modifiers (e.g., '+1 day').",
+        "Returns: A real number representing the Julian day number."
+    ],
+    "Examples": [
+        "SELECT julianday(); -- Returns the current Julian day number.",
+        "SELECT julianday('2024-08-21'); -- Returns the Julian day number for August 21, 2024.",
+        "SELECT julianday('now', '+1 day'); -- Returns the Julian day number for one day after the current date."
+    ],
+    "Category": [
+        "Date And Time Functions"
+    ]
+}

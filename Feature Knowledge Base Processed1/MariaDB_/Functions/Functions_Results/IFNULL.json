@@ -1,0 +1,37 @@
+{
+    "HTML": "https://mariadb.com//kb/en/ifnull/",
+    "Title": "IFNULL",
+    "Feature": [
+        "IFNULL(expr1,expr2)\nNVL(expr1,expr2)\n"
+    ],
+    "Description": [
+        "If expr1 is not NULL, IFNULL() returns expr1; otherwise it returns\nexpr2. IFNULL() returns a numeric or string value, depending on the\ncontext in which it is used. ",
+        "From MariaDB 10.3, NVL() is an alias for IFNULL()."
+    ],
+    "Examples": [
+        "SELECT IFNULL(1,0); \n+-------------+\n| IFNULL(1,0) |\n+-------------+\n|           1 |\n+-------------+\n\nSELECT IFNULL(NULL,10);\n+-----------------+\n| IFNULL(NULL,10) |\n+-----------------+\n|              10 |\n+-----------------+\n\nSELECT IFNULL(1/0,10);\n+----------------+\n| IFNULL(1/0,10) |\n+----------------+\n|        10.0000 |\n+----------------+\n\nSELECT IFNULL(1/0,'yes');\n+-------------------+\n| IFNULL(1/0,'yes') |\n+-------------------+\n| yes               |\n+-------------------+\n"
+    ],
+    "Category": [
+        "Control Flow Functions"
+    ],
+    "Effective SQLs Refined": [
+        "SELECT IFNULL(1,0);",
+        "SELECT IFNULL(NULL,10);",
+        "SELECT IFNULL(1/0,10);",
+        "SELECT IFNULL(1/0,'yes');"
+    ],
+    "Ineffective SQLs Refined": [],
+    "Wrong Messages from Ineffective SQLs Refined": [],
+    "SQLs Generated1": [],
+    "SQLs Generated Costs1": [],
+    "SQLs Generated ExecResults1": [],
+    "SQLs Generated ExecTimes1": [],
+    "SQLs Generated ErrorMessages1": [],
+    "Effective SQLs Generated1": [],
+    "SQLs Generated2": [],
+    "SQLs Generated Costs2": [],
+    "SQLs Generated ExecResults2": [],
+    "SQLs Generated ExecTimes2": [],
+    "SQLs Generated ErrorMessages2": [],
+    "Effective SQLs Generated2": []
+}

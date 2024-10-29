@@ -1,0 +1,35 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/create-server/"
+    ],
+    "Title": [
+        "CREATE SERVER"
+    ],
+    "Feature": [
+        "CREATE [OR REPLACE] SERVER [IF NOT EXISTS] server_name\n    FOREIGN DATA WRAPPER wrapper_name\n    OPTIONS (option [, option] ...)\n\noption:\n  { HOST character-literal\n  | DATABASE character-literal\n  | USER character-literal\n  | PASSWORD character-literal\n  | SOCKET character-literal\n  | OWNER character-literal\n  | PORT numeric-literal }\n"
+    ],
+    "Description": [
+        "This statement creates the definition of a server for use with the Spider, Connect, \nFEDERATED or FederatedX storage\nengine. The CREATE SERVER statement creates a new row within the\nservers table within the mysql database. This statement\nrequires the SUPER privilege or, from MariaDB 10.5.2, the FEDERATED ADMIN privilege.",
+        "The server_name should be a unique reference to the server. Server definitions\nare global within the scope of the server, it is not possible to qualify the\nserver definition to a specific database. server_name has a maximum length of\n64 characters (names longer than 64 characters are silently truncated), and is\ncase insensitive. You may specify the name as a quoted string.",
+        "The wrapper_name may be quoted with single quotes. Supported values are:",
+        "mysql\nmariadb (in MariaDB 10.3 and later) \n",
+        "For each option you must specify either a character literal or numeric literal.\nCharacter literals are UTF-8, support a maximum length of 64 characters and\ndefault to a blank (empty) string. String literals are silently truncated to 64\ncharacters. Numeric literals must be a number between 0 and 9999, default value\nis 0.",
+        "Note: The OWNER option is currently not applied, and has no effect on\nthe ownership or operation of the server connection that is created.",
+        "The CREATE SERVER statement creates an entry in the\nmysql.servers table that can later be used with the\nCREATE TABLE statement when creating a Spider, Connect, FederatedX or\nFEDERATED table. The options that you specify will\nbe used to populate the columns in the mysql.servers table. The table columns\nare Server_name, Host, Db, Username, Password, Port and Socket.",
+        " DROP SERVER removes a previously created server definition. ",
+        "CREATE SERVER is not written to the binary log, irrespective of\nthe binary log format being used and therefore will not replicate. From MariaDB 10.1.13, Galera replicates the CREATE SERVER, ALTER SERVER and DROP SERVER statements.",
+        "For valid identifiers to use as server names, see Identifier Names.",
+        "OR REPLACE",
+        "If the optional OR REPLACE clause is used, it acts as a shortcut for:",
+        "DROP SERVER IF EXISTS name;\nCREATE SERVER server_name ...;\n",
+        "IF NOT EXISTS",
+        "If the IF NOT EXISTS clause is used, MariaDB will return a warning instead of an error if the server already exists. Cannot be used together with OR REPLACE."
+    ],
+    "Examples": [
+        "CREATE SERVER s\nFOREIGN DATA WRAPPER mariadb\nOPTIONS (USER 'Remote', HOST '192.168.1.106', DATABASE 'test');\n",
+        "CREATE SERVER s \nFOREIGN DATA WRAPPER mariadb \nOPTIONS (USER 'Remote', HOST '192.168.1.106', DATABASE 'test');\nERROR 1476 (HY000): The foreign server, s, you are trying to create already exists\n\nCREATE OR REPLACE SERVER s \nFOREIGN DATA WRAPPER mariadb \nOPTIONS (USER 'Remote', HOST '192.168.1.106', DATABASE 'test');\nQuery OK, 0 rows affected (0.00 sec)\n\nCREATE SERVER IF NOT EXISTS s \nFOREIGN DATA WRAPPER mariadb \nOPTIONS (USER 'Remote', HOST '192.168.1.106', DATABASE 'test');\nQuery OK, 0 rows affected, 1 warning (0.00 sec)\n\nSHOW WARNINGS;\n+-------+------+----------------------------------------------------------------+\n| Level | Code | Message                                                        |\n+-------+------+----------------------------------------------------------------+\n| Note  | 1476 | The foreign server, s, you are trying to create already exists |\n+-------+------+----------------------------------------------------------------+\n"
+    ],
+    "Category": [
+        "Data Definition"
+    ]
+}

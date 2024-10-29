@@ -1,0 +1,22 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/aggregate-functions.html#function_std"
+    ],
+    "Title": [
+        "STD()"
+    ],
+    "Feature": [
+        "STD(expr)\n            [over_clause]"
+    ],
+    "Description": [
+        "Return the population standard deviation",
+        "\nSTD(expr)\n            [over_clause]\n",
+        "\n            Returns the population standard deviation of\n            expr.\n            STD() is a synonym for the\n            standard SQL function\n            STDDEV_POP(), provided as a\n            MySQL extension.\n          ",
+        "\n            If there are no matching rows, or if\n            expr is NULL,\n            STD() returns\n            NULL.\n          ",
+        "\n            This function executes as a window function if\n            over_clause is present.\n            over_clause is as described in\n            Section\u00a014.20.2, \u201cWindow Function Concepts and Syntax\u201d.\n          "
+    ],
+    "Examples": [],
+    "Category": [
+        "Aggregate Functions"
+    ]
+}

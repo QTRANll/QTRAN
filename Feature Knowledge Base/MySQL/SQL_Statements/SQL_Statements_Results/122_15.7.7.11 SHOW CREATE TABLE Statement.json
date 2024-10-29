@@ -1,0 +1,29 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/show-create-table.html"
+    ],
+    "Title": [
+        "15.7.7.11 SHOW CREATE TABLE Statement"
+    ],
+    "Feature": [
+        "SHOW CREATE TABLE tbl_name",
+        "mysql> SHOW CREATE TABLE t\\G\n*************************** 1. row ***************************\n       Table: t\nCreate Table: CREATE TABLE `t` (\n  `id` int NOT NULL AUTO_INCREMENT,\n  `s` char(60) DEFAULT NULL,\n  PRIMARY KEY (`id`)\n) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci"
+    ],
+    "Description": [
+        "\n        Shows the CREATE TABLE statement\n        that creates the named table. To use this statement, you must\n        have some privilege for the table. This statement also works\n        with views.\n      ",
+        "\nSHOW CREATE TABLE displays all\n        CHECK constraints as table constraints. That\n        is, a CHECK constraint originally specified\n        as part of a column definition displays as a separate clause not\n        part of the column definition. Example:\n      ",
+        "Press CTRL+C to copy mysql> CREATE TABLE t1 (\n         i1 INT CHECK (i1 <> 0),      -- column constraint\n         i2 INT,\n         CHECK (i2 > i1),             -- table constraint\n         CHECK (i2 <> 0) NOT ENFORCED -- table constraint, not enforced\n       );\n\nmysql> SHOW CREATE TABLE t1\\G\n*************************** 1. row ***************************\n       Table: t1\nCreate Table: CREATE TABLE `t1` (\n  `i1` int DEFAULT NULL,\n  `i2` int DEFAULT NULL,\n  CONSTRAINT `t1_chk_1` CHECK ((`i1` <> 0)),\n  CONSTRAINT `t1_chk_2` CHECK ((`i2` > `i1`)),\n  CONSTRAINT `t1_chk_3` CHECK ((`i2` <> 0)) /*!80016 NOT ENFORCED */\n) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci",
+        "\nSHOW CREATE TABLE quotes table\n        and column names according to the value of the\n        sql_quote_show_create option.\n        See Section\u00a07.1.8, \u201cServer System Variables\u201d.\n      ",
+        "\n        When altering the storage engine of a table, table options that\n        are not applicable to the new storage engine are retained in the\n        table definition to enable reverting the table with its\n        previously defined options to the original storage engine, if\n        necessary. For example, when changing the storage engine from\n        InnoDB to MyISAM, options\n        specific to InnoDB, such as\n        ROW_FORMAT=COMPACT, are retained, as shown\n        here:\n      ",
+        "Press CTRL+C to copy mysql> CREATE TABLE t1 (c1 INT PRIMARY KEY) ROW_FORMAT=COMPACT ENGINE=InnoDB;\nmysql> ALTER TABLE t1 ENGINE=MyISAM;\nmysql> SHOW CREATE TABLE t1\\G\n*************************** 1. row ***************************\n       Table: t1\nCreate Table: CREATE TABLE `t1` (\n  `c1` int NOT NULL,\n  PRIMARY KEY (`c1`)\n) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=COMPACT",
+        "\n        When creating a table with\n        strict mode disabled,\n        the storage engine's default row format is used if the\n        specified row format is not supported. The actual row format of\n        the table is reported in the Row_format\n        column in response to SHOW TABLE\n        STATUS. SHOW CREATE\n        TABLE shows the row format that was specified in the\n        CREATE TABLE statement.\n      ",
+        "\nSHOW CREATE TABLE also includes the\n        definition of the table's generated invisible primary key,\n        if it has such a key, by default. You can cause this information\n        to be suppressed in the statement's output by setting\n        show_gipk_in_create_table_and_information_schema\n        = OFF. For more information, see\n        Section\u00a015.1.20.11, \u201cGenerated Invisible Primary Keys\u201d.\n"
+    ],
+    "Examples": [
+        "mysql> CREATE TABLE t1 (\n         i1 INT CHECK (i1 <> 0),      -- column constraint\n         i2 INT,\n         CHECK (i2 > i1),             -- table constraint\n         CHECK (i2 <> 0) NOT ENFORCED -- table constraint, not enforced\n       );\n\nmysql> SHOW CREATE TABLE t1\\G\n*************************** 1. row ***************************\n       Table: t1\nCreate Table: CREATE TABLE `t1` (\n  `i1` int DEFAULT NULL,\n  `i2` int DEFAULT NULL,\n  CONSTRAINT `t1_chk_1` CHECK ((`i1` <> 0)),\n  CONSTRAINT `t1_chk_2` CHECK ((`i2` > `i1`)),\n  CONSTRAINT `t1_chk_3` CHECK ((`i2` <> 0)) /*!80016 NOT ENFORCED */\n) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci",
+        "mysql> CREATE TABLE t1 (c1 INT PRIMARY KEY) ROW_FORMAT=COMPACT ENGINE=InnoDB;\nmysql> ALTER TABLE t1 ENGINE=MyISAM;\nmysql> SHOW CREATE TABLE t1\\G\n*************************** 1. row ***************************\n       Table: t1\nCreate Table: CREATE TABLE `t1` (\n  `c1` int NOT NULL,\n  PRIMARY KEY (`c1`)\n) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=COMPACT"
+    ],
+    "Category": [
+        "Database Administration Statements"
+    ]
+}

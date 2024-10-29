@@ -1,0 +1,22 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/current/functions-string.html"
+    ],
+    "Title": [
+        "to_oct"
+    ],
+    "Feature": [
+        "to_oct ( integer ) → text",
+        "to_oct ( bigint ) → text"
+    ],
+    "Description": [
+        "Converts the number to its equivalent two's complement octal representation."
+    ],
+    "Examples": [
+        "to_oct(2147483647) → 17777777777",
+        "to_oct(-1234) → 37777775456"
+    ],
+    "Category": [
+        "String Functions and Operators"
+    ]
+}

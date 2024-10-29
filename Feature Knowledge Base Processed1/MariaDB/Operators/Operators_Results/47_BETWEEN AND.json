@@ -1,0 +1,24 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/between-and/"
+    ],
+    "Title": [
+        "BETWEEN AND"
+    ],
+    "Feature": [
+        "expr BETWEEN min AND max\n"
+    ],
+    "Description": [
+        "If expr is greater than or equal to min and expr is less than or equal\nto max, BETWEEN returns 1, otherwise it returns 0. This is equivalent\nto the expression (min <= expr AND expr <= max) if all the arguments\nare of the same type. Otherwise type conversion takes place according\nto the rules described at Type Conversion, but\napplied to all the three arguments."
+    ],
+    "Examples": [
+        "SELECT 1 BETWEEN 2 AND 3;",
+        "SELECT 'b' BETWEEN 'a' AND 'c';",
+        "SELECT 2 BETWEEN 2 AND '3';",
+        "SELECT 2 BETWEEN 2 AND 'x-3';",
+        "SELECT 1 BETWEEN 1 AND NULL;"
+    ],
+    "Category": [
+        "Comparison Operators"
+    ]
+}

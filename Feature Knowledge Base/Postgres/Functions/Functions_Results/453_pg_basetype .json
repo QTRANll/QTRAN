@@ -1,0 +1,21 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/current/functions-info.html"
+    ],
+    "Title": [
+        "pg_basetype"
+    ],
+    "Feature": [
+        "pg_basetype ( regtype ) → regtype"
+    ],
+    "Description": [
+        "Returns the OID of the base type of a domain identified by its type OID. If the argument is the OID of a non-domain type, returns the argument as-is. Returns NULL if the argument is not a valid type OID. If there's a chain of domain dependencies, it will recurse until finding the base type.",
+        "Assuming CREATE DOMAIN mytext AS text:"
+    ],
+    "Examples": [
+        "pg_basetype('mytext'::regtype) → text"
+    ],
+    "Category": [
+        "System Information Functions and Operators"
+    ]
+}

@@ -1,0 +1,24 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/current/functions-math.html"
+    ],
+    "Title": [
+        "numeric ^ numeric"
+    ],
+    "Feature": [
+        "numeric ^ numeric → numeric",
+        "double precision ^ double precision → double precision"
+    ],
+    "Description": [
+        "Exponentiation",
+        "Unlike typical mathematical practice, multiple uses of ^ will associate left to right by default:"
+    ],
+    "Examples": [
+        "2 ^ 3 → 8",
+        "2 ^ 3 ^ 3 → 512",
+        "2 ^ (3 ^ 3) → 134217728"
+    ],
+    "Category": [
+        "Mathematical Functions and Operators"
+    ]
+}

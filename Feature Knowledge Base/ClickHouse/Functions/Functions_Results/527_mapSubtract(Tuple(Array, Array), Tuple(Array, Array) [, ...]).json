@@ -1,0 +1,28 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/tuple-map-functions"
+    ],
+    "Title": [
+        "mapSubtract"
+    ],
+    "Feature": [
+        "mapSubtract(Tuple(Array, Array), Tuple(Array, Array) [, ...])"
+    ],
+    "Description": [
+        "mapSubtract",
+        "Collect all the keys and subtract corresponding values.",
+        "Syntax",
+        "mapSubtract(Tuple(Array, Array), Tuple(Array, Array) [, ...])",
+        "Arguments",
+        "Arguments are maps or tuples of two arrays, where items in the first array represent keys, and the second array contains values for the each key. All key arrays should have same type, and all value arrays should contain items which are promote to the one type (Int64, UInt64 or Float64). The common promoted type is used as a type for the result array.",
+        "Returned value",
+        "Depending on the arguments returns one map or tuple, where the first array contains the sorted keys and the second array contains values."
+    ],
+    "Examples": [
+        "SELECT mapSubtract(map(1,1), map(1,1));",
+        "SELECT mapSubtract(([toUInt8(1), 2], [toInt32(1), 1]), ([toUInt8(1), 2], [toInt32(2), 1])) as res, toTypeName(res) as type;"
+    ],
+    "Category": [
+        "Maps Functions"
+    ]
+}

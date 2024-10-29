@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/current/functions-json.html"
+    ],
+    "Title": [
+        "value . integer"
+    ],
+    "Feature": [
+        "value . integer() → integer"
+    ],
+    "Description": [
+        "Integer value converted from a JSON number or string"
+    ],
+    "Examples": [
+        "jsonb_path_query('{\"len\": \"12345\"}', '$.len.integer()') → 12345"
+    ],
+    "Category": [
+        "JSON Functions and Operators"
+    ]
+}

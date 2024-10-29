@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/current/functions-textsearch.html"
+    ],
+    "Title": [
+        "websearch_to_tsquery"
+    ],
+    "Feature": [
+        "websearch_to_tsquery ( [ config regconfig, ] query text ) → tsquery"
+    ],
+    "Description": [
+        "Converts text to a tsquery, normalizing words according to the specified or default configuration. Quoted word sequences are converted to phrase tests. The word “or” is understood as producing an OR operator, and a dash produces a NOT operator; other punctuation is ignored. This approximates the behavior of some common web search tools."
+    ],
+    "Examples": [
+        "websearch_to_tsquery('english', '\"fat rat\" or cat dog') → 'fat' <-> 'rat' | 'cat' & 'dog'"
+    ],
+    "Category": [
+        "Text Search Functions and Operators"
+    ]
+}

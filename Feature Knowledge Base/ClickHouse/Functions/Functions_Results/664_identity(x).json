@@ -1,0 +1,23 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/other-functions"
+    ],
+    "Title": [
+        "identity"
+    ],
+    "Feature": [
+        "identity(x)"
+    ],
+    "Description": [
+        "identity",
+        "Returns its argument. Intended for debugging and testing. Allows to cancel using index, and get the query performance of a full scan. When the query is analyzed for possible use of an index, the analyzer ignores everything in identity functions. Also disables constant folding.",
+        "Syntax",
+        "identity(x)"
+    ],
+    "Examples": [
+        "SELECT identity(42);"
+    ],
+    "Category": [
+        "Other Functions"
+    ]
+}

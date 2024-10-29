@@ -1,0 +1,26 @@
+{
+    "HTML": [
+        "https://docs.pingcap.com//zh/tidb/stable/sql-statement-alter-resource-group"
+    ],
+    "Title": [
+        "ALTER RESOURCE GROUP"
+    ],
+    "Feature": [
+        "AlterResourceGroupStmt ::=\n   \"ALTER\" \"RESOURCE\" \"GROUP\" IfExists ResourceGroupName ResourceGroupOptionList\n\nIfExists ::=\n    ('IF' 'EXISTS')?\n\nResourceGroupName ::=\n    Identifier\n|   \"DEFAULT\"\n\nResourceGroupOptionList ::=\n    DirectResourceGroupOption\n|   ResourceGroupOptionList DirectResourceGroupOption\n|   ResourceGroupOptionList ',' DirectResourceGroupOption\n\nDirectResourceGroupOption ::=\n    \"RU_PER_SEC\" EqOpt stringLit\n|   \"PRIORITY\" EqOpt ResourceGroupPriorityOption\n|   \"BURSTABLE\"\n|   \"BURSTABLE\" EqOpt Boolean\n|   \"QUERY_LIMIT\" EqOpt '(' ResourceGroupRunawayOptionList ')'\n|   \"QUERY_LIMIT\" EqOpt '(' ')'\n|   \"QUERY_LIMIT\" EqOpt \"NULL\"\n|   \"BACKGROUND\" EqOpt '(' BackgroundOptionList ')'\n|   \"BACKGROUND\" EqOpt '(' ')'\n|   \"BACKGROUND\" EqOpt \"NULL\"\n\nResourceGroupPriorityOption ::=\n    LOW\n|   MEDIUM\n|   HIGH\n\nResourceGroupRunawayOptionList ::= \n    DirectResourceGroupRunawayOption\n|   ResourceGroupRunawayOptionList DirectResourceGroupRunawayOption\n|   ResourceGroupRunawayOptionList ',' DirectResourceGroupRunawayOption\n\nDirectResourceGroupRunawayOption ::=\n    \"EXEC_ELAPSED\" EqOpt stringLit\n|   \"ACTION\" EqOpt ResourceGroupRunawayActionOption\n|   \"WATCH\" EqOpt ResourceGroupRunawayWatchOption \"DURATION\" EqOpt stringLit\n\nResourceGroupRunawayWatchOption ::=\n    EXACT\n|   SIMILAR\n\nResourceGroupRunawayActionOption ::=\n    DRYRUN\n|   COOLDOWN\n|   KILL\n\nBackgroundOptionList ::= \n    DirectBackgroundOption\n|   BackgroundOptionList DirectBackgroundOption\n|   BackgroundOptionList ',' DirectBackgroundOption\n\nDirectBackgroundOption ::= \n    \"TASK_TYPES\" EqOpt stringLit\n"
+    ],
+    "Description": [
+        "ALTER RESOURCE GROUP \u8bed\u53e5\u7528\u4e8e\u5728\u5f53\u524d\u6240\u9009\u6570\u636e\u5e93\u4e2d\u4fee\u6539\u8d44\u6e90\u7ec4\u3002"
+    ],
+    "Examples": [
+        "DROP RESOURCE GROUP IF EXISTS rg1;\n",
+        "CREATE RESOURCE GROUP IF NOT EXISTS rg1\n  RU_PER_SEC = 100\n  BURSTABLE;\n",
+        "SELECT * FROM information_schema.resource_groups WHERE NAME ='rg1';\n",
+        "ALTER RESOURCE GROUP rg1\n  RU_PER_SEC = 200\n  PRIORITY = LOW\n  QUERY_LIMIT = (EXEC_ELAPSED='1s' ACTION=COOLDOWN WATCH=EXACT DURATION '30s');\n",
+        "SELECT * FROM information_schema.resource_groups WHERE NAME ='rg1';\n",
+        "ALTER RESOURCE GROUP default BACKGROUND = (TASK_TYPES = \"br,ddl\");\n",
+        "SELECT * FROM information_schema.resource_groups WHERE NAME ='default';\n"
+    ],
+    "Category": [
+        "\u8d44\u6e90\u7ec4"
+    ]
+}

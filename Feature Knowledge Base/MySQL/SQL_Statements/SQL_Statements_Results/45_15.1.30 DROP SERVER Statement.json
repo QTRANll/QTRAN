@@ -1,0 +1,21 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/drop-server.html"
+    ],
+    "Title": [
+        "15.1.30 DROP SERVER Statement"
+    ],
+    "Feature": [
+        "DROP SERVER [ IF EXISTS ] server_name"
+    ],
+    "Description": [
+        "\n      Drops the server definition for the server named\n      server_name. The\n      corresponding row in the mysql.servers table is\n      deleted. This statement requires the\n      SUPER privilege.\n    ",
+        "\n      Dropping a server for a table does not affect any\n      FEDERATED tables that used this connection\n      information when they were created. See\n      Section\u00a015.1.18, \u201cCREATE SERVER Statement\u201d.\n    ",
+        "\nDROP SERVER causes an implicit commit. See\n      Section\u00a015.3.3, \u201cStatements That Cause an Implicit Commit\u201d.\n    ",
+        "\nDROP SERVER is not written to the binary log,\n      regardless of the logging format that is in use.\n"
+    ],
+    "Examples": [],
+    "Category": [
+        "Data Definition Statements"
+    ]
+}

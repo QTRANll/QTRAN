@@ -1,0 +1,30 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/table-functions/file"
+    ],
+    "Title": [
+        "Examples for Writing to a File"
+    ],
+    "Feature": [
+        "Examples for Writing to a File"
+    ],
+    "Description": [
+        "Examples for Writing to a File",
+        "Write to a TSV file",
+        "INSERT INTO TABLE FUNCTIONfile('test.tsv', 'TSV', 'column1 UInt32, column2 UInt32, column3 UInt32')VALUES (1, 2, 3), (3, 2, 1), (1, 3, 2)",
+        "As a result, the data is written into the file test.tsv:",
+        "# cat /var/lib/clickhouse/user_files/test.tsv1   2   33   2   11   3   2",
+        "Partitioned write to multiple TSV files",
+        "If you specify a PARTITION BY expression when inserting data into a table function of type file(), then a separate file is created for each partition. Splitting the data into separate files helps to improve performance of read operations.",
+        "INSERT INTO TABLE FUNCTIONfile('test_{_partition_id}.tsv', 'TSV', 'column1 UInt32, column2 UInt32, column3 UInt32')PARTITION BY column3VALUES (1, 2, 3), (3, 2, 1), (1, 3, 2)",
+        "As a result, the data is written into three files: test_1.tsv, test_2.tsv, and test_3.tsv.",
+        "# cat /var/lib/clickhouse/user_files/test_1.tsv3   2   1# cat /var/lib/clickhouse/user_files/test_2.tsv1   3   2# cat /var/lib/clickhouse/user_files/test_3.tsv1   2   3"
+    ],
+    "Examples": [
+        "INSERT INTO TABLE FUNCTIONfile('test.tsv', 'TSV', 'column1 UInt32, column2 UInt32, column3 UInt32')VALUES (1, 2, 3), (3, 2, 1), (1, 3, 2)",
+        "INSERT INTO TABLE FUNCTIONfile('test_{_partition_id}.tsv', 'TSV', 'column1 UInt32, column2 UInt32, column3 UInt32')PARTITION BY column3VALUES (1, 2, 3), (3, 2, 1), (1, 3, 2)"
+    ],
+    "Category": [
+        "Table Functions"
+    ]
+}

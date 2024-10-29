@@ -1,0 +1,31 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/encryption-functions"
+    ],
+    "Title": [
+        "aes_decrypt_mysql"
+    ],
+    "Feature": [
+        "aes_decrypt_mysql('mode', 'ciphertext', 'key' [, iv])"
+    ],
+    "Description": [
+        "aes_decrypt_mysql",
+        "Compatible with mysql encryption and decrypts data encrypted with AES_ENCRYPT function.",
+        "Will produce same plaintext as decrypt on equal inputs. But when key or iv are longer than they should normally be, aes_decrypt_mysql will stick to what MySQL's aes_decrypt does: 'fold' key and ignore excess bits of IV.",
+        "Supported decryption modes:",
+        "aes-128-ecb, aes-192-ecb, aes-256-ecbaes-128-cbc, aes-192-cbc, aes-256-cbcaes-128-cfb128aes-128-ofb, aes-192-ofb, aes-256-ofb",
+        "Syntax",
+        "aes_decrypt_mysql('mode', 'ciphertext', 'key' [, iv])",
+        "Arguments",
+        "mode \u2014 Decryption mode. String.ciphertext \u2014 Encrypted text that needs to be decrypted. String.key \u2014 Decryption key. String.iv \u2014 Initialization vector. Optional. String.",
+        "Returned value",
+        "Decrypted String. String."
+    ],
+    "Examples": [
+        "mysql> SET  block_encryption_mode='aes-256-ofb';Query OK, 0 rows affected (0.00 sec)mysql> SELECT aes_encrypt('Secret', '123456789101213141516171819202122', 'iviviviviviviviv123456') as ciphertext;+------------------------+| ciphertext             |+------------------------+| 0x24E9E4966469         |+------------------------+1 row in set (0.00 sec)",
+        "SELECT aes_decrypt_mysql('aes-256-ofb', unhex('24E9E4966469'), '123456789101213141516171819202122', 'iviviviviviviviv123456') AS plaintext"
+    ],
+    "Category": [
+        "Encryption Functions"
+    ]
+}

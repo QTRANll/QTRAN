@@ -1,0 +1,26 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/aggregate-functions/reference/skewpop"
+    ],
+    "Title": [
+        "skewPop"
+    ],
+    "Feature": [
+        "skewPop(expr)"
+    ],
+    "Description": [
+        "skewPop",
+        "Computes the skewness of a sequence.",
+        "skewPop(expr)",
+        "Arguments",
+        "expr \u2014 Expression returning a number.",
+        "Returned value",
+        "The skewness of the given distribution. Type \u2014 Float64"
+    ],
+    "Examples": [
+        "SELECT skewPop(value) FROM series_with_value_column;"
+    ],
+    "Category": [
+        "Aggregate Functions"
+    ]
+}

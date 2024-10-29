@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/ntile/"
+    ],
+    "Title": [
+        "NTILE"
+    ],
+    "Feature": [
+        "NTILE (expr) OVER ( \n  [ PARTITION BY partition_expression ] \n  [ ORDER BY order_list ]\n)\n"
+    ],
+    "Description": [
+        "NTILE() is a window function that returns an integer indicating which group a given row falls into. The number of groups is specified in the argument (expr), starting at one. Ordered rows in the partition are divided into the specified number of groups with as equal a size as possible. "
+    ],
+    "Examples": [
+        "SELECT NTILE(4) OVER (ORDER BY 1) AS group_number;"
+    ],
+    "Category": [
+        "Window Functions"
+    ]
+}

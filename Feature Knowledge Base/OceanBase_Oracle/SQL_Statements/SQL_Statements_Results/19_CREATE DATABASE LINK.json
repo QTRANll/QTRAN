@@ -1,0 +1,25 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000001054365"
+    ],
+    "Title": [
+        "CREATE DATABASE LINK"
+    ],
+    "Feature": [
+        "CREATE DATABASE LINK dblink_name CONNECT TO user_name@tenant_name\n    IDENTIFIED BY password_str [OB|OCI] HOST 'ip:port[/oracle_sid]' [CLUSTER cluster_name] [MY_NAME local_user_name@local_tenant_name\n            IDENTIFIED BY local_password_str HOST 'local_ip:local_port'];\n\n"
+    ],
+    "Description": [
+        "该语句用于创建一个访问指定远端数据库的 dblink。该语句中需要指定 dblink 名称并且提供远端数据库的用户名、租户名、密码、IP 地址、端口号以及访问类型，反向 LINK 需要提供本地数据库的用户名、租户名、密码、IP 地址、端口号，不提供访问类型时默认创建访问远端 OceanBase 数据库的 dblink。",
+        "如果远端数据库是 OceanBase 数据库，IP 地址和端口号可以是指定远端 OceanBase 集群中某个 OBServer 节点的 IP 地址和端口号，或者是 OceanBase 集群的 Proxy 的 IP 地址和端口号。当创建 dblink 的端口号是集群的Proxy 的端口号，且 Proxy 是由 ConfigUrl 部署的时候，需要指定 Cluster 名字。当需要反向 LINK 功能时需要额外提供本地 OceanBase 集群中某个 OBServer 的 IP 地址和端口号以及用户名、租户名、密码。",
+        "如果远端数据库是 Oracle 数据库，需要显示指定访问类型为 OCI类型，并指定 oracle_sid，且租户名为oracle。",
+        "\n\n\n字段\n描述\n\n\n\n\ndblink_name\n指定要访问的数据库链接的名称。\n\n\nuser_name\n指定远端数据库的用户名。\n\n\ntenant_name\n指定远端数据库的租户名。如果远端数据库是 Oracle，则租户名始终为oracle。\n\n\npassword\n指定远端数据库的用户名的登录密码。密码里有如有除数字、字母以外的特殊字符（~!@#%^&*_-+=|(){}[]:;,.?/ ）时，需要使用双引号把密码括起来避免报语法错误。\n\n\nOB | OCI\nOB 表示指定远端数据库类型为 OceanBase 数据库，OCI 代表指定访问远端数据库类型为 Oracle。两个参数都不提供时，OceanBase 数据库为默认远端数据库类型。\n\n\nip\n指定远端数据库的 IP 地址。如果远端数据库的类型是 OceanBase 数据库，IP 地址可以指定为集群的 Proxy 的 IP 地址，或者集群中某个 OBServer 的 IP 地址。如果指定为 OBServer 的 IP 地址，则要求本地数据库和指定 OBServer 之间的网络是可以互通的。\n\n\nport\n指定远端数据库的端口号。如果远端数据库类型是 OceanBase 数据库，可以指定为集群的 Proxy 的端口号，或者集群中某个 OBServer 的端口号。如果指定为 OBServer 的端口号，则要求本地数据库和指定 OBServer 之间的网络是可以互通的。如果远端数据库类型是 Oracle 数据库，IP 地址为 Oracle 实例的 IP 地址。\n\n\noracle_sid\n远端 Oracle 数据库的 sid。只有远端数据库类型是 Oracle 数据库时才需要指定oracle_sid。\n\n\ncluster_name\n远端 OceanBase 集群名称。只有 IP 和端口号是 Proxy 的，且 Proxy 是在由 ConfigUrl 部署时才需要指定集群名字。集群名字需要使用双引号括起来。\n\n\nlocal_cluster_name\n本地 OceanBase 集群名称。只有 IP 和端口号是 Proxy 的，且 Proxy 是在由 ConfigUrl 部署时才需要指定集群名字。集群名字需要使用双引号括起来。\n\n\nlocal_user\n本地数据库的用户名称。\n\n\nlocal_tenant\n本地数据库的租户名称。\n\n\nlocal_password\n本地数据库的用户名的登录密码，密码里如有除数字、字母以外的特殊字符（~!@#%^&*_-+=|(){}[]:;,.?/ ）时，需要使用双引号把密码括起来避免报语法错误。\n\n\nlocal_ip\n本地数据库集群中某个 OBServer 的 IP 地址。\n\n\nlocal_port\n本地数据库集群中某个 OBServer 的端口号。\n\n\n"
+    ],
+    "Examples": [
+        "obclient> CREATE DATABASE LINK ob_dblink_proxy CONNECT TO ob_testuser@oracle IDENTIFIED BY **1** OB HOST  '10.XXX.XXX.XXX:30084' CLUSTER “ob***”;\nQuery OK, 1 row affected\n",
+        "obclient> CREATE DATABASE LINK ob_dblink_reverse_link CONNECT TO ob_testuser2@oracle IDENTIFIED BY **1** OB HOST '10.XXX.XXX.XXX:35305' MY_NAME local_ob_testuser@oracle identified by **2** host '10.XXX.XXX.XXX:35307';\nQuery OK, 1 row affected\n",
+        "obclient> CREATE DATABASE LINK orcl_dblink CONNECT TO orcl_testuser@oracle IDENTIFIED BY **1** OCI HOST '10.XXX.XXX.XXX:1521/ORCL';\nQuery OK, 1 row affected\n"
+    ],
+    "Category": [
+        "DDL"
+    ]
+}

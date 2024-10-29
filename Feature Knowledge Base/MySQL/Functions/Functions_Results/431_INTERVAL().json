@@ -1,0 +1,32 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/built-in-function-reference.html",
+        "https://dev.mysql.com/doc/refman/8.4/en/comparison-operators.html"
+    ],
+    "Title": [
+        "14.1 Built-In Function and Operator Reference",
+        "14.4.2 Comparison Functions and Operators"
+    ],
+    "Feature": [
+        "INTERVAL(N,N1,N2,N3,...)"
+    ],
+    "Description": [
+        "Return the index of the argument that is less than the first",
+        "\nINTERVAL(N,N1,N2,N3,...)\n",
+        "\n            Returns 0 if N\n            \u2264 N1, 1 if\n            N \u2264\n            N2 and so on, or\n            -1 if N is\n            NULL. All arguments are treated as\n            integers. It is required that N1\n            \u2264 N2 \u2264\n            N3 \u2264 ...\n            \u2264 Nn for this function to work\n            correctly. This is because a binary search is used (very\n            fast).\n          ",
+        "Press CTRL+C to copy mysql> SELECT INTERVAL(23, 1, 15, 17, 30, 44, 200);\n        -> 3\nmysql> SELECT INTERVAL(10, 1, 10, 100, 1000);\n        -> 2\nmysql> SELECT INTERVAL(22, 23, 30, 44, 200);\n        -> 0"
+    ],
+    "Examples": [
+        "mysql> SELECT INTERVAL(23, 1, 15, 17, 30, 44, 200);\n        -> 3\nmysql> SELECT INTERVAL(10, 1, 10, 100, 1000);\n        -> 2\nmysql> SELECT INTERVAL(22, 23, 30, 44, 200);\n        -> 0"
+    ],
+    "Category": [
+        "Built-In Functions",
+        "Comparison Functions"
+    ],
+    "Reference HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/comparison-operators.html#function_interval"
+    ],
+    "Feature Type": [
+        "Function"
+    ]
+}

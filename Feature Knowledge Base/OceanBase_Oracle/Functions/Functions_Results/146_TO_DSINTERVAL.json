@@ -1,0 +1,24 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000000823134"
+    ],
+    "Title": [
+        "TO_DSINTERVAL"
+    ],
+    "Feature": [
+        "/*SQL 日期格式*/\nTO_DSINTERVAL ('[+ | -] days hours:minutes:seconds[.frac_secs]')\n\n/*ISO 日期格式*/\nTO_DSINTERVAL ('[-] P[days D]\n[T[hours H][minutes M][seconds[.frac_secs]S]]')\n"
+    ],
+    "Description": [
+        "该函数将一个 CHAR、VARCHAR2、NCHAR 或 NVARCHAR2 数据类型的字符串转换为一个 INTERVAL DAY TO SECOND 数据类型的值，可以用来对一个日期时间值进行加减计算。",
+        "\n\n\n参数\n说明\n\n\n\n\n[+ | -]days hours：minutes：seconds[.frac_secs]\n符合该参数格式的 CHAR、VARCHAR2、NCHAR 或 NVARCHAR2 数据类型的字符串。 \n      \ndays 表示天，取整数值，范围为 [0,999999999]。\nhours 表示小时，取整数值，范围为 [0,23]。\nminutes 表示分钟，取整数值，范围为 [0,59]。\nseconds 表示秒，取整数值，范围为 [0,59]。\n\n\n\n[-] P[days D] [T[hours H][minutes M][seconds[.frac_secs]S]\n符合该参数格式的 CHAR、VARCHAR2、NCHAR 或 NVARCHAR2 数据类型的字符串。 注意 值中不允许有空格。\n\n\nfrac_secs\n表示秒的小数部分，取整数值，范围为 [0,999999999]。\n\n\n",
+        "返回 INTERVAL DAY TO SECOND 数据类型。"
+    ],
+    "Examples": [
+        "obclient> SELECT TO_CHAR(TIMESTAMP '2021-11-11 00:00:00'+TO_DSINTERVAL('100 00:00:00'),\n     'YYYY-MM-DD HH24:MI:SS') \"Time Stamp\" FROM DUAL;\n+---------------------+\n| Time Stamp          |\n+---------------------+\n| 2022-02-19 00:00:00 |\n+---------------------+\n1 row in set\n",
+        "obclient> SELECT TO_CHAR(TIMESTAMP '2021-11-11 00:00:00'+TO_DSINTERVAL('P100DT5H'),\n    'YYYY-MM-DD HH24:MI:SS') \"Time Stamp\" FROM DUAL;\n+---------------------+\n| Time Stamp          |\n+---------------------+\n| 2022-02-19 05:00:00 |\n+---------------------+\n1 row in set\n"
+    ],
+    "Category": [
+        "Datetime Functions",
+        "Conversion Functions"
+    ]
+}

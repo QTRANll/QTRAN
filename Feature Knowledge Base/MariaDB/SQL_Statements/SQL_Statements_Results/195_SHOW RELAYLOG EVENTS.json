@@ -1,0 +1,26 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/show-relaylog-events/"
+    ],
+    "Title": [
+        "SHOW RELAYLOG EVENTS"
+    ],
+    "Feature": [
+        "SHOW RELAYLOG ['connection_name'] EVENTS\n    [IN 'log_name'] [FROM pos] [LIMIT [offset,] row_count]\n    [ FOR CHANNEL 'channel_name']\n"
+    ],
+    "Description": [
+        "On replicas, this command shows the events in the relay log. If 'log_name' is not specified, the first relay log is shown.",
+        "Syntax for the LIMIT clause is the same as for SELECT ... LIMIT.",
+        "Using the LIMIT clause is highly recommended because the SHOW RELAYLOG EVENTS command returns the complete contents of the relay log, which can be quite large.\n",
+        "This command does not return events related to setting user and system variables. If you need those, use mariadb-binlog.",
+        "On the primary, this command does nothing.",
+        "Requires the REPLICA MONITOR privilege (>= MariaDB 10.5.9), the REPLICATION SLAVE ADMIN privilege (>= MariaDB 10.5.2) or the REPLICATION SLAVE privilege (<= MariaDB 10.5.1).",
+        "connection_name",
+        "If there is only one nameless primary, or the default primary (as specified by the default_master_connection system variable) is intended, connection_name can be omitted. If provided, the SHOW RELAYLOG statement will apply to the specified primary. connection_name is case-insensitive.",
+        "MariaDB starting with 10.7.0The FOR CHANNEL keyword was added for MySQL compatibility. This is identical as\nusing the channel_name directly after SHOW RELAYLOG.\n"
+    ],
+    "Examples": [],
+    "Category": [
+        "Administrative SQL Statements"
+    ]
+}

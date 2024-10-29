@@ -1,0 +1,24 @@
+{
+    "HTML": [
+        "https://sqlite.org/json1.html#jvalid"
+    ],
+    "Title": [
+        "JSON Functions"
+    ],
+    "Feature": [
+        "json_valid(X, Y)"
+    ],
+    "Description": [
+        "The json_valid() function checks if the input X is a well-formed JSON string or BLOB. It returns 1 if X is well-formed according to the bitmask specified by Y, or 0 if it is not. The Y parameter is an optional integer bitmask that defines the criteria for 'well-formed', with a default value of 1, which corresponds to strict compliance with canonical RFC-8259 JSON without extensions. The bitmask allows for various combinations to define what constitutes well-formed JSON, including support for JSON5 extensions and JSONB format. If either X or Y is NULL, the function returns NULL. The function is designed to be compatible with older versions of SQLite and can be enhanced in future versions to accept new flag values."
+    ],
+    "Examples": [
+        "json_valid('{\"x\":35}') returns 1",
+        "json_valid('{x:35}') returns 0",
+        "json_valid('{x:35}', 6) returns 1",
+        "json_valid('{\"x\":35') returns 0",
+        "json_valid(NULL) returns NULL"
+    ],
+    "Category": [
+        "JSON Functions"
+    ]
+}

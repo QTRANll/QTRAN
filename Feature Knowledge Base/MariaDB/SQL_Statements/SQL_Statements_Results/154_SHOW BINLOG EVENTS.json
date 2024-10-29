@@ -1,0 +1,21 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/show-binlog-events/"
+    ],
+    "Title": [
+        "SHOW BINLOG EVENTS"
+    ],
+    "Feature": [
+        "SHOW BINLOG EVENTS\n   [IN 'log_name'] [FROM pos] [LIMIT [offset,] row_count]\n"
+    ],
+    "Description": [
+        "Shows the events in the binary log. If you do not specify 'log_name',\nthe first binary log is displayed.",
+        "Requires the BINLOG MONITOR privilege (>= MariaDB 10.5.2) or the REPLICATION SLAVE privilege (<= MariaDB 10.5.1)."
+    ],
+    "Examples": [
+        "SHOW BINLOG EVENTS IN 'mysql_sandbox10019-bin.000002';\n+-------------------------------+-----+-------------------+-----------+-------------+------------------------------------------------+\n| Log_name                      | Pos | Event_type        | Server_id | End_log_pos | Info                                           |\n+-------------------------------+-----+-------------------+-----------+-------------+------------------------------------------------+\n| mysql_sandbox10019-bin.000002 |   4 | Format_desc       |         1 |         248 | Server ver: 10.0.19-MariaDB-log, Binlog ver: 4 |\n| mysql_sandbox10019-bin.000002 | 248 | Gtid_list         |         1 |         273 | []                                             |\n| mysql_sandbox10019-bin.000002 | 273 | Binlog_checkpoint |         1 |         325 | mysql_sandbox10019-bin.000002                  |\n| mysql_sandbox10019-bin.000002 | 325 | Gtid              |         1 |         363 | GTID 0-1-1                                     |\n| mysql_sandbox10019-bin.000002 | 363 | Query             |         1 |         446 | CREATE DATABASE blog                           |\n| mysql_sandbox10019-bin.000002 | 446 | Gtid              |         1 |         484 | GTID 0-1-2                                     |\n| mysql_sandbox10019-bin.000002 | 484 | Query             |         1 |         571 | use `blog`; CREATE TABLE bb (id INT)           |\n+-------------------------------+-----+-------------------+-----------+-------------+------------------------------------------------+\n"
+    ],
+    "Category": [
+        "Administrative SQL Statements"
+    ]
+}

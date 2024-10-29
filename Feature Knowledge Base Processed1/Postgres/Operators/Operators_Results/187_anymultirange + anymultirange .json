@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/current/functions-range.html"
+    ],
+    "Title": [
+        "anymultirange + anymultirange"
+    ],
+    "Feature": [
+        "anymultirange + anymultirange → anymultirange"
+    ],
+    "Description": [
+        "Computes the union of the multiranges. The multiranges need not overlap or be adjacent."
+    ],
+    "Examples": [
+        "'{[5,10)}'::nummultirange + '{[15,20)}'::nummultirange → {[5,10), [15,20)}"
+    ],
+    "Category": [
+        "Range divide Multirange Functions and Operators"
+    ]
+}

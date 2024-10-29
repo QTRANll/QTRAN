@@ -1,0 +1,22 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/is_ipv4_mapped/"
+    ],
+    "Title": [
+        "IS_IPV4_MAPPED"
+    ],
+    "Feature": [
+        "IS_IPV4_MAPPED(expr)\n"
+    ],
+    "Description": [
+        "Returns 1 if a given a numeric binary string IPv6 address, such as returned by INET6_ATON(), is a valid IPv4-mapped address, otherwise returns 0.",
+        "MariaDB starting with 10.5.0From MariaDB 10.5.0, when the argument is not INET6, automatic implicit CAST to INET6 is applied. As a consequence, IS_IPV4_MAPPED now understands arguments in both text representation and binary(16) representation. Before MariaDB 10.5.0, the function understood only binary(16) representation.\n"
+    ],
+    "Examples": [
+        "SELECT IS_IPV4_MAPPED(INET6_ATON('::10.0.1.1'));",
+        "SELECT IS_IPV4_MAPPED(INET6_ATON('::ffff:10.0.1.1'));"
+    ],
+    "Category": [
+        "Miscellaneous Functions"
+    ]
+}

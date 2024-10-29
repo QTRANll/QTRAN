@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/current/functions-json.html"
+    ],
+    "Title": [
+        "jsonb ?| text[]"
+    ],
+    "Feature": [
+        "jsonb ?| text[] → boolean"
+    ],
+    "Description": [
+        "Do any of the strings in the text array exist as top-level keys or array elements?"
+    ],
+    "Examples": [
+        "'{\"a\":1, \"b\":2, \"c\":3}'::jsonb ?| array['b', 'd'] → t"
+    ],
+    "Category": [
+        "JSON Functions and Operators"
+    ]
+}

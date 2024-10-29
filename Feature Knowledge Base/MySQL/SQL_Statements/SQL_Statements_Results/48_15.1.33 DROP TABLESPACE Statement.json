@@ -1,0 +1,51 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/drop-tablespace.html"
+    ],
+    "Title": [
+        "15.1.33 DROP TABLESPACE Statement"
+    ],
+    "Feature": [
+        "DROP [UNDO] TABLESPACE tablespace_name"
+    ],
+    "Description": [
+        "\n      This statement drops a tablespace that was previously created\n      using CREATE TABLESPACE. It is\n      supported by the NDB and\n      InnoDB storage engines.\n    ",
+        "\n      The UNDO keyword must be specified to drop an\n      undo tablespace. Only undo tablespaces created using\n      CREATE UNDO\n      TABLESPACE syntax can be dropped. An undo tablespace\n      must be in an empty state before it can be\n      dropped. For more information, see\n      Section\u00a017.6.3.4, \u201cUndo Tablespaces\u201d.\n    ",
+        "\ntablespace_name is a\n      case-sensitive identifier in MySQL.\n    ",
+        "\n      For an InnoDB general tablespace, all tables\n      must be dropped from the tablespace prior to a DROP\n      TABLESPACE operation. If the tablespace is not empty,\n      DROP TABLESPACE returns an error.\n    ",
+        "\n      An NDB tablespace to be dropped must not\n      contain any data files; in other words, before you can drop an\n      NDB tablespace, you must first drop each of its\n      data files using\n      ALTER TABLESPACE\n      ... DROP DATAFILE.\n",
+        {
+            "Sub-title": "Notes",
+            "Illustration": [
+                "\n\n          A general InnoDB tablespace is not deleted\n          automatically when the last table in the tablespace is\n          dropped. The tablespace must be dropped explicitly using\n          DROP TABLESPACE\n          tablespace_name.\n        \n          A DROP DATABASE operation can\n          drop tables that belong to a general tablespace but it cannot\n          drop the tablespace, even if the operation drops all tables\n          that belong to the tablespace. The tablespace must be dropped\n          explicitly using DROP TABLESPACE\n          tablespace_name.\n        \n          Similar to the system tablespace, truncating or dropping\n          tables stored in a general tablespace creates free space\n          internally in the general tablespace\n          .ibd data file which can\n          only be used for new InnoDB data. Space is\n          not released back to the operating system as it is for\n          file-per-table tablespaces.\n\n"
+            ]
+        },
+        {
+            "Sub-title": "InnoDB Examples",
+            "Illustration": [
+                "\n      This example demonstrates how to drop an InnoDB\n      general tablespace. The general tablespace ts1\n      is created with a single table. Before dropping the tablespace,\n      the table must be dropped.\n    ",
+                "Press CTRL+C to copy mysql> CREATE TABLESPACE `ts1` ADD DATAFILE 'ts1.ibd' Engine=InnoDB;\n\nmysql> CREATE TABLE t1 (c1 INT PRIMARY KEY) TABLESPACE ts1 Engine=InnoDB;\n\nmysql> DROP TABLE t1;\n\nmysql> DROP TABLESPACE ts1;",
+                "\n      This example demonstrates dropping an undo tablespace. An undo\n      tablespace must be in an empty state before it\n      can be dropped. For more information, see\n      Section\u00a017.6.3.4, \u201cUndo Tablespaces\u201d.\n    ",
+                "Press CTRL+C to copy mysql> DROP UNDO TABLESPACE undo_003;"
+            ]
+        },
+        {
+            "Sub-title": "NDB Example",
+            "Illustration": [
+                "\n      This example shows how to drop an NDB\n      tablespace myts having a data file named\n      mydata-1.dat after first creating the\n      tablespace, and assumes the existence of a log file group named\n      mylg (see\n      Section\u00a015.1.16, \u201cCREATE LOGFILE GROUP Statement\u201d).\n    ",
+                "Press CTRL+C to copy mysql> CREATE TABLESPACE myts\n    ->     ADD DATAFILE 'mydata-1.dat'\n    ->     USE LOGFILE GROUP mylg\n    ->     ENGINE=NDB;",
+                "\n      You must remove all data files from the tablespace using\n      ALTER TABLESPACE, as shown here,\n      before it can be dropped:\n    ",
+                "Press CTRL+C to copy mysql> ALTER TABLESPACE myts\n    ->     DROP DATAFILE 'mydata-1.dat';\n\nmysql> DROP TABLESPACE myts;"
+            ]
+        }
+    ],
+    "Examples": [
+        "mysql> CREATE TABLESPACE `ts1` ADD DATAFILE 'ts1.ibd' Engine=InnoDB;\n\nmysql> CREATE TABLE t1 (c1 INT PRIMARY KEY) TABLESPACE ts1 Engine=InnoDB;\n\nmysql> DROP TABLE t1;\n\nmysql> DROP TABLESPACE ts1;",
+        "mysql> DROP UNDO TABLESPACE undo_003;",
+        "mysql> CREATE TABLESPACE myts\n    ->     ADD DATAFILE 'mydata-1.dat'\n    ->     USE LOGFILE GROUP mylg\n    ->     ENGINE=NDB;",
+        "mysql> ALTER TABLESPACE myts\n    ->     DROP DATAFILE 'mydata-1.dat';\n\nmysql> DROP TABLESPACE myts;"
+    ],
+    "Category": [
+        "Data Definition Statements"
+    ]
+}

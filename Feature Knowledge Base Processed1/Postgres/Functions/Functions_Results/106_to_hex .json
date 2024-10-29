@@ -1,0 +1,22 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/current/functions-string.html"
+    ],
+    "Title": [
+        "to_hex"
+    ],
+    "Feature": [
+        "to_hex ( integer ) → text",
+        "to_hex ( bigint ) → text"
+    ],
+    "Description": [
+        "Converts the number to its equivalent two's complement hexadecimal representation."
+    ],
+    "Examples": [
+        "to_hex(2147483647) → 7fffffff",
+        "to_hex(-1234) → fffffb2e"
+    ],
+    "Category": [
+        "String Functions and Operators"
+    ]
+}

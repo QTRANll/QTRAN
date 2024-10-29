@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/current/functions-string.html"
+    ],
+    "Title": [
+        "regexp_replace"
+    ],
+    "Feature": [
+        "regexp_replace ( string text, pattern text, replacement text, start integer, N integer [, flags text ] ) → text"
+    ],
+    "Description": [
+        "Replaces the substring that is the N'th match to the POSIX regular expression pattern, or all such matches if N is zero; see Section 9.7.3."
+    ],
+    "Examples": [
+        "regexp_replace('Thomas', '.', 'X', 3, 2) → ThoXas"
+    ],
+    "Category": [
+        "String Functions and Operators"
+    ]
+}

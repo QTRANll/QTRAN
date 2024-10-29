@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/current/functions-geometry.html"
+    ],
+    "Title": [
+        "geometric_type ?# geometric_type"
+    ],
+    "Feature": [
+        "geometric_type ?# geometric_type → boolean"
+    ],
+    "Description": [
+        "Do these objects intersect? Available for these pairs of types: (box, box), (lseg, box), (lseg, lseg), (lseg, line), (line, box), (line, line), (path, path)."
+    ],
+    "Examples": [
+        "lseg '[(-1,0),(1,0)]' ?# box '(2,2),(-2,-2)' → t"
+    ],
+    "Category": [
+        "Geometric Functions and Operators"
+    ]
+}

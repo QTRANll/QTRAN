@@ -1,0 +1,43 @@
+{
+    "HTML": "https://mariadb.com//kb/en/or/",
+    "Title": "||",
+    "Feature": [
+        "OR, ||\n"
+    ],
+    "Description": [
+        "Logical OR. When both operands are non-NULL, the result is 1 if any\noperand is non-zero, and 0 otherwise. With a NULL operand, the result\nis 1 if the other operand is non-zero, and NULL otherwise. If both\noperands are NULL, the result is NULL.",
+        "For this operator, short-circuit evaluation can be used.",
+        "Note that, if the PIPES_AS_CONCAT SQL_MODE is set, || is used as a string concatenation operator. This means that a || b is the same as CONCAT(a,b). See CONCAT() for details.",
+        "Oracle Mode",
+        "MariaDB starting with 10.3In Oracle mode from MariaDB 10.3, || ignores NULL.\n"
+    ],
+    "Examples": [
+        "SELECT 1 || 1;\n+--------+\n| 1 || 1 |\n+--------+\n|      1 |\n+--------+\n\nSELECT 1 || 0;\n+--------+\n| 1 || 0 |\n+--------+\n|      1 |\n+--------+\n\nSELECT 0 || 0;\n+--------+\n| 0 || 0 |\n+--------+\n|      0 |\n+--------+\n\nSELECT 0 || NULL;\n+-----------+\n| 0 || NULL |\n+-----------+\n|      NULL |\n+-----------+\n\nSELECT 1 || NULL;\n+-----------+\n| 1 || NULL |\n+-----------+\n|         1 |\n+-----------+\n",
+        "SELECT 0 || NULL;\n+-----------+\n| 0 || NULL |\n+-----------+\n| 0         |\n+-----------+\n"
+    ],
+    "Category": [
+        "Logical Operators"
+    ],
+    "Effective SQLs Refined": [
+        "SELECT 1 || 1;",
+        "SELECT 1 || 0;",
+        "SELECT 0 || 0;",
+        "SELECT 0 || NULL;",
+        "SELECT 1 || NULL;",
+        "SELECT 0 || NULL;"
+    ],
+    "Ineffective SQLs Refined": [],
+    "Wrong Messages from Ineffective SQLs Refined": [],
+    "SQLs Generated1": [],
+    "SQLs Generated Costs1": [],
+    "SQLs Generated ExecResults1": [],
+    "SQLs Generated ExecTimes1": [],
+    "SQLs Generated ErrorMessages1": [],
+    "Effective SQLs Generated1": [],
+    "SQLs Generated2": [],
+    "SQLs Generated Costs2": [],
+    "SQLs Generated ExecResults2": [],
+    "SQLs Generated ExecTimes2": [],
+    "SQLs Generated ErrorMessages2": [],
+    "Effective SQLs Generated2": []
+}

@@ -1,0 +1,39 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/built-in-function-reference.html",
+        "https://dev.mysql.com/doc/refman/8.4/en/replication-functions.html",
+        "https://dev.mysql.com/doc/refman/8.4/en/replication-functions-synchronization.html"
+    ],
+    "Title": [
+        "14.1 Built-In Function and Operator Reference",
+        "14.18 Replication Functions",
+        "14.18.4 Position-Based Synchronization Functions"
+    ],
+    "Feature": [
+        "SOURCE_POS_WAIT(log_name,log_pos[,timeout][,channel])"
+    ],
+    "Description": [
+        "Block until the replica has read and applied all updates up to the",
+        "\nSOURCE_POS_WAIT(log_name,log_pos[,timeout][,channel])\n",
+        "\n            This function is for control of source-replica\n            synchronization. It blocks until the replica has read and\n            applied all updates up to the specified position in the\n            source's binary log.\n          ",
+        "\n            The return value is the number of log events the replica had\n            to wait for to advance to the specified position. The\n            function returns NULL if the replication\n            SQL thread is not started, the replica's source information\n            is not initialized, the arguments are incorrect, or an error\n            occurs. It returns -1 if the timeout has\n            been exceeded. If the replication SQL thread stops while\n            SOURCE_POS_WAIT() is waiting,\n            the function returns NULL. If the replica\n            is past the specified position, the function returns\n            immediately.\n          ",
+        "\n            If the binary log file position has been marked as invalid,\n            the function waits until a valid file position is known. The\n            binary log file position can be marked as invalid when the\n            CHANGE REPLICATION SOURCE TO\n            option GTID_ONLY is set for the\n            replication channel, and the server is restarted or\n            replication is stopped. The file position becomes valid\n            after a transaction is successfully applied past the given\n            file position. If the applier does not reach the stated\n            position, the function waits until the timeout. Use a\n            SHOW REPLICA STATUS statement\n            to check if the binary log file position has been marked as\n            invalid.\n          ",
+        "\n            On a multithreaded replica, the function waits until expiry\n            of the limit set by the\n            replica_checkpoint_group or\n            replica_checkpoint_period\n            system variable, when the checkpoint operation is called to\n            update the status of the replica. Depending on the setting\n            for the system variables, the function might therefore\n            return some time after the specified position was reached.\n          ",
+        "\n            If binary log transaction compression is in use and the\n            transaction payload at the specified position is compressed\n            (as a Transaction_payload_event), the\n            function waits until the whole transaction has been read and\n            applied, and the positions have updated.\n          ",
+        "\n            If a timeout value is specified,\n            SOURCE_POS_WAIT() stops\n            waiting when timeout seconds have\n            elapsed. timeout must be greater\n            than or equal to 0. (When the server is running in strict\n            SQL mode, a negative timeout\n            value is immediately rejected with\n            ER_WRONG_ARGUMENTS;\n            otherwise the function returns NULL, and\n            raises a warning.)\n          ",
+        "\n            The optional channel value\n            enables you to name which replication channel the function\n            applies to. See Section\u00a019.2.2, \u201cReplication Channels\u201d for\n            more information.\n          ",
+        "\n            This function is unsafe for statement-based replication. A\n            warning is logged if you use this function when\n            binlog_format is set to\n            STATEMENT.\n"
+    ],
+    "Examples": [],
+    "Category": [
+        "Built-In Functions",
+        "Replication Functions",
+        "Replication Functions"
+    ],
+    "Reference HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/replication-functions-synchronization.html#function_source-pos-wait"
+    ],
+    "Feature Type": [
+        "Function"
+    ]
+}

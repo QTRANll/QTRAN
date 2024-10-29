@@ -1,0 +1,36 @@
+{
+    "HTML": "https://mariadb.com//kb/en/database/",
+    "Title": "DATABASE",
+    "Feature": [
+        "DATABASE()\nSCHEMA()\n"
+    ],
+    "Description": [
+        "Returns the default (current) database name as a string in the utf8 character set. If there is no default database, DATABASE() returns NULL. Within a stored routine, the default database is the database that the routine is associated with, which is not necessarily the same as the database that is the default in the calling context.",
+        "SCHEMA() is a synonym for DATABASE().",
+        "To select a default database, the USE statement can be run. Another way to set the default database is specifying its name at mariadb command line client startup."
+    ],
+    "Examples": [
+        "SELECT DATABASE();\n+------------+\n| DATABASE() |\n+------------+\n| NULL       |\n+------------+\n\nUSE test;\nDatabase changed\n\nSELECT DATABASE();\n+------------+\n| DATABASE() |\n+------------+\n| test       |\n+------------+\n"
+    ],
+    "Category": [
+        "Information Functions"
+    ],
+    "Effective SQLs Refined": [
+        "SELECT DATABASE();",
+        "SELECT DATABASE();"
+    ],
+    "Ineffective SQLs Refined": [],
+    "Wrong Messages from Ineffective SQLs Refined": [],
+    "SQLs Generated1": [],
+    "SQLs Generated Costs1": [],
+    "SQLs Generated ExecResults1": [],
+    "SQLs Generated ExecTimes1": [],
+    "SQLs Generated ErrorMessages1": [],
+    "Effective SQLs Generated1": [],
+    "SQLs Generated2": [],
+    "SQLs Generated Costs2": [],
+    "SQLs Generated ExecResults2": [],
+    "SQLs Generated ExecTimes2": [],
+    "SQLs Generated ErrorMessages2": [],
+    "Effective SQLs Generated2": []
+}

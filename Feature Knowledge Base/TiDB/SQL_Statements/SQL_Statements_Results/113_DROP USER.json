@@ -1,0 +1,28 @@
+{
+    "HTML": [
+        "https://docs.pingcap.com//zh/tidb/stable/sql-statement-drop-user"
+    ],
+    "Title": [
+        "DROP USER"
+    ],
+    "Feature": [
+        "DropUserStmt ::=\n    'DROP' 'USER' ( 'IF' 'EXISTS' )? UsernameList\n\nUsername ::=\n    StringName ('@' StringName | singleAtIdentifier)? | 'CURRENT_USER' OptionalBraces\n"
+    ],
+    "Description": [
+        "DROP USER \u8bed\u53e5\u7528\u4e8e\u4ece TiDB \u7cfb\u7edf\u6570\u636e\u5e93\u4e2d\u5220\u9664\u7528\u6237\u3002\u5982\u679c\u7528\u6237\u4e0d\u5b58\u5728\uff0c\u4f7f\u7528\u5173\u952e\u8bcd IF EXISTS \u53ef\u907f\u514d\u51fa\u73b0\u8b66\u544a\u3002\u6267\u884c DROP USER \u8bed\u53e5\u9700\u8981\u62e5\u6709 CREATE USER \u6743\u9650\u3002"
+    ],
+    "Examples": [
+        "DROP USER 'idontexist';\n",
+        "DROP USER IF EXISTS 'idontexist';\n",
+        "CREATE USER 'newuser' IDENTIFIED BY 'mypassword';\n",
+        "GRANT ALL ON test.* TO 'newuser';\n",
+        "SHOW GRANTS FOR 'newuser';\n",
+        "REVOKE ALL ON test.* FROM 'newuser';\n",
+        "SHOW GRANTS FOR 'newuser';\n",
+        "DROP USER 'newuser';\n",
+        "SHOW GRANTS FOR 'newuser';\n"
+    ],
+    "Category": [
+        "\u8d26\u6237\u7ba1\u7406\u4e0e\u6570\u636e\u63a7\u5236\u8bed\u8a00 (DCL)"
+    ]
+}

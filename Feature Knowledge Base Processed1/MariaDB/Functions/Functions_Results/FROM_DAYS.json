@@ -1,0 +1,35 @@
+{
+    "HTML": "https://mariadb.com//kb/en/from_days/",
+    "Title": "FROM_DAYS",
+    "Feature": [
+        "FROM_DAYS(N)\n"
+    ],
+    "Description": [
+        "Given a day number N, returns a DATE value. The day count is based on the number of days from the start of the standard calendar (0000-00-00). ",
+        "The function is not designed for use with dates before the advent of the Gregorian calendar in October 1582. Results will not be reliable since it doesn't account for the lost days when the calendar changed from the Julian calendar.",
+        "This is the converse of the TO_DAYS() function."
+    ],
+    "Examples": [
+        "SELECT FROM_DAYS(730669);\n+-------------------+\n| FROM_DAYS(730669) |\n+-------------------+\n| 2000-07-03        |\n+-------------------+\n"
+    ],
+    "Category": [
+        "Date & Time Functions"
+    ],
+    "Effective SQLs Refined": [
+        "SELECT FROM_DAYS(730669);"
+    ],
+    "Ineffective SQLs Refined": [],
+    "Wrong Messages from Ineffective SQLs Refined": [],
+    "SQLs Generated1": [],
+    "SQLs Generated Costs1": [],
+    "SQLs Generated ExecResults1": [],
+    "SQLs Generated ExecTimes1": [],
+    "SQLs Generated ErrorMessages1": [],
+    "Effective SQLs Generated1": [],
+    "SQLs Generated2": [],
+    "SQLs Generated Costs2": [],
+    "SQLs Generated ExecResults2": [],
+    "SQLs Generated ExecTimes2": [],
+    "SQLs Generated ErrorMessages2": [],
+    "Effective SQLs Generated2": []
+}

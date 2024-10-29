@@ -1,0 +1,23 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/reset.html"
+    ],
+    "Title": [
+        "15.7.8.6 RESET Statement"
+    ],
+    "Feature": [
+        "RESET reset_option [, reset_option] ...\n\nreset_option: {\n    BINARY LOGS AND GTIDS\n  | REPLICA\n}"
+    ],
+    "Description": [
+        "\n        The RESET statement is used to\n        clear the state of various server operations. You must have the\n        RELOAD privilege to execute\n        RESET.\n      ",
+        "\n        For information about the RESET\n        PERSIST statement that removes persisted global system\n        variables, see Section\u00a015.7.8.7, \u201cRESET PERSIST Statement\u201d.\n      ",
+        "\nRESET acts as a stronger version\n        of the FLUSH statement. See\n        Section\u00a015.7.8.3, \u201cFLUSH Statement\u201d.\n      ",
+        "\n        The RESET statement causes an\n        implicit commit. See Section\u00a015.3.3, \u201cStatements That Cause an Implicit Commit\u201d.\n      ",
+        "\n        The following list describes the permitted\n        RESET statement\n        reset_option values:\n",
+        "\n\nRESET BINARY LOGS AND GTIDS\n\n            Deletes all binary logs listed in the index file, resets the\n            binary log index file to be empty, and creates a new binary\n            log file.\n          \nRESET\n            REPLICA\n\n            Makes the replica forget its replication position in the\n            source binary logs. Also resets the relay log by deleting\n            any existing relay log files and beginning a new one.\n\n"
+    ],
+    "Examples": [],
+    "Category": [
+        "Database Administration Statements"
+    ]
+}

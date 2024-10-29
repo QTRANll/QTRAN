@@ -1,0 +1,22 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/array-functions"
+    ],
+    "Title": [
+        "arrayMap(func, arr1, ...)"
+    ],
+    "Feature": [
+        "arrayMap(func, arr1, ...)"
+    ],
+    "Description": [
+        "arrayMap(func, arr1, ...)",
+        "Returns an array obtained from the original arrays by application of func(arr1[i], ..., arrN[i]) for each element. Arrays arr1 ... arrN must have the same number of elements."
+    ],
+    "Examples": [
+        "SELECT arrayMap(x -> (x + 2), [1, 2, 3]) as res;",
+        "SELECT arrayMap((x, y) -> (x, y), [1, 2, 3], [4, 5, 6]) AS res"
+    ],
+    "Category": [
+        "Arrays Functions"
+    ]
+}

@@ -1,0 +1,22 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/aggregate-functions.html#function_var-samp"
+    ],
+    "Title": [
+        "VAR_SAMP()"
+    ],
+    "Feature": [
+        "VAR_SAMP(expr)\n            [over_clause]"
+    ],
+    "Description": [
+        "Return the sample variance",
+        "\nVAR_SAMP(expr)\n            [over_clause]\n",
+        "\n            Returns the sample variance of\n            expr. That is, the denominator is\n            the number of rows minus one.\n          ",
+        "\n            If there are no matching rows, or if\n            expr is NULL,\n            VAR_SAMP() returns\n            NULL.\n          ",
+        "\n            This function executes as a window function if\n            over_clause is present.\n            over_clause is as described in\n            Section\u00a014.20.2, \u201cWindow Function Concepts and Syntax\u201d.\n          "
+    ],
+    "Examples": [],
+    "Category": [
+        "Aggregate Functions"
+    ]
+}

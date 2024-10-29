@@ -1,0 +1,19 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/set-sql_log_bin/"
+    ],
+    "Title": [
+        "SET SQL_LOG_BIN"
+    ],
+    "Feature": [
+        "SET [SESSION] sql_log_bin = {0|1}\n"
+    ],
+    "Description": [
+        "Sets the sql_log_bin system variable, which disables or enables binary logging for the current connection, if the client has the SUPER privilege. The statement is refused with an\nerror if the client does not have that privilege.",
+        "Before MariaDB 5.5 and before MySQL 5.6 one could also set sql_log_bin as a global variable. This was disabled as this was too dangerous as it could damage replication."
+    ],
+    "Examples": [],
+    "Category": [
+        "Administrative SQL Statements"
+    ]
+}

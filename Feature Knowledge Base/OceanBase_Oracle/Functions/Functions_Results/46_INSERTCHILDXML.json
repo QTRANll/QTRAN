@@ -1,0 +1,30 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000000823515"
+    ],
+    "Title": [
+        "INSERTCHILDXML"
+    ],
+    "Feature": [
+        "INSERTCHILDXML( XMLType_instance, XPath_string, child_expr, value_expr [, namespace_string ])\n"
+    ],
+    "Description": [
+        "该函数用于将指定的 XML 片段插入到目标 XML 中，插入位置由 XPath 表达式指示的节点决定。",
+        "\n\n\n字段\n说明\n\n\n\n\nXMLType_instance\n指定一个 XMLType 实例，表示目标 XML 文档。\n\n\nXPath_string\nXPath 表达式，指示要插入一个或多个子节点的一个或多个目标节点。可以使用绝对路径（以斜杠开头）或相对路径（省略初始斜杠）。如果省略初始斜杠，则相对路径的上下文默认为根节点。\n\n\nchild_expr\n指定一个或多个要插入的元素或属性节点。\n\n\nvalue_expr\n指定一个 XMLType 片段，指定要插入的一个或多个节点。它必须解析为一个字符串或者 XMLType。\n\n\nnamespace_string\n可选项，用于为 XPath_string 提供命名空间信息。\n\n\n",
+        "\n说明\n插入的父节点如果还有命名空间，但是待插入的值没有，就要遍历增加空的命名空间。\n",
+        "返回 XMLType 数据类型。"
+    ],
+    "Examples": [
+        "SELECT INSERTCHILDXML(\n        XMLtype('<bookstore>\n                    <book att=\"old\"></book>\n                    <author>carrot</author>\n                  </bookstore>'), \n        '/bookstore', \n        'price', \n        XMLtype('<price>99.9</price>')\n      ) AS result\nFROM dual;\n",
+        "+-----------------------------------------------------------------------------------------------+\n| RESULT                                                                                        |\n+-----------------------------------------------------------------------------------------------+\n| <bookstore>\n  <book att=\"old\"/>\n  <author>carrot</author>\n  <price>99.9</price>\n</bookstore>\n|\n+-----------------------------------------------------------------------------------------------+\n1 row in set\n",
+        "SELECT \n  INSERTCHILDXML(\n    xmltype(\n      '<bookstore>\n        <book att=\"old\"></book>\n        <author>carrot</author>\n      </bookstore>'\n    ), \n    '/bookstore/book', \n    'a', \n    xmltype('<a><b/></a>')\n  )\nFROM dual;\n",
+        "+----------------------------------------------------------------------------------------------------------------------------------------------+\n| INSERTCHILDXML(XMLTYPE('<BOOKSTORE><BOOKATT=\"OLD\"></BOOK><AUTHOR>CARROT</AUTHOR></BOOKSTORE>'),'/BOOKSTORE/BOOK','A',XMLTYPE('<A><B/></A>')) |\n+----------------------------------------------------------------------------------------------------------------------------------------------+\n| <bookstore>\n  <book att=\"old\">\n    <a>\n      <b/>\n    </a>\n  </book>\n  <author>carrot</author>\n</bookstore>\n                                |\n+----------------------------------------------------------------------------------------------------------------------------------------------+\n1 row in set\n",
+        "SELECT \n  INSERTCHILDXML(\n    xmltype(\n      '<bookstore>\n        <book att=\"old\"></book>\n        <book></book>\n        <author>carrot</author>\n      </bookstore>'\n    ), \n    '/bookstore/book', \n    'price', \n    xmltype('<price>99.9</price>')\n  ) \nFROM dual;\n",
+        "+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+\n| INSERTCHILDXML(XMLTYPE('<BOOKSTORE><BOOKATT=\"OLD\"></BOOK><BOOK></BOOK><AUTHOR>CARROT</AUTHOR></BOOKSTORE>'),'/BOOKSTORE/BOOK','PRICE',XMLTYPE('<PRICE>99.9</PRICE>')) |\n+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+\n| <bookstore>\n  <book att=\"old\">\n    <price>99.9</price>\n  </book>\n  <book>\n    <price>99.9</price>\n  </book>\n  <author>carrot</author>\n</bookstore>\n                  |\n+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+\n1 row in set\n",
+        "SELECT \n  INSERTCHILDXML(\n    xmltype(\n      '<bookstore>\n        <book att=\"old\"></book>\n        <author>carrot</author>\n      </bookstore>'\n    ), \n    '/bookstore/book', \n    '@att2', \n    'abc'\n  ) \nFROM dual;\n",
+        "+---------------------------------------------------------------------------------------------------------------------------------+\n| INSERTCHILDXML(XMLTYPE('<BOOKSTORE><BOOKATT=\"OLD\"></BOOK><AUTHOR>CARROT</AUTHOR></BOOKSTORE>'),'/BOOKSTORE/BOOK','@ATT2','ABC') |\n+---------------------------------------------------------------------------------------------------------------------------------+\n| <bookstore>\n  <book att=\"old\" att2=\"abc\"/>\n  <author>carrot</author>\n</bookstore>\n                                              |\n+---------------------------------------------------------------------------------------------------------------------------------+\n1 row in set\n"
+    ],
+    "Category": [
+        "XML Functions"
+    ]
+}

@@ -1,0 +1,34 @@
+{
+    "HTML": "https://mariadb.com//kb/en/sha1/",
+    "Title": "SHA1",
+    "Feature": [
+        "SHA1(str), SHA(str)\n"
+    ],
+    "Description": [
+        "Calculates an SHA-1 160-bit checksum for the string str, as described in\nRFC 3174 (Secure Hash Algorithm).",
+        "The value is returned as a string of 40 hex digits, or NULL if the argument was NULL. As of MariaDB 5.5, the return value is a nonbinary string in the connection character set and collation, determined by the values of the character_set_connection and collation_connection system variables. Before 5.5, the return value was a binary string."
+    ],
+    "Examples": [
+        "SELECT SHA1('some boring text');\n+------------------------------------------+\n| SHA1('some boring text')                 |\n+------------------------------------------+\n| af969fc2085b1bb6d31e517d5c456def5cdd7093 |\n+------------------------------------------+\n"
+    ],
+    "Category": [
+        "Encryption, Hashing and Compression Functions"
+    ],
+    "Effective SQLs Refined": [
+        "SELECT SHA1('some boring text');"
+    ],
+    "Ineffective SQLs Refined": [],
+    "Wrong Messages from Ineffective SQLs Refined": [],
+    "SQLs Generated1": [],
+    "SQLs Generated Costs1": [],
+    "SQLs Generated ExecResults1": [],
+    "SQLs Generated ExecTimes1": [],
+    "SQLs Generated ErrorMessages1": [],
+    "Effective SQLs Generated1": [],
+    "SQLs Generated2": [],
+    "SQLs Generated Costs2": [],
+    "SQLs Generated ExecResults2": [],
+    "SQLs Generated ExecTimes2": [],
+    "SQLs Generated ErrorMessages2": [],
+    "Effective SQLs Generated2": []
+}

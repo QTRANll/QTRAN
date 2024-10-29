@@ -1,0 +1,31 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000000823439"
+    ],
+    "Title": [
+        "REPLACE"
+    ],
+    "Feature": [
+        "REPLACE(str, from_str, to_str)\n"
+    ],
+    "Description": [
+        "REPLACE() 函数用于替换字符串中的子字符串。这个函数会在 str 中查找所有的 from_str 并将其替换为 to_str。如果 str 中没有找到匹配的 from_str，则原始字符串将保持不变。",
+        "REPLACE() 中任何参数为 NULL 的情况下，则结果返回 NULL。",
+        "REPLACE() 函数是区分大小写的，这意味着它将考虑字符串的大小写。如果您想进行大小写不敏感的替换，可以使用 REPLACE(UPPER(str), UPPER(from_str), to_str) 或 REPLACE(LOWER(str), LOWER(from_str), to_str) 来确保在不考虑大小写的情况下执行替换。",
+        "REPLACE() 函数是多字节安全的。",
+        "\n\n\n参数\n必选/可选\n说明\n\n\n\n\nstr\n必选\n原始字符串，要进行替换的目标。\n\n\nfrom_str\n必选\n要替换的子字符串。\n\n\nto_str\n必选\n替换后的新字符串。\n\n\n"
+    ],
+    "Examples": [
+        "obclient> SELECT REPLACE('abc.efg.gpg.nowdew.abc.dabc.e', 'abc.', 'www');\n",
+        "+---------------------------------------------------------+\n| REPLACE('abc.efg.gpg.nowdew.abc.dabc.e', 'abc.', 'www') |\n+---------------------------------------------------------+\n| wwwefg.gpg.nowdew.wwwdwwwe                              |\n+---------------------------------------------------------+\n1 row in set\n",
+        "obclient> SELECT REPLACE('abc.efg.gpg.nowdew.abc.dabc.e', NULL, 'www');\n",
+        "+-------------------------------------------------------+\n| REPLACE('abc.efg.gpg.nowdew.abc.dabc.e', NULL, 'www') |\n+-------------------------------------------------------+\n| NULL                                                  |\n+-------------------------------------------------------+\n1 row in set\n",
+        "obclient> SELECT REPLACE('abc.efg.gpg.nowdew.abc.dabc.e', 'abc.', 'WWW');\n",
+        "+---------------------------------------------------------+\n| REPLACE('abc.efg.gpg.nowdew.abc.dabc.e', 'abc.', 'WWW') |\n+---------------------------------------------------------+\n| WWWefg.gpg.nowdew.WWWdWWWe                              |\n+---------------------------------------------------------+\n1 row in set\n",
+        "obclient> SELECT REPLACE(UPPER('Hello World'), UPPER('world'), 'Universe');\n",
+        "+-----------------------------------------------------------+\n| REPLACE(UPPER('Hello World'), UPPER('world'), 'Universe') |\n+-----------------------------------------------------------+\n| HELLO Universe                                            |\n+-----------------------------------------------------------+\n1 row in set\n"
+    ],
+    "Category": [
+        "String Functions"
+    ]
+}

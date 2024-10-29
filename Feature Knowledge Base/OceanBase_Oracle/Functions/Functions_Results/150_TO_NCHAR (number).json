@@ -1,0 +1,24 @@
+{
+    "HTML": [
+        "https://www.oceanbase.com/docs/enterprise-oceanbase-database-cn-1000000000823246"
+    ],
+    "Title": [
+        "TO_NCHAR (number)"
+    ],
+    "Feature": [
+        "TO_NCHAR(n [, fmt [, 'nlsparam' ] ])\n"
+    ],
+    "Description": [
+        "该函数将 NUMBER、BINARY_FLOAT 或 BINARY_DOUBLE 类型的数值转换为国家字符集中的字符串。",
+        "\n\n\n参数\n说明\n\n\n\n\nn\n属于 NUMBER、BINARY_FLOAT 或 BINARY_DOUBLE 数据类型的数值。\n\n\nfmt\n输出格式参数，为可选项。如果省略 fmt，则 n 被转换为 NVARCHAR2 值返回。 取值信息请参见 fmt 参数列表。\n\n\nnlsparam\n定义十进制字符、组分隔符、当地货币符号和国际货币符号，为可选项。\n\n\n",
+        "fmt 参数列表",
+        "\n\n\nfmt 参数取值\n说明\n\n\n\n\n9\n返回指定位数的值。\n\n\n0\n返回指定前导和尾随 0。\n\n\n,（逗号）\n返回指定位置的逗号。您可以在数字格式模型中指定多个逗号。 限制条件 ：格式模型数值不能以逗号开头，且逗号不能出现在小数字符或句点的右边。\n\n\n.（小数点）\n返回一个小数，且小数点在指定位置。 限制条件 ：在数字格式模型中，您只能指定一个小数点。\n\n\n",
+        "返回 NVARCHAR2 数据类型。"
+    ],
+    "Examples": [
+        "obclient> SELECT TO_NCHAR(123456789.123,'999,999,999') FROM DUAL;\n+---------------------------------------+\n| TO_NCHAR(123456789.123,'999,999,999') |\n+---------------------------------------+\n|  123,456,789                          |\n+---------------------------------------+\n1 row in set\n"
+    ],
+    "Category": [
+        "Conversion Functions"
+    ]
+}

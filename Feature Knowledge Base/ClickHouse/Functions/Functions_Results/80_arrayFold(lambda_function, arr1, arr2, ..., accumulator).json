@@ -1,0 +1,24 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/array-functions"
+    ],
+    "Title": [
+        "arrayFold"
+    ],
+    "Feature": [
+        "arrayFold(lambda_function, arr1, arr2, ..., accumulator)"
+    ],
+    "Description": [
+        "arrayFold",
+        "Applies a lambda function to one or more equally-sized arrays and collects the result in an accumulator.",
+        "Syntax",
+        "arrayFold(lambda_function, arr1, arr2, ..., accumulator)"
+    ],
+    "Examples": [
+        "SELECT arrayFold( acc,x -> acc + x*2,  [1, 2, 3, 4], toInt64(3)) AS res;",
+        "SELECT arrayFold( acc,x -> (acc.2, acc.2 + acc.1), range(number), (1::Int64, 0::Int64)).1 AS fibonacciFROM numbers(1,10);\u250c\u2500fibonacci\u2500\u2510\u2502         0 \u2502\u2502         1 \u2502\u2502         1 \u2502\u2502         2 \u2502\u2502         3 \u2502\u2502         5 \u2502\u2502         8 \u2502\u2502        13 \u2502\u2502        21 \u2502\u2502        34 \u2502\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518"
+    ],
+    "Category": [
+        "Arrays Functions"
+    ]
+}

@@ -1,0 +1,26 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/date-time-functions"
+    ],
+    "Title": [
+        "serverTimeZone"
+    ],
+    "Feature": [
+        "serverTimeZone()"
+    ],
+    "Description": [
+        "serverTimeZone",
+        "Returns the timezone of the server, i.e. the value of setting timezone.\nIf the function is executed in the context of a distributed table, then it generates a normal column with values relevant to each shard. Otherwise, it produces a constant value.",
+        "Syntax",
+        "serverTimeZone()",
+        "Alias: serverTimezone.",
+        "Returned value",
+        "Timezone. String."
+    ],
+    "Examples": [
+        "SELECT serverTimeZone()"
+    ],
+    "Category": [
+        "Dates and Times Functions"
+    ]
+}

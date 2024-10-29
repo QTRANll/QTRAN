@@ -1,0 +1,21 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/dayofweek/"
+    ],
+    "Title": [
+        "DAYOFWEEK"
+    ],
+    "Feature": [
+        "DAYOFWEEK(date)\n"
+    ],
+    "Description": [
+        "Returns the day of the week index for the date (1 = Sunday, 2 = Monday, ..., 7 =\nSaturday). These index values correspond to the ODBC standard.",
+        "This contrasts with WEEKDAY() which follows a different index numbering\n(0 = Monday, 1 = Tuesday, ... 6 = Sunday)."
+    ],
+    "Examples": [
+        "SELECT DAYOFWEEK('2007-02-03');"
+    ],
+    "Category": [
+        "Date & Time Functions"
+    ]
+}
