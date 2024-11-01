@@ -23,7 +23,7 @@ from src.Connector import exec_sql_statement
 
 os.environ["http_proxy"] = "http://localhost:7890"
 os.environ["https_proxy"] = "http://localhost:7890"
-os.environ["OPENAI_API_KEY"] = "sk-MyyJB3tU9g4qOhN09c23E2655dF8461dA6B8Ff188fA71276"  # app5
+os.environ["OPENAI_API_KEY"] = ""  # app5
 os.environ["OPENAI_API_BASE"] = "https://ai-yyds.com/v1"  # "https://ai-yyds.com/v1"
 openai.api_key = os.environ['OPENAI_API_KEY']
 openai.api_base = os.environ['OPENAI_API_BASE']

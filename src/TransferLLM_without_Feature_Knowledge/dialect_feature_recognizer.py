@@ -20,7 +20,7 @@ from langchain.memory import ConversationBufferMemory
 from TokenType_not_op_SQLGlot import TokenType_not_op
 os.environ["http_proxy"] = "http://localhost:7890"
 os.environ["https_proxy"] = "http://localhost:7890"
-os.environ["OPENAI_API_KEY"] = "sk-Y43xSO6aOSD7xULJ1cFbE337712a48509949A7075616377d"
+os.environ["OPENAI_API_KEY"] = ""
 os.environ["OPENAI_API_BASE"] = "https://ai-yyds.com/v1"  # "https://ai-yyds.com/v1"
 openai.api_key = os.environ['OPENAI_API_KEY']
 openai.api_base = os.environ['OPENAI_API_BASE']

@@ -32,15 +32,15 @@ from src.Connector import exec_sql_statement
 
 os.environ["http_proxy"] = "http://localhost:7890"
 os.environ["https_proxy"] = "http://localhost:7890"
-os.environ["OPENAI_API_KEY"] = "sk-MyyJB3tU9g4qOhN09c23E2655dF8461dA6B8Ff188fA71276"  # app5
+os.environ["OPENAI_API_KEY"] = ""  # app5
 os.environ["OPENAI_API_BASE"] = "https://ai-yyds.com/v1"  # "https://ai-yyds.com/v1"
 openai.api_key = os.environ['OPENAI_API_KEY']
 openai.api_base = os.environ['OPENAI_API_BASE']
 
-api_key = "sk-TZTfbY7z8DTGoAXrcvUX0ulZVXCAdPyPlGzjDOfAUFT3BlbkFJ8bQ0FsADuBAcjskOTXqWocvcddmOH5MK_5RGKcZV8A"
-sqlancer_norec_mutate_id = "ft:gpt-4o-mini-2024-07-18:personal:norec-mutate-llm:AJJBcUaa"
-sqlancer_dqe_mutate_id = "ft:gpt-4o-mini-2024-07-18:personal:dqe-mutate-llm:AKdFEdgZ"
-sqlancer_tlp_mutate_id = "ft:gpt-4o-mini-2024-07-18:personal:tlp-mutate-llm:AJgfi4ly"
+api_key = ""
+sqlancer_norec_mutate_id = ""
+sqlancer_dqe_mutate_id = ""
+sqlancer_tlp_mutate_id = ""
 
 
 """

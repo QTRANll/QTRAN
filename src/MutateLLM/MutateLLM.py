@@ -15,8 +15,8 @@ from langchain.callbacks import get_openai_callback
 os.environ["http_proxy"] = "http://localhost:7890"
 os.environ["https_proxy"] = "http://localhost:7890"
 
-api_key = "sk-TZTfbY7z8DTGoAXrcvUX0ulZVXCAdPyPlGzjDOfAUFT3BlbkFJ8bQ0FsADuBAcjskOTXqWocvcddmOH5MK_5RGKcZV8A"
-mutate_llm_model_ID = "ft:gpt-4o-mini-2024-07-18:personal:pinolo-mutate-llm:9x9umpsR"
+api_key = ""
+mutate_llm_model_ID = ""
 
 
 # 获取当前文件的绝对路径
@@ -102,20 +102,6 @@ def run_muatate_llm(tool, mutate_name):
     client = OpenAI(api_key=api_key)
 
     # 为Mutate LLM构造满足特定格式的testing data数据项
-    """
-    pinolo格式如下：
-      messages=[
-          {"role": "system","content": "You are an expert in MySQL statement mutation.Mutate the seed sql given by user into the mutated sql according to the mutate strategy \"FixMDistinctL\" :\"Distinct false -> true\".This mutate strategy will change \"DISTINCT\" in SELECT statement from false to true."},
-          {"role": "user","content": "(SELECT (DATE_SUB(WEEK(_UTF8MB4'2005-08-02'), INTERVAL 1 DAY_MICROSECOND)) AS `f1`,(BINARY `f5`&CHARSET(`f4`) DIV `f6`) AS `f2`,(`f4`-0) AS `f3` FROM (SELECT `col_char(20)_key_signed` AS `f7`,`col_float_key_signed` AS `f5`,`col_double_undef_unsigned` AS `f8` FROM `table_3_utf8_undef` USE INDEX (`col_decimal(40, 20)_key_signed`, `col_bigint_key_unsigned`)) AS `t1` NATURAL JOIN (SELECT (CHARSET(`f12`)) AS `f4`,(DATE_SUB(`f10`, INTERVAL 1 HOUR_MINUTE)) AS `f9`,(COLLATION(`f12`)%REPEAT(`f11`, 3)) AS `f6` FROM (SELECT `col_double_key_unsigned` AS `f10`,`col_double_key_signed` AS `f11`,`col_double_undef_signed` AS `f12` FROM `table_7_utf8_undef` IGNORE INDEX (`col_char(20)_key_signed`, `col_decimal(40, 20)_key_unsigned`)) AS `t2` WHERE ((((DATE_ADD(MINUTE(_UTF8MB4'2005-01-05 12:14:45'), INTERVAL 1 YEAR_MONTH))>=ALL (SELECT `col_decimal(40, 20)_key_signed` FROM `table_7_utf8_undef` FORCE INDEX (`col_decimal(40, 20)_key_signed`))) AND ((LOCATE(`f12`, `f12`)) IS TRUE)) OR ((NOT ((DATE_ADD(~6, INTERVAL 1 HOUR_MICROSECOND)) NOT IN (SELECT `col_bigint_key_signed` FROM `table_7_utf8_undef` IGNORE INDEX (`col_bigint_key_signed`, `col_bigint_key_unsigned`)))) AND (NOT (1)))) IS TRUE HAVING ((DAYNAME(_UTF8MB4'2018-05-21')) NOT BETWEEN CRC32(_UTF8MB4'2007') AND `f4`) OR ((CAST((FROM_DAYS(105096451230399333)) AS CHAR) LIKE _UTF8MB4'%1%') IS TRUE) OR ((RTRIM(_UTF8MB4'was')) BETWEEN HOUR(_UTF8MB4'14:44:22') AND `f6`) ORDER BY `f10`) AS `t3`) UNION ALL (SELECT (COLLATION(`f13`)) AS `f1`,(ROUND(0.9230651247279676)) AS `f2`,(TIMEDIFF(_UTF8MB4'2014-05-24 03:48:34', _UTF8MB4'2011-06-19 04:02:54')>>~`f13`) AS `f3` FROM (SELECT (CEIL(0.05303136671365602)^DEGREES(-5382834637802595851)-`f20`) AS `f16`,(UCASE(`f18`)) AS `f14`,(`f19`) AS `f17` FROM (SELECT `col_double_key_unsigned` AS `f18`,`col_double_key_signed` AS `f19`,`col_char(20)_undef_signed` AS `f20` FROM `table_7_utf8_undef` USE INDEX (`col_decimal(40, 20)_key_unsigned`, `col_float_key_signed`)) AS `t4`) AS `t5` NATURAL JOIN (SELECT (TIME(_UTF8MB4'2003-03-20 08:48:54')) AS `f13`,(DATE_ADD(-7078353141775895169, INTERVAL 1 DAY_SECOND)) AS `f21`,(CONCAT(0.9420451500844236, 1, `f22`)) AS `f15` FROM (SELECT `col_decimal(40, 20)_key_unsigned` AS `f22`,`col_double_undef_unsigned` AS `f23`,`col_float_undef_unsigned` AS `f24` FROM `table_3_utf8_undef`) AS `t6`) AS `t7`)"}
-      ]
-    completion = client.chat.completions.create(
-      model="ft:gpt-4o-mini-2024-07-18:personal:pinolo-mutate-llm:9x9umpsR",
-      messages=[
-          {"role": "system","content": "You are an expert in MySQL statement mutation.Mutate the seed sql given by user into the mutated sql according to the mutate strategy \"FixMDistinctL\" :\"Distinct false -> true\".This mutate strategy will change \"DISTINCT\" in SELECT statement from false to true."},
-          {"role": "user","content": "(SELECT (DATE_SUB(WEEK(_UTF8MB4'2005-08-02'), INTERVAL 1 DAY_MICROSECOND)) AS `f1`,(BINARY `f5`&CHARSET(`f4`) DIV `f6`) AS `f2`,(`f4`-0) AS `f3` FROM (SELECT `col_char(20)_key_signed` AS `f7`,`col_float_key_signed` AS `f5`,`col_double_undef_unsigned` AS `f8` FROM `table_3_utf8_undef` USE INDEX (`col_decimal(40, 20)_key_signed`, `col_bigint_key_unsigned`)) AS `t1` NATURAL JOIN (SELECT (CHARSET(`f12`)) AS `f4`,(DATE_SUB(`f10`, INTERVAL 1 HOUR_MINUTE)) AS `f9`,(COLLATION(`f12`)%REPEAT(`f11`, 3)) AS `f6` FROM (SELECT `col_double_key_unsigned` AS `f10`,`col_double_key_signed` AS `f11`,`col_double_undef_signed` AS `f12` FROM `table_7_utf8_undef` IGNORE INDEX (`col_char(20)_key_signed`, `col_decimal(40, 20)_key_unsigned`)) AS `t2` WHERE ((((DATE_ADD(MINUTE(_UTF8MB4'2005-01-05 12:14:45'), INTERVAL 1 YEAR_MONTH))>=ALL (SELECT `col_decimal(40, 20)_key_signed` FROM `table_7_utf8_undef` FORCE INDEX (`col_decimal(40, 20)_key_signed`))) AND ((LOCATE(`f12`, `f12`)) IS TRUE)) OR ((NOT ((DATE_ADD(~6, INTERVAL 1 HOUR_MICROSECOND)) NOT IN (SELECT `col_bigint_key_signed` FROM `table_7_utf8_undef` IGNORE INDEX (`col_bigint_key_signed`, `col_bigint_key_unsigned`)))) AND (NOT (1)))) IS TRUE HAVING ((DAYNAME(_UTF8MB4'2018-05-21')) NOT BETWEEN CRC32(_UTF8MB4'2007') AND `f4`) OR ((CAST((FROM_DAYS(105096451230399333)) AS CHAR) LIKE _UTF8MB4'%1%') IS TRUE) OR ((RTRIM(_UTF8MB4'was')) BETWEEN HOUR(_UTF8MB4'14:44:22') AND `f6`) ORDER BY `f10`) AS `t3`) UNION ALL (SELECT (COLLATION(`f13`)) AS `f1`,(ROUND(0.9230651247279676)) AS `f2`,(TIMEDIFF(_UTF8MB4'2014-05-24 03:48:34', _UTF8MB4'2011-06-19 04:02:54')>>~`f13`) AS `f3` FROM (SELECT (CEIL(0.05303136671365602)^DEGREES(-5382834637802595851)-`f20`) AS `f16`,(UCASE(`f18`)) AS `f14`,(`f19`) AS `f17` FROM (SELECT `col_double_key_unsigned` AS `f18`,`col_double_key_signed` AS `f19`,`col_char(20)_undef_signed` AS `f20` FROM `table_7_utf8_undef` USE INDEX (`col_decimal(40, 20)_key_unsigned`, `col_float_key_signed`)) AS `t4`) AS `t5` NATURAL JOIN (SELECT (TIME(_UTF8MB4'2003-03-20 08:48:54')) AS `f13`,(DATE_ADD(-7078353141775895169, INTERVAL 1 DAY_SECOND)) AS `f21`,(CONCAT(0.9420451500844236, 1, `f22`)) AS `f15` FROM (SELECT `col_decimal(40, 20)_key_unsigned` AS `f22`,`col_double_undef_unsigned` AS `f23`,`col_float_undef_unsigned` AS `f24` FROM `table_3_utf8_undef`) AS `t6`) AS `t7`)"}
-      ]
-    )
-    """
 
     if tool.lower() == "pinolo":
         with open(filenames[mutate_name], "r", encoding="utf-8") as r:
@@ -153,26 +139,6 @@ def run_muatate_llm(tool, mutate_name):
 def run_muatate_llm_single_sql(tool, client, model_id, mutate_name, oracle, db_type, sql):
 
     # 为Mutate LLM构造满足特定格式的testing data数据项
-    """
-    sqlancer格式如下
-    messages=[
-    {
-      "role": "system",
-      "content": "Synthesize mutated SQL that returns the same result as the user-provided seed SQL, following this mutation strategy:\nMove predicate P from the WHERE clause to the SELECT list to disable optimization, and use SUM(.) to count the rows where P IS TRUE in the SELECT list.\nNote: The mutated SQL must belong to the same DBMS of the user-provided seed SQL."
-    },
-    {
-      "role": "user",
-      "content": "A seed SQL from cockroach:\n"+"SELECT COUNT(*) FROM t2 WHERE true;"
-    },
-    ]
-    completion = client.chat.completions.create(
-      model="ft:gpt-4o-mini-2024-07-18:personal:pinolo-mutate-llm:9x9umpsR",
-      messages=[
-          {"role": "system","content": "You are an expert in MySQL statement mutation.Mutate the seed sql given by user into the mutated sql according to the mutate strategy \"FixMDistinctL\" :\"Distinct false -> true\".This mutate strategy will change \"DISTINCT\" in SELECT statement from false to true."},
-          {"role": "user","content": "(SELECT (DATE_SUB(WEEK(_UTF8MB4'2005-08-02'), INTERVAL 1 DAY_MICROSECOND)) AS `f1`,(BINARY `f5`&CHARSET(`f4`) DIV `f6`) AS `f2`,(`f4`-0) AS `f3` FROM (SELECT `col_char(20)_key_signed` AS `f7`,`col_float_key_signed` AS `f5`,`col_double_undef_unsigned` AS `f8` FROM `table_3_utf8_undef` USE INDEX (`col_decimal(40, 20)_key_signed`, `col_bigint_key_unsigned`)) AS `t1` NATURAL JOIN (SELECT (CHARSET(`f12`)) AS `f4`,(DATE_SUB(`f10`, INTERVAL 1 HOUR_MINUTE)) AS `f9`,(COLLATION(`f12`)%REPEAT(`f11`, 3)) AS `f6` FROM (SELECT `col_double_key_unsigned` AS `f10`,`col_double_key_signed` AS `f11`,`col_double_undef_signed` AS `f12` FROM `table_7_utf8_undef` IGNORE INDEX (`col_char(20)_key_signed`, `col_decimal(40, 20)_key_unsigned`)) AS `t2` WHERE ((((DATE_ADD(MINUTE(_UTF8MB4'2005-01-05 12:14:45'), INTERVAL 1 YEAR_MONTH))>=ALL (SELECT `col_decimal(40, 20)_key_signed` FROM `table_7_utf8_undef` FORCE INDEX (`col_decimal(40, 20)_key_signed`))) AND ((LOCATE(`f12`, `f12`)) IS TRUE)) OR ((NOT ((DATE_ADD(~6, INTERVAL 1 HOUR_MICROSECOND)) NOT IN (SELECT `col_bigint_key_signed` FROM `table_7_utf8_undef` IGNORE INDEX (`col_bigint_key_signed`, `col_bigint_key_unsigned`)))) AND (NOT (1)))) IS TRUE HAVING ((DAYNAME(_UTF8MB4'2018-05-21')) NOT BETWEEN CRC32(_UTF8MB4'2007') AND `f4`) OR ((CAST((FROM_DAYS(105096451230399333)) AS CHAR) LIKE _UTF8MB4'%1%') IS TRUE) OR ((RTRIM(_UTF8MB4'was')) BETWEEN HOUR(_UTF8MB4'14:44:22') AND `f6`) ORDER BY `f10`) AS `t3`) UNION ALL (SELECT (COLLATION(`f13`)) AS `f1`,(ROUND(0.9230651247279676)) AS `f2`,(TIMEDIFF(_UTF8MB4'2014-05-24 03:48:34', _UTF8MB4'2011-06-19 04:02:54')>>~`f13`) AS `f3` FROM (SELECT (CEIL(0.05303136671365602)^DEGREES(-5382834637802595851)-`f20`) AS `f16`,(UCASE(`f18`)) AS `f14`,(`f19`) AS `f17` FROM (SELECT `col_double_key_unsigned` AS `f18`,`col_double_key_signed` AS `f19`,`col_char(20)_undef_signed` AS `f20` FROM `table_7_utf8_undef` USE INDEX (`col_decimal(40, 20)_key_unsigned`, `col_float_key_signed`)) AS `t4`) AS `t5` NATURAL JOIN (SELECT (TIME(_UTF8MB4'2003-03-20 08:48:54')) AS `f13`,(DATE_ADD(-7078353141775895169, INTERVAL 1 DAY_SECOND)) AS `f21`,(CONCAT(0.9420451500844236, 1, `f22`)) AS `f15` FROM (SELECT `col_decimal(40, 20)_key_unsigned` AS `f22`,`col_double_undef_unsigned` AS `f23`,`col_float_undef_unsigned` AS `f24` FROM `table_3_utf8_undef`) AS `t6`) AS `t7`)"}
-      ]
-    )
-    """
     if tool.lower() == "sqlancer":
         # 构造格式化输入词
         mutate_stratege = None
