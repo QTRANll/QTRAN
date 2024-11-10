@@ -7,44 +7,15 @@
 
 import os
 import json
-from src.Connector import test_database_mysql_like, test_database_postgres
-import openai
-from openai import OpenAI
 import random
 from langchain.prompts import ChatPromptTemplate
-from langchain.chat_models import ChatOpenAI
 from langchain.output_parsers import ResponseSchema
 from langchain.output_parsers import StructuredOutputParser
-from langchain.chains import ConversationChain
 from langchain.callbacks import get_openai_callback
-from langchain.memory import ConversationBufferMemory
-from src.Connector import database_connection_args
-
-os.environ["http_proxy"] = "http://localhost:7890"
-os.environ["https_proxy"] = "http://localhost:7890"
-os.environ["OPENAI_API_KEY"] = ""  # app5
-os.environ["OPENAI_API_BASE"] = "https://ai-yyds.com/v1"  # "https://ai-yyds.com/v1"
-openai.api_key = os.environ['OPENAI_API_KEY']
-openai.api_base = os.environ['OPENAI_API_BASE']
+from src.Tools.DatasetConnector.DatabaseConnector import exec_sql_statement
 
 
 db_names = ["mysql", "mariadb", "tidb"]
-
-
-def exec_database_sql(db_type, host, port, username, password, dbname, sql_statement):
-    if db_type in ["mariadb", "MariaDB", "mysql", "MySQL", "tidb", "TiDB"]:
-        if db_type == "MariaDB":
-            db_type_temp = "mariadb"
-        elif db_type == "MySQL":
-            db_type_temp = "mysql"
-        elif db_type == "TiDB":
-            db_type_temp = "tidb"
-        else:
-            db_type_temp = db_type
-
-        return test_database_mysql_like(db_type_temp, host, port, username, password, dbname, "../../Dataset/Pinolo Output/ddl_mysql_like.json", sql_statement)
-    elif db_type in ["postgres"]:
-        return test_database_postgres(db_type, host, port, username, password, dbname, "", sql_statement)
 
 def load_data(output_name, db_name, len_low, len_high, is_random, num):
     """
@@ -220,7 +191,7 @@ def init_data(output_name, db_name, len_low, len_high, is_random, num):
     with open(sqlsim_dir_filename, 'w', encoding='utf-8') as f:
         json.dump(sqlsim_init_results, f, indent=4)
 
-# 处理传递给transfer llm的sql statement
+# 处理传递给transfer llm的sql statement(这是针对pinolo的process)
 def sql_statement_process(origin_sql):
     map_list = {
         "col_decimal(40, 20)_undef_signed": "col_decimal_40_20_undef_signed",
@@ -238,7 +209,137 @@ def sql_statement_process(origin_sql):
             sql_statement = sql_statement.replace(key, value)
     return sql_statement
 
-def transfer_llm(chat, temperature, model, error_iteration, iteration_num, FewShot, origin_db, target_db, sql_statement):
+
+def get_examples_string(FewShot, origin_db, target_db):
+    examples_string = ""
+    examples_data = None
+    if FewShot:  # 给出样例
+        # example是给出的例子
+        with open(os.path.join("../../Dataset/Pinolo Output/output_test/",
+                               "examples_" + origin_db + "_" + target_db + ".json"), "r", encoding="utf-8") as r:
+            examples_data = json.load(r)
+        example = None
+        for index in range(len(examples_data)):
+            example = examples_data[index]
+            OriginDB = example["origin_db"]
+            TargetDB = example["target_db"]
+            SQL = example["Sql"]
+            Answer = json.dumps(example["answer"])
+            # 坏了，这句好像写在for循环外面了
+            examples_string = examples_string + '[Example ' + str(
+                index) + ' start]: ' + '[original database]: ' + OriginDB + '\n' + '[target database]: ' + TargetDB + '\n' + '[sql statement]: ' + SQL + '\n' + '[Answer]: ' + Answer + '\n' + '[Example ' + str(
+                index) + ' end]\n'
+    return examples_string
+
+"""
+def get_feature_knowledge_string(origin_db, target_db, with_knowledge, mapping_indexes):
+    knowledge_string = ""
+    steps_string = ""
+    examples_data = None
+    if with_knowledge:  # 给出样例
+        # 获取对应的详细信息
+        names_ = "merge"
+        for feature_type in ["Functions"]:
+            names_ = names_ + "_" + feature_type
+        origin_merge_feature_filename = os.path.join("..", "..", "Feature Knowledge Base Processed1", origin_db, "RAG_Embedding_Data",names_ + ".jsonl")
+        target_merge_feature_filename = os.path.join("..", "..", "Feature Knowledge Base Processed1", target_db,"RAG_Embedding_Data", names_ + ".jsonl")
+        with open(origin_merge_feature_filename, "r", encoding="utf-8") as r:
+            origin_features = r.readlines()
+        with open(target_merge_feature_filename, "r", encoding="utf-8") as r:
+            target_features = r.readlines()
+        cnt = 0
+        for mapping_pair in mapping_indexes:
+            # 获取a_db以及b_db中的feature knowledge
+            origin_feature = json.loads(origin_features[mapping_pair[0]])
+            target_feature = json.loads(target_features[mapping_pair[1]])
+            knowledge_string = knowledge_string + "[Feature Mapping "+str(cnt) + " Start]" + "Here is the original feature.\n"
+            knowledge_string = knowledge_string + "Feature Syntax(Database "+origin_db+"):"
+            for item in origin_feature["Feature"]:
+                knowledge_string += item
+            knowledge_string += "\nDescription(Database "+origin_db+"):"
+            for item in origin_feature["Description"]:
+                knowledge_string += item
+            knowledge_string = knowledge_string + "\nExamples(Database "+origin_db+"):"
+            for item in origin_feature["Examples"]:
+                knowledge_string += item
+
+            knowledge_string += "Here is the mapping feature.\n"
+
+            knowledge_string = knowledge_string + "Feature Syntax(Database "+target_db+"):"
+            for item in target_feature["Feature"]:
+                knowledge_string += item
+            knowledge_string = knowledge_string + "\nDescription(Database "+origin_db+"):"
+            for item in target_feature["Description"]:
+                knowledge_string += item
+            knowledge_string = knowledge_string + "\nExamples(Database "+origin_db+"):"
+            for item in target_feature["Examples"]:
+                knowledge_string += item
+            knowledge_string += "\n"
+
+            knowledge_string = knowledge_string + "[Feature Mapping " + str(cnt) + " End]"
+
+            # 拼接steps的提示词
+            steps_string = steps_string + "Replace "+str(origin_feature["Feature"])+" from "+origin_db+" in original sql with "+str(target_feature["Feature"])+" from "+target_db+"\n"
+            cnt += 1
+    return knowledge_string, steps_string
+"""
+
+def get_feature_knowledge_string(origin_db, target_db, with_knowledge, mapping_indexes):
+    knowledge_string = ""
+    steps_string = ""
+    examples_data = None
+    if with_knowledge:  # 给出样例
+        # 获取对应的详细信息
+        names_ = "merge"
+        for feature_type in ["Functions"]:
+            names_ = names_ + "_" + feature_type
+        origin_merge_feature_filename = os.path.join("..", "..", "Feature Knowledge Base", origin_db, "RAG_Embedding_Data",names_ + ".jsonl")
+        target_merge_feature_filename = os.path.join("..", "..", "Feature Knowledge Base", target_db,"RAG_Embedding_Data", names_ + ".jsonl")
+        with open(origin_merge_feature_filename, "r", encoding="utf-8") as r:
+            origin_features = r.readlines()
+        with open(target_merge_feature_filename, "r", encoding="utf-8") as r:
+            target_features = r.readlines()
+        cnt = 0
+        for mapping_pair in mapping_indexes:
+            # 获取a_db以及b_db中的feature knowledge
+            origin_feature = json.loads(origin_features[mapping_pair[0]])
+            target_feature = json.loads(target_features[mapping_pair[1]])
+            knowledge_string = knowledge_string + " Step " + str(cnt) + ": Transfer " + str(origin_feature["Feature"])+" from "+origin_db+" to "+str(target_feature["Feature"])+" from "+target_db+"\n"
+
+            knowledge_string = knowledge_string + "Here is the original feature from "+origin_db +".\n"
+            knowledge_string = knowledge_string + "Feature Syntax(Database "+origin_db+"):"
+            for item in origin_feature["Feature"]:
+                knowledge_string += item
+
+            """
+            knowledge_string += "\nDescription(Database "+origin_db+"):"
+            for item in origin_feature["Description"]:
+                knowledge_string += item
+            """
+
+            knowledge_string = knowledge_string + "\nExamples(Database "+origin_db+"):"
+            for item in origin_feature["Examples"]:
+                knowledge_string += item
+
+            knowledge_string = knowledge_string + "Here is the mapping feature from "+target_db +".\n"
+
+            knowledge_string = knowledge_string + "Feature Syntax(Database "+target_db+"):"
+            for item in target_feature["Feature"]:
+                knowledge_string += item
+            """
+            knowledge_string = knowledge_string + "\nDescription(Database "+origin_db+"):"
+            for item in target_feature["Description"]:
+                knowledge_string += item
+            """
+            knowledge_string = knowledge_string + "\nExamples(Database "+origin_db+"):"
+            for item in target_feature["Examples"]:
+                knowledge_string += item
+            knowledge_string += "\n\n"
+
+            cnt += 1
+    return knowledge_string
+
+def transfer_llm(tool, conversation, error_iteration, iteration_num, FewShot, with_knowledge, origin_db, target_db, test_info):
     """
     # transfer llm:单条sql语句的转换及结果处理
     # 返回结果：costs, transfer_results, exec_results, exec_times, error_messages, str(origin_exec_result), str(origin_exec_time), str(origin_error_message), exec_equalities
@@ -249,32 +350,125 @@ def transfer_llm(chat, temperature, model, error_iteration, iteration_num, FewSh
     # * 运行结果与原sql的一致性列表"exec_equalities"
     # * 列表是为返回error进行迭代设计的，能记录多次迭代的过程值
     """
-    origin_exec_args = database_connection_args[origin_db]
-    target_exec_args = database_connection_args[target_db]
 
+    sql_statement = test_info["Sql"]
     sql_statement_processed = sql_statement
     # 如果是mysql_like转postgres，先把sql语句的列名进行替换，和postgres的ddl语句中的列名保持一致，便于后续语句转换
-    if target_db == "postgres":
+    if target_db == "postgres" and tool.lower() == "pinolo":
         sql_statement_processed = sql_statement_process(sql_statement)
 
-    memory = ConversationBufferMemory()  # 内存：对话缓冲区内存
-    if error_iteration:
-        conversation = ConversationChain(
-            llm=chat,
-            memory=memory,
-            verbose=False  # 为true的时候是展示langchain实际在做什么
-        )
-    else:
-        conversation = ConversationChain(
-            llm=chat,
-            verbose=False  # 为true的时候是展示langchain实际在做什么
-        )
+    # 存储feature knowledge
+    # v1
+    transfer_llm_string = """  
+    Let's think step by step.Transfer the sql statement in {origin_db} database to the corresponding executable sql statement in {target_db} database to perform similar data operations.\
+    Ensure that all column names remain unchanged between the sql statements before and after the transfer.\
+    Ensure that the transferred sqls don't have features that return random values such as current_time,random.\
+    {origin_db} statement: {sql_statement}\
+    Here are some examples: {examples}\
+    Here is feature knowledge related to this transfer: {feature_knowledge}.\
+    Answer the following information: {format_instructions}
+    """
 
+    # v0
     transfer_llm_string = """  
     Let's think step by step.Transfer the sql statement in {origin_db} database to the corresponding executable sql statement in {target_db} database to perform similar data operations.\
     Ensure that all column names remain unchanged between the sql statements before and after the transfer.\
     {origin_db} statement: {sql_statement}\
     Here are some examples: {examples}\
+    Here is feature knowledge related to this transfer: {feature_knowledge}.\
+    Answer the following information: {format_instructions}
+    """
+
+    # v4
+    transfer_llm_string = """  
+    Let's think step by step.
+    Use the feature knowledge to replace the features in {origin_db} statement in correct syntax, thus transfer the statement in {origin_db} database to executable statement in {target_db} database to perform similar data operations.\
+    Ensure that all column names remain unchanged between the sql statements before and after the transfer.\
+    Ensure that the transferred sqls don't have features that return random values such as current_time,random.\
+    {origin_db} statement: {sql_statement}\
+    Here is feature knowledge related to this transfer.Each pair includes two features with similar operation,which can replace each other : {feature_knowledge}.\
+    逐项检查transfer后的sql语句是否根据feature knowledge 进行替换翻译。若违反，则给出修改后的transferred sql.\
+    Here are some examples: {examples}\
+    Answer the following information: {format_instructions}
+    """
+
+
+
+    # v5
+    transfer_llm_string = """  
+    Let's think step by step.
+    Use the feature knowledge to replace the features in {origin_db} statement in correct syntax, thus transfer the statement in {origin_db} database to executable statement in {target_db} database to perform similar data operations.\
+    Ensure that all column names remain unchanged between the sql statements before and after the transfer.\
+    Ensure that the transferred sqls don't have features that return random values such as current_time,random.\
+    {origin_db} statement: {sql_statement}\
+    Here is feature knowledge related to this transfer.Each pair includes two features with similar operation,which can replace each other : {feature_knowledge}.\
+    Here are some examples: {examples}\
+    Answer the following information: {format_instructions}
+    """
+
+
+
+    # v6
+    transfer_llm_string = """  
+    Let's think step by step.
+    Use the feature knowledge to replace the features in {origin_db} statement in correct syntax, thus transfer the statement in {origin_db} database to executable statement in {target_db} database to perform similar data operations.\
+    Ensure that all column names remain unchanged between the sql statements before and after the transfer.\
+    Ensure that the transferred sqls don't have features that return random values such as current_time,random.\
+    {origin_db} statement: {sql_statement}\
+    执行下面的步骤:{steps}\
+    Here is feature knowledge related to this transfer.Each pair includes two features with similar operation,which can replace each other : {feature_knowledge}.\
+    Here are some examples: {examples}\
+    Answer the following information: {format_instructions}
+    """
+
+    # v2
+    transfer_llm_string = """  
+    Let's think step by step.
+    Use the feature knowledge to replace the features in {origin_db} statement, thus transfer the statement in {origin_db} database to executable statement in {target_db} database to perform similar data operations.\
+    Ensure that don't replace original features with NULL or 0.
+    Ensure that all column names remain unchanged between the sql statements before and after the transfer.\
+    Ensure that the transferred sqls don't have features that return random values such as current_time,random.\
+    {origin_db} statement: {sql_statement}\
+    Here is feature knowledge related to this transfer: {feature_knowledge}.\
+    Here are some examples: {examples}\
+    Answer the following information: {format_instructions}
+    """
+
+    # v7: 不包括few-shot examples，未微调;不包括feature description和examples
+    transfer_llm_string = """  
+    Let's think step by step.You are an expert in sql statement translation between different database.\
+    With the assistance of feature knowledge,transfer the following {origin_db} statement to executable {target_db} statement with similar semantics.\
+    {origin_db} statement: {sql_statement}\
+    
+    Transfer should ensure following requirements:
+    1. All column names remain unchanged.
+    2. Forbid transferring with meaningless features(such as NULL,0), features with random return value(such as current_time).
+    3. Transfer as far as possible, and ensure similar semantics if transferring fails.\
+    
+    Transfer by carrying out following instructions step by step.\
+    {feature_knowledge}\
+    
+    Here are some transfer examples: {examples}\
+    Answer the following information: {format_instructions}
+    """
+
+    # v8: 不包括few-shot examples（下面的examples是空的），未微调;关于feature knowledge只包括了feature和examples
+    transfer_llm_string = """  
+    Let's think step by step.You are an expert in sql statement translation between different database.\
+    With the assistance of feature knowledge,transfer the following {origin_db} statement to executable {target_db} statement with similar semantics.\
+    {origin_db} statement: {sql_statement}\
+
+    Transfer should ensure following requirements:
+    1. All column names and feature variables remain unchanged.
+    2. Strictly forbid meaningless features(such as NULL,0), features with random return value(such as current_time).
+    3. Transfer as far as possible, and ensure similar semantics.\
+
+    Transfer by carrying out following instructions step by step.\
+    {feature_knowledge}\
+    
+    Check if transfer result satisfies requirements mentioned before.If not,modify the result.
+
+    Here are some transfer examples: {examples}\
     Answer the following information: {format_instructions}
     """
 
@@ -286,21 +480,8 @@ def transfer_llm(chat, temperature, model, error_iteration, iteration_num, FewSh
     output_parser = StructuredOutputParser.from_response_schemas(response_schemas)
     format_instructions = output_parser.get_format_instructions()
 
-    examples_string = ""
-    examples_data = None
-    if FewShot:  # 给出样例
-        # example是给出的例子
-        with open(os.path.join("../../Dataset/Pinolo Output/output_test/", "examples_"+origin_db+"_"+target_db+".json"), "r", encoding="utf-8") as r:
-            examples_data = json.load(r)
-        example = None
-        for index in range(len(examples_data)):
-            example = examples_data[index]
-            OriginDB = example["origin_db"]
-            TargetDB = example["target_db"]
-            SQL = example["Sql"]
-            Answer = json.dumps(example["answer"])
-            # 坏了，这句好像写在for循环外面了
-            examples_string = examples_string + '[Example ' + str(index) + ' start]: ' + '[original database]: ' + OriginDB + '\n' + '[target database]: ' + TargetDB + '\n' + '[sql statement]: ' + SQL + '\n' + '[Answer]: ' + Answer + '\n' + '[Example ' + str(index) + ' end]\n'
+    examples_string = get_examples_string(FewShot, origin_db,target_db)
+    feature_knowledge_string = get_feature_knowledge_string(origin_db, target_db, with_knowledge, test_info["SqlPotentialDialectFunctionMapping"])
 
     prompt_template = ChatPromptTemplate.from_template(transfer_llm_string)
 
@@ -329,13 +510,7 @@ def transfer_llm(chat, temperature, model, error_iteration, iteration_num, FewSh
     error_messages = []
     exec_equalities = []
     # 执行origin sql得到结果，并和得到的所有transfer sql结果依次进行比对，确定执行结果是否相同，将对比结果存储到exec_same中
-    origin_exec_result, origin_exec_time, origin_error_message = exec_database_sql(origin_exec_args["db_type"],
-                                                                                   origin_exec_args["host"],
-                                                                                   origin_exec_args["port"],
-                                                                                   origin_exec_args["username"],
-                                                                                   origin_exec_args["password"],
-                                                                                   origin_exec_args["dbname"],
-                                                                                   sql_statement)
+    origin_exec_result, origin_exec_time, origin_error_message = exec_sql_statement(tool, origin_db, sql_statement)
 
     conversation_cnt = 0  # conversation_cnt = 0:初始第一条prompt
     # 边界1：达到最大迭代次数
@@ -348,14 +523,16 @@ def transfer_llm(chat, temperature, model, error_iteration, iteration_num, FewSh
                 target_db=target_db,
                 sql_statement=sql_statement_processed,
                 examples=examples_string,
+                feature_knowledge=feature_knowledge_string,
                 format_instructions=format_instructions
             )
         else:
             # 边界2：判断是否需要迭代，不需要迭代则break跳出while循环
+            print(error_messages)
             if error_iteration is False:
                 break
             # 边界3：判断上一次得到的transfer sql执行是否执行成功，能执行成功则break直接跳出循环，执行失败则进行下面的error信息迭代处理
-            if error_messages[-1] == "None":
+            if len(error_messages) and error_messages[-1] == "None":
                 break
 
             # error信息迭代处理：
@@ -370,7 +547,8 @@ def transfer_llm(chat, temperature, model, error_iteration, iteration_num, FewSh
 
         try:
             cost = {}
-            with get_openai_callback() as cb:
+            with (get_openai_callback() as cb):
+                print(prompt_messages[0].content)
                 response = conversation.predict(input=prompt_messages[0].content)
                 output_dict = output_parser.parse(response)
                 # print(response)
@@ -380,22 +558,19 @@ def transfer_llm(chat, temperature, model, error_iteration, iteration_num, FewSh
                 cost["Completion Tokens"] = cb.completion_tokens
                 cost["Total Cost (USD)"] = cb.total_cost  # 用了4o-mini以后变成0.0了，还没修改，也可以用户token乘单价计算
 
-                exec_result, exec_time, error_message = exec_database_sql(target_exec_args["db_type"],
-                                                                          target_exec_args["host"],
-                                                                          target_exec_args["port"],
-                                                                          target_exec_args["username"],
-                                                                          target_exec_args["password"],
-                                                                          target_exec_args["dbname"],
-                                                                          output_dict["TransferSQL"])
+                exec_result, exec_time, error_message = exec_sql_statement(tool, target_db, output_dict["TransferSQL"])
                 costs.append(cost)
                 transfer_results.append(output_dict)
                 exec_results.append(str(exec_result))
                 exec_times.append(str(exec_time))
                 # 简化error_message,只留下关键部分
+                """
                 if error_message:
-                    error_message = error_message.split("[SQL:")[0]
+                    error_message = error_message.split(":")[1]
+                """
+                print(error_messages)
                 error_messages.append(str(error_message))
-                if exec_result == origin_exec_result:
+                if not error_message and not origin_error_message and exec_result == origin_exec_result:
                     exec_equalities.append(True)
                 else:
                     exec_equalities.append(False)
@@ -408,25 +583,29 @@ def transfer_llm(chat, temperature, model, error_iteration, iteration_num, FewSh
     return costs, transfer_results, exec_results, exec_times, error_messages, str(origin_exec_result), str(origin_exec_time), str(origin_error_message), exec_equalities
 
 
-def transfer_data(temperature, model, error_iteration, iteration_num, FewShot, output_name, origin_db_name, target_db_name, len_low, len_high, IsRandom, num, sqls_type):
+
+def get_feature_knowledge(value,feature_type):
+    if feature_type == "Functions":
+        mapping_indexes = value["SqlPotentialDialectFunctionMapping"]
+
+def transfer_data(tool,temperature, model, error_iteration, iteration_num, FewShot, with_knowledge, output_name, origin_db_name, target_db_name, len_low, len_high, IsRandom, num, sqls_type):
     """
     # transfer data：将经过init_data()处理的初始化后数据，逐条进行transfer llm的转换并存储结果
     # 源文件：Pinolo Output/output_test下ALL和RANDOM文件夹内的init_output1_mariadb_x_x_originalSql_all.json,init_output1_mariadb_x_x_originalSqlsim_all.json
     # 目标文件：Pinolo Output/output_test_results下ALL和RANDOM文件夹内的文件
     """
-    chat = ChatOpenAI(temperature=temperature, model=model)
+
     results_filename = None
     sqls_filename = None
     if IsRandom:
-        sql_temp = output_name + "_" + origin_db_name + "_" + str(len_low) + "_" + str(
-            len_high) + "_originalSql_random_" + str(num) + ".json"
-        sqlsim_temp = output_name + "_" + origin_db_name + "_" + str(len_low) + "_" + str(
-            len_high) + "_originalSqlsim_random_" + str(num) + ".json"
+        sql_temp = output_name + "_" + origin_db_name + "_to_" + target_db_name + "_" + str(len_low) + "_" + str(
+            len_high) + "_originalSql_random_" + str(num) + ".jsonl"
+        sqlsim_temp = output_name + "_" + origin_db_name + "_to_" + target_db_name + "_" + str(len_low) + "_" + str(
+            len_high) + "_originalSqlsim_random_" + str(num) + ".jsonl"
         res_sql_temp = output_name + "_" + origin_db_name + "_to_" + target_db_name + "_" + str(len_low) + "_" + str(
-            len_high) + "_originalSql_random_" + str(num) + ".json"
+            len_high) + "_originalSql_random_" + str(num) + ".jsonl"
         res_sqlsim_temp = output_name + "_" + origin_db_name + "_to_" + target_db_name + "_" + str(len_low) + "_" + str(
-            len_high) + "_originalSqlsim_random_" + str(num) + ".json"
-
+            len_high) + "_originalSqlsim_random_" + str(num) + ".jsonl"
         if FewShot:
             res_sql_temp = "fewshot_"+res_sql_temp
             res_sqlsim_temp = "fewshot_" + res_sqlsim_temp
@@ -434,16 +613,18 @@ def transfer_data(temperature, model, error_iteration, iteration_num, FewShot, o
             res_sql_temp = "iterated_"+res_sql_temp
             res_sqlsim_temp = "iterated_" + res_sqlsim_temp
         if sqls_type == "origin":
-            sqls_filename = os.path.join("..\..\Dataset\Pinolo Output", "output_test", "RANDOM", "init_"+sql_temp)
-            results_filename = os.path.join("..\..\Dataset\Pinolo Output", "output_test_results", "RANDOM", res_sql_temp)
+            sqls_filename = os.path.join("..\..\Output\TransferLLM\Pinolo", "PotentialDialectFeatures", "RANDOM", "init_"+sql_temp)
+            results_filename = os.path.join("..\..\Output\TransferLLM\Pinolo", "Results_With_Feature_Knowledge", "RANDOM", res_sql_temp)
         elif sqls_type == "simple":
-            sqls_filename = os.path.join("..\..\Dataset\Pinolo Output", "output_test", "RANDOM", "init_"+sqlsim_temp)
-            results_filename = os.path.join("..\..\Dataset\Pinolo Output", "output_test_results", "RANDOM", res_sqlsim_temp)
+            sqls_filename = os.path.join("..\..\Output\TransferLLM\Pinolo", "PotentialDialectFeatures", "RANDOM", "init_"+sqlsim_temp)
+            results_filename = os.path.join("..\..\Output\TransferLLM\Pinolo", "Results_With_Feature_Knowledge", "RANDOM", res_sqlsim_temp)
     else:
-        sql_temp = output_name + "_" + origin_db_name + "_" + str(len_low) + "_" + str(len_high) + "_originalSql_all.json"
-        sqlsim_temp = output_name + "_" + origin_db_name + "_" + str(len_low) + "_" + str(len_high) + "_originalSqlsim_all.json"
-        res_sql_temp = output_name + "_" + origin_db_name + "_to_" + target_db_name+"_" + str(len_low) + "_" + str(len_high) + "_originalSql_all.json"
-        res_sqlsim_temp = output_name + "_" + origin_db_name + "_to_" + target_db_name+"_" + str(len_low) + "_" + str(len_high) + "_originalSqlsim_all.json"
+        sql_temp = output_name + "_" + origin_db_name + "_to_" + target_db_name + "_" + str(len_low) + "_" + str(
+            len_high) + "_originalSql_all_" + str(num) + ".jsonl"
+        sqlsim_temp = output_name + "_" + origin_db_name + "_to_" + target_db_name + "_" + str(len_low) + "_" + str(
+            len_high) + "_originalSqlsim_all_" + str(num) + ".jsonl"
+        res_sql_temp = output_name + "_" + origin_db_name + "_to_" + target_db_name+"_" + str(len_low) + "_" + str(len_high) + "_originalSql_all.jsonl"
+        res_sqlsim_temp = output_name + "_" + origin_db_name + "_to_" + target_db_name+"_" + str(len_low) + "_" + str(len_high) + "_originalSqlsim_all.jsonl"
         if FewShot:
             res_sql_temp = "fewshot_" + res_sql_temp
             res_sqlsim_temp = "fewshot_" + res_sqlsim_temp
@@ -451,62 +632,102 @@ def transfer_data(temperature, model, error_iteration, iteration_num, FewShot, o
             res_sql_temp = "iterated_" + res_sql_temp
             res_sqlsim_temp = "iterated_" + res_sqlsim_temp
         if sqls_type == "origin":
-            sqls_filename = os.path.join("..\..\Dataset\Pinolo Output", "output_test", "ALL", "init_"+sql_temp)
-            results_filename = os.path.join("..\..\Dataset\Pinolo Output", "output_test_results", "ALL", res_sql_temp)
+            sqls_filename = os.path.join("..\..\Output\TransferLLM\Pinolo", "PotentialDialectFeatures", "ALL", "init_"+sql_temp)
+            results_filename = os.path.join("..\..\Output\TransferLLM\Pinolo", "Results_With_Feature_Knowledge", "ALL", res_sql_temp)
         elif sqls_type == "simple":
-            sqls_filename = os.path.join("..\..\Dataset\Pinolo Output", "output_test", "ALL", "init_"+sqlsim_temp)
-            results_filename = os.path.join("..\..\Dataset\Pinolo Output", "output_test_results", "ALL", res_sqlsim_temp)
+            sqls_filename = os.path.join("..\..\Output\TransferLLM\Pinolo", "PotentialDialectFeatures", "ALL", "init_"+sqlsim_temp)
+            results_filename = os.path.join("..\..\Output\TransferLLM\Pinolo", "Results_With_Feature_Knowledge", "ALL", res_sqlsim_temp)
 
+    processed_cnt = 0
     if os.path.exists(results_filename):
         with open(results_filename, "r", encoding="utf-8") as rf:
-            Sqls = json.load(rf)
-    else:
-        with open(sqls_filename, "r", encoding="utf-8") as rf:
-            Sqls = json.load(rf)
+            processed_cnt = len(rf.readlines())
+
+    with open(sqls_filename, "r", encoding="utf-8") as rf:
+        Sqls = rf.readlines()
 
     for index in range(len(Sqls)):
-    # for index in range(30):
+        # for index in range(30):
+        value = json.loads(Sqls[index])
         print(index)
-        # 跳过已经有执行结果的测试数据，说明已经测试过
-        if Sqls[index]["TransferResult"]:
+        if value["index"] < processed_cnt:
             continue
+        print(value)
+        costs, transfer_results, exec_results, exec_times, error_messages, origin_exec_result, origin_exec_time, origin_error_message, exec_equalities = transfer_llm(
+            tool=tool,
+            temperature=temperature,
+            model=model,
+            error_iteration=error_iteration,
+            iteration_num=iteration_num,
+            FewShot=FewShot,
+            with_knowledge=with_knowledge,
+            origin_db=origin_db_name,
+            target_db=target_db_name,
+            test_info=value
+        )
+
+        value["SqlExecResult"] = origin_exec_result
+        value["SqlExecTime"] = origin_exec_time
+        value["SqlExecError"] = origin_error_message
+
+        value["TransferResult"] = transfer_results
+        value["TransferCost"] = costs
+        value["TransferSqlExecResult"] = exec_results
+        value["TransferSqlExecTime"] = exec_times
+        value["TransferSqlExecError"] = error_messages  # 记录transfer sql的多次执行是否有报错：如果为None则表示成功执行，如果不是None而是具体报错则说明执行失败
+        value["TransferSqlExecEqualities"] = exec_equalities  # 记录transfer sql的多次执行结果是否与origin sql一样：如果为True则说明一样，否则为不一样
+
+        with open(results_filename, 'a', encoding='utf-8') as a:
+            json.dump(value, a)
+            a.write('\n')
+
         try:
-            costs, transfer_results, exec_results, exec_times, error_messages, origin_exec_result, origin_exec_time, origin_error_message, exec_equalities = transfer_llm(
-                chat=chat,
-                temperature=temperature,
-                model=model,
-                error_iteration=error_iteration,
-                iteration_num=iteration_num,
-                FewShot=FewShot,
-                origin_db=origin_db_name,
-                target_db=target_db_name,
-                sql_statement=Sqls[index]["Sql"]
-                )
-
-            Sqls[index]["SqlExecResult"] = origin_exec_result
-            Sqls[index]["SqlExecTime"] = origin_exec_time
-            Sqls[index]["SqlExecError"] = origin_error_message
-
-            Sqls[index]["TransferResult"] = transfer_results
-            Sqls[index]["TransferCost"] = costs
-            Sqls[index]["TransferSqlExecResult"] = exec_results
-            Sqls[index]["TransferSqlExecTime"] = exec_times
-            Sqls[index]["TransferSqlExecError"] = error_messages  # 记录transfer sql的多次执行是否有报错：如果为None则表示成功执行，如果不是None而是具体报错则说明执行失败
-            Sqls[index]["TransferSqlExecEqualities"] = exec_equalities   # 记录transfer sql的多次执行结果是否与origin sql一样：如果为True则说明一样，否则为不一样
-
+            a = 1
         except Exception as e:
-            with open(results_filename, 'w', encoding='utf-8') as f:
-                json.dump(Sqls, f, indent=4)
             print(e)
-    with open(results_filename, 'w', encoding='utf-8') as f:
-        json.dump(Sqls, f, indent=4)
 
 
 # sql_type:"origin"或"simple"，分别代表原始sql和简化后的sql
-def exec_transfer_llm(temperature, model, error_iteration, iteration_num, FewShot, output_name, origin_db_name, target_db_name, len_low, len_high, IsRandom, num, sqls_type):
+def exec_transfer_llm(temperature, model, error_iteration, iteration_num, FewShot, with_knowledge, output_name, origin_db_name, target_db_name, len_low, len_high, IsRandom, num, sqls_type):
     load_data(output_name, origin_db_name, len_low, len_high, IsRandom, num)
     init_data(output_name, origin_db_name, len_low, len_high, IsRandom, num)
-    transfer_data(temperature, model, error_iteration, iteration_num, FewShot, output_name, origin_db_name, target_db_name, len_low, len_high, IsRandom, num, sqls_type)
+    transfer_data("pinolo",temperature, model, error_iteration, iteration_num, FewShot, with_knowledge, output_name, origin_db_name, target_db_name, len_low, len_high, IsRandom, num, sqls_type)
 
+
+
+
+
+
+"""
+origin_exec_args = database_connection_args["postgres"]
+sql_statement = "SELECT ('really') AS f1, (f5) AS f2, (COLLATION FOR(f4::text)) AS f3 FROM (SELECT col_bigint_undef_unsigned AS f4, col_decimal_40_20_key_unsigned AS f5, col_varchar_20_key_signed AS f6 FROM table_7_utf8_undef) AS t1"
+origin_exec_result, origin_exec_time, origin_error_message = exec_database_sql(origin_exec_args["db_type"],
+                                                                                   origin_exec_args["host"],
+                                                                                   origin_exec_args["port"],
+                                                                                   origin_exec_args["username"],
+                                                                                   origin_exec_args["password"],
+                                                                                   origin_exec_args["dbname"],
+                                                                                   sql_statement)
+print(origin_exec_result)
+
+
+
+
+origin_exec_args = database_connection_args["mariadb"]
+sql_statement = "SELECT ('really') AS `f1`,(`f5`) AS `f2`,(~COLLATION(`f4`)) AS `f3` FROM (SELECT `col_bigint_undef_unsigned` AS `f4`,`col_decimal(40, 20)_key_unsigned` AS `f5`,`col_varchar(20)_key_signed` AS `f6` FROM `table_7_utf8_undef`) AS `t1`"
+origin_exec_result, origin_exec_time, origin_error_message = exec_database_sql(origin_exec_args["db_type"],
+                                                                                   origin_exec_args["host"],
+                                                                                   origin_exec_args["port"],
+                                                                                   origin_exec_args["username"],
+                                                                                   origin_exec_args["password"],
+                                                                                   origin_exec_args["dbname"],
+                                                                                   sql_statement)
+print(origin_exec_result)
+"""
+
+
+file = "../../Output/TransferLLM/Pinolo/Results_With_Feature_Knowledge/ALL/iterated_fewshot_output1_mariadb_to_postgres_1_240_originalSqlsim_all_.json"
+file = "../../Output/TransferLLM/Pinolo/Results_With_Feature_Knowledge/ALL/iterated_fewshot_output1_mariadb_to_postgres_1_240_originalSqlsim_all.jsonl"
+# test_temp(file)
 
 

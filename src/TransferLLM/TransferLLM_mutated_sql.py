@@ -3,13 +3,11 @@
 # @Time    : 2024/7/26 17:09
 # @Author  : zql
 # @File    : TransferLLM.py
-# @Intro   :
+# @Intro   : 为已经变异的sql进行transfer，这个文件是之前为了给论文查找例子临时写的一个文件
 
 import os
 import json
-from src.Connector import test_database_mysql_like, test_database_postgres
-import openai
-from openai import OpenAI
+from src.Tools.DatasetConnector.DatabaseConnector import test_database_mysql_like, test_database_postgres
 import random
 from langchain.prompts import ChatPromptTemplate
 from langchain.chat_models import ChatOpenAI
@@ -18,15 +16,7 @@ from langchain.output_parsers import StructuredOutputParser
 from langchain.chains import ConversationChain
 from langchain.callbacks import get_openai_callback
 from langchain.memory import ConversationBufferMemory
-from src.Connector import database_connection_args
-
-
-os.environ["http_proxy"] = "http://localhost:7890"
-os.environ["https_proxy"] = "http://localhost:7890"
-os.environ["OPENAI_API_KEY"] = ""  # app5
-os.environ["OPENAI_API_BASE"] = "https://ai-yyds.com/v1"  # "https://ai-yyds.com/v1"
-openai.api_key = os.environ['OPENAI_API_KEY']
-openai.api_base = os.environ['OPENAI_API_BASE']
+from src.Tools.DatasetConnector.DatabaseConnector import database_connection_args
 
 
 db_names = ["mysql", "mariadb", "tidb"]

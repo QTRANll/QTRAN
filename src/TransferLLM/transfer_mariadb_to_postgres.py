@@ -4,6 +4,7 @@
 # @Author  : shaocanfan
 # @File    : test_mariadb_to_postgressql.py
 # @Intro   :
+import json
 
 from TransferLLM import exec_transfer_llm
 from TransferLLMEvaluation import evaluate_transfer_llm
@@ -11,7 +12,7 @@ from TransferLLMEvaluation import evaluate_transfer_llm
 
 # transfer llm:用mariadb to mysql随机选取的500条数据，但是测前200条数据
 Iteration_Num = 10  # 默认最大迭代次数
-Temperature = 0
+Temperature = 0.4
 Model = "gpt-4o-mini"
 
 """
@@ -31,6 +32,7 @@ exec_transfer_llm(temperature=Temperature, model=Model, error_iteration=False, i
 
 
 """
+# 进行错误迭代
 exec_transfer_llm(temperature=Temperature, model=Model, error_iteration=True, iteration_num=Iteration_Num, FewShot=False,
                   output_name="output1", origin_db_name="mariadb", target_db_name="postgres", len_low=1,
                   len_high=float('inf'), IsRandom=True, num=500, sqls_type="origin")
@@ -40,27 +42,16 @@ exec_transfer_llm(temperature=Temperature, model=Model, error_iteration=True, it
 exec_transfer_llm(temperature=Temperature, model=Model, error_iteration=True, iteration_num=Iteration_Num, FewShot=True,
                   output_name="output1", origin_db_name="mariadb", target_db_name="postgres", len_low=1,
                   len_high=float('inf'), IsRandom=True, num=500, sqls_type="origin")
-
 """
 
-
-# error_iteration=True，sqls_type="simple"，FewShot=True ，length_range = [1,240)
-exec_transfer_llm(temperature=Temperature, model=Model, error_iteration=True, iteration_num=Iteration_Num, FewShot=True,
-                  output_name="output1", origin_db_name="mariadb", target_db_name="postgres", len_low=1, len_high=240,
-                  IsRandom=False, num=0, sqls_type="simple")
-
 """
+# error_iteration=True，sqls_type="simple"，FewShot=True ，length_range = [1,500)
 exec_transfer_llm(temperature=Temperature, model=Model, error_iteration=True, iteration_num=Iteration_Num, FewShot=True,
                   output_name="output1", origin_db_name="mariadb", target_db_name="postgres", len_low=1,
                   len_high=float('inf'), IsRandom=True, num=500, sqls_type="simple")
 """
 
-"""
-# error_iteration=True，sqls_type="simple"，FewShot=True ，length_range = [240,400)
-exec_transfer_llm(temperature=Temperature, model=Model, error_iteration=True, iteration_num=Iteration_Num, FewShot=True,
-                  output_name="output1", origin_db_name="mariadb", target_db_name="postgres", len_low=240, len_high=400,
-                  IsRandom=True, num=100, sqls_type="simple")
-"""
+
 """
 exec_transfer_llm(temperature=Temperature, model=Model, error_iteration=True, iteration_num=Iteration_Num, FewShot=True,
                   output_name="output1", origin_db_name="mariadb", target_db_name="postgres", len_low=240, len_high=400,
@@ -68,14 +59,29 @@ exec_transfer_llm(temperature=Temperature, model=Model, error_iteration=True, it
 """
 
 
+# 暂时测了下面两个：2024/10/17
+# error_iteration=True，sqls_type="simple"，FewShot=True ，length_range = [1,240)
+exec_transfer_llm(temperature=Temperature, model=Model, error_iteration=True, iteration_num=Iteration_Num, FewShot=False, with_knowledge=True,
+                  output_name="output1", origin_db_name="mariadb", target_db_name="postgres", len_low=1, len_high=240,
+                  IsRandom=False, num=0, sqls_type="simple")
 
 
+
+"""
+# error_iteration=True，sqls_type="simple"，FewShot=True ，length_range = [240,400)
+exec_transfer_llm(temperature=Temperature, model=Model, error_iteration=True, iteration_num=Iteration_Num, FewShot=True,
+                  output_name="output1", origin_db_name="mariadb", target_db_name="postgres", len_low=240, len_high=400,
+                  IsRandom=True, num=100, sqls_type="simple")
+"""
 
 
 # evaluate transfer llm
 Ranges = [[1, float('inf')], [1, 400], [400, 800], [800, 1200], [1200, 1600], [1600, float('inf')]]
-
-# evaluate_transfer_llm("../../Dataset/Pinolo Output/output_test_results/ALL/iterated_fewshot_output1_mariadb_to_postgres_1_240_originalSqlsim_all.json",Ranges)
+Ranges = [[1, 400]]
+Ranges = [[1, float('inf')], [1, 100], [100, 200], [200, 300], [400, 500]]
+# evaluate_transfer_llm("../../Output/TransferLLM/Pinolo/Results_With_Feature_Knowledge/ALL/iterated_fewshot_output1_mariadb_to_postgres_1_240_originalSqlsim_all.json",Ranges)
+evaluate_transfer_llm(
+    "../../Output/TransferLLM/Pinolo/Results_With_Feature_Knowledge/ALL/v8_iterated_output1_mariadb_to_postgres_1_240_originalSqlsim_all.jsonl", Ranges)
 
 """
 evaluate_transfer_llm("../../Dataset/Pinolo Output/output_test_results/ALL/output1_mariadb_to_postgres_1_240_originalSql_all.json", Ranges)
@@ -94,3 +100,6 @@ evaluate_transfer_llm("../../Dataset/Pinolo Output/output_test_results/RANDOM/fe
 evaluate_transfer_llm("../../Dataset/Pinolo Output/output_test_results/RANDOM/iterated_output1_mariadb_to_mysql_1_inf_originalSql_random_500.json", Ranges)
 evaluate_transfer_llm("../../Dataset/Pinolo Output/output_test_results/RANDOM/iterated_fewshot_output1_mariadb_to_mysql_1_inf_originalSqlsim_random_500.json", Ranges)
 """
+
+
+
