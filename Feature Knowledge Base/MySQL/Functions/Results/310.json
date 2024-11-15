@@ -1,0 +1,29 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.0/en/built-in-function-reference.html"
+    ],
+    "Title": [
+        "14.1 Built-In Function and Operator Reference"
+    ],
+    "Name": "ST_GeoHash()",
+    "Description": [
+        "\nST_GeoHash(longitude,\n          latitude,\n          max_length),\n          ST_GeoHash(point,\n          max_length)\n",
+        "\n          Returns a geohash string in the connection character set and\n          collation.\n        ",
+        "\n          For the first syntax, the longitude\n          must be a number in the range [\u2212180, 180], and the\n          latitude must be a number in the\n          range [\u221290, 90]. For the second syntax, a\n          POINT value is required, where the X and Y\n          coordinates are in the valid ranges for longitude and\n          latitude, respectively.\n        ",
+        "\n          The resulting string is no longer than\n          max_length characters, which has an\n          upper limit of 100. The string might be shorter than\n          max_length characters because the\n          algorithm that creates the geohash value continues until it\n          has created a string that is either an exact representation of\n          the location or max_length\n          characters, whichever comes first.\n        ",
+        "\nST_GeoHash() handles its\n          arguments as described in the introduction to this section.\n        ",
+        "Press CTRL+C to copy mysql> SELECT ST_GeoHash(180,0,10), ST_GeoHash(-180,-90,15);\n+----------------------+-------------------------+\n| ST_GeoHash(180,0,10) | ST_GeoHash(-180,-90,15) |\n+----------------------+-------------------------+\n| xbpbpbpbpb           | 000000000000000         |\n+----------------------+-------------------------+"
+    ],
+    "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/spatial-geohash-functions.html#function_st-geohash",
+    "Feature": [
+        "ST_GeoHash(longitude,\n          latitude,\n          max_length)",
+        "ST_GeoHash(point,\n          max_length)"
+    ],
+    "Examples": [
+        "mysql> SELECT ST_GeoHash(180,0,10), ST_GeoHash(-180,-90,15);\n+----------------------+-------------------------+\n| ST_GeoHash(180,0,10) | ST_GeoHash(-180,-90,15) |\n+----------------------+-------------------------+\n| xbpbpbpbpb           | 000000000000000         |\n+----------------------+-------------------------+"
+    ],
+    "Category": [
+        "Built-In Functions and Operators",
+        "Spatial Analysis Functions"
+    ]
+}

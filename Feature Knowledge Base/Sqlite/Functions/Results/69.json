@@ -1,0 +1,21 @@
+{
+    "HTML": [
+        "https://sqlite.org/json1.html"
+    ],
+    "Title": [
+        "4.6. The json_error_position() function"
+    ],
+    "Feature": [
+        "4.6. The json_error_position() function"
+    ],
+    "Description": [
+        "4.6. The json_error_position() function",
+        "The json_error_position(X) function returns 0 if the input X is a\nwell-formed JSON or JSON5 string.  If the input X contains one or more\nsyntax errors, then this function returns the character position of the\nfirst syntax error.  The left-most character is position 1.\n\n",
+        "If the input X is a BLOB, then this routine returns 0 if X is\na well-formed JSONB blob.  If the return value is positive, then it\nrepresents the approximate 1-based position in the BLOB of the\nfirst detected error.\n\n",
+        "\nThe json_error_position() function was added with\nSQLite version 3.42.0 (2023-05-16).\n\n\n\n"
+    ],
+    "Examples": [],
+    "Category": [
+        "JSON Functions"
+    ]
+}

@@ -1,0 +1,27 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/string-search-functions"
+    ],
+    "Title": [
+        "multiSearchFirstPositionUTF8"
+    ],
+    "Feature": [
+        "multiSearchFirstPositionUTF8(haystack, [needle1, needle2, ..., needleN])"
+    ],
+    "Description": [
+        "multiSearchFirstPositionUTF8",
+        "Like multiSearchFirstPosition but assumes haystack and needle to be UTF-8 strings.",
+        "Syntax",
+        "multiSearchFirstPositionUTF8(haystack, [needle1, needle2, ..., needleN])",
+        "Parameters",
+        "haystack \u2014 UTF-8 string in which the search is performed. String.needle \u2014 Array of UTF-8 substrings to be searched. Array.",
+        "Returned value",
+        "Leftmost offset in a haystack string which matches any of multiple needle strings.0, if there was no match."
+    ],
+    "Examples": [
+        "SELECT multiSearchFirstPositionUTF8('\\x68\\x65\\x6c\\x6c\\x6f\\x20\\x77\\x6f\\x72\\x6c\\x64',['wor', 'ld', 'ello']);"
+    ],
+    "Category": [
+        "Searching in Strings Functions"
+    ]
+}

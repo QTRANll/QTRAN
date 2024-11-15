@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/16/functions-range.html"
+    ],
+    "Title": [
+        "lower_inc"
+    ],
+    "Feature": [
+        "lower_inc ( anymultirange ) → boolean"
+    ],
+    "Description": [
+        "Is the multirange's lower bound inclusive?"
+    ],
+    "Examples": [
+        "lower_inc('{[1.1,2.2)}'::nummultirange) → t"
+    ],
+    "Category": [
+        "Range divide Multirange Functions and Operators"
+    ]
+}

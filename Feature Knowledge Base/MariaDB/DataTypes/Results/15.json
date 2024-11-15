@@ -1,0 +1,25 @@
+{
+    "HTML": [
+        "https://mariadb.com/kb/en/blob/"
+    ],
+    "Title": [
+        "BLOB"
+    ],
+    "Feature": [
+        "BLOB[(M)]\n"
+    ],
+    "Description": [
+        "A BLOB column with a maximum length of 65,535 (216 - 1) bytes. Each\nBLOB value is stored using a two-byte length prefix that indicates the\nnumber of bytes in the value.",
+        "An optional length M can be given for this type. If this is done,\nMariaDB creates the column as the smallest BLOB type large enough to\nhold values M bytes long.",
+        "BLOBS can also be used to store dynamic columns.",
+        "BLOB and TEXT columns can both be assigned a DEFAULT value.",
+        "Indexing",
+        "MariaDB starting with 10.4From MariaDB 10.4, it is possible to set a unique index on a column that uses the BLOB data type.  In previous releases this was not possible, as the index would only guarantee the uniqueness of a fixed number of characters.\n",
+        "Oracle Mode",
+        "In Oracle mode from MariaDB 10.3, BLOB is a synonym for LONGBLOB."
+    ],
+    "Examples": [],
+    "Category": [
+        "String Data Types"
+    ]
+}

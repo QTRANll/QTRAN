@@ -1,0 +1,29 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.0/en/built-in-function-reference.html"
+    ],
+    "Title": [
+        "14.1 Built-In Function and Operator Reference"
+    ],
+    "Name": "IF()",
+    "Description": [
+        "\nIF(expr1,expr2,expr3)\n",
+        "\n          If expr1 is TRUE\n          (expr1 <>\n          0 and expr1 IS\n          NOT NULL), IF()\n          returns expr2. Otherwise, it\n          returns expr3.\n",
+        "\n\nNote\n\n\n            There is also an IF\nstatement, which differs from the\n            IF()\nfunction described here. See\n            Section\u00a015.6.5.2, \u201cIF Statement\u201d.\n\n",
+        "\n          If only one of expr2 or\n          expr3 is explicitly\n          NULL, the result type of the\n          IF() function is the type of\n          the non-NULL expression.\n        ",
+        "\n          The default return type of IF()\n          (which may matter when it is stored into a temporary table) is\n          calculated as follows:\n",
+        "\n\n              If expr2 or\n              expr3 produce a string, the\n              result is a string.\n            \n              If expr2 and\n              expr3 are both strings, the\n              result is case-sensitive if either string is\n              case-sensitive.\n            \n              If expr2 or\n              expr3 produce a floating-point\n              value, the result is a floating-point value.\n            \n              If expr2 or\n              expr3 produce an integer, the\n              result is an integer.\n\n",
+        "Press CTRL+C to copy mysql> SELECT IF(1>2,2,3);\n        -> 3\nmysql> SELECT IF(1<2,'yes','no');\n        -> 'yes'\nmysql> SELECT IF(STRCMP('test','test1'),'no','yes');\n        -> 'no'"
+    ],
+    "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/flow-control-functions.html#function_if",
+    "Feature": [
+        "IF(expr1,expr2,expr3)"
+    ],
+    "Examples": [
+        "mysql> SELECT IF(1>2,2,3);\n        -> 3\nmysql> SELECT IF(1<2,'yes','no');\n        -> 'yes'\nmysql> SELECT IF(STRCMP('test','test1'),'no','yes');\n        -> 'no'"
+    ],
+    "Category": [
+        "Built-In Functions and Operators",
+        "Flow Control Functions"
+    ]
+}

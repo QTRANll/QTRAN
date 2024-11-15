@@ -1,0 +1,25 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/other-functions"
+    ],
+    "Title": [
+        "formatReadableSize"
+    ],
+    "Feature": [
+        "formatReadableSize(x)"
+    ],
+    "Description": [
+        "formatReadableSize",
+        "Given a size (number of bytes), this function returns a readable, rounded size with suffix (KiB, MiB, etc.) as string.",
+        "The opposite operations of this function are parseReadableSize, parseReadableSizeOrZero, and parseReadableSizeOrNull.",
+        "Syntax",
+        "formatReadableSize(x)",
+        "Alias: FORMAT_BYTES."
+    ],
+    "Examples": [
+        "SELECT    arrayJoin([1, 1024, 1024*1024, 192851925]) AS filesize_bytes,    formatReadableSize(filesize_bytes) AS filesize"
+    ],
+    "Category": [
+        "Other Functions"
+    ]
+}

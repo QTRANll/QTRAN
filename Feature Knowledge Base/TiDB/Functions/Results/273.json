@@ -1,0 +1,21 @@
+{
+    "HTML": [
+        "https://docs.pingcap.com/zh/tidb/v8.3/tidb-functions"
+    ],
+    "Title": [
+        "VITESS_HASH"
+    ],
+    "Feature": [
+        "VITESS_HASH"
+    ],
+    "Description": [
+        "VITESS_HASH",
+        "VITESS_HASH(num) 函数以与 Vitess 相同的方式返回数值的哈希值。这有助于将数据从 Vitess 迁移到 TiDB。"
+    ],
+    "Examples": [
+        "SELECT VITESS_HASH(123);\n"
+    ],
+    "Category": [
+        "TiDB 特有的函数"
+    ]
+}

@@ -1,0 +1,26 @@
+{
+    "HTML": [
+        "https://mariadb.com/kb/en/binary/"
+    ],
+    "Title": [
+        "BINARY"
+    ],
+    "Feature": [
+        "BINARY(M)\n"
+    ],
+    "Description": [
+        "The BINARY type is similar to the CHAR type, but stores binary\nbyte strings rather than non-binary character strings. M represents the\ncolumn length in bytes.",
+        "It contains no character set, and comparison and sorting are based on the numeric value of the bytes.",
+        "If the maximum length is exceeded, and SQL strict mode is not enabled , the extra characters will be dropped with a warning. If strict mode is enabled, an error will occur.",
+        "BINARY values are right-padded with 0x00 (the zero byte) to the specified length when inserted. The padding is not removed on select, so this needs to be taken into account when sorting and comparing, where all bytes are significant. The zero byte, 0x00 is less than a space for comparison purposes."
+    ],
+    "Examples": [
+        "CREATE TABLE bins (a BINARY(10));\n\nINSERT INTO bins VALUES('12345678901');\nQuery OK, 1 row affected, 1 warning (0.04 sec)\n\nSELECT * FROM bins;\n+------------+\n| a          |\n+------------+\n| 1234567890 |\n+------------+\n\nSET sql_mode='STRICT_ALL_TABLES';\n\nINSERT INTO bins VALUES('12345678901');\nERROR 1406 (22001): Data too long for column 'a' at row 1\n",
+        "TRUNCATE bins;\n\nINSERT INTO bins VALUES('A'),('B'),('a'),('b');\n\nSELECT * FROM bins ORDER BY a;\n+------+\n| a    |\n+------+\n| A    |\n| B    |\n| a    |\n| b    |\n+------+\n",
+        "SELECT * FROM bins ORDER BY CAST(a AS CHAR);\n+------+\n| a    |\n+------+\n| a    |\n| A    |\n| b    |\n| B    |\n+------+\n",
+        "TRUNCATE bins;\n\nINSERT INTO bins VALUES('12345678');\n\nSELECT a = '12345678', a = '12345678\\0\\0' from bins;\n+----------------+--------------------+\n| a = '12345678' | a = '12345678\\0\\0' |\n+----------------+--------------------+\n|              0 |                  1 |\n+----------------+--------------------+\n"
+    ],
+    "Category": [
+        "String Data Types"
+    ]
+}

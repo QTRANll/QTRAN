@@ -1,0 +1,27 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.0/en/built-in-function-reference.html"
+    ],
+    "Title": [
+        "14.1 Built-In Function and Operator Reference"
+    ],
+    "Name": "TO_BASE64()",
+    "Description": [
+        "\nTO_BASE64(str)\n",
+        "\n          Converts the string argument to base-64 encoded form and\n          returns the result as a character string with the connection\n          character set and collation. If the argument is not a string,\n          it is converted to a string before conversion takes place. The\n          result is NULL if the argument is\n          NULL. Base-64 encoded strings can be\n          decoded using the FROM_BASE64()\n          function.\n        ",
+        "Press CTRL+C to copy mysql> SELECT TO_BASE64('abc'), FROM_BASE64(TO_BASE64('abc'));\n        -> 'JWJj', 'abc'",
+        "\n          Different base-64 encoding schemes exist. These are the\n          encoding and decoding rules used by\n          TO_BASE64() and\n          FROM_BASE64():\n",
+        "\n\n              The encoding for alphabet value 62 is\n              '+'.\n            \n              The encoding for alphabet value 63 is\n              '/'.\n            \n              Encoded output consists of groups of 4 printable\n              characters. Each 3 bytes of the input data are encoded\n              using 4 characters. If the last group is incomplete, it is\n              padded with '=' characters to a length\n              of 4.\n            \n              A newline is added after each 76 characters of encoded\n              output to divide long output into multiple lines.\n            \n              Decoding recognizes and ignores newline, carriage return,\n              tab, and space.\n\n"
+    ],
+    "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/string-functions.html#function_to-base64",
+    "Feature": [
+        "TO_BASE64(str)"
+    ],
+    "Examples": [
+        "mysql> SELECT TO_BASE64('abc'), FROM_BASE64(TO_BASE64('abc'));\n        -> 'JWJj', 'abc'"
+    ],
+    "Category": [
+        "Built-In Functions and Operators",
+        "String Functions and Operators"
+    ]
+}

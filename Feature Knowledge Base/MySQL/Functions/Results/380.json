@@ -1,0 +1,27 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.0/en/built-in-function-reference.html"
+    ],
+    "Title": [
+        "14.1 Built-In Function and Operator Reference"
+    ],
+    "Name": "SYSTEM_USER()",
+    "Description": [
+        "\nSYSTEM_USER()\n",
+        "\nSYSTEM_USER() is a synonym for\n          USER().\n",
+        "\n\nNote\n\n\n            The SYSTEM_USER() function is\n            distinct from the SYSTEM_USER\n            privilege. The former returns the current MySQL account\n            name. The latter distinguishes the system user and regular\n            user account categories (see\n            Section\u00a08.2.11, \u201cAccount Categories\u201d).\n\n",
+        "\n          Beginning with MySQL 8.0.34, like\n          USER(), this function can be\n          used for the default value of a\n          VARCHAR or\n          TEXT column, as shown in the\n          following CREATE TABLE\n          statement:\n        ",
+        "Press CTRL+C to copy CREATE TABLE t (c VARCHAR(288) DEFAULT (SYSTEM_USER()));"
+    ],
+    "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/information-functions.html#function_system-user",
+    "Feature": [
+        "SYSTEM_USER()"
+    ],
+    "Examples": [
+        "CREATE TABLE t (c VARCHAR(288) DEFAULT (SYSTEM_USER()));"
+    ],
+    "Category": [
+        "Built-In Functions and Operators",
+        "Information Functions"
+    ]
+}

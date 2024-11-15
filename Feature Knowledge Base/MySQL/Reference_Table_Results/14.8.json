@@ -1,0 +1,490 @@
+[
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/string-functions.html",
+        "Title": "14.8 String Functions and Operators",
+        "Name": "ASCII()",
+        "Description": "Return numeric value of left-most character",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/string-functions.html#function_ascii",
+        "Category": "String Functions and Operators"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/string-functions.html",
+        "Title": "14.8 String Functions and Operators",
+        "Name": "BIN()",
+        "Description": "Return a string containing binary representation of a number",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/string-functions.html#function_bin",
+        "Category": "String Functions and Operators"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/string-functions.html",
+        "Title": "14.8 String Functions and Operators",
+        "Name": "BIT_LENGTH()",
+        "Description": "Return length of argument in bits",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/string-functions.html#function_bit-length",
+        "Category": "String Functions and Operators"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/string-functions.html",
+        "Title": "14.8 String Functions and Operators",
+        "Name": "CHAR()",
+        "Description": "Return the character for each integer passed",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/string-functions.html#function_char",
+        "Category": "String Functions and Operators"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/string-functions.html",
+        "Title": "14.8 String Functions and Operators",
+        "Name": "CHAR_LENGTH()",
+        "Description": "Return number of characters in argument",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/string-functions.html#function_char-length",
+        "Category": "String Functions and Operators"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/string-functions.html",
+        "Title": "14.8 String Functions and Operators",
+        "Name": "CHARACTER_LENGTH()",
+        "Description": "Synonym for CHAR_LENGTH()",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/string-functions.html#function_character-length",
+        "Category": "String Functions and Operators"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/string-functions.html",
+        "Title": "14.8 String Functions and Operators",
+        "Name": "CONCAT()",
+        "Description": "Return concatenated string",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/string-functions.html#function_concat",
+        "Category": "String Functions and Operators"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/string-functions.html",
+        "Title": "14.8 String Functions and Operators",
+        "Name": "CONCAT_WS()",
+        "Description": "Return concatenate with separator",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/string-functions.html#function_concat-ws",
+        "Category": "String Functions and Operators"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/string-functions.html",
+        "Title": "14.8 String Functions and Operators",
+        "Name": "ELT()",
+        "Description": "Return string at index number",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/string-functions.html#function_elt",
+        "Category": "String Functions and Operators"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/string-functions.html",
+        "Title": "14.8 String Functions and Operators",
+        "Name": "EXPORT_SET()",
+        "Description": "Return a string such that for every bit set in the value bits, you",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/string-functions.html#function_export-set",
+        "Category": "String Functions and Operators"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/string-functions.html",
+        "Title": "14.8 String Functions and Operators",
+        "Name": "FIELD()",
+        "Description": "Index (position) of first argument in subsequent arguments",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/string-functions.html#function_field",
+        "Category": "String Functions and Operators"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/string-functions.html",
+        "Title": "14.8 String Functions and Operators",
+        "Name": "FIND_IN_SET()",
+        "Description": "Index (position) of first argument within second argument",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/string-functions.html#function_find-in-set",
+        "Category": "String Functions and Operators"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/string-functions.html",
+        "Title": "14.8 String Functions and Operators",
+        "Name": "FORMAT()",
+        "Description": "Return a number formatted to specified number of decimal places",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/string-functions.html#function_format",
+        "Category": "String Functions and Operators"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/string-functions.html",
+        "Title": "14.8 String Functions and Operators",
+        "Name": "FROM_BASE64()",
+        "Description": "Decode base64 encoded string and return result",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/string-functions.html#function_from-base64",
+        "Category": "String Functions and Operators"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/string-functions.html",
+        "Title": "14.8 String Functions and Operators",
+        "Name": "HEX()",
+        "Description": "Hexadecimal representation of decimal or string value",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/string-functions.html#function_hex",
+        "Category": "String Functions and Operators"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/string-functions.html",
+        "Title": "14.8 String Functions and Operators",
+        "Name": "INSERT()",
+        "Description": "Insert substring at specified position up to specified number of",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/string-functions.html#function_insert",
+        "Category": "String Functions and Operators"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/string-functions.html",
+        "Title": "14.8 String Functions and Operators",
+        "Name": "INSTR()",
+        "Description": "Return the index of the first occurrence of substring",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/string-functions.html#function_instr",
+        "Category": "String Functions and Operators"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/string-functions.html",
+        "Title": "14.8 String Functions and Operators",
+        "Name": "LCASE()",
+        "Description": "Synonym for LOWER()",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/string-functions.html#function_lcase",
+        "Category": "String Functions and Operators"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/string-functions.html",
+        "Title": "14.8 String Functions and Operators",
+        "Name": "LEFT()",
+        "Description": "Return the leftmost number of characters as specified",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/string-functions.html#function_left",
+        "Category": "String Functions and Operators"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/string-functions.html",
+        "Title": "14.8 String Functions and Operators",
+        "Name": "LENGTH()",
+        "Description": "Return the length of a string in bytes",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/string-functions.html#function_length",
+        "Category": "String Functions and Operators"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/string-functions.html",
+        "Title": "14.8 String Functions and Operators",
+        "Name": "LIKE",
+        "Description": "Simple pattern matching",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/string-comparison-functions.html#operator_like",
+        "Category": "String Functions and Operators"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/string-functions.html",
+        "Title": "14.8 String Functions and Operators",
+        "Name": "LOAD_FILE()",
+        "Description": "Load the named file",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/string-functions.html#function_load-file",
+        "Category": "String Functions and Operators"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/string-functions.html",
+        "Title": "14.8 String Functions and Operators",
+        "Name": "LOCATE()",
+        "Description": "Return the position of the first occurrence of substring",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/string-functions.html#function_locate",
+        "Category": "String Functions and Operators"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/string-functions.html",
+        "Title": "14.8 String Functions and Operators",
+        "Name": "LOWER()",
+        "Description": "Return the argument in lowercase",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/string-functions.html#function_lower",
+        "Category": "String Functions and Operators"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/string-functions.html",
+        "Title": "14.8 String Functions and Operators",
+        "Name": "LPAD()",
+        "Description": "Return the string argument, left-padded with the specified string",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/string-functions.html#function_lpad",
+        "Category": "String Functions and Operators"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/string-functions.html",
+        "Title": "14.8 String Functions and Operators",
+        "Name": "LTRIM()",
+        "Description": "Remove leading spaces",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/string-functions.html#function_ltrim",
+        "Category": "String Functions and Operators"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/string-functions.html",
+        "Title": "14.8 String Functions and Operators",
+        "Name": "MAKE_SET()",
+        "Description": "Return a set of comma-separated strings that have the",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/string-functions.html#function_make-set",
+        "Category": "String Functions and Operators"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/string-functions.html",
+        "Title": "14.8 String Functions and Operators",
+        "Name": "MATCH()",
+        "Description": "Perform full-text search",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/fulltext-search.html#function_match",
+        "Category": "String Functions and Operators"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/string-functions.html",
+        "Title": "14.8 String Functions and Operators",
+        "Name": "MID()",
+        "Description": "Return a substring starting from the specified position",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/string-functions.html#function_mid",
+        "Category": "String Functions and Operators"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/string-functions.html",
+        "Title": "14.8 String Functions and Operators",
+        "Name": "NOT LIKE",
+        "Description": "Negation of simple pattern matching",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/string-comparison-functions.html#operator_not-like",
+        "Category": "String Functions and Operators"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/string-functions.html",
+        "Title": "14.8 String Functions and Operators",
+        "Name": "NOT REGEXP",
+        "Description": "Negation of REGEXP",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/regexp.html#operator_not-regexp",
+        "Category": "String Functions and Operators"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/string-functions.html",
+        "Title": "14.8 String Functions and Operators",
+        "Name": "OCT()",
+        "Description": "Return a string containing octal representation of a number",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/string-functions.html#function_oct",
+        "Category": "String Functions and Operators"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/string-functions.html",
+        "Title": "14.8 String Functions and Operators",
+        "Name": "OCTET_LENGTH()",
+        "Description": "Synonym for LENGTH()",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/string-functions.html#function_octet-length",
+        "Category": "String Functions and Operators"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/string-functions.html",
+        "Title": "14.8 String Functions and Operators",
+        "Name": "ORD()",
+        "Description": "Return character code for leftmost character of the argument",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/string-functions.html#function_ord",
+        "Category": "String Functions and Operators"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/string-functions.html",
+        "Title": "14.8 String Functions and Operators",
+        "Name": "POSITION()",
+        "Description": "Synonym for LOCATE()",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/string-functions.html#function_position",
+        "Category": "String Functions and Operators"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/string-functions.html",
+        "Title": "14.8 String Functions and Operators",
+        "Name": "QUOTE()",
+        "Description": "Escape the argument for use in an SQL statement",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/string-functions.html#function_quote",
+        "Category": "String Functions and Operators"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/string-functions.html",
+        "Title": "14.8 String Functions and Operators",
+        "Name": "REGEXP",
+        "Description": "Whether string matches regular expression",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/regexp.html#operator_regexp",
+        "Category": "String Functions and Operators"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/string-functions.html",
+        "Title": "14.8 String Functions and Operators",
+        "Name": "REGEXP_INSTR()",
+        "Description": "Starting index of substring matching regular expression",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/regexp.html#function_regexp-instr",
+        "Category": "String Functions and Operators"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/string-functions.html",
+        "Title": "14.8 String Functions and Operators",
+        "Name": "REGEXP_LIKE()",
+        "Description": "Whether string matches regular expression",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/regexp.html#function_regexp-like",
+        "Category": "String Functions and Operators"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/string-functions.html",
+        "Title": "14.8 String Functions and Operators",
+        "Name": "REGEXP_REPLACE()",
+        "Description": "Replace substrings matching regular expression",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/regexp.html#function_regexp-replace",
+        "Category": "String Functions and Operators"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/string-functions.html",
+        "Title": "14.8 String Functions and Operators",
+        "Name": "REGEXP_SUBSTR()",
+        "Description": "Return substring matching regular expression",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/regexp.html#function_regexp-substr",
+        "Category": "String Functions and Operators"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/string-functions.html",
+        "Title": "14.8 String Functions and Operators",
+        "Name": "REPEAT()",
+        "Description": "Repeat a string the specified number of times",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/string-functions.html#function_repeat",
+        "Category": "String Functions and Operators"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/string-functions.html",
+        "Title": "14.8 String Functions and Operators",
+        "Name": "REPLACE()",
+        "Description": "Replace occurrences of a specified string",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/string-functions.html#function_replace",
+        "Category": "String Functions and Operators"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/string-functions.html",
+        "Title": "14.8 String Functions and Operators",
+        "Name": "REVERSE()",
+        "Description": "Reverse the characters in a string",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/string-functions.html#function_reverse",
+        "Category": "String Functions and Operators"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/string-functions.html",
+        "Title": "14.8 String Functions and Operators",
+        "Name": "RIGHT()",
+        "Description": "Return the specified rightmost number of characters",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/string-functions.html#function_right",
+        "Category": "String Functions and Operators"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/string-functions.html",
+        "Title": "14.8 String Functions and Operators",
+        "Name": "RLIKE",
+        "Description": "Whether string matches regular expression",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/regexp.html#operator_regexp",
+        "Category": "String Functions and Operators"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/string-functions.html",
+        "Title": "14.8 String Functions and Operators",
+        "Name": "RPAD()",
+        "Description": "Append string the specified number of times",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/string-functions.html#function_rpad",
+        "Category": "String Functions and Operators"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/string-functions.html",
+        "Title": "14.8 String Functions and Operators",
+        "Name": "RTRIM()",
+        "Description": "Remove trailing spaces",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/string-functions.html#function_rtrim",
+        "Category": "String Functions and Operators"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/string-functions.html",
+        "Title": "14.8 String Functions and Operators",
+        "Name": "SOUNDEX()",
+        "Description": "Return a soundex string",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/string-functions.html#function_soundex",
+        "Category": "String Functions and Operators"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/string-functions.html",
+        "Title": "14.8 String Functions and Operators",
+        "Name": "SOUNDS LIKE",
+        "Description": "Compare sounds",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/string-functions.html#operator_sounds-like",
+        "Category": "String Functions and Operators"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/string-functions.html",
+        "Title": "14.8 String Functions and Operators",
+        "Name": "SPACE()",
+        "Description": "Return a string of the specified number of spaces",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/string-functions.html#function_space",
+        "Category": "String Functions and Operators"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/string-functions.html",
+        "Title": "14.8 String Functions and Operators",
+        "Name": "STRCMP()",
+        "Description": "Compare two strings",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/string-comparison-functions.html#function_strcmp",
+        "Category": "String Functions and Operators"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/string-functions.html",
+        "Title": "14.8 String Functions and Operators",
+        "Name": "SUBSTR()",
+        "Description": "Return the substring as specified",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/string-functions.html#function_substr",
+        "Category": "String Functions and Operators"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/string-functions.html",
+        "Title": "14.8 String Functions and Operators",
+        "Name": "SUBSTRING()",
+        "Description": "Return the substring as specified",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/string-functions.html#function_substring",
+        "Category": "String Functions and Operators"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/string-functions.html",
+        "Title": "14.8 String Functions and Operators",
+        "Name": "SUBSTRING_INDEX()",
+        "Description": "Return a substring from a string before the specified number of",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/string-functions.html#function_substring-index",
+        "Category": "String Functions and Operators"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/string-functions.html",
+        "Title": "14.8 String Functions and Operators",
+        "Name": "TO_BASE64()",
+        "Description": "Return the argument converted to a base-64 string",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/string-functions.html#function_to-base64",
+        "Category": "String Functions and Operators"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/string-functions.html",
+        "Title": "14.8 String Functions and Operators",
+        "Name": "TRIM()",
+        "Description": "Remove leading and trailing spaces",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/string-functions.html#function_trim",
+        "Category": "String Functions and Operators"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/string-functions.html",
+        "Title": "14.8 String Functions and Operators",
+        "Name": "UCASE()",
+        "Description": "Synonym for UPPER()",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/string-functions.html#function_ucase",
+        "Category": "String Functions and Operators"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/string-functions.html",
+        "Title": "14.8 String Functions and Operators",
+        "Name": "UNHEX()",
+        "Description": "Return a string containing hex representation of a number",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/string-functions.html#function_unhex",
+        "Category": "String Functions and Operators"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/string-functions.html",
+        "Title": "14.8 String Functions and Operators",
+        "Name": "UPPER()",
+        "Description": "Convert to uppercase",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/string-functions.html#function_upper",
+        "Category": "String Functions and Operators"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/string-functions.html",
+        "Title": "14.8 String Functions and Operators",
+        "Name": "WEIGHT_STRING()",
+        "Description": "Return the weight string for a string",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/string-functions.html#function_weight-string",
+        "Category": "String Functions and Operators"
+    }
+]

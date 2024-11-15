@@ -1,0 +1,19 @@
+{
+    "HTML": [
+        "https://sqlite.org/json1.html"
+    ],
+    "Title": [
+        "4.22. Array and object aggregate functions"
+    ],
+    "Feature": [
+        "4.22. Array and object aggregate functions"
+    ],
+    "Description": [
+        "4.22. Array and object aggregate functions",
+        "The json_group_array(X) function is an\naggregate SQL function that returns a JSON array\ncomprised of all X values in the aggregation.\nSimilarly, the json_group_object(NAME,VALUE) function returns a JSON object\ncomprised of all NAME/VALUE pairs in the aggregation.\nThe \"jsonb_\" variants are the same except that they return their\nresult in the binary JSONB format.\n\n\n\n"
+    ],
+    "Examples": [],
+    "Category": [
+        "JSON Functions"
+    ]
+}

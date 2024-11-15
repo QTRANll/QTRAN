@@ -1,0 +1,27 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/ip-address-functions"
+    ],
+    "Title": [
+        "toIPv4OrNull"
+    ],
+    "Feature": [
+        "toIPv4OrNull(string)"
+    ],
+    "Description": [
+        "toIPv4OrNull",
+        "Same as toIPv4, but if the IPv4 address has an invalid format, it returns null.",
+        "Syntax",
+        "toIPv4OrNull(string)",
+        "Arguments",
+        "string \u2014 IP address. String.",
+        "Returned value",
+        "string converted to the current IPv4 address, or null if string is an invalid address. String."
+    ],
+    "Examples": [
+        "WITH 'fe80:2030:31:24' AS invalid_IPv6_stringSELECT toIPv4OrNull(invalid_IPv6_string);"
+    ],
+    "Category": [
+        "IP Addresses Functions"
+    ]
+}

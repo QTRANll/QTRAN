@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/16/functions-binarystring.html"
+    ],
+    "Title": [
+        "convert_to"
+    ],
+    "Feature": [
+        "convert_to ( string text, dest_encoding name ) → bytea"
+    ],
+    "Description": [
+        "Converts a text string (in the database encoding) to a binary string encoded in encoding dest_encoding (see Section 24.3.4 for available conversions)."
+    ],
+    "Examples": [
+        "convert_to('some_text', 'UTF8') → \\x736f6d655f74657874"
+    ],
+    "Category": [
+        "Binary String Functions and Operators"
+    ]
+}

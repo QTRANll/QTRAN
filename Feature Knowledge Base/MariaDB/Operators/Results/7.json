@@ -1,0 +1,23 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/assignment-operator/"
+    ],
+    "Title": [
+        "Assignment Operator (:=)"
+    ],
+    "Feature": [
+        "var_name := expr\n"
+    ],
+    "Description": [
+        "Assignment operator for assigning a value. The value on the right is assigned to the variable on left.",
+        "Unlike the = operator, := can always be used to assign a value to a variable.",
+        "This operator works with both user-defined variables and local variables.",
+        "When assigning the same value to several variables, LAST_VALUE() can be useful."
+    ],
+    "Examples": [
+        " SELECT @x := 10;\n+----------+\n| @x := 10 |\n+----------+\n|       10 |\n+----------+\n\nSELECT @x, @y := @x;\n+------+----------+\n| @x   | @y := @x |\n+------+----------+\n|   10 |       10 |\n+------+----------+\n"
+    ],
+    "Category": [
+        "Assignment Operators"
+    ]
+}

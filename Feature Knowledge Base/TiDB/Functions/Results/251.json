@@ -1,0 +1,27 @@
+{
+    "HTML": [
+        "https://docs.pingcap.com/zh/tidb/v8.3/miscellaneous-functions"
+    ],
+    "Title": [
+        "NAME_CONST()"
+    ],
+    "Feature": [
+        "NAME_CONST()"
+    ],
+    "Description": [
+        "NAME_CONST()",
+        "函数 NAME_CONST() 用于命名列。建议使用列别名功能代替。",
+        "SELECT NAME_CONST('column name', 'value') UNION ALL SELECT 'another value';\n",
+        "+---------------+\n| column name   |\n+---------------+\n| another value |\n| value         |\n+---------------+\n2 rows in set (0.00 sec)\n",
+        "上面这条语句使用了 NAME_CONST()，下面这条语句使用了列别名的方式（推荐）。",
+        "SELECT 'value' AS 'column name' UNION ALL SELECT 'another value';\n",
+        "+---------------+\n| column name   |\n+---------------+\n| value         |\n| another value |\n+---------------+\n2 rows in set (0.00 sec)\n"
+    ],
+    "Examples": [
+        "SELECT NAME_CONST('column name', 'value') UNION ALL SELECT 'another value';\n",
+        "SELECT 'value' AS 'column name' UNION ALL SELECT 'another value';\n"
+    ],
+    "Category": [
+        "其它函数"
+    ]
+}

@@ -1,0 +1,33 @@
+{
+    "HTML": [
+        "https://sqlite.org/json1.html"
+    ],
+    "Title": [
+        "4.5. The json_array_length() function"
+    ],
+    "Feature": [
+        "4.5. The json_array_length() function"
+    ],
+    "Description": [
+        "4.5. The json_array_length() function",
+        "The json_array_length(X) function returns the number of elements\nin the JSON array X, or 0 if X is some kind of JSON value other\nthan an array.  The json_array_length(X,P) locates the array at path P\nwithin X and returns the length of that array, or 0 if path P locates\nan element in X that is not a JSON array, and NULL if path P does not\nlocate any element of X.  Errors are thrown if either X is not \nwell-formed JSON or if P is not a well-formed path.\n\n",
+        "Examples:\n\n",
+        "json_array_length('[1,2,3,4]')\n→ 4",
+        "json_array_length('[1,2,3,4]', '$')\n→ 4",
+        "json_array_length('[1,2,3,4]', '$[2]')\n→ 0",
+        "json_array_length('{\"one\":[1,2,3]}')\n→ 0",
+        "json_array_length('{\"one\":[1,2,3]}', '$.one')\n→ 3",
+        "json_array_length('{\"one\":[1,2,3]}', '$.two')\n→ NULL"
+    ],
+    "Examples": [
+        "json_array_length('[1,2,3,4]')\n→ 4",
+        "json_array_length('[1,2,3,4]', '$')\n→ 4",
+        "json_array_length('[1,2,3,4]', '$[2]')\n→ 0",
+        "json_array_length('{\"one\":[1,2,3]}')\n→ 0",
+        "json_array_length('{\"one\":[1,2,3]}', '$.one')\n→ 3",
+        "json_array_length('{\"one\":[1,2,3]}', '$.two')\n→ NULL"
+    ],
+    "Category": [
+        "JSON Functions"
+    ]
+}

@@ -1,0 +1,19 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/16/functions-srf.html"
+    ],
+    "Title": [
+        "generate_series"
+    ],
+    "Feature": [
+        "generate_series ( start timestamp, stop timestamp, step interval ) → setof timestamp",
+        "generate_series ( start timestamp with time zone, stop timestamp with time zone, step interval [, timezone text ] ) → setof timestamp with time zone"
+    ],
+    "Description": [
+        "Generates a series of values from start to stop, with a step size of step. In the timezone-aware form, times of day and daylight-savings adjustments are computed according to the time zone named by the timezone argument, or the current TimeZone setting if that is omitted."
+    ],
+    "Examples": [],
+    "Category": [
+        "Set Returning Functions"
+    ]
+}

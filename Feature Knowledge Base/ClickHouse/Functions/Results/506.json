@@ -1,0 +1,27 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/ip-address-functions"
+    ],
+    "Title": [
+        "toIPv6OrZero"
+    ],
+    "Feature": [
+        "toIPv6OrZero(string)"
+    ],
+    "Description": [
+        "toIPv6OrZero",
+        "Same as toIPv6, but if the IPv6 address has an invalid format, it returns ::.",
+        "Syntax",
+        "toIPv6OrZero(string)",
+        "Argument",
+        "string \u2014 IP address. String.",
+        "Returned value",
+        "IP address. IPv6, or :: if string is not a valid format."
+    ],
+    "Examples": [
+        "WITH '127.0.0.1.6' AS invalid_IPv4_stringSELECT toIPv6OrZero(invalid_IPv4_string);"
+    ],
+    "Category": [
+        "IP Addresses Functions"
+    ]
+}

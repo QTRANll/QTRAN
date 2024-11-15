@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/16/functions-array.html"
+    ],
+    "Title": [
+        "array_shuffle"
+    ],
+    "Feature": [
+        "array_shuffle ( anyarray ) → anyarray"
+    ],
+    "Description": [
+        "Randomly shuffles the first dimension of the array."
+    ],
+    "Examples": [
+        "array_shuffle(ARRAY[[1,2],[3,4],[5,6]]) → {{5,6},{1,2},{3,4}}"
+    ],
+    "Category": [
+        "Array Functions and Operators"
+    ]
+}

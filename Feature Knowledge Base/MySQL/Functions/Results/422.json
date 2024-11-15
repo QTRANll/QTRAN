@@ -1,0 +1,27 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.0/en/loadable-function-reference.html"
+    ],
+    "Title": [
+        "14.2 Loadable Function Reference"
+    ],
+    "Name": "asymmetric_decrypt()",
+    "Description": [
+        "\nasymmetric_decrypt(algorithm,\n          data_str,\n          priv_key_str)\n",
+        "\n          Decrypts an encrypted string using the given algorithm and key\n          string, and returns the resulting plaintext as a binary\n          string. If decryption fails, the result is\n          NULL.\n        ",
+        "\n          For the legacy version of this function in use before MySQL\n          8.0.29, see\n          Section\u00a08.6.6, \u201cMySQL Enterprise Encryption Legacy Function Descriptions\u201d.\n        ",
+        "\n          By default, the\n          component_enterprise_encryption function\n          assumes that encrypted text uses the RSAES-OAEP padding\n          scheme. The function supports decryption for content encrypted\n          by the legacy openssl_udf shared library\n          functions if the system variable\n          enterprise_encryption.rsa_support_legacy_padding\n          is set to ON (the default is\n          OFF). When ON is set,\n          the function also supports the RSAES-PKCS1-v1_5 padding\n          scheme, as used by the legacy openssl_udf\n          shared library functions. When OFF is set,\n          content encrypted by the legacy functions cannot be decrypted,\n          and the function returns null output for such content.\n        ",
+        "\nalgorithm is the encryption\n          algorithm used to create the key. The supported algorithm\n          value is 'RSA'.\n        ",
+        "\ndata_str is the encrypted string to\n          decrypt, which was encrypted with\n          asymmetric_encrypt().\n        ",
+        "\npriv_key_str is a valid PEM encoded\n          RSA private key. For successful decryption, the key string\n          must correspond to the public key string used with\n          asymmetric_encrypt() to produce\n          the encrypted string. The\n          asymmetric_encrypt() component\n          function only supports encryption using a public key, so\n          decryption takes place with the corresponding private key.\n        ",
+        "\n          For a usage example, see the description of\n          asymmetric_encrypt().\n        "
+    ],
+    "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/enterprise-encryption-functions.html#function_asymmetric-decrypt",
+    "Feature": [
+        "asymmetric_decrypt(algorithm,\n          data_str,\n          priv_key_str)"
+    ],
+    "Examples": [],
+    "Category": [
+        "Loadable Functions"
+    ]
+}

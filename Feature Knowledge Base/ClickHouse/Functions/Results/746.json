@@ -1,0 +1,28 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/rounding-functions"
+    ],
+    "Title": [
+        "roundAge"
+    ],
+    "Feature": [
+        "roundAge(num)"
+    ],
+    "Description": [
+        "roundAge",
+        "Accepts a number within various commonly used ranges of human age and returns either a maximum or a minimum within that range.",
+        "Syntax",
+        "roundAge(num)",
+        "Parameters",
+        "age: A number representing an age in years. UInt/Float.",
+        "Returned value",
+        "Returns 0, for age<1age \\lt 1age<1.Returns 17, for 1\u2264age\u2264171 \\leq age \\leq 171\u2264age\u226417.Returns 18, for 18\u2264age\u22642418 \\leq age \\leq 2418\u2264age\u226424.Returns 25, for 25\u2264age\u22643425 \\leq age \\leq 3425\u2264age\u226434.Returns 35, for 35\u2264age\u22644435 \\leq age \\leq 4435\u2264age\u226444.Returns 45, for 45\u2264age\u22645445 \\leq age \\leq 5445\u2264age\u226454.Returns 55, for age\u226555age \\geq 55age\u226555.",
+        "Type: UInt8."
+    ],
+    "Examples": [
+        "SELECT *, roundAge(*) FROM system.numbers WHERE number IN (0, 5, 20, 31, 37, 54, 72);"
+    ],
+    "Category": [
+        "Rounding Functions"
+    ]
+}

@@ -1,0 +1,24 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/bit_xor/"
+    ],
+    "Title": [
+        "BIT_XOR"
+    ],
+    "Feature": [
+        "BIT_XOR(expr) [over_clause]\n"
+    ],
+    "Description": [
+        "Returns the bitwise XOR of all bits in expr. The calculation is performed with 64-bit (BIGINT) precision. It is an aggregate function, and so can be used with the GROUP BY clause.",
+        "If no rows match, BIT_XOR will return a value with all bits set to 0. NULL values have no effect on the result unless all results are NULL, which is treated as no match.",
+        "BIT_XOR can be used as a window function with the addition of the over_clause."
+    ],
+    "Examples": [
+        "CREATE TABLE vals (x INT);\n\nINSERT INTO vals VALUES(111),(110),(100);\n\nSELECT BIT_AND(x), BIT_OR(x), BIT_XOR(x) FROM vals;\n+------------+-----------+------------+\n| BIT_AND(x) | BIT_OR(x) | BIT_XOR(x) |\n+------------+-----------+------------+\n|        100 |       111 |        101 |\n+------------+-----------+------------+\n",
+        "CREATE TABLE vals2 (category VARCHAR(1), x INT);\n\nINSERT INTO vals2 VALUES\n  ('a',111),('a',110),('a',100),\n  ('b','000'),('b',001),('b',011);\n\nSELECT category, BIT_AND(x), BIT_OR(x), BIT_XOR(x) \n  FROM vals GROUP BY category;\n+----------+------------+-----------+------------+\n| category | BIT_AND(x) | BIT_OR(x) | BIT_XOR(x) |\n+----------+------------+-----------+------------+\n| a        |        100 |       111 |        101 |\n| b        |          0 |        11 |         10 |\n+----------+------------+-----------+------------+\n",
+        "SELECT BIT_XOR(NULL);\n+---------------+\n| BIT_XOR(NULL) |\n+---------------+\n|             0 |\n+---------------+\n"
+    ],
+    "Category": [
+        "Aggregate Functions"
+    ]
+}

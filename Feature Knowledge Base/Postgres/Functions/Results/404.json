@@ -1,0 +1,18 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/16/functions-info.html"
+    ],
+    "Title": [
+        "has_database_privilege"
+    ],
+    "Feature": [
+        "has_database_privilege ( [ user name or oid, ] database text or oid, privilege text ) → boolean"
+    ],
+    "Description": [
+        "Does user have privilege for database? Allowable privilege types are CREATE, CONNECT, TEMPORARY, and TEMP (which is equivalent to TEMPORARY)."
+    ],
+    "Examples": [],
+    "Category": [
+        "System Information Functions and Operators"
+    ]
+}

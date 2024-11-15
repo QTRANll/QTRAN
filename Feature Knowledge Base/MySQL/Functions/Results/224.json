@@ -1,0 +1,25 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.0/en/built-in-function-reference.html"
+    ],
+    "Title": [
+        "14.1 Built-In Function and Operator Reference"
+    ],
+    "Name": "MID()",
+    "Description": [
+        "\nMID(str,pos),\n          MID(str FROM\n          pos),\n          MID(str,pos,len),\n          MID(str FROM\n          pos FOR\n          len)\n",
+        "\nMID(str,pos,len)\n          is a synonym for\n          SUBSTRING(str,pos,len).\n        "
+    ],
+    "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/string-functions.html#function_mid",
+    "Feature": [
+        "MID(str,pos)",
+        "MID(str FROM\n          pos)",
+        "MID(str,pos,len)",
+        "MID(str FROM\n          pos FOR\n          len)"
+    ],
+    "Examples": [],
+    "Category": [
+        "Built-In Functions and Operators",
+        "String Functions and Operators"
+    ]
+}

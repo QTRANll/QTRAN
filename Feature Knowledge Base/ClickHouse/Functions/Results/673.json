@@ -1,0 +1,26 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/other-functions"
+    ],
+    "Title": [
+        "currentProfiles"
+    ],
+    "Feature": [
+        "currentProfiles()"
+    ],
+    "Description": [
+        "currentProfiles",
+        "Returns a list of the current settings profiles for the current user.",
+        "The command SET PROFILE could be used to change the current setting profile. If the command SET PROFILE was not used the function returns the profiles specified at the current user's definition (see CREATE USER).",
+        "Syntax",
+        "currentProfiles()",
+        "Returned value",
+        "List of the current user settings profiles. Array(String)."
+    ],
+    "Examples": [
+        "currentProfiles()"
+    ],
+    "Category": [
+        "Other Functions"
+    ]
+}

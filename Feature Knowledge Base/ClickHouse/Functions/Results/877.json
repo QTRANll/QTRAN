@@ -1,0 +1,28 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/string-functions"
+    ],
+    "Title": [
+        "encodeXMLComponent"
+    ],
+    "Feature": [
+        "encodeXMLComponent(x)"
+    ],
+    "Description": [
+        "encodeXMLComponent",
+        "Escapes characters with special meaning in XML such that they can afterwards be place into a XML text node or attribute.",
+        "The following characters are replaced: <, &, >, \", '.\nAlso see the list of XML and HTML character entity references.",
+        "Syntax",
+        "encodeXMLComponent(x)",
+        "Arguments",
+        "x \u2014 An input string. String.",
+        "Returned value",
+        "The escaped string. String."
+    ],
+    "Examples": [
+        "SELECT encodeXMLComponent('Hello, \"world\"!');SELECT encodeXMLComponent('<123>');SELECT encodeXMLComponent('&clickhouse');SELECT encodeXMLComponent('\\'foo\\'');"
+    ],
+    "Category": [
+        "Strings Functions"
+    ]
+}

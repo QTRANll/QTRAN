@@ -1,0 +1,29 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.0/en/loadable-function-reference.html"
+    ],
+    "Title": [
+        "14.2 Loadable Function Reference"
+    ],
+    "Name": "mask_canada_sin()",
+    "Description": [
+        "\nmask_canada_sin(str\n              [, mask_char])\n",
+        "\n              Masks a Canada Social Insurance Number (SIN) and returns\n              the number with all meaningful digits replaced by\n              'X' characters. An optional masking\n              character can be specified.\n            ",
+        "\n              Arguments:\n",
+        "\n\nstr: The string to mask.\n                  The accepted formats are:\n\n\n\n                      Nine non-separated digits.\n                    \n                      Nine digits grouped in pattern:\n                      xxx-xxx-xxx\n                      ('-' is any separator\n                      character).\n\n\n\n                  This argument is converted to the\n                  utf8mb4 character set.\n                \nmask_char: (Optional) The\n                  single character to use for masking. The default is\n                  'X' if\n                  mask_char is not given.\n\n",
+        "\n              Return value:\n            ",
+        "\n              The masked Canada SIN as a string encoded in the\n              utf8mb4 character set, an error if the\n              argument is not the correct length, or\n              NULL if str\n              is in incorrect format or contains a multibyte character.\n            ",
+        "\n              Example:\n            ",
+        "Press CTRL+C to copy mysql> SELECT mask_canada_sin('046-454-286'), mask_canada_sin('abcdefijk');\n+--------------------------------+------------------------------+\n| mask_canada_sin('046-454-286') | mask_canada_sin('abcdefijk') |\n+--------------------------------+------------------------------+\n| XXX-XXX-XXX                    | XXXXXXXXX                    |\n+--------------------------------+------------------------------+\nmysql> SELECT mask_canada_sin('909');\nERROR 1123 (HY000): Can't initialize function 'mask_canada_sin'; Argument 0 is too short.\nmysql> SELECT mask_canada_sin('046-454-286-909');\nERROR 1123 (HY000): Can't initialize function 'mask_canada_sin'; Argument 0 is too long."
+    ],
+    "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/data-masking-component-functions.html#function_mask-canada-sin",
+    "Feature": [
+        "mask_canada_sin(str\n              [, mask_char])"
+    ],
+    "Examples": [
+        "mysql> SELECT mask_canada_sin('046-454-286'), mask_canada_sin('abcdefijk');\n+--------------------------------+------------------------------+\n| mask_canada_sin('046-454-286') | mask_canada_sin('abcdefijk') |\n+--------------------------------+------------------------------+\n| XXX-XXX-XXX                    | XXXXXXXXX                    |\n+--------------------------------+------------------------------+\nmysql> SELECT mask_canada_sin('909');\nERROR 1123 (HY000): Can't initialize function 'mask_canada_sin'; Argument 0 is too short.\nmysql> SELECT mask_canada_sin('046-454-286-909');\nERROR 1123 (HY000): Can't initialize function 'mask_canada_sin'; Argument 0 is too long."
+    ],
+    "Category": [
+        "Loadable Functions"
+    ]
+}

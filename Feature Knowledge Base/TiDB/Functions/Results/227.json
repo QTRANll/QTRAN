@@ -1,0 +1,23 @@
+{
+    "HTML": [
+        "https://docs.pingcap.com/zh/tidb/v8.3/window-functions"
+    ],
+    "Title": [
+        "DENSE_RANK()"
+    ],
+    "Feature": [
+        "DENSE_RANK()"
+    ],
+    "Description": [
+        "DENSE_RANK()",
+        "DENSE_RANK() 函数返回当前行的排名。它的作用类似于 RANK()，但在处理具有相同值和排序条件的行时能够确保排名是连续的。",
+        "SELECT\n    *,\n    DENSE_RANK() OVER (ORDER BY n)\nFROM (\n    SELECT 5 AS 'n'\n    UNION ALL\n    SELECT 8\n    UNION ALL\n    SELECT 5\n    UNION ALL\n    SELECT 30\n    UNION ALL\n    SELECT 31\n    UNION ALL\n    SELECT 32) a;\n",
+        "+----+--------------------------------+\n| n  | DENSE_RANK() OVER (ORDER BY n) |\n+----+--------------------------------+\n|  5 |                              1 |\n|  5 |                              1 |\n|  8 |                              2 |\n| 30 |                              3 |\n| 31 |                              4 |\n| 32 |                              5 |\n+----+--------------------------------+\n6 rows in set (0.00 sec)\n"
+    ],
+    "Examples": [
+        "SELECT\n    *,\n    DENSE_RANK() OVER (ORDER BY n)\nFROM (\n    SELECT 5 AS 'n'\n    UNION ALL\n    SELECT 8\n    UNION ALL\n    SELECT 5\n    UNION ALL\n    SELECT 30\n    UNION ALL\n    SELECT 31\n    UNION ALL\n    SELECT 32) a;\n"
+    ],
+    "Category": [
+        "窗口函数"
+    ]
+}

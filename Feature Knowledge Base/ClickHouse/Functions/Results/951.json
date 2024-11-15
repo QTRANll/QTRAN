@@ -1,0 +1,33 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/type-conversion-functions"
+    ],
+    "Title": [
+        "toInt128OrZero"
+    ],
+    "Feature": [
+        "toInt128OrZero(expr)"
+    ],
+    "Description": [
+        "toInt128OrZero",
+        "Like toInt128, this function converts an input value to a value of type Int128 but returns 0 in case of an error.",
+        "Syntax",
+        "toInt128OrZero(expr)",
+        "Arguments",
+        "expr \u2014 Expression returning a number or a string representation of a number. Expression / String.",
+        "Supported arguments:",
+        "String representations of (U)Int8/16/32/128/256.",
+        "Unsupported arguments (return 0):",
+        "String representations of Float32/64 values, including NaN and Inf.String representations of binary and hexadecimal values, e.g. SELECT toInt128OrZero('0xc0fe');.",
+        "NoteIf the input value cannot be represented within the bounds of Int128, overflow or underflow of the result occurs.\nThis is not considered an error.",
+        "Returned value",
+        "128-bit integer value if successful, otherwise 0. Int128.",
+        "NoteThe function uses rounding towards zero, meaning it truncates fractional digits of numbers."
+    ],
+    "Examples": [
+        "SELECT    toInt128OrZero('-128'),    toInt128OrZero('abc')FORMAT Vertical;"
+    ],
+    "Category": [
+        "Type Conversion Functions"
+    ]
+}

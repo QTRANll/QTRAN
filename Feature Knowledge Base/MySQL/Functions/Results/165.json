@@ -1,0 +1,26 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.0/en/built-in-function-reference.html"
+    ],
+    "Title": [
+        "14.1 Built-In Function and Operator Reference"
+    ],
+    "Name": "JSON_MERGE()",
+    "Description": [
+        "\nJSON_MERGE(json_doc,\n          json_doc[,\n          json_doc] ...)\n",
+        "\n          Merges two or more JSON documents. Synonym for\n          JSON_MERGE_PRESERVE(); deprecated in MySQL\n          8.0.3 and subject to removal in a future release.\n        ",
+        "Press CTRL+C to copy mysql> SELECT JSON_MERGE('[1, 2]', '[true, false]');\n+---------------------------------------+\n| JSON_MERGE('[1, 2]', '[true, false]') |\n+---------------------------------------+\n| [1, 2, true, false]                   |\n+---------------------------------------+\n1 row in set, 1 warning (0.00 sec)\n\nmysql> SHOW WARNINGS\\G\n*************************** 1. row ***************************\n  Level: Warning\n   Code: 1287\nMessage: 'JSON_MERGE' is deprecated and will be removed in a future release. \\\n Please use JSON_MERGE_PRESERVE/JSON_MERGE_PATCH instead\n1 row in set (0.00 sec)",
+        "\n          For additional examples, see the entry for\n          JSON_MERGE_PRESERVE().\n        "
+    ],
+    "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/json-modification-functions.html#function_json-merge",
+    "Feature": [
+        "JSON_MERGE(json_doc,\n          json_doc[,\n          json_doc] ...)"
+    ],
+    "Examples": [
+        "mysql> SELECT JSON_MERGE('[1, 2]', '[true, false]');\n+---------------------------------------+\n| JSON_MERGE('[1, 2]', '[true, false]') |\n+---------------------------------------+\n| [1, 2, true, false]                   |\n+---------------------------------------+\n1 row in set, 1 warning (0.00 sec)\n\nmysql> SHOW WARNINGS\\G\n*************************** 1. row ***************************\n  Level: Warning\n   Code: 1287\nMessage: 'JSON_MERGE' is deprecated and will be removed in a future release. \\\n Please use JSON_MERGE_PRESERVE/JSON_MERGE_PATCH instead\n1 row in set (0.00 sec)"
+    ],
+    "Category": [
+        "Built-In Functions and Operators",
+        "JSON Functions"
+    ]
+}

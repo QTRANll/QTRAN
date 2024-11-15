@@ -1,0 +1,25 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.0/en/loadable-function-reference.html"
+    ],
+    "Title": [
+        "14.2 Loadable Function Reference"
+    ],
+    "Name": "create_asymmetric_pub_key()",
+    "Description": [
+        "\ncreate_asymmetric_pub_key(algorithm,\n          priv_key_str)\n",
+        "\n          Derives a public key from the given private key using the\n          given algorithm, and returns the key as a binary string in PEM\n          format. The key is in PKCS #8 format. If key derivation fails,\n          the result is NULL.\n        ",
+        "\n          For the legacy version of this function in use before MySQL\n          8.0.29, see\n          Section\u00a08.6.6, \u201cMySQL Enterprise Encryption Legacy Function Descriptions\u201d.\n        ",
+        "\nalgorithm is the encryption\n          algorithm used to create the key. The supported algorithm\n          value is 'RSA'.\n        ",
+        "\npriv_key_str is a valid PEM encoded\n          RSA private key.\n        ",
+        "\n          For a usage example, see the description of\n          create_asymmetric_priv_key().\n        "
+    ],
+    "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/enterprise-encryption-functions.html#function_create-asymmetric-pub-key",
+    "Feature": [
+        "create_asymmetric_pub_key(algorithm,\n          priv_key_str)"
+    ],
+    "Examples": [],
+    "Category": [
+        "Loadable Functions"
+    ]
+}

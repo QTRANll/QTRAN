@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/16/functions-textsearch.html"
+    ],
+    "Title": [
+        "ts_stat"
+    ],
+    "Feature": [
+        "ts_stat ( sqlquery text [, weights text ] ) → setof record ( word text, ndoc integer, nentry integer )"
+    ],
+    "Description": [
+        "Executes the sqlquery, which must return a single tsvector column, and returns statistics about each distinct lexeme contained in the data. See Section 12.4.4 for details."
+    ],
+    "Examples": [
+        "ts_stat('SELECT vector FROM apod') → (foo,10,15) ..."
+    ],
+    "Category": [
+        "Text Search Functions and Operators"
+    ]
+}

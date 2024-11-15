@@ -1,0 +1,266 @@
+[
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/json-function-reference.html",
+        "Title": "14.17.1 JSON Function Reference",
+        "Name": "->",
+        "Description": "Return value from JSON column after evaluating path; equivalent to",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/json-search-functions.html#operator_json-column-path",
+        "Category": "JSON Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/json-function-reference.html",
+        "Title": "14.17.1 JSON Function Reference",
+        "Name": "->>",
+        "Description": "Return value from JSON column after evaluating path and unquoting",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/json-search-functions.html#operator_json-inline-path",
+        "Category": "JSON Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/json-function-reference.html",
+        "Title": "14.17.1 JSON Function Reference",
+        "Name": "JSON_ARRAY()",
+        "Description": "Create JSON array",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/json-creation-functions.html#function_json-array",
+        "Category": "JSON Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/json-function-reference.html",
+        "Title": "14.17.1 JSON Function Reference",
+        "Name": "JSON_ARRAY_APPEND()",
+        "Description": "Append data to JSON document",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/json-modification-functions.html#function_json-array-append",
+        "Category": "JSON Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/json-function-reference.html",
+        "Title": "14.17.1 JSON Function Reference",
+        "Name": "JSON_ARRAY_INSERT()",
+        "Description": "Insert into JSON array",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/json-modification-functions.html#function_json-array-insert",
+        "Category": "JSON Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/json-function-reference.html",
+        "Title": "14.17.1 JSON Function Reference",
+        "Name": "JSON_CONTAINS()",
+        "Description": "Whether JSON document contains specific object at path",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/json-search-functions.html#function_json-contains",
+        "Category": "JSON Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/json-function-reference.html",
+        "Title": "14.17.1 JSON Function Reference",
+        "Name": "JSON_CONTAINS_PATH()",
+        "Description": "Whether JSON document contains any data at path",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/json-search-functions.html#function_json-contains-path",
+        "Category": "JSON Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/json-function-reference.html",
+        "Title": "14.17.1 JSON Function Reference",
+        "Name": "JSON_DEPTH()",
+        "Description": "Maximum depth of JSON document",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/json-attribute-functions.html#function_json-depth",
+        "Category": "JSON Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/json-function-reference.html",
+        "Title": "14.17.1 JSON Function Reference",
+        "Name": "JSON_EXTRACT()",
+        "Description": "Return data from JSON document",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/json-search-functions.html#function_json-extract",
+        "Category": "JSON Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/json-function-reference.html",
+        "Title": "14.17.1 JSON Function Reference",
+        "Name": "JSON_INSERT()",
+        "Description": "Insert data into JSON document",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/json-modification-functions.html#function_json-insert",
+        "Category": "JSON Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/json-function-reference.html",
+        "Title": "14.17.1 JSON Function Reference",
+        "Name": "JSON_KEYS()",
+        "Description": "Array of keys from JSON document",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/json-search-functions.html#function_json-keys",
+        "Category": "JSON Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/json-function-reference.html",
+        "Title": "14.17.1 JSON Function Reference",
+        "Name": "JSON_LENGTH()",
+        "Description": "Number of elements in JSON document",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/json-attribute-functions.html#function_json-length",
+        "Category": "JSON Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/json-function-reference.html",
+        "Title": "14.17.1 JSON Function Reference",
+        "Name": "JSON_MERGE()",
+        "Description": "Merge JSON documents, preserving duplicate keys. Deprecated",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/json-modification-functions.html#function_json-merge",
+        "Category": "JSON Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/json-function-reference.html",
+        "Title": "14.17.1 JSON Function Reference",
+        "Name": "JSON_MERGE_PATCH()",
+        "Description": "Merge JSON documents, replacing values of duplicate keys",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/json-modification-functions.html#function_json-merge-patch",
+        "Category": "JSON Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/json-function-reference.html",
+        "Title": "14.17.1 JSON Function Reference",
+        "Name": "JSON_MERGE_PRESERVE()",
+        "Description": "Merge JSON documents, preserving duplicate keys",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/json-modification-functions.html#function_json-merge-preserve",
+        "Category": "JSON Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/json-function-reference.html",
+        "Title": "14.17.1 JSON Function Reference",
+        "Name": "JSON_OBJECT()",
+        "Description": "Create JSON object",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/json-creation-functions.html#function_json-object",
+        "Category": "JSON Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/json-function-reference.html",
+        "Title": "14.17.1 JSON Function Reference",
+        "Name": "JSON_OVERLAPS()",
+        "Description": "Compares two JSON documents, returns TRUE (1) if these have any",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/json-search-functions.html#function_json-overlaps",
+        "Category": "JSON Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/json-function-reference.html",
+        "Title": "14.17.1 JSON Function Reference",
+        "Name": "JSON_PRETTY()",
+        "Description": "Print a JSON document in human-readable format",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/json-utility-functions.html#function_json-pretty",
+        "Category": "JSON Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/json-function-reference.html",
+        "Title": "14.17.1 JSON Function Reference",
+        "Name": "JSON_QUOTE()",
+        "Description": "Quote JSON document",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/json-creation-functions.html#function_json-quote",
+        "Category": "JSON Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/json-function-reference.html",
+        "Title": "14.17.1 JSON Function Reference",
+        "Name": "JSON_REMOVE()",
+        "Description": "Remove data from JSON document",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/json-modification-functions.html#function_json-remove",
+        "Category": "JSON Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/json-function-reference.html",
+        "Title": "14.17.1 JSON Function Reference",
+        "Name": "JSON_REPLACE()",
+        "Description": "Replace values in JSON document",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/json-modification-functions.html#function_json-replace",
+        "Category": "JSON Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/json-function-reference.html",
+        "Title": "14.17.1 JSON Function Reference",
+        "Name": "JSON_SCHEMA_VALID()",
+        "Description": "Validate JSON document against JSON schema; returns TRUE/1 if",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/json-validation-functions.html#function_json-schema-valid",
+        "Category": "JSON Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/json-function-reference.html",
+        "Title": "14.17.1 JSON Function Reference",
+        "Name": "JSON_SCHEMA_VALIDATION_REPORT()",
+        "Description": "Validate JSON document against JSON schema; returns report in JSON",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/json-validation-functions.html#function_json-schema-validation-report",
+        "Category": "JSON Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/json-function-reference.html",
+        "Title": "14.17.1 JSON Function Reference",
+        "Name": "JSON_SEARCH()",
+        "Description": "Path to value within JSON document",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/json-search-functions.html#function_json-search",
+        "Category": "JSON Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/json-function-reference.html",
+        "Title": "14.17.1 JSON Function Reference",
+        "Name": "JSON_SET()",
+        "Description": "Insert data into JSON document",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/json-modification-functions.html#function_json-set",
+        "Category": "JSON Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/json-function-reference.html",
+        "Title": "14.17.1 JSON Function Reference",
+        "Name": "JSON_STORAGE_FREE()",
+        "Description": "Freed space within binary representation of JSON column value",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/json-utility-functions.html#function_json-storage-free",
+        "Category": "JSON Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/json-function-reference.html",
+        "Title": "14.17.1 JSON Function Reference",
+        "Name": "JSON_STORAGE_SIZE()",
+        "Description": "Space used for storage of binary representation of a JSON document",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/json-utility-functions.html#function_json-storage-size",
+        "Category": "JSON Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/json-function-reference.html",
+        "Title": "14.17.1 JSON Function Reference",
+        "Name": "JSON_TABLE()",
+        "Description": "Return data from a JSON expression as a relational table",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/json-table-functions.html#function_json-table",
+        "Category": "JSON Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/json-function-reference.html",
+        "Title": "14.17.1 JSON Function Reference",
+        "Name": "JSON_TYPE()",
+        "Description": "Type of JSON value",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/json-attribute-functions.html#function_json-type",
+        "Category": "JSON Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/json-function-reference.html",
+        "Title": "14.17.1 JSON Function Reference",
+        "Name": "JSON_UNQUOTE()",
+        "Description": "Unquote JSON value",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/json-modification-functions.html#function_json-unquote",
+        "Category": "JSON Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/json-function-reference.html",
+        "Title": "14.17.1 JSON Function Reference",
+        "Name": "JSON_VALID()",
+        "Description": "Whether JSON value is valid",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/json-attribute-functions.html#function_json-valid",
+        "Category": "JSON Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/json-function-reference.html",
+        "Title": "14.17.1 JSON Function Reference",
+        "Name": "JSON_VALUE()",
+        "Description": "Extract value from JSON document at location pointed to by path",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/json-search-functions.html#function_json-value",
+        "Category": "JSON Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/json-function-reference.html",
+        "Title": "14.17.1 JSON Function Reference",
+        "Name": "MEMBER OF()",
+        "Description": "Returns true (1) if first operand matches any element of JSON",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/json-search-functions.html#operator_member-of",
+        "Category": "JSON Functions"
+    }
+]

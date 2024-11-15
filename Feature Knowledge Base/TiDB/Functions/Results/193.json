@@ -1,0 +1,23 @@
+{
+    "HTML": [
+        "https://docs.pingcap.com/zh/tidb/v8.3/json-functions-search"
+    ],
+    "Title": [
+        "JSON_OVERLAPS()"
+    ],
+    "Feature": [
+        "JSON_OVERLAPS()"
+    ],
+    "Description": [
+        "JSON_OVERLAPS()",
+        "JSON_OVERLAPS(json_doc, json_doc) 函数检查两个 JSON 文档是否有重叠部分。如果有重叠，则返回 1，如果没有重叠，则返回 0。如果任一参数为 NULL，则返回 NULL。"
+    ],
+    "Examples": [
+        "SELECT JSON_OVERLAPS(\n    '{\"languages\": [\"Go\",\"Rust\",\"C#\"]}',\n    '{\"languages\": [\"Go\",\"Rust\"]}'\n) AS 'Overlaps';\n",
+        "SELECT JSON_OVERLAPS(\n    '{\"languages\": [\"Go\",\"Rust\",\"C#\"]}',\n    '{\"languages\": [\"Go\",\"Rust\",\"C#\"]}'\n) AS 'Overlaps';\n",
+        "SELECT JSON_OVERLAPS(\n    '{\"languages\": [\"Go\",\"Rust\",\"C#\"]}',\n    '{\"languages\": [\"Go\",\"Rust\",\"C#\"], \"arch\": [\"arm64\"]}'\n) AS 'Overlaps';\n"
+    ],
+    "Category": [
+        "搜索 JSON 的函数"
+    ]
+}

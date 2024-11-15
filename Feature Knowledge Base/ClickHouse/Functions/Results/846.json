@@ -1,0 +1,30 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/string-functions"
+    ],
+    "Title": [
+        "substringIndexUTF8"
+    ],
+    "Feature": [
+        "substringIndexUTF8(s, delim, count)"
+    ],
+    "Description": [
+        "substringIndexUTF8",
+        "Returns the substring of s before count occurrences of the delimiter delim, specifically for Unicode code points.",
+        "Assumes that the string contains valid UTF-8 encoded text. If this assumption is violated, no exception is thrown and the result is undefined.",
+        "Syntax",
+        "substringIndexUTF8(s, delim, count)",
+        "Arguments",
+        "s \u2014 The string to extract substring from. String.delim \u2014 The character to split. String.count \u2014 The number of occurrences of the delimiter to count before extracting the substring. If count is positive, everything to the left of the final delimiter (counting from the left) is returned. If count is negative, everything to the right of the final delimiter (counting from the right) is returned. UInt or Int",
+        "Returned value",
+        "A substring String of s before count occurrences of delim.",
+        "Implementation details",
+        "Assumes that the string contains valid UTF-8 encoded text. If this assumption is violated, no exception is thrown and the result is undefined."
+    ],
+    "Examples": [
+        "SELECT substringIndexUTF8('www.stra\u00dfen-in-europa.de', '.', 2)"
+    ],
+    "Category": [
+        "Strings Functions"
+    ]
+}

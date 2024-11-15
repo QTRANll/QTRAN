@@ -1,0 +1,23 @@
+{
+    "HTML": [
+        "https://duckdb.org/docs/sql/functions/lambda"
+    ],
+    "Title": [
+        "reduce"
+    ],
+    "Feature": [
+        "reduce"
+    ],
+    "Description": [
+        "array_reduce",
+        "list_reduce(list, lambda)",
+        "Reduces all elements of the input list into a single value by executing the lambda function on a running result and the next list element. The list must have at least one element \u2013 the use of an initial accumulator value is currently not supported.",
+        "Reduces all elements of the input list into a single value by executing the lambda function on a running result and the next list element. The list must have at least one element \u2013 the use of an initial accumulator value is currently not supported. For more information, see Reduce."
+    ],
+    "Examples": [
+        "list_reduce([4, 5, 6], (x, y) -> x + y)"
+    ],
+    "Category": [
+        "Lambda Functions"
+    ]
+}

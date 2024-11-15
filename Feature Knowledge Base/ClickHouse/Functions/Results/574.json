@@ -1,0 +1,28 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/math-functions"
+    ],
+    "Title": [
+        "atanh"
+    ],
+    "Feature": [
+        "atanh(x)"
+    ],
+    "Description": [
+        "atanh",
+        "Returns the inverse hyperbolic tangent.",
+        "Syntax",
+        "atanh(x)",
+        "Arguments",
+        "x \u2014 Hyperbolic tangent of angle. Values from the interval: \u22121<x<1-1 \\lt x \\lt 1\u22121<x<1. (U)Int*, Float* or Decimal*.",
+        "Returned value",
+        "The angle, in radians. Values from the interval: \u2212\u221e<atanh(x)<+\u221e-\\infty \\lt atanh(x) \\lt +\\infty\u2212\u221e<atanh(x)<+\u221e.",
+        "Type: Float64."
+    ],
+    "Examples": [
+        "SELECT atanh(0);"
+    ],
+    "Category": [
+        "Mathematical Functions"
+    ]
+}

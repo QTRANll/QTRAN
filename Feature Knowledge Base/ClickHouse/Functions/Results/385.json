@@ -1,0 +1,21 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/geo/polygons"
+    ],
+    "Title": [
+        "polygonsDistanceCartesian"
+    ],
+    "Feature": [
+        "polygonsDistanceCartesian"
+    ],
+    "Description": [
+        "polygonsDistanceCartesian",
+        "Calculates distance between two polygons"
+    ],
+    "Examples": [
+        "SELECT polygonsDistanceCartesian([[[(0, 0), (0, 0.1), (0.1, 0.1), (0.1, 0)]]], [[[(10., 10.), (10., 40.), (40., 40.), (40., 10.), (10., 10.)]]])"
+    ],
+    "Category": [
+        "Geo Functions"
+    ]
+}

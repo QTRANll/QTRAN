@@ -1,0 +1,54 @@
+{
+    "HTML": [
+        "https://sqlite.org/json1.html"
+    ],
+    "Title": [
+        "4.9. The -> and ->> operators"
+    ],
+    "Feature": [
+        "4.9. The -> and ->> operators"
+    ],
+    "Description": [
+        "4.9. The -> and ->> operators",
+        "Beginning with SQLite version 3.38.0 (2022-02-22), the ->\nand ->> operators are available for extracting subcomponents of JSON.\nThe SQLite implementation of -> and ->> strives to be\ncompatible with both MySQL and PostgreSQL.\nThe -> and ->> operators take a JSON string or JSONB blob\nas their left operand and a PATH expression or object field\nlabel or array index as their right operand.  The -> operator\nreturns a text JSON representation of the selected subcomponent or\nNULL if that subcomponent does not exist.  The ->> operator returns\nan SQL TEXT, INTEGER, REAL, or NULL value that represents the selected\nsubcomponent, or NULL if the subcomponent does not exist.\n\n",
+        "Both the -> and ->> operators select the same subcomponent\nof the JSON to their left.  The difference is that -> always returns a\nJSON representation of that subcomponent and the ->> operator always\nreturns an SQL representation of that subcomponent.  Thus, these operators\nare subtly different from a two-argument json_extract() function call.\nA call to json_extract() with two arguments will return a JSON representation\nof the subcomponent if and only if the subcomponent is a JSON array or\nobject, and will return an SQL representation of the subcomponent if the\nsubcomponent is a JSON null, string, or numeric value.\n\n",
+        "When the -> operator returns JSON, it always returns the\nRFC 8565 text representation of that JSON, not JSONB.  Use the\njsonb_extract() function if you need a subcomponent in the\nJSONB format.\n\n",
+        "The right-hand operand to the -> and ->> operators can\nbe a well-formed JSON path expression.  This is the form used by MySQL.\nFor compatibility with PostgreSQL,\nthe -> and ->> operators also accept a text object label or\ninteger array index as their right-hand operand.\nIf the right operand is a text\nlabel X, then it is interpreted as the JSON path '$.X'.  If the right\noperand is an integer value N, then it is interpreted as the JSON path '$[N]'\nif it is non-negative.  Or if N is negative integer with value -K, then it\nis interpreted like the JSON path '$[#-K]'.  In other words, the\nindexing begins at the end of the array and moves back toward the front.\nNegative values for N are only supported in SQLite versions 3.47.0\n(2024-10-21) and later.\n\n\n",
+        "Examples:\n\n",
+        "'{\"a\":2,\"c\":[4,5,{\"f\":7}]}' -> '$'\n→ '{\"a\":2,\"c\":[4,5,{\"f\":7}]}'",
+        "'{\"a\":2,\"c\":[4,5,{\"f\":7}]}' -> '$.c'\n→ '[4,5,{\"f\":7}]'",
+        "'{\"a\":2,\"c\":[4,5,{\"f\":7}]}' -> 'c'\n→ '[4,5,{\"f\":7}]'",
+        "'{\"a\":2,\"c\":[4,5,{\"f\":7}]}' -> '$.c[2]'\n→ '{\"f\":7}'",
+        "'{\"a\":2,\"c\":[4,5,{\"f\":7}]}' -> '$.c[2].f'\n→ '7'",
+        "'{\"a\":2,\"c\":[4,5,{\"f\":7}]}' ->> '$.c[2].f'\n→ 7",
+        "'{\"a\":2,\"c\":[4,5,{\"f\":7}]}' -> 'c' -> 2 ->> 'f'\n→ 7",
+        "'{\"a\":2,\"c\":[4,5],\"f\":7}' -> '$.c[#-1]'\n→ '5'",
+        "'{\"a\":2,\"c\":[4,5,{\"f\":7}]}' -> '$.x'\n→ NULL",
+        "'[11,22,33,44]' -> 3\n→ '44'",
+        "'[11,22,33,44]' ->> 3\n→ 44",
+        "'{\"a\":\"xyz\"}' -> '$.a'\n→ '\"xyz\"'",
+        "'{\"a\":\"xyz\"}' ->> '$.a'\n→ 'xyz'",
+        "'{\"a\":null}' -> '$.a'\n→ 'null'",
+        "'{\"a\":null}' ->> '$.a'\n→ NULL"
+    ],
+    "Examples": [
+        "'{\"a\":2,\"c\":[4,5,{\"f\":7}]}' -> '$'\n→ '{\"a\":2,\"c\":[4,5,{\"f\":7}]}'",
+        "'{\"a\":2,\"c\":[4,5,{\"f\":7}]}' -> '$.c'\n→ '[4,5,{\"f\":7}]'",
+        "'{\"a\":2,\"c\":[4,5,{\"f\":7}]}' -> 'c'\n→ '[4,5,{\"f\":7}]'",
+        "'{\"a\":2,\"c\":[4,5,{\"f\":7}]}' -> '$.c[2]'\n→ '{\"f\":7}'",
+        "'{\"a\":2,\"c\":[4,5,{\"f\":7}]}' -> '$.c[2].f'\n→ '7'",
+        "'{\"a\":2,\"c\":[4,5,{\"f\":7}]}' ->> '$.c[2].f'\n→ 7",
+        "'{\"a\":2,\"c\":[4,5,{\"f\":7}]}' -> 'c' -> 2 ->> 'f'\n→ 7",
+        "'{\"a\":2,\"c\":[4,5],\"f\":7}' -> '$.c[#-1]'\n→ '5'",
+        "'{\"a\":2,\"c\":[4,5,{\"f\":7}]}' -> '$.x'\n→ NULL",
+        "'[11,22,33,44]' -> 3\n→ '44'",
+        "'[11,22,33,44]' ->> 3\n→ 44",
+        "'{\"a\":\"xyz\"}' -> '$.a'\n→ '\"xyz\"'",
+        "'{\"a\":\"xyz\"}' ->> '$.a'\n→ 'xyz'",
+        "'{\"a\":null}' -> '$.a'\n→ 'null'",
+        "'{\"a\":null}' ->> '$.a'\n→ NULL"
+    ],
+    "Category": [
+        "JSON Functions"
+    ]
+}

@@ -1,0 +1,24 @@
+{
+    "HTML": [
+        "https://docs.pingcap.com/zh/tidb/v8.3/string-functions"
+    ],
+    "Title": [
+        "REGEXP_LIKE()"
+    ],
+    "Feature": [
+        "REGEXP_LIKE()"
+    ],
+    "Description": [
+        "REGEXP_LIKE()",
+        "判断字符串是否满足正则表达式（与 MySQL 不完全兼容，具体请参考正则函数与 MySQL 的兼容性）",
+        "REGEXP_LIKE(str, regex, [match_type]) 函数用于判断正则表达式是否匹配字符串。可选的 match_type 参数可以用于更改匹配行为。"
+    ],
+    "Examples": [
+        "SELECT REGEXP_LIKE('abc','^a');\n",
+        "SELECT REGEXP_LIKE('abc','^A');\n",
+        "SELECT REGEXP_LIKE('abc','^A','i');\n"
+    ],
+    "Category": [
+        "字符串函数"
+    ]
+}

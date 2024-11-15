@@ -1,0 +1,32 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/type-conversion-functions"
+    ],
+    "Title": [
+        "toDecimal128OrZero"
+    ],
+    "Feature": [
+        "toDecimal128OrZero(expr, S)"
+    ],
+    "Description": [
+        "toDecimal128OrZero",
+        "Like toDecimal128, this function converts an input value to a value of type Decimal(38, S) but returns 0 in case of an error.",
+        "Syntax",
+        "toDecimal128OrZero(expr, S)",
+        "Arguments",
+        "expr \u2014 A String representation of a number. String.S \u2014 Scale parameter between 0 and 38, specifying how many digits the fractional part of a number can have. UInt8.",
+        "Supported arguments:",
+        "String representations of type (U)Int8/16/32/64/128/256.String representations of type Float32/64.",
+        "Unsupported arguments:",
+        "String representations of Float32/64 values NaN and Inf.String representations of binary and hexadecimal values, e.g. SELECT toDecimal128OrZero('0xc0fe', 1);.",
+        "NoteAn overflow can occur if the value of expr exceeds the bounds of Decimal128: ( -1 * 10^(38 - S), 1 * 10^(38 - S) ).\nExcessive digits in a fraction are discarded (not rounded).\nExcessive digits in the integer part will lead to an error.",
+        "Returned value",
+        "Value of type Decimal(38, S) if successful, otherwise 0 with S decimal places. Decimal128(S)."
+    ],
+    "Examples": [
+        "SELECT    toDecimal128OrZero(toString(0.0001), 38) AS a,    toTypeName(a),    toDecimal128OrZero(toString('Inf'), 38) as b,    toTypeName(b)FORMAT Vertical;"
+    ],
+    "Category": [
+        "Type Conversion Functions"
+    ]
+}

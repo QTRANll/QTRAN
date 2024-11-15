@@ -1,0 +1,21 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/ps_thread_stack/"
+    ],
+    "Title": [
+        "ps_thread_stack"
+    ],
+    "Feature": [
+        "sys.ps_thread_stack(thread_id, verbose)\n"
+    ],
+    "Description": [
+        "ps_thread_stack is a stored function available with the Sys Schema that, for a given thread_id, returns all statements, stages, and events within the Performance Schema, as a JSON formatted stack.",
+        "The boolean verbose argument specifies whether or not to include file:lineno information in the events."
+    ],
+    "Examples": [
+        "SELECT sys.ps_thread_stack(13, FALSE) AS thread_stack\\G\n*************************** 1. row ***************************\nthread_stack: {\"rankdir\": \"LR\",\"nodesep\": \"0.10\",\n  \"stack_created\": \"2022-03-28 16:01:06\",\n  \"mysql_version\": \"10.8.2-MariaDB\",\n  \"mysql_user\": \"msandbox@localhost\",\n  \"events\": []}\n"
+    ],
+    "Category": [
+        "No Category"
+    ]
+}

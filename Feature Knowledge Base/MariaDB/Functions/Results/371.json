@@ -1,0 +1,27 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/unix_timestamp/"
+    ],
+    "Title": [
+        "UNIX_TIMESTAMP"
+    ],
+    "Feature": [
+        "UNIX_TIMESTAMP()\nUNIX_TIMESTAMP(date)\n"
+    ],
+    "Description": [
+        "If called with no argument, returns a Unix timestamp (seconds since\n'1970-01-01 00:00:00' UTC) as an unsigned integer. If UNIX_TIMESTAMP()\nis called with a date argument, it returns the value of the argument as seconds\nsince '1970-01-01 00:00:00' UTC. date may be a DATE string, a\nDATETIME string, a TIMESTAMP, or a number in\nthe format YYMMDD or YYYYMMDD. The server interprets date as a value in the\ncurrent time zone and converts it to an internal value in UTC. Clients can set\ntheir time zone as described in time zones.",
+        "The inverse function of UNIX_TIMESTAMP() is FROM_UNIXTIME()",
+        "UNIX_TIMESTAMP() supports microseconds.",
+        "Timestamps in MariaDB have a maximum value of 2147483647, equivalent to 2038-01-19 05:14:07. This is due to the underlying 32-bit limitation. Using the function on a date beyond this will result in NULL being returned. Use DATETIME as a storage type if you require dates beyond this.\n",
+        "Error Handling",
+        "Returns NULL for wrong arguments to UNIX_TIMESTAMP(). In MySQL and MariaDB before 5.3 wrong arguments to UNIX_TIMESTAMP() returned 0. ",
+        "Compatibility",
+        "As you can see in the examples above, UNIX_TIMESTAMP(constant-date-string) returns a timestamp with 6 decimals while MariaDB 5.2 and before returns it without decimals. This can cause a problem if you are using UNIX_TIMESTAMP() as a partitioning function. You can fix this by using FLOOR(UNIX_TIMESTAMP(..)) or changing the date string to a date number, like 20080101000000. "
+    ],
+    "Examples": [
+        "SELECT UNIX_TIMESTAMP();\n+------------------+\n| UNIX_TIMESTAMP() |\n+------------------+\n|       1269711082 |\n+------------------+\n\nSELECT UNIX_TIMESTAMP('2007-11-30 10:30:19');\n+---------------------------------------+\n| UNIX_TIMESTAMP('2007-11-30 10:30:19') |\n+---------------------------------------+\n|                     1196436619.000000 |\n+---------------------------------------+\n\nSELECT UNIX_TIMESTAMP(\"2007-11-30 10:30:19.123456\");\n+----------------------------------------------+\n| unix_timestamp(\"2007-11-30 10:30:19.123456\") |\n+----------------------------------------------+\n|                            1196411419.123456 |\n+----------------------------------------------+\n\nSELECT FROM_UNIXTIME(UNIX_TIMESTAMP('2007-11-30 10:30:19'));\n+------------------------------------------------------+\n| FROM_UNIXTIME(UNIX_TIMESTAMP('2007-11-30 10:30:19')) |\n+------------------------------------------------------+\n| 2007-11-30 10:30:19.000000                           |\n+------------------------------------------------------+\n\nSELECT FROM_UNIXTIME(FLOOR(UNIX_TIMESTAMP('2007-11-30 10:30:19')));\n+-------------------------------------------------------------+\n| FROM_UNIXTIME(FLOOR(UNIX_TIMESTAMP('2007-11-30 10:30:19'))) |\n+-------------------------------------------------------------+\n| 2007-11-30 10:30:19                                         |\n+-------------------------------------------------------------+\n"
+    ],
+    "Category": [
+        "Date & Time Functions"
+    ]
+}

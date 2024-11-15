@@ -1,0 +1,25 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/bitmap-functions"
+    ],
+    "Title": [
+        "bitmapToArray"
+    ],
+    "Feature": [
+        "bitmapToArray(bitmap)"
+    ],
+    "Description": [
+        "bitmapToArray",
+        "Converts bitmap to an integer array.",
+        "Syntax",
+        "bitmapToArray(bitmap)",
+        "Arguments",
+        "bitmap \u2013 Bitmap object."
+    ],
+    "Examples": [
+        "SELECT bitmapToArray(bitmapBuild([1, 2, 3, 4, 5])) AS res;"
+    ],
+    "Category": [
+        "Bitmap Functions"
+    ]
+}

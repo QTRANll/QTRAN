@@ -1,0 +1,28 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/other-functions"
+    ],
+    "Title": [
+        "formatQuery"
+    ],
+    "Feature": [
+        "formatQuery(query)formatQueryOrNull(query)"
+    ],
+    "Description": [
+        "formatQuery",
+        "Returns a formatted, possibly multi-line, version of the given SQL query.",
+        "Throws an exception if the query is not well-formed. To return NULL instead, function formatQueryOrNull() may be used.",
+        "Syntax",
+        "formatQuery(query)formatQueryOrNull(query)",
+        "Arguments",
+        "query - The SQL query to be formatted. String",
+        "Returned value",
+        "The formatted query. String."
+    ],
+    "Examples": [
+        "SELECT formatQuery('select a,    b FRom tab WHERE a > 3 and  b < 3');"
+    ],
+    "Category": [
+        "Other Functions"
+    ]
+}

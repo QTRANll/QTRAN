@@ -1,0 +1,21 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/16/functions-json.html"
+    ],
+    "Title": [
+        "json_object_keys"
+    ],
+    "Feature": [
+        "json_object_keys ( json ) → setof text",
+        "jsonb_object_keys ( jsonb ) → setof text"
+    ],
+    "Description": [
+        "Returns the set of keys in the top-level JSON object."
+    ],
+    "Examples": [
+        "select * from json_object_keys('{\"f1\":\"abc\",\"f2\":{\"f3\":\"a\", \"f4\":\"b\"}}') →"
+    ],
+    "Category": [
+        "JSON Functions and Operators"
+    ]
+}

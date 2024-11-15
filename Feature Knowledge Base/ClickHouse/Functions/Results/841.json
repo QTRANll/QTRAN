@@ -1,0 +1,29 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/string-functions"
+    ],
+    "Title": [
+        "concatWithSeparator"
+    ],
+    "Feature": [
+        "concatWithSeparator(sep, expr1, expr2, expr3...)"
+    ],
+    "Description": [
+        "concatWithSeparator",
+        "Concatenates the given strings with a given separator.",
+        "Syntax",
+        "concatWithSeparator(sep, expr1, expr2, expr3...)",
+        "Alias: concat_ws",
+        "Arguments",
+        "sep \u2014 separator. Const String or FixedString.exprN \u2014 expression to be concatenated. Arguments which are not of types String or FixedString are converted to strings using their default serialization. As this decreases performance, it is not recommended to use non-String/FixedString arguments.",
+        "Returned values",
+        "The String created by concatenating the arguments.",
+        "If any of the argument values is NULL, the function returns NULL."
+    ],
+    "Examples": [
+        "SELECT concatWithSeparator('a', '1', '2', '3', '4')"
+    ],
+    "Category": [
+        "Strings Functions"
+    ]
+}

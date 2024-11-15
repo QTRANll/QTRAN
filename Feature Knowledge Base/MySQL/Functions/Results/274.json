@@ -1,0 +1,26 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.0/en/built-in-function-reference.html"
+    ],
+    "Title": [
+        "14.1 Built-In Function and Operator Reference"
+    ],
+    "Name": "RPAD()",
+    "Description": [
+        "\nRPAD(str,len,padstr)\n",
+        "\n          Returns the string str,\n          right-padded with the string padstr\n          to a length of len characters. If\n          str is longer than\n          len, the return value is shortened\n          to len characters. If\n          str,\n          padstr, or\n          len is NULL, the\n          function returns NULL.\n        ",
+        "Press CTRL+C to copy mysql> SELECT RPAD('hi',5,'?');\n        -> 'hi???'\nmysql> SELECT RPAD('hi',1,'?');\n        -> 'h'",
+        "\n          This function is multibyte safe.\n        "
+    ],
+    "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/string-functions.html#function_rpad",
+    "Feature": [
+        "RPAD(str,len,padstr)"
+    ],
+    "Examples": [
+        "mysql> SELECT RPAD('hi',5,'?');\n        -> 'hi???'\nmysql> SELECT RPAD('hi',1,'?');\n        -> 'h'"
+    ],
+    "Category": [
+        "Built-In Functions and Operators",
+        "String Functions and Operators"
+    ]
+}

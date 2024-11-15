@@ -1,0 +1,29 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.0/en/loadable-function-reference.html"
+    ],
+    "Title": [
+        "14.2 Loadable Function Reference"
+    ],
+    "Name": "mask_pan()",
+    "Description": [
+        "\nmask_pan(str)\n",
+        "\n              Masks a payment card Primary Account Number and returns\n              the number with all but the last four digits replaced by\n              'X' characters.\n            ",
+        "\n              Arguments:\n",
+        "\n\nstr: The string to mask.\n                  The string must be a suitable length for the Primary\n                  Account Number, but is not otherwise checked.\n\n",
+        "\n              Return value:\n            ",
+        "\n              The masked payment number as a string. If the argument is\n              shorter than required, it is returned unchanged.\n            ",
+        "\n              Example:\n            ",
+        "Press CTRL+C to copy mysql> SELECT mask_pan(gen_rnd_pan());\n+-------------------------+\n| mask_pan(gen_rnd_pan()) |\n+-------------------------+\n| XXXXXXXXXXXX9102        |\n+-------------------------+\nmysql> SELECT mask_pan(gen_rnd_pan(19));\n+---------------------------+\n| mask_pan(gen_rnd_pan(19)) |\n+---------------------------+\n| XXXXXXXXXXXXXXX8268       |\n+---------------------------+\nmysql> SELECT mask_pan('a*Z');\n+-----------------+\n| mask_pan('a*Z') |\n+-----------------+\n| a*Z             |\n+-----------------+"
+    ],
+    "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/data-masking-plugin-functions.html#function_mask-pan-plugin",
+    "Feature": [
+        "mask_pan(str)"
+    ],
+    "Examples": [
+        "mysql> SELECT mask_pan(gen_rnd_pan());\n+-------------------------+\n| mask_pan(gen_rnd_pan()) |\n+-------------------------+\n| XXXXXXXXXXXX9102        |\n+-------------------------+\nmysql> SELECT mask_pan(gen_rnd_pan(19));\n+---------------------------+\n| mask_pan(gen_rnd_pan(19)) |\n+---------------------------+\n| XXXXXXXXXXXXXXX8268       |\n+---------------------------+\nmysql> SELECT mask_pan('a*Z');\n+-----------------+\n| mask_pan('a*Z') |\n+-----------------+\n| a*Z             |\n+-----------------+"
+    ],
+    "Category": [
+        "Loadable Functions"
+    ]
+}

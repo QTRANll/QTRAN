@@ -1,0 +1,23 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/type-conversion-functions"
+    ],
+    "Title": [
+        "Common Issues with Data Conversion"
+    ],
+    "Feature": [
+        "Common Issues with Data Conversion"
+    ],
+    "Description": [
+        "Common Issues with Data Conversion",
+        "ClickHouse generally uses the same behavior as C++ programs.",
+        "to<type> functions and cast behave differently in some cases, for example in case of LowCardinality: cast removes LowCardinality trait to<type> functions don't. The same with Nullable, this behaviour is not compatible with SQL standard, and it can be changed using cast_keep_nullable setting.",
+        "NoteBe aware of potential data loss if values of a datatype are converted to a smaller datatype (for example from Int64 to Int32) or between\nincompatible datatypes (for example from String to Int). Make sure to check carefully if the result is as expected."
+    ],
+    "Examples": [
+        "SELECT    toTypeName(toLowCardinality('') AS val) AS source_type,    toTypeName(toString(val)) AS to_type_result_type,    toTypeName(CAST(val, 'String')) AS cast_result_type\u250c\u2500source_type\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500to_type_result_type\u2500\u2500\u2500\u2500\u252c\u2500cast_result_type\u2500\u2510\u2502 LowCardinality(String) \u2502 LowCardinality(String) \u2502 String           \u2502\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518SELECT    toTypeName(toNullable('') AS val) AS source_type,    toTypeName(toString(val)) AS to_type_result_type,    toTypeName(CAST(val, 'String')) AS cast_result_type\u250c\u2500source_type\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500to_type_result_type\u2500\u252c\u2500cast_result_type\u2500\u2510\u2502 Nullable(String) \u2502 Nullable(String)    \u2502 String           \u2502\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518SELECT    toTypeName(toNullable('') AS val) AS source_type,    toTypeName(toString(val)) AS to_type_result_type,    toTypeName(CAST(val, 'String')) AS cast_result_typeSETTINGS cast_keep_nullable = 1\u250c\u2500source_type\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500to_type_result_type\u2500\u252c\u2500cast_result_type\u2500\u2510\u2502 Nullable(String) \u2502 Nullable(String)    \u2502 Nullable(String) \u2502\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518"
+    ],
+    "Category": [
+        "Type Conversion Functions"
+    ]
+}

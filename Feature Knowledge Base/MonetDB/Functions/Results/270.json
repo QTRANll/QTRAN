@@ -1,0 +1,22 @@
+{
+    "HTML": [
+        "https://www.monetdb.org/documentation-Aug2024/user-guide/sql-functions/aggregate-functions"
+    ],
+    "Title": [
+        "sys.group_concat(col_expr)"
+    ],
+    "Feature": [
+        "sys.group_concat(col_expr)"
+    ],
+    "Description": [
+        "Return type: ",
+        "clob",
+        "concatenate non-NULL values in a column or group into one large string with values separated by a comma (the default separator)"
+    ],
+    "Examples": [
+        "sys.group_concat(c)"
+    ],
+    "Category": [
+        "Aggregate Functions"
+    ]
+}

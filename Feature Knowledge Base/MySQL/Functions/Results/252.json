@@ -1,0 +1,28 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.0/en/built-in-function-reference.html"
+    ],
+    "Title": [
+        "14.1 Built-In Function and Operator Reference"
+    ],
+    "Name": "PS_CURRENT_THREAD_ID()",
+    "Description": [
+        "\nPS_CURRENT_THREAD_ID()\n",
+        "\n          Returns a BIGINT UNSIGNED value\n          representing the Performance Schema thread ID assigned to the\n          current connection.\n        ",
+        "\n          The thread ID return value is a value of the type given in the\n          THREAD_ID column of Performance Schema\n          tables.\n        ",
+        "\n          Performance Schema configuration affects\n          PS_CURRENT_THREAD_ID() the same\n          way as for PS_THREAD_ID(). For\n          details, see the description of that function.\n        ",
+        "Press CTRL+C to copy mysql> SELECT PS_CURRENT_THREAD_ID();\n+------------------------+\n| PS_CURRENT_THREAD_ID() |\n+------------------------+\n|                     52 |\n+------------------------+\nmysql> SELECT PS_THREAD_ID(CONNECTION_ID());\n+-------------------------------+\n| PS_THREAD_ID(CONNECTION_ID()) |\n+-------------------------------+\n|                            52 |\n+-------------------------------+",
+        "\nPS_CURRENT_THREAD_ID() was\n          added in MySQL 8.0.16. It may be used as a shortcut for\n          invoking the sys schema\n          ps_thread_id() function with an\n          argument of NULL or\n          CONNECTION_ID().\n        "
+    ],
+    "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/performance-schema-functions.html#function_ps-current-thread-id",
+    "Feature": [
+        "PS_CURRENT_THREAD_ID()"
+    ],
+    "Examples": [
+        "mysql> SELECT PS_CURRENT_THREAD_ID();\n+------------------------+\n| PS_CURRENT_THREAD_ID() |\n+------------------------+\n|                     52 |\n+------------------------+\nmysql> SELECT PS_THREAD_ID(CONNECTION_ID());\n+-------------------------------+\n| PS_THREAD_ID(CONNECTION_ID()) |\n+-------------------------------+\n|                            52 |\n+-------------------------------+"
+    ],
+    "Category": [
+        "Built-In Functions and Operators",
+        "Performance Schema Functions"
+    ]
+}

@@ -1,0 +1,24 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.0/en/loadable-function-reference.html"
+    ],
+    "Title": [
+        "14.2 Loadable Function Reference"
+    ],
+    "Name": "version_tokens_unlock()",
+    "Description": [
+        "\nversion_tokens_unlock()\n",
+        "\n              Releases all locks that were acquired within the current\n              session using\n              version_tokens_lock_exclusive()\n              and\n              version_tokens_lock_shared().\n            ",
+        "Press CTRL+C to copy mysql> SELECT version_tokens_unlock();\n+-------------------------+\n| version_tokens_unlock() |\n+-------------------------+\n|                       1 |\n+-------------------------+"
+    ],
+    "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/version-tokens-reference.html#function_version-tokens-unlock",
+    "Feature": [
+        "version_tokens_unlock()"
+    ],
+    "Examples": [
+        "mysql> SELECT version_tokens_unlock();\n+-------------------------+\n| version_tokens_unlock() |\n+-------------------------+\n|                       1 |\n+-------------------------+"
+    ],
+    "Category": [
+        "Loadable Functions"
+    ]
+}

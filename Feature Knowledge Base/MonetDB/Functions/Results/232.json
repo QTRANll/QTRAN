@@ -1,0 +1,22 @@
+{
+    "HTML": [
+        "https://www.monetdb.org/documentation-Aug2024/user-guide/sql-functions/json-functions"
+    ],
+    "Title": [
+        "json.text(js, Separator str)"
+    ],
+    "Feature": [
+        "json.text(js, Separator str)"
+    ],
+    "Description": [
+        "Return type: ",
+        "clob",
+        "glue together the values in js separated by Separator string"
+    ],
+    "Examples": [
+        "json.text(json '[1,2,3,4]', 'x')"
+    ],
+    "Category": [
+        "JSON Functions"
+    ]
+}

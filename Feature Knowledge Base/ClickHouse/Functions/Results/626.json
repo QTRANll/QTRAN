@@ -1,0 +1,23 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/other-functions"
+    ],
+    "Title": [
+        "formatReadableQuantity"
+    ],
+    "Feature": [
+        "formatReadableQuantity(x)"
+    ],
+    "Description": [
+        "formatReadableQuantity",
+        "Given a number, this function returns a rounded number with suffix (thousand, million, billion, etc.) as string.",
+        "Syntax",
+        "formatReadableQuantity(x)"
+    ],
+    "Examples": [
+        "SELECT    arrayJoin([1024, 1234 * 1000, (4567 * 1000) * 1000, 98765432101234]) AS number,    formatReadableQuantity(number) AS number_for_humans"
+    ],
+    "Category": [
+        "Other Functions"
+    ]
+}

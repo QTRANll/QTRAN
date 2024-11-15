@@ -1,0 +1,27 @@
+{
+    "HTML": [
+        "https://docs.pingcap.com/zh/tidb/v8.3/string-functions"
+    ],
+    "Title": [
+        "REGEXP_REPLACE()"
+    ],
+    "Feature": [
+        "REGEXP_REPLACE()"
+    ],
+    "Description": [
+        "REGEXP_REPLACE()",
+        "替换满足正则表达式的子字符串（与 MySQL 不完全兼容，具体请参考正则函数与 MySQL 的兼容性）",
+        "REGEXP_REPLACE(str, regexp, replace, [start, [match, [match_type]]]) 函数可以用于基于正则表达式替换字符串。"
+    ],
+    "Examples": [
+        "SELECT REGEXP_REPLACE('TooDB', 'o{2}', 'i');\n",
+        "SELECT REGEXP_REPLACE('TooDB', 'o{2}', 'i',3);\n",
+        "SELECT REGEXP_REPLACE('TooDB', 'o', 'i',1,1);\n",
+        "SELECT REGEXP_REPLACE('TooDB', 'o', 'i',1,2);\n",
+        "SELECT REGEXP_REPLACE('TooDB', 'O{2}','i',1,1);\n",
+        "SELECT REGEXP_REPLACE('TooDB', 'O{2}','i',1,1,'i');\n"
+    ],
+    "Category": [
+        "字符串函数"
+    ]
+}

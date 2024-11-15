@@ -1,0 +1,23 @@
+{
+    "HTML": [
+        "https://docs.pingcap.com/zh/tidb/v8.3/json-functions-search"
+    ],
+    "Title": [
+        "JSON_CONTAINS_PATH()"
+    ],
+    "Feature": [
+        "JSON_CONTAINS_PATH()"
+    ],
+    "Description": [
+        "JSON_CONTAINS_PATH()",
+        "JSON_CONTAINS_PATH(json_doc,all_or_one,path [,path, ...]) 函数返回 0 或 1，表示 JSON 文档是否包含指定路径下的数据。"
+    ],
+    "Examples": [
+        "SELECT JSON_CONTAINS_PATH('{\"foo\": \"bar\", \"aaa\": 5}','all','$.foo');\n",
+        "SELECT JSON_CONTAINS_PATH('{\"foo\": \"bar\", \"aaa\": 5}','all','$.bar');\n",
+        "SELECT JSON_CONTAINS_PATH('{\"foo\": \"bar\", \"aaa\": 5}','all','$.foo', '$.aaa');\n"
+    ],
+    "Category": [
+        "搜索 JSON 的函数"
+    ]
+}

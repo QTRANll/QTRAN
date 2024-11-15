@@ -1,0 +1,29 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/date-time-functions"
+    ],
+    "Title": [
+        "date_trunc"
+    ],
+    "Feature": [
+        "date_trunc(unit, value[, timezone])"
+    ],
+    "Description": [
+        "date_trunc",
+        "Truncates date and time data to the specified part of date.",
+        "Syntax",
+        "date_trunc(unit, value[, timezone])",
+        "Alias: dateTrunc.",
+        "Arguments",
+        "unit \u2014 The type of interval to truncate the result. String Literal.\nPossible values:nanosecond - Compatible only with DateTime64microsecond - Compatible only with DateTime64milisecond - Compatible only with DateTime64secondminutehourdayweekmonthquarteryearunit argument is case-insensitive.value \u2014 Date and time. Date, Date32, DateTime or DateTime64.timezone \u2014 Timezone name for the returned value (optional). If not specified, the function uses the timezone of the value parameter. String.",
+        "Returned value",
+        "Value, truncated to the specified part of date. DateTime."
+    ],
+    "Examples": [
+        "SELECT now(), date_trunc('hour', now());",
+        "SELECT now(), date_trunc('hour', now(), 'Asia/Istanbul');"
+    ],
+    "Category": [
+        "Dates and Times Functions"
+    ]
+}

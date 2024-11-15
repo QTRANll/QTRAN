@@ -1,0 +1,28 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.0/en/built-in-function-reference.html"
+    ],
+    "Title": [
+        "14.1 Built-In Function and Operator Reference"
+    ],
+    "Name": "LEAD()",
+    "Description": [
+        "\nLEAD(expr [,\n            N[,\n            default]])\n            [null_treatment]\n            over_clause\n",
+        "\n            Returns the value of expr from\n            the row that leads (follows) the current row by\n            N rows within its partition. If\n            there is no such row, the return value is\n            default. For example, if\n            N is 3, the return value is\n            default for the last three rows.\n            If N or\n            default are missing, the defaults\n            are 1 and NULL, respectively.\n          ",
+        "\nN must be a literal nonnegative\n            integer. If N is 0,\n            expr is evaluated for the current\n            row.\n          ",
+        "\n            Beginning with MySQL 8.0.22, N\n            cannot be NULL. In addition, it must now\n            be an integer in the range 0 to\n            263,\n            inclusive, in any of the following forms:\n",
+        "\n\n                an unsigned integer constant literal\n              \n                a positional parameter marker (?)\n              \n                a user-defined variable\n              \n                a local variable in a stored routine\n\n",
+        "\nover_clause is as described in\n            Section\u00a014.20.2, \u201cWindow Function Concepts and Syntax\u201d.\n            null_treatment is as described in\n            the section introduction.\n          ",
+        "\n            For an example, see the LAG()\n            function description.\n          ",
+        "\n            In MySQL 8.0.22 and later, use of a negative value for the\n            rows argument of this function is not permitted.\n          "
+    ],
+    "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/window-function-descriptions.html#function_lead",
+    "Feature": [
+        "LEAD(expr [,\n            N[,\n            default]])"
+    ],
+    "Examples": [],
+    "Category": [
+        "Built-In Functions and Operators",
+        "Window Functions"
+    ]
+}

@@ -1,0 +1,32 @@
+{
+    "HTML": [
+        "https://docs.pingcap.com/zh/tidb/v8.3/tidb-functions"
+    ],
+    "Title": [
+        "TIDB_ROW_CHECKSUM"
+    ],
+    "Feature": [
+        "TIDB_ROW_CHECKSUM"
+    ],
+    "Description": [
+        "TIDB_ROW_CHECKSUM",
+        "TIDB_ROW_CHECKSUM() 函数用于查询行数据的 Checksum 值。该函数只能用于 FastPlan 流程的 SELECT 语句，即你可通过形如 SELECT TIDB_ROW_CHECKSUM() FROM t WHERE id = ? 或 SELECT TIDB_ROW_CHECKSUM() FROM t WHERE id IN (?, ?, ...) 的语句进行查询。",
+        "在 TiDB 中开启行数据 Checksum 功能 tidb_enable_row_level_checksum：",
+        "SET GLOBAL tidb_enable_row_level_checksum = ON;\n",
+        "上述配置仅对新创建的会话生效，因此需要重新连接 TiDB。",
+        "创建表 t 并插入数据：",
+        "USE test;\nCREATE TABLE t (id INT PRIMARY KEY, k INT, c CHAR(1));\nINSERT INTO t VALUES (1, 10, 'a');\n",
+        "查询表 t 中 id = 1 的行数据的 Checksum 值：",
+        "SELECT *, TIDB_ROW_CHECKSUM() FROM t WHERE id = 1;\n",
+        "输出结果如下：",
+        "+----+------+------+---------------------+\n| id | k    | c    | TIDB_ROW_CHECKSUM() |\n+----+------+------+---------------------+\n|  1 |   10 | a    | 3813955661          |\n+----+------+------+---------------------+\n1 row in set (0.000 sec)\n"
+    ],
+    "Examples": [
+        "SET GLOBAL tidb_enable_row_level_checksum = ON;\n",
+        "USE test;\nCREATE TABLE t (id INT PRIMARY KEY, k INT, c CHAR(1));\nINSERT INTO t VALUES (1, 10, 'a');\n",
+        "SELECT *, TIDB_ROW_CHECKSUM() FROM t WHERE id = 1;\n"
+    ],
+    "Category": [
+        "TiDB 特有的函数"
+    ]
+}

@@ -1,0 +1,32 @@
+{
+    "HTML": [
+        "https://sqlite.org/json1.html"
+    ],
+    "Title": [
+        "4.14. The json_patch() function"
+    ],
+    "Feature": [
+        "4.14. The json_patch() function"
+    ],
+    "Description": [
+        "4.14. The json_patch() function",
+        "The json_patch(T,P) SQL function runs the\nRFC-7396 MergePatch algorithm\nto apply patch P against input T.  The patched copy of T is returned.\n\n",
+        "MergePatch can add, modify, or delete elements of a JSON Object,\nand so for JSON Objects, the json_patch() routine is a generalized\nreplacement for json_set() and json_remove().  However, MergePatch\ntreats JSON Array objects as atomic.  MergePatch cannot append to an\nArray nor modify individual elements of an Array.  It can only insert,\nreplace, or delete the whole Array as a single unit.  Hence, json_patch()\nis not as useful when dealing with JSON that includes Arrays,\nespecially Arrays with lots of substructure.\n\n",
+        "Examples:\n\n",
+        "json_patch('{\"a\":1,\"b\":2}','{\"c\":3,\"d\":4}')\n→ '{\"a\":1,\"b\":2,\"c\":3,\"d\":4}'",
+        "json_patch('{\"a\":[1,2],\"b\":2}','{\"a\":9}')\n→ '{\"a\":9,\"b\":2}'",
+        "json_patch('{\"a\":[1,2],\"b\":2}','{\"a\":null}')\n→ '{\"b\":2}'",
+        "json_patch('{\"a\":1,\"b\":2}','{\"a\":9,\"b\":null,\"c\":8}')\n→ '{\"a\":9,\"c\":8}'",
+        "json_patch('{\"a\":{\"x\":1,\"y\":2},\"b\":3}','{\"a\":{\"y\":9},\"c\":8}')\n→ '{\"a\":{\"x\":1,\"y\":9},\"b\":3,\"c\":8}'"
+    ],
+    "Examples": [
+        "json_patch('{\"a\":1,\"b\":2}','{\"c\":3,\"d\":4}')\n→ '{\"a\":1,\"b\":2,\"c\":3,\"d\":4}'",
+        "json_patch('{\"a\":[1,2],\"b\":2}','{\"a\":9}')\n→ '{\"a\":9,\"b\":2}'",
+        "json_patch('{\"a\":[1,2],\"b\":2}','{\"a\":null}')\n→ '{\"b\":2}'",
+        "json_patch('{\"a\":1,\"b\":2}','{\"a\":9,\"b\":null,\"c\":8}')\n→ '{\"a\":9,\"c\":8}'",
+        "json_patch('{\"a\":{\"x\":1,\"y\":2},\"b\":3}','{\"a\":{\"y\":9},\"c\":8}')\n→ '{\"a\":{\"x\":1,\"y\":9},\"b\":3,\"c\":8}'"
+    ],
+    "Category": [
+        "JSON Functions"
+    ]
+}

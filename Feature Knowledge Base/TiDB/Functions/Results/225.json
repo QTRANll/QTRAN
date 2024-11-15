@@ -1,0 +1,17 @@
+{
+    "HTML": "https://dev.mysql.com/doc/refman/8.0/en/aggregate-functions.html#function_stddev-samp",
+    "Title": "STDDEV_SAMP()",
+    "Feature": [
+        "STDDEV_SAMP(expr)\n            [over_clause]"
+    ],
+    "Description": [
+        "\nSTDDEV_SAMP(expr)\n            [over_clause]\n",
+        "\n            Returns the sample standard deviation of\n            expr (the square root of\n            VAR_SAMP().\n          ",
+        "\n            If there are no matching rows, or if\n            expr is NULL,\n            STDDEV_SAMP() returns\n            NULL.\n          ",
+        "\n            This function executes as a window function if\n            over_clause is present.\n            over_clause is as described in\n            Section 14.20.2, “Window Function Concepts and Syntax”.\n          "
+    ],
+    "Examples": [],
+    "Category": [
+        "GROUP BY 聚合函数"
+    ]
+}

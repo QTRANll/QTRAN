@@ -1,0 +1,27 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/string-search-functions"
+    ],
+    "Title": [
+        "extractGroups"
+    ],
+    "Feature": [
+        "extractGroups(haystack, pattern)"
+    ],
+    "Description": [
+        "extractGroups",
+        "Match all groups of given input string with a given regular expression, returns an array of arrays of matches.",
+        "Syntax",
+        "extractGroups(haystack, pattern)",
+        "Arguments",
+        "haystack \u2014 Input string. String.pattern \u2014 Regular expression with re2 regular expression syntax. Must contain groups, each group enclosed in parentheses. If pattern contains no groups, an exception is thrown. String.",
+        "Returned value",
+        "Array of arrays of matches. Array."
+    ],
+    "Examples": [
+        "SELECT extractGroups('hello abc=111 world', '(\"[^\"]+\"|\\\\w+)=(\"[^\"]+\"|\\\\w+)') AS result;"
+    ],
+    "Category": [
+        "Searching in Strings Functions"
+    ]
+}

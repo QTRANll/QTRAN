@@ -1,0 +1,28 @@
+{
+    "HTML": [
+        "https://docs.pingcap.com/zh/tidb/v8.3/json-functions-modify"
+    ],
+    "Title": [
+        "JSON_INSERT()"
+    ],
+    "Feature": [
+        "JSON_INSERT()"
+    ],
+    "Description": [
+        "JSON_INSERT()",
+        "JSON_INSERT(json_doc,path,value[,path,value] ...) 函数将一个或多个值插入到 JSON 文档，并返回结果。",
+        "该函数可接受成对的 path 和 value 参数。",
+        "SELECT JSON_INSERT(\n    '{\"language\": [\"Go\", \"Rust\", \"C++\"]}',\n    '$.architecture', 'riscv',\n    '$.os', JSON_ARRAY(\"linux\",\"freebsd\")\n) AS \"Demo\";\n",
+        "+------------------------------------------------------------------------------------------+\n| Demo                                                                                     |\n+------------------------------------------------------------------------------------------+\n| {\"architecture\": \"riscv\", \"language\": [\"Go\", \"Rust\", \"C++\"], \"os\": [\"linux\", \"freebsd\"]} |\n+------------------------------------------------------------------------------------------+\n1 row in set (0.00 sec)\n",
+        "请注意，该函数不会覆盖现有属性。例如，以下语句看起来会覆盖 \"a\" 属性现有的值，但实际上并不会。",
+        "SELECT JSON_INSERT('{\"a\": 61, \"b\": 62}', '$.a', 41, '$.c', 63);\n",
+        "+---------------------------------------------------------+\n| JSON_INSERT('{\"a\": 61, \"b\": 62}', '$.a', 41, '$.c', 63) |\n+---------------------------------------------------------+\n| {\"a\": 61, \"b\": 62, \"c\": 63}                             |\n+---------------------------------------------------------+\n1 row in set (0.00 sec)\n"
+    ],
+    "Examples": [
+        "SELECT JSON_INSERT(\n    '{\"language\": [\"Go\", \"Rust\", \"C++\"]}',\n    '$.architecture', 'riscv',\n    '$.os', JSON_ARRAY(\"linux\",\"freebsd\")\n) AS \"Demo\";\n",
+        "SELECT JSON_INSERT('{\"a\": 61, \"b\": 62}', '$.a', 41, '$.c', 63);\n"
+    ],
+    "Category": [
+        "修改 JSON 的函数"
+    ]
+}

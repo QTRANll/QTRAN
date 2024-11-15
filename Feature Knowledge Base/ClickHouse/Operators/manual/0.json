@@ -1,0 +1,22 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/operators"
+    ],
+    "Title": [
+        "EXTRACT"
+    ],
+    "Feature": [
+        "EXTRACT(part FROM date);"
+    ],
+    "Description": [
+        "Extract parts from a given date. For example, you can retrieve a month from a given date, or a second from a time.\n\nThe part parameter specifies which part of the date to retrieve. The following values are available:\n\nDAY — The day of the month. Possible values: 1–31.\nMONTH — The number of a month. Possible values: 1–12.\nYEAR — The year.\nSECOND — The second. Possible values: 0–59.\nMINUTE — The minute. Possible values: 0–59.\nHOUR — The hour. Possible values: 0–23.\nThe part parameter is case-insensitive.\n\nThe date parameter specifies the date or the time to process. Either Date or DateTime type is supported."
+    ],
+    "Examples": [
+        "SELECT EXTRACT(DAY FROM toDate('2017-06-15'));",
+        "SELECT EXTRACT(MONTH FROM toDate('2017-06-15'));",
+        "SELECT EXTRACT(YEAR FROM toDate('2017-06-15'));"
+    ],
+    "Category": [
+        "Operators for Working with Dates and Times"
+    ]
+}

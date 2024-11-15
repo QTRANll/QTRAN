@@ -1,0 +1,21 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/xor/"
+    ],
+    "Title": [
+        "XOR"
+    ],
+    "Feature": [
+        "XOR\n"
+    ],
+    "Description": [
+        "XOR stands for eXclusive OR. Returns NULL if either operand is NULL. For non-NULL\noperands, evaluates to 1 if an odd number of operands is non-zero,\notherwise 0 is returned."
+    ],
+    "Examples": [
+        "SELECT 1 XOR 1;\n+---------+\n| 1 XOR 1 |\n+---------+\n|       0 |\n+---------+\n\nSELECT 1 XOR 0;\n+---------+\n| 1 XOR 0 |\n+---------+\n|       1 |\n+---------+\n\nSELECT 1 XOR NULL;\n+------------+\n| 1 XOR NULL |\n+------------+\n|       NULL |\n+------------+\n",
+        "SELECT 1 XOR 1 XOR 1;\n+---------------+\n| 1 XOR 1 XOR 1 |\n+---------------+\n|             1 |\n+---------------+\n"
+    ],
+    "Category": [
+        "Logical Operators"
+    ]
+}

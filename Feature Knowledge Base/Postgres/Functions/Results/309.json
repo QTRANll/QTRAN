@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/16/functions-range.html"
+    ],
+    "Title": [
+        "range_merge"
+    ],
+    "Feature": [
+        "range_merge ( anymultirange ) → anyrange"
+    ],
+    "Description": [
+        "Computes the smallest range that includes the entire multirange."
+    ],
+    "Examples": [
+        "range_merge('{[1,2), [3,4)}'::int4multirange) → [1,4)"
+    ],
+    "Category": [
+        "Range divide Multirange Functions and Operators"
+    ]
+}

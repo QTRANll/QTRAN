@@ -1,0 +1,23 @@
+{
+    "HTML": [
+        "https://docs.pingcap.com/zh/tidb/v8.3/encryption-and-compression-functions"
+    ],
+    "Title": [
+        "SHA1()"
+    ],
+    "Feature": [
+        "SHA1()"
+    ],
+    "Description": [
+        "SHA1()",
+        "SHA1(expr) 函数为给定参数 expr 计算 160 位 SHA-1 哈希值。",
+        "SELECT SHA1('abc');\n",
+        "+------------------------------------------+\n| SHA1('abc')                              |\n+------------------------------------------+\n| a9993e364706816aba3e25717850c26c9cd0d89d |\n+------------------------------------------+\n1 row in set (0.00 sec)\n"
+    ],
+    "Examples": [
+        "SELECT SHA1('abc');\n"
+    ],
+    "Category": [
+        "加密和压缩函数"
+    ]
+}

@@ -1,0 +1,27 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/type-conversion-functions"
+    ],
+    "Title": [
+        "parseDateTime64BestEffort"
+    ],
+    "Feature": [
+        "parseDateTime64BestEffort(time_string [, precision [, time_zone]])"
+    ],
+    "Description": [
+        "parseDateTime64BestEffort",
+        "Same as parseDateTimeBestEffort function but also parse milliseconds and microseconds and returns DateTime data type.",
+        "Syntax",
+        "parseDateTime64BestEffort(time_string [, precision [, time_zone]])",
+        "Arguments",
+        "time_string \u2014 String containing a date or date with time to convert. String.precision \u2014 Required precision. 3 \u2014 for milliseconds, 6 \u2014 for microseconds. Default \u2014 3. Optional. UInt8.time_zone \u2014 Timezone. The function parses time_string according to the timezone. Optional. String.",
+        "Returned value",
+        "time_string converted to the DateTime data type."
+    ],
+    "Examples": [
+        "SELECT parseDateTime64BestEffort('2021-01-01') AS a, toTypeName(a) AS tUNION ALLSELECT parseDateTime64BestEffort('2021-01-01 01:01:00.12346') AS a, toTypeName(a) AS tUNION ALLSELECT parseDateTime64BestEffort('2021-01-01 01:01:00.12346',6) AS a, toTypeName(a) AS tUNION ALLSELECT parseDateTime64BestEffort('2021-01-01 01:01:00.12346',3,'Asia/Istanbul') AS a, toTypeName(a) AS tFORMAT PrettyCompactMonoBlock;"
+    ],
+    "Category": [
+        "Type Conversion Functions"
+    ]
+}

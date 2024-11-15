@@ -1,0 +1,29 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/date-time-functions"
+    ],
+    "Title": [
+        "timestamp_sub"
+    ],
+    "Feature": [
+        "timestamp_sub(unit, value, date)"
+    ],
+    "Description": [
+        "timestamp_sub",
+        "Subtracts the time interval from the provided date or date with time.",
+        "If the subtraction results in a value outside the bounds of the data type, the result is undefined.",
+        "Syntax",
+        "timestamp_sub(unit, value, date)",
+        "Aliases: timeStampSub, TIMESTAMP_SUB.",
+        "Arguments",
+        "unit \u2014 The type of interval to subtract. String.\nPossible values:secondminutehourdayweekmonthquarteryearvalue \u2014 Value of interval to subtract. Int.date \u2014 Date or date with time. Date, Date32, DateTime or DateTime64.",
+        "Returned value",
+        "Date or date with time obtained by subtracting value, expressed in unit, from date. Date, Date32, DateTime or DateTime64."
+    ],
+    "Examples": [
+        "select timestamp_sub(MONTH, 5, toDateTime('2018-12-18 01:02:03'));"
+    ],
+    "Category": [
+        "Dates and Times Functions"
+    ]
+}

@@ -1,0 +1,18 @@
+{
+    "HTML": [
+        "https://sqlite.org/lang_corefunc.html"
+    ],
+    "Title": [
+        "hex(X)"
+    ],
+    "Feature": [
+        "hex(X)"
+    ],
+    "Description": [
+        "\n  The hex() function interprets its argument as a BLOB and returns\n  a string which is the upper-case hexadecimal rendering of the content of\n  that blob.\n  \n  If the argument X in \"hex(X)\" is an\n  integer or floating point number, then \"interprets its argument as a BLOB\" means\n  that the binary number is first converted into a UTF8 text representation, then\n  that text is interpreted as a BLOB.  Hence, \"hex(12345678)\" renders\n  as \"3132333435363738\" not the binary representation of the integer value\n  \"0000000000BC614E\".\n  \n  See also:  unhex()\n"
+    ],
+    "Examples": [],
+    "Category": [
+        "Core SQL Functions"
+    ]
+}

@@ -1,0 +1,30 @@
+{
+    "HTML": [
+        "https://mariadb.com/kb/en/row/"
+    ],
+    "Title": [
+        "ROW"
+    ],
+    "Feature": [
+        "ROW (<field name> <data type> [{, <field name> <data type>}... ])"
+    ],
+    "Description": [
+        "ROW is a data type for stored procedure variables."
+    ],
+    "Examples": [
+        "DELIMITER $$\nCREATE PROCEDURE p1()\nBEGIN\n  DECLARE r ROW (c1 INT, c2 VARCHAR(10));\n  SET r.c1= 10;\n  SET r.c2= 'test';\n  INSERT INTO t1 VALUES (r.c1, r.c2);\nEND;\n$$\nDELIMITER ;\nCALL p1();\n",
+        "DROP TABLE IF EXISTS t1;\nCREATE TABLE t1 (a INT, b VARCHAR(32));\nINSERT INTO t1 VALUES (10,'b10');\nINSERT INTO t1 VALUES (20,'b20');\nINSERT INTO t1 VALUES (30,'b30');\n\nSET sql_mode=oracle;\nDROP PROCEDURE IF EXISTS p1;\nDELIMITER $$\nCREATE PROCEDURE p1 AS\n  rec ROW(a INT, b VARCHAR(32));\n  CURSOR c IS SELECT a,b FROM t1;\nBEGIN\n  OPEN c;\n  LOOP\n    FETCH c INTO rec;\n    EXIT WHEN c%NOTFOUND;\n    SELECT ('rec=(' || rec.a ||','|| rec.b||')');\n  END LOOP;\n  CLOSE c;\nEND;\n$$\nDELIMITER ;\nCALL p1();\n",
+        "DROP TABLE IF EXISTS t1;\nCREATE TABLE t1 (a INT, b VARCHAR(32));\nINSERT INTO t1 VALUES (10,'b10');\nINSERT INTO t1 VALUES (20,'b20');\nINSERT INTO t1 VALUES (30,'b30');\n\nSET sql_mode=DEFAULT;\nDROP PROCEDURE IF EXISTS p1;\nDELIMITER $$\nCREATE PROCEDURE p1()\nBEGIN\n  DECLARE done INT DEFAULT FALSE;\n  DECLARE rec ROW(a INT, b VARCHAR(32));\n  DECLARE c CURSOR FOR SELECT a,b FROM t1;\n  DECLARE CONTINUE HANDLER FOR NOT FOUND SET done = TRUE;\n  OPEN c;\nread_loop:\n  LOOP\n    FETCH c INTO rec;\n    IF done THEN\n      LEAVE read_loop;\n    END IF;\n    SELECT CONCAT('rec=(',rec.a,',',rec.b,')');\n  END LOOP;\n  CLOSE c;\nEND;\n$$\nDELIMITER ;\nCALL p1();\n",
+        "SET sql_mode=DEFAULT;\nDROP TABLE IF EXISTS t1;\nDROP PROCEDURE IF EXISTS p1;\nCREATE TABLE t1 (a INT, b VARCHAR(32));\nINSERT INTO t1 VALUES (10,'b10');\nDELIMITER $$\nCREATE PROCEDURE p1()\nBEGIN\n  DECLARE rec1 ROW(a INT, b VARCHAR(32));\n  SELECT * FROM t1 INTO rec1;\n  SELECT rec1.a, rec1.b;\nEND;\n$$\nDELIMITER ;\nCALL p1();\n",
+        "+--------+--------+\n| rec1.a | rec1.b |\n+--------+--------+\n|     10 | b10    |\n+--------+--------+\n",
+        "SET sql_mode=ORACLE;\nDROP TABLE IF EXISTS t1;\nDROP PROCEDURE IF EXISTS p1;\nCREATE TABLE t1 (a INT, b VARCHAR(32));\nINSERT INTO t1 VALUES (10,'b10');\nDELIMITER $$\nCREATE PROCEDURE p1 AS\n  rec1 ROW(a INT, b VARCHAR(32));\nBEGIN\n  SELECT * FROM t1 INTO rec1;\n  SELECT rec1.a, rec1.b;\nEND;\n$$\nDELIMITER ;\nCALL p1();\n",
+        "+--------+--------+\n| rec1.a | rec1.b |\n+--------+--------+\n|     10 | b10    |\n+--------+--------+\n",
+        "SET sql_mode=ORACLE;\nDROP TABLE IF EXISTS t1;\nDROP PROCEDURE IF EXISTS p1;\nCREATE TABLE t1 (a INT, b VARCHAR(32));\nINSERT INTO t1 VALUES (10,'b10');\nDELIMITER $$\nCREATE PROCEDURE p1 AS\n  rec1 t1%ROWTYPE;\nBEGIN\n  SELECT * FROM t1 INTO rec1;\n  SELECT rec1.a, rec1.b;\nEND;\n$$\nDELIMITER ;\nCALL p1();\n",
+        "+--------+--------+\n| rec1.a | rec1.b |\n+--------+--------+\n|     10 | b10    |\n+--------+--------+\n",
+        "SET sql_mode=ORACLE;\nDROP TABLE IF EXISTS t1;\nDROP PROCEDURE IF EXISTS p1;\nCREATE TABLE t1 (a INT, b VARCHAR(32));\nINSERT INTO t1 VALUES (10,'b10');\nDELIMITER $$\nCREATE PROCEDURE p1 AS\n  CURSOR cur1 IS SELECT * FROM t1;\n  rec1 cur1%ROWTYPE;\nBEGIN\n  SELECT * FROM t1 INTO rec1;\n  SELECT rec1.a, rec1.b;\nEND;\n$$\nDELIMITER ;\nCALL p1();\n",
+        "+--------+--------+\n| rec1.a | rec1.b |\n+--------+--------+\n|     10 | b10    |\n+--------+--------+\n"
+    ],
+    "Category": [
+        "String Data Types"
+    ]
+}

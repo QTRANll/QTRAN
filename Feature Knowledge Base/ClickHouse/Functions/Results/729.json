@@ -1,0 +1,28 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/string-replace-functions"
+    ],
+    "Title": [
+        "overlayUTF8"
+    ],
+    "Feature": [
+        "overlayUTF8(s, replace, offset[, length])"
+    ],
+    "Description": [
+        "overlayUTF8",
+        "Replace part of the string input with another string replace, starting at the 1-based index offset.",
+        "Assumes that the string contains valid UTF-8 encoded text.\nIf this assumption is violated, no exception is thrown and the result is undefined.",
+        "Syntax",
+        "overlayUTF8(s, replace, offset[, length])",
+        "Parameters",
+        "s: A string type String.replace: A string type String.offset: An integer type Int (1-based). If offset is negative, it is counted from the end of the input string s.length: Optional. An integer type Int. length specifies the length of the snippet within the input string s to be replaced. If length is not specified, the number of characters removed from s equals the length of replace; otherwise length characters are removed.",
+        "Returned value",
+        "A String data type value."
+    ],
+    "Examples": [
+        "SELECT overlay('Mein Vater ist aus \u00d6sterreich.', 'der T\u00fcrkei', 20) AS res;"
+    ],
+    "Category": [
+        "Replacing in Strings Functions"
+    ]
+}

@@ -1,0 +1,28 @@
+{
+    "HTML": [
+        "https://docs.pingcap.com/zh/tidb/v8.3/string-functions"
+    ],
+    "Title": [
+        "MAKE_SET()"
+    ],
+    "Feature": [
+        "MAKE_SET()"
+    ],
+    "Description": [
+        "MAKE_SET()",
+        "MAKE_SET() 函数根据输入的 bits 参数中相应的 bit 是否为 1 返回一组由逗号分隔的字符串。",
+        "语法：",
+        "MAKE_SET(bits, str1, str2, ...)\n",
+        "bits：控制其后的字符串参数中的哪些参数会包含到输出结果中。如果 bits 为 NULL，该函数将返回 NULL。str1, str2, ...：字符串参数列表。每个字符串与 bits 参数中从右到左的一个 bit 依次对应。str1 对应于 bits 中从右起的第一个 bit，str2 对应于从右起的第二个 bit，依此类推。如果相应的 bit 为 1，则该字符串将包含在输出结果中；否则，将不包含在输出结果中。"
+    ],
+    "Examples": [
+        "SELECT MAKE_SET(b'000','foo','bar','baz');\n",
+        "SELECT MAKE_SET(b'001','foo','bar','baz');\n",
+        "SELECT MAKE_SET(b'010','foo','bar','baz');\n",
+        "SELECT MAKE_SET(b'100','foo','bar','baz');\n",
+        "SELECT MAKE_SET(b'111','foo','bar','baz');\n"
+    ],
+    "Category": [
+        "字符串函数"
+    ]
+}

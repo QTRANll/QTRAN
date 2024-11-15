@@ -1,0 +1,27 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/other-functions"
+    ],
+    "Title": [
+        "lowCardinalityIndices"
+    ],
+    "Feature": [
+        "lowCardinalityIndices(col)"
+    ],
+    "Description": [
+        "lowCardinalityIndices",
+        "Returns the position of a value in the dictionary of a LowCardinality column. Positions start at 1. Since LowCardinality have per-part dictionaries, this function may return different positions for the same value in different parts.",
+        "Syntax",
+        "lowCardinalityIndices(col)",
+        "Arguments",
+        "col \u2014 a low cardinality column. LowCardinality.",
+        "Returned value",
+        "The position of the value in the dictionary of the current part. UInt64."
+    ],
+    "Examples": [
+        "DROP TABLE IF EXISTS test;CREATE TABLE test (s LowCardinality(String)) ENGINE = Memory;-- create two parts:INSERT INTO test VALUES ('ab'), ('cd'), ('ab'), ('ab'), ('df');INSERT INTO test VALUES ('ef'), ('cd'), ('ab'), ('cd'), ('ef');SELECT s, lowCardinalityIndices(s) FROM test;"
+    ],
+    "Category": [
+        "Other Functions"
+    ]
+}

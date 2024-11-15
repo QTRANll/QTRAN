@@ -1,0 +1,34 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.0/en/built-in-function-reference.html"
+    ],
+    "Title": [
+        "14.1 Built-In Function and Operator Reference"
+    ],
+    "Name": "INET6_ATON()",
+    "Description": [
+        "\nINET6_ATON(expr)\n",
+        "\n          Given an IPv6 or IPv4 network address as a string, returns a\n          binary string that represents the numeric value of the address\n          in network byte order (big endian). Because numeric-format\n          IPv6 addresses require more bytes than the largest integer\n          type, the representation returned by this function has the\n          VARBINARY data type:\n          VARBINARY(16) for IPv6\n          addresses and VARBINARY(4) for\n          IPv4 addresses. If the argument is not a valid address, or if\n          it is NULL,\n          INET6_ATON() returns\n          NULL.\n        ",
+        "\n          The following examples use\n          HEX() to display the\n          INET6_ATON() result in\n          printable form:\n        ",
+        "Press CTRL+C to copy mysql> SELECT HEX(INET6_ATON('fdfe::5a55:caff:fefa:9089'));\n        -> 'FDFE0000000000005A55CAFFFEFA9089'\nmysql> SELECT HEX(INET6_ATON('10.0.5.9'));\n        -> '0A000509'",
+        "\nINET6_ATON() observes several constraints\n          on valid arguments. These are given in the following list\n          along with examples.\n",
+        "\n\n              A trailing zone ID is not permitted, as in\n              fe80::3%1 or\n              fe80::3%eth0.\n            \n              A trailing network mask is not permitted, as in\n              2001:45f:3:ba::/64 or\n              198.51.100.0/24.\n            \n              For values representing IPv4 addresses, only classless\n              addresses are supported. Classful addresses such as\n              198.51.1 are rejected. A trailing port\n              number is not permitted, as in\n              198.51.100.2:8080. Hexadecimal numbers\n              in address components are not permitted, as in\n              198.0xa0.1.2. Octal numbers are not\n              supported: 198.51.010.1 is treated as\n              198.51.10.1, not\n              198.51.8.1. These IPv4 constraints also\n              apply to IPv6 addresses that have IPv4 address parts, such\n              as IPv4-compatible or IPv4-mapped addresses.\n\n",
+        "\n          To convert an IPv4 address expr\n          represented in numeric form as an\n          INT value to an IPv6 address\n          represented in numeric form as a\n          VARBINARY value, use this\n          expression:\n        ",
+        "Press CTRL+C to copy INET6_ATON(INET_NTOA(expr))",
+        "\n          For example:\n        ",
+        "Press CTRL+C to copy mysql> SELECT HEX(INET6_ATON(INET_NTOA(167773449)));\n        -> '0A000509'",
+        "\n          If INET6_ATON() is invoked from\n          within the mysql client, binary strings\n          display using hexadecimal notation, depending on the value of\n          the --binary-as-hex. For more\n          information about that option, see Section\u00a06.5.1, \u201cmysql \u2014 The MySQL Command-Line Client\u201d.\n        "
+    ],
+    "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/miscellaneous-functions.html#function_inet6-aton",
+    "Feature": [
+        "INET6_ATON(expr)"
+    ],
+    "Examples": [
+        "mysql> SELECT HEX(INET6_ATON('fdfe::5a55:caff:fefa:9089'));\n        -> 'FDFE0000000000005A55CAFFFEFA9089'\nmysql> SELECT HEX(INET6_ATON('10.0.5.9'));\n        -> '0A000509'",
+        "mysql> SELECT HEX(INET6_ATON(INET_NTOA(167773449)));\n        -> '0A000509'"
+    ],
+    "Category": [
+        "Built-In Functions and Operators",
+        "Miscellaneous Functions"
+    ]
+}

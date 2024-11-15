@@ -1,0 +1,28 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.0/en/built-in-function-reference.html"
+    ],
+    "Title": [
+        "14.1 Built-In Function and Operator Reference"
+    ],
+    "Name": "UPPER()",
+    "Description": [
+        "\nUPPER(str)\n",
+        "\n          Returns the string str with all\n          characters changed to uppercase according to the current\n          character set mapping, or NULL if\n          str is NULL. The\n          default character set is utf8mb4.\n        ",
+        "Press CTRL+C to copy mysql> SELECT UPPER('Hej');\n        -> 'HEJ'",
+        "\n          See the description of LOWER()\n          for information that also applies to\n          UPPER(). This included\n          information about how to perform lettercase conversion of\n          binary strings (BINARY,\n          VARBINARY,\n          BLOB) for which these functions\n          are ineffective, and information about case folding for\n          Unicode character sets.\n        ",
+        "\n          This function is multibyte safe.\n        ",
+        "\nUCASE() used within views is rewritten as\n          UPPER().\n        "
+    ],
+    "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/string-functions.html#function_upper",
+    "Feature": [
+        "UPPER(str)"
+    ],
+    "Examples": [
+        "mysql> SELECT UPPER('Hej');\n        -> 'HEJ'"
+    ],
+    "Category": [
+        "Built-In Functions and Operators",
+        "String Functions and Operators"
+    ]
+}

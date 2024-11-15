@@ -1,0 +1,26 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.0/en/built-in-function-reference.html"
+    ],
+    "Title": [
+        "14.1 Built-In Function and Operator Reference"
+    ],
+    "Name": "BIN_TO_UUID()",
+    "Description": [
+        "\nBIN_TO_UUID(binary_uuid),\n          BIN_TO_UUID(binary_uuid,\n          swap_flag)\n",
+        "\nBIN_TO_UUID() is the inverse of\n          UUID_TO_BIN(). It converts a\n          binary UUID to a string UUID and returns the result. The\n          binary value should be a UUID as a\n          VARBINARY(16) value. The return\n          value is a string of five hexadecimal numbers separated by\n          dashes. (For details about this format, see the\n          UUID() function description.)\n          If the UUID argument is NULL, the return\n          value is NULL. If any argument is invalid,\n          an error occurs.\n        ",
+        "\nBIN_TO_UUID() takes one or two\n          arguments:\n",
+        "\n\n              The one-argument form takes a binary UUID value. The UUID\n              value is assumed not to have its time-low and time-high\n              parts swapped. The string result is in the same order as\n              the binary argument.\n            \n              The two-argument form takes a binary UUID value and a\n              swap-flag value:\n\n\n\n                  If swap_flag is 0, the\n                  two-argument form is equivalent to the one-argument\n                  form. The string result is in the same order as the\n                  binary argument.\n                \n                  If swap_flag is 1, the UUID\n                  value is assumed to have its time-low and time-high\n                  parts swapped. These parts are swapped back to their\n                  original position in the result value.\n\n\n\n",
+        "\n          For usage examples and information about time-part swapping,\n          see the UUID_TO_BIN() function\n          description.\n        "
+    ],
+    "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/miscellaneous-functions.html#function_bin-to-uuid",
+    "Feature": [
+        "BIN_TO_UUID(binary_uuid)",
+        "BIN_TO_UUID(binary_uuid,\n          swap_flag)"
+    ],
+    "Examples": [],
+    "Category": [
+        "Built-In Functions and Operators",
+        "Miscellaneous Functions"
+    ]
+}

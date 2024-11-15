@@ -1,0 +1,27 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.0/en/built-in-function-reference.html"
+    ],
+    "Title": [
+        "14.1 Built-In Function and Operator Reference"
+    ],
+    "Name": "ST_Difference()",
+    "Description": [
+        "\nST_Difference(g1,\n          g2)\n",
+        "\n          Returns a geometry that represents the point set difference of\n          the geometry values g1 and\n          g2. The result is in the same SRS\n          as the geometry arguments.\n        ",
+        "\n          As of MySQL 8.0.26,\n          ST_Difference() permits\n          arguments in either a Cartesian or a geographic SRS. Prior to\n          MySQL 8.0.26, ST_Difference()\n          permits arguments in a Cartesian SRS only; for arguments in a\n          geographic SRS, an\n          ER_NOT_IMPLEMENTED_FOR_GEOGRAPHIC_SRS\n          error occurs.\n        ",
+        "\nST_Difference() handles its\n          arguments as described in the introduction to this section.\n        ",
+        "Press CTRL+C to copy mysql> SET @g1 = Point(1,1), @g2 = Point(2,2);\nmysql> SELECT ST_AsText(ST_Difference(@g1, @g2));\n+------------------------------------+\n| ST_AsText(ST_Difference(@g1, @g2)) |\n+------------------------------------+\n| POINT(1 1)                         |\n+------------------------------------+"
+    ],
+    "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/spatial-operator-functions.html#function_st-difference",
+    "Feature": [
+        "ST_Difference(g1,\n          g2)"
+    ],
+    "Examples": [
+        "mysql> SET @g1 = Point(1,1), @g2 = Point(2,2);\nmysql> SELECT ST_AsText(ST_Difference(@g1, @g2));\n+------------------------------------+\n| ST_AsText(ST_Difference(@g1, @g2)) |\n+------------------------------------+\n| POINT(1 1)                         |\n+------------------------------------+"
+    ],
+    "Category": [
+        "Built-In Functions and Operators",
+        "Spatial Analysis Functions"
+    ]
+}

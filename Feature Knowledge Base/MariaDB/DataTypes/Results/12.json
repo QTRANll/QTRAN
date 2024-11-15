@@ -1,0 +1,25 @@
+{
+    "HTML": [
+        "https://mariadb.com/kb/en/bit/"
+    ],
+    "Title": [
+        "BIT"
+    ],
+    "Feature": [
+        "BIT[(M)]\n"
+    ],
+    "Description": [
+        "A bit-field type. M indicates the number of bits per value, from 1 to\n64. The default is 1 if M is omitted.",
+        "Bit values can be inserted with b'value' notation, where value is the bit value in 0's and 1's.",
+        "Bit fields are automatically zero-padded from the left to the full length of the bit, so for example in a BIT(4) field, '10' is equivalent to '0010'.",
+        "Bits are returned as binary, so to display them, either add 0, or use a function such as HEX, OCT or BIN to convert them."
+    ],
+    "Examples": [
+        "CREATE TABLE b ( b1 BIT(8) );\n",
+        "INSERT INTO b VALUES (b'11111111');\n\nINSERT INTO b VALUES (b'01010101');\n\nINSERT INTO b VALUES (b'1111111111111');\nERROR 1406 (22001): Data too long for column 'b1' at row 1\n\nSELECT b1+0, HEX(b1), OCT(b1), BIN(b1) FROM b;\n+------+---------+---------+----------+\n| b1+0 | HEX(b1) | OCT(b1) | BIN(b1)  |\n+------+---------+---------+----------+\n|  255 | FF      | 377     | 11111111 |\n|   85 | 55      | 125     | 1010101  |\n+------+---------+---------+----------+\n",
+        "INSERT INTO b VALUES (b'11111111'),(b'01010101'),(b'1111111111111');\nQuery OK, 3 rows affected, 1 warning (0.10 sec)\nRecords: 3  Duplicates: 0  Warnings: 1\n\nSHOW WARNINGS;\n+---------+------+---------------------------------------------+\n| Level   | Code | Message                                     |\n+---------+------+---------------------------------------------+\n| Warning | 1264 | Out of range value for column 'b1' at row 3 |\n+---------+------+---------------------------------------------+\n\nSELECT b1+0, HEX(b1), OCT(b1), BIN(b1) FROM b;\n+------+---------+---------+----------+\n| b1+0 | HEX(b1) | OCT(b1) | BIN(b1)  |\n+------+---------+---------+----------+\n|  255 | FF      | 377     | 11111111 |\n|   85 | 55      | 125     | 1010101  |\n|  255 | FF      | 377     | 11111111 |\n+------+---------+---------+----------+\n"
+    ],
+    "Category": [
+        "Numeric Data Types"
+    ]
+}

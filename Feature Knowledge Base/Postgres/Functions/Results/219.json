@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/16/functions-textsearch.html"
+    ],
+    "Title": [
+        "querytree"
+    ],
+    "Feature": [
+        "querytree ( tsquery ) → text"
+    ],
+    "Description": [
+        "Produces a representation of the indexable portion of a tsquery. A result that is empty or just T indicates a non-indexable query."
+    ],
+    "Examples": [
+        "querytree('foo & ! bar'::tsquery) → 'foo'"
+    ],
+    "Category": [
+        "Text Search Functions and Operators"
+    ]
+}

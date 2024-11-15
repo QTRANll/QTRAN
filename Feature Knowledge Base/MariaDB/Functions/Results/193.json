@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/mbrtouches/"
+    ],
+    "Title": [
+        "MBRTouches"
+    ],
+    "Feature": [
+        "MBRTouches(g1,g2)\n"
+    ],
+    "Description": [
+        "Returns 1 or 0 to indicate whether the Minimum Bounding Rectangles of\nthe two geometries g1 and g2 touch. Two geometries spatially touch if\nthe interiors of the geometries do not intersect, but the boundary of\none of the geometries intersects either the boundary or the interior\nof the other."
+    ],
+    "Examples": [
+        "SET @g1 = GeomFromText('Polygon((0 0,0 3,3 3,3 0,0 0))');\nSET @g2 = GeomFromText('Polygon((4 4,4 7,7 7,7 4,4 4))');\nSELECT mbrtouches(@g1,@g2);\n+---------------------+\n| mbrtouches(@g1,@g2) |\n+---------------------+\n|                   0 |\n+---------------------+\n\nSET @g1 = GeomFromText('Polygon((0 0,0 3,3 3,3 0,0 0))');\nSET @g2 = GeomFromText('Polygon((3 3,3 6,6 6,6 3,3 3))');\nSELECT mbrtouches(@g1,@g2);\n+---------------------+\n| mbrtouches(@g1,@g2) |\n+---------------------+\n|                   1 |\n+---------------------+\n\nSET @g1 = GeomFromText('Polygon((0 0,0 4,4 4,4 0,0 0))');\nSET @g2 = GeomFromText('Polygon((3 3,3 6,6 6,6 3,3 3))');\nSELECT mbrtouches(@g1,@g2);\n+---------------------+\n| mbrtouches(@g1,@g2) |\n+---------------------+\n|                   0 |\n+---------------------+\n"
+    ],
+    "Category": [
+        "Geographic Functions"
+    ]
+}

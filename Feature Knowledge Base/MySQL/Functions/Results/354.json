@@ -1,0 +1,37 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.0/en/built-in-function-reference.html"
+    ],
+    "Title": [
+        "14.1 Built-In Function and Operator Reference"
+    ],
+    "Name": "ST_SRID()",
+    "Description": [
+        "\nST_SRID(g [,\n            srid])\n",
+        "\n            With a single argument representing a valid geometry object\n            g,\n            ST_SRID() returns an integer\n            indicating the ID of the spatial reference system (SRS)\n            associated with g.\n          ",
+        "\n            With the optional second argument representing a valid SRID\n            value, ST_SRID() returns an\n            object with the same type as its first argument with an SRID\n            value equal to the second argument. This only sets the SRID\n            value of the object; it does not perform any transformation\n            of coordinate values.\n          ",
+        "\nST_SRID() handles its\n            arguments as described in the introduction to this section,\n            with this exception:\n",
+        "\n\n                For the single-argument syntax,\n                ST_SRID() returns the\n                geometry SRID even if it refers to an undefined SRS. An\n                ER_SRS_NOT_FOUND error\n                does not occur.\n\n",
+        "\nST_SRID(g,\n            target_srid) and\n            ST_Transform(g,\n            target_srid) differ as\n            follows:\n",
+        "\n\nST_SRID() changes the\n                geometry SRID value without transforming its\n                coordinates.\n              \nST_Transform() transforms\n                the geometry coordinates in addition to changing its\n                SRID value.\n\n",
+        "Press CTRL+C to copy mysql> SET @g = ST_GeomFromText('LineString(1 1,2 2)', 0);\nmysql> SELECT ST_SRID(@g);\n+-------------+\n| ST_SRID(@g) |\n+-------------+\n|           0 |\n+-------------+\nmysql> SET @g = ST_SRID(@g, 4326);\nmysql> SELECT ST_SRID(@g);\n+-------------+\n| ST_SRID(@g) |\n+-------------+\n|        4326 |\n+-------------+",
+        "\n            It is possible to create a geometry in a particular SRID by\n            passing to ST_SRID() the\n            result of one of the MySQL-specific functions for creating\n            spatial values, along with an SRID value. For example:\n          ",
+        "Press CTRL+C to copy SET @g1 = ST_SRID(Point(1, 1), 4326);",
+        "\n            However, that method creates the geometry in SRID 0, then\n            casts it to SRID 4326 (WGS 84). A preferable alternative is\n            to create the geometry with the correct spatial reference\n            system to begin with. For example:\n          ",
+        "Press CTRL+C to copy SET @g1 = ST_PointFromText('POINT(1 1)', 4326);\nSET @g1 = ST_GeomFromText('POINT(1 1)', 4326);",
+        "\n            The two-argument form of\n            ST_SRID() is useful for tasks\n            such as correcting or changing the SRS of geometries that\n            have an incorrect SRID.\n"
+    ],
+    "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/gis-general-property-functions.html#function_st-srid",
+    "Feature": [
+        "ST_SRID(g [,\n            srid])"
+    ],
+    "Examples": [
+        "mysql> SET @g = ST_GeomFromText('LineString(1 1,2 2)', 0);\nmysql> SELECT ST_SRID(@g);\n+-------------+\n| ST_SRID(@g) |\n+-------------+\n|           0 |\n+-------------+\nmysql> SET @g = ST_SRID(@g, 4326);\nmysql> SELECT ST_SRID(@g);\n+-------------+\n| ST_SRID(@g) |\n+-------------+\n|        4326 |\n+-------------+",
+        "SET @g1 = ST_SRID(Point(1, 1), 4326);",
+        "SET @g1 = ST_PointFromText('POINT(1 1)', 4326);\nSET @g1 = ST_GeomFromText('POINT(1 1)', 4326);"
+    ],
+    "Category": [
+        "Built-In Functions and Operators",
+        "Spatial Analysis Functions"
+    ]
+}

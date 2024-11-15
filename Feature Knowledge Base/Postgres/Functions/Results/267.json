@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/16/functions-json.html"
+    ],
+    "Title": [
+        "jsonb_path_query_first"
+    ],
+    "Feature": [
+        "jsonb_path_query_first ( target jsonb, path jsonpath [, vars jsonb [, silent boolean ]] ) → jsonb"
+    ],
+    "Description": [
+        "Returns the first JSON item returned by the JSON path for the specified JSON value. Returns NULL if there are no results. The optional vars and silent arguments act the same as for jsonb_path_exists."
+    ],
+    "Examples": [
+        "jsonb_path_query_first('{\"a\":[1,2,3,4,5]}', '$.a[*] ? (@ >= $min && @ <= $max)', '{\"min\":2, \"max\":4}') → 2"
+    ],
+    "Category": [
+        "JSON Functions and Operators"
+    ]
+}

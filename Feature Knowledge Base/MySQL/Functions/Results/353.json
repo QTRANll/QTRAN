@@ -1,0 +1,30 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.0/en/built-in-function-reference.html"
+    ],
+    "Title": [
+        "14.1 Built-In Function and Operator Reference"
+    ],
+    "Name": "ST_Simplify()",
+    "Description": [
+        "\nST_Simplify(g,\n          max_distance)\n",
+        "\n          Simplifies a geometry using the Douglas-Peucker algorithm and\n          returns a simplified value of the same type.\n        ",
+        "\n          The geometry may be any geometry type, although the\n          Douglas-Peucker algorithm may not actually process every type.\n          A geometry collection is processed by giving its components\n          one by one to the simplification algorithm, and the returned\n          geometries are put into a geometry collection as result.\n        ",
+        "\n          The max_distance argument is the\n          distance (in units of the input coordinates) of a vertex to\n          other segments to be removed. Vertices within this distance of\n          the simplified linestring are removed.\n        ",
+        "\n          According to Boost.Geometry, geometries might become invalid\n          as a result of the simplification process, and the process\n          might create self-intersections. To check the validity of the\n          result, pass it to\n          ST_IsValid().\n        ",
+        "\nST_Simplify() handles its\n          arguments as described in the introduction to this section,\n          with this exception:\n",
+        "\n\n              If the max_distance argument is\n              not positive, or is NaN, an\n              ER_WRONG_ARGUMENTS error\n              occurs.\n\n",
+        "Press CTRL+C to copy mysql> SET @g = ST_GeomFromText('LINESTRING(0 0,0 1,1 1,1 2,2 2,2 3,3 3)');\nmysql> SELECT ST_AsText(ST_Simplify(@g, 0.5));\n+---------------------------------+\n| ST_AsText(ST_Simplify(@g, 0.5)) |\n+---------------------------------+\n| LINESTRING(0 0,0 1,1 1,2 3,3 3) |\n+---------------------------------+\nmysql> SELECT ST_AsText(ST_Simplify(@g, 1.0));\n+---------------------------------+\n| ST_AsText(ST_Simplify(@g, 1.0)) |\n+---------------------------------+\n| LINESTRING(0 0,3 3)             |\n+---------------------------------+"
+    ],
+    "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/spatial-convenience-functions.html#function_st-simplify",
+    "Feature": [
+        "ST_Simplify(g,\n          max_distance)"
+    ],
+    "Examples": [
+        "mysql> SET @g = ST_GeomFromText('LINESTRING(0 0,0 1,1 1,1 2,2 2,2 3,3 3)');\nmysql> SELECT ST_AsText(ST_Simplify(@g, 0.5));\n+---------------------------------+\n| ST_AsText(ST_Simplify(@g, 0.5)) |\n+---------------------------------+\n| LINESTRING(0 0,0 1,1 1,2 3,3 3) |\n+---------------------------------+\nmysql> SELECT ST_AsText(ST_Simplify(@g, 1.0));\n+---------------------------------+\n| ST_AsText(ST_Simplify(@g, 1.0)) |\n+---------------------------------+\n| LINESTRING(0 0,3 3)             |\n+---------------------------------+"
+    ],
+    "Category": [
+        "Built-In Functions and Operators",
+        "Spatial Analysis Functions"
+    ]
+}

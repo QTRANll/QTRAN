@@ -1,0 +1,34 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.0/en/built-in-function-reference.html"
+    ],
+    "Title": [
+        "14.1 Built-In Function and Operator Reference"
+    ],
+    "Name": "group_replication_set_as_primary()",
+    "Description": [
+        "\ngroup_replication_set_as_primary()\n",
+        "\n              Appoints a specific member of the group as the new\n              primary, overriding any election process.\n            ",
+        "\n              Syntax:\n            ",
+        "Press CTRL+C to copy STRING group_replication_set_as_primary(member_uuid[, timeout])",
+        "\n              Arguments:\n",
+        "\n\nmember_uuid: A string\n                  containing the UUID of the member of the group that\n                  you want to become the new primary.\n                \ntimeout: An integer\n                  specifying a timeout in seconds for transactions that\n                  are running on the existing primary when you use the\n                  function. You can set a timeout from 0 seconds\n                  (immediately) up to 3600 seconds (60 minutes). When\n                  you set a timeout, new transactions cannot start on\n                  the primary from that point on. There is no default\n                  setting for the timeout, so if you do not set it,\n                  there is no upper limit to the wait time, and new\n                  transactions can start during that time. This option\n                  is available from MySQL 8.0.29.\n\n",
+        "\n              Return value:\n            ",
+        "\n              A string containing the result of the operation, for\n              example whether it was successful or not.\n            ",
+        "\n              Example:\n            ",
+        "Press CTRL+C to copy SELECT group_replication_set_as_primary(\u201800371d66-3c45-11ea-804b-080027337932\u2019, 300);",
+        "\n              For more information, see\n              Section\u00a020.5.1.1, \u201cChanging the Primary\u201d.\n"
+    ],
+    "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/group-replication-functions-for-new-primary.html#function_group-replication-set-as-primary",
+    "Feature": [
+        "group_replication_set_as_primary()"
+    ],
+    "Examples": [
+        "SELECT group_replication_set_as_primary(\u201800371d66-3c45-11ea-804b-080027337932\u2019, 300);"
+    ],
+    "Category": [
+        "Built-In Functions and Operators",
+        "Replication Functions",
+        "Loadable Functions"
+    ]
+}

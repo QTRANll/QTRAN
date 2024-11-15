@@ -1,0 +1,19 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/16/functions-admin.html"
+    ],
+    "Title": [
+        "pg_advisory_unlock"
+    ],
+    "Feature": [
+        "pg_advisory_unlock ( key bigint ) → boolean",
+        "pg_advisory_unlock ( key1 integer, key2 integer ) → boolean"
+    ],
+    "Description": [
+        "Releases a previously-acquired exclusive session-level advisory lock. Returns true if the lock is successfully released. If the lock was not held, false is returned, and in addition, an SQL warning will be reported by the server."
+    ],
+    "Examples": [],
+    "Category": [
+        "System Administration Functions"
+    ]
+}

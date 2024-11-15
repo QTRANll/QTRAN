@@ -1,0 +1,36 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/type-conversion-functions"
+    ],
+    "Title": [
+        "parseDateTime32BestEffort"
+    ],
+    "Feature": [
+        "parseDateTimeBestEffort(time_string [, time_zone])"
+    ],
+    "Description": [
+        "parseDateTime32BestEffort",
+        "Converts a date and time in the String representation to DateTime data type.",
+        "The function parses ISO 8601, RFC 1123 - 5.2.14 RFC-822 Date and Time Specification, ClickHouse\u2019s and some other date and time formats.",
+        "Syntax",
+        "parseDateTimeBestEffort(time_string [, time_zone])",
+        "Arguments",
+        "time_string \u2014 String containing a date and time to convert. String.time_zone \u2014 Time zone. The function parses time_string according to the time zone. String.",
+        "Supported non-standard formats",
+        "A string containing 9..10 digit unix timestamp.A string with a date and a time component: YYYYMMDDhhmmss, DD/MM/YYYY hh:mm:ss, DD-MM-YY hh:mm, YYYY-MM-DD hh:mm:ss, etc.A string with a date, but no time component: YYYY, YYYYMM, YYYY*MM, DD/MM/YYYY, DD-MM-YY etc.A string with a day and time: DD, DD hh, DD hh:mm. In this case MM is substituted by 01.A string that includes the date and time along with time zone offset information: YYYY-MM-DD hh:mm:ss \u00b1h:mm, etc. For example, 2020-12-12 17:36:00 -5:00.A syslog timestamp: Mmm dd hh:mm:ss. For example, Jun  9 14:20:32.",
+        "For all of the formats with separator the function parses months names expressed by their full name or by the first three letters of a month name. Examples: 24/DEC/18, 24-Dec-18, 01-September-2018.\nIf the year is not specified, it is considered to be equal to the current year. If the resulting DateTime happen to be in the future (even by a second after the current moment), then the current year is substituted by the previous year.",
+        "Returned value",
+        "time_string converted to the DateTime data type."
+    ],
+    "Examples": [
+        "SELECT parseDateTimeBestEffort('23/10/2020 12:12:57')AS parseDateTimeBestEffort;",
+        "SELECT parseDateTimeBestEffort('Sat, 18 Aug 2018 07:22:16 GMT', 'Asia/Istanbul')AS parseDateTimeBestEffort;",
+        "SELECT parseDateTimeBestEffort('1284101485')AS parseDateTimeBestEffort;",
+        "SELECT parseDateTimeBestEffort('2018-10-23 10:12:12')AS parseDateTimeBestEffort;",
+        "SELECT toYear(now()) as year, parseDateTimeBestEffort('10 20:19');",
+        "WITH    now() AS ts_now,    formatDateTime(ts_around, '%b %e %T') AS syslog_argSELECT    ts_now,    syslog_arg,    parseDateTimeBestEffort(syslog_arg)FROM (SELECT arrayJoin([ts_now - 30, ts_now + 30]) AS ts_around);"
+    ],
+    "Category": [
+        "Type Conversion Functions"
+    ]
+}

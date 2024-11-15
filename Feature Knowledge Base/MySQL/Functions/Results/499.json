@@ -1,0 +1,26 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.0/en/loadable-function-reference.html"
+    ],
+    "Title": [
+        "14.2 Loadable Function Reference"
+    ],
+    "Name": "read_firewall_whitelist()",
+    "Description": [
+        "\nread_firewall_whitelist(user,\n              rule)\n",
+        "\n              This aggregate function updates the recorded-statement\n              cache for the named account profile through a\n              SELECT statement on the\n              mysql.firewall_whitelist table. It\n              requires the FIREWALL_ADMIN\n              privilege or the deprecated\n              SUPER privilege.\n            ",
+        "\n              Example:\n            ",
+        "Press CTRL+C to copy SELECT read_firewall_whitelist('fwuser@localhost', fw.rule)\nFROM mysql.firewall_whitelist AS fw\nWHERE USERHOST = 'fwuser@localhost';",
+        "\n              As of MySQL 8.0.26, this function is deprecated and\n              subject to removal in a future MySQL version. See\n              Migrating Account Profiles to Group Profiles.\n            "
+    ],
+    "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/firewall-reference.html#function_read-firewall-whitelist",
+    "Feature": [
+        "read_firewall_whitelist(user,\n              rule)"
+    ],
+    "Examples": [
+        "SELECT read_firewall_whitelist('fwuser@localhost', fw.rule)\nFROM mysql.firewall_whitelist AS fw\nWHERE USERHOST = 'fwuser@localhost';"
+    ],
+    "Category": [
+        "Loadable Functions"
+    ]
+}

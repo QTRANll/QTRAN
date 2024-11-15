@@ -1,0 +1,28 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/distance-functions"
+    ],
+    "Title": [
+        "L2SquaredNorm"
+    ],
+    "Feature": [
+        "L2SquaredNorm(vector)"
+    ],
+    "Description": [
+        "L2SquaredNorm",
+        "Calculates the square root of the sum of the squares of the vector values (the L2Norm) squared.",
+        "Syntax",
+        "L2SquaredNorm(vector)",
+        "Alias: normL2Squared.",
+        "*Arguments",
+        "vector \u2014 Tuple or Array.",
+        "Returned value",
+        "L2-norm squared. Float."
+    ],
+    "Examples": [
+        "SELECT L2SquaredNorm((1, 2));"
+    ],
+    "Category": [
+        "Distance Functions"
+    ]
+}

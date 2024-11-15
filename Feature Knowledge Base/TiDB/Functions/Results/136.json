@@ -1,0 +1,23 @@
+{
+    "HTML": "https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html#function_timestampadd",
+    "Title": "TIMESTAMPADD()",
+    "Feature": [
+        "TIMESTAMPADD(unit,interval,datetime_expr)"
+    ],
+    "Description": [
+        "\nTIMESTAMPADD(unit,interval,datetime_expr)\n",
+        "\n          Adds the integer expression\n          interval to the date or datetime\n          expression datetime_expr. The unit\n          for interval is given by the\n          unit argument, which should be one\n          of the following values: MICROSECOND\n          (microseconds), SECOND,\n          MINUTE, HOUR,\n          DAY, WEEK,\n          MONTH, QUARTER, or\n          YEAR.\n        ",
+        "\n          The unit value may be specified\n          using one of keywords as shown, or with a prefix of\n          SQL_TSI_. For example,\n          DAY and SQL_TSI_DAY both\n          are legal.\n        ",
+        "\n          This function returns NULL if\n          interval or\n          datetime_expr is\n          NULL.\n        ",
+        "Press CTRL+C to copy mysql> SELECT TIMESTAMPADD(MINUTE, 1, '2003-01-02');\n        -> '2003-01-02 00:01:00'\nmysql> SELECT TIMESTAMPADD(WEEK,1,'2003-01-02');\n        -> '2003-01-09'",
+        "\n          When adding a MONTH interval to a\n          DATE or DATETIME value,\n          and the resulting date includes a day that does not exist in\n          the given month, the day is adjusted to the last day of the\n          month, as shown here:\n        ",
+        "Press CTRL+C to copy mysql> SELECT TIMESTAMPADD(MONTH, 1, DATE '2024-03-30') AS t1, \n     >        TIMESTAMPADD(MONTH, 1, DATE '2024-03-31') AS t2;\n+------------+------------+\n| t1         | t2         |\n+------------+------------+\n| 2024-04-30 | 2024-04-30 |\n+------------+------------+\n1 row in set (0.00 sec)"
+    ],
+    "Examples": [
+        "mysql> SELECT TIMESTAMPADD(MINUTE, 1, '2003-01-02');\n        -> '2003-01-02 00:01:00'\nmysql> SELECT TIMESTAMPADD(WEEK,1,'2003-01-02');\n        -> '2003-01-09'",
+        "mysql> SELECT TIMESTAMPADD(MONTH, 1, DATE '2024-03-30') AS t1, \n     >        TIMESTAMPADD(MONTH, 1, DATE '2024-03-31') AS t2;\n+------------+------------+\n| t1         | t2         |\n+------------+------------+\n| 2024-04-30 | 2024-04-30 |\n+------------+------------+\n1 row in set (0.00 sec)"
+    ],
+    "Category": [
+        "日期和时间函数"
+    ]
+}

@@ -1,16 +1,10 @@
-import json
-import os
-from src.Tools.Crawler.crawler_options import set_options
+from src.Tools.crawler_options import set_options
 from selenium import webdriver
 from selenium.webdriver.support.ui import WebDriverWait
 from bs4 import BeautifulSoup
+from urllib.parse import urljoin
 
-
-# 爬取Functions and Operators页面内所有的页面htmls
-def funcs_ops_htmls_crawler(html, dir_filename_one, dir_filename_two):
-    if os.path.exists(dir_filename_one) and os.path.exists(dir_filename_two):
-        print("文件 " + dir_filename_one + "," + dir_filename_two + "已存在！")
-        return
+def htmls_crawler(html):
     timeout = 5  # 等待时间
     options = set_options()
     driver = webdriver.Chrome(options=options)  # 创建一个Chrome浏览器的WebDriver对象，用于控制浏览器的操作
@@ -30,26 +24,8 @@ def funcs_ops_htmls_crawler(html, dir_filename_one, dir_filename_two):
         if name.count(".") > 2:
             # 二级标题，跳过
             continue
-        href = "https://www.postgresql.org/docs/current/" + item.find("a").get("href")
+        href = urljoin(html, item.find("a").get("href"))
         if href in skip_htmls:
             continue
         htmls_table[name] = href
-
-    with open(dir_filename_one, 'w', encoding='utf-8') as f:
-        json.dump({"No Category": htmls_table}, f, indent=4)
-
-    with open(dir_filename_two, 'w', encoding='utf-8') as f:
-        json.dump({"No Category": htmls_table}, f, indent=4)
-
-
-
-prefix = "../../../Feature Knowledge Base/Postgres/"
-HTML = "https://www.postgresql.org/docs/current/functions.html"
-dir_filename_fun_op = [
-    prefix + "Functions/HTMLs.json",
-    prefix + "Operators/HTMLs.json"
-]
-
-funcs_ops_htmls_crawler(HTML, dir_filename_fun_op[0], dir_filename_fun_op[1])
-
-
+    return {"No Category": htmls_table}

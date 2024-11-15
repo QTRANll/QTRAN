@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/16/functions-bitstring.html"
+    ],
+    "Title": [
+        "set_bit"
+    ],
+    "Feature": [
+        "set_bit ( bits bit, n integer, newvalue integer ) → bit"
+    ],
+    "Description": [
+        "Sets n'th bit in bit string to newvalue; the first (leftmost) bit is bit 0."
+    ],
+    "Examples": [
+        "set_bit(B'101010101010101010', 6, 0) → 101010001010101010"
+    ],
+    "Category": [
+        "Bit String Functions and Operators"
+    ]
+}

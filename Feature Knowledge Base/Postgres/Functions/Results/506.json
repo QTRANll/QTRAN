@@ -1,0 +1,18 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/16/functions-admin.html"
+    ],
+    "Title": [
+        "pg_cancel_backend"
+    ],
+    "Feature": [
+        "pg_cancel_backend ( pid integer ) → boolean"
+    ],
+    "Description": [
+        "Cancels the current query of the session whose backend process has the specified process ID. This is also allowed if the calling role is a member of the role whose backend is being canceled or the calling role has privileges of pg_signal_backend, however only superusers can cancel superuser backends."
+    ],
+    "Examples": [],
+    "Category": [
+        "System Administration Functions"
+    ]
+}

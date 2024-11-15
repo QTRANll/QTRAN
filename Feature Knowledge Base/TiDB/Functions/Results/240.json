@@ -1,0 +1,22 @@
+{
+    "HTML": [
+        "https://docs.pingcap.com/zh/tidb/v8.3/miscellaneous-functions"
+    ],
+    "Title": [
+        "DEFAULT()"
+    ],
+    "Feature": [
+        "DEFAULT()"
+    ],
+    "Description": [
+        "DEFAULT()",
+        "DEFAULT() 函数用于获取列的默认值。",
+        "CREATE TABLE t1 (id INT PRIMARY KEY, c1 INT DEFAULT 5);\nQuery OK, 0 rows affected (0.15 sec)\n\nINSERT INTO t1 VALUES (1, 1);\nQuery OK, 1 row affected (0.01 sec)\n\nUPDATE t1 SET c1=DEFAULT(c1)+3;\nQuery OK, 1 row affected (0.02 sec)\nRows matched: 1  Changed: 1  Warnings: 0\n\nTABLE t1;\n+----+------+\n| id | c1   |\n+----+------+\n|  1 |    8 |\n+----+------+\n1 row in set (0.00 sec)\n"
+    ],
+    "Examples": [
+        "CREATE TABLE t1 (id INT PRIMARY KEY, c1 INT DEFAULT 5);\nQuery OK, 0 rows affected (0.15 sec)\n\nINSERT INTO t1 VALUES (1, 1);\nQuery OK, 1 row affected (0.01 sec)\n\nUPDATE t1 SET c1=DEFAULT(c1)+3;\nQuery OK, 1 row affected (0.02 sec)\nRows matched: 1  Changed: 1  Warnings: 0\n\nTABLE t1;\n+----+------+\n| id | c1   |\n+----+------+\n|  1 |    8 |\n+----+------+\n1 row in set (0.00 sec)\n"
+    ],
+    "Category": [
+        "其它函数"
+    ]
+}

@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/16/functions-geometry.html"
+    ],
+    "Title": [
+        "geometric_type &<| geometric_type"
+    ],
+    "Feature": [
+        "geometric_type &<| geometric_type → boolean"
+    ],
+    "Description": [
+        "Does first object not extend above second? Available for box, polygon, circle."
+    ],
+    "Examples": [
+        "box '(1,1),(0,0)' &<| box '(2,2),(0,0)' → t"
+    ],
+    "Category": [
+        "Geometric Functions and Operators"
+    ]
+}

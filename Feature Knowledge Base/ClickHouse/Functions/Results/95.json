@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/array-functions"
+    ],
+    "Title": [
+        "arrayAll([func,] arr1, ...)"
+    ],
+    "Feature": [
+        "arrayAll([func,] arr1, ...)"
+    ],
+    "Description": [
+        "arrayAll([func,] arr1, ...)",
+        "Returns 1 if func(arr1[i], ..., arrN[i]) returns something other than 0 for all the elements in arrays. Otherwise, it returns 0.",
+        "Note that the arrayAll is a higher-order function. You can pass a lambda function to it as the first argument."
+    ],
+    "Examples": [],
+    "Category": [
+        "Arrays Functions"
+    ]
+}

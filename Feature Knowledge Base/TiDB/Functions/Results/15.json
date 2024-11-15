@@ -1,0 +1,22 @@
+{
+    "HTML": [
+        "https://docs.pingcap.com/zh/tidb/v8.3/string-functions"
+    ],
+    "Title": [
+        "FIND_IN_SET()"
+    ],
+    "Feature": [
+        "FIND_IN_SET()"
+    ],
+    "Description": [
+        "FIND_IN_SET()",
+        "返回第一个参数在第二个参数中出现的位置",
+        "该函数通常与 SET 数据类型一起使用。"
+    ],
+    "Examples": [
+        "SELECT FIND_IN_SET('Go', 'COBOL,BASIC,Rust,Go,Java,Fortran');\n+-------------------------------------------------------+\n| FIND_IN_SET('Go', 'COBOL,BASIC,Rust,Go,Java,Fortran') |\n+-------------------------------------------------------+\n|                                                     4 |\n+-------------------------------------------------------+\n1 row in set (0.00 sec)\n"
+    ],
+    "Category": [
+        "字符串函数"
+    ]
+}

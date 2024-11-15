@@ -1,0 +1,27 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/geo/h3"
+    ],
+    "Title": [
+        "h3NumHexagons"
+    ],
+    "Feature": [
+        "h3NumHexagons(resolution)"
+    ],
+    "Description": [
+        "h3NumHexagons",
+        "Returns the number of unique H3 indices at the given resolution.",
+        "Syntax",
+        "h3NumHexagons(resolution)",
+        "Parameter",
+        "resolution \u2014 Index resolution. Range: [0, 15]. UInt8.",
+        "Returned value",
+        "Number of H3 indices. Int64."
+    ],
+    "Examples": [
+        "SELECT h3NumHexagons(3) AS numHexagons;"
+    ],
+    "Category": [
+        "Geo Functions"
+    ]
+}

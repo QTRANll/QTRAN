@@ -1,0 +1,28 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/uuid-functions"
+    ],
+    "Title": [
+        "dateTime64ToSnowflake"
+    ],
+    "Feature": [
+        "dateTime64ToSnowflake(value)"
+    ],
+    "Description": [
+        "dateTime64ToSnowflake",
+        "DangerThis function is deprecated and can only be used if setting allow_deprecated_snowflake_conversion_functions is enabled.\nThe function will be removed at some point in future.",
+        "Convert a DateTime64 to the first Snowflake ID at the giving time.",
+        "Syntax",
+        "dateTime64ToSnowflake(value)",
+        "Arguments",
+        "value \u2014 Date with time. DateTime64.",
+        "Returned value",
+        "Input value converted to the Int64 data type as the first Snowflake ID at that time."
+    ],
+    "Examples": [
+        "WITH toDateTime64('2021-08-15 18:57:56.492', 3, 'Asia/Shanghai') AS dt64 SELECT dateTime64ToSnowflake(dt64);"
+    ],
+    "Category": [
+        "UUIDs Functions"
+    ]
+}

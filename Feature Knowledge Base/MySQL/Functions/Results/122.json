@@ -1,0 +1,30 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.0/en/built-in-function-reference.html"
+    ],
+    "Title": [
+        "14.1 Built-In Function and Operator Reference"
+    ],
+    "Name": "INET6_NTOA()",
+    "Description": [
+        "\nINET6_NTOA(expr)\n",
+        "\n          Given an IPv6 or IPv4 network address represented in numeric\n          form as a binary string, returns the string representation of\n          the address as a string in the connection character set. If\n          the argument is not a valid address, or if it is\n          NULL,\n          INET6_NTOA() returns\n          NULL.\n        ",
+        "\nINET6_NTOA() has these\n          properties:\n",
+        "\n\n              It does not use operating system functions to perform\n              conversions, thus the output string is platform\n              independent.\n            \n              The return string has a maximum length of 39 (4 x 8 + 7).\n              Given this statement:\n            Press CTRL+C to copy CREATE TABLE t AS SELECT INET6_NTOA(expr) AS c1;\n              The resulting table would have this definition:\n            Press CTRL+C to copy CREATE TABLE t (c1 VARCHAR(39) CHARACTER SET utf8mb3 DEFAULT NULL);\n              The return string uses lowercase letters for IPv6\n              addresses.\n\n",
+        "Press CTRL+C to copy mysql> SELECT INET6_NTOA(INET6_ATON('fdfe::5a55:caff:fefa:9089'));\n        -> 'fdfe::5a55:caff:fefa:9089'\nmysql> SELECT INET6_NTOA(INET6_ATON('10.0.5.9'));\n        -> '10.0.5.9'\n\nmysql> SELECT INET6_NTOA(UNHEX('FDFE0000000000005A55CAFFFEFA9089'));\n        -> 'fdfe::5a55:caff:fefa:9089'\nmysql> SELECT INET6_NTOA(UNHEX('0A000509'));\n        -> '10.0.5.9'",
+        "\n          If INET6_NTOA() is invoked from\n          within the mysql client, binary strings\n          display using hexadecimal notation, depending on the value of\n          the --binary-as-hex. For more\n          information about that option, see Section\u00a06.5.1, \u201cmysql \u2014 The MySQL Command-Line Client\u201d.\n        "
+    ],
+    "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/miscellaneous-functions.html#function_inet6-ntoa",
+    "Feature": [
+        "INET6_NTOA(expr)"
+    ],
+    "Examples": [
+        "CREATE TABLE t AS SELECT INET6_NTOA(expr) AS c1;",
+        "CREATE TABLE t (c1 VARCHAR(39) CHARACTER SET utf8mb3 DEFAULT NULL);",
+        "mysql> SELECT INET6_NTOA(INET6_ATON('fdfe::5a55:caff:fefa:9089'));\n        -> 'fdfe::5a55:caff:fefa:9089'\nmysql> SELECT INET6_NTOA(INET6_ATON('10.0.5.9'));\n        -> '10.0.5.9'\n\nmysql> SELECT INET6_NTOA(UNHEX('FDFE0000000000005A55CAFFFEFA9089'));\n        -> 'fdfe::5a55:caff:fefa:9089'\nmysql> SELECT INET6_NTOA(UNHEX('0A000509'));\n        -> '10.0.5.9'"
+    ],
+    "Category": [
+        "Built-In Functions and Operators",
+        "Miscellaneous Functions"
+    ]
+}

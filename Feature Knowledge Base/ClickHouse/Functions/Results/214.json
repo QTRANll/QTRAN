@@ -1,0 +1,27 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/date-time-functions"
+    ],
+    "Title": [
+        "toISOWeek"
+    ],
+    "Feature": [
+        "toISOWeek(value)"
+    ],
+    "Description": [
+        "toISOWeek",
+        "Converts a date, or date with time, to a UInt8 number containing the ISO Week number.",
+        "Syntax",
+        "toISOWeek(value)",
+        "Arguments",
+        "value \u2014 The value with date or date with time.",
+        "Returned value",
+        "value converted to the current ISO week number. UInt8."
+    ],
+    "Examples": [
+        "SELECT  toISOWeek(toDate('2024/10/02')) AS week1,  toISOWeek(toDateTime('2024/10/02 01:30:00')) AS week2"
+    ],
+    "Category": [
+        "Dates and Times Functions"
+    ]
+}

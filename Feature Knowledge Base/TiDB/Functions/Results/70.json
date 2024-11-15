@@ -1,0 +1,18 @@
+{
+    "HTML": "https://dev.mysql.com/doc/refman/8.0/en/mathematical-functions.html#function_crc32",
+    "Title": "CRC32()",
+    "Feature": [
+        "CRC32(expr)"
+    ],
+    "Description": [
+        "\nCRC32(expr)\n",
+        "\n            Computes a cyclic redundancy check value and returns a\n            32-bit unsigned value. The result is NULL\n            if the argument is NULL. The argument is\n            expected to be a string and (if possible) is treated as one\n            if it is not.\n          ",
+        "Press CTRL+C to copy mysql> SELECT CRC32('MySQL');\n        -> 3259397556\nmysql> SELECT CRC32('mysql');\n        -> 2501908538"
+    ],
+    "Examples": [
+        "mysql> SELECT CRC32('MySQL');\n        -> 3259397556\nmysql> SELECT CRC32('mysql');\n        -> 2501908538"
+    ],
+    "Category": [
+        "数值函数与操作符"
+    ]
+}

@@ -1,0 +1,25 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.0/en/built-in-function-reference.html"
+    ],
+    "Title": [
+        "14.1 Built-In Function and Operator Reference"
+    ],
+    "Name": "EXTRACT()",
+    "Description": [
+        "\nEXTRACT(unit\n          FROM date)\n",
+        "\n          The EXTRACT() function uses the\n          same kinds of unit specifiers as\n          DATE_ADD() or\n          DATE_SUB(), but extracts parts\n          from the date rather than performing date arithmetic. For\n          information on the unit argument,\n          see Temporal Intervals. Returns\n          NULL if date is\n          NULL.\n        ",
+        "Press CTRL+C to copy mysql> SELECT EXTRACT(YEAR FROM '2019-07-02');\n        -> 2019\nmysql> SELECT EXTRACT(YEAR_MONTH FROM '2019-07-02 01:02:03');\n        -> 201907\nmysql> SELECT EXTRACT(DAY_MINUTE FROM '2019-07-02 01:02:03');\n        -> 20102\nmysql> SELECT EXTRACT(MICROSECOND\n    ->                FROM '2003-01-02 10:30:00.000123');\n        -> 123"
+    ],
+    "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html#function_extract",
+    "Feature": [
+        "EXTRACT(unit\n          FROM date)"
+    ],
+    "Examples": [
+        "mysql> SELECT EXTRACT(YEAR FROM '2019-07-02');\n        -> 2019\nmysql> SELECT EXTRACT(YEAR_MONTH FROM '2019-07-02 01:02:03');\n        -> 201907\nmysql> SELECT EXTRACT(DAY_MINUTE FROM '2019-07-02 01:02:03');\n        -> 20102\nmysql> SELECT EXTRACT(MICROSECOND\n    ->                FROM '2003-01-02 10:30:00.000123');\n        -> 123"
+    ],
+    "Category": [
+        "Built-In Functions and Operators",
+        "Date and Time Functions"
+    ]
+}

@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://sqlite.org/json1.html"
+    ],
+    "Title": [
+        "4.16. The json_pretty() function"
+    ],
+    "Feature": [
+        "4.16. The json_pretty() function"
+    ],
+    "Description": [
+        "4.16. The json_pretty() function",
+        "\nThe json_pretty() function works like json() except that it adds\nextra whitespace to make the JSON result easier for humans to read.\nThe first argument is the JSON or JSONB that is to be pretty-printed.\nThe optional second argument is a text string that is used for indentation.\nIf the second argument is omitted or is NULL, then indentation is four\nspaces per level.\n",
+        "\nThe json_pretty() function was added with SQLite version 3.46.0 \n(2024-05-23).\n\n\n"
+    ],
+    "Examples": [],
+    "Category": [
+        "JSON Functions"
+    ]
+}

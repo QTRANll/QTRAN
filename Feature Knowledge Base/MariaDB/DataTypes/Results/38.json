@@ -1,0 +1,29 @@
+{
+    "HTML": [
+        "https://mariadb.com/kb/en/timestamp/"
+    ],
+    "Title": [
+        "TIMESTAMP"
+    ],
+    "Feature": [
+        "TIMESTAMP [(<microsecond precision)]\n"
+    ],
+    "Description": [
+        "A timestamp in the format YYYY-MM-DD HH:MM:SS.ffffff.",
+        "The timestamp field is generally used to define at which moment in time a row was added or updated and by default will automatically be assigned the current datetime when a record is inserted or updated. The automatic properties only apply to the first TIMESTAMP in the record; subsequent TIMESTAMP columns will not be changed.",
+        "MariaDB includes the --mysql56-temporal-format option, on by default, which allows MariaDB to store TIMESTAMPs using the same low-level format MySQL 5.6 uses.",
+        "For more information, see Internal Format."
+    ],
+    "Examples": [
+        "CREATE TABLE t (id INT, ts TIMESTAMP);\n\nDESC t;\n+-------+-----------+------+-----+-------------------+-----------------------------+\n| Field | Type      | Null | Key | Default           | Extra                       |\n+-------+-----------+------+-----+-------------------+-----------------------------+\n| id    | int(11)   | YES  |     | NULL              |                             |\n| ts    | timestamp | NO   |     | CURRENT_TIMESTAMP | on update CURRENT_TIMESTAMP |\n+-------+-----------+------+-----+-------------------+-----------------------------+\n\nINSERT INTO t(id)  VALUES (1),(2);\n\nSELECT * FROM t;\n+------+---------------------+\n| id   | ts                  |\n+------+---------------------+\n|    1 | 2013-07-22 12:50:05 |\n|    2 | 2013-07-22 12:50:05 |\n+------+---------------------+\n\nINSERT INTO t  VALUES (3,NULL),(4,'2001-07-22 12:12:12');\n\nSELECT * FROM t;\n+------+---------------------+\n| id   | ts                  |\n+------+---------------------+\n|    1 | 2013-07-22 12:50:05 |\n|    2 | 2013-07-22 12:50:05 |\n|    3 | 2013-07-22 12:51:56 |\n|    4 | 2001-07-22 12:12:12 |\n+------+---------------------+\n",
+        "SELECT ts, UNIX_TIMESTAMP(ts) FROM t;\n+---------------------+--------------------+\n| ts                  | UNIX_TIMESTAMP(ts) |\n+---------------------+--------------------+\n| 2013-07-22 12:50:05 |         1374490205 |\n| 2013-07-22 12:50:05 |         1374490205 |\n| 2013-07-22 12:51:56 |         1374490316 |\n| 2001-07-22 12:12:12 |          995796732 |\n+---------------------+--------------------+\n",
+        "UPDATE t set id=5 WHERE id=1;\n\nSELECT * FROM t;\n+------+---------------------+\n| id   | ts                  |\n+------+---------------------+\n|    5 | 2013-07-22 14:52:33 |\n|    2 | 2013-07-22 12:50:05 |\n|    3 | 2013-07-22 12:51:56 |\n|    4 | 2001-07-22 12:12:12 |\n+------+---------------------+\n",
+        "CREATE TABLE t2 (id INT, ts TIMESTAMP NULL ON UPDATE CURRENT_TIMESTAMP);\n\nINSERT INTO t(id)  VALUES (1),(2);\n\nSELECT * FROM t2;\n\nINSERT INTO t2(id)  VALUES (1),(2);\n\nSELECT * FROM t2;\n+------+------+\n| id   | ts   |\n+------+------+\n|    1 | NULL |\n|    2 | NULL |\n+------+------+\n\nUPDATE t2 SET id=3 WHERE id=1;\n\nSELECT * FROM t2;\n+------+---------------------+\n| id   | ts                  |\n+------+---------------------+\n|    3 | 2013-07-22 15:32:22 |\n|    2 | NULL                |\n+------+---------------------+\n",
+        "CREATE TABLE t3 (id INT, ts1 TIMESTAMP, ts2 TIMESTAMP);\n\nINSERT INTO t3(id)  VALUES (1),(2);\n\nSELECT * FROM t3;\n+------+---------------------+---------------------+\n| id   | ts1                 | ts2                 |\n+------+---------------------+---------------------+\n|    1 | 2013-07-22 15:35:07 | 0000-00-00 00:00:00 |\n|    2 | 2013-07-22 15:35:07 | 0000-00-00 00:00:00 |\n+------+---------------------+---------------------+\n\nDESC t3;\n+-------+-----------+------+-----+---------------------+-----------------------------+\n| Field | Type      | Null | Key | Default             | Extra                       |\n+-------+-----------+------+-----+---------------------+-----------------------------+\n| id    | int(11)   | YES  |     | NULL                |                             |\n| ts1   | timestamp | NO   |     | CURRENT_TIMESTAMP   | on update CURRENT_TIMESTAMP |\n| ts2   | timestamp | NO   |     | 0000-00-00 00:00:00 |                             |\n+-------+-----------+------+-----+---------------------+-----------------------------+\n",
+        "INSERT INTO t3(id,ts2)  VALUES (3,CURRENT_TIMESTAMP());\n\nSELECT * FROM t3;\n+------+---------------------+---------------------+\n| id   | ts1                 | ts2                 |\n+------+---------------------+---------------------+\n|    1 | 2013-07-22 15:35:07 | 0000-00-00 00:00:00 |\n|    2 | 2013-07-22 15:35:07 | 0000-00-00 00:00:00 |\n|    3 | 2013-07-22 15:38:52 | 2013-07-22 15:38:52 |\n+------+---------------------+---------------------+\n",
+        "CREATE TABLE t4 (id INT, ts TIMESTAMP NOT NULL);\n\nINSERT INTO t4(id)  VALUES (1);\nSELECT SLEEP(1);\nINSERT INTO t4(id,ts) VALUES (2,NULL);\n\nSELECT * FROM t4;\n"
+    ],
+    "Category": [
+        "Date and Time Data Types"
+    ]
+}

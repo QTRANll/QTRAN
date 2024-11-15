@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/glength/"
+    ],
+    "Title": [
+        "GLENGTH"
+    ],
+    "Feature": [
+        "GLength(ls)\n"
+    ],
+    "Description": [
+        "Returns as a double-precision number the length of the\nLineString value ls in its associated spatial reference."
+    ],
+    "Examples": [
+        "SET @ls = 'LineString(1 1,2 2,3 3)';\n\nSELECT GLength(GeomFromText(@ls));\n+----------------------------+\n| GLength(GeomFromText(@ls)) |\n+----------------------------+\n|           2.82842712474619 |\n+----------------------------+\n"
+    ],
+    "Category": [
+        "Geographic Functions"
+    ]
+}

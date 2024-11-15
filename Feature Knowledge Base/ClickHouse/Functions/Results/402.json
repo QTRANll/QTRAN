@@ -1,0 +1,27 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/geo/s2"
+    ],
+    "Title": [
+        "s2GetNeighbors"
+    ],
+    "Feature": [
+        "s2GetNeighbors(s2index)"
+    ],
+    "Description": [
+        "s2GetNeighbors",
+        "Returns S2 neighbor indexes corresponding to the provided S2. Each cell in the S2 system is a quadrilateral bounded by four geodesics. So, each cell has 4 neighbors.",
+        "Syntax",
+        "s2GetNeighbors(s2index)",
+        "Arguments",
+        "s2index \u2014 S2 Index. UInt64.",
+        "Returned value",
+        "An array consisting of 4 neighbor indexes: array[s2index1, s2index3, s2index2, s2index4]. Array(UInt64)."
+    ],
+    "Examples": [
+        "SELECT s2GetNeighbors(5074766849661468672) AS s2Neighbors;"
+    ],
+    "Category": [
+        "Geo Functions"
+    ]
+}

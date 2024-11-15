@@ -1,0 +1,27 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.0/en/built-in-function-reference.html"
+    ],
+    "Title": [
+        "14.1 Built-In Function and Operator Reference"
+    ],
+    "Name": "FIELD()",
+    "Description": [
+        "\nFIELD(str,str1,str2,str3,...)\n",
+        "\n          Returns the index (position) of str\n          in the str1,\n          str2,\n          str3, ... list.\n          Returns 0 if str\n          is not found.\n        ",
+        "\n          If all arguments to FIELD() are\n          strings, all arguments are compared as strings. If all\n          arguments are numbers, they are compared as numbers.\n          Otherwise, the arguments are compared as double.\n        ",
+        "\n          If str is NULL,\n          the return value is 0 because\n          NULL fails equality comparison with any\n          value. FIELD() is the\n          complement of ELT().\n        ",
+        "Press CTRL+C to copy mysql> SELECT FIELD('Bb', 'Aa', 'Bb', 'Cc', 'Dd', 'Ff');\n        -> 2\nmysql> SELECT FIELD('Gg', 'Aa', 'Bb', 'Cc', 'Dd', 'Ff');\n        -> 0"
+    ],
+    "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/string-functions.html#function_field",
+    "Feature": [
+        "FIELD(str,str1,str2,str3,...)"
+    ],
+    "Examples": [
+        "mysql> SELECT FIELD('Bb', 'Aa', 'Bb', 'Cc', 'Dd', 'Ff');\n        -> 2\nmysql> SELECT FIELD('Gg', 'Aa', 'Bb', 'Cc', 'Dd', 'Ff');\n        -> 0"
+    ],
+    "Category": [
+        "Built-In Functions and Operators",
+        "String Functions and Operators"
+    ]
+}

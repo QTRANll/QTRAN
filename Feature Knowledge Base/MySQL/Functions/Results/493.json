@@ -1,0 +1,27 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.0/en/loadable-function-reference.html"
+    ],
+    "Title": [
+        "14.2 Loadable Function Reference"
+    ],
+    "Name": "mysql_firewall_flush_status()",
+    "Description": [
+        "\nmysql_firewall_flush_status()\n",
+        "\n              This function resets several firewall status variables to\n              0:\n",
+        "\n\nFirewall_access_denied\n\nFirewall_access_granted\n\nFirewall_access_suspicious\n\n",
+        "\n              This function requires the\n              FIREWALL_ADMIN privilege or\n              the deprecated SUPER\n              privilege.\n            ",
+        "\n              Example:\n            ",
+        "Press CTRL+C to copy SELECT mysql_firewall_flush_status();"
+    ],
+    "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/firewall-reference.html#function_mysql-firewall-flush-status",
+    "Feature": [
+        "mysql_firewall_flush_status()"
+    ],
+    "Examples": [
+        "SELECT mysql_firewall_flush_status();"
+    ],
+    "Category": [
+        "Loadable Functions"
+    ]
+}

@@ -8,7 +8,7 @@ import json
 import os
 import sqlglot
 import re
-from src.Tools.DatasetConnector.DatabaseConnector import exec_sql_statement, database_connection_args_sqlancer, database_connection_args_pinolo
+from src.Tools.database_connector import exec_sql_statement, database_connection_args_sqlancer, database_connection_args_pinolo
 from langchain.prompts import ChatPromptTemplate
 from langchain.chat_models import ChatOpenAI
 from langchain.output_parsers import ResponseSchema
@@ -696,54 +696,4 @@ def sqlancer_potential_dialect_features_process_and_map(a_db, b_db, potential_di
 def potential_dialect_features_recognizer(a_db, b_db, source_filename, dir_filename, knowledge_base_dic, search_k=0,version_id=1):
     potential_dialect_features_process_and_map(a_db, b_db, source_filename, dir_filename, knowledge_base_dic, ["Functions"], search_k=0,version_id=1)
     potential_dialect_features_process_and_map(a_db, b_db, source_filename, dir_filename, knowledge_base_dic,["Operators"], search_k=0, version_id=1)
-
-
-# 示例用法
-if __name__ == "__main__":
-    # 预处理feature knowledge base：处理examples
-    feature_knowledge_base_preprocessing("MariaDB", "Functions")
-    # feature_knowledge_base_preprocessing("MariaDB", "Operators")
-
-    init_filename = "../../Dataset/Pinolo Output/output_test/ALL/init_output1_mariadb_1_240_originalSqlsim_all.json"
-    direct_filename_potential_feature = "../../Output/TransferLLM/Pinolo/PotentialFeatures/MariaDB/init_output1_mariadb_1_240_originalSqlsim_all.json"
-    direct_filename_potential_dialect = "../../Output/TransferLLM/Pinolo/PotentialDialectFeatures/ALL/init_output1_mariadb_to_postgres_1_240_originalSqlsim_all_0.jsonl"
-    knowledge_base_filename = "../../Feature Knowledge Base Processed1/MariaDB"
-    potential_features_refiner("MariaDB", init_filename, direct_filename_potential_feature)
-    # potential_dialect_features_recognizer("MariaDB", "Postgres", direct_filename_potential_feature, direct_filename_potential_dialect, knowledge_base_filename)
-
-
-    """
-    dic = "../../Feature Knowledge Base Processed3/MariaDB/Functions/Results"
-    dic = "../../Feature Knowledge Base Processed1/MariaDB/Operators/Results"
-    filenames = os.listdir(dic)
-    refined_fail_cnt = 0  # 提取effective sql失败的个数
-    generated1_fail_cnt = 0  # 生成effective sql第一步失败的个数
-    generated2_fail_cnt = 0  # 生成effective sql第二步失败的个数
-    for filename in filenames:
-        with open(os.path.join(dic, filename), "r", encoding="utf-8") as r:
-            content = json.load(r)
-        if len(content["Effective SQLs Refined"]) == 0:
-            refined_fail_cnt += 1
-            if len(content["Effective SQLs Generated1"]) == 0:
-
-                print(filename)
-                generated1_fail_cnt += 1
-                if "Effective SQLs Generated2" not in content:
-                    content["SQLs Generated2"] = []
-                    content["SQLs Generated Costs2"]=[]
-                    content["SQLs Generated ExecResults2"]= []
-                    content["SQLs Generated ExecTimes2"]= []
-                    content["SQLs Generated ErrorMessages2"] = []
-                    content["Effective SQLs Generated2"] = []
-                    with open(os.path.join(dic, filename), "w", encoding="utf-8") as w:
-                        json.dump(content, w, indent=4)
-                else:
-                    if len(content["Effective SQLs Generated2"]) == 0:
-                        generated2_fail_cnt += 1
-                        
-    print("提取effective sql失败的个数:"+str(refined_fail_cnt))
-    print("生成effective sql第一步失败的个数:" + str(generated1_fail_cnt))
-    print("生成effective sql第二步失败的个数:" + str(generated2_fail_cnt))
-    """
-
 

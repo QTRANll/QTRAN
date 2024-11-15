@@ -1,0 +1,23 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.0/en/built-in-function-reference.html"
+    ],
+    "Title": [
+        "14.1 Built-In Function and Operator Reference"
+    ],
+    "Name": "IS_USED_LOCK()",
+    "Description": [
+        "\nIS_USED_LOCK(str)\n",
+        "\n          Checks whether the lock named str\n          is in use (that is, locked). If so, it returns the connection\n          identifier of the client session that holds the lock.\n          Otherwise, it returns NULL.\n        ",
+        "\n          This function is unsafe for statement-based replication. A\n          warning is logged if you use this function when\n          binlog_format is set to\n          STATEMENT.\n        "
+    ],
+    "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/locking-functions.html#function_is-used-lock",
+    "Feature": [
+        "IS_USED_LOCK(str)"
+    ],
+    "Examples": [],
+    "Category": [
+        "Built-In Functions and Operators",
+        "Locking Functions"
+    ]
+}

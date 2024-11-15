@@ -1,0 +1,27 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/date-time-functions"
+    ],
+    "Title": [
+        "addMinutes"
+    ],
+    "Feature": [
+        "addMinutes(date, num)"
+    ],
+    "Description": [
+        "addMinutes",
+        "Adds a specified number of minutes to a date, a date with time or a string-encoded date / date with time.",
+        "Syntax",
+        "addMinutes(date, num)",
+        "Parameters",
+        "date: Date / date with time to add specified number of minutes to. Date/Date32/DateTime/DateTime64, String.num: Number of minutes to add. (U)Int*, Float*.",
+        "Returned value",
+        "Returns date plus num minutes. Date/Date32/DateTime/DateTime64."
+    ],
+    "Examples": [
+        "WITH    toDate('2024-01-01') AS date,    toDateTime('2024-01-01 00:00:00') AS date_time,    '2024-01-01 00:00:00' AS date_time_stringSELECT    addMinutes(date, 20) AS add_minutes_with_date,    addMinutes(date_time, 20) AS add_minutes_with_date_time,    addMinutes(date_time_string, 20) AS add_minutes_with_date_time_string"
+    ],
+    "Category": [
+        "Dates and Times Functions"
+    ]
+}

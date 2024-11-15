@@ -1,0 +1,32 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/string-functions"
+    ],
+    "Title": [
+        "isValidUTF8"
+    ],
+    "Feature": [
+        "isValidUTF8(input)"
+    ],
+    "Description": [
+        "isValidUTF8",
+        "Returns 1, if the set of bytes constitutes valid UTF-8-encoded text, otherwise 0.",
+        "Syntax",
+        "isValidUTF8(input)",
+        "Parameters",
+        "input \u2014 A string type String.",
+        "Returned value",
+        "Returns 1, if the set of bytes constitutes valid UTF-8-encoded text, otherwise 0.",
+        "Query:",
+        "SELECT isValidUTF8('\\xc3\\xb1') AS valid, isValidUTF8('\\xc3\\x28') AS invalid;",
+        "Result:",
+        "\u250c\u2500valid\u2500\u252c\u2500invalid\u2500\u2510\u2502     1 \u2502       0 \u2502\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518"
+    ],
+    "Examples": [
+        "isValidUTF8(input)",
+        "SELECT isValidUTF8('\\xc3\\xb1') AS valid, isValidUTF8('\\xc3\\x28') AS invalid;"
+    ],
+    "Category": [
+        "Strings Functions"
+    ]
+}

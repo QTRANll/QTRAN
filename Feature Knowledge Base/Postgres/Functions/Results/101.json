@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/16/functions-string.html"
+    ],
+    "Title": [
+        "strpos"
+    ],
+    "Feature": [
+        "strpos ( string text, substring text ) → integer"
+    ],
+    "Description": [
+        "Returns first starting index of the specified substring within string, or zero if it's not present. (Same as position(substring in string), but note the reversed argument order.)"
+    ],
+    "Examples": [
+        "strpos('high', 'ig') → 2"
+    ],
+    "Category": [
+        "String Functions and Operators"
+    ]
+}

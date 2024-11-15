@@ -1,0 +1,21 @@
+{
+    "HTML": [
+        "https://docs.pingcap.com/zh/tidb/v8.3/data-type-date-and-time"
+    ],
+    "Title": [
+        "TIME 类型"
+    ],
+    "Feature": [
+        "TIME 类型"
+    ],
+    "Description": [
+        "TIME 类型",
+        "TIME 类型的格式为 HH:MM:SS[.fraction]，支持的范围是 -838:59:59.000000 到 838:59:59.000000。TIME 不仅可用于指示一天内的时间，还可用于指两个事件之间的时间间隔。fsp 参数表示秒精度，取值范围为：0 ~ 6，默认值为 0。",
+        "TIME[(fsp)]\n",
+        "注意注意 TIME 的缩写形式。例如，11:12 表示 11:12:00 而不是 00:11:12。但是，1112 表示 00:11:12。这些差异取决于 : 字符的存在与否。"
+    ],
+    "Examples": [],
+    "Category": [
+        "日期和时间类型"
+    ]
+}

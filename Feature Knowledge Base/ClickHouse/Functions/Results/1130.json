@@ -1,0 +1,29 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/aggregate-functions/reference/argmax"
+    ],
+    "Title": [
+        "argMax"
+    ],
+    "Feature": [
+        "argMax(arg, val)"
+    ],
+    "Description": [
+        "argMax",
+        "Calculates the arg value for a maximum val value. If there are multiple rows with equal val being the maximum, which of the associated arg is returned is not deterministic.\nBoth parts the arg and the max behave as aggregate functions, they both skip Null during processing and return not Null values if not Null values are available.",
+        "Syntax",
+        "argMax(arg, val)",
+        "Arguments",
+        "arg \u2014 Argument.val \u2014 Value.",
+        "Returned value",
+        "arg value that corresponds to maximum val value.",
+        "Type: matches arg type."
+    ],
+    "Examples": [
+        "SELECT argMax(user, salary) FROM salary;",
+        "CREATE TABLE test(    a Nullable(String),    b Nullable(Int64))ENGINE = Memory ASSELECT *FROM VALUES(('a', 1), ('b', 2), ('c', 2), (NULL, 3), (NULL, NULL), ('d', NULL));select * from test;\u250c\u2500a\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500b\u2500\u2510\u2502 a    \u2502    1 \u2502\u2502 b    \u2502    2 \u2502\u2502 c    \u2502    2 \u2502\u2502 \u1d3a\u1d41\u1d38\u1d38 \u2502    3 \u2502\u2502 \u1d3a\u1d41\u1d38\u1d38 \u2502 \u1d3a\u1d41\u1d38\u1d38 \u2502\u2502 d    \u2502 \u1d3a\u1d41\u1d38\u1d38 \u2502\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2518SELECT argMax(a, b), max(b) FROM test;\u250c\u2500argMax(a, b)\u2500\u252c\u2500max(b)\u2500\u2510\u2502 b            \u2502      3 \u2502 -- argMax = 'b' because it the first not Null value, max(b) is from another row!\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518SELECT argMax(tuple(a), b) FROM test;\u250c\u2500argMax(tuple(a), b)\u2500\u2510\u2502 (NULL)              \u2502 -- The a `Tuple` that contains only a `NULL` value is not `NULL`, so the aggregate functions won't skip that row because of that `NULL` value\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518SELECT (argMax((a, b), b) as t).1 argMaxA, t.2 argMaxB FROM test;\u250c\u2500argMaxA\u2500\u252c\u2500argMaxB\u2500\u2510\u2502 \u1d3a\u1d41\u1d38\u1d38    \u2502       3 \u2502 -- you can use Tuple and get both (all - tuple(*)) columns for the according max(b)\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518SELECT argMax(a, b), max(b) FROM test WHERE a IS NULL AND b IS NULL;\u250c\u2500argMax(a, b)\u2500\u252c\u2500max(b)\u2500\u2510\u2502 \u1d3a\u1d41\u1d38\u1d38         \u2502   \u1d3a\u1d41\u1d38\u1d38 \u2502 -- All aggregated rows contains at least one `NULL` value because of the filter, so all rows are skipped, therefore the result will be `NULL`\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518SELECT argMax(a, (b,a)) FROM test;\u250c\u2500argMax(a, tuple(b, a))\u2500\u2510\u2502 c                      \u2502 -- There are two rows with b=2, `Tuple` in the `Max` allows to get not the first `arg`\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518SELECT argMax(a, tuple(b)) FROM test;\u250c\u2500argMax(a, tuple(b))\u2500\u2510\u2502 b                   \u2502 -- `Tuple` can be used in `Max` to not skip Nulls in `Max`\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518"
+    ],
+    "Category": [
+        "Aggregate Functions"
+    ]
+}

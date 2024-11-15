@@ -1,0 +1,21 @@
+{
+    "HTML": [
+        "https://duckdb.org/docs/sql/functions/regular_expressions"
+    ],
+    "Title": [
+        "regexp_extract(string, pattern, name_list[, options])"
+    ],
+    "Feature": [
+        "regexp_extract(string, pattern, name_list[, options])"
+    ],
+    "Description": [
+        "If string contains the regexp pattern, returns the capturing groups as a struct with corresponding names from name_list.",
+        "If string contains the regexp pattern, returns the capturing groups as a struct with corresponding names from name_list. A set of optional options can be set."
+    ],
+    "Examples": [
+        "regexp_extract('2023-04-15', '(\\d+)-(\\d+)-(\\d+)', ['y', 'm', 'd'])"
+    ],
+    "Category": [
+        "Regular Expressions"
+    ]
+}

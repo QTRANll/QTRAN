@@ -1,0 +1,32 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.0/en/built-in-function-reference.html"
+    ],
+    "Title": [
+        "14.1 Built-In Function and Operator Reference"
+    ],
+    "Name": "WAIT_FOR_EXECUTED_GTID_SET()",
+    "Description": [
+        "\nWAIT_FOR_EXECUTED_GTID_SET(gtid_set[,\n            timeout])\n",
+        "\n            Wait until the server has applied all of the transactions\n            whose global transaction identifiers are contained in\n            gtid_set; that is, until the\n            condition\n            GTID_SUBSET(gtid_subset,\n            @@GLOBAL.gtid_executed) holds. See\n            Section\u00a019.1.3.1, \u201cGTID Format and Storage\u201d for a\n            definition of GTID sets.\n          ",
+        "\n            If a timeout is specified, and\n            timeout seconds elapse before all\n            of the transactions in the GTID set have been applied, the\n            function stops waiting. timeout\n            is optional, and the default timeout is 0 seconds, in which\n            case the function always waits until all of the transactions\n            in the GTID set have been applied.\n            timeout must be greater than or\n            equal to 0; when running in strict SQL mode, a negative\n            timeout value is immediately\n            rejected with an error\n            (ER_WRONG_ARGUMENTS);\n            otherwise the function returns NULL, and\n            raises a warning.\n          ",
+        "\nWAIT_FOR_EXECUTED_GTID_SET() monitors all\n            the GTIDs that are applied on the server, including\n            transactions that arrive from all replication channels and\n            user clients. It does not take into account whether\n            replication channels have been started or stopped.\n          ",
+        "\n            For more information, see\n            Section\u00a019.1.3, \u201cReplication with Global Transaction Identifiers\u201d.\n          ",
+        "\n            GTID sets used with this function are represented as strings\n            and so must be quoted as shown in the following example:\n          ",
+        "Press CTRL+C to copy mysql> SELECT WAIT_FOR_EXECUTED_GTID_SET('3E11FA47-71CA-11E1-9E33-C80AA9429562:1-5');\n        -> 0",
+        "\n            For a syntax description for GTID sets, see\n            Section\u00a019.1.3.1, \u201cGTID Format and Storage\u201d.\n          ",
+        "\n            For WAIT_FOR_EXECUTED_GTID_SET(), the\n            return value is the state of the query, where 0 represents\n            success, and 1 represents timeout. Any other failures\n            generate an error.\n          ",
+        "\ngtid_mode cannot be changed\n            to OFF while any client is using this function to wait for\n            GTIDs to be applied.\n          "
+    ],
+    "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/gtid-functions.html#function_wait-for-executed-gtid-set",
+    "Feature": [
+        "WAIT_FOR_EXECUTED_GTID_SET(gtid_set[,\n            timeout])"
+    ],
+    "Examples": [
+        "mysql> SELECT WAIT_FOR_EXECUTED_GTID_SET('3E11FA47-71CA-11E1-9E33-C80AA9429562:1-5');\n        -> 0"
+    ],
+    "Category": [
+        "Built-In Functions and Operators",
+        "Replication Functions"
+    ]
+}

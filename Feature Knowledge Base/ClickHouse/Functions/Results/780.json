@@ -1,0 +1,28 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/string-search-functions"
+    ],
+    "Title": [
+        "extractAllGroupsVertical"
+    ],
+    "Feature": [
+        "extractAllGroupsVertical(haystack, pattern)"
+    ],
+    "Description": [
+        "extractAllGroupsVertical",
+        "Matches all groups of the haystack string using the pattern regular expression. Returns an array of arrays, where each array includes matching fragments from every group. Fragments are grouped in order of appearance in the haystack.",
+        "Syntax",
+        "extractAllGroupsVertical(haystack, pattern)",
+        "Arguments",
+        "haystack \u2014 Input string. String.pattern \u2014 Regular expression with re2 regular expression syntax. Must contain groups, each group enclosed in parentheses. If pattern contains no groups, an exception is thrown. String.",
+        "Returned value",
+        "Array of arrays of matches. Array.",
+        "NoteIf haystack does not match the pattern regex, an empty array is returned."
+    ],
+    "Examples": [
+        "SELECT extractAllGroupsVertical('abc=111, def=222, ghi=333', '(\"[^\"]+\"|\\\\w+)=(\"[^\"]+\"|\\\\w+)');"
+    ],
+    "Category": [
+        "Searching in Strings Functions"
+    ]
+}

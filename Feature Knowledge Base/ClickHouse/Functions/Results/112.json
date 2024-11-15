@@ -1,0 +1,31 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/array-functions"
+    ],
+    "Title": [
+        "arrayShiftRight"
+    ],
+    "Feature": [
+        "arrayShiftRight(arr, n[, default])"
+    ],
+    "Description": [
+        "arrayShiftRight",
+        "Shifts an array to the right by the specified number of elements.\nNew elements are filled with the provided argument or the default value of the array element type.\nIf the number of elements is negative, the array is shifted to the left.",
+        "Syntax",
+        "arrayShiftRight(arr, n[, default])",
+        "Arguments",
+        "arr \u2014 Array.n \u2014 Number of elements to shift.default \u2014 Optional. Default value for new elements.",
+        "Returned value",
+        "An array shifted to the right by the specified number of elements. Array."
+    ],
+    "Examples": [
+        "SELECT arrayShiftRight([1,2,3,4,5,6], 2) as res;",
+        "SELECT arrayShiftRight([1,2,3,4,5,6], -2) as res;",
+        "SELECT arrayShiftRight([1,2,3,4,5,6], 2, 42) as res;",
+        "SELECT arrayShiftRight(['a','b','c','d','e','f'], 3, 'foo') as res;",
+        "SELECT arrayShiftRight([1,2,3,4,5,6] :: Array(UInt16), 2, 4242) as res;"
+    ],
+    "Category": [
+        "Arrays Functions"
+    ]
+}

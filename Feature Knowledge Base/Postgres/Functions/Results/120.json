@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/16/functions-binarystring.html"
+    ],
+    "Title": [
+        "md5"
+    ],
+    "Feature": [
+        "md5 ( bytea ) → text"
+    ],
+    "Description": [
+        "Computes the MD5 hash of the binary string, with the result written in hexadecimal."
+    ],
+    "Examples": [
+        "md5('Th\\000omas'::bytea) → 8ab2d3c9689aaf18​b4958c334c82d8b1"
+    ],
+    "Category": [
+        "Binary String Functions and Operators"
+    ]
+}

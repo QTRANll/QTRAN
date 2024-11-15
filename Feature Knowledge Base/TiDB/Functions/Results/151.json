@@ -1,0 +1,25 @@
+{
+    "HTML": [
+        "https://docs.pingcap.com/zh/tidb/v8.3/cast-functions-and-operators"
+    ],
+    "Title": [
+        "CAST"
+    ],
+    "Feature": [
+        "CAST"
+    ],
+    "Description": [
+        "CAST",
+        "CAST(<expression> AS <type> [ARRAY]) 函数用于将一个表达式的值转换为指定的数据类型。",
+        "此外，你还可以将该函数用于创建多值索引。",
+        "支持的数据类型包括：",
+        "类型描述是否可用于多值索引BINARY(n)二进制字符串否CHAR(n)字符串是，但仅当指定了长度时才有效DATE日期是DATETIME(fsp)日期/时间，其中 fsp 是可选的是DECIMAL(n, m)十进制数，其中 n 和 m 是可选的，如果未指定，则默认为 10 和 0否DOUBLE双精度浮点数否FLOAT(n)浮点数，其中 n 是可选的，应介于 0 和 53 之间否JSONJSON否REAL浮点数是SIGNED [INTEGER]有符号整数是TIME(fsp)时间是UNSIGNED [INTEGER]无符号整数是YEAR年否"
+    ],
+    "Examples": [
+        "SELECT CAST(0x54694442 AS CHAR);\n",
+        "CREATE TABLE t (\n    id INT PRIMARY KEY,\n    j JSON,\n    INDEX idx_a ((CAST(j->'$.a' AS UNSIGNED ARRAY)))\n);\nINSERT INTO t VALUES (1, JSON_OBJECT('a',JSON_ARRAY(1,2,3)));\nINSERT INTO t VALUES (2, JSON_OBJECT('a',JSON_ARRAY(4,5,6)));\nINSERT INTO t VALUES (3, JSON_OBJECT('a',JSON_ARRAY(7,8,9)));\nANALYZE TABLE t;\n"
+    ],
+    "Category": [
+        "Cast 函数和操作符"
+    ]
+}

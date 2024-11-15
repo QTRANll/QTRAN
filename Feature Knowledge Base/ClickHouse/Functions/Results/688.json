@@ -1,0 +1,29 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/other-functions"
+    ],
+    "Title": [
+        "structureToCapnProtoSchema"
+    ],
+    "Feature": [
+        "structureToCapnProtoSchema(structure)"
+    ],
+    "Description": [
+        "structureToCapnProtoSchema",
+        "Converts ClickHouse table structure to CapnProto schema.",
+        "Syntax",
+        "structureToCapnProtoSchema(structure)",
+        "Arguments",
+        "structure \u2014 Table structure in a format column1_name column1_type, column2_name column2_type, ....root_struct_name \u2014 Name for root struct in CapnProto schema. Default value - Message;",
+        "Returned value",
+        "CapnProto schema. String."
+    ],
+    "Examples": [
+        "SELECT structureToCapnProtoSchema('column1 String, column2 UInt32, column3 Array(String)') FORMAT RawBLOB",
+        "SELECT structureToCapnProtoSchema('column1 Nullable(String), column2 Tuple(element1 UInt32, element2 Array(String)), column3 Map(String, String)') FORMAT RawBLOB",
+        "SELECT structureToCapnProtoSchema('column1 String, column2 UInt32', 'Root') FORMAT RawBLOB"
+    ],
+    "Category": [
+        "Other Functions"
+    ]
+}

@@ -1,0 +1,28 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.0/en/built-in-function-reference.html"
+    ],
+    "Title": [
+        "14.1 Built-In Function and Operator Reference"
+    ],
+    "Name": "RANK()",
+    "Description": [
+        "\nRANK()\nover_clause\n",
+        "\n            Returns the rank of the current row within its partition,\n            with gaps. Peers are considered ties and receive the same\n            rank. This function does not assign consecutive ranks to\n            peer groups if groups of size greater than one exist; the\n            result is noncontiguous rank numbers.\n          ",
+        "\n            This function should be used with ORDER\n            BY to sort partition rows into the desired order.\n            Without ORDER BY, all rows are peers.\n          ",
+        "\nover_clause is as described in\n            Section\u00a014.20.2, \u201cWindow Function Concepts and Syntax\u201d.\n          ",
+        "\n            The following query shows the difference between\n            RANK(), which produces ranks\n            with gaps, and DENSE_RANK(),\n            which produces ranks without gaps. The query shows rank\n            values for each member of a set of values in the\n            val column, which contains some\n            duplicates. RANK() assigns\n            peers (the duplicates) the same rank value, and the next\n            greater value has a rank higher by the number of peers minus\n            one. DENSE_RANK() also\n            assigns peers the same rank value, but the next higher value\n            has a rank one greater. For reference, the query also\n            displays row numbers using\n            ROW_NUMBER():\n          ",
+        "Press CTRL+C to copy mysql> SELECT\n         val,\n         ROW_NUMBER() OVER w AS 'row_number',\n         RANK()       OVER w AS 'rank',\n         DENSE_RANK() OVER w AS 'dense_rank'\n       FROM numbers\n       WINDOW w AS (ORDER BY val);\n+------+------------+------+------------+\n| val  | row_number | rank | dense_rank |\n+------+------------+------+------------+\n|    1 |          1 |    1 |          1 |\n|    1 |          2 |    1 |          1 |\n|    2 |          3 |    3 |          2 |\n|    3 |          4 |    4 |          3 |\n|    3 |          5 |    4 |          3 |\n|    3 |          6 |    4 |          3 |\n|    4 |          7 |    7 |          4 |\n|    4 |          8 |    7 |          4 |\n|    5 |          9 |    9 |          5 |\n+------+------------+------+------------+"
+    ],
+    "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/window-function-descriptions.html#function_rank",
+    "Feature": [
+        "RANK()"
+    ],
+    "Examples": [
+        "mysql> SELECT\n         val,\n         ROW_NUMBER() OVER w AS 'row_number',\n         RANK()       OVER w AS 'rank',\n         DENSE_RANK() OVER w AS 'dense_rank'\n       FROM numbers\n       WINDOW w AS (ORDER BY val);\n+------+------------+------+------------+\n| val  | row_number | rank | dense_rank |\n+------+------------+------+------------+\n|    1 |          1 |    1 |          1 |\n|    1 |          2 |    1 |          1 |\n|    2 |          3 |    3 |          2 |\n|    3 |          4 |    4 |          3 |\n|    3 |          5 |    4 |          3 |\n|    3 |          6 |    4 |          3 |\n|    4 |          7 |    7 |          4 |\n|    4 |          8 |    7 |          4 |\n|    5 |          9 |    9 |          5 |\n+------+------------+------+------------+"
+    ],
+    "Category": [
+        "Built-In Functions and Operators",
+        "Window Functions"
+    ]
+}

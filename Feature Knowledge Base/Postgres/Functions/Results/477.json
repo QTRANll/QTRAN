@@ -1,0 +1,23 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/16/functions-info.html"
+    ],
+    "Title": [
+        "pg_input_is_valid"
+    ],
+    "Feature": [
+        "pg_input_is_valid ( string text, type text ) → boolean"
+    ],
+    "Description": [
+        "Tests whether the given string is valid input for the specified data type, returning true or false.",
+        "This function will only work as desired if the data type's input function has been updated to report invalid input as a “soft” error. Otherwise, invalid input will abort the transaction, just as if the string had been cast to the type directly."
+    ],
+    "Examples": [
+        "pg_input_is_valid('42', 'integer') → t",
+        "pg_input_is_valid('42000000000', 'integer') → f",
+        "pg_input_is_valid('1234.567', 'numeric(7,4)') → f"
+    ],
+    "Category": [
+        "System Information Functions and Operators"
+    ]
+}

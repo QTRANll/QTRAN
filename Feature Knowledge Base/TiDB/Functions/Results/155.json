@@ -1,0 +1,28 @@
+{
+    "HTML": [
+        "https://docs.pingcap.com/zh/tidb/v8.3/encryption-and-compression-functions"
+    ],
+    "Title": [
+        "COMPRESS()"
+    ],
+    "Feature": [
+        "COMPRESS()"
+    ],
+    "Description": [
+        "COMPRESS()",
+        "COMPRESS(expr) 函数返回输入参数 expr 的压缩版本。",
+        "如果输入参数为 NULL，该函数返回 NULL。如果输入参数为空字符串，该函数返回零长度值。",
+        "对于非零长度输入参数，函数返回具有以下结构的二进制字符串：",
+        "字节 0 到 3：未压缩长度字节 4 到结尾：zlib 压缩数据",
+        "SELECT COMPRESS(0x414243);\n",
+        "+------------------------------------------+\n| COMPRESS(0x414243)                       |\n+------------------------------------------+\n| 0x03000000789C72747206040000FFFF018D00C7 |\n+------------------------------------------+\n1 row in set (0.00 sec)\n",
+        "在此输出中，0x03000000 表示未压缩长度 (3)，0x789C72747206040000FFFF018D00C7 是 zlib 压缩数据。"
+    ],
+    "Examples": [
+        "SELECT COMPRESS(0x414243);\n",
+        "WITH x AS (SELECT REPEAT('a',100) 'a')\nSELECT LENGTH(a),LENGTH(COMPRESS(a)) FROM x;\n"
+    ],
+    "Category": [
+        "加密和压缩函数"
+    ]
+}

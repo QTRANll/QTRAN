@@ -1,0 +1,27 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/aggregate-functions/reference/simplelinearregression"
+    ],
+    "Title": [
+        "simpleLinearRegression"
+    ],
+    "Feature": [
+        "simpleLinearRegression(x, y)"
+    ],
+    "Description": [
+        "simpleLinearRegression",
+        "Performs simple (unidimensional) linear regression.",
+        "simpleLinearRegression(x, y)",
+        "Parameters:",
+        "x \u2014 Column with explanatory variable values.y \u2014 Column with dependent variable values.",
+        "Returned values:",
+        "Constants (k, b) of the resulting line y = k*x + b."
+    ],
+    "Examples": [
+        "SELECT arrayReduce('simpleLinearRegression', [0, 1, 2, 3], [0, 1, 2, 3])",
+        "SELECT arrayReduce('simpleLinearRegression', [0, 1, 2, 3], [3, 4, 5, 6])"
+    ],
+    "Category": [
+        "Aggregate Functions"
+    ]
+}

@@ -1,0 +1,22 @@
+{
+    "HTML": [
+        "https://www.monetdb.org/documentation-Aug2024/user-guide/sql-functions/date-time-functions"
+    ],
+    "Title": [
+        "sql_add(dt_or_tm, sec_interval)"
+    ],
+    "Feature": [
+        "sql_add(dt_or_tm, sec_interval)"
+    ],
+    "Description": [
+        "Return type: ",
+        "same as arg 1",
+        "add a decimal seconds interval value to a date or time or timetz or timestamp or timestamptz"
+    ],
+    "Examples": [
+        "sql_add(time '15:35:50', interval '50' second)"
+    ],
+    "Category": [
+        "Date Time Functions"
+    ]
+}

@@ -1,0 +1,21 @@
+{
+    "HTML": [
+        "https://duckdb.org/docs/sql/functions/window_functions"
+    ],
+    "Title": [
+        "first_value(expr[ IGNORE NULLS])"
+    ],
+    "Feature": [
+        "first_value(expr[ IGNORE NULLS])"
+    ],
+    "Description": [
+        "Returns expr evaluated at the row that is the first row (with a non-null value of expr if IGNORE NULLS is set) of the window frame.",
+        "Same type as expr"
+    ],
+    "Examples": [
+        "first_value(column)"
+    ],
+    "Category": [
+        "Window Functions"
+    ]
+}

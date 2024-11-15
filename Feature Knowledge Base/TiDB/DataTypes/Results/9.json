@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://docs.pingcap.com/zh/tidb/v8.3/data-type-numeric"
+    ],
+    "Title": [
+        "DECIMAL 类型"
+    ],
+    "Feature": [
+        "DECIMAL 类型"
+    ],
+    "Description": [
+        "DECIMAL 类型",
+        "定点数，别名为 NUMERIC。M 是小数位数（精度）的总数，D 是小数点（标度）后面的位数。小数点和 -（负数）符号不包括在 M 中。如果 D 是 0，则值没有小数点或分数部分。如果 D 被省略，默认是 0。如果 M 被省略，默认是 10。",
+        "DECIMAL[(M[,D])] [UNSIGNED] [ZEROFILL]\nNUMERIC[(M[,D])] [UNSIGNED] [ZEROFILL]\n"
+    ],
+    "Examples": [],
+    "Category": [
+        "数值类型"
+    ]
+}

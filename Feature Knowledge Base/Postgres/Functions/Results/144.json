@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/16/functions-formatting.html"
+    ],
+    "Title": [
+        "to_number"
+    ],
+    "Feature": [
+        "to_number ( text, text ) → numeric"
+    ],
+    "Description": [
+        "Converts string to numeric according to the given format."
+    ],
+    "Examples": [
+        "to_number('12,454.8-', '99G999D9S') → -12454.8"
+    ],
+    "Category": [
+        "Data Type Formatting Functions"
+    ]
+}

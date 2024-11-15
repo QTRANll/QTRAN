@@ -1,0 +1,30 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/aggregate-functions/reference/grouparraysample"
+    ],
+    "Title": [
+        "groupArraySample"
+    ],
+    "Feature": [
+        "groupArraySample(max_size[, seed])(x)"
+    ],
+    "Description": [
+        "groupArraySample",
+        "Creates an array of sample argument values. The size of the resulting array is limited to max_size elements. Argument values are selected and added to the array randomly.",
+        "Syntax",
+        "groupArraySample(max_size[, seed])(x)",
+        "Arguments",
+        "max_size \u2014 Maximum size of the resulting array. UInt64.seed \u2014 Seed for the random number generator. Optional. UInt64. Default value: 123456.x \u2014 Argument (column name or expression).",
+        "Returned values",
+        "Array of randomly selected x arguments.",
+        "Type: Array."
+    ],
+    "Examples": [
+        "SELECT groupArraySample(3)(color) as newcolors FROM colors;",
+        "SELECT groupArraySample(3, 987654321)(color) as newcolors FROM colors;",
+        "SELECT groupArraySample(3)(concat('light-', color)) as newcolors FROM colors;"
+    ],
+    "Category": [
+        "Aggregate Functions"
+    ]
+}

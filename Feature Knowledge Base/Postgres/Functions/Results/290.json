@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/16/functions-array.html"
+    ],
+    "Title": [
+        "array_position"
+    ],
+    "Feature": [
+        "array_position ( anycompatiblearray, anycompatible [, integer ] ) → integer"
+    ],
+    "Description": [
+        "Returns the subscript of the first occurrence of the second argument in the array, or NULL if it's not present. If the third argument is given, the search begins at that subscript. The array must be one-dimensional. Comparisons are done using IS NOT DISTINCT FROM semantics, so it is possible to search for NULL."
+    ],
+    "Examples": [
+        "array_position(ARRAY['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat'], 'mon') → 2"
+    ],
+    "Category": [
+        "Array Functions and Operators"
+    ]
+}

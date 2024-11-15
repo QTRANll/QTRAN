@@ -1,0 +1,19 @@
+{
+    "HTML": "https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html#function_from-days",
+    "Title": "FROM_DAYS()",
+    "Feature": [
+        "FROM_DAYS(N)"
+    ],
+    "Description": [
+        "\nFROM_DAYS(N)\n",
+        "\n          Given a day number N, returns a\n          DATE value. Returns\n          NULL if N is\n          NULL.\n        ",
+        "Press CTRL+C to copy mysql> SELECT FROM_DAYS(730669);\n        -> '2000-07-03'",
+        "\n          Use FROM_DAYS() with caution on\n          old dates. It is not intended for use with values that precede\n          the advent of the Gregorian calendar (1582). See\n          Section 13.2.7, “What Calendar Is Used By MySQL?”.\n        "
+    ],
+    "Examples": [
+        "mysql> SELECT FROM_DAYS(730669);\n        -> '2000-07-03'"
+    ],
+    "Category": [
+        "日期和时间函数"
+    ]
+}

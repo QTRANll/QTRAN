@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/16/functions-bitstring.html"
+    ],
+    "Title": [
+        "overlay"
+    ],
+    "Feature": [
+        "overlay ( bits bit PLACING newsubstring bit FROM start integer [ FOR count integer ] ) → bit"
+    ],
+    "Description": [
+        "Replaces the substring of bits that starts at the start'th bit and extends for count bits with newsubstring. If count is omitted, it defaults to the length of newsubstring."
+    ],
+    "Examples": [
+        "overlay(B'01010101010101010' placing B'11111' from 2 for 3) → 0111110101010101010"
+    ],
+    "Category": [
+        "Bit String Functions and Operators"
+    ]
+}

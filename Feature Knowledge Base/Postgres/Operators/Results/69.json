@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/16/functions-geometry.html"
+    ],
+    "Title": [
+        "box # box"
+    ],
+    "Feature": [
+        "box # box → box"
+    ],
+    "Description": [
+        "Computes the intersection of two boxes, or NULL if there is none."
+    ],
+    "Examples": [
+        "box '(2,2),(-1,-1)' # box '(1,1),(-2,-2)' → (1,1),(-1,-1)"
+    ],
+    "Category": [
+        "Geometric Functions and Operators"
+    ]
+}

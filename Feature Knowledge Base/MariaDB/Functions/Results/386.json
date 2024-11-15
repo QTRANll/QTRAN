@@ -1,0 +1,21 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/vec_totext/"
+    ],
+    "Title": [
+        "VEC_ToText"
+    ],
+    "Feature": [
+        "VEC_ToText(v)\n"
+    ],
+    "Description": [
+        "VEC_ToText converts a binary vector into a json array of numbers (floats). Returns NULL and throws a warning 4201 if given an invalid vector."
+    ],
+    "Examples": [
+        "SELECT VEC_ToText(x'e360d63ebe554f3fcdbc523f4522193f5236083d');\n+---------------------------------------------------------+\n| VEC_ToText(x'e360d63ebe554f3fcdbc523f4522193f5236083d') |\n+---------------------------------------------------------+\n| [0.418708,0.809902,0.823193,0.598179,0.033255]          |\n+---------------------------------------------------------+\n",
+        "SELECT VEC_ToText(x'aabbcc');\n+-----------------------+\n| VEC_ToText(x'aabbcc') |\n+-----------------------+\n| NULL                  |\n+-----------------------+\n1 row in set, 1 warning (0.000 sec)\n\nWarning (Code 4201): Invalid binary vector format. Must use IEEE standard float \n  representation in little-endian format. Use VEC_FromText() to generate it.\n"
+    ],
+    "Category": [
+        "Vector Functions"
+    ]
+}

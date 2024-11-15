@@ -1,0 +1,32 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.0/en/built-in-function-reference.html"
+    ],
+    "Title": [
+        "14.1 Built-In Function and Operator Reference"
+    ],
+    "Name": "NTILE()",
+    "Description": [
+        "\nNTILE(N)\nover_clause\n",
+        "\n            Divides a partition into N groups\n            (buckets), assigns each row in the partition its bucket\n            number, and returns the bucket number of the current row\n            within its partition. For example, if\n            N is 4,\n            NTILE() divides rows into four buckets.\n            If N is 100,\n            NTILE() divides rows into 100 buckets.\n          ",
+        "\nN must be a literal positive\n            integer. Bucket number return values range from 1 to\n            N.\n          ",
+        "\n            Beginning with MySQL 8.0.22, N\n            cannot be NULL, and must be an integer in\n            the range 0 to\n            263,\n            inclusive, in any of the following forms:\n",
+        "\n\n                an unsigned integer constant literal\n              \n                a positional parameter marker (?)\n              \n                a user-defined variable\n              \n                a local variable in a stored routine\n\n",
+        "\n            This function should be used with ORDER\n            BY to sort partition rows into the desired order.\n          ",
+        "\nover_clause is as described in\n            Section\u00a014.20.2, \u201cWindow Function Concepts and Syntax\u201d.\n          ",
+        "\n            The following query shows, for the set of values in the\n            val column, the percentile values\n            resulting from dividing the rows into two or four groups.\n            For reference, the query also displays row numbers using\n            ROW_NUMBER():\n          ",
+        "Press CTRL+C to copy mysql> SELECT\n         val,\n         ROW_NUMBER() OVER w AS 'row_number',\n         NTILE(2)     OVER w AS 'ntile2',\n         NTILE(4)     OVER w AS 'ntile4'\n       FROM numbers\n       WINDOW w AS (ORDER BY val);\n+------+------------+--------+--------+\n| val  | row_number | ntile2 | ntile4 |\n+------+------------+--------+--------+\n|    1 |          1 |      1 |      1 |\n|    1 |          2 |      1 |      1 |\n|    2 |          3 |      1 |      1 |\n|    3 |          4 |      1 |      2 |\n|    3 |          5 |      1 |      2 |\n|    3 |          6 |      2 |      3 |\n|    4 |          7 |      2 |      3 |\n|    4 |          8 |      2 |      4 |\n|    5 |          9 |      2 |      4 |\n+------+------------+--------+--------+",
+        "\n            Beginning with MySQL 8.0.22, the construct\n            NTILE(NULL) is no longer permitted.\n          "
+    ],
+    "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/window-function-descriptions.html#function_ntile",
+    "Feature": [
+        "NTILE(N)"
+    ],
+    "Examples": [
+        "mysql> SELECT\n         val,\n         ROW_NUMBER() OVER w AS 'row_number',\n         NTILE(2)     OVER w AS 'ntile2',\n         NTILE(4)     OVER w AS 'ntile4'\n       FROM numbers\n       WINDOW w AS (ORDER BY val);\n+------+------------+--------+--------+\n| val  | row_number | ntile2 | ntile4 |\n+------+------------+--------+--------+\n|    1 |          1 |      1 |      1 |\n|    1 |          2 |      1 |      1 |\n|    2 |          3 |      1 |      1 |\n|    3 |          4 |      1 |      2 |\n|    3 |          5 |      1 |      2 |\n|    3 |          6 |      2 |      3 |\n|    4 |          7 |      2 |      3 |\n|    4 |          8 |      2 |      4 |\n|    5 |          9 |      2 |      4 |\n+------+------------+--------+--------+"
+    ],
+    "Category": [
+        "Built-In Functions and Operators",
+        "Window Functions"
+    ]
+}

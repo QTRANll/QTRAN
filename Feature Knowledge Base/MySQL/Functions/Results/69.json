@@ -1,0 +1,25 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.0/en/built-in-function-reference.html"
+    ],
+    "Title": [
+        "14.1 Built-In Function and Operator Reference"
+    ],
+    "Name": "DAYOFWEEK()",
+    "Description": [
+        "\nDAYOFWEEK(date)\n",
+        "\n          Returns the weekday index for date\n          (1 = Sunday, 2 = Monday,\n          \u2026, 7 = Saturday). These index values\n          correspond to the ODBC standard. Returns\n          NULL if date is\n          NULL.\n        ",
+        "Press CTRL+C to copy mysql> SELECT DAYOFWEEK('2007-02-03');\n        -> 7"
+    ],
+    "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html#function_dayofweek",
+    "Feature": [
+        "DAYOFWEEK(date)"
+    ],
+    "Examples": [
+        "mysql> SELECT DAYOFWEEK('2007-02-03');\n        -> 7"
+    ],
+    "Category": [
+        "Built-In Functions and Operators",
+        "Date and Time Functions"
+    ]
+}

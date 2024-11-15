@@ -1,0 +1,18 @@
+{
+    "HTML": "https://dev.mysql.com/doc/refman/8.0/en/comparison-operators.html#operator_is-not-null",
+    "Title": "IS NOT NULL",
+    "Feature": [
+        "IS NOT NULL"
+    ],
+    "Description": [
+        "\nIS NOT NULL\n",
+        "\n            Tests whether a value is not NULL.\n          ",
+        "Press CTRL+C to copy mysql> SELECT 1 IS NOT NULL, 0 IS NOT NULL, NULL IS NOT NULL;\n        -> 1, 1, 0"
+    ],
+    "Examples": [
+        "mysql> SELECT 1 IS NOT NULL, 0 IS NOT NULL, NULL IS NOT NULL;\n        -> 1, 1, 0"
+    ],
+    "Category": [
+        "Comparison Functions and Operators"
+    ]
+}

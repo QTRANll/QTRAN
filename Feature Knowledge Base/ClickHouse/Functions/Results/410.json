@@ -1,0 +1,30 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/geo/svg"
+    ],
+    "Title": [
+        "Svg"
+    ],
+    "Feature": [
+        "Svg(geometry,[style])"
+    ],
+    "Description": [
+        "Svg",
+        "Returns a string of select SVG element tags from Geo data.",
+        "Syntax",
+        "Svg(geometry,[style])",
+        "Aliases: SVG, svg",
+        "Parameters",
+        "geometry \u2014 Geo data. Geo.style \u2014 Optional style name. String.",
+        "Returned value",
+        "The SVG representation of the geometry. String.SVG circleSVG polygonSVG path"
+    ],
+    "Examples": [
+        "SELECT SVG((0., 0.))",
+        "SELECT SVG([(0., 0.), (10, 0), (10, 10), (0, 10)])",
+        "SELECT SVG([[(0., 0.), (10, 0), (10, 10), (0, 10)], [(4., 4.), (5, 4), (5, 5), (4, 5)]])"
+    ],
+    "Category": [
+        "Geo Functions"
+    ]
+}

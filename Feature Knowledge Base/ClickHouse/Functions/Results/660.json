@@ -1,0 +1,31 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/other-functions"
+    ],
+    "Title": [
+        "finalizeAggregation"
+    ],
+    "Feature": [
+        "finalizeAggregation(state)"
+    ],
+    "Description": [
+        "finalizeAggregation",
+        "Given a state of aggregate function, this function returns the result of aggregation (or finalized state when using a -State combinator).",
+        "Syntax",
+        "finalizeAggregation(state)",
+        "Arguments",
+        "state \u2014 State of aggregation. AggregateFunction.",
+        "Returned value(s)",
+        "Value/values that was aggregated.",
+        "NoteThe return type is equal to that of any types which were aggregated."
+    ],
+    "Examples": [
+        "SELECT finalizeAggregation(( SELECT countState(number) FROM numbers(10)));",
+        "SELECT finalizeAggregation(( SELECT sumState(number) FROM numbers(10)));",
+        "SELECT finalizeAggregation(arrayReduce('anyState', [NULL, 2, 3]));",
+        "WITH initializeAggregation('sumState', number) AS one_row_sum_stateSELECT    number,    finalizeAggregation(one_row_sum_state) AS one_row_sum,    runningAccumulate(one_row_sum_state) AS cumulative_sumFROM numbers(10);"
+    ],
+    "Category": [
+        "Other Functions"
+    ]
+}

@@ -1,0 +1,27 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/date-time-functions"
+    ],
+    "Title": [
+        "toRelativeWeekNum"
+    ],
+    "Feature": [
+        "toRelativeWeekNum(date)"
+    ],
+    "Description": [
+        "toRelativeWeekNum",
+        "Converts a date, or date with time, to the number of weeks elapsed since a certain fixed point in the past.",
+        "Syntax",
+        "toRelativeWeekNum(date)",
+        "Arguments",
+        "date \u2014 Date or date with time. Date/DateTime/DateTime64.",
+        "Returned value",
+        "The number of weeks from a fixed reference point in the past. UInt32."
+    ],
+    "Examples": [
+        "SELECT  toRelativeWeekNum(toDate('2000-02-29')) AS w1,  toRelativeWeekNum(toDate('2001-01-12')) AS w2"
+    ],
+    "Category": [
+        "Dates and Times Functions"
+    ]
+}

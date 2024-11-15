@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://docs.pingcap.com/zh/tidb/v8.3/data-type-string"
+    ],
+    "Title": [
+        "LONGTEXT 类型"
+    ],
+    "Feature": [
+        "LONGTEXT 类型"
+    ],
+    "Description": [
+        "LONGTEXT 类型",
+        "类似于 TEXT，区别在于最大列长度为 4,294,967,295。但由于 txn-entry-size-limit 的限制，TiDB 中默认单行存储最大不超过 6 MiB，可通过配置项将该限制调整至 120 MiB。",
+        "LONGTEXT [CHARACTER SET charset_name] [COLLATE collation_name]\n"
+    ],
+    "Examples": [],
+    "Category": [
+        "字符串类型"
+    ]
+}

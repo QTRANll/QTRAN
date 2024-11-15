@@ -1,0 +1,29 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.0/en/built-in-function-reference.html"
+    ],
+    "Title": [
+        "14.1 Built-In Function and Operator Reference"
+    ],
+    "Name": "CONVERT()",
+    "Description": [
+        "\nCONVERT(expr\n            USING transcoding_name)\n",
+        "\nCONVERT(expr,type)\n",
+        "\nCONVERT(expr\n            USING transcoding_name)\n            is standard SQL syntax. The non-USING\n            form of CONVERT() is ODBC\n            syntax. Regardless of the syntax used, the function returns\n            NULL if expr\n            is NULL.\n          ",
+        "\nCONVERT(expr\n            USING transcoding_name)\n            converts data between different character sets. In MySQL,\n            transcoding names are the same as the corresponding\n            character set names. For example, this statement converts\n            the string 'abc' in the default character\n            set to the corresponding string in the\n            utf8mb4 character set:\n          ",
+        "Press CTRL+C to copy SELECT CONVERT('abc' USING utf8mb4);",
+        "\nCONVERT(expr,\n            type) syntax (without\n            USING) takes an expression and a\n            type value specifying a result\n            type, and produces a result value of the specified type.\n            This operation may also be expressed as\n            CAST(expr AS\n            type), which is\n            equivalent. For more information, see the description of\n            CAST().\n",
+        "\n\nNote\n\n\n              Prior to MySQL 8.0.28, this function sometimes allowed\n              invalid conversions of\n              BINARY values to a\n              nonbinary character set. When CONVERT()\n              was used as part of the expression for an indexed\n              generated column, this could lead to index corruption\n              following an upgrade from a previous version of MySQL. See\n              SQL Changes, for information\n              about how to handle this situation.\n\n"
+    ],
+    "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/cast-functions.html#function_convert",
+    "Feature": [
+        "CONVERT(expr\n            USING transcoding_name)"
+    ],
+    "Examples": [
+        "SELECT CONVERT('abc' USING utf8mb4);"
+    ],
+    "Category": [
+        "Built-In Functions and Operators",
+        "Cast Functions and Operators"
+    ]
+}

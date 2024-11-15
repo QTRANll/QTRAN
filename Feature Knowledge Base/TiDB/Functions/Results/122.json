@@ -1,0 +1,20 @@
+{
+    "HTML": "https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html#function_period-add",
+    "Title": "PERIOD_ADD()",
+    "Feature": [
+        "PERIOD_ADD(P,N)"
+    ],
+    "Description": [
+        "\nPERIOD_ADD(P,N)\n",
+        "\n          Adds N months to period\n          P (in the format\n          YYMM or\n          YYYYMM). Returns a value in the\n          format YYYYMM.\n",
+        "\n\nNote\n\n\n            The period argument P is\n            not a date value.\n\n",
+        "\n          This function returns NULL if\n          P or N\n          is NULL.\n        ",
+        "Press CTRL+C to copy mysql> SELECT PERIOD_ADD(200801,2);\n        -> 200803"
+    ],
+    "Examples": [
+        "mysql> SELECT PERIOD_ADD(200801,2);\n        -> 200803"
+    ],
+    "Category": [
+        "日期和时间函数"
+    ]
+}

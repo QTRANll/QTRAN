@@ -1,0 +1,18 @@
+{
+    "HTML": "https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html#function_dayofweek",
+    "Title": "DAYOFWEEK()",
+    "Feature": [
+        "DAYOFWEEK(date)"
+    ],
+    "Description": [
+        "\nDAYOFWEEK(date)\n",
+        "\n          Returns the weekday index for date\n          (1 = Sunday, 2 = Monday,\n          …, 7 = Saturday). These index values\n          correspond to the ODBC standard. Returns\n          NULL if date is\n          NULL.\n        ",
+        "Press CTRL+C to copy mysql> SELECT DAYOFWEEK('2007-02-03');\n        -> 7"
+    ],
+    "Examples": [
+        "mysql> SELECT DAYOFWEEK('2007-02-03');\n        -> 7"
+    ],
+    "Category": [
+        "日期和时间函数"
+    ]
+}

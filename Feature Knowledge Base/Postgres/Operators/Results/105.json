@@ -1,0 +1,21 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/16/functions-textsearch.html"
+    ],
+    "Title": [
+        "tsvector @@ tsquery"
+    ],
+    "Feature": [
+        "tsvector @@ tsquery → boolean",
+        "tsquery @@ tsvector → boolean"
+    ],
+    "Description": [
+        "Does tsvector match tsquery? (The arguments can be given in either order.)"
+    ],
+    "Examples": [
+        "to_tsvector('fat cats ate rats') @@ to_tsquery('cat & rat') → t"
+    ],
+    "Category": [
+        "Text Search Functions and Operators"
+    ]
+}

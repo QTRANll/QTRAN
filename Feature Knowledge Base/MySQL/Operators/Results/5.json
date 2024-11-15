@@ -1,0 +1,28 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.0/en/built-in-function-reference.html"
+    ],
+    "Title": [
+        "14.1 Built-In Function and Operator Reference"
+    ],
+    "Name": "<>, !=",
+    "Description": [
+        "\n<>,\n            !=\n",
+        "\n            Not equal:\n          ",
+        "Press CTRL+C to copy mysql> SELECT '.01' <> '0.01';\n        -> 1\nmysql> SELECT .01 <> '0.01';\n        -> 0\nmysql> SELECT 'zapp' <> 'zappp';\n        -> 1",
+        "\n            For row comparisons, (a, b) <> (x,\n            y) and (a, b) != (x, y) are\n            equivalent to:\n          ",
+        "Press CTRL+C to copy (a <> x) OR (b <> y)"
+    ],
+    "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/comparison-operators.html#operator_not-equal",
+    "Feature": [
+        "<>",
+        "!="
+    ],
+    "Examples": [
+        "mysql> SELECT '.01' <> '0.01';\n        -> 1\nmysql> SELECT .01 <> '0.01';\n        -> 0\nmysql> SELECT 'zapp' <> 'zappp';\n        -> 1"
+    ],
+    "Category": [
+        "Built-In Functions and Operators",
+        "Comparison Functions and Operators"
+    ]
+}

@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/16/functions-string.html"
+    ],
+    "Title": [
+        "regexp_matches"
+    ],
+    "Feature": [
+        "regexp_matches ( string text, pattern text [, flags text ] ) → setof text[]"
+    ],
+    "Description": [
+        "Returns substrings within the first match of the POSIX regular expression pattern to the string, or substrings within all such matches if the g flag is used; see Section 9.7.3."
+    ],
+    "Examples": [
+        "regexp_matches('foobarbequebaz', 'ba.', 'g') →"
+    ],
+    "Category": [
+        "String Functions and Operators"
+    ]
+}

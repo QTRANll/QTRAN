@@ -1,0 +1,35 @@
+{
+    "HTML": [
+        "https://docs.pingcap.com/zh/tidb/v8.3/string-functions"
+    ],
+    "Title": [
+        "LIKE"
+    ],
+    "Feature": [
+        "LIKE"
+    ],
+    "Description": [
+        "LIKE",
+        "LIKE 用于进行简单字符串匹配。表达式 expr LIKE pat [ESCAPE 'escape_char'] 返回 1 (TRUE) 或 0 (FALSE)。如果 expr 或 pat 中任一个为 NULL，结果为 NULL。",
+        "你可以在 LIKE 中使用以下两个通配符：",
+        "% 匹配任意数量的字符，包括零个字符。_ 精确匹配一个字符。"
+    ],
+    "Examples": [
+        "SET collation_connection='utf8mb4_bin';\nSHOW VARIABLES LIKE 'collation_connection';\n+----------------------+-------------+\n| Variable_name        | Value       |\n+----------------------+-------------+\n| collation_connection | utf8mb4_bin |\n+----------------------+-------------+\n",
+        "SELECT NULL LIKE '%' as result;\n+--------+\n| result |\n+--------+\n|   NULL |\n+--------+\n",
+        "SELECT 'sushi!!!' LIKE 'sushi_' AS result;\n+--------+\n| result |\n+--------+\n|      0 |\n+--------+\n",
+        "SELECT '🍣🍺sushi🍣🍺' LIKE '%sushi%' AS result;\n+--------+\n| result |\n+--------+\n|      1 |\n+--------+\n",
+        "SELECT '🍣🍺sushi🍣🍺' LIKE '%SUSHI%' AS result;\n+--------+\n| result |\n+--------+\n|      0 |\n+--------+\n",
+        "SELECT '🍣🍺sushi🍣🍺' LIKE '%🍣%' AS result;\n+--------+\n| result |\n+--------+\n|      1 |\n+--------+\n",
+        "SELECT 'sushi!!!' LIKE 'sushi\\_' AS result;\n+--------+\n| result |\n+--------+\n|      0 |\n+--------+\n",
+        "SELECT 'sushi_' LIKE 'sushi\\_' AS result;\n+--------+\n| result |\n+--------+\n|      1 |\n+--------+\n",
+        "SELECT 'sushi_' LIKE 'sushi*_' ESCAPE '*' AS result;\n+--------+\n| result |\n+--------+\n|      1 |\n+--------+\n",
+        "SELECT 'sushi!' LIKE 'sushi*_' ESCAPE '*' AS result;\n+--------+\n| result |\n+--------+\n|      0 |\n+--------+\n",
+        "SELECT 10 LIKE '1%' AS result;\n+--------+\n| result |\n+--------+\n|      1 |\n+--------+\n",
+        "SELECT 10000 LIKE '12%' AS result;\n+--------+\n| result |\n+--------+\n|      0 |\n+--------+\n",
+        "SELECT '🍣🍺Sushi🍣🍺' COLLATE utf8mb4_unicode_ci LIKE '%SUSHI%' AS result;\n+--------+\n| result |\n+--------+\n|      1 |\n+--------+\n"
+    ],
+    "Category": [
+        "字符串函数"
+    ]
+}

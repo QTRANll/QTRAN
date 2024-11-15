@@ -1,0 +1,22 @@
+{
+    "HTML": [
+        "https://docs.pingcap.com/zh/tidb/v8.3/string-functions"
+    ],
+    "Title": [
+        "REGEXP_SUBSTR()"
+    ],
+    "Feature": [
+        "REGEXP_SUBSTR()"
+    ],
+    "Description": [
+        "REGEXP_SUBSTR()",
+        "返回满足正则表达式的子字符串（与 MySQL 不完全兼容，具体请参考正则函数与 MySQL 的兼容性）",
+        "REGEXP_SUBSTR(str, regexp, [start, [match, [match_type]]]) 函数用于基于正则表达式获取子字符串。"
+    ],
+    "Examples": [
+        "SELECT REGEXP_SUBSTR('This is TiDB','Ti.{2}');\n"
+    ],
+    "Category": [
+        "字符串函数"
+    ]
+}

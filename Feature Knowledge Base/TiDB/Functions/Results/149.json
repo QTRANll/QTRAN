@@ -1,0 +1,35 @@
+{
+    "HTML": [
+        "https://docs.pingcap.com/zh/tidb/v8.3/bit-functions-and-operators"
+    ],
+    "Title": [
+        "BIT_COUNT()"
+    ],
+    "Feature": [
+        "BIT_COUNT()"
+    ],
+    "Description": [
+        "BIT_COUNT()",
+        "BIT_COUNT(expr) 函数返回 expr 中为 1 的位数。",
+        "SELECT BIT_COUNT(b'00101001');\n",
+        "+------------------------+\n| BIT_COUNT(b'00101001') |\n+------------------------+\n|                      3 |\n+------------------------+\n1 row in set (0.00 sec)\n",
+        "注意当输入的 expr 参数是一个二进制数时，你需要在这个数之前显式地指定 b，比如 b'00101001'。否则，该函数会将其视为字符串处理而返回不同的结果。例如，BIT_COUNT('00101001') 会返回 7，因为它会将字符串 '00101001' 转换为十进制数 101001，并计算 101001 的二进制表示 11000100001010001 中 1 的位数。"
+    ],
+    "Examples": [
+        "SELECT BIT_COUNT(b'00101001');\n",
+        "SELECT BIT_COUNT(0x29), CONV(0x29,16,2);\n",
+        "SELECT BIT_COUNT(INET_ATON('255.255.255.0'));\n",
+        "SELECT CONV(b'1010' & b'1000',10,2);\n",
+        "SELECT INET_NTOA(INET_ATON('192.168.1.1') & INET_ATON('255.255.255.0'));\n",
+        "SELECT INET_NTOA(INET_ATON('192.168.1.2') & INET_ATON('255.255.255.0'));\n",
+        "SELECT CONV(~ b'1111000011110000',10,2);\n+------------------------------------------------------------------+\n| CONV(~ b'1111000011110000',10,2)                                 |\n+------------------------------------------------------------------+\n| 1111111111111111111111111111111111111111111111110000111100001111 |\n+------------------------------------------------------------------+\n1 row in set (0.00 sec)\n",
+        "SELECT CONV(~ b'1111111111111111111111111111111111111111111111110000111100001111',10,2);\n",
+        "SELECT CONV(b'1010' | b'1100',10,2);\n",
+        "SELECT CONV(b'1010' ^ b'1100',10,2);\n",
+        "WITH RECURSIVE cte(n) AS (\n    SELECT 0 AS n\n    UNION ALL\n    SELECT 1+n FROM cte WHERE n<10\n)\nSELECT n,1<<n,LPAD(CONV(1<<n,10,2),11,0) FROM cte;\n",
+        "WITH RECURSIVE cte(n) AS (\n    SELECT 0 AS n\n    UNION ALL\n    SELECT n+1 FROM cte WHERE n<11\n)\nSELECT n,1024>>n,LPAD(CONV(1024>>n,10,2),11,0) FROM cte;\n"
+    ],
+    "Category": [
+        "位函数和操作符"
+    ]
+}

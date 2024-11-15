@@ -1,0 +1,24 @@
+{
+    "HTML": [
+        "https://mariadb.com/kb/en/float/"
+    ],
+    "Title": [
+        "FLOAT"
+    ],
+    "Feature": [
+        "FLOAT[(M,D)] [SIGNED | UNSIGNED | ZEROFILL]\n"
+    ],
+    "Description": [
+        "A small (single-precision) floating-point number (see DOUBLE for a regular-size floating point number). Allowable values are:",
+        "-3.402823466E+38 to -1.175494351E-38\n0\n1.175494351E-38 to 3.402823466E+38. \n",
+        "These are the theoretical limits, based on the IEEE \nstandard. The actual range might be slightly smaller depending on your\nhardware or operating system.",
+        "M is the total number of digits and D is the number of digits\nfollowing the decimal point. If M and D are omitted, values are stored\nto the limits allowed by the hardware. A single-precision\nfloating-point number is accurate to approximately 7 decimal places.",
+        "UNSIGNED, if specified, disallows negative values.",
+        "Using FLOAT might give you some unexpected problems because all\ncalculations in MariaDB are done with double precision. See Floating Point Accuracy.",
+        "For more details on the attributes, see Numeric Data Type Overview."
+    ],
+    "Examples": [],
+    "Category": [
+        "Numeric Data Types"
+    ]
+}

@@ -1,0 +1,23 @@
+{
+    "HTML": [
+        "https://docs.pingcap.com/zh/tidb/v8.3/json-functions-modify"
+    ],
+    "Title": [
+        "JSON_ARRAY_APPEND()"
+    ],
+    "Feature": [
+        "JSON_ARRAY_APPEND()"
+    ],
+    "Description": [
+        "JSON_ARRAY_APPEND()",
+        "JSON_ARRAY_APPEND(json_array, path, value [,path, value] ...) 函数将 value 插入 path 中指定的 json_array 数组的末尾，并返回结果。",
+        "该函数可接受成对的 path 和 value 参数。"
+    ],
+    "Examples": [
+        "SELECT JSON_ARRAY_APPEND('[\"Car\", \"Boat\", \"Train\"]', '$', \"Airplane\") AS \"Transport options\";\n",
+        "SELECT JSON_ARRAY_APPEND('{\"transport_options\": [\"Car\", \"Boat\", \"Train\"]}', '$.transport_options', \"Airplane\") AS \"Transport options\";\n"
+    ],
+    "Category": [
+        "修改 JSON 的函数"
+    ]
+}

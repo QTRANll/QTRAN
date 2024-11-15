@@ -1,0 +1,32 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/introspection"
+    ],
+    "Title": [
+        "addressToLine"
+    ],
+    "Feature": [
+        "addressToLine(address_of_binary_instruction)"
+    ],
+    "Description": [
+        "addressToLine",
+        "Converts virtual memory address inside ClickHouse server process to the filename and the line number in ClickHouse source code.",
+        "If you use official ClickHouse packages, you need to install the clickhouse-common-static-dbg package.",
+        "Syntax",
+        "addressToLine(address_of_binary_instruction)",
+        "Arguments",
+        "address_of_binary_instruction (UInt64) \u2014 Address of instruction in a running process.",
+        "Returned value",
+        "Source code filename and the line number in this file delimited by colon.\nFor example, /build/obj-x86_64-linux-gnu/../src/Common/ThreadPool.cpp:199, where 199 is a line number.Name of a binary, if the function couldn\u2019t find the debug information.Empty string, if the address is not valid.",
+        "Type: String."
+    ],
+    "Examples": [
+        "SET allow_introspection_functions=1;",
+        "SELECT * FROM system.trace_log LIMIT 1 \\G;",
+        "SELECT addressToLine(94784076370703) \\G;",
+        "SELECT    arrayStringConcat(arrayMap(x -> addressToLine(x), trace), '\\n') AS trace_source_code_linesFROM system.trace_logLIMIT 1\\G"
+    ],
+    "Category": [
+        "Introspection Functions"
+    ]
+}

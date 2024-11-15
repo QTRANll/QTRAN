@@ -1,0 +1,29 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.0/en/loadable-function-reference.html"
+    ],
+    "Title": [
+        "14.2 Loadable Function Reference"
+    ],
+    "Name": "gen_dictionary()",
+    "Description": [
+        "\ngen_dictionary(dictionary_name)\n",
+        "\n              Returns a random term from a dictionary.\n            ",
+        "\n              Arguments:\n",
+        "\n\ndictionary_name: A string\n                  that names the dictionary from which to choose the\n                  term.\n\n",
+        "\n              Return value:\n            ",
+        "\n              A random term from the dictionary as a string, or\n              NULL if the dictionary name is not in\n              the dictionary registry.\n            ",
+        "\n              Example:\n            ",
+        "Press CTRL+C to copy mysql> SELECT gen_dictionary('mydict');\n+--------------------------+\n| gen_dictionary('mydict') |\n+--------------------------+\n| My term                  |\n+--------------------------+\nmysql> SELECT gen_dictionary('no-such-dict');\n+--------------------------------+\n| gen_dictionary('no-such-dict') |\n+--------------------------------+\n| NULL                           |\n+--------------------------------+"
+    ],
+    "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/data-masking-plugin-functions.html#function_gen-dictionary-plugin",
+    "Feature": [
+        "gen_dictionary(dictionary_name)"
+    ],
+    "Examples": [
+        "mysql> SELECT gen_dictionary('mydict');\n+--------------------------+\n| gen_dictionary('mydict') |\n+--------------------------+\n| My term                  |\n+--------------------------+\nmysql> SELECT gen_dictionary('no-such-dict');\n+--------------------------------+\n| gen_dictionary('no-such-dict') |\n+--------------------------------+\n| NULL                           |\n+--------------------------------+"
+    ],
+    "Category": [
+        "Loadable Functions"
+    ]
+}

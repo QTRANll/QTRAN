@@ -1,0 +1,21 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/polyfromwkb/"
+    ],
+    "Title": [
+        "ST_PolyFromWKB"
+    ],
+    "Feature": [
+        "ST_PolyFromWKB(wkb[,srid])\nST_PolygonFromWKB(wkb[,srid])\nPolyFromWKB(wkb[,srid])\nPolygonFromWKB(wkb[,srid])\n"
+    ],
+    "Description": [
+        "Constructs a POLYGON value using its WKB representation and SRID.",
+        "ST_PolyFromWKB(), ST_PolygonFromWKB(), PolyFromWKB() and PolygonFromWKB() are synonyms."
+    ],
+    "Examples": [
+        "SET @g = ST_AsBinary(ST_PolyFromText('POLYGON((1 1,1 5,4 9,6 9,9 3,7 2,1 1))'));\n\nSELECT ST_AsText(ST_PolyFromWKB(@g)) AS p;\n+----------------------------------------+\n| p                                      |\n+----------------------------------------+\n| POLYGON((1 1,1 5,4 9,6 9,9 3,7 2,1 1)) |\n+----------------------------------------+\n"
+    ],
+    "Category": [
+        "Geographic Functions"
+    ]
+}

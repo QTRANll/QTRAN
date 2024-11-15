@@ -1,0 +1,29 @@
+{
+    "HTML": [
+        "https://sqlite.org/json1.html"
+    ],
+    "Title": [
+        "4.12. The json_object() function"
+    ],
+    "Feature": [
+        "4.12. The json_object() function"
+    ],
+    "Description": [
+        "4.12. The json_object() function",
+        "The json_object() SQL function accepts zero or more pairs of arguments\nand returns a well-formed JSON object that is composed from those arguments.\nThe first argument of each pair is the label and the second argument of\neach pair is the value.\nIf any argument to json_object() is a BLOB then an error is thrown.\n\n",
+        "The json_object() function currently allows duplicate labels without\ncomplaint, though this might change in a future enhancement.\n\n",
+        "An argument with SQL type TEXT it is normally converted into a quoted \nJSON string even if the input text is well-formed JSON.  \nHowever, if the argument is the direct result from another JSON\nfunction or the -> operator (but not the ->> operator), \nthen it is treated as JSON and all of its JSON type information\nand substructure is preserved.  This allows calls to json_object()\nand json_array() to be nested.  The json() function can also\nbe used to force strings to be recognized as JSON.\n\n",
+        "Examples:\n\n",
+        "json_object('a',2,'c',4)\n→ '{\"a\":2,\"c\":4}'",
+        "json_object('a',2,'c','{e:5}')\n→ '{\"a\":2,\"c\":\"{e:5}\"}'",
+        "json_object('a',2,'c',json_object('e',5))\n→ '{\"a\":2,\"c\":{\"e\":5}}'"
+    ],
+    "Examples": [
+        "json_object('a',2,'c',4)\n→ '{\"a\":2,\"c\":4}'",
+        "json_object('a',2,'c','{e:5}')\n→ '{\"a\":2,\"c\":\"{e:5}\"}'",
+        "json_object('a',2,'c',json_object('e',5))\n→ '{\"a\":2,\"c\":{\"e\":5}}'"
+    ],
+    "Category": [
+        "JSON Functions"
+    ]
+}

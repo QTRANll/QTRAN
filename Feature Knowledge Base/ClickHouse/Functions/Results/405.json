@@ -1,0 +1,27 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/geo/s2"
+    ],
+    "Title": [
+        "s2CapUnion"
+    ],
+    "Feature": [
+        "s2CapUnion(center1, radius1, center2, radius2)"
+    ],
+    "Description": [
+        "s2CapUnion",
+        "Determines the smallest cap that contains the given two input caps. A cap represents a portion of the sphere that has been cut off by a plane. It is defined by a point on a sphere and a radius in degrees.",
+        "Syntax",
+        "s2CapUnion(center1, radius1, center2, radius2)",
+        "Arguments",
+        "center1, center2 \u2014 S2 point indexes corresponding to the two input caps. UInt64.radius1, radius2 \u2014 Radius of the two input caps in degrees. Float64.",
+        "Returned values",
+        "center \u2014 S2 point index corresponding the center of the smallest cap containing the two input caps. UInt64.radius \u2014 Radius of the smallest cap containing the two input caps. Float64."
+    ],
+    "Examples": [
+        "SELECT s2CapUnion(3814912406305146967, 1.0, 1157347770437378819, 1.0) AS capUnion;"
+    ],
+    "Category": [
+        "Geo Functions"
+    ]
+}

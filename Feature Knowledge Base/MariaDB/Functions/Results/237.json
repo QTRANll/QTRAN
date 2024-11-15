@@ -1,0 +1,21 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/ps_is_consumer_enabled/"
+    ],
+    "Title": [
+        "ps_is_consumer_enabled"
+    ],
+    "Feature": [
+        "sys.ps_is_consumer_enabled(consumer)\n"
+    ],
+    "Description": [
+        "ps_is_consumer_enabled is a stored function available with the Sys Schema.",
+        "It returns an ENUM('YES','NO') depending on whether Performance Schema instrumentation for the given consumer is enabled, and NULL if not given a valid consumer name."
+    ],
+    "Examples": [
+        "SELECT sys.ps_is_consumer_enabled('global_instrumentation');\n+------------------------------------------------------+\n| sys.ps_is_consumer_enabled('global_instrumentation') |\n+------------------------------------------------------+\n| YES                                                  |\n+------------------------------------------------------+\n\nSELECT sys.ps_is_consumer_enabled('events_stages_current');\n+-----------------------------------------------------+\n| sys.ps_is_consumer_enabled('events_stages_current') |\n+-----------------------------------------------------+\n| NO                                                  |\n+-----------------------------------------------------+\n\nSELECT sys.ps_is_consumer_enabled('nonexistent_consumer');\n+----------------------------------------------------+\n| sys.ps_is_consumer_enabled('nonexistent_consumer') |\n+----------------------------------------------------+\n| NULL                                               |\n+----------------------------------------------------+\n"
+    ],
+    "Category": [
+        "No Category"
+    ]
+}

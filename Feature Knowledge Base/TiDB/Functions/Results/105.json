@@ -1,0 +1,18 @@
+{
+    "HTML": "https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html#function_dayofmonth",
+    "Title": "DAYOFMONTH()",
+    "Feature": [
+        "DAYOFMONTH(date)"
+    ],
+    "Description": [
+        "\nDAYOFMONTH(date)\n",
+        "\n          Returns the day of the month for\n          date, in the range\n          1 to 31, or\n          0 for dates such as\n          '0000-00-00' or\n          '2008-00-00' that have a zero day part.\n          Returns NULL if\n          date is NULL.\n        ",
+        "Press CTRL+C to copy mysql> SELECT DAYOFMONTH('2007-02-03');\n        -> 3"
+    ],
+    "Examples": [
+        "mysql> SELECT DAYOFMONTH('2007-02-03');\n        -> 3"
+    ],
+    "Category": [
+        "日期和时间函数"
+    ]
+}

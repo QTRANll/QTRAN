@@ -1,0 +1,23 @@
+{
+    "HTML": [
+        "https://mariadb.com/kb/en/blob-and-text-data-types/"
+    ],
+    "Title": [
+        "BLOB and TEXT Data Types"
+    ],
+    "Feature": [],
+    "Description": [
+        "A BLOB is a binary large object that can hold a variable amount of\ndata. The four BLOB types are ",
+        "TINYBLOB,\nBLOB, \nMEDIUMBLOB, and\nLONGBLOB.\n",
+        "These differ only in the maximum length of the values they can hold. ",
+        "The TEXT types are ",
+        "TINYTEXT,\nTEXT,\nMEDIUMTEXT, and\nLONGTEXT.\nJSON (alias for LONGTEXT)\n",
+        "These correspond to the four BLOB types and have the same\nmaximum lengths and storage requirements.",
+        "BLOB and TEXT columns can have a DEFAULT value.",
+        "MariaDB starting with 10.4.3From MariaDB 10.4, it is possible to set a unique index on columns that use the BLOB or TEXT data types.\n"
+    ],
+    "Examples": [],
+    "Category": [
+        "String Data Types"
+    ]
+}

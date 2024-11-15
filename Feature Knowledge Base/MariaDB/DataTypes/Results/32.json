@@ -1,0 +1,28 @@
+{
+    "HTML": [
+        "https://mariadb.com/kb/en/varchar/"
+    ],
+    "Title": [
+        "VARCHAR"
+    ],
+    "Feature": [
+        "[NATIONAL] VARCHAR(M) [CHARACTER SET charset_name] [COLLATE collation_name]\n"
+    ],
+    "Description": [
+        "A variable-length string. M represents the maximum column length in\ncharacters. The range of M is 0 to 65,532. The effective maximum\nlength of a VARCHAR is subject to the maximum row size and the character set used. For\nexample, utf8 characters can require up to three bytes per character,\nso a VARCHAR column that uses the utf8 character set can be declared\nto be a maximum of 21,844 characters.",
+        "Note: For the ColumnStore engine, M represents the maximum column length in\nbytes.",
+        "MariaDB stores VARCHAR values as a one-byte or two-byte length prefix\nplus data. The length prefix indicates the number of bytes in the\nvalue. A VARCHAR column uses one length byte if values require no more\nthan 255 bytes, two length bytes if values may require more than 255\nbytes.",
+        "MariaDB follows the standard SQL specification, and does not remove trailing spaces from VARCHAR values.",
+        "VARCHAR(0) columns can contain 2 values: an empty string or NULL. Such columns cannot be part of an index. The CONNECT storage engine does not support VARCHAR(0).",
+        "VARCHAR is shorthand for CHARACTER VARYING. NATIONAL VARCHAR is the\nstandard SQL way to define that a VARCHAR column should use some\npredefined character set. MariaDB uses utf8 as this\npredefined character set, as does MySQL 4.1 and up.\nNVARCHAR is shorthand for NATIONAL VARCHAR.",
+        "Before MariaDB 10.2, all MariaDB collations were of type PADSPACE, meaning that VARCHAR (as well as CHAR and TEXT values) are compared without regard for trailing spaces. This does not apply to the LIKE pattern-matching operator, which takes into account trailing spaces. From MariaDB 10.2, a number of NO PAD collations are available.",
+        "If a unique index consists of a column where trailing pad characters are stripped or ignored, inserts into that column where values differ only by the number of trailing pad characters will result in a duplicate-key error."
+    ],
+    "Examples": [
+        "VARCHAR(30) CHARACTER SET utf8\nNATIONAL VARCHAR(30)\nNVARCHAR(30)\nNCHAR VARCHAR(30)\nNATIONAL CHARACTER VARYING(30)\nNATIONAL CHAR VARYING(30)\n",
+        "CREATE TABLE strtest (v VARCHAR(10));\nINSERT INTO strtest VALUES('Maria   ');\n\nSELECT v='Maria',v='Maria   ' FROM strtest;\n+-----------+--------------+\n| v='Maria' | v='Maria   ' |\n+-----------+--------------+\n|         1 |            1 |\n+-----------+--------------+\n\nSELECT v LIKE 'Maria',v LIKE 'Maria   ' FROM strtest;\n+----------------+-------------------+\n| v LIKE 'Maria' | v LIKE 'Maria   ' |\n+----------------+-------------------+\n|              0 |                 1 |\n+----------------+-------------------+\n"
+    ],
+    "Category": [
+        "String Data Types"
+    ]
+}

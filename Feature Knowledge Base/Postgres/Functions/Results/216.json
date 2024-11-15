@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/16/functions-textsearch.html"
+    ],
+    "Title": [
+        "plainto_tsquery"
+    ],
+    "Feature": [
+        "plainto_tsquery ( [ config regconfig, ] query text ) → tsquery"
+    ],
+    "Description": [
+        "Converts text to a tsquery, normalizing words according to the specified or default configuration. Any punctuation in the string is ignored (it does not determine query operators). The resulting query matches documents containing all non-stopwords in the text."
+    ],
+    "Examples": [
+        "plainto_tsquery('english', 'The Fat Rats') → 'fat' & 'rat'"
+    ],
+    "Category": [
+        "Text Search Functions and Operators"
+    ]
+}

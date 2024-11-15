@@ -1,0 +1,27 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.0/en/built-in-function-reference.html"
+    ],
+    "Title": [
+        "14.1 Built-In Function and Operator Reference"
+    ],
+    "Name": "ST_X()",
+    "Description": [
+        "\nST_X(p [,\n            new_x_val])\n",
+        "\n            With a single argument representing a valid\n            Point object\n            p,\n            ST_X() returns the\n            X-coordinate value of p as a\n            double-precision number. As of MySQL 8.0.12, the X\n            coordinate is considered to refer to the axis that appears\n            first in the Point spatial reference\n            system (SRS) definition.\n          ",
+        "\n            With the optional second argument,\n            ST_X() returns a\n            Point object like the first argument with\n            its X coordinate equal to the second argument. As of MySQL\n            8.0.12, if the Point object has a\n            geographic SRS, the second argument must be in the proper\n            range for longitude or latitude values.\n          ",
+        "\nST_X() handles its arguments\n            as described in the introduction to this section.\n          ",
+        "Press CTRL+C to copy mysql> SELECT ST_X(Point(56.7, 53.34));\n+--------------------------+\n| ST_X(Point(56.7, 53.34)) |\n+--------------------------+\n|                     56.7 |\n+--------------------------+\nmysql> SELECT ST_AsText(ST_X(Point(56.7, 53.34), 10.5));\n+-------------------------------------------+\n| ST_AsText(ST_X(Point(56.7, 53.34), 10.5)) |\n+-------------------------------------------+\n| POINT(10.5 53.34)                         |\n+-------------------------------------------+"
+    ],
+    "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/gis-point-property-functions.html#function_st-x",
+    "Feature": [
+        "ST_X(p [,\n            new_x_val])"
+    ],
+    "Examples": [
+        "mysql> SELECT ST_X(Point(56.7, 53.34));\n+--------------------------+\n| ST_X(Point(56.7, 53.34)) |\n+--------------------------+\n|                     56.7 |\n+--------------------------+\nmysql> SELECT ST_AsText(ST_X(Point(56.7, 53.34), 10.5));\n+-------------------------------------------+\n| ST_AsText(ST_X(Point(56.7, 53.34), 10.5)) |\n+-------------------------------------------+\n| POINT(10.5 53.34)                         |\n+-------------------------------------------+"
+    ],
+    "Category": [
+        "Built-In Functions and Operators",
+        "Spatial Analysis Functions"
+    ]
+}

@@ -1,0 +1,21 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.0/en/loadable-function-reference.html"
+    ],
+    "Title": [
+        "14.2 Loadable Function Reference"
+    ],
+    "Name": "gen_blacklist()",
+    "Description": [
+        "\ngen_blacklist(str,\n              dictionary_name,\n              replacement_dictionary_name)\n",
+        "\n              Replaces a term present in one dictionary with a term from\n              a second dictionary and returns the replacement term. This\n              masks the original term by substitution. This function is\n              deprecated in MySQL 8.0.23; use\n              gen_blocklist()\n              instead.\n            "
+    ],
+    "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/data-masking-plugin-functions.html#function_gen-blacklist-plugin",
+    "Feature": [
+        "gen_blacklist(str,\n              dictionary_name,\n              replacement_dictionary_name)"
+    ],
+    "Examples": [],
+    "Category": [
+        "Loadable Functions"
+    ]
+}

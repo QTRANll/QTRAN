@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://duckdb.org/docs/sql/functions/bitstring"
+    ],
+    "Title": [
+        "bitstring_agg(arg, min, max)"
+    ],
+    "Feature": [
+        "bitstring_agg(arg, min, max)"
+    ],
+    "Description": [
+        "Returns a bitstring with bits set for each distinct position defined in arg. All positions must be within the range [min, max] or an Out of Range Error will be thrown."
+    ],
+    "Examples": [
+        "bitstring_agg(A, 1, 42)"
+    ],
+    "Category": [
+        "Bitstring Functions"
+    ]
+}

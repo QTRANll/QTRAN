@@ -1,0 +1,32 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.0/en/loadable-function-reference.html"
+    ],
+    "Title": [
+        "14.2 Loadable Function Reference"
+    ],
+    "Name": "gen_rnd_iban()",
+    "Description": [
+        "\ngen_rnd_iban([country,\n              size])\n",
+        "\n              Generates a random International Bank Account Number\n              (IBAN) in AAAA\nBBBB\nCCCC\nDDDD format. The\n              generated string starts with a two-character country code,\n              two check digits computed according to the IBAN\n              specification and random alphanumeric characters up to the\n              required size.\n",
+        "\n\nWarning\n\n\n                Values returned from\n                gen_rnd_iban() should be\n                used only for test purposes, and are not suitable for\n                publication if used with a valid country code. There is\n                no way to guarantee that a given return value is not\n                assigned to a legitimate bank account. Should it be\n                necessary to publish a\n                gen_rnd_iban() result,\n                consider masking it with\n                mask_iban().\n\n",
+        "\n              Arguments:\n            ",
+        "\n",
+        "\n\ncountry: (Optional)\n                    Two-character country code; default value is\n                    ZZ\n\nsize: (Optional) Number\n                    of meaningful characters; default 16, minimum 15,\n                    maximum 34\n\n",
+        "\n",
+        "\n              Return value:\n            ",
+        "\n              A random IBAN as a string encoded in the\n              utf8mb4 character set.\n            ",
+        "\n              Example:\n            ",
+        "Press CTRL+C to copy mysql> SELECT gen_rnd_iban();\n+-----------------------------+\n| gen_rnd_iban()              |\n+-----------------------------+\n| ZZ79 3K2J WNH9 1V0DI        |\n+-----------------------------+"
+    ],
+    "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/data-masking-component-functions.html#function_gen-rnd-iban",
+    "Feature": [
+        "gen_rnd_iban([country,\n              size])"
+    ],
+    "Examples": [
+        "mysql> SELECT gen_rnd_iban();\n+-----------------------------+\n| gen_rnd_iban()              |\n+-----------------------------+\n| ZZ79 3K2J WNH9 1V0DI        |\n+-----------------------------+"
+    ],
+    "Category": [
+        "Loadable Functions"
+    ]
+}

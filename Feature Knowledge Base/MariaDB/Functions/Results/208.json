@@ -1,0 +1,21 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/mpolyfromwkb/"
+    ],
+    "Title": [
+        "MPolyFromWKB"
+    ],
+    "Feature": [
+        "MPolyFromWKB(wkb[,srid])\nMultiPolygonFromWKB(wkb[,srid])\n"
+    ],
+    "Description": [
+        "Constructs a MULTIPOLYGON value using its WKB  representation and SRID.",
+        "MPolyFromWKB() and MultiPolygonFromWKB() are synonyms."
+    ],
+    "Examples": [
+        "SET @g = ST_AsBinary(MPointFromText('MULTIPOLYGON(((28 26,28 0,84 0,84 42,28 26),(52 18,66 23,73 9,48 6,52 18)),((59 18,67 18,67 13,59 13,59 18)))'));\n\nSELECT ST_AsText(MPolyFromWKB(@g))\\G\n*************************** 1. row ***************************\nST_AsText(MPolyFromWKB(@g)): MULTIPOLYGON(((28 26,28 0,84 0,84 42,28 26),(52 18,66 23,73 9,48 6,52 18)),((59 18,67 18,67 13,59 13,59 18)))\n"
+    ],
+    "Category": [
+        "Geographic Functions"
+    ]
+}

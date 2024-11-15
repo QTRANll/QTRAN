@@ -1,0 +1,22 @@
+{
+    "HTML": "https://dev.mysql.com/doc/refman/8.0/en/arithmetic-functions.html#operator_divide",
+    "Title": "/",
+    "Feature": [
+        "/"
+    ],
+    "Description": [
+        "\n/\n",
+        "\n            Division:\n          ",
+        "Press CTRL+C to copy mysql> SELECT 3/5;\n        -> 0.60",
+        "\n            Division by zero produces a NULL result:\n          ",
+        "Press CTRL+C to copy mysql> SELECT 102/(1-1);\n        -> NULL",
+        "\n            A division is calculated with\n            BIGINT arithmetic only if\n            performed in a context where its result is converted to an\n            integer.\n          "
+    ],
+    "Examples": [
+        "mysql> SELECT 3/5;\n        -> 0.60",
+        "mysql> SELECT 102/(1-1);\n        -> NULL"
+    ],
+    "Category": [
+        "Arithmetic Operators"
+    ]
+}

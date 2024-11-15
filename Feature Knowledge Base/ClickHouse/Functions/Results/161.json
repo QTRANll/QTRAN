@@ -1,0 +1,23 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/conditional-functions"
+    ],
+    "Title": [
+        "greatest"
+    ],
+    "Feature": [
+        "greatest"
+    ],
+    "Description": [
+        "greatest",
+        "Returns the greatest across a list of values.  All of the list members must be of comparable types."
+    ],
+    "Examples": [
+        "SELECT greatest(1, 2, toUInt8(3), 3.) result,  toTypeName(result) type;",
+        "SELECT greatest(['hello'], ['there'], ['world'])",
+        "SELECT greatest(toDateTime32(now() + toIntervalDay(1)), toDateTime64(now(), 3))"
+    ],
+    "Category": [
+        "Conditional Functions"
+    ]
+}

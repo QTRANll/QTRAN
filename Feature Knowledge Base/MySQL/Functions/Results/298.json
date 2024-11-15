@@ -1,0 +1,28 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.0/en/built-in-function-reference.html"
+    ],
+    "Title": [
+        "14.1 Built-In Function and Operator Reference"
+    ],
+    "Name": "ST_ConvexHull()",
+    "Description": [
+        "\nST_ConvexHull(g)\n",
+        "\n          Returns a geometry that represents the convex hull of the\n          geometry value g.\n        ",
+        "\n          This function computes a geometry's convex hull by first\n          checking whether its vertex points are colinear. The function\n          returns a linear hull if so, a polygon hull otherwise. This\n          function processes geometry collections by extracting all\n          vertex points of all components of the collection, creating a\n          MultiPoint value from them, and computing\n          its convex hull.\n        ",
+        "\nST_ConvexHull() handles its\n          arguments as described in the introduction to this section,\n          with this exception:\n",
+        "\n\n              The return value is NULL for the\n              additional condition that the argument is an empty\n              geometry collection.\n\n",
+        "Press CTRL+C to copy mysql> SET @g = 'MULTIPOINT(5 0,25 0,15 10,15 25)';\nmysql> SELECT ST_AsText(ST_ConvexHull(ST_GeomFromText(@g)));\n+-----------------------------------------------+\n| ST_AsText(ST_ConvexHull(ST_GeomFromText(@g))) |\n+-----------------------------------------------+\n| POLYGON((5 0,25 0,15 25,5 0))                 |\n+-----------------------------------------------+"
+    ],
+    "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/spatial-operator-functions.html#function_st-convexhull",
+    "Feature": [
+        "ST_ConvexHull(g)"
+    ],
+    "Examples": [
+        "mysql> SET @g = 'MULTIPOINT(5 0,25 0,15 10,15 25)';\nmysql> SELECT ST_AsText(ST_ConvexHull(ST_GeomFromText(@g)));\n+-----------------------------------------------+\n| ST_AsText(ST_ConvexHull(ST_GeomFromText(@g))) |\n+-----------------------------------------------+\n| POLYGON((5 0,25 0,15 25,5 0))                 |\n+-----------------------------------------------+"
+    ],
+    "Category": [
+        "Built-In Functions and Operators",
+        "Spatial Analysis Functions"
+    ]
+}

@@ -1,0 +1,29 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.0/en/loadable-function-reference.html"
+    ],
+    "Title": [
+        "14.2 Loadable Function Reference"
+    ],
+    "Name": "keyring_aws_rotate_keys()",
+    "Description": [
+        "\nkeyring_aws_rotate_keys()\n",
+        "\n            Associated keyring plugin: keyring_aws\n",
+        "\nkeyring_aws_rotate_keys()\n            rotates keys stored in the keyring_aws\n            storage file named by the\n            keyring_aws_data_file\n            system variable. Rotation sends each key stored in the file\n            to AWS KMS for re-encryption using the value of the\n            keyring_aws_cmk_id system\n            variable as the CMK value, and stores the new encrypted keys\n            in the file.\n          ",
+        "\nkeyring_aws_rotate_keys() is\n            useful for key re-encryption under these circumstances:\n",
+        "\n\n                After rotating the CMK; that is, after invoking the\n                keyring_aws_rotate_cmk()\n                function.\n              \n                After changing the\n                keyring_aws_cmk_id\n                system variable to a different key value.\n\n",
+        "\n            This function requires the\n            SUPER privilege.\n          ",
+        "\n            Arguments:\n          ",
+        "\n            None.\n          ",
+        "\n            Return value:\n          ",
+        "\n            Returns 1 for success, or NULL and an\n            error for failure.\n          "
+    ],
+    "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/keyring-functions-plugin-specific.html#function_keyring-aws-rotate-keys",
+    "Feature": [
+        "keyring_aws_rotate_keys()"
+    ],
+    "Examples": [],
+    "Category": [
+        "Loadable Functions"
+    ]
+}

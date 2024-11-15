@@ -1,0 +1,17 @@
+{
+    "HTML": [
+        "https://mariadb.com/kb/en/json-data-type/"
+    ],
+    "Title": [
+        "JSON Data Type"
+    ],
+    "Feature": [],
+    "Description": [],
+    "Examples": [
+        "CREATE TABLE t (j JSON);\n\nDESC t;\n+-------+----------+------+-----+---------+-------+\n| Field | Type     | Null | Key | Default | Extra |\n+-------+----------+------+-----+---------+-------+\n| j     | longtext | YES  |     | NULL    |       |\n+-------+----------+------+-----+---------+-------+\n",
+        "CREATE TABLE t2 (\n  j JSON \n  CHECK (JSON_VALID(j))\n);\n\nINSERT INTO t2 VALUES ('invalid');\nERROR 4025 (23000): CONSTRAINT `j` failed for `test`.`t2`\n\nINSERT INTO t2 VALUES ('{\"id\": 1, \"name\": \"Monty\"}');\nQuery OK, 1 row affected (0.13 sec)\n"
+    ],
+    "Category": [
+        "String Data Types"
+    ]
+}

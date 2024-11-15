@@ -1,0 +1,29 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.0/en/built-in-function-reference.html"
+    ],
+    "Title": [
+        "14.1 Built-In Function and Operator Reference"
+    ],
+    "Name": "FORMAT_BYTES()",
+    "Description": [
+        "\nFORMAT_BYTES(count)\n",
+        "\n          Given a numeric byte count, converts it to human-readable\n          format and returns a string consisting of a value and a units\n          indicator. The string contains the number of bytes rounded to\n          2 decimal places and a minimum of 3 significant digits.\n          Numbers less than 1024 bytes are represented as whole numbers\n          and are not rounded. Returns NULL if\n          count is NULL.\n        ",
+        "\n          The units indicator depends on the size of the byte-count\n          argument as shown in the following table.\n",
+        "\n\nArgument Value\nResult Units\nResult Units Indicator\n\nUp to 1023\nbytes\nbytes\n\nUp to 10242 \u2212 1\nkibibytes\nKiB\n\nUp to 10243 \u2212 1\nmebibytes\nMiB\n\nUp to 10244 \u2212 1\ngibibytes\nGiB\n\nUp to 10245 \u2212 1\ntebibytes\nTiB\n\nUp to 10246 \u2212 1\npebibytes\nPiB\n\n10246 and up\nexbibytes\nEiB\n\n",
+        "Press CTRL+C to copy mysql> SELECT FORMAT_BYTES(512), FORMAT_BYTES(18446644073709551615);\n+-------------------+------------------------------------+\n| FORMAT_BYTES(512) | FORMAT_BYTES(18446644073709551615) |\n+-------------------+------------------------------------+\n|  512 bytes        | 16.00 EiB                          |\n+-------------------+------------------------------------+",
+        "\nFORMAT_BYTES() was added in\n          MySQL 8.0.16. It may be used instead of the\n          sys schema\n          format_bytes() function, keeping\n          in mind this difference:\n",
+        "\n\nFORMAT_BYTES() uses the\n              EiB units indicator.\n              sys.format_bytes() does not.\n\n"
+    ],
+    "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/performance-schema-functions.html#function_format-bytes",
+    "Feature": [
+        "FORMAT_BYTES(count)"
+    ],
+    "Examples": [
+        "mysql> SELECT FORMAT_BYTES(512), FORMAT_BYTES(18446644073709551615);\n+-------------------+------------------------------------+\n| FORMAT_BYTES(512) | FORMAT_BYTES(18446644073709551615) |\n+-------------------+------------------------------------+\n|  512 bytes        | 16.00 EiB                          |\n+-------------------+------------------------------------+"
+    ],
+    "Category": [
+        "Built-In Functions and Operators",
+        "Performance Schema Functions"
+    ]
+}

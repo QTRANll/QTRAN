@@ -1,0 +1,27 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/geo/s2"
+    ],
+    "Title": [
+        "s2RectUnion"
+    ],
+    "Feature": [
+        "s2RectUnion(s2Rect1PointLow, s2Rect1PointHi, s2Rect2PointLow, s2Rect2PointHi)"
+    ],
+    "Description": [
+        "s2RectUnion",
+        "Returns the smallest rectangle containing the union of this rectangle and the given rectangle. In the S2 system, a rectangle is represented by a type of S2Region called a S2LatLngRect that represents a rectangle in latitude-longitude space.",
+        "Syntax",
+        "s2RectUnion(s2Rect1PointLow, s2Rect1PointHi, s2Rect2PointLow, s2Rect2PointHi)",
+        "Arguments",
+        "s2Rect1PointLow, s2Rect1PointHi \u2014 Low and High S2 point indexes corresponding to the first rectangle. UInt64.s2Rect2PointLow, s2Rect2PointHi \u2014 Low and High S2 point indexes corresponding to the second rectangle. UInt64.",
+        "Returned values",
+        "s2UnionRect2PointLow \u2014 Low S2 cell id corresponding to the union rectangle. UInt64.s2UnionRect2PointHi \u2014 High S2 cell id corresponding to the union rectangle. UInt64."
+    ],
+    "Examples": [
+        "SELECT s2RectUnion(5178914411069187297, 5177056748191934217, 5179062030687166815, 5177056748191934217) AS rectUnion;"
+    ],
+    "Category": [
+        "Geo Functions"
+    ]
+}

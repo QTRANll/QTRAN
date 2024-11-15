@@ -1,0 +1,21 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/coercibility/"
+    ],
+    "Title": [
+        "COERCIBILITY"
+    ],
+    "Feature": [
+        "COERCIBILITY(str)\n"
+    ],
+    "Description": [
+        "Returns the collation coercibility value of the string argument. Coercibility defines what will be converted to what in case of collation conflict, with an expression with higher coercibility being converted to the collation of an expression with lower coercibility.",
+        "CoercibilityDescriptionExample\n0ExplicitValue using a COLLATE clause\n1No collationConcatenated strings using different collations\n2ImplicitA string data type column value, CAST to a string data type\n3System constantDATABASE(), USER() return value\n4CoercibleLiteral string\n5NumericNumeric and temporal values\n6IgnorableNULL or derived from NULL\n\n"
+    ],
+    "Examples": [
+        "SELECT COERCIBILITY('abc' COLLATE latin1_swedish_ci);\n+-----------------------------------------------+\n| COERCIBILITY('abc' COLLATE latin1_swedish_ci) |\n+-----------------------------------------------+\n|                                             0 |\n+-----------------------------------------------+\n\nSELECT COERCIBILITY(CAST(1 AS CHAR));\n+-------------------------------+\n| COERCIBILITY(CAST(1 AS CHAR)) |\n+-------------------------------+\n|                             2 |\n+-------------------------------+\n\nSELECT COERCIBILITY(USER());\n+----------------------+\n| COERCIBILITY(USER()) |\n+----------------------+\n|                    3 |\n+----------------------+\n\nSELECT COERCIBILITY('abc');\n+---------------------+\n| COERCIBILITY('abc') |\n+---------------------+\n|                   4 |\n+---------------------+\n\nSELECT COERCIBILITY(1);\n+-----------------+\n| COERCIBILITY(1) |\n+-----------------+\n|               5 |\n+-----------------+\n\nSELECT COERCIBILITY(NULL);\n+--------------------+\n| COERCIBILITY(NULL) |\n+--------------------+\n|                  6 |\n+--------------------+\n"
+    ],
+    "Category": [
+        "Information Functions"
+    ]
+}

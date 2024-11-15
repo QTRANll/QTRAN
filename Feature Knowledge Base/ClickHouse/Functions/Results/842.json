@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/string-functions"
+    ],
+    "Title": [
+        "concatWithSeparatorAssumeInjective"
+    ],
+    "Feature": [
+        "concatWithSeparatorAssumeInjective"
+    ],
+    "Description": [
+        "concatWithSeparatorAssumeInjective",
+        "Like concatWithSeparator but assumes that concatWithSeparator(sep, expr1, expr2, expr3...) \u2192 result is injective. Can be used for optimization of GROUP BY.",
+        "A function is called injective if it returns for different arguments different results. In other words: different arguments never produce identical result."
+    ],
+    "Examples": [],
+    "Category": [
+        "Strings Functions"
+    ]
+}

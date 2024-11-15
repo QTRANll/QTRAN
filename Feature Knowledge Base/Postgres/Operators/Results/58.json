@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/16/functions-datetime.html"
+    ],
+    "Title": [
+        "timestamp with time zone AT TIME ZONE zone"
+    ],
+    "Feature": [
+        "timestamp with time zone AT TIME ZONE zone → timestamp without time zone"
+    ],
+    "Description": [
+        "Converts given time stamp with time zone to time stamp without time zone, as the time would appear in that zone."
+    ],
+    "Examples": [
+        "timestamp with time zone '2001-02-16 20:38:40-05' at time zone 'America/Denver' → 2001-02-16 18:38:40"
+    ],
+    "Category": [
+        "Date divide Time Functions and Operators"
+    ]
+}

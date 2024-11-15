@@ -1,0 +1,27 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.0/en/built-in-function-reference.html"
+    ],
+    "Title": [
+        "14.1 Built-In Function and Operator Reference"
+    ],
+    "Name": "PERIOD_ADD()",
+    "Description": [
+        "\nPERIOD_ADD(P,N)\n",
+        "\n          Adds N months to period\n          P (in the format\n          YYMM or\n          YYYYMM). Returns a value in the\n          format YYYYMM.\n",
+        "\n\nNote\n\n\n            The period argument P is\n            not a date value.\n\n",
+        "\n          This function returns NULL if\n          P or N\n          is NULL.\n        ",
+        "Press CTRL+C to copy mysql> SELECT PERIOD_ADD(200801,2);\n        -> 200803"
+    ],
+    "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html#function_period-add",
+    "Feature": [
+        "PERIOD_ADD(P,N)"
+    ],
+    "Examples": [
+        "mysql> SELECT PERIOD_ADD(200801,2);\n        -> 200803"
+    ],
+    "Category": [
+        "Built-In Functions and Operators",
+        "Date and Time Functions"
+    ]
+}

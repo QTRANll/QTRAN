@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/16/functions-json.html"
+    ],
+    "Title": [
+        "jsonb_path_match"
+    ],
+    "Feature": [
+        "jsonb_path_match ( target jsonb, path jsonpath [, vars jsonb [, silent boolean ]] ) → boolean"
+    ],
+    "Description": [
+        "Returns the result of a JSON path predicate check for the specified JSON value. Only the first item of the result is taken into account. If the result is not Boolean, then NULL is returned. The optional vars and silent arguments act the same as for jsonb_path_exists."
+    ],
+    "Examples": [
+        "jsonb_path_match('{\"a\":[1,2,3,4,5]}', 'exists($.a[*] ? (@ >= $min && @ <= $max))', '{\"min\":2, \"max\":4}') → t"
+    ],
+    "Category": [
+        "JSON Functions and Operators"
+    ]
+}

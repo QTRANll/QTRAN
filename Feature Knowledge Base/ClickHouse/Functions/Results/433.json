@@ -1,0 +1,30 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/hash-functions"
+    ],
+    "Title": [
+        "sipHash64"
+    ],
+    "Feature": [
+        "sipHash64(par1,...)"
+    ],
+    "Description": [
+        "sipHash64",
+        "Produces a 64-bit SipHash hash value.",
+        "sipHash64(par1,...)",
+        "This is a cryptographic hash function. It works at least three times faster than the MD5 hash function.",
+        "The function interprets all the input parameters as strings and calculates the hash value for each of them. It then combines the hashes by the following algorithm:",
+        "The first and the second hash value are concatenated to an array which is hashed.The previously calculated hash value and the hash of the third input parameter are hashed in a similar way.This calculation is repeated for all remaining hash values of the original input.",
+        "Arguments",
+        "The function takes a variable number of input parameters of any of the supported data types.",
+        "Returned Value",
+        "A UInt64 data type hash value.",
+        "Note that the calculated hash values may be equal for the same input values of different argument types. This affects for example integer types of different size, named and unnamed Tuple with the same data, Map and the corresponding Array(Tuple(key, value)) type with the same data."
+    ],
+    "Examples": [
+        "SELECT sipHash64(array('e','x','a'), 'mple', 10, toDateTime('2019-06-15 23:00:00')) AS SipHash, toTypeName(SipHash) AS type;"
+    ],
+    "Category": [
+        "Hash Functions"
+    ]
+}

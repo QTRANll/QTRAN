@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/array-functions"
+    ],
+    "Title": [
+        "arrayLastIndex(func, arr1, ...)"
+    ],
+    "Feature": [
+        "arrayLastIndex(func, arr1, ...)"
+    ],
+    "Description": [
+        "arrayLastIndex(func, arr1, ...)",
+        "Returns the index of the last element in the arr1 array for which func(arr1[i], ..., arrN[i]) returns something other than 0.",
+        "Note that the arrayLastIndex is a higher-order function. You must pass a lambda function to it as the first argument, and it can\u2019t be omitted."
+    ],
+    "Examples": [],
+    "Category": [
+        "Arrays Functions"
+    ]
+}

@@ -1,0 +1,28 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.0/en/loadable-function-reference.html"
+    ],
+    "Title": [
+        "14.2 Loadable Function Reference"
+    ],
+    "Name": "keyring_aws_rotate_cmk()",
+    "Description": [
+        "\nkeyring_aws_rotate_cmk()\n",
+        "\n            Associated keyring plugin: keyring_aws\n",
+        "\nkeyring_aws_rotate_cmk()\n            rotates the AWS KMS key. Rotation changes only the key that\n            AWS KMS uses for subsequent data key-encryption operations.\n            AWS KMS maintains previous CMK versions, so keys generated\n            using previous CMKs remain decryptable after rotation.\n          ",
+        "\n            Rotation changes the CMK value used inside AWS KMS but does\n            not change the ID used to refer to it, so there is no need\n            to change the\n            keyring_aws_cmk_id system\n            variable after calling\n            keyring_aws_rotate_cmk().\n          ",
+        "\n            This function requires the\n            SUPER privilege.\n          ",
+        "\n            Arguments:\n          ",
+        "\n            None.\n          ",
+        "\n            Return value:\n          ",
+        "\n            Returns 1 for success, or NULL and an\n            error for failure.\n          "
+    ],
+    "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/keyring-functions-plugin-specific.html#function_keyring-aws-rotate-cmk",
+    "Feature": [
+        "keyring_aws_rotate_cmk()"
+    ],
+    "Examples": [],
+    "Category": [
+        "Loadable Functions"
+    ]
+}

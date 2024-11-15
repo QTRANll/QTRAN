@@ -1,0 +1,21 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/geometryn/"
+    ],
+    "Title": [
+        "ST_GEOMETRYN"
+    ],
+    "Feature": [
+        "ST_GeometryN(gc,N)\nGeometryN(gc,N)\n"
+    ],
+    "Description": [
+        "Returns the N-th geometry in the GeometryCollection gc. Geometries are numbered beginning with 1.",
+        "ST_GeometryN() and GeometryN() are synonyms."
+    ],
+    "Examples": [
+        "SET @gc = 'GeometryCollection(Point(1 1),LineString(12 14, 9 11))';\n\nSELECT AsText(GeometryN(GeomFromText(@gc),1));\n+----------------------------------------+\n| AsText(GeometryN(GeomFromText(@gc),1)) |\n+----------------------------------------+\n| POINT(1 1)                             |\n+----------------------------------------+\n"
+    ],
+    "Category": [
+        "Geographic Functions"
+    ]
+}

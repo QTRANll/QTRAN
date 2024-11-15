@@ -1,0 +1,28 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.0/en/loadable-function-reference.html"
+    ],
+    "Title": [
+        "14.2 Loadable Function Reference"
+    ],
+    "Name": "create_digest()",
+    "Description": [
+        "\ncreate_digest(digest_type,\n          str)\n",
+        "\n          Creates a digest from the given string using the given digest\n          type, and returns the digest as a binary string. If digest\n          generation fails, the result is NULL.\n        ",
+        "\n          For the legacy version of this function in use before MySQL\n          8.0.29, see\n          Section\u00a08.6.6, \u201cMySQL Enterprise Encryption Legacy Function Descriptions\u201d.\n        ",
+        "\n          The resulting digest string is suitable for use with\n          asymmetric_sign() and\n          asymmetric_verify(). The\n          component versions of these functions accept digests but do\n          not require them, as they are capable of handling data of an\n          arbitrary length.\n        ",
+        "\ndigest_type is the digest algorithm\n          to be used to generate the digest string. The supported\n          digest_type values are\n          'SHA224', 'SHA256',\n          'SHA384', and 'SHA512'\n          when OpenSSL 1.0.1 is in use. If OpenSSL 1.1.1 is in use, the\n          additional digest_type values\n          'SHA3-224', 'SHA3-256',\n          'SHA3-384', and\n          'SHA3-512' are available.\n        ",
+        "\nstr is the non-null data string for\n          which the digest is to be generated.\n        ",
+        "Press CTRL+C to copy SET @dig = create_digest('SHA512', 'The quick brown fox');"
+    ],
+    "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/enterprise-encryption-functions.html#function_create-digest",
+    "Feature": [
+        "create_digest(digest_type,\n          str)"
+    ],
+    "Examples": [
+        "SET @dig = create_digest('SHA512', 'The quick brown fox');"
+    ],
+    "Category": [
+        "Loadable Functions"
+    ]
+}

@@ -1,0 +1,21 @@
+{
+    "HTML": [
+        "https://docs.pingcap.com/zh/tidb/v8.3/json-functions-modify"
+    ],
+    "Title": [
+        "JSON_MERGE_PATCH()"
+    ],
+    "Feature": [
+        "JSON_MERGE_PATCH()"
+    ],
+    "Description": [
+        "JSON_MERGE_PATCH()",
+        "JSON_MERGE_PATCH(json_doc, json_doc [,json_doc] ...) 将两个或多个 JSON 文档合并为一个 JSON 文档，但不保留重复键的值。如果其中某些 json_doc 参数包含重复的键，合并后的结果只保留后面指定的那个 json_doc 参数中的值。"
+    ],
+    "Examples": [
+        "SELECT JSON_MERGE_PATCH(\n    '{\"a\": 1, \"b\": 2}',\n    '{\"a\": 100}',\n    '{\"c\": 300}'\n);\n"
+    ],
+    "Category": [
+        "修改 JSON 的函数"
+    ]
+}

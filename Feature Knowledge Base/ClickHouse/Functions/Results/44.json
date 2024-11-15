@@ -1,0 +1,24 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/array-functions"
+    ],
+    "Title": [
+        "has(arr, elem)"
+    ],
+    "Feature": [
+        "has(arr, elem)"
+    ],
+    "Description": [
+        "has(arr, elem)",
+        "Checks whether the \u2018arr\u2019 array has the \u2018elem\u2019 element.\nReturns 0 if the element is not in the array, or 1 if it is.",
+        "NULL is processed as a value.",
+        "SELECT has([1, 2, NULL], NULL)",
+        "\u250c\u2500has([1, 2, NULL], NULL)\u2500\u2510\u2502                       1 \u2502\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518"
+    ],
+    "Examples": [
+        "SELECT has([1, 2, NULL], NULL)"
+    ],
+    "Category": [
+        "Arrays Functions"
+    ]
+}

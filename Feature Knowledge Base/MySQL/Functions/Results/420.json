@@ -1,0 +1,25 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.0/en/built-in-function-reference.html"
+    ],
+    "Title": [
+        "14.1 Built-In Function and Operator Reference"
+    ],
+    "Name": "YEAR()",
+    "Description": [
+        "\nYEAR(date)\n",
+        "\n          Returns the year for date, in the\n          range 1000 to 9999, or\n          0 for the \u201czero\u201d date. Returns\n          NULL if date is\n          NULL.\n        ",
+        "Press CTRL+C to copy mysql> SELECT YEAR('1987-01-01');\n        -> 1987"
+    ],
+    "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html#function_year",
+    "Feature": [
+        "YEAR(date)"
+    ],
+    "Examples": [
+        "mysql> SELECT YEAR('1987-01-01');\n        -> 1987"
+    ],
+    "Category": [
+        "Built-In Functions and Operators",
+        "Date and Time Functions"
+    ]
+}

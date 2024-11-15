@@ -1,0 +1,26 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.0/en/loadable-function-reference.html"
+    ],
+    "Title": [
+        "14.2 Loadable Function Reference"
+    ],
+    "Name": "create_dh_parameters()",
+    "Description": [
+        "\ncreate_dh_parameters(key_len)\n",
+        "\n          Creates a shared secret for generating a DH private/public key\n          pair and returns a binary string that can be passed to\n          create_asymmetric_priv_key(). If secret\n          generation fails, the result is NULL.\n        ",
+        "\nkey_len is the key length. The\n          minimum and maximum key lengths in bits are 1,024 and 10,000.\n          These key-length limits are constraints imposed by OpenSSL.\n          Server administrators can impose additional limits on maximum\n          key length by setting the\n          MYSQL_OPENSSL_UDF_RSA_BITS_THRESHOLD,\n          MYSQL_OPENSSL_UDF_DSA_BITS_THRESHOLD, and\n          MYSQL_OPENSSL_UDF_DH_BITS_THRESHOLD\n          environment variables. See\n          Section\u00a08.6.2, \u201cConfiguring MySQL Enterprise Encryption\u201d.\n        ",
+        "\n          For an example showing how to use the return value for\n          generating symmetric keys, see the description of\n          asymmetric_derive().\n        ",
+        "Press CTRL+C to copy SET @dhp = create_dh_parameters(1024);"
+    ],
+    "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/enterprise-encryption-functions-legacy.html#function_create-dh-parameters",
+    "Feature": [
+        "create_dh_parameters(key_len)"
+    ],
+    "Examples": [
+        "SET @dhp = create_dh_parameters(1024);"
+    ],
+    "Category": [
+        "Loadable Functions"
+    ]
+}

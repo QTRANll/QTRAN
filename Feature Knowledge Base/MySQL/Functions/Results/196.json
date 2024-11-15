@@ -1,0 +1,27 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.0/en/built-in-function-reference.html"
+    ],
+    "Title": [
+        "14.1 Built-In Function and Operator Reference"
+    ],
+    "Name": "LOAD_FILE()",
+    "Description": [
+        "\nLOAD_FILE(file_name)\n",
+        "\n          Reads the file and returns the file contents as a string. To\n          use this function, the file must be located on the server\n          host, you must specify the full path name to the file, and you\n          must have the FILE privilege.\n          The file must be readable by the server and its size less than\n          max_allowed_packet bytes. If\n          the secure_file_priv system\n          variable is set to a nonempty directory name, the file to be\n          loaded must be located in that directory. (Prior to MySQL\n          8.0.17, the file must be readable by all, not just readable by\n          the server.)\n        ",
+        "\n          If the file does not exist or cannot be read because one of\n          the preceding conditions is not satisfied, the function\n          returns NULL.\n        ",
+        "\n          The character_set_filesystem\n          system variable controls interpretation of file names that are\n          given as literal strings.\n        ",
+        "Press CTRL+C to copy mysql> UPDATE t\n            SET blob_col=LOAD_FILE('/tmp/picture')\n            WHERE id=1;"
+    ],
+    "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/string-functions.html#function_load-file",
+    "Feature": [
+        "LOAD_FILE(file_name)"
+    ],
+    "Examples": [
+        "mysql> UPDATE t\n            SET blob_col=LOAD_FILE('/tmp/picture')\n            WHERE id=1;"
+    ],
+    "Category": [
+        "Built-In Functions and Operators",
+        "String Functions and Operators"
+    ]
+}

@@ -1,0 +1,20 @@
+{
+    "HTML": "https://dev.mysql.com/doc/refman/8.0/en/aggregate-functions.html#function_count-distinct",
+    "Title": "COUNT(DISTINCT)",
+    "Feature": [
+        "COUNT(DISTINCT\n            expr,[expr...])"
+    ],
+    "Description": [
+        "\nCOUNT(DISTINCT\n            expr,[expr...])\n",
+        "\n            Returns a count of the number of rows with different\n            non-NULL expr\n            values.\n          ",
+        "\n            If there are no matching rows,\n            COUNT(DISTINCT) returns\n            0.\n          ",
+        "Press CTRL+C to copy mysql> SELECT COUNT(DISTINCT results) FROM student;",
+        "\n            In MySQL, you can obtain the number of distinct expression\n            combinations that do not contain NULL by\n            giving a list of expressions. In standard SQL, you would\n            have to do a concatenation of all expressions inside\n            COUNT(DISTINCT ...).\n          "
+    ],
+    "Examples": [
+        "mysql> SELECT COUNT(DISTINCT results) FROM student;"
+    ],
+    "Category": [
+        "GROUP BY 聚合函数"
+    ]
+}

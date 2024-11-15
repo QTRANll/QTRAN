@@ -1,0 +1,21 @@
+{
+    "HTML": [
+        "https://duckdb.org/docs/sql/functions/list"
+    ],
+    "Title": [
+        "array_where"
+    ],
+    "Feature": [
+        "array_where"
+    ],
+    "Description": [
+        "list_where(value_list, mask_list)",
+        "Returns a list with the BOOLEANs in mask_list applied as a mask to the value_list."
+    ],
+    "Examples": [
+        "list_where([10, 20, 30, 40], [true, false, false, true])"
+    ],
+    "Category": [
+        "List Functions"
+    ]
+}

@@ -1,0 +1,21 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/geo/polygons"
+    ],
+    "Title": [
+        "polygonsDistanceSpherical"
+    ],
+    "Feature": [
+        "polygonsDistanceSpherical"
+    ],
+    "Description": [
+        "polygonsDistanceSpherical",
+        "Calculates the minimal distance between two points where one point belongs to the first polygon and the second to another polygon. Spherical means that coordinates are interpreted as coordinates on a pure and ideal sphere, which is not true for the Earth. Using this type of coordinate system speeds up execution, but of course is not precise."
+    ],
+    "Examples": [
+        "SELECT polygonsDistanceSpherical([[[(0, 0), (0, 0.1), (0.1, 0.1), (0.1, 0)]]], [[[(10., 10.), (10., 40.), (40., 40.), (40., 10.), (10., 10.)]]])"
+    ],
+    "Category": [
+        "Geo Functions"
+    ]
+}

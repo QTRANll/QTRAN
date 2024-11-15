@@ -1,0 +1,23 @@
+{
+    "HTML": [
+        "https://sqlite.org/lang_expr.html"
+    ],
+    "Title": [
+        "SQL Language Expressions"
+    ],
+    "Feature": [
+        "&"
+    ],
+    "Description": [
+        "The bitwise AND operator (&) performs a bitwise AND operation between two integer expressions. Non-integer operands are cast to INTEGER before the operation.",
+        "Parameters: Two integer expressions.",
+        "Returns: The result of the bitwise AND operation."
+    ],
+    "Examples": [
+        "SELECT 5 & 3 AS result; -- Returns 1 (binary 0101 & 0011 = 0001)",
+        "SELECT access_level & 4 FROM users; -- Checks if the access_level includes a specific bit"
+    ],
+    "Category": [
+        "Operators"
+    ]
+}

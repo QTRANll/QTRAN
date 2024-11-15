@@ -1,0 +1,27 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/string-search-functions"
+    ],
+    "Title": [
+        "multiSearchAllPositionsCaseInsensitive"
+    ],
+    "Feature": [
+        "multiSearchAllPositionsCaseInsensitive(haystack, [needle1, needle2, ..., needleN])"
+    ],
+    "Description": [
+        "multiSearchAllPositionsCaseInsensitive",
+        "Like multiSearchAllPositions but ignores case.",
+        "Syntax",
+        "multiSearchAllPositionsCaseInsensitive(haystack, [needle1, needle2, ..., needleN])",
+        "Parameters",
+        "haystack \u2014 String in which the search is performed. String.needle \u2014 Substrings to be searched. Array.",
+        "Returned value",
+        "Array of the starting position in bytes and counting from 1 (if the substring was found).0 if the substring was not found."
+    ],
+    "Examples": [
+        "SELECT multiSearchAllPositionsCaseInsensitive('ClickHouse',['c','h']);"
+    ],
+    "Category": [
+        "Searching in Strings Functions"
+    ]
+}

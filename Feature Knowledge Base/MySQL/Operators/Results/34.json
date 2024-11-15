@@ -1,0 +1,27 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.0/en/built-in-function-reference.html"
+    ],
+    "Title": [
+        "14.1 Built-In Function and Operator Reference"
+    ],
+    "Name": "NOT LIKE",
+    "Description": [
+        "\nexpr\n            NOT LIKE pat [ESCAPE\n            'escape_char']\n",
+        "\n            This is the same as NOT\n            (expr LIKE\n            pat [ESCAPE\n            'escape_char']).\n",
+        "\n\nNote\n\n\n              Aggregate queries involving NOT\n              LIKE comparisons with columns containing\n              NULL may yield unexpected results. For\n              example, consider the following table and data:\n            Press CTRL+C to copy CREATE TABLE foo (bar VARCHAR(10));\n\nINSERT INTO foo VALUES (NULL), (NULL);\n              The query SELECT COUNT(*) FROM foo WHERE bar LIKE\n              '%baz%'; returns 0. You might\n              assume that SELECT COUNT(*) FROM foo WHERE bar\n              NOT LIKE '%baz%'; would return\n              2. However, this is not the case: The\n              second query returns 0. This is because\n              NULL NOT LIKE\n              expr always returns\n              NULL, regardless of the value of\n              expr. The same is true for\n              aggregate queries involving NULL and\n              comparisons using\n              NOT\n              RLIKE or NOT\n              REGEXP. In such cases, you must test explicitly\n              for NOT NULL using\n              OR (and not\n              AND), as shown here:\n            Press CTRL+C to copy SELECT COUNT(*) FROM foo WHERE bar NOT LIKE '%baz%' OR bar IS NULL;\n"
+    ],
+    "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/string-comparison-functions.html#operator_not-like",
+    "Feature": [
+        "expr\n            NOT LIKE pat [ESCAPE\n            'escape_char']"
+    ],
+    "Examples": [
+        "CREATE TABLE foo (bar VARCHAR(10));\n\nINSERT INTO foo VALUES (NULL), (NULL);",
+        "SELECT COUNT(*) FROM foo WHERE bar NOT LIKE '%baz%' OR bar IS NULL;"
+    ],
+    "Category": [
+        "Built-In Functions and Operators",
+        "Comparison Functions and Operators",
+        "String Functions and Operators"
+    ]
+}

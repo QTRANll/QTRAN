@@ -1,0 +1,24 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.0/en/built-in-function-reference.html"
+    ],
+    "Title": [
+        "14.1 Built-In Function and Operator Reference"
+    ],
+    "Name": "GTID_SUBSET()",
+    "Description": [
+        "\nGTID_SUBSET(set1,set2)\n",
+        "\n            Given two sets of global transaction identifiers\n            set1 and\n            set2, returns true if all GTIDs\n            in set1 are also in\n            set2. Returns\n            NULL if set1\n            or set2 is\n            NULL. Returns false otherwise.\n          ",
+        "\n            The GTID sets used with this function are represented as\n            strings, as shown in the following examples:\n          ",
+        "Press CTRL+C to copy mysql> SELECT GTID_SUBSET('3E11FA47-71CA-11E1-9E33-C80AA9429562:23',\n    ->     '3E11FA47-71CA-11E1-9E33-C80AA9429562:21-57')\\G\n*************************** 1. row ***************************\nGTID_SUBSET('3E11FA47-71CA-11E1-9E33-C80AA9429562:23',\n    '3E11FA47-71CA-11E1-9E33-C80AA9429562:21-57'): 1\n1 row in set (0.00 sec)\n\nmysql> SELECT GTID_SUBSET('3E11FA47-71CA-11E1-9E33-C80AA9429562:23-25',\n    ->     '3E11FA47-71CA-11E1-9E33-C80AA9429562:21-57')\\G\n*************************** 1. row ***************************\nGTID_SUBSET('3E11FA47-71CA-11E1-9E33-C80AA9429562:23-25',\n    '3E11FA47-71CA-11E1-9E33-C80AA9429562:21-57'): 1\n1 row in set (0.00 sec)\n\nmysql> SELECT GTID_SUBSET('3E11FA47-71CA-11E1-9E33-C80AA9429562:20-25',\n    ->     '3E11FA47-71CA-11E1-9E33-C80AA9429562:21-57')\\G\n*************************** 1. row ***************************\nGTID_SUBSET('3E11FA47-71CA-11E1-9E33-C80AA9429562:20-25',\n    '3E11FA47-71CA-11E1-9E33-C80AA9429562:21-57'): 0\n1 row in set (0.00 sec)"
+    ],
+    "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/gtid-functions.html#function_gtid-subset",
+    "Feature": [
+        "GTID_SUBSET(set1,set2)"
+    ],
+    "Examples": [],
+    "Category": [
+        "Built-In Functions and Operators",
+        "Replication Functions"
+    ]
+}

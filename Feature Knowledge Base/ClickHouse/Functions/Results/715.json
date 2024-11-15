@@ -1,0 +1,27 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/random-functions"
+    ],
+    "Title": [
+        "randBinomial"
+    ],
+    "Feature": [
+        "randBinomial(experiments, probability)"
+    ],
+    "Description": [
+        "randBinomial",
+        "Returns a random UInt64 drawn from a binomial distribution.",
+        "Syntax",
+        "randBinomial(experiments, probability)",
+        "Arguments",
+        "experiments - UInt64 - number of experiments,probability - Float64 - probability of success in each experiment, a value between 0 and 1.",
+        "Returned value",
+        "Random number. UInt64."
+    ],
+    "Examples": [
+        "SELECT randBinomial(100, .75) FROM numbers(5)"
+    ],
+    "Category": [
+        "Random Numbers Functions"
+    ]
+}

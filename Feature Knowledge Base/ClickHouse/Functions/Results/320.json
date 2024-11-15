@@ -1,0 +1,27 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/ym-dict-functions"
+    ],
+    "Title": [
+        "regionToPopulation"
+    ],
+    "Feature": [
+        "regionToPopulation(id[, geobase])"
+    ],
+    "Description": [
+        "regionToPopulation",
+        "Gets the population for a region. The population can be recorded in files with the geobase. See the section \u201cDictionaries\u201d. If the population is not recorded for the region, it returns 0. In the geobase, the population might be recorded for child regions, but not for parent regions.",
+        "Syntax",
+        "regionToPopulation(id[, geobase])",
+        "Parameters",
+        "id \u2014 Region ID from the geobase. UInt32.geobase \u2014 Dictionary key. See Multiple Geobases. String. Optional.",
+        "Returned value",
+        "Population for the region. UInt32.0, if there is none."
+    ],
+    "Examples": [
+        "SELECT regionToName(number::UInt32, 'en'), regionToPopulation(number::UInt32) AS id, regionToName(id, 'en') FROM numbers(13);"
+    ],
+    "Category": [
+        "Embedded Dictionaries Functions"
+    ]
+}

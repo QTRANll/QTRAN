@@ -1,0 +1,28 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/date-time-functions"
+    ],
+    "Title": [
+        "toLastDayOfMonth"
+    ],
+    "Feature": [
+        "toLastDayOfMonth(value)"
+    ],
+    "Description": [
+        "toLastDayOfMonth",
+        "Rounds a date or date with time to the last day of the month. Returns the date.",
+        "Syntax",
+        "toLastDayOfMonth(value)",
+        "Alias: LAST_DAY",
+        "Arguments",
+        "value - a Date, Date32, DateTime or DateTime64",
+        "Returned value",
+        "The last day of the month of the given date/time=. Date."
+    ],
+    "Examples": [
+        "SELECT toLastDayOfMonth(toDateTime('2023-04-21 10:20:30'))"
+    ],
+    "Category": [
+        "Dates and Times Functions"
+    ]
+}

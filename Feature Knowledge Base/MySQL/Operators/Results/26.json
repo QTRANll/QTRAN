@@ -1,0 +1,25 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.0/en/built-in-function-reference.html"
+    ],
+    "Title": [
+        "14.1 Built-In Function and Operator Reference"
+    ],
+    "Name": "IS",
+    "Description": [
+        "\nIS\n            boolean_value\n",
+        "\n            Tests a value against a boolean value, where\n            boolean_value can be\n            TRUE, FALSE, or\n            UNKNOWN.\n          ",
+        "Press CTRL+C to copy mysql> SELECT 1 IS TRUE, 0 IS FALSE, NULL IS UNKNOWN;\n        -> 1, 1, 1"
+    ],
+    "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/comparison-operators.html#operator_is",
+    "Feature": [
+        "IS\n            boolean_value"
+    ],
+    "Examples": [
+        "mysql> SELECT 1 IS TRUE, 0 IS FALSE, NULL IS UNKNOWN;\n        -> 1, 1, 1"
+    ],
+    "Category": [
+        "Built-In Functions and Operators",
+        "Comparison Functions and Operators"
+    ]
+}

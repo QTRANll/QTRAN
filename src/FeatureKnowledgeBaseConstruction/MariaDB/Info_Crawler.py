@@ -14,7 +14,7 @@ from selenium import webdriver
 from selenium.webdriver.support.ui import WebDriverWait
 from bs4 import BeautifulSoup, Tag
 import re
-from src.Tools.Crawler.crawler_options import set_options
+from src.Tools.crawler_options import set_options
 
 
 def is_illustration(tag_name, tag_class, tag_text):
@@ -107,13 +107,12 @@ def sql_statements_crawler(feature_type, origin_category, title, html, dic_filen
     soup = BeautifulSoup(driver.page_source, "html.parser")
 
     # 获取html
-    result["HTML"] = html
+    result["HTML"] = [html]
     # 获取SQL Statement Title
     result["Title"] = soup.find("h1").text if soup.find("h1") else ""
-
+    result["Title"] = [result["Title"]]
     # 使用函数处理标题
-    sanitized_title = sanitize_title(result["Title"])
-    dir_filename = os.path.join(dic_filename, sanitized_title + '.json')
+    dir_filename = os.path.join(dic_filename, str(len(os.listdir(dic_filename))) + '.json')
 
     if os.path.exists(dir_filename):
         print("文件 " + dir_filename + " 已存在！")
@@ -132,19 +131,21 @@ def sql_statements_crawler(feature_type, origin_category, title, html, dic_filen
     soup_sub_header = soup.find("div", class_="breadcrumb", id="breadcrumbs")
     soup_a = soup_sub_header.find_all("a") if soup_sub_header else []
     soup_a_txt = [a.text for a in soup_a]
-    if feature_type == "statement":
+    if feature_type == "statements":
         # soup_a_text列表中'SQL Statements'后面的一个元素就是本条statement信息的category
         index = soup_a_txt.index('SQL Statements') if 'SQL Statements' in soup_a_txt else -1
-    if feature_type == "op":
+    if feature_type == "Operators":
         index = -1
-    elif feature_type == "function":
+    elif feature_type == "Functions":
         # soup_a_text列表中'Built-in Functions'后面的一个元素
         index = soup_a_txt.index('Built-in Functions') if 'Built-in Functions' in soup_a_txt else -1
         if "Functions" in soup_a_txt[index+2] or "functions" in soup_a_txt[index+2]:
             index += 1
+    elif feature_type == "DataTypes":
+        # soup_a_text列表中'Data Types'后面的一个元素
+        index = soup_a_txt.index('Data Types') if 'Data Types' in soup_a_txt else -1
     else:
         index = -1
-
     if index != -1 and index + 1 < len(soup_a_txt):
         result["Category"] = [soup_a_txt[index + 1]]
     else:
@@ -159,14 +160,18 @@ def sql_statements_crawler(feature_type, origin_category, title, html, dic_filen
         elif "Geographic & Geometric Features" in soup_a_txt:
             result["Category"] = ["Geographic Functions"]
     try:
-        with open(dir_filename, 'w', encoding='utf-8') as f:
-            json.dump(result, f, indent=4)
+        if len(result["Feature"]) or len(result["Description"]) or len(result["Examples"]):
+            with open(dir_filename, 'w', encoding='utf-8') as f:
+                json.dump(result, f, indent=4)
     except Exception as e:
         print(e)
         return
 
 
 def crawler_results(feature_type, htmls_filename, dic_filename):
+    if len(os.listdir(dic_filename)):
+        print(dic_filename+ ":crawler finished")
+        return
     with open(htmls_filename, "r", encoding="utf-8") as rf:
         html_contents = json.load(rf)
         for category_key, value in html_contents.items():
@@ -223,23 +228,10 @@ def preprocess_results(results_dicname):
                         data["Category"] = synonym_data["Category"]
 
                         # 将copy并修改后的data信息存储到原文件中,暂时不存了
-                        """
                         with open(json_file, "w", encoding="utf-8") as w:
                             json.dump(data, w, indent=4)
-                        """
             print("---------------")
 
-
-def delete_file(file_path):
-    try:
-        os.remove(file_path)
-        print(f"文件 '{file_path}' 已成功删除。")
-    except FileNotFoundError:
-        print(f"文件 '{file_path}' 不存在。")
-    except PermissionError:
-        print(f"没有权限删除文件 '{file_path}'。")
-    except Exception as e:
-        print(f"删除文件时发生错误: {e}")
 
 def category_classifier(results_dicname, results_category_dicname):
     # 对SQL_Statements_Results中爬取的所有结果以category进行分类并存储到SQL_Statements_Results_Category中
@@ -257,62 +249,3 @@ def category_classifier(results_dicname, results_category_dicname):
             w.write('\n')
 
 
-
-
-
-prefix = "../../../Feature Knowledge Base/MariaDB/"
-
-
-Statements_Htmls_Filename = prefix + "SQL_Statements/SQL_Statements_HTMLs.json"
-statements_dir_dicname = os.path.join('..', '..', '..', 'Feature Knowledge Base', 'MariaDB', 'SQL_Statements', 'SQL_Statements_Results')
-Results_Dicname = prefix + "SQL_Statements/SQL_Statements_Results"
-Results_Category_Dicname = prefix + "SQL_Statements/SQL_Statements_Results_Category"
-
-# 爬取statement的每个页面的信息并存储
-crawler_results("statement", Statements_Htmls_Filename, statements_dir_dicname)
-
-# 根据爬取的statement分配到的category对结果进行分类
-# category_classifier(Results_Dicname, Results_Category_Dicname)
-
-
-Ops_Htmls_Filename = prefix + "Operators/HTMLs.json"
-Op_dir_dicname = os.path.join('..', '..', '..', 'Feature Knowledge Base', 'MariaDB', 'Operators', 'Results')
-Op_Results_Category_Dicname = prefix + "Operators/Results_Category"
-# 爬取operators的每个页面的信息并存储
-# crawler_results("op", Ops_Htmls_Filename, Op_dir_dicname)
-# category_classifier(Op_dir_dicname, Op_Results_Category_Dicname)
-
-
-
-Function_Htmls_Filename = prefix + "Functions/HTMLs.json"
-Function_dir_dicname = os.path.join('..', '..', '..', 'Feature Knowledge Base', 'MariaDB', 'Functions', 'Results')
-Function_Results_Category_Dicname = prefix + "Functions/Results_Category"
-# crawler_results("function", Function_Htmls_Filename, Function_dir_dicname)
-# preprocess_results(Function_dir_dicname)
-# category_classifier(Function_dir_dicname, Function_Results_Category_Dicname)
-
-
-
-
-
-
-"""
-with open("../../../Feature Knowledge Base/MariaDB/Functions/Results_Category/No Category.jsonl", "r", encoding="utf-8") as r:
-    lines = r.readlines()
-
-for line in lines:
-    data = json.loads(line)
-    delete_file("../../../Feature Knowledge Base/MariaDB/Functions/Results/"+data["Title"]+".json")
-"""
-
-
-"""
-files = os.listdir("../../../Feature Knowledge Base/MariaDB/Functions/Results")
-for file in files:
-    with open("../../../Feature Knowledge Base/MariaDB/Functions/Results/"+file, "r", encoding="utf-8") as r:
-        data = json.load(r)
-    if "Geographic & Geometric Features" in data["Category"]:
-        data["Category"] = ["Geographic Functions"]
-        with open("../../../Feature Knowledge Base/MariaDB/Functions/Results/"+file, "w", encoding="utf-8") as w:
-            json.dump(data, w, indent=4)
-"""

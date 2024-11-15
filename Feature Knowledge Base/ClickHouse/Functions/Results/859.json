@@ -1,0 +1,23 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/string-functions"
+    ],
+    "Title": [
+        "endsWithUTF8"
+    ],
+    "Feature": [
+        "endsWithUTF8(str, suffix)"
+    ],
+    "Description": [
+        "endsWithUTF8",
+        "Returns whether string str ends with suffix, the difference between endsWithUTF8 and endsWith is that endsWithUTF8 match str and suffix by UTF-8 characters.",
+        "Syntax",
+        "endsWithUTF8(str, suffix)"
+    ],
+    "Examples": [
+        "SELECT endsWithUTF8('\u4e2d\u56fd', '\\xbd'), endsWith('\u4e2d\u56fd', '\\xbd')"
+    ],
+    "Category": [
+        "Strings Functions"
+    ]
+}

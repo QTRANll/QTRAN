@@ -1,0 +1,18 @@
+{
+    "HTML": [
+        "https://sqlite.org/windowfunctions.html"
+    ],
+    "Title": [
+        "dense_rank()\n"
+    ],
+    "Feature": [
+        "dense_rank()\n"
+    ],
+    "Description": [
+        " The number of the current row's peer group within its partition - the\n       rank of the current row without gaps. Rows are numbered starting\n       from 1 in the order defined by the ORDER BY clause in the window\n       definition. If there is no ORDER BY clause, then all rows are\n       considered peers and this function always returns 1.\n  "
+    ],
+    "Examples": [],
+    "Category": [
+        "Window Functions"
+    ]
+}

@@ -1,0 +1,26 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.0/en/built-in-function-reference.html"
+    ],
+    "Title": [
+        "14.1 Built-In Function and Operator Reference"
+    ],
+    "Name": "MBRCoveredBy()",
+    "Description": [
+        "\nMBRCoveredBy(g1,\n            g2)\n",
+        "\n            Returns 1 or 0 to indicate whether the minimum bounding\n            rectangle of g1 is covered by the\n            minimum bounding rectangle of g2.\n            This tests the opposite relationship as\n            MBRCovers().\n          ",
+        "\nMBRCoveredBy() handles its\n            arguments as described in the introduction to this section.\n          ",
+        "Press CTRL+C to copy mysql> SET @g1 = ST_GeomFromText('Polygon((0 0,0 3,3 3,3 0,0 0))');\nmysql> SET @g2 = ST_GeomFromText('Point(1 1)');\nmysql> SELECT MBRCovers(@g1,@g2), MBRCoveredby(@g1,@g2);\n+--------------------+-----------------------+\n| MBRCovers(@g1,@g2) | MBRCoveredby(@g1,@g2) |\n+--------------------+-----------------------+\n|                  1 |                     0 |\n+--------------------+-----------------------+\nmysql> SELECT MBRCovers(@g2,@g1), MBRCoveredby(@g2,@g1);\n+--------------------+-----------------------+\n| MBRCovers(@g2,@g1) | MBRCoveredby(@g2,@g1) |\n+--------------------+-----------------------+\n|                  0 |                     1 |\n+--------------------+-----------------------+"
+    ],
+    "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/spatial-relation-functions-mbr.html#function_mbrcoveredby",
+    "Feature": [
+        "MBRCoveredBy(g1,\n            g2)"
+    ],
+    "Examples": [
+        "mysql> SET @g1 = ST_GeomFromText('Polygon((0 0,0 3,3 3,3 0,0 0))');\nmysql> SET @g2 = ST_GeomFromText('Point(1 1)');\nmysql> SELECT MBRCovers(@g1,@g2), MBRCoveredby(@g1,@g2);\n+--------------------+-----------------------+\n| MBRCovers(@g1,@g2) | MBRCoveredby(@g1,@g2) |\n+--------------------+-----------------------+\n|                  1 |                     0 |\n+--------------------+-----------------------+\nmysql> SELECT MBRCovers(@g2,@g1), MBRCoveredby(@g2,@g1);\n+--------------------+-----------------------+\n| MBRCovers(@g2,@g1) | MBRCoveredby(@g2,@g1) |\n+--------------------+-----------------------+\n|                  0 |                     1 |\n+--------------------+-----------------------+"
+    ],
+    "Category": [
+        "Built-In Functions and Operators",
+        "Spatial Analysis Functions"
+    ]
+}

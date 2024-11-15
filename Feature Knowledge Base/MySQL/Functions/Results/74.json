@@ -1,0 +1,25 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.0/en/built-in-function-reference.html"
+    ],
+    "Title": [
+        "14.1 Built-In Function and Operator Reference"
+    ],
+    "Name": "ELT()",
+    "Description": [
+        "\nELT(N,str1,str2,str3,...)\n",
+        "\nELT() returns the\n          Nth element of the list of strings:\n          str1 if\n          N = 1,\n          str2 if\n          N = 2, and so\n          on. Returns NULL if\n          N is less than\n          1, greater than the number of arguments, or\n          NULL. ELT()\n          is the complement of FIELD().\n        ",
+        "Press CTRL+C to copy mysql> SELECT ELT(1, 'Aa', 'Bb', 'Cc', 'Dd');\n        -> 'Aa'\nmysql> SELECT ELT(4, 'Aa', 'Bb', 'Cc', 'Dd');\n        -> 'Dd'"
+    ],
+    "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/string-functions.html#function_elt",
+    "Feature": [
+        "ELT(N,str1,str2,str3,...)"
+    ],
+    "Examples": [
+        "mysql> SELECT ELT(1, 'Aa', 'Bb', 'Cc', 'Dd');\n        -> 'Aa'\nmysql> SELECT ELT(4, 'Aa', 'Bb', 'Cc', 'Dd');\n        -> 'Dd'"
+    ],
+    "Category": [
+        "Built-In Functions and Operators",
+        "String Functions and Operators"
+    ]
+}

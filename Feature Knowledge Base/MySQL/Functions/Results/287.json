@@ -1,0 +1,25 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.0/en/built-in-function-reference.html"
+    ],
+    "Title": [
+        "14.1 Built-In Function and Operator Reference"
+    ],
+    "Name": "SPACE()",
+    "Description": [
+        "\nSPACE(N)\n",
+        "\n          Returns a string consisting of N\n          space characters, or NULL if\n          N is NULL.\n        ",
+        "Press CTRL+C to copy mysql> SELECT SPACE(6);\n        -> '      '"
+    ],
+    "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/string-functions.html#function_space",
+    "Feature": [
+        "SPACE(N)"
+    ],
+    "Examples": [
+        "mysql> SELECT SPACE(6);\n        -> '      '"
+    ],
+    "Category": [
+        "Built-In Functions and Operators",
+        "String Functions and Operators"
+    ]
+}

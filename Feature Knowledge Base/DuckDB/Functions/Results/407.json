@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://duckdb.org/docs/sql/functions/char"
+    ],
+    "Title": [
+        "nfc_normalize(string)"
+    ],
+    "Feature": [
+        "nfc_normalize(string)"
+    ],
+    "Description": [
+        "Convert string to Unicode NFC normalized string. Useful for comparisons and ordering if text data is mixed between NFC normalized and not."
+    ],
+    "Examples": [
+        "nfc_normalize('arde\u0300ch')"
+    ],
+    "Category": [
+        "Text Functions"
+    ]
+}

@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://duckdb.org/docs/sql/functions/timestamp"
+    ],
+    "Title": [
+        "time_bucket(bucket_width, timestamp[, origin])"
+    ],
+    "Feature": [
+        "time_bucket(bucket_width, timestamp[, origin])"
+    ],
+    "Description": [
+        "Truncate timestamp by the specified interval bucket_width. Buckets are aligned relative to origin timestamp. origin defaults to 2000-01-03 00:00:00 for buckets that don't include a month or year interval, and to 2000-01-01 00:00:00 for month and year buckets."
+    ],
+    "Examples": [
+        "time_bucket(INTERVAL '2 weeks', TIMESTAMP '1992-04-20 15:26:00', TIMESTAMP '1992-04-01 00:00:00')"
+    ],
+    "Category": [
+        "Timestamp Functions"
+    ]
+}

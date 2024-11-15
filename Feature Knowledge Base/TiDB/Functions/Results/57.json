@@ -1,0 +1,22 @@
+{
+    "HTML": [
+        "https://docs.pingcap.com/zh/tidb/v8.3/string-functions"
+    ],
+    "Title": [
+        "UNHEX()"
+    ],
+    "Feature": [
+        "UNHEX()"
+    ],
+    "Description": [
+        "UNHEX()",
+        "UNHEX() 函数执行 HEX() 函数的逆运算，将参数中的每对字符视为十六进制数字，并将其转换为该数字表示的字符，返回值为二进制字符串。",
+        "注意传入的字符串必须是合法的十六进制数值，包含 0~9、A~F、a~f，如果为 NULL 或超出该范围，则返回 NULL。在 MySQL 客户端中，--binary-as-hex 选项在交互模式下默认启用，这会导致客户端将无法识别的字符集数据显示为十六进制字面量 (Hexadecimal literal)。你可以使用 --skip-binary-as-hex 选项来禁用此行为。"
+    ],
+    "Examples": [
+        "SELECT UNHEX('54694442');\n"
+    ],
+    "Category": [
+        "字符串函数"
+    ]
+}

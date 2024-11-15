@@ -1,0 +1,22 @@
+{
+    "HTML": [
+        "https://www.monetdb.org/documentation-Aug2024/user-guide/sql-functions/aggregate-functions"
+    ],
+    "Title": [
+        "sys.covar_pop(numeric_a, numeric_b)"
+    ],
+    "Feature": [
+        "sys.covar_pop(numeric_a, numeric_b)"
+    ],
+    "Description": [
+        "Return type: ",
+        "double",
+        "return the population covariance of numeric_expr of the non-NULL values in the numeric (integer/decimal/real/double/interval) column or group numeric_a versus numeric_b. Supported from release Jun2020 (11.37.7)"
+    ],
+    "Examples": [
+        "sys.covar_pop(i, i*2)"
+    ],
+    "Category": [
+        "Aggregate Functions"
+    ]
+}

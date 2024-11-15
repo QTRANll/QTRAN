@@ -1,0 +1,27 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/tuple-functions"
+    ],
+    "Title": [
+        "tupleDivideByNumber"
+    ],
+    "Feature": [
+        "tupleDivideByNumber(tuple, number)"
+    ],
+    "Description": [
+        "tupleDivideByNumber",
+        "Returns a tuple with all values divided by a number. Note that division by zero will return inf.",
+        "Syntax",
+        "tupleDivideByNumber(tuple, number)",
+        "Arguments",
+        "tuple \u2014 Tuple.number \u2014 Divider. Int/UInt, Float or Decimal.",
+        "Returned value",
+        "Tuple with divided values. Tuple."
+    ],
+    "Examples": [
+        "SELECT tupleDivideByNumber((1, 2), 0.5);"
+    ],
+    "Category": [
+        "Tuples Functions"
+    ]
+}

@@ -1,0 +1,23 @@
+{
+    "HTML": [
+        "https://docs.pingcap.com/zh/tidb/v8.3/information-functions"
+    ],
+    "Title": [
+        "CURRENT_USER()"
+    ],
+    "Feature": [
+        "CURRENT_USER()"
+    ],
+    "Description": [
+        "CURRENT_USER()",
+        "CURRENT_USER() 函数返回当前会话中使用的账户。",
+        "SELECT CURRENT_USER();\n",
+        "+----------------+\n| CURRENT_USER() |\n+----------------+\n| root@%         |\n+----------------+\n1 row in set (0.00 sec)\n"
+    ],
+    "Examples": [
+        "SELECT CURRENT_USER();\n"
+    ],
+    "Category": [
+        "信息函数"
+    ]
+}

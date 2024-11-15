@@ -1,0 +1,27 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/geo/h3"
+    ],
+    "Title": [
+        "h3IsPentagon"
+    ],
+    "Feature": [
+        "h3IsPentagon(index)"
+    ],
+    "Description": [
+        "h3IsPentagon",
+        "Returns whether this H3 index represents a pentagonal cell.",
+        "Syntax",
+        "h3IsPentagon(index)",
+        "Parameter",
+        "index \u2014 Hexagon index number. UInt64.",
+        "Returned value",
+        "1 \u2014 Index represents a pentagonal cell. UInt8.0 \u2014 Index doesn't represent a pentagonal cell. UInt8."
+    ],
+    "Examples": [
+        "SELECT h3IsPentagon(644721767722457330) AS pentagon;"
+    ],
+    "Category": [
+        "Geo Functions"
+    ]
+}

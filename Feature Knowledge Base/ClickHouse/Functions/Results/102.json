@@ -1,0 +1,31 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/array-functions"
+    ],
+    "Title": [
+        "arrayMin"
+    ],
+    "Feature": [
+        "arrayMin([func,] arr)"
+    ],
+    "Description": [
+        "arrayMin",
+        "Returns the minimum of elements in the source array.",
+        "If the func function is specified, returns the mininum of elements converted by this function.",
+        "Note that the arrayMin is a higher-order function. You can pass a lambda function to it as the first argument.",
+        "Syntax",
+        "arrayMin([func,] arr)",
+        "Arguments",
+        "func \u2014 Function. Expression.arr \u2014 Array. Array.",
+        "Returned value",
+        "The minimum of function values (or the array minimum).",
+        "NoteIf func is specified, then the return type matches the return value type of func, otherwise it matches the type of the array elements."
+    ],
+    "Examples": [
+        "SELECT arrayMin([1, 2, 4]) AS res;",
+        "SELECT arrayMin(x -> (-x), [1, 2, 4]) AS res;"
+    ],
+    "Category": [
+        "Arrays Functions"
+    ]
+}

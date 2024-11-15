@@ -1,0 +1,18 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/16/functions-admin.html"
+    ],
+    "Title": [
+        "gin_clean_pending_list"
+    ],
+    "Feature": [
+        "gin_clean_pending_list ( index regclass ) → bigint"
+    ],
+    "Description": [
+        "Cleans up the “pending” list of the specified GIN index by moving entries in it, in bulk, to the main GIN data structure. Returns the number of pages removed from the pending list. If the argument is a GIN index built with the fastupdate option disabled, no cleanup happens and the result is zero, because the index doesn't have a pending list. See Section 70.4.1 and Section 70.5 for details about the pending list and fastupdate option."
+    ],
+    "Examples": [],
+    "Category": [
+        "System Administration Functions"
+    ]
+}

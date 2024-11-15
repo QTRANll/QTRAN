@@ -1,0 +1,19 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/16/functions-admin.html"
+    ],
+    "Title": [
+        "pg_advisory_lock"
+    ],
+    "Feature": [
+        "pg_advisory_lock ( key bigint ) → void",
+        "pg_advisory_lock ( key1 integer, key2 integer ) → void"
+    ],
+    "Description": [
+        "Obtains an exclusive session-level advisory lock, waiting if necessary."
+    ],
+    "Examples": [],
+    "Category": [
+        "System Administration Functions"
+    ]
+}

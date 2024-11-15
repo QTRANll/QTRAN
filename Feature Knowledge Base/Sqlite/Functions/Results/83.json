@@ -1,0 +1,61 @@
+{
+    "HTML": [
+        "https://sqlite.org/json1.html"
+    ],
+    "Title": [
+        "4.20. The json_valid() function"
+    ],
+    "Feature": [
+        "4.20. The json_valid() function"
+    ],
+    "Description": [
+        "4.20. The json_valid() function",
+        "The json_valid(X,Y) function return 1 if the argument X is well-formed\nJSON, or returns 0 if X is not well-formed.  The Y parameter is an integer\nbitmask that defines what is meant by \"well-formed\".  The following bits\nof Y are currently defined:\n\n",
+        " 0x01 →\nThe input is text that strictly complies with canonical RFC-8259 JSON,\nwithout any extensions.\n",
+        " 0x02 →\nThe input is text that is JSON with JSON5 extensions described above.\n",
+        " 0x04 →\nThe input is a BLOB that superficially appears to be JSONB.\n",
+        " 0x08 →\nThe input is a BLOB that strictly conforms to the internal JSONB format.\n",
+        "By combining bits, the following useful values of Y can be derived:\n\n",
+        " 1 → X is RFC-8259 JSON text\n",
+        " 2 → X is JSON5 text\n",
+        " 4 → X is probably JSONB\n",
+        " 5 → X is RFC-8259 JSON text or JSONB\n",
+        " 6 → X is JSON5 text or JSONB\n     ← This is probably the value you want\n",
+        " 8 → X is strictly conforming JSONB\n",
+        " 9 → X is RFC-8259 or strictly conforming JSONB\n",
+        " 10 → X is JSON5 or strictly conforming JSONB\n",
+        "The Y parameter is optional. If omitted, it defaults to 1, which means\nthat the default behavior is to return true only if the input X is\nstrictly conforming RFC-8259 JSON text without any extensions.  This\nmakes the one-argument version of json_valid() compatible with older\nversions of SQLite, prior to the addition of support for\nJSON5 and JSONB.\n\n",
+        "The difference between 0x04 and 0x08 bits in the Y parameter is that\n0x04 only examines the outer wrapper of the BLOB to see if it superficially\nlooks like JSONB.  This is sufficient for must purposes and is very fast.\nThe 0x08 bit does a thorough examination of all internal details of the BLOB.\nThe 0x08 bit takes time that is linear in the size of the X input and is much\nslower.  The 0x04 bit is recommended for most purposes.\n\n",
+        "If you just want to know if a value is a plausible input to one of\nthe other JSON functions, a Y value of 6 is probably what you want to use.\n\n",
+        "Any Y value less than 1 or greater than 15 raises an error, for the\nlatest version of json_valid().  However, future versions of json_valid()\nmight be enhanced to accept flag values outside of this range, having new\nmeanings that we have not yet thought of.\n\n",
+        "If either X or Y inputs to json_valid() are NULL, then the function\nreturns NULL.\n\n",
+        "Examples:\n\n",
+        "json_valid('{\"x\":35}')\n→ 1",
+        "json_valid('{x:35}')\n→ 0",
+        "json_valid('{x:35}',6)\n→ 1",
+        "json_valid('{\"x\":35')\n→ 0",
+        "json_valid(NULL)\n→ NULL"
+    ],
+    "Examples": [
+        " 0x01 →\nThe input is text that strictly complies with canonical RFC-8259 JSON,\nwithout any extensions.\n",
+        " 0x02 →\nThe input is text that is JSON with JSON5 extensions described above.\n",
+        " 0x04 →\nThe input is a BLOB that superficially appears to be JSONB.\n",
+        " 0x08 →\nThe input is a BLOB that strictly conforms to the internal JSONB format.\n",
+        " 1 → X is RFC-8259 JSON text\n",
+        " 2 → X is JSON5 text\n",
+        " 4 → X is probably JSONB\n",
+        " 5 → X is RFC-8259 JSON text or JSONB\n",
+        " 6 → X is JSON5 text or JSONB\n     ← This is probably the value you want\n",
+        " 8 → X is strictly conforming JSONB\n",
+        " 9 → X is RFC-8259 or strictly conforming JSONB\n",
+        " 10 → X is JSON5 or strictly conforming JSONB\n",
+        "json_valid('{\"x\":35}')\n→ 1",
+        "json_valid('{x:35}')\n→ 0",
+        "json_valid('{x:35}',6)\n→ 1",
+        "json_valid('{\"x\":35')\n→ 0",
+        "json_valid(NULL)\n→ NULL"
+    ],
+    "Category": [
+        "JSON Functions"
+    ]
+}

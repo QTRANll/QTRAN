@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/16/functions-range.html"
+    ],
+    "Title": [
+        "lower"
+    ],
+    "Feature": [
+        "lower ( anymultirange ) → anyelement"
+    ],
+    "Description": [
+        "Extracts the lower bound of the multirange (NULL if the multirange is empty has no lower bound)."
+    ],
+    "Examples": [
+        "lower('{[1.1,2.2)}'::nummultirange) → 1.1"
+    ],
+    "Category": [
+        "Range divide Multirange Functions and Operators"
+    ]
+}

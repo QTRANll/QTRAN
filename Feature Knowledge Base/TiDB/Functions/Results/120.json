@@ -1,0 +1,18 @@
+{
+    "HTML": "https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html#function_monthname",
+    "Title": "MONTHNAME()",
+    "Feature": [
+        "MONTHNAME(date)"
+    ],
+    "Description": [
+        "\nMONTHNAME(date)\n",
+        "\n          Returns the full name of the month for\n          date. The language used for the\n          name is controlled by the value of the\n          lc_time_names system variable\n          (Section 12.16, “MySQL Server Locale Support”). Returns\n          NULL if date is\n          NULL.\n        ",
+        "Press CTRL+C to copy mysql> SELECT MONTHNAME('2008-02-03');\n        -> 'February'"
+    ],
+    "Examples": [
+        "mysql> SELECT MONTHNAME('2008-02-03');\n        -> 'February'"
+    ],
+    "Category": [
+        "日期和时间函数"
+    ]
+}

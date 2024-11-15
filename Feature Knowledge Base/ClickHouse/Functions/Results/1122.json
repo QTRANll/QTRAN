@@ -1,0 +1,27 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/aggregate-functions/reference/aggthrow"
+    ],
+    "Title": [
+        "aggThrow"
+    ],
+    "Feature": [
+        "aggThrow(throw_prob)"
+    ],
+    "Description": [
+        "aggThrow",
+        "This function can be used for the purpose of testing exception safety. It will throw an exception on creation with the specified probability.",
+        "Syntax",
+        "aggThrow(throw_prob)",
+        "Arguments",
+        "throw_prob \u2014 Probability to throw on creation. Float64.",
+        "Returned value",
+        "An exception: Code: 503. DB::Exception: Aggregate function aggThrow has thrown exception successfully."
+    ],
+    "Examples": [
+        "SELECT number % 2 AS even, aggThrow(number) FROM numbers(10) GROUP BY even;"
+    ],
+    "Category": [
+        "Aggregate Functions"
+    ]
+}

@@ -1,0 +1,25 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.0/en/built-in-function-reference.html"
+    ],
+    "Title": [
+        "14.1 Built-In Function and Operator Reference"
+    ],
+    "Name": "MICROSECOND()",
+    "Description": [
+        "\nMICROSECOND(expr)\n",
+        "\n          Returns the microseconds from the time or datetime expression\n          expr as a number in the range from\n          0 to 999999. Returns\n          NULL if expr is\n          NULL.\n        ",
+        "Press CTRL+C to copy mysql> SELECT MICROSECOND('12:00:00.123456');\n        -> 123456\nmysql> SELECT MICROSECOND('2019-12-31 23:59:59.000010');\n        -> 10"
+    ],
+    "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html#function_microsecond",
+    "Feature": [
+        "MICROSECOND(expr)"
+    ],
+    "Examples": [
+        "mysql> SELECT MICROSECOND('12:00:00.123456');\n        -> 123456\nmysql> SELECT MICROSECOND('2019-12-31 23:59:59.000010');\n        -> 10"
+    ],
+    "Category": [
+        "Built-In Functions and Operators",
+        "Date and Time Functions"
+    ]
+}

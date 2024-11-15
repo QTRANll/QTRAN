@@ -1,0 +1,27 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/date-time-functions"
+    ],
+    "Title": [
+        "toStartOfMonth"
+    ],
+    "Feature": [
+        "toStartOfMonth(value)"
+    ],
+    "Description": [
+        "toStartOfMonth",
+        "Rounds down a date or date with time to the first day of the month. Returns the date.",
+        "Syntax",
+        "toStartOfMonth(value)",
+        "Arguments",
+        "value - a Date, Date32, DateTime or DateTime64",
+        "Returned value",
+        "The first day of the month of the given date/time. Date."
+    ],
+    "Examples": [
+        "SELECT toStartOfMonth(toDateTime('2023-04-21 10:20:30'))"
+    ],
+    "Category": [
+        "Dates and Times Functions"
+    ]
+}

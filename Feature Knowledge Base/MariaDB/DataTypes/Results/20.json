@@ -1,0 +1,24 @@
+{
+    "HTML": [
+        "https://mariadb.com/kb/en/inet4/"
+    ],
+    "Title": [
+        "INET4"
+    ],
+    "Feature": [
+        "INET4\n"
+    ],
+    "Description": [
+        "INET4 is a data type to store IPv4 addresses, as 4-byte binary strings.",
+        "From MariaDB 11.3.0, casting from INET4 data types to INET6 is permitted, allowing for example comparisons between the two data types, and for INET 4 values to be inserted into INET6 columns."
+    ],
+    "Examples": [
+        "CREATE OR REPLACE TABLE t1 (a INET4);\n\nINSERT INTO t1 VALUES('0.0.0.0'), ('255.10.0.0'), ('255.255.255.255');\n\nINSERT INTO t1 VALUES (0xa0000001);\nINSERT INTO t1 VALUES (0xf0000000);\nINSERT INTO t1 VALUES (0xff000001);\n\nSELECT HEX(a), a FROM t1 ORDER BY a;\n+----------+-----------------+\n| HEX(a)   | a               |\n+----------+-----------------+\n| 00000000 | 0.0.0.0         |\n| A0000001 | 160.0.0.1       |\n| F0000000 | 240.0.0.0       |\n| FF000001 | 255.0.0.1       |\n| FF0A0000 | 255.10.0.0      |\n| FFFFFFFF | 255.255.255.255 |\n+----------+-----------------+\n",
+        "CREATE TABLE t1 (a INET6);\n\nINSERT INTO t1 VALUES('0.0.0.0'), ('255.10.0.0'), ('255.255.255.255');\nERROR 1292 (22007): Incorrect inet6 value: '0.0.0.0' for column `test`.`t1`.`a` at row 1\n",
+        "CREATE TABLE t1 (a INET6);\n\nINSERT INTO t1 VALUES('0.0.0.0'), ('255.10.0.0'), ('255.255.255.255');\nQuery OK, 3 rows affected (0.027 sec)\n",
+        "CREATE OR REPLACE TABLE t1 (i4 INET4, i6 INET6); \nINSERT INTO t1 VALUES('10.10.10.10','::ffff:192.168.0.1');\n\nSELECT LEAST(i4,i6) FROM t1;\n+--------------------+\n| LEAST(i4,i6)       |\n+--------------------+\n| ::ffff:10.10.10.10 |\n+--------------------+\n"
+    ],
+    "Category": [
+        "String Data Types"
+    ]
+}

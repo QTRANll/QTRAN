@@ -1,0 +1,27 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/hash-functions"
+    ],
+    "Title": [
+        "intHash64"
+    ],
+    "Feature": [
+        "intHash64(int)"
+    ],
+    "Description": [
+        "intHash64",
+        "Calculates a 64-bit hash code from any type of integer.\nThis is a relatively fast non-cryptographic hash function of average quality for numbers.\nIt works faster than intHash32.",
+        "Syntax",
+        "intHash64(int)",
+        "Arguments",
+        "int \u2014 Integer to hash. (U)Int*.",
+        "Returned value",
+        "64-bit hash code. UInt64."
+    ],
+    "Examples": [
+        "SELECT intHash64(42);"
+    ],
+    "Category": [
+        "Hash Functions"
+    ]
+}

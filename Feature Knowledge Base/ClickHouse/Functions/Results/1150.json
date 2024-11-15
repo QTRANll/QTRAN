@@ -1,0 +1,33 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/aggregate-functions/reference/exponentialMovingAverage"
+    ],
+    "Title": [
+        "exponentialMovingAverage"
+    ],
+    "Feature": [
+        "exponentialMovingAverage(x)(value, timeunit)"
+    ],
+    "Description": [
+        "exponentialMovingAverage",
+        "Calculates the exponential moving average of values for the determined time.",
+        "Syntax",
+        "exponentialMovingAverage(x)(value, timeunit)",
+        "Each value corresponds to the determinate timeunit. The half-life x is the time lag at which the exponential weights decay by one-half. The function returns a weighted average: the older the time point, the less weight the corresponding value is considered to be.",
+        "Arguments",
+        "value \u2014 Value. Integer, Float or Decimal.timeunit \u2014 Timeunit. Integer, Float or Decimal. Timeunit is not timestamp (seconds), it's -- an index of the time interval. Can be calculated using intDiv.",
+        "Parameters",
+        "x \u2014 Half-life period. Integer, Float or Decimal.",
+        "Returned values",
+        "Returns an exponentially smoothed moving average of the values for the past x time at the latest point of time.",
+        "Type: Float64."
+    ],
+    "Examples": [
+        "SELECT exponentialMovingAverage(5)(temperature, timestamp);",
+        "SELECT    value,    time,    round(exp_smooth, 3),    bar(exp_smooth, 0, 1, 50) AS barFROM(    SELECT        (number = 0) OR (number >= 25) AS value,        number AS time,        exponentialMovingAverage(10)(value, time) OVER (Rows BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW) AS exp_smooth    FROM numbers(50))",
+        "CREATE TABLE dataENGINE = Memory ASSELECT    10 AS value,    toDateTime('2020-01-01') + (3600 * number) AS timeFROM numbers_mt(10);-- Calculate timeunit using intDivSELECT    value,    time,    exponentialMovingAverage(1)(value, intDiv(toUInt32(time), 3600)) OVER (ORDER BY time ASC) AS res,    intDiv(toUInt32(time), 3600) AS timeunitFROM dataORDER BY time ASC;\u250c\u2500value\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500time\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500res\u2500\u252c\u2500timeunit\u2500\u2510\u2502    10 \u2502 2020-01-01 00:00:00 \u2502           5 \u2502   438288 \u2502\u2502    10 \u2502 2020-01-01 01:00:00 \u2502         7.5 \u2502   438289 \u2502\u2502    10 \u2502 2020-01-01 02:00:00 \u2502        8.75 \u2502   438290 \u2502\u2502    10 \u2502 2020-01-01 03:00:00 \u2502       9.375 \u2502   438291 \u2502\u2502    10 \u2502 2020-01-01 04:00:00 \u2502      9.6875 \u2502   438292 \u2502\u2502    10 \u2502 2020-01-01 05:00:00 \u2502     9.84375 \u2502   438293 \u2502\u2502    10 \u2502 2020-01-01 06:00:00 \u2502    9.921875 \u2502   438294 \u2502\u2502    10 \u2502 2020-01-01 07:00:00 \u2502   9.9609375 \u2502   438295 \u2502\u2502    10 \u2502 2020-01-01 08:00:00 \u2502  9.98046875 \u2502   438296 \u2502\u2502    10 \u2502 2020-01-01 09:00:00 \u2502 9.990234375 \u2502   438297 \u2502\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518-- Calculate timeunit using toRelativeHourNumSELECT    value,    time,    exponentialMovingAverage(1)(value, toRelativeHourNum(time)) OVER (ORDER BY time ASC) AS res,    toRelativeHourNum(time) AS timeunitFROM dataORDER BY time ASC;\u250c\u2500value\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500time\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500res\u2500\u252c\u2500timeunit\u2500\u2510\u2502    10 \u2502 2020-01-01 00:00:00 \u2502           5 \u2502   438288 \u2502\u2502    10 \u2502 2020-01-01 01:00:00 \u2502         7.5 \u2502   438289 \u2502\u2502    10 \u2502 2020-01-01 02:00:00 \u2502        8.75 \u2502   438290 \u2502\u2502    10 \u2502 2020-01-01 03:00:00 \u2502       9.375 \u2502   438291 \u2502\u2502    10 \u2502 2020-01-01 04:00:00 \u2502      9.6875 \u2502   438292 \u2502\u2502    10 \u2502 2020-01-01 05:00:00 \u2502     9.84375 \u2502   438293 \u2502\u2502    10 \u2502 2020-01-01 06:00:00 \u2502    9.921875 \u2502   438294 \u2502\u2502    10 \u2502 2020-01-01 07:00:00 \u2502   9.9609375 \u2502   438295 \u2502\u2502    10 \u2502 2020-01-01 08:00:00 \u2502  9.98046875 \u2502   438296 \u2502\u2502    10 \u2502 2020-01-01 09:00:00 \u2502 9.990234375 \u2502   438297 \u2502\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518"
+    ],
+    "Category": [
+        "Aggregate Functions"
+    ]
+}

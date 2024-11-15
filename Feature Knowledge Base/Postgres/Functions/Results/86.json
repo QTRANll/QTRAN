@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/16/functions-string.html"
+    ],
+    "Title": [
+        "regexp_like"
+    ],
+    "Feature": [
+        "regexp_like ( string text, pattern text [, flags text ] ) → boolean"
+    ],
+    "Description": [
+        "Checks whether a match of the POSIX regular expression pattern occurs within string; see Section 9.7.3."
+    ],
+    "Examples": [
+        "regexp_like('Hello World', 'world$', 'i') → t"
+    ],
+    "Category": [
+        "String Functions and Operators"
+    ]
+}

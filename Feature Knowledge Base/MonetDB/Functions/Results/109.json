@@ -1,0 +1,22 @@
+{
+    "HTML": [
+        "https://www.monetdb.org/documentation-Aug2024/user-guide/sql-functions/string-functions"
+    ],
+    "Title": [
+        "splitpart(s, sep, n)"
+    ],
+    "Feature": [
+        "splitpart(s, sep, n)"
+    ],
+    "Description": [
+        "Return type: ",
+        "same as input arg 1",
+        "extract substring from string s by spliting on separator string sep the field before nth occurrence. n must be greater than zero"
+    ],
+    "Examples": [
+        "splitpart('a|a|bc|cd', '|', 3)"
+    ],
+    "Category": [
+        "Character String Functions"
+    ]
+}

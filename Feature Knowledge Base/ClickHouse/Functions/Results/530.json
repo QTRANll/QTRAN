@@ -1,0 +1,33 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/tuple-map-functions"
+    ],
+    "Title": [
+        "mapPopulateSeries"
+    ],
+    "Feature": [
+        "mapPopulateSeries(map[, max])mapPopulateSeries(keys, values[, max])"
+    ],
+    "Description": [
+        "mapPopulateSeries",
+        "Fills missing key-value pairs in a map with integer keys.\nTo support extending the keys beyond the largest value, a maximum key can be specified.\nMore specifically, the function returns a map in which the the keys form a series from the smallest to the largest key (or max argument if it specified) with step size of 1, and corresponding values.\nIf no value is specified for a key, a default value is used as value.\nIn case keys repeat, only the first value (in order of appearance) is associated with the key.",
+        "Syntax",
+        "mapPopulateSeries(map[, max])mapPopulateSeries(keys, values[, max])",
+        "For array arguments the number of elements in keys and values must be the same for each row.",
+        "Arguments",
+        "Arguments are Maps or two Arrays, where the first and second array contains keys and values for the each key.",
+        "Mapped arrays:",
+        "map \u2014 Map with integer keys. Map.",
+        "or",
+        "keys \u2014 Array of keys. Array(Int).values \u2014 Array of values. Array(Int).max \u2014 Maximum key value. Optional. Int8, Int16, Int32, Int64, Int128, Int256.",
+        "Returned value",
+        "Depending on the arguments a Map or a Tuple of two Arrays: keys in sorted order, and values the corresponding keys."
+    ],
+    "Examples": [
+        "SELECT mapPopulateSeries(map(1, 10, 5, 20), 6);",
+        "SELECT mapPopulateSeries([1,2,4], [11,22,44], 5) AS res, toTypeName(res) AS type;"
+    ],
+    "Category": [
+        "Maps Functions"
+    ]
+}

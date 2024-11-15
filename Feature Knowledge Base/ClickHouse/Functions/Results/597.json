@@ -1,0 +1,26 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/functions-for-nulls"
+    ],
+    "Title": [
+        "isNotDistinctFrom"
+    ],
+    "Feature": [
+        "isNotDistinctFrom(x, y)"
+    ],
+    "Description": [
+        "isNotDistinctFrom",
+        "Performs null-safe comparison. Used to compare JOIN keys which contain NULL values in the JOIN ON section.\nThis function will consider two NULL values as identical and will return true, which is distinct from the usual\nequals behavior where comparing two NULL values would return NULL.",
+        "NoteThis function is an internal function used by the implementation of JOIN ON. Please do not use it manually in queries.",
+        "Syntax",
+        "isNotDistinctFrom(x, y)",
+        "Arguments",
+        "x \u2014 first JOIN key.y \u2014 second JOIN key.",
+        "Returned value",
+        "true when x and y are both NULL.false otherwise."
+    ],
+    "Examples": [],
+    "Category": [
+        "Nullable Functions"
+    ]
+}

@@ -1,0 +1,29 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/date-time-functions"
+    ],
+    "Title": [
+        "YYYYMMDDhhmmssToDateTime"
+    ],
+    "Feature": [
+        "YYYYMMDDhhmmssToDateTime(yyyymmddhhmmss[, timezone]);"
+    ],
+    "Description": [
+        "YYYYMMDDhhmmssToDateTime",
+        "Converts a number containing the year, month, day, hours, minute and second number to a DateTime.",
+        "The output is undefined if the input does not encode a valid DateTime value.",
+        "This function is the opposite of function toYYYYMMDDhhmmss().",
+        "Syntax",
+        "YYYYMMDDhhmmssToDateTime(yyyymmddhhmmss[, timezone]);",
+        "Arguments",
+        "yyyymmddhhmmss - A number representing the year, month and day. Integer, Float or Decimal.timezone - Timezone for the returned value (optional).",
+        "Returned value",
+        "a date with time created from the arguments. DateTime."
+    ],
+    "Examples": [
+        "SELECT YYYYMMDDToDateTime(20230911131415);"
+    ],
+    "Category": [
+        "Dates and Times Functions"
+    ]
+}

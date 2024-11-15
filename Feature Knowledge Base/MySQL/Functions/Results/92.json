@@ -1,0 +1,25 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.0/en/built-in-function-reference.html"
+    ],
+    "Title": [
+        "14.1 Built-In Function and Operator Reference"
+    ],
+    "Name": "GeometryCollection()",
+    "Description": [
+        "\nGeometryCollection(g\n          [, g] ...)\n",
+        "\n          Constructs a GeomCollection value from the\n          geometry arguments.\n        ",
+        "\nGeometryCollection() returns\n          all the proper geometries contained in the arguments even if a\n          nonsupported geometry is present.\n        ",
+        "\nGeometryCollection() with no\n          arguments is permitted as a way to create an empty geometry.\n          Also, functions such as\n          ST_GeomFromText() that accept\n          WKT geometry collection arguments understand both OpenGIS\n          'GEOMETRYCOLLECTION EMPTY' standard syntax\n          and MySQL 'GEOMETRYCOLLECTION()'\n          nonstandard syntax.\n        ",
+        "\nGeomCollection() and\n          GeometryCollection() are\n          synonymous, with\n          GeomCollection() the preferred\n          function.\n        "
+    ],
+    "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/gis-mysql-specific-functions.html#function_geometrycollection",
+    "Feature": [
+        "GeometryCollection(g\n          [, g] ...)"
+    ],
+    "Examples": [],
+    "Category": [
+        "Built-In Functions and Operators",
+        "Spatial Analysis Functions"
+    ]
+}

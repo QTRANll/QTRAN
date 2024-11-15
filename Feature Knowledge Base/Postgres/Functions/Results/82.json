@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/16/functions-string.html"
+    ],
+    "Title": [
+        "quote_literal"
+    ],
+    "Feature": [
+        "quote_literal ( anyelement ) → text"
+    ],
+    "Description": [
+        "Converts the given value to text and then quotes it as a literal. Embedded single-quotes and backslashes are properly doubled."
+    ],
+    "Examples": [
+        "quote_literal(42.5) → '42.5'"
+    ],
+    "Category": [
+        "String Functions and Operators"
+    ]
+}

@@ -1,0 +1,29 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/type-conversion-functions"
+    ],
+    "Title": [
+        "toDate32"
+    ],
+    "Feature": [
+        "toDate32(expr)"
+    ],
+    "Description": [
+        "toDate32",
+        "Converts the argument to the Date32 data type. If the value is outside the range, toDate32 returns the border values supported by Date32. If the argument has Date type, it's borders are taken into account.",
+        "Syntax",
+        "toDate32(expr)",
+        "Arguments",
+        "expr \u2014 The value. String, UInt32 or Date.",
+        "Returned value",
+        "A calendar date. Type Date32."
+    ],
+    "Examples": [
+        "SELECT toDate32('1955-01-01') AS value, toTypeName(value);",
+        "SELECT toDate32('1899-01-01') AS value, toTypeName(value);",
+        "SELECT toDate32(toDate('1899-01-01')) AS value, toTypeName(value);"
+    ],
+    "Category": [
+        "Type Conversion Functions"
+    ]
+}

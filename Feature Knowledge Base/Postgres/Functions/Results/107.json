@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/16/functions-binarystring.html"
+    ],
+    "Title": [
+        "bit_length"
+    ],
+    "Feature": [
+        "bit_length ( bytea ) → integer"
+    ],
+    "Description": [
+        "Returns number of bits in the binary string (8 times the octet_length)."
+    ],
+    "Examples": [
+        "bit_length('\\x123456'::bytea) → 24"
+    ],
+    "Category": [
+        "Binary String Functions and Operators"
+    ]
+}

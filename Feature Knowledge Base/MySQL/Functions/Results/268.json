@@ -1,0 +1,26 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.0/en/built-in-function-reference.html"
+    ],
+    "Title": [
+        "14.1 Built-In Function and Operator Reference"
+    ],
+    "Name": "REVERSE()",
+    "Description": [
+        "\nREVERSE(str)\n",
+        "\n          Returns the string str with the\n          order of the characters reversed, or NULL\n          if str is NULL.\n        ",
+        "Press CTRL+C to copy mysql> SELECT REVERSE('abc');\n        -> 'cba'",
+        "\n          This function is multibyte safe.\n        "
+    ],
+    "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/string-functions.html#function_reverse",
+    "Feature": [
+        "REVERSE(str)"
+    ],
+    "Examples": [
+        "mysql> SELECT REVERSE('abc');\n        -> 'cba'"
+    ],
+    "Category": [
+        "Built-In Functions and Operators",
+        "String Functions and Operators"
+    ]
+}

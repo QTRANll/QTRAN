@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://docs.pingcap.com/zh/tidb/v8.3/string-functions"
+    ],
+    "Title": [
+        "WEIGHT_STRING()"
+    ],
+    "Feature": [
+        "WEIGHT_STRING()"
+    ],
+    "Description": [
+        "WEIGHT_STRING()"
+    ],
+    "Examples": [
+        "SET NAMES 'utf8mb4';\nSELECT HEX(WEIGHT_STRING('ab' AS CHAR(3))) AS char_result, HEX(WEIGHT_STRING('ab' AS BINARY(3))) AS binary_result;\n"
+    ],
+    "Category": [
+        "字符串函数"
+    ]
+}

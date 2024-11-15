@@ -1,0 +1,19 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/16/functions-admin.html"
+    ],
+    "Title": [
+        "pg_advisory_unlock_shared"
+    ],
+    "Feature": [
+        "pg_advisory_unlock_shared ( key bigint ) → boolean",
+        "pg_advisory_unlock_shared ( key1 integer, key2 integer ) → boolean"
+    ],
+    "Description": [
+        "Releases a previously-acquired shared session-level advisory lock. Returns true if the lock is successfully released. If the lock was not held, false is returned, and in addition, an SQL warning will be reported by the server."
+    ],
+    "Examples": [],
+    "Category": [
+        "System Administration Functions"
+    ]
+}

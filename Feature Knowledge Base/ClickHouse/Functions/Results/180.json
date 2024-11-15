@@ -1,0 +1,29 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/date-time-functions"
+    ],
+    "Title": [
+        "toHour"
+    ],
+    "Feature": [
+        "toHour(value)"
+    ],
+    "Description": [
+        "toHour",
+        "Returns the hour component (0-24) of a date with time.",
+        "Assumes that if clocks are moved ahead, it is by one hour and occurs at 2 a.m., and if clocks are moved back, it is by one hour and occurs at 3 a.m. (which is not always exactly when it occurs - it depends on the timezone).",
+        "Syntax",
+        "toHour(value)",
+        "Alias: HOUR",
+        "Arguments",
+        "value - a DateTime or DateTime64",
+        "Returned value",
+        "The hour of the day (0 - 23) of the given date/time. UInt8."
+    ],
+    "Examples": [
+        "SELECT toHour(toDateTime('2023-04-21 10:20:30'))"
+    ],
+    "Category": [
+        "Dates and Times Functions"
+    ]
+}

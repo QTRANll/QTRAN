@@ -1,0 +1,28 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/date-time-functions"
+    ],
+    "Title": [
+        "subtractInterval"
+    ],
+    "Feature": [
+        "subtractInterval(interval_1, interval_2)"
+    ],
+    "Description": [
+        "subtractInterval",
+        "Adds a negated interval to another interval or tuple of intervals.",
+        "Syntax",
+        "subtractInterval(interval_1, interval_2)",
+        "Parameters",
+        "interval_1: First interval or interval of tuples. interval, tuple(interval).interval_2: Second interval to be negated. interval.",
+        "Returned value",
+        "Returns a tuple of intervals. tuple(interval).",
+        "NoteIntervals of the same type will be combined into a single interval. For instance if toIntervalDay(2) and toIntervalDay(1) are passed then the result will be (1) rather than (2,1)"
+    ],
+    "Examples": [
+        "SELECT subtractInterval(INTERVAL 1 DAY, INTERVAL 1 MONTH);SELECT subtractInterval((INTERVAL 1 DAY, INTERVAL 1 YEAR), INTERVAL 1 MONTH);SELECT subtractInterval(INTERVAL 2 DAY, INTERVAL 1 DAY);"
+    ],
+    "Category": [
+        "Dates and Times Functions"
+    ]
+}

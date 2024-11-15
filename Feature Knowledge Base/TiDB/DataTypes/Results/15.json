@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://docs.pingcap.com/zh/tidb/v8.3/data-type-string"
+    ],
+    "Title": [
+        "CHAR 类型"
+    ],
+    "Feature": [
+        "CHAR 类型"
+    ],
+    "Description": [
+        "CHAR 类型",
+        "定长字符串。CHAR 列的长度固定为创建表时声明的长度。M 表示列长度（字符的个数，不是字节的个数）。长度可以为从 0 到 255 的任何值。和 VARCHAR 类型不同，CHAR 列在写入时会对数据末尾的空格进行截断。",
+        "[NATIONAL] CHAR[(M)] [CHARACTER SET charset_name] [COLLATE collation_name]\n"
+    ],
+    "Examples": [],
+    "Category": [
+        "字符串类型"
+    ]
+}

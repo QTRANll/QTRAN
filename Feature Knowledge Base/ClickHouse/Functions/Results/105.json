@@ -1,0 +1,30 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/array-functions"
+    ],
+    "Title": [
+        "arrayAvg"
+    ],
+    "Feature": [
+        "arrayAvg([func,] arr)"
+    ],
+    "Description": [
+        "arrayAvg",
+        "Returns the average of elements in the source array.",
+        "If the func function is specified, returns the average of elements converted by this function.",
+        "Note that the arrayAvg is a higher-order function. You can pass a lambda function to it as the first argument.",
+        "Syntax",
+        "arrayAvg([func,] arr)",
+        "Arguments",
+        "func \u2014 Function. Expression.arr \u2014 Array. Array.",
+        "Returned value",
+        "The average of function values (or the array average). Float64."
+    ],
+    "Examples": [
+        "SELECT arrayAvg([1, 2, 4]) AS res;",
+        "SELECT arrayAvg(x -> (x * x), [2, 4]) AS res;"
+    ],
+    "Category": [
+        "Arrays Functions"
+    ]
+}

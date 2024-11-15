@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/16/functions-string.html"
+    ],
+    "Title": [
+        "rtrim"
+    ],
+    "Feature": [
+        "rtrim ( string text [, characters text ] ) → text"
+    ],
+    "Description": [
+        "Removes the longest string containing only characters in characters (a space by default) from the end of string."
+    ],
+    "Examples": [
+        "rtrim('testxxzx', 'xyz') → test"
+    ],
+    "Category": [
+        "String Functions and Operators"
+    ]
+}

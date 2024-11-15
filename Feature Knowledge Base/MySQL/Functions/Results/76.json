@@ -1,0 +1,26 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.0/en/built-in-function-reference.html"
+    ],
+    "Title": [
+        "14.1 Built-In Function and Operator Reference"
+    ],
+    "Name": "EXP()",
+    "Description": [
+        "\nEXP(X)\n",
+        "\n            Returns the value of e (the base of\n            natural logarithms) raised to the power of\n            X. The inverse of this function\n            is LOG() (using a single\n            argument only) or LN().\n          ",
+        "\n            If X is NULL,\n            this function returns NULL.\n          ",
+        "Press CTRL+C to copy mysql> SELECT EXP(2);\n        -> 7.3890560989307\nmysql> SELECT EXP(-2);\n        -> 0.13533528323661\nmysql> SELECT EXP(0);\n        -> 1"
+    ],
+    "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/mathematical-functions.html#function_exp",
+    "Feature": [
+        "EXP(X)"
+    ],
+    "Examples": [
+        "mysql> SELECT EXP(2);\n        -> 7.3890560989307\nmysql> SELECT EXP(-2);\n        -> 0.13533528323661\nmysql> SELECT EXP(0);\n        -> 1"
+    ],
+    "Category": [
+        "Built-In Functions and Operators",
+        "Mathematical Functions"
+    ]
+}

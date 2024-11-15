@@ -1,0 +1,26 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/other-functions"
+    ],
+    "Title": [
+        "dumpColumnStructure"
+    ],
+    "Feature": [
+        "dumpColumnStructure(value)"
+    ],
+    "Description": [
+        "dumpColumnStructure",
+        "Outputs a detailed description of data structures in RAM",
+        "dumpColumnStructure(value)",
+        "Arguments:",
+        "value \u2014 Any type of value.",
+        "Returned values",
+        "A description of the column structure used for representing value."
+    ],
+    "Examples": [
+        "SELECT dumpColumnStructure(CAST('2018-01-01 01:02:03', 'DateTime'))"
+    ],
+    "Category": [
+        "Other Functions"
+    ]
+}

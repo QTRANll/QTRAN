@@ -1,0 +1,31 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.0/en/built-in-function-reference.html"
+    ],
+    "Title": [
+        "14.1 Built-In Function and Operator Reference"
+    ],
+    "Name": "FROM_UNIXTIME()",
+    "Description": [
+        "\nFROM_UNIXTIME(unix_timestamp[,format])\n",
+        "\n          Returns a representation of\n          unix_timestamp as a datetime or\n          character string value. The value returned is expressed using\n          the session time zone. (Clients can set the session time zone\n          as described in Section\u00a07.1.15, \u201cMySQL Server Time Zone Support\u201d.)\n          unix_timestamp is an internal\n          timestamp value representing seconds since\n          '1970-01-01 00:00:00' UTC, such as produced\n          by the UNIX_TIMESTAMP()\n          function.\n        ",
+        "\n          If format is omitted, this function\n          returns a DATETIME value.\n        ",
+        "\n          If unix_timestamp or\n          format is NULL,\n          this function returns NULL.\n        ",
+        "\n          If unix_timestamp is an integer,\n          the fractional seconds precision of the\n          DATETIME is zero. When\n          unix_timestamp is a decimal value,\n          the fractional seconds precision of the\n          DATETIME is the same as the precision of\n          the decimal value, up to a maximum of 6. When\n          unix_timestamp is a floating point\n          number, the fractional seconds precision of the datetime is 6.\n        ",
+        "\n          On 32-bit platforms, the maximum useful value for\n          unix_timestamp is\n          2147483647.999999, which returns '2038-01-19\n          03:14:07.999999' UTC. On 64-bit platforms running\n          MySQL 8.0.28 or later, the effective maximum is\n          32536771199.999999, which returns '3001-01-18\n          23:59:59.999999' UTC. Regardless of platform or\n          version, a greater value for\n          unix_timestamp than the effective\n          maximum returns 0.\n        ",
+        "\nformat is used to format the result\n          in the same way as the format string used for the\n          DATE_FORMAT() function. If\n          format is supplied, the value\n          returned is a VARCHAR.\n        ",
+        "Press CTRL+C to copy mysql> SELECT FROM_UNIXTIME(1447430881);\n        -> '2015-11-13 10:08:01'\nmysql> SELECT FROM_UNIXTIME(1447430881) + 0;\n        -> 20151113100801\nmysql> SELECT FROM_UNIXTIME(1447430881,\n    ->                      '%Y %D %M %h:%i:%s %x');\n        -> '2015 13th November 10:08:01 2015'",
+        "\n\nNote\n\n\n            If you use UNIX_TIMESTAMP()\n            and FROM_UNIXTIME() to\n            convert between values in a non-UTC time zone and Unix\n            timestamp values, the conversion is lossy because the\n            mapping is not one-to-one in both directions. For details,\n            see the description of the\n            UNIX_TIMESTAMP() function.\n\n"
+    ],
+    "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html#function_from-unixtime",
+    "Feature": [
+        "FROM_UNIXTIME(unix_timestamp[,format])"
+    ],
+    "Examples": [
+        "mysql> SELECT FROM_UNIXTIME(1447430881);\n        -> '2015-11-13 10:08:01'\nmysql> SELECT FROM_UNIXTIME(1447430881) + 0;\n        -> 20151113100801\nmysql> SELECT FROM_UNIXTIME(1447430881,\n    ->                      '%Y %D %M %h:%i:%s %x');\n        -> '2015 13th November 10:08:01 2015'"
+    ],
+    "Category": [
+        "Built-In Functions and Operators",
+        "Date and Time Functions"
+    ]
+}

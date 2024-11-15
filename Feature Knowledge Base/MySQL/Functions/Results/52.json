@@ -1,0 +1,28 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.0/en/built-in-function-reference.html"
+    ],
+    "Title": [
+        "14.1 Built-In Function and Operator Reference"
+    ],
+    "Name": "CUME_DIST()",
+    "Description": [
+        "\nCUME_DIST()\nover_clause\n",
+        "\n            Returns the cumulative distribution of a value within a\n            group of values; that is, the percentage of partition values\n            less than or equal to the value in the current row. This\n            represents the number of rows preceding or peer with the\n            current row in the window ordering of the window partition\n            divided by the total number of rows in the window partition.\n            Return values range from 0 to 1.\n          ",
+        "\n            This function should be used with ORDER\n            BY to sort partition rows into the desired order.\n            Without ORDER BY, all rows are peers and\n            have value\n            N/N =\n            1, where N is the partition size.\n          ",
+        "\nover_clause is as described in\n            Section\u00a014.20.2, \u201cWindow Function Concepts and Syntax\u201d.\n          ",
+        "\n            The following query shows, for the set of values in the\n            val column, the\n            CUME_DIST() value for each row, as well\n            as the percentage rank value returned by the similar\n            PERCENT_RANK() function. For reference,\n            the query also displays row numbers using\n            ROW_NUMBER():\n          ",
+        "Press CTRL+C to copy mysql> SELECT\n         val,\n         ROW_NUMBER()   OVER w AS 'row_number',\n         CUME_DIST()    OVER w AS 'cume_dist',\n         PERCENT_RANK() OVER w AS 'percent_rank'\n       FROM numbers\n       WINDOW w AS (ORDER BY val);\n+------+------------+--------------------+--------------+\n| val  | row_number | cume_dist          | percent_rank |\n+------+------------+--------------------+--------------+\n|    1 |          1 | 0.2222222222222222 |            0 |\n|    1 |          2 | 0.2222222222222222 |            0 |\n|    2 |          3 | 0.3333333333333333 |         0.25 |\n|    3 |          4 | 0.6666666666666666 |        0.375 |\n|    3 |          5 | 0.6666666666666666 |        0.375 |\n|    3 |          6 | 0.6666666666666666 |        0.375 |\n|    4 |          7 | 0.8888888888888888 |         0.75 |\n|    4 |          8 | 0.8888888888888888 |         0.75 |\n|    5 |          9 |                  1 |            1 |\n+------+------------+--------------------+--------------+"
+    ],
+    "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/window-function-descriptions.html#function_cume-dist",
+    "Feature": [
+        "CUME_DIST()"
+    ],
+    "Examples": [
+        "mysql> SELECT\n         val,\n         ROW_NUMBER()   OVER w AS 'row_number',\n         CUME_DIST()    OVER w AS 'cume_dist',\n         PERCENT_RANK() OVER w AS 'percent_rank'\n       FROM numbers\n       WINDOW w AS (ORDER BY val);\n+------+------------+--------------------+--------------+\n| val  | row_number | cume_dist          | percent_rank |\n+------+------------+--------------------+--------------+\n|    1 |          1 | 0.2222222222222222 |            0 |\n|    1 |          2 | 0.2222222222222222 |            0 |\n|    2 |          3 | 0.3333333333333333 |         0.25 |\n|    3 |          4 | 0.6666666666666666 |        0.375 |\n|    3 |          5 | 0.6666666666666666 |        0.375 |\n|    3 |          6 | 0.6666666666666666 |        0.375 |\n|    4 |          7 | 0.8888888888888888 |         0.75 |\n|    4 |          8 | 0.8888888888888888 |         0.75 |\n|    5 |          9 |                  1 |            1 |\n+------+------------+--------------------+--------------+"
+    ],
+    "Category": [
+        "Built-In Functions and Operators",
+        "Window Functions"
+    ]
+}

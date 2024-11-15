@@ -1,0 +1,34 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.0/en/built-in-function-reference.html"
+    ],
+    "Title": [
+        "14.1 Built-In Function and Operator Reference"
+    ],
+    "Name": "group_replication_enable_member_action()",
+    "Description": [
+        "\ngroup_replication_enable_member_action()\n",
+        "\n              Enable a member action for the member to take in the\n              specified situation. If the server where you use the\n              function is part of a group, it must be the current\n              primary in a group in single-primary mode, and it must be\n              part of the majority. The changed setting is propagated to\n              other group members and joining members, so they will all\n              act in the same way when they are in the specified\n              situation, and you only need to use the function on the\n              primary.\n            ",
+        "\n              Syntax:\n            ",
+        "Press CTRL+C to copy STRING group_replication_enable_member_action(name, event)",
+        "\n              Arguments:\n",
+        "\n\nname: The name of the\n                  member action to enable.\n                \nevent: The event that\n                  triggers the member action.\n\n",
+        "\n              Return value:\n            ",
+        "\n              A string containing the result of the operation, for\n              example whether it was successful or not.\n            ",
+        "\n              Example:\n            ",
+        "Press CTRL+C to copy SELECT group_replication_enable_member_action(\"mysql_disable_super_read_only_if_primary\", \"AFTER_PRIMARY_ELECTION\");",
+        "\n              For more information, see\n              Section\u00a020.5.1.5, \u201cConfiguring Member Actions\u201d.\n            "
+    ],
+    "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/group-replication-functions-for-member-actions.html#function_group-replication-enable-member-action",
+    "Feature": [
+        "group_replication_enable_member_action()"
+    ],
+    "Examples": [
+        "SELECT group_replication_enable_member_action(\"mysql_disable_super_read_only_if_primary\", \"AFTER_PRIMARY_ELECTION\");"
+    ],
+    "Category": [
+        "Built-In Functions and Operators",
+        "Replication Functions",
+        "Loadable Functions"
+    ]
+}

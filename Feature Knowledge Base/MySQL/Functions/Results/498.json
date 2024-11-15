@@ -1,0 +1,26 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.0/en/loadable-function-reference.html"
+    ],
+    "Title": [
+        "14.2 Loadable Function Reference"
+    ],
+    "Name": "read_firewall_users()",
+    "Description": [
+        "\nread_firewall_users(user,\n              mode)\n",
+        "\n              This aggregate function updates the firewall account\n              profile cache through a SELECT\n              statement on the mysql.firewall_users\n              table. It requires the\n              FIREWALL_ADMIN privilege or\n              the deprecated SUPER\n              privilege.\n            ",
+        "\n              Example:\n            ",
+        "Press CTRL+C to copy SELECT read_firewall_users('fwuser@localhost', 'RECORDING')\nFROM mysql.firewall_users;",
+        "\n              As of MySQL 8.0.26, this function is deprecated and\n              subject to removal in a future MySQL version. See\n              Migrating Account Profiles to Group Profiles.\n            "
+    ],
+    "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/firewall-reference.html#function_read-firewall-users",
+    "Feature": [
+        "read_firewall_users(user,\n              mode)"
+    ],
+    "Examples": [
+        "SELECT read_firewall_users('fwuser@localhost', 'RECORDING')\nFROM mysql.firewall_users;"
+    ],
+    "Category": [
+        "Loadable Functions"
+    ]
+}

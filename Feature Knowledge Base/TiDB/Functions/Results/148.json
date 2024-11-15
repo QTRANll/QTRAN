@@ -1,0 +1,21 @@
+{
+    "HTML": "https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html#function_yearweek",
+    "Title": "YEARWEEK()",
+    "Feature": [
+        "YEARWEEK(date)",
+        "YEARWEEK(date,mode)"
+    ],
+    "Description": [
+        "\nYEARWEEK(date),\n          YEARWEEK(date,mode)\n",
+        "\n          Returns year and week for a date. The year in the result may\n          be different from the year in the date argument for the first\n          and the last week of the year. Returns NULL\n          if date is NULL.\n        ",
+        "\n          The mode argument works exactly\n          like the mode argument to\n          WEEK(). For the single-argument\n          syntax, a mode value of 0 is used.\n          Unlike WEEK(), the value of\n          default_week_format does not\n          influence YEARWEEK().\n        ",
+        "Press CTRL+C to copy mysql> SELECT YEARWEEK('1987-01-01');\n        -> 198652",
+        "\n          The week number is different from what the\n          WEEK() function would return\n          (0) for optional arguments\n          0 or 1, as\n          WEEK() then returns the week in\n          the context of the given year.\n"
+    ],
+    "Examples": [
+        "mysql> SELECT YEARWEEK('1987-01-01');\n        -> 198652"
+    ],
+    "Category": [
+        "日期和时间函数"
+    ]
+}

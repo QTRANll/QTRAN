@@ -1,0 +1,28 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.0/en/built-in-function-reference.html"
+    ],
+    "Title": [
+        "14.1 Built-In Function and Operator Reference"
+    ],
+    "Name": "IS_IPV4_MAPPED()",
+    "Description": [
+        "\nIS_IPV4_MAPPED(expr)\n",
+        "\n          This function takes an IPv6 address represented in numeric\n          form as a binary string, as returned by\n          INET6_ATON(). It returns 1 if\n          the argument is a valid IPv4-mapped IPv6 address, 0 otherwise,\n          unless expr is\n          NULL, in which case the function returns\n          NULL. IPv4-mapped addresses have the form\n          ::ffff:ipv4_address.\n        ",
+        "Press CTRL+C to copy mysql> SELECT IS_IPV4_MAPPED(INET6_ATON('::10.0.5.9'));\n        -> 0\nmysql> SELECT IS_IPV4_MAPPED(INET6_ATON('::ffff:10.0.5.9'));\n        -> 1",
+        "\n          As with IS_IPV4_COMPAT() the IPv4 part of\n          an IPv4-mapped address can also be represented using\n          hexadecimal notation:\n        ",
+        "Press CTRL+C to copy mysql> SELECT\n    ->   IS_IPV4_MAPPED(INET6_ATON('::ffff:198.51.100.1')),\n    ->   IS_IPV4_MAPPED(INET6_ATON('::ffff:c0a8:0001')),\n    ->   IS_IPV4_MAPPED(INET6_ATON('::ffff:c0a8:1'));\n        -> 1, 1, 1"
+    ],
+    "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/miscellaneous-functions.html#function_is-ipv4-mapped",
+    "Feature": [
+        "IS_IPV4_MAPPED(expr)"
+    ],
+    "Examples": [
+        "mysql> SELECT IS_IPV4_MAPPED(INET6_ATON('::10.0.5.9'));\n        -> 0\nmysql> SELECT IS_IPV4_MAPPED(INET6_ATON('::ffff:10.0.5.9'));\n        -> 1",
+        "mysql> SELECT\n    ->   IS_IPV4_MAPPED(INET6_ATON('::ffff:198.51.100.1')),\n    ->   IS_IPV4_MAPPED(INET6_ATON('::ffff:c0a8:0001')),\n    ->   IS_IPV4_MAPPED(INET6_ATON('::ffff:c0a8:1'));\n        -> 1, 1, 1"
+    ],
+    "Category": [
+        "Built-In Functions and Operators",
+        "Miscellaneous Functions"
+    ]
+}

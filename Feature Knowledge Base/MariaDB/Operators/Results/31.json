@@ -1,0 +1,22 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/is/"
+    ],
+    "Title": [
+        "IS"
+    ],
+    "Feature": [
+        "IS boolean_value\n"
+    ],
+    "Description": [
+        "Tests a value against a boolean value, where boolean_value can be\nTRUE, FALSE, or UNKNOWN.",
+        "There is an important difference between using IS TRUE or comparing a value with TRUE using =. When using =, only 1 equals to TRUE. But when using IS TRUE, all values which are logically true (like a number > 1) return TRUE."
+    ],
+    "Examples": [
+        "SELECT 1 IS TRUE, 0 IS FALSE, NULL IS UNKNOWN;\n+-----------+------------+-----------------+\n| 1 IS TRUE | 0 IS FALSE | NULL IS UNKNOWN |\n+-----------+------------+-----------------+\n|         1 |          1 |               1 |\n+-----------+------------+-----------------+\n",
+        "SELECT 2 = TRUE, 2 IS TRUE;\n+----------+-----------+\n| 2 = TRUE | 2 IS TRUE |\n+----------+-----------+\n|        0 |         1 |\n+----------+-----------+\n"
+    ],
+    "Category": [
+        "Comparison Operators"
+    ]
+}

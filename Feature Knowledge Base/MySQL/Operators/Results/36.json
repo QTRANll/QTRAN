@@ -1,0 +1,28 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.0/en/built-in-function-reference.html"
+    ],
+    "Title": [
+        "14.1 Built-In Function and Operator Reference"
+    ],
+    "Name": "OR, ||",
+    "Description": [
+        "\nOR,\n            ||\n",
+        "\n            Logical OR. When both operands are\n            non-NULL, the result is\n            1 if any operand is nonzero, and\n            0 otherwise. With a\n            NULL operand, the result is\n            1 if the other operand is nonzero, and\n            NULL otherwise. If both operands are\n            NULL, the result is\n            NULL.\n          ",
+        "Press CTRL+C to copy mysql> SELECT 1 OR 1;\n        -> 1\nmysql> SELECT 1 OR 0;\n        -> 1\nmysql> SELECT 0 OR 0;\n        -> 0\nmysql> SELECT 0 OR NULL;\n        -> NULL\nmysql> SELECT 1 OR NULL;\n        -> 1",
+        "\n\nNote\n\n\n              If the PIPES_AS_CONCAT\n              SQL mode is enabled,\n              || signifies\n              the SQL-standard string concatenation operator (like\n              CONCAT()).\n\n",
+        "\n            The ||, operator\n            is a nonstandard MySQL extension. As of MySQL 8.0.17, this\n            operator is deprecated; expect support for it to be removed\n            in a future version of MySQL. Applications should be\n            adjusted to use the standard SQL\n            OR operator. Exception:\n            Deprecation does not apply if\n            PIPES_AS_CONCAT is enabled\n            because, in that case,\n            || signifies\n            string concatenation.\n          "
+    ],
+    "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/logical-operators.html#operator_or",
+    "Feature": [
+        "OR",
+        "||"
+    ],
+    "Examples": [
+        "mysql> SELECT 1 OR 1;\n        -> 1\nmysql> SELECT 1 OR 0;\n        -> 1\nmysql> SELECT 0 OR 0;\n        -> 0\nmysql> SELECT 0 OR NULL;\n        -> NULL\nmysql> SELECT 1 OR NULL;\n        -> 1"
+    ],
+    "Category": [
+        "Built-In Functions and Operators",
+        "Logical Operators"
+    ]
+}

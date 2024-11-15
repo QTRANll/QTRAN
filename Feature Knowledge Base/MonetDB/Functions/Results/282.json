@@ -1,0 +1,22 @@
+{
+    "HTML": [
+        "https://www.monetdb.org/documentation-Aug2024/user-guide/sql-functions/aggregate-functions"
+    ],
+    "Title": [
+        "sys.stddev_samp(numeric_expr)"
+    ],
+    "Feature": [
+        "sys.stddev_samp(numeric_expr)"
+    ],
+    "Description": [
+        "Return type: ",
+        "double",
+        "return the sample standard deviation of numeric_expr of the non-NULL values in the numeric (integer/decimal/real/double/interval) column or group. Same as the square root of var_samp()."
+    ],
+    "Examples": [
+        "sys.stddev_samp(i)"
+    ],
+    "Category": [
+        "Aggregate Functions"
+    ]
+}

@@ -1,0 +1,23 @@
+{
+    "HTML": [
+        "https://sqlite.org/lang_expr.html"
+    ],
+    "Title": [
+        "SQL Language Expressions"
+    ],
+    "Feature": [
+        ">>"
+    ],
+    "Description": [
+        "The bitwise shift right operator (>>) shifts the bits of the first integer expression to the right by the number of positions specified by the second integer expression.",
+        "Parameters: Two integer expressions. The first is shifted right by the number of positions specified by the second.",
+        "Returns: The result of the bitwise shift right operation."
+    ],
+    "Examples": [
+        "SELECT 20 >> 1 AS result; -- Returns 10 (binary 10100 >> 1 = 01010)",
+        "SELECT shift_amount >> 3 FROM settings; -- Shifts the shift_amount right by 3 positions"
+    ],
+    "Category": [
+        "Operators"
+    ]
+}

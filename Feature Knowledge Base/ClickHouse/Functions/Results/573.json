@@ -1,0 +1,28 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/math-functions"
+    ],
+    "Title": [
+        "tanh"
+    ],
+    "Feature": [
+        "tanh(x)"
+    ],
+    "Description": [
+        "tanh",
+        "Returns the hyperbolic tangent.",
+        "Syntax",
+        "tanh(x)",
+        "Arguments",
+        "x \u2014 The angle, in radians. Values from the interval: \u2212\u221e<x<+\u221e-\\infty \\lt x \\lt +\\infty\u2212\u221e<x<+\u221e. (U)Int*, Float* or Decimal*.",
+        "Returned value",
+        "Values from the interval: \u22121<tanh(x)<1-1 \\lt tanh(x) \\lt 1\u22121<tanh(x)<1.",
+        "Type: Float*."
+    ],
+    "Examples": [
+        "SELECT tanh(0);"
+    ],
+    "Category": [
+        "Mathematical Functions"
+    ]
+}

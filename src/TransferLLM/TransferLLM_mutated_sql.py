@@ -7,7 +7,7 @@
 
 import os
 import json
-from src.Tools.DatasetConnector.DatabaseConnector import test_database_mysql_like, test_database_postgres
+from src.Tools.database_connector import test_database_mysql_like, test_database_postgres
 import random
 from langchain.prompts import ChatPromptTemplate
 from langchain.chat_models import ChatOpenAI
@@ -16,7 +16,7 @@ from langchain.output_parsers import StructuredOutputParser
 from langchain.chains import ConversationChain
 from langchain.callbacks import get_openai_callback
 from langchain.memory import ConversationBufferMemory
-from src.Tools.DatasetConnector.DatabaseConnector import database_connection_args
+from src.Tools.database_connector import database_connection_args
 
 
 db_names = ["mysql", "mariadb", "tidb"]

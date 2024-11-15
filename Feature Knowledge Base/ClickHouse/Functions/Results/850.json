@@ -1,0 +1,27 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/string-functions"
+    ],
+    "Title": [
+        "base58Decode"
+    ],
+    "Feature": [
+        "base58Decode(encoded)"
+    ],
+    "Description": [
+        "base58Decode",
+        "Accepts a string and decodes it using Base58 encoding scheme using \"Bitcoin\" alphabet.",
+        "Syntax",
+        "base58Decode(encoded)",
+        "Arguments",
+        "encoded \u2014 String or FixedString. If the string is not a valid Base58-encoded value, an exception is thrown.",
+        "Returned value",
+        "A string containing the decoded value of the argument. String."
+    ],
+    "Examples": [
+        "SELECT base58Decode('3dc8KtHrwM');"
+    ],
+    "Category": [
+        "Strings Functions"
+    ]
+}

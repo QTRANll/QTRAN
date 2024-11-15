@@ -1,0 +1,25 @@
+{
+    "HTML": [
+        "https://docs.pingcap.com/zh/tidb/v8.3/tidb-functions"
+    ],
+    "Title": [
+        "TIDB_PARSE_TSO"
+    ],
+    "Feature": [
+        "TIDB_PARSE_TSO"
+    ],
+    "Description": [
+        "TIDB_PARSE_TSO",
+        "TIDB_PARSE_TSO() 函数用于从 TiDB TSO 时间戳中提取物理时间戳。",
+        "TSO 指 Time Stamp Oracle，是 PD (Placement Driver) 为每个事务提供的单调递增的时间戳。TSO 是一串数字，包含以下两部分：",
+        "一个物理时间戳一个逻辑计数器",
+        "BEGIN;\nSELECT TIDB_PARSE_TSO(@@tidb_current_ts);\nROLLBACK;\n",
+        "+-----------------------------------+\n| TIDB_PARSE_TSO(@@tidb_current_ts) |\n+-----------------------------------+\n| 2021-05-26 11:33:37.776000        |\n+-----------------------------------+\n1 row in set (0.0012 sec)\n"
+    ],
+    "Examples": [
+        "BEGIN;\nSELECT TIDB_PARSE_TSO(@@tidb_current_ts);\nROLLBACK;\n"
+    ],
+    "Category": [
+        "TiDB 特有的函数"
+    ]
+}

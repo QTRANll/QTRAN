@@ -1,0 +1,26 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.0/en/built-in-function-reference.html"
+    ],
+    "Title": [
+        "14.1 Built-In Function and Operator Reference"
+    ],
+    "Name": "ST_SwapXY()",
+    "Description": [
+        "\nST_SwapXY(g)\n",
+        "\n          Accepts an argument in internal geometry format, swaps the X\n          and Y values of each coordinate pair within the geometry, and\n          returns the result.\n        ",
+        "\nST_SwapXY() handles its\n          arguments as described in the introduction to this section.\n        ",
+        "Press CTRL+C to copy mysql> SET @g = ST_LineFromText('LINESTRING(0 5,5 10,10 15)');\nmysql> SELECT ST_AsText(@g);\n+----------------------------+\n| ST_AsText(@g)              |\n+----------------------------+\n| LINESTRING(0 5,5 10,10 15) |\n+----------------------------+\nmysql> SELECT ST_AsText(ST_SwapXY(@g));\n+----------------------------+\n| ST_AsText(ST_SwapXY(@g))   |\n+----------------------------+\n| LINESTRING(5 0,10 5,15 10) |\n+----------------------------+"
+    ],
+    "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/gis-format-conversion-functions.html#function_st-swapxy",
+    "Feature": [
+        "ST_SwapXY(g)"
+    ],
+    "Examples": [
+        "mysql> SET @g = ST_LineFromText('LINESTRING(0 5,5 10,10 15)');\nmysql> SELECT ST_AsText(@g);\n+----------------------------+\n| ST_AsText(@g)              |\n+----------------------------+\n| LINESTRING(0 5,5 10,10 15) |\n+----------------------------+\nmysql> SELECT ST_AsText(ST_SwapXY(@g));\n+----------------------------+\n| ST_AsText(ST_SwapXY(@g))   |\n+----------------------------+\n| LINESTRING(5 0,10 5,15 10) |\n+----------------------------+"
+    ],
+    "Category": [
+        "Built-In Functions and Operators",
+        "Spatial Analysis Functions"
+    ]
+}

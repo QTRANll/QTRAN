@@ -1,0 +1,28 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.0/en/built-in-function-reference.html"
+    ],
+    "Title": [
+        "14.1 Built-In Function and Operator Reference"
+    ],
+    "Name": "ST_Centroid()",
+    "Description": [
+        "\nST_Centroid({poly|mpoly})\n",
+        "\n            Returns the mathematical centroid for the\n            Polygon or\n            MultiPolygon argument as a\n            Point. The result is not guaranteed to be\n            on the MultiPolygon.\n          ",
+        "\n            This function processes geometry collections by computing\n            the centroid point for components of highest dimension in\n            the collection. Such components are extracted and made into\n            a single MultiPolygon,\n            MultiLineString, or\n            MultiPoint for centroid computation.\n          ",
+        "\nST_Centroid() handles its\n            arguments as described in the introduction to this section,\n            with these exceptions:\n",
+        "\n\n                The return value is NULL for the\n                additional condition that the argument is an empty\n                geometry collection.\n              \n                If the geometry has an SRID value for a geographic\n                spatial reference system (SRS), an\n                ER_NOT_IMPLEMENTED_FOR_GEOGRAPHIC_SRS\n                error occurs.\n\n",
+        "Press CTRL+C to copy mysql> SET @poly =\n       ST_GeomFromText('POLYGON((0 0,10 0,10 10,0 10,0 0),(5 5,7 5,7 7,5 7,5 5))');\nmysql> SELECT ST_GeometryType(@poly),ST_AsText(ST_Centroid(@poly));\n+------------------------+--------------------------------------------+\n| ST_GeometryType(@poly) | ST_AsText(ST_Centroid(@poly))              |\n+------------------------+--------------------------------------------+\n| POLYGON                | POINT(4.958333333333333 4.958333333333333) |\n+------------------------+--------------------------------------------+"
+    ],
+    "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/gis-polygon-property-functions.html#function_st-centroid",
+    "Feature": [
+        "ST_Centroid({poly|mpoly})"
+    ],
+    "Examples": [
+        "mysql> SET @poly =\n       ST_GeomFromText('POLYGON((0 0,10 0,10 10,0 10,0 0),(5 5,7 5,7 7,5 7,5 5))');\nmysql> SELECT ST_GeometryType(@poly),ST_AsText(ST_Centroid(@poly));\n+------------------------+--------------------------------------------+\n| ST_GeometryType(@poly) | ST_AsText(ST_Centroid(@poly))              |\n+------------------------+--------------------------------------------+\n| POLYGON                | POINT(4.958333333333333 4.958333333333333) |\n+------------------------+--------------------------------------------+"
+    ],
+    "Category": [
+        "Built-In Functions and Operators",
+        "Spatial Analysis Functions"
+    ]
+}

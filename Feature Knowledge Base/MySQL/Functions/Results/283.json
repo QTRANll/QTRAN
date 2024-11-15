@@ -1,0 +1,25 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.0/en/built-in-function-reference.html"
+    ],
+    "Title": [
+        "14.1 Built-In Function and Operator Reference"
+    ],
+    "Name": "SIN()",
+    "Description": [
+        "\nSIN(X)\n",
+        "\n            Returns the sine of X, where\n            X is given in radians. Returns\n            NULL if X is\n            NULL.\n          ",
+        "Press CTRL+C to copy mysql> SELECT SIN(PI());\n        -> 1.2246063538224e-16\nmysql> SELECT ROUND(SIN(PI()));\n        -> 0"
+    ],
+    "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/mathematical-functions.html#function_sin",
+    "Feature": [
+        "SIN(X)"
+    ],
+    "Examples": [
+        "mysql> SELECT SIN(PI());\n        -> 1.2246063538224e-16\nmysql> SELECT ROUND(SIN(PI()));\n        -> 0"
+    ],
+    "Category": [
+        "Built-In Functions and Operators",
+        "Mathematical Functions"
+    ]
+}

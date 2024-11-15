@@ -1,0 +1,30 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.0/en/built-in-function-reference.html"
+    ],
+    "Title": [
+        "14.1 Built-In Function and Operator Reference"
+    ],
+    "Name": "ST_Transform()",
+    "Description": [
+        "\nST_Transform(g,\n          target_srid)\n",
+        "\n          Transforms a geometry from one spatial reference system (SRS)\n          to another. The return value is a geometry of the same type as\n          the input geometry with all coordinates transformed to the\n          target SRID, target_srid. Prior to\n          MySQL 8.0.30, transformation support was limited to geographic\n          SRSs (unless the SRID of the geometry argument was the same as\n          the target SRID value, in which case the return value was the\n          input geometry for any valid SRS), and this function did not\n          support Cartesian SRSs. Beginning with MySQL 8.0.30, support\n          is provided for the Popular Visualisation Pseudo Mercator\n          (EPSG 1024) projection method, used for WGS 84 Pseudo-Mercator\n          (SRID 3857). In MySQL 8.0.32 and later, support is extended to\n          all SRSs defined by EPSG except for those listed here:\n",
+        "\n\n              EPSG 1042 Krovak Modified\n            \n              EPSG 1043 Krovak Modified (North Orientated)\n            \n              EPSG 9816 Tunisia Mining Grid\n            \n              EPSG 9826 Lambert Conic Conformal (West Orientated)\n\n",
+        "\nST_Transform() handles its\n          arguments as described in the introduction to this section,\n          with these exceptions:\n",
+        "\n\n              Geometry arguments that have an SRID value for a\n              geographic SRS do not produce an error.\n            \n              If the geometry or target SRID argument has an SRID value\n              that refers to an undefined spatial reference system\n              (SRS), an ER_SRS_NOT_FOUND\n              error occurs.\n            \n              If the geometry is in an SRS that\n              ST_Transform() cannot\n              transform from, an\n              ER_TRANSFORM_SOURCE_SRS_NOT_SUPPORTED\n              error occurs.\n            \n              If the target SRID is in an SRS that\n              ST_Transform() cannot\n              transform to, an\n              ER_TRANSFORM_TARGET_SRS_NOT_SUPPORTED\n              error occurs.\n            \n              If the geometry is in an SRS that is not WGS 84 and has no\n              TOWGS84 clause, an\n              ER_TRANSFORM_SOURCE_SRS_MISSING_TOWGS84\n              error occurs.\n            \n              If the target SRID is in an SRS that is not WGS 84 and has\n              no TOWGS84 clause, an\n              ER_TRANSFORM_TARGET_SRS_MISSING_TOWGS84\n              error occurs.\n\n",
+        "\nST_SRID(g,\n          target_srid) and\n          ST_Transform(g,\n          target_srid) differ as\n          follows:\n",
+        "\n\nST_SRID() changes the\n              geometry SRID value without transforming its coordinates.\n            \nST_Transform() transforms\n              the geometry coordinates in addition to changing its SRID\n              value.\n\n",
+        "Press CTRL+C to copy mysql> SET @p = ST_GeomFromText('POINT(52.381389 13.064444)', 4326);\nmysql> SELECT ST_AsText(@p);\n+----------------------------+\n| ST_AsText(@p)              |\n+----------------------------+\n| POINT(52.381389 13.064444) |\n+----------------------------+\nmysql> SET @p = ST_Transform(@p, 4230);\nmysql> SELECT ST_AsText(@p);\n+---------------------------------------------+\n| ST_AsText(@p)                               |\n+---------------------------------------------+\n| POINT(52.38208611407426 13.065520672345304) |\n+---------------------------------------------+"
+    ],
+    "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/spatial-operator-functions.html#function_st-transform",
+    "Feature": [
+        "ST_Transform(g,\n          target_srid)"
+    ],
+    "Examples": [
+        "mysql> SET @p = ST_GeomFromText('POINT(52.381389 13.064444)', 4326);\nmysql> SELECT ST_AsText(@p);\n+----------------------------+\n| ST_AsText(@p)              |\n+----------------------------+\n| POINT(52.381389 13.064444) |\n+----------------------------+\nmysql> SET @p = ST_Transform(@p, 4230);\nmysql> SELECT ST_AsText(@p);\n+---------------------------------------------+\n| ST_AsText(@p)                               |\n+---------------------------------------------+\n| POINT(52.38208611407426 13.065520672345304) |\n+---------------------------------------------+"
+    ],
+    "Category": [
+        "Built-In Functions and Operators",
+        "Spatial Analysis Functions"
+    ]
+}

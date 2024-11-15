@@ -1,0 +1,29 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.0/en/loadable-function-reference.html"
+    ],
+    "Title": [
+        "14.2 Loadable Function Reference"
+    ],
+    "Name": "keyring_key_store()",
+    "Description": [
+        "\nkeyring_key_store(key_id,\n              key_type,\n              key)\n",
+        "\n              Obfuscates and stores a key in the keyring.\n            ",
+        "\n              Arguments:\n",
+        "\n\nkey_id: A string that\n                  specifies the key ID.\n                \nkey_type: A string that\n                  specifies the key type.\n                \nkey: A string that\n                  specifies the key value.\n\n",
+        "\n              Return value:\n            ",
+        "\n              Returns 1 for success, or NULL and an\n              error for failure.\n            ",
+        "\n              Example:\n            ",
+        "Press CTRL+C to copy mysql> SELECT keyring_key_store('new key', 'DSA', 'My key value');\n+-----------------------------------------------------+\n| keyring_key_store('new key', 'DSA', 'My key value') |\n+-----------------------------------------------------+\n|                                                   1 |\n+-----------------------------------------------------+"
+    ],
+    "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/keyring-functions-general-purpose.html#function_keyring-key-store",
+    "Feature": [
+        "keyring_key_store(key_id,\n              key_type,\n              key)"
+    ],
+    "Examples": [
+        "mysql> SELECT keyring_key_store('new key', 'DSA', 'My key value');\n+-----------------------------------------------------+\n| keyring_key_store('new key', 'DSA', 'My key value') |\n+-----------------------------------------------------+\n|                                                   1 |\n+-----------------------------------------------------+"
+    ],
+    "Category": [
+        "Loadable Functions"
+    ]
+}

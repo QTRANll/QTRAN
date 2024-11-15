@@ -1,0 +1,26 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.0/en/built-in-function-reference.html"
+    ],
+    "Title": [
+        "14.1 Built-In Function and Operator Reference"
+    ],
+    "Name": "XOR",
+    "Description": [
+        "\nXOR\n",
+        "\n            Logical XOR. Returns NULL if either\n            operand is NULL. For\n            non-NULL operands, evaluates to\n            1 if an odd number of operands is\n            nonzero, otherwise 0 is returned.\n          ",
+        "Press CTRL+C to copy mysql> SELECT 1 XOR 1;\n        -> 0\nmysql> SELECT 1 XOR 0;\n        -> 1\nmysql> SELECT 1 XOR NULL;\n        -> NULL\nmysql> SELECT 1 XOR 1 XOR 1;\n        -> 1",
+        "\na XOR b is mathematically equal to\n            (a AND (NOT b)) OR ((NOT a) and b).\n"
+    ],
+    "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/logical-operators.html#operator_xor",
+    "Feature": [
+        "XOR"
+    ],
+    "Examples": [
+        "mysql> SELECT 1 XOR 1;\n        -> 0\nmysql> SELECT 1 XOR 0;\n        -> 1\nmysql> SELECT 1 XOR NULL;\n        -> NULL\nmysql> SELECT 1 XOR 1 XOR 1;\n        -> 1"
+    ],
+    "Category": [
+        "Built-In Functions and Operators",
+        "Logical Operators"
+    ]
+}

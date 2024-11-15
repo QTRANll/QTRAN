@@ -1,0 +1,16 @@
+{
+    "HTML": "https://dev.mysql.com/doc/refman/8.0/en/locking-functions.html#function_is-used-lock",
+    "Title": "IS_USED_LOCK()",
+    "Feature": [
+        "IS_USED_LOCK(str)"
+    ],
+    "Description": [
+        "\nIS_USED_LOCK(str)\n",
+        "\n          Checks whether the lock named str\n          is in use (that is, locked). If so, it returns the connection\n          identifier of the client session that holds the lock.\n          Otherwise, it returns NULL.\n        ",
+        "\n          This function is unsafe for statement-based replication. A\n          warning is logged if you use this function when\n          binlog_format is set to\n          STATEMENT.\n        "
+    ],
+    "Examples": [],
+    "Category": [
+        "锁函数"
+    ]
+}

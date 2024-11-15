@@ -1,0 +1,28 @@
+{
+    "HTML": [
+        "https://mariadb.com/kb/en/decimal/"
+    ],
+    "Title": [
+        "DECIMAL"
+    ],
+    "Feature": [
+        "DECIMAL[(M[,D])] [SIGNED | UNSIGNED | ZEROFILL]\n"
+    ],
+    "Description": [
+        "A packed \"exact\" fixed-point number. M is the total number of digits (the\nprecision) and D is the number of digits after the decimal point (the\nscale). ",
+        "The decimal point and (for negative numbers) the \"-\" sign are not\ncounted in M. \nIf D is 0, values have no decimal point or fractional\npart and on INSERT the value will be rounded to the nearest DECIMAL. \nThe maximum number of digits (M) for DECIMAL is 65. \nThe maximum number of supported decimals (D) is 30 before MariadB 10.2.1 and 38 afterwards. \nIf D is omitted, the default is 0. If M is omitted, the default is 10.\n",
+        "UNSIGNED, if specified, disallows negative values.",
+        "ZEROFILL, if specified, pads the number with zeros, up to the total number\nof digits specified by M.",
+        "All basic calculations (+, -, *, /) with DECIMAL columns are done with\na precision of 65 digits.",
+        "For more details on the attributes, see Numeric Data Type Overview.",
+        "DEC, NUMERIC and FIXED are synonyms, as well as NUMBER in Oracle mode from MariaDB 10.3."
+    ],
+    "Examples": [
+        "CREATE TABLE t1 (d DECIMAL UNSIGNED ZEROFILL);\n\nINSERT INTO t1 VALUES (1),(2),(3),(4.0),(5.2),(5.7);\nQuery OK, 6 rows affected, 2 warnings (0.16 sec)\nRecords: 6  Duplicates: 0  Warnings: 2\n\nNote (Code 1265): Data truncated for column 'd' at row 5\nNote (Code 1265): Data truncated for column 'd' at row 6\n\nSELECT * FROM t1;\n+------------+\n| d          |\n+------------+\n| 0000000001 |\n| 0000000002 |\n| 0000000003 |\n| 0000000004 |\n| 0000000005 |\n| 0000000006 |\n+------------+\n",
+        "INSERT INTO t1 VALUES (-7);\nERROR 1264 (22003): Out of range value for column 'd' at row 1\n",
+        "INSERT INTO t1 VALUES (-7);\nQuery OK, 1 row affected, 1 warning (0.02 sec)\nWarning (Code 1264): Out of range value for column 'd' at row 1\n\nSELECT * FROM t1;\n+------------+\n| d          |\n+------------+\n| 0000000001 |\n| 0000000002 |\n| 0000000003 |\n| 0000000004 |\n| 0000000005 |\n| 0000000006 |\n| 0000000000 |\n+------------+\n"
+    ],
+    "Category": [
+        "Numeric Data Types"
+    ]
+}

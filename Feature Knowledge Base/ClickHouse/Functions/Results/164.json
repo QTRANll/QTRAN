@@ -1,0 +1,31 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/date-time-functions"
+    ],
+    "Title": [
+        "makeDate"
+    ],
+    "Feature": [
+        "makeDate(year, month, day);makeDate(year, day_of_year);"
+    ],
+    "Description": [
+        "makeDate",
+        "Creates a Date",
+        "from a year, month and day argument, orfrom a year and day of year argument.",
+        "Syntax",
+        "makeDate(year, month, day);makeDate(year, day_of_year);",
+        "Alias:",
+        "MAKEDATE(year, month, day);MAKEDATE(year, day_of_year);",
+        "Arguments",
+        "year \u2014 Year. Integer, Float or Decimal.month \u2014 Month. Integer, Float or Decimal.day \u2014 Day. Integer, Float or Decimal.day_of_year \u2014 Day of the year. Integer, Float or Decimal.",
+        "Returned value",
+        "A date created from the arguments. Date."
+    ],
+    "Examples": [
+        "SELECT makeDate(2023, 2, 28) AS Date;",
+        "SELECT makeDate(2023, 42) AS Date;"
+    ],
+    "Category": [
+        "Dates and Times Functions"
+    ]
+}

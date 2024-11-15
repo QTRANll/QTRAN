@@ -1,0 +1,30 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/tuple-functions"
+    ],
+    "Title": [
+        "tupleIntDivByNumber"
+    ],
+    "Feature": [
+        "tupleIntDivByNumber(tuple_num, div)"
+    ],
+    "Description": [
+        "tupleIntDivByNumber",
+        "Does integer division of a tuple of numerators by a given denominator, and returns a tuple of the quotients.",
+        "Syntax",
+        "tupleIntDivByNumber(tuple_num, div)",
+        "Parameters",
+        "tuple_num: Tuple of numerator values. Tuple of numeric type.div: The divisor value. Numeric type.",
+        "Returned value",
+        "Tuple of the quotients of tuple_num and div. Tuple of integer values.",
+        "Implementation details",
+        "If either tuple_num or div contain non-integer values then the result is calculated by rounding to the nearest integer for each non-integer numerator or divisor.An error will be thrown for division by 0. "
+    ],
+    "Examples": [
+        "SELECT tupleIntDivByNumber((15, 10, 5), 5);",
+        "SELECT tupleIntDivByNumber((15.2, 10.7, 5.5), 5.8);"
+    ],
+    "Category": [
+        "Tuples Functions"
+    ]
+}

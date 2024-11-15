@@ -1,0 +1,26 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/bitmap-functions"
+    ],
+    "Title": [
+        "bitmapHasAll"
+    ],
+    "Feature": [
+        "bitmapHasAll(bitmap1, bitmap2)"
+    ],
+    "Description": [
+        "bitmapHasAll",
+        "Returns 1 if the first bitmap contains all elements of the second bitmap, otherwise 0.\nIf the second bitmap is empty, returns 1.",
+        "Also see hasAll(array, array).",
+        "Syntax",
+        "bitmapHasAll(bitmap1, bitmap2)",
+        "Arguments",
+        "bitmap1 \u2013 Bitmap object 1.bitmap2 \u2013 Bitmap object 2."
+    ],
+    "Examples": [
+        "SELECT bitmapHasAll(bitmapBuild([1,2,3]),bitmapBuild([3,4,5])) AS res;"
+    ],
+    "Category": [
+        "Bitmap Functions"
+    ]
+}

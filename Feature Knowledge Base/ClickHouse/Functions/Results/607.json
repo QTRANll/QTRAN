@@ -1,0 +1,29 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/other-functions"
+    ],
+    "Title": [
+        "basename"
+    ],
+    "Feature": [
+        "basename(expr)"
+    ],
+    "Description": [
+        "basename",
+        "Extracts the tail of a string following its last slash or backslash. This function if often used to extract the filename from a path.",
+        "basename(expr)",
+        "Arguments",
+        "expr \u2014 A value of type String. Backslashes must be escaped.",
+        "Returned Value",
+        "A string that contains:",
+        "The tail of the input string after its last slash or backslash. If the input string ends with a slash or backslash (e.g. / or c:\\), the function returns an empty string.The original string if there are no slashes or backslashes."
+    ],
+    "Examples": [
+        "SELECT 'some/long/path/to/file' AS a, basename(a)",
+        "SELECT 'some\\\\long\\\\path\\\\to\\\\file' AS a, basename(a)",
+        "SELECT 'some-file-name' AS a, basename(a)"
+    ],
+    "Category": [
+        "Other Functions"
+    ]
+}

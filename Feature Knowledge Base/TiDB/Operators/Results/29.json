@@ -1,0 +1,16 @@
+{
+    "HTML": "https://dev.mysql.com/doc/refman/8.0/en/regexp.html#operator_not-regexp",
+    "Title": "NOT REGEXP",
+    "Feature": [
+        "expr\n              NOT REGEXP pat",
+        "expr\n              NOT RLIKE pat"
+    ],
+    "Description": [
+        "\nexpr\n              NOT REGEXP pat,\n              expr\n              NOT RLIKE pat\n",
+        "\n              This is the same as NOT\n              (expr REGEXP\n              pat).\n            "
+    ],
+    "Examples": [],
+    "Category": [
+        "String Functions and Operators"
+    ]
+}

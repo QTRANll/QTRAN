@@ -1,0 +1,18 @@
+{
+    "HTML": [
+        "https://sqlite.org/windowfunctions.html"
+    ],
+    "Title": [
+        "percent_rank()\n"
+    ],
+    "Feature": [
+        "percent_rank()\n"
+    ],
+    "Description": [
+        " Despite the name, this function always returns a value between 0.0\n       and 1.0 equal to (rank - 1)/(partition-rows - 1), where\n       rank is the value returned by built-in window function rank()\n       and partition-rows is the total number of rows in the\n       partition. If the partition contains only one row, this function\n       returns 0.0.\n  "
+    ],
+    "Examples": [],
+    "Category": [
+        "Window Functions"
+    ]
+}

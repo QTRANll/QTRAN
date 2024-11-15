@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/16/functions-geometry.html"
+    ],
+    "Title": [
+        "geometric_type << geometric_type"
+    ],
+    "Feature": [
+        "geometric_type << geometric_type → boolean"
+    ],
+    "Description": [
+        "Is first object strictly left of second? Available for point, box, polygon, circle."
+    ],
+    "Examples": [
+        "circle '<(0,0),1>' << circle '<(5,0),1>' → t"
+    ],
+    "Category": [
+        "Geometric Functions and Operators"
+    ]
+}

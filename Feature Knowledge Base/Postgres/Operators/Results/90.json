@@ -1,0 +1,21 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/16/functions-geometry.html"
+    ],
+    "Title": [
+        "line ?-| line"
+    ],
+    "Feature": [
+        "line ?-| line → boolean",
+        "lseg ?-| lseg → boolean"
+    ],
+    "Description": [
+        "Are lines perpendicular?"
+    ],
+    "Examples": [
+        "lseg '[(0,0),(0,1)]' ?-| lseg '[(0,0),(1,0)]' → t"
+    ],
+    "Category": [
+        "Geometric Functions and Operators"
+    ]
+}

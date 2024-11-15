@@ -1,0 +1,22 @@
+{
+    "HTML": [
+        "https://docs.pingcap.com/zh/tidb/v8.3/string-functions"
+    ],
+    "Title": [
+        "QUOTE()"
+    ],
+    "Feature": [
+        "QUOTE()"
+    ],
+    "Description": [
+        "QUOTE()",
+        "QUOTE() 函数用于转义字符串，使其可以在 SQL 语句中使用。",
+        "如果输入参数为 NULL，该函数返回 NULL。"
+    ],
+    "Examples": [
+        "SELECT QUOTE(0x002774657374);\n"
+    ],
+    "Category": [
+        "字符串函数"
+    ]
+}

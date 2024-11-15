@@ -1,0 +1,23 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/add_months/"
+    ],
+    "Title": [
+        "ADD_MONTHS"
+    ],
+    "Feature": [
+        "ADD_MONTHS(date, months)\n"
+    ],
+    "Description": [
+        "ADD_MONTHS adds an integer months to a given date (DATE, DATETIME or TIMESTAMP), returning the resulting date.",
+        "months can be positive or negative.  If months is not a whole number, then it will be rounded to the nearest whole number (not truncated).",
+        "The resulting day component will remain the same as that specified in date, unless the resulting month has fewer days than the day component of the given date, in which case the day will be the last day of the resulting month.",
+        "Returns NULL if given an invalid date, or a NULL argument."
+    ],
+    "Examples": [
+        "SELECT ADD_MONTHS('2012-01-31', 2);\n+-----------------------------+\n| ADD_MONTHS('2012-01-31', 2) |\n+-----------------------------+\n| 2012-03-31                  |\n+-----------------------------+\n\nSELECT ADD_MONTHS('2012-01-31', -5);\n+------------------------------+\n| ADD_MONTHS('2012-01-31', -5) |\n+------------------------------+\n| 2011-08-31                   |\n+------------------------------+\n\nSELECT ADD_MONTHS('2011-01-31', 1);\n+-----------------------------+\n| ADD_MONTHS('2011-01-31', 1) |\n+-----------------------------+\n| 2011-02-28                  |\n+-----------------------------+\n\nSELECT ADD_MONTHS('2012-01-31', 1);\n+-----------------------------+\n| ADD_MONTHS('2012-01-31', 1) |\n+-----------------------------+\n| 2012-02-29                  |\n+-----------------------------+\n\nSELECT ADD_MONTHS('2012-01-31', 2);\n+-----------------------------+\n| ADD_MONTHS('2012-01-31', 2) |\n+-----------------------------+\n| 2012-03-31                  |\n+-----------------------------+\n\nSELECT ADD_MONTHS('2012-01-31', 3);\n+-----------------------------+\n| ADD_MONTHS('2012-01-31', 3) |\n+-----------------------------+\n| 2012-04-30                  |\n+-----------------------------+\n\nSELECT ADD_MONTHS('2011-01-15', 2.5);\n+-------------------------------+\n| ADD_MONTHS('2011-01-15', 2.5) |\n+-------------------------------+\n| 2011-04-15                    |\n+-------------------------------+\n1 row in set (0.001 sec)\n\nSELECT ADD_MONTHS('2011-01-15', 2.6);\n+-------------------------------+\n| ADD_MONTHS('2011-01-15', 2.6) |\n+-------------------------------+\n| 2011-04-15                    |\n+-------------------------------+\n1 row in set (0.001 sec)\n\nSELECT ADD_MONTHS('2011-01-15', 2.1);\n+-------------------------------+\n| ADD_MONTHS('2011-01-15', 2.1) |\n+-------------------------------+\n| 2011-03-15                    |\n+-------------------------------+\n1 row in set (0.004 sec)\n"
+    ],
+    "Category": [
+        "Date & Time Functions"
+    ]
+}

@@ -1,0 +1,25 @@
+{
+    "HTML": [
+        "https://docs.pingcap.com/zh/tidb/v8.3/encryption-and-compression-functions"
+    ],
+    "Title": [
+        "SHA2()"
+    ],
+    "Feature": [
+        "SHA2()"
+    ],
+    "Description": [
+        "SHA2()",
+        "SHA2(str, n) 函数使用 SHA-2 系列中的算法计算哈希值。参数 n 用于选择算法。如果任一参数为 NULL 或 n 指定的算法未知或不受支持，SHA2() 返回 NULL。",
+        "以下列出支持的算法：",
+        "n算法0SHA-256224SHA-224256SHA-256384SHA-384512SHA-512",
+        "SELECT SHA2('abc',224);\n",
+        "+----------------------------------------------------------+\n| SHA2('abc',224)                                          |\n+----------------------------------------------------------+\n| 23097d223405d8228642a477bda255b32aadbce4bda0b3f7e36c9da7 |\n+----------------------------------------------------------+\n1 row in set (0.00 sec)\n"
+    ],
+    "Examples": [
+        "SELECT SHA2('abc',224);\n"
+    ],
+    "Category": [
+        "加密和压缩函数"
+    ]
+}

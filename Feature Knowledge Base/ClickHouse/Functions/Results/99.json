@@ -1,0 +1,30 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/array-functions"
+    ],
+    "Title": [
+        "arrayLastOrNull"
+    ],
+    "Feature": [
+        "arrayLastOrNull(func, arr1, ...)"
+    ],
+    "Description": [
+        "arrayLastOrNull",
+        "Returns the last element in the arr1 array for which func(arr1[i], ..., arrN[i]) returns something other than 0, otherwise returns NULL.",
+        "Syntax",
+        "arrayLastOrNull(func, arr1, ...)",
+        "Parameters",
+        "func: Lambda function. Lambda function.arr1: Array to operate on. Array.",
+        "Returned value",
+        "The last element in the passed array.Otherwise, returns NULL",
+        "Implementation details",
+        "Note that the arrayLastOrNull is a higher-order function. You must pass a lambda function to it as the first argument, and it can\u2019t be omitted."
+    ],
+    "Examples": [
+        "SELECT arrayLastOrNull(x -> x >= 2, [1, 2, 3]);",
+        "SELECT arrayLastOrNull(x -> x >= 2, emptyArrayUInt8());"
+    ],
+    "Category": [
+        "Arrays Functions"
+    ]
+}

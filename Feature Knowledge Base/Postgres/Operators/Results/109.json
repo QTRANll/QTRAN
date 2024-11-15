@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/16/functions-textsearch.html"
+    ],
+    "Title": [
+        "tsquery && tsquery"
+    ],
+    "Feature": [
+        "tsquery && tsquery → tsquery"
+    ],
+    "Description": [
+        "ANDs two tsquerys together, producing a query that matches documents that match both input queries."
+    ],
+    "Examples": [
+        "'fat | rat'::tsquery && 'cat'::tsquery → ( 'fat' | 'rat' ) & 'cat'"
+    ],
+    "Category": [
+        "Text Search Functions and Operators"
+    ]
+}

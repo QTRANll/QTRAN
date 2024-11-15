@@ -1,0 +1,27 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/other-functions"
+    ],
+    "Title": [
+        "zookeeperSessionUptime"
+    ],
+    "Feature": [
+        "zookeeperSessionUptime()"
+    ],
+    "Description": [
+        "zookeeperSessionUptime",
+        "Returns the uptime of the current ZooKeeper session in seconds.",
+        "Syntax",
+        "zookeeperSessionUptime()",
+        "Arguments",
+        "None.",
+        "Returned value",
+        "Uptime of the current ZooKeeper session in seconds. UInt32."
+    ],
+    "Examples": [
+        "SELECT zookeeperSessionUptime();"
+    ],
+    "Category": [
+        "Other Functions"
+    ]
+}

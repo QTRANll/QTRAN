@@ -1,0 +1,482 @@
+[
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html",
+        "Title": "14.7 Date and Time Functions",
+        "Name": "ADDDATE()",
+        "Description": "Add time values (intervals) to a date value",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html#function_adddate",
+        "Category": "Date and Time Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html",
+        "Title": "14.7 Date and Time Functions",
+        "Name": "ADDTIME()",
+        "Description": "Add time",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html#function_addtime",
+        "Category": "Date and Time Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html",
+        "Title": "14.7 Date and Time Functions",
+        "Name": "CONVERT_TZ()",
+        "Description": "Convert from one time zone to another",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html#function_convert-tz",
+        "Category": "Date and Time Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html",
+        "Title": "14.7 Date and Time Functions",
+        "Name": "CURDATE()",
+        "Description": "Return the current date",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html#function_curdate",
+        "Category": "Date and Time Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html",
+        "Title": "14.7 Date and Time Functions",
+        "Name": "CURRENT_DATE(), CURRENT_DATE",
+        "Description": "Synonyms for CURDATE()",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html#function_current-date",
+        "Category": "Date and Time Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html",
+        "Title": "14.7 Date and Time Functions",
+        "Name": "CURRENT_TIME(), CURRENT_TIME",
+        "Description": "Synonyms for CURTIME()",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html#function_current-time",
+        "Category": "Date and Time Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html",
+        "Title": "14.7 Date and Time Functions",
+        "Name": "CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP",
+        "Description": "Synonyms for NOW()",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html#function_current-timestamp",
+        "Category": "Date and Time Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html",
+        "Title": "14.7 Date and Time Functions",
+        "Name": "CURTIME()",
+        "Description": "Return the current time",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html#function_curtime",
+        "Category": "Date and Time Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html",
+        "Title": "14.7 Date and Time Functions",
+        "Name": "DATE()",
+        "Description": "Extract the date part of a date or datetime expression",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html#function_date",
+        "Category": "Date and Time Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html",
+        "Title": "14.7 Date and Time Functions",
+        "Name": "DATE_ADD()",
+        "Description": "Add time values (intervals) to a date value",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html#function_date-add",
+        "Category": "Date and Time Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html",
+        "Title": "14.7 Date and Time Functions",
+        "Name": "DATE_FORMAT()",
+        "Description": "Format date as specified",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html#function_date-format",
+        "Category": "Date and Time Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html",
+        "Title": "14.7 Date and Time Functions",
+        "Name": "DATE_SUB()",
+        "Description": "Subtract a time value (interval) from a date",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html#function_date-sub",
+        "Category": "Date and Time Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html",
+        "Title": "14.7 Date and Time Functions",
+        "Name": "DATEDIFF()",
+        "Description": "Subtract two dates",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html#function_datediff",
+        "Category": "Date and Time Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html",
+        "Title": "14.7 Date and Time Functions",
+        "Name": "DAY()",
+        "Description": "Synonym for DAYOFMONTH()",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html#function_day",
+        "Category": "Date and Time Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html",
+        "Title": "14.7 Date and Time Functions",
+        "Name": "DAYNAME()",
+        "Description": "Return the name of the weekday",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html#function_dayname",
+        "Category": "Date and Time Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html",
+        "Title": "14.7 Date and Time Functions",
+        "Name": "DAYOFMONTH()",
+        "Description": "Return the day of the month (0-31)",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html#function_dayofmonth",
+        "Category": "Date and Time Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html",
+        "Title": "14.7 Date and Time Functions",
+        "Name": "DAYOFWEEK()",
+        "Description": "Return the weekday index of the argument",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html#function_dayofweek",
+        "Category": "Date and Time Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html",
+        "Title": "14.7 Date and Time Functions",
+        "Name": "DAYOFYEAR()",
+        "Description": "Return the day of the year (1-366)",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html#function_dayofyear",
+        "Category": "Date and Time Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html",
+        "Title": "14.7 Date and Time Functions",
+        "Name": "EXTRACT()",
+        "Description": "Extract part of a date",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html#function_extract",
+        "Category": "Date and Time Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html",
+        "Title": "14.7 Date and Time Functions",
+        "Name": "FROM_DAYS()",
+        "Description": "Convert a day number to a date",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html#function_from-days",
+        "Category": "Date and Time Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html",
+        "Title": "14.7 Date and Time Functions",
+        "Name": "FROM_UNIXTIME()",
+        "Description": "Format Unix timestamp as a date",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html#function_from-unixtime",
+        "Category": "Date and Time Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html",
+        "Title": "14.7 Date and Time Functions",
+        "Name": "GET_FORMAT()",
+        "Description": "Return a date format string",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html#function_get-format",
+        "Category": "Date and Time Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html",
+        "Title": "14.7 Date and Time Functions",
+        "Name": "HOUR()",
+        "Description": "Extract the hour",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html#function_hour",
+        "Category": "Date and Time Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html",
+        "Title": "14.7 Date and Time Functions",
+        "Name": "LAST_DAY",
+        "Description": "Return the last day of the month for the argument",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html#function_last-day",
+        "Category": "Date and Time Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html",
+        "Title": "14.7 Date and Time Functions",
+        "Name": "LOCALTIME(), LOCALTIME",
+        "Description": "Synonym for NOW()",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html#function_localtime",
+        "Category": "Date and Time Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html",
+        "Title": "14.7 Date and Time Functions",
+        "Name": "LOCALTIMESTAMP, LOCALTIMESTAMP()",
+        "Description": "Synonym for NOW()",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html#function_localtimestamp",
+        "Category": "Date and Time Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html",
+        "Title": "14.7 Date and Time Functions",
+        "Name": "MAKEDATE()",
+        "Description": "Create a date from the year and day of year",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html#function_makedate",
+        "Category": "Date and Time Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html",
+        "Title": "14.7 Date and Time Functions",
+        "Name": "MAKETIME()",
+        "Description": "Create time from hour, minute, second",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html#function_maketime",
+        "Category": "Date and Time Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html",
+        "Title": "14.7 Date and Time Functions",
+        "Name": "MICROSECOND()",
+        "Description": "Return the microseconds from argument",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html#function_microsecond",
+        "Category": "Date and Time Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html",
+        "Title": "14.7 Date and Time Functions",
+        "Name": "MINUTE()",
+        "Description": "Return the minute from the argument",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html#function_minute",
+        "Category": "Date and Time Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html",
+        "Title": "14.7 Date and Time Functions",
+        "Name": "MONTH()",
+        "Description": "Return the month from the date passed",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html#function_month",
+        "Category": "Date and Time Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html",
+        "Title": "14.7 Date and Time Functions",
+        "Name": "MONTHNAME()",
+        "Description": "Return the name of the month",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html#function_monthname",
+        "Category": "Date and Time Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html",
+        "Title": "14.7 Date and Time Functions",
+        "Name": "NOW()",
+        "Description": "Return the current date and time",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html#function_now",
+        "Category": "Date and Time Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html",
+        "Title": "14.7 Date and Time Functions",
+        "Name": "PERIOD_ADD()",
+        "Description": "Add a period to a year-month",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html#function_period-add",
+        "Category": "Date and Time Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html",
+        "Title": "14.7 Date and Time Functions",
+        "Name": "PERIOD_DIFF()",
+        "Description": "Return the number of months between periods",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html#function_period-diff",
+        "Category": "Date and Time Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html",
+        "Title": "14.7 Date and Time Functions",
+        "Name": "QUARTER()",
+        "Description": "Return the quarter from a date argument",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html#function_quarter",
+        "Category": "Date and Time Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html",
+        "Title": "14.7 Date and Time Functions",
+        "Name": "SEC_TO_TIME()",
+        "Description": "Converts seconds to 'hh:mm:ss' format",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html#function_sec-to-time",
+        "Category": "Date and Time Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html",
+        "Title": "14.7 Date and Time Functions",
+        "Name": "SECOND()",
+        "Description": "Return the second (0-59)",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html#function_second",
+        "Category": "Date and Time Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html",
+        "Title": "14.7 Date and Time Functions",
+        "Name": "STR_TO_DATE()",
+        "Description": "Convert a string to a date",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html#function_str-to-date",
+        "Category": "Date and Time Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html",
+        "Title": "14.7 Date and Time Functions",
+        "Name": "SUBDATE()",
+        "Description": "Synonym for DATE_SUB() when invoked with three arguments",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html#function_subdate",
+        "Category": "Date and Time Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html",
+        "Title": "14.7 Date and Time Functions",
+        "Name": "SUBTIME()",
+        "Description": "Subtract times",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html#function_subtime",
+        "Category": "Date and Time Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html",
+        "Title": "14.7 Date and Time Functions",
+        "Name": "SYSDATE()",
+        "Description": "Return the time at which the function executes",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html#function_sysdate",
+        "Category": "Date and Time Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html",
+        "Title": "14.7 Date and Time Functions",
+        "Name": "TIME()",
+        "Description": "Extract the time portion of the expression passed",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html#function_time",
+        "Category": "Date and Time Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html",
+        "Title": "14.7 Date and Time Functions",
+        "Name": "TIME_FORMAT()",
+        "Description": "Format as time",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html#function_time-format",
+        "Category": "Date and Time Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html",
+        "Title": "14.7 Date and Time Functions",
+        "Name": "TIME_TO_SEC()",
+        "Description": "Return the argument converted to seconds",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html#function_time-to-sec",
+        "Category": "Date and Time Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html",
+        "Title": "14.7 Date and Time Functions",
+        "Name": "TIMEDIFF()",
+        "Description": "Subtract time",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html#function_timediff",
+        "Category": "Date and Time Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html",
+        "Title": "14.7 Date and Time Functions",
+        "Name": "TIMESTAMP()",
+        "Description": "With a single argument, this function returns the date or datetime",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html#function_timestamp",
+        "Category": "Date and Time Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html",
+        "Title": "14.7 Date and Time Functions",
+        "Name": "TIMESTAMPADD()",
+        "Description": "Add an interval to a datetime expression",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html#function_timestampadd",
+        "Category": "Date and Time Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html",
+        "Title": "14.7 Date and Time Functions",
+        "Name": "TIMESTAMPDIFF()",
+        "Description": "Return the difference of two datetime expressions, using the units",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html#function_timestampdiff",
+        "Category": "Date and Time Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html",
+        "Title": "14.7 Date and Time Functions",
+        "Name": "TO_DAYS()",
+        "Description": "Return the date argument converted to days",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html#function_to-days",
+        "Category": "Date and Time Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html",
+        "Title": "14.7 Date and Time Functions",
+        "Name": "TO_SECONDS()",
+        "Description": "Return the date or datetime argument converted to seconds since",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html#function_to-seconds",
+        "Category": "Date and Time Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html",
+        "Title": "14.7 Date and Time Functions",
+        "Name": "UNIX_TIMESTAMP()",
+        "Description": "Return a Unix timestamp",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html#function_unix-timestamp",
+        "Category": "Date and Time Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html",
+        "Title": "14.7 Date and Time Functions",
+        "Name": "UTC_DATE()",
+        "Description": "Return the current UTC date",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html#function_utc-date",
+        "Category": "Date and Time Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html",
+        "Title": "14.7 Date and Time Functions",
+        "Name": "UTC_TIME()",
+        "Description": "Return the current UTC time",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html#function_utc-time",
+        "Category": "Date and Time Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html",
+        "Title": "14.7 Date and Time Functions",
+        "Name": "UTC_TIMESTAMP()",
+        "Description": "Return the current UTC date and time",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html#function_utc-timestamp",
+        "Category": "Date and Time Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html",
+        "Title": "14.7 Date and Time Functions",
+        "Name": "WEEK()",
+        "Description": "Return the week number",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html#function_week",
+        "Category": "Date and Time Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html",
+        "Title": "14.7 Date and Time Functions",
+        "Name": "WEEKDAY()",
+        "Description": "Return the weekday index",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html#function_weekday",
+        "Category": "Date and Time Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html",
+        "Title": "14.7 Date and Time Functions",
+        "Name": "WEEKOFYEAR()",
+        "Description": "Return the calendar week of the date (1-53)",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html#function_weekofyear",
+        "Category": "Date and Time Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html",
+        "Title": "14.7 Date and Time Functions",
+        "Name": "YEAR()",
+        "Description": "Return the year",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html#function_year",
+        "Category": "Date and Time Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html",
+        "Title": "14.7 Date and Time Functions",
+        "Name": "YEARWEEK()",
+        "Description": "Return the year and week",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html#function_yearweek",
+        "Category": "Date and Time Functions"
+    }
+]

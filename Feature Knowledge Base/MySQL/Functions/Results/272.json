@@ -1,0 +1,31 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.0/en/built-in-function-reference.html"
+    ],
+    "Title": [
+        "14.1 Built-In Function and Operator Reference"
+    ],
+    "Name": "ROW_COUNT()",
+    "Description": [
+        "\nROW_COUNT()\n",
+        "\nROW_COUNT() returns a value as follows:\n",
+        "\n\n              DDL statements: 0. This applies to statements such as\n              CREATE TABLE or\n              DROP TABLE.\n            \n              DML statements other than\n              SELECT: The number of\n              affected rows. This applies to statements such as\n              UPDATE,\n              INSERT, or\n              DELETE (as before), but now\n              also to statements such as ALTER\n              TABLE and LOAD\n              DATA.\n            \nSELECT: -1 if the statement\n              returns a result set, or the number of rows\n              \u201caffected\u201d if it does not. For example, for\n              SELECT * FROM t1,\n              ROW_COUNT() returns -1. For\n              SELECT * FROM t1 INTO OUTFILE\n              'file_name',\n              ROW_COUNT() returns the\n              number of rows written to the file.\n            \nSIGNAL statements: 0.\n\n",
+        "\n          For UPDATE statements, the\n          affected-rows value by default is the number of rows actually\n          changed. If you specify the\n          CLIENT_FOUND_ROWS flag to\n          mysql_real_connect() when\n          connecting to mysqld, the affected-rows\n          value is the number of rows \u201cfound\u201d; that is,\n          matched by the WHERE clause.\n        ",
+        "\n          For REPLACE statements, the\n          affected-rows value is 2 if the new row replaced an old row,\n          because in this case, one row was inserted after the duplicate\n          was deleted.\n        ",
+        "\n          For\n          INSERT\n          ... ON DUPLICATE KEY UPDATE statements, the\n          affected-rows value per row is 1 if the row is inserted as a\n          new row, 2 if an existing row is updated, and 0 if an existing\n          row is set to its current values. If you specify the\n          CLIENT_FOUND_ROWS flag, the affected-rows\n          value is 1 (not 0) if an existing row is set to its current\n          values.\n        ",
+        "\n          The ROW_COUNT() value is\n          similar to the value from the\n          mysql_affected_rows() C API\n          function and the row count that the mysql\n          client displays following statement execution.\n        ",
+        "Press CTRL+C to copy mysql> INSERT INTO t VALUES(1),(2),(3);\nQuery OK, 3 rows affected (0.00 sec)\nRecords: 3  Duplicates: 0  Warnings: 0\n\nmysql> SELECT ROW_COUNT();\n+-------------+\n| ROW_COUNT() |\n+-------------+\n|           3 |\n+-------------+\n1 row in set (0.00 sec)\n\nmysql> DELETE FROM t WHERE i IN(1,2);\nQuery OK, 2 rows affected (0.00 sec)\n\nmysql> SELECT ROW_COUNT();\n+-------------+\n| ROW_COUNT() |\n+-------------+\n|           2 |\n+-------------+\n1 row in set (0.00 sec)",
+        "\n\nImportant\n\n\nROW_COUNT() is not replicated\n            reliably using statement-based replication. This function is\n            automatically replicated using row-based replication.\n\n"
+    ],
+    "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/information-functions.html#function_row-count",
+    "Feature": [
+        "ROW_COUNT()"
+    ],
+    "Examples": [
+        "mysql> INSERT INTO t VALUES(1),(2),(3);\nQuery OK, 3 rows affected (0.00 sec)\nRecords: 3  Duplicates: 0  Warnings: 0\n\nmysql> SELECT ROW_COUNT();\n+-------------+\n| ROW_COUNT() |\n+-------------+\n|           3 |\n+-------------+\n1 row in set (0.00 sec)\n\nmysql> DELETE FROM t WHERE i IN(1,2);\nQuery OK, 2 rows affected (0.00 sec)\n\nmysql> SELECT ROW_COUNT();\n+-------------+\n| ROW_COUNT() |\n+-------------+\n|           2 |\n+-------------+\n1 row in set (0.00 sec)"
+    ],
+    "Category": [
+        "Built-In Functions and Operators",
+        "Information Functions"
+    ]
+}

@@ -1,0 +1,29 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.0/en/built-in-function-reference.html"
+    ],
+    "Title": [
+        "14.1 Built-In Function and Operator Reference"
+    ],
+    "Name": "JSON_REPLACE()",
+    "Description": [
+        "\nJSON_REPLACE(json_doc,\n          path,\n          val[,\n          path,\n          val] ...)\n",
+        "\n          Replaces existing values in a JSON document and returns the\n          result. Returns NULL if any argument is\n          NULL. An error occurs if the\n          json_doc argument is not a valid\n          JSON document or any path argument\n          is not a valid path expression or contains a\n          * or ** wildcard.\n        ",
+        "\n          The path-value pairs are evaluated left to right. The document\n          produced by evaluating one pair becomes the new value against\n          which the next pair is evaluated.\n        ",
+        "\n          A path-value pair for an existing path in the document\n          overwrites the existing document value with the new value. A\n          path-value pair for a nonexisting path in the document is\n          ignored and has no effect.\n        ",
+        "\n          In MySQL 8.0.4, the optimizer can perform a partial, in-place\n          update of a JSON column instead of removing\n          the old document and writing the new document in its entirety\n          to the column. This optimization can be performed for an\n          update statement that uses the\n          JSON_REPLACE() function and\n          meets the conditions outlined in\n          Partial Updates of JSON Values.\n        ",
+        "\n          For a comparison of\n          JSON_INSERT(),\n          JSON_REPLACE(), and\n          JSON_SET(), see the discussion\n          of JSON_SET().\n        ",
+        "Press CTRL+C to copy mysql> SET @j = '{ \"a\": 1, \"b\": [2, 3]}';\nmysql> SELECT JSON_REPLACE(@j, '$.a', 10, '$.c', '[true, false]');\n+-----------------------------------------------------+\n| JSON_REPLACE(@j, '$.a', 10, '$.c', '[true, false]') |\n+-----------------------------------------------------+\n| {\"a\": 10, \"b\": [2, 3]}                              |\n+-----------------------------------------------------+"
+    ],
+    "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/json-modification-functions.html#function_json-replace",
+    "Feature": [
+        "JSON_REPLACE(json_doc,\n          path,\n          val[,\n          path,\n          val] ...)"
+    ],
+    "Examples": [
+        "mysql> SET @j = '{ \"a\": 1, \"b\": [2, 3]}';\nmysql> SELECT JSON_REPLACE(@j, '$.a', 10, '$.c', '[true, false]');\n+-----------------------------------------------------+\n| JSON_REPLACE(@j, '$.a', 10, '$.c', '[true, false]') |\n+-----------------------------------------------------+\n| {\"a\": 10, \"b\": [2, 3]}                              |\n+-----------------------------------------------------+"
+    ],
+    "Category": [
+        "Built-In Functions and Operators",
+        "JSON Functions"
+    ]
+}

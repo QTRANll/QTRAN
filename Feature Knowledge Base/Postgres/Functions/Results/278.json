@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/16/functions-json.html"
+    ],
+    "Title": [
+        "object . keyvalue"
+    ],
+    "Feature": [
+        "object . keyvalue() → array"
+    ],
+    "Description": [
+        "The object's key-value pairs, represented as an array of objects containing three fields: \"key\", \"value\", and \"id\"; \"id\" is a unique identifier of the object the key-value pair belongs to"
+    ],
+    "Examples": [
+        "jsonb_path_query_array('{\"x\": \"20\", \"y\": 32}', '$.keyvalue()') → [{\"id\": 0, \"key\": \"x\", \"value\": \"20\"}, {\"id\": 0, \"key\": \"y\", \"value\": 32}]"
+    ],
+    "Category": [
+        "JSON Functions and Operators"
+    ]
+}

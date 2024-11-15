@@ -1,0 +1,25 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.0/en/built-in-function-reference.html"
+    ],
+    "Title": [
+        "14.1 Built-In Function and Operator Reference"
+    ],
+    "Name": "TAN()",
+    "Description": [
+        "\nTAN(X)\n",
+        "\n            Returns the tangent of X, where\n            X is given in radians. Returns\n            NULL if X is\n            NULL.\n          ",
+        "Press CTRL+C to copy mysql> SELECT TAN(PI());\n        -> -1.2246063538224e-16\nmysql> SELECT TAN(PI()+1);\n        -> 1.5574077246549"
+    ],
+    "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/mathematical-functions.html#function_tan",
+    "Feature": [
+        "TAN(X)"
+    ],
+    "Examples": [
+        "mysql> SELECT TAN(PI());\n        -> -1.2246063538224e-16\nmysql> SELECT TAN(PI()+1);\n        -> 1.5574077246549"
+    ],
+    "Category": [
+        "Built-In Functions and Operators",
+        "Mathematical Functions"
+    ]
+}

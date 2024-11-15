@@ -1,0 +1,19 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/type-conversion-functions"
+    ],
+    "Title": [
+        "parseDateTimeBestEffortUS"
+    ],
+    "Feature": [
+        "parseDateTimeBestEffortUS"
+    ],
+    "Description": [
+        "parseDateTimeBestEffortUS",
+        "This function behaves like parseDateTimeBestEffort for ISO date formats, e.g. YYYY-MM-DD hh:mm:ss, and other date formats where the month and date components can be unambiguously extracted, e.g. YYYYMMDDhhmmss, YYYY-MM, DD hh, or YYYY-MM-DD hh:mm:ss \u00b1h:mm. If the month and the date components cannot be unambiguously extracted, e.g. MM/DD/YYYY, MM-DD-YYYY, or MM-DD-YY, it prefers the US date format instead of DD/MM/YYYY, DD-MM-YYYY, or DD-MM-YY. As an exception from the latter, if the month is bigger than 12 and smaller or equal than 31, this function falls back to the behavior of parseDateTimeBestEffort, e.g. 15/08/2020 is parsed as 2020-08-15."
+    ],
+    "Examples": [],
+    "Category": [
+        "Type Conversion Functions"
+    ]
+}

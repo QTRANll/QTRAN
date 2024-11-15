@@ -1,0 +1,18 @@
+{
+    "HTML": [
+        "https://sqlite.org/lang_corefunc.html"
+    ],
+    "Title": [
+        "concat_ws(SEP,X,...)"
+    ],
+    "Feature": [
+        "concat_ws(SEP,X,...)"
+    ],
+    "Description": [
+        "\n  The concat_ws(SEP,...) function returns a string that is the concatenation of\n  all non-null arguments beyond the first argument, using the text value of the\n  first argument as a separator.  If the first argument is NULL, then concat_ws()\n  returns NULL.  If all arguments other than the first are NULL, then concat_ws()\n  returns an empty string.\n"
+    ],
+    "Examples": [],
+    "Category": [
+        "Core SQL Functions"
+    ]
+}

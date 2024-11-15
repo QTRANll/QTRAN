@@ -1,0 +1,22 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/16/functions-textsearch.html"
+    ],
+    "Title": [
+        "to_tsvector"
+    ],
+    "Feature": [
+        "to_tsvector ( [ config regconfig, ] document json ) → tsvector",
+        "to_tsvector ( [ config regconfig, ] document jsonb ) → tsvector"
+    ],
+    "Description": [
+        "Converts each string value in the JSON document to a tsvector, normalizing words according to the specified or default configuration. The results are then concatenated in document order to produce the output. Position information is generated as though one stopword exists between each pair of string values. (Beware that “document order” of the fields of a JSON object is implementation-dependent when the input is jsonb; observe the difference in the examples.)"
+    ],
+    "Examples": [
+        "to_tsvector('english', '{\"aa\": \"The Fat Rats\", \"b\": \"dog\"}'::json) → 'dog':5 'fat':2 'rat':3",
+        "to_tsvector('english', '{\"aa\": \"The Fat Rats\", \"b\": \"dog\"}'::jsonb) → 'dog':1 'fat':4 'rat':5"
+    ],
+    "Category": [
+        "Text Search Functions and Operators"
+    ]
+}

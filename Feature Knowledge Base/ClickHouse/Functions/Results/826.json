@@ -1,0 +1,28 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/string-functions"
+    ],
+    "Title": [
+        "rightUTF8"
+    ],
+    "Feature": [
+        "rightUTF8(s, offset)"
+    ],
+    "Description": [
+        "rightUTF8",
+        "Returns a substring of UTF-8 encoded string s with a specified offset starting from the right.",
+        "Syntax",
+        "rightUTF8(s, offset)",
+        "Parameters",
+        "s \u2014 The UTF-8 encoded string to calculate a substring from. String or FixedString.offset \u2014 The number of bytes of the offset. UInt*.",
+        "Returned value",
+        "For positive offset: A substring of s with offset many bytes, starting from the right of the string.For negative offset: A substring of s with length(s) - |offset| bytes, starting from the right of the string.An empty string if length is 0."
+    ],
+    "Examples": [
+        "SELECT rightUTF8('\u041f\u0440\u0438\u0432\u0435\u0442', 4);",
+        "SELECT rightUTF8('\u041f\u0440\u0438\u0432\u0435\u0442', -4);"
+    ],
+    "Category": [
+        "Strings Functions"
+    ]
+}

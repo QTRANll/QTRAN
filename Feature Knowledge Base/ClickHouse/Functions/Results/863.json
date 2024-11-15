@@ -1,0 +1,28 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/string-functions"
+    ],
+    "Title": [
+        "trimLeft"
+    ],
+    "Feature": [
+        "trimLeft(input_string)"
+    ],
+    "Description": [
+        "trimLeft",
+        "Removes the consecutive occurrences of whitespace (ASCII-character 32) from the start of a string.",
+        "Syntax",
+        "trimLeft(input_string)",
+        "Alias: ltrim(input_string).",
+        "Arguments",
+        "input_string \u2014 string to trim. String.",
+        "Returned value",
+        "A string without leading common whitespaces. String."
+    ],
+    "Examples": [
+        "SELECT trimLeft('     Hello, world!     ');"
+    ],
+    "Category": [
+        "Strings Functions"
+    ]
+}

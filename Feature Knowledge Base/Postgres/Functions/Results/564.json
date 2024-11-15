@@ -1,0 +1,19 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/16/functions-admin.html"
+    ],
+    "Title": [
+        "pg_tablespace_size"
+    ],
+    "Feature": [
+        "pg_tablespace_size ( name ) → bigint",
+        "pg_tablespace_size ( oid ) → bigint"
+    ],
+    "Description": [
+        "Computes the total disk space used in the tablespace with the specified name or OID. To use this function, you must have CREATE privilege on the specified tablespace or have privileges of the pg_read_all_stats role, unless it is the default tablespace for the current database."
+    ],
+    "Examples": [],
+    "Category": [
+        "System Administration Functions"
+    ]
+}

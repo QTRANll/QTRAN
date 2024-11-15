@@ -1,0 +1,27 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/geo/h3"
+    ],
+    "Title": [
+        "h3IndexesAreNeighbors"
+    ],
+    "Feature": [
+        "h3IndexesAreNeighbors(index1, index2)"
+    ],
+    "Description": [
+        "h3IndexesAreNeighbors",
+        "Returns whether or not the provided H3 indexes are neighbors.",
+        "Syntax",
+        "h3IndexesAreNeighbors(index1, index2)",
+        "Arguments",
+        "index1 \u2014 Hexagon index number. UInt64.index2 \u2014 Hexagon index number. UInt64.",
+        "Returned value",
+        "1 \u2014 Indexes are neighbours. UInt8.0 \u2014 Indexes are not neighbours. UInt8."
+    ],
+    "Examples": [
+        "SELECT h3IndexesAreNeighbors(617420388351344639, 617420388352655359) AS n;"
+    ],
+    "Category": [
+        "Geo Functions"
+    ]
+}

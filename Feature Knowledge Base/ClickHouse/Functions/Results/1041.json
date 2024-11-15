@@ -1,0 +1,29 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/type-conversion-functions"
+    ],
+    "Title": [
+        "reinterpretAsDateTime"
+    ],
+    "Feature": [
+        "reinterpretAsDateTime(x)"
+    ],
+    "Description": [
+        "reinterpretAsDateTime",
+        "These functions accept a string and interpret the bytes placed at the beginning of the string as a number in host order (little endian). Returns a date with time interpreted as the number of seconds since the beginning of the Unix Epoch.",
+        "Syntax",
+        "reinterpretAsDateTime(x)",
+        "Parameters",
+        "x: number of seconds since the beginning of the Unix Epoch. (U)Int*, Float, Date, DateTime, UUID, String or FixedString.",
+        "Returned value",
+        "Date and Time. DateTime.",
+        "Implementation details",
+        "NoteIf the provided string isn\u2019t long enough, the function works as if the string is padded with the necessary number of null bytes. If the string is longer than needed, the extra bytes are ignored."
+    ],
+    "Examples": [
+        "SELECT reinterpretAsDateTime(65), reinterpretAsDateTime('A');"
+    ],
+    "Category": [
+        "Type Conversion Functions"
+    ]
+}

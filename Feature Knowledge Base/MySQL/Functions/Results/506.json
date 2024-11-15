@@ -1,0 +1,24 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.0/en/loadable-function-reference.html"
+    ],
+    "Title": [
+        "14.2 Loadable Function Reference"
+    ],
+    "Name": "version_tokens_edit()",
+    "Description": [
+        "\nversion_tokens_edit(token_list)\n",
+        "\n              Modifies the server's list of version tokens using the\n              token_list argument and returns\n              a binary string that indicates the outcome of the\n              operation. token_list is a\n              semicolon-separated list of\n              name=value\n              pairs specifying the name of each token to be defined and\n              its value. If a token exists, its value is updated with\n              the given value. If a token does not exist, it is created\n              with the given value. If the argument is\n              NULL or a string containing no tokens,\n              the token list remains unchanged.\n            ",
+        "Press CTRL+C to copy mysql> SELECT version_tokens_set('tok1=value1;tok2=value2');\n+-----------------------------------------------+\n| version_tokens_set('tok1=value1;tok2=value2') |\n+-----------------------------------------------+\n| 2 version tokens set.                         |\n+-----------------------------------------------+\nmysql> SELECT version_tokens_edit('tok2=new_value2;tok3=new_value3');\n+--------------------------------------------------------+\n| version_tokens_edit('tok2=new_value2;tok3=new_value3') |\n+--------------------------------------------------------+\n| 2 version tokens updated.                              |\n+--------------------------------------------------------+"
+    ],
+    "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/version-tokens-reference.html#function_version-tokens-edit",
+    "Feature": [
+        "version_tokens_edit(token_list)"
+    ],
+    "Examples": [
+        "mysql> SELECT version_tokens_set('tok1=value1;tok2=value2');\n+-----------------------------------------------+\n| version_tokens_set('tok1=value1;tok2=value2') |\n+-----------------------------------------------+\n| 2 version tokens set.                         |\n+-----------------------------------------------+\nmysql> SELECT version_tokens_edit('tok2=new_value2;tok3=new_value3');\n+--------------------------------------------------------+\n| version_tokens_edit('tok2=new_value2;tok3=new_value3') |\n+--------------------------------------------------------+\n| 2 version tokens updated.                              |\n+--------------------------------------------------------+"
+    ],
+    "Category": [
+        "Loadable Functions"
+    ]
+}

@@ -1,0 +1,24 @@
+{
+    "HTML": [
+        "https://docs.pingcap.com/zh/tidb/v8.3/encryption-and-compression-functions"
+    ],
+    "Title": [
+        "PASSWORD()"
+    ],
+    "Feature": [
+        "PASSWORD()"
+    ],
+    "Description": [
+        "PASSWORD()",
+        "警告PASSWORD() 函数在 MySQL 5.7 中已弃用，在 MySQL 8.0 中已删除，在 TiDB 中也已弃用。不建议使用此函数。",
+        "PASSWORD(str) 函数计算可用于 mysql_native_password 认证方法的密码哈希。",
+        "SELECT PASSWORD('secret');\n",
+        "+-------------------------------------------+\n| PASSWORD('secret')                        |\n+-------------------------------------------+\n| *14E65567ABDB5135D0CFD9A70B3032C179A49EE7 |\n+-------------------------------------------+\n1 row in set, 1 warning (0.00 sec)\n\nWarning (Code 1681): PASSWORD is deprecated and will be removed in a future release.\n"
+    ],
+    "Examples": [
+        "SELECT PASSWORD('secret');\n"
+    ],
+    "Category": [
+        "加密和压缩函数"
+    ]
+}

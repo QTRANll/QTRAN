@@ -1,0 +1,18 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/16/functions-admin.html"
+    ],
+    "Title": [
+        "pg_get_wal_replay_pause_state"
+    ],
+    "Feature": [
+        "pg_get_wal_replay_pause_state () → text"
+    ],
+    "Description": [
+        "Returns recovery pause state. The return values are not paused if pause is not requested, pause requested if pause is requested but recovery is not yet paused, and paused if the recovery is actually paused."
+    ],
+    "Examples": [],
+    "Category": [
+        "System Administration Functions"
+    ]
+}

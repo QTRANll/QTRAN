@@ -1,0 +1,28 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/ext-dict-functions"
+    ],
+    "Title": [
+        "dictGetDescendant"
+    ],
+    "Feature": [
+        "dictGetDescendants(dict_name, key, level)"
+    ],
+    "Description": [
+        "dictGetDescendant",
+        "Returns all descendants as if dictGetChildren function was applied level times recursively.",
+        "Syntax",
+        "dictGetDescendants(dict_name, key, level)",
+        "Arguments",
+        "dict_name \u2014 Name of the dictionary. String literal.key \u2014 Key value. Expression returning a UInt64-type value.level \u2014 Hierarchy level. If level = 0 returns all descendants to the end. UInt8.",
+        "Returned values",
+        "Descendants for the key. Array(UInt64)."
+    ],
+    "Examples": [
+        "SELECT dictGetDescendants('hierarchy_flat_dictionary', number) FROM system.numbers LIMIT 4;",
+        "SELECT dictGetDescendants('hierarchy_flat_dictionary', number, 1) FROM system.numbers LIMIT 4;"
+    ],
+    "Category": [
+        "Dictionaries Functions"
+    ]
+}

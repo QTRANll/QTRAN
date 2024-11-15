@@ -1,0 +1,24 @@
+{
+    "HTML": [
+        "https://mariadb.com/kb/en/char/"
+    ],
+    "Title": [
+        "CHAR"
+    ],
+    "Feature": [
+        "[NATIONAL] CHAR[(M)] [CHARACTER SET charset_name] [COLLATE collation_name]\n"
+    ],
+    "Description": [
+        "A fixed-length string that is always right-padded with spaces to the specified\nlength when stored. M represents the column length in characters. The range\nof M is 0 to 255. If M is omitted, the length is 1.",
+        "CHAR(0) columns can contain 2 values: an empty string or NULL. Such columns cannot be part of an index. The CONNECT storage engine does not support CHAR(0).",
+        "Note: Trailing spaces are removed when CHAR values are retrieved\nunless the PAD_CHAR_TO_FULL_LENGTH SQL mode is enabled.",
+        "Before MariaDB 10.2, all collations were of type PADSPACE, meaning that CHAR (as well as VARCHAR and TEXT) values are compared without regard for trailing spaces. This does not apply to the LIKE pattern-matching operator, which takes into account trailing spaces.",
+        "If a unique index consists of a column where trailing pad characters are stripped or ignored, inserts into that column where values differ only by the number of trailing pad characters will result in a duplicate-key error."
+    ],
+    "Examples": [
+        "CREATE TABLE strtest (c CHAR(10));\nINSERT INTO strtest VALUES('Maria   ');\n\nSELECT c='Maria',c='Maria   ' FROM strtest;\n+-----------+--------------+\n| c='Maria' | c='Maria   ' |\n+-----------+--------------+\n|         1 |            1 |\n+-----------+--------------+\n\nSELECT c LIKE 'Maria',c LIKE 'Maria   ' FROM strtest;\n+----------------+-------------------+\n| c LIKE 'Maria' | c LIKE 'Maria   ' |\n+----------------+-------------------+\n|              1 |                 0 |\n+----------------+-------------------+\n"
+    ],
+    "Category": [
+        "String Data Types"
+    ]
+}

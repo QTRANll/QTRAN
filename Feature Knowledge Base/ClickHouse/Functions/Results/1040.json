@@ -1,0 +1,29 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/type-conversion-functions"
+    ],
+    "Title": [
+        "reinterpretAsDate"
+    ],
+    "Feature": [
+        "reinterpretAsDate(x)"
+    ],
+    "Description": [
+        "reinterpretAsDate",
+        "Accepts a string, fixed string or numeric value and interprets the bytes as a number in host order (little endian). It returns a date from the interpreted number as the number of days since the beginning of the Unix Epoch.",
+        "Syntax",
+        "reinterpretAsDate(x)",
+        "Parameters",
+        "x: number of days since the beginning of the Unix Epoch. (U)Int*, Float, Date, DateTime, UUID, String or FixedString.",
+        "Returned value",
+        "Date. Date.",
+        "Implementation details",
+        "NoteIf the provided string isn\u2019t long enough, the function works as if the string is padded with the necessary number of null bytes. If the string is longer than needed, the extra bytes are ignored."
+    ],
+    "Examples": [
+        "SELECT reinterpretAsDate(65), reinterpretAsDate('A');"
+    ],
+    "Category": [
+        "Type Conversion Functions"
+    ]
+}

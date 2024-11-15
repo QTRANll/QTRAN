@@ -1,0 +1,31 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/date-time-functions"
+    ],
+    "Title": [
+        "date_diff"
+    ],
+    "Feature": [
+        "date_diff('unit', startdate, enddate, [timezone])"
+    ],
+    "Description": [
+        "date_diff",
+        "Returns the count of the specified unit boundaries crossed between the startdate and the enddate.\nThe difference is calculated using relative units, e.g. the difference between 2021-12-29 and 2022-01-01 is 3 days for unit day (see toRelativeDayNum), 1 month for unit month (see toRelativeMonthNum) and 1 year for unit year (see toRelativeYearNum).",
+        "If unit week was specified, date_diff assumes that weeks start on Monday. Note that this behavior is different from that of function toWeek() in which weeks start by default on Sunday.",
+        "For an alternative to date_diff, see function age.",
+        "Syntax",
+        "date_diff('unit', startdate, enddate, [timezone])",
+        "Aliases: dateDiff, DATE_DIFF, timestampDiff, timestamp_diff, TIMESTAMP_DIFF.",
+        "Arguments",
+        "unit \u2014 The type of interval for result. String.\nPossible values:nanosecond, nanoseconds, nsmicrosecond, microseconds, us, umillisecond, milliseconds, mssecond, seconds, ss, sminute, minutes, mi, nhour, hours, hh, hday, days, dd, dweek, weeks, wk, wwmonth, months, mm, mquarter, quarters, qq, qyear, years, yyyy, yystartdate \u2014 The first time value to subtract (the subtrahend). Date, Date32, DateTime or DateTime64.enddate \u2014 The second time value to subtract from (the minuend). Date, Date32, DateTime or DateTime64.timezone \u2014 Timezone name (optional). If specified, it is applied to both startdate and enddate. If not specified, timezones of startdate and enddate are used. If they are not the same, the result is unspecified. String.",
+        "Returned value",
+        "Difference between enddate and startdate expressed in unit. Int."
+    ],
+    "Examples": [
+        "SELECT dateDiff('hour', toDateTime('2018-01-01 22:00:00'), toDateTime('2018-01-02 23:00:00'));",
+        "SELECT    toDate('2022-01-01') AS e,    toDate('2021-12-29') AS s,    dateDiff('day', s, e) AS day_diff,    dateDiff('month', s, e) AS month__diff,    dateDiff('year', s, e) AS year_diff;"
+    ],
+    "Category": [
+        "Dates and Times Functions"
+    ]
+}

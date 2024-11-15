@@ -1,0 +1,29 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/string-search-functions"
+    ],
+    "Title": [
+        "countSubstrings"
+    ],
+    "Feature": [
+        "countSubstrings(haystack, needle[, start_pos])"
+    ],
+    "Description": [
+        "countSubstrings",
+        "Returns how often a substring needle occurs in a string haystack.",
+        "Functions countSubstringsCaseInsensitive and countSubstringsCaseInsensitiveUTF8 provide case-insensitive and case-insensitive + UTF-8 variants of this function respectively.",
+        "Syntax",
+        "countSubstrings(haystack, needle[, start_pos])",
+        "Arguments",
+        "haystack \u2014 String in which the search is performed. String.needle \u2014 Substring to be searched. String.start_pos \u2013 Position (1-based) in haystack at which the search starts. UInt. Optional.",
+        "Returned value",
+        "The number of occurrences. UInt64."
+    ],
+    "Examples": [
+        "SELECT countSubstrings('aaaa', 'aa');",
+        "SELECT countSubstrings('abc___abc', 'abc', 4);"
+    ],
+    "Category": [
+        "Searching in Strings Functions"
+    ]
+}

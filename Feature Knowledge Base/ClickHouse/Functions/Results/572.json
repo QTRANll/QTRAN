@@ -1,0 +1,28 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/math-functions"
+    ],
+    "Title": [
+        "asinh"
+    ],
+    "Feature": [
+        "asinh(x)"
+    ],
+    "Description": [
+        "asinh",
+        "Returns the inverse hyperbolic sine.",
+        "Syntax",
+        "asinh(x)",
+        "Arguments",
+        "x \u2014 Hyperbolic sine of angle. Values from the interval: \u2212\u221e<x<+\u221e-\\infty \\lt x \\lt +\\infty\u2212\u221e<x<+\u221e. (U)Int*, Float* or Decimal*.",
+        "Returned value",
+        "The angle, in radians. Values from the interval: \u2212\u221e<asinh(x)<+\u221e-\\infty \\lt asinh(x) \\lt +\\infty\u2212\u221e<asinh(x)<+\u221e.",
+        "Type: Float64."
+    ],
+    "Examples": [
+        "SELECT asinh(0);"
+    ],
+    "Category": [
+        "Mathematical Functions"
+    ]
+}

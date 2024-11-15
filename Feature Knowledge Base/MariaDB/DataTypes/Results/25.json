@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://mariadb.com/kb/en/longblob/"
+    ],
+    "Title": [
+        "LONGBLOB"
+    ],
+    "Feature": [
+        "LONGBLOB\n"
+    ],
+    "Description": [
+        "A BLOB column with a \nmaximum length of 4,294,967,295 bytes or 4GB (232 - 1). The effective maximum length of LONGBLOB columns depends on the\nconfigured maximum packet size in the client/server protocol and\navailable memory. Each LONGBLOB value is stored using a four-byte\nlength prefix that indicates the number of bytes in the value.",
+        "Oracle Mode",
+        "In Oracle mode from MariaDB 10.3, BLOB is a synonym for LONGBLOB."
+    ],
+    "Examples": [],
+    "Category": [
+        "String Data Types"
+    ]
+}

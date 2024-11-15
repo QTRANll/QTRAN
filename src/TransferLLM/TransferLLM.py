@@ -12,7 +12,7 @@ from langchain.prompts import ChatPromptTemplate
 from langchain.output_parsers import ResponseSchema
 from langchain.output_parsers import StructuredOutputParser
 from langchain.callbacks import get_openai_callback
-from src.Tools.DatasetConnector.DatabaseConnector import exec_sql_statement
+from src.Tools.database_connector import exec_sql_statement
 
 
 db_names = ["mysql", "mariadb", "tidb"]
@@ -692,42 +692,3 @@ def exec_transfer_llm(temperature, model, error_iteration, iteration_num, FewSho
     load_data(output_name, origin_db_name, len_low, len_high, IsRandom, num)
     init_data(output_name, origin_db_name, len_low, len_high, IsRandom, num)
     transfer_data("pinolo",temperature, model, error_iteration, iteration_num, FewShot, with_knowledge, output_name, origin_db_name, target_db_name, len_low, len_high, IsRandom, num, sqls_type)
-
-
-
-
-
-
-"""
-origin_exec_args = database_connection_args["postgres"]
-sql_statement = "SELECT ('really') AS f1, (f5) AS f2, (COLLATION FOR(f4::text)) AS f3 FROM (SELECT col_bigint_undef_unsigned AS f4, col_decimal_40_20_key_unsigned AS f5, col_varchar_20_key_signed AS f6 FROM table_7_utf8_undef) AS t1"
-origin_exec_result, origin_exec_time, origin_error_message = exec_database_sql(origin_exec_args["db_type"],
-                                                                                   origin_exec_args["host"],
-                                                                                   origin_exec_args["port"],
-                                                                                   origin_exec_args["username"],
-                                                                                   origin_exec_args["password"],
-                                                                                   origin_exec_args["dbname"],
-                                                                                   sql_statement)
-print(origin_exec_result)
-
-
-
-
-origin_exec_args = database_connection_args["mariadb"]
-sql_statement = "SELECT ('really') AS `f1`,(`f5`) AS `f2`,(~COLLATION(`f4`)) AS `f3` FROM (SELECT `col_bigint_undef_unsigned` AS `f4`,`col_decimal(40, 20)_key_unsigned` AS `f5`,`col_varchar(20)_key_signed` AS `f6` FROM `table_7_utf8_undef`) AS `t1`"
-origin_exec_result, origin_exec_time, origin_error_message = exec_database_sql(origin_exec_args["db_type"],
-                                                                                   origin_exec_args["host"],
-                                                                                   origin_exec_args["port"],
-                                                                                   origin_exec_args["username"],
-                                                                                   origin_exec_args["password"],
-                                                                                   origin_exec_args["dbname"],
-                                                                                   sql_statement)
-print(origin_exec_result)
-"""
-
-
-file = "../../Output/TransferLLM/Pinolo/Results_With_Feature_Knowledge/ALL/iterated_fewshot_output1_mariadb_to_postgres_1_240_originalSqlsim_all_.json"
-file = "../../Output/TransferLLM/Pinolo/Results_With_Feature_Knowledge/ALL/iterated_fewshot_output1_mariadb_to_postgres_1_240_originalSqlsim_all.jsonl"
-# test_temp(file)
-
-

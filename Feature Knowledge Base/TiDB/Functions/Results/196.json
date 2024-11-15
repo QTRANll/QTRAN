@@ -1,0 +1,23 @@
+{
+    "HTML": [
+        "https://docs.pingcap.com/zh/tidb/v8.3/json-functions-modify"
+    ],
+    "Title": [
+        "JSON_ARRAY_INSERT()"
+    ],
+    "Feature": [
+        "JSON_ARRAY_INSERT()"
+    ],
+    "Description": [
+        "JSON_ARRAY_INSERT()",
+        "JSON_ARRAY_INSERT(json_array, path, value [,path, value] ...) 函数将 value 插入 path 中 json_array 的指定位置，并返回结果。",
+        "该函数可接受成对的 path 和 value 参数。"
+    ],
+    "Examples": [
+        "SELECT JSON_ARRAY_INSERT('[\"Car\", \"Boat\", \"Train\"]', '$[0]', \"Airplane\") AS \"Transport options\";\n",
+        "SELECT JSON_ARRAY_INSERT('[\"Car\", \"Boat\", \"Train\"]', '$[1]', \"Airplane\") AS \"Transport options\";\n"
+    ],
+    "Category": [
+        "修改 JSON 的函数"
+    ]
+}

@@ -1,0 +1,26 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.0/en/built-in-function-reference.html"
+    ],
+    "Title": [
+        "14.1 Built-In Function and Operator Reference"
+    ],
+    "Name": "CONCAT_WS()",
+    "Description": [
+        "\nCONCAT_WS(separator,str1,str2,...)\n",
+        "\nCONCAT_WS() stands for\n          Concatenate With Separator and is a special form of\n          CONCAT(). The first argument is\n          the separator for the rest of the arguments. The separator is\n          added between the strings to be concatenated. The separator\n          can be a string, as can the rest of the arguments. If the\n          separator is NULL, the result is\n          NULL.\n        ",
+        "Press CTRL+C to copy mysql> SELECT CONCAT_WS(',', 'First name', 'Second name', 'Last Name');\n        -> 'First name,Second name,Last Name'\nmysql> SELECT CONCAT_WS(',', 'First name', NULL, 'Last Name');\n        -> 'First name,Last Name'",
+        "\nCONCAT_WS() does not skip empty\n          strings. However, it does skip any NULL\n          values after the separator argument.\n        "
+    ],
+    "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/string-functions.html#function_concat-ws",
+    "Feature": [
+        "CONCAT_WS(separator,str1,str2,...)"
+    ],
+    "Examples": [
+        "mysql> SELECT CONCAT_WS(',', 'First name', 'Second name', 'Last Name');\n        -> 'First name,Second name,Last Name'\nmysql> SELECT CONCAT_WS(',', 'First name', NULL, 'Last Name');\n        -> 'First name,Last Name'"
+    ],
+    "Category": [
+        "Built-In Functions and Operators",
+        "String Functions and Operators"
+    ]
+}

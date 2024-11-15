@@ -1,0 +1,29 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/string-functions"
+    ],
+    "Title": [
+        "length"
+    ],
+    "Feature": [
+        "length(s)"
+    ],
+    "Description": [
+        "length",
+        "Returns the length of a string in bytes rather than in characters or Unicode code points. The function also works for arrays.",
+        "Alias: OCTET_LENGTH",
+        "Syntax",
+        "length(s)",
+        "Parameters",
+        "s \u2014 An input string or array. String/Array.",
+        "Returned value",
+        "Length of the string or array s in bytes. UInt64."
+    ],
+    "Examples": [
+        "SELECT length('Hello, world!');",
+        "SELECT length([1, 2, 3, 4]);"
+    ],
+    "Category": [
+        "Strings Functions"
+    ]
+}

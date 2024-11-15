@@ -1,0 +1,26 @@
+{
+    "HTML": [
+        "https://mariadb.com/kb/en/year-data-type/"
+    ],
+    "Title": [
+        "YEAR Data Type"
+    ],
+    "Feature": [
+        "YEAR[(4)]\n"
+    ],
+    "Description": [
+        "A year in two-digit or four-digit format. The default is four-digit format. Note that the two-digit format has been deprecated since MariaDB 5.5.27. ",
+        "In four-digit format, the allowable values are 1901 to 2155,\nand 0000. In two-digit format, the allowable values are 70 to 69,\nrepresenting years from 1970 to 2069. MariaDB displays YEAR values in\nYYYY format, but allows you to assign values to YEAR columns using\neither strings or numbers.",
+        "Inserting numeric zero has a different result for YEAR(4) and YEAR(2). For YEAR(2), the value 00 reflects the year 2000. For YEAR(4), the value 0000 reflects the year zero. This only applies to numeric zero. String zero always reflects the year 2000."
+    ],
+    "Examples": [
+        "CREATE TABLE y(y YEAR);\n\nINSERT INTO y VALUES (1990),('2012');\n\nSELECT * FROM y;\n+------+\n| y    |\n+------+\n| 1990 |\n| 2012 |\n+------+\n",
+        "INSERT INTO y VALUES (1005),('3080');\nERROR 1264 (22003): Out of range value for column 'y' at row 1\n\nINSERT INTO y VALUES ('2013-12-12');\nERROR 1265 (01000): Data truncated for column 'y' at row 1\n\nSELECT * FROM y;\n+------+\n| y    |\n+------+\n| 1990 |\n| 2012 |\n+------+\n",
+        "INSERT INTO y VALUES (1005),('3080');\nQuery OK, 2 rows affected, 2 warnings (0.05 sec)\nRecords: 2  Duplicates: 0  Warnings: 2\n\nSHOW WARNINGS;\n+---------+------+--------------------------------------------+\n| Level   | Code | Message                                    |\n+---------+------+--------------------------------------------+\n| Warning | 1264 | Out of range value for column 'y' at row 1 |\n| Warning | 1264 | Out of range value for column 'y' at row 2 |\n+---------+------+--------------------------------------------+\n\nSELECT * FROM y;\n+------+\n| y    |\n+------+\n| 1990 |\n| 2012 |\n| 0000 |\n| 0000 |\n+------+\n",
+        "INSERT INTO y VALUES ('2013-12-12');\nQuery OK, 1 row affected, 1 warning (0.05 sec)\n\nSHOW WARNINGS;\n+---------+------+----------------------------------------+\n| Level   | Code | Message                                |\n+---------+------+----------------------------------------+\n| Warning | 1265 | Data truncated for column 'y' at row 1 |\n+---------+------+----------------------------------------+\n\nSELECT * FROM y;\n+------+\n| y    |\n+------+\n| 1990 |\n| 2012 |\n| 0000 |\n| 0000 |\n| 2013 |\n+------+\n",
+        "CREATE TABLE y2(y YEAR(4), y2 YEAR(2));\nQuery OK, 0 rows affected, 1 warning (0.40 sec)\n\nNote (Code 1287): 'YEAR(2)' is deprecated and will be removed in a future release. \n Please use YEAR(4) instead\n\nINSERT INTO y2 VALUES(0,0),('0','0');\n\nSELECT YEAR(y),YEAR(y2) FROM y2;\n+---------+----------+\n| YEAR(y) | YEAR(y2) |\n+---------+----------+\n|       0 |     2000 |\n|    2000 |     2000 |\n+---------+----------+\n"
+    ],
+    "Category": [
+        "Date and Time Data Types"
+    ]
+}

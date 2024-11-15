@@ -1,0 +1,23 @@
+{
+    "HTML": [
+        "https://docs.pingcap.com/zh/tidb/v8.3/window-functions"
+    ],
+    "Title": [
+        "LAST_VALUE()"
+    ],
+    "Feature": [
+        "LAST_VALUE()"
+    ],
+    "Description": [
+        "LAST_VALUE()",
+        "LAST_VALUE() 函数返回窗口中的最后一个值。",
+        "WITH RECURSIVE cte(n) AS (\n    SELECT\n        1\n    UNION\n    SELECT\n        n+1\n    FROM\n        cte\n    WHERE\n        n<10\n)\nSELECT\n    n,\n    LAST_VALUE(n) OVER (PARTITION BY n<=5)\nFROM\n    cte\nORDER BY\n    n;\n",
+        "+------+----------------------------------------+\n| n    | LAST_VALUE(n) OVER (PARTITION BY n<=5) |\n+------+----------------------------------------+\n|    1 |                                      5 |\n|    2 |                                      5 |\n|    3 |                                      5 |\n|    4 |                                      5 |\n|    5 |                                      5 |\n|    6 |                                     10 |\n|    7 |                                     10 |\n|    8 |                                     10 |\n|    9 |                                     10 |\n|   10 |                                     10 |\n+------+----------------------------------------+\n10 rows in set (0.00 sec)\n"
+    ],
+    "Examples": [
+        "WITH RECURSIVE cte(n) AS (\n    SELECT\n        1\n    UNION\n    SELECT\n        n+1\n    FROM\n        cte\n    WHERE\n        n<10\n)\nSELECT\n    n,\n    LAST_VALUE(n) OVER (PARTITION BY n<=5)\nFROM\n    cte\nORDER BY\n    n;\n"
+    ],
+    "Category": [
+        "窗口函数"
+    ]
+}

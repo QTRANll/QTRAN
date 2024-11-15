@@ -1,0 +1,36 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/uuid-functions"
+    ],
+    "Title": [
+        "UUIDNumToString"
+    ],
+    "Feature": [
+        "UUIDNumToString(binary[, variant = 1])"
+    ],
+    "Description": [
+        "UUIDNumToString",
+        "Accepts binary containing a binary representation of a UUID, with its format optionally specified by variant (Big-endian by default), and returns a string containing 36 characters in text format.",
+        "Syntax",
+        "UUIDNumToString(binary[, variant = 1])",
+        "Arguments",
+        "binary \u2014 FixedString(16) as a binary representation of a UUID.variant \u2014 Integer, representing a variant as specified by RFC4122. 1 = Big-endian (default), 2 = Microsoft.",
+        "Returned value",
+        "String.",
+        "Usage example",
+        "SELECT    'a/<@];!~p{jTj={)' AS bytes,    UUIDNumToString(toFixedString(bytes, 16)) AS uuid",
+        "Result:",
+        "\u250c\u2500bytes\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500uuid\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\u2502 a/<@];!~p{jTj={) \u2502 612f3c40-5d3b-217e-707b-6a546a3d7b29 \u2502\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518",
+        "SELECT    '@</a;]~!p{jTj={)' AS bytes,    UUIDNumToString(toFixedString(bytes, 16), 2) AS uuid",
+        "Result:",
+        "\u250c\u2500bytes\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500uuid\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\u2502 @</a;]~!p{jTj={) \u2502 612f3c40-5d3b-217e-707b-6a546a3d7b29 \u2502\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518"
+    ],
+    "Examples": [
+        "UUIDNumToString(binary[, variant = 1])",
+        "SELECT    'a/<@];!~p{jTj={)' AS bytes,    UUIDNumToString(toFixedString(bytes, 16)) AS uuid",
+        "SELECT    '@</a;]~!p{jTj={)' AS bytes,    UUIDNumToString(toFixedString(bytes, 16), 2) AS uuid"
+    ],
+    "Category": [
+        "UUIDs Functions"
+    ]
+}

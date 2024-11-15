@@ -1,0 +1,26 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.0/en/built-in-function-reference.html"
+    ],
+    "Title": [
+        "14.1 Built-In Function and Operator Reference"
+    ],
+    "Name": "INSTR()",
+    "Description": [
+        "\nINSTR(str,substr)\n",
+        "\n          Returns the position of the first occurrence of substring\n          substr in string\n          str. This is the same as the\n          two-argument form of LOCATE(),\n          except that the order of the arguments is reversed.\n        ",
+        "Press CTRL+C to copy mysql> SELECT INSTR('foobarbar', 'bar');\n        -> 4\nmysql> SELECT INSTR('xbar', 'foobar');\n        -> 0",
+        "\n          This function is multibyte safe, and is case-sensitive only if\n          at least one argument is a binary string. If either argument\n          is NULL, this functions returns\n          NULL.\n        "
+    ],
+    "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/string-functions.html#function_instr",
+    "Feature": [
+        "INSTR(str,substr)"
+    ],
+    "Examples": [
+        "mysql> SELECT INSTR('foobarbar', 'bar');\n        -> 4\nmysql> SELECT INSTR('xbar', 'foobar');\n        -> 0"
+    ],
+    "Category": [
+        "Built-In Functions and Operators",
+        "String Functions and Operators"
+    ]
+}

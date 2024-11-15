@@ -1,0 +1,28 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/aggregate-functions/reference/avg"
+    ],
+    "Title": [
+        "avg"
+    ],
+    "Feature": [
+        "avg(x)"
+    ],
+    "Description": [
+        "avg",
+        "Calculates the arithmetic mean.",
+        "Syntax",
+        "avg(x)",
+        "Arguments",
+        "x \u2014 input values, must be Integer, Float, or Decimal.",
+        "Returned value",
+        "The arithmetic mean, always as Float64.NaN if the input parameter x is empty."
+    ],
+    "Examples": [
+        "SELECT avg(x) FROM values('x Int8', 0, 1, 2, 3, 4, 5);",
+        "CREATE table test (t UInt8) ENGINE = Memory;"
+    ],
+    "Category": [
+        "Aggregate Functions"
+    ]
+}

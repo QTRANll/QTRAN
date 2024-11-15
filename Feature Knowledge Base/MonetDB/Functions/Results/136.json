@@ -1,0 +1,22 @@
+{
+    "HTML": [
+        "https://www.monetdb.org/documentation-Aug2024/user-guide/sql-functions/string-functions"
+    ],
+    "Title": [
+        "dameraulevenshtein(s1, s2, int insdel, int rep, int trans)"
+    ],
+    "Feature": [
+        "dameraulevenshtein(s1, s2, int insdel, int rep, int trans)"
+    ],
+    "Description": [
+        "Return type: ",
+        "int",
+        "Compute the 'Damerau-Levenshtein distance' between two strings returning the minimum number of single-character edits (insertions/deletions, substitutions and transpositions) required to change one word into the other. Variable costs of insertions/deletions, substitutions and transpositions, with insdel, rep and trans respectively"
+    ],
+    "Examples": [
+        "dameraulevenshtein('MonetDB', 'DB3', 4, 2, 1)"
+    ],
+    "Category": [
+        "Character String Functions"
+    ]
+}

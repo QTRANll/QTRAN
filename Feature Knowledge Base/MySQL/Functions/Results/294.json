@@ -1,0 +1,29 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.0/en/built-in-function-reference.html"
+    ],
+    "Title": [
+        "14.1 Built-In Function and Operator Reference"
+    ],
+    "Name": "ST_Buffer_Strategy()",
+    "Description": [
+        "\nST_Buffer_Strategy(strategy\n          [, points_per_circle])\n",
+        "\n          This function returns a strategy byte string for use with\n          ST_Buffer() to influence buffer\n          computation.\n        ",
+        "\n          Information about strategies is available at\n          Boost.org.\n        ",
+        "\n          The first argument must be a string indicating a strategy\n          option:\n",
+        "\n\n              For point strategies, permitted values are\n              'point_circle' and\n              'point_square'.\n            \n              For join strategies, permitted values are\n              'join_round' and\n              'join_miter'.\n            \n              For end strategies, permitted values are\n              'end_round' and\n              'end_flat'.\n\n",
+        "\n          If the first argument is 'point_circle',\n          'join_round',\n          'join_miter', or\n          'end_round', the\n          points_per_circle argument must be\n          given as a positive numeric value. The maximum\n          points_per_circle value is the\n          value of the\n          max_points_in_geometry system\n          variable.\n        ",
+        "\n          For examples, see the description of\n          ST_Buffer().\n        ",
+        "\nST_Buffer_Strategy() handles\n          its arguments as described in the introduction to this\n          section, with these exceptions:\n",
+        "\n\n              If any argument is invalid, an\n              ER_WRONG_ARGUMENTS error\n              occurs.\n            \n              If the first argument is 'point_square'\n              or 'end_flat', the\n              points_per_circle argument must\n              not be given or an\n              ER_WRONG_ARGUMENTS error\n              occurs.\n\n"
+    ],
+    "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/spatial-operator-functions.html#function_st-buffer-strategy",
+    "Feature": [
+        "ST_Buffer_Strategy(strategy\n          [, points_per_circle])"
+    ],
+    "Examples": [],
+    "Category": [
+        "Built-In Functions and Operators",
+        "Spatial Analysis Functions"
+    ]
+}

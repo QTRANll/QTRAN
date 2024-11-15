@@ -1,0 +1,28 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/math-functions"
+    ],
+    "Title": [
+        "log1p"
+    ],
+    "Feature": [
+        "log1p(x)"
+    ],
+    "Description": [
+        "log1p",
+        "Calculates log(1+x). The calculation log1p(x) is more accurate than log(1+x) for small values of x.",
+        "Syntax",
+        "log1p(x)",
+        "Arguments",
+        "x \u2014 Values from the interval: \u22121<x<+\u221e-1 \\lt x \\lt +\\infty\u22121<x<+\u221e. (U)Int*, Float* or Decimal*.",
+        "Returned value",
+        "Values from the interval: \u2212\u221e<log1p(x)<+\u221e-\\infty < log1p(x) \\lt +\\infty\u2212\u221e<log1p(x)<+\u221e.",
+        "Type: Float64."
+    ],
+    "Examples": [
+        "SELECT log1p(0);"
+    ],
+    "Category": [
+        "Mathematical Functions"
+    ]
+}

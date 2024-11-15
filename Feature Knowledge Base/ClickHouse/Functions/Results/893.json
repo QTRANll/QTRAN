@@ -1,0 +1,23 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/string-functions"
+    ],
+    "Title": [
+        "editDistanceUTF8"
+    ],
+    "Feature": [
+        "editDistanceUTF8(string1, string2)"
+    ],
+    "Description": [
+        "editDistanceUTF8",
+        "Calculates the edit distance between two UTF8 strings.",
+        "Syntax",
+        "editDistanceUTF8(string1, string2)"
+    ],
+    "Examples": [
+        "SELECT editDistanceUTF8('\u6211\u662f\u8c01', '\u6211\u662f\u6211');"
+    ],
+    "Category": [
+        "Strings Functions"
+    ]
+}

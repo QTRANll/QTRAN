@@ -1,0 +1,27 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/date-time-functions"
+    ],
+    "Title": [
+        "toUTCTimestamp"
+    ],
+    "Feature": [
+        "toUTCTimestamp(time_val, time_zone)"
+    ],
+    "Description": [
+        "toUTCTimestamp",
+        "Convert DateTime/DateTime64 type value from other time zone to UTC timezone timestamp",
+        "Syntax",
+        "toUTCTimestamp(time_val, time_zone)",
+        "Arguments",
+        "time_val \u2014 A DateTime/DateTime64 type const value or an expression . DateTime/DateTime64 typestime_zone \u2014 A String type const value or an expression represent the time zone. String types",
+        "Returned value",
+        "DateTime/DateTime64 in text form"
+    ],
+    "Examples": [
+        "SELECT toUTCTimestamp(toDateTime('2023-03-16'), 'Asia/Shanghai');"
+    ],
+    "Category": [
+        "Dates and Times Functions"
+    ]
+}

@@ -1,0 +1,22 @@
+{
+    "HTML": [
+        "https://www.monetdb.org/documentation-Aug2024/user-guide/sql-functions/string-functions"
+    ],
+    "Title": [
+        "insert(s1, int pos, int nr, s2)"
+    ],
+    "Feature": [
+        "insert(s1, int pos, int nr, s2)"
+    ],
+    "Description": [
+        "Return type: ",
+        "same as input arg 4",
+        "insert string s2 into string s1 after position pos replacing nr characters in string s1. when pos is negative it counts from the end of the string. nr must be >= 0."
+    ],
+    "Examples": [
+        "insert('abcdef', 2, 1, 'XY')"
+    ],
+    "Category": [
+        "Character String Functions"
+    ]
+}

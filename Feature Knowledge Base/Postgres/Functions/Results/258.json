@@ -1,0 +1,21 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/16/functions-json.html"
+    ],
+    "Title": [
+        "json_to_recordset"
+    ],
+    "Feature": [
+        "json_to_recordset ( json ) → setof record",
+        "jsonb_to_recordset ( jsonb ) → setof record"
+    ],
+    "Description": [
+        "Expands the top-level JSON array of objects to a set of rows having the composite type defined by an AS clause. (As with all functions returning record, the calling query must explicitly define the structure of the record with an AS clause.) Each element of the JSON array is processed as described above for json[b]_populate_record."
+    ],
+    "Examples": [
+        "select * from json_to_recordset('[{\"a\":1,\"b\":\"foo\"}, {\"a\":\"2\",\"c\":\"bar\"}]') as x(a int, b text) →"
+    ],
+    "Category": [
+        "JSON Functions and Operators"
+    ]
+}

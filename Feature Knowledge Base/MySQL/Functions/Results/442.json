@@ -1,0 +1,26 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.0/en/loadable-function-reference.html"
+    ],
+    "Title": [
+        "14.2 Loadable Function Reference"
+    ],
+    "Name": "firewall_group_delist()",
+    "Description": [
+        "\nfirewall_group_delist(group,\n              user)\n",
+        "\n              This function removes an account from a group profile. It\n              requires the FIREWALL_ADMIN\n              privilege.\n            ",
+        "\n              Example:\n            ",
+        "Press CTRL+C to copy SELECT firewall_group_delist('g', 'fwuser@localhost');",
+        "\n              This function was added in MySQL 8.0.23.\n            "
+    ],
+    "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/firewall-reference.html#function_firewall-group-delist",
+    "Feature": [
+        "firewall_group_delist(group,\n              user)"
+    ],
+    "Examples": [
+        "SELECT firewall_group_delist('g', 'fwuser@localhost');"
+    ],
+    "Category": [
+        "Loadable Functions"
+    ]
+}

@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/operators"
+    ],
+    "Title": [
+        "IS NOT NULL"
+    ],
+    "Feature": [
+        "IS NOT NULL"
+    ],
+    "Description": [
+        "For Nullable type values, the IS NOT NULL operator returns:\n0, if the value is NULL.\n1 otherwise.\nFor other values, the IS NOT NULL operator always returns 1."
+    ],
+    "Examples": [
+        "SELECT * FROM t_null WHERE y IS NOT NULL"
+    ],
+    "Category": [
+        "Checking for NULL"
+    ]
+}

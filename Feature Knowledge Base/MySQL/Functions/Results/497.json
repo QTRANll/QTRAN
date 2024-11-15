@@ -1,0 +1,26 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.0/en/loadable-function-reference.html"
+    ],
+    "Title": [
+        "14.2 Loadable Function Reference"
+    ],
+    "Name": "read_firewall_groups()",
+    "Description": [
+        "\nread_firewall_groups(group,\n              mode,\n              user)\n",
+        "\n              This aggregate function updates the firewall group profile\n              cache through a SELECT\n              statement on the mysql.firewall_groups\n              table. It requires the\n              FIREWALL_ADMIN privilege.\n            ",
+        "\n              Example:\n            ",
+        "Press CTRL+C to copy SELECT read_firewall_groups('g', 'RECORDING', 'fwuser@localhost')\nFROM mysql.firewall_groups;",
+        "\n              This function was added in MySQL 8.0.23.\n            "
+    ],
+    "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/firewall-reference.html#function_read-firewall-groups",
+    "Feature": [
+        "read_firewall_groups(group,\n              mode,\n              user)"
+    ],
+    "Examples": [
+        "SELECT read_firewall_groups('g', 'RECORDING', 'fwuser@localhost')\nFROM mysql.firewall_groups;"
+    ],
+    "Category": [
+        "Loadable Functions"
+    ]
+}

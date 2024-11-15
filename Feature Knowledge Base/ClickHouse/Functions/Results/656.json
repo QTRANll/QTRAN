@@ -1,0 +1,25 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/other-functions"
+    ],
+    "Title": [
+        "filesystemAvailable"
+    ],
+    "Feature": [
+        "filesystemAvailable()"
+    ],
+    "Description": [
+        "filesystemAvailable",
+        "Returns the amount of free space in the filesystem hosting the database persistence. The returned value is always smaller than total free space (filesystemFree) because some space is reserved for the operating system.",
+        "Syntax",
+        "filesystemAvailable()",
+        "Returned value",
+        "The amount of remaining space available in bytes. UInt64."
+    ],
+    "Examples": [
+        "SELECT formatReadableSize(filesystemAvailable()) AS \"Available space\";"
+    ],
+    "Category": [
+        "Other Functions"
+    ]
+}

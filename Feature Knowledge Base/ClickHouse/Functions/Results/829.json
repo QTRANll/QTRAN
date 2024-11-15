@@ -1,0 +1,28 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/string-functions"
+    ],
+    "Title": [
+        "lower"
+    ],
+    "Feature": [
+        "lower(input)"
+    ],
+    "Description": [
+        "lower",
+        "Converts the ASCII Latin symbols in a string to lowercase.",
+        "*Syntax**",
+        "lower(input)",
+        "Alias: lcase",
+        "Parameters",
+        "input: A string type String.",
+        "Returned value",
+        "A String data type value."
+    ],
+    "Examples": [
+        "SELECT lower('CLICKHOUSE');"
+    ],
+    "Category": [
+        "Strings Functions"
+    ]
+}

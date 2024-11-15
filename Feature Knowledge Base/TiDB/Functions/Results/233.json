@@ -1,0 +1,23 @@
+{
+    "HTML": [
+        "https://docs.pingcap.com/zh/tidb/v8.3/window-functions"
+    ],
+    "Title": [
+        "NTILE()"
+    ],
+    "Feature": [
+        "NTILE()"
+    ],
+    "Description": [
+        "NTILE()",
+        "NTILE(n) 函数将窗口划分为 n 个分组，并返回各行的分组编号。",
+        "WITH RECURSIVE cte(n) AS (\n    SELECT\n        1\n    UNION\n    SELECT\n        n+1\n    FROM\n        cte\n    WHERE\n    n<10\n)\nSELECT\n    n,\n    NTILE(5) OVER (),\n    NTILE(2) OVER ()\nFROM\n    cte;\n",
+        "+------+------------------+------------------+\n| n    | NTILE(5) OVER () | NTILE(2) OVER () |\n+------+------------------+------------------+\n|    1 |                1 |                1 |\n|    2 |                1 |                1 |\n|    3 |                2 |                1 |\n|    4 |                2 |                1 |\n|    5 |                3 |                1 |\n|    6 |                3 |                2 |\n|    7 |                4 |                2 |\n|    8 |                4 |                2 |\n|    9 |                5 |                2 |\n|   10 |                5 |                2 |\n+------+------------------+------------------+\n10 rows in set (0.00 sec)\n"
+    ],
+    "Examples": [
+        "WITH RECURSIVE cte(n) AS (\n    SELECT\n        1\n    UNION\n    SELECT\n        n+1\n    FROM\n        cte\n    WHERE\n    n<10\n)\nSELECT\n    n,\n    NTILE(5) OVER (),\n    NTILE(2) OVER ()\nFROM\n    cte;\n"
+    ],
+    "Category": [
+        "窗口函数"
+    ]
+}

@@ -1,0 +1,49 @@
+{
+    "HTML": [
+        "https://sqlite.org/json1.html"
+    ],
+    "Title": [
+        "4.10. The json_insert(), json_replace, and json_set() functions"
+    ],
+    "Feature": [
+        "4.10. The json_insert(), json_replace, and json_set() functions"
+    ],
+    "Description": [
+        "4.10. The json_insert(), json_replace, and json_set() functions",
+        "The json_insert(), json_replace, and json_set() functions all take\na single JSON value as their first argument followed by zero or more\npairs of path and value arguments, and return a new JSON string formed\nby updating the input JSON by the path/value pairs.  The functions\ndiffer only in how they deal with creating new values and overwriting\npreexisting values.\n\n",
+        "\n\n\nFunctionOverwrite if already exists?Create if does not exist?\n\njson_insert()NoYes\n\njson_replace()YesNo\n\njson_set()YesYes\n",
+        "The json_insert(), json_replace(), and json_set() functions always\ntake an odd number of arguments.  The first argument is always the original\nJSON to be edited.  Subsequent arguments occur in pairs with the first\nelement of each pair being a path and the second element being the value\nto insert or replace or set on that path.\n\n",
+        "Edits occur sequentially from left to right.  Changes caused by\nprior edits can affect the path search for subsequent edits.\n\n",
+        "If the value of a path/value pair is an SQLite TEXT value, then it\nis normally inserted as a quoted JSON string, even if the string looks\nlike valid JSON.  However, if the value is the result of another\njson function (such as json() or json_array() or json_object())\nor if it is the result of the -> operator,\nthen it is interpreted as JSON and is inserted as JSON retaining all\nof its substructure.  Values that are the result of the ->> operator\nare always interpreted as TEXT and are inserted as a JSON string even\nif they look like valid JSON.\n\n",
+        "These routines throw an error if the first JSON argument is not\nwell-formed or if any PATH argument is not well-formed or if any\nargument is a BLOB.\n\n",
+        "To append an element onto the end of an array, using json_insert()\nwith an array index of \"#\".  Examples:\n\n",
+        "json_insert('[1,2,3,4]','$[#]',99)\n→ '[1,2,3,4,99]'",
+        "json_insert('[1,[2,3],4]','$[1][#]',99)\n→ '[1,[2,3,99],4]'",
+        "Other examples:\n\n",
+        "json_insert('{\"a\":2,\"c\":4}', '$.a', 99)\n→ '{\"a\":2,\"c\":4}'",
+        "json_insert('{\"a\":2,\"c\":4}', '$.e', 99)\n→ '{\"a\":2,\"c\":4,\"e\":99}'",
+        "json_replace('{\"a\":2,\"c\":4}', '$.a', 99)\n→ '{\"a\":99,\"c\":4}'",
+        "json_replace('{\"a\":2,\"c\":4}', '$.e', 99)\n→ '{\"a\":2,\"c\":4}'",
+        "json_set('{\"a\":2,\"c\":4}', '$.a', 99)\n→ '{\"a\":99,\"c\":4}'",
+        "json_set('{\"a\":2,\"c\":4}', '$.e', 99)\n→ '{\"a\":2,\"c\":4,\"e\":99}'",
+        "json_set('{\"a\":2,\"c\":4}', '$.c', '[97,96]')\n→ '{\"a\":2,\"c\":\"[97,96]\"}'",
+        "json_set('{\"a\":2,\"c\":4}', '$.c', json('[97,96]'))\n→ '{\"a\":2,\"c\":[97,96]}'",
+        "json_set('{\"a\":2,\"c\":4}', '$.c', json_array(97,96))\n→ '{\"a\":2,\"c\":[97,96]}'"
+    ],
+    "Examples": [
+        "json_insert('[1,2,3,4]','$[#]',99)\n→ '[1,2,3,4,99]'",
+        "json_insert('[1,[2,3],4]','$[1][#]',99)\n→ '[1,[2,3,99],4]'",
+        "json_insert('{\"a\":2,\"c\":4}', '$.a', 99)\n→ '{\"a\":2,\"c\":4}'",
+        "json_insert('{\"a\":2,\"c\":4}', '$.e', 99)\n→ '{\"a\":2,\"c\":4,\"e\":99}'",
+        "json_replace('{\"a\":2,\"c\":4}', '$.a', 99)\n→ '{\"a\":99,\"c\":4}'",
+        "json_replace('{\"a\":2,\"c\":4}', '$.e', 99)\n→ '{\"a\":2,\"c\":4}'",
+        "json_set('{\"a\":2,\"c\":4}', '$.a', 99)\n→ '{\"a\":99,\"c\":4}'",
+        "json_set('{\"a\":2,\"c\":4}', '$.e', 99)\n→ '{\"a\":2,\"c\":4,\"e\":99}'",
+        "json_set('{\"a\":2,\"c\":4}', '$.c', '[97,96]')\n→ '{\"a\":2,\"c\":\"[97,96]\"}'",
+        "json_set('{\"a\":2,\"c\":4}', '$.c', json('[97,96]'))\n→ '{\"a\":2,\"c\":[97,96]}'",
+        "json_set('{\"a\":2,\"c\":4}', '$.c', json_array(97,96))\n→ '{\"a\":2,\"c\":[97,96]}'"
+    ],
+    "Category": [
+        "JSON Functions"
+    ]
+}

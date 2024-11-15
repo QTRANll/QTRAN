@@ -1,0 +1,18 @@
+{
+    "HTML": "https://dev.mysql.com/doc/refman/8.0/en/mathematical-functions.html#function_radians",
+    "Title": "RADIANS()",
+    "Feature": [
+        "RADIANS(X)"
+    ],
+    "Description": [
+        "\nRADIANS(X)\n",
+        "\n            Returns the argument X, converted\n            from degrees to radians. (Note that π radians equals 180\n            degrees.) Returns NULL if\n            X is NULL.\n          ",
+        "Press CTRL+C to copy mysql> SELECT RADIANS(90);\n        -> 1.5707963267949"
+    ],
+    "Examples": [
+        "mysql> SELECT RADIANS(90);\n        -> 1.5707963267949"
+    ],
+    "Category": [
+        "数值函数与操作符"
+    ]
+}

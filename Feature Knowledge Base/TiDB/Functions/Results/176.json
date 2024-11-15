@@ -1,0 +1,27 @@
+{
+    "HTML": [
+        "https://docs.pingcap.com/zh/tidb/v8.3/information-functions"
+    ],
+    "Title": [
+        "FOUND_ROWS()"
+    ],
+    "Feature": [
+        "FOUND_ROWS()"
+    ],
+    "Description": [
+        "FOUND_ROWS()",
+        "FOUND_ROWS() 函数返回上一条执行的 SELECT 语句的结果集中的行数。",
+        "SELECT 1 UNION ALL SELECT 2;\n",
+        "+------+\n| 1    |\n+------+\n|    2 |\n|    1 |\n+------+\n2 rows in set (0.01 sec)\n",
+        "SELECT FOUND_ROWS();\n",
+        "+--------------+\n| FOUND_ROWS() |\n+--------------+\n|            2 |\n+--------------+\n1 row in set (0.00 sec)\n",
+        "注意SQL_CALC_FOUND_ROWS 查询修饰符用于计算在没有 LIMIT 子句的情况下结果集中的总行数，只有在启用了 tidb_enable_noop_functions 时才能使用。从 MySQL 8.0.17 开始，该查询修饰符已废弃。建议使用 COUNT(*) 代替。"
+    ],
+    "Examples": [
+        "SELECT 1 UNION ALL SELECT 2;\n",
+        "SELECT FOUND_ROWS();\n"
+    ],
+    "Category": [
+        "信息函数"
+    ]
+}

@@ -1,0 +1,23 @@
+{
+    "HTML": [
+        "https://docs.pingcap.com/zh/tidb/v8.3/json-functions-return"
+    ],
+    "Title": [
+        "JSON_TYPE()"
+    ],
+    "Feature": [
+        "JSON_TYPE()"
+    ],
+    "Description": [
+        "JSON_TYPE()",
+        "JSON_TYPE(json_val) 函数返回一个字符串，表示 JSON 值的类型。"
+    ],
+    "Examples": [
+        "WITH demo AS (\n    SELECT 'null' AS 'v'\n    UNION SELECT '\"foobar\"'\n    UNION SELECT 'true'\n    UNION SELECT '5'\n    UNION SELECT '1.14'\n    UNION SELECT '[]'\n    UNION SELECT '{}'\n    UNION SELECT POW(2,63)\n)\nSELECT v, JSON_TYPE(v) FROM demo ORDER BY 2;\n",
+        "SELECT '\"2025-06-14\"',CAST(CAST('2025-06-14' AS date) AS json);\n",
+        "SELECT JSON_TYPE('\"2025-06-14\"'),JSON_TYPE(CAST(CAST('2025-06-14' AS date) AS json));\n"
+    ],
+    "Category": [
+        "返回 JSON 的函数"
+    ]
+}

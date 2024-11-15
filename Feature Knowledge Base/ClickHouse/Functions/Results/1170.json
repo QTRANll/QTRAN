@@ -1,0 +1,26 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/aggregate-functions/reference/groupbitor"
+    ],
+    "Title": [
+        "groupBitOr"
+    ],
+    "Feature": [
+        "groupBitOr(expr)"
+    ],
+    "Description": [
+        "groupBitOr",
+        "Applies bit-wise OR for series of numbers.",
+        "groupBitOr(expr)",
+        "Arguments",
+        "expr \u2013 An expression that results in UInt* or Int* type.",
+        "Returned value",
+        "Value of the UInt* or Int* type."
+    ],
+    "Examples": [
+        "SELECT groupBitOr(num) FROM t"
+    ],
+    "Category": [
+        "Aggregate Functions"
+    ]
+}

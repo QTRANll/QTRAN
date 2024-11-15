@@ -1,0 +1,19 @@
+{
+    "HTML": [
+        "https://duckdb.org/docs/sql/functions/aggregates"
+    ],
+    "Title": [
+        "var_pop(x)"
+    ],
+    "Feature": [
+        "var_pop(x)"
+    ],
+    "Description": [
+        "The population variance, which does not include bias correction.",
+        "(sum(x^2) - sum(x)^2 / count(x)) / count(x), var_samp(y, x) * (1 - 1 / count(x))"
+    ],
+    "Examples": [],
+    "Category": [
+        "Aggregate Functions"
+    ]
+}

@@ -1,0 +1,21 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/16/functions-json.html"
+    ],
+    "Title": [
+        "json_each_text"
+    ],
+    "Feature": [
+        "json_each_text ( json ) → setof record ( key text, value text )",
+        "jsonb_each_text ( jsonb ) → setof record ( key text, value text )"
+    ],
+    "Description": [
+        "Expands the top-level JSON object into a set of key/value pairs. The returned values will be of type text."
+    ],
+    "Examples": [
+        "select * from json_each_text('{\"a\":\"foo\", \"b\":\"bar\"}') →"
+    ],
+    "Category": [
+        "JSON Functions and Operators"
+    ]
+}

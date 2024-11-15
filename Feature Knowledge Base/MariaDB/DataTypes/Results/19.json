@@ -1,0 +1,33 @@
+{
+    "HTML": [
+        "https://mariadb.com/kb/en/enum/"
+    ],
+    "Title": [
+        "ENUM"
+    ],
+    "Feature": [
+        "ENUM('value1','value2',...) [CHARACTER SET charset_name] [COLLATE collation_name]\n"
+    ],
+    "Description": [
+        "An enumeration. A string object that can have only one value, chosen\nfrom the list of values 'value1', 'value2', ..., NULL or the special \n'' error value. In theory, an ENUM column can have a maximum of 65,535 distinct\nvalues; in practice, the real maximum depends on many factors. ENUM values are represented internally as integers.",
+        "Trailing spaces are automatically stripped from ENUM values on table creation.",
+        "ENUMs require relatively little storage space compared to strings, either one or two bytes depending on the number of enumeration values.",
+        "NULL and empty values",
+        "An ENUM can also contain NULL and empty values. If the ENUM column is declared to permit NULL values, NULL becomes a valid value, as well as the default value (see below). If strict SQL Mode is not enabled, and an invalid value is inserted into an ENUM, a special empty string, with an index value of zero (see Numeric index, below), is inserted, with a warning. This may be confusing, because the empty string is also a possible value, and the only difference if that is this case its index is not 0. Inserting will fail with an error if strict mode is active.",
+        "If a DEFAULT clause is missing, the default value will be:",
+        "NULL if the column is nullable;\notherwise, the first value in the enumeration.\n",
+        "Numeric index",
+        "ENUM values are indexed numerically in the order they are defined, and sorting will be performed in this numeric order. We suggest not using ENUM to store numerals, as there is little to no storage space benefit, and it is easy to confuse the enum integer with the enum numeral value by leaving out the quotes.",
+        "An ENUM defined as ENUM('apple','orange','pear') would have the following index values:",
+        "IndexValue\nNULLNULL\n0''\n1'apple'\n2'orange'\n3'pear'\n\n"
+    ],
+    "Examples": [
+        "CREATE TABLE fruits (\n  id INT NOT NULL auto_increment PRIMARY KEY,\n  fruit ENUM('apple','orange','pear'),\n  bushels INT);\n\nDESCRIBE fruits;\n+---------+-------------------------------+------+-----+---------+----------------+\n| Field   | Type                          | Null | Key | Default | Extra          |\n+---------+-------------------------------+------+-----+---------+----------------+\n| id      | int(11)                       | NO   | PRI | NULL    | auto_increment |\n| fruit   | enum('apple','orange','pear') | YES  |     | NULL    |                |\n| bushels | int(11)                       | YES  |     | NULL    |                |\n+---------+-------------------------------+------+-----+---------+----------------+\n\nINSERT INTO fruits\n    (fruit,bushels) VALUES\n    ('pear',20),\n    ('apple',100),\n    ('orange',25);\n\nINSERT INTO fruits\n    (fruit,bushels) VALUES\n    ('avocado',10);\nERROR 1265 (01000): Data truncated for column 'fruit' at row 1\n\nSELECT * FROM fruits;\n+----+--------+---------+\n| id | fruit  | bushels |\n+----+--------+---------+\n|  1 | pear   |      20 |\n|  2 | apple  |     100 |\n|  3 | orange |      25 |\n+----+--------+---------+\n",
+        "SELECT * FROM fruits WHERE fruit=2;\n+----+--------+---------+\n| id | fruit  | bushels |\n+----+--------+---------+\n|  3 | orange |      25 |\n+----+--------+---------+\n",
+        "CREATE TABLE enums (a ENUM('2','1'));\n\nINSERT INTO enums VALUES ('1'),('2');\n\nSELECT * FROM enums ORDER BY a ASC;\n+------+\n| a    |\n+------+\n| 2    |\n| 1    |\n+------+\n",
+        "SELECT * FROM enums WHERE a=1;\n+------+\n| a    |\n+------+\n| 2    |\n+------+\n\nSELECT * FROM enums WHERE a='1';\n+------+\n| a    |\n+------+\n| 1    |\n+------+\n"
+    ],
+    "Category": [
+        "String Data Types"
+    ]
+}

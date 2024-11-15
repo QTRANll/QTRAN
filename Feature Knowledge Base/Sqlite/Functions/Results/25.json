@@ -1,0 +1,18 @@
+{
+    "HTML": [
+        "https://sqlite.org/lang_corefunc.html"
+    ],
+    "Title": [
+        "quote(X)"
+    ],
+    "Feature": [
+        "quote(X)"
+    ],
+    "Description": [
+        "\n  The quote(X) function returns the text of an SQL literal which\n  is the value of its argument suitable for inclusion into an SQL statement.\n  Strings are surrounded by single-quotes with escapes on interior quotes\n  as needed.  BLOBs are encoded as hexadecimal literals.\n  Strings with embedded NUL characters cannot be represented as string\n  literals in SQL and hence the returned string literal is truncated prior\n  to the first NUL.\n"
+    ],
+    "Examples": [],
+    "Category": [
+        "Core SQL Functions"
+    ]
+}

@@ -1,0 +1,28 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/string-search-functions"
+    ],
+    "Title": [
+        "ngramDistanceCaseInsensitive"
+    ],
+    "Feature": [
+        "ngramDistanceCaseInsensitive(haystack, needle)"
+    ],
+    "Description": [
+        "ngramDistanceCaseInsensitive",
+        "Provides a case-insensitive variant of ngramDistance.",
+        "Syntax",
+        "ngramDistanceCaseInsensitive(haystack, needle)",
+        "Parameters",
+        "haystack: First comparison string. String literalneedle: Second comparison string. String literal",
+        "Returned value",
+        "Value between 0 and 1 representing the similarity between the two strings. Float32"
+    ],
+    "Examples": [
+        "SELECT ngramDistance('ClickHouse','clickhouse');",
+        "SELECT ngramDistanceCaseInsensitive('ClickHouse','clickhouse');"
+    ],
+    "Category": [
+        "Searching in Strings Functions"
+    ]
+}

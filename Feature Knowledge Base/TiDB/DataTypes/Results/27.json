@@ -1,0 +1,25 @@
+{
+    "HTML": [
+        "https://docs.pingcap.com/zh/tidb/v8.3/data-type-string"
+    ],
+    "Title": [
+        "ENUM 类型"
+    ],
+    "Feature": [
+        "ENUM 类型"
+    ],
+    "Description": [
+        "ENUM 类型",
+        "枚举类型是一个字符串，它只能有一个值的字符串对象。其值必须是从一个固定集合中选取，这个固定集合在创建表的时候定义，语法是：",
+        "ENUM('value1','value2',...) [CHARACTER SET charset_name] [COLLATE collation_name]\n",
+        "例如：",
+        "ENUM('apple', 'orange', 'pear')\n",
+        "枚举类型的值在 TiDB 内部使用数值来存储，每个值会按照定义的顺序转换为一个数字，比如上面的例子中，每个字符串值都会映射为一个数字：",
+        "值数字NULLNULL''0'apple'1'orange'2'pear'3",
+        "更多信息参考 MySQL 枚举文档。"
+    ],
+    "Examples": [],
+    "Category": [
+        "字符串类型"
+    ]
+}

@@ -1,10 +1,10 @@
 import json
 import os
-from src.Tools.Crawler.crawler_options import set_options
+from src.Tools.crawler_options import set_options
 from selenium import webdriver
 from selenium.webdriver.support.ui import WebDriverWait
 from bs4 import BeautifulSoup
-
+from urllib.parse import urljoin
 
 statements_category_htmls = {
     "Account Management SQL Commands":"https://mariadb.com/kb/en/account-management-sql-commands/",
@@ -58,8 +58,6 @@ def get_statements_htmls_category(dir_filename, category, crawler_html):
                 print(html_name + ":" + html_txt)
 
 
-
-
 def statements_htmls_crawler(Prefix):
     statements_htmls = {}
     merged_htmls_filename = "../../../Feature Knowledge Base/MariaDB/SQL_Statements/SQL_Statements_HTMLs.json"
@@ -86,9 +84,7 @@ def statements_htmls_crawler(Prefix):
     with open(merged_htmls_filename, "w", encoding="utf-8") as w:
         json.dump(statements_htmls, w, indent=4)
 
-
-# 爬取Functions and Operators页面内的Reference Table的所有表格项并存储
-def funcs_htmls_crawler(html_start, html_end, dir_filename):
+def htmls_crawler(html_start, html_end, dir_filename):
     if os.path.exists(dir_filename):
         print("文件 " + dir_filename + " 已存在！")
         return
@@ -113,7 +109,8 @@ def funcs_htmls_crawler(html_start, html_end, dir_filename):
         "https://clickhouse.com/docs/en/sql-reference/window-functions",
         "https://clickhouse.com/docs/en/sql-reference/functions/udf",
         "https://clickhouse.com/docs/en/sql-reference/functions/in-functions",
-        "https://clickhouse.com/docs/en/sql-reference/functions/machine-learning-functions"
+        "https://clickhouse.com/docs/en/sql-reference/functions/machine-learning-functions",
+        "https://clickhouse.com/docs/en/sql-reference/table-functions/deltalake"
     ]
 
     while True:
@@ -122,7 +119,8 @@ def funcs_htmls_crawler(html_start, html_end, dir_filename):
         WebDriverWait(driver, timeout)  # 创建一个WebDriverWait对象，设置最大等待时间为50秒，用于等待页面加载完成
         soup = BeautifulSoup(driver.page_source, "html.parser")
         soup_next_html_a = soup.find("a", class_="pagination-nav__link pagination-nav__link--next paginationNavLink_UdUv")
-        next_html = "https://clickhouse.com" + soup_next_html_a.get("href") if soup_next_html_a else ""
+        # next_html = "https://clickhouse.com" + soup_next_html_a.get("href") if soup_next_html_a else ""
+        next_html = urljoin(this_html, soup_next_html_a.get("href")) if soup_next_html_a else ""
         soup_next_html_name = soup_next_html_a.find("div", class_="paginationNavLabel_YPzM pagination-nav__label") if soup_next_html_a else None
         next_name = soup_next_html_name.text if soup_next_html_name else ""
 
@@ -130,32 +128,16 @@ def funcs_htmls_crawler(html_start, html_end, dir_filename):
         if next_html not in skip_htmls:
             # 跳过部分html
             htmls_table[next_name] = next_html
-        print(next_name+":"+next_html)
+            print(next_name + ":" + next_html)
         if next_html == html_end:
             # 到达最后一个html，跳出while循环
             break
         else:
             # 更新this_html，进入下一轮
-            this_html = next_html
+            if next_name == "deltaLake":
+                this_html = "https://clickhouse.com/docs/en/sql-reference/table-functions/dictionary"
+            else:
+                this_html = next_html
+    return {"No Category": htmls_table}
 
 
-
-    with open(dir_filename, 'w', encoding='utf-8') as f:
-        json.dump({"No Category": htmls_table}, f, indent=4)
-
-
-prefix = "../../../Feature Knowledge Base/ClickHouse/"
-# statements_htmls_crawler(prefix)
-
-
-html_op_start = "https://clickhouse.com/docs/en/sql-reference/window-functions/leadInFrame"
-html_op_end = "https://clickhouse.com/docs/en/sql-reference/operators/in"
-html_op_end = "https://clickhouse.com/docs/en/sql-reference/operators/exists"
-dir_filename_op = prefix + "Operators/HTMLs.json"  # functions 和 operators的目录页
-# funcs_htmls_crawler(html_op_start, html_op_end, dir_filename_op)
-
-
-html_func_start = "https://clickhouse.com/docs/en/sql-reference/functions"
-html_func_end = "https://clickhouse.com/docs/en/sql-reference/window-functions/leadInFrame"
-dir_filename_fun = prefix + "Functions/HTMLs.json"
-# funcs_htmls_crawler(html_func_start, html_func_end, dir_filename_fun)

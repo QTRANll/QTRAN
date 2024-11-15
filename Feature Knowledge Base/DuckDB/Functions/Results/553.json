@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://duckdb.org/docs/sql/functions/timestamptz"
+    ],
+    "Title": [
+        "strptime(text, format)"
+    ],
+    "Feature": [
+        "strptime(text, format)"
+    ],
+    "Description": [
+        "Converts string to TIMESTAMP WITH TIME ZONE according to the format string if %Z is specified."
+    ],
+    "Examples": [
+        "strptime('Wed, 1 January 1992 - 08:38:40 PST', '%a, %-d %B %Y - %H:%M:%S %Z')"
+    ],
+    "Category": [
+        "Timestamp with Time Zone Functions"
+    ]
+}

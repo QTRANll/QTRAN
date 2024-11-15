@@ -1,0 +1,21 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/16/functions-geometry.html"
+    ],
+    "Title": [
+        "geometric_type * point"
+    ],
+    "Feature": [
+        "geometric_type * point → geometric_type"
+    ],
+    "Description": [
+        "Multiplies each point of the first argument by the second point (treating a point as being a complex number represented by real and imaginary parts, and performing standard complex multiplication). If one interprets the second point as a vector, this is equivalent to scaling the object's size and distance from the origin by the length of the vector, and rotating it counterclockwise around the origin by the vector's angle from the x axis. Available for point, box,[a] path, circle."
+    ],
+    "Examples": [
+        "path '((0,0),(1,0),(1,1))' * point '(3.0,0)' → ((0,0),(3,0),(3,3))",
+        "path '((0,0),(1,0),(1,1))' * point(cosd(45), sind(45)) → ((0,0),​(0.7071067811865475,0.7071067811865475),​(0,1.414213562373095))"
+    ],
+    "Category": [
+        "Geometric Functions and Operators"
+    ]
+}

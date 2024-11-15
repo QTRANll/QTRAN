@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://duckdb.org/docs/sql/functions/char"
+    ],
+    "Title": [
+        "parse_dirname(path, separator)"
+    ],
+    "Feature": [
+        "parse_dirname(path, separator)"
+    ],
+    "Description": [
+        "Returns the top-level directory name from the given path. separator options: system, both_slash (default), forward_slash, backslash."
+    ],
+    "Examples": [
+        "parse_dirname('path/to/file.csv', 'system')"
+    ],
+    "Category": [
+        "Text Functions"
+    ]
+}

@@ -1,0 +1,27 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/rounding-functions"
+    ],
+    "Title": [
+        "roundDuration"
+    ],
+    "Feature": [
+        "roundDuration(num)"
+    ],
+    "Description": [
+        "roundDuration",
+        "Accepts a number. If the number is less than one, it returns 0. Otherwise, it rounds the number down to numbers from the set of commonly used durations: 1, 10, 30, 60, 120, 180, 240, 300, 600, 1200, 1800, 3600, 7200, 18000, 36000.",
+        "Syntax",
+        "roundDuration(num)",
+        "Parameters",
+        "num: A number to round to one of the numbers in the set of common durations. UInt/Float.",
+        "Returned value",
+        "0, for num <1\\lt 1<1.Otherwise, one of: 1, 10, 30, 60, 120, 180, 240, 300, 600, 1200, 1800, 3600, 7200, 18000, 36000. UInt16."
+    ],
+    "Examples": [
+        "SELECT *, roundDuration(*) FROM system.numbers WHERE number IN (0, 9, 19, 47, 101, 149, 205, 271, 421, 789, 1423, 2345, 4567, 9876, 24680, 42573)"
+    ],
+    "Category": [
+        "Rounding Functions"
+    ]
+}

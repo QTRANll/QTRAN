@@ -1,0 +1,18 @@
+{
+    "HTML": "https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html#function_curdate",
+    "Title": "CURDATE()",
+    "Feature": [
+        "CURDATE()"
+    ],
+    "Description": [
+        "\nCURDATE()\n",
+        "\n          Returns the current date as a value in\n          'YYYY-MM-DD' or\n          YYYYMMDD format, depending on\n          whether the function is used in string or numeric context.\n        ",
+        "Press CTRL+C to copy mysql> SELECT CURDATE();\n        -> '2008-06-13'\nmysql> SELECT CURDATE() + 0;\n        -> 20080613"
+    ],
+    "Examples": [
+        "mysql> SELECT CURDATE();\n        -> '2008-06-13'\nmysql> SELECT CURDATE() + 0;\n        -> 20080613"
+    ],
+    "Category": [
+        "日期和时间函数"
+    ]
+}

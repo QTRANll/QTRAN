@@ -1,0 +1,25 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/bitmap-functions"
+    ],
+    "Title": [
+        "bitmapMin"
+    ],
+    "Feature": [
+        "bitmapMin(bitmap)"
+    ],
+    "Description": [
+        "bitmapMin",
+        "Computes the smallest bit set in a bitmap, or UINT32_MAX if the bitmap is empty.",
+        "Syntax",
+        "bitmapMin(bitmap)",
+        "Arguments",
+        "bitmap \u2013 Bitmap object."
+    ],
+    "Examples": [
+        "SELECT bitmapMin(bitmapBuild([1, 2, 3, 4, 5])) AS res;"
+    ],
+    "Category": [
+        "Bitmap Functions"
+    ]
+}

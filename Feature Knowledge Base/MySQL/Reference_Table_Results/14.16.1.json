@@ -1,0 +1,746 @@
+[
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/spatial-function-reference.html",
+        "Title": "14.16.1 Spatial Function Reference",
+        "Name": "GeomCollection()",
+        "Description": "Construct geometry collection from geometries",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/gis-mysql-specific-functions.html#function_geomcollection",
+        "Category": "Spatial Analysis Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/spatial-function-reference.html",
+        "Title": "14.16.1 Spatial Function Reference",
+        "Name": "GeometryCollection()",
+        "Description": "Construct geometry collection from geometries",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/gis-mysql-specific-functions.html#function_geometrycollection",
+        "Category": "Spatial Analysis Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/spatial-function-reference.html",
+        "Title": "14.16.1 Spatial Function Reference",
+        "Name": "LineString()",
+        "Description": "Construct LineString from Point values",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/gis-mysql-specific-functions.html#function_linestring",
+        "Category": "Spatial Analysis Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/spatial-function-reference.html",
+        "Title": "14.16.1 Spatial Function Reference",
+        "Name": "MBRContains()",
+        "Description": "Whether MBR of one geometry contains MBR of another",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/spatial-relation-functions-mbr.html#function_mbrcontains",
+        "Category": "Spatial Analysis Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/spatial-function-reference.html",
+        "Title": "14.16.1 Spatial Function Reference",
+        "Name": "MBRCoveredBy()",
+        "Description": "Whether one MBR is covered by another",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/spatial-relation-functions-mbr.html#function_mbrcoveredby",
+        "Category": "Spatial Analysis Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/spatial-function-reference.html",
+        "Title": "14.16.1 Spatial Function Reference",
+        "Name": "MBRCovers()",
+        "Description": "Whether one MBR covers another",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/spatial-relation-functions-mbr.html#function_mbrcovers",
+        "Category": "Spatial Analysis Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/spatial-function-reference.html",
+        "Title": "14.16.1 Spatial Function Reference",
+        "Name": "MBRDisjoint()",
+        "Description": "Whether MBRs of two geometries are disjoint",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/spatial-relation-functions-mbr.html#function_mbrdisjoint",
+        "Category": "Spatial Analysis Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/spatial-function-reference.html",
+        "Title": "14.16.1 Spatial Function Reference",
+        "Name": "MBREquals()",
+        "Description": "Whether MBRs of two geometries are equal",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/spatial-relation-functions-mbr.html#function_mbrequals",
+        "Category": "Spatial Analysis Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/spatial-function-reference.html",
+        "Title": "14.16.1 Spatial Function Reference",
+        "Name": "MBRIntersects()",
+        "Description": "Whether MBRs of two geometries intersect",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/spatial-relation-functions-mbr.html#function_mbrintersects",
+        "Category": "Spatial Analysis Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/spatial-function-reference.html",
+        "Title": "14.16.1 Spatial Function Reference",
+        "Name": "MBROverlaps()",
+        "Description": "Whether MBRs of two geometries overlap",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/spatial-relation-functions-mbr.html#function_mbroverlaps",
+        "Category": "Spatial Analysis Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/spatial-function-reference.html",
+        "Title": "14.16.1 Spatial Function Reference",
+        "Name": "MBRTouches()",
+        "Description": "Whether MBRs of two geometries touch",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/spatial-relation-functions-mbr.html#function_mbrtouches",
+        "Category": "Spatial Analysis Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/spatial-function-reference.html",
+        "Title": "14.16.1 Spatial Function Reference",
+        "Name": "MBRWithin()",
+        "Description": "Whether MBR of one geometry is within MBR of another",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/spatial-relation-functions-mbr.html#function_mbrwithin",
+        "Category": "Spatial Analysis Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/spatial-function-reference.html",
+        "Title": "14.16.1 Spatial Function Reference",
+        "Name": "MultiLineString()",
+        "Description": "Contruct MultiLineString from LineString values",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/gis-mysql-specific-functions.html#function_multilinestring",
+        "Category": "Spatial Analysis Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/spatial-function-reference.html",
+        "Title": "14.16.1 Spatial Function Reference",
+        "Name": "MultiPoint()",
+        "Description": "Construct MultiPoint from Point values",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/gis-mysql-specific-functions.html#function_multipoint",
+        "Category": "Spatial Analysis Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/spatial-function-reference.html",
+        "Title": "14.16.1 Spatial Function Reference",
+        "Name": "MultiPolygon()",
+        "Description": "Construct MultiPolygon from Polygon values",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/gis-mysql-specific-functions.html#function_multipolygon",
+        "Category": "Spatial Analysis Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/spatial-function-reference.html",
+        "Title": "14.16.1 Spatial Function Reference",
+        "Name": "Point()",
+        "Description": "Construct Point from coordinates",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/gis-mysql-specific-functions.html#function_point",
+        "Category": "Spatial Analysis Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/spatial-function-reference.html",
+        "Title": "14.16.1 Spatial Function Reference",
+        "Name": "Polygon()",
+        "Description": "Construct Polygon from LineString arguments",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/gis-mysql-specific-functions.html#function_polygon",
+        "Category": "Spatial Analysis Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/spatial-function-reference.html",
+        "Title": "14.16.1 Spatial Function Reference",
+        "Name": "ST_Area()",
+        "Description": "Return Polygon or MultiPolygon area",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/gis-polygon-property-functions.html#function_st-area",
+        "Category": "Spatial Analysis Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/spatial-function-reference.html",
+        "Title": "14.16.1 Spatial Function Reference",
+        "Name": "ST_AsBinary(), ST_AsWKB()",
+        "Description": "Convert from internal geometry format to WKB",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/gis-format-conversion-functions.html#function_st-asbinary",
+        "Category": "Spatial Analysis Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/spatial-function-reference.html",
+        "Title": "14.16.1 Spatial Function Reference",
+        "Name": "ST_AsGeoJSON()",
+        "Description": "Generate GeoJSON object from geometry",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/spatial-geojson-functions.html#function_st-asgeojson",
+        "Category": "Spatial Analysis Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/spatial-function-reference.html",
+        "Title": "14.16.1 Spatial Function Reference",
+        "Name": "ST_AsText(), ST_AsWKT()",
+        "Description": "Convert from internal geometry format to WKT",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/gis-format-conversion-functions.html#function_st-astext",
+        "Category": "Spatial Analysis Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/spatial-function-reference.html",
+        "Title": "14.16.1 Spatial Function Reference",
+        "Name": "ST_Buffer()",
+        "Description": "Return geometry of points within given distance from geometry",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/spatial-operator-functions.html#function_st-buffer",
+        "Category": "Spatial Analysis Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/spatial-function-reference.html",
+        "Title": "14.16.1 Spatial Function Reference",
+        "Name": "ST_Buffer_Strategy()",
+        "Description": "Produce strategy option for ST_Buffer()",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/spatial-operator-functions.html#function_st-buffer-strategy",
+        "Category": "Spatial Analysis Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/spatial-function-reference.html",
+        "Title": "14.16.1 Spatial Function Reference",
+        "Name": "ST_Centroid()",
+        "Description": "Return centroid as a point",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/gis-polygon-property-functions.html#function_st-centroid",
+        "Category": "Spatial Analysis Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/spatial-function-reference.html",
+        "Title": "14.16.1 Spatial Function Reference",
+        "Name": "ST_Collect()",
+        "Description": "Aggregate spatial values into collection",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/spatial-aggregate-functions.html#function_st-collect",
+        "Category": "Spatial Analysis Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/spatial-function-reference.html",
+        "Title": "14.16.1 Spatial Function Reference",
+        "Name": "ST_Contains()",
+        "Description": "Whether one geometry contains another",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/spatial-relation-functions-object-shapes.html#function_st-contains",
+        "Category": "Spatial Analysis Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/spatial-function-reference.html",
+        "Title": "14.16.1 Spatial Function Reference",
+        "Name": "ST_ConvexHull()",
+        "Description": "Return convex hull of geometry",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/spatial-operator-functions.html#function_st-convexhull",
+        "Category": "Spatial Analysis Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/spatial-function-reference.html",
+        "Title": "14.16.1 Spatial Function Reference",
+        "Name": "ST_Crosses()",
+        "Description": "Whether one geometry crosses another",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/spatial-relation-functions-object-shapes.html#function_st-crosses",
+        "Category": "Spatial Analysis Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/spatial-function-reference.html",
+        "Title": "14.16.1 Spatial Function Reference",
+        "Name": "ST_Difference()",
+        "Description": "Return point set difference of two geometries",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/spatial-operator-functions.html#function_st-difference",
+        "Category": "Spatial Analysis Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/spatial-function-reference.html",
+        "Title": "14.16.1 Spatial Function Reference",
+        "Name": "ST_Dimension()",
+        "Description": "Dimension of geometry",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/gis-general-property-functions.html#function_st-dimension",
+        "Category": "Spatial Analysis Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/spatial-function-reference.html",
+        "Title": "14.16.1 Spatial Function Reference",
+        "Name": "ST_Disjoint()",
+        "Description": "Whether one geometry is disjoint from another",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/spatial-relation-functions-object-shapes.html#function_st-disjoint",
+        "Category": "Spatial Analysis Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/spatial-function-reference.html",
+        "Title": "14.16.1 Spatial Function Reference",
+        "Name": "ST_Distance()",
+        "Description": "The distance of one geometry from another",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/spatial-relation-functions-object-shapes.html#function_st-distance",
+        "Category": "Spatial Analysis Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/spatial-function-reference.html",
+        "Title": "14.16.1 Spatial Function Reference",
+        "Name": "ST_Distance_Sphere()",
+        "Description": "Minimum distance on earth between two geometries",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/spatial-convenience-functions.html#function_st-distance-sphere",
+        "Category": "Spatial Analysis Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/spatial-function-reference.html",
+        "Title": "14.16.1 Spatial Function Reference",
+        "Name": "ST_EndPoint()",
+        "Description": "End Point of LineString",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/gis-linestring-property-functions.html#function_st-endpoint",
+        "Category": "Spatial Analysis Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/spatial-function-reference.html",
+        "Title": "14.16.1 Spatial Function Reference",
+        "Name": "ST_Envelope()",
+        "Description": "Return MBR of geometry",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/gis-general-property-functions.html#function_st-envelope",
+        "Category": "Spatial Analysis Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/spatial-function-reference.html",
+        "Title": "14.16.1 Spatial Function Reference",
+        "Name": "ST_Equals()",
+        "Description": "Whether one geometry is equal to another",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/spatial-relation-functions-object-shapes.html#function_st-equals",
+        "Category": "Spatial Analysis Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/spatial-function-reference.html",
+        "Title": "14.16.1 Spatial Function Reference",
+        "Name": "ST_ExteriorRing()",
+        "Description": "Return exterior ring of Polygon",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/gis-polygon-property-functions.html#function_st-exteriorring",
+        "Category": "Spatial Analysis Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/spatial-function-reference.html",
+        "Title": "14.16.1 Spatial Function Reference",
+        "Name": "ST_FrechetDistance()",
+        "Description": "The discrete Fr\u00e9chet distance of one geometry from another",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/spatial-relation-functions-object-shapes.html#function_st-frechetdistance",
+        "Category": "Spatial Analysis Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/spatial-function-reference.html",
+        "Title": "14.16.1 Spatial Function Reference",
+        "Name": "ST_GeoHash()",
+        "Description": "Produce a geohash value",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/spatial-geohash-functions.html#function_st-geohash",
+        "Category": "Spatial Analysis Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/spatial-function-reference.html",
+        "Title": "14.16.1 Spatial Function Reference",
+        "Name": "ST_GeomCollFromText(), ST_GeometryCollectionFromText(), ST_GeomCollFromTxt()",
+        "Description": "Return geometry collection from WKT",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/gis-wkt-functions.html#function_st-geomcollfromtext",
+        "Category": "Spatial Analysis Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/spatial-function-reference.html",
+        "Title": "14.16.1 Spatial Function Reference",
+        "Name": "ST_GeomCollFromWKB(), ST_GeometryCollectionFromWKB()",
+        "Description": "Return geometry collection from WKB",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/gis-wkb-functions.html#function_st-geomcollfromwkb",
+        "Category": "Spatial Analysis Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/spatial-function-reference.html",
+        "Title": "14.16.1 Spatial Function Reference",
+        "Name": "ST_GeometryN()",
+        "Description": "Return N-th geometry from geometry collection",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/gis-geometrycollection-property-functions.html#function_st-geometryn",
+        "Category": "Spatial Analysis Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/spatial-function-reference.html",
+        "Title": "14.16.1 Spatial Function Reference",
+        "Name": "ST_GeometryType()",
+        "Description": "Return name of geometry type",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/gis-general-property-functions.html#function_st-geometrytype",
+        "Category": "Spatial Analysis Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/spatial-function-reference.html",
+        "Title": "14.16.1 Spatial Function Reference",
+        "Name": "ST_GeomFromGeoJSON()",
+        "Description": "Generate geometry from GeoJSON object",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/spatial-geojson-functions.html#function_st-geomfromgeojson",
+        "Category": "Spatial Analysis Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/spatial-function-reference.html",
+        "Title": "14.16.1 Spatial Function Reference",
+        "Name": "ST_GeomFromText(), ST_GeometryFromText()",
+        "Description": "Return geometry from WKT",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/gis-wkt-functions.html#function_st-geomfromtext",
+        "Category": "Spatial Analysis Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/spatial-function-reference.html",
+        "Title": "14.16.1 Spatial Function Reference",
+        "Name": "ST_GeomFromWKB(), ST_GeometryFromWKB()",
+        "Description": "Return geometry from WKB",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/gis-wkb-functions.html#function_st-geomfromwkb",
+        "Category": "Spatial Analysis Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/spatial-function-reference.html",
+        "Title": "14.16.1 Spatial Function Reference",
+        "Name": "ST_HausdorffDistance()",
+        "Description": "The discrete Hausdorff distance of one geometry from another",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/spatial-relation-functions-object-shapes.html#function_st-hausdorffdistance",
+        "Category": "Spatial Analysis Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/spatial-function-reference.html",
+        "Title": "14.16.1 Spatial Function Reference",
+        "Name": "ST_InteriorRingN()",
+        "Description": "Return N-th interior ring of Polygon",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/gis-polygon-property-functions.html#function_st-interiorringn",
+        "Category": "Spatial Analysis Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/spatial-function-reference.html",
+        "Title": "14.16.1 Spatial Function Reference",
+        "Name": "ST_Intersection()",
+        "Description": "Return point set intersection of two geometries",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/spatial-operator-functions.html#function_st-intersection",
+        "Category": "Spatial Analysis Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/spatial-function-reference.html",
+        "Title": "14.16.1 Spatial Function Reference",
+        "Name": "ST_Intersects()",
+        "Description": "Whether one geometry intersects another",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/spatial-relation-functions-object-shapes.html#function_st-intersects",
+        "Category": "Spatial Analysis Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/spatial-function-reference.html",
+        "Title": "14.16.1 Spatial Function Reference",
+        "Name": "ST_IsClosed()",
+        "Description": "Whether a geometry is closed and simple",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/gis-linestring-property-functions.html#function_st-isclosed",
+        "Category": "Spatial Analysis Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/spatial-function-reference.html",
+        "Title": "14.16.1 Spatial Function Reference",
+        "Name": "ST_IsEmpty()",
+        "Description": "Whether a geometry is empty",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/gis-general-property-functions.html#function_st-isempty",
+        "Category": "Spatial Analysis Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/spatial-function-reference.html",
+        "Title": "14.16.1 Spatial Function Reference",
+        "Name": "ST_IsSimple()",
+        "Description": "Whether a geometry is simple",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/gis-general-property-functions.html#function_st-issimple",
+        "Category": "Spatial Analysis Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/spatial-function-reference.html",
+        "Title": "14.16.1 Spatial Function Reference",
+        "Name": "ST_IsValid()",
+        "Description": "Whether a geometry is valid",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/spatial-convenience-functions.html#function_st-isvalid",
+        "Category": "Spatial Analysis Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/spatial-function-reference.html",
+        "Title": "14.16.1 Spatial Function Reference",
+        "Name": "ST_LatFromGeoHash()",
+        "Description": "Return latitude from geohash value",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/spatial-geohash-functions.html#function_st-latfromgeohash",
+        "Category": "Spatial Analysis Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/spatial-function-reference.html",
+        "Title": "14.16.1 Spatial Function Reference",
+        "Name": "ST_Latitude()",
+        "Description": "Return latitude of Point",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/gis-point-property-functions.html#function_st-latitude",
+        "Category": "Spatial Analysis Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/spatial-function-reference.html",
+        "Title": "14.16.1 Spatial Function Reference",
+        "Name": "ST_Length()",
+        "Description": "Return length of LineString",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/gis-linestring-property-functions.html#function_st-length",
+        "Category": "Spatial Analysis Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/spatial-function-reference.html",
+        "Title": "14.16.1 Spatial Function Reference",
+        "Name": "ST_LineFromText(), ST_LineStringFromText()",
+        "Description": "Construct LineString from WKT",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/gis-wkt-functions.html#function_st-linefromtext",
+        "Category": "Spatial Analysis Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/spatial-function-reference.html",
+        "Title": "14.16.1 Spatial Function Reference",
+        "Name": "ST_LineFromWKB(), ST_LineStringFromWKB()",
+        "Description": "Construct LineString from WKB",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/gis-wkb-functions.html#function_st-linefromwkb",
+        "Category": "Spatial Analysis Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/spatial-function-reference.html",
+        "Title": "14.16.1 Spatial Function Reference",
+        "Name": "ST_LineInterpolatePoint()",
+        "Description": "The point a given percentage along a LineString",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/spatial-operator-functions.html#function_st-lineinterpolatepoint",
+        "Category": "Spatial Analysis Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/spatial-function-reference.html",
+        "Title": "14.16.1 Spatial Function Reference",
+        "Name": "ST_LineInterpolatePoints()",
+        "Description": "The points a given percentage along a LineString",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/spatial-operator-functions.html#function_st-lineinterpolatepoints",
+        "Category": "Spatial Analysis Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/spatial-function-reference.html",
+        "Title": "14.16.1 Spatial Function Reference",
+        "Name": "ST_LongFromGeoHash()",
+        "Description": "Return longitude from geohash value",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/spatial-geohash-functions.html#function_st-longfromgeohash",
+        "Category": "Spatial Analysis Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/spatial-function-reference.html",
+        "Title": "14.16.1 Spatial Function Reference",
+        "Name": "ST_Longitude()",
+        "Description": "Return longitude of Point",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/gis-point-property-functions.html#function_st-longitude",
+        "Category": "Spatial Analysis Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/spatial-function-reference.html",
+        "Title": "14.16.1 Spatial Function Reference",
+        "Name": "ST_MakeEnvelope()",
+        "Description": "Rectangle around two points",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/spatial-convenience-functions.html#function_st-makeenvelope",
+        "Category": "Spatial Analysis Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/spatial-function-reference.html",
+        "Title": "14.16.1 Spatial Function Reference",
+        "Name": "ST_MLineFromText(), ST_MultiLineStringFromText()",
+        "Description": "Construct MultiLineString from WKT",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/gis-wkt-functions.html#function_st-mlinefromtext",
+        "Category": "Spatial Analysis Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/spatial-function-reference.html",
+        "Title": "14.16.1 Spatial Function Reference",
+        "Name": "ST_MLineFromWKB(), ST_MultiLineStringFromWKB()",
+        "Description": "Construct MultiLineString from WKB",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/gis-wkb-functions.html#function_st-mlinefromwkb",
+        "Category": "Spatial Analysis Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/spatial-function-reference.html",
+        "Title": "14.16.1 Spatial Function Reference",
+        "Name": "ST_MPointFromText(), ST_MultiPointFromText()",
+        "Description": "Construct MultiPoint from WKT",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/gis-wkt-functions.html#function_st-mpointfromtext",
+        "Category": "Spatial Analysis Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/spatial-function-reference.html",
+        "Title": "14.16.1 Spatial Function Reference",
+        "Name": "ST_MPointFromWKB(), ST_MultiPointFromWKB()",
+        "Description": "Construct MultiPoint from WKB",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/gis-wkb-functions.html#function_st-mpointfromwkb",
+        "Category": "Spatial Analysis Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/spatial-function-reference.html",
+        "Title": "14.16.1 Spatial Function Reference",
+        "Name": "ST_MPolyFromText(), ST_MultiPolygonFromText()",
+        "Description": "Construct MultiPolygon from WKT",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/gis-wkt-functions.html#function_st-mpolyfromtext",
+        "Category": "Spatial Analysis Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/spatial-function-reference.html",
+        "Title": "14.16.1 Spatial Function Reference",
+        "Name": "ST_MPolyFromWKB(), ST_MultiPolygonFromWKB()",
+        "Description": "Construct MultiPolygon from WKB",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/gis-wkb-functions.html#function_st-mpolyfromwkb",
+        "Category": "Spatial Analysis Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/spatial-function-reference.html",
+        "Title": "14.16.1 Spatial Function Reference",
+        "Name": "ST_NumGeometries()",
+        "Description": "Return number of geometries in geometry collection",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/gis-geometrycollection-property-functions.html#function_st-numgeometries",
+        "Category": "Spatial Analysis Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/spatial-function-reference.html",
+        "Title": "14.16.1 Spatial Function Reference",
+        "Name": "ST_NumInteriorRing(), ST_NumInteriorRings()",
+        "Description": "Return number of interior rings in Polygon",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/gis-polygon-property-functions.html#function_st-numinteriorrings",
+        "Category": "Spatial Analysis Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/spatial-function-reference.html",
+        "Title": "14.16.1 Spatial Function Reference",
+        "Name": "ST_NumPoints()",
+        "Description": "Return number of points in LineString",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/gis-linestring-property-functions.html#function_st-numpoints",
+        "Category": "Spatial Analysis Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/spatial-function-reference.html",
+        "Title": "14.16.1 Spatial Function Reference",
+        "Name": "ST_Overlaps()",
+        "Description": "Whether one geometry overlaps another",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/spatial-relation-functions-object-shapes.html#function_st-overlaps",
+        "Category": "Spatial Analysis Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/spatial-function-reference.html",
+        "Title": "14.16.1 Spatial Function Reference",
+        "Name": "ST_PointAtDistance()",
+        "Description": "The point a given distance along a LineString",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/spatial-operator-functions.html#function_st-pointatdistance",
+        "Category": "Spatial Analysis Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/spatial-function-reference.html",
+        "Title": "14.16.1 Spatial Function Reference",
+        "Name": "ST_PointFromGeoHash()",
+        "Description": "Convert geohash value to POINT value",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/spatial-geohash-functions.html#function_st-pointfromgeohash",
+        "Category": "Spatial Analysis Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/spatial-function-reference.html",
+        "Title": "14.16.1 Spatial Function Reference",
+        "Name": "ST_PointFromText()",
+        "Description": "Construct Point from WKT",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/gis-wkt-functions.html#function_st-pointfromtext",
+        "Category": "Spatial Analysis Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/spatial-function-reference.html",
+        "Title": "14.16.1 Spatial Function Reference",
+        "Name": "ST_PointFromWKB()",
+        "Description": "Construct Point from WKB",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/gis-wkb-functions.html#function_st-pointfromwkb",
+        "Category": "Spatial Analysis Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/spatial-function-reference.html",
+        "Title": "14.16.1 Spatial Function Reference",
+        "Name": "ST_PointN()",
+        "Description": "Return N-th point from LineString",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/gis-linestring-property-functions.html#function_st-pointn",
+        "Category": "Spatial Analysis Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/spatial-function-reference.html",
+        "Title": "14.16.1 Spatial Function Reference",
+        "Name": "ST_PolyFromText(), ST_PolygonFromText()",
+        "Description": "Construct Polygon from WKT",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/gis-wkt-functions.html#function_st-polyfromtext",
+        "Category": "Spatial Analysis Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/spatial-function-reference.html",
+        "Title": "14.16.1 Spatial Function Reference",
+        "Name": "ST_PolyFromWKB(), ST_PolygonFromWKB()",
+        "Description": "Construct Polygon from WKB",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/gis-wkb-functions.html#function_st-polyfromwkb",
+        "Category": "Spatial Analysis Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/spatial-function-reference.html",
+        "Title": "14.16.1 Spatial Function Reference",
+        "Name": "ST_Simplify()",
+        "Description": "Return simplified geometry",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/spatial-convenience-functions.html#function_st-simplify",
+        "Category": "Spatial Analysis Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/spatial-function-reference.html",
+        "Title": "14.16.1 Spatial Function Reference",
+        "Name": "ST_SRID()",
+        "Description": "Return spatial reference system ID for geometry",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/gis-general-property-functions.html#function_st-srid",
+        "Category": "Spatial Analysis Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/spatial-function-reference.html",
+        "Title": "14.16.1 Spatial Function Reference",
+        "Name": "ST_StartPoint()",
+        "Description": "Start Point of LineString",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/gis-linestring-property-functions.html#function_st-startpoint",
+        "Category": "Spatial Analysis Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/spatial-function-reference.html",
+        "Title": "14.16.1 Spatial Function Reference",
+        "Name": "ST_SwapXY()",
+        "Description": "Return argument with X/Y coordinates swapped",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/gis-format-conversion-functions.html#function_st-swapxy",
+        "Category": "Spatial Analysis Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/spatial-function-reference.html",
+        "Title": "14.16.1 Spatial Function Reference",
+        "Name": "ST_SymDifference()",
+        "Description": "Return point set symmetric difference of two geometries",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/spatial-operator-functions.html#function_st-symdifference",
+        "Category": "Spatial Analysis Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/spatial-function-reference.html",
+        "Title": "14.16.1 Spatial Function Reference",
+        "Name": "ST_Touches()",
+        "Description": "Whether one geometry touches another",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/spatial-relation-functions-object-shapes.html#function_st-touches",
+        "Category": "Spatial Analysis Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/spatial-function-reference.html",
+        "Title": "14.16.1 Spatial Function Reference",
+        "Name": "ST_Transform()",
+        "Description": "Transform coordinates of geometry",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/spatial-operator-functions.html#function_st-transform",
+        "Category": "Spatial Analysis Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/spatial-function-reference.html",
+        "Title": "14.16.1 Spatial Function Reference",
+        "Name": "ST_Union()",
+        "Description": "Return point set union of two geometries",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/spatial-operator-functions.html#function_st-union",
+        "Category": "Spatial Analysis Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/spatial-function-reference.html",
+        "Title": "14.16.1 Spatial Function Reference",
+        "Name": "ST_Validate()",
+        "Description": "Return validated geometry",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/spatial-convenience-functions.html#function_st-validate",
+        "Category": "Spatial Analysis Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/spatial-function-reference.html",
+        "Title": "14.16.1 Spatial Function Reference",
+        "Name": "ST_Within()",
+        "Description": "Whether one geometry is within another",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/spatial-relation-functions-object-shapes.html#function_st-within",
+        "Category": "Spatial Analysis Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/spatial-function-reference.html",
+        "Title": "14.16.1 Spatial Function Reference",
+        "Name": "ST_X()",
+        "Description": "Return X coordinate of Point",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/gis-point-property-functions.html#function_st-x",
+        "Category": "Spatial Analysis Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/spatial-function-reference.html",
+        "Title": "14.16.1 Spatial Function Reference",
+        "Name": "ST_Y()",
+        "Description": "Return Y coordinate of Point",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/gis-point-property-functions.html#function_st-y",
+        "Category": "Spatial Analysis Functions"
+    }
+]

@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://duckdb.org/docs/sql/functions/date"
+    ],
+    "Title": [
+        "+"
+    ],
+    "Feature": [
+        "+"
+    ],
+    "Description": [
+        "Addition of a variable INTERVAL"
+    ],
+    "Examples": [
+        "SELECT DATE '1992-03-22' + INTERVAL (d.days) DAY FROM (VALUES (5), (11)) AS d(days)"
+    ],
+    "Category": [
+        "Date Operators"
+    ]
+}

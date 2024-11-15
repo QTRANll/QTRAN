@@ -1,0 +1,23 @@
+{
+    "HTML": [
+        "https://docs.pingcap.com/zh/tidb/v8.3/miscellaneous-functions"
+    ],
+    "Title": [
+        "INET6_NTOA()"
+    ],
+    "Feature": [
+        "INET6_NTOA()"
+    ],
+    "Description": [
+        "INET6_NTOA()",
+        "INET6_NTOA() 函数的功能类似于 INET_NTOA()，但 INET6_NTOA() 还可以处理 IPv6 地址。",
+        "SELECT INET6_NTOA(0x00000000000000000000000000000001);\n",
+        "+------------------------------------------------+\n| INET6_NTOA(0x00000000000000000000000000000001) |\n+------------------------------------------------+\n| ::1                                            |\n+------------------------------------------------+\n1 row in set (0.00 sec)\n"
+    ],
+    "Examples": [
+        "SELECT INET6_NTOA(0x00000000000000000000000000000001);\n"
+    ],
+    "Category": [
+        "其它函数"
+    ]
+}

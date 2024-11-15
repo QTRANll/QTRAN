@@ -1,0 +1,28 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/date-time-functions"
+    ],
+    "Title": [
+        "toTime"
+    ],
+    "Feature": [
+        "toTime(date[,timezone])"
+    ],
+    "Description": [
+        "toTime",
+        "Converts a date with time to a certain fixed date, while preserving the time.",
+        "Syntax",
+        "toTime(date[,timezone])",
+        "Arguments",
+        "date \u2014 Date to convert to a time. Date/DateTime/DateTime64.timezone (optional) \u2014 Timezone for the returned value. String.",
+        "Returned value",
+        "DateTime with date equated to 1970-01-02 while preserving the time. DateTime.",
+        "NoteIf the date input argument contained sub-second components,\nthey will be dropped in the returned DateTime value with second-accuracy."
+    ],
+    "Examples": [
+        "SELECT toTime(toDateTime64('1970-12-10 01:20:30.3000',3)) AS result, toTypeName(result);"
+    ],
+    "Category": [
+        "Dates and Times Functions"
+    ]
+}

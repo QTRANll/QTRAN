@@ -1,0 +1,29 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/date-time-functions"
+    ],
+    "Title": [
+        "makeDate32"
+    ],
+    "Feature": [
+        "makeDate32(year, [month,] day)"
+    ],
+    "Description": [
+        "makeDate32",
+        "Creates a date of type Date32 from a year, month, day (or optionally a year and a day).",
+        "Syntax",
+        "makeDate32(year, [month,] day)",
+        "Arguments",
+        "year \u2014 Year. Integer, Float or Decimal.month \u2014 Month (optional). Integer, Float or Decimal.day \u2014 Day. Integer, Float or Decimal.",
+        "NoteIf month is omitted then day should take a value between 1 and 365, otherwise it should take a value between 1 and 31.",
+        "Returned values",
+        "A date created from the arguments. Date32."
+    ],
+    "Examples": [
+        "SELECT makeDate32(2024, 1, 1);",
+        "SELECT makeDate32(2024, 100);"
+    ],
+    "Category": [
+        "Dates and Times Functions"
+    ]
+}

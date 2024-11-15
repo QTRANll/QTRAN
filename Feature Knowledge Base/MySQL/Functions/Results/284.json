@@ -1,0 +1,35 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.0/en/built-in-function-reference.html"
+    ],
+    "Title": [
+        "14.1 Built-In Function and Operator Reference"
+    ],
+    "Name": "SLEEP()",
+    "Description": [
+        "\nSLEEP(duration)\n",
+        "\n          Sleeps (pauses) for the number of seconds given by the\n          duration argument, then returns 0.\n          The duration may have a fractional part. If the argument is\n          NULL or negative,\n          SLEEP() produces a warning, or\n          an error in strict SQL mode.\n        ",
+        "\n          When sleep returns normally (without interruption), it returns\n          0:\n        ",
+        "Press CTRL+C to copy mysql> SELECT SLEEP(1000);\n+-------------+\n| SLEEP(1000) |\n+-------------+\n|           0 |\n+-------------+",
+        "\n          When SLEEP() is the only thing\n          invoked by a query that is interrupted, it returns 1 and the\n          query itself returns no error. This is true whether the query\n          is killed or times out:\n",
+        "\n\n              This statement is interrupted using\n              KILL QUERY\n              from another session:\n            Press CTRL+C to copy mysql> SELECT SLEEP(1000);\n+-------------+\n| SLEEP(1000) |\n+-------------+\n|           1 |\n+-------------+\n              This statement is interrupted by timing out:\n            Press CTRL+C to copy mysql> SELECT /*+ MAX_EXECUTION_TIME(1) */ SLEEP(1000);\n+-------------+\n| SLEEP(1000) |\n+-------------+\n|           1 |\n+-------------+\n",
+        "\n          When SLEEP() is only part of a\n          query that is interrupted, the query returns an error:\n",
+        "\n\n              This statement is interrupted using\n              KILL QUERY\n              from another session:\n            Press CTRL+C to copy mysql> SELECT 1 FROM t1 WHERE SLEEP(1000);\nERROR 1317 (70100): Query execution was interrupted\n              This statement is interrupted by timing out:\n            Press CTRL+C to copy mysql> SELECT /*+ MAX_EXECUTION_TIME(1000) */ 1 FROM t1 WHERE SLEEP(1000);\nERROR 3024 (HY000): Query execution was interrupted, maximum statement\nexecution time exceeded\n",
+        "\n          This function is unsafe for statement-based replication. A\n          warning is logged if you use this function when\n          binlog_format is set to\n          STATEMENT.\n        "
+    ],
+    "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/miscellaneous-functions.html#function_sleep",
+    "Feature": [
+        "SLEEP(duration)"
+    ],
+    "Examples": [
+        "mysql> SELECT SLEEP(1000);\n+-------------+\n| SLEEP(1000) |\n+-------------+\n|           0 |\n+-------------+",
+        "mysql> SELECT SLEEP(1000);\n+-------------+\n| SLEEP(1000) |\n+-------------+\n|           1 |\n+-------------+",
+        "mysql> SELECT /*+ MAX_EXECUTION_TIME(1) */ SLEEP(1000);\n+-------------+\n| SLEEP(1000) |\n+-------------+\n|           1 |\n+-------------+",
+        "mysql> SELECT 1 FROM t1 WHERE SLEEP(1000);\nERROR 1317 (70100): Query execution was interrupted",
+        "mysql> SELECT /*+ MAX_EXECUTION_TIME(1000) */ 1 FROM t1 WHERE SLEEP(1000);\nERROR 3024 (HY000): Query execution was interrupted, maximum statement\nexecution time exceeded"
+    ],
+    "Category": [
+        "Built-In Functions and Operators",
+        "Miscellaneous Functions"
+    ]
+}

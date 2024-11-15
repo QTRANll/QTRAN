@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/16/functions-json.html"
+    ],
+    "Title": [
+        "value . double"
+    ],
+    "Feature": [
+        "value . double() → number"
+    ],
+    "Description": [
+        "Approximate floating-point number converted from a JSON number or string"
+    ],
+    "Examples": [
+        "jsonb_path_query('{\"len\": \"1.9\"}', '$.len.double() * 2') → 3.8"
+    ],
+    "Category": [
+        "JSON Functions and Operators"
+    ]
+}

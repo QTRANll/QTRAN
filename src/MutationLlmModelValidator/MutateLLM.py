@@ -6,9 +6,9 @@
 # @Intro   :
 import json
 import os
-from src.Tools.DatasetConnector.DatabaseConnector import exec_sql_statement
-from src.Tools.OracleChecker.oracle_check import execSQL_result_convertor, Check
-from src.Tools.OracleChecker.Result import Result
+from src.Tools.database_connector import exec_sql_statement
+from src.Tools.oracle_check import execSQL_result_convertor, Check
+from src.Tools.oracle_check import Result
 
 os.environ["http_proxy"] = "http://localhost:7890"
 os.environ["https_proxy"] = "http://localhost:7890"
@@ -229,15 +229,4 @@ def detect_bug(mutate_name):
 
     with open(eval_filenames[mutate_name], "w", encoding="utf-8") as w:
         json.dump(detect_results, w, indent=4)
-
-
-# run_muatate_llm("pinolo",  "FixMCmpOpU")
-# run_muatate_llm("FixMDistinctL")
-# run_muatate_llm("FixMHaving1U")
-# run_muatate_llm("FixMOn1U")
-
-detect_bug("FixMCmpOpU")
-detect_bug("FixMDistinctL")
-detect_bug("FixMHaving1U")
-detect_bug("FixMOn1U")
 

@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/16/functions-string.html"
+    ],
+    "Title": [
+        "overlay"
+    ],
+    "Feature": [
+        "overlay ( string text PLACING newsubstring text FROM start integer [ FOR count integer ] ) → text"
+    ],
+    "Description": [
+        "Replaces the substring of string that starts at the start'th character and extends for count characters with newsubstring. If count is omitted, it defaults to the length of newsubstring."
+    ],
+    "Examples": [
+        "overlay('Txxxxas' placing 'hom' from 2 for 4) → Thomas"
+    ],
+    "Category": [
+        "String Functions and Operators"
+    ]
+}

@@ -1,0 +1,21 @@
+{
+    "HTML": [
+        "https://docs.pingcap.com/zh/tidb/v8.3/window-functions"
+    ],
+    "Title": [
+        "FIRST_VALUE()"
+    ],
+    "Feature": [
+        "FIRST_VALUE()"
+    ],
+    "Description": [
+        "FIRST_VALUE()",
+        "FIRST_VALUE(expr) 返回窗口中的第一个值。"
+    ],
+    "Examples": [
+        "SELECT\n    n,\n    FIRST_VALUE(n) OVER (PARTITION BY n MOD 2 ORDER BY n),\n    FIRST_VALUE(n) OVER (PARTITION BY n <= 2 ORDER BY n)\nFROM (\n    SELECT 1 AS 'n'\n    UNION\n    SELECT 2\n    UNION\n    SELECT 3\n    UNION\n    SELECT 4\n) a\nORDER BY\n    n;\n"
+    ],
+    "Category": [
+        "窗口函数"
+    ]
+}

@@ -1,0 +1,30 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/array-functions"
+    ],
+    "Title": [
+        "arrayShuffle"
+    ],
+    "Feature": [
+        "arrayShuffle(arr[, seed])"
+    ],
+    "Description": [
+        "arrayShuffle",
+        "Returns an array of the same size as the original array containing the elements in shuffled order.\nElements are reordered in such a way that each possible permutation of those elements has equal probability of appearance.",
+        "Syntax",
+        "arrayShuffle(arr[, seed])",
+        "Parameters",
+        "arr: The array to partially shuffle. Array.seed (optional): seed to be used with random number generation. If not provided a random one is used. UInt or Int.",
+        "Returned value",
+        "Array with elements shuffled.",
+        "Implementation details",
+        "NoteThis function will not materialize constants."
+    ],
+    "Examples": [
+        "SELECT arrayShuffle([1, 2, 3, 4]);",
+        "SELECT arrayShuffle([1, 2, 3, 4], 41);"
+    ],
+    "Category": [
+        "Arrays Functions"
+    ]
+}

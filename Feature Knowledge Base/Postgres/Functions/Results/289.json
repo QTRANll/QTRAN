@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/16/functions-array.html"
+    ],
+    "Title": [
+        "array_ndims"
+    ],
+    "Feature": [
+        "array_ndims ( anyarray ) → integer"
+    ],
+    "Description": [
+        "Returns the number of dimensions of the array."
+    ],
+    "Examples": [
+        "array_ndims(ARRAY[[1,2,3], [4,5,6]]) → 2"
+    ],
+    "Category": [
+        "Array Functions and Operators"
+    ]
+}

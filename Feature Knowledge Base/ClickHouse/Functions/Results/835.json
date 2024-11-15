@@ -1,0 +1,28 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/string-functions"
+    ],
+    "Title": [
+        "repeat"
+    ],
+    "Feature": [
+        "repeat(s, n)"
+    ],
+    "Description": [
+        "repeat",
+        "Concatenates a string as many times with itself as specified.",
+        "Syntax",
+        "repeat(s, n)",
+        "Alias: REPEAT",
+        "Arguments",
+        "s \u2014 The string to repeat. String.n \u2014 The number of times to repeat the string. UInt or Int.",
+        "Returned value",
+        "A string containing string s repeated n times. If n <= 0, the function returns the empty string. String."
+    ],
+    "Examples": [
+        "SELECT repeat('abc', 10);"
+    ],
+    "Category": [
+        "Strings Functions"
+    ]
+}

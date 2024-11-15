@@ -1,0 +1,22 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/string-functions"
+    ],
+    "Title": [
+        "startsWithUTF8"
+    ],
+    "Feature": [
+        "startsWithUTF8"
+    ],
+    "Description": [
+        "startsWithUTF8",
+        "Available in version 23.8 and later",
+        "Returns whether string str starts with prefix, the difference between startsWithUTF8 and startsWith is that startsWithUTF8 match str and suffix by UTF-8 characters."
+    ],
+    "Examples": [
+        "SELECT startsWithUTF8('\u4e2d\u56fd', '\\xe4'), startsWith('\u4e2d\u56fd', '\\xe4')"
+    ],
+    "Category": [
+        "Strings Functions"
+    ]
+}

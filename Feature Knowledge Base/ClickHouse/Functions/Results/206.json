@@ -1,0 +1,27 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/date-time-functions"
+    ],
+    "Title": [
+        "toRelativeQuarterNum"
+    ],
+    "Feature": [
+        "toRelativeQuarterNum(date)"
+    ],
+    "Description": [
+        "toRelativeQuarterNum",
+        "Converts a date, or date with time, to the number of quarters elapsed since a certain fixed point in the past.",
+        "Syntax",
+        "toRelativeQuarterNum(date)",
+        "Arguments",
+        "date \u2014 Date or date with time. Date/DateTime/DateTime64.",
+        "Returned value",
+        "The number of quarters from a fixed reference point in the past. UInt32."
+    ],
+    "Examples": [
+        "SELECT  toRelativeQuarterNum(toDate('1993-11-25')) AS q1,  toRelativeQuarterNum(toDate('2005-01-05')) AS q2"
+    ],
+    "Category": [
+        "Dates and Times Functions"
+    ]
+}

@@ -1,0 +1,23 @@
+{
+    "HTML": [
+        "https://docs.pingcap.com/zh/tidb/v8.3/window-functions"
+    ],
+    "Title": [
+        "CUME_DIST()"
+    ],
+    "Feature": [
+        "CUME_DIST()"
+    ],
+    "Description": [
+        "CUME_DIST()",
+        "CUME_DIST() 计算一个值在一组值中的累积分布。请注意，你需要在 CUME_DIST() 后使用 ORDER BY 子句对该组中的值进行排序。否则，此函数将不会返回预期值。",
+        "WITH RECURSIVE cte(n) AS (\n    SELECT 1\n    UNION\n    SELECT\n        n+2\n    FROM\n        cte\n    WHERE\n        n<6\n)\nSELECT\n    *,\n    CUME_DIST() OVER(ORDER BY n)\nFROM\n    cte;\n",
+        "+------+------------------------------+\n| n    | CUME_DIST() OVER(ORDER BY n) |\n+------+------------------------------+\n|    1 |                         0.25 |\n|    3 |                          0.5 |\n|    5 |                         0.75 |\n|    7 |                            1 |\n+------+------------------------------+\n4 rows in set (0.00 sec)\n"
+    ],
+    "Examples": [
+        "WITH RECURSIVE cte(n) AS (\n    SELECT 1\n    UNION\n    SELECT\n        n+2\n    FROM\n        cte\n    WHERE\n        n<6\n)\nSELECT\n    *,\n    CUME_DIST() OVER(ORDER BY n)\nFROM\n    cte;\n"
+    ],
+    "Category": [
+        "窗口函数"
+    ]
+}

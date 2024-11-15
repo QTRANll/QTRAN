@@ -1,0 +1,28 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.0/en/built-in-function-reference.html"
+    ],
+    "Title": [
+        "14.1 Built-In Function and Operator Reference"
+    ],
+    "Name": "COMPRESS()",
+    "Description": [
+        "\nCOMPRESS(string_to_compress)\n",
+        "\n          Compresses a string and returns the result as a binary string.\n          This function requires MySQL to have been compiled with a\n          compression library such as zlib.\n          Otherwise, the return value is always NULL.\n          The return value is also NULL if\n          string_to_compress is\n          NULL. The compressed string can be\n          uncompressed with UNCOMPRESS().\n        ",
+        "Press CTRL+C to copy mysql> SELECT LENGTH(COMPRESS(REPEAT('a',1000)));\n        -> 21\nmysql> SELECT LENGTH(COMPRESS(''));\n        -> 0\nmysql> SELECT LENGTH(COMPRESS('a'));\n        -> 13\nmysql> SELECT LENGTH(COMPRESS(REPEAT('a',16)));\n        -> 15",
+        "\n          The compressed string contents are stored the following way:\n",
+        "\n\n              Empty strings are stored as empty strings.\n            \n              Nonempty strings are stored as a 4-byte length of the\n              uncompressed string (low byte first), followed by the\n              compressed string. If the string ends with space, an extra\n              . character is added to avoid problems\n              with endspace trimming should the result be stored in a\n              CHAR or\n              VARCHAR column. (However,\n              use of nonbinary string data types such as\n              CHAR or\n              VARCHAR to store compressed\n              strings is not recommended anyway because character set\n              conversion may occur. Use a\n              VARBINARY or\n              BLOB binary string column\n              instead.)\n\n",
+        "\n          If COMPRESS() is invoked from\n          within the mysql client, binary strings\n          display using hexadecimal notation, depending on the value of\n          the --binary-as-hex. For more\n          information about that option, see Section\u00a06.5.1, \u201cmysql \u2014 The MySQL Command-Line Client\u201d.\n        "
+    ],
+    "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/encryption-functions.html#function_compress",
+    "Feature": [
+        "COMPRESS(string_to_compress)"
+    ],
+    "Examples": [
+        "mysql> SELECT LENGTH(COMPRESS(REPEAT('a',1000)));\n        -> 21\nmysql> SELECT LENGTH(COMPRESS(''));\n        -> 0\nmysql> SELECT LENGTH(COMPRESS('a'));\n        -> 13\nmysql> SELECT LENGTH(COMPRESS(REPEAT('a',16)));\n        -> 15"
+    ],
+    "Category": [
+        "Built-In Functions and Operators",
+        "Encryption and Compression Functions"
+    ]
+}

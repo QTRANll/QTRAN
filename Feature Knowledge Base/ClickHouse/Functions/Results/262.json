@@ -1,0 +1,27 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/date-time-functions"
+    ],
+    "Title": [
+        "subtractQuarters"
+    ],
+    "Feature": [
+        "subtractQuarters(date, num)"
+    ],
+    "Description": [
+        "subtractQuarters",
+        "Subtracts a specified number of quarters from a date, a date with time or a string-encoded date / date with time.",
+        "Syntax",
+        "subtractQuarters(date, num)",
+        "Parameters",
+        "date: Date / date with time to subtract specified number of quarters from. Date/Date32/DateTime/DateTime64, String.num: Number of quarters to subtract. (U)Int*, Float*.",
+        "Returned value",
+        "Returns date minus num quarters. Date/Date32/DateTime/DateTime64."
+    ],
+    "Examples": [
+        "WITH    toDate('2024-01-01') AS date,    toDateTime('2024-01-01 00:00:00') AS date_time,    '2024-01-01 00:00:00' AS date_time_stringSELECT    subtractQuarters(date, 1) AS subtract_quarters_with_date,    subtractQuarters(date_time, 1) AS subtract_quarters_with_date_time,    subtractQuarters(date_time_string, 1) AS subtract_quarters_with_date_time_string"
+    ],
+    "Category": [
+        "Dates and Times Functions"
+    ]
+}

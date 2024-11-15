@@ -1,0 +1,27 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/string-functions"
+    ],
+    "Title": [
+        "tryBase58Decode"
+    ],
+    "Feature": [
+        "tryBase58Decode(encoded)"
+    ],
+    "Description": [
+        "tryBase58Decode",
+        "Like base58Decode but returns an empty string in case of error.",
+        "Syntax",
+        "tryBase58Decode(encoded)",
+        "Parameters",
+        "encoded: String or FixedString. If the string is not a valid Base58-encoded value, returns an empty string in case of error.",
+        "Returned value",
+        "A string containing the decoded value of the argument."
+    ],
+    "Examples": [
+        "SELECT tryBase58Decode('3dc8KtHrwM') as res, tryBase58Decode('invalid') as res_invalid;"
+    ],
+    "Category": [
+        "Strings Functions"
+    ]
+}

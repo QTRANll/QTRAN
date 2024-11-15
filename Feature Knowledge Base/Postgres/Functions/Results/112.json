@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/16/functions-binarystring.html"
+    ],
+    "Title": [
+        "position"
+    ],
+    "Feature": [
+        "position ( substring bytea IN bytes bytea ) → integer"
+    ],
+    "Description": [
+        "Returns first starting index of the specified substring within bytes, or zero if it's not present."
+    ],
+    "Examples": [
+        "position('\\x5678'::bytea in '\\x1234567890'::bytea) → 3"
+    ],
+    "Category": [
+        "Binary String Functions and Operators"
+    ]
+}

@@ -1,0 +1,27 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/tuple-functions"
+    ],
+    "Title": [
+        "tupleMultiply"
+    ],
+    "Feature": [
+        "tupleMultiply(tuple1, tuple2)"
+    ],
+    "Description": [
+        "tupleMultiply",
+        "Calculates the multiplication of corresponding values of two tuples of the same size.",
+        "Syntax",
+        "tupleMultiply(tuple1, tuple2)",
+        "Arguments",
+        "tuple1 \u2014 First tuple. Tuple.tuple2 \u2014 Second tuple. Tuple.",
+        "Returned value",
+        "Tuple with the multiplication. Tuple."
+    ],
+    "Examples": [
+        "SELECT tupleMultiply((1, 2), (2, 3));"
+    ],
+    "Category": [
+        "Tuples Functions"
+    ]
+}

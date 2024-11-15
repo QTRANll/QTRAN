@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/16/functions-json.html"
+    ],
+    "Title": [
+        "jsonb - integer"
+    ],
+    "Feature": [
+        "jsonb - integer → jsonb"
+    ],
+    "Description": [
+        "Deletes the array element with specified index (negative integers count from the end). Throws an error if JSON value is not an array."
+    ],
+    "Examples": [
+        "'[\"a\", \"b\"]'::jsonb - 1 → [\"a\"]"
+    ],
+    "Category": [
+        "JSON Functions and Operators"
+    ]
+}

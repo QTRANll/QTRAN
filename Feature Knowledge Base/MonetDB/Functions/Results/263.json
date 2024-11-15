@@ -1,0 +1,22 @@
+{
+    "HTML": [
+        "https://www.monetdb.org/documentation-Aug2024/user-guide/sql-functions/aggregate-functions"
+    ],
+    "Title": [
+        "sum(distinct integer_expr)"
+    ],
+    "Feature": [
+        "sum(distinct integer_expr)"
+    ],
+    "Description": [
+        "Return type: ",
+        "bigint or hugeint",
+        "compute the sum of all distinct non-NULL integer values in the column or group"
+    ],
+    "Examples": [
+        "sum(distinct i/2)"
+    ],
+    "Category": [
+        "Aggregate Functions"
+    ]
+}

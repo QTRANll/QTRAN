@@ -1,0 +1,27 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/random-functions"
+    ],
+    "Title": [
+        "randomStringUTF8"
+    ],
+    "Feature": [
+        "randomStringUTF8(length);"
+    ],
+    "Description": [
+        "randomStringUTF8",
+        "Generates a random string of a specified length. Result string contains valid UTF-8 code points. The value of code points may be outside of the range of assigned Unicode.",
+        "Syntax",
+        "randomStringUTF8(length);",
+        "Arguments",
+        "length \u2014 Length of the string in code points. UInt64.",
+        "Returned value(s)",
+        "UTF-8 random string. String."
+    ],
+    "Examples": [
+        "SELECT randomStringUTF8(13)"
+    ],
+    "Category": [
+        "Random Numbers Functions"
+    ]
+}

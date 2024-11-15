@@ -1,0 +1,23 @@
+{
+    "HTML": [
+        "https://docs.pingcap.com/zh/tidb/v8.3/sequence-functions"
+    ],
+    "Title": [
+        "SETVAL()"
+    ],
+    "Feature": [
+        "SETVAL()"
+    ],
+    "Description": [
+        "SETVAL()",
+        "SETVAL(n) 函数设置序列的当前值。"
+    ],
+    "Examples": [
+        "SELECT NEXTVAL(s1);\n",
+        "SELECT SETVAL(s1, 10);\n",
+        "SELECT NEXTVAL(s1);\n"
+    ],
+    "Category": [
+        "序列函数"
+    ]
+}

@@ -1,0 +1,29 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.0/en/built-in-function-reference.html"
+    ],
+    "Title": [
+        "14.1 Built-In Function and Operator Reference"
+    ],
+    "Name": "BIT_XOR()",
+    "Description": [
+        "\nBIT_XOR(expr)\n            [over_clause]\n",
+        "\n            Returns the bitwise XOR of all\n            bits in expr.\n          ",
+        "\n            The result type depends on whether the function argument\n            values are evaluated as binary strings or numbers:\n",
+        "\n\n                Binary-string evaluation occurs when the argument values\n                have a binary string type, and the argument is not a\n                hexadecimal literal, bit literal, or\n                NULL literal. Numeric evaluation\n                occurs otherwise, with argument value conversion to\n                unsigned 64-bit integers as necessary.\n              \n                Binary-string evaluation produces a binary string of the\n                same length as the argument values. If argument values\n                have unequal lengths, an\n                ER_INVALID_BITWISE_OPERANDS_SIZE\n                error occurs. If the argument size exceeds 511 bytes, an\n                ER_INVALID_BITWISE_AGGREGATE_OPERANDS_SIZE\n                error occurs. Numeric evaluation produces an unsigned\n                64-bit integer.\n\n",
+        "\n            If there are no matching rows,\n            BIT_XOR() returns a neutral\n            value (all bits set to 0) having the same length as the\n            argument values.\n          ",
+        "\nNULL values do not affect the result\n            unless all values are NULL. In that case,\n            the result is a neutral value having the same length as the\n            argument values.\n          ",
+        "\n            For more information discussion about argument evaluation\n            and result types, see the introductory discussion in\n            Section\u00a014.12, \u201cBit Functions and Operators\u201d.\n          ",
+        "\n            If BIT_XOR() is invoked from\n            within the mysql client, binary string\n            results display using hexadecimal notation, depending on the\n            value of the --binary-as-hex.\n            For more information about that option, see\n            Section\u00a06.5.1, \u201cmysql \u2014 The MySQL Command-Line Client\u201d.\n          ",
+        "\n            As of MySQL 8.0.12, this function executes as a window\n            function if over_clause is\n            present. over_clause is as\n            described in Section\u00a014.20.2, \u201cWindow Function Concepts and Syntax\u201d.\n          "
+    ],
+    "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/aggregate-functions.html#function_bit-xor",
+    "Feature": [
+        "BIT_XOR(expr)\n            [over_clause]"
+    ],
+    "Examples": [],
+    "Category": [
+        "Built-In Functions and Operators",
+        "Aggregate Functions"
+    ]
+}

@@ -1,0 +1,22 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/values-value/"
+    ],
+    "Title": [
+        "VALUES / VALUE"
+    ],
+    "Feature": [
+        "MariaDB starting with 10.3.3VALUE(col_name) \n",
+        "MariaDB until 10.3.2VALUES(col_name) \n"
+    ],
+    "Description": [
+        "In an INSERT ... ON DUPLICATE KEY UPDATE statement, you can use the VALUES(col_name) function in the  UPDATE clause to refer to column values from the  INSERT portion of the statement. In other words,  VALUES(col_name) in the UPDATE clause refers to the value of col_name that would be inserted, had no duplicate-key conflict occurred. This function is especially useful in multiple-row inserts.",
+        "The VALUES() function is meaningful only in INSERT ... ON DUPLICATE KEY UPDATE statements and returns NULL otherwise.",
+        "In MariaDB 10.3.3 this function was renamed to VALUE(), because it's incompatible with the standard Table Value Constructors syntax, implemented in MariaDB 10.3.3.",
+        "The VALUES() function can still be used even from MariaDB 10.3.3, but only in INSERT ... ON DUPLICATE KEY UPDATE statements; it's a syntax error otherwise."
+    ],
+    "Examples": [],
+    "Category": [
+        "Miscellaneous Functions"
+    ]
+}

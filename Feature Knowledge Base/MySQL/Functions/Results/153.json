@@ -1,0 +1,27 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.0/en/built-in-function-reference.html"
+    ],
+    "Title": [
+        "14.1 Built-In Function and Operator Reference"
+    ],
+    "Name": "ISNULL()",
+    "Description": [
+        "\nISNULL(expr)\n",
+        "\n            If expr is\n            NULL,\n            ISNULL() returns\n            1, otherwise it returns\n            0.\n          ",
+        "Press CTRL+C to copy mysql> SELECT ISNULL(1+1);\n        -> 0\nmysql> SELECT ISNULL(1/0);\n        -> 1",
+        "\nISNULL() can be used instead\n            of = to test\n            whether a value is NULL. (Comparing a\n            value to NULL using\n            = always\n            yields NULL.)\n          ",
+        "\n            The ISNULL() function shares\n            some special behaviors with the\n            IS NULL\n            comparison operator. See the description of\n            IS NULL.\n          "
+    ],
+    "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/comparison-operators.html#function_isnull",
+    "Feature": [
+        "ISNULL(expr)"
+    ],
+    "Examples": [
+        "mysql> SELECT ISNULL(1+1);\n        -> 0\nmysql> SELECT ISNULL(1/0);\n        -> 1"
+    ],
+    "Category": [
+        "Built-In Functions and Operators",
+        "Comparison Functions and Operators"
+    ]
+}

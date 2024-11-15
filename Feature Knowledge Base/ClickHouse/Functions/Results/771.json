@@ -1,0 +1,23 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/string-search-functions"
+    ],
+    "Title": [
+        "multiMatchAnyIndex"
+    ],
+    "Feature": [
+        "multiMatchAnyIndex(haystack, \\[pattern<sub>1</sub>, pattern<sub>2</sub>, ..., pattern<sub>n</sub>\\])"
+    ],
+    "Description": [
+        "multiMatchAnyIndex",
+        "Like multiMatchAny but returns any index that matches the haystack.",
+        "Syntax",
+        "multiMatchAnyIndex(haystack, \\[pattern<sub>1</sub>, pattern<sub>2</sub>, ..., pattern<sub>n</sub>\\])"
+    ],
+    "Examples": [
+        "multiMatchAnyIndex(haystack, \\[pattern<sub>1</sub>, pattern<sub>2</sub>, ..., pattern<sub>n</sub>\\])"
+    ],
+    "Category": [
+        "Searching in Strings Functions"
+    ]
+}

@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/16/functions-range.html"
+    ],
+    "Title": [
+        "anyelement <@ anymultirange"
+    ],
+    "Feature": [
+        "anyelement <@ anymultirange → boolean"
+    ],
+    "Description": [
+        "Is the element contained by the multirange?"
+    ],
+    "Examples": [
+        "4 <@ '{[1,7)}'::int4multirange → t"
+    ],
+    "Category": [
+        "Range divide Multirange Functions and Operators"
+    ]
+}

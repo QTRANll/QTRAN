@@ -1,0 +1,21 @@
+{
+    "HTML": [
+        "https://docs.pingcap.com/zh/tidb/v8.3/json-functions-modify"
+    ],
+    "Title": [
+        "JSON_MERGE_PRESERVE()"
+    ],
+    "Feature": [
+        "JSON_MERGE_PRESERVE()"
+    ],
+    "Description": [
+        "JSON_MERGE_PRESERVE()",
+        "JSON_MERGE_PRESERVE(json_doc, json_doc [,json_doc] ...) 函数通过保留所有键值的方式合并两个或多个 JSON 文档，并返回合并结果。"
+    ],
+    "Examples": [
+        "SELECT JSON_MERGE_PRESERVE('{\"a\": 1, \"b\": 2}','{\"a\": 100}', '{\"c\": 300}');\n"
+    ],
+    "Category": [
+        "修改 JSON 的函数"
+    ]
+}

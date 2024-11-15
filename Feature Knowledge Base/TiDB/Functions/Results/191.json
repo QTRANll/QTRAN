@@ -1,0 +1,22 @@
+{
+    "HTML": [
+        "https://docs.pingcap.com/zh/tidb/v8.3/json-functions-search"
+    ],
+    "Title": [
+        "JSON_KEYS()"
+    ],
+    "Feature": [
+        "JSON_KEYS()"
+    ],
+    "Description": [
+        "JSON_KEYS()",
+        "JSON_KEYS(json_doc [,path]) 函数以 JSON 数组的形式返回 JSON 对象的顶层键 (key)。如果指定了 path 参数，则返回所选路径的顶层键 (key)。"
+    ],
+    "Examples": [
+        "SELECT JSON_KEYS('{\"name\": {\"first\": \"John\", \"last\": \"Doe\"}, \"type\": \"Person\"}');\n",
+        "SELECT JSON_KEYS('{\"name\": {\"first\": \"John\", \"last\": \"Doe\"}, \"type\": \"Person\"}', '$.name');\n"
+    ],
+    "Category": [
+        "搜索 JSON 的函数"
+    ]
+}

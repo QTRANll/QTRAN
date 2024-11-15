@@ -1,0 +1,24 @@
+{
+    "HTML": [
+        "https://docs.pingcap.com/zh/tidb/v8.3/encryption-and-compression-functions"
+    ],
+    "Title": [
+        "SM3()"
+    ],
+    "Feature": [
+        "SM3()"
+    ],
+    "Description": [
+        "SM3()",
+        "注意SM3() 函数是 TiDB 扩展，未在 MySQL 中实现。",
+        "SM3(str) 函数为给定参数 str 计算 256 位 ShangMi 3 (SM3) 哈希值。",
+        "SELECT SM3('abc');\n",
+        "+------------------------------------------------------------------+\n| SM3('abc')                                                       |\n+------------------------------------------------------------------+\n| 66c7f0f462eeedd9d1f2d46bdc10e4e24167c4875cf2f7a2297da02b8f4ba8e0 |\n+------------------------------------------------------------------+\n1 row in set (0.00 sec)\n"
+    ],
+    "Examples": [
+        "SELECT SM3('abc');\n"
+    ],
+    "Category": [
+        "加密和压缩函数"
+    ]
+}

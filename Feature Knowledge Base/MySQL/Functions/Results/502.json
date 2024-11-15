@@ -1,0 +1,22 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.0/en/loadable-function-reference.html"
+    ],
+    "Title": [
+        "14.2 Loadable Function Reference"
+    ],
+    "Name": "service_release_locks()",
+    "Description": [
+        "\nservice_release_locks(namespace)\n",
+        "\n                For the given namespace, releases all locks that were\n                acquired within the current session using\n                service_get_read_locks()\n                and\n                service_get_write_locks().\n              ",
+        "\n                It is not an error for there to be no locks in the\n                namespace.\n"
+    ],
+    "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/locking-service.html#function_service-release-locks",
+    "Feature": [
+        "service_release_locks(namespace)"
+    ],
+    "Examples": [],
+    "Category": [
+        "Loadable Functions"
+    ]
+}

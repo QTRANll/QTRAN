@@ -1,0 +1,23 @@
+{
+    "HTML": [
+        "https://mariadb.com/kb/en/date/"
+    ],
+    "Title": [
+        "DATE"
+    ],
+    "Feature": [
+        "DATE\n"
+    ],
+    "Description": [
+        "A date. The supported range is '1000-01-01' to '9999-12-31'. MariaDB\ndisplays DATE values in 'YYYY-MM-DD' format, but can be assigned dates in looser formats, including strings or numbers, as long as they make sense. These include a short year, YY-MM-DD, no delimiters, YYMMDD, or any other acceptable delimiter, for example YYYY/MM/DD. For details, see date and time literals.",
+        "'0000-00-00' is a permitted special value (zero-date), unless the NO_ZERO_DATE SQL_MODE is used. Also, individual components of a date can be set to 0 (for example: '2015-00-12'), unless the NO_ZERO_IN_DATE SQL_MODE is used. In many cases, the result of en expression involving a zero-date, or a date with zero-parts, is NULL. If the ALLOW_INVALID_DATES SQL_MODE is enabled, if the day part is in the range between 1 and 31, the date does not produce any error, even for months that have less than 31 days.",
+        "Oracle Mode",
+        "In Oracle mode, DATE with a time portion is a synonym for DATETIME. See also mariadb_schema."
+    ],
+    "Examples": [
+        "CREATE TABLE t1 (d DATE);\n\nINSERT INTO t1 VALUES (\"2010-01-12\"), (\"2011-2-28\"), ('120314'),('13*04*21');\n\nSELECT * FROM t1;\n+------------+\n| d          |\n+------------+\n| 2010-01-12 |\n| 2011-02-28 |\n| 2012-03-14 |\n| 2013-04-21 |\n+------------+\n"
+    ],
+    "Category": [
+        "Date and Time Data Types"
+    ]
+}

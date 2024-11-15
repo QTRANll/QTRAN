@@ -6,20 +6,20 @@
 # @Intro   :
 
 from src.DialectRecognition.dialect_feature_recognizer import potential_features_refiner_single_sql, sqlancer_potential_dialect_features_process_and_map
-from src.Tools.DatasetConnector.DatabaseConnector import database_connection_args_sqlancer
+from src.Tools.database_connector import database_connection_args_sqlancer
 # from src.TransferLLM.rag_based_feature_mapping import rag_feature_mapping_llm, rag_feature_mapping_count, rag_feature_mapping_process
 from src.TransferLLM_with_Feature_Knowledge.TransferLLM import transfer_llm
-from src.Tools.DatasetConnector.DatabaseConnector import database_clear_sqlancer
+from src.Tools.database_connector import database_clear_sqlancer
 from datetime import datetime
 from src.MutationLlmModelValidator.MutateLLM import run_muatate_llm_single_sql
-from src.Tools.OracleChecker.oracle_check import execSQL_result_convertor, Result, Check
+from src.Tools.oracle_check import execSQL_result_convertor, Result, Check
 import os
 import json
 from openai import OpenAI
 from langchain.chat_models import ChatOpenAI
 from langchain.chains import ConversationChain
 from langchain.memory import ConversationBufferMemory
-from src.Tools.DatasetConnector.DatabaseConnector import exec_sql_statement
+from src.Tools.database_connector import exec_sql_statement
 
 
 sqlancer_norec_mutate_id = os.environ['SQLANCER_MUTATE_MODEL_NOREC']

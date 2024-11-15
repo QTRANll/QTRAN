@@ -1,0 +1,28 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/string-functions"
+    ],
+    "Title": [
+        "empty"
+    ],
+    "Feature": [
+        "empty(x)"
+    ],
+    "Description": [
+        "empty",
+        "Checks whether the input string is empty. A string is considered non-empty if it contains at least one byte, even if this byte is a space or the null byte.",
+        "The function is also available for arrays and UUIDs.",
+        "Syntax",
+        "empty(x)",
+        "Arguments",
+        "x \u2014 Input value. String.",
+        "Returned value",
+        "Returns 1 for an empty string or 0 for a non-empty string. UInt8."
+    ],
+    "Examples": [
+        "SELECT empty('');"
+    ],
+    "Category": [
+        "Strings Functions"
+    ]
+}

@@ -1,0 +1,25 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.0/en/built-in-function-reference.html"
+    ],
+    "Title": [
+        "14.1 Built-In Function and Operator Reference"
+    ],
+    "Name": "MINUTE()",
+    "Description": [
+        "\nMINUTE(time)\n",
+        "\n          Returns the minute for time, in the\n          range 0 to 59, or\n          NULL if time is\n          NULL.\n        ",
+        "Press CTRL+C to copy mysql> SELECT MINUTE('2008-02-03 10:05:03');\n        -> 5"
+    ],
+    "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html#function_minute",
+    "Feature": [
+        "MINUTE(time)"
+    ],
+    "Examples": [
+        "mysql> SELECT MINUTE('2008-02-03 10:05:03');\n        -> 5"
+    ],
+    "Category": [
+        "Built-In Functions and Operators",
+        "Date and Time Functions"
+    ]
+}

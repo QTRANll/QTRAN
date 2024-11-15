@@ -1,0 +1,29 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/date-time-functions"
+    ],
+    "Title": [
+        "fromDaysSinceYearZero"
+    ],
+    "Feature": [
+        "fromDaysSinceYearZero(days)"
+    ],
+    "Description": [
+        "fromDaysSinceYearZero",
+        "Returns for a given number of days passed since 1 January 0000 the corresponding date in the proleptic Gregorian calendar defined by ISO 8601. The calculation is the same as in MySQL's FROM_DAYS() function.",
+        "The result is undefined if it cannot be represented within the bounds of the Date type.",
+        "Syntax",
+        "fromDaysSinceYearZero(days)",
+        "Alias: FROM_DAYS",
+        "Arguments",
+        "days \u2014 The number of days passed since year zero.",
+        "Returned value",
+        "The date corresponding to the number of days passed since year zero. Date."
+    ],
+    "Examples": [
+        "SELECT fromDaysSinceYearZero(739136), fromDaysSinceYearZero(toDaysSinceYearZero(toDate('2023-09-08')));"
+    ],
+    "Category": [
+        "Dates and Times Functions"
+    ]
+}

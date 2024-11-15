@@ -1,0 +1,49 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/type-conversion-functions"
+    ],
+    "Title": [
+        "toDate"
+    ],
+    "Feature": [
+        "toDate"
+    ],
+    "Description": [
+        "toDate",
+        "Converts the argument to Date data type.",
+        "If the argument is DateTime or DateTime64, it truncates it and leaves the date component of the DateTime:",
+        "SELECT    now() AS x,    toDate(x)",
+        "\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500x\u2500\u252c\u2500toDate(now())\u2500\u2510\u2502 2022-12-30 13:44:17 \u2502    2022-12-30 \u2502\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518",
+        "If the argument is a String, it is parsed as Date or DateTime. If it was parsed as DateTime, the date component is being used:",
+        "SELECT    toDate('2022-12-30') AS x,    toTypeName(x)",
+        "\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500x\u2500\u252c\u2500toTypeName(toDate('2022-12-30'))\u2500\u2510\u2502 2022-12-30 \u2502 Date                             \u2502\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u25181 row in set. Elapsed: 0.001 sec.",
+        "SELECT    toDate('2022-12-30 01:02:03') AS x,    toTypeName(x)",
+        "\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500x\u2500\u252c\u2500toTypeName(toDate('2022-12-30 01:02:03'))\u2500\u2510\u2502 2022-12-30 \u2502 Date                                      \u2502\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518",
+        "If the argument is a number and looks like a UNIX timestamp (is greater than 65535), it is interpreted as a DateTime, then truncated to Date in the current timezone. The timezone argument can be specified as a second argument of the function. The truncation to Date depends on the timezone:",
+        "SELECT    now() AS current_time,    toUnixTimestamp(current_time) AS ts,    toDateTime(ts) AS time_Amsterdam,    toDateTime(ts, 'Pacific/Apia') AS time_Samoa,    toDate(time_Amsterdam) AS date_Amsterdam,    toDate(time_Samoa) AS date_Samoa,    toDate(ts) AS date_Amsterdam_2,    toDate(ts, 'Pacific/Apia') AS date_Samoa_2",
+        "Row 1:\u2500\u2500\u2500\u2500\u2500\u2500current_time:     2022-12-30 13:51:54ts:               1672404714time_Amsterdam:   2022-12-30 13:51:54time_Samoa:       2022-12-31 01:51:54date_Amsterdam:   2022-12-30date_Samoa:       2022-12-31date_Amsterdam_2: 2022-12-30date_Samoa_2:     2022-12-31",
+        "The example above demonstrates how the same UNIX timestamp can be interpreted as different dates in different time zones.",
+        "If the argument is a number and it is smaller than 65536, it is interpreted as the number of days since 1970-01-01 (the first UNIX day) and converted to Date. It corresponds to the internal numeric representation of the Date data type. Example:",
+        "SELECT toDate(12345)",
+        "\u250c\u2500toDate(12345)\u2500\u2510\u2502    2003-10-20 \u2502\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518",
+        "This conversion does not depend on timezones.",
+        "If the argument does not fit in the range of the Date type, it results in an implementation-defined behavior, that can saturate to the maximum supported date or overflow:",
+        "SELECT toDate(10000000000.)",
+        "\u250c\u2500toDate(10000000000.)\u2500\u2510\u2502           2106-02-07 \u2502\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518",
+        "The function toDate can be also written in alternative forms:",
+        "SELECT    now() AS time,    toDate(time),    DATE(time),    CAST(time, 'Date')",
+        "\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500time\u2500\u252c\u2500toDate(now())\u2500\u252c\u2500DATE(now())\u2500\u252c\u2500CAST(now(), 'Date')\u2500\u2510\u2502 2022-12-30 13:54:58 \u2502    2022-12-30 \u2502  2022-12-30 \u2502          2022-12-30 \u2502\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518"
+    ],
+    "Examples": [
+        "SELECT    now() AS x,    toDate(x)",
+        "SELECT    toDate('2022-12-30') AS x,    toTypeName(x)",
+        "SELECT    toDate('2022-12-30 01:02:03') AS x,    toTypeName(x)",
+        "SELECT    now() AS current_time,    toUnixTimestamp(current_time) AS ts,    toDateTime(ts) AS time_Amsterdam,    toDateTime(ts, 'Pacific/Apia') AS time_Samoa,    toDate(time_Amsterdam) AS date_Amsterdam,    toDate(time_Samoa) AS date_Samoa,    toDate(ts) AS date_Amsterdam_2,    toDate(ts, 'Pacific/Apia') AS date_Samoa_2",
+        "SELECT toDate(12345)",
+        "SELECT toDate(10000000000.)",
+        "SELECT    now() AS time,    toDate(time),    DATE(time),    CAST(time, 'Date')"
+    ],
+    "Category": [
+        "Type Conversion Functions"
+    ]
+}

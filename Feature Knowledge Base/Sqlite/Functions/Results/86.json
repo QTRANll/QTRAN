@@ -1,0 +1,41 @@
+{
+    "HTML": [
+        "https://sqlite.org/json1.html"
+    ],
+    "Title": [
+        "4.23. The json_each() and json_tree() table-valued functions"
+    ],
+    "Feature": [
+        "4.23. The json_each() and json_tree() table-valued functions"
+    ],
+    "Description": [
+        "4.23. The json_each() and json_tree() table-valued functions",
+        "The json_each(X) and json_tree(X) table-valued functions walk the\nJSON value provided as their first argument and return one row for each\nelement.  The json_each(X) function only walks the immediate children\nof the top-level array or object,\nor just the top-level element itself if the top-level\nelement is a primitive value.\nThe json_tree(X) function recursively walks through the\nJSON substructure starting with the top-level element.  \n\n",
+        "The json_each(X,P) and json_tree(X,P) functions work just like\ntheir one-argument counterparts except that they treat the element\nidentified by path P as the top-level element.\n\n",
+        "The schema for the table returned by json_each() and json_tree() is\nas follows:\n\n",
+        "CREATE TABLE json_tree(\n    key ANY,             -- key for current element relative to its parent\n    value ANY,           -- value for the current element\n    type TEXT,           -- 'object','array','string','integer', etc.\n    atom ANY,            -- value for primitive types, null for array & object\n    id INTEGER,          -- integer ID for this element\n    parent INTEGER,      -- integer ID for the parent of this element\n    fullkey TEXT,        -- full path describing the current element\n    path TEXT,           -- path to the container of the current row\n    json JSON HIDDEN,    -- 1st input parameter: the raw JSON\n    root TEXT HIDDEN     -- 2nd input parameter: the PATH at which to start\n);\n",
+        "\nThe \"key\" column is the integer array index for elements of a JSON array \nand the text label for elements of a JSON object.  The key column is\nNULL in all other cases.\n\n",
+        "\nThe \"atom\" column is the SQL value corresponding to primitive elements - \nelements other than JSON arrays and objects.  The \"atom\" column is NULL\nfor a JSON array or object.  The \"value\" column is the same as the\n\"atom\" column for primitive JSON elements but takes on the text JSON value\nfor arrays and objects.\n\n",
+        "\nThe \"type\" column is an SQL text value taken from ('null', 'true', 'false',\n'integer', 'real', 'text', 'array', 'object') according to the type of\nthe current JSON element.\n\n",
+        "\nThe \"id\" column is an integer that identifies a specific JSON element\nwithin the complete JSON string.  The \"id\" integer is an internal housekeeping\nnumber, the computation of which might change in future releases.  The\nonly guarantee is that the \"id\" column will be different for every row.\n\n",
+        "\nThe \"parent\" column is always NULL for json_each().\nFor json_tree(),\nthe \"parent\" column is the \"id\" integer for the parent of the current\nelement, or NULL for the top-level JSON element or the element identified\nby the root path in the second argument.\n\n",
+        "\nThe \"fullkey\" column is a text path that uniquely identifies the current\nrow element within the original JSON string.  The complete key to the\ntrue top-level element is returned even if an alternative starting point\nis provided by the \"root\" argument.\n\n",
+        "\nThe \"path\" column is the path to the array or object container that holds \nthe current row, or the path to the current row in the case where the \niteration starts on a primitive type and thus only provides a single\nrow of output.\n\n",
+        "4.23.1. Examples using json_each() and json_tree()",
+        "Suppose the table \"CREATE TABLE user(name,phone)\" stores zero or\nmore phone numbers as a JSON array object in the user.phone field.\nTo find all users who have any phone number with a 704 area code:\n\n",
+        "SELECT DISTINCT user.name\n  FROM user, json_each(user.phone)\n WHERE json_each.value LIKE '704-%';\n",
+        "Now suppose the user.phone field contains plain text if the user\nhas only a single phone number and a JSON array if the user has multiple\nphone numbers.  The same question is posed: \"Which users have a phone number\nin the 704 area code?\"  But now the json_each() function can only be called\nfor those users that have two or more phone numbers since json_each()\nrequires well-formed JSON as its first argument:\n\n",
+        "SELECT name FROM user WHERE phone LIKE '704-%'\nUNION\nSELECT user.name\n  FROM user, json_each(user.phone)\n WHERE json_valid(user.phone)\n   AND json_each.value LIKE '704-%';\n",
+        "Consider a different database with \"CREATE TABLE big(json JSON)\".\nTo see a complete line-by-line decomposition of the data:\n\n",
+        "SELECT big.rowid, fullkey, value\n  FROM big, json_tree(big.json)\n WHERE json_tree.type NOT IN ('object','array');\n",
+        "In the previous, the \"type NOT IN ('object','array')\" term of the\nWHERE clause suppresses containers and only lets through leaf elements.\nThe same effect could be achieved this way:\n\n",
+        "SELECT big.rowid, fullkey, atom\n  FROM big, json_tree(big.json)\n WHERE atom IS NOT NULL;\n",
+        "Suppose each entry in the BIG table is a JSON object \nwith a '$.id' field that is a unique identifier\nand a '$.partlist' field that can be a deeply nested object.\nYou want to find the id of every entry that contains one\nor more references to uuid '6fa5181e-5721-11e5-a04e-57f3d7b32808' anywhere\nin its '$.partlist'.\n\n",
+        "SELECT DISTINCT json_extract(big.json,'$.id')\n  FROM big, json_tree(big.json, '$.partlist')\n WHERE json_tree.key='uuid'\n   AND json_tree.value='6fa5181e-5721-11e5-a04e-57f3d7b32808';\n",
+        "This page last modified on  2024-09-18 15:57:24 UTC "
+    ],
+    "Examples": [],
+    "Category": [
+        "JSON Functions"
+    ]
+}

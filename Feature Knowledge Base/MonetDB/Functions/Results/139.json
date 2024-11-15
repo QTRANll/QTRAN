@@ -1,0 +1,22 @@
+{
+    "HTML": [
+        "https://www.monetdb.org/documentation-Aug2024/user-guide/sql-functions/string-functions"
+    ],
+    "Title": [
+        "levenshtein(s1, s2, int insdel, int rep)"
+    ],
+    "Feature": [
+        "levenshtein(s1, s2, int insdel, int rep)"
+    ],
+    "Description": [
+        "Return type: ",
+        "int",
+        "Compute the 'Levenshtein distance' between two strings returning the minimum number of single-character edits (insertions/deletions or substitutions) required to change one word into the other. Variable costs of insertions/deletions or substitutions, with insdel and rep respectively."
+    ],
+    "Examples": [
+        "levenshtein('MonetDB', 'DB3', 4, 2)"
+    ],
+    "Category": [
+        "Character String Functions"
+    ]
+}

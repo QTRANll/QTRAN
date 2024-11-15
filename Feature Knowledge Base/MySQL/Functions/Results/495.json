@@ -1,0 +1,26 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.0/en/loadable-function-reference.html"
+    ],
+    "Title": [
+        "14.2 Loadable Function Reference"
+    ],
+    "Name": "normalize_statement()",
+    "Description": [
+        "\nnormalize_statement(stmt)\n",
+        "\n              This function normalizes an SQL statement into the digest\n              form used for allowlist rules. It requires the\n              FIREWALL_ADMIN privilege or\n              the deprecated SUPER\n              privilege.\n            ",
+        "\n              Example:\n            ",
+        "Press CTRL+C to copy SELECT normalize_statement('SELECT * FROM t1 WHERE c1 > 2');",
+        "\n\nNote\n\n\n                The same digest functionality is available outside\n                firewall context using the\n                STATEMENT_DIGEST_TEXT()\n                SQL function.\n\n"
+    ],
+    "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/firewall-reference.html#function_normalize-statement",
+    "Feature": [
+        "normalize_statement(stmt)"
+    ],
+    "Examples": [
+        "SELECT normalize_statement('SELECT * FROM t1 WHERE c1 > 2');"
+    ],
+    "Category": [
+        "Loadable Functions"
+    ]
+}

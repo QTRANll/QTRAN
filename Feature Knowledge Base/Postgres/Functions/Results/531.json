@@ -1,0 +1,19 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/16/functions-admin.html"
+    ],
+    "Title": [
+        "pg_wal_replay_resume"
+    ],
+    "Feature": [
+        "pg_wal_replay_resume () → void"
+    ],
+    "Description": [
+        "Restarts recovery if it was paused.",
+        "This function is restricted to superusers by default, but other users can be granted EXECUTE to run the function."
+    ],
+    "Examples": [],
+    "Category": [
+        "System Administration Functions"
+    ]
+}

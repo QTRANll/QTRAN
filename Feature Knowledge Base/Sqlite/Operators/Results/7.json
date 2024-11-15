@@ -1,0 +1,23 @@
+{
+    "HTML": [
+        "https://sqlite.org/lang_expr.html"
+    ],
+    "Title": [
+        "SQL Language Expressions"
+    ],
+    "Feature": [
+        "COLLATE"
+    ],
+    "Description": [
+        "The COLLATE operator specifies a collation sequence for the comparison of two TEXT expressions. The collation sequence determines how string values are compared and sorted.",
+        "Parameters: A TEXT expression and a collation sequence name.",
+        "Returns: The result of comparing the TEXT expression using the specified collation sequence."
+    ],
+    "Examples": [
+        "SELECT name FROM employees ORDER BY name COLLATE NOCASE; -- Orders names case-insensitively",
+        "SELECT * FROM products WHERE product_name COLLATE RTRIM = 'Widget'; -- Compares product names with trimming"
+    ],
+    "Category": [
+        "Operators"
+    ]
+}

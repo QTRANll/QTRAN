@@ -1,0 +1,28 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/hash-functions"
+    ],
+    "Title": [
+        "wordShingleSimHashUTF8"
+    ],
+    "Feature": [
+        "wordShingleSimHashUTF8(string[, shinglesize])"
+    ],
+    "Description": [
+        "wordShingleSimHashUTF8",
+        "Splits a UTF-8 string into parts (shingles) of shinglesize words and returns the word shingle simhash. Is case sensitive.",
+        "Can be used for detection of semi-duplicate strings with bitHammingDistance. The smaller is the Hamming Distance of the calculated simhashes of two strings, the more likely these strings are the same.",
+        "Syntax",
+        "wordShingleSimHashUTF8(string[, shinglesize])",
+        "Arguments",
+        "string \u2014 String. String.shinglesize \u2014 The size of a word shingle. Optional. Possible values: any number from 1 to 25. Default value: 3. UInt8.",
+        "Returned value",
+        "Hash value. UInt64."
+    ],
+    "Examples": [
+        "SELECT wordShingleSimHashUTF8('ClickHouse\u00ae is a column-oriented database management system (DBMS) for online analytical processing of queries (OLAP).') AS Hash;"
+    ],
+    "Category": [
+        "Hash Functions"
+    ]
+}

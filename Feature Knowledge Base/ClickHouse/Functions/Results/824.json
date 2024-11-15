@@ -1,0 +1,27 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/string-functions"
+    ],
+    "Title": [
+        "leftPadUTF8"
+    ],
+    "Feature": [
+        "leftPadUTF8(string, length[, pad_string])"
+    ],
+    "Description": [
+        "leftPadUTF8",
+        "Pads the string from the left with spaces or a specified string (multiple times, if needed) until the resulting string reaches the given length. Unlike leftPad which measures the string length in bytes, the string length is measured in code points.",
+        "Syntax",
+        "leftPadUTF8(string, length[, pad_string])",
+        "Arguments",
+        "string \u2014 Input string that should be padded. String.length \u2014 The length of the resulting string. UInt or Int. If the value is smaller than the input string length, then the input string is shortened to length characters.pad_string \u2014 The string to pad the input string with. String. Optional. If not specified, then the input string is padded with spaces.",
+        "Returned value",
+        "A left-padded string of the given length. String."
+    ],
+    "Examples": [
+        "SELECT leftPadUTF8('\u0430\u0431\u0432\u0433', 7, '*'), leftPadUTF8('\u0434\u0435\u0436\u0437', 7);"
+    ],
+    "Category": [
+        "Strings Functions"
+    ]
+}

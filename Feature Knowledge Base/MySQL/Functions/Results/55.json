@@ -1,0 +1,29 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.0/en/built-in-function-reference.html"
+    ],
+    "Title": [
+        "14.1 Built-In Function and Operator Reference"
+    ],
+    "Name": "CURRENT_ROLE()",
+    "Description": [
+        "\nCURRENT_ROLE()\n",
+        "\n          Returns a utf8mb3 string containing the\n          current active roles for the current session, separated by\n          commas, or NONE if there are none. The\n          value reflects the setting of the\n          sql_quote_show_create system\n          variable.\n        ",
+        "\n          Suppose that an account is granted roles as follows:\n        ",
+        "Press CTRL+C to copy GRANT 'r1', 'r2' TO 'u1'@'localhost';\nSET DEFAULT ROLE ALL TO 'u1'@'localhost';",
+        "\n          In sessions for u1, the initial\n          CURRENT_ROLE() value names the\n          default account roles. Using SET\n          ROLE changes that:\n        ",
+        "Press CTRL+C to copy mysql> SELECT CURRENT_ROLE();\n+-------------------+\n| CURRENT_ROLE()    |\n+-------------------+\n| `r1`@`%`,`r2`@`%` |\n+-------------------+\nmysql> SET ROLE 'r1'; SELECT CURRENT_ROLE();\n+----------------+\n| CURRENT_ROLE() |\n+----------------+\n| `r1`@`%`       |\n+----------------+"
+    ],
+    "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/information-functions.html#function_current-role",
+    "Feature": [
+        "CURRENT_ROLE()"
+    ],
+    "Examples": [
+        "GRANT 'r1', 'r2' TO 'u1'@'localhost';\nSET DEFAULT ROLE ALL TO 'u1'@'localhost';",
+        "mysql> SELECT CURRENT_ROLE();\n+-------------------+\n| CURRENT_ROLE()    |\n+-------------------+\n| `r1`@`%`,`r2`@`%` |\n+-------------------+\nmysql> SET ROLE 'r1'; SELECT CURRENT_ROLE();\n+----------------+\n| CURRENT_ROLE() |\n+----------------+\n| `r1`@`%`       |\n+----------------+"
+    ],
+    "Category": [
+        "Built-In Functions and Operators",
+        "Information Functions"
+    ]
+}

@@ -1,0 +1,26 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/date_format/"
+    ],
+    "Title": [
+        "DATE_FORMAT"
+    ],
+    "Feature": [
+        "DATE_FORMAT(date, format[, locale])\n"
+    ],
+    "Description": [
+        "Formats the date value according to the format string. ",
+        "The language used for the names is controlled by the value of the lc_time_names system variable. See server locale for more on the supported locales.",
+        "The options that can be used by DATE_FORMAT(), as well as its inverse STR_TO_DATE() and the FROM_UNIXTIME() function, are:",
+        "OptionDescription\n%aShort weekday name in current locale (Variable lc_time_names).\n%bShort form month name in current locale. For locale en_US this is one of: Jan,Feb,Mar,Apr,May,Jun,Jul,Aug,Sep,Oct,Nov or Dec.\n%cMonth with 1 or 2 digits.\n%DDay with English suffix 'th', 'nd', 'st' or 'rd''. (1st, 2nd, 3rd...).\n%dDay with 2 digits.\n%eDay with 1 or 2 digits.\n%fMicroseconds 6 digits.\n%HHour with 2 digits between 00-23.\n%hHour with 2 digits between 01-12.\n%IHour with 2 digits between 01-12.\n%iMinute with 2 digits.\n%jDay of the year (001-366)\n%kHour with 1 digits between 0-23.\n%lHour with 1 digits between 1-12.\n%MFull month name in current locale (Variable lc_time_names).\n%mMonth with 2 digits.\n%pAM/PM according to current locale (Variable lc_time_names).\n%rTime in 12 hour format, followed by AM/PM. Short for '%I:%i:%S %p'.\n%SSeconds with 2 digits.\n%sSeconds with 2 digits.\n%TTime in 24 hour format. Short for '%H:%i:%S'.\n%UWeek number (00-53), when first day of the week is Sunday.\n%uWeek number (00-53), when first day of the week is Monday.\n%VWeek number (01-53), when first day of the week is Sunday. Used with %X.\n%vWeek number (01-53), when first day of the week is Monday. Used with %x.\n%WFull weekday name in current locale (Variable lc_time_names).\n%wDay of the week. 0 = Sunday, 6 = Saturday.\n%XYear with 4 digits when first day of the week is Sunday. Used with %V.\n%xYear with 4 digits when first day of the week is Monday. Used with %v.\n%YYear with 4 digits.\n%yYear with 2 digits.\n%ZTimezone abbreviation. From MariaDB 11.3.0.\n%zNumeric timezone +hhmm or -hhmm presenting the hour and minute offset from UTC. From MariaDB 11.3.0.\n%#For str_to_date(), skip all numbers.\n%.For str_to_date(), skip all punctation characters.\n%@For str_to_date(), skip all alpha characters.\n%%A literal % character.\n\n",
+        "To get a date in one of the standard formats, GET_FORMAT() can be used."
+    ],
+    "Examples": [
+        "SELECT DATE_FORMAT('2009-10-04 22:23:00', '%W %M %Y');\n+------------------------------------------------+\n| DATE_FORMAT('2009-10-04 22:23:00', '%W %M %Y') |\n+------------------------------------------------+\n| Sunday October 2009                            |\n+------------------------------------------------+\n\nSELECT DATE_FORMAT('2007-10-04 22:23:00', '%H:%i:%s');\n+------------------------------------------------+\n| DATE_FORMAT('2007-10-04 22:23:00', '%H:%i:%s') |\n+------------------------------------------------+\n| 22:23:00                                       |\n+------------------------------------------------+\n\nSELECT DATE_FORMAT('1900-10-04 22:23:00', '%D %y %a %d %m %b %j');\n+------------------------------------------------------------+\n| DATE_FORMAT('1900-10-04 22:23:00', '%D %y %a %d %m %b %j') |\n+------------------------------------------------------------+\n| 4th 00 Thu 04 10 Oct 277                                   |\n+------------------------------------------------------------+\n\nSELECT DATE_FORMAT('1997-10-04 22:23:00', '%H %k %I %r %T %S %w');\n+------------------------------------------------------------+\n| DATE_FORMAT('1997-10-04 22:23:00', '%H %k %I %r %T %S %w') |\n+------------------------------------------------------------+\n| 22 22 10 10:23:00 PM 22:23:00 00 6                         |\n+------------------------------------------------------------+\n\nSELECT DATE_FORMAT('1999-01-01', '%X %V');\n+------------------------------------+\n| DATE_FORMAT('1999-01-01', '%X %V') |\n+------------------------------------+\n| 1998 52                            |\n+------------------------------------+\n\nSELECT DATE_FORMAT('2006-06-00', '%d');\n+---------------------------------+\n| DATE_FORMAT('2006-06-00', '%d') |\n+---------------------------------+\n| 00                              |\n+---------------------------------+\n",
+        "SELECT DATE_FORMAT('2006-01-01', '%W', 'el_GR');\n+------------------------------------------+\n| DATE_FORMAT('2006-01-01', '%W', 'el_GR') |\n+------------------------------------------+\n| \u039a\u03c5\u03c1\u03b9\u03b1\u03ba\u03ae                                  |\n+------------------------------------------+\n",
+        "SELECT DATE_FORMAT(NOW(), '%W %d %M %Y %H:%i:%s %Z %z');\n+--------------------------------------------------+\n| DATE_FORMAT(NOW(), '%W %d %M %Y %H:%i:%s %Z %z') |\n+--------------------------------------------------+\n| Wednesday 20 September 2023 15:00:23 SAST +0200  |\n+--------------------------------------------------+\n"
+    ],
+    "Category": [
+        "Date & Time Functions"
+    ]
+}

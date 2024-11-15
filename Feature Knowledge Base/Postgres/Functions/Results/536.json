@@ -1,0 +1,18 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/16/functions-admin.html"
+    ],
+    "Title": [
+        "pg_create_logical_replication_slot"
+    ],
+    "Feature": [
+        "pg_create_logical_replication_slot ( slot_name name, plugin name [, temporary boolean, twophase boolean ] ) → record ( slot_name name, lsn pg_lsn )"
+    ],
+    "Description": [
+        "Creates a new logical (decoding) replication slot named slot_name using the output plugin plugin. The optional third parameter, temporary, when set to true, specifies that the slot should not be permanently stored to disk and is only meant for use by the current session. Temporary slots are also released upon any error. The optional fourth parameter, twophase, when set to true, specifies that the decoding of prepared transactions is enabled for this slot. A call to this function has the same effect as the replication protocol command CREATE_REPLICATION_SLOT ... LOGICAL."
+    ],
+    "Examples": [],
+    "Category": [
+        "System Administration Functions"
+    ]
+}

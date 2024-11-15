@@ -1,0 +1,25 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/bitmap-functions"
+    ],
+    "Title": [
+        "bitmapAndnot"
+    ],
+    "Feature": [
+        "bitmapAndnot(bitmap,bitmap)"
+    ],
+    "Description": [
+        "bitmapAndnot",
+        "Computes the logical conjunction of two bitmaps and negates the result.",
+        "Syntax",
+        "bitmapAndnot(bitmap,bitmap)",
+        "Arguments",
+        "bitmap \u2013 Bitmap object."
+    ],
+    "Examples": [
+        "SELECT bitmapToArray(bitmapAndnot(bitmapBuild([1,2,3]),bitmapBuild([3,4,5]))) AS res;"
+    ],
+    "Category": [
+        "Bitmap Functions"
+    ]
+}

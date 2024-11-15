@@ -1,0 +1,22 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.0/en/built-in-function-reference.html"
+    ],
+    "Title": [
+        "14.1 Built-In Function and Operator Reference"
+    ],
+    "Name": "Polygon()",
+    "Description": [
+        "\nPolygon(ls [,\n          ls] ...)\n",
+        "\n          Constructs a Polygon value from a number of\n          LineString or WKB\n          LineString arguments. If any argument does\n          not represent a LinearRing (that is, not a\n          closed and simple LineString), the return\n          value is NULL.\n"
+    ],
+    "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/gis-mysql-specific-functions.html#function_polygon",
+    "Feature": [
+        "Polygon(ls [,\n          ls] ...)"
+    ],
+    "Examples": [],
+    "Category": [
+        "Built-In Functions and Operators",
+        "Spatial Analysis Functions"
+    ]
+}

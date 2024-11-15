@@ -1,0 +1,23 @@
+{
+    "HTML": [
+        "https://docs.pingcap.com/zh/tidb/v8.3/json-functions-search"
+    ],
+    "Title": [
+        "JSON_SEARCH()"
+    ],
+    "Feature": [
+        "JSON_SEARCH()"
+    ],
+    "Description": [
+        "JSON_SEARCH()",
+        "JSON_SEARCH(json_doc,one_or_all,str) 函数会在 JSON 文档中搜索与字符串匹配的一个或所有的匹配项。"
+    ],
+    "Examples": [
+        "SELECT JSON_SEARCH('{\"a\": [\"aa\", \"bb\", \"cc\"], \"b\": [\"cc\", \"dd\"]}','one','cc');\n",
+        "SELECT JSON_SEARCH('{\"a\": [\"aa\", \"bb\", \"cc\"], \"b\": [\"cc\", \"dd\"]}','all','cc');\n",
+        "SELECT '🍍' MEMBER OF ('[\"🍍\",\"🥥\",\"🥭\"]') AS 'Contains pineapple';\n"
+    ],
+    "Category": [
+        "搜索 JSON 的函数"
+    ]
+}

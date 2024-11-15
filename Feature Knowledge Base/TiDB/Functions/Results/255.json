@@ -1,0 +1,24 @@
+{
+    "HTML": [
+        "https://docs.pingcap.com/zh/tidb/v8.3/miscellaneous-functions"
+    ],
+    "Title": [
+        "VALUES()"
+    ],
+    "Feature": [
+        "VALUES()"
+    ],
+    "Description": [
+        "VALUES()",
+        "VALUES(col_name) 函数用于在 INSERT 语句的 ON DUPLICATE KEY UPDATE 子句中引用特定列的值。",
+        "CREATE TABLE t1 (id INT PRIMARY KEY, c1 INT);\nQuery OK, 0 rows affected (0.17 sec)\n\nINSERT INTO t1 VALUES (1,51),(2,52),(3,53),(4,54),(5,55);\nQuery OK, 5 rows affected (0.01 sec)\nRecords: 5  Duplicates: 0  Warnings: 0\n\nINSERT INTO t1 VALUES(2,22),(4,44) ON DUPLICATE KEY UPDATE c1=VALUES(id)+100;\nQuery OK, 4 rows affected (0.01 sec)\nRecords: 2  Duplicates: 2  Warnings: 0\n\nTABLE t1;\n+----+------+\n| id | c1   |\n+----+------+\n|  1 |   51 |\n|  2 |  102 |\n|  3 |   53 |\n|  4 |  104 |\n|  5 |   55 |\n+----+------+\n5 rows in set (0.00 sec)\n",
+        "不支持的函数",
+        "函数名功能描述UUID_SHORT()基于特定假设提供唯一的 UUID，目前这些假设在 TiDB 中不存在，详见 TiDB #4620"
+    ],
+    "Examples": [
+        "CREATE TABLE t1 (id INT PRIMARY KEY, c1 INT);\nQuery OK, 0 rows affected (0.17 sec)\n\nINSERT INTO t1 VALUES (1,51),(2,52),(3,53),(4,54),(5,55);\nQuery OK, 5 rows affected (0.01 sec)\nRecords: 5  Duplicates: 0  Warnings: 0\n\nINSERT INTO t1 VALUES(2,22),(4,44) ON DUPLICATE KEY UPDATE c1=VALUES(id)+100;\nQuery OK, 4 rows affected (0.01 sec)\nRecords: 2  Duplicates: 2  Warnings: 0\n\nTABLE t1;\n+----+------+\n| id | c1   |\n+----+------+\n|  1 |   51 |\n|  2 |  102 |\n|  3 |   53 |\n|  4 |  104 |\n|  5 |   55 |\n+----+------+\n5 rows in set (0.00 sec)\n"
+    ],
+    "Category": [
+        "其它函数"
+    ]
+}

@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/16/functions-textsearch.html"
+    ],
+    "Title": [
+        "ts_token_type"
+    ],
+    "Feature": [
+        "ts_token_type ( parser_oid oid ) → setof record ( tokid integer, alias text, description text )"
+    ],
+    "Description": [
+        "Returns a table that describes each type of token a parser specified by OID can recognize. See Section 12.8.2 for details."
+    ],
+    "Examples": [
+        "ts_token_type(3722) → (1,asciiword,\"Word, all ASCII\") ..."
+    ],
+    "Category": [
+        "Text Search Functions and Operators"
+    ]
+}

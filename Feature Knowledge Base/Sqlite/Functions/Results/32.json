@@ -1,0 +1,18 @@
+{
+    "HTML": [
+        "https://sqlite.org/lang_corefunc.html"
+    ],
+    "Title": [
+        "soundex(X)"
+    ],
+    "Feature": [
+        "soundex(X)"
+    ],
+    "Description": [
+        "\n  The soundex(X) function returns a string that is the soundex encoding \n  of the string X.\n  The string \"?000\" is returned if the argument is NULL or contains\n  no ASCII alphabetic characters.\n  This function is omitted from SQLite by default.\n  It is only available if the SQLITE_SOUNDEX compile-time option\n  is used when SQLite is built.\n"
+    ],
+    "Examples": [],
+    "Category": [
+        "Core SQL Functions"
+    ]
+}

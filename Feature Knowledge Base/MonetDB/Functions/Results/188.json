@@ -1,0 +1,22 @@
+{
+    "HTML": [
+        "https://www.monetdb.org/documentation-Aug2024/user-guide/sql-functions/date-time-functions"
+    ],
+    "Title": [
+        "sys.str_to_time(s, format_str)"
+    ],
+    "Feature": [
+        "sys.str_to_time(s, format_str)"
+    ],
+    "Description": [
+        "Return type: ",
+        "timetz",
+        "parse string s using format_str and construct a time(0) with time zone value. See format specifiers"
+    ],
+    "Examples": [
+        "sys.str_to_time('09:30:49','%H:%M:%S')"
+    ],
+    "Category": [
+        "Date Time Functions"
+    ]
+}

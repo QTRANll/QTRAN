@@ -1,0 +1,25 @@
+{
+    "HTML": [
+        "https://docs.pingcap.com/zh/tidb/v8.3/string-functions"
+    ],
+    "Title": [
+        "CHAR()"
+    ],
+    "Feature": [
+        "CHAR()"
+    ],
+    "Description": [
+        "CHAR()",
+        "CHAR() 函数用于获取指定 ASCII 值的对应字符。该函数执行的操作与 ASCII() 相反，ASCII() 用于返回指定字符的 ASCII 值。如果提供了多个参数，CHAR() 函数将作用于所有参数并将它们的结果拼接在一起返回。"
+    ],
+    "Examples": [
+        "SELECT CHAR(65);\n\n+------------+\n|  CHAR(65)  |\n+------------+\n|          A |\n+------------+\n",
+        "SELECT CHAR(84);\n\n+------------+\n|  CHAR(84)  |\n+------------+\n|          T |\n+------------+\n",
+        "/*For extended ASCII: */\n\nSELECT CHAR(128);\n\n+------------+\n|  CHAR(128) |\n+------------+\n|       0x80 |\n+------------+\n",
+        "/* For Unicode: */\n\n--skip-binary-as-hex\n\nSELECT CHAR(50089);\n\n+--------------+\n|  CHAR(50089) |\n+--------------+\n|            é |\n+--------------+\n",
+        "SELECT CHAR(65,66,67);\n"
+    ],
+    "Category": [
+        "字符串函数"
+    ]
+}

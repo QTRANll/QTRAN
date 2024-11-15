@@ -1,0 +1,21 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/16/functions-string.html"
+    ],
+    "Title": [
+        "regexp_substr"
+    ],
+    "Feature": [
+        "regexp_substr ( string text, pattern text [, start integer [, N integer [, flags text [, subexpr integer ] ] ] ] ) → text"
+    ],
+    "Description": [
+        "Returns the substring within string that matches the N'th occurrence of the POSIX regular expression pattern, or NULL if there is no such match; see Section 9.7.3."
+    ],
+    "Examples": [
+        "regexp_substr('ABCDEF', 'c(.)(..)', 1, 1, 'i') → CDEF",
+        "regexp_substr('ABCDEF', 'c(.)(..)', 1, 1, 'i', 2) → EF"
+    ],
+    "Category": [
+        "String Functions and Operators"
+    ]
+}

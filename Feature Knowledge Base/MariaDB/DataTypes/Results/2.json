@@ -1,0 +1,26 @@
+{
+    "HTML": [
+        "https://mariadb.com/kb/en/smallint/"
+    ],
+    "Title": [
+        "SMALLINT"
+    ],
+    "Feature": [
+        "SMALLINT[(M)] [SIGNED | UNSIGNED | ZEROFILL]\n"
+    ],
+    "Description": [
+        "A small integer. The signed range is -32768 to 32767. The unsigned range is 0 to 65535.",
+        "If a column has been set to ZEROFILL, all values will be prepended by zeros so that the SMALLINT value contains a number of M digits.",
+        "Note: If the ZEROFILL attribute has been specified, the column will automatically become UNSIGNED.",
+        "INT2 is a synonym for SMALLINT.",
+        "For more details on the attributes, see Numeric Data Type Overview."
+    ],
+    "Examples": [
+        "CREATE TABLE smallints (a SMALLINT,b SMALLINT UNSIGNED,c SMALLINT ZEROFILL);\n",
+        "INSERT INTO smallints VALUES (-10,-10,-10);\nERROR 1264 (22003): Out of range value for column 'b' at row 1\n\nINSERT INTO smallints VALUES (-10,10,-10);\nERROR 1264 (22003): Out of range value for column 'c' at row 1\n\nINSERT INTO smallints VALUES (-10,10,10);\n\nINSERT INTO smallints VALUES (32768,32768,32768);\nERROR 1264 (22003): Out of range value for column 'a' at row 1\n\nINSERT INTO smallints VALUES (32767,32768,32768);\n\nSELECT * FROM smallints;\n+-------+-------+-------+\n| a     | b     | c     |\n+-------+-------+-------+\n|   -10 |    10 | 00010 |\n| 32767 | 32768 | 32768 |\n+-------+-------+-------+\n",
+        "INSERT INTO smallints VALUES (-10,-10,-10);\nQuery OK, 1 row affected, 2 warnings (0.09 sec)\nWarning (Code 1264): Out of range value for column 'b' at row 1\nWarning (Code 1264): Out of range value for column 'c' at row 1\n\nINSERT INTO smallints VALUES (-10,10,-10);\nQuery OK, 1 row affected, 1 warning (0.08 sec)\nWarning (Code 1264): Out of range value for column 'c' at row 1\n\nINSERT INTO smallints VALUES (-10,10,10);\n\nINSERT INTO smallints VALUES (32768,32768,32768);\nQuery OK, 1 row affected, 1 warning (0.04 sec)\nWarning (Code 1264): Out of range value for column 'a' at row 1\n\nINSERT INTO smallints VALUES (32767,32768,32768);\n\nSELECT * FROM smallints;\n+-------+-------+-------+\n| a     | b     | c     |\n+-------+-------+-------+\n|   -10 |     0 | 00000 |\n|   -10 |    10 | 00000 |\n|   -10 |    10 | 00010 |\n| 32767 | 32768 | 32768 |\n| 32767 | 32768 | 32768 |\n+-------+-------+-------+\n"
+    ],
+    "Category": [
+        "Numeric Data Types"
+    ]
+}

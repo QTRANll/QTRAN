@@ -1,0 +1,24 @@
+{
+    "HTML": [
+        "https://docs.pingcap.com/zh/tidb/v8.3/information-functions"
+    ],
+    "Title": [
+        "BENCHMARK()"
+    ],
+    "Feature": [
+        "BENCHMARK()"
+    ],
+    "Description": [
+        "BENCHMARK()",
+        "BENCHMARK() 函数可以按照指定的次数重复执行给定的表达式。",
+        "语法：",
+        "BENCHMARK(count, expression)\n",
+        "count：要执行表达式的次数。expression：要重复执行的表达式。"
+    ],
+    "Examples": [
+        "SELECT BENCHMARK(5, SLEEP(2));\n"
+    ],
+    "Category": [
+        "信息函数"
+    ]
+}

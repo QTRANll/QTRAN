@@ -1,0 +1,28 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.0/en/built-in-function-reference.html"
+    ],
+    "Title": [
+        "14.1 Built-In Function and Operator Reference"
+    ],
+    "Name": "SHA1(), SHA()",
+    "Description": [
+        "\nSHA1(str),\n          SHA(str)\n",
+        "\n          Calculates an SHA-1 160-bit checksum for the string, as\n          described in RFC 3174 (Secure Hash Algorithm). The value is\n          returned as a string of 40 hexadecimal digits, or\n          NULL if the argument is\n          NULL. One of the possible uses for this\n          function is as a hash key. See the notes at the beginning of\n          this section about storing hash values efficiently.\n          SHA() is\n          synonymous with SHA1().\n        ",
+        "\n          The return value is a string in the connection character set.\n        ",
+        "Press CTRL+C to copy mysql> SELECT SHA1('abc');\n        -> 'a9993e364706816aba3e25717850c26c9cd0d89d'",
+        "\nSHA1() can be considered a\n          cryptographically more secure equivalent of\n          MD5(). However, see the note\n          regarding the MD5 and SHA-1 algorithms at the beginning this\n          section.\n        "
+    ],
+    "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/encryption-functions.html#function_sha1",
+    "Feature": [
+        "SHA1(str)",
+        "SHA(str)"
+    ],
+    "Examples": [
+        "mysql> SELECT SHA1('abc');\n        -> 'a9993e364706816aba3e25717850c26c9cd0d89d'"
+    ],
+    "Category": [
+        "Built-In Functions and Operators",
+        "Encryption and Compression Functions"
+    ]
+}

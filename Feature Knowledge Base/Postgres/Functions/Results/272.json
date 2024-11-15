@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/16/functions-json.html"
+    ],
+    "Title": [
+        "value . size"
+    ],
+    "Feature": [
+        "value . size() → number"
+    ],
+    "Description": [
+        "Size of the JSON item (number of array elements, or 1 if not an array)"
+    ],
+    "Examples": [
+        "jsonb_path_query('{\"m\": [11, 15]}', '$.m.size()') → 2"
+    ],
+    "Category": [
+        "JSON Functions and Operators"
+    ]
+}

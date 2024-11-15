@@ -1,0 +1,22 @@
+{
+    "HTML": [
+        "https://docs.pingcap.com/zh/tidb/v8.3/json-functions"
+    ],
+    "Title": [
+        "JSONPath"
+    ],
+    "Feature": [
+        "JSONPath"
+    ],
+    "Description": [
+        "JSONPath",
+        "许多 JSON 函数都使用 JSONPath 来选择 JSON 文档中的特定内容。",
+        "符号描述$文件根目录.选择成员[]选择数组*通配符**路径通配符[<n> to <n>]选择数组范围",
+        "下面以如下 JSON 文档为例，说明如何使用 JSONPath：",
+        "{\n    \"database\": {\n        \"name\": \"TiDB\",\n        \"features\": [\n            \"distributed\",\n            \"scalable\",\n            \"relational\",\n            \"cloud native\"\n        ],\n        \"license\": \"Apache-2.0 license\",\n        \"versions\": [\n            {\n                \"version\": \"v8.1.0\",\n                \"type\": \"lts\",\n                \"release_date\": \"2024-05-24\"\n            },\n            {\n                \"version\": \"v8.0.0\",\n                \"type\": \"dmr\",\n                \"release_date\": \"2024-03-29\"\n            }\n        ]\n    },\n    \"migration_tool\": {\n        \"name\": \"TiDB Data Migration\",\n        \"features\": [\n            \"MySQL compatible\",\n            \"Shard merging\"\n        ],\n        \"license\": \"Apache-2.0 license\"\n    }\n}\n"
+    ],
+    "Examples": [],
+    "Category": [
+        "JSON概览"
+    ]
+}

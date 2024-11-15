@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://duckdb.org/docs/sql/functions/char"
+    ],
+    "Title": [
+        "mismatches(s1, s2)"
+    ],
+    "Feature": [
+        "mismatches(s1, s2)"
+    ],
+    "Description": [
+        "Alias for hamming(s1, s2). The number of positions with different characters for two strings of equal length. Strings must be of equal length. Characters of different cases (e.g., a and A) are considered different."
+    ],
+    "Examples": [
+        "mismatches('duck', 'luck')"
+    ],
+    "Category": [
+        "Text Functions"
+    ]
+}

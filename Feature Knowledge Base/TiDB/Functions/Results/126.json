@@ -1,0 +1,18 @@
+{
+    "HTML": "https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html#function_second",
+    "Title": "SECOND()",
+    "Feature": [
+        "SECOND(time)"
+    ],
+    "Description": [
+        "\nSECOND(time)\n",
+        "\n          Returns the second for time, in the\n          range 0 to 59, or\n          NULL if time is\n          NULL.\n        ",
+        "Press CTRL+C to copy mysql> SELECT SECOND('10:05:03');\n        -> 3"
+    ],
+    "Examples": [
+        "mysql> SELECT SECOND('10:05:03');\n        -> 3"
+    ],
+    "Category": [
+        "日期和时间函数"
+    ]
+}

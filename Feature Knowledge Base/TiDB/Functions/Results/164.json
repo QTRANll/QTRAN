@@ -1,0 +1,23 @@
+{
+    "HTML": [
+        "https://docs.pingcap.com/zh/tidb/v8.3/encryption-and-compression-functions"
+    ],
+    "Title": [
+        "UNCOMPRESSED_LENGTH()"
+    ],
+    "Feature": [
+        "UNCOMPRESSED_LENGTH()"
+    ],
+    "Description": [
+        "UNCOMPRESSED_LENGTH()",
+        "UNCOMPRESSED_LENGTH(data) 函数返回压缩数据的前 4 个字节，即字符串在使用 COMPRESS() 函数压缩之前的长度。",
+        "SELECT UNCOMPRESSED_LENGTH(0x03000000789C72747206040000FFFF018D00C7);\n",
+        "+---------------------------------------------------------------+\n| UNCOMPRESSED_LENGTH(0x03000000789C72747206040000FFFF018D00C7) |\n+---------------------------------------------------------------+\n|                                                             3 |\n+---------------------------------------------------------------+\n1 row in set (0.00 sec)\n"
+    ],
+    "Examples": [
+        "SELECT UNCOMPRESSED_LENGTH(0x03000000789C72747206040000FFFF018D00C7);\n"
+    ],
+    "Category": [
+        "加密和压缩函数"
+    ]
+}

@@ -1,0 +1,22 @@
+{
+    "HTML": [
+        "https://docs.pingcap.com/zh/tidb/v8.3/miscellaneous-functions"
+    ],
+    "Title": [
+        "ANY_VALUE()"
+    ],
+    "Feature": [
+        "ANY_VALUE()"
+    ],
+    "Description": [
+        "ANY_VALUE()",
+        "ANY_VALUE() 函数可以从一组值中返回其中任意一个值。通常，该函数用于需要在 SELECT 语句中包含非聚合列以及 GROUP BY 子句的场景中。",
+        "CREATE TABLE fruits (id INT PRIMARY KEY, name VARCHAR(255));\nQuery OK, 0 rows affected (0.14 sec)\n\nINSERT INTO fruits VALUES (1,'apple'),(2,'apple'),(3,'pear'),(4,'banana'),(5, 'pineapple');\nQuery OK, 5 rows affected (0.01 sec)\nRecords: 5  Duplicates: 0  Warnings: 0\n\nSELECT id,name FROM fruits GROUP BY name;\nERROR 1055 (42000): Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'test.fruits.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by\n\nSELECT ANY_VALUE(id),GROUP_CONCAT(id),name FROM fruits GROUP BY name;\n+---------------+------------------+-----------+\n| ANY_VALUE(id) | GROUP_CONCAT(id) | name      |\n+---------------+------------------+-----------+\n|             1 | 1,2              | apple     |\n|             3 | 3                | pear      |\n|             4 | 4                | banana    |\n|             5 | 5                | pineapple |\n+---------------+------------------+-----------+\n4 rows in set (0.00 sec)\n"
+    ],
+    "Examples": [
+        "CREATE TABLE fruits (id INT PRIMARY KEY, name VARCHAR(255));\nQuery OK, 0 rows affected (0.14 sec)\n\nINSERT INTO fruits VALUES (1,'apple'),(2,'apple'),(3,'pear'),(4,'banana'),(5, 'pineapple');\nQuery OK, 5 rows affected (0.01 sec)\nRecords: 5  Duplicates: 0  Warnings: 0\n\nSELECT id,name FROM fruits GROUP BY name;\nERROR 1055 (42000): Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'test.fruits.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by\n\nSELECT ANY_VALUE(id),GROUP_CONCAT(id),name FROM fruits GROUP BY name;\n+---------------+------------------+-----------+\n| ANY_VALUE(id) | GROUP_CONCAT(id) | name      |\n+---------------+------------------+-----------+\n|             1 | 1,2              | apple     |\n|             3 | 3                | pear      |\n|             4 | 4                | banana    |\n|             5 | 5                | pineapple |\n+---------------+------------------+-----------+\n4 rows in set (0.00 sec)\n"
+    ],
+    "Category": [
+        "其它函数"
+    ]
+}

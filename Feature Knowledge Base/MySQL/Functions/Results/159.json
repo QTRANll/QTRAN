@@ -1,0 +1,28 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.0/en/built-in-function-reference.html"
+    ],
+    "Title": [
+        "14.1 Built-In Function and Operator Reference"
+    ],
+    "Name": "JSON_CONTAINS_PATH()",
+    "Description": [
+        "\nJSON_CONTAINS_PATH(json_doc,\n          one_or_all,\n          path[,\n          path] ...)\n",
+        "\n          Returns 0 or 1 to indicate whether a JSON document contains\n          data at a given path or paths. Returns NULL\n          if any argument is NULL. An error occurs if\n          the json_doc argument is not a\n          valid JSON document, any path\n          argument is not a valid path expression, or\n          one_or_all is not\n          'one' or 'all'.\n        ",
+        "\n          To check for a specific value at a path, use\n          JSON_CONTAINS() instead.\n        ",
+        "\n          The return value is 0 if no specified path exists within the\n          document. Otherwise, the return value depends on the\n          one_or_all argument:\n",
+        "\n\n'one': 1 if at least one path exists\n              within the document, 0 otherwise.\n            \n'all': 1 if all paths exist within the\n              document, 0 otherwise.\n\n",
+        "Press CTRL+C to copy mysql> SET @j = '{\"a\": 1, \"b\": 2, \"c\": {\"d\": 4}}';\nmysql> SELECT JSON_CONTAINS_PATH(@j, 'one', '$.a', '$.e');\n+---------------------------------------------+\n| JSON_CONTAINS_PATH(@j, 'one', '$.a', '$.e') |\n+---------------------------------------------+\n|                                           1 |\n+---------------------------------------------+\nmysql> SELECT JSON_CONTAINS_PATH(@j, 'all', '$.a', '$.e');\n+---------------------------------------------+\n| JSON_CONTAINS_PATH(@j, 'all', '$.a', '$.e') |\n+---------------------------------------------+\n|                                           0 |\n+---------------------------------------------+\nmysql> SELECT JSON_CONTAINS_PATH(@j, 'one', '$.c.d');\n+----------------------------------------+\n| JSON_CONTAINS_PATH(@j, 'one', '$.c.d') |\n+----------------------------------------+\n|                                      1 |\n+----------------------------------------+\nmysql> SELECT JSON_CONTAINS_PATH(@j, 'one', '$.a.d');\n+----------------------------------------+\n| JSON_CONTAINS_PATH(@j, 'one', '$.a.d') |\n+----------------------------------------+\n|                                      0 |\n+----------------------------------------+"
+    ],
+    "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/json-search-functions.html#function_json-contains-path",
+    "Feature": [
+        "JSON_CONTAINS_PATH(json_doc,\n          one_or_all,\n          path[,\n          path] ...)"
+    ],
+    "Examples": [
+        "mysql> SET @j = '{\"a\": 1, \"b\": 2, \"c\": {\"d\": 4}}';\nmysql> SELECT JSON_CONTAINS_PATH(@j, 'one', '$.a', '$.e');\n+---------------------------------------------+\n| JSON_CONTAINS_PATH(@j, 'one', '$.a', '$.e') |\n+---------------------------------------------+\n|                                           1 |\n+---------------------------------------------+\nmysql> SELECT JSON_CONTAINS_PATH(@j, 'all', '$.a', '$.e');\n+---------------------------------------------+\n| JSON_CONTAINS_PATH(@j, 'all', '$.a', '$.e') |\n+---------------------------------------------+\n|                                           0 |\n+---------------------------------------------+\nmysql> SELECT JSON_CONTAINS_PATH(@j, 'one', '$.c.d');\n+----------------------------------------+\n| JSON_CONTAINS_PATH(@j, 'one', '$.c.d') |\n+----------------------------------------+\n|                                      1 |\n+----------------------------------------+\nmysql> SELECT JSON_CONTAINS_PATH(@j, 'one', '$.a.d');\n+----------------------------------------+\n| JSON_CONTAINS_PATH(@j, 'one', '$.a.d') |\n+----------------------------------------+\n|                                      0 |\n+----------------------------------------+"
+    ],
+    "Category": [
+        "Built-In Functions and Operators",
+        "JSON Functions"
+    ]
+}

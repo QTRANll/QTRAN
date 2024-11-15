@@ -1,0 +1,18 @@
+{
+    "HTML": [
+        "https://sqlite.org/lang_corefunc.html"
+    ],
+    "Title": [
+        "substr(X,Y,Z)substr(X,Y)substring(X,Y,Z)substring(X,Y)"
+    ],
+    "Feature": [
+        "substr(X,Y,Z)substr(X,Y)substring(X,Y,Z)substring(X,Y)"
+    ],
+    "Description": [
+        "\n  The substr(X,Y,Z) function returns a substring of input string X that begins\n  with the Y-th character and which is Z characters long.\n  If Z is omitted then substr(X,Y) returns all characters through the end\n  of the string X beginning with the Y-th.\n  The left-most character of X is number 1.  If Y is negative\n  then the first character of the substring is found by counting from the\n  right rather than the left.  If Z is negative then\n  the abs(Z) characters preceding the Y-th character are returned.\n  If X is a string then characters indices refer to actual UTF-8 \n  characters.  If X is a BLOB then the indices refer to bytes.\n  \n  \"substring()\" is an alias for \"substr()\" beginning with SQLite version 3.34.\n"
+    ],
+    "Examples": [],
+    "Category": [
+        "Core SQL Functions"
+    ]
+}

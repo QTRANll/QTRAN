@@ -1,0 +1,28 @@
+{
+    "HTML": [
+        "https://docs.pingcap.com/zh/tidb/v8.3/json-functions-return"
+    ],
+    "Title": [
+        "JSON_VALID()"
+    ],
+    "Feature": [
+        "JSON_VALID()"
+    ],
+    "Description": [
+        "JSON_VALID()",
+        "JSON_VALID(str) 函数检查输入的参数是否为有效的 JSON 格式。该函数对于在将列转换为 JSON 类型之前进行检查非常有用。",
+        "SELECT JSON_VALID('{\"foo\"=\"bar\"}');\n",
+        "+-----------------------------+\n| JSON_VALID('{\"foo\"=\"bar\"}') |\n+-----------------------------+\n|                           0 |\n+-----------------------------+\n1 row in set (0.01 sec)\n",
+        "SELECT JSON_VALID('{\"foo\": \"bar\"}');\n",
+        "+------------------------------+\n| JSON_VALID('{\"foo\": \"bar\"}') |\n+------------------------------+\n|                            1 |\n+------------------------------+\n1 row in set (0.01 sec)\n",
+        "另请参考",
+        "JSON 函数JSON 数据类型"
+    ],
+    "Examples": [
+        "SELECT JSON_VALID('{\"foo\"=\"bar\"}');\n",
+        "SELECT JSON_VALID('{\"foo\": \"bar\"}');\n"
+    ],
+    "Category": [
+        "返回 JSON 的函数"
+    ]
+}

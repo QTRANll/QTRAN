@@ -1,0 +1,25 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/bitmap-functions"
+    ],
+    "Title": [
+        "bitmapAnd"
+    ],
+    "Feature": [
+        "bitmapAnd(bitmap,bitmap)"
+    ],
+    "Description": [
+        "bitmapAnd",
+        "Computes the logical conjunction of two bitmaps.",
+        "Syntax",
+        "bitmapAnd(bitmap,bitmap)",
+        "Arguments",
+        "bitmap \u2013 Bitmap object."
+    ],
+    "Examples": [
+        "SELECT bitmapToArray(bitmapAnd(bitmapBuild([1,2,3]),bitmapBuild([3,4,5]))) AS res;"
+    ],
+    "Category": [
+        "Bitmap Functions"
+    ]
+}

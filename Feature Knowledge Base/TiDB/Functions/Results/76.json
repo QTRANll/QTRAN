@@ -1,0 +1,19 @@
+{
+    "HTML": "https://dev.mysql.com/doc/refman/8.0/en/mathematical-functions.html#function_log10",
+    "Title": "LOG10()",
+    "Feature": [
+        "LOG10(X)"
+    ],
+    "Description": [
+        "\nLOG10(X)\n",
+        "\n            Returns the base-10 logarithm of\n            X. If\n            X is less than or equal to 0.0E0,\n            the function returns NULL and a warning\n            “Invalid argument for logarithm” is reported.\n            Returns NULL if\n            X is NULL.\n          ",
+        "Press CTRL+C to copy mysql> SELECT LOG10(2);\n        -> 0.30102999566398\nmysql> SELECT LOG10(100);\n        -> 2\nmysql> SELECT LOG10(-100);\n        -> NULL",
+        "\nLOG10(X)\n            is equivalent to\n            LOG(10,X).\n          "
+    ],
+    "Examples": [
+        "mysql> SELECT LOG10(2);\n        -> 0.30102999566398\nmysql> SELECT LOG10(100);\n        -> 2\nmysql> SELECT LOG10(-100);\n        -> NULL"
+    ],
+    "Category": [
+        "数值函数与操作符"
+    ]
+}

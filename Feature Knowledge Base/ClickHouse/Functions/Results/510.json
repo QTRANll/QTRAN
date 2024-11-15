@@ -1,0 +1,27 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/ip-address-functions"
+    ],
+    "Title": [
+        "isIPv6String"
+    ],
+    "Feature": [
+        "isIPv6String(string)"
+    ],
+    "Description": [
+        "isIPv6String",
+        "Determines whether the input string is an IPv6 address or not. If string is IPv4 address returns 0.",
+        "Syntax",
+        "isIPv6String(string)",
+        "Arguments",
+        "string \u2014 IP address. String.",
+        "Returned value",
+        "1 if string is IPv6 address, 0 otherwise. UInt8."
+    ],
+    "Examples": [
+        "SELECT addr, isIPv6String(addr) FROM ( SELECT ['::', '1111::ffff', '::ffff:127.0.0.1', '127.0.0.1'] AS addr ) ARRAY JOIN addr;"
+    ],
+    "Category": [
+        "IP Addresses Functions"
+    ]
+}

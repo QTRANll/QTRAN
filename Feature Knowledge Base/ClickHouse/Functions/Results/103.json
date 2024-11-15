@@ -1,0 +1,31 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/array-functions"
+    ],
+    "Title": [
+        "arrayMax"
+    ],
+    "Feature": [
+        "arrayMax([func,] arr)"
+    ],
+    "Description": [
+        "arrayMax",
+        "Returns the maximum of elements in the source array.",
+        "If the func function is specified, returns the maximum of elements converted by this function.",
+        "Note that the arrayMax is a higher-order function. You can pass a lambda function to it as the first argument.",
+        "Syntax",
+        "arrayMax([func,] arr)",
+        "Arguments",
+        "func \u2014 Function. Expression.arr \u2014 Array. Array.",
+        "Returned value",
+        "The maximum of function values (or the array maximum).",
+        "Noteif func is specified then the return type matches the return value type of func, otherwise it matches the type of the array elements."
+    ],
+    "Examples": [
+        "SELECT arrayMax([1, 2, 4]) AS res;",
+        "SELECT arrayMax(x -> (-x), [1, 2, 4]) AS res;"
+    ],
+    "Category": [
+        "Arrays Functions"
+    ]
+}

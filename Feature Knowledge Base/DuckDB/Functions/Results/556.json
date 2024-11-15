@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://duckdb.org/docs/sql/functions/timestamptz"
+    ],
+    "Title": [
+        "time_bucket(bucket_width, timestamptz[, timezone])"
+    ],
+    "Feature": [
+        "time_bucket(bucket_width, timestamptz[, timezone])"
+    ],
+    "Description": [
+        "Truncate timestamptz by the specified interval bucket_width. Bucket starts and ends are calculated using timezone. timezone is a varchar and defaults to UTC."
+    ],
+    "Examples": [
+        "time_bucket(INTERVAL '2 days', TIMESTAMPTZ '1992-04-20 15:26:00-07', 'Europe/Berlin')"
+    ],
+    "Category": [
+        "Timestamp with Time Zone Functions"
+    ]
+}

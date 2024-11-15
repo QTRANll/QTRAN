@@ -1,0 +1,20 @@
+{
+    "HTML": "https://dev.mysql.com/doc/refman/8.0/en/comparison-operators.html#operator_is-null",
+    "Title": "IS NULL",
+    "Feature": [
+        "IS NULL"
+    ],
+    "Description": [
+        "\nIS NULL\n",
+        "\n            Tests whether a value is NULL.\n          ",
+        "Press CTRL+C to copy mysql> SELECT 1 IS NULL, 0 IS NULL, NULL IS NULL;\n        -> 0, 0, 1",
+        "\n            To work well with ODBC programs, MySQL supports the\n            following extra features when using IS\n            NULL:\n",
+        "\n\n                If sql_auto_is_null\n                variable is set to 1, then after a statement that\n                successfully inserts an automatically generated\n                AUTO_INCREMENT value, you can find\n                that value by issuing a statement of the following form:\n              Press CTRL+C to copy SELECT * FROM tbl_name WHERE auto_col IS NULL\n                If the statement returns a row, the value returned is\n                the same as if you invoked the\n                LAST_INSERT_ID()\n                function. For details, including the return value after\n                a multiple-row insert, see\n                Section 14.15, “Information Functions”. If no\n                AUTO_INCREMENT value was successfully\n                inserted, the SELECT\n                statement returns no row.\n              \n                The behavior of retrieving an\n                AUTO_INCREMENT value by using an\n                IS NULL comparison can be\n                disabled by setting\n                sql_auto_is_null = 0.\n                See Section 7.1.8, “Server System Variables”.\n              \n                The default value of\n                sql_auto_is_null is 0.\n              \n                For DATE and\n                DATETIME columns that are\n                declared as NOT NULL, you can find\n                the special date '0000-00-00' by\n                using a statement like this:\n              Press CTRL+C to copy SELECT * FROM tbl_name WHERE date_column IS NULL\n                This is needed to get some ODBC applications to work\n                because ODBC does not support a\n                '0000-00-00' date value.\n              \n                See\n                Obtaining Auto-Increment Values,\n                and the description for the\n                FLAG_AUTO_IS_NULL option at\n                Connector/ODBC Connection Parameters.\n\n"
+    ],
+    "Examples": [
+        "mysql> SELECT 1 IS NULL, 0 IS NULL, NULL IS NULL;\n        -> 0, 0, 1"
+    ],
+    "Category": [
+        "Comparison Functions and Operators"
+    ]
+}

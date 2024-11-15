@@ -1,0 +1,22 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/table-functions/gcs"
+    ],
+    "Title": [
+        "Partitioned Write"
+    ],
+    "Feature": [
+        "Partitioned Write"
+    ],
+    "Description": [
+        "Partitioned Write",
+        "If you specify PARTITION BY expression when inserting data into GCS table, a separate file is created for each partition value. Splitting the data into separate files helps to improve reading operations efficiency."
+    ],
+    "Examples": [
+        "INSERT INTO TABLE FUNCTION    gcs('http://bucket.amazonaws.com/my_bucket/file_{_partition_id}.csv', 'CSV', 'a String, b UInt32, c UInt32')    PARTITION BY a VALUES ('x', 2, 3), ('x', 4, 5), ('y', 11, 12), ('y', 13, 14), ('z', 21, 22), ('z', 23, 24);",
+        "INSERT INTO TABLE FUNCTION    gcs('http://bucket.amazonaws.com/my_bucket_{_partition_id}/file.csv', 'CSV', 'a UInt32, b UInt32, c UInt32')    PARTITION BY a VALUES (1, 2, 3), (1, 4, 5), (10, 11, 12), (10, 13, 14), (20, 21, 22), (20, 23, 24);"
+    ],
+    "Category": [
+        "Table Functions"
+    ]
+}

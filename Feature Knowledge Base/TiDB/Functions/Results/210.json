@@ -1,0 +1,24 @@
+{
+    "HTML": [
+        "https://docs.pingcap.com/zh/tidb/v8.3/json-functions-utility"
+    ],
+    "Title": [
+        "JSON_STORAGE_FREE()"
+    ],
+    "Feature": [
+        "JSON_STORAGE_FREE()"
+    ],
+    "Description": [
+        "JSON_STORAGE_FREE()",
+        "JSON_STORAGE_FREE(json_doc) 函数返回 JSON 值在原地更新操作后释放了多少存储空间，以二进制表示。",
+        "注意由于 TiDB 的存储架构与 MySQL 不同，因此对于有效的 JSON 值，该函数总是返回 0，而且它的实现是为了与 MySQL 8.0 兼容。请注意，TiDB 不能进行原地更新。更多信息，请参阅 RocksDB 的空间占用。",
+        "SELECT JSON_STORAGE_FREE('{}');\n",
+        "+-------------------------+\n| JSON_STORAGE_FREE('{}') |\n+-------------------------+\n|                       0 |\n+-------------------------+\n1 row in set (0.00 sec)\n"
+    ],
+    "Examples": [
+        "SELECT JSON_STORAGE_FREE('{}');\n"
+    ],
+    "Category": [
+        "JSON 效用函数"
+    ]
+}

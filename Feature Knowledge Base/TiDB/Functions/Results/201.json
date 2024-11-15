@@ -1,0 +1,22 @@
+{
+    "HTML": [
+        "https://docs.pingcap.com/zh/tidb/v8.3/json-functions-modify"
+    ],
+    "Title": [
+        "JSON_REMOVE()"
+    ],
+    "Feature": [
+        "JSON_REMOVE()"
+    ],
+    "Description": [
+        "JSON_REMOVE()",
+        "JSON_REMOVE(json_doc,path [,path] ...) 函数从 JSON 文档中删除指定 path 的数据并返回结果。"
+    ],
+    "Examples": [
+        "SELECT JSON_REMOVE('{\"a\": 61, \"b\": 62, \"c\": 63}','$.b');\n",
+        "SELECT JSON_REMOVE('{\"a\": 61, \"b\": 62, \"c\": 63}','$.b','$.c');\n"
+    ],
+    "Category": [
+        "修改 JSON 的函数"
+    ]
+}

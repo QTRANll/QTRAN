@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://docs.pingcap.com/zh/tidb/v8.3/data-type-string"
+    ],
+    "Title": [
+        "TEXT 类型"
+    ],
+    "Feature": [
+        "TEXT 类型"
+    ],
+    "Description": [
+        "TEXT 类型",
+        "文本串。最大列长为 65,535 字节。可选的 M 参数以字符为单位，用于自动选择 TEXT 列的最合适类型。例如 TEXT(60) 会产生一个 TINYTEXT 数据类型，最多可容纳 255 字节，即容纳一个 60 字符的 UTF-8 字符串，每个字符最多包含 4 字节（即 4×60=240）。不推荐使用 M 参数。",
+        "TEXT[(M)] [CHARACTER SET charset_name] [COLLATE collation_name]\n"
+    ],
+    "Examples": [],
+    "Category": [
+        "字符串类型"
+    ]
+}

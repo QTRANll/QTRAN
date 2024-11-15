@@ -1,0 +1,26 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.0/en/built-in-function-reference.html"
+    ],
+    "Title": [
+        "14.1 Built-In Function and Operator Reference"
+    ],
+    "Name": "FORMAT()",
+    "Description": [
+        "\nFORMAT(X,D[,locale])\n",
+        "\n          Formats the number X to a format\n          like '#,###,###.##', rounded to\n          D decimal places, and returns the\n          result as a string. If D is\n          0, the result has no decimal point or\n          fractional part. If X or\n          D is NULL, the\n          function returns NULL.\n        ",
+        "\n          The optional third parameter enables a locale to be specified\n          to be used for the result number's decimal point, thousands\n          separator, and grouping between separators. Permissible locale\n          values are the same as the legal values for the\n          lc_time_names system variable\n          (see Section\u00a012.16, \u201cMySQL Server Locale Support\u201d). If the locale is\n          NULL or not specified, the default locale\n          is 'en_US'.\n        ",
+        "Press CTRL+C to copy mysql> SELECT FORMAT(12332.123456, 4);\n        -> '12,332.1235'\nmysql> SELECT FORMAT(12332.1,4);\n        -> '12,332.1000'\nmysql> SELECT FORMAT(12332.2,0);\n        -> '12,332'\nmysql> SELECT FORMAT(12332.2,2,'de_DE');\n        -> '12.332,20'"
+    ],
+    "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/string-functions.html#function_format",
+    "Feature": [
+        "FORMAT(X,D[,locale])"
+    ],
+    "Examples": [
+        "mysql> SELECT FORMAT(12332.123456, 4);\n        -> '12,332.1235'\nmysql> SELECT FORMAT(12332.1,4);\n        -> '12,332.1000'\nmysql> SELECT FORMAT(12332.2,0);\n        -> '12,332'\nmysql> SELECT FORMAT(12332.2,2,'de_DE');\n        -> '12.332,20'"
+    ],
+    "Category": [
+        "Built-In Functions and Operators",
+        "String Functions and Operators"
+    ]
+}

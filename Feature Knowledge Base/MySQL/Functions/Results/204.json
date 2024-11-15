@@ -1,0 +1,26 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.0/en/built-in-function-reference.html"
+    ],
+    "Title": [
+        "14.1 Built-In Function and Operator Reference"
+    ],
+    "Name": "LPAD()",
+    "Description": [
+        "\nLPAD(str,len,padstr)\n",
+        "\n          Returns the string str, left-padded\n          with the string padstr to a length\n          of len characters. If\n          str is longer than\n          len, the return value is shortened\n          to len characters.\n        ",
+        "Press CTRL+C to copy mysql> SELECT LPAD('hi',4,'??');\n        -> '??hi'\nmysql> SELECT LPAD('hi',1,'??');\n        -> 'h'",
+        "\n          Returns NULL if any of its arguments are\n          NULL.\n        "
+    ],
+    "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/string-functions.html#function_lpad",
+    "Feature": [
+        "LPAD(str,len,padstr)"
+    ],
+    "Examples": [
+        "mysql> SELECT LPAD('hi',4,'??');\n        -> '??hi'\nmysql> SELECT LPAD('hi',1,'??');\n        -> 'h'"
+    ],
+    "Category": [
+        "Built-In Functions and Operators",
+        "String Functions and Operators"
+    ]
+}

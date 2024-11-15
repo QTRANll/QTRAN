@@ -1,0 +1,21 @@
+{
+    "HTML": [
+        "https://docs.pingcap.com/zh/tidb/v8.3/control-flow-functions"
+    ],
+    "Title": [
+        "NULLIF()"
+    ],
+    "Feature": [
+        "NULLIF()"
+    ],
+    "Description": [
+        "NULLIF()",
+        "NULLIF(expr1,expr2) 函数用于在两个参数相同或第一个参数为 NULL 时返回 NULL。否则，返回第一个参数。"
+    ],
+    "Examples": [
+        "WITH RECURSIVE d AS (SELECT 1 AS n UNION ALL SELECT n+1 FROM d WHERE n<10)\nSELECT n, NULLIF(n+n, n+2) FROM d;\n"
+    ],
+    "Category": [
+        "控制流程函数"
+    ]
+}

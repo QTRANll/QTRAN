@@ -1,0 +1,21 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/ln/"
+    ],
+    "Title": [
+        "LN"
+    ],
+    "Feature": [
+        "LN(X)\n"
+    ],
+    "Description": [
+        "Returns the natural logarithm of X; that is, the base-e logarithm of X.\nIf X is less than or equal to 0, or NULL, then NULL is returned.",
+        "The inverse of this function is EXP()."
+    ],
+    "Examples": [
+        "SELECT LN(2);\n+-------------------+\n| LN(2)             |\n+-------------------+\n| 0.693147180559945 |\n+-------------------+\n\nSELECT LN(-2);\n+--------+\n| LN(-2) |\n+--------+\n|   NULL |\n+--------+\n"
+    ],
+    "Category": [
+        "Numeric Functions"
+    ]
+}

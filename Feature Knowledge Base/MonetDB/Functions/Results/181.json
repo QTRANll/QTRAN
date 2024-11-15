@@ -1,0 +1,22 @@
+{
+    "HTML": [
+        "https://www.monetdb.org/documentation-Aug2024/user-guide/sql-functions/date-time-functions"
+    ],
+    "Title": [
+        "sql_sub(dt_or_ts, month_interval)"
+    ],
+    "Feature": [
+        "sql_sub(dt_or_ts, month_interval)"
+    ],
+    "Description": [
+        "Return type: ",
+        "same as arg 1",
+        "subtract an integer month interval value from a date or timestamp or timestamptz"
+    ],
+    "Examples": [
+        "select sql_sub(date '2021-12-31', interval '-2' month)"
+    ],
+    "Category": [
+        "Date Time Functions"
+    ]
+}

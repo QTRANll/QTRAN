@@ -1,0 +1,22 @@
+{
+    "HTML": [
+        "https://docs.pingcap.com/zh/tidb/v8.3/tidb-functions"
+    ],
+    "Title": [
+        "TIDB_ENCODE_SQL_DIGEST"
+    ],
+    "Feature": [
+        "TIDB_ENCODE_SQL_DIGEST"
+    ],
+    "Description": [
+        "TIDB_ENCODE_SQL_DIGEST",
+        "TIDB_ENCODE_SQL_DIGEST(query_str) 函数返回查询字符串的 SQL digest。"
+    ],
+    "Examples": [
+        "SELECT TIDB_ENCODE_SQL_DIGEST('SELECT 1');\n",
+        "SELECT TIDB_ENCODE_SQL_DIGEST('SELECT 2');\n"
+    ],
+    "Category": [
+        "TiDB 特有的函数"
+    ]
+}

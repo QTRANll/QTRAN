@@ -1,0 +1,35 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/aggregate-functions/reference/quantileexact"
+    ],
+    "Title": [
+        "quantileExactLow"
+    ],
+    "Feature": [
+        "quantileExactLow(level)(expr)"
+    ],
+    "Description": [
+        "quantileExactLow",
+        "Similar to quantileExact, this computes the exact quantile of a numeric data sequence.",
+        "To get the exact value, all the passed values are combined into an array, which is then fully sorted.  The sorting algorithm's complexity is O(N\u00b7log(N)), where N = std::distance(first, last) comparisons.",
+        "The return value depends on the quantile level and the number of elements in the selection, i.e. if the level is 0.5, then the function returns the lower median value for an even number of elements and the middle median value for an odd number of elements. Median is calculated similarly to the median_low implementation which is used in python.",
+        "For all other levels, the element at the index corresponding to the value of level * size_of_array is returned. For example:",
+        "SELECT quantileExactLow(0.1)(number) FROM numbers(10)\u250c\u2500quantileExactLow(0.1)(number)\u2500\u2510\u2502                             1 \u2502\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518",
+        "When using multiple quantile* functions with different levels in a query, the internal states are not combined (that is, the query works less efficiently than it could). In this case, use the quantiles function.",
+        "Syntax",
+        "quantileExactLow(level)(expr)",
+        "Alias: medianExactLow.",
+        "Arguments",
+        "level \u2014 Level of quantile. Optional parameter. Constant floating-point number from 0 to 1. We recommend using a level value in the range of [0.01, 0.99]. Default value: 0.5. At level=0.5 the function calculates median.expr \u2014 Expression over the column values resulting in numeric data types, Date or DateTime.",
+        "Returned value",
+        "Quantile of the specified level.",
+        "Type:",
+        "Float64 for numeric data type input.Date if input values have the Date type.DateTime if input values have the DateTime type."
+    ],
+    "Examples": [
+        "SELECT quantileExactLow(number) FROM numbers(10)"
+    ],
+    "Category": [
+        "Aggregate Functions"
+    ]
+}

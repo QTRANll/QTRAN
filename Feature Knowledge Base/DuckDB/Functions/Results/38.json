@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://duckdb.org/docs/sql/functions/aggregates"
+    ],
+    "Title": [
+        "reservoir_quantile(x, quantile, sample_size = 8192)"
+    ],
+    "Feature": [
+        "reservoir_quantile(x, quantile, sample_size = 8192)"
+    ],
+    "Description": [
+        "Gives the approximate quantile using reservoir sampling, the sample size is optional and uses 8192 as a default size."
+    ],
+    "Examples": [
+        "reservoir_quantile(A, 0.5, 1024)"
+    ],
+    "Category": [
+        "Aggregate Functions"
+    ]
+}

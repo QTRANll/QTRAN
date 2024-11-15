@@ -1,0 +1,19 @@
+{
+    "HTML": "https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html#function_utc-date",
+    "Title": "UTC_DATE()",
+    "Feature": [
+        "UTC_DATE",
+        "UTC_DATE()"
+    ],
+    "Description": [
+        "\nUTC_DATE,\n          UTC_DATE()\n",
+        "\n          Returns the current UTC date as a value in\n          'YYYY-MM-DD' or\n          YYYYMMDD format, depending on\n          whether the function is used in string or numeric context.\n        ",
+        "Press CTRL+C to copy mysql> SELECT UTC_DATE(), UTC_DATE() + 0;\n        -> '2003-08-14', 20030814"
+    ],
+    "Examples": [
+        "mysql> SELECT UTC_DATE(), UTC_DATE() + 0;\n        -> '2003-08-14', 20030814"
+    ],
+    "Category": [
+        "日期和时间函数"
+    ]
+}

@@ -1,0 +1,27 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/geo/h3"
+    ],
+    "Title": [
+        "h3ToGeoBoundary"
+    ],
+    "Feature": [
+        "h3ToGeoBoundary(h3Index)"
+    ],
+    "Description": [
+        "h3ToGeoBoundary",
+        "Returns array of pairs (lon, lat), which corresponds to the boundary of the provided H3 index.",
+        "Syntax",
+        "h3ToGeoBoundary(h3Index)",
+        "Arguments",
+        "h3Index \u2014 H3 Index. UInt64.",
+        "Returned values",
+        "Array of pairs '(lon, lat)'. Array(Float64, Float64)."
+    ],
+    "Examples": [
+        "SELECT h3ToGeoBoundary(644325524701193974) AS coordinates;"
+    ],
+    "Category": [
+        "Geo Functions"
+    ]
+}

@@ -172,16 +172,3 @@ def postgres_fine_tuning_1(training_data_filename, testing_data_filename):
             encoding="utf-8") as w:
     json.dump(job_events_json, w, indent=4)
   """
-
-
-
-
-
-mysql_training_data_filename = "../../Dataset/FineTuning/Pinolo FineTuning/TrainingDataset/mysql_training_dataset_formatted2.0.jsonl"
-mysql_testing_data_filename = "../../Dataset/FineTuning/Pinolo FineTuning/TestingDataset/mysql_testing_dataset_formatted2.0.jsonl"
-# mysql_fine_tuning_1(mysql_training_data_filename, mysql_testing_data_filename)
-
-postgres_training_data_filename = "../../Dataset/FineTuning/Pinolo FineTuning/TrainingDataset/postgres_training_dataset_formatted1.0.jsonl"
-postgres_testing_data_filename = "../../Dataset/FineTuning/Pinolo FineTuning/TestingDataset/postgres_testing_dataset_formatted1.0.jsonl"
-# postgres_fine_tuning_1(postgres_training_data_filename,postgres_testing_data_filename)
-

@@ -1,0 +1,23 @@
+{
+    "HTML": [
+        "https://docs.pingcap.com/zh/tidb/v8.3/control-flow-functions"
+    ],
+    "Title": [
+        "IF()"
+    ],
+    "Feature": [
+        "IF()"
+    ],
+    "Description": [
+        "IF()",
+        "IF() 函数可以根据值或表达式是否为真执行不同的操作。",
+        "语法：",
+        "IF(condition, value_if_true, value_if_false)\n"
+    ],
+    "Examples": [
+        "WITH RECURSIVE d AS (SELECT 1 AS n UNION ALL SELECT n+1 FROM d WHERE n<10)\nSELECT n, IF(n MOD 2, \"odd\", \"even\") FROM d;\n"
+    ],
+    "Category": [
+        "控制流程函数"
+    ]
+}

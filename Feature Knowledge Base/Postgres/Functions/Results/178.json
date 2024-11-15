@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/16/functions-geometry.html"
+    ],
+    "Title": [
+        "diagonal"
+    ],
+    "Feature": [
+        "diagonal ( box ) → lseg"
+    ],
+    "Description": [
+        "Extracts box's diagonal as a line segment (same as lseg(box))."
+    ],
+    "Examples": [
+        "diagonal(box '(1,2),(0,0)') → [(1,2),(0,0)]"
+    ],
+    "Category": [
+        "Geometric Functions and Operators"
+    ]
+}

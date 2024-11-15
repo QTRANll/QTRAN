@@ -1,0 +1,22 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/16/functions-info.html"
+    ],
+    "Title": [
+        "pg_input_error_info"
+    ],
+    "Feature": [
+        "pg_input_error_info ( string text, type text ) → record ( message text, detail text, hint text, sql_error_code text )"
+    ],
+    "Description": [
+        "Tests whether the given string is valid input for the specified data type; if not, return the details of the error that would have been thrown. If the input is valid, the results are NULL. The inputs are the same as for pg_input_is_valid.",
+        "This function will only work as desired if the data type's input function has been updated to report invalid input as a “soft” error. Otherwise, invalid input will abort the transaction, just as if the string had been cast to the type directly."
+    ],
+    "Examples": [
+        "select * from pg_input_error_info('42000000000', 'integer') →",
+        "select message, detail from pg_input_error_info('1234.567', 'numeric(7,4)') →"
+    ],
+    "Category": [
+        "System Information Functions and Operators"
+    ]
+}

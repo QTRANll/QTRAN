@@ -1,0 +1,27 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/other-functions"
+    ],
+    "Title": [
+        "globalVariable"
+    ],
+    "Feature": [
+        "globalVariable(name)"
+    ],
+    "Description": [
+        "globalVariable",
+        "Takes a constant string argument and returns the value of the global variable with that name. This function is intended for compatibility with MySQL and not needed or useful for normal operation of ClickHouse. Only few dummy global variables are defined.",
+        "Syntax",
+        "globalVariable(name)",
+        "Arguments",
+        "name \u2014 Global variable name. String.",
+        "Returned value",
+        "Returns the value of variable name."
+    ],
+    "Examples": [
+        "SELECT globalVariable('max_allowed_packet');"
+    ],
+    "Category": [
+        "Other Functions"
+    ]
+}

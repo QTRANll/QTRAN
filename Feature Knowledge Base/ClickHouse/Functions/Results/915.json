@@ -1,0 +1,29 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/tuple-functions"
+    ],
+    "Title": [
+        "tupleNames"
+    ],
+    "Feature": [
+        "tupleNames(tuple)"
+    ],
+    "Description": [
+        "tupleNames",
+        "Converts a tuple into an array of column names. For a tuple in the form Tuple(a T, b T, ...), it returns an array of strings representing the named columns of the tuple. If the tuple elements do not have explicit names, their indices will be used as the column names instead.",
+        "Syntax",
+        "tupleNames(tuple)",
+        "Arguments",
+        "tuple \u2014 Named tuple. Tuple with any types of values.",
+        "Returned value",
+        "An array with strings.",
+        "Type: Array(Tuple(String, ...))."
+    ],
+    "Examples": [
+        "CREATE TABLE tupletest (col Tuple(user_ID UInt64, session_ID UInt64)) ENGINE = Memory;INSERT INTO tupletest VALUES (tuple(1, 2));SELECT tupleNames(col) FROM tupletest;",
+        "SELECT tupleNames(tuple(3, 2, 1));"
+    ],
+    "Category": [
+        "Tuples Functions"
+    ]
+}

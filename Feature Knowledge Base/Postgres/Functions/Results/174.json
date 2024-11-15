@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/16/functions-enum.html"
+    ],
+    "Title": [
+        "enum_last"
+    ],
+    "Feature": [
+        "enum_last ( anyenum ) → anyenum"
+    ],
+    "Description": [
+        "Returns the last value of the input enum type."
+    ],
+    "Examples": [
+        "enum_last(null::rainbow) → purple"
+    ],
+    "Category": [
+        "Enum Support Functions"
+    ]
+}

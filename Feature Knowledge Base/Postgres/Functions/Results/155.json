@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/16/functions-datetime.html"
+    ],
+    "Title": [
+        "date_trunc"
+    ],
+    "Feature": [
+        "date_trunc ( text, interval ) → interval"
+    ],
+    "Description": [
+        "Truncate to specified precision; see Section 9.9.2"
+    ],
+    "Examples": [
+        "date_trunc('hour', interval '2 days 3 hours 40 minutes') → 2 days 03:00:00"
+    ],
+    "Category": [
+        "Date divide Time Functions and Operators"
+    ]
+}

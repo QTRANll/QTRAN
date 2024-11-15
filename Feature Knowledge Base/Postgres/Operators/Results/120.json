@@ -1,0 +1,21 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/16/functions-json.html"
+    ],
+    "Title": [
+        "json #>> text[]"
+    ],
+    "Feature": [
+        "json #>> text[] → text",
+        "jsonb #>> text[] → text"
+    ],
+    "Description": [
+        "Extracts JSON sub-object at the specified path as text."
+    ],
+    "Examples": [
+        "'{\"a\": {\"b\": [\"foo\",\"bar\"]}}'::json #>> '{a,b,1}' → bar"
+    ],
+    "Category": [
+        "JSON Functions and Operators"
+    ]
+}

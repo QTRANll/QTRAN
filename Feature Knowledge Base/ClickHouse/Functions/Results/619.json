@@ -1,0 +1,31 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/other-functions"
+    ],
+    "Title": [
+        "isConstant"
+    ],
+    "Feature": [
+        "isConstant(x)"
+    ],
+    "Description": [
+        "isConstant",
+        "Returns whether the argument is a constant expression.",
+        "A constant expression is an expression whose result is known during query analysis, i.e.\u00a0before execution. For example, expressions over literals are constant expressions.",
+        "This function is mostly intended for development, debugging and demonstration.",
+        "Syntax",
+        "isConstant(x)",
+        "Arguments",
+        "x \u2014 Expression to check.",
+        "Returned values",
+        "1 if x is constant. UInt8.0 if x is non-constant. UInt8."
+    ],
+    "Examples": [
+        "SELECT isConstant(x + 1) FROM (SELECT 43 AS x)",
+        "WITH 3.14 AS pi SELECT isConstant(cos(pi))",
+        "SELECT isConstant(number) FROM numbers(1)"
+    ],
+    "Category": [
+        "Other Functions"
+    ]
+}

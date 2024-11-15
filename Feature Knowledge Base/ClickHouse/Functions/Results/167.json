@@ -1,0 +1,27 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/date-time-functions"
+    ],
+    "Title": [
+        "makeDateTime64"
+    ],
+    "Feature": [
+        "makeDateTime64(year, month, day, hour, minute, second[, precision])"
+    ],
+    "Description": [
+        "makeDateTime64",
+        "Creates a DateTime64 data type value from its components: year, month, day, hour, minute, second. With optional sub-second precision.",
+        "Syntax",
+        "makeDateTime64(year, month, day, hour, minute, second[, precision])",
+        "Arguments",
+        "year \u2014 Year (0-9999). Integer, Float or Decimal.month \u2014 Month (1-12). Integer, Float or Decimal.day \u2014 Day (1-31). Integer, Float or Decimal.hour \u2014 Hour (0-23). Integer, Float or Decimal.minute \u2014 Minute (0-59). Integer, Float or Decimal.second \u2014 Second (0-59). Integer, Float or Decimal.precision \u2014 Optional precision of the sub-second component (0-9). Integer.",
+        "Returned value",
+        "A date and time created from the supplied arguments. DateTime64.  "
+    ],
+    "Examples": [
+        "SELECT makeDateTime64(2023, 5, 15, 10, 30, 45, 779, 5);"
+    ],
+    "Category": [
+        "Dates and Times Functions"
+    ]
+}

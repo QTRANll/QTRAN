@@ -1,0 +1,21 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.0/en/loadable-function-reference.html"
+    ],
+    "Title": [
+        "14.2 Loadable Function Reference"
+    ],
+    "Name": "service_get_write_locks()",
+    "Description": [
+        "\nservice_get_write_locks(namespace,\n                lock_name[,\n                lock_name] ...,\n                timeout)\n",
+        "\n                Acquires one or more write (exclusive) locks in the\n                given namespace using the given lock names, timing out\n                with an error if the locks are not acquired within the\n                given timeout value.\n              "
+    ],
+    "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/locking-service.html#function_service-get-write-locks",
+    "Feature": [
+        "service_get_write_locks(namespace,\n                lock_name[,\n                lock_name] ...,\n                timeout)"
+    ],
+    "Examples": [],
+    "Category": [
+        "Loadable Functions"
+    ]
+}

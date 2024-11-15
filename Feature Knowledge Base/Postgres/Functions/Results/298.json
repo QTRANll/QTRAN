@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/16/functions-array.html"
+    ],
+    "Title": [
+        "array_upper"
+    ],
+    "Feature": [
+        "array_upper ( anyarray, integer ) → integer"
+    ],
+    "Description": [
+        "Returns the upper bound of the requested array dimension."
+    ],
+    "Examples": [
+        "array_upper(ARRAY[1,8,3,7], 1) → 4"
+    ],
+    "Category": [
+        "Array Functions and Operators"
+    ]
+}

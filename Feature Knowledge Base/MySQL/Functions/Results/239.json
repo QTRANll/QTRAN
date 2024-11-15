@@ -1,0 +1,27 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.0/en/built-in-function-reference.html"
+    ],
+    "Title": [
+        "14.1 Built-In Function and Operator Reference"
+    ],
+    "Name": "NULLIF()",
+    "Description": [
+        "\nNULLIF(expr1,expr2)\n",
+        "\n          Returns NULL if\n          expr1 =\n          expr2 is true, otherwise\n          returns expr1. This is the same as\n          CASE WHEN\n          expr1 =\n          expr2 THEN NULL ELSE\n          expr1 END.\n        ",
+        "\n          The return value has the same type as the first argument.\n        ",
+        "Press CTRL+C to copy mysql> SELECT NULLIF(1,1);\n        -> NULL\nmysql> SELECT NULLIF(1,2);\n        -> 1",
+        "\n\nNote\n\n\n            MySQL evaluates expr1 twice if\n            the arguments are not equal.\n\n"
+    ],
+    "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/flow-control-functions.html#function_nullif",
+    "Feature": [
+        "NULLIF(expr1,expr2)"
+    ],
+    "Examples": [
+        "mysql> SELECT NULLIF(1,1);\n        -> NULL\nmysql> SELECT NULLIF(1,2);\n        -> 1"
+    ],
+    "Category": [
+        "Built-In Functions and Operators",
+        "Flow Control Functions"
+    ]
+}

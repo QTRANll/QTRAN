@@ -1,0 +1,31 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.0/en/loadable-function-reference.html"
+    ],
+    "Title": [
+        "14.2 Loadable Function Reference"
+    ],
+    "Name": "keyring_key_fetch()",
+    "Description": [
+        "\nkeyring_key_fetch(key_id)\n",
+        "\n              Given a key ID, deobfuscates and returns the key value.\n            ",
+        "\n              Arguments:\n",
+        "\n\nkey_id: A string that\n                  specifies the key ID.\n\n",
+        "\n              Return value:\n            ",
+        "\n              Returns the key value as a string for success,\n              NULL if the key does not exist, or\n              NULL and an error for failure.\n",
+        "\n\nNote\n\n\n                Key values retrieved using\n                keyring_key_fetch() are\n                subject to the general keyring function limits described\n                in Section\u00a08.4.4.13, \u201cSupported Keyring Key Types and Lengths\u201d. A key value\n                longer than that length can be stored using a keyring\n                service function (see\n                Section\u00a07.6.9.2, \u201cThe Keyring Service\u201d), but if retrieved\n                using keyring_key_fetch()\n                is truncated to the general keyring function limit.\n\n",
+        "\n              Example:\n            ",
+        "Press CTRL+C to copy mysql> SELECT keyring_key_generate('RSA_key', 'RSA', 16);\n+--------------------------------------------+\n| keyring_key_generate('RSA_key', 'RSA', 16) |\n+--------------------------------------------+\n|                                          1 |\n+--------------------------------------------+\nmysql> SELECT HEX(keyring_key_fetch('RSA_key'));\n+-----------------------------------+\n| HEX(keyring_key_fetch('RSA_key')) |\n+-----------------------------------+\n| 91C2253B696064D3556984B6630F891A  |\n+-----------------------------------+\nmysql> SELECT keyring_key_type_fetch('RSA_key');\n+-----------------------------------+\n| keyring_key_type_fetch('RSA_key') |\n+-----------------------------------+\n| RSA                               |\n+-----------------------------------+\nmysql> SELECT keyring_key_length_fetch('RSA_key');\n+-------------------------------------+\n| keyring_key_length_fetch('RSA_key') |\n+-------------------------------------+\n|                                  16 |\n+-------------------------------------+",
+        "\n              The example uses HEX() to\n              display the key value because it may contain nonprintable\n              characters. The example also uses a short key for brevity,\n              but be aware that longer keys provide better security.\n            "
+    ],
+    "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/keyring-functions-general-purpose.html#function_keyring-key-fetch",
+    "Feature": [
+        "keyring_key_fetch(key_id)"
+    ],
+    "Examples": [
+        "mysql> SELECT keyring_key_generate('RSA_key', 'RSA', 16);\n+--------------------------------------------+\n| keyring_key_generate('RSA_key', 'RSA', 16) |\n+--------------------------------------------+\n|                                          1 |\n+--------------------------------------------+\nmysql> SELECT HEX(keyring_key_fetch('RSA_key'));\n+-----------------------------------+\n| HEX(keyring_key_fetch('RSA_key')) |\n+-----------------------------------+\n| 91C2253B696064D3556984B6630F891A  |\n+-----------------------------------+\nmysql> SELECT keyring_key_type_fetch('RSA_key');\n+-----------------------------------+\n| keyring_key_type_fetch('RSA_key') |\n+-----------------------------------+\n| RSA                               |\n+-----------------------------------+\nmysql> SELECT keyring_key_length_fetch('RSA_key');\n+-------------------------------------+\n| keyring_key_length_fetch('RSA_key') |\n+-------------------------------------+\n|                                  16 |\n+-------------------------------------+"
+    ],
+    "Category": [
+        "Loadable Functions"
+    ]
+}

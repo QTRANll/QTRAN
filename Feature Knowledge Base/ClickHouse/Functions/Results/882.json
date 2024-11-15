@@ -1,0 +1,27 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/string-functions"
+    ],
+    "Title": [
+        "soundex"
+    ],
+    "Feature": [
+        "soundex(val)"
+    ],
+    "Description": [
+        "soundex",
+        "Returns the Soundex code of a string.",
+        "Syntax",
+        "soundex(val)",
+        "Arguments",
+        "val \u2014 Input value. String",
+        "Returned value",
+        "The Soundex code of the input value. String"
+    ],
+    "Examples": [
+        "select soundex('aksel');"
+    ],
+    "Category": [
+        "Strings Functions"
+    ]
+}

@@ -1,0 +1,32 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.0/en/built-in-function-reference.html"
+    ],
+    "Title": [
+        "14.1 Built-In Function and Operator Reference"
+    ],
+    "Name": "STRCMP()",
+    "Description": [
+        "\nSTRCMP(expr1,expr2)\n",
+        "\nSTRCMP() returns\n            0 if the strings are the same,\n            -1 if the first argument is smaller than\n            the second according to the current sort order, and\n            NULL if either argument is\n            NULL. It returns 1\n            otherwise.\n          ",
+        "Press CTRL+C to copy mysql> SELECT STRCMP('text', 'text2');\n        -> -1\nmysql> SELECT STRCMP('text2', 'text');\n        -> 1\nmysql> SELECT STRCMP('text', 'text');\n        -> 0",
+        "\nSTRCMP() performs the\n            comparison using the collation of the arguments.\n          ",
+        "Press CTRL+C to copy mysql> SET @s1 = _utf8mb4 'x' COLLATE utf8mb4_0900_ai_ci;\nmysql> SET @s2 = _utf8mb4 'X' COLLATE utf8mb4_0900_ai_ci;\nmysql> SET @s3 = _utf8mb4 'x' COLLATE utf8mb4_0900_as_cs;\nmysql> SET @s4 = _utf8mb4 'X' COLLATE utf8mb4_0900_as_cs;\nmysql> SELECT STRCMP(@s1, @s2), STRCMP(@s3, @s4);\n+------------------+------------------+\n| STRCMP(@s1, @s2) | STRCMP(@s3, @s4) |\n+------------------+------------------+\n|                0 |               -1 |\n+------------------+------------------+",
+        "\n            If the collations are incompatible, one of the arguments\n            must be converted to be compatible with the other. See\n            Section\u00a012.8.4, \u201cCollation Coercibility in Expressions\u201d.\n          ",
+        "Press CTRL+C to copy mysql> SET @s1 = _utf8mb4 'x' COLLATE utf8mb4_0900_ai_ci;\nmysql> SET @s2 = _utf8mb4 'X' COLLATE utf8mb4_0900_ai_ci;\nmysql> SET @s3 = _utf8mb4 'x' COLLATE utf8mb4_0900_as_cs;\nmysql> SET @s4 = _utf8mb4 'X' COLLATE utf8mb4_0900_as_cs;\n-->\nmysql> SELECT STRCMP(@s1, @s3);\nERROR 1267 (HY000): Illegal mix of collations (utf8mb4_0900_ai_ci,IMPLICIT)\nand (utf8mb4_0900_as_cs,IMPLICIT) for operation 'strcmp'\nmysql> SELECT STRCMP(@s1, @s3 COLLATE utf8mb4_0900_ai_ci);\n+---------------------------------------------+\n| STRCMP(@s1, @s3 COLLATE utf8mb4_0900_ai_ci) |\n+---------------------------------------------+\n|                                           0 |\n+---------------------------------------------+"
+    ],
+    "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/string-comparison-functions.html#function_strcmp",
+    "Feature": [
+        "STRCMP(expr1,expr2)"
+    ],
+    "Examples": [
+        "mysql> SELECT STRCMP('text', 'text2');\n        -> -1\nmysql> SELECT STRCMP('text2', 'text');\n        -> 1\nmysql> SELECT STRCMP('text', 'text');\n        -> 0",
+        "mysql> SET @s1 = _utf8mb4 'x' COLLATE utf8mb4_0900_ai_ci;\nmysql> SET @s2 = _utf8mb4 'X' COLLATE utf8mb4_0900_ai_ci;\nmysql> SET @s3 = _utf8mb4 'x' COLLATE utf8mb4_0900_as_cs;\nmysql> SET @s4 = _utf8mb4 'X' COLLATE utf8mb4_0900_as_cs;\nmysql> SELECT STRCMP(@s1, @s2), STRCMP(@s3, @s4);\n+------------------+------------------+\n| STRCMP(@s1, @s2) | STRCMP(@s3, @s4) |\n+------------------+------------------+\n|                0 |               -1 |\n+------------------+------------------+",
+        "mysql> SET @s1 = _utf8mb4 'x' COLLATE utf8mb4_0900_ai_ci;\nmysql> SET @s2 = _utf8mb4 'X' COLLATE utf8mb4_0900_ai_ci;\nmysql> SET @s3 = _utf8mb4 'x' COLLATE utf8mb4_0900_as_cs;\nmysql> SET @s4 = _utf8mb4 'X' COLLATE utf8mb4_0900_as_cs;\n-->\nmysql> SELECT STRCMP(@s1, @s3);\nERROR 1267 (HY000): Illegal mix of collations (utf8mb4_0900_ai_ci,IMPLICIT)\nand (utf8mb4_0900_as_cs,IMPLICIT) for operation 'strcmp'\nmysql> SELECT STRCMP(@s1, @s3 COLLATE utf8mb4_0900_ai_ci);\n+---------------------------------------------+\n| STRCMP(@s1, @s3 COLLATE utf8mb4_0900_ai_ci) |\n+---------------------------------------------+\n|                                           0 |\n+---------------------------------------------+"
+    ],
+    "Category": [
+        "Built-In Functions and Operators",
+        "Comparison Functions and Operators",
+        "String Functions and Operators"
+    ]
+}

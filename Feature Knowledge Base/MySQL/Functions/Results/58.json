@@ -1,0 +1,36 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.0/en/built-in-function-reference.html"
+    ],
+    "Title": [
+        "14.1 Built-In Function and Operator Reference"
+    ],
+    "Name": "CURRENT_USER(), CURRENT_USER",
+    "Description": [
+        "\nCURRENT_USER,\n          CURRENT_USER()\n",
+        "\n          Returns the user name and host name combination for the MySQL\n          account that the server used to authenticate the current\n          client. This account determines your access privileges. The\n          return value is a string in the utf8mb3\n          character set.\n        ",
+        "\n          The value of CURRENT_USER() can\n          differ from the value of\n          USER().\n        ",
+        "Press CTRL+C to copy mysql> SELECT USER();\n        -> 'davida@localhost'\nmysql> SELECT * FROM mysql.user;\nERROR 1044: Access denied for user ''@'localhost' to\ndatabase 'mysql'\nmysql> SELECT CURRENT_USER();\n        -> '@localhost'",
+        "\n          The example illustrates that although the client specified a\n          user name of davida (as indicated by the\n          value of the USER() function),\n          the server authenticated the client using an anonymous user\n          account (as seen by the empty user name part of the\n          CURRENT_USER() value). One way\n          this might occur is that there is no account listed in the\n          grant tables for davida.\n        ",
+        "\n          Within a stored program or view,\n          CURRENT_USER() returns the\n          account for the user who defined the object (as given by its\n          DEFINER value) unless defined with the\n          SQL SECURITY INVOKER characteristic. In the\n          latter case, CURRENT_USER()\n          returns the object's invoker.\n        ",
+        "\n          Triggers and events have no option to define the SQL\n          SECURITY characteristic, so for these objects,\n          CURRENT_USER() returns the\n          account for the user who defined the object. To return the\n          invoker, use USER() or\n          SESSION_USER().\n        ",
+        "\n          The following statements support use of the\n          CURRENT_USER() function to take\n          the place of the name of (and, possibly, a host for) an\n          affected user or a definer; in such cases,\n          CURRENT_USER() is expanded\n          where and as needed:\n",
+        "\n\nDROP USER\n\nRENAME USER\n\nGRANT\n\nREVOKE\n\nCREATE FUNCTION\n\nCREATE PROCEDURE\n\nCREATE TRIGGER\n\nCREATE EVENT\n\nCREATE VIEW\n\nALTER EVENT\n\nALTER VIEW\n\nSET PASSWORD\n\n",
+        "\n          For information about the implications that this expansion of\n          CURRENT_USER() has for\n          replication, see\n          Section\u00a019.5.1.8, \u201cReplication of CURRENT_USER()\u201d.\n        ",
+        "\n          Beginning with MySQL 8.0.34, this function can be used for the\n          default value of a VARCHAR or\n          TEXT column, as shown in the\n          following CREATE TABLE\n          statement:\n        ",
+        "Press CTRL+C to copy CREATE TABLE t (c VARCHAR(288) DEFAULT (CURRENT_USER()));"
+    ],
+    "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/information-functions.html#function_current-user",
+    "Feature": [
+        "CURRENT_USER",
+        "CURRENT_USER()"
+    ],
+    "Examples": [
+        "mysql> SELECT USER();\n        -> 'davida@localhost'\nmysql> SELECT * FROM mysql.user;\nERROR 1044: Access denied for user ''@'localhost' to\ndatabase 'mysql'\nmysql> SELECT CURRENT_USER();\n        -> '@localhost'",
+        "CREATE TABLE t (c VARCHAR(288) DEFAULT (CURRENT_USER()));"
+    ],
+    "Category": [
+        "Built-In Functions and Operators",
+        "Information Functions"
+    ]
+}

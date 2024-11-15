@@ -1,0 +1,22 @@
+{
+    "HTML": [
+        "https://duckdb.org/docs/sql/functions/char"
+    ],
+    "Title": [
+        "array_slice(list, begin, end)"
+    ],
+    "Feature": [
+        "array_slice(list, begin, end)"
+    ],
+    "Description": [
+        "Extract a string using slice conventions. Negative values are accepted.",
+        "Extract a string using slice conventions (like in Python). Negative values are accepted.",
+        "array_slice('DuckDB', 3, 4)",
+        "array_slice('DuckDB', 3, NULL)",
+        "array_slice('DuckDB', 0, -3)"
+    ],
+    "Examples": [],
+    "Category": [
+        "Text Functions"
+    ]
+}

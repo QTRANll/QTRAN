@@ -1,0 +1,22 @@
+{
+    "HTML": [
+        "https://www.monetdb.org/documentation-Aug2024/user-guide/sql-functions/aggregate-functions"
+    ],
+    "Title": [
+        "sys.quantile(col_expr, percentile)"
+    ],
+    "Feature": [
+        "sys.quantile(col_expr, percentile)"
+    ],
+    "Description": [
+        "Return type: ",
+        "type of col_expr",
+        "return the statistic quantile of the non-NULL values in the numeric (integer/decimal/real/double) or temporal (date/time/timestamp/interval) column or group. The percentile argument must be between 0.0 and 1.0"
+    ],
+    "Examples": [
+        "sys.quantile(i, 0.7)"
+    ],
+    "Category": [
+        "Aggregate Functions"
+    ]
+}

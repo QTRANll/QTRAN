@@ -1,0 +1,26 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.0/en/built-in-function-reference.html"
+    ],
+    "Title": [
+        "14.1 Built-In Function and Operator Reference"
+    ],
+    "Name": "ST_InteriorRingN()",
+    "Description": [
+        "\nST_InteriorRingN(poly,\n            N)\n",
+        "\n            Returns the N-th interior ring\n            for the Polygon value\n            poly as a\n            LineString. Rings are numbered beginning\n            with 1.\n          ",
+        "\nST_InteriorRingN() handles\n            its arguments as described in the introduction to this\n            section.\n          ",
+        "Press CTRL+C to copy mysql> SET @poly =\n       'Polygon((0 0,0 3,3 3,3 0,0 0),(1 1,1 2,2 2,2 1,1 1))';\nmysql> SELECT ST_AsText(ST_InteriorRingN(ST_GeomFromText(@poly),1));\n+-------------------------------------------------------+\n| ST_AsText(ST_InteriorRingN(ST_GeomFromText(@poly),1)) |\n+-------------------------------------------------------+\n| LINESTRING(1 1,1 2,2 2,2 1,1 1)                       |\n+-------------------------------------------------------+"
+    ],
+    "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/gis-polygon-property-functions.html#function_st-interiorringn",
+    "Feature": [
+        "ST_InteriorRingN(poly,\n            N)"
+    ],
+    "Examples": [
+        "mysql> SET @poly =\n       'Polygon((0 0,0 3,3 3,3 0,0 0),(1 1,1 2,2 2,2 1,1 1))';\nmysql> SELECT ST_AsText(ST_InteriorRingN(ST_GeomFromText(@poly),1));\n+-------------------------------------------------------+\n| ST_AsText(ST_InteriorRingN(ST_GeomFromText(@poly),1)) |\n+-------------------------------------------------------+\n| LINESTRING(1 1,1 2,2 2,2 1,1 1)                       |\n+-------------------------------------------------------+"
+    ],
+    "Category": [
+        "Built-In Functions and Operators",
+        "Spatial Analysis Functions"
+    ]
+}

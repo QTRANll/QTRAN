@@ -8,14 +8,13 @@
 
 import json
 import os
-import glob
 # from exceptiongroup import catch
 # from prompt_toolkit.layout.processors import PasswordProcessor
 from selenium import webdriver
 from selenium.webdriver.support.ui import WebDriverWait
 from bs4 import BeautifulSoup, Tag
-from src.Tools.Crawler.crawler_options import set_options
-from src.Tools.Crawler.crawler_options import sanitize_title
+from src.Tools.crawler_options import set_options
+
 
 def is_illustration(tag_name, tag_class, tag_text):
     if tag_text == "":
@@ -36,30 +35,21 @@ def function_article_body_processor(category, title, html, dic_filename, soup_bo
         #  跳过非Tag
         if isinstance(item, Tag) == 0:
             continue
-
         # 获取每个文本块的类型信息
         item_name = item.name
         item_class = item.get("class")  # 注意：item_class是列表形式的
         item_text = item.text
-
         #  跳过非有效文本内容的Tag
         if not is_illustration(item_name, item_class, item_text):continue
-
         #  如果是SubTitle，则记录下标
         if item_name == function_name_h_type:
             function_subtitle_indexes.append(len(doc_items))
-
         # 如果是code(可能是feature syntax，也可能是code)，则记录下标
         # code的class是['language-sql', 'codeBlockContainer_APcc', 'theme-code-block']
         if item_name == 'div' and 'language-sql' in item_class:
             code_indexes.append(len(doc_items))
         # 如果item内找到凑得，则将code存储
-        """
-        if item_name == 'p' and item.find('code'):
-            code_indexes.append(len(doc_items))
-        """
         doc_items.append(item_text.replace("\u200B", ""))
-
     # 遍历处理doc_items的内容，以subtitle的下标为function分界线处理所有的functions内容
     for i in range(len(function_subtitle_indexes)):
         # 获取当前所处理function信息的开始下标和结束下标：doc_items[start_index,end_index)
@@ -136,14 +126,6 @@ def function_article_body_processor(category, title, html, dic_filename, soup_bo
             feature_info["Description"] = doc_items[start_index: example_title_index]
         else:
             feature_info["Description"] = doc_items[start_index: end_index]
-
-
-        print(feature_info["Title"])
-        """
-        for des_item in feature_info["Description"]:
-            print(des_item)
-        """
-
         if syntax_title_index:
             print(doc_items[syntax_title_index])
 
@@ -156,7 +138,7 @@ def function_article_body_processor(category, title, html, dic_filename, soup_bo
         # 存储function information
         try:
             file_cnt = len(os.listdir(dic_filename))
-            with open(os.path.join(dic_filename, str(file_cnt) + "_" + sanitize_title(feature_info["Feature"][0]) + ".json"), "w", encoding="utf-8") as w:
+            with open(os.path.join(dic_filename, str(file_cnt) + ".json"), "w", encoding="utf-8") as w:
                 json.dump(feature_info, w, indent=4)
         except Exception as e:
             # 文件名称不合法，将文件名称修改为合法的
@@ -166,11 +148,9 @@ def function_article_body_processor(category, title, html, dic_filename, soup_bo
                 new_name = feature_info["Feature"][0][:left_index]
             print(new_name)
             file_cnt = len(os.listdir(dic_filename))
-            with open(os.path.join(dic_filename, str(file_cnt) + "_" + sanitize_title(new_name) + ".json"), "w", encoding="utf-8") as w:
+            with open(os.path.join(dic_filename, str(file_cnt) + ".json"), "w", encoding="utf-8") as w:
                 json.dump(feature_info, w, indent=4)
             print("存储文件时发生异常：" + str(e))
-
-
 
 #  处理operators，获取feature,description和examples:遍历处理Document Body的内容并获取feature,description和examples
 def operator_article_body_processor(category, title, html, dic_name, soup_body, op_category_h_type, op_name_h_type):
@@ -239,9 +219,8 @@ def operator_article_body_processor(category, title, html, dic_name, soup_body, 
 
             # 存储相关op信息
             file_cnt = len(os.listdir(dic_name))
-            with open(os.path.join(dic_name, str(file_cnt) + "_" + sanitize_title(op_result["Title"][0])+".json"), "w", encoding="utf-8") as w:
+            with open(os.path.join(dic_name, str(file_cnt) +".json"), "w", encoding="utf-8") as w:
                 json.dump(op_result, w, indent=4)
-
         #  记录op的name下标:op_category_h == "h2"
         if item_name == op_name_h_type:
             name_subtitle_indexes.append(len(doc_items))
@@ -313,7 +292,6 @@ def function_crawler(origin_category, title, html, dic_filename):
 
     h2_cnt = len(soup.find_all("h2"))
     h3_cnt = len(soup.find_all("h3"))
-
     # 根据不同的页面类型分情况进行functions的信息爬取
     if h2_cnt > 1:
         # type 1
@@ -339,7 +317,6 @@ def op_crawler(origin_category, title, html, dic_filename):
         pass
     else:
         return
-
     result = {}
     timeout = 5  # 等待时间
     options = set_options()
@@ -349,63 +326,55 @@ def op_crawler(origin_category, title, html, dic_filename):
     soup = BeautifulSoup(driver.page_source, "html.parser")
     soup_article = soup.find("article")
     soup_document_markdown = soup_article.find("div", class_="theme-doc-markdown markdown")
-
     operator_article_body_processor(origin_category, title, html, dic_filename, soup_document_markdown, "h2", "h3")
+
+def data_types_crawler(category_key, statement_key, statement_value, dic_filename):
+    detailed = {
+        "HTML": [statement_value],
+        "Title": [statement_key],
+        "Feature": [statement_key],
+        "Description": [],
+        "Examples": [],
+        "Category": [statement_key]
+    }
+    timeout = 5  # 等待时间
+    options = set_options()
+    driver = webdriver.Chrome(options=options)  # 创建一个Chrome浏览器的WebDriver对象，用于控制浏览器的操作
+    driver.get(statement_value)  # 打开指定的URL:使用WebDriver打开指定的URL，加载页面内容
+    WebDriverWait(driver, timeout)  # 创建一个WebDriverWait对象，设置最大等待时间为50秒，用于等待页面加载完成
+    soup = BeautifulSoup(driver.page_source, "html.parser")
+    soup_article = soup.find("article")
+    soup_document_markdown = soup_article.find("div", class_="theme-doc-markdown markdown")
+    for item in soup_document_markdown:
+        if len(item.text.strip()):
+            detailed["Description"].append(item.text)
+
+    soup_divs = soup_document_markdown.find_all("div")
+    for item in soup_divs:
+        if 'language-sql' in item.get('class') and len(item.text.strip()):
+            detailed["Examples"].append(item.text)
+
+    file_cnt = len(os.listdir(dic_filename))
+    with open(os.path.join(dic_filename, str(file_cnt) + ".json"), "w", encoding="utf-8") as w:
+        json.dump(detailed, w, indent=4)
+
 
 
 def crawler_results(feature_type, htmls_filename, dic_filename):
+    if len(os.listdir(dic_filename)):
+        print(dic_filename + ":crawler finished")
+        return
     with open(htmls_filename, "r", encoding="utf-8") as rf:
         html_contents = json.load(rf)
         for category_key, value in html_contents.items():
             for statement_key, statement_value in value.items():
                 print(statement_key+":"+str(statement_value))
-                if feature_type == "function":
+                if feature_type == "Functions":
                     function_crawler(category_key, statement_key, statement_value, dic_filename)
-                elif feature_type == "op":
+                elif feature_type == "Operators":
                     op_crawler(category_key, statement_key, statement_value, dic_filename)
+                elif feature_type == "DataTypes":
+                    data_types_crawler(category_key, statement_key, statement_value, dic_filename)
                 print('----------------------')
-
-
-def delete_file(file_path):
-    try:
-        os.remove(file_path)
-        print(f"文件 '{file_path}' 已成功删除。")
-    except FileNotFoundError:
-        print(f"文件 '{file_path}' 不存在。")
-    except PermissionError:
-        print(f"没有权限删除文件 '{file_path}'。")
-    except Exception as e:
-        print(f"删除文件时发生错误: {e}")
-
-def category_classifier(results_dicname, results_category_dicname):
-    # 对爬取的所有结果以category进行分类并存储到SQL_Statements_Results_Category中
-    json_files = glob.glob(os.path.join(results_dicname, '*.json'))
-    for json_file in json_files:
-        with open(json_file, "r", encoding="utf-8") as r:
-            data = json.load(r)
-
-        # 将结果存储到对应的jsonl文件中,可能属于多个类别
-        for category in data["Category"]:
-            with open(os.path.join(results_category_dicname, category + ".jsonl"), "a",encoding="utf-8") as w:
-                json.dump(data, w)
-                w.write('\n')
-
-
-
-
-prefix = os.path.join("..","..","..","Feature Knowledge Base","ClickHouse")
-Function_Htmls_Filename = os.path.join(prefix, "Functions", "HTMLs.json")
-Function_dir_dicname = os.path.join(prefix, "Functions", "Results")
-Function_Results_Category_Dicname = os.path.join(prefix, "Functions", "Results_Category")
-# crawler_results("function", Function_Htmls_Filename, Function_dir_dicname)
-# category_classifier(Function_dir_dicname, Function_Results_Category_Dicname)  # 文件写入方式为add
-
-
-Ops_Htmls_Filename = os.path.join(prefix, "Operators", "HTMLs.json")
-Op_dir_dicname = os.path.join(prefix, 'Operators', 'Results')
-Op_Results_Category_Dicname = os.path.join(prefix, "Operators", "Results_Category")
-# 爬取operators的每个页面的信息并存储
-# crawler_results("op", Ops_Htmls_Filename, Op_dir_dicname)
-# category_classifier(Op_dir_dicname, Op_Results_Category_Dicname)  # 文件写入方式为add
 
 

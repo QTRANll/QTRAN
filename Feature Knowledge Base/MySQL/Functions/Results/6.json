@@ -1,0 +1,43 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.0/en/built-in-function-reference.html"
+    ],
+    "Title": [
+        "14.1 Built-In Function and Operator Reference"
+    ],
+    "Name": "ANY_VALUE()",
+    "Description": [
+        "\nANY_VALUE(arg)\n",
+        "\n          This function is useful for GROUP BY\n          queries when the\n          ONLY_FULL_GROUP_BY SQL mode\n          is enabled, for cases when MySQL rejects a query that you know\n          is valid for reasons that MySQL cannot determine. The function\n          return value and type are the same as the return value and\n          type of its argument, but the function result is not checked\n          for the ONLY_FULL_GROUP_BY\n          SQL mode.\n        ",
+        "\n          For example, if name is a nonindexed\n          column, the following query fails with\n          ONLY_FULL_GROUP_BY enabled:\n        ",
+        "Press CTRL+C to copy mysql> SELECT name, address, MAX(age) FROM t GROUP BY name;\nERROR 1055 (42000): Expression #2 of SELECT list is not in GROUP\nBY clause and contains nonaggregated column 'mydb.t.address' which\nis not functionally dependent on columns in GROUP BY clause; this\nis incompatible with sql_mode=only_full_group_by",
+        "\n          The failure occurs because address is a\n          nonaggregated column that is neither named among\n          GROUP BY columns nor functionally dependent\n          on them. As a result, the address value for\n          rows within each name group is\n          nondeterministic. There are multiple ways to cause MySQL to\n          accept the query:\n",
+        "\n\n              Alter the table to make name a primary\n              key or a unique NOT NULL column. This\n              enables MySQL to determine that address\n              is functionally dependent on name; that\n              is, address is uniquely determined by\n              name. (This technique is inapplicable\n              if NULL must be permitted as a valid\n              name value.)\n            \n              Use ANY_VALUE() to refer to\n              address:\n            Press CTRL+C to copy SELECT name, ANY_VALUE(address), MAX(age) FROM t GROUP BY name;\n              In this case, MySQL ignores the nondeterminism of\n              address values within each\n              name group and accepts the query. This\n              may be useful if you simply do not care which value of a\n              nonaggregated column is chosen for each group.\n              ANY_VALUE() is not an\n              aggregate function, unlike functions such as\n              SUM() or\n              COUNT(). It simply acts to\n              suppress the test for nondeterminism.\n            \n              Disable\n              ONLY_FULL_GROUP_BY. This\n              is equivalent to using\n              ANY_VALUE() with\n              ONLY_FULL_GROUP_BY\n              enabled, as described in the previous item.\n\n",
+        "\nANY_VALUE() is also useful if\n          functional dependence exists between columns but MySQL cannot\n          determine it. The following query is valid because\n          age is functionally dependent on the\n          grouping column age-1, but MySQL cannot\n          tell that and rejects the query with\n          ONLY_FULL_GROUP_BY enabled:\n        ",
+        "Press CTRL+C to copy SELECT age FROM t GROUP BY age-1;",
+        "\n          To cause MySQL to accept the query, use\n          ANY_VALUE():\n        ",
+        "Press CTRL+C to copy SELECT ANY_VALUE(age) FROM t GROUP BY age-1;",
+        "\nANY_VALUE() can be used for\n          queries that refer to aggregate functions in the absence of a\n          GROUP BY clause:\n        ",
+        "Press CTRL+C to copy mysql> SELECT name, MAX(age) FROM t;\nERROR 1140 (42000): In aggregated query without GROUP BY, expression\n#1 of SELECT list contains nonaggregated column 'mydb.t.name'; this\nis incompatible with sql_mode=only_full_group_by",
+        "\n          Without GROUP BY, there is a single group\n          and it is nondeterministic which name value\n          to choose for the group.\n          ANY_VALUE() tells MySQL to\n          accept the query:\n        ",
+        "Press CTRL+C to copy SELECT ANY_VALUE(name), MAX(age) FROM t;",
+        "\n          It may be that, due to some property of a given data set, you\n          know that a selected nonaggregated column is effectively\n          functionally dependent on a GROUP BY\n          column. For example, an application may enforce uniqueness of\n          one column with respect to another. In this case, using\n          ANY_VALUE() for the effectively\n          functionally dependent column may make sense.\n        ",
+        "\n          For additional discussion, see\n          Section\u00a014.19.3, \u201cMySQL Handling of GROUP BY\u201d.\n        "
+    ],
+    "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/miscellaneous-functions.html#function_any-value",
+    "Feature": [
+        "ANY_VALUE(arg)"
+    ],
+    "Examples": [
+        "mysql> SELECT name, address, MAX(age) FROM t GROUP BY name;\nERROR 1055 (42000): Expression #2 of SELECT list is not in GROUP\nBY clause and contains nonaggregated column 'mydb.t.address' which\nis not functionally dependent on columns in GROUP BY clause; this\nis incompatible with sql_mode=only_full_group_by",
+        "SELECT name, ANY_VALUE(address), MAX(age) FROM t GROUP BY name;",
+        "SELECT age FROM t GROUP BY age-1;",
+        "SELECT ANY_VALUE(age) FROM t GROUP BY age-1;",
+        "mysql> SELECT name, MAX(age) FROM t;\nERROR 1140 (42000): In aggregated query without GROUP BY, expression\n#1 of SELECT list contains nonaggregated column 'mydb.t.name'; this\nis incompatible with sql_mode=only_full_group_by",
+        "SELECT ANY_VALUE(name), MAX(age) FROM t;"
+    ],
+    "Category": [
+        "Built-In Functions and Operators",
+        "Miscellaneous Functions"
+    ]
+}

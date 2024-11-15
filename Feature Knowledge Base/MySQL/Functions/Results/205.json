@@ -1,0 +1,26 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.0/en/built-in-function-reference.html"
+    ],
+    "Title": [
+        "14.1 Built-In Function and Operator Reference"
+    ],
+    "Name": "LTRIM()",
+    "Description": [
+        "\nLTRIM(str)\n",
+        "\n          Returns the string str with leading\n          space characters removed. Returns NULL if\n          str is NULL.\n        ",
+        "Press CTRL+C to copy mysql> SELECT LTRIM('  barbar');\n        -> 'barbar'",
+        "\n          This function is multibyte safe.\n        "
+    ],
+    "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/string-functions.html#function_ltrim",
+    "Feature": [
+        "LTRIM(str)"
+    ],
+    "Examples": [
+        "mysql> SELECT LTRIM('  barbar');\n        -> 'barbar'"
+    ],
+    "Category": [
+        "Built-In Functions and Operators",
+        "String Functions and Operators"
+    ]
+}

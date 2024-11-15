@@ -1,0 +1,18 @@
+{
+    "HTML": [
+        "https://sqlite.org/lang_corefunc.html"
+    ],
+    "Title": [
+        "glob(X,Y)"
+    ],
+    "Feature": [
+        "glob(X,Y)"
+    ],
+    "Description": [
+        "\n  The glob(X,Y) function is equivalent to the\n  expression \"Y GLOB X\".\n  Note that the X and Y arguments are reversed in the glob() function\n  relative to the infix GLOB operator.  Y is the string and X is the\n  pattern.  So, for example, the following expressions are equivalent:\n       name GLOB '*helium*'\n     glob('*helium*',name)\n  \nIf the sqlite3_create_function() interface is used to\n  override the glob(X,Y) function with an alternative implementation then\n  the GLOB operator will invoke the alternative implementation.\n"
+    ],
+    "Examples": [],
+    "Category": [
+        "Core SQL Functions"
+    ]
+}

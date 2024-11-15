@@ -1,0 +1,21 @@
+{
+    "HTML": [
+        "https://docs.pingcap.com/zh/tidb/v8.3/json-functions-aggregate"
+    ],
+    "Title": [
+        "JSON_ARRAYAGG()"
+    ],
+    "Feature": [
+        "JSON_ARRAYAGG()"
+    ],
+    "Description": [
+        "JSON_ARRAYAGG()",
+        "JSON_ARRAYAGG(key) 函数可以根据给定的 key 将 key 值聚合到一个 JSON 数组中。key 通常为表达式或列名。"
+    ],
+    "Examples": [
+        "SELECT JSON_ARRAYAGG(v) FROM (SELECT 1 'v' UNION SELECT 2);\n"
+    ],
+    "Category": [
+        "聚合 JSON 的函数"
+    ]
+}

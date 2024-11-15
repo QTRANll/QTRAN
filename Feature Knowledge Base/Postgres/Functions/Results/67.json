@@ -1,0 +1,21 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/16/functions-string.html"
+    ],
+    "Title": [
+        "substring"
+    ],
+    "Feature": [
+        "substring ( string text SIMILAR pattern text ESCAPE escape text ) → text",
+        "substring ( string text FROM pattern text FOR escape text ) → text"
+    ],
+    "Description": [
+        "Extracts the first substring matching SQL regular expression; see Section 9.7.2. The first form has been specified since SQL:2003; the second form was only in SQL:1999 and should be considered obsolete."
+    ],
+    "Examples": [
+        "substring('Thomas' similar '%#\"o_a#\"_' escape '#') → oma"
+    ],
+    "Category": [
+        "String Functions and Operators"
+    ]
+}

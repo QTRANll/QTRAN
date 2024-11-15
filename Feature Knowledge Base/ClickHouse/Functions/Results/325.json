@@ -1,0 +1,26 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/geo/coordinates"
+    ],
+    "Title": [
+        "greatCircleAngle"
+    ],
+    "Feature": [
+        "greatCircleAngle(lon1Deg, lat1Deg, lon2Deg, lat2Deg)"
+    ],
+    "Description": [
+        "greatCircleAngle",
+        "Calculates the central angle between two points on the Earth\u2019s surface using the great-circle formula.",
+        "greatCircleAngle(lon1Deg, lat1Deg, lon2Deg, lat2Deg)",
+        "Input parameters",
+        "lon1Deg \u2014 Longitude of the first point in degrees.lat1Deg \u2014 Latitude of the first point in degrees.lon2Deg \u2014 Longitude of the second point in degrees.lat2Deg \u2014 Latitude of the second point in degrees.",
+        "Returned value",
+        "The central angle between two points in degrees."
+    ],
+    "Examples": [
+        "SELECT greatCircleAngle(0, 0, 45, 0) AS arc"
+    ],
+    "Category": [
+        "Geo Functions"
+    ]
+}

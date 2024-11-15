@@ -1,0 +1,27 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/ym-dict-functions"
+    ],
+    "Title": [
+        "regionToName"
+    ],
+    "Feature": [
+        "regionToName(id\\[, lang\\])"
+    ],
+    "Description": [
+        "regionToName",
+        "Accepts a region ID and geobase and returns a string of the name of the region in the corresponding language. If the region with the specified ID does not exist, an empty string is returned.",
+        "Syntax",
+        "regionToName(id\\[, lang\\])",
+        "Parameters",
+        "id \u2014 Region ID from the geobase. UInt32.geobase \u2014 Dictionary key. See Multiple Geobases. String. Optional.",
+        "Returned value",
+        "Name of the region in the corresponding language specified by geobase. String.Otherwise, an empty string. "
+    ],
+    "Examples": [
+        "SELECT regionToName(number::UInt32,'en') FROM numbers(0,5);"
+    ],
+    "Category": [
+        "Embedded Dictionaries Functions"
+    ]
+}

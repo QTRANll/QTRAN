@@ -1,0 +1,23 @@
+{
+    "HTML": [
+        "https://mariadb.com/kb/en/boolean/"
+    ],
+    "Title": [
+        "BOOLEAN"
+    ],
+    "Feature": [
+        "BOOL, BOOLEAN\n"
+    ],
+    "Description": [
+        "These types are synonyms for TINYINT(1). \nA value of zero is considered false. Non-zero values are considered true.",
+        "However, the values TRUE and FALSE are merely aliases for 1 and 0. See Boolean Literals, as well as the IS operator for testing values against a boolean."
+    ],
+    "Examples": [
+        "CREATE TABLE boo (i BOOLEAN);\n\nDESC boo;\n+-------+------------+------+-----+---------+-------+\n| Field | Type       | Null | Key | Default | Extra |\n+-------+------------+------+-----+---------+-------+\n| i     | tinyint(1) | YES  |     | NULL    |       |\n+-------+------------+------+-----+---------+-------+\n",
+        "SELECT IF(0, 'true', 'false');\n+------------------------+\n| IF(0, 'true', 'false') |\n+------------------------+\n| false                  |\n+------------------------+\n\nSELECT IF(1, 'true', 'false');\n+------------------------+\n| IF(1, 'true', 'false') |\n+------------------------+\n| true                   |\n+------------------------+\n\nSELECT IF(2, 'true', 'false');\n+------------------------+\n| IF(2, 'true', 'false') |\n+------------------------+\n| true                   |\n+------------------------+\n",
+        "SELECT IF(0 = FALSE, 'true', 'false');\n\n+--------------------------------+\n| IF(0 = FALSE, 'true', 'false') |\n+--------------------------------+\n| true                           |\n+--------------------------------+\n\nSELECT IF(1 = TRUE, 'true', 'false');\n+-------------------------------+\n| IF(1 = TRUE, 'true', 'false') |\n+-------------------------------+\n| true                          |\n+-------------------------------+\n\nSELECT IF(2 = TRUE, 'true', 'false');\n+-------------------------------+\n| IF(2 = TRUE, 'true', 'false') |\n+-------------------------------+\n| false                         |\n+-------------------------------+\n\nSELECT IF(2 = FALSE, 'true', 'false');\n+--------------------------------+\n| IF(2 = FALSE, 'true', 'false') |\n+--------------------------------+\n| false                          |\n+--------------------------------+\n"
+    ],
+    "Category": [
+        "Numeric Data Types"
+    ]
+}

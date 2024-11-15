@@ -1,0 +1,24 @@
+{
+    "HTML": [
+        "https://docs.pingcap.com/zh/tidb/v8.3/string-functions"
+    ],
+    "Title": [
+        "ORD()"
+    ],
+    "Feature": [
+        "ORD()"
+    ],
+    "Description": [
+        "ORD()",
+        "返回给定的参数中最左侧字符的字符编码。",
+        "该函数的功能类似于 CHAR()，但处理方式相反。"
+    ],
+    "Examples": [
+        "SELECT ORD('a'), ORD('A');\n",
+        "SELECT CHAR(97), CHAR(65);\n",
+        "SELECT ORD('e'), ORD('ë'), HEX('e'), HEX('ë');\n"
+    ],
+    "Category": [
+        "字符串函数"
+    ]
+}

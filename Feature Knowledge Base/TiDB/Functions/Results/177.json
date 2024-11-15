@@ -1,0 +1,22 @@
+{
+    "HTML": [
+        "https://docs.pingcap.com/zh/tidb/v8.3/information-functions"
+    ],
+    "Title": [
+        "LAST_INSERT_ID()"
+    ],
+    "Feature": [
+        "LAST_INSERT_ID()"
+    ],
+    "Description": [
+        "LAST_INSERT_ID()",
+        "LAST_INSERT_ID() 函数返回包含 AUTO_INCREMENT 或 AUTO_RANDOM 列的表中最后插入行的 ID。",
+        "CREATE TABLE t1(id SERIAL);\nQuery OK, 0 rows affected (0.17 sec)\n\nINSERT INTO t1() VALUES();\nQuery OK, 1 row affected (0.03 sec)\n\nINSERT INTO t1() VALUES();\nQuery OK, 1 row affected (0.00 sec)\n\nSELECT LAST_INSERT_ID();\n+------------------+\n| LAST_INSERT_ID() |\n+------------------+\n|                3 |\n+------------------+\n1 row in set (0.00 sec)\n\nTABLE t1;\n+----+\n| id |\n+----+\n|  1 |\n|  3 |\n+----+\n2 rows in set (0.00 sec)\n"
+    ],
+    "Examples": [
+        "CREATE TABLE t1(id SERIAL);\nQuery OK, 0 rows affected (0.17 sec)\n\nINSERT INTO t1() VALUES();\nQuery OK, 1 row affected (0.03 sec)\n\nINSERT INTO t1() VALUES();\nQuery OK, 1 row affected (0.00 sec)\n\nSELECT LAST_INSERT_ID();\n+------------------+\n| LAST_INSERT_ID() |\n+------------------+\n|                3 |\n+------------------+\n1 row in set (0.00 sec)\n\nTABLE t1;\n+----+\n| id |\n+----+\n|  1 |\n|  3 |\n+----+\n2 rows in set (0.00 sec)\n"
+    ],
+    "Category": [
+        "信息函数"
+    ]
+}

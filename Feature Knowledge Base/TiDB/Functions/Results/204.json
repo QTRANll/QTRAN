@@ -1,0 +1,23 @@
+{
+    "HTML": [
+        "https://docs.pingcap.com/zh/tidb/v8.3/json-functions-modify"
+    ],
+    "Title": [
+        "JSON_UNQUOTE()"
+    ],
+    "Feature": [
+        "JSON_UNQUOTE()"
+    ],
+    "Description": [
+        "JSON_UNQUOTE()",
+        "JSON_UNQUOTE(json) 函数去掉 JSON 值的引号，并以字符串形式返回结果。该函数与 JSON_QUOTE() 函数作用相反。"
+    ],
+    "Examples": [
+        "SELECT JSON_UNQUOTE('\"foo\"');\n",
+        "SELECT JSON_EXTRACT('{\"database\": \"TiDB\"}', '$.database');\n",
+        "SELECT JSON_UNQUOTE(JSON_EXTRACT('{\"database\": \"TiDB\"}', '$.database'));\n"
+    ],
+    "Category": [
+        "修改 JSON 的函数"
+    ]
+}

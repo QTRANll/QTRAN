@@ -1,0 +1,21 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/string-search-functions"
+    ],
+    "Title": [
+        "positionUTF8"
+    ],
+    "Feature": [
+        "positionUTF8"
+    ],
+    "Description": [
+        "positionUTF8",
+        "Like position but assumes haystack and needle are UTF-8 encoded strings."
+    ],
+    "Examples": [
+        "SELECT positionUTF8('Mot\u00f6rhead', 'r');"
+    ],
+    "Category": [
+        "Searching in Strings Functions"
+    ]
+}

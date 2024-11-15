@@ -1,0 +1,31 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/aggregate-functions/reference/minmap"
+    ],
+    "Title": [
+        "minMap"
+    ],
+    "Feature": [
+        "`minMap(key, value)`"
+    ],
+    "Description": [
+        "minMap",
+        "Calculates the minimum from value array according to the keys specified in the key array.",
+        "Syntax",
+        "`minMap(key, value)`",
+        "or",
+        "minMap(Tuple(key, value))",
+        "Alias: minMappedArrays",
+        "NotePassing a tuple of keys and value arrays is identical to passing an array of keys and an array of values.The number of elements in key and value must be the same for each row that is totaled.",
+        "Parameters",
+        "key \u2014 Array of keys. Array.value \u2014 Array of values. Array.",
+        "Returned value",
+        "Returns a tuple of two arrays: keys in sorted order, and values calculated for the corresponding keys. Tuple(Array, Array)."
+    ],
+    "Examples": [
+        "SELECT minMap(a, b)FROM values('a Array(Int32), b Array(Int64)', ([1, 2], [2, 2]), ([2, 3], [1, 1]))"
+    ],
+    "Category": [
+        "Aggregate Functions"
+    ]
+}

@@ -1,0 +1,27 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.0/en/loadable-function-reference.html"
+    ],
+    "Title": [
+        "14.2 Loadable Function Reference"
+    ],
+    "Name": "firewall_group_enlist()",
+    "Description": [
+        "\nfirewall_group_enlist(group,\n              user)\n",
+        "\n              This function adds an account to a group profile. It\n              requires the FIREWALL_ADMIN\n              privilege.\n            ",
+        "\n              It is not necessary to register the account itself with\n              the firewall before adding the account to the group.\n            ",
+        "\n              Example:\n            ",
+        "Press CTRL+C to copy SELECT firewall_group_enlist('g', 'fwuser@localhost');",
+        "\n              This function was added in MySQL 8.0.23.\n            "
+    ],
+    "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/firewall-reference.html#function_firewall-group-enlist",
+    "Feature": [
+        "firewall_group_enlist(group,\n              user)"
+    ],
+    "Examples": [
+        "SELECT firewall_group_enlist('g', 'fwuser@localhost');"
+    ],
+    "Category": [
+        "Loadable Functions"
+    ]
+}

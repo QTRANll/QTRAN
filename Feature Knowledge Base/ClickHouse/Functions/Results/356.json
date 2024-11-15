@@ -1,0 +1,27 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/geo/h3"
+    ],
+    "Title": [
+        "h3ToCenterChild"
+    ],
+    "Feature": [
+        "h3ToCenterChild(index, resolution)"
+    ],
+    "Description": [
+        "h3ToCenterChild",
+        "Returns the center child (finer) H3 index contained by given H3 at the given resolution.",
+        "Syntax",
+        "h3ToCenterChild(index, resolution)",
+        "Parameter",
+        "index \u2014 Hexagon index number. UInt64.resolution \u2014 Index resolution. Range: [0, 15]. UInt8.",
+        "Returned values",
+        "H3 index of the center child contained by given H3 at the given resolution. UInt64."
+    ],
+    "Examples": [
+        "SELECT h3ToCenterChild(577023702256844799,1) AS centerToChild;"
+    ],
+    "Category": [
+        "Geo Functions"
+    ]
+}

@@ -1,0 +1,27 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/hash-functions"
+    ],
+    "Title": [
+        "sipHash128ReferenceKeyed"
+    ],
+    "Feature": [
+        "sipHash128ReferenceKeyed((k0, k1), par1,...)"
+    ],
+    "Description": [
+        "sipHash128ReferenceKeyed",
+        "Same as sipHash128Reference but additionally takes an explicit key argument instead of using a fixed key.",
+        "Syntax",
+        "sipHash128ReferenceKeyed((k0, k1), par1,...)",
+        "Arguments",
+        "Same as sipHash128Reference, but the first argument is a tuple of two UInt64 values representing the key.",
+        "Returned value",
+        "A 128-bit SipHash hash value of type FixedString(16)."
+    ],
+    "Examples": [
+        "SELECT hex(sipHash128ReferenceKeyed((506097522914230528, 1084818905618843912),'foo', '\\x01', 3));"
+    ],
+    "Category": [
+        "Hash Functions"
+    ]
+}

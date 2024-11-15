@@ -1,0 +1,25 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.0/en/built-in-function-reference.html"
+    ],
+    "Title": [
+        "14.1 Built-In Function and Operator Reference"
+    ],
+    "Name": "UNCOMPRESS()",
+    "Description": [
+        "\nUNCOMPRESS(string_to_uncompress)\n",
+        "\n          Uncompresses a string compressed by the\n          COMPRESS() function. If the\n          argument is not a compressed value, the result is\n          NULL; if\n          string_to_uncompress is\n          NULL, the result is also\n          NULL. This function requires MySQL to have\n          been compiled with a compression library such as\n          zlib. Otherwise, the return value is always\n          NULL.\n        ",
+        "Press CTRL+C to copy mysql> SELECT UNCOMPRESS(COMPRESS('any string'));\n        -> 'any string'\nmysql> SELECT UNCOMPRESS('any string');\n        -> NULL"
+    ],
+    "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/encryption-functions.html#function_uncompress",
+    "Feature": [
+        "UNCOMPRESS(string_to_uncompress)"
+    ],
+    "Examples": [
+        "mysql> SELECT UNCOMPRESS(COMPRESS('any string'));\n        -> 'any string'\nmysql> SELECT UNCOMPRESS('any string');\n        -> NULL"
+    ],
+    "Category": [
+        "Built-In Functions and Operators",
+        "Encryption and Compression Functions"
+    ]
+}

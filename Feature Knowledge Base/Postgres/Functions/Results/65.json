@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/16/functions-string.html"
+    ],
+    "Title": [
+        "rpad"
+    ],
+    "Feature": [
+        "rpad ( string text, length integer [, fill text ] ) → text"
+    ],
+    "Description": [
+        "Extends the string to length length by appending the characters fill (a space by default). If the string is already longer than length then it is truncated."
+    ],
+    "Examples": [
+        "rpad('hi', 5, 'xy') → hixyx"
+    ],
+    "Category": [
+        "String Functions and Operators"
+    ]
+}

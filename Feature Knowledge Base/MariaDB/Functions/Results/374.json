@@ -1,0 +1,24 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/user/"
+    ],
+    "Title": [
+        "USER"
+    ],
+    "Feature": [
+        "USER()\n"
+    ],
+    "Description": [
+        "Returns the current MariaDB user name and host name, given when authenticating to MariaDB,  as a string in the utf8 character set.",
+        "Note that the value of USER() may differ from the value of CURRENT_USER(), which is the user used to authenticate the current client. \nCURRENT_ROLE() returns the current active role.",
+        "SYSTEM_USER() and SESSION_USER are synonyms for USER().",
+        "Statements using the USER() function or one of its synonyms are not safe for statement level replication."
+    ],
+    "Examples": [
+        "shell> mysql --user=\"anonymous\"\n\nSELECT USER(),CURRENT_USER();\n+---------------------+----------------+\n| USER()              | CURRENT_USER() |\n+---------------------+----------------+\n| anonymous@localhost | @localhost     |\n+---------------------+----------------+\n",
+        "SELECT SUBSTRING_INDEX(USER(), '@', -1);\n+----------------------------------+\n| SUBSTRING_INDEX(USER(), '@', -1) |\n+----------------------------------+\n| 192.168.0.101                    |\n+----------------------------------+\n"
+    ],
+    "Category": [
+        "Information Functions"
+    ]
+}

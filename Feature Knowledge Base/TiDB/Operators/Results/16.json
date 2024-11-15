@@ -1,0 +1,18 @@
+{
+    "HTML": "https://dev.mysql.com/doc/refman/8.0/en/comparison-operators.html#operator_is-not",
+    "Title": "IS NOT",
+    "Feature": [
+        "IS NOT\n            boolean_value"
+    ],
+    "Description": [
+        "\nIS NOT\n            boolean_value\n",
+        "\n            Tests a value against a boolean value, where\n            boolean_value can be\n            TRUE, FALSE, or\n            UNKNOWN.\n          ",
+        "Press CTRL+C to copy mysql> SELECT 1 IS NOT UNKNOWN, 0 IS NOT UNKNOWN, NULL IS NOT UNKNOWN;\n        -> 1, 1, 0"
+    ],
+    "Examples": [
+        "mysql> SELECT 1 IS NOT UNKNOWN, 0 IS NOT UNKNOWN, NULL IS NOT UNKNOWN;\n        -> 1, 1, 0"
+    ],
+    "Category": [
+        "Comparison Functions and Operators"
+    ]
+}

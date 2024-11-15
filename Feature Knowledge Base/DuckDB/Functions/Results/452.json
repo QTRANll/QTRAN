@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://duckdb.org/docs/sql/functions/char"
+    ],
+    "Title": [
+        "editdist3(s1, s2)"
+    ],
+    "Feature": [
+        "editdist3(s1, s2)"
+    ],
+    "Description": [
+        "Alias of levenshtein for SQLite compatibility. The minimum number of single-character edits (insertions, deletions or substitutions) required to change one string to the other. Characters of different cases (e.g., a and A) are considered different."
+    ],
+    "Examples": [
+        "editdist3('duck', 'db')"
+    ],
+    "Category": [
+        "Text Functions"
+    ]
+}

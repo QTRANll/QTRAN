@@ -1,0 +1,18 @@
+{
+    "HTML": [
+        "https://sqlite.org/lang_corefunc.html"
+    ],
+    "Title": [
+        "octet_length(X)"
+    ],
+    "Feature": [
+        "octet_length(X)"
+    ],
+    "Description": [
+        "\n  The octet_length(X) function returns the number of bytes in the encoding\n  of text string X.  If X is NULL then octet_length(X) returns NULL.  If X is\n  a BLOB value, then octet_length(X) is the same as length(X).  If X is a\n  numeric value, then octet_length(X) returns the number of bytes in a text\n  rendering of that number.\n  \n  Because octet_length(X) returns the number of bytes in X, not the number\n  of characters or code-points, the value returned depends on the database\n  encoding.  The\n  octet_length() function can return different answers for the same input string\n  if the database encoding is UTF16 instead of UTF8.\n  \n  If argument X is a table column and the value is of type text or blob,\n  then octet_length(X) avoids reading the content of X from disk, as the byte\n  length can be computed from metadata.  Thus, octet_length(X) is efficient\n  even if X is a column containing a multi-megabyte text or blob value.\n"
+    ],
+    "Examples": [],
+    "Category": [
+        "Core SQL Functions"
+    ]
+}

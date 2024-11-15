@@ -1,0 +1,18 @@
+{
+    "HTML": [
+        "https://sqlite.org/lang_corefunc.html"
+    ],
+    "Title": [
+        "format(FORMAT,...)"
+    ],
+    "Feature": [
+        "format(FORMAT,...)"
+    ],
+    "Description": [
+        "\n  The format(FORMAT,...) SQL function works like the sqlite3_mprintf() C-language\n  function and the printf() function from the standard C library.\n  The first argument is a format string that specifies how to construct the output\n  string using values taken from subsequent arguments.  If the FORMAT argument is\n  missing or NULL then the result is NULL.  The %n format is silently ignored and\n  does not consume an argument.  The %p format is an alias for %X.  The %z format\n  is interchangeable with %s.  If there are too few arguments in the argument list,\n  missing arguments are assumed to have a NULL value, which is translated into\n  0 or 0.0 for numeric formats or an empty string for %s.  See the\n  built-in printf() documentation for additional information.\n"
+    ],
+    "Examples": [],
+    "Category": [
+        "Core SQL Functions"
+    ]
+}

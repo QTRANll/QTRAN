@@ -1,0 +1,18 @@
+{
+    "HTML": [
+        "https://sqlite.org/lang_corefunc.html"
+    ],
+    "Title": [
+        "randomblob(N)"
+    ],
+    "Feature": [
+        "randomblob(N)"
+    ],
+    "Description": [
+        "\n  The randomblob(N) function return an N-byte blob containing pseudo-random\n  bytes. If N is less than 1 then a 1-byte random blob is returned.\n\n  Hint:  applications can generate globally unique identifiers\n  using this function together with hex() and/or\n  lower() like this:\n\n  hex(randomblob(16))\n  lower(hex(randomblob(16)))\n  \n"
+    ],
+    "Examples": [],
+    "Category": [
+        "Core SQL Functions"
+    ]
+}

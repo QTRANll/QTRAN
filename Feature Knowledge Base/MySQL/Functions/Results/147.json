@@ -1,0 +1,27 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.0/en/built-in-function-reference.html"
+    ],
+    "Title": [
+        "14.1 Built-In Function and Operator Reference"
+    ],
+    "Name": "IS_IPV4()",
+    "Description": [
+        "\nIS_IPV4(expr)\n",
+        "\n          Returns 1 if the argument is a valid IPv4 address specified as\n          a string, 0 otherwise. Returns NULL if\n          expr is NULL.\n        ",
+        "Press CTRL+C to copy mysql> SELECT IS_IPV4('10.0.5.9'), IS_IPV4('10.0.5.256');\n        -> 1, 0",
+        "\n          For a given argument, if\n          IS_IPV4() returns 1,\n          INET_ATON() (and\n          INET6_ATON()) returns\n          non-NULL. The converse statement is not\n          true: In some cases,\n          INET_ATON() returns\n          non-NULL when\n          IS_IPV4() returns 0.\n        ",
+        "\n          As implied by the preceding remarks,\n          IS_IPV4() is more strict than\n          INET_ATON() about what\n          constitutes a valid IPv4 address, so it may be useful for\n          applications that need to perform strong checks against\n          invalid values. Alternatively, use\n          INET6_ATON() to convert IPv4\n          addresses to internal form and check for a\n          NULL result (which indicates an invalid\n          address). INET6_ATON() is\n          equally strong as IS_IPV4()\n          about checking IPv4 addresses.\n        "
+    ],
+    "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/miscellaneous-functions.html#function_is-ipv4",
+    "Feature": [
+        "IS_IPV4(expr)"
+    ],
+    "Examples": [
+        "mysql> SELECT IS_IPV4('10.0.5.9'), IS_IPV4('10.0.5.256');\n        -> 1, 0"
+    ],
+    "Category": [
+        "Built-In Functions and Operators",
+        "Miscellaneous Functions"
+    ]
+}

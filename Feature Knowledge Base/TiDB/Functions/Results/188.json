@@ -1,0 +1,25 @@
+{
+    "HTML": [
+        "https://docs.pingcap.com/zh/tidb/v8.3/json-functions-search"
+    ],
+    "Title": [
+        "JSON_CONTAINS()"
+    ],
+    "Feature": [
+        "JSON_CONTAINS()"
+    ],
+    "Description": [
+        "JSON_CONTAINS()",
+        "通过返回 1 或 0，JSON_CONTAINS(json_doc, candidate [,path]) 函数用于确认指定的 JSON 文档 candidate 是否包含在目标 JSON 文档中。"
+    ],
+    "Examples": [
+        "SELECT JSON_CONTAINS('[\"a\",\"b\",\"c\"]','\"a\"');\n",
+        "SELECT JSON_CONTAINS('[\"a\",\"b\",\"c\"]','\"e\"');\n",
+        "SELECT JSON_CONTAINS('{\"foo\": \"bar\", \"aaa\": 5}','{\"foo\": \"bar\"}');\n",
+        "SELECT JSON_CONTAINS('{\"foo\": \"bar\", \"aaa\": 5}','\"bar\"');\n",
+        "SELECT JSON_CONTAINS('{\"foo\": \"bar\", \"aaa\": 5}','\"bar\"', '$.foo');\n"
+    ],
+    "Category": [
+        "搜索 JSON 的函数"
+    ]
+}

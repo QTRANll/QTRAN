@@ -1,0 +1,28 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.0/en/built-in-function-reference.html"
+    ],
+    "Title": [
+        "14.1 Built-In Function and Operator Reference"
+    ],
+    "Name": "ST_LineInterpolatePoint()",
+    "Description": [
+        "\nST_LineInterpolatePoint(ls,\n          fractional_distance)\n",
+        "\n          This function takes a LineString geometry\n          and a fractional distance in the range [0.0, 1.0] and returns\n          the Point along the\n          LineString at the given fraction of the\n          distance from its start point to its endpoint. It can be used\n          to answer questions such as which Point\n          lies halfway along the road described by the geometry\n          argument.\n        ",
+        "\n          The function is implemented for LineString\n          geometries in all spatial reference systems, both Cartesian\n          and geographic.\n        ",
+        "\n          If the fractional_distance argument\n          is 1.0, the result may not be exactly the last point of the\n          LineString argument but a point close to it\n          due to numerical inaccuracies in approximate-value\n          computations.\n        ",
+        "\n          A related function,\n          ST_LineInterpolatePoints(),\n          takes similar arguments but returns a\n          MultiPoint consisting of\n          Point values along the\n          LineString at each fraction of the distance\n          from its start point to its endpoint. For examples of both\n          functions, see the\n          ST_LineInterpolatePoints()\n          description.\n        ",
+        "\nST_LineInterpolatePoint()\n          handles its arguments as described in the introduction to this\n          section, with these exceptions:\n",
+        "\n\n              If the geometry argument is not a\n              LineString, an\n              ER_UNEXPECTED_GEOMETRY_TYPE\n              error occurs.\n            \n              If the fractional distance argument is outside the range\n              [0.0, 1.0], an\n              ER_DATA_OUT_OF_RANGE error\n              occurs.\n\n",
+        "\nST_LineInterpolatePoint() is a\n          MySQL extension to OpenGIS. This function was added in MySQL\n          8.0.24.\n        "
+    ],
+    "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/spatial-operator-functions.html#function_st-lineinterpolatepoint",
+    "Feature": [
+        "ST_LineInterpolatePoint(ls,\n          fractional_distance)"
+    ],
+    "Examples": [],
+    "Category": [
+        "Built-In Functions and Operators",
+        "Spatial Analysis Functions"
+    ]
+}

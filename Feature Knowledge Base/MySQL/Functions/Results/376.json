@@ -1,0 +1,27 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.0/en/built-in-function-reference.html"
+    ],
+    "Title": [
+        "14.1 Built-In Function and Operator Reference"
+    ],
+    "Name": "SUBSTRING_INDEX()",
+    "Description": [
+        "\nSUBSTRING_INDEX(str,delim,count)\n",
+        "\n          Returns the substring from string\n          str before\n          count occurrences of the delimiter\n          delim. If\n          count is positive, everything to\n          the left of the final delimiter (counting from the left) is\n          returned. If count is negative,\n          everything to the right of the final delimiter (counting from\n          the right) is returned.\n          SUBSTRING_INDEX() performs a\n          case-sensitive match when searching for\n          delim.\n        ",
+        "Press CTRL+C to copy mysql> SELECT SUBSTRING_INDEX('www.mysql.com', '.', 2);\n        -> 'www.mysql'\nmysql> SELECT SUBSTRING_INDEX('www.mysql.com', '.', -2);\n        -> 'mysql.com'",
+        "\n          This function is multibyte safe.\n        ",
+        "\nSUBSTRING_INDEX() returns\n          NULL if any of its arguments are\n          NULL.\n        "
+    ],
+    "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/string-functions.html#function_substring-index",
+    "Feature": [
+        "SUBSTRING_INDEX(str,delim,count)"
+    ],
+    "Examples": [
+        "mysql> SELECT SUBSTRING_INDEX('www.mysql.com', '.', 2);\n        -> 'www.mysql'\nmysql> SELECT SUBSTRING_INDEX('www.mysql.com', '.', -2);\n        -> 'mysql.com'"
+    ],
+    "Category": [
+        "Built-In Functions and Operators",
+        "String Functions and Operators"
+    ]
+}

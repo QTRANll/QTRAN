@@ -1,0 +1,28 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/ip-address-functions"
+    ],
+    "Title": [
+        "toIPv4"
+    ],
+    "Feature": [
+        "toIPv4(string)"
+    ],
+    "Description": [
+        "toIPv4",
+        "Like IPv4StringToNum but takes a string form of IPv4 address and returns value of IPv4 type.",
+        "Syntax",
+        "toIPv4(string)",
+        "Arguments",
+        "string \u2014 IPv4 address. String.",
+        "Returned value",
+        "string converted to the IPv4 address. IPv4."
+    ],
+    "Examples": [
+        "SELECT toIPv4('171.225.130.45');",
+        "WITH    '171.225.130.45' as IPv4_stringSELECT    hex(IPv4StringToNum(IPv4_string)),    hex(toIPv4(IPv4_string))"
+    ],
+    "Category": [
+        "IP Addresses Functions"
+    ]
+}

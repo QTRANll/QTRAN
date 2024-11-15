@@ -1,0 +1,44 @@
+{
+    "HTML": [
+        "https://docs.pingcap.com/zh/tidb/v8.3/json-functions-validate"
+    ],
+    "Title": [
+        "JSON_SCHEMA_VALID()"
+    ],
+    "Feature": [
+        "JSON_SCHEMA_VALID()"
+    ],
+    "Description": [
+        "JSON_SCHEMA_VALID()",
+        "JSON_SCHEMA_VALID(schema, json_doc) 函数根据 schema 验证 JSON 文档，确保数据的完整性和一致性。该函数可以与 CHECK 约束一起使用，以便在修改表时自动进行 schema 验证。该函数遵循 JSON Schema specification。",
+        "验证关键词如下：",
+        "验证关键词适用于描述typeAny测试类型，如 array、stringenumAny测试某个值是否在指定的值数组中constAny与 enum 相似，但只适用于单个值allOfAny匹配所有指定的 schemaanyOfAny匹配任意指定的 schemamultipleOfnumber/integer测试值是否是指定值的倍数maximumnumber/integer测试数值是否小于最大值（包括最大值在内）exclusiveMaximumnumber/integer测试数值是否小于最大值（不包括最大值）minimumnumber/integer测试数值是否大于最小值（包括最小值在内）exclusiveMinimumnumber/integer测试值是否大于最小值（不包括最小值）maxlengthstring测试值的长度是否不超过指定值minLengthstring测试值的长度是否不低于指定值formatstring测试字符串是否符合指定格式patternstring测试字符串是否与模式匹配itemsarray适用于数组项的 schemaprefixItemsarray适用于数组的位置项的 schemamaxItemsarray测试数组中的元素数量是否不超过指定值minItemsarray测试数组中的元素数量是否不低于指定值uniqueItemsarray测试数组中的元素是否唯一，true/falsecontainsarray为数组中的元素设置 schemamaxContainsarray与 contains 一起使用时，用于测试某些元素出现的最多次数minContainsarray与 contains 一起使用时，用于测试某些元素出现的最少次数propertiesobject适用于对象属性的 schemapatternPropertiesobject根据属性名称的模式匹配，应用于某些属性的 schemaadditionalPropertiesobject是否允许额外的属性，true/falseminPropertiesobject测试对象的最小属性数量maxPropertiesobject测试对象的最大属性数量requiredobject必须填写的属性名称"
+    ],
+    "Examples": [
+        "SET @j := '{\"fruits\": [\"orange\", \"apple\", \"pear\"], \"vegetables\": [\"carrot\", \"pepper\", \"kale\"]}';\n",
+        "SELECT JSON_SCHEMA_VALID('{\"type\": \"object\"}',@j);\n",
+        "SELECT JSON_SCHEMA_VALID('{\"type\": \"array\"}',@j);\n",
+        "mysql> SELECT JSON_TYPE(@j);\n",
+        "SELECT JSON_SCHEMA_VALID('{\"required\": [\"fruits\",\"vegetables\"]}',@j);\n",
+        "SELECT JSON_SCHEMA_VALID('{\"required\": [\"fruits\",\"vegetables\",\"grains\"]}',@j);\n",
+        "SELECT JSON_SCHEMA_VALID('{\"properties\": {\"fruits\": {\"type\": \"array\"}}}',@j);\n",
+        "SELECT JSON_SCHEMA_VALID('{\"properties\": {\"fruits\": {\"type\": \"string\"}}}',@j);\n",
+        "SELECT JSON_SCHEMA_VALID('{\"properties\": {\"fruits\": {\"type\": \"array\", \"minItems\": 3}}}',@j);\n",
+        "SELECT JSON_SCHEMA_VALID('{\"properties\": {\"fruits\": {\"type\": \"array\", \"minItems\": 4}}}',@j);\n",
+        "SELECT JSON_SCHEMA_VALID('{\"type\": \"integer\", \"minimum\": 40, \"maximum\": 45}', '42');\n+------------------------------------------------------------------------------+\n| JSON_SCHEMA_VALID('{\"type\": \"integer\", \"minimum\": 40, \"maximum\": 45}', '42') |\n+------------------------------------------------------------------------------+\n|                                                                            1 |\n+------------------------------------------------------------------------------+\n1 row in set (0.01 sec)\n",
+        "SELECT JSON_SCHEMA_VALID('{\"type\": \"integer\", \"minimum\": 40, \"maximum\": 45}', '123');\n",
+        "SELECT JSON_SCHEMA_VALID('{\"type\": \"string\", \"pattern\": \"^Ti\"}', '\"TiDB\"');\n",
+        "SELECT JSON_SCHEMA_VALID('{\"type\": \"string\", \"pattern\": \"^Ti\"}', '\"PingCAP\"');\n",
+        "SELECT JSON_SCHEMA_VALID('{\"format\": \"ipv4\"}', '\"127.0.0.1\"');\n",
+        "SELECT JSON_SCHEMA_VALID('{\"format\": \"ipv4\"}', '\"327.0.0.1\"');\n",
+        "SELECT JSON_SCHEMA_VALID('{\"enum\": [\"TiDB\", \"MySQL\"]}', '\"TiDB\"');\n",
+        "SELECT JSON_SCHEMA_VALID('{\"enum\": [\"TiDB\", \"MySQL\"]}', '\"MySQL\"');\n",
+        "SELECT JSON_SCHEMA_VALID('{\"enum\": [\"TiDB\", \"MySQL\"]}', '\"SQLite\"');\n",
+        "SELECT JSON_SCHEMA_VALID('{\"anyOf\": [{\"type\": \"string\"},{\"type\": \"integer\"}]}', '\"TiDB\"');\n",
+        "SELECT JSON_SCHEMA_VALID('{\"anyOf\": [{\"type\": \"string\"},{\"type\": \"integer\"}]}', '[\"TiDB\", \"MySQL\"]');\n",
+        "SELECT JSON_SCHEMA_VALID('{\"anyOf\": [{\"type\": \"string\"},{\"type\": \"integer\"}]}', '5');\n"
+    ],
+    "Category": [
+        "验证 JSON 的函数"
+    ]
+}

@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://mariadb.com/kb/en/set-data-type/"
+    ],
+    "Title": [
+        "SET Data Type"
+    ],
+    "Feature": [
+        "SET('value1','value2',...) [CHARACTER SET charset_name] [COLLATE collation_name]\n"
+    ],
+    "Description": [
+        "A set. A string object that can have zero or more values, each of\nwhich must be chosen from the list of values 'value1', 'value2', ... A\nSET column can have a maximum of 64 members. SET values are\nrepresented internally as integers.",
+        "SET values cannot contain commas.",
+        "If a SET contains duplicate values, an error will be returned if strict mode is enabled, or a warning if strict mode is not enabled. "
+    ],
+    "Examples": [],
+    "Category": [
+        "String Data Types"
+    ]
+}

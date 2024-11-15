@@ -1,0 +1,23 @@
+{
+    "HTML": [
+        "https://sqlite.org/lang_expr.html"
+    ],
+    "Title": [
+        "SQL Language Expressions"
+    ],
+    "Feature": [
+        "-"
+    ],
+    "Description": [
+        "The subtraction operator (-) subtracts one numeric expression from another. Non-numeric operands are cast to numeric types before performing the subtraction.",
+        "Parameters: Two numeric expressions.",
+        "Returns: The difference between the two numeric expressions."
+    ],
+    "Examples": [
+        "SELECT 20 - 5 AS result; -- Returns 15",
+        "SELECT salary - deductions FROM employees; -- Subtracts deductions from salary for each employee"
+    ],
+    "Category": [
+        "Operators"
+    ]
+}

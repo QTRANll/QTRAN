@@ -1,0 +1,25 @@
+{
+    "HTML": [
+        "https://mariadb.com/kb/en/mediumint/"
+    ],
+    "Title": [
+        "MEDIUMINT"
+    ],
+    "Feature": [
+        "MEDIUMINT[(M)] [SIGNED | UNSIGNED | ZEROFILL]\n"
+    ],
+    "Description": [
+        "A medium-sized integer. The signed range is -8388608 to 8388607. The\nunsigned range is 0 to 16777215.",
+        "ZEROFILL pads the integer with zeroes and assumes UNSIGNED (even if UNSIGNED is not specified).",
+        "INT3 is a synonym for MEDIUMINT.",
+        "For details on the attributes, see Numeric Data Type Overview."
+    ],
+    "Examples": [
+        "CREATE TABLE mediumints (a MEDIUMINT,b MEDIUMINT UNSIGNED,c MEDIUMINT ZEROFILL);\n\nDESCRIBE mediumints;\n+-------+--------------------------------+------+-----+---------+-------+\n| Field | Type                           | Null | Key | Default | Extra |\n+-------+--------------------------------+------+-----+---------+-------+\n| a     | mediumint(9)                   | YES  |     | NULL    |       |\n| b     | mediumint(8) unsigned          | YES  |     | NULL    |       |\n| c     | mediumint(8) unsigned zerofill | YES  |     | NULL    |       |\n+-------+--------------------------------+------+-----+---------+-------+\n",
+        "INSERT INTO mediumints VALUES (-10,-10,-10);\nERROR 1264 (22003): Out of range value for column 'b' at row 1\n\nINSERT INTO mediumints VALUES (-10,10,-10);\nERROR 1264 (22003): Out of range value for column 'c' at row 1\n\nINSERT INTO mediumints VALUES (-10,10,10);\n\nINSERT INTO mediumints VALUES (8388608,8388608,8388608);\nERROR 1264 (22003): Out of range value for column 'a' at row 1\n\nINSERT INTO mediumints VALUES (8388607,8388608,8388608);\n\nSELECT * FROM mediumints;\n+---------+---------+----------+\n| a       | b       | c        |\n+---------+---------+----------+\n|     -10 |      10 | 00000010 |\n| 8388607 | 8388608 | 08388608 |\n+---------+---------+----------+\n",
+        "INSERT INTO mediumints VALUES (-10,-10,-10);\nQuery OK, 1 row affected, 2 warnings (0.05 sec)\nWarning (Code 1264): Out of range value for column 'b' at row 1\nWarning (Code 1264): Out of range value for column 'c' at row 1\n\nINSERT INTO mediumints VALUES (-10,10,-10);\nQuery OK, 1 row affected, 1 warning (0.08 sec)\nWarning (Code 1264): Out of range value for column 'c' at row 1\n\nINSERT INTO mediumints VALUES (-10,10,10);\n\nINSERT INTO mediumints VALUES (8388608,8388608,8388608);\nQuery OK, 1 row affected, 1 warning (0.05 sec)\nWarning (Code 1264): Out of range value for column 'a' at row 1\n\nINSERT INTO mediumints VALUES (8388607,8388608,8388608);\n\nSELECT * FROM mediumints;\n+---------+---------+----------+\n| a       | b       | c        |\n+---------+---------+----------+\n|     -10 |       0 | 00000000 |\n|     -10 |       0 | 00000000 |\n|     -10 |      10 | 00000000 |\n|     -10 |      10 | 00000010 |\n| 8388607 | 8388608 | 08388608 |\n| 8388607 | 8388608 | 08388608 |\n+---------+---------+----------+\n"
+    ],
+    "Category": [
+        "Numeric Data Types"
+    ]
+}

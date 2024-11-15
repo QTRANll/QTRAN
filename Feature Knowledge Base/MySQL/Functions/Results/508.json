@@ -1,0 +1,24 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.0/en/loadable-function-reference.html"
+    ],
+    "Title": [
+        "14.2 Loadable Function Reference"
+    ],
+    "Name": "version_tokens_lock_shared()",
+    "Description": [
+        "\nversion_tokens_lock_shared(token_name[,\n              token_name] ...,\n              timeout)\n",
+        "\n              Acquires shared locks on one or more version tokens,\n              specified by name as strings, timing out with an error if\n              the locks are not acquired within the given timeout value.\n            ",
+        "Press CTRL+C to copy mysql> SELECT version_tokens_lock_shared('lock1', 'lock2', 10);\n+--------------------------------------------------+\n| version_tokens_lock_shared('lock1', 'lock2', 10) |\n+--------------------------------------------------+\n|                                                1 |\n+--------------------------------------------------+"
+    ],
+    "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/version-tokens-reference.html#function_version-tokens-lock-shared",
+    "Feature": [
+        "version_tokens_lock_shared(token_name[,\n              token_name] ...,\n              timeout)"
+    ],
+    "Examples": [
+        "mysql> SELECT version_tokens_lock_shared('lock1', 'lock2', 10);\n+--------------------------------------------------+\n| version_tokens_lock_shared('lock1', 'lock2', 10) |\n+--------------------------------------------------+\n|                                                1 |\n+--------------------------------------------------+"
+    ],
+    "Category": [
+        "Loadable Functions"
+    ]
+}

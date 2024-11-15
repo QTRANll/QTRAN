@@ -1,0 +1,17 @@
+{
+    "HTML": "https://dev.mysql.com/doc/refman/8.0/en/aggregate-functions.html#function_sum",
+    "Title": "SUM()",
+    "Feature": [
+        "SUM([DISTINCT]\n            expr)\n            [over_clause]"
+    ],
+    "Description": [
+        "\nSUM([DISTINCT]\n            expr)\n            [over_clause]\n",
+        "\n            Returns the sum of expr. If the\n            return set has no rows, SUM()\n            returns NULL. The\n            DISTINCT keyword can be used to sum only\n            the distinct values of expr.\n          ",
+        "\n            If there are no matching rows, or if\n            expr is NULL,\n            SUM() returns\n            NULL.\n          ",
+        "\n            This function executes as a window function if\n            over_clause is present.\n            over_clause is as described in\n            Section 14.20.2, “Window Function Concepts and Syntax”; it cannot be used\n            with DISTINCT.\n          "
+    ],
+    "Examples": [],
+    "Category": [
+        "GROUP BY 聚合函数"
+    ]
+}

@@ -1,0 +1,18 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/16/functions-info.html"
+    ],
+    "Title": [
+        "makeaclitem"
+    ],
+    "Feature": [
+        "makeaclitem ( grantee oid, grantor oid, privileges text, is_grantable boolean ) → aclitem"
+    ],
+    "Description": [
+        "Constructs an aclitem with the given properties. privileges is a comma-separated list of privilege names such as SELECT, INSERT, etc, all of which are set in the result. (Case of the privilege string is not significant, and extra whitespace is allowed between but not within privilege names.)"
+    ],
+    "Examples": [],
+    "Category": [
+        "System Information Functions and Operators"
+    ]
+}

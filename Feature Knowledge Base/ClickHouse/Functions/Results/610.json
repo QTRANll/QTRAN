@@ -1,0 +1,23 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/other-functions"
+    ],
+    "Title": [
+        "blockSize"
+    ],
+    "Feature": [
+        "blockSize()"
+    ],
+    "Description": [
+        "blockSize",
+        "In ClickHouse, queries are processed in blocks (chunks).\nThis function returns the size (row count) of the block the function is called on.",
+        "Syntax",
+        "blockSize()"
+    ],
+    "Examples": [
+        "DROP TABLE IF EXISTS test;CREATE TABLE test (n UInt8) ENGINE = Memory;INSERT INTO testSELECT * FROM system.numbers LIMIT 5;SELECT blockSize()FROM test;"
+    ],
+    "Category": [
+        "Other Functions"
+    ]
+}

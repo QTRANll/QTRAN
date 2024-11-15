@@ -1,0 +1,28 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.0/en/loadable-function-reference.html"
+    ],
+    "Title": [
+        "14.2 Loadable Function Reference"
+    ],
+    "Name": "version_tokens_delete()",
+    "Description": [
+        "\nversion_tokens_delete(name_list)\n",
+        "\n              Deletes tokens from the server's list of version tokens\n              using the name_list argument\n              and returns a binary string that indicates the outcome of\n              the operation. name_list is a\n              semicolon-separated list of version token names to delete.\n            ",
+        "Press CTRL+C to copy mysql> SELECT version_tokens_delete('tok1;tok3');\n+------------------------------------+\n| version_tokens_delete('tok1;tok3') |\n+------------------------------------+\n| 2 version tokens deleted.          |\n+------------------------------------+",
+        "\n              An argument of NULL is treated as an\n              empty string, which has no effect on the token list.\n            ",
+        "\nversion_tokens_delete()\n              deletes the tokens named in its argument, if they exist.\n              (It is not an error to delete nonexisting tokens.) To\n              clear the token list entirely without knowing which tokens\n              are in the list, pass NULL or a string\n              containing no tokens to\n              version_tokens_set():\n            ",
+        "Press CTRL+C to copy mysql> SELECT version_tokens_set(NULL);\n+------------------------------+\n| version_tokens_set(NULL)     |\n+------------------------------+\n| Version tokens list cleared. |\n+------------------------------+\nmysql> SELECT version_tokens_set('');\n+------------------------------+\n| version_tokens_set('')       |\n+------------------------------+\n| Version tokens list cleared. |\n+------------------------------+"
+    ],
+    "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/version-tokens-reference.html#function_version-tokens-delete",
+    "Feature": [
+        "version_tokens_delete(name_list)"
+    ],
+    "Examples": [
+        "mysql> SELECT version_tokens_delete('tok1;tok3');\n+------------------------------------+\n| version_tokens_delete('tok1;tok3') |\n+------------------------------------+\n| 2 version tokens deleted.          |\n+------------------------------------+",
+        "mysql> SELECT version_tokens_set(NULL);\n+------------------------------+\n| version_tokens_set(NULL)     |\n+------------------------------+\n| Version tokens list cleared. |\n+------------------------------+\nmysql> SELECT version_tokens_set('');\n+------------------------------+\n| version_tokens_set('')       |\n+------------------------------+\n| Version tokens list cleared. |\n+------------------------------+"
+    ],
+    "Category": [
+        "Loadable Functions"
+    ]
+}

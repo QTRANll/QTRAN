@@ -1,0 +1,27 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/type-conversion-functions"
+    ],
+    "Title": [
+        "reinterpret"
+    ],
+    "Feature": [
+        "reinterpret(x, type)"
+    ],
+    "Description": [
+        "reinterpret",
+        "Uses the same source in-memory bytes sequence for x value and reinterprets it to destination type.",
+        "Syntax",
+        "reinterpret(x, type)",
+        "Arguments",
+        "x \u2014 Any type.type \u2014 Destination type. String.",
+        "Returned value",
+        "Destination type value."
+    ],
+    "Examples": [
+        "SELECT reinterpret(toInt8(-1), 'UInt8') as int_to_uint,    reinterpret(toInt8(1), 'Float32') as int_to_float,    reinterpret('1', 'UInt32') as string_to_int;"
+    ],
+    "Category": [
+        "Type Conversion Functions"
+    ]
+}

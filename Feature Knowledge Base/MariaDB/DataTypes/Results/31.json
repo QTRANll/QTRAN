@@ -1,0 +1,27 @@
+{
+    "HTML": [
+        "https://mariadb.com/kb/en/varbinary/"
+    ],
+    "Title": [
+        "VARBINARY"
+    ],
+    "Feature": [
+        "VARBINARY(M)\n"
+    ],
+    "Description": [
+        "The VARBINARY type is similar to the VARCHAR type, but stores binary byte strings rather than non-binary character strings. M represents the maximum column length in bytes. ",
+        "It contains no character set, and comparison and sorting are based on the numeric value of the bytes.",
+        "If the maximum length is exceeded, and SQL strict mode is not enabled , the extra characters will be dropped with a warning. If strict mode is enabled, an error will occur.",
+        "Unlike BINARY values, VARBINARYs are not right-padded when inserting.",
+        "Oracle Mode",
+        "In Oracle mode from MariaDB 10.3, RAW is a synonym for VARBINARY."
+    ],
+    "Examples": [
+        "CREATE TABLE varbins (a VARBINARY(10));\n\nINSERT INTO varbins VALUES('12345678901');\nQuery OK, 1 row affected, 1 warning (0.04 sec)\n\nSELECT * FROM varbins;\n+------------+\n| a          |\n+------------+\n| 1234567890 |\n+------------+\n\nSET sql_mode='STRICT_ALL_TABLES';\n\nINSERT INTO varbins VALUES('12345678901');\nERROR 1406 (22001): Data too long for column 'a' at row 1\n",
+        "TRUNCATE varbins;\n\nINSERT INTO varbins VALUES('A'),('B'),('a'),('b');\n\nSELECT * FROM varbins ORDER BY a;\n+------+\n| a    |\n+------+\n| A    |\n| B    |\n| a    |\n| b    |\n+------+\n",
+        "SELECT * FROM varbins ORDER BY CAST(a AS CHAR);\n+------+\n| a    |\n+------+\n| a    |\n| A    |\n| b    |\n| B    |\n+------+\n"
+    ],
+    "Category": [
+        "String Data Types"
+    ]
+}

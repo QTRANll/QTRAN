@@ -1,0 +1,21 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.0/en/loadable-function-reference.html"
+    ],
+    "Title": [
+        "14.2 Loadable Function Reference"
+    ],
+    "Name": "service_get_read_locks()",
+    "Description": [
+        "\nservice_get_read_locks(namespace,\n                lock_name[,\n                lock_name] ...,\n                timeout)\n",
+        "\n                Acquires one or more read (shared) locks in the given\n                namespace using the given lock names, timing out with an\n                error if the locks are not acquired within the given\n                timeout value.\n              "
+    ],
+    "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/locking-service.html#function_service-get-read-locks",
+    "Feature": [
+        "service_get_read_locks(namespace,\n                lock_name[,\n                lock_name] ...,\n                timeout)"
+    ],
+    "Examples": [],
+    "Category": [
+        "Loadable Functions"
+    ]
+}

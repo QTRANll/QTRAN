@@ -1,0 +1,21 @@
+{
+    "HTML": [
+        "https://docs.pingcap.com/zh/tidb/v8.3/control-flow-functions"
+    ],
+    "Title": [
+        "IFNULL()"
+    ],
+    "Feature": [
+        "IFNULL()"
+    ],
+    "Description": [
+        "IFNULL()",
+        "IFNULL(expr1,expr2) 函数用于处理查询中的 NULL 值。如果 expr1 不为 NULL，该函数返回 expr1；否则返回 expr2。"
+    ],
+    "Examples": [
+        "WITH data AS (SELECT NULL AS x UNION ALL SELECT 1 )\nSELECT x, IFNULL(x,'x has no value') FROM data;\n"
+    ],
+    "Category": [
+        "控制流程函数"
+    ]
+}

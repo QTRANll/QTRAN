@@ -1,0 +1,21 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/16/functions-json.html"
+    ],
+    "Title": [
+        "json_build_object"
+    ],
+    "Feature": [
+        "json_build_object ( VARIADIC \"any\" ) → json",
+        "jsonb_build_object ( VARIADIC \"any\" ) → jsonb"
+    ],
+    "Description": [
+        "Builds a JSON object out of a variadic argument list. By convention, the argument list consists of alternating keys and values. Key arguments are coerced to text; value arguments are converted as per to_json or to_jsonb."
+    ],
+    "Examples": [
+        "json_build_object('foo', 1, 2, row(3,'bar')) → {\"foo\" : 1, \"2\" : {\"f1\":3,\"f2\":\"bar\"}}"
+    ],
+    "Category": [
+        "JSON Functions and Operators"
+    ]
+}

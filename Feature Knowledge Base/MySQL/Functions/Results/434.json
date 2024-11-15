@@ -1,0 +1,30 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.0/en/loadable-function-reference.html"
+    ],
+    "Title": [
+        "14.2 Loadable Function Reference"
+    ],
+    "Name": "audit_log_filter_set_user()",
+    "Description": [
+        "\naudit_log_filter_set_user(user_name,\n              filter_name)\n",
+        "\n              Given a user account name and a filter name, assigns the\n              filter to the user. A user can be assigned only one\n              filter, so if the user was already assigned a filter, the\n              assignment is replaced. Filtering of current sessions for\n              the user remains unaffected. New connections are filtered\n              using the new filter.\n            ",
+        "\n              As a special case, the name %\n              represents the default account. The filter is used for\n              connections from any user account that has no explicitly\n              assigned filter.\n            ",
+        "\n              Arguments:\n",
+        "\n\nuser_name: The user account\n                  name as a string in\n                  user_name@host_name\n                  format, or % to represent the\n                  default account.\n                \nfilter_name: A string that\n                  specifies the filter name.\n\n",
+        "\n              Return value:\n            ",
+        "\n              A string that indicates whether the operation succeeded.\n              OK indicates success. ERROR:\n              message indicates\n              failure.\n            ",
+        "\n              Example:\n            ",
+        "Press CTRL+C to copy mysql> SELECT audit_log_filter_set_user('user1@localhost', 'SomeFilter');\n+------------------------------------------------------------+\n| audit_log_filter_set_user('user1@localhost', 'SomeFilter') |\n+------------------------------------------------------------+\n| OK                                                         |\n+------------------------------------------------------------+"
+    ],
+    "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/audit-log-reference.html#function_audit-log-filter-set-user",
+    "Feature": [
+        "audit_log_filter_set_user(user_name,\n              filter_name)"
+    ],
+    "Examples": [
+        "mysql> SELECT audit_log_filter_set_user('user1@localhost', 'SomeFilter');\n+------------------------------------------------------------+\n| audit_log_filter_set_user('user1@localhost', 'SomeFilter') |\n+------------------------------------------------------------+\n| OK                                                         |\n+------------------------------------------------------------+"
+    ],
+    "Category": [
+        "Loadable Functions"
+    ]
+}

@@ -1,0 +1,26 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.0/en/built-in-function-reference.html"
+    ],
+    "Title": [
+        "14.1 Built-In Function and Operator Reference"
+    ],
+    "Name": "TIME()",
+    "Description": [
+        "\nTIME(expr)\n",
+        "\n          Extracts the time part of the time or datetime expression\n          expr and returns it as a string.\n          Returns NULL if\n          expr is NULL.\n        ",
+        "\n          This function is unsafe for statement-based replication. A\n          warning is logged if you use this function when\n          binlog_format is set to\n          STATEMENT.\n        ",
+        "Press CTRL+C to copy mysql> SELECT TIME('2003-12-31 01:02:03');\n        -> '01:02:03'\nmysql> SELECT TIME('2003-12-31 01:02:03.000123');\n        -> '01:02:03.000123'"
+    ],
+    "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html#function_time",
+    "Feature": [
+        "TIME(expr)"
+    ],
+    "Examples": [
+        "mysql> SELECT TIME('2003-12-31 01:02:03');\n        -> '01:02:03'\nmysql> SELECT TIME('2003-12-31 01:02:03.000123');\n        -> '01:02:03.000123'"
+    ],
+    "Category": [
+        "Built-In Functions and Operators",
+        "Date and Time Functions"
+    ]
+}

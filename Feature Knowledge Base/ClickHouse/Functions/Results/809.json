@@ -1,0 +1,31 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/splitting-merging-functions"
+    ],
+    "Title": [
+        "splitByRegexp"
+    ],
+    "Feature": [
+        "splitByRegexp(regexp, s[, max_substrings]))"
+    ],
+    "Description": [
+        "splitByRegexp",
+        "Splits a string into substrings separated by a regular expression. It uses a regular expression string regexp as the separator. If the regexp is empty, it will split the string s into an array of single characters. If no match is found for this regular expression, the string s won't be split.",
+        "Syntax",
+        "splitByRegexp(regexp, s[, max_substrings]))",
+        "Arguments",
+        "regexp \u2014 Regular expression. Constant. String or FixedString.s \u2014 The string to split. String.max_substrings \u2014 An optional Int64 defaulting to 0. When max_substrings > 0, the returned substrings will be no more than max_substrings, otherwise the function will return as many substrings as possible.",
+        "Returned value(s)",
+        "An array of selected substrings. Array(String).",
+        "Empty substrings may be selected when:",
+        "A non-empty regular expression match occurs at the beginning or end of the string;There are multiple consecutive non-empty regular expression matches;The original string s is empty while the regular expression is not empty.",
+        "NoteSetting splitby_max_substrings_includes_remaining_string (default: 0) controls if the remaining string is included in the last element of the result array when argument max_substrings > 0."
+    ],
+    "Examples": [
+        "SELECT splitByRegexp('\\\\d+', 'a12bc23de345f');",
+        "SELECT splitByRegexp('', 'abcde');"
+    ],
+    "Category": [
+        "Splitting Strings Functions"
+    ]
+}

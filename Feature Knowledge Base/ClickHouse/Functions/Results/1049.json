@@ -1,0 +1,28 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/type-conversion-functions"
+    ],
+    "Title": [
+        "accurateCastOrDefault(x, T[, default_value])"
+    ],
+    "Feature": [
+        "accurateCastOrDefault(x, T)"
+    ],
+    "Description": [
+        "accurateCastOrDefault(x, T[, default_value])",
+        "Converts input value x to the specified data type T. Returns default type value or default_value if specified if the casted value is not representable in the target type.",
+        "Syntax",
+        "accurateCastOrDefault(x, T)",
+        "Arguments",
+        "x \u2014 Input value.T \u2014 The name of the returned data type.default_value \u2014 Default value of returned data type.",
+        "Returned value",
+        "The value converted to the specified data type T."
+    ],
+    "Examples": [
+        "SELECT toTypeName(accurateCastOrDefault(5, 'UInt8'));",
+        "SELECT    accurateCastOrDefault(-1, 'UInt8') as uint8,    accurateCastOrDefault(-1, 'UInt8', 5) as uint8_default,    accurateCastOrDefault(128, 'Int8') as int8,    accurateCastOrDefault(128, 'Int8', 5) as int8_default,    accurateCastOrDefault('Test', 'FixedString(2)') as fixed_string,    accurateCastOrDefault('Test', 'FixedString(2)', 'Te') as fixed_string_default;"
+    ],
+    "Category": [
+        "Type Conversion Functions"
+    ]
+}

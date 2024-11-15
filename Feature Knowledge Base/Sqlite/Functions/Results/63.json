@@ -1,0 +1,18 @@
+{
+    "HTML": [
+        "https://sqlite.org/windowfunctions.html"
+    ],
+    "Title": [
+        "nth_value(expr, N)\n"
+    ],
+    "Feature": [
+        "nth_value(expr, N)\n"
+    ],
+    "Description": [
+        " This built-in window function calculates the window frame for each\n       row in the same way as an aggregate window function. It returns the\n       value of expr evaluated against the row N of the window\n       frame. Rows are numbered within the window frame starting from 1 in\n       the order defined by the ORDER BY clause if one is present, or in\n       arbitrary order otherwise. If there is no Nth row in the\n       partition, then NULL is returned.\n  "
+    ],
+    "Examples": [],
+    "Category": [
+        "Window Functions"
+    ]
+}

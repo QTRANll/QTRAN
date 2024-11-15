@@ -1,0 +1,27 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/other-functions"
+    ],
+    "Title": [
+        "sleepEachRow"
+    ],
+    "Feature": [
+        "sleepEachRow(seconds)"
+    ],
+    "Description": [
+        "sleepEachRow",
+        "Pauses the execution of a query for a specified number of seconds for each row in the result set.",
+        "Syntax",
+        "sleepEachRow(seconds)",
+        "Arguments",
+        "seconds: UInt* or Float* The number of seconds to pause the query execution for each row in the result set to a maximum of 3 seconds. It can be a floating-point value to specify fractional seconds.",
+        "Returned value",
+        "This function returns the same input values as it receives, without modifying them."
+    ],
+    "Examples": [
+        "SELECT number, sleepEachRow(0.5) FROM system.numbers LIMIT 5;"
+    ],
+    "Category": [
+        "Other Functions"
+    ]
+}

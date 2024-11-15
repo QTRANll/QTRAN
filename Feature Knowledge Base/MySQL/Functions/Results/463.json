@@ -1,0 +1,29 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.0/en/loadable-function-reference.html"
+    ],
+    "Title": [
+        "14.2 Loadable Function Reference"
+    ],
+    "Name": "gen_rnd_us_phone()",
+    "Description": [
+        "\ngen_rnd_us_phone()\n",
+        "\n              Generates a random US phone number in\n              1-555-AAA-BBBB\n              format. The 555 area code is not used for legitimate phone\n              numbers.\n            ",
+        "\n              Arguments:\n            ",
+        "\n              None.\n            ",
+        "\n              Return value:\n            ",
+        "\n              A random US phone number as a string encoded in the\n              utf8mb4 character set.\n            ",
+        "\n              Example:\n            ",
+        "Press CTRL+C to copy mysql> SELECT gen_rnd_us_phone();\n+--------------------+\n| gen_rnd_us_phone() |\n+--------------------+\n| 1-555-682-5423     |\n+--------------------+"
+    ],
+    "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/data-masking-component-functions.html#function_gen-rnd-us-phone",
+    "Feature": [
+        "gen_rnd_us_phone()"
+    ],
+    "Examples": [
+        "mysql> SELECT gen_rnd_us_phone();\n+--------------------+\n| gen_rnd_us_phone() |\n+--------------------+\n| 1-555-682-5423     |\n+--------------------+"
+    ],
+    "Category": [
+        "Loadable Functions"
+    ]
+}

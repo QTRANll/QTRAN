@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/16/functions-string.html"
+    ],
+    "Title": [
+        "position"
+    ],
+    "Feature": [
+        "position ( substring text IN string text ) → integer"
+    ],
+    "Description": [
+        "Returns first starting index of the specified substring within string, or zero if it's not present."
+    ],
+    "Examples": [
+        "position('om' in 'Thomas') → 3"
+    ],
+    "Category": [
+        "String Functions and Operators"
+    ]
+}

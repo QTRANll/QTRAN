@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/16/functions-array.html"
+    ],
+    "Title": [
+        "array_remove"
+    ],
+    "Feature": [
+        "array_remove ( anycompatiblearray, anycompatible ) → anycompatiblearray"
+    ],
+    "Description": [
+        "Removes all elements equal to the given value from the array. The array must be one-dimensional. Comparisons are done using IS NOT DISTINCT FROM semantics, so it is possible to remove NULLs."
+    ],
+    "Examples": [
+        "array_remove(ARRAY[1,2,3,2], 2) → {1,3}"
+    ],
+    "Category": [
+        "Array Functions and Operators"
+    ]
+}

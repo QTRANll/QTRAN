@@ -1,0 +1,23 @@
+{
+    "HTML": [
+        "https://docs.pingcap.com/zh/tidb/v8.3/miscellaneous-functions"
+    ],
+    "Title": [
+        "INET6_ATON()"
+    ],
+    "Feature": [
+        "INET6_ATON()"
+    ],
+    "Description": [
+        "INET6_ATON()",
+        "INET6_ATON() 函数的功能类似于 INET_ATON()，但 INET6_ATON() 还可以处理 IPv6 地址。",
+        "SELECT INET6_ATON('::1');\n",
+        "+--------------------------------------+\n| INET6_ATON('::1')                    |\n+--------------------------------------+\n| 0x00000000000000000000000000000001   |\n+--------------------------------------+\n1 row in set (0.00 sec)\n"
+    ],
+    "Examples": [
+        "SELECT INET6_ATON('::1');\n"
+    ],
+    "Category": [
+        "其它函数"
+    ]
+}

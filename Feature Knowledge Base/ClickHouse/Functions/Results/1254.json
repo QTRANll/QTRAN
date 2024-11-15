@@ -1,0 +1,35 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/table-functions/file"
+    ],
+    "Title": [
+        "Examples for Reading from a File"
+    ],
+    "Feature": [
+        "Examples for Reading from a File"
+    ],
+    "Description": [
+        "Examples for Reading from a File",
+        "SELECT from a CSV file",
+        "First, set user_files_path in the server configuration and prepare a file test.csv:",
+        "$ grep user_files_path /etc/clickhouse-server/config.xml    <user_files_path>/var/lib/clickhouse/user_files/</user_files_path>$ cat /var/lib/clickhouse/user_files/test.csv    1,2,3    3,2,1    78,43,45",
+        "Then, read data from test.csv into a table and select its first two rows:",
+        "SELECT * FROMfile('test.csv', 'CSV', 'column1 UInt32, column2 UInt32, column3 UInt32')LIMIT 2;",
+        "\u250c\u2500column1\u2500\u252c\u2500column2\u2500\u252c\u2500column3\u2500\u2510\u2502       1 \u2502       2 \u2502       3 \u2502\u2502       3 \u2502       2 \u2502       1 \u2502\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518",
+        "Inserting data from a file into a table",
+        "INSERT INTO FUNCTIONfile('test.csv', 'CSV', 'column1 UInt32, column2 UInt32, column3 UInt32')VALUES (1, 2, 3), (3, 2, 1);",
+        "SELECT * FROMfile('test.csv', 'CSV', 'column1 UInt32, column2 UInt32, column3 UInt32');",
+        "\u250c\u2500column1\u2500\u252c\u2500column2\u2500\u252c\u2500column3\u2500\u2510\u2502       1 \u2502       2 \u2502       3 \u2502\u2502       3 \u2502       2 \u2502       1 \u2502\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518",
+        "Reading data from table.csv, located in archive1.zip or/and archive2.zip:",
+        "SELECT * FROM file('user_files/archives/archive{1..2}.zip :: table.csv');"
+    ],
+    "Examples": [
+        "SELECT * FROMfile('test.csv', 'CSV', 'column1 UInt32, column2 UInt32, column3 UInt32')LIMIT 2;",
+        "INSERT INTO FUNCTIONfile('test.csv', 'CSV', 'column1 UInt32, column2 UInt32, column3 UInt32')VALUES (1, 2, 3), (3, 2, 1);",
+        "SELECT * FROMfile('test.csv', 'CSV', 'column1 UInt32, column2 UInt32, column3 UInt32');",
+        "SELECT * FROM file('user_files/archives/archive{1..2}.zip :: table.csv');"
+    ],
+    "Category": [
+        "Table Functions"
+    ]
+}

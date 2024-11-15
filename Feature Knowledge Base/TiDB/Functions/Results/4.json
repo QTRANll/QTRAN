@@ -1,0 +1,23 @@
+{
+    "HTML": [
+        "https://docs.pingcap.com/zh/tidb/v8.3/string-functions"
+    ],
+    "Title": [
+        "ASCII()"
+    ],
+    "Feature": [
+        "ASCII()"
+    ],
+    "Description": [
+        "ASCII()",
+        "ASCII() 函数用于获取输入的参数中最左字符的 ASCII 值。该参数可以为字符串或数字。",
+        "如果输入参数不为空，该函数返回参数中最左字符的 ASCII 值。如果输入参数为空字符串，该函数返回 0。如果输入参数为 NULL，该函数返回 NULL。",
+        "注意ASCII() 只能处理那些用 8 个二进制数字（即单个字节）来表示的字符。"
+    ],
+    "Examples": [
+        "SELECT ASCII('A'), ASCII('TiDB'), ASCII(23);\n"
+    ],
+    "Category": [
+        "字符串函数"
+    ]
+}

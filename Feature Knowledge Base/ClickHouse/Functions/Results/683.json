@@ -1,0 +1,25 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/other-functions"
+    ],
+    "Title": [
+        "shardNum"
+    ],
+    "Feature": [
+        "shardNum()"
+    ],
+    "Description": [
+        "shardNum",
+        "Returns the index of a shard which processes a part of data in a distributed query. Indices are started from 1.\nIf a query is not distributed then constant value 0 is returned.",
+        "Syntax",
+        "shardNum()",
+        "Returned value",
+        "Shard index or constant 0. UInt32."
+    ],
+    "Examples": [
+        "CREATE TABLE shard_num_example (dummy UInt8)    ENGINE=Distributed(test_cluster_two_shards_localhost, system, one, dummy);SELECT dummy, shardNum(), shardCount() FROM shard_num_example;"
+    ],
+    "Category": [
+        "Other Functions"
+    ]
+}

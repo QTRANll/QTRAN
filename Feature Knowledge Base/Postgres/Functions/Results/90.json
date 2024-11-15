@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/16/functions-string.html"
+    ],
+    "Title": [
+        "regexp_split_to_array"
+    ],
+    "Feature": [
+        "regexp_split_to_array ( string text, pattern text [, flags text ] ) → text[]"
+    ],
+    "Description": [
+        "Splits string using a POSIX regular expression as the delimiter, producing an array of results; see Section 9.7.3."
+    ],
+    "Examples": [
+        "regexp_split_to_array('hello world', '\\s+') → {hello,world}"
+    ],
+    "Category": [
+        "String Functions and Operators"
+    ]
+}

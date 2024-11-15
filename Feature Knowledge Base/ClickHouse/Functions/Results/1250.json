@@ -1,0 +1,31 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/engines/table-functions/executable"
+    ],
+    "Title": [
+        "Syntax"
+    ],
+    "Feature": [
+        "executable(script_name, format, structure, [input_query...] [,SETTINGS ...])"
+    ],
+    "Description": [
+        "Syntax",
+        "The executable table function requires three parameters and accepts an optional list of input queries:",
+        "executable(script_name, format, structure, [input_query...] [,SETTINGS ...])",
+        "script_name: the file name of the script. saved in the user_scripts folder (the default folder of the user_scripts_path setting)format: the format of the generated tablestructure: the table schema of the generated tableinput_query: an optional query (or collection or queries) whose results are passed to the script via stdin",
+        "NoteIf you are going to invoke the same script repeatedly with the same input queries, consider using the Executable table engine.",
+        "The following Python script is named generate_random.py and is saved in the user_scripts folder. It reads in a number i and prints i random strings, with each string preceded by a number that is separated by a tab:",
+        "#!/usr/local/bin/python3.9import sysimport stringimport randomdef main():    # Read input value    for number in sys.stdin:        i = int(number)        # Generate some random rows        for id in range(0, i):            letters = string.ascii_letters            random_string =  ''.join(random.choices(letters ,k=10))            print(str(id) + '\\t' + random_string + '\\n', end='')        # Flush results to stdout        sys.stdout.flush()if __name__ == \"__main__\":    main()",
+        "Let's invoke the script and have it generate 10 random strings:",
+        "SELECT * FROM executable('generate_random.py', TabSeparated, 'id UInt32, random String', (SELECT 10))",
+        "The response looks like:",
+        "\u250c\u2500id\u2500\u252c\u2500random\u2500\u2500\u2500\u2500\u2500\u2510\u2502  0 \u2502 xheXXCiSkH \u2502\u2502  1 \u2502 AqxvHAoTrl \u2502\u2502  2 \u2502 JYvPCEbIkY \u2502\u2502  3 \u2502 sWgnqJwGRm \u2502\u2502  4 \u2502 fTZGrjcLon \u2502\u2502  5 \u2502 ZQINGktPnd \u2502\u2502  6 \u2502 YFSvGGoezb \u2502\u2502  7 \u2502 QyMJJZOOia \u2502\u2502  8 \u2502 NfiyDDhmcI \u2502\u2502  9 \u2502 REJRdJpWrg \u2502\u2514\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518"
+    ],
+    "Examples": [
+        "executable(script_name, format, structure, [input_query...] [,SETTINGS ...])",
+        "SELECT * FROM executable('generate_random.py', TabSeparated, 'id UInt32, random String', (SELECT 10))"
+    ],
+    "Category": [
+        "Table Functions"
+    ]
+}

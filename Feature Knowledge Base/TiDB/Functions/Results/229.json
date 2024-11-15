@@ -1,0 +1,21 @@
+{
+    "HTML": [
+        "https://docs.pingcap.com/zh/tidb/v8.3/window-functions"
+    ],
+    "Title": [
+        "LAG()"
+    ],
+    "Feature": [
+        "LAG()"
+    ],
+    "Description": [
+        "LAG()",
+        "函数 LAG(expr [, num [, default]]) 返回当前行之前第 num 行的 expr 值。如果不存在该行，则返回 default 值。默认情况下，未指定时，num 为 1，default 为 NULL。"
+    ],
+    "Examples": [
+        "WITH RECURSIVE cte(n) AS (\n    SELECT 1\n    UNION\n    SELECT\n        n+1\n    FROM\n        cte\n    WHERE\n        n<10\n)\nSELECT\n    n,\n    LAG(n) OVER ()\nFROM\n    cte;\n"
+    ],
+    "Category": [
+        "窗口函数"
+    ]
+}

@@ -1,0 +1,25 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/splitting-merging-functions"
+    ],
+    "Title": [
+        "tokens"
+    ],
+    "Feature": [
+        "tokens"
+    ],
+    "Description": [
+        "tokens",
+        "Splits a string into tokens using non-alphanumeric ASCII characters as separators.",
+        "Arguments",
+        "input_string \u2014 Any set of bytes represented as the String data type object.",
+        "Returned value",
+        "The resulting array of tokens from input string. Array."
+    ],
+    "Examples": [
+        "SELECT tokens('test1,;\\\\ test2,;\\\\ test3,;\\\\   test4') AS tokens;"
+    ],
+    "Category": [
+        "Splitting Strings Functions"
+    ]
+}

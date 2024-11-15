@@ -1,0 +1,834 @@
+[
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/loadable-function-reference.html",
+        "Title": "14.2 Loadable Function Reference",
+        "Name": "asymmetric_decrypt()",
+        "Description": "Decrypt ciphertext using private or public key",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/enterprise-encryption-functions.html#function_asymmetric-decrypt",
+        "Category": "Loadable Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/loadable-function-reference.html",
+        "Title": "14.2 Loadable Function Reference",
+        "Name": "asymmetric_derive()",
+        "Description": "Derive symmetric key from asymmetric keys",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/enterprise-encryption-functions-legacy.html#function_asymmetric-derive",
+        "Category": "Loadable Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/loadable-function-reference.html",
+        "Title": "14.2 Loadable Function Reference",
+        "Name": "asymmetric_encrypt()",
+        "Description": "Encrypt cleartext using private or public key",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/enterprise-encryption-functions.html#function_asymmetric-encrypt",
+        "Category": "Loadable Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/loadable-function-reference.html",
+        "Title": "14.2 Loadable Function Reference",
+        "Name": "asymmetric_sign()",
+        "Description": "Generate signature from digest",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/enterprise-encryption-functions.html#function_asymmetric-sign",
+        "Category": "Loadable Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/loadable-function-reference.html",
+        "Title": "14.2 Loadable Function Reference",
+        "Name": "asymmetric_verify()",
+        "Description": "Verify that signature matches digest",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/enterprise-encryption-functions.html#function_asymmetric-verify",
+        "Category": "Loadable Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/loadable-function-reference.html",
+        "Title": "14.2 Loadable Function Reference",
+        "Name": "asynchronous_connection_failover_add_managed()",
+        "Description": "Add a replication source server in a managed group to the source",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/replication-functions-async-failover.html#function_asynchronous-connection-failover-add-managed",
+        "Category": "Loadable Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/loadable-function-reference.html",
+        "Title": "14.2 Loadable Function Reference",
+        "Name": "asynchronous_connection_failover_add_source()",
+        "Description": "Add a replication source server to the source list",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/replication-functions-async-failover.html#function_asynchronous-connection-failover-add-source",
+        "Category": "Loadable Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/loadable-function-reference.html",
+        "Title": "14.2 Loadable Function Reference",
+        "Name": "asynchronous_connection_failover_delete_managed()",
+        "Description": "Remove managed group of replication source servers from the source",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/replication-functions-async-failover.html#function_asynchronous-connection-failover-delete-managed",
+        "Category": "Loadable Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/loadable-function-reference.html",
+        "Title": "14.2 Loadable Function Reference",
+        "Name": "asynchronous_connection_failover_delete_source()",
+        "Description": "Remove a replication source server from the source list",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/replication-functions-async-failover.html#function_asynchronous-connection-failover-delete-source",
+        "Category": "Loadable Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/loadable-function-reference.html",
+        "Title": "14.2 Loadable Function Reference",
+        "Name": "audit_api_message_emit_udf()",
+        "Description": "Add message event to audit log",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/audit-api-message-emit.html#function_audit-api-message-emit-udf",
+        "Category": "Loadable Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/loadable-function-reference.html",
+        "Title": "14.2 Loadable Function Reference",
+        "Name": "audit_log_encryption_password_get()",
+        "Description": "Fetch audit log encryption password",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/audit-log-reference.html#function_audit-log-encryption-password-get",
+        "Category": "Loadable Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/loadable-function-reference.html",
+        "Title": "14.2 Loadable Function Reference",
+        "Name": "audit_log_encryption_password_set()",
+        "Description": "Set audit log encryption password",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/audit-log-reference.html#function_audit-log-encryption-password-set",
+        "Category": "Loadable Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/loadable-function-reference.html",
+        "Title": "14.2 Loadable Function Reference",
+        "Name": "audit_log_filter_flush()",
+        "Description": "Flush audit log filter tables",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/audit-log-reference.html#function_audit-log-filter-flush",
+        "Category": "Loadable Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/loadable-function-reference.html",
+        "Title": "14.2 Loadable Function Reference",
+        "Name": "audit_log_filter_remove_filter()",
+        "Description": "Remove audit log filter",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/audit-log-reference.html#function_audit-log-filter-remove-filter",
+        "Category": "Loadable Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/loadable-function-reference.html",
+        "Title": "14.2 Loadable Function Reference",
+        "Name": "audit_log_filter_remove_user()",
+        "Description": "Unassign audit log filter from user",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/audit-log-reference.html#function_audit-log-filter-remove-user",
+        "Category": "Loadable Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/loadable-function-reference.html",
+        "Title": "14.2 Loadable Function Reference",
+        "Name": "audit_log_filter_set_filter()",
+        "Description": "Define audit log filter",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/audit-log-reference.html#function_audit-log-filter-set-filter",
+        "Category": "Loadable Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/loadable-function-reference.html",
+        "Title": "14.2 Loadable Function Reference",
+        "Name": "audit_log_filter_set_user()",
+        "Description": "Assign audit log filter to user",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/audit-log-reference.html#function_audit-log-filter-set-user",
+        "Category": "Loadable Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/loadable-function-reference.html",
+        "Title": "14.2 Loadable Function Reference",
+        "Name": "audit_log_read()",
+        "Description": "Return audit log records",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/audit-log-reference.html#function_audit-log-read",
+        "Category": "Loadable Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/loadable-function-reference.html",
+        "Title": "14.2 Loadable Function Reference",
+        "Name": "audit_log_read_bookmark()",
+        "Description": "Bookmark for most recent audit log event",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/audit-log-reference.html#function_audit-log-read-bookmark",
+        "Category": "Loadable Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/loadable-function-reference.html",
+        "Title": "14.2 Loadable Function Reference",
+        "Name": "audit_log_rotate()",
+        "Description": "Rotate audit log file",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/audit-log-reference.html#function_audit-log-rotate",
+        "Category": "Loadable Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/loadable-function-reference.html",
+        "Title": "14.2 Loadable Function Reference",
+        "Name": "create_asymmetric_priv_key()",
+        "Description": "Create private key",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/enterprise-encryption-functions.html#function_create-asymmetric-priv-key",
+        "Category": "Loadable Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/loadable-function-reference.html",
+        "Title": "14.2 Loadable Function Reference",
+        "Name": "create_asymmetric_pub_key()",
+        "Description": "Create public key",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/enterprise-encryption-functions.html#function_create-asymmetric-pub-key",
+        "Category": "Loadable Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/loadable-function-reference.html",
+        "Title": "14.2 Loadable Function Reference",
+        "Name": "create_dh_parameters()",
+        "Description": "Generate shared DH secret",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/enterprise-encryption-functions-legacy.html#function_create-dh-parameters",
+        "Category": "Loadable Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/loadable-function-reference.html",
+        "Title": "14.2 Loadable Function Reference",
+        "Name": "create_digest()",
+        "Description": "Generate digest from string",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/enterprise-encryption-functions.html#function_create-digest",
+        "Category": "Loadable Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/loadable-function-reference.html",
+        "Title": "14.2 Loadable Function Reference",
+        "Name": "firewall_group_delist()",
+        "Description": "Remove account from firewall group profile",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/firewall-reference.html#function_firewall-group-delist",
+        "Category": "Loadable Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/loadable-function-reference.html",
+        "Title": "14.2 Loadable Function Reference",
+        "Name": "firewall_group_enlist()",
+        "Description": "Add account to firewall group profile",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/firewall-reference.html#function_firewall-group-enlist",
+        "Category": "Loadable Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/loadable-function-reference.html",
+        "Title": "14.2 Loadable Function Reference",
+        "Name": "flush_rewrite_rules()",
+        "Description": "Load rewrite_rules table into Rewriter cache",
+        "Reference HTML": "",
+        "Category": "Loadable Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/loadable-function-reference.html",
+        "Title": "14.2 Loadable Function Reference",
+        "Name": "gen_blacklist()",
+        "Description": "Perform dictionary term replacement",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/data-masking-plugin-functions.html#function_gen-blacklist-plugin",
+        "Category": "Loadable Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/loadable-function-reference.html",
+        "Title": "14.2 Loadable Function Reference",
+        "Name": "gen_blocklist()",
+        "Description": "Perform dictionary term replacement",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/data-masking-component-functions.html#function_gen-blocklist",
+        "Category": "Loadable Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/loadable-function-reference.html",
+        "Title": "14.2 Loadable Function Reference",
+        "Name": "gen_blocklist()",
+        "Description": "Perform dictionary term replacement",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/data-masking-plugin-functions.html#function_gen-blocklist-plugin",
+        "Category": "Loadable Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/loadable-function-reference.html",
+        "Title": "14.2 Loadable Function Reference",
+        "Name": "gen_dictionary()",
+        "Description": "Return random term from dictionary",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/data-masking-component-functions.html#function_gen-dictionary",
+        "Category": "Loadable Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/loadable-function-reference.html",
+        "Title": "14.2 Loadable Function Reference",
+        "Name": "gen_dictionary_drop()",
+        "Description": "Remove dictionary from registry",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/data-masking-plugin-functions.html#function_gen-dictionary-drop-plugin",
+        "Category": "Loadable Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/loadable-function-reference.html",
+        "Title": "14.2 Loadable Function Reference",
+        "Name": "gen_dictionary_load()",
+        "Description": "Load dictionary into registry",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/data-masking-plugin-functions.html#function_gen-dictionary-load-plugin",
+        "Category": "Loadable Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/loadable-function-reference.html",
+        "Title": "14.2 Loadable Function Reference",
+        "Name": "gen_dictionary()",
+        "Description": "Return random term from dictionary",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/data-masking-plugin-functions.html#function_gen-dictionary-plugin",
+        "Category": "Loadable Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/loadable-function-reference.html",
+        "Title": "14.2 Loadable Function Reference",
+        "Name": "gen_range()",
+        "Description": "Generate random number within range",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/data-masking-component-functions.html#function_gen-range",
+        "Category": "Loadable Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/loadable-function-reference.html",
+        "Title": "14.2 Loadable Function Reference",
+        "Name": "gen_range()",
+        "Description": "Generate random number within range",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/data-masking-plugin-functions.html#function_gen-range-plugin",
+        "Category": "Loadable Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/loadable-function-reference.html",
+        "Title": "14.2 Loadable Function Reference",
+        "Name": "gen_rnd_canada_sin()",
+        "Description": "Generate random Canada Social Insurance Number",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/data-masking-component-functions.html#function_gen-rnd-canada-sin",
+        "Category": "Loadable Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/loadable-function-reference.html",
+        "Title": "14.2 Loadable Function Reference",
+        "Name": "gen_rnd_email()",
+        "Description": "Generate random email address",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/data-masking-component-functions.html#function_gen-rnd-email",
+        "Category": "Loadable Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/loadable-function-reference.html",
+        "Title": "14.2 Loadable Function Reference",
+        "Name": "gen_rnd_email()",
+        "Description": "Generate random email address",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/data-masking-plugin-functions.html#function_gen-rnd-email-plugin",
+        "Category": "Loadable Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/loadable-function-reference.html",
+        "Title": "14.2 Loadable Function Reference",
+        "Name": "gen_rnd_iban()",
+        "Description": "Generate random International Bank Account Number",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/data-masking-component-functions.html#function_gen-rnd-iban",
+        "Category": "Loadable Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/loadable-function-reference.html",
+        "Title": "14.2 Loadable Function Reference",
+        "Name": "gen_rnd_pan()",
+        "Description": "Generate random payment card Primary Account Number",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/data-masking-component-functions.html#function_gen-rnd-pan",
+        "Category": "Loadable Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/loadable-function-reference.html",
+        "Title": "14.2 Loadable Function Reference",
+        "Name": "gen_rnd_pan()",
+        "Description": "Generate random payment card Primary Account Number",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/data-masking-plugin-functions.html#function_gen-rnd-pan-plugin",
+        "Category": "Loadable Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/loadable-function-reference.html",
+        "Title": "14.2 Loadable Function Reference",
+        "Name": "gen_rnd_ssn()",
+        "Description": "Generate random US Social Security Number",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/data-masking-component-functions.html#function_gen-rnd-ssn",
+        "Category": "Loadable Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/loadable-function-reference.html",
+        "Title": "14.2 Loadable Function Reference",
+        "Name": "gen_rnd_ssn()",
+        "Description": "Generate random US Social Security Number",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/data-masking-plugin-functions.html#function_gen-rnd-ssn-plugin",
+        "Category": "Loadable Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/loadable-function-reference.html",
+        "Title": "14.2 Loadable Function Reference",
+        "Name": "gen_rnd_uk_nin()",
+        "Description": "Generate random United Kingdom National Insurance Number",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/data-masking-component-functions.html#function_gen-rnd-uk-nin",
+        "Category": "Loadable Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/loadable-function-reference.html",
+        "Title": "14.2 Loadable Function Reference",
+        "Name": "gen_rnd_us_phone()",
+        "Description": "Generate random US phone number",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/data-masking-component-functions.html#function_gen-rnd-us-phone",
+        "Category": "Loadable Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/loadable-function-reference.html",
+        "Title": "14.2 Loadable Function Reference",
+        "Name": "gen_rnd_us_phone()",
+        "Description": "Generate random US phone number",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/data-masking-plugin-functions.html#function_gen-rnd-us-phone-plugin",
+        "Category": "Loadable Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/loadable-function-reference.html",
+        "Title": "14.2 Loadable Function Reference",
+        "Name": "gen_rnd_uuid()",
+        "Description": "Generate random Universally Unique Identifier",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/data-masking-component-functions.html#function_gen-rnd-uuid",
+        "Category": "Loadable Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/loadable-function-reference.html",
+        "Title": "14.2 Loadable Function Reference",
+        "Name": "group_replication_disable_member_action()",
+        "Description": "Enable a member action so that the member does not take it in the",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/group-replication-functions-for-member-actions.html#function_group-replication-disable-member-action",
+        "Category": "Loadable Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/loadable-function-reference.html",
+        "Title": "14.2 Loadable Function Reference",
+        "Name": "group_replication_enable_member_action()",
+        "Description": "Enable a member action for the member to take in the specified",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/group-replication-functions-for-member-actions.html#function_group-replication-enable-member-action",
+        "Category": "Loadable Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/loadable-function-reference.html",
+        "Title": "14.2 Loadable Function Reference",
+        "Name": "group_replication_get_communication_protocol()",
+        "Description": "Return Group Replication protocol version",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/group-replication-functions-for-communication-protocol.html#function_group-replication-get-communication-protocol",
+        "Category": "Loadable Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/loadable-function-reference.html",
+        "Title": "14.2 Loadable Function Reference",
+        "Name": "group_replication_get_write_concurrency()",
+        "Description": "Return maximum number of consensus instances executable in",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/group-replication-functions-for-maximum-consensus.html#function_group-replication-get-write-concurrency",
+        "Category": "Loadable Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/loadable-function-reference.html",
+        "Title": "14.2 Loadable Function Reference",
+        "Name": "group_replication_reset_member_actions()",
+        "Description": "Reset the member actions configuration to the default settings",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/group-replication-functions-for-member-actions.html#function_group-replication-reset-member-actions",
+        "Category": "Loadable Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/loadable-function-reference.html",
+        "Title": "14.2 Loadable Function Reference",
+        "Name": "group_replication_set_as_primary()",
+        "Description": "Assign group member as new primary",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/group-replication-functions-for-new-primary.html#function_group-replication-set-as-primary",
+        "Category": "Loadable Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/loadable-function-reference.html",
+        "Title": "14.2 Loadable Function Reference",
+        "Name": "group_replication_set_communication_protocol()",
+        "Description": "Set Group Replication protocol version",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/group-replication-functions-for-communication-protocol.html#function_group-replication-set-communication-protocol",
+        "Category": "Loadable Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/loadable-function-reference.html",
+        "Title": "14.2 Loadable Function Reference",
+        "Name": "group_replication_set_write_concurrency()",
+        "Description": "Set maximum number of consensus instances executable in parallel",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/group-replication-functions-for-maximum-consensus.html#function_group-replication-set-write-concurrency",
+        "Category": "Loadable Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/loadable-function-reference.html",
+        "Title": "14.2 Loadable Function Reference",
+        "Name": "group_replication_switch_to_multi_primary_mode()",
+        "Description": "Change group from single-primary to multi-primary mode",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/group-replication-functions-for-mode.html#function_group-replication-switch-to-multi-primary-mode",
+        "Category": "Loadable Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/loadable-function-reference.html",
+        "Title": "14.2 Loadable Function Reference",
+        "Name": "group_replication_switch_to_single_primary_mode()",
+        "Description": "Change group from multi-primary to single-primary mode",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/group-replication-functions-for-mode.html#function_group-replication-switch-to-single-primary-mode",
+        "Category": "Loadable Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/loadable-function-reference.html",
+        "Title": "14.2 Loadable Function Reference",
+        "Name": "keyring_aws_rotate_cmk()",
+        "Description": "Rotate AWS customer master key",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/keyring-functions-plugin-specific.html#function_keyring-aws-rotate-cmk",
+        "Category": "Loadable Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/loadable-function-reference.html",
+        "Title": "14.2 Loadable Function Reference",
+        "Name": "keyring_aws_rotate_keys()",
+        "Description": "Rotate keys in keyring_aws storage file",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/keyring-functions-plugin-specific.html#function_keyring-aws-rotate-keys",
+        "Category": "Loadable Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/loadable-function-reference.html",
+        "Title": "14.2 Loadable Function Reference",
+        "Name": "keyring_hashicorp_update_config()",
+        "Description": "Cause runtime keyring_hashicorp reconfiguration",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/keyring-functions-plugin-specific.html#function_keyring-hashicorp-update-config",
+        "Category": "Loadable Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/loadable-function-reference.html",
+        "Title": "14.2 Loadable Function Reference",
+        "Name": "keyring_key_fetch()",
+        "Description": "Fetch keyring key value",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/keyring-functions-general-purpose.html#function_keyring-key-fetch",
+        "Category": "Loadable Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/loadable-function-reference.html",
+        "Title": "14.2 Loadable Function Reference",
+        "Name": "keyring_key_generate()",
+        "Description": "Generate random keyring key",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/keyring-functions-general-purpose.html#function_keyring-key-generate",
+        "Category": "Loadable Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/loadable-function-reference.html",
+        "Title": "14.2 Loadable Function Reference",
+        "Name": "keyring_key_length_fetch()",
+        "Description": "Return keyring key length",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/keyring-functions-general-purpose.html#function_keyring-key-length-fetch",
+        "Category": "Loadable Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/loadable-function-reference.html",
+        "Title": "14.2 Loadable Function Reference",
+        "Name": "keyring_key_remove()",
+        "Description": "Remove keyring key",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/keyring-functions-general-purpose.html#function_keyring-key-remove",
+        "Category": "Loadable Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/loadable-function-reference.html",
+        "Title": "14.2 Loadable Function Reference",
+        "Name": "keyring_key_store()",
+        "Description": "Store key in keyring",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/keyring-functions-general-purpose.html#function_keyring-key-store",
+        "Category": "Loadable Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/loadable-function-reference.html",
+        "Title": "14.2 Loadable Function Reference",
+        "Name": "keyring_key_type_fetch()",
+        "Description": "Return keyring key type",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/keyring-functions-general-purpose.html#function_keyring-key-type-fetch",
+        "Category": "Loadable Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/loadable-function-reference.html",
+        "Title": "14.2 Loadable Function Reference",
+        "Name": "load_rewrite_rules()",
+        "Description": "Rewriter plugin helper routine",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/rewriter-query-rewrite-plugin-reference.html#function_load-rewrite-rules",
+        "Category": "Loadable Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/loadable-function-reference.html",
+        "Title": "14.2 Loadable Function Reference",
+        "Name": "mask_canada_sin()",
+        "Description": "Mask Canada Social Insurance Number",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/data-masking-component-functions.html#function_mask-canada-sin",
+        "Category": "Loadable Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/loadable-function-reference.html",
+        "Title": "14.2 Loadable Function Reference",
+        "Name": "mask_iban()",
+        "Description": "Mask International Bank Account Number",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/data-masking-component-functions.html#function_mask-iban",
+        "Category": "Loadable Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/loadable-function-reference.html",
+        "Title": "14.2 Loadable Function Reference",
+        "Name": "mask_inner()",
+        "Description": "Mask interior part of string",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/data-masking-component-functions.html#function_mask-inner",
+        "Category": "Loadable Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/loadable-function-reference.html",
+        "Title": "14.2 Loadable Function Reference",
+        "Name": "mask_inner()",
+        "Description": "Mask interior part of string",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/data-masking-plugin-functions.html#function_mask-inner-plugin",
+        "Category": "Loadable Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/loadable-function-reference.html",
+        "Title": "14.2 Loadable Function Reference",
+        "Name": "mask_outer()",
+        "Description": "Mask left and right parts of string",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/data-masking-component-functions.html#function_mask-outer",
+        "Category": "Loadable Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/loadable-function-reference.html",
+        "Title": "14.2 Loadable Function Reference",
+        "Name": "mask_outer()",
+        "Description": "Mask left and right parts of string",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/data-masking-plugin-functions.html#function_mask-outer-plugin",
+        "Category": "Loadable Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/loadable-function-reference.html",
+        "Title": "14.2 Loadable Function Reference",
+        "Name": "mask_pan()",
+        "Description": "Mask payment card Primary Account Number part of string",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/data-masking-component-functions.html#function_mask-pan",
+        "Category": "Loadable Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/loadable-function-reference.html",
+        "Title": "14.2 Loadable Function Reference",
+        "Name": "mask_pan()",
+        "Description": "Mask payment card Primary Account Number part of string",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/data-masking-plugin-functions.html#function_mask-pan-plugin",
+        "Category": "Loadable Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/loadable-function-reference.html",
+        "Title": "14.2 Loadable Function Reference",
+        "Name": "mask_pan_relaxed()",
+        "Description": "Mask payment card Primary Account Number part of string",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/data-masking-component-functions.html#function_mask-pan-relaxed",
+        "Category": "Loadable Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/loadable-function-reference.html",
+        "Title": "14.2 Loadable Function Reference",
+        "Name": "mask_pan_relaxed()",
+        "Description": "Mask payment card Primary Account Number part of string",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/data-masking-plugin-functions.html#function_mask-pan-relaxed-plugin",
+        "Category": "Loadable Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/loadable-function-reference.html",
+        "Title": "14.2 Loadable Function Reference",
+        "Name": "mask_ssn()",
+        "Description": "Mask US Social Security Number",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/data-masking-component-functions.html#function_mask-ssn",
+        "Category": "Loadable Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/loadable-function-reference.html",
+        "Title": "14.2 Loadable Function Reference",
+        "Name": "mask_ssn()",
+        "Description": "Mask US Social Security Number",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/data-masking-plugin-functions.html#function_mask-ssn-plugin",
+        "Category": "Loadable Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/loadable-function-reference.html",
+        "Title": "14.2 Loadable Function Reference",
+        "Name": "mask_uk_nin()",
+        "Description": "Mask United Kingdom National Insurance Number",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/data-masking-component-functions.html#function_mask-uk-nin",
+        "Category": "Loadable Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/loadable-function-reference.html",
+        "Title": "14.2 Loadable Function Reference",
+        "Name": "mask_uuid()",
+        "Description": "Mask Universally Unique Identifier part of string",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/data-masking-component-functions.html#function_mask-uuid",
+        "Category": "Loadable Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/loadable-function-reference.html",
+        "Title": "14.2 Loadable Function Reference",
+        "Name": "masking_dictionary_remove()",
+        "Description": "Remove dictionary from the database table",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/data-masking-component-functions.html#function_masking-dictionary-remove",
+        "Category": "Loadable Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/loadable-function-reference.html",
+        "Title": "14.2 Loadable Function Reference",
+        "Name": "masking_dictionary_term_add()",
+        "Description": "Add new term to the dictionary",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/data-masking-component-functions.html#function_masking-dictionary-term-add",
+        "Category": "Loadable Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/loadable-function-reference.html",
+        "Title": "14.2 Loadable Function Reference",
+        "Name": "masking_dictionary_term_remove()",
+        "Description": "Remove existing term from the dictionary",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/data-masking-component-functions.html#function_masking-dictionary-term-remove",
+        "Category": "Loadable Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/loadable-function-reference.html",
+        "Title": "14.2 Loadable Function Reference",
+        "Name": "mysql_firewall_flush_status()",
+        "Description": "Reset firewall status variables",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/firewall-reference.html#function_mysql-firewall-flush-status",
+        "Category": "Loadable Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/loadable-function-reference.html",
+        "Title": "14.2 Loadable Function Reference",
+        "Name": "mysql_query_attribute_string()",
+        "Description": "Fetch query attribute value",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/query-attributes.html#function_mysql-query-attribute-string",
+        "Category": "Loadable Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/loadable-function-reference.html",
+        "Title": "14.2 Loadable Function Reference",
+        "Name": "normalize_statement()",
+        "Description": "Normalize SQL statement to digest form",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/firewall-reference.html#function_normalize-statement",
+        "Category": "Loadable Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/loadable-function-reference.html",
+        "Title": "14.2 Loadable Function Reference",
+        "Name": "read_firewall_group_allowlist()",
+        "Description": "Update firewall group profile recorded-statement cache",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/firewall-reference.html#function_read-firewall-group-allowlist",
+        "Category": "Loadable Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/loadable-function-reference.html",
+        "Title": "14.2 Loadable Function Reference",
+        "Name": "read_firewall_groups()",
+        "Description": "Update firewall group profile cache",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/firewall-reference.html#function_read-firewall-groups",
+        "Category": "Loadable Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/loadable-function-reference.html",
+        "Title": "14.2 Loadable Function Reference",
+        "Name": "read_firewall_users()",
+        "Description": "Update firewall account profile cache",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/firewall-reference.html#function_read-firewall-users",
+        "Category": "Loadable Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/loadable-function-reference.html",
+        "Title": "14.2 Loadable Function Reference",
+        "Name": "read_firewall_whitelist()",
+        "Description": "Update firewall account profile recorded-statement cache",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/firewall-reference.html#function_read-firewall-whitelist",
+        "Category": "Loadable Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/loadable-function-reference.html",
+        "Title": "14.2 Loadable Function Reference",
+        "Name": "service_get_read_locks()",
+        "Description": "Acquire locking service shared locks",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/locking-service.html#function_service-get-read-locks",
+        "Category": "Loadable Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/loadable-function-reference.html",
+        "Title": "14.2 Loadable Function Reference",
+        "Name": "service_get_write_locks()",
+        "Description": "Acquire locking service exclusive locks",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/locking-service.html#function_service-get-write-locks",
+        "Category": "Loadable Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/loadable-function-reference.html",
+        "Title": "14.2 Loadable Function Reference",
+        "Name": "service_release_locks()",
+        "Description": "Release locking service locks",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/locking-service.html#function_service-release-locks",
+        "Category": "Loadable Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/loadable-function-reference.html",
+        "Title": "14.2 Loadable Function Reference",
+        "Name": "set_firewall_group_mode()",
+        "Description": "Establish firewall group profile operational mode",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/firewall-reference.html#function_set-firewall-group-mode",
+        "Category": "Loadable Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/loadable-function-reference.html",
+        "Title": "14.2 Loadable Function Reference",
+        "Name": "set_firewall_mode()",
+        "Description": "Establish firewall account profile operational mode",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/firewall-reference.html#function_set-firewall-mode",
+        "Category": "Loadable Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/loadable-function-reference.html",
+        "Title": "14.2 Loadable Function Reference",
+        "Name": "version_tokens_delete()",
+        "Description": "Delete tokens from version tokens list",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/version-tokens-reference.html#function_version-tokens-delete",
+        "Category": "Loadable Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/loadable-function-reference.html",
+        "Title": "14.2 Loadable Function Reference",
+        "Name": "version_tokens_edit()",
+        "Description": "Modify version tokens list",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/version-tokens-reference.html#function_version-tokens-edit",
+        "Category": "Loadable Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/loadable-function-reference.html",
+        "Title": "14.2 Loadable Function Reference",
+        "Name": "version_tokens_lock_exclusive()",
+        "Description": "Acquire exclusive locks on version tokens",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/version-tokens-reference.html#function_version-tokens-lock-exclusive",
+        "Category": "Loadable Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/loadable-function-reference.html",
+        "Title": "14.2 Loadable Function Reference",
+        "Name": "version_tokens_lock_shared()",
+        "Description": "Acquire shared locks on version tokens",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/version-tokens-reference.html#function_version-tokens-lock-shared",
+        "Category": "Loadable Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/loadable-function-reference.html",
+        "Title": "14.2 Loadable Function Reference",
+        "Name": "version_tokens_set()",
+        "Description": "Set version tokens list",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/version-tokens-reference.html#function_version-tokens-set",
+        "Category": "Loadable Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/loadable-function-reference.html",
+        "Title": "14.2 Loadable Function Reference",
+        "Name": "version_tokens_show()",
+        "Description": "Return version tokens list",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/version-tokens-reference.html#function_version-tokens-show",
+        "Category": "Loadable Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/loadable-function-reference.html",
+        "Title": "14.2 Loadable Function Reference",
+        "Name": "version_tokens_unlock()",
+        "Description": "Release version tokens locks",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/version-tokens-reference.html#function_version-tokens-unlock",
+        "Category": "Loadable Functions"
+    }
+]

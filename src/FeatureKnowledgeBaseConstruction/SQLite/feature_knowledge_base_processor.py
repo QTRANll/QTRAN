@@ -6,7 +6,7 @@
 # @Intro   : 处理前面第一轮爬取的（mysql，tidb，oceanbase）数据库的信息，将信息格式重新编排统一
 import json
 import os
-from src.Tools.Crawler.crawler_options import sanitize_title
+from src.Tools.crawler_options import sanitize_title
 import glob
 
 def category_classifier(results_dicname, results_category_dicname):

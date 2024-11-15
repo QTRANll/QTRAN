@@ -1,0 +1,30 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/aggregate-functions/parametric-functions"
+    ],
+    "Title": [
+        "histogram"
+    ],
+    "Feature": [
+        "histogram(number_of_bins)(values)"
+    ],
+    "Description": [
+        "histogram",
+        "Calculates an adaptive histogram. It does not guarantee precise results.",
+        "histogram(number_of_bins)(values)",
+        "The functions uses A Streaming Parallel Decision Tree Algorithm. The borders of histogram bins are adjusted as new data enters a function. In common case, the widths of bins are not equal.",
+        "Arguments",
+        "values \u2014 Expression resulting in input values.",
+        "Parameters",
+        "number_of_bins \u2014 Upper limit for the number of bins in the histogram. The function automatically calculates the number of bins. It tries to reach the specified number of bins, but if it fails, it uses fewer bins.",
+        "Returned values",
+        "Array of Tuples of the following format:  ```  [(lower_1, upper_1, height_1), ... (lower_N, upper_N, height_N)]  ```  - `lower` \u2014 Lower bound of the bin.  - `upper` \u2014 Upper bound of the bin.  - `height` \u2014 Calculated height of the bin."
+    ],
+    "Examples": [
+        "SELECT histogram(5)(number + 1)FROM (    SELECT *    FROM system.numbers    LIMIT 20)",
+        "WITH histogram(5)(rand() % 100) AS histSELECT    arrayJoin(hist).3 AS height,    bar(height, 0, 6, 5) AS barFROM(    SELECT *    FROM system.numbers    LIMIT 20)"
+    ],
+    "Category": [
+        "Aggregate Functions"
+    ]
+}

@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://duckdb.org/docs/sql/functions/char"
+    ],
+    "Title": [
+        "regexp_extract_all(string, regex[, group = 0])"
+    ],
+    "Feature": [
+        "regexp_extract_all(string, regex[, group = 0])"
+    ],
+    "Description": [
+        "Split the string along the regex and extract all occurrences of group."
+    ],
+    "Examples": [
+        "regexp_extract_all('hello_world', '([a-z ]+)_?', 1)"
+    ],
+    "Category": [
+        "Text Functions"
+    ]
+}

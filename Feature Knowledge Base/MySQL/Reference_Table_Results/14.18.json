@@ -1,0 +1,170 @@
+[
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/replication-functions.html",
+        "Title": "14.18 Replication Functions",
+        "Name": "asynchronous_connection_failover_add_managed()",
+        "Description": "Add group member source server configuration information to a",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/replication-functions-async-failover.html#function_asynchronous-connection-failover-add-managed",
+        "Category": "Replication Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/replication-functions.html",
+        "Title": "14.18 Replication Functions",
+        "Name": "asynchronous_connection_failover_add_source()",
+        "Description": "Add source server configuration information server to a",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/replication-functions-async-failover.html#function_asynchronous-connection-failover-add-source",
+        "Category": "Replication Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/replication-functions.html",
+        "Title": "14.18 Replication Functions",
+        "Name": "asynchronous_connection_failover_delete_managed()",
+        "Description": "Remove a managed group from a replication channel source list",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/replication-functions-async-failover.html#function_asynchronous-connection-failover-delete-managed",
+        "Category": "Replication Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/replication-functions.html",
+        "Title": "14.18 Replication Functions",
+        "Name": "asynchronous_connection_failover_delete_source()",
+        "Description": "Remove a source server from a replication channel source list",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/replication-functions-async-failover.html#function_asynchronous-connection-failover-delete-source",
+        "Category": "Replication Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/replication-functions.html",
+        "Title": "14.18 Replication Functions",
+        "Name": "asynchronous_connection_failover_reset()",
+        "Description": "Remove all settings relating to group replication asynchronous",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/replication-functions-async-failover.html#function_asynchronous-connection-failover-reset",
+        "Category": "Replication Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/replication-functions.html",
+        "Title": "14.18 Replication Functions",
+        "Name": "group_replication_disable_member_action()",
+        "Description": "Disable member action for event specified",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/group-replication-functions-for-member-actions.html#function_group-replication-disable-member-action",
+        "Category": "Replication Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/replication-functions.html",
+        "Title": "14.18 Replication Functions",
+        "Name": "group_replication_enable_member_action()",
+        "Description": "Enable member action for event specified",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/group-replication-functions-for-member-actions.html#function_group-replication-enable-member-action",
+        "Category": "Replication Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/replication-functions.html",
+        "Title": "14.18 Replication Functions",
+        "Name": "group_replication_get_communication_protocol()",
+        "Description": "Get version of group replication communication protocol currently",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/group-replication-functions-for-communication-protocol.html#function_group-replication-get-communication-protocol",
+        "Category": "Replication Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/replication-functions.html",
+        "Title": "14.18 Replication Functions",
+        "Name": "group_replication_get_write_concurrency()",
+        "Description": "Get maximum number of consensus instances currently set for group",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/group-replication-functions-for-maximum-consensus.html#function_group-replication-get-write-concurrency",
+        "Category": "Replication Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/replication-functions.html",
+        "Title": "14.18 Replication Functions",
+        "Name": "group_replication_reset_member_actions()",
+        "Description": "Reset all member actions to defaults and configuration version",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/group-replication-functions-for-member-actions.html#function_group-replication-reset-member-actions",
+        "Category": "Replication Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/replication-functions.html",
+        "Title": "14.18 Replication Functions",
+        "Name": "group_replication_set_as_primary()",
+        "Description": "Make a specific group member the primary",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/group-replication-functions-for-new-primary.html#function_group-replication-set-as-primary",
+        "Category": "Replication Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/replication-functions.html",
+        "Title": "14.18 Replication Functions",
+        "Name": "group_replication_set_communication_protocol()",
+        "Description": "Set version for group replication communication protocol to use",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/group-replication-functions-for-communication-protocol.html#function_group-replication-set-communication-protocol",
+        "Category": "Replication Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/replication-functions.html",
+        "Title": "14.18 Replication Functions",
+        "Name": "group_replication_set_write_concurrency()",
+        "Description": "Set maximum number of consensus instances that can be executed in",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/group-replication-functions-for-maximum-consensus.html#function_group-replication-set-write-concurrency",
+        "Category": "Replication Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/replication-functions.html",
+        "Title": "14.18 Replication Functions",
+        "Name": "group_replication_switch_to_multi_primary_mode()",
+        "Description": "Changes the mode of a group running in single-primary mode to",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/group-replication-functions-for-mode.html#function_group-replication-switch-to-multi-primary-mode",
+        "Category": "Replication Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/replication-functions.html",
+        "Title": "14.18 Replication Functions",
+        "Name": "group_replication_switch_to_single_primary_mode()",
+        "Description": "Changes the mode of a group running in multi-primary mode to",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/group-replication-functions-for-mode.html#function_group-replication-switch-to-single-primary-mode",
+        "Category": "Replication Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/replication-functions.html",
+        "Title": "14.18 Replication Functions",
+        "Name": "GTID_SUBSET()",
+        "Description": "Return true if all GTIDs in subset are also in set; otherwise",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/gtid-functions.html#function_gtid-subset",
+        "Category": "Replication Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/replication-functions.html",
+        "Title": "14.18 Replication Functions",
+        "Name": "GTID_SUBTRACT()",
+        "Description": "Return all GTIDs in set that are not in subset.",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/gtid-functions.html#function_gtid-subtract",
+        "Category": "Replication Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/replication-functions.html",
+        "Title": "14.18 Replication Functions",
+        "Name": "MASTER_POS_WAIT()",
+        "Description": "Block until the replica has read and applied all updates up to the",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/replication-functions-synchronization.html#function_master-pos-wait",
+        "Category": "Replication Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/replication-functions.html",
+        "Title": "14.18 Replication Functions",
+        "Name": "SOURCE_POS_WAIT()",
+        "Description": "Block until the replica has read and applied all updates up to the",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/replication-functions-synchronization.html#function_source-pos-wait",
+        "Category": "Replication Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/replication-functions.html",
+        "Title": "14.18 Replication Functions",
+        "Name": "WAIT_FOR_EXECUTED_GTID_SET()",
+        "Description": "Wait until the given GTIDs have executed on the replica.",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/gtid-functions.html#function_wait-for-executed-gtid-set",
+        "Category": "Replication Functions"
+    },
+    {
+        "HTML": "https://dev.mysql.com/doc/refman/8.0/en/replication-functions.html",
+        "Title": "14.18 Replication Functions",
+        "Name": "WAIT_UNTIL_SQL_THREAD_AFTER_GTIDS()",
+        "Description": "Use WAIT_FOR_EXECUTED_GTID_SET().",
+        "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/gtid-functions.html#function_wait-until-sql-thread-after-gtids",
+        "Category": "Replication Functions"
+    }
+]

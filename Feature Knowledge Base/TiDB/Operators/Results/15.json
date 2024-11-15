@@ -1,0 +1,18 @@
+{
+    "HTML": "https://dev.mysql.com/doc/refman/8.0/en/comparison-operators.html#operator_is",
+    "Title": "IS",
+    "Feature": [
+        "IS\n            boolean_value"
+    ],
+    "Description": [
+        "\nIS\n            boolean_value\n",
+        "\n            Tests a value against a boolean value, where\n            boolean_value can be\n            TRUE, FALSE, or\n            UNKNOWN.\n          ",
+        "Press CTRL+C to copy mysql> SELECT 1 IS TRUE, 0 IS FALSE, NULL IS UNKNOWN;\n        -> 1, 1, 1"
+    ],
+    "Examples": [
+        "mysql> SELECT 1 IS TRUE, 0 IS FALSE, NULL IS UNKNOWN;\n        -> 1, 1, 1"
+    ],
+    "Category": [
+        "Comparison Functions and Operators"
+    ]
+}

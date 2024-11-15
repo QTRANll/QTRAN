@@ -1,0 +1,22 @@
+{
+    "HTML": [
+        "https://duckdb.org/docs/sql/functions/aggregates"
+    ],
+    "Title": [
+        "argmin(arg, val, n)"
+    ],
+    "Feature": [
+        "argmin(arg, val, n)"
+    ],
+    "Description": [
+        "arg_min(arg, val, n)",
+        "Returns a LIST containing the arg expressions for the \"bottom\" n rows ordered by val ascending. This function is affected by ordering.",
+        "The generalized case of arg_min for n values: returns a LIST containing the arg expressions for the top n rows ordered by val descending. This function is affected by ordering."
+    ],
+    "Examples": [
+        "arg_min(A, B, 2)"
+    ],
+    "Category": [
+        "Aggregate Functions"
+    ]
+}

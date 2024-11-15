@@ -1,0 +1,23 @@
+{
+    "HTML": [
+        "https://docs.pingcap.com/zh/tidb/v8.3/json-functions-modify"
+    ],
+    "Title": [
+        "JSON_SET()"
+    ],
+    "Feature": [
+        "JSON_SET()"
+    ],
+    "Description": [
+        "JSON_SET()",
+        "JSON_SET(json_doc,path,value[,path,value] ...) 函数在 JSON 文档中插入或更新数据，并返回结果。",
+        "该函数可接受成对的 path 和 value 参数。"
+    ],
+    "Examples": [
+        "SELECT JSON_SET('{\"version\": 1.1, \"name\": \"example\"}','$.version',1.2);\n",
+        "SELECT JSON_SET('{\"version\": 1.1, \"name\": \"example\"}','$.version',1.2,'$.branch', \"main\");\n"
+    ],
+    "Category": [
+        "修改 JSON 的函数"
+    ]
+}

@@ -1,0 +1,18 @@
+{
+    "HTML": [
+        "https://sqlite.org/lang_corefunc.html"
+    ],
+    "Title": [
+        "likely(X)"
+    ],
+    "Feature": [
+        "likely(X)"
+    ],
+    "Description": [
+        "\n  The likely(X) function returns the argument X unchanged.\n  The likely(X) function is a no-op that the code generator\n  optimizes away so that it consumes no CPU cycles at\n  run-time (that is, during calls to sqlite3_step()).\n  The purpose of the likely(X) function is to provide a hint\n  to the query planner that the argument X is a boolean value\n  that is usually true. The likely(X) function is equivalent\n  to likelihood(X,0.9375). See also: unlikely(X).\n"
+    ],
+    "Examples": [],
+    "Category": [
+        "Core SQL Functions"
+    ]
+}

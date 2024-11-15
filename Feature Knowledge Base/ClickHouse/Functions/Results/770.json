@@ -1,0 +1,25 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/string-search-functions"
+    ],
+    "Title": [
+        "multiMatchAny"
+    ],
+    "Feature": [
+        "multiMatchAny(haystack, \\[pattern<sub>1</sub>, pattern<sub>2</sub>, ..., pattern<sub>n</sub>\\])"
+    ],
+    "Description": [
+        "multiMatchAny",
+        "Like match but returns 1 if at least one of the patterns match and 0 otherwise.",
+        "NoteFunctions in the multi[Fuzzy]Match*() family use the the (Vectorscan)[https://github.com/VectorCamp/vectorscan] library. As such, they are only enabled if ClickHouse is compiled with support for vectorscan.To turn off all functions that use hyperscan, use setting SET allow_hyperscan = 0;.Due to restrictions of vectorscan, the length of the haystack string must be less than 232 bytes.Hyperscan is generally vulnerable to regular expression denial of service (ReDoS) attacks (e.g. see\n(here)[https://www.usenix.org/conference/usenixsecurity22/presentation/turonova], (here)[https://doi.org/10.1007/s10664-021-10033-1] and\n(here)[https://doi.org/10.1145/3236024.3236027]. Users are adviced to check the provided patterns carefully.",
+        "If you only want to search multiple substrings in a string, you can use function multiSearchAny instead - it works much faster than this function.",
+        "Syntax",
+        "multiMatchAny(haystack, \\[pattern<sub>1</sub>, pattern<sub>2</sub>, ..., pattern<sub>n</sub>\\])"
+    ],
+    "Examples": [
+        "multiMatchAny(haystack, \\[pattern<sub>1</sub>, pattern<sub>2</sub>, ..., pattern<sub>n</sub>\\])"
+    ],
+    "Category": [
+        "Searching in Strings Functions"
+    ]
+}

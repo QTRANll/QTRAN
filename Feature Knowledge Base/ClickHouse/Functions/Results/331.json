@@ -1,0 +1,29 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/geo/geohash"
+    ],
+    "Title": [
+        "geohashesInBox"
+    ],
+    "Feature": [
+        "geohashesInBox(longitude_min, latitude_min, longitude_max, latitude_max, precision)"
+    ],
+    "Description": [
+        "geohashesInBox",
+        "Returns an array of geohash-encoded strings of given precision that fall inside and intersect boundaries of given box, basically a 2D grid flattened into array.",
+        "Syntax",
+        "geohashesInBox(longitude_min, latitude_min, longitude_max, latitude_max, precision)",
+        "Arguments",
+        "longitude_min \u2014 Minimum longitude. Range: [-180\u00b0, 180\u00b0]. Float.latitude_min \u2014 Minimum latitude. Range: [-90\u00b0, 90\u00b0]. Float.longitude_max \u2014 Maximum longitude. Range: [-180\u00b0, 180\u00b0]. Float.latitude_max \u2014 Maximum latitude. Range: [-90\u00b0, 90\u00b0]. Float.precision \u2014 Geohash precision. Range: [1, 12]. UInt8.",
+        "NoteAll coordinate parameters must be of the same type: either Float32 or Float64.",
+        "Returned values",
+        "Array of precision-long strings of geohash-boxes covering provided area, you should not rely on order of items. Array(String).[] - Empty array if minimum latitude and longitude values aren\u2019t less than corresponding maximum values.",
+        "NoteFunction throws an exception if resulting array is over 10\u2019000\u2019000 items long."
+    ],
+    "Examples": [
+        "SELECT geohashesInBox(24.48, 40.56, 24.785, 40.81, 4) AS thasos;"
+    ],
+    "Category": [
+        "Geo Functions"
+    ]
+}

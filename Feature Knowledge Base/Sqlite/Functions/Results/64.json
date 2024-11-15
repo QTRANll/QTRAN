@@ -1,0 +1,25 @@
+{
+    "HTML": [
+        "https://sqlite.org/json1.html"
+    ],
+    "Title": [
+        "4.1. The json() function"
+    ],
+    "Feature": [
+        "4.1. The json() function"
+    ],
+    "Description": [
+        "4.1. The json() function",
+        "The json(X) function verifies that its argument X is a valid\nJSON string or JSONB blob and returns a minified version of that JSON string\nwith all unnecessary whitespace removed.  If X is not a well-formed\nJSON string or JSONB blob, then this routine throws an error.\n\n",
+        "If the input is JSON5 text, then it is converted into canonical\nRFC-8259 text prior to being returned.\n\n",
+        "If the argument X to json(X) contains JSON objects with duplicate\nlabels, then it is undefined whether or not the duplicates are\npreserved.  The current implementation preserves duplicates.\nHowever, future enhancements\nto this routine may choose to silently remove duplicates.\n\n",
+        "\nExample:\n\n",
+        "json(' { \"this\" : \"is\", \"a\": [ \"test\" ] } ')\n→ '{\"this\":\"is\",\"a\":[\"test\"]}'"
+    ],
+    "Examples": [
+        "json(' { \"this\" : \"is\", \"a\": [ \"test\" ] } ')\n→ '{\"this\":\"is\",\"a\":[\"test\"]}'"
+    ],
+    "Category": [
+        "JSON Functions"
+    ]
+}

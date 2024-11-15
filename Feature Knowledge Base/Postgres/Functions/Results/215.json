@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/16/functions-textsearch.html"
+    ],
+    "Title": [
+        "numnode"
+    ],
+    "Feature": [
+        "numnode ( tsquery ) → integer"
+    ],
+    "Description": [
+        "Returns the number of lexemes plus operators in the tsquery."
+    ],
+    "Examples": [
+        "numnode('(fat & rat) | cat'::tsquery) → 5"
+    ],
+    "Category": [
+        "Text Search Functions and Operators"
+    ]
+}

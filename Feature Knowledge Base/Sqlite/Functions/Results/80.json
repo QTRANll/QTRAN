@@ -1,0 +1,40 @@
+{
+    "HTML": [
+        "https://sqlite.org/json1.html"
+    ],
+    "Title": [
+        "4.17. The json_remove() function"
+    ],
+    "Feature": [
+        "4.17. The json_remove() function"
+    ],
+    "Description": [
+        "4.17. The json_remove() function",
+        "The json_remove(X,P,...) function takes a single JSON value as its\nfirst argument followed by zero or more path arguments.\nThe json_remove(X,P,...) function returns\na copy of the X parameter with all the elements \nidentified by path arguments removed.  Paths that select elements\nnot found in X are silently ignored.\n\n",
+        "Removals occurs sequentially from left to right.  Changes caused by\nprior removals can affect the path search for subsequent arguments.\n\n",
+        "If the json_remove(X) function is called with no path arguments,\nthen it returns the input X reformatted, with excess whitespace\nremoved.\n\n",
+        "The json_remove() function throws an error if the first argument\nis not well-formed JSON or if any later argument is not a well-formed\npath.\n\n",
+        "Examples:\n\n",
+        "json_remove('[0,1,2,3,4]','$[2]')\n→ '[0,1,3,4]'",
+        "json_remove('[0,1,2,3,4]','$[2]','$[0]')\n→ '[1,3,4]'",
+        "json_remove('[0,1,2,3,4]','$[0]','$[2]')\n→ '[1,2,4]'",
+        "json_remove('[0,1,2,3,4]','$[#-1]','$[0]')\n→ '[1,2,3]'",
+        "json_remove('{\"x\":25,\"y\":42}')\n→ '{\"x\":25,\"y\":42}'",
+        "json_remove('{\"x\":25,\"y\":42}','$.z')\n→ '{\"x\":25,\"y\":42}'",
+        "json_remove('{\"x\":25,\"y\":42}','$.y')\n→ '{\"x\":25}'",
+        "json_remove('{\"x\":25,\"y\":42}','$')\n→ NULL"
+    ],
+    "Examples": [
+        "json_remove('[0,1,2,3,4]','$[2]')\n→ '[0,1,3,4]'",
+        "json_remove('[0,1,2,3,4]','$[2]','$[0]')\n→ '[1,3,4]'",
+        "json_remove('[0,1,2,3,4]','$[0]','$[2]')\n→ '[1,2,4]'",
+        "json_remove('[0,1,2,3,4]','$[#-1]','$[0]')\n→ '[1,2,3]'",
+        "json_remove('{\"x\":25,\"y\":42}')\n→ '{\"x\":25,\"y\":42}'",
+        "json_remove('{\"x\":25,\"y\":42}','$.z')\n→ '{\"x\":25,\"y\":42}'",
+        "json_remove('{\"x\":25,\"y\":42}','$.y')\n→ '{\"x\":25}'",
+        "json_remove('{\"x\":25,\"y\":42}','$')\n→ NULL"
+    ],
+    "Category": [
+        "JSON Functions"
+    ]
+}

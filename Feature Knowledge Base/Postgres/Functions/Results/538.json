@@ -1,0 +1,18 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/16/functions-admin.html"
+    ],
+    "Title": [
+        "pg_copy_logical_replication_slot"
+    ],
+    "Feature": [
+        "pg_copy_logical_replication_slot ( src_slot_name name, dst_slot_name name [, temporary boolean [, plugin name ]] ) → record ( slot_name name, lsn pg_lsn )"
+    ],
+    "Description": [
+        "Copies an existing logical replication slot named src_slot_name to a logical replication slot named dst_slot_name, optionally changing the output plugin and persistence. The copied logical slot starts from the same LSN as the source logical slot. Both temporary and plugin are optional; if they are omitted, the values of the source slot are used."
+    ],
+    "Examples": [],
+    "Category": [
+        "System Administration Functions"
+    ]
+}

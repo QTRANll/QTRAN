@@ -1,0 +1,27 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.0/en/loadable-function-reference.html"
+    ],
+    "Title": [
+        "14.2 Loadable Function Reference"
+    ],
+    "Name": "keyring_key_length_fetch()",
+    "Description": [
+        "\nkeyring_key_length_fetch(key_id)\n",
+        "\n              Given a key ID, returns the key length.\n            ",
+        "\n              Arguments:\n",
+        "\n\nkey_id: A string that\n                  specifies the key ID.\n\n",
+        "\n              Return value:\n            ",
+        "\n              Returns the key length in bytes as an integer for success,\n              NULL if the key does not exist, or\n              NULL and an error for failure.\n            ",
+        "\n              Example:\n            ",
+        "\n              See the description of\n              keyring_key_fetch().\n            "
+    ],
+    "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/keyring-functions-general-purpose.html#function_keyring-key-length-fetch",
+    "Feature": [
+        "keyring_key_length_fetch(key_id)"
+    ],
+    "Examples": [],
+    "Category": [
+        "Loadable Functions"
+    ]
+}

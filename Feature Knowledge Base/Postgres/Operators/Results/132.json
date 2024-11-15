@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/16/functions-json.html"
+    ],
+    "Title": [
+        "jsonb @@ jsonpath"
+    ],
+    "Feature": [
+        "jsonb @@ jsonpath → boolean"
+    ],
+    "Description": [
+        "Returns the result of a JSON path predicate check for the specified JSON value. Only the first item of the result is taken into account. If the result is not Boolean, then NULL is returned."
+    ],
+    "Examples": [
+        "'{\"a\":[1,2,3,4,5]}'::jsonb @@ '$.a[*] > 2' → t"
+    ],
+    "Category": [
+        "JSON Functions and Operators"
+    ]
+}

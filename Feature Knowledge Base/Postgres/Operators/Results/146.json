@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/16/functions-range.html"
+    ],
+    "Title": [
+        "anyrange @> anyrange"
+    ],
+    "Feature": [
+        "anyrange @> anyrange → boolean"
+    ],
+    "Description": [
+        "Does the first range contain the second?"
+    ],
+    "Examples": [
+        "int4range(2,4) @> int4range(2,3) → t"
+    ],
+    "Category": [
+        "Range divide Multirange Functions and Operators"
+    ]
+}

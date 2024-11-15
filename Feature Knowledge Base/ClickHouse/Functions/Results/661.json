@@ -1,0 +1,30 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/other-functions"
+    ],
+    "Title": [
+        "runningAccumulate"
+    ],
+    "Feature": [
+        "runningAccumulate(agg_state[, grouping]);"
+    ],
+    "Description": [
+        "runningAccumulate",
+        "Accumulates the states of an aggregate function for each row of a data block.",
+        "NoteThe state is reset for each new block of data.\nBecause of this error-prone behavior the function is DEPRECATED, please use proper window functions instead.",
+        "Syntax",
+        "runningAccumulate(agg_state[, grouping]);",
+        "Arguments",
+        "agg_state \u2014 State of the aggregate function. AggregateFunction.grouping \u2014 Grouping key. Optional. The state of the function is reset if the grouping value is changed. It can be any of the supported data types for which the equality operator is defined.",
+        "Returned value",
+        "Each resulting row contains a result of the aggregate function, accumulated for all the input rows from 0 to the current position. runningAccumulate resets states for each new data block or when the grouping value changes.",
+        "Type depends on the aggregate function used."
+    ],
+    "Examples": [
+        "SELECT k, runningAccumulate(sum_k) AS res FROM (SELECT number as k, sumState(k) AS sum_k FROM numbers(10) GROUP BY k ORDER BY k);",
+        "SELECT    grouping,    item,    runningAccumulate(state, grouping) AS resFROM(    SELECT        toInt8(number / 4) AS grouping,        number AS item,        sumState(number) AS state    FROM numbers(15)    GROUP BY item    ORDER BY item ASC);"
+    ],
+    "Category": [
+        "Other Functions"
+    ]
+}

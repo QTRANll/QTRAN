@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/16/functions-geometry.html"
+    ],
+    "Title": [
+        "path + path"
+    ],
+    "Feature": [
+        "path + path → path"
+    ],
+    "Description": [
+        "Concatenates two open paths (returns NULL if either path is closed)."
+    ],
+    "Examples": [
+        "path '[(0,0),(1,1)]' + path '[(2,2),(3,3),(4,4)]' → [(0,0),(1,1),(2,2),(3,3),(4,4)]"
+    ],
+    "Category": [
+        "Geometric Functions and Operators"
+    ]
+}

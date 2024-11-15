@@ -4,13 +4,12 @@
 # @Author  : zql
 # @File    : HTMLs_Crawler_MySQL.py
 # @Intro   : Get all of MySQL's htmls for data types, functions, operators
-import json
-import os
-from src.Tools.Crawler.crawler_options import set_options
+from src.Tools.crawler_options import set_options
 from selenium import webdriver
 from selenium.webdriver.support.ui import WebDriverWait
 from bs4 import BeautifulSoup
 from urllib.parse import urljoin
+
 def htmls_crawler(html):
     timeout = 5  # 等待时间
     options = set_options()
@@ -33,6 +32,7 @@ def htmls_crawler(html):
             soup_a_temp = soup_a_temp.find_all("a")
         for item_temp in soup_a_temp:
             statement_htmls[item_temp.text] = urljoin(html, item_temp.get("href"))
+    print(statement_htmls)
     return statement_htmls
 
 

@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/multipoint/"
+    ],
+    "Title": [
+        "MULTIPOINT"
+    ],
+    "Feature": [
+        "MultiPoint(pt1,pt2,...)\n"
+    ],
+    "Description": [
+        "Constructs a WKB MultiPoint value using WKB Point arguments. If any argument is not a WKB Point, the return value is NULL."
+    ],
+    "Examples": [
+        "SET @g = ST_GEOMFROMTEXT('MultiPoint( 1 1, 2 2, 5 3, 7 2, 9 3, 8 4, 6 6, 6 9, 4 9, 1 5 )');\n\nCREATE TABLE gis_multi_point (g MULTIPOINT);\nINSERT INTO gis_multi_point VALUES\n    (MultiPointFromText('MULTIPOINT(0 0,10 10,10 20,20 20)')),\n    (MPointFromText('MULTIPOINT(1 1,11 11,11 21,21 21)')),\n    (MPointFromWKB(AsWKB(MultiPoint(Point(3, 6), Point(4, 10)))));\n"
+    ],
+    "Category": [
+        "Geographic Functions"
+    ]
+}

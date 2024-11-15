@@ -1,0 +1,22 @@
+{
+    "HTML": [
+        "https://docs.pingcap.com/zh/tidb/v8.3/data-type-string"
+    ],
+    "Title": [
+        "VARCHAR 类型"
+    ],
+    "Feature": [
+        "VARCHAR 类型"
+    ],
+    "Description": [
+        "VARCHAR 类型",
+        "变长字符串。M 表示最大列长度（字符的最大个数）。VARCHAR 的空间占用大小不得超过 65535 字节。在选择 VARCHAR 长度时，应当根据最长的行的大小和使用的字符集确定。",
+        "对于不同的字符集，单个字符所占用的空间可能有所不同。以下表格是各个字符集下单个字符占用的字节数，以及 VARCHAR 列长度的取值范围：",
+        "字符集单个字符字节数VARCHAR 最大列长度的取值范围ascii1(0, 65535]latin11(0, 65535]binary1(0, 65535]utf83(0, 21845]utf8mb44(0, 16383]",
+        "[NATIONAL] VARCHAR(M) [CHARACTER SET charset_name] [COLLATE collation_name]\n"
+    ],
+    "Examples": [],
+    "Category": [
+        "字符串类型"
+    ]
+}

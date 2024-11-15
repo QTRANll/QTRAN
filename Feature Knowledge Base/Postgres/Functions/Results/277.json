@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/16/functions-json.html"
+    ],
+    "Title": [
+        "string . datetime"
+    ],
+    "Feature": [
+        "string . datetime(template) → datetime_type (see note)"
+    ],
+    "Description": [
+        "Date/time value converted from a string using the specified to_timestamp template"
+    ],
+    "Examples": [
+        "jsonb_path_query_array('[\"12:30\", \"18:40\"]', '$[*].datetime(\"HH24:MI\")') → [\"12:30:00\", \"18:40:00\"]"
+    ],
+    "Category": [
+        "JSON Functions and Operators"
+    ]
+}

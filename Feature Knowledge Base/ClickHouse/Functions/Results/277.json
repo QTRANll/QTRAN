@@ -1,0 +1,27 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/date-time-functions"
+    ],
+    "Title": [
+        "dateName"
+    ],
+    "Feature": [
+        "dateName(date_part, date)"
+    ],
+    "Description": [
+        "dateName",
+        "Returns specified part of date.",
+        "Syntax",
+        "dateName(date_part, date)",
+        "Arguments",
+        "date_part \u2014 Date part. Possible values: 'year', 'quarter', 'month', 'week', 'dayofyear', 'day', 'weekday', 'hour', 'minute', 'second'. String.date \u2014 Date. Date, Date32, DateTime or DateTime64.timezone \u2014 Timezone. Optional. String.",
+        "Returned value",
+        "The specified part of date. String"
+    ],
+    "Examples": [
+        "WITH toDateTime('2021-04-14 11:22:33') AS date_valueSELECT    dateName('year', date_value),    dateName('month', date_value),    dateName('day', date_value);"
+    ],
+    "Category": [
+        "Dates and Times Functions"
+    ]
+}

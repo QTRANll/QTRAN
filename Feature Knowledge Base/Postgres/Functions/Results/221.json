@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/16/functions-textsearch.html"
+    ],
+    "Title": [
+        "strip"
+    ],
+    "Feature": [
+        "strip ( tsvector ) → tsvector"
+    ],
+    "Description": [
+        "Removes positions and weights from the tsvector."
+    ],
+    "Examples": [
+        "strip('fat:2,4 cat:3 rat:5A'::tsvector) → 'cat' 'fat' 'rat'"
+    ],
+    "Category": [
+        "Text Search Functions and Operators"
+    ]
+}

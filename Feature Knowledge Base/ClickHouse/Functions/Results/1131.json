@@ -1,0 +1,29 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/aggregate-functions/reference/argmin"
+    ],
+    "Title": [
+        "argMin"
+    ],
+    "Feature": [
+        "argMin(arg, val)"
+    ],
+    "Description": [
+        "argMin",
+        "Calculates the arg value for a minimum val value. If there are multiple rows with equal val being the maximum, which of the associated arg is returned is not deterministic.\nBoth parts the arg and the min behave as aggregate functions, they both skip Null during processing and return not Null values if not Null values are available.",
+        "Syntax",
+        "argMin(arg, val)",
+        "Arguments",
+        "arg \u2014 Argument.val \u2014 Value.",
+        "Returned value",
+        "arg value that corresponds to minimum val value.",
+        "Type: matches arg type."
+    ],
+    "Examples": [
+        "SELECT argMin(user, salary) FROM salary",
+        "CREATE TABLE test(    a Nullable(String),    b Nullable(Int64))ENGINE = Memory ASSELECT *FROM VALUES((NULL, 0), ('a', 1), ('b', 2), ('c', 2), (NULL, NULL), ('d', NULL));select * from test;\u250c\u2500a\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500b\u2500\u2510\u2502 \u1d3a\u1d41\u1d38\u1d38 \u2502    0 \u2502\u2502 a    \u2502    1 \u2502\u2502 b    \u2502    2 \u2502\u2502 c    \u2502    2 \u2502\u2502 \u1d3a\u1d41\u1d38\u1d38 \u2502 \u1d3a\u1d41\u1d38\u1d38 \u2502\u2502 d    \u2502 \u1d3a\u1d41\u1d38\u1d38 \u2502\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2518SELECT argMin(a, b), min(b) FROM test;\u250c\u2500argMin(a, b)\u2500\u252c\u2500min(b)\u2500\u2510\u2502 a            \u2502      0 \u2502 -- argMin = a because it the first not `NULL` value, min(b) is from another row!\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518SELECT argMin(tuple(a), b) FROM test;\u250c\u2500argMin(tuple(a), b)\u2500\u2510\u2502 (NULL)              \u2502 -- The a `Tuple` that contains only a `NULL` value is not `NULL`, so the aggregate functions won't skip that row because of that `NULL` value\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518SELECT (argMin((a, b), b) as t).1 argMinA, t.2 argMinB from test;\u250c\u2500argMinA\u2500\u252c\u2500argMinB\u2500\u2510\u2502 \u1d3a\u1d41\u1d38\u1d38    \u2502       0 \u2502 -- you can use `Tuple` and get both (all - tuple(*)) columns for the according max(b)\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518SELECT argMin(a, b), min(b) FROM test WHERE a IS NULL and b IS NULL;\u250c\u2500argMin(a, b)\u2500\u252c\u2500min(b)\u2500\u2510\u2502 \u1d3a\u1d41\u1d38\u1d38         \u2502   \u1d3a\u1d41\u1d38\u1d38 \u2502 -- All aggregated rows contains at least one `NULL` value because of the filter, so all rows are skipped, therefore the result will be `NULL`\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518SELECT argMin(a, (b, a)), min(tuple(b, a)) FROM test;\u250c\u2500argMin(a, tuple(b, a))\u2500\u252c\u2500min(tuple(b, a))\u2500\u2510\u2502 d                      \u2502 (NULL,NULL)      \u2502 -- 'd' is the first not `NULL` value for the min\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518SELECT argMin((a, b), (b, a)), min(tuple(b, a)) FROM test;\u250c\u2500argMin(tuple(a, b), tuple(b, a))\u2500\u252c\u2500min(tuple(b, a))\u2500\u2510\u2502 (NULL,NULL)                      \u2502 (NULL,NULL)      \u2502 -- argMin returns (NULL,NULL) here because `Tuple` allows to don't skip `NULL` and min(tuple(b, a)) in this case is minimal value for this dataset\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518SELECT argMin(a, tuple(b)) FROM test;\u250c\u2500argMin(a, tuple(b))\u2500\u2510\u2502 d                   \u2502 -- `Tuple` can be used in `min` to not skip rows with `NULL` values as b.\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518"
+    ],
+    "Category": [
+        "Aggregate Functions"
+    ]
+}

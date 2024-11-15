@@ -1,0 +1,31 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.0/en/built-in-function-reference.html"
+    ],
+    "Title": [
+        "14.1 Built-In Function and Operator Reference"
+    ],
+    "Name": "IS_IPV4_COMPAT()",
+    "Description": [
+        "\nIS_IPV4_COMPAT(expr)\n",
+        "\n          This function takes an IPv6 address represented in numeric\n          form as a binary string, as returned by\n          INET6_ATON(). It returns 1 if\n          the argument is a valid IPv4-compatible IPv6 address, 0\n          otherwise (unless expr is\n          NULL, in which case the function returns\n          NULL). IPv4-compatible addresses have the\n          form\n          ::ipv4_address.\n        ",
+        "Press CTRL+C to copy mysql> SELECT IS_IPV4_COMPAT(INET6_ATON('::10.0.5.9'));\n        -> 1\nmysql> SELECT IS_IPV4_COMPAT(INET6_ATON('::ffff:10.0.5.9'));\n        -> 0",
+        "\n          The IPv4 part of an IPv4-compatible address can also be\n          represented using hexadecimal notation. For example,\n          198.51.100.1 has this raw hexadecimal\n          value:\n        ",
+        "Press CTRL+C to copy mysql> SELECT HEX(INET6_ATON('198.51.100.1'));\n        -> 'C6336401'",
+        "\n          Expressed in IPv4-compatible form,\n          ::198.51.100.1 is equivalent to\n          ::c0a8:0001 or (without leading zeros)\n          ::c0a8:1\n",
+        "Press CTRL+C to copy mysql> SELECT\n    ->   IS_IPV4_COMPAT(INET6_ATON('::198.51.100.1')),\n    ->   IS_IPV4_COMPAT(INET6_ATON('::c0a8:0001')),\n    ->   IS_IPV4_COMPAT(INET6_ATON('::c0a8:1'));\n        -> 1, 1, 1"
+    ],
+    "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/miscellaneous-functions.html#function_is-ipv4-compat",
+    "Feature": [
+        "IS_IPV4_COMPAT(expr)"
+    ],
+    "Examples": [
+        "mysql> SELECT IS_IPV4_COMPAT(INET6_ATON('::10.0.5.9'));\n        -> 1\nmysql> SELECT IS_IPV4_COMPAT(INET6_ATON('::ffff:10.0.5.9'));\n        -> 0",
+        "mysql> SELECT HEX(INET6_ATON('198.51.100.1'));\n        -> 'C6336401'",
+        "mysql> SELECT\n    ->   IS_IPV4_COMPAT(INET6_ATON('::198.51.100.1')),\n    ->   IS_IPV4_COMPAT(INET6_ATON('::c0a8:0001')),\n    ->   IS_IPV4_COMPAT(INET6_ATON('::c0a8:1'));\n        -> 1, 1, 1"
+    ],
+    "Category": [
+        "Built-In Functions and Operators",
+        "Miscellaneous Functions"
+    ]
+}

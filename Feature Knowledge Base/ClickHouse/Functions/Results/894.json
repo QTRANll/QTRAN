@@ -1,0 +1,23 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/string-functions"
+    ],
+    "Title": [
+        "damerauLevenshteinDistance"
+    ],
+    "Feature": [
+        "damerauLevenshteinDistance(string1, string2)"
+    ],
+    "Description": [
+        "damerauLevenshteinDistance",
+        "Calculates the Damerau-Levenshtein distance between two byte strings.",
+        "Syntax",
+        "damerauLevenshteinDistance(string1, string2)"
+    ],
+    "Examples": [
+        "SELECT damerauLevenshteinDistance('clickhouse', 'mouse');"
+    ],
+    "Category": [
+        "Strings Functions"
+    ]
+}

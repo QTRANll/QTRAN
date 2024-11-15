@@ -1,0 +1,27 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/string-functions"
+    ],
+    "Title": [
+        "normalizeUTF8NFD"
+    ],
+    "Feature": [
+        "normalizeUTF8NFD(words)"
+    ],
+    "Description": [
+        "normalizeUTF8NFD",
+        "Converts a string to NFD normalized form, assuming the string is valid UTF8-encoded text.",
+        "Syntax",
+        "normalizeUTF8NFD(words)",
+        "Arguments",
+        "words \u2014 UTF8-encoded input string. String.",
+        "Returned value",
+        "String transformed to NFD normalization form. String."
+    ],
+    "Examples": [
+        "SELECT length('\u00e2'), normalizeUTF8NFD('\u00e2') AS nfd, length(nfd) AS nfd_len;"
+    ],
+    "Category": [
+        "Strings Functions"
+    ]
+}

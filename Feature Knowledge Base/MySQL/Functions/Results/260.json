@@ -1,0 +1,28 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.0/en/built-in-function-reference.html"
+    ],
+    "Title": [
+        "14.1 Built-In Function and Operator Reference"
+    ],
+    "Name": "REGEXP_INSTR()",
+    "Description": [
+        "\nREGEXP_INSTR(expr,\n              pat[,\n              pos[,\n              occurrence[,\n              return_option[,\n              match_type]]]])\n",
+        "\n              Returns the starting index of the substring of the string\n              expr that matches the regular\n              expression specified by the pattern\n              pat, 0 if there is no match. If\n              expr or\n              pat is NULL,\n              the return value is NULL. Character\n              indexes begin at 1.\n            ",
+        "\nREGEXP_INSTR() takes these\n              optional arguments:\n",
+        "\n\npos: The position in\n                  expr at which to start the\n                  search. If omitted, the default is 1.\n                \noccurrence: Which\n                  occurrence of a match to search for. If omitted, the\n                  default is 1.\n                \nreturn_option: Which type\n                  of position to return. If this value is 0,\n                  REGEXP_INSTR() returns\n                  the position of the matched substring's first\n                  character. If this value is 1,\n                  REGEXP_INSTR() returns\n                  the position following the matched substring. If\n                  omitted, the default is 0.\n                \nmatch_type: A string that\n                  specifies how to perform matching. The meaning is as\n                  described for\n                  REGEXP_LIKE().\n\n",
+        "\n              For additional information about how matching occurs, see\n              the description for\n              REGEXP_LIKE().\n            ",
+        "Press CTRL+C to copy mysql> SELECT REGEXP_INSTR('dog cat dog', 'dog');\n+------------------------------------+\n| REGEXP_INSTR('dog cat dog', 'dog') |\n+------------------------------------+\n|                                  1 |\n+------------------------------------+\nmysql> SELECT REGEXP_INSTR('dog cat dog', 'dog', 2);\n+---------------------------------------+\n| REGEXP_INSTR('dog cat dog', 'dog', 2) |\n+---------------------------------------+\n|                                     9 |\n+---------------------------------------+\nmysql> SELECT REGEXP_INSTR('aa aaa aaaa', 'a{2}');\n+-------------------------------------+\n| REGEXP_INSTR('aa aaa aaaa', 'a{2}') |\n+-------------------------------------+\n|                                   1 |\n+-------------------------------------+\nmysql> SELECT REGEXP_INSTR('aa aaa aaaa', 'a{4}');\n+-------------------------------------+\n| REGEXP_INSTR('aa aaa aaaa', 'a{4}') |\n+-------------------------------------+\n|                                   8 |\n+-------------------------------------+"
+    ],
+    "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/regexp.html#function_regexp-instr",
+    "Feature": [
+        "REGEXP_INSTR(expr,\n              pat[,\n              pos[,\n              occurrence[,\n              return_option[,\n              match_type]]]])"
+    ],
+    "Examples": [
+        "mysql> SELECT REGEXP_INSTR('dog cat dog', 'dog');\n+------------------------------------+\n| REGEXP_INSTR('dog cat dog', 'dog') |\n+------------------------------------+\n|                                  1 |\n+------------------------------------+\nmysql> SELECT REGEXP_INSTR('dog cat dog', 'dog', 2);\n+---------------------------------------+\n| REGEXP_INSTR('dog cat dog', 'dog', 2) |\n+---------------------------------------+\n|                                     9 |\n+---------------------------------------+\nmysql> SELECT REGEXP_INSTR('aa aaa aaaa', 'a{2}');\n+-------------------------------------+\n| REGEXP_INSTR('aa aaa aaaa', 'a{2}') |\n+-------------------------------------+\n|                                   1 |\n+-------------------------------------+\nmysql> SELECT REGEXP_INSTR('aa aaa aaaa', 'a{4}');\n+-------------------------------------+\n| REGEXP_INSTR('aa aaa aaaa', 'a{4}') |\n+-------------------------------------+\n|                                   8 |\n+-------------------------------------+"
+    ],
+    "Category": [
+        "Built-In Functions and Operators",
+        "String Functions and Operators"
+    ]
+}

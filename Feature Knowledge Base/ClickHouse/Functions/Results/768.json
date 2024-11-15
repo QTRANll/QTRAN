@@ -1,0 +1,27 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/string-search-functions"
+    ],
+    "Title": [
+        "multiSearchAnyCaseInsensitiveUTF8"
+    ],
+    "Feature": [
+        "multiSearchAnyCaseInsensitiveUTF8(haystack, [needle1, needle2, ..., needleN])"
+    ],
+    "Description": [
+        "multiSearchAnyCaseInsensitiveUTF8",
+        "Like multiSearchAnyUTF8 but ignores case.",
+        "*Syntax**",
+        "multiSearchAnyCaseInsensitiveUTF8(haystack, [needle1, needle2, ..., needleN])",
+        "Parameters",
+        "haystack \u2014 UTF-8 string in which the search is performed. String.needle \u2014 UTF-8 substrings to be searched. Array",
+        "Returned value",
+        "1, if there was at least one case-insensitive match.0, if there was not at least one case-insensitive match."
+    ],
+    "Examples": [
+        "SELECT multiSearchAnyCaseInsensitiveUTF8('\\x43\\x6c\\x69\\x63\\x6b\\x48\\x6f\\x75\\x73\\x65',['\\x68']);"
+    ],
+    "Category": [
+        "Searching in Strings Functions"
+    ]
+}

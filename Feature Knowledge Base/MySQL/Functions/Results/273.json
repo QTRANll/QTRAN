@@ -1,0 +1,25 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.0/en/built-in-function-reference.html"
+    ],
+    "Title": [
+        "14.1 Built-In Function and Operator Reference"
+    ],
+    "Name": "ROW_NUMBER()",
+    "Description": [
+        "\nROW_NUMBER()\nover_clause\n",
+        "\n            Returns the number of the current row within its partition.\n            Rows numbers range from 1 to the number of partition rows.\n          ",
+        "\nORDER BY affects the order in which rows\n            are numbered. Without ORDER BY, row\n            numbering is nondeterministic.\n          ",
+        "\nROW_NUMBER() assigns peers\n            different row numbers. To assign peers the same value, use\n            RANK() or\n            DENSE_RANK(). For an example,\n            see the RANK() function\n            description.\n          ",
+        "\nover_clause is as described in\n            Section\u00a014.20.2, \u201cWindow Function Concepts and Syntax\u201d.\n"
+    ],
+    "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/window-function-descriptions.html#function_row-number",
+    "Feature": [
+        "ROW_NUMBER()"
+    ],
+    "Examples": [],
+    "Category": [
+        "Built-In Functions and Operators",
+        "Window Functions"
+    ]
+}

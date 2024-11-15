@@ -1,0 +1,18 @@
+{
+    "HTML": [
+        "https://sqlite.org/lang_corefunc.html"
+    ],
+    "Title": [
+        "nullif(X,Y)"
+    ],
+    "Feature": [
+        "nullif(X,Y)"
+    ],
+    "Description": [
+        "\n  The nullif(X,Y) function returns its first argument if the arguments are\n  different and NULL if the arguments are the same.  The nullif(X,Y) function\n  searches its arguments from left to right for an argument that defines a\n  collating function and uses that collating function for all string\n  comparisons.  If neither argument to nullif() defines a collating function\n  then the BINARY collating function is used.\n"
+    ],
+    "Examples": [],
+    "Category": [
+        "Core SQL Functions"
+    ]
+}

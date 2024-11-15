@@ -1,0 +1,27 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/array-functions"
+    ],
+    "Title": [
+        "arrayCumSum([func,] arr1, ...)"
+    ],
+    "Feature": [
+        "arrayCumSum(arr)"
+    ],
+    "Description": [
+        "arrayCumSum([func,] arr1, ...)",
+        "Returns an array of the partial (running) sums of the elements in the source array arr1. If func is specified, then the sum is computed from applying func to arr1, arr2, ..., arrN, i.e. func(arr1[i], ..., arrN[i]).",
+        "Syntax",
+        "arrayCumSum(arr)",
+        "Arguments",
+        "arr \u2014 Array of numeric values.",
+        "Returned value",
+        "Returns an array of the partial sums of the elements in the source array. UInt*, Int*, Float*."
+    ],
+    "Examples": [
+        "SELECT arrayCumSum([1, 1, 1, 1]) AS res"
+    ],
+    "Category": [
+        "Arrays Functions"
+    ]
+}

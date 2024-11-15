@@ -1,0 +1,33 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/type-conversion-functions"
+    ],
+    "Title": [
+        "toUInt8OrZero"
+    ],
+    "Feature": [
+        "toUInt8OrZero(x)"
+    ],
+    "Description": [
+        "toUInt8OrZero",
+        "Like toUInt8, this function converts an input value to a value of type UInt8 but returns 0 in case of an error.",
+        "Syntax",
+        "toUInt8OrZero(x)",
+        "Arguments",
+        "x \u2014 A String representation of a number. String.",
+        "Supported arguments:",
+        "String representations of (U)Int8/16/32/128/256.",
+        "Unsupported arguments (return 0):",
+        "String representations of ordinary Float32/64 values, including NaN and Inf.String representations of binary and hexadecimal values, e.g. SELECT toUInt8OrZero('0xc0fe');.",
+        "NoteIf the input value cannot be represented within the bounds of UInt8, overflow or underflow of the result occurs.\nThis is not considered an error.",
+        "Returned value",
+        "8-bit unsigned integer value if successful, otherwise 0. UInt8.",
+        "NoteThe function uses rounding towards zero, meaning it truncates fractional digits of numbers."
+    ],
+    "Examples": [
+        "SELECT    toUInt8OrZero('-8'),    toUInt8OrZero('abc')FORMAT Vertical;"
+    ],
+    "Category": [
+        "Type Conversion Functions"
+    ]
+}

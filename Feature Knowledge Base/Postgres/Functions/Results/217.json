@@ -1,0 +1,21 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/16/functions-textsearch.html"
+    ],
+    "Title": [
+        "phraseto_tsquery"
+    ],
+    "Feature": [
+        "phraseto_tsquery ( [ config regconfig, ] query text ) → tsquery"
+    ],
+    "Description": [
+        "Converts text to a tsquery, normalizing words according to the specified or default configuration. Any punctuation in the string is ignored (it does not determine query operators). The resulting query matches phrases containing all non-stopwords in the text."
+    ],
+    "Examples": [
+        "phraseto_tsquery('english', 'The Fat Rats') → 'fat' <-> 'rat'",
+        "phraseto_tsquery('english', 'The Cat and Rats') → 'cat' <2> 'rat'"
+    ],
+    "Category": [
+        "Text Search Functions and Operators"
+    ]
+}

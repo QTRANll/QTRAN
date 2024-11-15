@@ -1,0 +1,27 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/string-functions"
+    ],
+    "Title": [
+        "tryBase64URLDecode"
+    ],
+    "Feature": [
+        "tryBase64URLDecode(encodedUrl)"
+    ],
+    "Description": [
+        "tryBase64URLDecode",
+        "Like base64URLDecode but returns an empty string in case of error.",
+        "Syntax",
+        "tryBase64URLDecode(encodedUrl)",
+        "Parameters",
+        "encodedURL \u2014 String column or constant. If the string is not a valid Base64-encoded value with URL-specific modifications, returns an empty string.",
+        "Returned value",
+        "A string containing the decoded value of the argument."
+    ],
+    "Examples": [
+        "SELECT tryBase64URLDecode('aHR0cDovL2NsaWNraG91c2UuY29t') as res, tryBase64Decode('aHR0cHM6Ly9jbGlja') as res_invalid;"
+    ],
+    "Category": [
+        "Strings Functions"
+    ]
+}

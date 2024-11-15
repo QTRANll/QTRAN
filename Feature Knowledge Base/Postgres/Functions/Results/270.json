@@ -1,0 +1,23 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/16/functions-json.html"
+    ],
+    "Title": [
+        "json_typeof"
+    ],
+    "Feature": [
+        "json_typeof ( json ) → text",
+        "jsonb_typeof ( jsonb ) → text"
+    ],
+    "Description": [
+        "Returns the type of the top-level JSON value as a text string. Possible types are object, array, string, number, boolean, and null. (The null result should not be confused with an SQL NULL; see the examples.)"
+    ],
+    "Examples": [
+        "json_typeof('-123.4') → number",
+        "json_typeof('null'::json) → null",
+        "json_typeof(NULL::json) IS NULL → t"
+    ],
+    "Category": [
+        "JSON Functions and Operators"
+    ]
+}

@@ -1,0 +1,27 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/string-search-functions"
+    ],
+    "Title": [
+        "multiSearchFirstIndexUTF8"
+    ],
+    "Feature": [
+        "multiSearchFirstIndexUTF8(haystack, [needle1, needle2, ..., needleN])"
+    ],
+    "Description": [
+        "multiSearchFirstIndexUTF8",
+        "Returns the index i (starting from 1) of the leftmost found needlei in the string haystack and 0 otherwise. Assumes haystack and needle are UTF-8 encoded strings.",
+        "Syntax",
+        "multiSearchFirstIndexUTF8(haystack, [needle1, needle2, ..., needleN])",
+        "Parameters",
+        "haystack \u2014 UTF-8 string in which the search is performed. String.needle \u2014 Array of UTF-8 substrings to be searched. Array",
+        "Returned value",
+        "index (starting from 1) of the leftmost found needle, Otherwise 0, if there was no match. UInt8."
+    ],
+    "Examples": [
+        "SELECT multiSearchFirstIndexUTF8('\\x48\\x65\\x6c\\x6c\\x6f\\x20\\x57\\x6f\\x72\\x6c\\x64',['\\x57\\x6f\\x72\\x6c\\x64','\\x48\\x65\\x6c\\x6c\\x6f']);"
+    ],
+    "Category": [
+        "Searching in Strings Functions"
+    ]
+}

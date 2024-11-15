@@ -1,0 +1,24 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/stddev/"
+    ],
+    "Title": [
+        "STDDEV"
+    ],
+    "Feature": [
+        "STDDEV(expr)\n"
+    ],
+    "Description": [
+        "Returns the population standard deviation of expr. This function is\nprovided for compatibility with Oracle. The standard SQL function\nSTDDEV_POP() can be used instead.",
+        "It is an aggregate function, and so can be used with the GROUP BY clause.",
+        "STDDEV() can be used as a window function.",
+        "This function returns NULL if there were no matching rows."
+    ],
+    "Examples": [
+        "CREATE OR REPLACE TABLE stats (category VARCHAR(2), x INT);\n\nINSERT INTO stats VALUES \n  ('a',1),('a',2),('a',3),\n  ('b',11),('b',12),('b',20),('b',30),('b',60);\n\nSELECT category, STDDEV_POP(x), STDDEV_SAMP(x), VAR_POP(x) \n  FROM stats GROUP BY category;\n+----------+---------------+----------------+------------+\n| category | STDDEV_POP(x) | STDDEV_SAMP(x) | VAR_POP(x) |\n+----------+---------------+----------------+------------+\n| a        |        0.8165 |         1.0000 |     0.6667 |\n| b        |       18.0400 |        20.1693 |   325.4400 |\n+----------+---------------+----------------+------------+\n",
+        "CREATE OR REPLACE TABLE student_test (name CHAR(10), test CHAR(10), score TINYINT);\n\nINSERT INTO student_test VALUES \n    ('Chun', 'SQL', 75), ('Chun', 'Tuning', 73), \n    ('Esben', 'SQL', 43), ('Esben', 'Tuning', 31), \n    ('Kaolin', 'SQL', 56), ('Kaolin', 'Tuning', 88), \n    ('Tatiana', 'SQL', 87);\n\nSELECT name, test, score, STDDEV_POP(score) \n  OVER (PARTITION BY test) AS stddev_results FROM student_test;\n+---------+--------+-------+----------------+\n| name    | test   | score | stddev_results |\n+---------+--------+-------+----------------+\n| Chun    | SQL    |    75 |        16.9466 |\n| Chun    | Tuning |    73 |        24.1247 |\n| Esben   | SQL    |    43 |        16.9466 |\n| Esben   | Tuning |    31 |        24.1247 |\n| Kaolin  | SQL    |    56 |        16.9466 |\n| Kaolin  | Tuning |    88 |        24.1247 |\n| Tatiana | SQL    |    87 |        16.9466 |\n+---------+--------+-------+----------------+\n"
+    ],
+    "Category": [
+        "Aggregate Functions"
+    ]
+}

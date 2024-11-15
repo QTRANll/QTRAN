@@ -1,0 +1,27 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/ip-address-functions"
+    ],
+    "Title": [
+        "toIPv4OrDefault"
+    ],
+    "Feature": [
+        "toIPv4OrDefault(string[, default])"
+    ],
+    "Description": [
+        "toIPv4OrDefault",
+        "Same as toIPv4, but if the IPv4 address has an invalid format, it returns 0.0.0.0 (0 IPv4), or the provided IPv4 default.",
+        "Syntax",
+        "toIPv4OrDefault(string[, default])",
+        "Arguments",
+        "value \u2014 IP address. String.default (optional) \u2014 The value to return if string has an invalid format. IPv4.",
+        "Returned value",
+        "string converted to the current IPv4 address. String."
+    ],
+    "Examples": [
+        "WITH    '::ffff:127.0.0.1' AS valid_IPv6_string,    'fe80:2030:31:24' AS invalid_IPv6_stringSELECT    toIPv4OrDefault(valid_IPv6_string) AS valid,    toIPv4OrDefault(invalid_IPv6_string) AS default,    toIPv4OrDefault(invalid_IPv6_string, toIPv4('1.1.1.1')) AS provided_default;"
+    ],
+    "Category": [
+        "IP Addresses Functions"
+    ]
+}

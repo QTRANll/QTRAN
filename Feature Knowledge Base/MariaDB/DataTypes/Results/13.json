@@ -1,0 +1,17 @@
+{
+    "HTML": [
+        "https://mariadb.com/kb/en/floating-point-accuracy/"
+    ],
+    "Title": [
+        "Floating-point Accuracy"
+    ],
+    "Feature": [],
+    "Description": [],
+    "Examples": [
+        "CREATE TABLE fpn (id INT, f1 FLOAT, f2 DOUBLE, f3 DECIMAL (10,3));\nINSERT INTO fpn VALUES (1,2,2,2),(2,0.1,0.1,0.1);\n\nSELECT * FROM fpn WHERE f1*f1 = f2*f2;\n+------+------+------+-------+\n| id   | f1   | f2   | f3    |\n+------+------+------+-------+\n|    1 |    2 |    2 | 2.000 |\n+------+------+------+-------+\n",
+        "SELECT f1*f1, f2*f2, f3*f3 FROM fpn;\n+----------------------+----------------------+----------+\n| f1*f1                | f2*f2                | f3*f3    |\n+----------------------+----------------------+----------+\n|                    4 |                    4 | 4.000000 |\n| 0.010000000298023226 | 0.010000000000000002 | 0.010000 |\n+----------------------+----------------------+----------+\n"
+    ],
+    "Category": [
+        "Numeric Data Types"
+    ]
+}

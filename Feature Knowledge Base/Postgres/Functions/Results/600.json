@@ -1,0 +1,19 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/16/functions-admin.html"
+    ],
+    "Title": [
+        "pg_try_advisory_xact_lock_shared"
+    ],
+    "Feature": [
+        "pg_try_advisory_xact_lock_shared ( key bigint ) → boolean",
+        "pg_try_advisory_xact_lock_shared ( key1 integer, key2 integer ) → boolean"
+    ],
+    "Description": [
+        "Obtains a shared transaction-level advisory lock if available. This will either obtain the lock immediately and return true, or return false without waiting if the lock cannot be acquired immediately."
+    ],
+    "Examples": [],
+    "Category": [
+        "System Administration Functions"
+    ]
+}

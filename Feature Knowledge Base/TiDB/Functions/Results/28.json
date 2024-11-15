@@ -1,0 +1,24 @@
+{
+    "HTML": [
+        "https://docs.pingcap.com/zh/tidb/v8.3/string-functions"
+    ],
+    "Title": [
+        "LTRIM()"
+    ],
+    "Feature": [
+        "LTRIM()"
+    ],
+    "Description": [
+        "LTRIM()",
+        "LTRIM() 函数用于删除给定的字符串中的前导空格（即字符串开头的连续空格）。",
+        "如果输入的参数为 NULL，该函数将返回 NULL。",
+        "注意该函数只去掉空格字符（U+0020），不去掉其他类似空格的字符，如制表符（U+0009）或非分隔符（U+00A0）。"
+    ],
+    "Examples": [
+        "SELECT LTRIM('    hello');\n",
+        "SELECT CONCAT('«',LTRIM('    hello'),'»');\n"
+    ],
+    "Category": [
+        "字符串函数"
+    ]
+}

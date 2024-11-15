@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://duckdb.org/docs/sql/functions/aggregates"
+    ],
+    "Title": [
+        "arg_min_null(arg, val)"
+    ],
+    "Feature": [
+        "arg_min_null(arg, val)"
+    ],
+    "Description": [
+        "Finds the row with the minimum val and calculates the arg expression at that row. Rows where the val expression evaluates to NULL are ignored. This function is affected by ordering."
+    ],
+    "Examples": [
+        "arg_min_null(A, B)"
+    ],
+    "Category": [
+        "Aggregate Functions"
+    ]
+}

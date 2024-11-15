@@ -1,0 +1,28 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.0/en/built-in-function-reference.html"
+    ],
+    "Title": [
+        "14.1 Built-In Function and Operator Reference"
+    ],
+    "Name": "SOUNDEX()",
+    "Description": [
+        "\nSOUNDEX(str)\n",
+        "\n          Returns a soundex string from str,\n          or NULL if str\n          is NULL. Two strings that sound almost the\n          same should have identical soundex strings. A standard soundex\n          string is four characters long, but the\n          SOUNDEX() function returns an\n          arbitrarily long string. You can use\n          SUBSTRING() on the result to\n          get a standard soundex string. All nonalphabetic characters in\n          str are ignored. All international\n          alphabetic characters outside the A-Z range are treated as\n          vowels.\n",
+        "\n\nImportant\n\n\n            When using SOUNDEX(), you\n            should be aware of the following limitations:\n\n",
+        "\n\n              This function, as currently implemented, is intended to\n              work well with strings that are in the English language\n              only. Strings in other languages may not produce reliable\n              results.\n            \n              This function is not guaranteed to provide consistent\n              results with strings that use multibyte character sets,\n              including utf-8. See Bug #22638 for\n              more information.\n\n",
+        "Press CTRL+C to copy mysql> SELECT SOUNDEX('Hello');\n        -> 'H400'\nmysql> SELECT SOUNDEX('Quadratically');\n        -> 'Q36324'",
+        "\n\nNote\n\n\n            This function implements the original Soundex algorithm, not\n            the more popular enhanced version (also described by D.\n            Knuth). The difference is that original version discards\n            vowels first and duplicates second, whereas the enhanced\n            version discards duplicates first and vowels second.\n\n"
+    ],
+    "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/string-functions.html#function_soundex",
+    "Feature": [
+        "SOUNDEX(str)"
+    ],
+    "Examples": [
+        "mysql> SELECT SOUNDEX('Hello');\n        -> 'H400'\nmysql> SELECT SOUNDEX('Quadratically');\n        -> 'Q36324'"
+    ],
+    "Category": [
+        "Built-In Functions and Operators",
+        "String Functions and Operators"
+    ]
+}

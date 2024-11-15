@@ -1,0 +1,18 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/16/functions-info.html"
+    ],
+    "Title": [
+        "pg_visible_in_snapshot"
+    ],
+    "Feature": [
+        "pg_visible_in_snapshot ( xid8, pg_snapshot ) → boolean"
+    ],
+    "Description": [
+        "Is the given transaction ID visible according to this snapshot (that is, was it completed before the snapshot was taken)? Note that this function will not give the correct answer for a subtransaction ID (subxid); see Section 74.3 for details."
+    ],
+    "Examples": [],
+    "Category": [
+        "System Information Functions and Operators"
+    ]
+}

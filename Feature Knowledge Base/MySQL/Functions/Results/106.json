@@ -1,0 +1,35 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.0/en/built-in-function-reference.html"
+    ],
+    "Title": [
+        "14.1 Built-In Function and Operator Reference"
+    ],
+    "Name": "group_replication_set_communication_protocol()",
+    "Description": [
+        "\ngroup_replication_set_communication_protocol()\n",
+        "\n              Downgrade the Group Replication communication protocol\n              version of a group so that members at earlier releases can\n              join, or upgrade the Group Replication communication\n              protocol version of a group after upgrading MySQL Server\n              on all members. The\n              GROUP_REPLICATION_ADMIN\n              privilege is required to use this function, and all\n              existing group members must be online when you issue the\n              statement, with no loss of majority.\n",
+        "\n\nNote\n\n\n                For MySQL InnoDB cluster, the communication protocol\n                version is managed automatically whenever the cluster\n                topology is changed using AdminAPI operations. You do\n                not have to use these functions yourself for an InnoDB\n                cluster.\n\n",
+        "\n              Syntax:\n            ",
+        "Press CTRL+C to copy STRING group_replication_set_communication_protocol(version)",
+        "\n              Arguments:\n",
+        "\n\nversion: For a downgrade,\n                  specify the MySQL Server version of the prospective\n                  group member that has the oldest installed server\n                  version. In this case, the command makes the group\n                  fall back to a communication protocol compatible with\n                  that server version if possible. The minimum server\n                  version that you can specify is MySQL 5.7.14. For an\n                  upgrade, specify the new MySQL Server version to which\n                  the existing group members have been upgraded.\n\n",
+        "\n              Return value:\n            ",
+        "\n              A string containing the result of the operation, for\n              example whether it was successful or not.\n            ",
+        "\n              Example:\n            ",
+        "Press CTRL+C to copy SELECT group_replication_set_communication_protocol(\"5.7.25\");",
+        "\n              For more information, see\n              Section\u00a020.5.1.4, \u201cSetting a Group's Communication Protocol Version\u201d.\n"
+    ],
+    "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/group-replication-functions-for-communication-protocol.html#function_group-replication-set-communication-protocol",
+    "Feature": [
+        "group_replication_set_communication_protocol()"
+    ],
+    "Examples": [
+        "SELECT group_replication_set_communication_protocol(\"5.7.25\");"
+    ],
+    "Category": [
+        "Built-In Functions and Operators",
+        "Replication Functions",
+        "Loadable Functions"
+    ]
+}

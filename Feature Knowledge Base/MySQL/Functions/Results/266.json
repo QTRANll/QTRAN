@@ -1,0 +1,25 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.0/en/built-in-function-reference.html"
+    ],
+    "Title": [
+        "14.1 Built-In Function and Operator Reference"
+    ],
+    "Name": "REPEAT()",
+    "Description": [
+        "\nREPEAT(str,count)\n",
+        "\n          Returns a string consisting of the string\n          str repeated\n          count times. If\n          count is less than 1, returns an\n          empty string. Returns NULL if\n          str or\n          count is NULL.\n        ",
+        "Press CTRL+C to copy mysql> SELECT REPEAT('MySQL', 3);\n        -> 'MySQLMySQLMySQL'"
+    ],
+    "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/string-functions.html#function_repeat",
+    "Feature": [
+        "REPEAT(str,count)"
+    ],
+    "Examples": [
+        "mysql> SELECT REPEAT('MySQL', 3);\n        -> 'MySQLMySQLMySQL'"
+    ],
+    "Category": [
+        "Built-In Functions and Operators",
+        "String Functions and Operators"
+    ]
+}

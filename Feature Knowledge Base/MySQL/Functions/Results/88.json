@@ -1,0 +1,26 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.0/en/built-in-function-reference.html"
+    ],
+    "Title": [
+        "14.1 Built-In Function and Operator Reference"
+    ],
+    "Name": "FROM_BASE64()",
+    "Description": [
+        "\nFROM_BASE64(str)\n",
+        "\n          Takes a string encoded with the base-64 encoded rules used by\n          TO_BASE64() and returns the\n          decoded result as a binary string. The result is\n          NULL if the argument is\n          NULL or not a valid base-64 string. See the\n          description of TO_BASE64() for\n          details about the encoding and decoding rules.\n        ",
+        "Press CTRL+C to copy mysql> SELECT TO_BASE64('abc'), FROM_BASE64(TO_BASE64('abc'));\n        -> 'JWJj', 'abc'",
+        "\n          If FROM_BASE64() is invoked\n          from within the mysql client, binary\n          strings display using hexadecimal notation. You can disable\n          this behavior by setting the value of the\n          --binary-as-hex to\n          0 when starting the\n          mysql client. For more information about\n          that option, see Section\u00a06.5.1, \u201cmysql \u2014 The MySQL Command-Line Client\u201d.\n        "
+    ],
+    "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/string-functions.html#function_from-base64",
+    "Feature": [
+        "FROM_BASE64(str)"
+    ],
+    "Examples": [
+        "mysql> SELECT TO_BASE64('abc'), FROM_BASE64(TO_BASE64('abc'));\n        -> 'JWJj', 'abc'"
+    ],
+    "Category": [
+        "Built-In Functions and Operators",
+        "String Functions and Operators"
+    ]
+}

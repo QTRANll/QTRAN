@@ -1,0 +1,23 @@
+{
+    "HTML": [
+        "https://docs.pingcap.com/zh/tidb/v8.3/miscellaneous-functions"
+    ],
+    "Title": [
+        "SLEEP()"
+    ],
+    "Feature": [
+        "SLEEP()"
+    ],
+    "Description": [
+        "SLEEP()",
+        "SLEEP() 函数用于将查询暂停执行几秒。",
+        "SELECT SLEEP(1.5);\n",
+        "+------------+\n| SLEEP(1.5) |\n+------------+\n|          0 |\n+------------+\n1 row in set (1.50 sec)\n"
+    ],
+    "Examples": [
+        "SELECT SLEEP(1.5);\n"
+    ],
+    "Category": [
+        "其它函数"
+    ]
+}

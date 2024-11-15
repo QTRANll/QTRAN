@@ -1,0 +1,31 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.0/en/built-in-function-reference.html"
+    ],
+    "Title": [
+        "14.1 Built-In Function and Operator Reference"
+    ],
+    "Name": "UNHEX()",
+    "Description": [
+        "\nUNHEX(str)\n",
+        "\n          For a string argument str,\n          UNHEX(str)\n          interprets each pair of characters in the argument as a\n          hexadecimal number and converts it to the byte represented by\n          the number. The return value is a binary string.\n        ",
+        "Press CTRL+C to copy mysql> SELECT UNHEX('4D7953514C');\n        -> 'MySQL'\nmysql> SELECT X'4D7953514C';\n        -> 'MySQL'\nmysql> SELECT UNHEX(HEX('string'));\n        -> 'string'\nmysql> SELECT HEX(UNHEX('1267'));\n        -> '1267'",
+        "\n          The characters in the argument string must be legal\n          hexadecimal digits: '0' ..\n          '9', 'A' ..\n          'F', 'a' ..\n          'f'. If the argument contains any\n          nonhexadecimal digits, or is itself NULL,\n          the result is NULL:\n        ",
+        "Press CTRL+C to copy mysql> SELECT UNHEX('GG');\n+-------------+\n| UNHEX('GG') |\n+-------------+\n| NULL        |\n+-------------+\n\nmysql> SELECT UNHEX(NULL);\n+-------------+\n| UNHEX(NULL) |\n+-------------+\n| NULL        |\n+-------------+",
+        "\n          A NULL result can also occur if the\n          argument to UNHEX() is a\n          BINARY column, because values\n          are padded with 0x00 bytes when stored but\n          those bytes are not stripped on retrieval. For example,\n          '41' is stored into a\n          CHAR(3) column as\n          '41\u00a0' and retrieved as\n          '41' (with the trailing pad space\n          stripped), so UNHEX() for the\n          column value returns X'41'. By contrast,\n          '41' is stored into a\n          BINARY(3) column as\n          '41\\0' and retrieved as\n          '41\\0' (with the trailing pad\n          0x00 byte not stripped).\n          '\\0' is not a legal hexadecimal digit, so\n          UNHEX() for the column value\n          returns NULL.\n        ",
+        "\n          For a numeric argument N, the\n          inverse of\n          HEX(N)\n          is not performed by UNHEX().\n          Use\n          CONV(HEX(N),16,10)\n          instead. See the description of\n          HEX().\n        ",
+        "\n          If UNHEX() is invoked from\n          within the mysql client, binary strings\n          display using hexadecimal notation, depending on the value of\n          the --binary-as-hex. For more\n          information about that option, see Section\u00a06.5.1, \u201cmysql \u2014 The MySQL Command-Line Client\u201d.\n        "
+    ],
+    "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/string-functions.html#function_unhex",
+    "Feature": [
+        "UNHEX(str)"
+    ],
+    "Examples": [
+        "mysql> SELECT UNHEX('4D7953514C');\n        -> 'MySQL'\nmysql> SELECT X'4D7953514C';\n        -> 'MySQL'\nmysql> SELECT UNHEX(HEX('string'));\n        -> 'string'\nmysql> SELECT HEX(UNHEX('1267'));\n        -> '1267'",
+        "mysql> SELECT UNHEX('GG');\n+-------------+\n| UNHEX('GG') |\n+-------------+\n| NULL        |\n+-------------+\n\nmysql> SELECT UNHEX(NULL);\n+-------------+\n| UNHEX(NULL) |\n+-------------+\n| NULL        |\n+-------------+"
+    ],
+    "Category": [
+        "Built-In Functions and Operators",
+        "String Functions and Operators"
+    ]
+}

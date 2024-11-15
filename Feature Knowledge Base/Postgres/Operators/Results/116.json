@@ -1,0 +1,21 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/16/functions-json.html"
+    ],
+    "Title": [
+        "json -> text"
+    ],
+    "Feature": [
+        "json -> text → json",
+        "jsonb -> text → jsonb"
+    ],
+    "Description": [
+        "Extracts JSON object field with the given key."
+    ],
+    "Examples": [
+        "'{\"a\": {\"b\":\"foo\"}}'::json -> 'a' → {\"b\":\"foo\"}"
+    ],
+    "Category": [
+        "JSON Functions and Operators"
+    ]
+}

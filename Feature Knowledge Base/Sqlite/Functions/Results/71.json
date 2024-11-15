@@ -1,0 +1,19 @@
+{
+    "HTML": [
+        "https://sqlite.org/json1.html"
+    ],
+    "Title": [
+        "4.8. The jsonb_extract() function"
+    ],
+    "Feature": [
+        "4.8. The jsonb_extract() function"
+    ],
+    "Description": [
+        "4.8. The jsonb_extract() function",
+        "\nThe jsonb_extract() function works the same as the json_extract() function,\nexcept in cases where json_extract() would normally return a text\nJSON array object, this routine returns the array or object in the\nJSONB format.  For the common case where a text, numeric, null, or\nboolean JSON element is returned, this routine works exactly the same\nas json_extract().\n\n\n\n"
+    ],
+    "Examples": [],
+    "Category": [
+        "JSON Functions"
+    ]
+}

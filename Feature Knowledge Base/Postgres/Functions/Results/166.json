@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/16/functions-datetime.html"
+    ],
+    "Title": [
+        "make_timestamp"
+    ],
+    "Feature": [
+        "make_timestamp ( year int, month int, day int, hour int, min int, sec double precision ) → timestamp"
+    ],
+    "Description": [
+        "Create timestamp from year, month, day, hour, minute and seconds fields (negative years signify BC)"
+    ],
+    "Examples": [
+        "make_timestamp(2013, 7, 15, 8, 15, 23.5) → 2013-07-15 08:15:23.5"
+    ],
+    "Category": [
+        "Date divide Time Functions and Operators"
+    ]
+}

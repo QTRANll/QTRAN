@@ -1,0 +1,18 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/16/functions-admin.html"
+    ],
+    "Title": [
+        "brin_summarize_range"
+    ],
+    "Feature": [
+        "brin_summarize_range ( index regclass, blockNumber bigint ) → integer"
+    ],
+    "Description": [
+        "Summarizes the page range covering the given block, if not already summarized. This is like brin_summarize_new_values except that it only processes the page range that covers the given table block number."
+    ],
+    "Examples": [],
+    "Category": [
+        "System Administration Functions"
+    ]
+}

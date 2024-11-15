@@ -1,0 +1,21 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/find_in_set/"
+    ],
+    "Title": [
+        "FIND_IN_SET"
+    ],
+    "Feature": [
+        "FIND_IN_SET(pattern, strlist)\n"
+    ],
+    "Description": [
+        "Returns the index position where the given pattern occurs in a string list.  The first argument is the pattern you want to search for.  The second argument is a string containing comma-separated variables.  If the second argument is of the SET data-type, the function is optimized to use bit arithmetic.",
+        "If the pattern does not occur in the string list or if the string list is an empty string, the function returns 0.  If either argument is NULL, the function returns NULL.  The function does not return the correct result if the pattern contains a comma (\",\") character."
+    ],
+    "Examples": [
+        "SELECT FIND_IN_SET('b','a,b,c,d') AS \"Found Results\";\n+---------------+\n| Found Results |\n+---------------+\n|             2 |\n+---------------+\n"
+    ],
+    "Category": [
+        "String Functions"
+    ]
+}

@@ -1,0 +1,29 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.0/en/loadable-function-reference.html"
+    ],
+    "Title": [
+        "14.2 Loadable Function Reference"
+    ],
+    "Name": "gen_rnd_email()",
+    "Description": [
+        "\ngen_rnd_email()\n",
+        "\n              Generates a random email address in the\n              example.com domain.\n            ",
+        "\n              Arguments:\n            ",
+        "\n              None.\n            ",
+        "\n              Return value:\n            ",
+        "\n              A random email address as a string.\n            ",
+        "\n              Example:\n            ",
+        "Press CTRL+C to copy mysql> SELECT gen_rnd_email();\n+---------------------------+\n| gen_rnd_email()           |\n+---------------------------+\n| ijocv.mwvhhuf@example.com |\n+---------------------------+"
+    ],
+    "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/data-masking-plugin-functions.html#function_gen-rnd-email-plugin",
+    "Feature": [
+        "gen_rnd_email()"
+    ],
+    "Examples": [
+        "mysql> SELECT gen_rnd_email();\n+---------------------------+\n| gen_rnd_email()           |\n+---------------------------+\n| ijocv.mwvhhuf@example.com |\n+---------------------------+"
+    ],
+    "Category": [
+        "Loadable Functions"
+    ]
+}

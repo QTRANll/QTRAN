@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/dense_rank/"
+    ],
+    "Title": [
+        "DENSE_RANK"
+    ],
+    "Feature": [
+        "DENSE_RANK() OVER (\n  [ PARTITION BY partition_expression ]\n  [ ORDER BY order_list ]\n) \n"
+    ],
+    "Description": [
+        "DENSE_RANK() is a window function that displays the number of a given row, starting at one and following the ORDER BY sequence of the window function, with identical values receiving the same result. Unlike the  RANK() function, there are no skipped values if the preceding results are identical. It is also similar to the ROW_NUMBER() function except that in that function, identical values will receive a different row number for each result."
+    ],
+    "Examples": [
+        "CREATE TABLE student(course VARCHAR(10), mark int, name varchar(10));\n\nINSERT INTO student VALUES \n  ('Maths', 60, 'Thulile'),\n  ('Maths', 60, 'Pritha'),\n  ('Maths', 70, 'Voitto'),\n  ('Maths', 55, 'Chun'),\n  ('Biology', 60, 'Bilal'),\n   ('Biology', 70, 'Roger');\n\nSELECT \n  RANK() OVER (PARTITION BY course ORDER BY mark DESC) AS rank, \n  DENSE_RANK() OVER (PARTITION BY course ORDER BY mark DESC) AS dense_rank, \n  ROW_NUMBER() OVER (PARTITION BY course ORDER BY mark DESC) AS row_num, \n  course, mark, name \nFROM student ORDER BY course, mark DESC;\n+------+------------+---------+---------+------+---------+\n| rank | dense_rank | row_num | course  | mark | name    |\n+------+------------+---------+---------+------+---------+\n|    1 |          1 |       1 | Biology |   70 | Roger   |\n|    2 |          2 |       2 | Biology |   60 | Bilal   |\n|    1 |          1 |       1 | Maths   |   70 | Voitto  |\n|    2 |          2 |       2 | Maths   |   60 | Thulile |\n|    2 |          2 |       3 | Maths   |   60 | Pritha  |\n|    4 |          3 |       4 | Maths   |   55 | Chun    |\n+------+------------+---------+---------+------+---------+\n"
+    ],
+    "Category": [
+        "Window Functions"
+    ]
+}

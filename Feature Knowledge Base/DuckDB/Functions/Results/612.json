@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://duckdb.org/docs/sql/functions/window_functions"
+    ],
+    "Title": [
+        "lead(column, 3, 0)"
+    ],
+    "Feature": [
+        "lead(column, 3, 0)"
+    ],
+    "Description": [
+        "lead(expr[, offset[, default]][ IGNORE NULLS])",
+        "Returns expr evaluated at the row that is offset rows after the current row (among rows with a non-null value of expr if IGNORE NULLS is set) within the window frame; if there is no such row, instead return default (which must be of the Same type as expr). Both offset and default are evaluated with respect to the current row. If omitted, offset defaults to 1 and default to NULL.",
+        "Same type as expr"
+    ],
+    "Examples": [],
+    "Category": [
+        "Window Functions"
+    ]
+}

@@ -1,0 +1,22 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/16/functions-json.html"
+    ],
+    "Title": [
+        "json_array"
+    ],
+    "Feature": [
+        "json_array ( [ { value_expression [ FORMAT JSON ] } [, ...] ] [ { NULL | ABSENT } ON NULL ] [ RETURNING data_type [ FORMAT JSON [ ENCODING UTF8 ] ] ])",
+        "json_array ( [ query_expression ] [ RETURNING data_type [ FORMAT JSON [ ENCODING UTF8 ] ] ])"
+    ],
+    "Description": [
+        "Constructs a JSON array from either a series of value_expression parameters or from the results of query_expression, which must be a SELECT query returning a single column. If ABSENT ON NULL is specified, NULL values are ignored. This is always the case if a query_expression is used."
+    ],
+    "Examples": [
+        "json_array(1,true,json '{\"a\":null}') → [1, true, {\"a\":null}]",
+        "json_array(SELECT * FROM (VALUES(1),(2)) t) → [1, 2]"
+    ],
+    "Category": [
+        "JSON Functions and Operators"
+    ]
+}

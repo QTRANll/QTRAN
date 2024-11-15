@@ -1,0 +1,23 @@
+{
+    "HTML": [
+        "https://docs.pingcap.com/zh/tidb/v8.3/miscellaneous-functions"
+    ],
+    "Title": [
+        "IS_UUID()"
+    ],
+    "Feature": [
+        "IS_UUID()"
+    ],
+    "Description": [
+        "IS_UUID()",
+        "IS_UUID() 函数用于判断输入的参数是否为 UUID。",
+        "SELECT IS_UUID('eb48c08c-eb71-11ee-bacf-5405db7aad56');\n",
+        "+-------------------------------------------------+\n| IS_UUID('eb48c08c-eb71-11ee-bacf-5405db7aad56') |\n+-------------------------------------------------+\n|                                               1 |\n+-------------------------------------------------+\n1 row in set (0.00 sec)\n"
+    ],
+    "Examples": [
+        "SELECT IS_UUID('eb48c08c-eb71-11ee-bacf-5405db7aad56');\n"
+    ],
+    "Category": [
+        "其它函数"
+    ]
+}

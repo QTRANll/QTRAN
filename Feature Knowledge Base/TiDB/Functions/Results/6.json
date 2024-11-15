@@ -1,0 +1,23 @@
+{
+    "HTML": [
+        "https://docs.pingcap.com/zh/tidb/v8.3/string-functions"
+    ],
+    "Title": [
+        "BIT_LENGTH()"
+    ],
+    "Feature": [
+        "BIT_LENGTH()"
+    ],
+    "Description": [
+        "BIT_LENGTH()",
+        "BIT_LENGTH() 函数用于返回输入参数的长度，单位为 bit。"
+    ],
+    "Examples": [
+        "SELECT BIT_LENGTH(\"TiDB\");\n\n+--------------------+\n| BIT_LENGTH(\"TiDB\") |\n+--------------------+\n|                 32 |\n+--------------------+\n",
+        "SELECT BIT_LENGTH(\"PingCAP 123\");\n\n+---------------------------+\n| BIT_LENGTH(\"PingCAP 123\") |\n+---------------------------+\n|                        88 |\n+---------------------------+\n",
+        "SELECT CustomerName, BIT_LENGTH(CustomerName) AS BitLengthOfName FROM Customers;\n\n+--------------------+-----------------+\n| CustomerName       | BitLengthOfName |\n+--------------------+-----------------+\n| Albert Einstein    |             120 |\n| Robert Oppenheimer |             144 |\n+--------------------+-----------------+\n"
+    ],
+    "Category": [
+        "字符串函数"
+    ]
+}

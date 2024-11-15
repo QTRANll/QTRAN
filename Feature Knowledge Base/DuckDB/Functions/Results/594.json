@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://duckdb.org/docs/sql/functions/utility"
+    ],
+    "Title": [
+        "query(query_string_literal)"
+    ],
+    "Feature": [
+        "query(query_string_literal)"
+    ],
+    "Description": [
+        "Table function that parses and executes the query defined in query_string_literal. Only literal strings are allowed. Warning: this function allows invoking arbitrary queries, potentially altering the database state."
+    ],
+    "Examples": [
+        "query('SELECT 42 AS x')"
+    ],
+    "Category": [
+        "Utility Functions"
+    ]
+}

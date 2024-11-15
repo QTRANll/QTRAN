@@ -1,0 +1,26 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/arithmetic-functions"
+    ],
+    "Title": [
+        "intDiv"
+    ],
+    "Feature": [
+        "intDiv(a, b)"
+    ],
+    "Description": [
+        "intDiv",
+        "Performs an integer division of two values a by b, i.e. computes the quotient rounded down to the next smallest integer.",
+        "The result has the same width as the dividend (the first parameter).",
+        "An exception is thrown when dividing by zero, when the quotient does not fit in the range of the dividend, or when dividing a minimal negative number by minus one.",
+        "Syntax",
+        "intDiv(a, b)"
+    ],
+    "Examples": [
+        "SELECT    intDiv(toFloat64(1), 0.001) AS res,    toTypeName(res)",
+        "SELECT    intDiv(1, 0.001) AS res,    toTypeName(res)"
+    ],
+    "Category": [
+        "Arithmetic Functions"
+    ]
+}

@@ -1,0 +1,24 @@
+{
+    "HTML": [
+        "https://docs.pingcap.com/zh/tidb/v8.3/tidb-functions"
+    ],
+    "Title": [
+        "CURRENT_RESOURCE_GROUP"
+    ],
+    "Feature": [
+        "CURRENT_RESOURCE_GROUP"
+    ],
+    "Description": [
+        "CURRENT_RESOURCE_GROUP",
+        "CURRENT_RESOURCE_GROUP() 函数用于查询当前连接绑定的资源组名称。当开启资源管控 (Resource Control) 功能时，执行 SQL 语句对资源的占用会受到所绑定的资源组资源配置的限制。",
+        "在会话建立时，TiDB 默认会将连接绑定至登录用户绑定的资源组，如果用户没有绑定任何资源组，则会将连接绑定至 default 资源组。在会话建立之后，绑定的资源组默认不会发生变化，即使执行了修改用户绑定的资源组。如需修改当前会话绑定的资源组，可以使用 SET RESOURCE GROUP 语句。"
+    ],
+    "Examples": [
+        "CREATE USER 'user1';\nCREATE RESOURCE GROUP rg1 RU_PER_SEC = 1000;\nCREATE RESOURCE GROUP rg2 RU_PER_SEC = 2000;\nALTER USER 'user1' RESOURCE GROUP `rg1`;\n",
+        "SELECT CURRENT_RESOURCE_GROUP();\n",
+        "SET RESOURCE GROUP `rg2`;\nSELECT CURRENT_RESOURCE_GROUP();\n"
+    ],
+    "Category": [
+        "TiDB 特有的函数"
+    ]
+}

@@ -1,0 +1,26 @@
+{
+    "HTML": [
+        "https://mariadb.com/kb/en/datetime/"
+    ],
+    "Title": [
+        "DATETIME"
+    ],
+    "Feature": [
+        "DATETIME [(microsecond precision)]\n"
+    ],
+    "Description": [
+        "A date and time combination.",
+        "MariaDB displays DATETIME values in 'YYYY-MM-DD HH:MM:SS.ffffff' format, but\nallows assignment of values to DATETIME columns using either strings or\nnumbers. For details, see date and time literals.",
+        "DATETIME columns also accept CURRENT_TIMESTAMP as the default value.",
+        "MariaDB 10.1.2 introduced the --mysql56-temporal-format option, on by default, which allows MariaDB to store DATETMEs using the same low-level format MySQL 5.6 uses.  For more information, see Internal Format, below.",
+        "For storage requirements, see Data Type Storage Requirements."
+    ],
+    "Examples": [
+        "CREATE TABLE t1 (d DATETIME);\n\nINSERT INTO t1 VALUES (\"2011-03-11\"), (\"2012-04-19 13:08:22\"),\n (\"2013-07-18 13:44:22.123456\");\n\nSELECT * FROM t1;\n+---------------------+\n| d                   |\n+---------------------+\n| 2011-03-11 00:00:00 |\n| 2012-04-19 13:08:22 |\n| 2013-07-18 13:44:22 |\n+---------------------+\n",
+        "CREATE TABLE t2 (d DATETIME(6));\n\nINSERT INTO t2 VALUES (\"2011-03-11\"), (\"2012-04-19 13:08:22\"),\n (\"2013-07-18 13:44:22.123456\");\n\nSELECT * FROM t2;\n+----------------------------+\n| d                          |\n+----------------------------+\n| 2011-03-11 00:00:00.000000 |\n| 2012-04-19 13:08:22.000000 |\n| 2013-07-18 13:44:22.123456 |\n+----------------------------++\n",
+        "SELECT CONVERT('2007-11-30 10:30:19',datetime);\n+-----------------------------------------+\n| CONVERT('2007-11-30 10:30:19',datetime) |\n+-----------------------------------------+\n| 2007-11-30 10:30:19                     |\n+-----------------------------------------+\n\nSELECT CONVERT('2007-11-30 10:30:19',datetime(6));\n+--------------------------------------------+\n| CONVERT('2007-11-30 10:30:19',datetime(6)) |\n+--------------------------------------------+\n| 2007-11-30 10:30:19.000000                 |\n+--------------------------------------------+\n"
+    ],
+    "Category": [
+        "Date and Time Data Types"
+    ]
+}

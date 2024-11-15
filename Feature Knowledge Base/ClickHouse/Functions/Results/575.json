@@ -1,0 +1,28 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/math-functions"
+    ],
+    "Title": [
+        "atan2"
+    ],
+    "Feature": [
+        "atan2(y, x)"
+    ],
+    "Description": [
+        "atan2",
+        "Returns the atan2 as the angle in the Euclidean plane, given in radians, between the positive x axis and the ray to the point (x, y) \u2260 (0, 0).",
+        "Syntax",
+        "atan2(y, x)",
+        "Arguments",
+        "y \u2014 y-coordinate of the point through which the ray passes. (U)Int*, Float* or Decimal*.x \u2014 x-coordinate of the point through which the ray passes. (U)Int*, Float* or Decimal*.",
+        "Returned value",
+        "The angle \u03b8 such that \u2212\u03c0<0\u2264\u03c0-\\pi \\lt 0 \\le \\pi\u2212\u03c0<0\u2264\u03c0, in radians.",
+        "Type: Float64."
+    ],
+    "Examples": [
+        "SELECT atan2(1, 1);"
+    ],
+    "Category": [
+        "Mathematical Functions"
+    ]
+}

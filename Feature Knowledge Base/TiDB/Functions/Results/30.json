@@ -1,0 +1,25 @@
+{
+    "HTML": [
+        "https://docs.pingcap.com/zh/tidb/v8.3/string-functions"
+    ],
+    "Title": [
+        "MID()"
+    ],
+    "Feature": [
+        "MID()"
+    ],
+    "Description": [
+        "MID()",
+        "MID(str,pos,len) 函数返回从指定的 pos 位置开始的长度为 len 的子字符串。",
+        "如果任一参数为 NULL，该函数将返回 NULL。",
+        "TiDB 不支持该函数的两参数版本。更多信息，请参见 #52420。"
+    ],
+    "Examples": [
+        "SELECT MID('abcdef',2,3);\n",
+        "SELECT 'aaa' LIKE 'a%', 'aaa' NOT LIKE 'a%';\n",
+        "SELECT 'aaa' LIKE 'b%', 'aaa' NOT LIKE 'b%';\n"
+    ],
+    "Category": [
+        "字符串函数"
+    ]
+}

@@ -1,0 +1,22 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/tuple-map-functions"
+    ],
+    "Title": [
+        "mapSort([func,], map)"
+    ],
+    "Feature": [
+        "mapSort([func,], map)"
+    ],
+    "Description": [
+        "mapSort([func,], map)",
+        "Sorts the elements of a map in ascending order.\nIf the func function is specified, the sorting order is determined by the result of the func function applied to the keys and values of the map."
+    ],
+    "Examples": [
+        "SELECT mapSort(map('key2', 2, 'key3', 1, 'key1', 3)) AS map;",
+        "SELECT mapSort((k, v) -> v, map('key2', 2, 'key3', 1, 'key1', 3)) AS map;"
+    ],
+    "Category": [
+        "Maps Functions"
+    ]
+}

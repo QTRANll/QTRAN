@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/16/functions-string.html"
+    ],
+    "Title": [
+        "normalize"
+    ],
+    "Feature": [
+        "normalize ( text [, form ] ) → text"
+    ],
+    "Description": [
+        "Converts the string to the specified Unicode normalization form. The optional form key word specifies the form: NFC (the default), NFD, NFKC, or NFKD. This function can only be used when the server encoding is UTF8."
+    ],
+    "Examples": [
+        "normalize(U&'\\0061\\0308bc', NFC) → U&'\\00E4bc'"
+    ],
+    "Category": [
+        "String Functions and Operators"
+    ]
+}

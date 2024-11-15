@@ -1,0 +1,39 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.0/en/loadable-function-reference.html"
+    ],
+    "Title": [
+        "14.2 Loadable Function Reference"
+    ],
+    "Name": "audit_log_read()",
+    "Description": [
+        "\naudit_log_read([arg])\n",
+        "\n              Reads the audit log and returns a\n              JSON string result. If the\n              audit log format is not\n              JSON, an error occurs.\n            ",
+        "\n              With no argument or a JSON\n              hash argument,\n              audit_log_read() reads\n              events from the audit log and returns a\n              JSON string containing an\n              array of audit events. Items in the hash argument\n              influence how reading occurs, as described later. Each\n              element in the returned array is an event represented as a\n              JSON hash, with the\n              exception that the last element may be a\n              JSON\nnull value to indicate no following\n              events are available to read.\n            ",
+        "\n              With an argument consisting of a\n              JSON\nnull value,\n              audit_log_read() closes the\n              current read sequence.\n            ",
+        "\n              For additional details about the audit log-reading\n              process, see Section\u00a08.4.5.6, \u201cReading Audit Log Files\u201d.\n            ",
+        "\n              Arguments:\n            ",
+        "\n              To obtain a bookmark for the most recently written event,\n              call\n              audit_log_read_bookmark().\n            ",
+        "\narg: The argument is optional.\n              If omitted, the function reads events from the current\n              position. If present, the argument can be a\n              JSON\nnull value to close the read sequence,\n              or a JSON hash. Within a\n              hash argument, items are optional and control aspects of\n              the read operation such as the position at which to begin\n              reading or how many events to read. The following items\n              are significant (other items are ignored):\n",
+        "\n\nstart: The position within the\n                  audit log of the first event to read. The position is\n                  given as a timestamp and the read starts from the\n                  first event that occurs on or after the timestamp\n                  value. The start item has this\n                  format, where value is a\n                  literal timestamp value:\n                Press CTRL+C to copy \"start\": { \"timestamp\": \"value\" }\n                  The start item is permitted as of\n                  MySQL 8.0.22.\n                \ntimestamp, id:\n                  The position within the audit log of the first event\n                  to read. The timestamp and\n                  id items together comprise a\n                  bookmark that uniquely identify a particular event. If\n                  an audit_log_read()\n                  argument includes either item, it must include both to\n                  completely specify a position or an error occurs.\n                \nmax_array_length: The maximum\n                  number of events to read from the log. If this item is\n                  omitted, the default is to read to the end of the log\n                  or until the read buffer is full, whichever comes\n                  first.\n\n",
+        "\n              To specify a starting position to\n              audit_log_read(), pass a\n              hash argument that includes either a\n              start item or a bookmark consisting of\n              timestamp and id\n              items. If a hash argument includes both a\n              start item and a bookmark, an error\n              occurs.\n            ",
+        "\n              If a hash argument specifies no starting position, reading\n              continues from the current position.\n            ",
+        "\n              If a timestamp value includes no time part, a time part of\n              00:00:00 is assumed.\n            ",
+        "\n              Return value:\n            ",
+        "\n              If the call succeeds, the return value is a\n              JSON string containing an\n              array of audit events, or a\n              JSON\nnull value if that was passed as the\n              argument to close the read sequence. If the call fails,\n              the return value is NULL and an error\n              occurs.\n            ",
+        "\n              Example:\n            ",
+        "Press CTRL+C to copy mysql> SELECT audit_log_read(audit_log_read_bookmark());\n+-----------------------------------------------------------------------+\n| audit_log_read(audit_log_read_bookmark())                             |\n+-----------------------------------------------------------------------+\n| [ {\"timestamp\":\"2020-05-18 22:41:24\",\"id\":0,\"class\":\"connection\", ... |\n+-----------------------------------------------------------------------+\nmysql> SELECT audit_log_read('null');\n+------------------------+\n| audit_log_read('null') |\n+------------------------+\n| null                   |\n+------------------------+",
+        "\n              Notes:\n            ",
+        "\n              Prior to MySQL 8.0.19, string return values are binary\n              JSON strings. For\n              information about converting such values to nonbinary\n              strings, see Section\u00a08.4.5.6, \u201cReading Audit Log Files\u201d.\n            "
+    ],
+    "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/audit-log-reference.html#function_audit-log-read",
+    "Feature": [
+        "audit_log_read([arg])"
+    ],
+    "Examples": [
+        "mysql> SELECT audit_log_read(audit_log_read_bookmark());\n+-----------------------------------------------------------------------+\n| audit_log_read(audit_log_read_bookmark())                             |\n+-----------------------------------------------------------------------+\n| [ {\"timestamp\":\"2020-05-18 22:41:24\",\"id\":0,\"class\":\"connection\", ... |\n+-----------------------------------------------------------------------+\nmysql> SELECT audit_log_read('null');\n+------------------------+\n| audit_log_read('null') |\n+------------------------+\n| null                   |\n+------------------------+"
+    ],
+    "Category": [
+        "Loadable Functions"
+    ]
+}

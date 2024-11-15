@@ -1,0 +1,31 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.0/en/loadable-function-reference.html"
+    ],
+    "Title": [
+        "14.2 Loadable Function Reference"
+    ],
+    "Name": "asymmetric_derive()",
+    "Description": [
+        "\nasymmetric_derive(pub_key_str,\n          priv_key_str)\n",
+        "\n          Derives a symmetric key using the private key of one party and\n          the public key of another, and returns the resulting key as a\n          binary string. If key derivation fails, the result is\n          NULL.\n        ",
+        "\npub_key_str and\n          priv_key_str are valid PEM encoded\n          key strings that were created using the DH algorithm.\n        ",
+        "\n          Suppose that you have two pairs of public and private keys:\n        ",
+        "Press CTRL+C to copy SET @dhp = create_dh_parameters(1024);\nSET @priv1 = create_asymmetric_priv_key('DH', @dhp);\nSET @pub1 = create_asymmetric_pub_key('DH', @priv1);\nSET @priv2 = create_asymmetric_priv_key('DH', @dhp);\nSET @pub2 = create_asymmetric_pub_key('DH', @priv2);",
+        "\n          Suppose further that you use the private key from one pair and\n          the public key from the other pair to create a symmetric key\n          string. Then this symmetric key identity relationship holds:\n        ",
+        "Press CTRL+C to copy asymmetric_derive(@pub1, @priv2) = asymmetric_derive(@pub2, @priv1)",
+        "\n          This example requires DH private/public keys as inputs,\n          created using a shared symmetric secret. Create the secret by\n          passing the key length to\n          create_dh_parameters(), then\n          pass the secret as the \u201ckey length\u201d to\n          create_asymmetric_priv_key().\n        ",
+        "Press CTRL+C to copy -- Generate DH shared symmetric secret\nSET @dhp = create_dh_parameters(1024);\n-- Generate DH key pairs\nSET @algo = 'DH';\nSET @priv1 = create_asymmetric_priv_key(@algo, @dhp);\nSET @pub1 = create_asymmetric_pub_key(@algo, @priv1);\nSET @priv2 = create_asymmetric_priv_key(@algo, @dhp);\nSET @pub2 = create_asymmetric_pub_key(@algo, @priv2);\n\n-- Generate symmetric key using public key of first party,\n-- private key of second party\nSET @sym1 = asymmetric_derive(@pub1, @priv2);\n\n-- Or use public key of second party, private key of first party\nSET @sym2 = asymmetric_derive(@pub2, @priv1);"
+    ],
+    "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/enterprise-encryption-functions-legacy.html#function_asymmetric-derive",
+    "Feature": [
+        "asymmetric_derive(pub_key_str,\n          priv_key_str)"
+    ],
+    "Examples": [
+        "SET @dhp = create_dh_parameters(1024);\nSET @priv1 = create_asymmetric_priv_key('DH', @dhp);\nSET @pub1 = create_asymmetric_pub_key('DH', @priv1);\nSET @priv2 = create_asymmetric_priv_key('DH', @dhp);\nSET @pub2 = create_asymmetric_pub_key('DH', @priv2);",
+        "-- Generate DH shared symmetric secret\nSET @dhp = create_dh_parameters(1024);\n-- Generate DH key pairs\nSET @algo = 'DH';\nSET @priv1 = create_asymmetric_priv_key(@algo, @dhp);\nSET @pub1 = create_asymmetric_pub_key(@algo, @priv1);\nSET @priv2 = create_asymmetric_priv_key(@algo, @dhp);\nSET @pub2 = create_asymmetric_pub_key(@algo, @priv2);\n\n-- Generate symmetric key using public key of first party,\n-- private key of second party\nSET @sym1 = asymmetric_derive(@pub1, @priv2);\n\n-- Or use public key of second party, private key of first party\nSET @sym2 = asymmetric_derive(@pub2, @priv1);"
+    ],
+    "Category": [
+        "Loadable Functions"
+    ]
+}

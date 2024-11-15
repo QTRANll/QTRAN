@@ -1,0 +1,22 @@
+{
+    "HTML": [
+        "https://www.monetdb.org/documentation-Aug2024/user-guide/sql-functions/date-time-functions"
+    ],
+    "Title": [
+        "timestampdiff_sec(ts_dt_tz, ts_dt_tz)"
+    ],
+    "Feature": [
+        "timestampdiff_sec(ts_dt_tz, ts_dt_tz)"
+    ],
+    "Description": [
+        "Return type: ",
+        "bigint",
+        "returns difference of two timestamps or timestamps with time zone or dates"
+    ],
+    "Examples": [
+        "select timestampdiff_sec(timestamp '2021-12-31 18:40:40', timestamp '2021-12-31 16:30:20')"
+    ],
+    "Category": [
+        "Date Time Functions"
+    ]
+}

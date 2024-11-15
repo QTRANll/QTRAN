@@ -1,0 +1,25 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.0/en/built-in-function-reference.html"
+    ],
+    "Title": [
+        "14.1 Built-In Function and Operator Reference"
+    ],
+    "Name": "VALIDATE_PASSWORD_STRENGTH()",
+    "Description": [
+        "\nVALIDATE_PASSWORD_STRENGTH(str)\n",
+        "\n          Given an argument representing a plaintext password, this\n          function returns an integer to indicate how strong the\n          password is, or NULL if the argument is\n          NULL. The return value ranges from 0 (weak)\n          to 100 (strong).\n        ",
+        "\n          Password assessment by\n          VALIDATE_PASSWORD_STRENGTH() is\n          done by the validate_password component. If\n          that component is not installed, the function always returns\n          0. For information about installing\n          validate_password, see\n          Section\u00a08.4.3, \u201cThe Password Validation Component\u201d. To examine or configure\n          the parameters that affect password testing, check or set the\n          system variables implemented by\n          validate_password. See\n          Section\u00a08.4.3.2, \u201cPassword Validation Options and Variables\u201d.\n        ",
+        "\n          The password is subjected to increasingly strict tests and the\n          return value reflects which tests were satisfied, as shown in\n          the following table. In addition, if the\n          validate_password.check_user_name\n          system variable is enabled and the password matches the user\n          name,\n          VALIDATE_PASSWORD_STRENGTH()\n          returns 0 regardless of how other\n          validate_password system variables are set.\n",
+        "\n\nPassword Test\nReturn Value\n\nLength < 4\n0\n\nLength \u2265 4 and <\n                validate_password.length\n25\n\nSatisfies policy 1 (LOW)\n50\n\nSatisfies policy 2 (MEDIUM)\n75\n\nSatisfies policy 3 (STRONG)\n100\n\n"
+    ],
+    "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/encryption-functions.html#function_validate-password-strength",
+    "Feature": [
+        "VALIDATE_PASSWORD_STRENGTH(str)"
+    ],
+    "Examples": [],
+    "Category": [
+        "Built-In Functions and Operators",
+        "Encryption and Compression Functions"
+    ]
+}

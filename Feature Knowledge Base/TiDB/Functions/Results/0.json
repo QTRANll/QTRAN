@@ -1,0 +1,23 @@
+{
+    "HTML": [
+        "https://docs.pingcap.com/zh/tidb/v8.3/control-flow-functions"
+    ],
+    "Title": [
+        "CASE"
+    ],
+    "Feature": [
+        "CASE"
+    ],
+    "Description": [
+        "CASE",
+        "CASE 操作符可以根据指定的条件进行条件逻辑判断并自定义查询结果。",
+        "语法：",
+        "CASE\n    WHEN condition1 THEN result1\n    WHEN condition2 THEN result2\n    ...\n    ELSE default_result\nEND\n"
+    ],
+    "Examples": [
+        "WITH RECURSIVE d AS (SELECT 1 AS n UNION ALL SELECT n+1 FROM d WHERE n<10)\nSELECT n, CASE WHEN n MOD 2 THEN \"odd\" ELSE \"even\" END FROM d;\n"
+    ],
+    "Category": [
+        "控制流程函数"
+    ]
+}

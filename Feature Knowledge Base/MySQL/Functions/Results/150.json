@@ -1,0 +1,26 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.0/en/built-in-function-reference.html"
+    ],
+    "Title": [
+        "14.1 Built-In Function and Operator Reference"
+    ],
+    "Name": "IS_IPV6()",
+    "Description": [
+        "\nIS_IPV6(expr)\n",
+        "\n          Returns 1 if the argument is a valid IPv6 address specified as\n          a string, 0 otherwise, unless expr\n          is NULL, in which case the function returns\n          NULL. This function does not consider IPv4\n          addresses to be valid IPv6 addresses.\n        ",
+        "Press CTRL+C to copy mysql> SELECT IS_IPV6('10.0.5.9'), IS_IPV6('::1');\n        -> 0, 1",
+        "\n          For a given argument, if\n          IS_IPV6() returns 1,\n          INET6_ATON() returns\n          non-NULL.\n        "
+    ],
+    "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/miscellaneous-functions.html#function_is-ipv6",
+    "Feature": [
+        "IS_IPV6(expr)"
+    ],
+    "Examples": [
+        "mysql> SELECT IS_IPV6('10.0.5.9'), IS_IPV6('::1');\n        -> 0, 1"
+    ],
+    "Category": [
+        "Built-In Functions and Operators",
+        "Miscellaneous Functions"
+    ]
+}

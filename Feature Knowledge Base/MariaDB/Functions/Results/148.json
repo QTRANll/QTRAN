@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/json_query/"
+    ],
+    "Title": [
+        "JSON_QUERY"
+    ],
+    "Feature": [
+        "JSON_QUERY(json_doc, path)\n"
+    ],
+    "Description": [
+        "Given a JSON document, returns an object or array specified by the path. Returns NULL if not given a valid JSON document, or if there is no match."
+    ],
+    "Examples": [
+        "select json_query('{\"key1\":{\"a\":1, \"b\":[1,2]}}', '$.key1');\n+-----------------------------------------------------+\n| json_query('{\"key1\":{\"a\":1, \"b\":[1,2]}}', '$.key1') |\n+-----------------------------------------------------+\n| {\"a\":1, \"b\":[1,2]}                                  |\n+-----------------------------------------------------+\n\nselect json_query('{\"key1\":123, \"key1\": [1,2,3]}', '$.key1');\n+-------------------------------------------------------+\n| json_query('{\"key1\":123, \"key1\": [1,2,3]}', '$.key1') |\n+-------------------------------------------------------+\n| [1,2,3]                                               |\n+-------------------------------------------------------+\n"
+    ],
+    "Category": [
+        "JSON Functions"
+    ]
+}

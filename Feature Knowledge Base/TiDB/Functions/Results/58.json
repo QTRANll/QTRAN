@@ -1,0 +1,22 @@
+{
+    "HTML": [
+        "https://docs.pingcap.com/zh/tidb/v8.3/string-functions"
+    ],
+    "Title": [
+        "UPPER()"
+    ],
+    "Feature": [
+        "UPPER()"
+    ],
+    "Description": [
+        "UPPER()",
+        "UPPER() 函数将字符串转换为大写字母，此函数等价于 UCASE() 函数。",
+        "注意当字符串为 null 时，则返回 NULL。"
+    ],
+    "Examples": [
+        "SELECT UPPER('bigdata') AS result_upper, UPPER(null) AS result_null;\n"
+    ],
+    "Category": [
+        "字符串函数"
+    ]
+}

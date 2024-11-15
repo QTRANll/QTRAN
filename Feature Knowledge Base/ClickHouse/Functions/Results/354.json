@@ -1,0 +1,27 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/geo/h3"
+    ],
+    "Title": [
+        "h3CellAreaM2"
+    ],
+    "Feature": [
+        "h3CellAreaM2(index)"
+    ],
+    "Description": [
+        "h3CellAreaM2",
+        "Returns the exact area of a specific cell in square meters corresponding to the given input H3 index.",
+        "Syntax",
+        "h3CellAreaM2(index)",
+        "Parameter",
+        "index \u2014 Hexagon index number. UInt64.",
+        "Returned value",
+        "Cell area in square meters. Float64."
+    ],
+    "Examples": [
+        "SELECT h3CellAreaM2(579205133326352383) AS area;"
+    ],
+    "Category": [
+        "Geo Functions"
+    ]
+}

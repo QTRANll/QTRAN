@@ -1,0 +1,23 @@
+{
+    "HTML": [
+        "https://docs.pingcap.com/zh/tidb/v8.3/string-functions"
+    ],
+    "Title": [
+        "LOWER()"
+    ],
+    "Feature": [
+        "LOWER()"
+    ],
+    "Description": [
+        "LOWER()",
+        "LOWER(str) 函数用于将输入的参数 str 中的所有字符转换为小写。该参数可以为字符串或数字。",
+        "如果输入参数为字符串，该函数返回字符串的小写形式。如果输入参数为数字，该函数将会去掉该数字中的前导零。如果输入参数为 NULL，该函数返回 NULL。"
+    ],
+    "Examples": [
+        "SELECT LOWER(\"TiDB\");\n\n+---------------+\n| LOWER(\"TiDB\") |\n+---------------+\n| tidb          |\n+---------------+\n",
+        "SELECT LOWER(-012);\n\n+-------------+\n| LOWER(-012) |\n+-------------+\n| -12         |\n+-------------+\n"
+    ],
+    "Category": [
+        "字符串函数"
+    ]
+}

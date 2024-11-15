@@ -1,0 +1,16 @@
+{
+    "HTML": "https://dev.mysql.com/doc/refman/8.0/en/locking-functions.html#function_is-free-lock",
+    "Title": "IS_FREE_LOCK()",
+    "Feature": [
+        "IS_FREE_LOCK(str)"
+    ],
+    "Description": [
+        "\nIS_FREE_LOCK(str)\n",
+        "\n          Checks whether the lock named str\n          is free to use (that is, not locked). Returns\n          1 if the lock is free (no one is using the\n          lock), 0 if the lock is in use, and\n          NULL if an error occurs (such as an\n          incorrect argument).\n        ",
+        "\n          This function is unsafe for statement-based replication. A\n          warning is logged if you use this function when\n          binlog_format is set to\n          STATEMENT.\n        "
+    ],
+    "Examples": [],
+    "Category": [
+        "锁函数"
+    ]
+}

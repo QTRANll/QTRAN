@@ -1,0 +1,22 @@
+{
+    "HTML": [
+        "https://www.monetdb.org/documentation-Aug2024/user-guide/sql-functions/string-functions"
+    ],
+    "Title": [
+        "rpad(s1, int len, s2)"
+    ],
+    "Feature": [
+        "rpad(s1, int len, s2)"
+    ],
+    "Description": [
+        "Return type: ",
+        "same as input arg 1",
+        "fill up the string s1 to length len by appending the characters s2. If the string s1 is already longer than length then it is truncated (on the right)."
+    ],
+    "Examples": [
+        "rpad('abc', 6, 'DB')"
+    ],
+    "Category": [
+        "Character String Functions"
+    ]
+}

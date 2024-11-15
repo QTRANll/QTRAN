@@ -1,0 +1,33 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/date-time-functions"
+    ],
+    "Title": [
+        "toWeek"
+    ],
+    "Feature": [
+        "toWeek(t[, mode[, time_zone]])"
+    ],
+    "Description": [
+        "toWeek",
+        "This function returns the week number for date or datetime. The two-argument form of toWeek() enables you to specify whether the week starts on Sunday or Monday and whether the return value should be in the range from 0 to 53 or from 1 to 53. If the mode argument is omitted, the default mode is 0.",
+        "toISOWeek() is a compatibility function that is equivalent to toWeek(date,3).",
+        "The following table describes how the mode argument works.",
+        "ModeFirst day of weekRangeWeek 1 is the first week ...0Sunday0-53with a Sunday in this year1Monday0-53with 4 or more days this year2Sunday1-53with a Sunday in this year3Monday1-53with 4 or more days this year4Sunday0-53with 4 or more days this year5Monday0-53with a Monday in this year6Sunday1-53with 4 or more days this year7Monday1-53with a Monday in this year8Sunday1-53contains January 19Monday1-53contains January 1",
+        "For mode values with a meaning of \u201cwith 4 or more days this year,\u201d weeks are numbered according to ISO 8601:1988:",
+        "If the week containing January 1 has 4 or more days in the new year, it is week 1.Otherwise, it is the last week of the previous year, and the next week is week 1.",
+        "For mode values with a meaning of \u201ccontains January 1\u201d, the week contains January 1 is week 1.\nIt does not matter how many days in the new year the week contained, even if it contained only one day.\nI.e. if the last week of December contains January 1 of the next year, it will be week 1 of the next year.",
+        "Syntax",
+        "toWeek(t[, mode[, time_zone]])",
+        "Alias: WEEK",
+        "Arguments",
+        "t \u2013 Date or DateTime.mode \u2013 Optional parameter, Range of values is [0,9], default is 0.Timezone \u2013 Optional parameter, it behaves like any other conversion function.",
+        "The first argument can also be specified as String in a format supported by parseDateTime64BestEffort(). Support for string arguments exists only for reasons of compatibility with MySQL which is expected by certain 3rd party tools. As string argument support may in future be made dependent on new MySQL-compatibility settings and because string parsing is generally slow, it is recommended to not use it."
+    ],
+    "Examples": [
+        "SELECT toDate('2016-12-27') AS date, toWeek(date) AS week0, toWeek(date,1) AS week1, toWeek(date,9) AS week9;"
+    ],
+    "Category": [
+        "Dates and Times Functions"
+    ]
+}

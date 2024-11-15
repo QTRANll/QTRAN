@@ -1,0 +1,26 @@
+{
+    "HTML": [
+        "https://docs.pingcap.com/zh/tidb/v8.3/string-functions"
+    ],
+    "Title": [
+        "EXPORT_SET()"
+    ],
+    "Feature": [
+        "EXPORT_SET()"
+    ],
+    "Description": [
+        "EXPORT_SET()",
+        "EXPORT_SET() 函数返回一个由指定数量 (number_of_bits) 的 on/off 值组成的字符串，各个值之间可以用 separator 分隔（可选）。这些值将基于输入的 bits 参数中的相应 bit 是否为 1 而确定，其中第一个值对应于 bits 中的最右边（即最低）的 bit。",
+        "语法：",
+        "EXPORT_SET(bits, on, off, [separator[, number_of_bits]])\n",
+        "bits：一个代表 bits 值的整数。on：如果对应的 bit 为 1，则返回该字符串。off：如果对应的 bit 为 0，则返回该字符串。separator（可选）：输出字符串中的分隔符。number_of_bits（可选）：要处理的位数。如果未设置，则默认使用 64（最大位数），这意味着 bits 将被视为一个无符号 64 位整数。"
+    ],
+    "Examples": [
+        "SELECT EXPORT_SET(b'101',\"ON\",'off','|',5);\n",
+        "SELECT EXPORT_SET(b'00001111', 'x', '_', '', 8);\n",
+        "SELECT EXPORT_SET(b'01010101', 'x', '_', '', 8);\n"
+    ],
+    "Category": [
+        "字符串函数"
+    ]
+}

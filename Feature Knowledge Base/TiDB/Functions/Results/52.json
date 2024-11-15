@@ -1,0 +1,25 @@
+{
+    "HTML": [
+        "https://docs.pingcap.com/zh/tidb/v8.3/string-functions"
+    ],
+    "Title": [
+        "SUBSTRING_INDEX()"
+    ],
+    "Feature": [
+        "SUBSTRING_INDEX()"
+    ],
+    "Description": [
+        "SUBSTRING_INDEX()",
+        "SUBSTRING_INDEX() 函数用于按照指定的分隔符和次数从字符串中提取子字符串。该函数在处理以特定分隔符分隔的数据时特别有用，例如解析 CSV 数据或处理日志文件。",
+        "语法：",
+        "SUBSTRING_INDEX(str, delim, count)\n",
+        "str：要处理的字符串。delim：指定字符串中的分隔符，大小写敏感。count：指定分隔符出现的次数。如果 count 为正数，该函数返回从字符串左边开始的第 count 个分隔符之前的子字符串。如果 count 为负数，该函数返回从字符串右边开始的第 count 个分隔符之后的子字符串。如果 count 为 0，该函数返回一个空字符串。"
+    ],
+    "Examples": [
+        "SELECT SUBSTRING_INDEX('www.tidbcloud.com', '.', 2);\n",
+        "SELECT SUBSTRING_INDEX('www.tidbcloud.com', '.', -1);\n"
+    ],
+    "Category": [
+        "字符串函数"
+    ]
+}

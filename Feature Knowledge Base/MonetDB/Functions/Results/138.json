@@ -1,0 +1,22 @@
+{
+    "HTML": [
+        "https://www.monetdb.org/documentation-Aug2024/user-guide/sql-functions/string-functions"
+    ],
+    "Title": [
+        "endswith(s1, s2, icase)"
+    ],
+    "Feature": [
+        "endswith(s1, s2, icase)"
+    ],
+    "Description": [
+        "Return type: ",
+        "boolean",
+        "whether string s1 ends with string s2 matching case insenstive when icase is true, case sensitive when icase is false. returns null when either s1 or s2 is null"
+    ],
+    "Examples": [
+        "endswith('abc', 'BC', true)"
+    ],
+    "Category": [
+        "Character String Functions"
+    ]
+}

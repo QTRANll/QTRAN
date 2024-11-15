@@ -1,0 +1,28 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/bitmap-functions"
+    ],
+    "Title": [
+        "bitmapHasAny"
+    ],
+    "Feature": [
+        "bitmapHasAny(bitmap1, bitmap2)"
+    ],
+    "Description": [
+        "bitmapHasAny",
+        "Checks whether two bitmaps intersect.",
+        "If bitmap2 contains exactly one element, consider using bitmapContains instead as it works more efficiently.",
+        "Syntax",
+        "bitmapHasAny(bitmap1, bitmap2)",
+        "Arguments",
+        "bitmap1 \u2013 Bitmap object 1.bitmap2 \u2013 Bitmap object 2.",
+        "Return values",
+        "1, if bitmap1 and bitmap2 have at least one shared element.0, otherwise."
+    ],
+    "Examples": [
+        "SELECT bitmapHasAny(bitmapBuild([1,2,3]),bitmapBuild([3,4,5])) AS res;"
+    ],
+    "Category": [
+        "Bitmap Functions"
+    ]
+}

@@ -1,0 +1,26 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.0/en/built-in-function-reference.html"
+    ],
+    "Title": [
+        "14.1 Built-In Function and Operator Reference"
+    ],
+    "Name": "ST_NumGeometries()",
+    "Description": [
+        "\nST_NumGeometries(gc)\n",
+        "\n            Returns the number of geometries in the\n            GeometryCollection value\n            gc.\n          ",
+        "\nST_NumGeometries() handles\n            its arguments as described in the introduction to this\n            section.\n          ",
+        "Press CTRL+C to copy mysql> SET @gc = 'GeometryCollection(Point(1 1),LineString(2 2, 3 3))';\nmysql> SELECT ST_NumGeometries(ST_GeomFromText(@gc));\n+----------------------------------------+\n| ST_NumGeometries(ST_GeomFromText(@gc)) |\n+----------------------------------------+\n|                                      2 |\n+----------------------------------------+"
+    ],
+    "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/gis-geometrycollection-property-functions.html#function_st-numgeometries",
+    "Feature": [
+        "ST_NumGeometries(gc)"
+    ],
+    "Examples": [
+        "mysql> SET @gc = 'GeometryCollection(Point(1 1),LineString(2 2, 3 3))';\nmysql> SELECT ST_NumGeometries(ST_GeomFromText(@gc));\n+----------------------------------------+\n| ST_NumGeometries(ST_GeomFromText(@gc)) |\n+----------------------------------------+\n|                                      2 |\n+----------------------------------------+"
+    ],
+    "Category": [
+        "Built-In Functions and Operators",
+        "Spatial Analysis Functions"
+    ]
+}

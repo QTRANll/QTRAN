@@ -1,0 +1,18 @@
+{
+    "HTML": [
+        "https://mariadb.com/kb/en/mediumtext/"
+    ],
+    "Title": [
+        "MEDIUMTEXT"
+    ],
+    "Feature": [
+        "MEDIUMTEXT [CHARACTER SET charset_name] [COLLATE collation_name]\n"
+    ],
+    "Description": [
+        "A TEXT column with a \nmaximum length of 16,777,215 (224 - 1)\ncharacters.  The effective maximum length is less if the value\ncontains multi-byte characters. Each MEDIUMTEXT value is stored using\na three-byte length prefix that indicates the number of bytes in the\nvalue."
+    ],
+    "Examples": [],
+    "Category": [
+        "String Data Types"
+    ]
+}

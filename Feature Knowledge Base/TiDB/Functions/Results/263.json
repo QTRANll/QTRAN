@@ -1,0 +1,22 @@
+{
+    "HTML": [
+        "https://docs.pingcap.com/zh/tidb/v8.3/tidb-functions"
+    ],
+    "Title": [
+        "TIDB_DECODE_KEY"
+    ],
+    "Feature": [
+        "TIDB_DECODE_KEY"
+    ],
+    "Description": [
+        "TIDB_DECODE_KEY",
+        "TIDB_DECODE_KEY() 函数用于将 TiDB 编码的键输入解码为包含 _tidb_rowid 和 table_id 的 JSON 结构。在一些系统表和日志输出中有 TiDB 编码的键。"
+    ],
+    "Examples": [
+        "SELECT tidb_decode_key('7480000000000000FF3E5F720400000000FF0000000601633430FF3338646232FF2D64FF3531632D3131FF65FF622D386337352DFFFF3830653635303138FFFF61396265000000FF00FB000000000000F9');\n",
+        "SELECT\n  TABLE_NAME,\n  TIDB_DECODE_KEY(START_KEY),\n  TIDB_DECODE_KEY(END_KEY)\nFROM\n  information_schema.TIKV_REGION_STATUS\nWHERE\n  TABLE_NAME='stock'\n  AND IS_INDEX=0\nORDER BY\n  START_KEY;\n"
+    ],
+    "Category": [
+        "TiDB 特有的函数"
+    ]
+}

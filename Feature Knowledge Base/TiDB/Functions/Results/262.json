@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://docs.pingcap.com/zh/tidb/v8.3/tidb-functions"
+    ],
+    "Title": [
+        "TIDB_DECODE_BINARY_PLAN"
+    ],
+    "Feature": [
+        "TIDB_DECODE_BINARY_PLAN"
+    ],
+    "Description": [
+        "TIDB_DECODE_BINARY_PLAN",
+        "TIDB_DECODE_BINARY_PLAN(binary_plan) 函数用于解码以二进制格式编码的执行计划，例如 STATEMENTS_SUMMARY 表中 BINARY_PLAN 列的计划。",
+        "必须将 tidb_generate_binary_plan 变量设置为 ON，二进制计划才可用。"
+    ],
+    "Examples": [],
+    "Category": [
+        "TiDB 特有的函数"
+    ]
+}

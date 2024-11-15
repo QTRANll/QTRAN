@@ -1,0 +1,29 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/other-functions"
+    ],
+    "Title": [
+        "structureToProtobufSchema"
+    ],
+    "Feature": [
+        "structureToProtobufSchema(structure)"
+    ],
+    "Description": [
+        "structureToProtobufSchema",
+        "Converts ClickHouse table structure to Protobuf schema.",
+        "Syntax",
+        "structureToProtobufSchema(structure)",
+        "Arguments",
+        "structure \u2014 Table structure in a format column1_name column1_type, column2_name column2_type, ....root_message_name \u2014 Name for root message in Protobuf schema. Default value - Message;",
+        "Returned value",
+        "Protobuf schema. String."
+    ],
+    "Examples": [
+        "SELECT structureToProtobufSchema('column1 String, column2 UInt32, column3 Array(String)') FORMAT RawBLOB",
+        "SELECT structureToProtobufSchema('column1 Nullable(String), column2 Tuple(element1 UInt32, element2 Array(String)), column3 Map(String, String)') FORMAT RawBLOB",
+        "SELECT structureToProtobufSchema('column1 String, column2 UInt32', 'Root') FORMAT RawBLOB"
+    ],
+    "Category": [
+        "Other Functions"
+    ]
+}

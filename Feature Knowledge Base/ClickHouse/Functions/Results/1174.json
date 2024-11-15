@@ -1,0 +1,26 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/aggregate-functions/reference/kurtpop"
+    ],
+    "Title": [
+        "kurtPop"
+    ],
+    "Feature": [
+        "kurtPop(expr)"
+    ],
+    "Description": [
+        "kurtPop",
+        "Computes the kurtosis of a sequence.",
+        "kurtPop(expr)",
+        "Arguments",
+        "expr \u2014 Expression returning a number.",
+        "Returned value",
+        "The kurtosis of the given distribution. Type \u2014 Float64"
+    ],
+    "Examples": [
+        "SELECT kurtPop(value) FROM series_with_value_column;"
+    ],
+    "Category": [
+        "Aggregate Functions"
+    ]
+}

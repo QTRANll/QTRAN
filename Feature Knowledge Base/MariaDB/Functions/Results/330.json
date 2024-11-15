@@ -1,0 +1,21 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/pointn/"
+    ],
+    "Title": [
+        "ST_POINTN"
+    ],
+    "Feature": [
+        "ST_PointN(ls,N)\nPointN(ls,N)\n"
+    ],
+    "Description": [
+        "Returns the N-th Point in the LineString value ls.\nPoints are numbered beginning with 1.",
+        "ST_PointN() and PointN() are synonyms."
+    ],
+    "Examples": [
+        "SET @ls = 'LineString(1 1,2 2,3 3)';\n\nSELECT AsText(PointN(GeomFromText(@ls),2));\n+-------------------------------------+\n| AsText(PointN(GeomFromText(@ls),2)) |\n+-------------------------------------+\n| POINT(2 2)                          |\n+-------------------------------------+\n"
+    ],
+    "Category": [
+        "Geographic Functions"
+    ]
+}

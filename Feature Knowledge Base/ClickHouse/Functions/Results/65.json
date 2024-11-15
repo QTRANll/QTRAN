@@ -1,0 +1,55 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/array-functions"
+    ],
+    "Title": [
+        "arrayReverseSort"
+    ],
+    "Feature": [
+        "arrayReverseSort([func,] arr, ...)"
+    ],
+    "Description": [
+        "arrayReverseSort",
+        "Sorts the elements of the arr array in descending order. If the func function is specified, arr is sorted according to the result of the func function applied to the elements of the array, and then the sorted array is reversed. If func accepts multiple arguments, the arrayReverseSort function is passed several arrays that the arguments of func will correspond to. Detailed examples are shown at the end of arrayReverseSort description.",
+        "Syntax",
+        "arrayReverseSort([func,] arr, ...)",
+        "Example of integer values sorting:",
+        "SELECT arrayReverseSort([1, 3, 3, 0]);",
+        "\u250c\u2500arrayReverseSort([1, 3, 3, 0])\u2500\u2510\u2502 [3,3,1,0]                      \u2502\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518",
+        "Example of string values sorting:",
+        "SELECT arrayReverseSort(['hello', 'world', '!']);",
+        "\u250c\u2500arrayReverseSort(['hello', 'world', '!'])\u2500\u2510\u2502 ['world','hello','!']                     \u2502\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518",
+        "Consider the following sorting order for the NULL, NaN and Inf values:",
+        "SELECT arrayReverseSort([1, nan, 2, NULL, 3, nan, -4, NULL, inf, -inf]) as res;",
+        "\u250c\u2500res\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\u2502 [inf,3,2,1,-4,-inf,nan,nan,NULL,NULL] \u2502\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518",
+        "Inf values are first in the array.NULL values are last in the array.NaN values are right before NULL.-Inf values are right before NaN.",
+        "Note that the arrayReverseSort is a higher-order function. You can pass a lambda function to it as the first argument. Example is shown below.",
+        "SELECT arrayReverseSort((x) -> -x, [1, 2, 3]) as res;",
+        "\u250c\u2500res\u2500\u2500\u2500\u2500\u2500\u2510\u2502 [1,2,3] \u2502\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518",
+        "The array is sorted in the following way:",
+        "At first, the source array ([1, 2, 3]) is sorted according to the result of the lambda function applied to the elements of the array. The result is an array [3, 2, 1].Array that is obtained on the previous step, is reversed. So, the final result is [1, 2, 3].",
+        "The lambda function can accept multiple arguments. In this case, you need to pass the arrayReverseSort function several arrays of identical length that the arguments of lambda function will correspond to. The resulting array will consist of elements from the first input array; elements from the next input array(s) specify the sorting keys. For example:",
+        "SELECT arrayReverseSort((x, y) -> y, ['hello', 'world'], [2, 1]) as res;",
+        "\u250c\u2500res\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\u2502 ['hello','world'] \u2502\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518",
+        "In this example, the array is sorted in the following way:",
+        "At first, the source array ([\u2018hello\u2019, \u2018world\u2019]) is sorted according to the result of the lambda function applied to the elements of the arrays. The elements that are passed in the second array ([2, 1]), define the sorting keys for corresponding elements from the source array. The result is an array [\u2018world\u2019, \u2018hello\u2019].Array that was sorted on the previous step, is reversed. So, the final result is [\u2018hello\u2019, \u2018world\u2019].",
+        "Other examples are shown below.",
+        "SELECT arrayReverseSort((x, y) -> y, [4, 3, 5], ['a', 'b', 'c']) AS res;",
+        "\u250c\u2500res\u2500\u2500\u2500\u2500\u2500\u2510\u2502 [5,3,4] \u2502\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518",
+        "SELECT arrayReverseSort((x, y) -> -y, [4, 3, 5], [1, 2, 3]) AS res;",
+        "\u250c\u2500res\u2500\u2500\u2500\u2500\u2500\u2510\u2502 [4,3,5] \u2502\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518"
+    ],
+    "Examples": [
+        "arrayReverseSort([func,] arr, ...)",
+        "SELECT arrayReverseSort([1, 3, 3, 0]);",
+        "SELECT arrayReverseSort(['hello', 'world', '!']);",
+        "SELECT arrayReverseSort([1, nan, 2, NULL, 3, nan, -4, NULL, inf, -inf]) as res;",
+        "SELECT arrayReverseSort((x) -> -x, [1, 2, 3]) as res;",
+        "SELECT arrayReverseSort((x, y) -> y, ['hello', 'world'], [2, 1]) as res;",
+        "SELECT arrayReverseSort((x, y) -> y, [4, 3, 5], ['a', 'b', 'c']) AS res;",
+        "SELECT arrayReverseSort((x, y) -> -y, [4, 3, 5], [1, 2, 3]) AS res;"
+    ],
+    "Category": [
+        "Arrays Functions"
+    ]
+}

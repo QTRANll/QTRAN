@@ -1,0 +1,28 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/string-functions"
+    ],
+    "Title": [
+        "base64Decode"
+    ],
+    "Feature": [
+        "base64Decode(encoded)"
+    ],
+    "Description": [
+        "base64Decode",
+        "Accepts a String and decodes it from base64, according to RFC 4648. Throws an exception in case of an error.",
+        "Alias: FROM_BASE64.",
+        "Syntax",
+        "base64Decode(encoded)",
+        "Arguments",
+        "encoded \u2014 String column or constant. If the string is not a valid Base64-encoded value, an exception is thrown.",
+        "Returned value",
+        "A string containing the decoded value of the argument."
+    ],
+    "Examples": [
+        "SELECT base64Decode('Y2xpY2tob3VzZQ==');"
+    ],
+    "Category": [
+        "Strings Functions"
+    ]
+}

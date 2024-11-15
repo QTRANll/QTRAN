@@ -1,0 +1,26 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.0/en/built-in-function-reference.html"
+    ],
+    "Title": [
+        "14.1 Built-In Function and Operator Reference"
+    ],
+    "Name": "VERSION()",
+    "Description": [
+        "\nVERSION()\n",
+        "\n          Returns a string that indicates the MySQL server version. The\n          string uses the utf8mb3 character set. The\n          value might have a suffix in addition to the version number.\n          See the description of the\n          version system variable in\n          Section\u00a07.1.8, \u201cServer System Variables\u201d.\n        ",
+        "\n          This function is unsafe for statement-based replication. A\n          warning is logged if you use this function when\n          binlog_format is set to\n          STATEMENT.\n        ",
+        "Press CTRL+C to copy mysql> SELECT VERSION();\n        -> '8.0.40-standard'"
+    ],
+    "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/information-functions.html#function_version",
+    "Feature": [
+        "VERSION()"
+    ],
+    "Examples": [
+        "mysql> SELECT VERSION();\n        -> '8.0.40-standard'"
+    ],
+    "Category": [
+        "Built-In Functions and Operators",
+        "Information Functions"
+    ]
+}

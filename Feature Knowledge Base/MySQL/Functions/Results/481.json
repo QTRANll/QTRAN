@@ -1,0 +1,30 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.0/en/loadable-function-reference.html"
+    ],
+    "Title": [
+        "14.2 Loadable Function Reference"
+    ],
+    "Name": "mask_outer()",
+    "Description": [
+        "\nmask_outer(str,\n              margin1,\n              margin2 [,\n              mask_char])\n",
+        "\n              Masks the left and right ends of a string, leaving the\n              interior unmasked, and returns the result. An optional\n              masking character can be specified.\n            ",
+        "\n              Arguments:\n",
+        "\n\nstr: The string to mask.\n                \nmargin1: A nonnegative\n                  integer that specifies the number of characters on the\n                  left end of the string to mask. If the value is 0, no\n                  left end characters are masked.\n                \nmargin2: A nonnegative\n                  integer that specifies the number of characters on the\n                  right end of the string to mask. If the value is 0, no\n                  right end characters are masked.\n                \nmask_char: (Optional) The\n                  single character to use for masking. The default is\n                  'X' if\n                  mask_char is not given.\n                \n                  The masking character must be a single-byte character.\n                  Attempts to use a multibyte character produce an\n                  error.\n\n",
+        "\n              Return value:\n            ",
+        "\n              The masked string, or NULL if either\n              margin is negative.\n            ",
+        "\n              If the sum of the margin values is larger than the\n              argument length, the entire argument is masked.\n            ",
+        "\n              Example:\n            ",
+        "Press CTRL+C to copy mysql> SELECT mask_outer('abcdef', 1, 2), mask_outer('abcdef',0, 5);\n+----------------------------+---------------------------+\n| mask_outer('abcdef', 1, 2) | mask_outer('abcdef',0, 5) |\n+----------------------------+---------------------------+\n| XbcdXX                     | aXXXXX                    |\n+----------------------------+---------------------------+\nmysql> SELECT mask_outer('abcdef', 1, 2, '*'), mask_outer('abcdef',0, 5, '#');\n+---------------------------------+--------------------------------+\n| mask_outer('abcdef', 1, 2, '*') | mask_outer('abcdef',0, 5, '#') |\n+---------------------------------+--------------------------------+\n| *bcd**                          | a#####                         |\n+---------------------------------+--------------------------------+"
+    ],
+    "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/data-masking-plugin-functions.html#function_mask-outer-plugin",
+    "Feature": [
+        "mask_outer(str,\n              margin1,\n              margin2 [,\n              mask_char])"
+    ],
+    "Examples": [
+        "mysql> SELECT mask_outer('abcdef', 1, 2), mask_outer('abcdef',0, 5);\n+----------------------------+---------------------------+\n| mask_outer('abcdef', 1, 2) | mask_outer('abcdef',0, 5) |\n+----------------------------+---------------------------+\n| XbcdXX                     | aXXXXX                    |\n+----------------------------+---------------------------+\nmysql> SELECT mask_outer('abcdef', 1, 2, '*'), mask_outer('abcdef',0, 5, '#');\n+---------------------------------+--------------------------------+\n| mask_outer('abcdef', 1, 2, '*') | mask_outer('abcdef',0, 5, '#') |\n+---------------------------------+--------------------------------+\n| *bcd**                          | a#####                         |\n+---------------------------------+--------------------------------+"
+    ],
+    "Category": [
+        "Loadable Functions"
+    ]
+}

@@ -1,0 +1,26 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.0/en/built-in-function-reference.html"
+    ],
+    "Title": [
+        "14.1 Built-In Function and Operator Reference"
+    ],
+    "Name": "CURTIME()",
+    "Description": [
+        "\nCURTIME([fsp])\n",
+        "\n          Returns the current time as a value in\n          'hh:mm:ss' or\n          hhmmss format, depending on whether\n          the function is used in string or numeric context. The value\n          is expressed in the session time zone.\n        ",
+        "\n          If the fsp argument is given to\n          specify a fractional seconds precision from 0 to 6, the return\n          value includes a fractional seconds part of that many digits.\n        ",
+        "Press CTRL+C to copy mysql> SELECT CURTIME();\n+-----------+\n| CURTIME() |\n+-----------+\n| 19:25:37  |\n+-----------+\n\nmysql> SELECT CURTIME() + 0;\n+---------------+\n| CURTIME() + 0 |\n+---------------+\n|        192537 |\n+---------------+\n\nmysql> SELECT CURTIME(3);\n+--------------+\n| CURTIME(3)   |\n+--------------+\n| 19:25:37.840 |\n+--------------+"
+    ],
+    "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html#function_curtime",
+    "Feature": [
+        "CURTIME([fsp])"
+    ],
+    "Examples": [
+        "mysql> SELECT CURTIME();\n+-----------+\n| CURTIME() |\n+-----------+\n| 19:25:37  |\n+-----------+\n\nmysql> SELECT CURTIME() + 0;\n+---------------+\n| CURTIME() + 0 |\n+---------------+\n|        192537 |\n+---------------+\n\nmysql> SELECT CURTIME(3);\n+--------------+\n| CURTIME(3)   |\n+--------------+\n| 19:25:37.840 |\n+--------------+"
+    ],
+    "Category": [
+        "Built-In Functions and Operators",
+        "Date and Time Functions"
+    ]
+}

@@ -1,0 +1,28 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/distance-functions"
+    ],
+    "Title": [
+        "LpNormalize"
+    ],
+    "Feature": [
+        "LpNormalize(tuple, p)"
+    ],
+    "Description": [
+        "LpNormalize",
+        "Calculates the unit vector of a given vector (the values of the tuple are the coordinates) in Lp space (using p-norm).",
+        "Syntax",
+        "LpNormalize(tuple, p)",
+        "Alias: normalizeLp .",
+        "Arguments",
+        "tuple \u2014 Tuple.p \u2014 The power. Possible values: any number from [1;inf). UInt or Float.",
+        "Returned value",
+        "Unit vector. Tuple of Float."
+    ],
+    "Examples": [
+        "SELECT LpNormalize((3, 4),5);"
+    ],
+    "Category": [
+        "Distance Functions"
+    ]
+}

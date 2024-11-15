@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://duckdb.org/docs/sql/functions/timestamptz"
+    ],
+    "Title": [
+        "strftime(timestamptz, format)"
+    ],
+    "Feature": [
+        "strftime(timestamptz, format)"
+    ],
+    "Description": [
+        "Converts a TIMESTAMP WITH TIME ZONE value to string according to the format string."
+    ],
+    "Examples": [
+        "strftime(timestamptz '1992-01-01 20:38:40', '%a, %-d %B %Y - %I:%M:%S %p')"
+    ],
+    "Category": [
+        "Timestamp with Time Zone Functions"
+    ]
+}

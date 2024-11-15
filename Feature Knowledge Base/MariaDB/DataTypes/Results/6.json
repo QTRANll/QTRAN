@@ -1,0 +1,28 @@
+{
+    "HTML": [
+        "https://mariadb.com/kb/en/bigint/"
+    ],
+    "Title": [
+        "BIGINT"
+    ],
+    "Feature": [
+        "BIGINT[(M)] [SIGNED | UNSIGNED | ZEROFILL]\n"
+    ],
+    "Description": [
+        "A large integer. The signed range is -9223372036854775808 to\n9223372036854775807. The unsigned range is 0 to\n18446744073709551615.",
+        "If a column has been set to ZEROFILL, all values will be prepended by zeros so that the BIGINT value contains a number of M digits.",
+        "Note: If the ZEROFILL attribute has been specified, the column will automatically become UNSIGNED.",
+        "For more details on the attributes, see Numeric Data Type Overview.",
+        "SERIAL is an alias for:",
+        "BIGINT UNSIGNED NOT NULL AUTO_INCREMENT UNIQUE\n",
+        "INT8 is a synonym for BIGINT."
+    ],
+    "Examples": [
+        "CREATE TABLE bigints (a BIGINT,b BIGINT UNSIGNED,c BIGINT ZEROFILL);\n",
+        "INSERT INTO bigints VALUES (-10,-10,-10);\nERROR 1264 (22003): Out of range value for column 'b' at row 1\n\nINSERT INTO bigints VALUES (-10,10,-10);\nERROR 1264 (22003): Out of range value for column 'c' at row 1\n\nINSERT INTO bigints VALUES (-10,10,10);\n\nINSERT INTO bigints VALUES (9223372036854775808,9223372036854775808,9223372036854775808);\nERROR 1264 (22003): Out of range value for column 'a' at row 1\n\nINSERT INTO bigints VALUES (9223372036854775807,9223372036854775808,9223372036854775808);\n\nSELECT * FROM bigints;\n+---------------------+---------------------+----------------------+\n| a                   | b                   | c                    |\n+---------------------+---------------------+----------------------+\n|                 -10 |                  10 | 00000000000000000010 |\n| 9223372036854775807 | 9223372036854775808 | 09223372036854775808 |\n+---------------------+---------------------+----------------------+\n",
+        "INSERT INTO bigints VALUES (-10,-10,-10);\nQuery OK, 1 row affected, 2 warnings (0.08 sec)\nWarning (Code 1264): Out of range value for column 'b' at row 1\nWarning (Code 1264): Out of range value for column 'c' at row 1\n\nINSERT INTO bigints VALUES (-10,10,-10);\nQuery OK, 1 row affected, 1 warning (0.08 sec)\nWarning (Code 1264): Out of range value for column 'c' at row 1\n\nINSERT INTO bigints VALUES (-10,10,10);\n\nINSERT INTO bigints VALUES (9223372036854775808,9223372036854775808,9223372036854775808);\nQuery OK, 1 row affected, 1 warning (0.07 sec)\nWarning (Code 1264): Out of range value for column 'a' at row 1\n\nINSERT INTO bigints VALUES (9223372036854775807,9223372036854775808,9223372036854775808);\n\nSELECT * FROM bigints;\n+---------------------+---------------------+----------------------+\n| a                   | b                   | c                    |\n+---------------------+---------------------+----------------------+\n|                 -10 |                   0 | 00000000000000000000 |\n|                 -10 |                  10 | 00000000000000000000 |\n|                 -10 |                  10 | 00000000000000000010 |\n| 9223372036854775807 | 9223372036854775808 | 09223372036854775808 |\n| 9223372036854775807 | 9223372036854775808 | 09223372036854775808 |\n+---------------------+---------------------+----------------------+\n"
+    ],
+    "Category": [
+        "Numeric Data Types"
+    ]
+}

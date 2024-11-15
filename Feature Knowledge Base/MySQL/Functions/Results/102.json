@@ -1,0 +1,34 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.0/en/built-in-function-reference.html"
+    ],
+    "Title": [
+        "14.1 Built-In Function and Operator Reference"
+    ],
+    "Name": "group_replication_get_communication_protocol()",
+    "Description": [
+        "\ngroup_replication_get_communication_protocol()\n",
+        "\n              Inspect the Group Replication communication protocol\n              version that is currently in use for a group.\n            ",
+        "\n              Syntax:\n            ",
+        "Press CTRL+C to copy STRING group_replication_get_communication_protocol()",
+        "\n              This function has no parameters.\n            ",
+        "\n              Return value:\n            ",
+        "\n              The oldest MySQL Server version that can join this group\n              and use the group's communication protocol. Note that\n              the\n              group_replication_get_communication_protocol()\n              function returns the minimum MySQL version that the group\n              supports, which might differ from the version number that\n              was passed to\n              group_replication_set_communication_protocol(),\n              and from the MySQL Server version that is installed on the\n              member where you use the function.\n            ",
+        "\n              If the protocol cannot be inspected because this server\n              instance does not belong to a replication group, an error\n              is returned as a string.\n            ",
+        "\n              Example:\n            ",
+        "Press CTRL+C to copy SELECT group_replication_get_communication_protocol();\n+------------------------------------------------+\n| group_replication_get_communication_protocol() |\n+------------------------------------------------+\n| 8.0.40                                          |\n+------------------------------------------------+",
+        "\n              For more information, see\n              Section\u00a020.5.1.4, \u201cSetting a Group's Communication Protocol Version\u201d.\n            "
+    ],
+    "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/group-replication-functions-for-communication-protocol.html#function_group-replication-get-communication-protocol",
+    "Feature": [
+        "group_replication_get_communication_protocol()"
+    ],
+    "Examples": [
+        "SELECT group_replication_get_communication_protocol();\n+------------------------------------------------+\n| group_replication_get_communication_protocol() |\n+------------------------------------------------+\n| 8.0.40                                          |\n+------------------------------------------------+"
+    ],
+    "Category": [
+        "Built-In Functions and Operators",
+        "Replication Functions",
+        "Loadable Functions"
+    ]
+}

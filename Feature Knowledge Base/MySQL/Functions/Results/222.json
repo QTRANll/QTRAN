@@ -1,0 +1,44 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.0/en/built-in-function-reference.html"
+    ],
+    "Title": [
+        "14.1 Built-In Function and Operator Reference"
+    ],
+    "Name": "MEMBER OF()",
+    "Description": [
+        "\nvalue\n          MEMBER OF(json_array)\n",
+        "\n          Returns true (1) if value is an\n          element of json_array, otherwise\n          returns false (0). value must be a\n          scalar or a JSON document; if it is a scalar, the operator\n          attempts to treat it as an element of a JSON array. If\n          value or\n          json_array is\n          NULL, the function returns\n          NULL.\n        ",
+        "\n          Queries using MEMBER OF() on JSON columns\n          of InnoDB tables in the\n          WHERE clause can be optimized using\n          multi-valued indexes. See\n          Multi-Valued Indexes, for detailed\n          information and examples.\n        ",
+        "\n          Simple scalars are treated as array values, as shown here:\n        ",
+        "Press CTRL+C to copy mysql> SELECT 17 MEMBER OF('[23, \"abc\", 17, \"ab\", 10]');\n+-------------------------------------------+\n| 17 MEMBER OF('[23, \"abc\", 17, \"ab\", 10]') |\n+-------------------------------------------+\n|                                         1 |\n+-------------------------------------------+\n1 row in set (0.00 sec)\n\nmysql> SELECT 'ab' MEMBER OF('[23, \"abc\", 17, \"ab\", 10]');\n+---------------------------------------------+\n| 'ab' MEMBER OF('[23, \"abc\", 17, \"ab\", 10]') |\n+---------------------------------------------+\n|                                           1 |\n+---------------------------------------------+\n1 row in set (0.00 sec)",
+        "\n          Partial matches of array element values do not match:\n        ",
+        "Press CTRL+C to copy mysql> SELECT 7 MEMBER OF('[23, \"abc\", 17, \"ab\", 10]');\n+------------------------------------------+\n| 7 MEMBER OF('[23, \"abc\", 17, \"ab\", 10]') |\n+------------------------------------------+\n|                                        0 |\n+------------------------------------------+\n1 row in set (0.00 sec)",
+        "Press CTRL+C to copy mysql> SELECT 'a' MEMBER OF('[23, \"abc\", 17, \"ab\", 10]');\n+--------------------------------------------+\n| 'a' MEMBER OF('[23, \"abc\", 17, \"ab\", 10]') |\n+--------------------------------------------+\n|                                          0 |\n+--------------------------------------------+\n1 row in set (0.00 sec)",
+        "\n          Conversions to and from string types are not performed:\n        ",
+        "Press CTRL+C to copy mysql> SELECT\n    -> 17 MEMBER OF('[23, \"abc\", \"17\", \"ab\", 10]'),\n    -> \"17\" MEMBER OF('[23, \"abc\", 17, \"ab\", 10]')\\G\n*************************** 1. row ***************************\n17 MEMBER OF('[23, \"abc\", \"17\", \"ab\", 10]'): 0\n\"17\" MEMBER OF('[23, \"abc\", 17, \"ab\", 10]'): 0\n1 row in set (0.00 sec)",
+        "\n          To use this operator with a value which itself an array, it is\n          necessary to cast it explicitly as a JSON array. You can do\n          this with CAST(... AS JSON):\n        ",
+        "Press CTRL+C to copy mysql> SELECT CAST('[4,5]' AS JSON) MEMBER OF('[[3,4],[4,5]]');\n+--------------------------------------------------+\n| CAST('[4,5]' AS JSON) MEMBER OF('[[3,4],[4,5]]') |\n+--------------------------------------------------+\n|                                                1 |\n+--------------------------------------------------+\n1 row in set (0.00 sec)",
+        "\n          It is also possible to perform the necessary cast using the\n          JSON_ARRAY() function, like\n          this:\n        ",
+        "Press CTRL+C to copy mysql> SELECT JSON_ARRAY(4,5) MEMBER OF('[[3,4],[4,5]]');\n+--------------------------------------------+\n| JSON_ARRAY(4,5) MEMBER OF('[[3,4],[4,5]]') |\n+--------------------------------------------+\n|                                          1 |\n+--------------------------------------------+\n1 row in set (0.00 sec)",
+        "\n          Any JSON objects used as values to be tested or which appear\n          in the target array must be coerced to the correct type using\n          CAST(... AS JSON) or\n          JSON_OBJECT(). In addition, a\n          target array containing JSON objects must itself be cast using\n          JSON_ARRAY. This is demonstrated in the\n          following sequence of statements:\n        ",
+        "Press CTRL+C to copy mysql> SET @a = CAST('{\"a\":1}' AS JSON);\nQuery OK, 0 rows affected (0.00 sec)\n\nmysql> SET @b = JSON_OBJECT(\"b\", 2);\nQuery OK, 0 rows affected (0.00 sec)\n\nmysql> SET @c = JSON_ARRAY(17, @b, \"abc\", @a, 23);\nQuery OK, 0 rows affected (0.00 sec)\n\nmysql> SELECT @a MEMBER OF(@c), @b MEMBER OF(@c);\n+------------------+------------------+\n| @a MEMBER OF(@c) | @b MEMBER OF(@c) |\n+------------------+------------------+\n|                1 |                1 |\n+------------------+------------------+\n1 row in set (0.00 sec)",
+        "\n          The MEMBER OF() operator was added in MySQL\n          8.0.17.\n"
+    ],
+    "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/json-search-functions.html#operator_member-of",
+    "Feature": [
+        "value\n          MEMBER OF(json_array)"
+    ],
+    "Examples": [
+        "mysql> SELECT 17 MEMBER OF('[23, \"abc\", 17, \"ab\", 10]');\n+-------------------------------------------+\n| 17 MEMBER OF('[23, \"abc\", 17, \"ab\", 10]') |\n+-------------------------------------------+\n|                                         1 |\n+-------------------------------------------+\n1 row in set (0.00 sec)\n\nmysql> SELECT 'ab' MEMBER OF('[23, \"abc\", 17, \"ab\", 10]');\n+---------------------------------------------+\n| 'ab' MEMBER OF('[23, \"abc\", 17, \"ab\", 10]') |\n+---------------------------------------------+\n|                                           1 |\n+---------------------------------------------+\n1 row in set (0.00 sec)",
+        "mysql> SELECT 7 MEMBER OF('[23, \"abc\", 17, \"ab\", 10]');\n+------------------------------------------+\n| 7 MEMBER OF('[23, \"abc\", 17, \"ab\", 10]') |\n+------------------------------------------+\n|                                        0 |\n+------------------------------------------+\n1 row in set (0.00 sec)",
+        "mysql> SELECT 'a' MEMBER OF('[23, \"abc\", 17, \"ab\", 10]');\n+--------------------------------------------+\n| 'a' MEMBER OF('[23, \"abc\", 17, \"ab\", 10]') |\n+--------------------------------------------+\n|                                          0 |\n+--------------------------------------------+\n1 row in set (0.00 sec)",
+        "mysql> SELECT CAST('[4,5]' AS JSON) MEMBER OF('[[3,4],[4,5]]');\n+--------------------------------------------------+\n| CAST('[4,5]' AS JSON) MEMBER OF('[[3,4],[4,5]]') |\n+--------------------------------------------------+\n|                                                1 |\n+--------------------------------------------------+\n1 row in set (0.00 sec)",
+        "mysql> SELECT JSON_ARRAY(4,5) MEMBER OF('[[3,4],[4,5]]');\n+--------------------------------------------+\n| JSON_ARRAY(4,5) MEMBER OF('[[3,4],[4,5]]') |\n+--------------------------------------------+\n|                                          1 |\n+--------------------------------------------+\n1 row in set (0.00 sec)",
+        "mysql> SET @a = CAST('{\"a\":1}' AS JSON);\nQuery OK, 0 rows affected (0.00 sec)\n\nmysql> SET @b = JSON_OBJECT(\"b\", 2);\nQuery OK, 0 rows affected (0.00 sec)\n\nmysql> SET @c = JSON_ARRAY(17, @b, \"abc\", @a, 23);\nQuery OK, 0 rows affected (0.00 sec)\n\nmysql> SELECT @a MEMBER OF(@c), @b MEMBER OF(@c);\n+------------------+------------------+\n| @a MEMBER OF(@c) | @b MEMBER OF(@c) |\n+------------------+------------------+\n|                1 |                1 |\n+------------------+------------------+\n1 row in set (0.00 sec)"
+    ],
+    "Category": [
+        "Built-In Functions and Operators",
+        "JSON Functions"
+    ]
+}

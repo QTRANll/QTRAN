@@ -1,0 +1,21 @@
+{
+    "HTML": [
+        "https://duckdb.org/docs/sql/functions/aggregates"
+    ],
+    "Title": [
+        "argMax(arg, val, n)"
+    ],
+    "Feature": [
+        "argMax(arg, val, n)"
+    ],
+    "Description": [
+        "arg_max(arg, val, n)",
+        "The generalized case of arg_max for n values: returns a LIST containing the arg expressions for the top n rows ordered by val descending. This function is affected by ordering."
+    ],
+    "Examples": [
+        "arg_max(A, B, 2)"
+    ],
+    "Category": [
+        "Aggregate Functions"
+    ]
+}

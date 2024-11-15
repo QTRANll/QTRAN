@@ -1,0 +1,28 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.0/en/built-in-function-reference.html"
+    ],
+    "Title": [
+        "14.1 Built-In Function and Operator Reference"
+    ],
+    "Name": "FIRST_VALUE()",
+    "Description": [
+        "\nFIRST_VALUE(expr)\n            [null_treatment]\n            over_clause\n",
+        "\n            Returns the value of expr from\n            the first row of the window frame.\n          ",
+        "\nover_clause is as described in\n            Section\u00a014.20.2, \u201cWindow Function Concepts and Syntax\u201d.\n            null_treatment is as described in\n            the section introduction.\n          ",
+        "\n            The following query demonstrates\n            FIRST_VALUE(),\n            LAST_VALUE(), and two\n            instances of NTH_VALUE():\n          ",
+        "Press CTRL+C to copy mysql> SELECT\n         time, subject, val,\n         FIRST_VALUE(val)  OVER w AS 'first',\n         LAST_VALUE(val)   OVER w AS 'last',\n         NTH_VALUE(val, 2) OVER w AS 'second',\n         NTH_VALUE(val, 4) OVER w AS 'fourth'\n       FROM observations\n       WINDOW w AS (PARTITION BY subject ORDER BY time\n                    ROWS UNBOUNDED PRECEDING);\n+----------+---------+------+-------+------+--------+--------+\n| time     | subject | val  | first | last | second | fourth |\n+----------+---------+------+-------+------+--------+--------+\n| 07:00:00 | st113   |   10 |    10 |   10 |   NULL |   NULL |\n| 07:15:00 | st113   |    9 |    10 |    9 |      9 |   NULL |\n| 07:30:00 | st113   |   25 |    10 |   25 |      9 |   NULL |\n| 07:45:00 | st113   |   20 |    10 |   20 |      9 |     20 |\n| 07:00:00 | xh458   |    0 |     0 |    0 |   NULL |   NULL |\n| 07:15:00 | xh458   |   10 |     0 |   10 |     10 |   NULL |\n| 07:30:00 | xh458   |    5 |     0 |    5 |     10 |   NULL |\n| 07:45:00 | xh458   |   30 |     0 |   30 |     10 |     30 |\n| 08:00:00 | xh458   |   25 |     0 |   25 |     10 |     30 |\n+----------+---------+------+-------+------+--------+--------+",
+        "\n            Each function uses the rows in the current frame, which, per\n            the window definition shown, extends from the first\n            partition row to the current row. For the\n            NTH_VALUE() calls, the\n            current frame does not always include the requested row; in\n            such cases, the return value is NULL.\n          "
+    ],
+    "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/window-function-descriptions.html#function_first-value",
+    "Feature": [
+        "FIRST_VALUE(expr)"
+    ],
+    "Examples": [
+        "mysql> SELECT\n         time, subject, val,\n         FIRST_VALUE(val)  OVER w AS 'first',\n         LAST_VALUE(val)   OVER w AS 'last',\n         NTH_VALUE(val, 2) OVER w AS 'second',\n         NTH_VALUE(val, 4) OVER w AS 'fourth'\n       FROM observations\n       WINDOW w AS (PARTITION BY subject ORDER BY time\n                    ROWS UNBOUNDED PRECEDING);\n+----------+---------+------+-------+------+--------+--------+\n| time     | subject | val  | first | last | second | fourth |\n+----------+---------+------+-------+------+--------+--------+\n| 07:00:00 | st113   |   10 |    10 |   10 |   NULL |   NULL |\n| 07:15:00 | st113   |    9 |    10 |    9 |      9 |   NULL |\n| 07:30:00 | st113   |   25 |    10 |   25 |      9 |   NULL |\n| 07:45:00 | st113   |   20 |    10 |   20 |      9 |     20 |\n| 07:00:00 | xh458   |    0 |     0 |    0 |   NULL |   NULL |\n| 07:15:00 | xh458   |   10 |     0 |   10 |     10 |   NULL |\n| 07:30:00 | xh458   |    5 |     0 |    5 |     10 |   NULL |\n| 07:45:00 | xh458   |   30 |     0 |   30 |     10 |     30 |\n| 08:00:00 | xh458   |   25 |     0 |   25 |     10 |     30 |\n+----------+---------+------+-------+------+--------+--------+"
+    ],
+    "Category": [
+        "Built-In Functions and Operators",
+        "Window Functions"
+    ]
+}

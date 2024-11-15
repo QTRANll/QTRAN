@@ -1,0 +1,22 @@
+{
+    "HTML": [
+        "https://www.monetdb.org/documentation-Aug2024/user-guide/sql-functions/string-functions"
+    ],
+    "Title": [
+        "sys.ms_stuff(varchar(32) s1, int pos, int nr, varchar(32) s2)"
+    ],
+    "Feature": [
+        "sys.ms_stuff(varchar(32) s1, int pos, int nr, varchar(32) s2)"
+    ],
+    "Description": [
+        "Return type: ",
+        "varchar(32)",
+        "insert string s2 into string s1 at position pos replacing nr characters in string s1. If pos <= 0 or > length of s1 then an empty string is returned. nr may be negative."
+    ],
+    "Examples": [
+        "sys.ms_stuff('abcdef', 2, 1, 'XY')"
+    ],
+    "Category": [
+        "Character String Functions"
+    ]
+}

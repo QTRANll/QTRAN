@@ -1,0 +1,23 @@
+{
+    "HTML": [
+        "https://mariadb.com/kb/en/tinyint/"
+    ],
+    "Title": [
+        "TINYINT"
+    ],
+    "Feature": [
+        "TINYINT[(M)] [SIGNED | UNSIGNED | ZEROFILL]\n"
+    ],
+    "Description": [
+        "A very small integer. The signed range is -128 to 127. The unsigned range is 0 to 255. For details on the attributes, see Numeric Data Type Overview.",
+        "INT1 is a synonym for TINYINT. BOOL and BOOLEAN are synonyms for TINYINT(1)."
+    ],
+    "Examples": [
+        "CREATE TABLE tinyints (a TINYINT,b TINYINT UNSIGNED,c TINYINT ZEROFILL);\n",
+        "INSERT INTO tinyints VALUES (-10,-10,-10);\nERROR 1264 (22003): Out of range value for column 'b' at row 1\n\nINSERT INTO tinyints VALUES (-10,10,-10);\nERROR 1264 (22003): Out of range value for column 'c' at row 1\n\nINSERT INTO tinyints VALUES (-10,10,10);\n\nSELECT * FROM tinyints;\n+------+------+------+\n| a    | b    | c    |\n+------+------+------+\n|  -10 |   10 |  010 |\n+------+------+------+\n\nINSERT INTO tinyints VALUES (128,128,128);\nERROR 1264 (22003): Out of range value for column 'a' at row 1\n\nINSERT INTO tinyints VALUES (127,128,128);\n\nSELECT * FROM tinyints;\n+------+------+------+\n| a    | b    | c    |\n+------+------+------+\n|  -10 |   10 |  010 |\n|  127 |  128 |  128 |\n+------+------+------+\n",
+        "INSERT INTO tinyints VALUES (-10,-10,-10);\nQuery OK, 1 row affected, 2 warnings (0.08 sec)\nWarning (Code 1264): Out of range value for column 'b' at row 1\nWarning (Code 1264): Out of range value for column 'c' at row 1\n\nINSERT INTO tinyints VALUES (-10,10,-10);\nQuery OK, 1 row affected, 1 warning (0.11 sec)\nWarning (Code 1264): Out of range value for column 'c' at row 1\n\nINSERT INTO tinyints VALUES (-10,10,10);\n\nSELECT * FROM tinyints;\n+------+------+------+\n| a    | b    | c    |\n+------+------+------+\n|  -10 |    0 |  000 |\n|  -10 |   10 |  000 |\n|  -10 |   10 |  010 |\n+------+------+------+\n\nINSERT INTO tinyints VALUES (128,128,128);\nQuery OK, 1 row affected, 1 warning (0.19 sec)\nWarning (Code 1264): Out of range value for column 'a' at row 1\n\nINSERT INTO tinyints VALUES (127,128,128);\n\nSELECT * FROM tinyints;\n+------+------+------+\n| a    | b    | c    |\n+------+------+------+\n|  -10 |    0 |  000 |\n|  -10 |   10 |  000 |\n|  -10 |   10 |  010 |\n|  127 |  128 |  128 |\n|  127 |  128 |  128 |\n+------+------+------+\n"
+    ],
+    "Category": [
+        "Numeric Data Types"
+    ]
+}

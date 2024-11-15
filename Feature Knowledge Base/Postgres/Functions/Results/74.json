@@ -1,0 +1,20 @@
+{
+    "HTML": [
+        "https://www.postgresql.org/docs/16/functions-string.html"
+    ],
+    "Title": [
+        "format"
+    ],
+    "Feature": [
+        "format ( formatstr text [, formatarg \"any\" [, ...] ] ) → text"
+    ],
+    "Description": [
+        "Formats arguments according to a format string; see Section 9.4.1. This function is similar to the C function sprintf."
+    ],
+    "Examples": [
+        "format('Hello %s, %1$s', 'World') → Hello World, World"
+    ],
+    "Category": [
+        "String Functions and Operators"
+    ]
+}

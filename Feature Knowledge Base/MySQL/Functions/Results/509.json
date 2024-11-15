@@ -1,0 +1,24 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.0/en/loadable-function-reference.html"
+    ],
+    "Title": [
+        "14.2 Loadable Function Reference"
+    ],
+    "Name": "version_tokens_set()",
+    "Description": [
+        "\nversion_tokens_set(token_list)\n",
+        "\n              Replaces the server's list of version tokens with the\n              tokens defined in the\n              token_list argument and returns\n              a binary string that indicates the outcome of the\n              operation. token_list is a\n              semicolon-separated list of\n              name=value\n              pairs specifying the name of each token to be defined and\n              its value. If the argument is NULL or a\n              string containing no tokens, the token list is cleared.\n            ",
+        "Press CTRL+C to copy mysql> SELECT version_tokens_set('tok1=value1;tok2=value2');\n+-----------------------------------------------+\n| version_tokens_set('tok1=value1;tok2=value2') |\n+-----------------------------------------------+\n| 2 version tokens set.                         |\n+-----------------------------------------------+"
+    ],
+    "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/version-tokens-reference.html#function_version-tokens-set",
+    "Feature": [
+        "version_tokens_set(token_list)"
+    ],
+    "Examples": [
+        "mysql> SELECT version_tokens_set('tok1=value1;tok2=value2');\n+-----------------------------------------------+\n| version_tokens_set('tok1=value1;tok2=value2') |\n+-----------------------------------------------+\n| 2 version tokens set.                         |\n+-----------------------------------------------+"
+    ],
+    "Category": [
+        "Loadable Functions"
+    ]
+}

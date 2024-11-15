@@ -1,0 +1,23 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/string-search-functions"
+    ],
+    "Title": [
+        "multiFuzzyMatchAnyIndex"
+    ],
+    "Feature": [
+        "multiFuzzyMatchAnyIndex(haystack, distance, \\[pattern<sub>1</sub>, pattern<sub>2</sub>, ..., pattern<sub>n</sub>\\])"
+    ],
+    "Description": [
+        "multiFuzzyMatchAnyIndex",
+        "Like multiFuzzyMatchAny but returns any index that matches the haystack within a constant edit distance.",
+        "Syntax",
+        "multiFuzzyMatchAnyIndex(haystack, distance, \\[pattern<sub>1</sub>, pattern<sub>2</sub>, ..., pattern<sub>n</sub>\\])"
+    ],
+    "Examples": [
+        "multiFuzzyMatchAnyIndex(haystack, distance, \\[pattern<sub>1</sub>, pattern<sub>2</sub>, ..., pattern<sub>n</sub>\\])"
+    ],
+    "Category": [
+        "Searching in Strings Functions"
+    ]
+}

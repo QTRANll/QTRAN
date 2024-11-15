@@ -1,0 +1,26 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/string-functions"
+    ],
+    "Title": [
+        "substringIndex"
+    ],
+    "Feature": [
+        "substringIndex(s, delim, count)"
+    ],
+    "Description": [
+        "substringIndex",
+        "Returns the substring of s before count occurrences of the delimiter delim, as in Spark or MySQL.",
+        "Syntax",
+        "substringIndex(s, delim, count)",
+        "Alias: SUBSTRING_INDEX",
+        "Arguments",
+        "s \u2014 The string to extract substring from. String.delim \u2014 The character to split. String.count \u2014 The number of occurrences of the delimiter to count before extracting the substring. If count is positive, everything to the left of the final delimiter (counting from the left) is returned. If count is negative, everything to the right of the final delimiter (counting from the right) is returned. UInt or Int"
+    ],
+    "Examples": [
+        "SELECT substringIndex('www.clickhouse.com', '.', 2)"
+    ],
+    "Category": [
+        "Strings Functions"
+    ]
+}

@@ -1,0 +1,27 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/geo/h3"
+    ],
+    "Title": [
+        "h3UnidirectionalEdgeIsValid"
+    ],
+    "Feature": [
+        "h3UnidirectionalEdgeisValid(index)"
+    ],
+    "Description": [
+        "h3UnidirectionalEdgeIsValid",
+        "Determines if the provided H3Index is a valid unidirectional edge index. Returns 1 if it's a unidirectional edge and 0 otherwise.",
+        "Syntax",
+        "h3UnidirectionalEdgeisValid(index)",
+        "Parameter",
+        "index \u2014 Hexagon index number. UInt64.",
+        "Returned value",
+        "1 \u2014 The H3 index is a valid unidirectional edge. UInt8.0 \u2014 The H3 index is not a valid unidirectional edge. UInt8."
+    ],
+    "Examples": [
+        " SELECT h3UnidirectionalEdgeIsValid(1248204388774707199) as validOrNot;"
+    ],
+    "Category": [
+        "Geo Functions"
+    ]
+}

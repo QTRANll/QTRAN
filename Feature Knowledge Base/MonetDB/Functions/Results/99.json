@@ -1,0 +1,22 @@
+{
+    "HTML": [
+        "https://www.monetdb.org/documentation-Aug2024/user-guide/sql-functions/string-functions"
+    ],
+    "Title": [
+        "patindex(pattern, s)"
+    ],
+    "Feature": [
+        "patindex(pattern, s)"
+    ],
+    "Description": [
+        "Return type: ",
+        "int",
+        "search for pattern in string s, when found return the position of the last matched character, when not found return 0"
+    ],
+    "Examples": [
+        "patindex('%bc%', 'abcd')"
+    ],
+    "Category": [
+        "Character String Functions"
+    ]
+}

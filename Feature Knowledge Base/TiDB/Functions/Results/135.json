@@ -1,0 +1,19 @@
+{
+    "HTML": "https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html#function_timestamp",
+    "Title": "TIMESTAMP()",
+    "Feature": [
+        "TIMESTAMP(expr)",
+        "TIMESTAMP(expr1,expr2)"
+    ],
+    "Description": [
+        "\nTIMESTAMP(expr),\n          TIMESTAMP(expr1,expr2)\n",
+        "\n          With a single argument, this function returns the date or\n          datetime expression expr as a\n          datetime value. With two arguments, it adds the time\n          expression expr2 to the date or\n          datetime expression expr1 and\n          returns the result as a datetime value. Returns\n          NULL if expr,\n          expr1, or\n          expr2 is NULL.\n        ",
+        "Press CTRL+C to copy mysql> SELECT TIMESTAMP('2003-12-31');\n        -> '2003-12-31 00:00:00'\nmysql> SELECT TIMESTAMP('2003-12-31 12:00:00','12:00:00');\n        -> '2004-01-01 00:00:00'"
+    ],
+    "Examples": [
+        "mysql> SELECT TIMESTAMP('2003-12-31');\n        -> '2003-12-31 00:00:00'\nmysql> SELECT TIMESTAMP('2003-12-31 12:00:00','12:00:00');\n        -> '2004-01-01 00:00:00'"
+    ],
+    "Category": [
+        "日期和时间函数"
+    ]
+}

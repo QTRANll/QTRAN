@@ -1,0 +1,27 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/tuple-functions"
+    ],
+    "Title": [
+        "tupleNegate"
+    ],
+    "Feature": [
+        "tupleNegate(tuple)"
+    ],
+    "Description": [
+        "tupleNegate",
+        "Calculates the negation of the tuple values.",
+        "Syntax",
+        "tupleNegate(tuple)",
+        "Arguments",
+        "tuple \u2014 Tuple.",
+        "Returned value",
+        "Tuple with the result of negation. Tuple."
+    ],
+    "Examples": [
+        "SELECT tupleNegate((1,  2));"
+    ],
+    "Category": [
+        "Tuples Functions"
+    ]
+}

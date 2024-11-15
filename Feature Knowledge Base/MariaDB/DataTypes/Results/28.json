@@ -1,0 +1,23 @@
+{
+    "HTML": [
+        "https://mariadb.com/kb/en/text/"
+    ],
+    "Title": [
+        "TEXT"
+    ],
+    "Feature": [
+        "TEXT[(M)] [CHARACTER SET charset_name] [COLLATE collation_name]\n"
+    ],
+    "Description": [
+        "A TEXT column with a maximum length of 65,535 (216 - 1)\ncharacters. The effective maximum length is less if the value contains\nmulti-byte characters. Each TEXT value is stored using a two-byte length\nprefix that indicates the number of bytes in the value.  If you need a bigger storage, consider using MEDIUMTEXT instead.",
+        "An optional length M can be given for this type. If this is done, MariaDB\ncreates the column as the smallest TEXT type large enough to hold values\nM characters long.",
+        "Before MariaDB 10.2, all MariaDB collations were of type PADSPACE, meaning that TEXT (as well as VARCHAR and CHAR values) are compared without regard for trailing spaces. This does not apply to the LIKE pattern-matching operator, which takes into account trailing spaces.",
+        "BLOB and TEXT columns can be assigned a DEFAULT value. This was not possible prior to MariaDB 10.2."
+    ],
+    "Examples": [
+        "CREATE TABLE strtest (d TEXT(10));\nINSERT INTO strtest VALUES('Maria   ');\n\nSELECT d='Maria',d='Maria   ' FROM strtest;\n+-----------+--------------+\n| d='Maria' | d='Maria   ' |\n+-----------+--------------+\n|         1 |            1 |\n+-----------+--------------+\n\nSELECT d LIKE 'Maria',d LIKE 'Maria   ' FROM strtest;\n+----------------+-------------------+\n| d LIKE 'Maria' | d LIKE 'Maria   ' |\n+----------------+-------------------+\n|              0 |                 1 |\n+----------------+-------------------+\n"
+    ],
+    "Category": [
+        "String Data Types"
+    ]
+}

@@ -1,0 +1,21 @@
+{
+    "HTML": [
+        "https://duckdb.org/docs/sql/functions/regular_expressions"
+    ],
+    "Title": [
+        "regexp_replace(string, pattern, replacement[, options])"
+    ],
+    "Feature": [
+        "regexp_replace(string, pattern, replacement[, options])"
+    ],
+    "Description": [
+        "If string contains the regexp pattern, replaces the matching part with replacement.",
+        "If string contains the regexp pattern, replaces the matching part with replacement. A set of optional options can be set."
+    ],
+    "Examples": [
+        "regexp_replace('hello', '[lo]', '-')"
+    ],
+    "Category": [
+        "Regular Expressions"
+    ]
+}

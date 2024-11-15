@@ -1,0 +1,25 @@
+{
+    "HTML": [
+        "https://mariadb.com/kb/en/int/"
+    ],
+    "Title": [
+        "INT"
+    ],
+    "Feature": [
+        "INT[(M)] [SIGNED | UNSIGNED | ZEROFILL]\nINTEGER[(M)] [SIGNED | UNSIGNED | ZEROFILL]\n"
+    ],
+    "Description": [
+        "A normal-size integer. When marked UNSIGNED, it ranges from 0 to 4294967295, otherwise its range is -2147483648 to 2147483647 (SIGNED is the default). If a column has been set to ZEROFILL, all values will be prepended by zeros so that the INT value contains a number of M digits. INTEGER is a synonym for INT.",
+        "Note: If the ZEROFILL attribute has been specified, the column will automatically become UNSIGNED.",
+        "INT4 is a synonym for INT.",
+        "For details on the attributes, see Numeric Data Type Overview."
+    ],
+    "Examples": [
+        "CREATE TABLE ints (a INT,b INT UNSIGNED,c INT ZEROFILL);\n",
+        "INSERT INTO ints VALUES (-10,-10,-10);\nERROR 1264 (22003): Out of range value for column 'b' at row 1\n\nINSERT INTO ints VALUES (-10,10,-10);\nERROR 1264 (22003): Out of range value for column 'c' at row 1\n\nINSERT INTO ints VALUES (-10,10,10);\n\nINSERT INTO ints VALUES (2147483648,2147483648,2147483648);\nERROR 1264 (22003): Out of range value for column 'a' at row 1\n\nINSERT INTO ints VALUES (2147483647,2147483648,2147483648);\n\nSELECT * FROM ints;\n+------------+------------+------------+\n| a          | b          | c          |\n+------------+------------+------------+\n|        -10 |         10 | 0000000010 |\n| 2147483647 | 2147483648 | 2147483648 |\n+------------+------------+------------+\n",
+        "INSERT INTO ints VALUES (-10,-10,-10);\nQuery OK, 1 row affected, 2 warnings (0.10 sec)\nWarning (Code 1264): Out of range value for column 'b' at row 1\nWarning (Code 1264): Out of range value for column 'c' at row 1\n\nINSERT INTO ints VALUES (-10,10,-10);\nQuery OK, 1 row affected, 1 warning (0.08 sec)\nWarning (Code 1264): Out of range value for column 'c' at row 1\n\nINSERT INTO ints VALUES (-10,10,10);\n\nINSERT INTO ints VALUES (2147483648,2147483648,2147483648);\nQuery OK, 1 row affected, 1 warning (0.07 sec)\nWarning (Code 1264): Out of range value for column 'a' at row 1\n\nINSERT INTO ints VALUES (2147483647,2147483648,2147483648);\n\nSELECT * FROM ints;\n+------------+------------+------------+\n| a          | b          | c          |\n+------------+------------+------------+\n|        -10 |          0 | 0000000000 |\n|        -10 |         10 | 0000000000 |\n|        -10 |         10 | 0000000010 |\n| 2147483647 | 2147483648 | 2147483648 |\n| 2147483647 | 2147483648 | 2147483648 |\n+------------+------------+------------+\n"
+    ],
+    "Category": [
+        "Numeric Data Types"
+    ]
+}

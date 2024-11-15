@@ -1,0 +1,30 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.0/en/built-in-function-reference.html"
+    ],
+    "Title": [
+        "14.1 Built-In Function and Operator Reference"
+    ],
+    "Name": "IS_UUID()",
+    "Description": [
+        "\nIS_UUID(string_uuid)\n",
+        "\n          Returns 1 if the argument is a valid string-format UUID, 0 if\n          the argument is not a valid UUID, and NULL\n          if the argument is NULL.\n        ",
+        "\n\u201cValid\u201d means that the value is in a format that\n          can be parsed. That is, it has the correct length and contains\n          only the permitted characters (hexadecimal digits in any\n          lettercase and, optionally, dashes and curly braces). This\n          format is most common:\n        ",
+        "Press CTRL+C to copy aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee",
+        "\n          These other formats are also permitted:\n        ",
+        "Press CTRL+C to copy aaaaaaaabbbbccccddddeeeeeeeeeeee\n{aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee}",
+        "\n          For the meanings of fields within the value, see the\n          UUID() function description.\n        ",
+        "Press CTRL+C to copy mysql> SELECT IS_UUID('6ccd780c-baba-1026-9564-5b8c656024db');\n+-------------------------------------------------+\n| IS_UUID('6ccd780c-baba-1026-9564-5b8c656024db') |\n+-------------------------------------------------+\n|                                               1 |\n+-------------------------------------------------+\nmysql> SELECT IS_UUID('6CCD780C-BABA-1026-9564-5B8C656024DB');\n+-------------------------------------------------+\n| IS_UUID('6CCD780C-BABA-1026-9564-5B8C656024DB') |\n+-------------------------------------------------+\n|                                               1 |\n+-------------------------------------------------+\nmysql> SELECT IS_UUID('6ccd780cbaba102695645b8c656024db');\n+---------------------------------------------+\n| IS_UUID('6ccd780cbaba102695645b8c656024db') |\n+---------------------------------------------+\n|                                           1 |\n+---------------------------------------------+\nmysql> SELECT IS_UUID('{6ccd780c-baba-1026-9564-5b8c656024db}');\n+---------------------------------------------------+\n| IS_UUID('{6ccd780c-baba-1026-9564-5b8c656024db}') |\n+---------------------------------------------------+\n|                                                 1 |\n+---------------------------------------------------+\nmysql> SELECT IS_UUID('6ccd780c-baba-1026-9564-5b8c6560');\n+---------------------------------------------+\n| IS_UUID('6ccd780c-baba-1026-9564-5b8c6560') |\n+---------------------------------------------+\n|                                           0 |\n+---------------------------------------------+\nmysql> SELECT IS_UUID(RAND());\n+-----------------+\n| IS_UUID(RAND()) |\n+-----------------+\n|               0 |\n+-----------------+"
+    ],
+    "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/miscellaneous-functions.html#function_is-uuid",
+    "Feature": [
+        "IS_UUID(string_uuid)"
+    ],
+    "Examples": [
+        "mysql> SELECT IS_UUID('6ccd780c-baba-1026-9564-5b8c656024db');\n+-------------------------------------------------+\n| IS_UUID('6ccd780c-baba-1026-9564-5b8c656024db') |\n+-------------------------------------------------+\n|                                               1 |\n+-------------------------------------------------+\nmysql> SELECT IS_UUID('6CCD780C-BABA-1026-9564-5B8C656024DB');\n+-------------------------------------------------+\n| IS_UUID('6CCD780C-BABA-1026-9564-5B8C656024DB') |\n+-------------------------------------------------+\n|                                               1 |\n+-------------------------------------------------+\nmysql> SELECT IS_UUID('6ccd780cbaba102695645b8c656024db');\n+---------------------------------------------+\n| IS_UUID('6ccd780cbaba102695645b8c656024db') |\n+---------------------------------------------+\n|                                           1 |\n+---------------------------------------------+\nmysql> SELECT IS_UUID('{6ccd780c-baba-1026-9564-5b8c656024db}');\n+---------------------------------------------------+\n| IS_UUID('{6ccd780c-baba-1026-9564-5b8c656024db}') |\n+---------------------------------------------------+\n|                                                 1 |\n+---------------------------------------------------+\nmysql> SELECT IS_UUID('6ccd780c-baba-1026-9564-5b8c6560');\n+---------------------------------------------+\n| IS_UUID('6ccd780c-baba-1026-9564-5b8c6560') |\n+---------------------------------------------+\n|                                           0 |\n+---------------------------------------------+\nmysql> SELECT IS_UUID(RAND());\n+-----------------+\n| IS_UUID(RAND()) |\n+-----------------+\n|               0 |\n+-----------------+"
+    ],
+    "Category": [
+        "Built-In Functions and Operators",
+        "Miscellaneous Functions"
+    ]
+}

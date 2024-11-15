@@ -1,0 +1,19 @@
+{
+    "HTML": [
+        "https://clickhouse.com/docs/en/sql-reference/functions/type-conversion-functions"
+    ],
+    "Title": [
+        "parseDateTime64BestEffortUSOrZero"
+    ],
+    "Feature": [
+        "parseDateTime64BestEffortUSOrZero"
+    ],
+    "Description": [
+        "parseDateTime64BestEffortUSOrZero",
+        "Same as for parseDateTime64BestEffort, except that this function prefers US date format (MM/DD/YYYY etc.) in case of ambiguity and returns zero date or zero date time when it encounters a date format that cannot be processed."
+    ],
+    "Examples": [],
+    "Category": [
+        "Type Conversion Functions"
+    ]
+}

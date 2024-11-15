@@ -1,0 +1,25 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.0/en/built-in-function-reference.html"
+    ],
+    "Title": [
+        "14.1 Built-In Function and Operator Reference"
+    ],
+    "Name": "SQRT()",
+    "Description": [
+        "\nSQRT(X)\n",
+        "\n            Returns the square root of a nonnegative number\n            X. If\n            X is NULL, the\n            function returns NULL.\n          ",
+        "Press CTRL+C to copy mysql> SELECT SQRT(4);\n        -> 2\nmysql> SELECT SQRT(20);\n        -> 4.4721359549996\nmysql> SELECT SQRT(-16);\n        -> NULL"
+    ],
+    "Reference HTML": "https://dev.mysql.com/doc/refman/8.0/en/mathematical-functions.html#function_sqrt",
+    "Feature": [
+        "SQRT(X)"
+    ],
+    "Examples": [
+        "mysql> SELECT SQRT(4);\n        -> 2\nmysql> SELECT SQRT(20);\n        -> 4.4721359549996\nmysql> SELECT SQRT(-16);\n        -> NULL"
+    ],
+    "Category": [
+        "Built-In Functions and Operators",
+        "Mathematical Functions"
+    ]
+}
