@@ -1,0 +1,24 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/geomcollfromwkb/"
+    ],
+    "Title": [
+        "ST_GeomCollFromWKB"
+    ],
+    "Feature": [
+        "ST_GeomCollFromWKB(wkb[,srid])\nST_GeometryCollectionFromWKB(wkb[,srid])\nGeomCollFromWKB(wkb[,srid])\nGeometryCollectionFromWKB(wkb[,srid])\n"
+    ],
+    "Description": [
+        "Constructs a GEOMETRYCOLLECTION value using its WKB  representation and SRID.",
+        "ST_GeomCollFromWKB(), ST_GeometryCollectionFromWKB(), GeomCollFromWKB() and GeometryCollectionFromWKB() are synonyms."
+    ],
+    "Examples": [
+        "SET @g = ST_AsBinary(ST_GeomFromText('GEOMETRYCOLLECTION(\n   POLYGON((5 5,10 5,10 10,5 5)),POINT(10 10))'));\n\nSELECT ST_AsText(ST_GeomCollFromWKB(@g));\n+----------------------------------------------------------------+\n| ST_AsText(ST_GeomCollFromWKB(@g))                              |\n+----------------------------------------------------------------+\n| GEOMETRYCOLLECTION(POLYGON((5 5,10 5,10 10,5 5)),POINT(10 10)) |\n+----------------------------------------------------------------+\n"
+    ],
+    "Category": [
+        "Geographic Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT ST_AsText(ST_GeomCollFromWKB(@g));"
+    ]
+}

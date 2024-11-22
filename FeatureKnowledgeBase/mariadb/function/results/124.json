@@ -1,0 +1,23 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/is_ipv6/"
+    ],
+    "Title": [
+        "IS_IPV6"
+    ],
+    "Feature": [
+        "IS_IPV6(expr)\n"
+    ],
+    "Description": [
+        "Returns 1 if the expression is a valid IPv6 address specified as a string, otherwise returns 0. Does not consider IPv4 addresses to be valid IPv6 addresses."
+    ],
+    "Examples": [
+        " SELECT IS_IPV6('48f3::d432:1431:ba23:846f');\n+--------------------------------------+\n| IS_IPV6('48f3::d432:1431:ba23:846f') |\n+--------------------------------------+\n|                                    1 |\n+--------------------------------------+\n1 row in set (0.02 sec)\n\nSELECT IS_IPV6('10.0.1.1');\n+---------------------+\n| IS_IPV6('10.0.1.1') |\n+---------------------+\n|                   0 |\n+---------------------+\n"
+    ],
+    "Category": [
+        "Miscellaneous Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT IS_IPV6('48f3::d432:1431:ba23:846f');"
+    ]
+}

@@ -1,6 +1,0 @@
-{"index": 40, "origin_index": 256, "Sql": "PRAGMA encoding = 'UTF16be';", "TransferResult": ["SET TRANSACTION ISOLATION LEVEL READ COMMITTED;"]}
-{"index": 40, "origin_index": 256, "Sql": "CREATE TABLE t0(c0, c1);", "TransferResult": ["CREATE TABLE t0(c0 VARCHAR(255), c1 VARCHAR(255));"]}
-{"index": 40, "origin_index": 256, "Sql": "INSERT INTO t0(c0) VALUES (x'00');", "TransferResult": ["INSERT INTO t0(c0) VALUES (CAST(0x00 AS VARCHAR(255)));"]}
-{"index": 40, "origin_index": 256, "Sql": "CREATE INDEX i0 ON t0(c0 COLLATE BINARY);", "TransferResult": ["CREATE INDEX i0 ON t0(c0);"]}
-{"index": 40, "origin_index": 256, "Sql": "INSERT INTO t0(c0) VALUES (1);", "TransferResult": ["INSERT INTO t0(c0) VALUES (1);"]}
-{"index": 40, "origin_index": 256, "Sql": "SELECT COUNT(*) FROM t0 WHERE SUBSTR(t0.c0, ','); -- expected: 1, actual: 2", "TransferResult": ["SELECT COUNT(*) FROM t0 WHERE SUBSTRING(t0.c0 FROM 1 FOR POSITION(',' IN t0.c0) - 1);"], "TransferSqlExecResult": ["[(0,)]"], "MutateResult": "SELECT SUM(CASE WHEN SUBSTRING(t0.c0 FROM 1 FOR POSITION(',' IN t0.c0) - 1) IS NOT NULL THEN 1 ELSE 0 END) FROM t0;", "MutateSqlExecResult": "[(2,)]"}

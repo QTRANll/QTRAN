@@ -1,0 +1,24 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/column_create/"
+    ],
+    "Title": [
+        "COLUMN_CREATE"
+    ],
+    "Feature": [
+        "COLUMN_CREATE(column_nr, value [as type], [column_nr, value [as type]]...);\nCOLUMN_CREATE(column_name, value [as type], [column_name, value [as type]]...);\n"
+    ],
+    "Description": [
+        "Returns a dynamic columns blob that stores the specified columns with values.",
+        "The return value is suitable for ",
+        "storing in a table\nfurther modification with other dynamic columns functions\n",
+        "The as type part allows one to specify the value type. In most cases,\nthis is redundant because MariaDB will be able to deduce the type of the\nvalue. Explicit type specification may be needed when the type of the value is\nnot apparent. For example, a literal '2012-12-01' has a CHAR type by\ndefault, one will need to specify '2012-12-01' AS DATE to have it stored as\na date. See Dynamic Columns:Datatypes for further details."
+    ],
+    "Examples": [
+        "INSERT INTO tbl SET dyncol_blob=COLUMN_CREATE(\"column_name\", \"value\");\n"
+    ],
+    "Category": [
+        "Dynamic Columns Functions"
+    ],
+    "EffectiveSQLsRefined": []
+}

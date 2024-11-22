@@ -1,0 +1,33 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/count/"
+    ],
+    "Title": [
+        "COUNT"
+    ],
+    "Feature": [
+        "COUNT(expr)\n"
+    ],
+    "Description": [
+        "Returns a count of the number of non-NULL values of expr in the rows retrieved by a SELECT statement. The result is a BIGINT value. It is an aggregate function, and so can be used with the GROUP BY clause.",
+        "COUNT(*) counts the total number of rows in a table.",
+        "COUNT() returns 0 if there were no matching rows.",
+        "COUNT() can be used as a window function."
+    ],
+    "Examples": [
+        "CREATE TABLE student (name CHAR(10), test CHAR(10), score TINYINT); \n\nINSERT INTO student VALUES \n  ('Chun', 'SQL', 75), ('Chun', 'Tuning', 73), \n  ('Esben', 'SQL', 43), ('Esben', 'Tuning', 31), \n  ('Kaolin', 'SQL', 56), ('Kaolin', 'Tuning', 88), \n  ('Tatiana', 'SQL', 87), ('Tatiana', 'Tuning', 83);\n\nSELECT COUNT(*) FROM student;\n+----------+\n| COUNT(*) |\n+----------+\n|        8 |\n+----------+\n",
+        "SELECT COUNT(DISTINCT (name)) FROM student;\n+------------------------+\n| COUNT(DISTINCT (name)) |\n+------------------------+\n|                      4 |\n+------------------------+\n",
+        "CREATE OR REPLACE TABLE student_test (name CHAR(10), test CHAR(10), score TINYINT);\n\nINSERT INTO student_test VALUES \n    ('Chun', 'SQL', 75), ('Chun', 'Tuning', 73), \n    ('Esben', 'SQL', 43), ('Esben', 'Tuning', 31), \n    ('Kaolin', 'SQL', 56), ('Kaolin', 'Tuning', 88), \n    ('Tatiana', 'SQL', 87);\n\nSELECT name, test, score, COUNT(score) OVER (PARTITION BY name) \n    AS tests_written FROM student_test;\n+---------+--------+-------+---------------+\n| name    | test   | score | tests_written |\n+---------+--------+-------+---------------+\n| Chun    | SQL    |    75 |             2 |\n| Chun    | Tuning |    73 |             2 |\n| Esben   | SQL    |    43 |             2 |\n| Esben   | Tuning |    31 |             2 |\n| Kaolin  | SQL    |    56 |             2 |\n| Kaolin  | Tuning |    88 |             2 |\n| Tatiana | SQL    |    87 |             1 |\n+---------+--------+-------+---------------+\n"
+    ],
+    "Category": [
+        "Aggregate Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "INSERT INTO student VALUES \n  ('Chun', 'SQL', 75), ('Chun', 'Tuning', 73), \n  ('Esben', 'SQL', 43), ('Esben', 'Tuning', 31), \n  ('Kaolin', 'SQL', 56), ('Kaolin', 'Tuning', 88), \n  ('Tatiana', 'SQL', 87), ('Tatiana', 'Tuning', 83);",
+        "SELECT COUNT(*) FROM student;",
+        "SELECT COUNT(DISTINCT (name)) FROM student;",
+        "CREATE OR REPLACE TABLE student_test (name CHAR(10), test CHAR(10), score TINYINT);",
+        "INSERT INTO student_test VALUES \n    ('Chun', 'SQL', 75), ('Chun', 'Tuning', 73), \n    ('Esben', 'SQL', 43), ('Esben', 'Tuning', 31), \n    ('Kaolin', 'SQL', 56), ('Kaolin', 'Tuning', 88), \n    ('Tatiana', 'SQL', 87);",
+        "SELECT name, test, score, COUNT(score) OVER (PARTITION BY name) \n    AS tests_written FROM student_test;"
+    ]
+}

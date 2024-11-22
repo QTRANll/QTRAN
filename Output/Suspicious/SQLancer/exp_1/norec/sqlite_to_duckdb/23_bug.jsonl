@@ -1,5 +1,0 @@
-{"index": 23, "origin_index": 172, "Sql": "CREATE TABLE t0(c0);", "TransferResult": ["CREATE TABLE t0 (c0 TEXT);"]}
-{"index": 23, "origin_index": 172, "Sql": "CREATE TABLE t1(c0);", "TransferResult": ["CREATE TABLE t1 (c0 TEXT);"]}
-{"index": 23, "origin_index": 172, "Sql": "CREATE VIEW v0(c0) AS SELECT t0.c0 FROM t1 LEFT JOIN t0;", "TransferResult": ["CREATE VIEW v0 AS SELECT t0.c0 FROM t1 LEFT JOIN t0 ON t1.c0 = t0.c0;"]}
-{"index": 23, "origin_index": 172, "Sql": "INSERT INTO t1(c0) VALUES (0);", "TransferResult": ["INSERT INTO t1(c0) VALUES ('example_value');"]}
-{"index": 23, "origin_index": 172, "Sql": "SELECT COUNT(*) FROM v0 WHERE (v0.c0, x'') != (NULL, 0); -- unexpected: row is not fetched", "TransferResult": ["SELECT COUNT(*) FROM v0 WHERE (v0.c0, '') != (CAST(NULL AS TEXT), '0');"], "TransferSqlExecResult": ["[(0,)]"], "MutateResult": "SELECT SUM(CASE WHEN (v0.c0, '') != (CAST(NULL AS TEXT), '0') THEN 1 ELSE 0 END) FROM v0;", "MutateSqlExecResult": "[(1,)]"}

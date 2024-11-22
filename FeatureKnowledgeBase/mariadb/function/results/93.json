@@ -1,0 +1,24 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/floor/"
+    ],
+    "Title": [
+        "FLOOR"
+    ],
+    "Feature": [
+        "FLOOR(X)\n"
+    ],
+    "Description": [
+        "Returns the largest integer value not greater than X."
+    ],
+    "Examples": [
+        "SELECT FLOOR(1.23);\n+-------------+\n| FLOOR(1.23) |\n+-------------+\n|           1 |\n+-------------+\n\nSELECT FLOOR(-1.23);\n+--------------+\n| FLOOR(-1.23) |\n+--------------+\n|           -2 |\n+--------------+\n"
+    ],
+    "Category": [
+        "Numeric Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT FLOOR(1.23);",
+        "SELECT FLOOR(-1.23);"
+    ]
+}

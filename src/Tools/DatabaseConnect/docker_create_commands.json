@@ -1,0 +1,117 @@
+{
+    "mysql": {
+        "docker_name": "mysql:8.0.39",
+        "pull_docker": ["docker", "pull", "mysql:8.0.39"],
+        "container_name": "mysql_QTRAN",
+        "run_container": [
+            "docker", "run", "--name", "mysql_QTRAN",
+            "-e", "MYSQL_ROOT_PASSWORD={password}",
+            "-p", "{port}:{container_port}", "-d", "{dbType}"
+        ],
+        "enter_container": ["docker", "exec", "mysql_QTRAN"],
+        "login_in": ["{dbType}", "-u", "{username}", "-p{password}", "-e"],
+        "create_databases": [
+            "CREATE DATABASE IF NOT EXISTS {dbname};",
+            "SHOW DATABASES;"
+        ]
+    },
+    "mariadb": {
+        "docker_name": "mariadb:11.5.2",
+        "pull_docker": ["docker", "pull", "mariadb:11.5.2"],
+        "container_name": "mariadb_QTRAN",
+        "run_container": [
+            "docker", "run", "--name", "mariadb_QTRAN",
+            "-e", "MYSQL_ROOT_PASSWORD={password}",
+            "-p", "{port}:{container_port}", "-d", "{dbType}"
+        ],
+        "enter_container": ["docker", "exec", "mariadb_QTRAN"],
+        "login_in": ["{dbType}", "-u", "{username}", "-p{password}", "-e"],
+        "create_databases": [
+            "CREATE DATABASE IF NOT EXISTS {dbname};",
+            "SHOW DATABASES;"
+        ]
+    },
+    "tidb": {
+        "docker_name": "",
+        "pull_docker": [],
+        "container_name": "tidb_QTRAN",
+        "run_container": [
+            "export PATH=/home/zhuqinglin/.tiup/bin && tiup cluster start tidb_QTRAN"
+        ],
+        "enter_container": [],
+        "login_in": ["mysql", "-h", "{host}", "-P", "{port}", "-u", "{username}", "-e"],
+        "create_databases": [
+            "CREATE DATABASE IF NOT EXISTS {dbname};",
+            "SHOW DATABASES;"
+        ]
+    },
+    "postgres": {
+        "docker_name": "postgres:16.3",
+        "pull_docker": ["docker", "pull", "postgres:16.3"],
+        "container_name": "postgres_QTRAN",
+        "run_container": [
+            "docker", "run", "--name", "postgres_QTRAN",
+            "-e", "POSTGRES_PASSWORD={password}",
+            "-p", "{port}:{container_port}", "-d", "{dbType}"
+        ],
+        "enter_container": ["docker", "exec", "postgres_QTRAN"],
+        "login_in": ["psql", "-h", "{host}", "-U", "{username}", "-c"],
+        "create_databases": [
+            "CREATE DATABASE {dbname};",
+            "\\l"
+        ]
+    },
+    "monetdb": {
+        "docker_name": "monetdb/monetdb-r-docker",
+        "pull_docker": ["docker", "pull", "monetdb/monetdb-r-docker"],
+        "container_name": "monetdb_QTRAN",
+        "run_container": [
+            "docker", "run", "-d", "-P", "--name", "monetdb_QTRAN", "-p", "{port}:{container_port}", "monetdb/monetdb-r-docker"
+        ],
+        "enter_container": ["docker", "exec", "monetdb_QTRAN"],
+        "login_in": [],
+        "create_databases": [
+            ["monetdb", "create", "{dbname}"],
+            ["monetdb", "release", "{dbname}"],
+            ["monetdb", "start", "{dbname}"],
+            ["monetdb", "status"]
+        ]
+    },
+    "clickhouse": {
+        "docker_name": "clickhouse/clickhouse-server:24.9.2.42",
+        "pull_docker": ["docker", "pull", "clickhouse/clickhouse-server:24.9.2.42"],
+        "container_name": "clickhouse_QTRAN",
+        "run_container": [
+            "docker", "run", "-d", "--name", "clickhouse_QTRAN", "-p", "{port}:{container_port}", "-p", "9000:9000" ,
+            "clickhouse/clickhouse-server"
+        ],
+        "enter_container": ["docker", "exec", "clickhouse_QTRAN"],
+        "access_enable": [
+            ["apt-get", "update"],
+            ["apt-get", "install", "-y", "vim"],
+            [
+                "sed",
+                "-i",
+                "'s|<!-- <access_management>1</access_management> -->|<access_management>1</access_management>|g'",
+                "/etc/clickhouse-server/users.xml"
+            ],
+            [
+                "sed",
+                "-i",
+                "'s|<access_management>1</access_management>|<access_management>1</access_management>            <named_collection_control>1</named_collection_control>            <show_named_collections>1</show_named_collections>            <show_named_collections_secrets>1</show_named_collections_secrets>|g'",
+                "/etc/clickhouse-server/users.xml"
+            ]
+        ],
+        "create_admin_login_in": [
+            ["clickhouse-client", "--query", "\"CREATE user admin IDENTIFIED WITH sha256_password BY '{password}';\""],
+            ["clickhouse-client", "--query", "\"SELECT current_user();\""],
+            ["clickhouse-client", "--query", "\"GRANT ALL ON *.* TO admin WITH GRANT OPTION;\""],
+            ["clickhouse-client", "--query", "\"exit\""]
+        ],
+        "login_in": ["clickhouse-client", "-u", "{username}", "--password", "{password}", "--query"],
+        "create_databases": [
+            "CREATE DATABASE IF NOT EXISTS {dbname};",
+            "SHOW DATABASES;"
+        ]
+    }
+}

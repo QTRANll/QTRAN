@@ -1,0 +1,25 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/mbroverlaps/"
+    ],
+    "Title": [
+        "MBROverlaps"
+    ],
+    "Feature": [
+        "MBROverlaps(g1,g2)\n"
+    ],
+    "Description": [
+        "Returns 1 or 0 to indicate whether the Minimum Bounding Rectangles of\nthe two geometries g1 and g2 overlap. The term spatially overlaps is\nused if two geometries intersect and their intersection results in a\ngeometry of the same dimension but not equal to either of the given\ngeometries."
+    ],
+    "Examples": [
+        "SET @g1 = GeomFromText('Polygon((0 0,0 3,3 3,3 0,0 0))');\nSET @g2 = GeomFromText('Polygon((4 4,4 7,7 7,7 4,4 4))');\nSELECT mbroverlaps(@g1,@g2);\n+----------------------+\n| mbroverlaps(@g1,@g2) |\n+----------------------+\n|                    0 |\n+----------------------+\n\nSET @g1 = GeomFromText('Polygon((0 0,0 3,3 3,3 0,0 0))');\nSET @g2 = GeomFromText('Polygon((3 3,3 6,6 6,6 3,3 3))');\nSELECT mbroverlaps(@g1,@g2);\n+----------------------+\n| mbroverlaps(@g1,@g2) |\n+----------------------+\n|                    0 |\n+----------------------+\n\nSET @g1 = GeomFromText('Polygon((0 0,0 4,4 4,4 0,0 0))');\nSET @g2 = GeomFromText('Polygon((3 3,3 6,6 6,6 3,3 3))');\nSELECT mbroverlaps(@g1,@g2);\n+----------------------+\n| mbroverlaps(@g1,@g2) |\n+----------------------+\n|                    1 |\n+----------------------+\n"
+    ],
+    "Category": [
+        "Geographic Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT mbroverlaps(@g1,@g2);",
+        "SELECT mbroverlaps(@g1,@g2);",
+        "SELECT mbroverlaps(@g1,@g2);"
+    ]
+}

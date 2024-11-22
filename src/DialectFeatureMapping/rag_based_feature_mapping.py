@@ -7,10 +7,8 @@
 
 import json
 import os
-import time
-import re
 from langchain.prompts import ChatPromptTemplate
-from src.Tools.JSONLoader import JSONLoader
+from src.Tools.JsonLoader.JSONLoader import JSONLoader
 from langchain_community.vectorstores import Chroma
 from langchain_community.embeddings.sentence_transformer import (
     SentenceTransformerEmbeddings,
@@ -24,17 +22,13 @@ from langchain.callbacks import get_openai_callback
 # from langchain.vectorstores import Weaviate
 
 
-import openai
 from langchain.chat_models import ChatOpenAI
 from langchain.schema.runnable import RunnablePassthrough
-from langchain.schema.output_parser import StrOutputParser
-from langchain_community.embeddings import OllamaEmbeddings
 from langchain_core.output_parsers import StrOutputParser
-from langchain_community.vectorstores import DocArrayInMemorySearch
 
 llm = ChatOpenAI(temperature=0.0, model="gpt-4o-mini")
 
-feature_knowledge_base = "Feature Knowledge Base"
+feature_knowledge_base = "FeatureKnowledgeBase"
 
 # 合并每个feature type中所有的feature数据，并将它们以jsonl格式存储起来
 def feature_knowledge_merge(db, feature_type):
@@ -418,7 +412,7 @@ def rag_feature_mapping_llm_v4(version_id, search_k, a_db, b_db, feature_types, 
     names = "merge"
     for feature_type in feature_types:
         names = names + "_" + feature_type
-    merge_feature_filename = os.path.join("..", "..", "Feature Knowledge Base", a_db, "RAG_Embedding_Data",
+    merge_feature_filename = os.path.join("..", "..", "FeatureKnowledgeBase", a_db, "RAG_Embedding_Data",
                                           names + ".jsonl")
     with open(merge_feature_filename, "r", encoding="utf-8") as read_lines:
         query_data = read_lines.readlines()
@@ -426,7 +420,7 @@ def rag_feature_mapping_llm_v4(version_id, search_k, a_db, b_db, feature_types, 
     b_names = "merge"
     for feature_type in feature_types:
         b_names = b_names + "_" + feature_type
-    b_merge_feature_filename = os.path.join("..", "..", "Feature Knowledge Base", b_db, "RAG_Embedding_Data",
+    b_merge_feature_filename = os.path.join("..", "..", "FeatureKnowledgeBase", b_db, "RAG_Embedding_Data",
                                             b_names + ".jsonl")
     with open(b_merge_feature_filename, "r", encoding="utf-8") as read_lines:
         b_query_data = read_lines.readlines()
@@ -602,7 +596,7 @@ def rag_feature_mapping_process(version_id, search_k, a_db, b_db, feature_types,
     a_names = "merge"
     for feature_type in feature_types:
         a_names = a_names + "_" + feature_type
-    a_merge_feature_filename = os.path.join("..", "..", "Feature Knowledge Base", a_db, "RAG_Embedding_Data",
+    a_merge_feature_filename = os.path.join("..", "..", "FeatureKnowledgeBase", a_db, "RAG_Embedding_Data",
                                             a_names + ".jsonl")
     with open(a_merge_feature_filename, "r", encoding="utf-8") as read_lines:
         a_merge_data = read_lines.readlines()
@@ -610,7 +604,7 @@ def rag_feature_mapping_process(version_id, search_k, a_db, b_db, feature_types,
     names = "merge"
     for feature_type in feature_types:
         names = names + "_" + feature_type
-    merge_feature_filename = os.path.join("..", "..", "Feature Knowledge Base", b_db, "RAG_Embedding_Data",
+    merge_feature_filename = os.path.join("..", "..", "FeatureKnowledgeBase", b_db, "RAG_Embedding_Data",
                                           names + ".jsonl")
     with open(merge_feature_filename, "r", encoding="utf-8") as read_lines:
         query_data = read_lines.readlines()
@@ -702,7 +696,7 @@ def rag_feature_mapping_count(version_id, search_k, a_db, b_db, feature_types, c
     a_names = "merge"
     for feature_type in feature_types:
         a_names = a_names + "_" + feature_type
-    a_merge_feature_filename = os.path.join("..", "..", "Feature Knowledge Base", a_db, "RAG_Embedding_Data",
+    a_merge_feature_filename = os.path.join("..", "..", "FeatureKnowledgeBase", a_db, "RAG_Embedding_Data",
                                             a_names + ".jsonl")
     with open(a_merge_feature_filename, "r", encoding="utf-8") as read_lines:
         a_merge_data = read_lines.readlines()
@@ -710,7 +704,7 @@ def rag_feature_mapping_count(version_id, search_k, a_db, b_db, feature_types, c
     names = "merge"
     for feature_type in feature_types:
         names = names + "_" + feature_type
-    merge_feature_filename = os.path.join("..", "..", "Feature Knowledge Base", b_db, "RAG_Embedding_Data",
+    merge_feature_filename = os.path.join("..", "..", "FeatureKnowledgeBase", b_db, "RAG_Embedding_Data",
                                           names + ".jsonl")
     with open(merge_feature_filename, "r", encoding="utf-8") as read_lines:
         query_data = read_lines.readlines()

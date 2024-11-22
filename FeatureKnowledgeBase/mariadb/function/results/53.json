@@ -1,0 +1,22 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/crosses/"
+    ],
+    "Title": [
+        "CROSSES"
+    ],
+    "Feature": [
+        "Crosses(g1,g2)\n"
+    ],
+    "Description": [
+        "Returns 1 if g1 spatially crosses g2. Returns NULL if g1 is\na Polygon or a MultiPolygon, or if g2 is a\nPoint or a MultiPoint. Otherwise, returns 0.",
+        "The term spatially crosses denotes a spatial relation between two\ngiven geometries that has the following properties:",
+        "The two geometries intersect\nTheir intersection results in a geometry that has a dimension that is one\n  less than the maximum dimension of the two given geometries\nTheir intersection is not equal to either of the two given geometries\n",
+        "CROSSES() is based on the original MySQL implementation, and uses object bounding rectangles, while ST_CROSSES() uses object shapes."
+    ],
+    "Examples": [],
+    "Category": [
+        "Geographic Functions"
+    ],
+    "EffectiveSQLsRefined": []
+}

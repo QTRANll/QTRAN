@@ -1,0 +1,42 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/setval/"
+    ],
+    "Title": [
+        "SETVAL"
+    ],
+    "Feature": [
+        "SETVAL(sequence_name, next_value, [is_used, [round]])\n"
+    ],
+    "Description": [
+        "Set the next value to be returned for a SEQUENCE.",
+        "This function is compatible with PostgreSQL syntax, extended\nwith the round argument.",
+        "If the is_used argument is not given or is 1 or true, then the next used value will\none after the given value. If is_used is 0 or false then the next generated value\nwill be the given value.",
+        "If round is used then it will set the round value (or the internal cycle count, starting at zero) for the sequence.\nIf round is not used, it's assumed to be 0.",
+        "next_value must be an integer literal.",
+        "For SEQUENCE tables defined with CYCLE (see CREATE SEQUENCE) one should use both next_value and round to define the next value. In this case the\ncurrent sequence value is defined to be round, next_value.",
+        "The result returned by SETVAL() is next_value or NULL if the given next_value and round  is smaller than the current value.",
+        "SETVAL() will not set the SEQUENCE value to a something that is less than\nits current value. This is needed to ensure that SETVAL()\nis replication safe.  If you want to set the SEQUENCE to a smaller number\nuse ALTER SEQUENCE.",
+        "If CYCLE is used, first round and then next_value are compared\nto see if the value is bigger than the current value.",
+        "Internally, in the MariaDB server, SETVAL() is used to inform\nreplicas that a SEQUENCE has changed value.  The replica may get\nSETVAL() statements out of order, but this is ok as only the\nbiggest one will have an effect.",
+        "SETVAL requires the INSERT privilege."
+    ],
+    "Examples": [
+        "SELECT setval(foo, 42);           -- Next nextval will return 43\nSELECT setval(foo, 42, true);     -- Same as above\nSELECT setval(foo, 42, false);    -- Next nextval will return 42\n",
+        "SELECT NEXTVAL(s);\n+------------+\n| NEXTVAL(s) |\n+------------+\n|         50 |\n+------------+\n\nSELECT SETVAL(s, 100);\n+----------------+\n| SETVAL(s, 100) |\n+----------------+\n|            100 |\n+----------------+\n\nSELECT NEXTVAL(s);\n+------------+\n| NEXTVAL(s) |\n+------------+\n|        110 |\n+------------+\n\nSELECT SETVAL(s, 50);\n+---------------+\n| SETVAL(s, 50) |\n+---------------+\n|          NULL |\n+---------------+\n\nSELECT NEXTVAL(s);\n+------------+\n| NEXTVAL(s) |\n+------------+\n|        120 |\n+------------+\n",
+        "CREATE OR REPLACE SEQUENCE s1\n  START WITH 1\n  MINVALUE 1\n  MAXVALUE 99\n  INCREMENT BY 1 \n  CACHE 20 \n  CYCLE;\n\nSELECT SETVAL(s1, 99, 1, 0);\n+----------------------+\n| SETVAL(s1, 99, 1, 0) |\n+----------------------+\n|                   99 |\n+----------------------+\n\nSELECT NEXTVAL(s1);\n+-------------+\n| NEXTVAL(s1) |\n+-------------+\n|           1 |\n+-------------+\n",
+        "SELECT SETVAL(s1, 99, 1, 0);\n+----------------------+\n| SETVAL(s1, 99, 1, 0) |\n+----------------------+\n|                 NULL |\n+----------------------+\n\nSELECT NEXTVAL(s1);\n+-------------+\n| NEXTVAL(s1) |\n+-------------+\n|           2 |\n+-------------+\n",
+        "SELECT SETVAL(s1, 99, 1, 1);\n+----------------------+\n| SETVAL(s1, 99, 1, 1) |\n+----------------------+\n|                   99 |\n+----------------------+\n\nSELECT NEXTVAL(s1);\n+-------------+\n| NEXTVAL(s1) |\n+-------------+\n|           1 |\n+-------------+\n"
+    ],
+    "Category": [
+        "SEQUENCE Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT SETVAL(s, 100);",
+        "SELECT SETVAL(s, 50);",
+        "CREATE OR REPLACE SEQUENCE s1\n  START WITH 1\n  MINVALUE 1\n  MAXVALUE 99\n  INCREMENT BY 1 \n  CACHE 20 \n  CYCLE;",
+        "SELECT SETVAL(s1, 99, 1, 0);",
+        "SELECT SETVAL(s1, 99, 1, 0);",
+        "SELECT SETVAL(s1, 99, 1, 1);"
+    ]
+}

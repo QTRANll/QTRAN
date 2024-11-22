@@ -1,0 +1,24 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/numpoints/"
+    ],
+    "Title": [
+        "ST_NUMPOINTS"
+    ],
+    "Feature": [
+        "ST_NumPoints(ls)\nNumPoints(ls)\n"
+    ],
+    "Description": [
+        "Returns the number of Point objects in the LineString\nvalue ls.",
+        "ST_NumPoints() and NumPoints() are synonyms."
+    ],
+    "Examples": [
+        "SET @ls = 'LineString(1 1,2 2,3 3)';\n\nSELECT NumPoints(GeomFromText(@ls));\n+------------------------------+\n| NumPoints(GeomFromText(@ls)) |\n+------------------------------+\n|                            3 |\n+------------------------------+\n"
+    ],
+    "Category": [
+        "Geographic Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT NumPoints(GeomFromText(@ls));"
+    ]
+}

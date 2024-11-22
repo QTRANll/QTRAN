@@ -8,7 +8,7 @@ import json
 import os
 import sqlglot
 import re
-from src.Tools.database_connector import exec_sql_statement, database_connection_args_sqlancer, database_connection_args_pinolo
+from src.Tools.DatabaseConnect.database_connector import exec_sql_statement, database_connection_args_sqlancer, database_connection_args_pinolo
 from langchain.prompts import ChatPromptTemplate
 from langchain.chat_models import ChatOpenAI
 from langchain.output_parsers import ResponseSchema
@@ -119,17 +119,17 @@ def effective_sqls_refiner(db_name, feature_type,tool):
     elif tool.lower() == "sqlancer":
         database_args = database_connection_args_sqlancer[db_name]
 
-    if feature_type in ["Functions", "Operators"]:
+    if feature_type in ["function", "operator"]:
         effective_feature_cnt = 0  # 记录有效的feature个数，即文件中的description和feature语法部分不为空
         indistinct_feature_cnt = 0  # 记录唯一的feature个数
         none_effective_cnt = 0  # 未提取到effective sql的feature数量
         none_example_cnt = 0  # 官网未提供Example字符串的feature数量
-        source_dic = os.path.join("..", "..", "Feature Knowledge Base", db_name, feature_type,
+        source_dic = os.path.join("..", "..", "FeatureKnowledgeBase", db_name, feature_type,
                                   feature_type + "_Results")
-        direct_dic = os.path.join("..", "..", "Feature Knowledge Base Processed", db_name, feature_type,
+        direct_dic = os.path.join("..", "..", "FeatureKnowledgeBase Processed", db_name, feature_type,
                                   feature_type + "_Results")
-        ineffective_sqls_filename = os.path.join("..", "..", "Feature Knowledge Base Processed", db_name, feature_type, "ineffective_sqls.jsonl")
-        dropped_list_filename = os.path.join("..", "..", "Feature Knowledge Base Processed", db_name, feature_type, "dropped_files.jsonl")
+        ineffective_sqls_filename = os.path.join("..", "..", "FeatureKnowledgeBase Processed", db_name, feature_type, "ineffective_sqls.jsonl")
+        dropped_list_filename = os.path.join("..", "..", "FeatureKnowledgeBase Processed", db_name, feature_type, "dropped_files.jsonl")
 
 
         if os.path.exists(ineffective_sqls_filename):
@@ -183,7 +183,7 @@ def effective_sqls_refiner(db_name, feature_type,tool):
                 print(matches)
                 for match in matches:
                     # 判断match中是否包含feature元素，不包含则认为与feature无关，跳过。这里对于feature name的处理，简化为取title的字符串并以空格划分，取第一个元素。
-                    if feature_type == "Functions":
+                    if feature_type == "function":
                         feature_name = content["Title"].split(" ")[0]
                     else:
                         feature_name = ""
@@ -365,12 +365,12 @@ def sql_generator_llm(tool, db_name, temperature, model, content, max_cnt, with_
 
 def effective_sqls_generator(db_name, feature_type, temperature, model, max_cnt):
     # 对于提取effective sql失败的feature：利用llm为该feature生成一个简单的effective sql
-    if feature_type in ["Functions", "Operators"]:
+    if feature_type in ["function", "operator"]:
         none_effective_cnt = 0
         generate_without_table_fail_cnt = 0
         generate_with_table_fail_cnt = 0
 
-        source_dic = os.path.join("..", "..", "Feature Knowledge Base Processed1", db_name, feature_type,
+        source_dic = os.path.join("..", "..", "FeatureKnowledgeBase Processed1", db_name, feature_type,
                                   feature_type + "_Results")
 
         source_filenames = os.listdir(source_dic)
@@ -448,12 +448,12 @@ def effective_sqls_generator(db_name, feature_type, temperature, model, max_cnt)
 
 def effective_sqls_generator_v2(db_name, feature_type, temperature, model, max_cnt):
     # 对于提取effective sql失败的feature：利用llm为该feature生成一个简单的effective sql
-    if feature_type in ["Functions", "Operators"]:
+    if feature_type in ["function", "operator"]:
         none_effective_cnt = 0
         generate_without_table_fail_cnt = 0
         generate_with_table_fail_cnt = 0
 
-        source_dic = os.path.join("..", "..", "Feature Knowledge Base Processed", db_name, feature_type,
+        source_dic = os.path.join("..", "..", "FeatureKnowledgeBase Processed", db_name, feature_type,
                                   feature_type + "_Results")
 
         source_filenames = os.listdir(source_dic)
@@ -522,7 +522,7 @@ def mariadb_knowledge_base_processing(db_name, feature_type):
 
 def feature_knowledge_base_preprocessing(db_name, feature_type):
     # 对feature knowledge base中的数据进行预处理
-    if db_name == "MariaDB":
+    if db_name == "mariadb":
         mariadb_knowledge_base_processing(db_name, feature_type)
 
 
@@ -546,7 +546,7 @@ def potential_dialect_features_process_and_map(tool, a_db, b_db, source_filename
     names = "merge"
     for feature_type in feature_types:
         names = names + "_" + feature_type
-    a_merge_feature_filename = os.path.join("..", "..", "Feature Knowledge Base Processed1", a_db, "RAG_Embedding_Data", names + ".jsonl")
+    a_merge_feature_filename = os.path.join("..", "..", "FeatureKnowledgeBase Processed1", a_db, "RAG_Embedding_Data", names + ".jsonl")
     with open(a_merge_feature_filename, "r", encoding="utf-8") as r:
         a_merge_features = r.readlines()
 
@@ -574,9 +574,9 @@ def potential_dialect_features_process_and_map(tool, a_db, b_db, source_filename
         not_potential_dialect = []
         potential_dialect_mapping_index = []  #存储potential dialect map的feature
         lists = tokenize_sql(content["Sql"])
-        if feature_types[0] == "Functions":
+        if feature_types[0] == "function":
             feature_indexes = content["SqlPotentialFunctionIndexes"]  # potential functions的分词的下标
-        elif feature_types[0] == "Operators":
+        elif feature_types[0] == "operator":
             feature_indexes = content["SqlPotentialOperatorIndexes"]  # potential functions的分词的下标
         else:
             feature_indexes = []
@@ -625,11 +625,11 @@ def potential_dialect_features_process_and_map(tool, a_db, b_db, source_filename
                 features_searched_fail_cnt += 1
                 dialect_features_cnt += 1
 
-        if feature_types[0] == "Functions":
+        if feature_types[0] == "function":
             content["SqlPotentialDialectFunction"] = potential_dialect
             content["SqlNotDialectFunction"] = not_potential_dialect
             content["SqlPotentialDialectFunctionMapping"] = potential_dialect_mapping_index
-        elif feature_types[0] == "Operators":
+        elif feature_types[0] == "operator":
             content["SqlPotentialDialectOperator"] = potential_dialect
             content["SqlNotDialectOperator"] = not_potential_dialect
             content["SqlPotentialDialectOperatorMapping"] = potential_dialect_mapping_index
@@ -694,6 +694,6 @@ def sqlancer_potential_dialect_features_process_and_map(a_db, b_db, potential_di
 
 
 def potential_dialect_features_recognizer(a_db, b_db, source_filename, dir_filename, knowledge_base_dic, search_k=0,version_id=1):
-    potential_dialect_features_process_and_map(a_db, b_db, source_filename, dir_filename, knowledge_base_dic, ["Functions"], search_k=0,version_id=1)
-    potential_dialect_features_process_and_map(a_db, b_db, source_filename, dir_filename, knowledge_base_dic,["Operators"], search_k=0, version_id=1)
+    potential_dialect_features_process_and_map(a_db, b_db, source_filename, dir_filename, knowledge_base_dic, ["function"], search_k=0,version_id=1)
+    potential_dialect_features_process_and_map(a_db, b_db, source_filename, dir_filename, knowledge_base_dic,["operator"], search_k=0, version_id=1)
 

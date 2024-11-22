@@ -1,0 +1,27 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/hour/"
+    ],
+    "Title": [
+        "HOUR"
+    ],
+    "Feature": [
+        "HOUR(time)\n"
+    ],
+    "Description": [
+        "Returns the hour for time. The range of the return value is 0 to 23\nfor time-of-day values. However, the range of TIME values actually is\nmuch larger, so HOUR can return values greater than 23.",
+        "The return value is always positive, even if a negative TIME value is provided."
+    ],
+    "Examples": [
+        "SELECT HOUR('10:05:03');\n+------------------+\n| HOUR('10:05:03') |\n+------------------+\n|               10 |\n+------------------+\n\nSELECT HOUR('272:59:59');\n+-------------------+\n| HOUR('272:59:59') |\n+-------------------+\n|               272 |\n+-------------------+\n",
+        "SELECT EXTRACT(HOUR FROM '26:30:00'), HOUR('26:30:00');\n+-------------------------------+------------------+\n| EXTRACT(HOUR FROM '26:30:00') | HOUR('26:30:00') |\n+-------------------------------+------------------+\n|                             2 |               26 |\n+-------------------------------+------------------+\n"
+    ],
+    "Category": [
+        "Date & Time Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT HOUR('10:05:03');",
+        "SELECT HOUR('272:59:59');",
+        "SELECT EXTRACT(HOUR FROM '26:30:00'), HOUR('26:30:00');"
+    ]
+}

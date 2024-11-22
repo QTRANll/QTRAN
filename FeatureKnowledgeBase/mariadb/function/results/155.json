@@ -1,0 +1,26 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/json_type/"
+    ],
+    "Title": [
+        "JSON_TYPE"
+    ],
+    "Feature": [
+        "JSON_TYPE(json_val)\n"
+    ],
+    "Description": [
+        "Returns the type of a JSON value (as a string), or NULL if the argument is null.",
+        "An error will occur if the argument is an invalid JSON value.",
+        "The following is a complete list of the possible return types:",
+        "Return typeValueExample\nARRAYJSON array[1, 2, {\"key\": \"value\"}]\nOBJECTJSON object{\"key\":\"value\"}\nBOOLEANJSON true/false literalstrue, false\nDOUBLEA number with at least one floating point decimal.1.2\nINTEGERA number without a floating point decimal.1\nNULLJSON null literal (this is returned as a string, not to be confused with the SQL NULL value!)null\nSTRINGJSON String\"a sample string\"\n\n"
+    ],
+    "Examples": [
+        "SELECT JSON_TYPE('{\"A\": 1, \"B\": 2, \"C\": 3}');\n+---------------------------------------+\n| JSON_TYPE('{\"A\": 1, \"B\": 2, \"C\": 3}') |\n+---------------------------------------+\n| OBJECT                                |\n+---------------------------------------+\n"
+    ],
+    "Category": [
+        "JSON Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT JSON_TYPE('{\"A\": 1, \"B\": 2, \"C\": 3}');"
+    ]
+}

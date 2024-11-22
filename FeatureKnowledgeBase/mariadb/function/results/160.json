@@ -1,0 +1,26 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/last_day/"
+    ],
+    "Title": [
+        "LAST_DAY"
+    ],
+    "Feature": [
+        "LAST_DAY(date)\n"
+    ],
+    "Description": [
+        "Takes a date or datetime value and returns the corresponding value for\nthe last day of the month. Returns NULL if the argument is invalid."
+    ],
+    "Examples": [
+        "SELECT LAST_DAY('2003-02-05');\n+------------------------+\n| LAST_DAY('2003-02-05') |\n+------------------------+\n| 2003-02-28             |\n+------------------------+\n\nSELECT LAST_DAY('2004-02-05');\n+------------------------+\n| LAST_DAY('2004-02-05') |\n+------------------------+\n| 2004-02-29             |\n+------------------------+\n\nSELECT LAST_DAY('2004-01-01 01:01:01');\n+---------------------------------+\n| LAST_DAY('2004-01-01 01:01:01') |\n+---------------------------------+\n| 2004-01-31                      |\n+---------------------------------+\n\nSELECT LAST_DAY('2003-03-32');\n+------------------------+\n| LAST_DAY('2003-03-32') |\n+------------------------+\n| NULL                   |\n+------------------------+\n1 row in set, 1 warning (0.00 sec)\n\nWarning (Code 1292): Incorrect datetime value: '2003-03-32'\n"
+    ],
+    "Category": [
+        "Date & Time Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT LAST_DAY('2003-02-05');",
+        "SELECT LAST_DAY('2004-02-05');",
+        "SELECT LAST_DAY('2004-01-01 01:01:01');",
+        "SELECT LAST_DAY('2003-03-32');"
+    ]
+}

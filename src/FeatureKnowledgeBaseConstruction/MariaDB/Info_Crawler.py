@@ -14,7 +14,7 @@ from selenium import webdriver
 from selenium.webdriver.support.ui import WebDriverWait
 from bs4 import BeautifulSoup, Tag
 import re
-from src.Tools.crawler_options import set_options
+from src.Tools.Crawler.crawler_options import set_options
 
 
 def is_illustration(tag_name, tag_class, tag_text):
@@ -134,14 +134,14 @@ def sql_statements_crawler(feature_type, origin_category, title, html, dic_filen
     if feature_type == "statements":
         # soup_a_text列表中'SQL Statements'后面的一个元素就是本条statement信息的category
         index = soup_a_txt.index('SQL Statements') if 'SQL Statements' in soup_a_txt else -1
-    if feature_type == "Operators":
+    if feature_type == "operator":
         index = -1
-    elif feature_type == "Functions":
-        # soup_a_text列表中'Built-in Functions'后面的一个元素
-        index = soup_a_txt.index('Built-in Functions') if 'Built-in Functions' in soup_a_txt else -1
-        if "Functions" in soup_a_txt[index+2] or "functions" in soup_a_txt[index+2]:
+    elif feature_type == "function":
+        # soup_a_text列表中'Built-in function'后面的一个元素
+        index = soup_a_txt.index('Built-in function') if 'Built-in function' in soup_a_txt else -1
+        if "function" in soup_a_txt[index+2] or "functions" in soup_a_txt[index+2]:
             index += 1
-    elif feature_type == "DataTypes":
+    elif feature_type == "datatype":
         # soup_a_text列表中'Data Types'后面的一个元素
         index = soup_a_txt.index('Data Types') if 'Data Types' in soup_a_txt else -1
     else:
@@ -151,14 +151,14 @@ def sql_statements_crawler(feature_type, origin_category, title, html, dic_filen
     else:
         # 如果SQL Statements不在顶部目录导航栏中，则以原始的category填入
         result["Category"] = [origin_category]
-        if "SEQUENCE Functions" in soup_a_txt:
-            result["Category"] = ["SEQUENCE Functions"]
-        elif "Spider Functions" in soup_a_txt:
-            result["Category"] = ["Spider Functions"]
-        elif "Vector Functions" in soup_a_txt:
-            result["Category"] = ["Vector Functions"]
+        if "SEQUENCE function" in soup_a_txt:
+            result["Category"] = ["SEQUENCE function"]
+        elif "Spider function" in soup_a_txt:
+            result["Category"] = ["Spider function"]
+        elif "Vector function" in soup_a_txt:
+            result["Category"] = ["Vector function"]
         elif "Geographic & Geometric Features" in soup_a_txt:
-            result["Category"] = ["Geographic Functions"]
+            result["Category"] = ["Geographic function"]
     try:
         if len(result["Feature"]) or len(result["Description"]) or len(result["Examples"]):
             with open(dir_filename, 'w', encoding='utf-8') as f:
@@ -170,7 +170,7 @@ def sql_statements_crawler(feature_type, origin_category, title, html, dic_filen
 
 def crawler_results(feature_type, htmls_filename, dic_filename):
     if len(os.listdir(dic_filename)):
-        print(dic_filename+ ":crawler finished")
+        print(dic_filename+ ":Crawler finished")
         return
     with open(htmls_filename, "r", encoding="utf-8") as rf:
         html_contents = json.load(rf)

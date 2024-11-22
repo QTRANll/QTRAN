@@ -1,0 +1,21 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/binlog_gtid_pos/"
+    ],
+    "Title": [
+        "BINLOG_GTID_POS"
+    ],
+    "Feature": [
+        "BINLOG_GTID_POS(binlog_filename,binlog_offset)\n"
+    ],
+    "Description": [
+        "The BINLOG_GTID_POS() function takes as input an old-style binary log position in the form of a file name and a file offset. It looks up the position in the current binlog, and returns a string representation of the corresponding GTID position. If the position is not found in the current binlog, NULL is returned."
+    ],
+    "Examples": [
+        "SELECT BINLOG_GTID_POS(\"master-bin.000001\", 600);\n"
+    ],
+    "Category": [
+        "Information Functions"
+    ],
+    "EffectiveSQLsRefined": []
+}

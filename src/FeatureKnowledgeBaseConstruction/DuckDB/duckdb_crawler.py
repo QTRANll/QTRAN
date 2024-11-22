@@ -2,17 +2,20 @@ import os
 import json
 from src.FeatureKnowledgeBaseConstruction.DuckDB.HTMLs_Crawler import htmls_crawler
 from src.FeatureKnowledgeBaseConstruction.DuckDB.Info_Crawler import crawler_results
-from src.Tools.crawler_options import category_classifier
+from src.Tools.Crawler.crawler_options import category_classifier
+current_file_path = os.path.abspath(__file__)
+current_dir = os.path.dirname(current_file_path)
+
 def duckdb_crawler():
-    dic_path = os.path.join(os.getcwd(),"..", "..", "..", "Feature Knowledge Base", "DuckDB")
-    feature_types = ["DataTypes", "Functions", "Operators"]
-    sub_dic = ["Results", "Results_Category"]
+    dic_path = os.path.join(current_dir,"..", "..", "..", "FeatureKnowledgeBase", "duckdb")
+    feature_types = ["datatype", "function", "operator"]
+    sub_dic = ["results", "results_category"]
     htmls_list = {
-        "Functions": "https://duckdb.org/docs/sql/functions/overview",
-        "Operators": "https://duckdb.org/docs/sql/functions/overview",
-        "DataTypes": "https://duckdb.org/docs/sql/data_types/overview"
+        "function": "https://duckdb.org/docs/sql/functions/overview",
+        "operator": "https://duckdb.org/docs/sql/functions/overview",
+        "datatype": "https://duckdb.org/docs/sql/data_types/overview"
     }
-    # htmls crawler
+    # htmls Crawler
     for feature in feature_types:
         # make dictionaries
         feature_dic = os.path.join(dic_path, feature)
@@ -32,12 +35,10 @@ def duckdb_crawler():
             json.dump(htmls, f, indent=4)
 
 
-    # information crawler and classification
+    # information Crawler and classification
     for feature in feature_types:
         htmls_filename = os.path.join(dic_path, feature, "HTMLs.json")
-        results_dic = os.path.join(dic_path, feature, "Results")
-        results_category_dic = os.path.join(dic_path, feature, "Results_Category")
+        results_dic = os.path.join(dic_path, feature, "results")
+        results_category_dic = os.path.join(dic_path, feature, "results_category")
         crawler_results(feature, htmls_filename, results_dic)
         category_classifier(results_dic, results_category_dic)
-
-duckdb_crawler()

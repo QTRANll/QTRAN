@@ -1,0 +1,31 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/timestampdiff/"
+    ],
+    "Title": [
+        "TIMESTAMPDIFF"
+    ],
+    "Feature": [
+        "TIMESTAMPDIFF(unit,datetime_expr1,datetime_expr2)\n"
+    ],
+    "Description": [
+        "Returns datetime_expr2 - datetime_expr1, where datetime_expr1 and\ndatetime_expr2 are date or datetime expressions. One expression may be\na date and the other a datetime; a date value is treated as a datetime\nhaving the time part '00:00:00' where necessary. The unit for the\nresult (an integer) is given by the unit argument. The legal values\nfor unit are the same as those listed in the description of the\nTIMESTAMPADD() function, i.e  MICROSECOND, SECOND, MINUTE, HOUR, DAY, WEEK, MONTH, QUARTER, or YEAR.",
+        "TIMESTAMPDIFF can also be used to calculate age."
+    ],
+    "Examples": [
+        "SELECT TIMESTAMPDIFF(MONTH,'2003-02-01','2003-05-01');\n+------------------------------------------------+\n| TIMESTAMPDIFF(MONTH,'2003-02-01','2003-05-01') |\n+------------------------------------------------+\n|                                              3 |\n+------------------------------------------------+\n\nSELECT TIMESTAMPDIFF(YEAR,'2002-05-01','2001-01-01');\n+-----------------------------------------------+\n| TIMESTAMPDIFF(YEAR,'2002-05-01','2001-01-01') |\n+-----------------------------------------------+\n|                                            -1 |\n+-----------------------------------------------+\n\nSELECT TIMESTAMPDIFF(MINUTE,'2003-02-01','2003-05-01 12:05:55');\n+----------------------------------------------------------+\n| TIMESTAMPDIFF(MINUTE,'2003-02-01','2003-05-01 12:05:55') |\n+----------------------------------------------------------+\n|                                                   128885 |\n+----------------------------------------------------------+\n",
+        "SELECT CURDATE();\n+------------+\n| CURDATE()  |\n+------------+\n| 2019-05-27 |\n+------------+\n\nSELECT TIMESTAMPDIFF(YEAR, '1971-06-06', CURDATE()) AS age;\n+------+\n| age  |\n+------+\n|   47 |\n+------+\n\nSELECT TIMESTAMPDIFF(YEAR, '1971-05-06', CURDATE()) AS age;\n+------+\n| age  |\n+------+\n|   48 |\n+------+\n",
+        "SELECT name, date_of_birth, TIMESTAMPDIFF(YEAR,date_of_birth,'2014-08-02') AS age \n  FROM student_details;\n+---------+---------------+------+\n| name    | date_of_birth | age  |\n+---------+---------------+------+\n| Chun    | 1993-12-31    |   20 |\n| Esben   | 1946-01-01    |   68 |\n| Kaolin  | 1996-07-16    |   18 |\n| Tatiana | 1988-04-13    |   26 |\n+---------+---------------+------+\n"
+    ],
+    "Category": [
+        "Date & Time Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT TIMESTAMPDIFF(MONTH,'2003-02-01','2003-05-01');",
+        "SELECT TIMESTAMPDIFF(YEAR,'2002-05-01','2001-01-01');",
+        "SELECT TIMESTAMPDIFF(MINUTE,'2003-02-01','2003-05-01 12:05:55');",
+        "SELECT CURDATE();",
+        "SELECT TIMESTAMPDIFF(YEAR, '1971-06-06', CURDATE()) AS age;",
+        "SELECT TIMESTAMPDIFF(YEAR, '1971-05-06', CURDATE()) AS age;"
+    ]
+}

@@ -1,0 +1,35 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/natural_sort_key/"
+    ],
+    "Title": [
+        "NATURAL_SORT_KEY"
+    ],
+    "Feature": [
+        "NATURAL_SORT_KEY(str)\n"
+    ],
+    "Description": [
+        "The NATURAL_SORT_KEY function is used for sorting that is closer to natural sorting. Strings are sorted in alphabetical order, while numbers are treated in a way such that, for example, 10 is greater than 2, whereas in other forms of sorting, 2 would be greater than 10, just like z is greater than ya.",
+        "There are multiple natural sort implementations, differing in the way they handle leading zeroes, fractions, i18n, negatives, decimals and so on.",
+        "MariaDB's implementation ignores leading zeroes when performing the sort.",
+        "You can use also use NATURAL_SORT_KEY with generated columns. The value is not stored permanently in the table. When using a generated column, the virtual column must be longer than the base column to cater for embedded numbers in the string and MDEV-24582."
+    ],
+    "Examples": [
+        "CREATE TABLE t1 (c TEXT);\n\nINSERT INTO t1 VALUES ('b1'),('a2'),('a11'),('a1');\n\nSELECT c FROM t1;\n+------+\n| c    |\n+------+\n| b1   |\n| a2   |\n| a11  |\n| a1   |\n+------+\n\nSELECT c FROM t1 ORDER BY c;\n+------+\n| c    |\n+------+\n| a1   |\n| a11  |\n| a2   |\n| b1   |\n+------+\n",
+        "TRUNCATE t1;\n\nINSERT INTO t1 VALUES \n  ('5.5.31'),('10.7.0'),('10.2.1'),\n  ('10.1.22'),('10.3.32'),('10.2.12');\n\nSELECT c FROM t1;\n+---------+\n| c       |\n+---------+\n| 5.5.31  |\n| 10.7.0  |\n| 10.2.1  |\n| 10.1.22 |\n| 10.3.32 |\n| 10.2.12 |\n+---------+\n\nSELECT c FROM t1 ORDER BY c;\n+---------+\n| c       |\n+---------+\n| 10.1.22 |\n| 10.2.1  |\n| 10.2.12 |\n| 10.3.32 |\n| 10.7.0  |\n| 5.5.31  |\n+---------+\n\nSELECT c FROM t1 ORDER BY NATURAL_SORT_KEY(c);\n+---------+\n| c       |\n+---------+\n| 5.5.31  |\n| 10.1.22 |\n| 10.2.1  |\n| 10.2.12 |\n| 10.3.32 |\n| 10.7.0  |\n+---------+\n",
+        "TRUNCATE t1;\n\nINSERT INTO t1 VALUES \n  ('192.167.3.1'),('192.167.1.12'),('100.200.300.400'),\n  ('100.50.60.70'),('100.8.9.9'),('127.0.0.1'),('0.0.0.0');\n\nSELECT c FROM t1;\n+-----------------+\n| c               |\n+-----------------+\n| 192.167.3.1     |\n| 192.167.1.12    |\n| 100.200.300.400 |\n| 100.50.60.70    |\n| 100.8.9.9       |\n| 127.0.0.1       |\n| 0.0.0.0         |\n+-----------------+\n\nSELECT c FROM t1 ORDER BY c;\n+-----------------+\n| c               |\n+-----------------+\n| 0.0.0.0         |\n| 100.200.300.400 |\n| 100.50.60.70    |\n| 100.8.9.9       |\n| 127.0.0.1       |\n| 192.167.1.12    |\n| 192.167.3.1     |\n+-----------------+\n\nSELECT c FROM t1 ORDER BY NATURAL_SORT_KEY(c);\n+-----------------+\n| c               |\n+-----------------+\n| 0.0.0.0         |\n| 100.8.9.9       |\n| 100.50.60.70    |\n| 100.200.300.400 |\n| 127.0.0.1       |\n| 192.167.1.12    |\n| 192.167.3.1     |\n+-----------------+\n",
+        "CREATE TABLE t(c VARCHAR(3), k VARCHAR(4) AS (NATURAL_SORT_KEY(c)) INVISIBLE);\n\nINSERT INTO t(c) VALUES ('b1'),('a2'),('a11'),('a10');\n\nSELECT * FROM t ORDER by k;\n+------+\n| c    |\n+------+\n| a2   |\n| a10  |\n| a11  |\n| b1   |\n+------+\n",
+        "CREATE TABLE t2(c VARCHAR(3), k VARCHAR(3) AS (NATURAL_SORT_KEY(c)) INVISIBLE);\n\nINSERT INTO t2(c) VALUES ('b1'),('a2'),('a11'),('a10');\n\nSELECT * FROM t2 ORDER by k;\n+------+\n| c    |\n+------+\n| a2   |\n| a11  |\n| a10  |\n| b1   |\n+------+\n",
+        "CREATE TABLE t3 (a VARCHAR(4));\n\nINSERT INTO t3 VALUES \n  ('a1'), ('a001'), ('a10'), ('a001'), ('a10'), \n  ('a01'), ('a01'), ('a01b'), ('a01b'), ('a1');\n\nSELECT a FROM t3 ORDER BY a;\n+------+\n| a    |\n+------+\n| a001 |\n| a001 |\n| a01  |\n| a01  |\n| a01b |\n| a01b |\n| a1   |\n| a1   |\n| a10  |\n| a10  |\n+------+\n10 rows in set (0.000 sec)\n\nSELECT a FROM t3 ORDER BY NATURAL_SORT_KEY(a);\n+------+\n| a    |\n+------+\n| a1   |\n| a01  |\n| a01  |\n| a001 |\n| a001 |\n| a1   |\n| a01b |\n| a01b |\n| a10  |\n| a10  |\n+------+\n",
+        "SELECT a FROM t3 ORDER BY NATURAL_SORT_KEY(a), a;\n+------+\n| a    |\n+------+\n| a001 |\n| a001 |\n| a01  |\n| a01  |\n| a1   |\n| a1   |\n| a01b |\n| a01b |\n| a10  |\n| a10  |\n+------+\n"
+    ],
+    "Category": [
+        "String Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT * FROM t ORDER by k;",
+        "INSERT INTO t3 VALUES \n  ('a1'), ('a001'), ('a10'), ('a001'), ('a10'), \n  ('a01'), ('a01'), ('a01b'), ('a01b'), ('a1');",
+        "SELECT a FROM t3 ORDER BY a;",
+        "SELECT a FROM t3 ORDER BY NATURAL_SORT_KEY(a), a;"
+    ]
+}

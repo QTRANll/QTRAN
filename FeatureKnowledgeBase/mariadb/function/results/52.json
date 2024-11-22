@@ -1,0 +1,28 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/crc32c/"
+    ],
+    "Title": [
+        "CRC32C"
+    ],
+    "Feature": [
+        "CRC32C([par,]expr)\n"
+    ],
+    "Description": [
+        "MariaDB has always included a native unary function CRC32() that computes the CRC-32 of a string using the ISO 3309 polynomial that used by zlib and many others.",
+        "InnoDB and MyRocks use a different polynomial, which was implemented in SSE4.2 instructions that were introduced in the Intel Nehalem microarchitecture. This is commonly called CRC-32C (Castagnoli).",
+        "The CRC32C function uses the Castagnoli polynomial.",
+        "This allows SELECT\u2026INTO DUMPFILE to be used for the creation of files with\nvalid checksums, such as a logically empty InnoDB redo log file\nib_logfile0 corresponding to a particular log sequence number.",
+        "The optional parameter allows the checksum to be computed in pieces:\nCRC32C('MariaDB')=CRC32C(CRC32C('Maria'),'DB')."
+    ],
+    "Examples": [
+        "SELECT CRC32C('MariaDB');\n+-------------------+\n| CRC32C('MariaDB') |\n+-------------------+\n|         809606978 |\n+-------------------+\n\nSELECT CRC32C(CRC32C('Maria'),'DB');\n+------------------------------+\n| CRC32C(CRC32C('Maria'),'DB') |\n+------------------------------+\n|                    809606978 |\n+------------------------------+\n"
+    ],
+    "Category": [
+        "Numeric Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT CRC32C('MariaDB');",
+        "SELECT CRC32C(CRC32C('Maria'),'DB');"
+    ]
+}

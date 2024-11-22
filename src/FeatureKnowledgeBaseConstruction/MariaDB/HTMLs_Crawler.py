@@ -1,6 +1,6 @@
 import json
 import os
-from src.Tools.crawler_options import set_options
+from src.Tools.Crawler.crawler_options import set_options
 from selenium import webdriver
 from selenium.webdriver.support.ui import WebDriverWait
 from bs4 import BeautifulSoup

@@ -1,0 +1,25 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/sin/"
+    ],
+    "Title": [
+        "SIN"
+    ],
+    "Feature": [
+        "SIN(X)\n"
+    ],
+    "Description": [
+        "Returns the sine of X, where X is given in radians."
+    ],
+    "Examples": [
+        "SELECT SIN(1.5707963267948966);\n+-------------------------+\n| SIN(1.5707963267948966) |\n+-------------------------+\n|                       1 |\n+-------------------------+\n\nSELECT SIN(PI());\n+----------------------+\n| SIN(PI())            |\n+----------------------+\n| 1.22460635382238e-16 |\n+----------------------+\n\nSELECT ROUND(SIN(PI()));\n+------------------+\n| ROUND(SIN(PI())) |\n+------------------+\n|                0 |\n+------------------+\n"
+    ],
+    "Category": [
+        "Numeric Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT SIN(1.5707963267948966);",
+        "SELECT SIN(PI());",
+        "SELECT ROUND(SIN(PI()));"
+    ]
+}

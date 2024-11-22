@@ -13,7 +13,7 @@ import os
 from selenium import webdriver
 from selenium.webdriver.support.ui import WebDriverWait
 from bs4 import BeautifulSoup, Tag
-from src.Tools.crawler_options import set_options
+from src.Tools.Crawler.crawler_options import set_options
 
 
 def is_illustration(tag_name, tag_class, tag_text):
@@ -192,7 +192,7 @@ def operator_article_body_processor(category, title, html, dic_name, soup_body, 
             func_name = code_blocks[-1].text.split('(')[0].strip() if len(code_blocks) > 1 else ""
             # 对应的function_dicname
             if len(func_name):
-                function_dicname = dic_name.replace("Operators", "Functions")
+                function_dicname = dic_name.replace("operator", "function")
                 filenames_func = os.listdir(function_dicname)
                 for file in filenames_func:
                     if file.lower().split('.')[0] == func_name.lower() or file.lower().startswith(func_name.lower()+"("):
@@ -273,16 +273,16 @@ def function_crawler(origin_category, title, html, dic_filename):
     for soup_li in soup_breadcrumb.find_all("li"):
         if len(soup_li.text):
             soup_breadcrumb_list.append(soup_li.text)
-    if soup_breadcrumb_list[1] == "Regular Functions":
-        origin_category = soup_breadcrumb_list[2] + " Functions"
-    elif soup_breadcrumb_list[1] in ["Aggregate Functions", "Table Functions", "Window Functions"]:
+    if soup_breadcrumb_list[1] == "Regular function":
+        origin_category = soup_breadcrumb_list[2] + " function"
+    elif soup_breadcrumb_list[1] in ["Aggregate function", "Table function", "Window function"]:
         origin_category = soup_breadcrumb_list[1]
 
     # 获取页面内h2标题的个数h2_cnt以及h3标题的个数h3_cnt
     """
-    1. 以h2作为标题划分页面内多个函数，有一个h1上级标题（即页面顶部标题）：例如[Arithmetic Functions | ClickHouse Docs](https://clickhouse.com/docs/en/sql-reference/functions/arithmetic-functions)
-    2. 以h3作为标题划分页面内多个函数，有一个h2上级标题：例如[Functions for Working with Embedded Dictionaries | ClickHouse Docs](https://clickhouse.com/docs/en/sql-reference/functions/ym-dict-functions)
-    3. 页面内只有一个函数，Syntax和Example没有明确的划分：例如[arrayJoin function | ClickHouse Docs](https://clickhouse.com/docs/en/sql-reference/functions/array-join)
+    1. 以h2作为标题划分页面内多个函数，有一个h1上级标题（即页面顶部标题）：例如[Arithmetic function | clickhouse Docs](https://clickhouse.com/docs/en/sql-reference/functions/arithmetic-functions)
+    2. 以h3作为标题划分页面内多个函数，有一个h2上级标题：例如[function for Working with Embedded Dictionaries | clickhouse Docs](https://clickhouse.com/docs/en/sql-reference/functions/ym-dict-functions)
+    3. 页面内只有一个函数，Syntax和Example没有明确的划分：例如[arrayJoin function | clickhouse Docs](https://clickhouse.com/docs/en/sql-reference/functions/array-join)
     * 读取页面内所有h2标题个数h2_cnt和h3标题个数h3_cnt。
 	* h2_cnt > 1，h3_cnt = 任意：情况1
 	* h2_cnt = 1，h3_cnt = 0：情况1
@@ -310,9 +310,9 @@ def function_crawler(origin_category, title, html, dic_filename):
 
 def op_crawler(origin_category, title, html, dic_filename):
     if title == "EXISTS":
-        function_crawler("EXISTS Operators", title, html, dic_filename)
+        function_crawler("EXISTS operator", title, html, dic_filename)
         return
-    elif title == "Operators":
+    elif title == "operator":
         # 下面的代码进行处理
         pass
     else:
@@ -362,18 +362,18 @@ def data_types_crawler(category_key, statement_key, statement_value, dic_filenam
 
 def crawler_results(feature_type, htmls_filename, dic_filename):
     if len(os.listdir(dic_filename)):
-        print(dic_filename + ":crawler finished")
+        print(dic_filename + ":Crawler finished")
         return
     with open(htmls_filename, "r", encoding="utf-8") as rf:
         html_contents = json.load(rf)
         for category_key, value in html_contents.items():
             for statement_key, statement_value in value.items():
                 print(statement_key+":"+str(statement_value))
-                if feature_type == "Functions":
+                if feature_type == "function":
                     function_crawler(category_key, statement_key, statement_value, dic_filename)
-                elif feature_type == "Operators":
+                elif feature_type == "operator":
                     op_crawler(category_key, statement_key, statement_value, dic_filename)
-                elif feature_type == "DataTypes":
+                elif feature_type == "datatype":
                     data_types_crawler(category_key, statement_key, statement_value, dic_filename)
                 print('----------------------')
 

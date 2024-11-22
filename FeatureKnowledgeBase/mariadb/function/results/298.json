@@ -1,0 +1,27 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/st_crosses/"
+    ],
+    "Title": [
+        "ST_CROSSES"
+    ],
+    "Feature": [
+        "ST_CROSSES(g1,g2)\n"
+    ],
+    "Description": [
+        "Returns 1 if geometry g1 spatially crosses geometry g2. Returns NULL if g1 is a Polygon or a MultiPolygon, or if g2 is a\nPoint or a MultiPoint. Otherwise, returns 0.",
+        "The term spatially crosses denotes a spatial relation between two\ngiven geometries that has the following properties:",
+        "The two geometries intersect\nTheir intersection results in a geometry that has a dimension that is one\n  less than the maximum dimension of the two given geometries\nTheir intersection is not equal to either of the two given geometries\n",
+        "ST_CROSSES() uses object shapes, while CROSSES(), based on the original MySQL implementation, uses object bounding rectangles."
+    ],
+    "Examples": [
+        "SET @g1 = ST_GEOMFROMTEXT('LINESTRING(174 149, 176 151)');\n\nSET @g2 = ST_GEOMFROMTEXT('POLYGON((175 150, 20 40, 50 60, 125 100, 175 150))');\n\nSELECT ST_CROSSES(@g1,@g2);\n+---------------------+\n| ST_CROSSES(@g1,@g2) |\n+---------------------+\n|                   1 |\n+---------------------+\n\nSET @g1 = ST_GEOMFROMTEXT('LINESTRING(176 149, 176 151)');\n\nSELECT ST_CROSSES(@g1,@g2);\n+---------------------+\n| ST_CROSSES(@g1,@g2) |\n+---------------------+\n|                   0 |\n+---------------------+\n"
+    ],
+    "Category": [
+        "Geographic Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT ST_CROSSES(@g1,@g2);",
+        "SELECT ST_CROSSES(@g1,@g2);"
+    ]
+}

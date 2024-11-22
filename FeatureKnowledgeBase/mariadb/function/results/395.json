@@ -1,0 +1,25 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/within/"
+    ],
+    "Title": [
+        "WITHIN"
+    ],
+    "Feature": [
+        "Within(g1,g2)\n"
+    ],
+    "Description": [
+        "Returns 1 or 0 to indicate whether g1 is spatially within g2.\nThis tests the opposite relationship as Contains().",
+        "WITHIN() is based on the original MySQL implementation, and uses object bounding rectangles, while ST_WITHIN() uses object shapes."
+    ],
+    "Examples": [
+        "SET @g1 = GEOMFROMTEXT('POINT(174 149)');\nSET @g2 = GEOMFROMTEXT('POINT(176 151)');\nSET @g3 = GEOMFROMTEXT('POLYGON((175 150, 20 40, 50 60, 125 100, 175 150))');\n\nSELECT within(@g1,@g3);\n+-----------------+\n| within(@g1,@g3) |\n+-----------------+\n|               1 |\n+-----------------+\n\nSELECT within(@g2,@g3);\n+-----------------+\n| within(@g2,@g3) |\n+-----------------+\n|               0 |\n+-----------------+\n"
+    ],
+    "Category": [
+        "Geographic Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT within(@g1,@g3);",
+        "SELECT within(@g2,@g3);"
+    ]
+}

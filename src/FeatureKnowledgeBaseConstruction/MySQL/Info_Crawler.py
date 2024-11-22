@@ -9,8 +9,8 @@ import os
 from selenium import webdriver
 from selenium.webdriver.support.ui import WebDriverWait
 from bs4 import BeautifulSoup, Tag
-from src.Tools.crawler_options import set_options
-from src.Tools.crawler_options import sanitize_title
+from src.Tools.Crawler.crawler_options import set_options
+from src.Tools.Crawler.crawler_options import sanitize_title
 
 # 判断Tag是否为illustration：是则返回True，否则返回False
 def is_illustration(tag_name, tag_class, tag_text):
@@ -93,13 +93,11 @@ def functions_and_operators_item_crawler(table_content, feature_type):
 def functions_and_operators_table_crawler(reference_table_filename, dic_path):
     with open(reference_table_filename, "r", encoding="utf-8") as rf:
         table_contents = json.load(rf)
-    # 遍历Reference Table Results文件中所有Functiosn/Operators，逐个爬取相关信息
-    print(len(table_contents))
+    # 遍历Reference Table Results文件中所有Functiosn/operator，逐个爬取相关信息
     for index in range(len(table_contents)):
         table_content = table_contents[index]
-        print("Title:" + table_content["Title"] + "\n" + "Name:" + table_content["Name"] +"\n" + "Reference HTML:" + table_content["Reference HTML"] + "\n")
         try:
-            table_content_type = "Functions" if "(" in table_content["Name"] and ")" in table_content["Name"] else "Operators"
+            table_content_type = "function" if "(" in table_content["Name"] and ")" in table_content["Name"] else "operator"
             direct_filename = os.path.join(dic_path, str(index) + ".json")
             if os.path.exists(direct_filename):
                 print(direct_filename + ":已存在")

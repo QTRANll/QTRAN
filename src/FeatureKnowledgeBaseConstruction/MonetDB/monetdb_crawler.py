@@ -2,17 +2,20 @@ import os
 import json
 from src.FeatureKnowledgeBaseConstruction.MonetDB.HTMLs_Crawler import htmls_crawler
 from src.FeatureKnowledgeBaseConstruction.MonetDB.Info_Crawler import crawler_results
-from src.Tools.crawler_options import category_classifier
+from src.Tools.Crawler.crawler_options import category_classifier
+current_file_path = os.path.abspath(__file__)
+current_dir = os.path.dirname(current_file_path)
+
 def monetdb_crawler():
-    dic_path = os.path.join(os.getcwd(),"..", "..", "..", "Feature Knowledge Base", "MonetDB")
-    feature_types = ["DataTypes", "Functions", "Operators"]
-    sub_dic = ["Results", "Results_Category"]
+    dic_path = os.path.join(current_dir,"..", "..", "..", "FeatureKnowledgeBase", "monetdb")
+    feature_types = ["datatype", "function", "operator"]
+    sub_dic = ["results", "results_category"]
     htmls_list = {
-        "Functions": "https://www.monetdb.org/documentation-Aug2024/user-guide/sql-functions/",
-        "Operators": "https://www.monetdb.org/documentation-Aug2024/user-guide/sql-functions/",
-        "DataTypes": "https://www.monetdb.org/documentation-Aug2024/user-guide/sql-manual/data-types/"
+        "function": "https://www.monetdb.org/documentation-Aug2024/user-guide/sql-functions/",
+        "operator": "https://www.monetdb.org/documentation-Aug2024/user-guide/sql-functions/",
+        "datatype": "https://www.monetdb.org/documentation-Aug2024/user-guide/sql-manual/data-types/"
     }
-    # htmls crawler
+    # htmls Crawler
     for feature in feature_types:
         # make dictionaries
         feature_dic = os.path.join(dic_path, feature)
@@ -32,22 +35,20 @@ def monetdb_crawler():
             json.dump(htmls, f, indent=4)
 
 
-    # information crawler and classification
+    # information Crawler and classification
     # functions and operators
-    htmls_filename = os.path.join(dic_path, "Functions", "HTMLs.json")
-    func_results_dic = os.path.join(dic_path, "Functions", "Results")
-    func_results_category_dic = os.path.join(dic_path, "Functions", "Results_Category")
-    op_results_dic = os.path.join(dic_path, "Operators", "Results")
-    op_results_category_dic = os.path.join(dic_path, "Operators", "Results_Category")
-    crawler_results("Functions", htmls_filename, func_results_dic, op_results_dic)
+    htmls_filename = os.path.join(dic_path, "function", "HTMLs.json")
+    func_results_dic = os.path.join(dic_path, "function", "results")
+    func_results_category_dic = os.path.join(dic_path, "function", "results_category")
+    op_results_dic = os.path.join(dic_path, "operator", "results")
+    op_results_category_dic = os.path.join(dic_path, "operator", "results_category")
+    crawler_results("function", htmls_filename, func_results_dic, op_results_dic)
     category_classifier(func_results_dic, func_results_category_dic)
     category_classifier(op_results_dic, op_results_category_dic)
 
     # data types
-    htmls_filename = os.path.join(dic_path, "DataTypes", "HTMLs.json")
-    data_results_dic = os.path.join(dic_path, "DataTypes", "Results")
-    data_results_category_dic = os.path.join(dic_path, "DataTypes", "Results_Category")
-    crawler_results("DataTypes", htmls_filename, data_results_dic, "")
+    htmls_filename = os.path.join(dic_path, "datatype", "HTMLs.json")
+    data_results_dic = os.path.join(dic_path, "datatype", "results")
+    data_results_category_dic = os.path.join(dic_path, "datatype", "results_category")
+    crawler_results("datatype", htmls_filename, data_results_dic, "")
     category_classifier(data_results_dic, data_results_category_dic)
-
-monetdb_crawler()

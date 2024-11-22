@@ -1,0 +1,24 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/oct/"
+    ],
+    "Title": [
+        "OCT"
+    ],
+    "Feature": [
+        "OCT(N)\n"
+    ],
+    "Description": [
+        "Returns a string representation of the octal value of N, where N is a longlong (BIGINT) number. This is equivalent to CONV(N,10,8). Returns NULL if N is NULL."
+    ],
+    "Examples": [
+        "SELECT OCT(34);\n+---------+\n| OCT(34) |\n+---------+\n| 42      |\n+---------+\n\nSELECT OCT(12);\n+---------+\n| OCT(12) |\n+---------+\n| 14      |\n+---------+\n"
+    ],
+    "Category": [
+        "Numeric Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT OCT(34);",
+        "SELECT OCT(12);"
+    ]
+}

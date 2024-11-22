@@ -1,0 +1,44 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/like/"
+    ],
+    "Title": [
+        "LIKE"
+    ],
+    "Feature": [
+        "expr LIKE pat [ESCAPE 'escape_char']\nexpr NOT LIKE pat [ESCAPE 'escape_char']\n"
+    ],
+    "Description": [
+        "Tests whether expr matches the pattern pat. Returns either 1 (TRUE) or 0 (FALSE).\nBoth expr and pat may be any valid expression and are evaluated to strings.\nPatterns may use the following wildcard characters:",
+        "% matches any number of characters, including zero.\n_ matches any single character.\n",
+        "Use NOT LIKE to test if a string does not match a pattern. This is equivalent to using\nthe NOT operator on the entire LIKE expression.",
+        "If either the expression or the pattern is NULL, the result is NULL.",
+        "LIKE performs case-insensitive substring matches if the collation for the\nexpression and pattern is case-insensitive. For case-sensitive matches, declare either argument\nto use a binary collation using COLLATE, or coerce either of them to a BINARY\nstring using CAST. Use SHOW COLLATION to get a list of\navailable collations. Collations ending in _bin are case-sensitive.",
+        "Numeric arguments are coerced to binary strings.",
+        "The _ wildcard matches a single character, not byte. It will only match a multi-byte character\nif it is valid in the expression's character set. For example, _ will match _utf8\"\u20ac\", but it\nwill not match _latin1\"\u20ac\" because the Euro sign is not a valid latin1 character. If necessary,\nuse CONVERT to use the expression in a different character set.",
+        "If you need to match the characters _ or %, you must escape them. By default,\nyou can prefix the wildcard characters the backslash character \\ to escape them.\nThe backslash is used both to encode special characters like newlines when a string is\nparsed as well as to escape wildcards in a pattern after parsing. Thus, to match an\nactual backslash, you sometimes need to double-escape it as \"\\\\\\\\\".",
+        "To avoid difficulties with the backslash character, you can change the wildcard escape\ncharacter using ESCAPE in a LIKE expression. The argument to ESCAPE\nmust be a single-character string."
+    ],
+    "Examples": [
+        "CREATE TABLE t1 (d VARCHAR(16));\nINSERT INTO t1 VALUES \n  (\"Monday\"), (\"Tuesday\"), (\"Wednesday\"), \n  (\"Thursday\"), (\"Friday\"), (\"Saturday\"), (\"Sunday\");\nSELECT * FROM t1 WHERE d LIKE \"T%\";\n",
+        "SELECT * FROM t1 WHERE d LIKE \"T%\";\n+----------+\n| d        |\n+----------+\n| Tuesday  |\n| Thursday |\n+----------+\n",
+        "SELECT * FROM t1 WHERE d LIKE \"%es%\";\n",
+        "SELECT * FROM t1 WHERE d LIKE \"%es%\";\n+-----------+\n| d         |\n+-----------+\n| Tuesday   |\n| Wednesday |\n+-----------+\n",
+        "SELECT * FROM t1 WHERE d like \"___day\";\n",
+        "SELECT * FROM t1 WHERE d like \"___day\";\n+---------+\n| d       |\n+---------+\n| Monday  |\n| Friday  |\n| Sunday  |\n+---------+\n",
+        "SELECT * FROM t1 where d like \"t%\";\n",
+        "SELECT * FROM t1 where d like \"t%\";\n+----------+\n| d        |\n+----------+\n| Tuesday  |\n| Thursday |\n+----------+\n",
+        "SELECT * FROM t1 WHERE d like \"t%\" COLLATE latin1_bin;\n",
+        "SELECT * FROM t1 WHERE d like \"t%\" COLLATE latin1_bin;\nEmpty set (0.00 sec)\n",
+        "CREATE TABLE t2 (d DATETIME);\nINSERT INTO t2 VALUES\n    (\"2007-01-30 21:31:07\"),\n    (\"1983-10-15 06:42:51\"),\n    (\"2011-04-21 12:34:56\"),\n    (\"2011-10-30 06:31:41\"),\n    (\"2011-01-30 14:03:25\"),\n    (\"2004-10-07 11:19:34\");\nSELECT * FROM t2 WHERE DAYNAME(d) LIKE \"T%\";\n",
+        "SELECT * FROM t2 WHERE DAYNAME(d) LIKE \"T%\";\n+------------------+\n| d                |\n+------------------+\n| 2007-01-30 21:31 |\n| 2011-04-21 12:34 |\n| 2004-10-07 11:19 |\n+------------------+\n3 rows in set, 7 warnings (0.00 sec)\n"
+    ],
+    "Category": [
+        "String Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "INSERT INTO t2 VALUES\n    (\"2007-01-30 21:31:07\"),\n    (\"1983-10-15 06:42:51\"),\n    (\"2011-04-21 12:34:56\"),\n    (\"2011-10-30 06:31:41\"),\n    (\"2011-01-30 14:03:25\"),\n    (\"2004-10-07 11:19:34\");",
+        "SELECT * FROM t2 WHERE DAYNAME(d) LIKE \"T%\";",
+        "SELECT * FROM t2 WHERE DAYNAME(d) LIKE \"T%\";"
+    ]
+}

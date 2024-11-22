@@ -2,22 +2,25 @@ import os
 import json
 from src.FeatureKnowledgeBaseConstruction.ClickHouse.HTMLs_Crawler import htmls_crawler
 from src.FeatureKnowledgeBaseConstruction.ClickHouse.Info_Crawler import crawler_results
-from src.Tools.crawler_options import category_classifier
+from src.Tools.Crawler.crawler_options import category_classifier
+current_file_path = os.path.abspath(__file__)
+current_dir = os.path.dirname(current_file_path)
+
 def clickhouse_crawler():
-    dic_path = os.path.join(os.getcwd(),"..", "..", "..", "Feature Knowledge Base", "Clickhouse")
-    feature_types = ["DataTypes", "Functions", "Operators"]
-    sub_dic = ["Results", "Results_Category"]
+    dic_path = os.path.join(current_dir,"..", "..", "..", "FeatureKnowledgeBase", "clickhouse")
+    feature_types = ["datatype", "function", "operator"]
+    sub_dic = ["results", "results_category"]
     htmls_start_list = {
-        "Functions": "https://clickhouse.com/docs/en/sql-reference/functions",
-        "Operators": "https://clickhouse.com/docs/en/sql-reference/window-functions/leadInFrame",
-        "DataTypes": "https://clickhouse.com/docs/en/sql-reference/data-types"
+        "function": "https://clickhouse.com/docs/en/sql-reference/functions",
+        "operator": "https://clickhouse.com/docs/en/sql-reference/window-functions/leadInFrame",
+        "datatype": "https://clickhouse.com/docs/en/sql-reference/data-types"
     }
     htmls_end_list = {
-        "Functions": "https://clickhouse.com/docs/en/sql-reference/window-functions/leadInFrame",
-        "Operators": "https://clickhouse.com/docs/en/sql-reference/operators/exists",
-        "DataTypes": "https://clickhouse.com/docs/en/sql-reference/data-types/newjson"
+        "function": "https://clickhouse.com/docs/en/sql-reference/window-functions/leadInFrame",
+        "operator": "https://clickhouse.com/docs/en/sql-reference/operators/exists",
+        "datatype": "https://clickhouse.com/docs/en/sql-reference/data-types/newjson"
     }
-    # htmls crawler
+    # htmls Crawler
     for feature in feature_types:
         # make dictionaries
         feature_dic = os.path.join(dic_path, feature)
@@ -36,12 +39,10 @@ def clickhouse_crawler():
         with open(html_path, 'w', encoding='utf-8') as f:
             json.dump(htmls, f, indent=4)
 
-    # functions and operators information crawler and classification
+    # functions and operators information Crawler and classification
     for feature in feature_types:
         htmls_filename = os.path.join(dic_path, feature, "HTMLs.json")
-        results_dic = os.path.join(dic_path, feature, "Results")
-        results_category_dic = os.path.join(dic_path, feature, "Results_Category")
+        results_dic = os.path.join(dic_path, feature, "results")
+        results_category_dic = os.path.join(dic_path, feature, "results_category")
         crawler_results(feature, htmls_filename, results_dic)
         category_classifier(results_dic, results_category_dic)
-
-clickhouse_crawler()

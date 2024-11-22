@@ -12,9 +12,8 @@ import os
 from selenium import webdriver
 from selenium.webdriver.support.ui import WebDriverWait
 from bs4 import BeautifulSoup, Tag
-import re
-from src.Tools.crawler_options import set_options
-from urllib.parse import urljoin
+from src.Tools.Crawler.crawler_options import set_options
+
 
 def is_illustration(tag_name, tag_class, tag_text):
     if tag_text == "":
@@ -105,19 +104,19 @@ def functions_crawler_results(origin_category,html, results_dic, mysql_results_d
             result_filename = os.path.join(results_dic, str(file_cnt) + ".json")
             with open(result_filename, "w", encoding="utf-8") as w:
                 json.dump(function_res, w, indent=4, ensure_ascii=False)
-    if "JSON Functions" == origin_category:
+    if "JSON function" == origin_category:
         functions_crawler_results_json(origin_category, html, results_dic)
 
 
 def crawler_results(feature_type, htmls_filename, dic_filename):
     if len(os.listdir(dic_filename)):
-        print(dic_filename + ":crawler finished")
+        print(dic_filename + ":Crawler finished")
         return
     with open(htmls_filename, "r", encoding="utf-8") as rf:
         html_contents = json.load(rf)
     for category_key, value in html_contents.items():
         for statement_key, statement_value in value.items():
             print(statement_key + ":" + str(statement_value))
-            if feature_type == "Functions":
-                functions_crawler_results(statement_key,statement_value, dic_filename, dic_filename.replace("TiDB", "MySQL"))
+            if feature_type == "function":
+                functions_crawler_results(statement_key,statement_value, dic_filename, dic_filename.replace("tidb", "mysql"))
             print('----------------------')

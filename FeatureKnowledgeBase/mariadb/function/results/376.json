@@ -1,0 +1,26 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/utc_time/"
+    ],
+    "Title": [
+        "UTC_TIME"
+    ],
+    "Feature": [
+        "UTC_TIME\nUTC_TIME([precision])\n"
+    ],
+    "Description": [
+        "Returns the current UTC time as a value in 'HH:MM:SS' or HHMMSS.uuuuuu format, depending on whether the function is used in a string or numeric context. ",
+        "The optional precision determines the microsecond precision. See Microseconds in MariaDB."
+    ],
+    "Examples": [
+        "SELECT UTC_TIME(), UTC_TIME() + 0;\n+------------+----------------+\n| UTC_TIME() | UTC_TIME() + 0 |\n+------------+----------------+\n| 17:32:34   |  173234.000000 |\n+------------+----------------+\n",
+        "SELECT UTC_TIME(5);\n+----------------+\n| UTC_TIME(5)    |\n+----------------+\n| 07:52:50.78369 |\n+----------------+\n"
+    ],
+    "Category": [
+        "Date & Time Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT UTC_TIME(), UTC_TIME() + 0;",
+        "SELECT UTC_TIME(5);"
+    ]
+}

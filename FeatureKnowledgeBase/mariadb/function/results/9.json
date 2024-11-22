@@ -1,0 +1,24 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/atan/"
+    ],
+    "Title": [
+        "ATAN"
+    ],
+    "Feature": [
+        "ATAN(X)\n"
+    ],
+    "Description": [
+        "Returns the arc tangent of X, that is, the value whose tangent is X."
+    ],
+    "Examples": [
+        "SELECT ATAN(2);\n+--------------------+\n| ATAN(2)            |\n+--------------------+\n| 1.1071487177940904 |\n+--------------------+\n\nSELECT ATAN(-2);\n+---------------------+\n| ATAN(-2)            |\n+---------------------+\n| -1.1071487177940904 |\n+---------------------+\n"
+    ],
+    "Category": [
+        "Numeric Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT ATAN(2);",
+        "SELECT ATAN(-2);"
+    ]
+}

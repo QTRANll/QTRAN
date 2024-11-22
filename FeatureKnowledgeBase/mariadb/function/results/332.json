@@ -1,0 +1,24 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/polyfromtext/"
+    ],
+    "Title": [
+        "ST_PolyFromText"
+    ],
+    "Feature": [
+        "ST_PolyFromText(wkt[,srid])\nST_PolygonFromText(wkt[,srid])\nPolyFromText(wkt[,srid])\nPolygonFromText(wkt[,srid])\n"
+    ],
+    "Description": [
+        "Constructs a POLYGON value using its WKT representation and SRID.",
+        "ST_PolyFromText(), ST_PolygonFromText(), PolyFromText() and ST_PolygonFromText() are all synonyms."
+    ],
+    "Examples": [
+        "CREATE TABLE gis_polygon   (g POLYGON);\nINSERT INTO gis_polygon VALUES\n    (PolygonFromText('POLYGON((10 10,20 10,20 20,10 20,10 10))')),\n    (PolyFromText('POLYGON((0 0,50 0,50 50,0 50,0 0), (10 10,20 10,20 20,10 20,10 10))'));\n"
+    ],
+    "Category": [
+        "Geographic Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "INSERT INTO gis_polygon VALUES\n    (PolygonFromText('POLYGON((10 10,20 10,20 20,10 20,10 10))')),\n    (PolyFromText('POLYGON((0 0,50 0,50 50,0 50,0 0), (10 10,20 10,20 20,10 20,10 10))'));"
+    ]
+}

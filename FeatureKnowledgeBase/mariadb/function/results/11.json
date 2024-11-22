@@ -1,0 +1,35 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/avg/"
+    ],
+    "Title": [
+        "AVG"
+    ],
+    "Feature": [
+        "AVG([DISTINCT] expr)\n"
+    ],
+    "Description": [
+        "Returns the average value of expr. The DISTINCT option can be used to return the average of the distinct values of expr. NULL values are ignored. It is an aggregate function, and so can be used with the GROUP BY clause.",
+        "AVG() returns NULL if there were no matching rows.",
+        "AVG() can be used as a window function."
+    ],
+    "Examples": [
+        "CREATE TABLE sales (sales_value INT);\n\nINSERT INTO sales VALUES(10),(20),(20),(40);\n\nSELECT AVG(sales_value) FROM sales;\n+------------------+\n| AVG(sales_value) |\n+------------------+\n|          22.5000 |\n+------------------+\n\nSELECT AVG(DISTINCT(sales_value)) FROM sales;\n+----------------------------+\n| AVG(DISTINCT(sales_value)) |\n+----------------------------+\n|                    23.3333 |\n+----------------------------+\n",
+        "CREATE TABLE student (name CHAR(10), test CHAR(10), score TINYINT); \n\nINSERT INTO student VALUES \n  ('Chun', 'SQL', 75), ('Chun', 'Tuning', 73), \n  ('Esben', 'SQL', 43), ('Esben', 'Tuning', 31), \n  ('Kaolin', 'SQL', 56), ('Kaolin', 'Tuning', 88), \n  ('Tatiana', 'SQL', 87), ('Tatiana', 'Tuning', 83);\n\nSELECT name, AVG(score) FROM student GROUP BY name;\n+---------+------------+\n| name    | AVG(score) |\n+---------+------------+\n| Chun    |    74.0000 |\n| Esben   |    37.0000 |\n| Kaolin  |    72.0000 |\n| Tatiana |    85.0000 |\n+---------+------------+\n",
+        "SELECT name,test,AVG(score) FROM student;\n+------+------+------------+\n| name | test | MIN(score) |\n+------+------+------------+\n| Chun | SQL  |         31 |\n+------+------+------------+\n",
+        "CREATE TABLE student_test (name CHAR(10), test CHAR(10), score TINYINT); \n\nINSERT INTO student_test VALUES \n    ('Chun', 'SQL', 75), ('Chun', 'Tuning', 73), \n    ('Esben', 'SQL', 43), ('Esben', 'Tuning', 31), \n    ('Kaolin', 'SQL', 56), ('Kaolin', 'Tuning', 88), \n    ('Tatiana', 'SQL', 87), ('Tatiana', 'Tuning', 83);\n\nSELECT name, test, score, AVG(score) OVER (PARTITION BY test) \n    AS average_by_test FROM student_test;\n+---------+--------+-------+-----------------+\n| name    | test   | score | average_by_test |\n+---------+--------+-------+-----------------+\n| Chun    | SQL    |    75 |         65.2500 |\n| Chun    | Tuning |    73 |         68.7500 |\n| Esben   | SQL    |    43 |         65.2500 |\n| Esben   | Tuning |    31 |         68.7500 |\n| Kaolin  | SQL    |    56 |         65.2500 |\n| Kaolin  | Tuning |    88 |         68.7500 |\n| Tatiana | SQL    |    87 |         65.2500 |\n| Tatiana | Tuning |    83 |         68.7500 |\n+---------+--------+-------+-----------------+\n"
+    ],
+    "Category": [
+        "Aggregate Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "INSERT INTO sales VALUES(10),(20),(20),(40);",
+        "SELECT AVG(sales_value) FROM sales;",
+        "SELECT AVG(DISTINCT(sales_value)) FROM sales;",
+        "INSERT INTO student VALUES \n  ('Chun', 'SQL', 75), ('Chun', 'Tuning', 73), \n  ('Esben', 'SQL', 43), ('Esben', 'Tuning', 31), \n  ('Kaolin', 'SQL', 56), ('Kaolin', 'Tuning', 88), \n  ('Tatiana', 'SQL', 87), ('Tatiana', 'Tuning', 83);",
+        "SELECT name, AVG(score) FROM student GROUP BY name;",
+        "SELECT name,test,AVG(score) FROM student;",
+        "INSERT INTO student_test VALUES \n    ('Chun', 'SQL', 75), ('Chun', 'Tuning', 73), \n    ('Esben', 'SQL', 43), ('Esben', 'Tuning', 31), \n    ('Kaolin', 'SQL', 56), ('Kaolin', 'Tuning', 88), \n    ('Tatiana', 'SQL', 87), ('Tatiana', 'Tuning', 83);",
+        "SELECT name, test, score, AVG(score) OVER (PARTITION BY test) \n    AS average_by_test FROM student_test;"
+    ]
+}

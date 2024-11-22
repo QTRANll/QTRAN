@@ -1,6 +1,6 @@
 import json
 import os
-from src.Tools.crawler_options import set_options
+from src.Tools.Crawler.crawler_options import set_options
 from selenium import webdriver
 from selenium.webdriver.support.ui import WebDriverWait
 from bs4 import BeautifulSoup
@@ -60,7 +60,7 @@ def get_statements_htmls_category(dir_filename, category, crawler_html):
 
 def statements_htmls_crawler(Prefix):
     statements_htmls = {}
-    merged_htmls_filename = "../../../Feature Knowledge Base/MariaDB/SQL_Statements/SQL_Statements_HTMLs.json"
+    merged_htmls_filename = "../../../FeatureKnowledgeBase/mariadb/SQL_Statements/SQL_Statements_HTMLs.json"
     for key, value in statements_category_htmls.items():
         statements_htmls[key] = {}
         print(key)

@@ -1,0 +1,24 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/st_y/"
+    ],
+    "Title": [
+        "ST_Y"
+    ],
+    "Feature": [
+        "ST_Y(p)\nY(p)\n"
+    ],
+    "Description": [
+        "Returns the Y-coordinate value for the point p as a double-precision number.",
+        "ST_Y() and Y() are synonyms."
+    ],
+    "Examples": [
+        "SET @pt = 'Point(56.7 53.34)';\n\nSELECT Y(GeomFromText(@pt));\n+----------------------+\n| Y(GeomFromText(@pt)) |\n+----------------------+\n|                53.34 |\n+----------------------+\n"
+    ],
+    "Category": [
+        "Geographic Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT Y(GeomFromText(@pt));"
+    ]
+}

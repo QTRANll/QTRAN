@@ -13,7 +13,7 @@ from selenium import webdriver
 from selenium.webdriver.support.ui import WebDriverWait
 from bs4 import BeautifulSoup, Tag
 import re
-from src.Tools.crawler_options import set_options
+from src.Tools.Crawler.crawler_options import set_options
 from urllib.parse import urljoin
 
 def is_illustration(tag_name, tag_class, tag_text):
@@ -33,8 +33,8 @@ def operators_crawler_results(origin_category,html,results_dicname, mysql_result
         if html == value["Reference HTML"]:
             # 修改value的内容
             category_temp = value["Category"]
-            if "Built-In Functions and Operators" in category_temp and len(category_temp) > 1:
-                category_temp.remove("Built-In Functions and Operators")
+            if "Built-In function and operator" in category_temp and len(category_temp) > 1:
+                category_temp.remove("Built-In function and operator")
             value_new = {
                 "HTML": html,
                 "Title": value["Name"],
@@ -192,17 +192,17 @@ def data_types_crawler_results(origin_category,html, results_dic):
 
 def crawler_results(feature_type, htmls_filename, dic_filename):
     if len(os.listdir(dic_filename)):
-        print(dic_filename + ":crawler finished")
+        print(dic_filename + ":Crawler finished")
         return
     with open(htmls_filename, "r", encoding="utf-8") as rf:
         html_contents = json.load(rf)
     for category_key, value in html_contents.items():
         for statement_key, statement_value in value.items():
             print(statement_key + ":" + str(statement_value))
-            if feature_type == "Operators":
-                operators_crawler_results(statement_key,statement_value, dic_filename, dic_filename.replace("TiDB", "MySQL"))
-            elif feature_type == "Functions":
-                functions_crawler_results(statement_key,statement_value, dic_filename, dic_filename.replace("TiDB", "MySQL"))
-            elif feature_type == "DataTypes":
+            if feature_type == "operator":
+                operators_crawler_results(statement_key,statement_value, dic_filename, dic_filename.replace("tidb", "mysql"))
+            elif feature_type == "function":
+                functions_crawler_results(statement_key,statement_value, dic_filename, dic_filename.replace("tidb", "mysql"))
+            elif feature_type == "datatype":
                 data_types_crawler_results(statement_key,statement_value, dic_filename)
             print('----------------------')

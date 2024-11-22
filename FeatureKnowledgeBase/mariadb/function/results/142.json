@@ -1,0 +1,24 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/json_normalize/"
+    ],
+    "Title": [
+        "JSON_NORMALIZE"
+    ],
+    "Feature": [
+        "JSON_NORMALIZE(json)\n"
+    ],
+    "Description": [
+        "Recursively sorts keys and removes spaces, allowing comparison of json documents for equality."
+    ],
+    "Examples": [
+        "CREATE TABLE t1 (\n id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,\n val JSON,\n /* other columns here */\n PRIMARY KEY (id)\n);\n",
+        "ALTER TABLE t1\n   ADD COLUMN jnorm JSON AS (JSON_NORMALIZE(val)) VIRTUAL,\n   ADD UNIQUE KEY (jnorm);\n",
+        "INSERT INTO t1 (val) VALUES ('{\"name\":\"alice\",\"color\":\"blue\"}');\n",
+        "INSERT INTO t1 (val) VALUES ('{ \"color\": \"blue\", \"name\": \"alice\" }');\nERROR 1062 (23000): Duplicate entry '{\"color\":\"blue\",\"name\":\"alice\"}' for key 'jnorm'\n"
+    ],
+    "Category": [
+        "JSON Functions"
+    ],
+    "EffectiveSQLsRefined": []
+}

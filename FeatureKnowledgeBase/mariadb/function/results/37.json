@@ -1,0 +1,21 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/column_json/"
+    ],
+    "Title": [
+        "COLUMN_JSON"
+    ],
+    "Feature": [
+        "COLUMN_JSON(dyncol_blob)\n"
+    ],
+    "Description": [
+        "Returns a JSON representation of data in dyncol_blob. Can also be used to display nested columns. See dynamic columns for more information."
+    ],
+    "Examples": [
+        "select item_name, COLUMN_JSON(dynamic_cols) from assets;\n+-----------------+----------------------------------------+\n| item_name       | COLUMN_JSON(dynamic_cols)              |\n+-----------------+----------------------------------------+\n| MariaDB T-shirt | {\"size\":\"XL\",\"color\":\"blue\"}           |\n| Thinkpad Laptop | {\"color\":\"black\",\"warranty\":\"3 years\"} |\n+-----------------+----------------------------------------+\n"
+    ],
+    "Category": [
+        "Dynamic Columns Functions"
+    ],
+    "EffectiveSQLsRefined": []
+}

@@ -1,0 +1,25 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/current_user/"
+    ],
+    "Title": [
+        "CURRENT_USER"
+    ],
+    "Feature": [
+        "CURRENT_USER, CURRENT_USER()\n"
+    ],
+    "Description": [
+        "Returns the user name and host name combination for the MariaDB account\nthat the server used to authenticate the current client. This account\ndetermines your access privileges. The return value is a string in the\nutf8 character set.",
+        "The value of CURRENT_USER() can differ from the value of USER(). CURRENT_ROLE() returns the current active role.",
+        "Statements using the CURRENT_USER function are not safe for statement-based replication."
+    ],
+    "Examples": [
+        "shell> mysql --user=\"anonymous\"\n\nselect user(),current_user();\n+---------------------+----------------+\n| user()              | current_user() |\n+---------------------+----------------+\n| anonymous@localhost | @localhost     |\n+---------------------+----------------+\n"
+    ],
+    "Category": [
+        "Information Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "select user(),current_user();"
+    ]
+}

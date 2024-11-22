@@ -6,7 +6,7 @@
 # @Intro   : 处理前面第一轮爬取的（mysql，tidb，oceanbase）数据库的信息，将信息格式重新编排统一
 import json
 import os
-from src.Tools.crawler_options import sanitize_title
+from src.Tools.Crawler.crawler_options import sanitize_title
 import glob
 
 def category_classifier(results_dicname, results_category_dicname):
@@ -62,17 +62,17 @@ def processor(source_dic_name, direcct_din_name, direcct_din_name_category):
                     w.write('\n')
 
 
-function_source = "../../../Feature Knowledge Base_PINOLO_WithoutProcess/Sqlite/func"
-function_direct = "../../../Feature Knowledge Base/Sqlite/Functions/Results"
-function_direct_category = "../../../Feature Knowledge Base/Sqlite/Functions/Results_Category"
+function_source = "../../../Feature Knowledge Base_PINOLO_WithoutProcess/sqlite/func"
+function_direct = "../../../FeatureKnowledgeBase/sqlite/function/results"
+function_direct_category = "../../../FeatureKnowledgeBase/sqlite/function/results_category"
 
-op_source = "../../../Feature Knowledge Base_PINOLO_WithoutProcess/Sqlite/expr"
-op_direct = "../../../Feature Knowledge Base/Sqlite/Operators/Results"
-op_direct_category = "../../../Feature Knowledge Base/Sqlite/Operators/Results_Category"
+op_source = "../../../Feature Knowledge Base_PINOLO_WithoutProcess/sqlite/expr"
+op_direct = "../../../FeatureKnowledgeBase/sqlite/operator/results"
+op_direct_category = "../../../FeatureKnowledgeBase/sqlite/operator/results_category"
 
-statement_source = "../../../Feature Knowledge Base_PINOLO_WithoutProcess/Sqlite/statement"
-statement_direct = "../../../Feature Knowledge Base/Sqlite/SQL_Statements/SQL_Statements_Results"
-statement_direct_category = "../../../Feature Knowledge Base/Sqlite/SQL_Statements/SQL_Statements_Results_Category"
+statement_source = "../../../Feature Knowledge Base_PINOLO_WithoutProcess/sqlite/statement"
+statement_direct = "../../../FeatureKnowledgeBase/sqlite/SQL_Statements/SQL_Statements_Results"
+statement_direct_category = "../../../FeatureKnowledgeBase/sqlite/SQL_Statements/SQL_Statements_Results_Category"
 
 # 下面的函数只运行一次：add
 # processor(function_source, function_direct, function_direct_category)

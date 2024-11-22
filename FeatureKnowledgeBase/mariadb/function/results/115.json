@@ -1,0 +1,24 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/inet_aton/"
+    ],
+    "Title": [
+        "INET_ATON"
+    ],
+    "Feature": [
+        "INET_ATON(expr)\n"
+    ],
+    "Description": [
+        "Given the dotted-quad representation of an IPv4 network address as a string,\nreturns an integer that represents the numeric value of the address.\nAddresses may be 4- or 8-byte addresses.",
+        "Returns NULL if the argument is not understood."
+    ],
+    "Examples": [
+        "SELECT INET_ATON('192.168.1.1');\n+--------------------------+\n| INET_ATON('192.168.1.1') |\n+--------------------------+\n|               3232235777 |\n+--------------------------+\n"
+    ],
+    "Category": [
+        "Miscellaneous Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT INET_ATON('192.168.1.1');"
+    ]
+}

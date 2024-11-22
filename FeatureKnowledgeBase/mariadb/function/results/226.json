@@ -1,0 +1,22 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/percent_rank/"
+    ],
+    "Title": [
+        "PERCENT_RANK"
+    ],
+    "Feature": [
+        "PERCENT_RANK() OVER (\n  [ PARTITION BY partition_expression ] \n  [ ORDER BY order_list ]\n)\n"
+    ],
+    "Description": [
+        "PERCENT_RANK() is a window function that returns the relative percent rank of a given row. The following formula is used to calculate the percent rank:",
+        "(rank - 1) / (number of rows in the window or partition - 1)\n"
+    ],
+    "Examples": [
+        "create table t1 (\n  pk int primary key,\n  a int,\n  b int\n);\n\n\ninsert into t1 values\n( 1 , 0, 10),\n( 2 , 0, 10),\n( 3 , 1, 10),\n( 4 , 1, 10),\n( 8 , 2, 10),\n( 5 , 2, 20),\n( 6 , 2, 20),\n( 7 , 2, 20),\n( 9 , 4, 20),\n(10 , 4, 20);\n\nselect pk, a, b,\n    rank() over (order by a) as rank,\n    percent_rank() over (order by a) as pct_rank,\n    cume_dist() over (order by a) as cume_dist\nfrom t1;\n+----+------+------+------+--------------+--------------+\n| pk | a    | b    | rank | pct_rank     | cume_dist    |\n+----+------+------+------+--------------+--------------+\n|  1 |    0 |   10 |    1 | 0.0000000000 | 0.2000000000 |\n|  2 |    0 |   10 |    1 | 0.0000000000 | 0.2000000000 |\n|  3 |    1 |   10 |    3 | 0.2222222222 | 0.4000000000 |\n|  4 |    1 |   10 |    3 | 0.2222222222 | 0.4000000000 |\n|  5 |    2 |   20 |    5 | 0.4444444444 | 0.8000000000 |\n|  6 |    2 |   20 |    5 | 0.4444444444 | 0.8000000000 |\n|  7 |    2 |   20 |    5 | 0.4444444444 | 0.8000000000 |\n|  8 |    2 |   10 |    5 | 0.4444444444 | 0.8000000000 |\n|  9 |    4 |   20 |    9 | 0.8888888889 | 1.0000000000 |\n| 10 |    4 |   20 |    9 | 0.8888888889 | 1.0000000000 |\n+----+------+------+------+--------------+--------------+\n\nselect pk, a, b,\n       percent_rank() over (order by pk) as pct_rank,\n       cume_dist() over (order by pk) as cume_dist\nfrom t1 order by pk;\n+----+------+------+--------------+--------------+\n| pk | a    | b    | pct_rank     | cume_dist    |\n+----+------+------+--------------+--------------+\n|  1 |    0 |   10 | 0.0000000000 | 0.1000000000 |\n|  2 |    0 |   10 | 0.1111111111 | 0.2000000000 |\n|  3 |    1 |   10 | 0.2222222222 | 0.3000000000 |\n|  4 |    1 |   10 | 0.3333333333 | 0.4000000000 |\n|  5 |    2 |   20 | 0.4444444444 | 0.5000000000 |\n|  6 |    2 |   20 | 0.5555555556 | 0.6000000000 |\n|  7 |    2 |   20 | 0.6666666667 | 0.7000000000 |\n|  8 |    2 |   10 | 0.7777777778 | 0.8000000000 |\n|  9 |    4 |   20 | 0.8888888889 | 0.9000000000 |\n| 10 |    4 |   20 | 1.0000000000 | 1.0000000000 |\n+----+------+------+--------------+--------------+\n\nselect pk, a, b,\n        percent_rank() over (partition by a order by a) as pct_rank,\n        cume_dist() over (partition by a order by a) as cume_dist\nfrom t1;\n+----+------+------+--------------+--------------+\n| pk | a    | b    | pct_rank     | cume_dist    |\n+----+------+------+--------------+--------------+\n|  1 |    0 |   10 | 0.0000000000 | 1.0000000000 |\n|  2 |    0 |   10 | 0.0000000000 | 1.0000000000 |\n|  3 |    1 |   10 | 0.0000000000 | 1.0000000000 |\n|  4 |    1 |   10 | 0.0000000000 | 1.0000000000 |\n|  5 |    2 |   20 | 0.0000000000 | 1.0000000000 |\n|  6 |    2 |   20 | 0.0000000000 | 1.0000000000 |\n|  7 |    2 |   20 | 0.0000000000 | 1.0000000000 |\n|  8 |    2 |   10 | 0.0000000000 | 1.0000000000 |\n|  9 |    4 |   20 | 0.0000000000 | 1.0000000000 |\n| 10 |    4 |   20 | 0.0000000000 | 1.0000000000 |\n+----+------+------+--------------+--------------+\n\n"
+    ],
+    "Category": [
+        "Window Functions"
+    ],
+    "EffectiveSQLsRefined": []
+}

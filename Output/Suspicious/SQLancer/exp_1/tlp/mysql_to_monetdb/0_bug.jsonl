@@ -1,3 +1,0 @@
-{"index": 0, "origin_index": 326, "Sql": "CREATE TABLE t0(c0 BOOL);", "TransferResult": ["CREATE TABLE t0(c0 BOOLEAN);"]}
-{"index": 0, "origin_index": 326, "Sql": "INSERT INTO t0 VALUES (0);", "TransferResult": ["INSERT INTO t0 VALUES (TRUE);"]}
-{"index": 0, "origin_index": 326, "Sql": "SELECT * FROM t0 WHERE 1 AND 0.4; -- expected: {0}, actual: {}", "TransferResult": ["SELECT * FROM t0 WHERE TRUE;"], "TransferSqlExecResult": ["[(True,)]"], "MutateResult": "SELECT * FROM t0 WHERE (TRUE) AND (TRIM(t0.c0)) UNION ALL SELECT * FROM t0 WHERE (TRUE) AND (NOT (TRIM(t0.c0))) UNION ALL SELECT * FROM t0 WHERE (TRUE) AND ((TRIM(t0.c0)) IS NULL);", "MutateSqlExecResult": "[(True,), (True,), (True,)]"}

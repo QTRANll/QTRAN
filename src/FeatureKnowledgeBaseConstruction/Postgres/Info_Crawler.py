@@ -14,8 +14,8 @@ import os
 from selenium import webdriver
 from selenium.webdriver.support.ui import WebDriverWait
 from bs4 import BeautifulSoup
-from src.Tools.crawler_options import set_options
-from src.Tools.crawler_options import sanitize_title
+from src.Tools.Crawler.crawler_options import set_options
+from src.Tools.Crawler.crawler_options import sanitize_title
 
 column_names_temp = []
 column_htmls_temp = []
@@ -271,17 +271,17 @@ def data_types_crawler(category_key, statement_key, statement_value, dic_filenam
 
 def crawler_results(feature_type, func_htmls_filename, func_dic_filename, op_dir_dicname):
     if len(os.listdir(func_dic_filename)):
-        print(func_dic_filename+ ":crawler finished")
+        print(func_dic_filename+ ":Crawler finished")
         return
     with open(func_htmls_filename, "r", encoding="utf-8") as rf:
         html_contents = json.load(rf)
         for category_key, value in html_contents.items():
             for statement_key, statement_value in value.items():
                 print(statement_key+":"+str(statement_value))
-                if feature_type in ["Functions", "Operators"]:
+                if feature_type in ["function", "operator"]:
                     origin_category = sanitize_title(statement_key.split(".")[-1].strip())
                     function_crawler(origin_category, statement_key, statement_value, func_dic_filename, op_dir_dicname)
-                elif feature_type == "DataTypes":
+                elif feature_type == "datatype":
                     data_types_crawler(category_key, statement_key, statement_value, func_dic_filename)
                 print('----------------------')
 

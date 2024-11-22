@@ -9,12 +9,12 @@ import json
 
 
 def exec_database_sql(db_type, host, port, username, password, dbname, sql_statement):
-    if db_type in ["mariadb", "MariaDB", "mysql", "MySQL", "tidb", "TiDB"]:
-        if db_type == "MariaDB":
+    if db_type in ["mariadb", "mariadb", "mysql", "mysql", "tidb", "tidb"]:
+        if db_type == "mariadb":
             db_type_temp = "mariadb"
-        elif db_type == "MySQL":
+        elif db_type == "mysql":
             db_type_temp = "mysql"
-        elif db_type == "TiDB":
+        elif db_type == "tidb":
             db_type_temp = "tidb"
         else:
             db_type_temp = db_type
@@ -166,7 +166,7 @@ def evaluate_transfer_llm(result_filename, ranges):
 
 """
 sql = "SELECT /*+ AGG_TO_COP()*/t0.c0 FROM t0 GROUP BY t0.c0;"
-origin_exec_args = database_connection_args["MariaDB"]
+origin_exec_args = database_connection_args["mariadb"]
 origin_exec_result, _, _ = exec_database_sql(origin_exec_args["db_type"],
                                              origin_exec_args["host"],
                                              origin_exec_args["port"],

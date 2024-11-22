@@ -1,0 +1,36 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/previous-value-for-sequence_name/"
+    ],
+    "Title": [
+        "PREVIOUS VALUE FOR sequence_name"
+    ],
+    "Feature": [
+        "PREVIOUS VALUE FOR sequence_name\n",
+        "or",
+        "LASTVAL(sequence_name)\n",
+        "or in Oracle mode (SQL_MODE=ORACLE)",
+        "sequence_name.currval\n",
+        "PREVIOUS VALUE FOR is IBM DB2 syntax while LASTVAL() is PostgreSQL syntax."
+    ],
+    "Description": [
+        "Gets the most recent value in the current connection generated from a sequence.",
+        "If the sequence has not yet been used by the connection, PREVIOUS VALUE FOR returns NULL (the same thing applies with a new connection which doesn't see a last value for an existing sequence).\nIf a SEQUENCE has been dropped and re-created then it's treated as a new SEQUENCE and PREVIOUS VALUE FOR will return NULL.\nReturns NULL if the sequence is complete\nFLUSH TABLES has no effect on PREVIOUS VALUE FOR.\nPrevious values for all used sequences are stored per connection until connection ends.\nPREVIOUS VALUE FOR requires the SELECT privilege.\n"
+    ],
+    "Examples": [
+        "CREATE SEQUENCE s START WITH 100 INCREMENT BY 10;\n\nSELECT PREVIOUS VALUE FOR s;\n+----------------------+\n| PREVIOUS VALUE FOR s |\n+----------------------+\n|                 NULL |\n+----------------------+\n\n# The function works for sequences only, if the table is used an error is generated\nSELECT PREVIOUS VALUE FOR t;\nERROR 4089 (42S02): 'test.t' is not a SEQUENCE\n\n# Call the NEXT VALUE FOR s:\nSELECT NEXT VALUE FOR s;\n+------------------+\n| NEXT VALUE FOR s |\n+------------------+\n|              100 |\n+------------------+\n\nSELECT PREVIOUS VALUE FOR s;\n+----------------------+\n| PREVIOUS VALUE FOR s |\n+----------------------+\n|                  100 |\n+----------------------+\n",
+        "CREATE OR REPLACE SEQUENCE s MAXVALUE=2;\n\nSELECT NEXTVAL(s), LASTVAL(s);\n+------------+------------+\n| NEXTVAL(s) | LASTVAL(s) |\n+------------+------------+\n|          1 |          1 |\n+------------+------------+\n\nSELECT NEXTVAL(s), LASTVAL(s);\n+------------+------------+\n| NEXTVAL(s) | LASTVAL(s) |\n+------------+------------+\n|          2 |          2 |\n+------------+------------+\n\nSELECT NEXTVAL(s), LASTVAL(s);\nERROR 4084 (HY000): Sequence 'test.s' has run out\n\nSELECT LASTVAL(s);\n+------------+\n| LASTVAL(s) |\n+------------+\n|       NULL |\n+------------+\n"
+    ],
+    "Category": [
+        "SEQUENCE Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT PREVIOUS VALUE FOR s;",
+        "SELECT NEXT VALUE FOR s;",
+        "SELECT PREVIOUS VALUE FOR s;",
+        "CREATE OR REPLACE SEQUENCE s MAXVALUE=2;",
+        "SELECT NEXTVAL(s), LASTVAL(s);",
+        "SELECT NEXTVAL(s), LASTVAL(s);",
+        "SELECT LASTVAL(s);"
+    ]
+}

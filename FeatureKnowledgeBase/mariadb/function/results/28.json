@@ -1,0 +1,27 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/chr/"
+    ],
+    "Title": [
+        "CHR"
+    ],
+    "Feature": [
+        "CHR(N)\n"
+    ],
+    "Description": [
+        "CHR() interprets each argument N as an integer and returns a VARCHAR(1) string consisting of the character given by the code values of the integer. The character set and collation of the string are set according to the values of the character_set_database and collation_database system variables.",
+        "CHR() is similar to the CHAR() function, but only accepts a single argument.",
+        "CHR() is available in all sql_modes."
+    ],
+    "Examples": [
+        "SELECT CHR(67);\n+---------+\n| CHR(67) |\n+---------+\n| C       |\n+---------+\n\nSELECT CHR('67');\n+-----------+\n| CHR('67') |\n+-----------+\n| C         |\n+-----------+\n\nSELECT CHR('C');\n+----------+\n| CHR('C') |\n+----------+\n|          |\n+----------+\n1 row in set, 1 warning (0.000 sec)\n\nSHOW WARNINGS;\n+---------+------+----------------------------------------+\n| Level   | Code | Message                                |\n+---------+------+----------------------------------------+\n| Warning | 1292 | Truncated incorrect INTEGER value: 'C' |\n+---------+------+----------------------------------------+\n"
+    ],
+    "Category": [
+        "String Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT CHR(67);",
+        "SELECT CHR('67');",
+        "SELECT CHR('C');"
+    ]
+}

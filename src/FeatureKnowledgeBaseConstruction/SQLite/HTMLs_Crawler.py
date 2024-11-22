@@ -1,4 +1,4 @@
-from src.Tools.crawler_options import set_options
+from src.Tools.Crawler.crawler_options import set_options
 from selenium import webdriver
 from selenium.webdriver.support.ui import WebDriverWait
 from bs4 import BeautifulSoup, Tag
@@ -23,10 +23,10 @@ def funcs_htmls_crawler(html):
         for a_item in soup_a_list:
             subtitle = a_item.text
             html_temp = urljoin(html, a_item.get("href"))
-            if "Functions" in subtitle:
+            if "function" in subtitle:
                 results_list[subtitle] = html_temp
 
-    results_list["Built-In Mathematical SQL Functions"] = "https://sqlite.org/lang_mathfunc.html"
+    results_list["Built-In Mathematical SQL function"] = "https://sqlite.org/lang_mathfunc.html"
     return {"No Category": results_list}
 
 
@@ -49,6 +49,6 @@ def datatypes_htmls_crawler(html):
         for a_item in soup_a_list:
             subtitle = a_item.text
             html_temp = urljoin(html, a_item.get("href"))
-            if "DataTypes" == subtitle:
+            if "datatype" == subtitle:
                 results_list[subtitle] = html_temp
     return {"No Category": results_list}

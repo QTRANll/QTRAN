@@ -3,8 +3,8 @@
 # @Time    : 2024/7/22 23:17
 # @Author  : zql
 # @File    : HTMLs_Crawler_MySQL.py
-# @Intro   : Get all of MySQL's htmls for data types, functions, operators
-from src.Tools.crawler_options import set_options
+# @Intro   : Get all of mysql's htmls for data types, functions, operators
+from src.Tools.Crawler.crawler_options import set_options
 from selenium import webdriver
 from selenium.webdriver.support.ui import WebDriverWait
 from bs4 import BeautifulSoup
@@ -32,7 +32,6 @@ def htmls_crawler(html):
             soup_a_temp = soup_a_temp.find_all("a")
         for item_temp in soup_a_temp:
             statement_htmls[item_temp.text] = urljoin(html, item_temp.get("href"))
-    print(statement_htmls)
     return statement_htmls
 
 

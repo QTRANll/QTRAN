@@ -1,4 +1,0 @@
-{"index": 10, "origin_index": 132, "Sql": "CREATE TABLE t0(c0 COLLATE NOCASE);", "TransferResult": ["CREATE TABLE t0(c0 VARCHAR(255) COLLATE utf8mb4_general_ci);"]}
-{"index": 10, "origin_index": 132, "Sql": "INSERT INTO t0(c0) VALUES ('B');", "TransferResult": ["INSERT INTO t0(c0) VALUES ('B');"]}
-{"index": 10, "origin_index": 132, "Sql": "CREATE VIEW v0(c0, c1) AS SELECT DISTINCT t0.c0, 'a' FROM t0;", "TransferResult": ["CREATE VIEW v0(c0, c1) AS SELECT DISTINCT t0.c0, 'a' FROM t0;"]}
-{"index": 10, "origin_index": 132, "Sql": "SELECT COUNT(*) FROM v0 WHERE v0.c1 >= v0.c0;-- actual: 1, expected: 0", "TransferResult": ["SELECT COUNT(*) FROM v0 WHERE v0.c1 >= v0.c0;"], "TransferSqlExecResult": ["[(0,)]"], "MutateResult": "SELECT SUM(count) FROM (SELECT (v0.c1 >= v0.c0) IS TRUE as count FROM v0) as asdf;", "MutateSqlExecResult": "[(Decimal('1'),)]"}

@@ -1,0 +1,24 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/mpolyfromtext/"
+    ],
+    "Title": [
+        "MPolyFromText"
+    ],
+    "Feature": [
+        "MPolyFromText(wkt[,srid])\nMultiPolygonFromText(wkt[,srid])\n"
+    ],
+    "Description": [
+        "Constructs a MULTIPOLYGON value using its WKT representation and SRID.",
+        "MPolyFromText() and MultiPolygonFromText() are synonyms."
+    ],
+    "Examples": [
+        "CREATE TABLE gis_multi_polygon  (g MULTIPOLYGON);\nSHOW FIELDS FROM gis_multi_polygon;\nINSERT INTO gis_multi_polygon VALUES\n    (MultiPolygonFromText('MULTIPOLYGON(\n       ((28 26,28 0,84 0,84 42,28 26),(52 18,66 23,73 9,48 6,52 18)),\n       ((59 18,67 18,67 13,59 13,59 18)))')),\n    (MPolyFromText('MULTIPOLYGON(\n       ((28 26,28 0,84 0,84 42,28 26),(52 18,66 23,73 9,48 6,52 18)),\n       ((59 18,67 18,67 13,59 13,59 18)))')),\n    (MPolyFromWKB(AsWKB(MultiPolygon(Polygon(\n       LineString(Point(0, 3), Point(3, 3), Point(3, 0), Point(0, 3)))))));\n"
+    ],
+    "Category": [
+        "Geographic Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "INSERT INTO gis_multi_polygon VALUES\n    (MultiPolygonFromText('MULTIPOLYGON(\n       ((28 26,28 0,84 0,84 42,28 26),(52 18,66 23,73 9,48 6,52 18)),\n       ((59 18,67 18,67 13,59 13,59 18)))')),\n    (MPolyFromText('MULTIPOLYGON(\n       ((28 26,28 0,84 0,84 42,28 26),(52 18,66 23,73 9,48 6,52 18)),\n       ((59 18,67 18,67 13,59 13,59 18)))')),\n    (MPolyFromWKB(AsWKB(MultiPolygon(Polygon(\n       LineString(Point(0, 3), Point(3, 3), Point(3, 0), Point(0, 3)))))));"
+    ]
+}

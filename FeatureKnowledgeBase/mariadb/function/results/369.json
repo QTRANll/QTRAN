@@ -1,0 +1,25 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/uncompressed_length/"
+    ],
+    "Title": [
+        "UNCOMPRESSED_LENGTH"
+    ],
+    "Feature": [
+        "UNCOMPRESSED_LENGTH(compressed_string)\n"
+    ],
+    "Description": [
+        "Returns the length that the compressed string had before being\ncompressed with COMPRESS().",
+        "UNCOMPRESSED_LENGTH() returns NULL or an incorrect result if the string is not compressed.",
+        "Until MariaDB 10.3.1, returns MYSQL_TYPE_LONGLONG, or bigint(10), in all cases. From MariaDB 10.3.1, returns MYSQL_TYPE_LONG, or int(10), when the result would fit within 32-bits."
+    ],
+    "Examples": [
+        "SELECT UNCOMPRESSED_LENGTH(COMPRESS(REPEAT('a',30)));\n+-----------------------------------------------+\n| UNCOMPRESSED_LENGTH(COMPRESS(REPEAT('a',30))) |\n+-----------------------------------------------+\n|                                            30 |\n+-----------------------------------------------+\n"
+    ],
+    "Category": [
+        "Encryption, Hashing and Compression Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT UNCOMPRESSED_LENGTH(COMPRESS(REPEAT('a',30)));"
+    ]
+}

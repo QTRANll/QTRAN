@@ -1,0 +1,40 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/min/"
+    ],
+    "Title": [
+        "MIN"
+    ],
+    "Feature": [
+        "MIN([DISTINCT] expr)\n"
+    ],
+    "Description": [
+        "Returns the minimum value of expr. MIN() may take a string\nargument, in which case it returns the minimum string value. The DISTINCT\nkeyword can be used to find the minimum of the distinct values of expr,\nhowever, this produces the same result as omitting DISTINCT.",
+        "Note that SET and ENUM fields are currently compared by their string value rather than their relative position in the set, so MIN() may produce a different lowest result than ORDER BY ASC.",
+        "It is an aggregate function, and so can be used with the GROUP BY clause.",
+        "MIN() can be used as a window function.",
+        "MIN() returns NULL if there were no matching rows."
+    ],
+    "Examples": [
+        "CREATE TABLE student (name CHAR(10), test CHAR(10), score TINYINT); \n\nINSERT INTO student VALUES \n  ('Chun', 'SQL', 75), ('Chun', 'Tuning', 73), \n  ('Esben', 'SQL', 43), ('Esben', 'Tuning', 31), \n  ('Kaolin', 'SQL', 56), ('Kaolin', 'Tuning', 88), \n  ('Tatiana', 'SQL', 87), ('Tatiana', 'Tuning', 83);\n\nSELECT name, MIN(score) FROM student GROUP BY name;\n+---------+------------+\n| name    | MIN(score) |\n+---------+------------+\n| Chun    |         73 |\n| Esben   |         31 |\n| Kaolin  |         56 |\n| Tatiana |         83 |\n+---------+------------+\n",
+        "SELECT MIN(name) FROM student;\n+-----------+\n| MIN(name) |\n+-----------+\n| Chun      |\n+-----------+\n",
+        "SELECT name,test,MIN(score) FROM student;\n+------+------+------------+\n| name | test | MIN(score) |\n+------+------+------------+\n| Chun | SQL  |         31 |\n+------+------+------------+\n",
+        "CREATE TABLE student2(name CHAR(10),grade ENUM('b','c','a'));\n\nINSERT INTO student2 VALUES('Chun','b'),('Esben','c'),('Kaolin','a');\n\nSELECT MIN(grade) FROM student2;\n+------------+\n| MIN(grade) |\n+------------+\n| a          |\n+------------+\n\nSELECT grade FROM student2 ORDER BY grade ASC LIMIT 1;\n+-------+\n| grade |\n+-------+\n| b     |\n+-------+\n",
+        "CREATE OR REPLACE TABLE student_test (name CHAR(10), test CHAR(10), score TINYINT);\nINSERT INTO student_test VALUES \n    ('Chun', 'SQL', 75), ('Chun', 'Tuning', 73), \n    ('Esben', 'SQL', 43), ('Esben', 'Tuning', 31), \n    ('Kaolin', 'SQL', 56), ('Kaolin', 'Tuning', 88), \n    ('Tatiana', 'SQL', 87);\n\n\nSELECT name, test, score, MIN(score) \n  OVER (PARTITION BY name) AS lowest_score FROM student_test;\n+---------+--------+-------+--------------+\n| name    | test   | score | lowest_score |\n+---------+--------+-------+--------------+\n| Chun    | SQL    |    75 |           73 |\n| Chun    | Tuning |    73 |           73 |\n| Esben   | SQL    |    43 |           31 |\n| Esben   | Tuning |    31 |           31 |\n| Kaolin  | SQL    |    56 |           56 |\n| Kaolin  | Tuning |    88 |           56 |\n| Tatiana | SQL    |    87 |           87 |\n+---------+--------+-------+--------------+\n"
+    ],
+    "Category": [
+        "Aggregate Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "INSERT INTO student VALUES \n  ('Chun', 'SQL', 75), ('Chun', 'Tuning', 73), \n  ('Esben', 'SQL', 43), ('Esben', 'Tuning', 31), \n  ('Kaolin', 'SQL', 56), ('Kaolin', 'Tuning', 88), \n  ('Tatiana', 'SQL', 87), ('Tatiana', 'Tuning', 83);",
+        "SELECT name, MIN(score) FROM student GROUP BY name;",
+        "SELECT MIN(name) FROM student;",
+        "SELECT name,test,MIN(score) FROM student;",
+        "INSERT INTO student2 VALUES('Chun','b'),('Esben','c'),('Kaolin','a');",
+        "SELECT MIN(grade) FROM student2;",
+        "SELECT grade FROM student2 ORDER BY grade ASC LIMIT 1;",
+        "CREATE OR REPLACE TABLE student_test (name CHAR(10), test CHAR(10), score TINYINT);",
+        "INSERT INTO student_test VALUES \n    ('Chun', 'SQL', 75), ('Chun', 'Tuning', 73), \n    ('Esben', 'SQL', 43), ('Esben', 'Tuning', 31), \n    ('Kaolin', 'SQL', 56), ('Kaolin', 'Tuning', 88), \n    ('Tatiana', 'SQL', 87);",
+        "SELECT name, test, score, MIN(score) \n  OVER (PARTITION BY name) AS lowest_score FROM student_test;"
+    ]
+}

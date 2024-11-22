@@ -1,0 +1,23 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/repeat-function/"
+    ],
+    "Title": [
+        "REPEAT Function"
+    ],
+    "Feature": [
+        "REPEAT(str,count)\n"
+    ],
+    "Description": [
+        "Returns a string consisting of the string str repeated count times. If\ncount is less than 1, returns an empty string. Returns NULL if str or\ncount are NULL."
+    ],
+    "Examples": [
+        "SELECT QUOTE(REPEAT('MariaDB ',4));\n+------------------------------------+\n| QUOTE(REPEAT('MariaDB ',4))        |\n+------------------------------------+\n| 'MariaDB MariaDB MariaDB MariaDB ' |\n+------------------------------------+\n"
+    ],
+    "Category": [
+        "String Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT QUOTE(REPEAT('MariaDB ',4));"
+    ]
+}

@@ -12,7 +12,7 @@ from langchain.prompts import ChatPromptTemplate
 from langchain.output_parsers import ResponseSchema
 from langchain.output_parsers import StructuredOutputParser
 from langchain.callbacks import get_openai_callback
-from src.Tools.database_connector import exec_sql_statement
+from src.Tools.DatabaseConnect.database_connector import exec_sql_statement
 
 
 db_names = ["mysql", "mariadb", "tidb"]
@@ -239,10 +239,10 @@ def get_feature_knowledge_string(origin_db, target_db, with_knowledge, mapping_i
     if with_knowledge:  # 给出样例
         # 获取对应的详细信息
         names_ = "merge"
-        for feature_type in ["Functions"]:
+        for feature_type in ["function"]:
             names_ = names_ + "_" + feature_type
-        origin_merge_feature_filename = os.path.join("..", "..", "Feature Knowledge Base Processed1", origin_db, "RAG_Embedding_Data",names_ + ".jsonl")
-        target_merge_feature_filename = os.path.join("..", "..", "Feature Knowledge Base Processed1", target_db,"RAG_Embedding_Data", names_ + ".jsonl")
+        origin_merge_feature_filename = os.path.join("..", "..", "FeatureKnowledgeBase Processed1", origin_db, "RAG_Embedding_Data",names_ + ".jsonl")
+        target_merge_feature_filename = os.path.join("..", "..", "FeatureKnowledgeBase Processed1", target_db,"RAG_Embedding_Data", names_ + ".jsonl")
         with open(origin_merge_feature_filename, "r", encoding="utf-8") as r:
             origin_features = r.readlines()
         with open(target_merge_feature_filename, "r", encoding="utf-8") as r:
@@ -291,10 +291,10 @@ def get_feature_knowledge_string(origin_db, target_db, with_knowledge, mapping_i
     if with_knowledge:  # 给出样例
         # 获取对应的详细信息
         names_ = "merge"
-        for feature_type in ["Functions"]:
+        for feature_type in ["function"]:
             names_ = names_ + "_" + feature_type
-        origin_merge_feature_filename = os.path.join("..", "..", "Feature Knowledge Base", origin_db, "RAG_Embedding_Data",names_ + ".jsonl")
-        target_merge_feature_filename = os.path.join("..", "..", "Feature Knowledge Base", target_db,"RAG_Embedding_Data", names_ + ".jsonl")
+        origin_merge_feature_filename = os.path.join("..", "..", "FeatureKnowledgeBase", origin_db, "RAG_Embedding_Data",names_ + ".jsonl")
+        target_merge_feature_filename = os.path.join("..", "..", "FeatureKnowledgeBase", target_db,"RAG_Embedding_Data", names_ + ".jsonl")
         with open(origin_merge_feature_filename, "r", encoding="utf-8") as r:
             origin_features = r.readlines()
         with open(target_merge_feature_filename, "r", encoding="utf-8") as r:
@@ -585,7 +585,7 @@ def transfer_llm(tool, conversation, error_iteration, iteration_num, FewShot, wi
 
 
 def get_feature_knowledge(value,feature_type):
-    if feature_type == "Functions":
+    if feature_type == "function":
         mapping_indexes = value["SqlPotentialDialectFunctionMapping"]
 
 def transfer_data(tool,temperature, model, error_iteration, iteration_num, FewShot, with_knowledge, output_name, origin_db_name, target_db_name, len_low, len_high, IsRandom, num, sqls_type):

@@ -1,0 +1,24 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/astext/"
+    ],
+    "Title": [
+        "ST_AsText"
+    ],
+    "Feature": [
+        "ST_AsText(g)\nAsText(g)\nST_AsWKT(g)\nAsWKT(g)\n"
+    ],
+    "Description": [
+        "Converts a value in internal geometry format to its WKT representation and returns the string result.",
+        "ST_AsText(), AsText(), ST_AsWKT() and AsWKT() are all synonyms."
+    ],
+    "Examples": [
+        "SET @g = 'LineString(1 1,4 4,6 6)';\n\nSELECT ST_AsText(ST_GeomFromText(@g));\n+--------------------------------+\n| ST_AsText(ST_GeomFromText(@g)) |\n+--------------------------------+\n| LINESTRING(1 1,4 4,6 6)        |\n+--------------------------------+\n"
+    ],
+    "Category": [
+        "Geographic Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT ST_AsText(ST_GeomFromText(@g));"
+    ]
+}

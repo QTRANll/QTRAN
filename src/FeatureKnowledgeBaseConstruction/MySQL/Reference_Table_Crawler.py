@@ -10,33 +10,33 @@ import os
 from selenium import webdriver
 from selenium.webdriver.support.ui import WebDriverWait
 from bs4 import BeautifulSoup
-from src.Tools.crawler_options import set_options
+from src.Tools.Crawler.crawler_options import set_options
 from urllib.parse import urljoin
 Categories = {
-   "14.1": "Built-In Functions and Operators",
-   "14.2": "Loadable Functions",
-   "14.4.2": "Comparison Functions and Operators",
-   "14.5": "Flow Control Functions",
-   "14.6.2": "Mathematical Functions",
-   "14.7": "Date and Time Functions",
-   "14.8": "String Functions and Operators",
-   "14.10": "Cast Functions and Operators",
-   "14.11": "XML Functions",
-   "14.12": "Bit Functions and Operators",
-   "14.13": "Encryption and Compression Functions",
-   "14.14": "Locking Functions",
-   "14.15": "Information Functions",
-   "14.16": "Spatial Analysis Functions",
-   "14.17": "JSON Functions",
-   "14.18": "Replication Functions",
-   "14.19": "Aggregate Functions",
-   "14.20": "Window Functions",
-   "14.21": "Performance Schema Functions",
-   "14.22": "Internal Functions",
-   "14.23": "Miscellaneous Functions",
-    "14.4.3": "Logical Operators",
-    "14.4.4": "Assignment Operators",
-    "14.6.1": "Arithmetic Operators"
+   "14.1": "Built-In function and operator",
+   "14.2": "Loadable function",
+   "14.4.2": "Comparison function and operator",
+   "14.5": "Flow Control function",
+   "14.6.2": "Mathematical function",
+   "14.7": "Date and Time function",
+   "14.8": "String function and operator",
+   "14.10": "Cast function and operator",
+   "14.11": "XML function",
+   "14.12": "Bit function and operator",
+   "14.13": "Encryption and Compression function",
+   "14.14": "Locking function",
+   "14.15": "Information function",
+   "14.16": "Spatial Analysis function",
+   "14.17": "JSON function",
+   "14.18": "Replication function",
+   "14.19": "Aggregate function",
+   "14.20": "Window function",
+   "14.21": "Performance Schema function",
+   "14.22": "Internal function",
+   "14.23": "Miscellaneous function",
+    "14.4.3": "Logical operator",
+    "14.4.4": "Assignment operator",
+    "14.6.1": "Arithmetic operator"
 }
 # 爬取单个Functions and Operators页面内的Reference Table内容并存储
 def reference_table_item_crawler(key, value, dic_name):

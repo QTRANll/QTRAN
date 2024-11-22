@@ -1,0 +1,48 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/group_concat/"
+    ],
+    "Title": [
+        "GROUP_CONCAT"
+    ],
+    "Feature": [
+        "GROUP_CONCAT(expr)\n"
+    ],
+    "Description": [
+        "This function returns a string result with the concatenated non-NULL values from a group. If any expr in GROUP_CONCAT evaluates to NULL, that tuple is not present in the list returned by GROUP_CONCAT. ",
+        "It returns NULL if all arguments are NULL, or there are no matching rows.",
+        "The maximum returned length in bytes is determined by the group_concat_max_len server system variable, which defaults to 1M.",
+        "If group_concat_max_len <= 512, the return type is VARBINARY or VARCHAR; otherwise, the return type is BLOB or TEXT. The choice between binary or non-binary types depends from the input.",
+        "The full syntax is as follows:",
+        "GROUP_CONCAT([DISTINCT] expr [,expr ...]\n             [ORDER BY {unsigned_integer | col_name | expr}\n                 [ASC | DESC] [,col_name ...]]\n             [SEPARATOR str_val]\n             [LIMIT {[offset,] row_count | row_count OFFSET offset}])\n",
+        "DISTINCT eliminates duplicate values from the output string.",
+        "ORDER BY determines the order of returned values.",
+        "SEPARATOR specifies a separator between the values. The default separator is a comma (,). It is possible to avoid using a separator by specifying an empty string.",
+        "LIMIT",
+        "The LIMIT clause can be used with GROUP_CONCAT. This was not possible prior to MariaDB 10.3.3."
+    ],
+    "Examples": [
+        "SELECT student_name,\n       GROUP_CONCAT(test_score)\n       FROM student\n       GROUP BY student_name;\n",
+        "SELECT GROUP_CONCAT(DISTINCT User ORDER BY User SEPARATOR '\\n')\n   FROM mysql.user;\n",
+        "SELECT User, GROUP_CONCAT(Host ORDER BY Host SEPARATOR ', ') \n   FROM mysql.user GROUP BY User ORDER BY User;\n",
+        "CREATE TABLE d (dd DATE, cc INT);\n\nINSERT INTO d VALUES ('2017-01-01',1);\nINSERT INTO d VALUES ('2017-01-02',2);\nINSERT INTO d VALUES ('2017-01-04',3);\n",
+        "SELECT SUBSTRING_INDEX(GROUP_CONCAT(CONCAT_WS(\":\",dd,cc) ORDER BY cc DESC),\",\",1) FROM d;\n+----------------------------------------------------------------------------+\n| SUBSTRING_INDEX(GROUP_CONCAT(CONCAT_WS(\":\",dd,cc) ORDER BY cc DESC),\",\",1) |\n+----------------------------------------------------------------------------+\n| 2017-01-04:3                                                               |\n+----------------------------------------------------------------------------+\n",
+        "SELECT GROUP_CONCAT(CONCAT_WS(\":\",dd,cc) ORDER BY cc DESC LIMIT 1) FROM d;\n+-------------------------------------------------------------+\n| GROUP_CONCAT(CONCAT_WS(\":\",dd,cc) ORDER BY cc DESC LIMIT 1) |\n+-------------------------------------------------------------+\n| 2017-01-04:3                                                |\n+-------------------------------------------------------------+\n",
+        "CREATE OR REPLACE TABLE t1 (a int, b char);\n\nINSERT INTO t1 VALUES (1, 'a'), (2, NULL);\n\nSELECT GROUP_CONCAT(a, b) FROM t1;\n+--------------------+\n| GROUP_CONCAT(a, b) |\n+--------------------+\n| 1a                 |\n+--------------------+\n"
+    ],
+    "Category": [
+        "Aggregate Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT GROUP_CONCAT(DISTINCT User ORDER BY User SEPARATOR '\\n')\n   FROM mysql.user;",
+        "SELECT User, GROUP_CONCAT(Host ORDER BY Host SEPARATOR ', ') \n   FROM mysql.user GROUP BY User ORDER BY User;",
+        "INSERT INTO d VALUES ('2017-01-01',1);",
+        "INSERT INTO d VALUES ('2017-01-02',2);",
+        "INSERT INTO d VALUES ('2017-01-04',3);",
+        "SELECT SUBSTRING_INDEX(GROUP_CONCAT(CONCAT_WS(\":\",dd,cc) ORDER BY cc DESC),\",\",1) FROM d;",
+        "SELECT GROUP_CONCAT(CONCAT_WS(\":\",dd,cc) ORDER BY cc DESC LIMIT 1) FROM d;",
+        "CREATE OR REPLACE TABLE t1 (a int, b char);",
+        "INSERT INTO t1 VALUES (1, 'a'), (2, NULL);",
+        "SELECT GROUP_CONCAT(a, b) FROM t1;"
+    ]
+}

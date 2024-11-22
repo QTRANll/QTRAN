@@ -1,0 +1,23 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/dayofyear/"
+    ],
+    "Title": [
+        "DAYOFYEAR"
+    ],
+    "Feature": [
+        "DAYOFYEAR(date)\n"
+    ],
+    "Description": [
+        "Returns the day of the year for date, in the range 1 to 366."
+    ],
+    "Examples": [
+        "SELECT DAYOFYEAR('2018-02-16');\n+-------------------------+\n| DAYOFYEAR('2018-02-16') |\n+-------------------------+\n|                      47 |\n+-------------------------+\n"
+    ],
+    "Category": [
+        "Date & Time Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT DAYOFYEAR('2018-02-16');"
+    ]
+}

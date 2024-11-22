@@ -1,0 +1,26 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/list_drop/"
+    ],
+    "Title": [
+        "list_drop"
+    ],
+    "Feature": [
+        "sys.list_drop(list,value)\n"
+    ],
+    "Description": [
+        "list_drop is a stored function available with the Sys Schema.",
+        "It takes a list to be be modified and a value to be dropped from the list, returning the resulting value. This can be used, for example, to remove a value from a system variable taking a comma-delimited list of options, such as sql_mode.",
+        "The related function list_add can be used to add a value to a list."
+    ],
+    "Examples": [
+        "SELECT @@sql_mode;\n+-----------------------------------------------------------------------+\n| @@sql_mode                                                            |\n+-----------------------------------------------------------------------+\n| STRICT_TRANS_TABLES,ERROR_FOR_DIVISION_BY_ZERO,\nNO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION |\n+-----------------------------------------------------------------------+\n\nSET @@sql_mode = sys.list_drop(@@sql_mode, 'NO_ENGINE_SUBSTITUTION');\n\nSELECT @@sql_mode;\n+-----------------------------------------------------------------------+\n| @@sql_mode                                                            |\n+-----------------------------------------------------------------------+\n| STRICT_TRANS_TABLES,ERROR_FOR_DIVISION_BY_ZERO,\nNO_AUTO_CREATE_USER |\n+-----------------------------------------------------------------------+\n"
+    ],
+    "Category": [
+        "No Category"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT @@sql_mode;",
+        "SELECT @@sql_mode;"
+    ]
+}

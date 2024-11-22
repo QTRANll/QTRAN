@@ -1,0 +1,35 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/concat/"
+    ],
+    "Title": [
+        "CONCAT"
+    ],
+    "Feature": [
+        "CONCAT(str1,str2,...)\n"
+    ],
+    "Description": [
+        "Returns the string that results from concatenating the arguments. May have one or more arguments. If all arguments are non-binary strings, the result is a non-binary string. If the arguments include any binary strings, the result is a binary string. A numeric argument is converted to its equivalent binary string form; if you want to avoid that, you can use an explicit type cast, as in this example:",
+        "SELECT CONCAT(CAST(int_col AS CHAR), char_col);\n",
+        "CONCAT() returns NULL if any argument is NULL.",
+        "A NULL parameter hides all information contained in other parameters from the result. Sometimes this is not desirable; to avoid this, you can:",
+        "Use the CONCAT_WS() function with an empty separator, because that function is NULL-safe.\nUse IFNULL() to turn NULLs into empty strings.\n",
+        "Oracle Mode",
+        "In Oracle mode, CONCAT ignores NULL."
+    ],
+    "Examples": [
+        "SELECT CONCAT('Ma', 'ria', 'DB');\n+---------------------------+\n| CONCAT('Ma', 'ria', 'DB') |\n+---------------------------+\n| MariaDB                   |\n+---------------------------+\n\nSELECT CONCAT('Ma', 'ria', NULL, 'DB');\n+---------------------------------+\n| CONCAT('Ma', 'ria', NULL, 'DB') |\n+---------------------------------+\n| NULL                            |\n+---------------------------------+\n\nSELECT CONCAT(42.0);\n+--------------+\n| CONCAT(42.0) |\n+--------------+\n| 42.0         |\n+--------------+\n",
+        "SELECT CONCAT('The value of @v is: ', IFNULL(@v, ''));\n+------------------------------------------------+\n| CONCAT('The value of @v is: ', IFNULL(@v, '')) |\n+------------------------------------------------+\n| The value of @v is:                            |\n+------------------------------------------------+\n",
+        "SELECT CONCAT('Ma', 'ria', NULL, 'DB');\n+---------------------------------+\n| CONCAT('Ma', 'ria', NULL, 'DB') |\n+---------------------------------+\n| MariaDB                         |\n+---------------------------------+\n"
+    ],
+    "Category": [
+        "String Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT CONCAT('Ma', 'ria', 'DB');",
+        "SELECT CONCAT('Ma', 'ria', NULL, 'DB');",
+        "SELECT CONCAT(42.0);",
+        "SELECT CONCAT('The value of @v is: ', IFNULL(@v, ''));",
+        "SELECT CONCAT('Ma', 'ria', NULL, 'DB');"
+    ]
+}

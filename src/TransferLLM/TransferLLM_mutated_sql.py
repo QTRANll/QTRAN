@@ -7,7 +7,7 @@
 
 import os
 import json
-from src.Tools.database_connector import test_database_mysql_like, test_database_postgres
+from src.Tools.DatabaseConnect.database_connector import test_database_mysql_like, test_database_postgres
 import random
 from langchain.prompts import ChatPromptTemplate
 from langchain.chat_models import ChatOpenAI
@@ -16,18 +16,18 @@ from langchain.output_parsers import StructuredOutputParser
 from langchain.chains import ConversationChain
 from langchain.callbacks import get_openai_callback
 from langchain.memory import ConversationBufferMemory
-from src.Tools.database_connector import database_connection_args
+from src.Tools.DatabaseConnect.database_connector import database_connection_args
 
 
 db_names = ["mysql", "mariadb", "tidb"]
 
 def exec_database_sql(db_type, host, port, username, password, dbname, sql_statement):
-    if db_type in ["mariadb", "MariaDB", "mysql", "MySQL", "tidb", "TiDB"]:
-        if db_type == "MariaDB":
+    if db_type in ["mariadb", "mariadb", "mysql", "mysql", "tidb", "tidb"]:
+        if db_type == "mariadb":
             db_type_temp = "mariadb"
-        elif db_type == "MySQL":
+        elif db_type == "mysql":
             db_type_temp = "mysql"
-        elif db_type == "TiDB":
+        elif db_type == "tidb":
             db_type_temp = "tidb"
         else:
             db_type_temp = db_type

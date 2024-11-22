@@ -1,0 +1,24 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/minute/"
+    ],
+    "Title": [
+        "MINUTE"
+    ],
+    "Feature": [
+        "MINUTE(time)\n"
+    ],
+    "Description": [
+        "Returns the minute for time, in the range 0 to 59. "
+    ],
+    "Examples": [
+        "SELECT MINUTE('2013-08-03 11:04:03');\n+-------------------------------+\n| MINUTE('2013-08-03 11:04:03') |\n+-------------------------------+\n|                             4 |\n+-------------------------------+\n\n SELECT MINUTE ('23:12:50');\n+---------------------+\n| MINUTE ('23:12:50') |\n+---------------------+\n|                  12 |\n+---------------------+\n"
+    ],
+    "Category": [
+        "Date & Time Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT MINUTE('2013-08-03 11:04:03');",
+        "SELECT MINUTE ('23:12:50');"
+    ]
+}

@@ -1,0 +1,24 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/st_x/"
+    ],
+    "Title": [
+        "ST_X"
+    ],
+    "Feature": [
+        "ST_X(p)\nX(p)\n"
+    ],
+    "Description": [
+        "Returns the X-coordinate value for the point p as a double-precision number.",
+        "ST_X() and X() are synonyms."
+    ],
+    "Examples": [
+        "SET @pt = 'Point(56.7 53.34)';\n\nSELECT X(GeomFromText(@pt));\n+----------------------+\n| X(GeomFromText(@pt)) |\n+----------------------+\n|                 56.7 |\n+----------------------+\n"
+    ],
+    "Category": [
+        "Geographic Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT X(GeomFromText(@pt));"
+    ]
+}

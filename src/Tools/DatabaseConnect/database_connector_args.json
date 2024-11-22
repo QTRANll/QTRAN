@@ -1,0 +1,71 @@
+{
+    "mysql": {
+        "container_name": "mysql_QTRAN",
+        "dbType": "mysql",
+        "host": "127.0.0.1",
+        "port": 13306,
+        "container_port": 3306,
+        "username": "root",
+        "password": "123456"
+    },
+    "mariadb": {
+        "container_name": "mariadb_QTRAN",
+        "dbType": "mariadb",
+        "host": "127.0.0.1",
+        "port": 9901,
+        "container_port": 3306,
+        "username": "root",
+        "password": "123456"
+    },
+    "tidb": {
+        "container_name": "tidb_QTRAN",
+        "dbType": "tidb",
+        "host": "172.24.89.100",
+        "port": 4000,
+        "username": "root",
+        "password": ""
+    },
+    "postgres": {
+        "container_name": "postgres_QTRAN",
+        "dbType": "postgres",
+        "host": "127.0.0.1",
+        "port": 5432,
+        "container_port": 5432,
+        "username": "postgres",
+        "password": "123456"
+    },
+    "sqlite": {
+        "container_name": "sqlite_QTRAN",
+        "dbType": "sqlite",
+        "host": "",
+        "port": 0,
+        "username": "",
+        "password": ""
+    },
+    "duckdb": {
+        "container_name": "duckdb_QTRAN",
+        "dbType": "duckdb",
+        "host": "",
+        "port": 0,
+        "username": "",
+        "password": ""
+    },
+    "monetdb": {
+        "container_name": "monetdb_QTRAN",
+        "dbType": "monetdb",
+        "host": "127.0.0.1",
+        "port": 50000,
+        "container_port": 50000,
+        "username": "monetdb",
+        "password": "monetdb"
+    },
+    "clickhouse": {
+        "container_name": "clickhouse_QTRAN",
+        "dbType": "clickhouse",
+        "host": "127.0.0.1",
+        "port": 8123,
+        "container_port": 8123,
+        "username": "admin",
+        "password": "123456"
+    }
+}

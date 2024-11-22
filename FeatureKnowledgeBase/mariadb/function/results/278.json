@@ -1,0 +1,23 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/space/"
+    ],
+    "Title": [
+        "SPACE"
+    ],
+    "Feature": [
+        "SPACE(N)\n"
+    ],
+    "Description": [
+        "Returns a string consisting of N space characters. If N is NULL, returns NULL."
+    ],
+    "Examples": [
+        "SELECT QUOTE(SPACE(6));\n+-----------------+\n| QUOTE(SPACE(6)) |\n+-----------------+\n| '      '        |\n+-----------------+\n"
+    ],
+    "Category": [
+        "String Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT QUOTE(SPACE(6));"
+    ]
+}

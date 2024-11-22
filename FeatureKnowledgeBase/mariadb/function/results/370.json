@@ -1,0 +1,28 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/unhex/"
+    ],
+    "Title": [
+        "UNHEX"
+    ],
+    "Feature": [
+        "UNHEX(str)\n"
+    ],
+    "Description": [
+        "Performs the inverse operation of HEX(str). That is, it interprets\neach pair of hexadecimal digits in the argument as a number and\nconverts it to the character represented by the number. The resulting\ncharacters are returned as a binary string.",
+        "If str is NULL, UNHEX() returns NULL."
+    ],
+    "Examples": [
+        "SELECT HEX('MariaDB');\n+----------------+\n| HEX('MariaDB') |\n+----------------+\n| 4D617269614442 |\n+----------------+\n\nSELECT UNHEX('4D617269614442');\n+-------------------------+\n| UNHEX('4D617269614442') |\n+-------------------------+\n| MariaDB                 |\n+-------------------------+\n\nSELECT 0x4D617269614442;\n+------------------+\n| 0x4D617269614442 |\n+------------------+\n| MariaDB          |\n+------------------+\n\nSELECT UNHEX(HEX('string'));\n+----------------------+\n| UNHEX(HEX('string')) |\n+----------------------+\n| string               |\n+----------------------+\n\nSELECT HEX(UNHEX('1267'));\n+--------------------+\n| HEX(UNHEX('1267')) |\n+--------------------+\n| 1267               |\n+--------------------+\n"
+    ],
+    "Category": [
+        "String Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT HEX('MariaDB');",
+        "SELECT UNHEX('4D617269614442');",
+        "SELECT 0x4D617269614442;",
+        "SELECT UNHEX(HEX('string'));",
+        "SELECT HEX(UNHEX('1267'));"
+    ]
+}

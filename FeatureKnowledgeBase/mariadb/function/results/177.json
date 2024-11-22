@@ -1,0 +1,25 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/log2/"
+    ],
+    "Title": [
+        "LOG2"
+    ],
+    "Feature": [
+        "LOG2(X)\n"
+    ],
+    "Description": [
+        "Returns the base-2 logarithm of X."
+    ],
+    "Examples": [
+        "SELECT LOG2(4398046511104);\n+---------------------+\n| LOG2(4398046511104) |\n+---------------------+\n|                  42 |\n+---------------------+\n\nSELECT LOG2(65536);\n+-------------+\n| LOG2(65536) |\n+-------------+\n|          16 |\n+-------------+\n\nSELECT LOG2(-100);\n+------------+\n| LOG2(-100) |\n+------------+\n|       NULL |\n+------------+\n"
+    ],
+    "Category": [
+        "Numeric Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT LOG2(4398046511104);",
+        "SELECT LOG2(65536);",
+        "SELECT LOG2(-100);"
+    ]
+}

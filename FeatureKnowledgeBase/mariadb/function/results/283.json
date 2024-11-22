@@ -1,0 +1,26 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/sqrt/"
+    ],
+    "Title": [
+        "SQRT"
+    ],
+    "Feature": [
+        "SQRT(X)\n"
+    ],
+    "Description": [
+        "Returns the square root of X. If X is negative, NULL is returned."
+    ],
+    "Examples": [
+        "SELECT SQRT(4);\n+---------+\n| SQRT(4) |\n+---------+\n|       2 |\n+---------+\n\nSELECT SQRT(20);\n+------------------+\n| SQRT(20)         |\n+------------------+\n| 4.47213595499958 |\n+------------------+\n\nSELECT SQRT(-16);\n+-----------+\n| SQRT(-16) |\n+-----------+\n|      NULL |\n+-----------+\n\nSELECT SQRT(1764);\n+------------+\n| SQRT(1764) |\n+------------+\n|         42 |\n+------------+\n"
+    ],
+    "Category": [
+        "Numeric Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT SQRT(4);",
+        "SELECT SQRT(20);",
+        "SELECT SQRT(-16);",
+        "SELECT SQRT(1764);"
+    ]
+}

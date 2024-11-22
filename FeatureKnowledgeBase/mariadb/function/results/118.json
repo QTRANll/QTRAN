@@ -1,0 +1,26 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/instr/"
+    ],
+    "Title": [
+        "INSTR"
+    ],
+    "Feature": [
+        "INSTR(str,substr)\n"
+    ],
+    "Description": [
+        "Returns the position of the first occurrence of substring substr in\nstring str. This is the same as the two-argument form of LOCATE(),\nexcept that the order of the arguments is reversed.",
+        "INSTR() performs a case-insensitive search.",
+        "If any argument is NULL, returns NULL."
+    ],
+    "Examples": [
+        "SELECT INSTR('foobarbar', 'bar');\n+---------------------------+\n| INSTR('foobarbar', 'bar') |\n+---------------------------+\n|                         4 |\n+---------------------------+\n\nSELECT INSTR('My', 'Maria');\n+----------------------+\n| INSTR('My', 'Maria') |\n+----------------------+\n|                    0 |\n+----------------------+\n"
+    ],
+    "Category": [
+        "String Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT INSTR('foobarbar', 'bar');",
+        "SELECT INSTR('My', 'Maria');"
+    ]
+}

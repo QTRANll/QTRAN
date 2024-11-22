@@ -1,0 +1,30 @@
+{
+    "HTML": [
+        "https://mariadb.com//kb/en/length/"
+    ],
+    "Title": [
+        "LENGTH"
+    ],
+    "Feature": [
+        "LENGTH(str)\n"
+    ],
+    "Description": [
+        "Returns the length of the string str.",
+        "In the default mode, when Oracle mode from MariaDB 10.3 is not set, the length is measured in bytes. In this case, a multi-byte character counts as multiple bytes. This means that for a string\ncontaining five two-byte characters, LENGTH() returns 10, whereas CHAR_LENGTH() returns 5. ",
+        "When running Oracle mode from MariaDB 10.3, the length is measured in characters, and LENGTH is a synonym for CHAR_LENGTH().",
+        "If str is not a string value, it is converted into a string. If str is NULL, the function returns NULL."
+    ],
+    "Examples": [
+        "SELECT LENGTH('MariaDB');\n+-------------------+\n| LENGTH('MariaDB') |\n+-------------------+\n|                 7 |\n+-------------------+\n",
+        "SELECT CHAR_LENGTH('\u03c0'), LENGTH('\u03c0'), LENGTHB('\u03c0'), OCTET_LENGTH('\u03c0');\n+-------------------+--------------+---------------+--------------------+\n| CHAR_LENGTH('\u03c0')  | LENGTH('\u03c0')  | LENGTHB('\u03c0')  | OCTET_LENGTH('\u03c0')  |\n+-------------------+--------------+---------------+--------------------+\n|                 1 |            2 |             2 |                  2 |\n+-------------------+--------------+---------------+--------------------+\n",
+        "SELECT CHAR_LENGTH('\u03c0'), LENGTH('\u03c0'), LENGTHB('\u03c0'), OCTET_LENGTH('\u03c0');\n+-------------------+--------------+---------------+--------------------+\n| CHAR_LENGTH('\u03c0')  | LENGTH('\u03c0')  | LENGTHB('\u03c0')  | OCTET_LENGTH('\u03c0')  |\n+-------------------+--------------+---------------+--------------------+\n|                 1 |            1 |             2 |                  2 |\n+-------------------+--------------+---------------+--------------------+\n"
+    ],
+    "Category": [
+        "String Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT LENGTH('MariaDB');",
+        "SELECT CHAR_LENGTH('\u03c0'), LENGTH('\u03c0'), LENGTHB('\u03c0'), OCTET_LENGTH('\u03c0');",
+        "SELECT CHAR_LENGTH('\u03c0'), LENGTH('\u03c0'), LENGTHB('\u03c0'), OCTET_LENGTH('\u03c0');"
+    ]
+}

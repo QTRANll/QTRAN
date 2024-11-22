@@ -3,18 +3,21 @@ import json
 from src.FeatureKnowledgeBaseConstruction.MySQL.HTMLs_Crawler import htmls_crawler
 from src.FeatureKnowledgeBaseConstruction.MySQL.Reference_Table_Crawler import reference_tables_crawler
 from src.FeatureKnowledgeBaseConstruction.MySQL.Info_Crawler import functions_and_operators_table_crawler, data_types_crawler
-from src.Tools.crawler_options import category_classifier
+from src.Tools.Crawler.crawler_options import category_classifier
+current_file_path = os.path.abspath(__file__)
+current_dir = os.path.dirname(current_file_path)
+
 def mysql_crawler():
-    dic_path = os.path.join(os.getcwd(),"..", "..", "..", "Feature Knowledge Base", "MySQL")
-    feature_types = ["DataTypes", "Functions", "Operators"]
-    sub_dic = ["Results", "Results_Category"]
+    dic_path = os.path.join(current_dir,"..", "..", "..", "FeatureKnowledgeBase", "mysql")
+    feature_types = ["datatype", "function", "operator"]
+    sub_dic = ["results", "results_category"]
     htmls_list = {
-        "Functions": "https://dev.mysql.com/doc/refman/8.0/en/functions.html",
-        "Operators": "https://dev.mysql.com/doc/refman/8.0/en/functions.html",
-        "DataTypes": "https://dev.mysql.com/doc/refman/8.0/en/data-types.html"
+        "function": "https://dev.mysql.com/doc/refman/8.0/en/functions.html",
+        "operator": "https://dev.mysql.com/doc/refman/8.0/en/functions.html",
+        "datatype": "https://dev.mysql.com/doc/refman/8.0/en/data-types.html"
     }
 
-    # htmls crawler
+    # htmls Crawler
     for feature in feature_types:
         # make dictionaries
         feature_dic = os.path.join(dic_path, feature)
@@ -33,13 +36,13 @@ def mysql_crawler():
         with open(html_path, 'w', encoding='utf-8') as f:
             json.dump(htmls, f, indent=4)
 
-    # reference tables crawler
+    # reference tables Crawler
     for feature in feature_types:
         # functions + operators
-        if feature in ["Functions", "Operators"]:
+        if feature in ["function", "operator"]:
             feature_dic = os.path.join(dic_path, feature)
             html_path = os.path.join(feature_dic, "HTMLs.json")
-            reference_table_results_path = os.path.join(dic_path, "Reference_Table_Results")
+            reference_table_results_path = os.path.join(dic_path, "reference_table_results")
             if not os.path.exists(reference_table_results_path):
                 os.makedirs(reference_table_results_path)
             reference_tables_crawler(html_path, reference_table_results_path)
@@ -73,25 +76,23 @@ def mysql_crawler():
             with open(os.path.join(dic_path, "operators_reference_table_results_merged.json"), "w", encoding="utf-8") as w:
                 json.dump(operator_references_merged, w, indent=4)
 
-    # functions and operators information crawler
+    # functions and operators information Crawler
     functions_reference_table = os.path.join(dic_path, "functions_reference_table_results_merged.json")
     operators_reference_table = os.path.join(dic_path, "operators_reference_table_results_merged.json")
-    functions_results = os.path.join(dic_path, "Functions", "Results")
-    operators_results = os.path.join(dic_path, "Operators", "Results")
-    functions_category = os.path.join(dic_path, "Functions", "Results_Category")
-    operators_category = os.path.join(dic_path, "Operators", "Results_Category")
+    functions_results = os.path.join(dic_path, "function", "results")
+    operators_results = os.path.join(dic_path, "operator", "results")
+    functions_category = os.path.join(dic_path, "function", "results_category")
+    operators_category = os.path.join(dic_path, "operator", "results_category")
     functions_and_operators_table_crawler(functions_reference_table, functions_results)
     functions_and_operators_table_crawler(operators_reference_table, operators_results)
-    # data types information crawler
-    feature_dic = os.path.join(dic_path, "DataTypes")
+    # data types information Crawler
+    feature_dic = os.path.join(dic_path, "datatype")
     data_types_htmls = os.path.join(feature_dic, "HTMLs.json")
-    data_types_results = os.path.join(dic_path, "DataTypes", "Results")
-    data_types_category = os.path.join(dic_path, "DataTypes", "Results_Category")
+    data_types_results = os.path.join(dic_path, "datatype", "results")
+    data_types_category = os.path.join(dic_path, "datatype", "results_category")
     data_types_crawler(data_types_htmls, data_types_results)
 
     # category
     category_classifier(functions_results, functions_category)
     category_classifier(operators_results, operators_category)
     category_classifier(data_types_results, data_types_category)
-
-mysql_crawler()
