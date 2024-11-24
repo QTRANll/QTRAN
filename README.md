@@ -12,7 +12,7 @@ Before running, ensure that the databases supported by QTRAN  have been built an
 **Please note: that:**
 1. After the databases are successfully built, **remember to fill in the correct database configuration information into the file [database_connector_args.json](src/Tools/DatabaseConnect/database_connector_args.json)** to successfully run QTRAN.
 2. The detailed information of databases supported by QTRAN is in the table below. It is recommended to deploy the following version of the databases for optimal performance.
-![TheDemographicsOfTheDBMSsUnderTest](README.assets/TheDemographicsOfTheDBMSsUnderTest.png)
+![TheDemographicsOfTheDBMSsUnderTest|600](README.assets/TheDemographicsOfTheDBMSsUnderTest.png)
 ### LLM keys
 Before running QTRAN, please make sure you have **valid large model API keys** so that QTRAN can successfully call the large model during execution.
 
