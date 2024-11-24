@@ -14,6 +14,9 @@ from sqlalchemy import create_engine
 import subprocess
 import os
 from src.Tools.DatabaseConnect.docker_create import run_container
+import threading
+import sys
+
 current_file_path = os.path.abspath(__file__)
 # 获取当前文件所在目录
 current_dir = os.path.dirname(current_file_path)
@@ -149,8 +152,8 @@ class DatabaseConnectionPool:
             return None, 0, str(e)
 
 
-# sqlancer每次执行后要清除数据库内的所有表格
-def database_clear_sqlancer(tool, exp, dbType):
+# 每次执行后要清除数据库内的所有表格
+def database_clear(tool, exp, dbType):
     args = get_database_connector_args(dbType.lower())
     args["dbname"] = f"{tool}_{exp}_{dbType}".lower()
     # 特殊处理：删除对应的db文件即可
@@ -181,7 +184,7 @@ def database_clear_sqlancer(tool, exp, dbType):
         print(dbType + "," + args["dbname"] + "重置成功")
     else:
         pool = DatabaseConnectionPool(args["dbType"], args["host"], args["port"], args["username"], args["password"],  f"{tool.lower()}_temp_{dbType.lower()}")
-        with open(os.path.join(current_dir, tool.lower(), exp.lower(), dbType.lower() + ".json"), "r", encoding="utf-8") as rf:
+        with open(os.path.join(current_dir,"database_clear", dbType.lower() + ".json"), "r", encoding="utf-8") as rf:
             ddls = json.load(rf)
         for ddl in ddls:
             ddl = ddl.replace("db_name", args["dbname"])
@@ -197,11 +200,64 @@ def exec_sql_statement(tool, exp, dbType, sql_statement):
     args["dbname"] = f"{tool}_{exp}_{dbType}"
     # 先检查容器是否打开，即数据库是否能正常链接，如果没有正常链接则打开容器
     pool = DatabaseConnectionPool(args["dbType"], args["host"], args["port"], args["username"], args["password"], args["dbname"])
-    if not pool.check_connection():
+
+    if dbType not in ["clickhouse"] and not pool.check_connection():
         run_container(tool, exp, dbType)
     result, exec_time, error_message = pool.execSQL(sql_statement)
     pool.close()
     return result, exec_time, error_message
+
+
+def run_with_timeout(func, timeout, *args, **kwargs):
+    result = [None, None, None]  # 使用列表来存储返回值，因为列表是可变的
+
+    def thread_func():
+        result[0], result[1], result[2] = func(*args, **kwargs)
+
+    thread = threading.Thread(target=thread_func)
+    thread.start()
+    thread.join(timeout)
+
+    if thread.is_alive():
+        # 若线程未完成则中断并抛出超时异常
+        thread.join()  # 等待线程结束
+        raise TimeoutError("Function call timed out.")
+
+    return result[0], result[1], result[2]  # 返回函数的执行结果
+
+"""
+def exec_sql_statement(tool, exp, dbType, sql_statement):
+    # 创建连接池实例
+    if tool.lower() in ["sqlancer", "sqlright"]:
+        tool = "sqlancer"
+    args = get_database_connector_args(dbType.lower())
+    args["dbname"] = f"{tool}_{exp}_{dbType}"
+
+    # 先检查容器是否打开，即数据库是否能正常链接，如果没有正常链接则打开容器
+    pool = DatabaseConnectionPool(args["dbType"], args["host"], args["port"], args["username"], args["password"],args["dbname"])
+    if not pool.check_connection():
+        run_container(tool, exp, dbType)
+    # 定义运行结果变量
+    result, exec_time, error_message = None, None, None
+    # 超时控制
+    def run_sql():
+        nonlocal result, exec_time, error_message
+        try:
+            result, exec_time, error_message = pool.execSQL(sql_statement)
+        except Exception as e:
+            error_message = str(e)
+    # 创建线程执行 SQL 语句
+    sql_thread = threading.Thread(target=run_sql)
+    sql_thread.start()
+    sql_thread.join(timeout=2)  # 等待线程完成，最多 10 秒
+    if sql_thread.is_alive():  # 检查线程是否仍在运行
+        error_message = True  # 设置超时错误
+        result, exec_time = None, None  # 清空结果
+        sql_thread.join()  # 确保线程被清理
+    # 关闭连接池
+    pool.close()
+    return result, exec_time, error_message
+"""
 
 def database_define_pinolo(tool, exp, dbType):
     # 创建连接池实例
@@ -241,9 +297,9 @@ if __name__ == "__main__":
 
     # Mariadb
     sql_statement = "SELECT json_array_intersect(@json1, @json2);"
-    print(exec_sql_statement('pinolo', 'exp1','mariadb', sql_statement))  # TEST OK
+    # print(exec_sql_statement('pinolo', 'exp1','mariadb', sql_statement))  # TEST OK
     sql_statement = "SELECT 1;"
-    print(exec_sql_statement('pinolo', 'exp1','mariadb', sql_statement))  # TEST OK
+    # print(exec_sql_statement('pinolo', 'exp1','mariadb', sql_statement))  # TEST OK
 
     # tidb
     # print(exec_sql_statement("pinolo", 'exp1','tidb', sql_statement))  # TEST OK
@@ -375,9 +431,7 @@ if __name__ == "__main__":
             "INSERT INTO t0 VALUES (1);",
             "SELECT * FROM t0 WHERE c0 = 1;"
     ]
-    """
     for sql in sqls:
         print(sqls.index(sql))
         print(exec_sql_statement("sqlancer",'exp1','clickhouse', sql))  #TEST OK
-    print(database_clear_sqlancer("sqlancer",'exp1','clickhouse'))
-    """
+    print(database_clear("sqlancer",'exp1','clickhouse'))

@@ -165,7 +165,7 @@ def run_container(tool, exp, dbType):
         else:
             # run_docker_container
             run_command(["docker", "start", commands_formatted["container_name"]])
-            time.sleep(12)
+            time.sleep(15)
             """
             if not is_container_running(commands_formatted["container_name"]):
                 run_command(["docker", "start", commands_formatted["container_name"]])
@@ -175,3 +175,5 @@ def run_container(tool, exp, dbType):
         print(f"命令执行失败：{e}")
         print(f"标准输出: {e.output}")
         print(f"标准错误: {e.stderr}")
+
+docker_create_databases("sqlancer", "temp","clickhouse")
