@@ -1,36 +1,38 @@
-
-## ClickHouse(可行)
+## ClickHouse
 
 Pull the ClickHouse Docker image:
 ```
 docker pull clickhouse/clickhouse-server:24.9.2.42
 ```
 
-运行ClickHouse容器：
+Run the ClickHouse container:
 
 ```
-docker run -d --name clickhouse_QTRAN -p 8123:8123 -p 9000:9000 -v <宿主机的文件路径>:/var/lib/clickhouse clickhouse/clickhouse-server
-
 docker run -d --name clickhouse_QTRAN -p 8123:8123 -p 9000:9000  clickhouse/clickhouse-server
 ```
 
-进入ClickHouse容器：
+Enter the ClickHouse container:
 
 ```
 docker exec -it clickhouse_QTRAN bash
 ```
 
-为默认账号开启管理员权限：
-[user `default` doesn't have enough grants for creating another user \ role \ row policy for 20.4 and 20.5 · Issue #13057 · ClickHouse/ClickHouse](https://github.com/ClickHouse/ClickHouse/issues/13057)
+[Grant administrator privileges to the default account:](https://github.com/ClickHouse/ClickHouse/issues/13057)
 
 ```
-apt-get update # 更新apt-get（可选）
-apt-get install vim # 安装vim（可选）
-vim /etc/clickhouse-server/users.xml # 修改用户配置
+apt-get update # install apt-get（optional）
+apt-get install vim # install vim（optional）
+```
 
-# 找到<default>标签内的注释如下，取消掉该行注释：
-<!-- <access_management>1</access_management> -->
+```
+vim /etc/clickhouse-server/users.xml # Modify user configuration
+```
 
+```
+# Find the comment inside the `<default>` tag as follows and uncomment that line
+<!-- <access_management>1</access_management> -->   
+
+# Add following configurations after `<access_management>1</access_management>`
 <yandex>
     <users>
         <default>
@@ -43,54 +45,42 @@ vim /etc/clickhouse-server/users.xml # 修改用户配置
 </yandex>
 ```
 
-使用clickhouse-client登录到ClickHouse数据库（使用默认账号）：
+Log in to the ClickHouse database using `clickhouse-client` (with the default account):
 
 ```
 clickhouse-client
 ```
 
-创建管理员账号：
+Create an administrator account:
 
 ```
 CREATE user admin IDENTIFIED WITH sha256_password BY '123456';
 ```
 
-赋予管理员账号所有权限：
+Grant all privileges to the administrator account:
 
 ```
 GRANT ALL PRIVILEGES ON *.* TO admin WITH GRANT OPTION;
 ```
 
-退出登录
+Log out:
 
 ```
 exit
 ```
 
-使用clickhouse-client登录到ClickHouse数据库（使用管理员账号，在这之前可以关闭默认账号的权限，即恢复相应的注释）：
+Log in to the ClickHouse database using `clickhouse-client` (with an administrator account, and before doing so, you can revoke the default account's permissions by uncommenting the corresponding settings):
 
 ```
 clickhouse-client -u admin --password 123456
 ```
 
-修改管理员账号密码：
+
+Modify the administrator account password:
 
 ```
 ALTER USER admin IDENTIFIED WITH plaintext_password BY '123456';
 ```
-
-创建名为TEST的数据库：
-
-```
-CREATE DATABASE PINOLO_ClickHouse;
-```
-
-[【Python】 使用 SQLAlchemy 连接 ClickHouse 数据库_python sqlalchemy clickhouse-CSDN博客](https://blog.csdn.net/qq_35240081/article/details/141114048)
-
-
-
-
-
 
 
 
