@@ -10,7 +10,7 @@ The workflow encompasses two key phases: transfer phase and mutation phase.
 
 ## Prerequisites
 ### Databases
-Before running, ensure that the databases supported by QTRAN  have been built and configured correctly.You can follow **the instructions in [Docker_Databases](Docker_Databases.md) (mainly using Docker containers)** to build the databases, or you can build them yourself. Please note that after the databases are successfully built, remember to fill in the correct database configuration information into the file [database_connector_args.json](Tools/DatabaseConnect/database_connector_args.json).
+Before running, ensure that the databases supported by QTRAN  have been built and configured correctly.You can follow **the instructions in [Docker_Databases](Docker_Databases.md) (mainly using Docker containers)** to build the databases, or you can build them yourself. Please note that after the databases are successfully built, remember to fill in the correct database configuration information into the file [database_connector_args.json](src/Tools/DatabaseConnect/database_connector_args.json).
 
 ### 
 
