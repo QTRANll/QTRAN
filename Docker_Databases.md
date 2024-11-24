@@ -1,21 +1,98 @@
-[Dialects — SQLAlchemy 2.0 Documentation](https://docs.sqlalchemy.org/en/20/dialects/)
 
-备注：
-* 在docker客户端进行启动：mysql，mariadb，postgres
-* 在wsl终端启动：tidb，monetdb（每次端口可能还不一样）
-* 不需要特殊操作：sqlite，duckdb
-* 设置容器容器：docker update --restart=always 容器ID(或者容器名)
+## ClickHouse(可行)
 
-# Ubuntu安装docker
-[Ubuntu 22.04下Docker安装（最全指引）_docker安装ubuntu-CSDN博客](https://blog.csdn.net/u011278722/article/details/137673353)
-# Docker DB
+Pull the ClickHouse Docker image:
+```
+docker pull clickhouse/clickhouse-server:24.9.2.42
+```
 
-## WSL Docker 启动
+运行ClickHouse容器：
 
 ```
-启动：sudo service docker start
-查看Docker运行状态：sudo systemctl status docker
+docker run -d --name clickhouse_QTRAN -p 8123:8123 -p 9000:9000 -v <宿主机的文件路径>:/var/lib/clickhouse clickhouse/clickhouse-server
+
+docker run -d --name clickhouse_QTRAN -p 8123:8123 -p 9000:9000  clickhouse/clickhouse-server
 ```
+
+进入ClickHouse容器：
+
+```
+docker exec -it clickhouse_QTRAN bash
+```
+
+为默认账号开启管理员权限：
+[user `default` doesn't have enough grants for creating another user \ role \ row policy for 20.4 and 20.5 · Issue #13057 · ClickHouse/ClickHouse](https://github.com/ClickHouse/ClickHouse/issues/13057)
+
+```
+apt-get update # 更新apt-get（可选）
+apt-get install vim # 安装vim（可选）
+vim /etc/clickhouse-server/users.xml # 修改用户配置
+
+# 找到<default>标签内的注释如下，取消掉该行注释：
+<!-- <access_management>1</access_management> -->
+
+<yandex>
+    <users>
+        <default>
+            <access_management>1</access_management>
+            <named_collection_control>1</named_collection_control>
+            <show_named_collections>1</show_named_collections>
+            <show_named_collections_secrets>1</show_named_collections_secrets>
+        </default>
+    </users>
+</yandex>
+```
+
+使用clickhouse-client登录到ClickHouse数据库（使用默认账号）：
+
+```
+clickhouse-client
+```
+
+创建管理员账号：
+
+```
+CREATE user admin IDENTIFIED WITH sha256_password BY '123456';
+```
+
+赋予管理员账号所有权限：
+
+```
+GRANT ALL PRIVILEGES ON *.* TO admin WITH GRANT OPTION;
+```
+
+退出登录
+
+```
+exit
+```
+
+使用clickhouse-client登录到ClickHouse数据库（使用管理员账号，在这之前可以关闭默认账号的权限，即恢复相应的注释）：
+
+```
+clickhouse-client -u admin --password 123456
+```
+
+修改管理员账号密码：
+
+```
+ALTER USER admin IDENTIFIED WITH plaintext_password BY '123456';
+```
+
+创建名为TEST的数据库：
+
+```
+CREATE DATABASE PINOLO_ClickHouse;
+```
+
+[【Python】 使用 SQLAlchemy 连接 ClickHouse 数据库_python sqlalchemy clickhouse-CSDN博客](https://blog.csdn.net/qq_35240081/article/details/141114048)
+
+
+
+
+
+
+
 
 ## MySQL（可行）
 
@@ -492,95 +569,6 @@ SELECT name FROM sys.tables WHERE system = false;
 ```
 
 
-
-## ClickHouse(可行)
-
-拉取ClickHouse Docker镜像：
-
-```
-docker pull clickhouse/clickhouse-server:24.9.2.42
-```
-
-运行ClickHouse容器：
-
-```
-docker run -d --name clickhouse_QTRAN -p 8123:8123 -p 9000:9000 -v <宿主机的文件路径>:/var/lib/clickhouse clickhouse/clickhouse-server
-
-docker run -d --name clickhouse_QTRAN -p 8123:8123 -p 9000:9000  clickhouse/clickhouse-server
-```
-
-进入ClickHouse容器：
-
-```
-docker exec -it clickhouse_QTRAN bash
-```
-
-为默认账号开启管理员权限：
-[user `default` doesn't have enough grants for creating another user \ role \ row policy for 20.4 and 20.5 · Issue #13057 · ClickHouse/ClickHouse](https://github.com/ClickHouse/ClickHouse/issues/13057)
-
-```
-apt-get update # 更新apt-get（可选）
-apt-get install vim # 安装vim（可选）
-vim /etc/clickhouse-server/users.xml # 修改用户配置
-
-# 找到<default>标签内的注释如下，取消掉该行注释：
-<!-- <access_management>1</access_management> -->
-
-<yandex>
-    <users>
-        <default>
-            <access_management>1</access_management>
-            <named_collection_control>1</named_collection_control>
-            <show_named_collections>1</show_named_collections>
-            <show_named_collections_secrets>1</show_named_collections_secrets>
-        </default>
-    </users>
-</yandex>
-```
-
-使用clickhouse-client登录到ClickHouse数据库（使用默认账号）：
-
-```
-clickhouse-client
-```
-
-创建管理员账号：
-
-```
-CREATE user admin IDENTIFIED WITH sha256_password BY '123456';
-```
-
-赋予管理员账号所有权限：
-
-```
-GRANT ALL PRIVILEGES ON *.* TO admin WITH GRANT OPTION;
-```
-
-退出登录
-
-```
-exit
-```
-
-使用clickhouse-client登录到ClickHouse数据库（使用管理员账号，在这之前可以关闭默认账号的权限，即恢复相应的注释）：
-
-```
-clickhouse-client -u admin --password 123456
-```
-
-修改管理员账号密码：
-
-```
-ALTER USER admin IDENTIFIED WITH plaintext_password BY '123456';
-```
-
-创建名为TEST的数据库：
-
-```
-CREATE DATABASE PINOLO_ClickHouse;
-```
-
-[【Python】 使用 SQLAlchemy 连接 ClickHouse 数据库_python sqlalchemy clickhouse-CSDN博客](https://blog.csdn.net/qq_35240081/article/details/141114048)
 
 
 
