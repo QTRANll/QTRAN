@@ -18,5 +18,23 @@
     ],
     "Category": [
         "Date Time Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT sql_sub('2023-10-01', 3);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 320,
+            "Prompt Tokens": 293,
+            "Completion Tokens": 27,
+            "Total Cost (USD)": 6.0149999999999985e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT sql_sub('2023-10-01', 3);"
     ]
 }

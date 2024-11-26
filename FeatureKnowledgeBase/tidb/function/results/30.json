@@ -10,9 +10,9 @@
     ],
     "Description": [
         "MID()",
-        "MID(str,pos,len) 函数返回从指定的 pos 位置开始的长度为 len 的子字符串。",
-        "如果任一参数为 NULL，该函数将返回 NULL。",
-        "TiDB 不支持该函数的两参数版本。更多信息，请参见 #52420。"
+        "MID(str,pos,len) \u51fd\u6570\u8fd4\u56de\u4ece\u6307\u5b9a\u7684 pos \u4f4d\u7f6e\u5f00\u59cb\u7684\u957f\u5ea6\u4e3a len \u7684\u5b50\u5b57\u7b26\u4e32\u3002",
+        "\u5982\u679c\u4efb\u4e00\u53c2\u6570\u4e3a NULL\uff0c\u8be5\u51fd\u6570\u5c06\u8fd4\u56de NULL\u3002",
+        "TiDB \u4e0d\u652f\u6301\u8be5\u51fd\u6570\u7684\u4e24\u53c2\u6570\u7248\u672c\u3002\u66f4\u591a\u4fe1\u606f\uff0c\u8bf7\u53c2\u89c1 #52420\u3002"
     ],
     "Examples": [
         "SELECT MID('abcdef',2,3);\n",
@@ -20,6 +20,19 @@
         "SELECT 'aaa' LIKE 'b%', 'aaa' NOT LIKE 'b%';\n"
     ],
     "Category": [
-        "字符串函数"
+        "\u5b57\u7b26\u4e32\u51fd\u6570"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT MID('abcdef',2,3);",
+        "SELECT 'aaa' LIKE 'a%', 'aaa' NOT LIKE 'a%';",
+        "SELECT 'aaa' LIKE 'b%', 'aaa' NOT LIKE 'b%';"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT MID('abcdef',2,3);",
+        "SELECT 'aaa' LIKE 'a%', 'aaa' NOT LIKE 'a%';",
+        "SELECT 'aaa' LIKE 'b%', 'aaa' NOT LIKE 'b%';"
     ]
 }

@@ -6,7 +6,7 @@
         "pg_export_snapshot"
     ],
     "Feature": [
-        "pg_export_snapshot () → text"
+        "pg_export_snapshot () \u2192 text"
     ],
     "Description": [
         "Saves the transaction's current snapshot and returns a text string identifying the snapshot. This string must be passed (outside the database) to clients that want to import the snapshot. The snapshot is available for import only until the end of the transaction that exported it.",
@@ -15,5 +15,23 @@
     "Examples": [],
     "Category": [
         "System Administration Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT pg_export_snapshot();"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 377,
+            "Prompt Tokens": 359,
+            "Completion Tokens": 18,
+            "Total Cost (USD)": 6.465e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT pg_export_snapshot();"
     ]
 }

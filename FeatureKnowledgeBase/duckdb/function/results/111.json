@@ -16,5 +16,39 @@
     ],
     "Category": [
         "Blob Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT octet_length(blob);",
+        "SELECT octet_length('your_blob_data_here');",
+        "SELECT octet_length(CAST('your_blob_data_here' AS BLOB));"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 273,
+            "Prompt Tokens": 254,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 4.95e-05
+        },
+        {
+            "Total Tokens": 441,
+            "Prompt Tokens": 418,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 7.649999999999999e-05
+        },
+        {
+            "Total Tokens": 665,
+            "Prompt Tokens": 636,
+            "Completion Tokens": 29,
+            "Total Cost (USD)": 0.00011279999999999999
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.BinderException) Binder Error: Referenced column \"blob\" not found in FROM clause!\nLINE 1: SELECT octet_length(blob);\n                            ^\n",
+        "(duckdb.duckdb.BinderException) Binder Error: Could not choose a best candidate function for the function call \"octet_length(STRING_LITERAL)\". In order to select one, please add explicit type casts.\n\tCandidate functions:\n\toctet_length(BIT) -> BIGINT\n\toctet_length(BLOB) -> BIGINT\n\nLINE 1: SELECT octet_length('your_blob_data_here');\n               ^\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT octet_length(CAST('your_blob_data_here' AS BLOB));"
     ]
 }

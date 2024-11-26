@@ -16,5 +16,53 @@
     ],
     "Category": [
         "Map Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT map_keys(map);",
+        "SELECT map_keys(ARRAY[1, 2, 3]::map);",
+        "SELECT map_keys(MAP[1, 'a', 2, 'b']);",
+        "SELECT map_keys(MAP['a', 1, 'b', 2]);",
+        "SELECT map_keys(MAP['a' => 1, 'b' => 2]);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 272,
+            "Prompt Tokens": 254,
+            "Completion Tokens": 18,
+            "Total Cost (USD)": 4.8899999999999996e-05
+        },
+        {
+            "Total Tokens": 445,
+            "Prompt Tokens": 415,
+            "Completion Tokens": 30,
+            "Total Cost (USD)": 8.025e-05
+        },
+        {
+            "Total Tokens": 601,
+            "Prompt Tokens": 571,
+            "Completion Tokens": 30,
+            "Total Cost (USD)": 0.00010364999999999997
+        },
+        {
+            "Total Tokens": 757,
+            "Prompt Tokens": 727,
+            "Completion Tokens": 30,
+            "Total Cost (USD)": 0.00012704999999999997
+        },
+        {
+            "Total Tokens": 915,
+            "Prompt Tokens": 883,
+            "Completion Tokens": 32,
+            "Total Cost (USD)": 0.00015165
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.BinderException) Binder Error: Referenced column \"map\" not found in FROM clause!\nLINE 1: SELECT map_keys(map);\n                        ^\n",
+        "(duckdb.duckdb.ParserException) Parser Error: syntax error at or near \")\"\n",
+        "(duckdb.duckdb.ParserException) Parser Error: syntax error at or near \",\"\n",
+        "(duckdb.duckdb.ParserException) Parser Error: syntax error at or near \",\"\n",
+        "(duckdb.duckdb.ParserException) Parser Error: syntax error at or near \"=>\"\n"
+    ],
+    "EffectiveSQLs": []
 }

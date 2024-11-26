@@ -16,5 +16,53 @@
     ],
     "Category": [
         "Comparison Operators"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT * FROM table_name WHERE column_name = value;",
+        "SELECT * FROM my_table WHERE my_column = my_value;",
+        "SELECT * FROM existing_table WHERE existing_column = existing_value;",
+        "SELECT * FROM my_schema.my_existing_table WHERE my_existing_column = my_existing_value;",
+        "SELECT * FROM public.my_table WHERE my_column = my_value;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 257,
+            "Prompt Tokens": 234,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 4.8899999999999996e-05
+        },
+        {
+            "Total Tokens": 410,
+            "Prompt Tokens": 386,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 7.23e-05
+        },
+        {
+            "Total Tokens": 563,
+            "Prompt Tokens": 539,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 9.525e-05
+        },
+        {
+            "Total Tokens": 721,
+            "Prompt Tokens": 692,
+            "Completion Tokens": 29,
+            "Total Cost (USD)": 0.00012119999999999999
+        },
+        {
+            "Total Tokens": 875,
+            "Prompt Tokens": 850,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 0.0001425
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymonetdb.exceptions.OperationalError) 42S02!SELECT: no such table 'table_name'\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42S02!SELECT: no such table 'my_table'\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42S02!SELECT: no such table 'existing_table'\n\n",
+        "(pymonetdb.exceptions.OperationalError) 3F000!SELECT: no such schema 'my_schema'\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!syntax error, unexpected PUBLIC in: \"select * from public\"\n\n"
+    ],
+    "EffectiveSQLs": []
 }

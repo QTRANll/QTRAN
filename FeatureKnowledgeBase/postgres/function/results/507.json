@@ -6,13 +6,39 @@
         "pg_log_backend_memory_contexts"
     ],
     "Feature": [
-        "pg_log_backend_memory_contexts ( pid integer ) → boolean"
+        "pg_log_backend_memory_contexts ( pid integer ) \u2192 boolean"
     ],
     "Description": [
-        "Requests to log the memory contexts of the backend with the specified process ID. This function can send the request to backends and auxiliary processes except logger. These memory contexts will be logged at LOG message level. They will appear in the server log based on the log configuration set (see Section 20.8 for more information), but will not be sent to the client regardless of client_min_messages."
+        "Requests to log the memory contexts of the backend with the specified process ID. This function can send the request to backends and auxiliary processes except logger. These memory contexts will be logged at LOG message level. They will appear in the server log based on the log configuration set (see Section\u00a020.8 for more information), but will not be sent to the client regardless of client_min_messages."
     ],
     "Examples": [],
     "Category": [
         "System Administration Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT pg_log_backend_memory_contexts(pid);",
+        "SELECT pg_log_backend_memory_contexts(12345);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 358,
+            "Prompt Tokens": 336,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 6.36e-05
+        },
+        {
+            "Total Tokens": 526,
+            "Prompt Tokens": 502,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 8.969999999999998e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedColumn) column \"pid\" does not exist\nLINE 1: SELECT pg_log_backend_memory_contexts(pid);\n                                              ^\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT pg_log_backend_memory_contexts(12345);"
     ]
 }

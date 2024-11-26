@@ -25,5 +25,53 @@
     ],
     "Category": [
         "Loadable Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT keyring_key_store('new key', 'DSA', 'My key value');",
+        "SELECT keyring_key_store('example_key', 'RSA', 'Example key value');",
+        "SELECT keyring_key_store('test_key', 'AES', 'Sample key value');",
+        "SELECT keyring_key_store('dummy_key', 'HMAC', 'Dummy key value');",
+        "SELECT keyring_key_store('sample_key', 'ECDSA', 'Sample key value');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 498,
+            "Prompt Tokens": 467,
+            "Completion Tokens": 31,
+            "Total Cost (USD)": 8.864999999999999e-05
+        },
+        {
+            "Total Tokens": 665,
+            "Prompt Tokens": 635,
+            "Completion Tokens": 30,
+            "Total Cost (USD)": 0.00011324999999999999
+        },
+        {
+            "Total Tokens": 832,
+            "Prompt Tokens": 802,
+            "Completion Tokens": 30,
+            "Total Cost (USD)": 0.0001383
+        },
+        {
+            "Total Tokens": 1000,
+            "Prompt Tokens": 969,
+            "Completion Tokens": 31,
+            "Total Cost (USD)": 0.00016394999999999997
+        },
+        {
+            "Total Tokens": 1168,
+            "Prompt Tokens": 1137,
+            "Completion Tokens": 31,
+            "Total Cost (USD)": 0.00018915
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.keyring_key_store does not exist')\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.keyring_key_store does not exist')\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.keyring_key_store does not exist')\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.keyring_key_store does not exist')\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.keyring_key_store does not exist')\n"
+    ],
+    "EffectiveSQLs": []
 }

@@ -17,5 +17,16 @@
     ],
     "Category": [
         "Comparison Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT 1 <=> 1, NULL <=> NULL, 1 <=> NULL;",
+        "SELECT 1 = 1, NULL = NULL, 1 = NULL;"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT 1 <=> 1, NULL <=> NULL, 1 <=> NULL;",
+        "SELECT 1 = 1, NULL = NULL, 1 = NULL;"
     ]
 }

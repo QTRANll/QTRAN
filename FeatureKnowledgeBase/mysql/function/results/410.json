@@ -20,5 +20,31 @@
     "Category": [
         "Built-In Functions and Operators",
         "Aggregate Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT VAR_POP(column_name) FROM table_name;",
+        "SELECT VAR_POP(1);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 442,
+            "Prompt Tokens": 420,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 7.619999999999998e-05
+        },
+        {
+            "Total Tokens": 599,
+            "Prompt Tokens": 580,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 9.839999999999998e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.ProgrammingError) (1146, \"Table 'knowledge_base_preprocess_mysql.table_name' doesn't exist\")\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT VAR_POP(1);"
     ]
 }

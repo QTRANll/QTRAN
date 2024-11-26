@@ -20,5 +20,31 @@
     "Category": [
         "Built-In Functions and Operators",
         "Spatial Analysis Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT ST_MPointFromText('POINT(1 1)', 4326);",
+        "SELECT ST_MultiPointFromText('MULTIPOINT((1 1), (2 2))', 4326);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 412,
+            "Prompt Tokens": 382,
+            "Completion Tokens": 30,
+            "Total Cost (USD)": 7.529999999999999e-05
+        },
+        {
+            "Total Tokens": 593,
+            "Prompt Tokens": 554,
+            "Completion Tokens": 39,
+            "Total Cost (USD)": 0.0001065
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.OperationalError) (3516, 'WKT value is a geometry of unexpected type POINT in st_mpointfromtext.')\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT ST_MultiPointFromText('MULTIPOINT((1 1), (2 2))', 4326);"
     ]
 }

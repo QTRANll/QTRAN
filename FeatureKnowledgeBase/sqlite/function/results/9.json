@@ -14,5 +14,31 @@
     "Examples": [],
     "Category": [
         "Core SQL Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT ifnull(column1, column2);",
+        "SELECT ifnull(1, 2);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 327,
+            "Prompt Tokens": 305,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 5.894999999999999e-05
+        },
+        {
+            "Total Tokens": 469,
+            "Prompt Tokens": 447,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 8.024999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(sqlite3.OperationalError) no such column: column1\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT ifnull(1, 2);"
     ]
 }

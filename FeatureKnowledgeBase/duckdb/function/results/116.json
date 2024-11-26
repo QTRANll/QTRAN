@@ -16,5 +16,23 @@
     ],
     "Category": [
         "Date Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT date_part('year', CURRENT_DATE);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 284,
+            "Prompt Tokens": 262,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 5.2499999999999995e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT date_part('year', CURRENT_DATE);"
     ]
 }

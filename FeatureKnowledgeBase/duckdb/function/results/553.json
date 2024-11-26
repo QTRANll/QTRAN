@@ -16,5 +16,23 @@
     ],
     "Category": [
         "Timestamp with Time Zone Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT strptime('2023-10-01 12:00:00', '%Y-%m-%d %H:%M:%S');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 316,
+            "Prompt Tokens": 273,
+            "Completion Tokens": 43,
+            "Total Cost (USD)": 6.675e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT strptime('2023-10-01 12:00:00', '%Y-%m-%d %H:%M:%S');"
     ]
 }

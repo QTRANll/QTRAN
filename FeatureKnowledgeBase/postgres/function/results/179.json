@@ -6,15 +6,49 @@
         "diameter"
     ],
     "Feature": [
-        "diameter ( circle ) → double precision"
+        "diameter ( circle ) \u2192 double precision"
     ],
     "Description": [
         "Computes diameter of circle."
     ],
     "Examples": [
-        "diameter(circle '<(0,0),2>') → 4"
+        "diameter(circle '<(0,0),2>') \u2192 4"
     ],
     "Category": [
         "Geometric Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT diameter(circle) AS circle_diameter;",
+        "SELECT diameter('((0,0), (1,1))'::circle) AS circle_diameter;",
+        "SELECT diameter('((0,0), 1)'::circle) AS circle_diameter;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 268,
+            "Prompt Tokens": 247,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 4.965e-05
+        },
+        {
+            "Total Tokens": 442,
+            "Prompt Tokens": 408,
+            "Completion Tokens": 34,
+            "Total Cost (USD)": 8.16e-05
+        },
+        {
+            "Total Tokens": 636,
+            "Prompt Tokens": 605,
+            "Completion Tokens": 31,
+            "Total Cost (USD)": 0.00010934999999999997
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedColumn) column \"circle\" does not exist\nLINE 1: SELECT diameter(circle) AS circle_diameter;\n                        ^\n\n",
+        "(psycopg2.errors.InvalidTextRepresentation) invalid input syntax for type circle: \"((0,0), (1,1))\"\nLINE 1: SELECT diameter('((0,0), (1,1))'::circle) AS circle_diameter...\n                        ^\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT diameter('((0,0), 1)'::circle) AS circle_diameter;"
     ]
 }

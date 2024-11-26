@@ -6,15 +6,33 @@
         "regexp_like"
     ],
     "Feature": [
-        "regexp_like ( string text, pattern text [, flags text ] ) → boolean"
+        "regexp_like ( string text, pattern text [, flags text ] ) \u2192 boolean"
     ],
     "Description": [
-        "Checks whether a match of the POSIX regular expression pattern occurs within string; see Section 9.7.3."
+        "Checks whether a match of the POSIX regular expression pattern occurs within string; see Section\u00a09.7.3."
     ],
     "Examples": [
-        "regexp_like('Hello World', 'world$', 'i') → t"
+        "regexp_like('Hello World', 'world$', 'i') \u2192 t"
     ],
     "Category": [
         "String Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT regexp_like('example_string', '^example')"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 295,
+            "Prompt Tokens": 272,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 5.46e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT regexp_like('example_string', '^example')"
     ]
 }

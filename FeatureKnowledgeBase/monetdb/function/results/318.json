@@ -16,5 +16,47 @@
     "Examples": [],
     "Category": [
         "Generate Series Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT generate_series('2023-01-01 00:00:00', '2023-01-10 00:00:00', interval '1 day');",
+        "SELECT generate_series('2023-01-01 00:00:00', '2023-01-10 00:00:00', '1 day');",
+        "SELECT generate_series(1, 10, 1);",
+        "SELECT * FROM generate_series(1, 10, 1);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 343,
+            "Prompt Tokens": 294,
+            "Completion Tokens": 49,
+            "Total Cost (USD)": 7.35e-05
+        },
+        {
+            "Total Tokens": 562,
+            "Prompt Tokens": 514,
+            "Completion Tokens": 48,
+            "Total Cost (USD)": 0.00010589999999999999
+        },
+        {
+            "Total Tokens": 724,
+            "Prompt Tokens": 699,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 0.00011984999999999999
+        },
+        {
+            "Total Tokens": 888,
+            "Prompt Tokens": 861,
+            "Completion Tokens": 27,
+            "Total Cost (USD)": 0.00014534999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymonetdb.exceptions.OperationalError) 42000!syntax error, unexpected ')' in: \"select generate_series('2023-01-01 00:00:00', '2023-01-10 00:00:00', interval '1\"\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: no such operator 'generate_series'\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: no such operator 'generate_series'\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT * FROM generate_series(1, 10, 1);"
     ]
 }

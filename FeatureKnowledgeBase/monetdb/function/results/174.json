@@ -18,5 +18,53 @@
     ],
     "Category": [
         "Date Time Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "\"second\"(sec_interval)",
+        "second(sec_interval)",
+        "SELECT EXTRACT(SECOND FROM sec_interval)",
+        "SELECT EXTRACT(SECOND FROM INTERVAL '00:00:00')",
+        "SELECT EXTRACT(SECOND FROM INTERVAL '00:00:00') AS seconds"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 291,
+            "Prompt Tokens": 273,
+            "Completion Tokens": 18,
+            "Total Cost (USD)": 5.175e-05
+        },
+        {
+            "Total Tokens": 442,
+            "Prompt Tokens": 426,
+            "Completion Tokens": 16,
+            "Total Cost (USD)": 7.35e-05
+        },
+        {
+            "Total Tokens": 597,
+            "Prompt Tokens": 576,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 9.899999999999998e-05
+        },
+        {
+            "Total Tokens": 757,
+            "Prompt Tokens": 729,
+            "Completion Tokens": 28,
+            "Total Cost (USD)": 0.00012614999999999998
+        },
+        {
+            "Total Tokens": 932,
+            "Prompt Tokens": 902,
+            "Completion Tokens": 30,
+            "Total Cost (USD)": 0.00015329999999999999
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymonetdb.exceptions.OperationalError) 42000!syntax error, unexpected IDENT in: \"\"second\"\"\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!syntax error, unexpected SECOND in: \"second\"\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: identifier 'sec_interval' unknown\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!syntax error, unexpected ')' in: \"select extract(second from interval '00:00:00')\"\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!syntax error, unexpected ')' in: \"select extract(second from interval '00:00:00')\"\n\n"
+    ],
+    "EffectiveSQLs": []
 }

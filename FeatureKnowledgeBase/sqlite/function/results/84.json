@@ -12,20 +12,38 @@
         "4.21. The json_quote() function",
         "The json_quote(X) function converts the SQL value X (a number or a\nstring) into its corresponding JSON representation.  If X is a JSON value\nreturned by another JSON function, then this function is a no-op.\n\n",
         "Examples:\n\n",
-        "json_quote(3.14159)\n→ 3.14159",
-        "json_quote('verdant')\n→ '\"verdant\"'",
-        "json_quote('[1]')\n→ '\"[1]\"'",
-        "json_quote(json('[1]'))\n→ '[1]'",
-        "json_quote('[1,')\n→ '\"[1,\"'"
+        "json_quote(3.14159)\n\u2192 3.14159",
+        "json_quote('verdant')\n\u2192 '\"verdant\"'",
+        "json_quote('[1]')\n\u2192 '\"[1]\"'",
+        "json_quote(json('[1]'))\n\u2192 '[1]'",
+        "json_quote('[1,')\n\u2192 '\"[1,\"'"
     ],
     "Examples": [
-        "json_quote(3.14159)\n→ 3.14159",
-        "json_quote('verdant')\n→ '\"verdant\"'",
-        "json_quote('[1]')\n→ '\"[1]\"'",
-        "json_quote(json('[1]'))\n→ '[1]'",
-        "json_quote('[1,')\n→ '\"[1,\"'"
+        "json_quote(3.14159)\n\u2192 3.14159",
+        "json_quote('verdant')\n\u2192 '\"verdant\"'",
+        "json_quote('[1]')\n\u2192 '\"[1]\"'",
+        "json_quote(json('[1]'))\n\u2192 '[1]'",
+        "json_quote('[1,')\n\u2192 '\"[1,\"'"
     ],
     "Category": [
         "JSON Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT json_quote('verdant');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 435,
+            "Prompt Tokens": 415,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 7.424999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT json_quote('verdant');"
     ]
 }

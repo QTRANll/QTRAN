@@ -13,6 +13,19 @@
         "mysql> SELECT SQRT(4);\n        -> 2\nmysql> SELECT SQRT(20);\n        -> 4.4721359549996\nmysql> SELECT SQRT(-16);\n        -> NULL"
     ],
     "Category": [
-        "数值函数与操作符"
+        "\u6570\u503c\u51fd\u6570\u4e0e\u64cd\u4f5c\u7b26"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT SQRT(4);",
+        "SELECT SQRT(20);",
+        "SELECT SQRT(-16);"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT SQRT(4);",
+        "SELECT SQRT(20);",
+        "SELECT SQRT(-16);"
     ]
 }

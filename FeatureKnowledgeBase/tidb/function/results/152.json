@@ -10,12 +10,21 @@
     ],
     "Description": [
         "CONVERT",
-        "CONVERT() 函数用于在字符集之间进行转换。"
+        "CONVERT() \u51fd\u6570\u7528\u4e8e\u5728\u5b57\u7b26\u96c6\u4e4b\u95f4\u8fdb\u884c\u8f6c\u6362\u3002"
     ],
     "Examples": [
         "SELECT CONVERT(0x616263 USING utf8mb4);\n"
     ],
     "Category": [
-        "Cast 函数和操作符"
+        "Cast \u51fd\u6570\u548c\u64cd\u4f5c\u7b26"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT CONVERT(0x616263 USING utf8mb4);"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT CONVERT(0x616263 USING utf8mb4);"
     ]
 }

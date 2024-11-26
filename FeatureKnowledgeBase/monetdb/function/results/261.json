@@ -18,5 +18,39 @@
     ],
     "Category": [
         "Aggregate Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT prod(DISTINCT numeric_column) FROM your_table;",
+        "SELECT prod(DISTINCT numeric_column);",
+        "SELECT prod(DISTINCT 1);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 307,
+            "Prompt Tokens": 283,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 5.684999999999999e-05
+        },
+        {
+            "Total Tokens": 462,
+            "Prompt Tokens": 441,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 7.874999999999999e-05
+        },
+        {
+            "Total Tokens": 615,
+            "Prompt Tokens": 594,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 0.00010169999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymonetdb.exceptions.OperationalError) 42S02!SELECT: no such table 'your_table'\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: identifier 'numeric_column' unknown\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT prod(DISTINCT 1);"
     ]
 }

@@ -15,5 +15,55 @@
     "Examples": [],
     "Category": [
         "Window Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT count(column_name any, distinct true);",
+        "SELECT count(distinct column_name);",
+        "SELECT count(distinct any_column) FROM your_table;",
+        "SELECT count(distinct any_column);",
+        "SELECT count(distinct 1);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 293,
+            "Prompt Tokens": 271,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 5.3849999999999994e-05
+        },
+        {
+            "Total Tokens": 456,
+            "Prompt Tokens": 436,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 7.739999999999998e-05
+        },
+        {
+            "Total Tokens": 613,
+            "Prompt Tokens": 590,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 0.00010229999999999998
+        },
+        {
+            "Total Tokens": 769,
+            "Prompt Tokens": 749,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 0.00012435
+        },
+        {
+            "Total Tokens": 923,
+            "Prompt Tokens": 903,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 0.00014744999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymonetdb.exceptions.OperationalError) 42000!syntax error, unexpected ANY, expecting ')' in: \"select count(column_name any\"\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: identifier 'column_name' unknown\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42S02!SELECT: no such table 'your_table'\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: identifier 'any_column' unknown\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT count(distinct 1);"
     ]
 }

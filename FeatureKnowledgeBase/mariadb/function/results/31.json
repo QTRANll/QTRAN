@@ -19,5 +19,52 @@
     "Category": [
         "Dynamic Columns Functions"
     ],
-    "EffectiveSQLsRefined": []
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "COLUMN_ADD(dyncol_blob, 'new_column', 'new_value');",
+        "SELECT COLUMN_ADD(dyncol_blob, 'new_column', 'new_value');",
+        "COLUMN_ADD('', 'new_column', 'new_value');",
+        "SET @dyncol_blob = COLUMN_CREATE(); COLUMN_ADD(@dyncol_blob, 'new_column', 'new_value');",
+        "SET @dyncol_blob = COLUMN_CREATE(); CALL COLUMN_ADD(@dyncol_blob, 'new_column', 'new_value');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 434,
+            "Prompt Tokens": 406,
+            "Completion Tokens": 28,
+            "Total Cost (USD)": 7.769999999999999e-05
+        },
+        {
+            "Total Tokens": 632,
+            "Prompt Tokens": 603,
+            "Completion Tokens": 29,
+            "Total Cost (USD)": 0.00010784999999999999
+        },
+        {
+            "Total Tokens": 788,
+            "Prompt Tokens": 764,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 0.000129
+        },
+        {
+            "Total Tokens": 990,
+            "Prompt Tokens": 953,
+            "Completion Tokens": 37,
+            "Total Cost (USD)": 0.00016514999999999998
+        },
+        {
+            "Total Tokens": 1198,
+            "Prompt Tokens": 1160,
+            "Completion Tokens": 38,
+            "Total Cost (USD)": 0.00019679999999999996
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.ProgrammingError) (1064, \"You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'COLUMN_ADD(dyncol_blob, 'new_column', 'new_value')' at line 1\")\n",
+        "(pymysql.err.OperationalError) (1054, \"Unknown column 'dyncol_blob' in 'field list'\")\n",
+        "(pymysql.err.ProgrammingError) (1064, \"You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'COLUMN_ADD('', 'new_column', 'new_value')' at line 1\")\n",
+        "(pymysql.err.ProgrammingError) (1064, \"You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '); COLUMN_ADD(@dyncol_blob, 'new_column', 'new_value')' at line 1\")\n",
+        "(pymysql.err.ProgrammingError) (1064, \"You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '); CALL COLUMN_ADD(@dyncol_blob, 'new_column', 'new_value')' at line 1\")\n"
+    ],
+    "EffectiveSQLs": []
 }

@@ -17,5 +17,23 @@
     ],
     "Category": [
         "List Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT array_distinct([1, 2, 2, 3, NULL, 4, NULL]);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 300,
+            "Prompt Tokens": 264,
+            "Completion Tokens": 36,
+            "Total Cost (USD)": 6.12e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT array_distinct([1, 2, 2, 3, NULL, 4, NULL]);"
     ]
 }

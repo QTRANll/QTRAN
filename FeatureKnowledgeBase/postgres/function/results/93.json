@@ -6,15 +6,33 @@
         "repeat"
     ],
     "Feature": [
-        "repeat ( string text, number integer ) → text"
+        "repeat ( string text, number integer ) \u2192 text"
     ],
     "Description": [
         "Repeats string the specified number of times."
     ],
     "Examples": [
-        "repeat('Pg', 4) → PgPgPgPg"
+        "repeat('Pg', 4) \u2192 PgPgPgPg"
     ],
     "Category": [
         "String Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT repeat('hello', 3);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 270,
+            "Prompt Tokens": 249,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 4.995e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT repeat('hello', 3);"
     ]
 }

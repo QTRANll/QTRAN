@@ -16,5 +16,39 @@
     "Examples": [],
     "Category": [
         "Aggregate Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT quantile_disc(value, 0.5) FROM your_table;",
+        "SELECT quantile_disc(value, 0.5);",
+        "SELECT quantile_disc(ARRAY[1, 2, 3, 4, 5], 0.5);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 347,
+            "Prompt Tokens": 320,
+            "Completion Tokens": 27,
+            "Total Cost (USD)": 6.419999999999999e-05
+        },
+        {
+            "Total Tokens": 527,
+            "Prompt Tokens": 503,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 8.984999999999999e-05
+        },
+        {
+            "Total Tokens": 713,
+            "Prompt Tokens": 674,
+            "Completion Tokens": 39,
+            "Total Cost (USD)": 0.0001245
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.CatalogException) Catalog Error: Table with name your_table does not exist!\nDid you mean \"pg_tables\"?\nLINE 1: SELECT quantile_disc(value, 0.5) FROM your_table;\n                                              ^\n",
+        "(duckdb.duckdb.BinderException) Binder Error: Referenced column \"value\" not found in FROM clause!\nLINE 1: SELECT quantile_disc(value, 0.5);\n                             ^\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT quantile_disc(ARRAY[1, 2, 3, 4, 5], 0.5);"
     ]
 }

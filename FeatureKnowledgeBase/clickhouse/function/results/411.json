@@ -25,5 +25,10 @@
     ],
     "Category": [
         "Encoding Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT char(104.1, 101, 108.9, 108.9, 111) AS hello;",
+        "SELECT char(0xD0, 0xBF, 0xD1, 0x80, 0xD0, 0xB8, 0xD0, 0xB2, 0xD0, 0xB5, 0xD1, 0x82) AS hello;",
+        "SELECT char(0xE4, 0xBD, 0xA0, 0xE5, 0xA5, 0xBD) AS hello;"
     ]
 }

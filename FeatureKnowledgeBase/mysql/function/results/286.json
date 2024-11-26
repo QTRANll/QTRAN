@@ -25,5 +25,31 @@
     "Category": [
         "Built-In Functions and Operators",
         "Replication Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SOURCE_POS_WAIT('my_log', 12345)",
+        "SELECT SOURCE_POS_WAIT('my_log', 12345)"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 999,
+            "Prompt Tokens": 976,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 0.0001602
+        },
+        {
+            "Total Tokens": 1192,
+            "Prompt Tokens": 1168,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 0.00018959999999999997
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.ProgrammingError) (1064, \"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'SOURCE_POS_WAIT('my_log', 12345)' at line 1\")\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT SOURCE_POS_WAIT('my_log', 12345)"
     ]
 }

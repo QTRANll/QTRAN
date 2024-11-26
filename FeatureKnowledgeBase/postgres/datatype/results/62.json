@@ -15,5 +15,31 @@
     "Examples": [],
     "Category": [
         "Pseudo-Types"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT * FROM anynonarray;",
+        "SELECT 'anynonarray'::text;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 282,
+            "Prompt Tokens": 263,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 5.0849999999999996e-05
+        },
+        {
+            "Total Tokens": 444,
+            "Prompt Tokens": 423,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 7.604999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedTable) relation \"anynonarray\" does not exist\nLINE 1: SELECT * FROM anynonarray;\n                      ^\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT 'anynonarray'::text;"
     ]
 }

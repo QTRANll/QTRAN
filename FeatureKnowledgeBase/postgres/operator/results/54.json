@@ -6,15 +6,33 @@
         "timestamp - timestamp"
     ],
     "Feature": [
-        "timestamp - timestamp → interval"
+        "timestamp - timestamp \u2192 interval"
     ],
     "Description": [
         "Subtract timestamps (converting 24-hour intervals into days, similarly to justify_hours())"
     ],
     "Examples": [
-        "timestamp '2001-09-29 03:00' - timestamp '2001-07-27 12:00' → 63 days 15:00:00"
+        "timestamp '2001-09-29 03:00' - timestamp '2001-07-27 12:00' \u2192 63 days 15:00:00"
     ],
     "Category": [
         "Date divide Time Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT '2023-10-01 12:00:00'::timestamp - '2023-09-30 12:00:00'::timestamp;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 305,
+            "Prompt Tokens": 258,
+            "Completion Tokens": 47,
+            "Total Cost (USD)": 6.69e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT '2023-10-01 12:00:00'::timestamp - '2023-09-30 12:00:00'::timestamp;"
     ]
 }

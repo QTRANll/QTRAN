@@ -6,15 +6,33 @@
         "date_part"
     ],
     "Feature": [
-        "date_part ( text, interval ) → double precision"
+        "date_part ( text, interval ) \u2192 double precision"
     ],
     "Description": [
-        "Get interval subfield (equivalent to extract); see Section 9.9.1"
+        "Get interval subfield (equivalent to extract); see Section\u00a09.9.1"
     ],
     "Examples": [
-        "date_part('month', interval '2 years 3 months') → 3"
+        "date_part('month', interval '2 years 3 months') \u2192 3"
     ],
     "Category": [
         "Date divide Time Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT date_part('epoch', INTERVAL '1 day');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 286,
+            "Prompt Tokens": 261,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 5.4149999999999995e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT date_part('epoch', INTERVAL '1 day');"
     ]
 }

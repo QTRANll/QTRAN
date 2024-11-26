@@ -17,5 +17,46 @@
     "Category": [
         "Spider Functions"
     ],
-    "EffectiveSQLsRefined": []
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT SPIDER_FLUSH_TABLE_MON_CACHE();",
+        "SELECT SPIDER_FLUSH_TABLE_MON_CACHE();",
+        "SELECT SPIDER_FLUSH_TABLE_MON_CACHE();",
+        "SELECT 1;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 309,
+            "Prompt Tokens": 287,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 5.624999999999999e-05
+        },
+        {
+            "Total Tokens": 475,
+            "Prompt Tokens": 453,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 8.115e-05
+        },
+        {
+            "Total Tokens": 641,
+            "Prompt Tokens": 619,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 0.00010604999999999999
+        },
+        {
+            "Total Tokens": 801,
+            "Prompt Tokens": 785,
+            "Completion Tokens": 16,
+            "Total Cost (USD)": 0.00012734999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION pinolo_temp_mariadb.SPIDER_FLUSH_TABLE_MON_CACHE does not exist')\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION pinolo_temp_mariadb.SPIDER_FLUSH_TABLE_MON_CACHE does not exist')\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION pinolo_temp_mariadb.SPIDER_FLUSH_TABLE_MON_CACHE does not exist')\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT 1;"
+    ]
 }

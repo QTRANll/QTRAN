@@ -6,7 +6,7 @@
         "pg_partition_tree"
     ],
     "Feature": [
-        "pg_partition_tree ( regclass ) → setof record ( relid regclass, parentrelid regclass, isleaf boolean, level integer )"
+        "pg_partition_tree ( regclass ) \u2192 setof record ( relid regclass, parentrelid regclass, isleaf boolean, level integer )"
     ],
     "Description": [
         "Lists the tables or indexes in the partition tree of the given partitioned table or partitioned index, with one row for each partition. Information provided includes the OID of the partition, the OID of its immediate parent, a boolean value telling if the partition is a leaf, and an integer telling its level in the hierarchy. The level value is 0 for the input table or index, 1 for its immediate child partitions, 2 for their partitions, and so on. Returns no rows if the relation does not exist or is not a partition or partitioned table."
@@ -14,5 +14,53 @@
     "Examples": [],
     "Category": [
         "System Administration Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT * FROM pg_partition_tree('your_partitioned_table_name');",
+        "SELECT * FROM pg_partition_tree('existing_partitioned_table_name');",
+        "SELECT * FROM pg_partition_tree('some_partitioned_table');",
+        "SELECT * FROM pg_partition_tree('non_existent_partitioned_table');",
+        "SELECT * FROM pg_partition_tree('any_valid_partitioned_table');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 408,
+            "Prompt Tokens": 382,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 7.29e-05
+        },
+        {
+            "Total Tokens": 583,
+            "Prompt Tokens": 557,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 9.915e-05
+        },
+        {
+            "Total Tokens": 757,
+            "Prompt Tokens": 732,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 0.0001248
+        },
+        {
+            "Total Tokens": 931,
+            "Prompt Tokens": 904,
+            "Completion Tokens": 27,
+            "Total Cost (USD)": 0.00015179999999999998
+        },
+        {
+            "Total Tokens": 1109,
+            "Prompt Tokens": 1083,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 0.00017805
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedTable) relation \"your_partitioned_table_name\" does not exist\nLINE 1: SELECT * FROM pg_partition_tree('your_partitioned_table_name...\n                                        ^\n\n",
+        "(psycopg2.errors.UndefinedTable) relation \"existing_partitioned_table_name\" does not exist\nLINE 1: SELECT * FROM pg_partition_tree('existing_partitioned_table_...\n                                        ^\n\n",
+        "(psycopg2.errors.UndefinedTable) relation \"some_partitioned_table\" does not exist\nLINE 1: SELECT * FROM pg_partition_tree('some_partitioned_table');\n                                        ^\n\n",
+        "(psycopg2.errors.UndefinedTable) relation \"non_existent_partitioned_table\" does not exist\nLINE 1: SELECT * FROM pg_partition_tree('non_existent_partitioned_ta...\n                                        ^\n\n",
+        "(psycopg2.errors.UndefinedTable) relation \"any_valid_partitioned_table\" does not exist\nLINE 1: SELECT * FROM pg_partition_tree('any_valid_partitioned_table...\n                                        ^\n\n"
+    ],
+    "EffectiveSQLs": []
 }

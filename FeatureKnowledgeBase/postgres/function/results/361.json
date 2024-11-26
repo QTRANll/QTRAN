@@ -6,7 +6,7 @@
         "cume_dist"
     ],
     "Feature": [
-        "cume_dist ( args ) WITHIN GROUP ( ORDER BY sorted_args ) → double precision"
+        "cume_dist ( args ) WITHIN GROUP ( ORDER BY sorted_args ) \u2192 double precision"
     ],
     "Description": [
         "Computes the cumulative distribution, that is (number of rows preceding or peers with hypothetical row) / (total rows). The value thus ranges from 1/N to 1."
@@ -14,5 +14,47 @@
     "Examples": [],
     "Category": [
         "Aggregate Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT cume_dist() OVER (ORDER BY some_column) AS cumulative_distribution",
+        "SELECT cume_dist() OVER (ORDER BY id) AS cumulative_distribution",
+        "SELECT cume_dist() OVER (ORDER BY some_existing_column) AS cumulative_distribution",
+        "SELECT cume_dist() OVER () AS cumulative_distribution"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 318,
+            "Prompt Tokens": 290,
+            "Completion Tokens": 28,
+            "Total Cost (USD)": 6.029999999999999e-05
+        },
+        {
+            "Total Tokens": 493,
+            "Prompt Tokens": 466,
+            "Completion Tokens": 27,
+            "Total Cost (USD)": 8.609999999999999e-05
+        },
+        {
+            "Total Tokens": 671,
+            "Prompt Tokens": 642,
+            "Completion Tokens": 29,
+            "Total Cost (USD)": 0.0001137
+        },
+        {
+            "Total Tokens": 844,
+            "Prompt Tokens": 821,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 0.00013695
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedColumn) column \"some_column\" does not exist\nLINE 1: SELECT cume_dist() OVER (ORDER BY some_column) AS cumulative...\n                                          ^\n\n",
+        "(psycopg2.errors.UndefinedColumn) column \"id\" does not exist\nLINE 1: SELECT cume_dist() OVER (ORDER BY id) AS cumulative_distribu...\n                                          ^\n\n",
+        "(psycopg2.errors.UndefinedColumn) column \"some_existing_column\" does not exist\nLINE 1: SELECT cume_dist() OVER (ORDER BY some_existing_column) AS c...\n                                          ^\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT cume_dist() OVER () AS cumulative_distribution"
     ]
 }

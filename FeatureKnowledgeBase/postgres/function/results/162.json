@@ -6,15 +6,33 @@
         "localtimestamp"
     ],
     "Feature": [
-        "localtimestamp ( integer ) → timestamp"
+        "localtimestamp ( integer ) \u2192 timestamp"
     ],
     "Description": [
-        "Current date and time (start of current transaction), with limited precision; see Section 9.9.5"
+        "Current date and time (start of current transaction), with limited precision; see Section\u00a09.9.5"
     ],
     "Examples": [
-        "localtimestamp(2) → 2019-12-23 14:39:53.66"
+        "localtimestamp(2) \u2192 2019-12-23 14:39:53.66"
     ],
     "Category": [
         "Date divide Time Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT localtimestamp;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 278,
+            "Prompt Tokens": 262,
+            "Completion Tokens": 16,
+            "Total Cost (USD)": 4.8899999999999996e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT localtimestamp;"
     ]
 }

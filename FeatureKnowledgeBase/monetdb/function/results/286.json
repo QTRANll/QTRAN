@@ -16,5 +16,53 @@
     "Examples": [],
     "Category": [
         "Window Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT dense_rank(value) FROM your_table;",
+        "SELECT dense_rank(*) FROM your_table;",
+        "SELECT dense_rank() FROM your_table;",
+        "SELECT dense_rank() OVER () AS rank;",
+        "SELECT dense_rank() OVER (ORDER BY some_column) AS rank;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 285,
+            "Prompt Tokens": 264,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 5.22e-05
+        },
+        {
+            "Total Tokens": 444,
+            "Prompt Tokens": 424,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 7.559999999999998e-05
+        },
+        {
+            "Total Tokens": 603,
+            "Prompt Tokens": 583,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 9.944999999999998e-05
+        },
+        {
+            "Total Tokens": 764,
+            "Prompt Tokens": 743,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 0.00012404999999999998
+        },
+        {
+            "Total Tokens": 903,
+            "Prompt Tokens": 877,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 0.00014715
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymonetdb.exceptions.OperationalError) 42000!syntax error, unexpected VALUE, expecting ')' in: \"select dense_rank(value\"\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!syntax error, unexpected '*', expecting ')' in: \"select dense_rank(*\"\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!syntax error, unexpected FROM, expecting OVER in: \"select dense_rank() from\"\n\n",
+        "Server closed connection",
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: identifier 'some_column' unknown\n\n"
+    ],
+    "EffectiveSQLs": []
 }

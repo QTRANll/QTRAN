@@ -1,0 +1,37 @@
+{
+    "HTML": "https://dev.mysql.com/doc/refman/8.0/en/logical-operators.html#operator_and",
+    "Title": "AND, &&",
+    "Feature": [
+        "AND",
+        "&&"
+    ],
+    "Description": [
+        "\nAND,\n            &&\n",
+        "\n            Logical AND. Evaluates to 1 if all\n            operands are nonzero and not NULL, to\n            0 if one or more operands are\n            0, otherwise NULL is\n            returned.\n          ",
+        "Press CTRL+C to copy mysql> SELECT 1 AND 1;\n        -> 1\nmysql> SELECT 1 AND 0;\n        -> 0\nmysql> SELECT 1 AND NULL;\n        -> NULL\nmysql> SELECT 0 AND NULL;\n        -> 0\nmysql> SELECT NULL AND 0;\n        -> 0",
+        "\n            The &&,\n            operator is a nonstandard MySQL extension. As of MySQL\n            8.0.17, this operator is deprecated; expect support for it\n            to be removed in a future version of MySQL. Applications\n            should be adjusted to use the standard SQL\n            AND operator.\n          "
+    ],
+    "Examples": [
+        "mysql> SELECT 1 AND 1;\n        -> 1\nmysql> SELECT 1 AND 0;\n        -> 0\nmysql> SELECT 1 AND NULL;\n        -> NULL\nmysql> SELECT 0 AND NULL;\n        -> 0\nmysql> SELECT NULL AND 0;\n        -> 0"
+    ],
+    "Category": [
+        "Logical Operators"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT 1 AND 1;",
+        "SELECT 1 AND 0;",
+        "SELECT 1 AND NULL;",
+        "SELECT 0 AND NULL;",
+        "SELECT NULL AND 0;"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT 1 AND 1;",
+        "SELECT 1 AND 0;",
+        "SELECT 1 AND NULL;",
+        "SELECT 0 AND NULL;",
+        "SELECT NULL AND 0;"
+    ]
+}

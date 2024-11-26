@@ -11,6 +11,60 @@
     ],
     "Examples": [],
     "Category": [
-        "日期和时间函数"
-    ]
+        "\u65e5\u671f\u548c\u65f6\u95f4\u51fd\u6570"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        [
+            "CURRENT_DATE()"
+        ],
+        "CURRENT_DATE()",
+        [
+            "CURRENT_DATE"
+        ],
+        "CURRENT_DATE",
+        [
+            "SELECT CURRENT_DATE()"
+        ]
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 298,
+            "Prompt Tokens": 277,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 5.415e-05
+        },
+        {
+            "Total Tokens": 432,
+            "Prompt Tokens": 416,
+            "Completion Tokens": 16,
+            "Total Cost (USD)": 7.199999999999999e-05
+        },
+        {
+            "Total Tokens": 609,
+            "Prompt Tokens": 589,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 0.00010034999999999999
+        },
+        {
+            "Total Tokens": 742,
+            "Prompt Tokens": 727,
+            "Completion Tokens": 15,
+            "Total Cost (USD)": 0.00011804999999999998
+        },
+        {
+            "Total Tokens": 921,
+            "Prompt Tokens": 899,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 0.00014805
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "expected string or bytes-like object, got 'list'",
+        "(pymysql.err.ProgrammingError) (1064, 'You have an error in your SQL syntax; check the manual that corresponds to your TiDB version for the right syntax to use line 1 column 12 near \"CURRENT_DATE()\" ')\n",
+        "expected string or bytes-like object, got 'list'",
+        "(pymysql.err.ProgrammingError) (1064, 'You have an error in your SQL syntax; check the manual that corresponds to your TiDB version for the right syntax to use line 1 column 12 near \"CURRENT_DATE\" ')\n",
+        "expected string or bytes-like object, got 'list'"
+    ],
+    "EffectiveSQLs": []
 }

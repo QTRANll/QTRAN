@@ -6,15 +6,57 @@
         "ts_rewrite"
     ],
     "Feature": [
-        "ts_rewrite ( query tsquery, select text ) → tsquery"
+        "ts_rewrite ( query tsquery, select text ) \u2192 tsquery"
     ],
     "Description": [
-        "Replaces portions of the query according to target(s) and substitute(s) obtained by executing a SELECT command. See Section 12.4.2.1 for details."
+        "Replaces portions of the query according to target(s) and substitute(s) obtained by executing a SELECT command. See Section\u00a012.4.2.1 for details."
     ],
     "Examples": [
-        "SELECT ts_rewrite('a & b'::tsquery, 'SELECT t,s FROM aliases') → 'b' & ( 'foo' | 'bar' )"
+        "SELECT ts_rewrite('a & b'::tsquery, 'SELECT t,s FROM aliases') \u2192 'b' & ( 'foo' | 'bar' )"
     ],
     "Category": [
         "Text Search Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT ts_rewrite('original_query', 'replacement_text');",
+        "SELECT ts_rewrite('original_query', 'SELECT ''replacement_text''');",
+        "SELECT ts_rewrite('original_query', 'SELECT ''replacement_text''::tsquery');",
+        "SELECT ts_rewrite('original_query', 'SELECT ''replacement_text''::tsquery, ''another_replacement_text''::tsquery');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 310,
+            "Prompt Tokens": 285,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 5.7749999999999994e-05
+        },
+        {
+            "Total Tokens": 476,
+            "Prompt Tokens": 448,
+            "Completion Tokens": 28,
+            "Total Cost (USD)": 8.4e-05
+        },
+        {
+            "Total Tokens": 633,
+            "Prompt Tokens": 602,
+            "Completion Tokens": 31,
+            "Total Cost (USD)": 0.00010889999999999999
+        },
+        {
+            "Total Tokens": 800,
+            "Prompt Tokens": 759,
+            "Completion Tokens": 41,
+            "Total Cost (USD)": 0.00013844999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.SyntaxError) syntax error at or near \"replacement_text\"\nLINE 1: replacement_text\n        ^\nQUERY:  replacement_text\n\n",
+        "(psycopg2.errors.InvalidParameterValue) ts_rewrite query must return two tsquery columns\n\n",
+        "(psycopg2.errors.InvalidParameterValue) ts_rewrite query must return two tsquery columns\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT ts_rewrite('original_query', 'SELECT ''replacement_text''::tsquery, ''another_replacement_text''::tsquery');"
     ]
 }

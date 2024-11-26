@@ -16,5 +16,23 @@
     ],
     "Category": [
         "Array Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT array_value(1);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 271,
+            "Prompt Tokens": 252,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 4.9199999999999997e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT array_value(1);"
     ]
 }

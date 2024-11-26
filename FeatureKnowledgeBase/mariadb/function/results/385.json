@@ -17,5 +17,38 @@
     "Category": [
         "Vector Functions"
     ],
-    "EffectiveSQLsRefined": []
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT VEC_FromText('[1.0, 2.0, 3.0]')",
+        "SELECT VEC_FromText('[1.0, 2.0, 3.0]') AS vector",
+        "SELECT '[1.0, 2.0, 3.0]' AS vector"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 318,
+            "Prompt Tokens": 284,
+            "Completion Tokens": 34,
+            "Total Cost (USD)": 6.299999999999999e-05
+        },
+        {
+            "Total Tokens": 491,
+            "Prompt Tokens": 455,
+            "Completion Tokens": 36,
+            "Total Cost (USD)": 8.984999999999999e-05
+        },
+        {
+            "Total Tokens": 659,
+            "Prompt Tokens": 628,
+            "Completion Tokens": 31,
+            "Total Cost (USD)": 0.00011279999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION pinolo_temp_mariadb.VEC_FromText does not exist')\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION pinolo_temp_mariadb.VEC_FromText does not exist')\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT '[1.0, 2.0, 3.0]' AS vector"
+    ]
 }

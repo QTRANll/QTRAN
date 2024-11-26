@@ -17,5 +17,22 @@
     "Category": [
         "Miscellaneous Functions"
     ],
-    "EffectiveSQLsRefined": []
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT NAME_CONST('example_name', 42);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 368,
+            "Prompt Tokens": 345,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 6.555e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT NAME_CONST('example_name', 42);"
+    ]
 }

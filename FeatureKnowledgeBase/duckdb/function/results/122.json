@@ -18,5 +18,23 @@
     ],
     "Category": [
         "Date Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT date_trunc('month', CURRENT_DATE);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 290,
+            "Prompt Tokens": 267,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 5.3849999999999994e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT date_trunc('month', CURRENT_DATE);"
     ]
 }

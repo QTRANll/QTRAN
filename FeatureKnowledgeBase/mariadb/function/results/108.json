@@ -36,6 +36,23 @@
     "EffectiveSQLsRefined": [
         "SELECT GROUP_CONCAT(DISTINCT User ORDER BY User SEPARATOR '\\n')\n   FROM mysql.user;",
         "SELECT User, GROUP_CONCAT(Host ORDER BY Host SEPARATOR ', ') \n   FROM mysql.user GROUP BY User ORDER BY User;",
+        "CREATE TABLE d (dd DATE, cc INT);",
+        "INSERT INTO d VALUES ('2017-01-01',1);",
+        "INSERT INTO d VALUES ('2017-01-02',2);",
+        "INSERT INTO d VALUES ('2017-01-04',3);",
+        "SELECT SUBSTRING_INDEX(GROUP_CONCAT(CONCAT_WS(\":\",dd,cc) ORDER BY cc DESC),\",\",1) FROM d;",
+        "SELECT GROUP_CONCAT(CONCAT_WS(\":\",dd,cc) ORDER BY cc DESC LIMIT 1) FROM d;",
+        "CREATE OR REPLACE TABLE t1 (a int, b char);",
+        "INSERT INTO t1 VALUES (1, 'a'), (2, NULL);",
+        "SELECT GROUP_CONCAT(a, b) FROM t1;"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT GROUP_CONCAT(DISTINCT User ORDER BY User SEPARATOR '\\n')\n   FROM mysql.user;",
+        "SELECT User, GROUP_CONCAT(Host ORDER BY Host SEPARATOR ', ') \n   FROM mysql.user GROUP BY User ORDER BY User;",
+        "CREATE TABLE d (dd DATE, cc INT);",
         "INSERT INTO d VALUES ('2017-01-01',1);",
         "INSERT INTO d VALUES ('2017-01-02',2);",
         "INSERT INTO d VALUES ('2017-01-04',3);",

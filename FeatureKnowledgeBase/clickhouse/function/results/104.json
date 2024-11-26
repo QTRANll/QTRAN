@@ -27,5 +27,9 @@
     ],
     "Category": [
         "Arrays Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT arraySum([2, 3]) AS res;",
+        "SELECT arraySum(x -> x*x, [2, 3]) AS res;"
     ]
 }

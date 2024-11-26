@@ -16,5 +16,23 @@
     ],
     "Category": [
         "Bitstring Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT bit_or(1) AS result;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 281,
+            "Prompt Tokens": 260,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 5.16e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT bit_or(1) AS result;"
     ]
 }

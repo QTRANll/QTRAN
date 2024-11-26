@@ -11,6 +11,32 @@
     ],
     "Examples": [],
     "Category": [
-        "锁函数"
+        "\u9501\u51fd\u6570"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "RELEASE_ALL_LOCKS()",
+        "SELECT RELEASE_ALL_LOCKS()"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 345,
+            "Prompt Tokens": 326,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 6.0299999999999995e-05
+        },
+        {
+            "Total Tokens": 525,
+            "Prompt Tokens": 506,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 8.729999999999998e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.ProgrammingError) (1064, 'You have an error in your SQL syntax; check the manual that corresponds to your TiDB version for the right syntax to use line 1 column 17 near \"RELEASE_ALL_LOCKS()\" ')\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT RELEASE_ALL_LOCKS()"
     ]
 }

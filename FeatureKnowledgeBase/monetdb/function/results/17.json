@@ -18,5 +18,53 @@
     ],
     "Category": [
         "Comparison Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT not_like(s, 'pattern', '\\', false);",
+        "SELECT not_like(s, 'pattern', '\\', false) AS result;",
+        "SELECT not_like(s, 'pattern', '\\', false) FROM your_table_name;",
+        "SELECT not_like(s, 'pattern', '\\', false) FROM (SELECT 'example_string' AS s) AS temp;",
+        "SELECT not_like('example_string', 'pattern', '\\', false);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 351,
+            "Prompt Tokens": 326,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 6.39e-05
+        },
+        {
+            "Total Tokens": 512,
+            "Prompt Tokens": 485,
+            "Completion Tokens": 27,
+            "Total Cost (USD)": 8.895e-05
+        },
+        {
+            "Total Tokens": 675,
+            "Prompt Tokens": 646,
+            "Completion Tokens": 29,
+            "Total Cost (USD)": 0.0001143
+        },
+        {
+            "Total Tokens": 846,
+            "Prompt Tokens": 809,
+            "Completion Tokens": 37,
+            "Total Cost (USD)": 0.00014355
+        },
+        {
+            "Total Tokens": 1035,
+            "Prompt Tokens": 1008,
+            "Completion Tokens": 27,
+            "Total Cost (USD)": 0.00016739999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymonetdb.exceptions.OperationalError) 42000!unexpected end of input\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!unexpected end of input\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!unexpected end of input\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!syntax error, unexpected IDENT, expecting ')' or ',' in: \"select not_like(s, 'pattern', '\\', false) FROM (SELECT 'example_string\"\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!unexpected end of input\n\n"
+    ],
+    "EffectiveSQLs": []
 }

@@ -29,5 +29,23 @@
     ],
     "Category": [
         "Date and Time Data Types"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT TIME('12:30:45');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 1009,
+            "Prompt Tokens": 987,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 0.00016125
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT TIME('12:30:45');"
     ]
 }

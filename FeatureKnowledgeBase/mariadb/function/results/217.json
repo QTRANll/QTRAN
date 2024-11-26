@@ -28,6 +28,16 @@
     "EffectiveSQLsRefined": [
         "SELECT NOW();",
         "SELECT NOW() + 0;",
-        "SELECT CURRENT_TIMESTAMP(2);"
+        "SELECT CURRENT_TIMESTAMP(2);",
+        "CREATE TABLE t (createdTS TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP);"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT NOW();",
+        "SELECT NOW() + 0;",
+        "SELECT CURRENT_TIMESTAMP(2);",
+        "CREATE TABLE t (createdTS TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP);"
     ]
 }

@@ -6,7 +6,7 @@
         "nth_value"
     ],
     "Feature": [
-        "nth_value ( value anyelement, n integer ) → anyelement"
+        "nth_value ( value anyelement, n integer ) \u2192 anyelement"
     ],
     "Description": [
         "Returns value evaluated at the row that is the n'th row of the window frame (counting from 1); returns NULL if there is no such row."
@@ -14,5 +14,55 @@
     "Examples": [],
     "Category": [
         "Window Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT nth_value(column_name, n) OVER (PARTITION BY some_column ORDER BY another_column) FROM table_name;",
+        "SELECT nth_value(column_name, n) OVER () FROM some_table;",
+        "SELECT nth_value(column_name, n) OVER ();",
+        "SELECT nth_value(1, n) OVER ();",
+        "SELECT nth_value(1, 1) OVER ();"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 314,
+            "Prompt Tokens": 278,
+            "Completion Tokens": 36,
+            "Total Cost (USD)": 6.33e-05
+        },
+        {
+            "Total Tokens": 486,
+            "Prompt Tokens": 460,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 8.46e-05
+        },
+        {
+            "Total Tokens": 655,
+            "Prompt Tokens": 632,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 0.00010859999999999998
+        },
+        {
+            "Total Tokens": 820,
+            "Prompt Tokens": 797,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 0.00013335
+        },
+        {
+            "Total Tokens": 985,
+            "Prompt Tokens": 961,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 0.00015854999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedTable) relation \"table_name\" does not exist\nLINE 1: ...TION BY some_column ORDER BY another_column) FROM table_name...\n                                                             ^\n\n",
+        "(psycopg2.errors.UndefinedTable) relation \"some_table\" does not exist\nLINE 1: SELECT nth_value(column_name, n) OVER () FROM some_table;\n                                                      ^\n\n",
+        "(psycopg2.errors.UndefinedColumn) column \"column_name\" does not exist\nLINE 1: SELECT nth_value(column_name, n) OVER ();\n                         ^\n\n",
+        "(psycopg2.errors.UndefinedColumn) column \"n\" does not exist\nLINE 1: SELECT nth_value(1, n) OVER ();\n                            ^\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT nth_value(1, 1) OVER ();"
     ]
 }

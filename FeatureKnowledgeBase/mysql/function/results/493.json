@@ -23,5 +23,47 @@
     ],
     "Category": [
         "Loadable Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT mysql_firewall_flush_status();",
+        "SELECT mysql_firewall_flush_status();",
+        "SELECT mysql_firewall_flush_status();",
+        "SELECT 'Function does not exist';"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 373,
+            "Prompt Tokens": 353,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 6.494999999999999e-05
+        },
+        {
+            "Total Tokens": 531,
+            "Prompt Tokens": 511,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 8.864999999999999e-05
+        },
+        {
+            "Total Tokens": 689,
+            "Prompt Tokens": 669,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 0.00011235
+        },
+        {
+            "Total Tokens": 847,
+            "Prompt Tokens": 827,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 0.00013604999999999997
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.mysql_firewall_flush_status does not exist')\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.mysql_firewall_flush_status does not exist')\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.mysql_firewall_flush_status does not exist')\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT 'Function does not exist';"
     ]
 }

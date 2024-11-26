@@ -14,5 +14,39 @@
     "Examples": [],
     "Category": [
         "Window Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT last_value(expr) OVER ()",
+        "SELECT last_value(column_name) OVER ()",
+        "SELECT last_value(1) OVER ()"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 316,
+            "Prompt Tokens": 296,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 5.6399999999999995e-05
+        },
+        {
+            "Total Tokens": 456,
+            "Prompt Tokens": 435,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 7.785e-05
+        },
+        {
+            "Total Tokens": 597,
+            "Prompt Tokens": 576,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 9.899999999999998e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(sqlite3.OperationalError) no such column: expr\n",
+        "(sqlite3.OperationalError) no such column: column_name\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT last_value(1) OVER ()"
     ]
 }

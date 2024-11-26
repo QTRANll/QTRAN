@@ -18,5 +18,23 @@
     ],
     "Category": [
         "URL Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT sys.getdomain('https://www.example.com')"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 299,
+            "Prompt Tokens": 275,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 5.565e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT sys.getdomain('https://www.example.com')"
     ]
 }

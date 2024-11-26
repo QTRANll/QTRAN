@@ -16,5 +16,31 @@
     ],
     "Category": [
         "Date Part Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT isoyear(date);",
+        "SELECT isoyear(current_date);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 282,
+            "Prompt Tokens": 263,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 5.0849999999999996e-05
+        },
+        {
+            "Total Tokens": 447,
+            "Prompt Tokens": 427,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 7.604999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.BinderException) Binder Error: Referenced column \"date\" not found in FROM clause!\nLINE 1: SELECT isoyear(date);\n                       ^\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT isoyear(current_date);"
     ]
 }

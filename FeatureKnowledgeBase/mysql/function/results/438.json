@@ -25,5 +25,47 @@
     ],
     "Category": [
         "Loadable Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SET @priv = create_asymmetric_priv_key('RSA', 2048);",
+        "SELECT create_asymmetric_priv_key('RSA', 2048);",
+        "SELECT create_asymmetric_priv_key('RSA', 2048) AS private_key;",
+        "SELECT NULL AS private_key;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 706,
+            "Prompt Tokens": 677,
+            "Completion Tokens": 29,
+            "Total Cost (USD)": 0.00011895
+        },
+        {
+            "Total Tokens": 870,
+            "Prompt Tokens": 844,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 0.0001422
+        },
+        {
+            "Total Tokens": 1037,
+            "Prompt Tokens": 1008,
+            "Completion Tokens": 29,
+            "Total Cost (USD)": 0.00016859999999999998
+        },
+        {
+            "Total Tokens": 1193,
+            "Prompt Tokens": 1175,
+            "Completion Tokens": 18,
+            "Total Cost (USD)": 0.00018705
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.create_asymmetric_priv_key does not exist')\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.create_asymmetric_priv_key does not exist')\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.create_asymmetric_priv_key does not exist')\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT NULL AS private_key;"
     ]
 }

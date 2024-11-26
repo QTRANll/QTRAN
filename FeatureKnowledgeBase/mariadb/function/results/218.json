@@ -17,5 +17,19 @@
     "Category": [
         "Window Functions"
     ],
-    "EffectiveSQLsRefined": []
+    "EffectiveSQLsRefined": [
+        "create table t1 (\n    pk int primary key,\n    a int,\n    b int\n  );",
+        "insert into t1 values\n    (11 , 0, 10),\n    (12 , 0, 10),\n    (13 , 1, 10),\n    (14 , 1, 10),\n    (18 , 2, 10),\n    (15 , 2, 20),\n    (16 , 2, 20),\n    (17 , 2, 20),\n    (19 , 4, 20),\n    (20 , 4, 20);",
+        "select pk, a, b,\n    ntile(1) over (order by pk)\n  from t1;",
+        "select pk, a, b,\n    ntile(4) over (order by pk)\n from t1;"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "create table t1 (\n    pk int primary key,\n    a int,\n    b int\n  );",
+        "insert into t1 values\n    (11 , 0, 10),\n    (12 , 0, 10),\n    (13 , 1, 10),\n    (14 , 1, 10),\n    (18 , 2, 10),\n    (15 , 2, 20),\n    (16 , 2, 20),\n    (17 , 2, 20),\n    (19 , 4, 20),\n    (20 , 4, 20);",
+        "select pk, a, b,\n    ntile(1) over (order by pk)\n  from t1;",
+        "select pk, a, b,\n    ntile(4) over (order by pk)\n from t1;"
+    ]
 }

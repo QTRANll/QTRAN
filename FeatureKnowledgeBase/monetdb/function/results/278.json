@@ -18,5 +18,53 @@
     ],
     "Category": [
         "Aggregate Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT sys.median_avg(numeric_column) FROM your_table;",
+        "SELECT sys.median_avg(42);",
+        "SELECT sys.median_avg(CAST(42 AS DOUBLE));",
+        "SELECT sys.median_avg(42.0);",
+        "SELECT sys.median_avg(CAST(42.0 AS DECIMAL));"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 320,
+            "Prompt Tokens": 295,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 5.924999999999999e-05
+        },
+        {
+            "Total Tokens": 477,
+            "Prompt Tokens": 456,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 8.099999999999999e-05
+        },
+        {
+            "Total Tokens": 642,
+            "Prompt Tokens": 617,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 0.00010754999999999999
+        },
+        {
+            "Total Tokens": 803,
+            "Prompt Tokens": 780,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 0.0001308
+        },
+        {
+            "Total Tokens": 969,
+            "Prompt Tokens": 941,
+            "Completion Tokens": 28,
+            "Total Cost (USD)": 0.00015795
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymonetdb.exceptions.OperationalError) 42S02!SELECT: no such table 'your_table'\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: no such unary operator 'median_avg(tinyint)'\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: no such unary operator 'median_avg(double)'\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: no such unary operator 'median_avg(decimal)'\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: no such unary operator 'median_avg(decimal)'\n\n"
+    ],
+    "EffectiveSQLs": []
 }

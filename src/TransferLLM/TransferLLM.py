@@ -339,7 +339,7 @@ def get_feature_knowledge_string(origin_db, target_db, with_knowledge, mapping_i
             cnt += 1
     return knowledge_string
 
-def transfer_llm(tool, conversation, error_iteration, iteration_num, FewShot, with_knowledge, origin_db, target_db, test_info):
+def transfer_llm(tool, exp, conversation, error_iteration, iteration_num, FewShot, with_knowledge, origin_db, target_db, test_info):
     """
     # transfer llm:单条sql语句的转换及结果处理
     # 返回结果：costs, transfer_results, exec_results, exec_times, error_messages, str(origin_exec_result), str(origin_exec_time), str(origin_error_message), exec_equalities
@@ -351,108 +351,12 @@ def transfer_llm(tool, conversation, error_iteration, iteration_num, FewShot, wi
     # * 列表是为返回error进行迭代设计的，能记录多次迭代的过程值
     """
 
-    sql_statement = test_info["Sql"]
+    sql_statement = test_info["sql"]
     sql_statement_processed = sql_statement
     # 如果是mysql_like转postgres，先把sql语句的列名进行替换，和postgres的ddl语句中的列名保持一致，便于后续语句转换
     if target_db == "postgres" and tool.lower() == "pinolo":
         sql_statement_processed = sql_statement_process(sql_statement)
 
-    # 存储feature knowledge
-    # v1
-    transfer_llm_string = """  
-    Let's think step by step.Transfer the sql statement in {origin_db} database to the corresponding executable sql statement in {target_db} database to perform similar data operations.\
-    Ensure that all column names remain unchanged between the sql statements before and after the transfer.\
-    Ensure that the transferred sqls don't have features that return random values such as current_time,random.\
-    {origin_db} statement: {sql_statement}\
-    Here are some examples: {examples}\
-    Here is feature knowledge related to this transfer: {feature_knowledge}.\
-    Answer the following information: {format_instructions}
-    """
-
-    # v0
-    transfer_llm_string = """  
-    Let's think step by step.Transfer the sql statement in {origin_db} database to the corresponding executable sql statement in {target_db} database to perform similar data operations.\
-    Ensure that all column names remain unchanged between the sql statements before and after the transfer.\
-    {origin_db} statement: {sql_statement}\
-    Here are some examples: {examples}\
-    Here is feature knowledge related to this transfer: {feature_knowledge}.\
-    Answer the following information: {format_instructions}
-    """
-
-    # v4
-    transfer_llm_string = """  
-    Let's think step by step.
-    Use the feature knowledge to replace the features in {origin_db} statement in correct syntax, thus transfer the statement in {origin_db} database to executable statement in {target_db} database to perform similar data operations.\
-    Ensure that all column names remain unchanged between the sql statements before and after the transfer.\
-    Ensure that the transferred sqls don't have features that return random values such as current_time,random.\
-    {origin_db} statement: {sql_statement}\
-    Here is feature knowledge related to this transfer.Each pair includes two features with similar operation,which can replace each other : {feature_knowledge}.\
-    逐项检查transfer后的sql语句是否根据feature knowledge 进行替换翻译。若违反，则给出修改后的transferred sql.\
-    Here are some examples: {examples}\
-    Answer the following information: {format_instructions}
-    """
-
-
-
-    # v5
-    transfer_llm_string = """  
-    Let's think step by step.
-    Use the feature knowledge to replace the features in {origin_db} statement in correct syntax, thus transfer the statement in {origin_db} database to executable statement in {target_db} database to perform similar data operations.\
-    Ensure that all column names remain unchanged between the sql statements before and after the transfer.\
-    Ensure that the transferred sqls don't have features that return random values such as current_time,random.\
-    {origin_db} statement: {sql_statement}\
-    Here is feature knowledge related to this transfer.Each pair includes two features with similar operation,which can replace each other : {feature_knowledge}.\
-    Here are some examples: {examples}\
-    Answer the following information: {format_instructions}
-    """
-
-
-
-    # v6
-    transfer_llm_string = """  
-    Let's think step by step.
-    Use the feature knowledge to replace the features in {origin_db} statement in correct syntax, thus transfer the statement in {origin_db} database to executable statement in {target_db} database to perform similar data operations.\
-    Ensure that all column names remain unchanged between the sql statements before and after the transfer.\
-    Ensure that the transferred sqls don't have features that return random values such as current_time,random.\
-    {origin_db} statement: {sql_statement}\
-    执行下面的步骤:{steps}\
-    Here is feature knowledge related to this transfer.Each pair includes two features with similar operation,which can replace each other : {feature_knowledge}.\
-    Here are some examples: {examples}\
-    Answer the following information: {format_instructions}
-    """
-
-    # v2
-    transfer_llm_string = """  
-    Let's think step by step.
-    Use the feature knowledge to replace the features in {origin_db} statement, thus transfer the statement in {origin_db} database to executable statement in {target_db} database to perform similar data operations.\
-    Ensure that don't replace original features with NULL or 0.
-    Ensure that all column names remain unchanged between the sql statements before and after the transfer.\
-    Ensure that the transferred sqls don't have features that return random values such as current_time,random.\
-    {origin_db} statement: {sql_statement}\
-    Here is feature knowledge related to this transfer: {feature_knowledge}.\
-    Here are some examples: {examples}\
-    Answer the following information: {format_instructions}
-    """
-
-    # v7: 不包括few-shot examples，未微调;不包括feature description和examples
-    transfer_llm_string = """  
-    Let's think step by step.You are an expert in sql statement translation between different database.\
-    With the assistance of feature knowledge,transfer the following {origin_db} statement to executable {target_db} statement with similar semantics.\
-    {origin_db} statement: {sql_statement}\
-    
-    Transfer should ensure following requirements:
-    1. All column names remain unchanged.
-    2. Forbid transferring with meaningless features(such as NULL,0), features with random return value(such as current_time).
-    3. Transfer as far as possible, and ensure similar semantics if transferring fails.\
-    
-    Transfer by carrying out following instructions step by step.\
-    {feature_knowledge}\
-    
-    Here are some transfer examples: {examples}\
-    Answer the following information: {format_instructions}
-    """
-
-    # v8: 不包括few-shot examples（下面的examples是空的），未微调;关于feature knowledge只包括了feature和examples
     transfer_llm_string = """  
     Let's think step by step.You are an expert in sql statement translation between different database.\
     With the assistance of feature knowledge,transfer the following {origin_db} statement to executable {target_db} statement with similar semantics.\
@@ -481,7 +385,10 @@ def transfer_llm(tool, conversation, error_iteration, iteration_num, FewShot, wi
     format_instructions = output_parser.get_format_instructions()
 
     examples_string = get_examples_string(FewShot, origin_db,target_db)
-    feature_knowledge_string = get_feature_knowledge_string(origin_db, target_db, with_knowledge, test_info["SqlPotentialDialectFunctionMapping"])
+    if with_knowledge:
+        feature_knowledge_string = get_feature_knowledge_string(origin_db, target_db, with_knowledge, test_info["SqlPotentialDialectFunctionMapping"])
+    else:
+        feature_knowledge_string = ""
 
     prompt_template = ChatPromptTemplate.from_template(transfer_llm_string)
 
@@ -510,7 +417,7 @@ def transfer_llm(tool, conversation, error_iteration, iteration_num, FewShot, wi
     error_messages = []
     exec_equalities = []
     # 执行origin sql得到结果，并和得到的所有transfer sql结果依次进行比对，确定执行结果是否相同，将对比结果存储到exec_same中
-    origin_exec_result, origin_exec_time, origin_error_message = exec_sql_statement(tool, origin_db, sql_statement)
+    origin_exec_result, origin_exec_time, origin_error_message = exec_sql_statement(tool, exp, origin_db, sql_statement)
 
     conversation_cnt = 0  # conversation_cnt = 0:初始第一条prompt
     # 边界1：达到最大迭代次数
@@ -541,48 +448,51 @@ def transfer_llm(tool, conversation, error_iteration, iteration_num, FewShot, wi
 
             # 迭代的prompt：每次取error_messages数组的最后一个元素，则为最新的报错信息
             prompt_messages = iterate_prompt_template.format_messages(
-                error_message=error_messages[-1],
+                error_message=error_messages[-1] if len(error_messages) else "",
                 format_instructions=iterate_format_instructions
             )
 
+        """
         try:
-            cost = {}
-            with (get_openai_callback() as cb):
-                print(prompt_messages[0].content)
-                response = conversation.predict(input=prompt_messages[0].content)
-                output_dict = output_parser.parse(response)
-                # print(response)
-                print(output_dict)
-                cost["Total Tokens"] = cb.total_tokens
-                cost["Prompt Tokens"] = cb.prompt_tokens
-                cost["Completion Tokens"] = cb.completion_tokens
-                cost["Total Cost (USD)"] = cb.total_cost  # 用了4o-mini以后变成0.0了，还没修改，也可以用户token乘单价计算
 
-                exec_result, exec_time, error_message = exec_sql_statement(tool, target_db, output_dict["TransferSQL"])
-                costs.append(cost)
-                transfer_results.append(output_dict)
-                exec_results.append(str(exec_result))
-                exec_times.append(str(exec_time))
-                # 简化error_message,只留下关键部分
-                """
-                if error_message:
-                    error_message = error_message.split(":")[1]
-                """
-                print(error_messages)
-                error_messages.append(str(error_message))
-                if not error_message and not origin_error_message and exec_result == origin_exec_result:
-                    exec_equalities.append(True)
-                else:
-                    exec_equalities.append(False)
         except Exception as e:
             print("transfer llm:")
             print(e)
+        """
+        cost = {}
+        with (get_openai_callback() as cb):
+            print(prompt_messages[0].content)
+            response = conversation.predict(input=prompt_messages[0].content)
+            output_dict = output_parser.parse(response)
+            # print(response)
+            print(output_dict)
+            cost["Total Tokens"] = cb.total_tokens
+            cost["Prompt Tokens"] = cb.prompt_tokens
+            cost["Completion Tokens"] = cb.completion_tokens
+            cost["Total Cost (USD)"] = cb.total_cost  # 用了4o-mini以后变成0.0了，还没修改，也可以用户token乘单价计算
 
+            exec_result, exec_time, error_message = exec_sql_statement(tool, exp, target_db, output_dict["TransferSQL"])
+            costs.append(cost)
+            transfer_results.append(output_dict)
+            exec_results.append(str(exec_result))
+            exec_times.append(str(exec_time))
+            # 简化error_message,只留下关键部分
+            """
+            if error_message:
+                error_message = error_message.split(":")[1]
+            """
+            print(error_messages)
+            error_messages.append(str(error_message))
+            if not error_message and not origin_error_message and exec_result == origin_exec_result:
+                exec_equalities.append(True)
+            else:
+                exec_equalities.append(False)
         conversation_cnt += 1
 
     return costs, transfer_results, exec_results, exec_times, error_messages, str(origin_exec_result), str(origin_exec_time), str(origin_error_message), exec_equalities
 
-
+def pinolo_qtran_run(input_filename,tool,temperature=0.3, model="gpt-4o-mini",error_iteration=True,iteration_num=4,FewShot=False,with_knowledge=True):
+    return
 
 def get_feature_knowledge(value,feature_type):
     if feature_type == "function":
@@ -692,3 +602,6 @@ def exec_transfer_llm(temperature, model, error_iteration, iteration_num, FewSho
     load_data(output_name, origin_db_name, len_low, len_high, IsRandom, num)
     init_data(output_name, origin_db_name, len_low, len_high, IsRandom, num)
     transfer_data("pinolo",temperature, model, error_iteration, iteration_num, FewShot, with_knowledge, output_name, origin_db_name, target_db_name, len_low, len_high, IsRandom, num, sqls_type)
+
+
+

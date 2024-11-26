@@ -36,5 +36,20 @@
     "Category": [
         "Built-In Functions and Operators",
         "Locking Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT GET_LOCK('lock1',10);",
+        "SELECT GET_LOCK('lock2',10);",
+        "SELECT RELEASE_LOCK('lock2');",
+        "SELECT RELEASE_LOCK('lock1');"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT GET_LOCK('lock1',10);",
+        "SELECT GET_LOCK('lock2',10);",
+        "SELECT RELEASE_LOCK('lock2');",
+        "SELECT RELEASE_LOCK('lock1');"
     ]
 }

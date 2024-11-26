@@ -16,5 +16,53 @@
     ],
     "Category": [
         "INET Operators"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT * FROM table_name WHERE column_name > value;",
+        "SELECT * FROM my_table WHERE my_column > my_value;",
+        "SELECT * FROM your_table WHERE your_column > your_value;",
+        "SELECT * FROM example_table WHERE example_column > example_value;",
+        "SELECT * FROM some_table WHERE some_column > some_value;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 259,
+            "Prompt Tokens": 236,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 4.919999999999999e-05
+        },
+        {
+            "Total Tokens": 412,
+            "Prompt Tokens": 388,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 7.26e-05
+        },
+        {
+            "Total Tokens": 565,
+            "Prompt Tokens": 541,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 9.554999999999999e-05
+        },
+        {
+            "Total Tokens": 718,
+            "Prompt Tokens": 694,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 0.00011849999999999998
+        },
+        {
+            "Total Tokens": 871,
+            "Prompt Tokens": 847,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 0.00014145
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymonetdb.exceptions.OperationalError) 42S02!SELECT: no such table 'table_name'\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42S02!SELECT: no such table 'my_table'\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42S02!SELECT: no such table 'your_table'\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42S02!SELECT: no such table 'example_table'\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42S02!SELECT: no such table 'some_table'\n\n"
+    ],
+    "EffectiveSQLs": []
 }

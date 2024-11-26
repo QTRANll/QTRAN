@@ -15,5 +15,53 @@
     "Examples": [],
     "Category": [
         "Pseudo-Types"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT * FROM my_table WHERE my_enum_column = ANYENUM;",
+        "SELECT * FROM ANYENUM;",
+        "SELECT 'example_value'::anyenum;",
+        "SELECT ANYENUM('example_value');",
+        "SELECT 'example_value'::text WHERE 'example_value'::text = ANYENUM;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 289,
+            "Prompt Tokens": 264,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 5.46e-05
+        },
+        {
+            "Total Tokens": 452,
+            "Prompt Tokens": 434,
+            "Completion Tokens": 18,
+            "Total Cost (USD)": 7.59e-05
+        },
+        {
+            "Total Tokens": 611,
+            "Prompt Tokens": 590,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 0.00010109999999999998
+        },
+        {
+            "Total Tokens": 771,
+            "Prompt Tokens": 751,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 0.00012465
+        },
+        {
+            "Total Tokens": 939,
+            "Prompt Tokens": 909,
+            "Completion Tokens": 30,
+            "Total Cost (USD)": 0.00015434999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedTable) relation \"my_table\" does not exist\nLINE 1: SELECT * FROM my_table WHERE my_enum_column = ANYENUM;\n                      ^\n\n",
+        "(psycopg2.errors.UndefinedTable) relation \"anyenum\" does not exist\nLINE 1: SELECT * FROM ANYENUM;\n                      ^\n\n",
+        "(psycopg2.errors.CannotCoerce) cannot cast type unknown to anyenum\nLINE 1: SELECT 'example_value'::anyenum;\n                              ^\n\n",
+        "(psycopg2.errors.FeatureNotSupported) cannot accept a value of type anyenum\nLINE 1: SELECT ANYENUM('example_value');\n                       ^\n\n",
+        "(psycopg2.errors.UndefinedColumn) column \"anyenum\" does not exist\nLINE 1: ...'example_value'::text WHERE 'example_value'::text = ANYENUM;\n                                                               ^\n\n"
+    ],
+    "EffectiveSQLs": []
 }

@@ -16,5 +16,23 @@
     ],
     "Category": [
         "Numeric Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT add(2, 3);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 275,
+            "Prompt Tokens": 254,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 5.07e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT add(2, 3);"
     ]
 }

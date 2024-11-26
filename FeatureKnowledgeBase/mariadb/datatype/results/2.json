@@ -22,5 +22,24 @@
     ],
     "Category": [
         "Numeric Data Types"
+    ],
+    "EffectiveSQLsRefined": [
+        "INSERT INTO smallints VALUES (-10,10,10);",
+        "INSERT INTO smallints VALUES (32767,32768,32768);",
+        "SELECT * FROM smallints;",
+        "INSERT INTO smallints VALUES (-10,10,10);",
+        "INSERT INTO smallints VALUES (32767,32768,32768);",
+        "SELECT * FROM smallints;"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "INSERT INTO smallints VALUES (-10,10,10);",
+        "INSERT INTO smallints VALUES (32767,32768,32768);",
+        "SELECT * FROM smallints;",
+        "INSERT INTO smallints VALUES (-10,10,10);",
+        "INSERT INTO smallints VALUES (32767,32768,32768);",
+        "SELECT * FROM smallints;"
     ]
 }

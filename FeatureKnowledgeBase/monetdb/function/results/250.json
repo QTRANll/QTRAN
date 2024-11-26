@@ -18,5 +18,23 @@
     ],
     "Category": [
         "URL Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT sys.newurl('http', 'www.example.com', 80, '/path');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 334,
+            "Prompt Tokens": 303,
+            "Completion Tokens": 31,
+            "Total Cost (USD)": 6.404999999999998e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT sys.newurl('http', 'www.example.com', 80, '/path');"
     ]
 }

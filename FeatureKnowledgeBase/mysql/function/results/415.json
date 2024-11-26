@@ -18,5 +18,31 @@
     "Category": [
         "Built-In Functions and Operators",
         "Replication Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "WAIT_UNTIL_SQL_THREAD_AFTER_GTIDS('your_gtid_set')",
+        "SELECT WAIT_UNTIL_SQL_THREAD_AFTER_GTIDS('your_gtid_set')"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 387,
+            "Prompt Tokens": 359,
+            "Completion Tokens": 28,
+            "Total Cost (USD)": 7.065e-05
+        },
+        {
+            "Total Tokens": 590,
+            "Prompt Tokens": 561,
+            "Completion Tokens": 29,
+            "Total Cost (USD)": 0.00010155
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.ProgrammingError) (1064, \"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'WAIT_UNTIL_SQL_THREAD_AFTER_GTIDS('your_gtid_set')' at line 1\")\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT WAIT_UNTIL_SQL_THREAD_AFTER_GTIDS('your_gtid_set')"
     ]
 }

@@ -22,5 +22,14 @@
     "Category": [
         "Built-In Functions and Operators",
         "Spatial Analysis Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT ST_AsText(ST_GeometryN(ST_GeomFromText(@gc),1));"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT ST_AsText(ST_GeometryN(ST_GeomFromText(@gc),1));"
     ]
 }

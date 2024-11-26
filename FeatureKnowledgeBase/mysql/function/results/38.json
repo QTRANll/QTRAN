@@ -24,5 +24,20 @@
     "Category": [
         "Built-In Functions and Operators",
         "Information Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT COERCIBILITY('abc' COLLATE utf8mb4_swedish_ci);",
+        "SELECT COERCIBILITY(USER());",
+        "SELECT COERCIBILITY('abc');",
+        "SELECT COERCIBILITY(1000);"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT COERCIBILITY('abc' COLLATE utf8mb4_swedish_ci);",
+        "SELECT COERCIBILITY(USER());",
+        "SELECT COERCIBILITY('abc');",
+        "SELECT COERCIBILITY(1000);"
     ]
 }

@@ -1,0 +1,3 @@
+{"index": 638, "a_db": "duckdb", "b_db": "mariadb", "molt": "tlp (aggregate max)", "sql": "CREATE TABLE t0(c0 VARCHAR);"}
+{"index": 638, "a_db": "duckdb", "b_db": "mariadb", "molt": "tlp (aggregate max)", "sql": "INSERT INTO t0 VALUES ('aaaaaaaaaaaa');"}
+{"index": 638, "a_db": "duckdb", "b_db": "mariadb", "molt": "tlp (aggregate max)", "sql": "SELECT MAX(agg0) FROM (SELECT MAX(t0.c0) AS agg0 FROM t0) as s0; -- nondeterministic result or crash"}

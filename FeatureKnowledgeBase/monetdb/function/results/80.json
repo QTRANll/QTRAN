@@ -18,5 +18,53 @@
     ],
     "Category": [
         "Character String Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT chr(code) FROM (VALUES (65), (66), (67)) AS codes(code);",
+        "SELECT chr(code::int) FROM (VALUES (65), (66), (67)) AS codes(code);",
+        "SELECT chr(code) FROM (VALUES (65), (66), (67)) AS codes(code);",
+        "SELECT chr(CAST(code AS int)) FROM (VALUES (65), (66), (67)) AS codes(code);",
+        "SELECT chr(code) FROM (VALUES (65::bigint), (66::bigint), (67::bigint)) AS codes(code);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 289,
+            "Prompt Tokens": 256,
+            "Completion Tokens": 33,
+            "Total Cost (USD)": 5.82e-05
+        },
+        {
+            "Total Tokens": 458,
+            "Prompt Tokens": 423,
+            "Completion Tokens": 35,
+            "Total Cost (USD)": 8.444999999999999e-05
+        },
+        {
+            "Total Tokens": 616,
+            "Prompt Tokens": 583,
+            "Completion Tokens": 33,
+            "Total Cost (USD)": 0.00010724999999999998
+        },
+        {
+            "Total Tokens": 787,
+            "Prompt Tokens": 750,
+            "Completion Tokens": 37,
+            "Total Cost (USD)": 0.0001347
+        },
+        {
+            "Total Tokens": 961,
+            "Prompt Tokens": 919,
+            "Completion Tokens": 42,
+            "Total Cost (USD)": 0.00016304999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: no such unary operator 'chr(tinyint)'\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!Unexpected symbol (:)\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: no such unary operator 'chr(tinyint)'\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: no such unary operator 'chr(int)'\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!Unexpected symbol (:)\n\n"
+    ],
+    "EffectiveSQLs": []
 }

@@ -6,15 +6,65 @@
         "lower_inf"
     ],
     "Feature": [
-        "lower_inf ( anymultirange ) → boolean"
+        "lower_inf ( anymultirange ) \u2192 boolean"
     ],
     "Description": [
         "Does the multirange have no lower bound? (A lower bound of -Infinity returns false.)"
     ],
     "Examples": [
-        "lower_inf('{(,)}'::datemultirange) → t"
+        "lower_inf('{(,)}'::datemultirange) \u2192 t"
     ],
     "Category": [
         "Range divide Multirange Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT lower_inf(ANYMULTIRANGE) FROM your_table;",
+        "SELECT lower_inf(ANYMULTIRANGE);",
+        "SELECT lower_inf(ARRAY[1:5, 10:20]::int4multirange);",
+        "SELECT lower_inf(ARRAY[int4range(1, 5), int4range(10, 20)]::int4multirange);",
+        "SELECT lower_inf(int4multirange(int4range(1, 5), int4range(10, 20)));"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 288,
+            "Prompt Tokens": 263,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 5.4449999999999995e-05
+        },
+        {
+            "Total Tokens": 455,
+            "Prompt Tokens": 433,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 7.814999999999999e-05
+        },
+        {
+            "Total Tokens": 633,
+            "Prompt Tokens": 598,
+            "Completion Tokens": 35,
+            "Total Cost (USD)": 0.00011069999999999998
+        },
+        {
+            "Total Tokens": 827,
+            "Prompt Tokens": 783,
+            "Completion Tokens": 44,
+            "Total Cost (USD)": 0.00014385
+        },
+        {
+            "Total Tokens": 1030,
+            "Prompt Tokens": 991,
+            "Completion Tokens": 39,
+            "Total Cost (USD)": 0.00017204999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedTable) relation \"your_table\" does not exist\nLINE 1: SELECT lower_inf(ANYMULTIRANGE) FROM your_table;\n                                             ^\n\n",
+        "(psycopg2.errors.UndefinedColumn) column \"anymultirange\" does not exist\nLINE 1: SELECT lower_inf(ANYMULTIRANGE);\n                         ^\n\n",
+        "(psycopg2.errors.SyntaxError) syntax error at or near \":\"\nLINE 1: SELECT lower_inf(ARRAY[1:5, 10:20]::int4multirange);\n                                ^\n\n",
+        "(psycopg2.errors.CannotCoerce) cannot cast type int4range[] to int4multirange\nLINE 1: ...ower_inf(ARRAY[int4range(1, 5), int4range(10, 20)]::int4mult...\n                                                             ^\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT lower_inf(int4multirange(int4range(1, 5), int4range(10, 20)));"
     ]
 }

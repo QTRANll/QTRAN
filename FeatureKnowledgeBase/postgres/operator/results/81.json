@@ -6,15 +6,49 @@
         "geometric_type &<| geometric_type"
     ],
     "Feature": [
-        "geometric_type &<| geometric_type → boolean"
+        "geometric_type &<| geometric_type \u2192 boolean"
     ],
     "Description": [
         "Does first object not extend above second? Available for box, polygon, circle."
     ],
     "Examples": [
-        "box '(1,1),(0,0)' &<| box '(2,2),(0,0)' → t"
+        "box '(1,1),(0,0)' &<| box '(2,2),(0,0)' \u2192 t"
     ],
     "Category": [
         "Geometric Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT ('geometric_type1' &<| 'geometric_type2') AS result;",
+        "SELECT ('geometric_type1'::box &<| 'geometric_type2'::box) AS result;",
+        "SELECT (box '((0,0),(1,1))' &<| box '((0,0),(2,2))') AS result;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 308,
+            "Prompt Tokens": 277,
+            "Completion Tokens": 31,
+            "Total Cost (USD)": 6.015e-05
+        },
+        {
+            "Total Tokens": 523,
+            "Prompt Tokens": 487,
+            "Completion Tokens": 36,
+            "Total Cost (USD)": 9.464999999999998e-05
+        },
+        {
+            "Total Tokens": 731,
+            "Prompt Tokens": 687,
+            "Completion Tokens": 44,
+            "Total Cost (USD)": 0.00012945
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.AmbiguousFunction) operator is not unique: unknown &<| unknown\nLINE 1: SELECT ('geometric_type1' &<| 'geometric_type2') AS result;\n                                  ^\nHINT:  Could not choose a best candidate operator. You might need to add explicit type casts.\n\n",
+        "(psycopg2.errors.InvalidTextRepresentation) invalid input syntax for type box: \"geometric_type1\"\nLINE 1: SELECT ('geometric_type1'::box &<| 'geometric_type2'::box) A...\n                ^\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT (box '((0,0),(1,1))' &<| box '((0,0),(2,2))') AS result;"
     ]
 }

@@ -16,5 +16,47 @@
     "Examples": [],
     "Category": [
         "Aggregate Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT variance(arg, val);",
+        "SELECT variance(val) FROM your_table_name;",
+        "SELECT variance(1, 2);",
+        "SELECT variance(1.0);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 325,
+            "Prompt Tokens": 306,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 5.73e-05
+        },
+        {
+            "Total Tokens": 491,
+            "Prompt Tokens": 470,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 8.309999999999999e-05
+        },
+        {
+            "Total Tokens": 667,
+            "Prompt Tokens": 646,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 0.00010949999999999999
+        },
+        {
+            "Total Tokens": 861,
+            "Prompt Tokens": 841,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 0.00013814999999999997
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.BinderException) Binder Error: Referenced column \"arg\" not found in FROM clause!\nLINE 1: SELECT variance(arg, val);\n                        ^\n",
+        "(duckdb.duckdb.CatalogException) Catalog Error: Table with name your_table_name does not exist!\nDid you mean \"pg_tablespace\"?\nLINE 1: SELECT variance(val) FROM your_table_name;\n                                  ^\n",
+        "(duckdb.duckdb.BinderException) Binder Error: No function matches the given name and argument types 'variance(INTEGER, INTEGER)'. You might need to add explicit type casts.\n\tCandidate functions:\n\tvariance(DOUBLE) -> DOUBLE\n\nLINE 1: SELECT variance(1, 2);\n               ^\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT variance(1.0);"
     ]
 }

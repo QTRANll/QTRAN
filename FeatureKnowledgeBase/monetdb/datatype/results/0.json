@@ -15,5 +15,47 @@
     "Examples": [],
     "Category": [
         "Base Types"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT 'A'::CHARACTER;",
+        "SELECT 'A'::CHAR;",
+        "SELECT 'A' AS CHARACTER;",
+        "SELECT 'A';"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 279,
+            "Prompt Tokens": 259,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 5.0849999999999996e-05
+        },
+        {
+            "Total Tokens": 422,
+            "Prompt Tokens": 403,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 7.185e-05
+        },
+        {
+            "Total Tokens": 565,
+            "Prompt Tokens": 546,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 9.329999999999999e-05
+        },
+        {
+            "Total Tokens": 722,
+            "Prompt Tokens": 705,
+            "Completion Tokens": 17,
+            "Total Cost (USD)": 0.00011594999999999999
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymonetdb.exceptions.OperationalError) 42000!Unexpected symbol (:)\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!Unexpected symbol (:)\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!syntax error, unexpected CHARACTER, expecting SCOLON in: \"select 'A' as character\"\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT 'A';"
     ]
 }

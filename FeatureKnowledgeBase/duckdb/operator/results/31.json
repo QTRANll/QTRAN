@@ -16,5 +16,23 @@
     ],
     "Category": [
         "Numeric Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT 10 % 3;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 257,
+            "Prompt Tokens": 238,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 4.709999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT 10 % 3;"
     ]
 }

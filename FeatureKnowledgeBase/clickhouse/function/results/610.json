@@ -19,5 +19,10 @@
     ],
     "Category": [
         "Other Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "DROP TABLE IF EXISTS test;",
+        "CREATE TABLE test (n UInt8) ENGINE = Memory;",
+        "SELECT blockSize()FROM test;"
     ]
 }

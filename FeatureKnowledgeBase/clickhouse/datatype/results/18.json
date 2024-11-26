@@ -148,5 +148,13 @@
     ],
     "Category": [
         "Variant(T1, T2, ...)"
+    ],
+    "EffectiveSQLsRefined": [
+        "SET use_variant_as_common_type = 1;",
+        "SET use_variant_as_common_type = 1;",
+        "SET use_variant_as_common_type = 1;",
+        "SET use_variant_as_common_type = 1;",
+        "SET allow_suspicious_variant_types = 1;",
+        "SELECT JSONExtract('{\"a\" : [1, 2, 3]}', 'a', 'Variant(UInt32, String, Array(UInt32))') AS variant, variantType(variant) AS variant_type;"
     ]
 }

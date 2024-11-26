@@ -17,5 +17,30 @@
     "Category": [
         "Geographic Functions"
     ],
-    "EffectiveSQLsRefined": []
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT ST_OVERLAPS(geometry1, geometry2);",
+        "SELECT ST_OVERLAPS(GeomFromText('POINT(1 1)'), GeomFromText('POINT(1 1)'));"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 361,
+            "Prompt Tokens": 336,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 6.539999999999999e-05
+        },
+        {
+            "Total Tokens": 535,
+            "Prompt Tokens": 494,
+            "Completion Tokens": 41,
+            "Total Cost (USD)": 9.87e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.OperationalError) (1054, \"Unknown column 'geometry1' in 'field list'\")\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT ST_OVERLAPS(GeomFromText('POINT(1 1)'), GeomFromText('POINT(1 1)'));"
+    ]
 }

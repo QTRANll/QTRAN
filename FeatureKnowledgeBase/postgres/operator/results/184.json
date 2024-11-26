@@ -6,15 +6,63 @@
         "anyrange -|- anymultirange"
     ],
     "Feature": [
-        "anyrange -|- anymultirange → boolean"
+        "anyrange -|- anymultirange \u2192 boolean"
     ],
     "Description": [
         "Is the range adjacent to the multirange?"
     ],
     "Examples": [
-        "numrange(1.1,2.2) -|- '{[2.2,3.3)}'::nummultirange → t"
+        "numrange(1.1,2.2) -|- '{[2.2,3.3)}'::nummultirange \u2192 t"
     ],
     "Category": [
         "Range divide Multirange Functions and Operators"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT anyrange && anymultirange;",
+        "SELECT '[]'::anyrange && '[1, 5]'::anymultirange;",
+        "SELECT '[]'::anymultirange && '[1, 5]'::anymultirange;",
+        "SELECT '[]'::int4range && '[1, 5]'::int4multirange;",
+        "SELECT '[1, 5]'::int4range && '[1, 10]'::int4multirange;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 292,
+            "Prompt Tokens": 271,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 5.325e-05
+        },
+        {
+            "Total Tokens": 471,
+            "Prompt Tokens": 439,
+            "Completion Tokens": 32,
+            "Total Cost (USD)": 8.504999999999998e-05
+        },
+        {
+            "Total Tokens": 662,
+            "Prompt Tokens": 628,
+            "Completion Tokens": 34,
+            "Total Cost (USD)": 0.0001146
+        },
+        {
+            "Total Tokens": 857,
+            "Prompt Tokens": 823,
+            "Completion Tokens": 34,
+            "Total Cost (USD)": 0.00014385
+        },
+        {
+            "Total Tokens": 1059,
+            "Prompt Tokens": 1022,
+            "Completion Tokens": 37,
+            "Total Cost (USD)": 0.00017549999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedColumn) column \"anyrange\" does not exist\nLINE 1: SELECT anyrange && anymultirange;\n               ^\n\n",
+        "(psycopg2.errors.FeatureNotSupported) cannot accept a value of type anyrange\nLINE 1: SELECT '[]'::anyrange && '[1, 5]'::anymultirange;\n               ^\n\n",
+        "(psycopg2.errors.FeatureNotSupported) cannot accept a value of type anymultirange\nLINE 1: SELECT '[]'::anymultirange && '[1, 5]'::anymultirange;\n               ^\n\n",
+        "(psycopg2.errors.InvalidTextRepresentation) malformed range literal: \"[]\"\nLINE 1: SELECT '[]'::int4range && '[1, 5]'::int4multirange;\n               ^\nDETAIL:  Missing comma after lower bound.\n\n",
+        "(psycopg2.errors.InvalidTextRepresentation) malformed multirange literal: \"[1, 10]\"\nLINE 1: SELECT '[1, 5]'::int4range && '[1, 10]'::int4multirange;\n                                      ^\nDETAIL:  Missing left brace.\n\n"
+    ],
+    "EffectiveSQLs": []
 }

@@ -6,15 +6,33 @@
         "atan"
     ],
     "Feature": [
-        "atan ( double precision ) → double precision"
+        "atan ( double precision ) \u2192 double precision"
     ],
     "Description": [
         "Inverse tangent, result in radians"
     ],
     "Examples": [
-        "atan(1) → 0.7853981633974483"
+        "atan(1) \u2192 0.7853981633974483"
     ],
     "Category": [
         "Mathematical Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT atan(1);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 262,
+            "Prompt Tokens": 244,
+            "Completion Tokens": 18,
+            "Total Cost (USD)": 4.7399999999999993e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT atan(1);"
     ]
 }

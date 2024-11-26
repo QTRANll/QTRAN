@@ -14,6 +14,17 @@
         "mysql> SELECT SEC_TO_TIME(2378);\n        -> '00:39:38'\nmysql> SELECT SEC_TO_TIME(2378) + 0;\n        -> 3938"
     ],
     "Category": [
-        "日期和时间函数"
+        "\u65e5\u671f\u548c\u65f6\u95f4\u51fd\u6570"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT SEC_TO_TIME(2378);",
+        "SELECT SEC_TO_TIME(2378) + 0;"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT SEC_TO_TIME(2378);",
+        "SELECT SEC_TO_TIME(2378) + 0;"
     ]
 }

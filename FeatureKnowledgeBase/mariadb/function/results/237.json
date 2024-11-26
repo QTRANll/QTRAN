@@ -22,5 +22,13 @@
         "SELECT sys.ps_is_consumer_enabled('global_instrumentation');",
         "SELECT sys.ps_is_consumer_enabled('events_stages_current');",
         "SELECT sys.ps_is_consumer_enabled('nonexistent_consumer');"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT sys.ps_is_consumer_enabled('global_instrumentation');",
+        "SELECT sys.ps_is_consumer_enabled('events_stages_current');",
+        "SELECT sys.ps_is_consumer_enabled('nonexistent_consumer');"
     ]
 }

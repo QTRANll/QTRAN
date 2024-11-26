@@ -1,0 +1,38 @@
+{
+    "HTML": [
+        "https://www.monetdb.org/documentation-Aug2024/user-guide/sql-manual/data-types/temporal-types"
+    ],
+    "Title": [
+        "TIME [ time_precision ]"
+    ],
+    "Feature": [
+        "TIME [ time_precision ]"
+    ],
+    "Description": [
+        "time",
+        "8-bytes",
+        "time of day (24-hour clock HH:MI:SS.sss) with optional seconds fraction precision (default 0 decimals)"
+    ],
+    "Examples": [],
+    "Category": [
+        "Temporal Datatypes"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT TIME '12:30:45.123';"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 307,
+            "Prompt Tokens": 283,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 5.684999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT TIME '12:30:45.123';"
+    ]
+}

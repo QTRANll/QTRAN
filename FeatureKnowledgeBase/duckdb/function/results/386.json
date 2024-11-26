@@ -16,5 +16,23 @@
     ],
     "Category": [
         "Text Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT format_bytes(1024);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 292,
+            "Prompt Tokens": 272,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 5.28e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT format_bytes(1024);"
     ]
 }

@@ -6,15 +6,49 @@
         "jsonb - text[]"
     ],
     "Feature": [
-        "jsonb - text[] → jsonb"
+        "jsonb - text[] \u2192 jsonb"
     ],
     "Description": [
         "Deletes all matching keys or array elements from the left operand."
     ],
     "Examples": [
-        "'{\"a\": \"b\", \"c\": \"d\"}'::jsonb - '{a,c}'::text[] → {}"
+        "'{\"a\": \"b\", \"c\": \"d\"}'::jsonb - '{a,c}'::text[] \u2192 {}"
     ],
     "Category": [
         "JSON Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT jsonb - 'key_to_delete' FROM jsonb_data;",
+        "SELECT jsonb - 'key_to_delete';",
+        "SELECT '{}'::jsonb - 'key_to_delete';"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 288,
+            "Prompt Tokens": 262,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 5.489999999999999e-05
+        },
+        {
+            "Total Tokens": 460,
+            "Prompt Tokens": 438,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 7.89e-05
+        },
+        {
+            "Total Tokens": 628,
+            "Prompt Tokens": 604,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 0.00010499999999999999
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedTable) relation \"jsonb_data\" does not exist\nLINE 1: SELECT jsonb - 'key_to_delete' FROM jsonb_data;\n                                            ^\n\n",
+        "(psycopg2.errors.UndefinedColumn) column \"jsonb\" does not exist\nLINE 1: SELECT jsonb - 'key_to_delete';\n               ^\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT '{}'::jsonb - 'key_to_delete';"
     ]
 }

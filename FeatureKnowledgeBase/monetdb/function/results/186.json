@@ -18,5 +18,39 @@
     ],
     "Category": [
         "Date Time Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT sql_sub('10:00:00-05:00', '09:30:00-05:00');",
+        "SELECT sql_sub('10:00:00-05:00'::timetz, '09:30:00-05:00'::timetz);",
+        "SELECT sql_sub(TIMETZ '10:00:00-05:00', TIMETZ '09:30:00-05:00');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 331,
+            "Prompt Tokens": 293,
+            "Completion Tokens": 38,
+            "Total Cost (USD)": 6.675e-05
+        },
+        {
+            "Total Tokens": 519,
+            "Prompt Tokens": 473,
+            "Completion Tokens": 46,
+            "Total Cost (USD)": 9.854999999999998e-05
+        },
+        {
+            "Total Tokens": 695,
+            "Prompt Tokens": 650,
+            "Completion Tokens": 45,
+            "Total Cost (USD)": 0.0001245
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymonetdb.exceptions.OperationalError) 22007!Timestamp (10:00:00-05:00) has incorrect format\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!Unexpected symbol (:)\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT sql_sub(TIMETZ '10:00:00-05:00', TIMETZ '09:30:00-05:00');"
     ]
 }

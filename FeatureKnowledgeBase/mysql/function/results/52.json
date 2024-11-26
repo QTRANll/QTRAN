@@ -24,5 +24,53 @@
     "Category": [
         "Built-In Functions and Operators",
         "Window Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT CUME_DIST() OVER (ORDER BY val) AS cume_dist FROM numbers;",
+        "SELECT CUME_DIST() OVER (ORDER BY val) AS cume_dist FROM (SELECT val FROM numbers) AS subquery;",
+        "SELECT CUME_DIST() OVER (ORDER BY val) AS cume_dist FROM (SELECT 1 AS val UNION SELECT 2 UNION SELECT 3 UNION SELECT 4 UNION SELECT 5) AS numbers;",
+        "SELECT CUME_DIST() OVER (ORDER BY val) AS cume_dist FROM (SELECT 1 AS val UNION ALL SELECT 2 UNION ALL SELECT 3 UNION ALL SELECT 4 UNION ALL SELECT 5) AS numbers;",
+        "SELECT CUME_DIST() OVER (ORDER BY val) AS cume_dist FROM (SELECT 1 AS val UNION ALL SELECT 2 AS val UNION ALL SELECT 3 AS val UNION ALL SELECT 4 AS val UNION ALL SELECT 5 AS val) AS numbers;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 891,
+            "Prompt Tokens": 861,
+            "Completion Tokens": 30,
+            "Total Cost (USD)": 0.00014715
+        },
+        {
+            "Total Tokens": 1093,
+            "Prompt Tokens": 1055,
+            "Completion Tokens": 38,
+            "Total Cost (USD)": 0.00018104999999999998
+        },
+        {
+            "Total Tokens": 1319,
+            "Prompt Tokens": 1265,
+            "Completion Tokens": 54,
+            "Total Cost (USD)": 0.00022214999999999998
+        },
+        {
+            "Total Tokens": 1559,
+            "Prompt Tokens": 1501,
+            "Completion Tokens": 58,
+            "Total Cost (USD)": 0.00025994999999999995
+        },
+        {
+            "Total Tokens": 1806,
+            "Prompt Tokens": 1740,
+            "Completion Tokens": 66,
+            "Total Cost (USD)": 0.0003006
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.ProgrammingError) (1064, \"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'cume_dist FROM numbers' at line 1\")\n",
+        "(pymysql.err.ProgrammingError) (1064, \"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'cume_dist FROM (SELECT val FROM numbers) AS subquery' at line 1\")\n",
+        "(pymysql.err.ProgrammingError) (1064, \"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'cume_dist FROM (SELECT 1 AS val UNION SELECT 2 UNION SELECT 3 UNION SELECT 4 UNI' at line 1\")\n",
+        "(pymysql.err.ProgrammingError) (1064, \"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'cume_dist FROM (SELECT 1 AS val UNION ALL SELECT 2 UNION ALL SELECT 3 UNION ALL ' at line 1\")\n",
+        "(pymysql.err.ProgrammingError) (1064, \"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'cume_dist FROM (SELECT 1 AS val UNION ALL SELECT 2 AS val UNION ALL SELECT 3 AS ' at line 1\")\n"
+    ],
+    "EffectiveSQLs": []
 }

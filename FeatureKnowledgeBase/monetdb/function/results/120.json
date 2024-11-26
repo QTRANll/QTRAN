@@ -18,5 +18,47 @@
     ],
     "Category": [
         "Character String Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "\"truncate\"(your_string, 10)",
+        "truncate(your_string, 10)",
+        "SELECT \"truncate\"(your_string, 10)",
+        "SELECT \"truncate\"('example_string', 10)"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 321,
+            "Prompt Tokens": 300,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 5.76e-05
+        },
+        {
+            "Total Tokens": 478,
+            "Prompt Tokens": 458,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 8.07e-05
+        },
+        {
+            "Total Tokens": 638,
+            "Prompt Tokens": 615,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 0.00010604999999999999
+        },
+        {
+            "Total Tokens": 795,
+            "Prompt Tokens": 772,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 0.0001296
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymonetdb.exceptions.OperationalError) 42000!syntax error, unexpected IDENT in: \"\"truncate\"\"\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!syntax error, unexpected '(' in: \"truncate(\"\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: identifier 'your_string' unknown\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT \"truncate\"('example_string', 10)"
     ]
 }

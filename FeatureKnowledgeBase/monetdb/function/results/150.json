@@ -18,5 +18,53 @@
     ],
     "Category": [
         "Date Time Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT sys.date_trunc('month', '2023-10-15 12:34:56'::timestamp);",
+        "SELECT sys.date_trunc('month', TIMESTAMP '2023-10-15 12:34:56');",
+        "SELECT sys.date_trunc('month', '2023-10-15 12:34:56');",
+        "SELECT sys.date_trunc('month', CURRENT_TIMESTAMP);",
+        "SELECT sys.date_trunc('month', NOW());"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 372,
+            "Prompt Tokens": 334,
+            "Completion Tokens": 38,
+            "Total Cost (USD)": 7.29e-05
+        },
+        {
+            "Total Tokens": 540,
+            "Prompt Tokens": 503,
+            "Completion Tokens": 37,
+            "Total Cost (USD)": 9.764999999999999e-05
+        },
+        {
+            "Total Tokens": 717,
+            "Prompt Tokens": 682,
+            "Completion Tokens": 35,
+            "Total Cost (USD)": 0.0001233
+        },
+        {
+            "Total Tokens": 882,
+            "Prompt Tokens": 858,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 0.00014309999999999998
+        },
+        {
+            "Total Tokens": 1050,
+            "Prompt Tokens": 1027,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 0.00016785
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymonetdb.exceptions.OperationalError) 42000!Unexpected symbol (:)\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: no such binary operator 'date_trunc(char,timestamp)'\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: no such binary operator 'date_trunc(char,char)'\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: no such binary operator 'date_trunc(char,timestamptz)'\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: no such binary operator 'date_trunc(char,timestamptz)'\n\n"
+    ],
+    "EffectiveSQLs": []
 }

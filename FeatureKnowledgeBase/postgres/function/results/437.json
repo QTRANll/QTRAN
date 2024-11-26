@@ -6,7 +6,7 @@
         "pg_get_constraintdef"
     ],
     "Feature": [
-        "pg_get_constraintdef ( constraint oid [, pretty boolean ] ) → text"
+        "pg_get_constraintdef ( constraint oid [, pretty boolean ] ) \u2192 text"
     ],
     "Description": [
         "Reconstructs the creating command for a constraint. (This is a decompiled reconstruction, not the original text of the command.)"
@@ -14,5 +14,23 @@
     "Examples": [],
     "Category": [
         "System Information Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT pg_get_constraintdef(oid) FROM pg_constraint;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 303,
+            "Prompt Tokens": 279,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 5.625e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT pg_get_constraintdef(oid) FROM pg_constraint;"
     ]
 }

@@ -9,10 +9,28 @@
         "pi()"
     ],
     "Description": [
-        "\n  Return an approximation for π.\n"
+        "\n  Return an approximation for \u03c0.\n"
     ],
     "Examples": [],
     "Category": [
         "Built-In Mathematical SQL Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT pi();"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 261,
+            "Prompt Tokens": 245,
+            "Completion Tokens": 16,
+            "Total Cost (USD)": 4.635e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT pi();"
     ]
 }

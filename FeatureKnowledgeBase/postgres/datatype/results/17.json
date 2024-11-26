@@ -17,5 +17,23 @@
     "Examples": [],
     "Category": [
         "Binary Data Types"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT decode('your_binary_string', 'escape')::bytea;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 284,
+            "Prompt Tokens": 258,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 5.429999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT decode('your_binary_string', 'escape')::bytea;"
     ]
 }

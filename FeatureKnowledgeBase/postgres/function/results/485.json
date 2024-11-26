@@ -6,7 +6,7 @@
         "pg_snapshot_xmin"
     ],
     "Feature": [
-        "pg_snapshot_xmin ( pg_snapshot ) → xid8"
+        "pg_snapshot_xmin ( pg_snapshot ) \u2192 xid8"
     ],
     "Description": [
         "Returns the xmin of a snapshot."
@@ -14,5 +14,23 @@
     "Examples": [],
     "Category": [
         "System Information Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT pg_snapshot_xmin(pg_current_snapshot());"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 279,
+            "Prompt Tokens": 257,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 5.174999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT pg_snapshot_xmin(pg_current_snapshot());"
     ]
 }

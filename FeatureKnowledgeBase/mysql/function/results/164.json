@@ -23,5 +23,18 @@
     "Category": [
         "Built-In Functions and Operators",
         "JSON Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT JSON_LENGTH('[1, 2, {\"a\": 3}]');",
+        "SELECT JSON_LENGTH('{\"a\": 1, \"b\": {\"c\": 30}}');",
+        "SELECT JSON_LENGTH('{\"a\": 1, \"b\": {\"c\": 30}}', '$.b');"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT JSON_LENGTH('[1, 2, {\"a\": 3}]');",
+        "SELECT JSON_LENGTH('{\"a\": 1, \"b\": {\"c\": 30}}');",
+        "SELECT JSON_LENGTH('{\"a\": 1, \"b\": {\"c\": 30}}', '$.b');"
     ]
 }

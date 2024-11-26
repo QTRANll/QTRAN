@@ -14,5 +14,39 @@
     "Examples": [],
     "Category": [
         "Core SQL Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT * FROM table_name WHERE likely(condition);",
+        "SELECT likely(condition);",
+        "SELECT likely(1);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 380,
+            "Prompt Tokens": 358,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 6.689999999999999e-05
+        },
+        {
+            "Total Tokens": 515,
+            "Prompt Tokens": 498,
+            "Completion Tokens": 17,
+            "Total Cost (USD)": 8.49e-05
+        },
+        {
+            "Total Tokens": 650,
+            "Prompt Tokens": 632,
+            "Completion Tokens": 18,
+            "Total Cost (USD)": 0.00010559999999999999
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(sqlite3.OperationalError) no such table: table_name\n",
+        "(sqlite3.OperationalError) no such column: condition\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT likely(1);"
     ]
 }

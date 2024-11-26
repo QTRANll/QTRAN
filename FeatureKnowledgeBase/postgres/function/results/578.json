@@ -6,13 +6,61 @@
         "gin_clean_pending_list"
     ],
     "Feature": [
-        "gin_clean_pending_list ( index regclass ) → bigint"
+        "gin_clean_pending_list ( index regclass ) \u2192 bigint"
     ],
     "Description": [
-        "Cleans up the “pending” list of the specified GIN index by moving entries in it, in bulk, to the main GIN data structure. Returns the number of pages removed from the pending list. If the argument is a GIN index built with the fastupdate option disabled, no cleanup happens and the result is zero, because the index doesn't have a pending list. See Section 70.4.1 and Section 70.5 for details about the pending list and fastupdate option."
+        "Cleans up the \u201cpending\u201d list of the specified GIN index by moving entries in it, in bulk, to the main GIN data structure. Returns the number of pages removed from the pending list. If the argument is a GIN index built with the fastupdate option disabled, no cleanup happens and the result is zero, because the index doesn't have a pending list. See Section\u00a070.4.1 and Section\u00a070.5 for details about the pending list and fastupdate option."
     ],
     "Examples": [],
     "Category": [
         "System Administration Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT gin_clean_pending_list('your_gin_index_name');",
+        "SELECT gin_clean_pending_list('my_gin_index');",
+        "SELECT gin_clean_pending_list('existing_gin_index');",
+        "SELECT gin_clean_pending_list('some_valid_gin_index');",
+        "SELECT gin_clean_pending_list('valid_gin_index');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 376,
+            "Prompt Tokens": 351,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 6.764999999999999e-05
+        },
+        {
+            "Total Tokens": 549,
+            "Prompt Tokens": 525,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 9.314999999999999e-05
+        },
+        {
+            "Total Tokens": 720,
+            "Prompt Tokens": 696,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 0.00011879999999999999
+        },
+        {
+            "Total Tokens": 892,
+            "Prompt Tokens": 867,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 0.00014504999999999997
+        },
+        {
+            "Total Tokens": 1065,
+            "Prompt Tokens": 1041,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 0.00017054999999999997
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedTable) relation \"your_gin_index_name\" does not exist\nLINE 1: SELECT gin_clean_pending_list('your_gin_index_name');\n                                      ^\n\n",
+        "(psycopg2.errors.UndefinedTable) relation \"my_gin_index\" does not exist\nLINE 1: SELECT gin_clean_pending_list('my_gin_index');\n                                      ^\n\n",
+        "(psycopg2.errors.UndefinedTable) relation \"existing_gin_index\" does not exist\nLINE 1: SELECT gin_clean_pending_list('existing_gin_index');\n                                      ^\n\n",
+        "(psycopg2.errors.UndefinedTable) relation \"some_valid_gin_index\" does not exist\nLINE 1: SELECT gin_clean_pending_list('some_valid_gin_index');\n                                      ^\n\n",
+        "(psycopg2.errors.UndefinedTable) relation \"valid_gin_index\" does not exist\nLINE 1: SELECT gin_clean_pending_list('valid_gin_index');\n                                      ^\n\n"
+    ],
+    "EffectiveSQLs": []
 }

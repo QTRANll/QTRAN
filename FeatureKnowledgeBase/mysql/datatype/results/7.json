@@ -14,5 +14,23 @@
     "Examples": [],
     "Category": [
         "The YEAR Type"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT YEAR(NOW());"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 931,
+            "Prompt Tokens": 913,
+            "Completion Tokens": 18,
+            "Total Cost (USD)": 0.00014774999999999999
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT YEAR(NOW());"
     ]
 }

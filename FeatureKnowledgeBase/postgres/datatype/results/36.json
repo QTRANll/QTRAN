@@ -17,5 +17,23 @@
     "Examples": [],
     "Category": [
         "Network Address Types"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT '00:1A:2B:3C:4D:5E'::macaddr;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 283,
+            "Prompt Tokens": 248,
+            "Completion Tokens": 35,
+            "Total Cost (USD)": 5.819999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT '00:1A:2B:3C:4D:5E'::macaddr;"
     ]
 }

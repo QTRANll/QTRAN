@@ -6,13 +6,39 @@
         "pg_index_has_property"
     ],
     "Feature": [
-        "pg_index_has_property ( index regclass, property text ) → boolean"
+        "pg_index_has_property ( index regclass, property text ) \u2192 boolean"
     ],
     "Description": [
-        "Tests whether an index has the named property. Common index properties are listed in Table 9.74. (Note that extension access methods can define additional property names for their indexes.) NULL is returned if the property name is not known or does not apply to the particular object, or if the OID does not identify a valid object."
+        "Tests whether an index has the named property. Common index properties are listed in Table\u00a09.74. (Note that extension access methods can define additional property names for their indexes.) NULL is returned if the property name is not known or does not apply to the particular object, or if the OID does not identify a valid object."
     ],
     "Examples": [],
     "Category": [
         "System Information Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT pg_index_has_property('your_index_name'::regclass, 'your_property_name');",
+        "SELECT pg_index_has_property('pg_index'::regclass, 'your_property_name');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 352,
+            "Prompt Tokens": 320,
+            "Completion Tokens": 32,
+            "Total Cost (USD)": 6.72e-05
+        },
+        {
+            "Total Tokens": 535,
+            "Prompt Tokens": 504,
+            "Completion Tokens": 31,
+            "Total Cost (USD)": 9.419999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedTable) relation \"your_index_name\" does not exist\nLINE 1: SELECT pg_index_has_property('your_index_name'::regclass, 'y...\n                                     ^\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT pg_index_has_property('pg_index'::regclass, 'your_property_name');"
     ]
 }

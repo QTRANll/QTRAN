@@ -20,5 +20,22 @@
     "Category": [
         "JSON Functions"
     ],
-    "EffectiveSQLsRefined": []
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT JSON_LENGTH('{\"key\": [1, 2, 3]}');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 416,
+            "Prompt Tokens": 386,
+            "Completion Tokens": 30,
+            "Total Cost (USD)": 7.59e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT JSON_LENGTH('{\"key\": [1, 2, 3]}');"
+    ]
 }

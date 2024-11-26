@@ -14,5 +14,55 @@
     "Examples": [],
     "Category": [
         "Window Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT first_value(column_name) OVER (ORDER BY some_column) FROM table_name;",
+        "SELECT first_value(column_name) OVER (ORDER BY some_column);",
+        "SELECT first_value(column_name);",
+        "SELECT first_value(1);",
+        "SELECT first_value(1) OVER ();"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 325,
+            "Prompt Tokens": 296,
+            "Completion Tokens": 29,
+            "Total Cost (USD)": 6.18e-05
+        },
+        {
+            "Total Tokens": 471,
+            "Prompt Tokens": 445,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 8.235e-05
+        },
+        {
+            "Total Tokens": 610,
+            "Prompt Tokens": 591,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 0.00010004999999999999
+        },
+        {
+            "Total Tokens": 749,
+            "Prompt Tokens": 730,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 0.00012089999999999998
+        },
+        {
+            "Total Tokens": 891,
+            "Prompt Tokens": 870,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 0.0001431
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(sqlite3.OperationalError) no such table: table_name\n",
+        "(sqlite3.OperationalError) no such column: some_column\n",
+        "(sqlite3.OperationalError) no such column: column_name\n",
+        "(sqlite3.OperationalError) misuse of window function first_value()\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT first_value(1) OVER ();"
     ]
 }

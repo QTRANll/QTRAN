@@ -8,12 +8,21 @@
         "\nFROM_DAYS(N)\n",
         "\n          Given a day number N, returns a\n          DATE value. Returns\n          NULL if N is\n          NULL.\n        ",
         "Press CTRL+C to copy mysql> SELECT FROM_DAYS(730669);\n        -> '2000-07-03'",
-        "\n          Use FROM_DAYS() with caution on\n          old dates. It is not intended for use with values that precede\n          the advent of the Gregorian calendar (1582). See\n          Section 13.2.7, “What Calendar Is Used By MySQL?”.\n        "
+        "\n          Use FROM_DAYS() with caution on\n          old dates. It is not intended for use with values that precede\n          the advent of the Gregorian calendar (1582). See\n          Section\u00a013.2.7, \u201cWhat Calendar Is Used By MySQL?\u201d.\n        "
     ],
     "Examples": [
         "mysql> SELECT FROM_DAYS(730669);\n        -> '2000-07-03'"
     ],
     "Category": [
-        "日期和时间函数"
+        "\u65e5\u671f\u548c\u65f6\u95f4\u51fd\u6570"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT FROM_DAYS(730669);"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT FROM_DAYS(730669);"
     ]
 }

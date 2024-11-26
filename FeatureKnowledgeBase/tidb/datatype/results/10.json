@@ -3,18 +3,36 @@
         "https://docs.pingcap.com/zh/tidb/v8.3/data-type-date-and-time"
     ],
     "Title": [
-        "DATE 类型"
+        "DATE \u7c7b\u578b"
     ],
     "Feature": [
-        "DATE 类型"
+        "DATE \u7c7b\u578b"
     ],
     "Description": [
-        "DATE 类型",
-        "DATE 类型只包含日期部分，不包含时间部分。DATE 类型的格式为 YYYY-MM-DD，支持的范围是 0000-01-01 到 9999-12-31。",
+        "DATE \u7c7b\u578b",
+        "DATE \u7c7b\u578b\u53ea\u5305\u542b\u65e5\u671f\u90e8\u5206\uff0c\u4e0d\u5305\u542b\u65f6\u95f4\u90e8\u5206\u3002DATE \u7c7b\u578b\u7684\u683c\u5f0f\u4e3a YYYY-MM-DD\uff0c\u652f\u6301\u7684\u8303\u56f4\u662f 0000-01-01 \u5230 9999-12-31\u3002",
         "DATE\n"
     ],
     "Examples": [],
     "Category": [
-        "日期和时间类型"
+        "\u65e5\u671f\u548c\u65f6\u95f4\u7c7b\u578b"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT CURDATE();"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 301,
+            "Prompt Tokens": 284,
+            "Completion Tokens": 17,
+            "Total Cost (USD)": 5.2799999999999996e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT CURDATE();"
     ]
 }

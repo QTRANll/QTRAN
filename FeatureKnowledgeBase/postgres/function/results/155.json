@@ -6,15 +6,33 @@
         "date_trunc"
     ],
     "Feature": [
-        "date_trunc ( text, interval ) → interval"
+        "date_trunc ( text, interval ) \u2192 interval"
     ],
     "Description": [
-        "Truncate to specified precision; see Section 9.9.2"
+        "Truncate to specified precision; see Section\u00a09.9.2"
     ],
     "Examples": [
-        "date_trunc('hour', interval '2 days 3 hours 40 minutes') → 2 days 03:00:00"
+        "date_trunc('hour', interval '2 days 3 hours 40 minutes') \u2192 2 days 03:00:00"
     ],
     "Category": [
         "Date divide Time Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT date_trunc('hour', NOW());"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 282,
+            "Prompt Tokens": 260,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 5.2199999999999995e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT date_trunc('hour', NOW());"
     ]
 }

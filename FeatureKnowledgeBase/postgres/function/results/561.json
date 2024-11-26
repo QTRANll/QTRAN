@@ -6,7 +6,7 @@
         "pg_size_bytes"
     ],
     "Feature": [
-        "pg_size_bytes ( text ) → bigint"
+        "pg_size_bytes ( text ) \u2192 bigint"
     ],
     "Description": [
         "Converts a size in human-readable format (as returned by pg_size_pretty) into bytes. Valid units are bytes, B, kB, MB, GB, TB, and PB."
@@ -14,5 +14,23 @@
     "Examples": [],
     "Category": [
         "System Administration Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT pg_size_bytes('10 MB');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 304,
+            "Prompt Tokens": 283,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 5.5049999999999996e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT pg_size_bytes('10 MB');"
     ]
 }

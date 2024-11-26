@@ -14,5 +14,31 @@
     "Examples": [],
     "Category": [
         "Numeric Type Attributes"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "CREATE TABLE example_table (id INT(4) UNSIGNED AUTO_INCREMENT, value INT(4) ZEROFILL);",
+        "CREATE TABLE example_table (id INT(4) UNSIGNED AUTO_INCREMENT PRIMARY KEY, value INT(4) ZEROFILL);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 1472,
+            "Prompt Tokens": 1434,
+            "Completion Tokens": 38,
+            "Total Cost (USD)": 0.00023789999999999998
+        },
+        {
+            "Total Tokens": 1656,
+            "Prompt Tokens": 1616,
+            "Completion Tokens": 40,
+            "Total Cost (USD)": 0.00026639999999999997
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.OperationalError) (1075, 'Incorrect table definition; there can be only one auto column and it must be defined as a key')\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "CREATE TABLE example_table (id INT(4) UNSIGNED AUTO_INCREMENT PRIMARY KEY, value INT(4) ZEROFILL);"
     ]
 }

@@ -6,15 +6,65 @@
         "box"
     ],
     "Feature": [
-        "box ( polygon ) → box"
+        "box ( polygon ) \u2192 box"
     ],
     "Description": [
         "Computes bounding box of polygon."
     ],
     "Examples": [
-        "box(polygon '((0,0),(1,1),(2,0))') → (2,1),(0,0)"
+        "box(polygon '((0,0),(1,1),(2,0))') \u2192 (2,1),(0,0)"
     ],
     "Category": [
         "Geometric Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT box(geom) FROM your_table;",
+        "SELECT box(geom) FROM (SELECT 'POLYGON((0 0, 1 1, 1 0, 0 0))'::geometry AS geom) AS subquery;",
+        "SELECT box('POLYGON((0 0, 1 1, 1 0, 0 0))'::polygon);",
+        "SELECT box('((0 0), (1 1), (1 0), (0 0))'::polygon);",
+        "SELECT box('((0, 0), (1, 1), (1, 0), (0, 0))'::polygon);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 264,
+            "Prompt Tokens": 243,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 4.905e-05
+        },
+        {
+            "Total Tokens": 457,
+            "Prompt Tokens": 404,
+            "Completion Tokens": 53,
+            "Total Cost (USD)": 9.24e-05
+        },
+        {
+            "Total Tokens": 663,
+            "Prompt Tokens": 621,
+            "Completion Tokens": 42,
+            "Total Cost (USD)": 0.00011834999999999999
+        },
+        {
+            "Total Tokens": 884,
+            "Prompt Tokens": 844,
+            "Completion Tokens": 40,
+            "Total Cost (USD)": 0.00015059999999999997
+        },
+        {
+            "Total Tokens": 1105,
+            "Prompt Tokens": 1061,
+            "Completion Tokens": 44,
+            "Total Cost (USD)": 0.00018554999999999996
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedTable) relation \"your_table\" does not exist\nLINE 1: SELECT box(geom) FROM your_table;\n                              ^\n\n",
+        "(psycopg2.errors.UndefinedObject) type \"geometry\" does not exist\nLINE 1: ...om) FROM (SELECT 'POLYGON((0 0, 1 1, 1 0, 0 0))'::geometry A...\n                                                             ^\n\n",
+        "(psycopg2.errors.InvalidTextRepresentation) invalid input syntax for type polygon: \"POLYGON((0 0, 1 1, 1 0, 0 0))\"\nLINE 1: SELECT box('POLYGON((0 0, 1 1, 1 0, 0 0))'::polygon);\n                   ^\n\n",
+        "(psycopg2.errors.InvalidTextRepresentation) invalid input syntax for type polygon: \"((0 0), (1 1), (1 0), (0 0))\"\nLINE 1: SELECT box('((0 0), (1 1), (1 0), (0 0))'::polygon);\n                   ^\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT box('((0, 0), (1, 1), (1, 0), (0, 0))'::polygon);"
     ]
 }

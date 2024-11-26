@@ -6,7 +6,7 @@
     ],
     "Description": [
         "\nSUBTIME(expr1,expr2)\n",
-        "\nSUBTIME() returns\n          expr1 −\n          expr2 expressed as a value in the\n          same format as expr1.\n          expr1 is a time or datetime\n          expression, and expr2 is a time\n          expression.\n        ",
+        "\nSUBTIME() returns\n          expr1 \u2212\n          expr2 expressed as a value in the\n          same format as expr1.\n          expr1 is a time or datetime\n          expression, and expr2 is a time\n          expression.\n        ",
         "\n          Resolution of this function's return type is performed as\n          it is for the ADDTIME()\n          function; see the description of that function for more\n          information.\n        ",
         "Press CTRL+C to copy mysql> SELECT SUBTIME('2007-12-31 23:59:59.999999','1 1:1:1.000002');\n        -> '2007-12-30 22:58:58.999997'\nmysql> SELECT SUBTIME('01:00:00.999999', '02:00:00.999998');\n        -> '-00:59:59.999999'",
         "\n          This function returns NULL if\n          expr1 or\n          expr2 is NULL.\n        "
@@ -15,6 +15,17 @@
         "mysql> SELECT SUBTIME('2007-12-31 23:59:59.999999','1 1:1:1.000002');\n        -> '2007-12-30 22:58:58.999997'\nmysql> SELECT SUBTIME('01:00:00.999999', '02:00:00.999998');\n        -> '-00:59:59.999999'"
     ],
     "Category": [
-        "日期和时间函数"
+        "\u65e5\u671f\u548c\u65f6\u95f4\u51fd\u6570"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT SUBTIME('2007-12-31 23:59:59.999999','1 1:1:1.000002');",
+        "SELECT SUBTIME('01:00:00.999999', '02:00:00.999998');"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT SUBTIME('2007-12-31 23:59:59.999999','1 1:1:1.000002');",
+        "SELECT SUBTIME('01:00:00.999999', '02:00:00.999998');"
     ]
 }

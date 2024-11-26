@@ -22,5 +22,31 @@
     "Category": [
         "Built-In Functions and Operators",
         "Miscellaneous Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT BIN_TO_UUID('your_binary_uuid_here');",
+        "SELECT BIN_TO_UUID(UNHEX('550e8400e29b41d4a716446655440000'));"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 657,
+            "Prompt Tokens": 634,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 0.00010889999999999999
+        },
+        {
+            "Total Tokens": 836,
+            "Prompt Tokens": 798,
+            "Completion Tokens": 38,
+            "Total Cost (USD)": 0.0001425
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.OperationalError) (1411, \"Incorrect string value: 'your_binary_uuid_here' for function bin_to_uuid\")\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT BIN_TO_UUID(UNHEX('550e8400e29b41d4a716446655440000'));"
     ]
 }

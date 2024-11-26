@@ -18,5 +18,31 @@
     ],
     "Category": [
         "INET Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT sys.hostmask(inet);",
+        "SELECT sys.hostmask('0.0.0.0');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 286,
+            "Prompt Tokens": 266,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 5.19e-05
+        },
+        {
+            "Total Tokens": 443,
+            "Prompt Tokens": 417,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 7.814999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: identifier 'inet' unknown\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT sys.hostmask('0.0.0.0');"
     ]
 }

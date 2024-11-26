@@ -33,15 +33,15 @@ def operators_crawler_results(origin_category,html,results_dicname, mysql_result
         if html == value["Reference HTML"]:
             # 修改value的内容
             category_temp = value["Category"]
-            if "Built-In function and operator" in category_temp and len(category_temp) > 1:
-                category_temp.remove("Built-In function and operator")
+            if "Built-In Functions and Operators" in category_temp and len(category_temp) > 1:
+                category_temp.remove("Built-In Functions and Operators")
             value_new = {
                 "HTML": html,
                 "Title": value["Name"],
                 "Feature": value["Feature"],
                 "Description": value["Description"],
                 "Examples": value["Examples"],
-                "Category": [origin_category]
+                "Category": category_temp
             }
             file_cnt = len(os.listdir(results_dicname))
             result_filename = os.path.join(results_dicname, str(file_cnt) + ".json")

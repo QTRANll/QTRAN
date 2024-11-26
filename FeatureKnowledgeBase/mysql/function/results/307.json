@@ -22,5 +22,14 @@
     "Category": [
         "Built-In Functions and Operators",
         "Spatial Analysis Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT ST_Equals(@g1, @g1), ST_Equals(@g1, @g2);"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT ST_Equals(@g1, @g1), ST_Equals(@g1, @g2);"
     ]
 }

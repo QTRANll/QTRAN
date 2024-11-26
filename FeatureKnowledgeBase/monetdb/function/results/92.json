@@ -18,5 +18,53 @@
     ],
     "Category": [
         "Character String Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        [
+            "SELECT LPAD(s, len, ' ') FROM your_table_name;"
+        ],
+        [
+            "SELECT LPAD(s::TEXT, len, ' ') FROM your_table_name;"
+        ],
+        [
+            "SELECT LPAD(s::TEXT, len, ' ') FROM your_table_name WHERE s IS NOT NULL;"
+        ],
+        [
+            "SELECT LPAD(CAST(s AS VARCHAR), len, ' ') FROM your_table_name WHERE s IS NOT NULL;"
+        ]
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 201,
+            "Prompt Tokens": 170,
+            "Completion Tokens": 31,
+            "Total Cost (USD)": 4.41e-05
+        },
+        {
+            "Total Tokens": 357,
+            "Prompt Tokens": 324,
+            "Completion Tokens": 33,
+            "Total Cost (USD)": 6.84e-05
+        },
+        {
+            "Total Tokens": 518,
+            "Prompt Tokens": 480,
+            "Completion Tokens": 38,
+            "Total Cost (USD)": 9.479999999999999e-05
+        },
+        {
+            "Total Tokens": 681,
+            "Prompt Tokens": 641,
+            "Completion Tokens": 40,
+            "Total Cost (USD)": 0.00012014999999999999
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "expected string or bytes-like object, got 'list'",
+        "expected string or bytes-like object, got 'list'",
+        "expected string or bytes-like object, got 'list'",
+        "expected string or bytes-like object, got 'list'"
+    ],
+    "EffectiveSQLs": []
 }

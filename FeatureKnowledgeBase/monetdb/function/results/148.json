@@ -18,5 +18,23 @@
     ],
     "Category": [
         "Date Time Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT curtime();"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 273,
+            "Prompt Tokens": 256,
+            "Completion Tokens": 17,
+            "Total Cost (USD)": 4.86e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT curtime();"
     ]
 }

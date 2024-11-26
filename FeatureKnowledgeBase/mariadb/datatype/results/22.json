@@ -13,5 +13,23 @@
     ],
     "Category": [
         "String Data Types"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT JSON_OBJECT('key', 'value');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 260,
+            "Prompt Tokens": 238,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 4.889999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT JSON_OBJECT('key', 'value');"
     ]
 }

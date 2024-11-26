@@ -6,14 +6,62 @@
         "has_function_privilege"
     ],
     "Feature": [
-        "has_function_privilege ( [ user name or oid, ] function text or oid, privilege text ) → boolean"
+        "has_function_privilege ( [ user name or oid, ] function text or oid, privilege text ) \u2192 boolean"
     ],
     "Description": [
         "Does user have privilege for function? The only allowable privilege type is EXECUTE.",
-        "When specifying a function by name rather than by OID, the allowed input is the same as for the regprocedure data type (see Section 8.19). An example is:"
+        "When specifying a function by name rather than by OID, the allowed input is the same as for the regprocedure data type (see Section\u00a08.19). An example is:"
     ],
     "Examples": [],
     "Category": [
         "System Information Functions and Operators"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT has_function_privilege('username', 'function_name', 'EXECUTE');",
+        "SELECT has_function_privilege(current_user, 'function_name', 'EXECUTE');",
+        "SELECT has_function_privilege(current_user, 'function_name()', 'EXECUTE');",
+        "SELECT has_function_privilege(current_user, 'function_name', 'EXECUTE');",
+        "SELECT has_function_privilege(current_user, 'schema_name.function_name', 'EXECUTE');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 344,
+            "Prompt Tokens": 315,
+            "Completion Tokens": 29,
+            "Total Cost (USD)": 6.465e-05
+        },
+        {
+            "Total Tokens": 498,
+            "Prompt Tokens": 469,
+            "Completion Tokens": 29,
+            "Total Cost (USD)": 8.774999999999999e-05
+        },
+        {
+            "Total Tokens": 649,
+            "Prompt Tokens": 620,
+            "Completion Tokens": 29,
+            "Total Cost (USD)": 0.0001104
+        },
+        {
+            "Total Tokens": 804,
+            "Prompt Tokens": 775,
+            "Completion Tokens": 29,
+            "Total Cost (USD)": 0.00013365
+        },
+        {
+            "Total Tokens": 957,
+            "Prompt Tokens": 926,
+            "Completion Tokens": 31,
+            "Total Cost (USD)": 0.00015749999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedObject) role \"username\" does not exist\n\n",
+        "(psycopg2.errors.InvalidTextRepresentation) expected a left parenthesis\n\n",
+        "(psycopg2.errors.UndefinedFunction) function \"function_name()\" does not exist\n\n",
+        "(psycopg2.errors.InvalidTextRepresentation) expected a left parenthesis\n\n",
+        "(psycopg2.errors.InvalidTextRepresentation) expected a left parenthesis\n\n"
+    ],
+    "EffectiveSQLs": []
 }

@@ -18,5 +18,23 @@
     ],
     "Category": [
         "Character String Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT soundex('example')"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 288,
+            "Prompt Tokens": 269,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 5.175e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT soundex('example')"
     ]
 }

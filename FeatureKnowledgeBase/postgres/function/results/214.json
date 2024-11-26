@@ -6,15 +6,33 @@
         "length"
     ],
     "Feature": [
-        "length ( tsvector ) → integer"
+        "length ( tsvector ) \u2192 integer"
     ],
     "Description": [
         "Returns the number of lexemes in the tsvector."
     ],
     "Examples": [
-        "length('fat:2,4 cat:3 rat:5A'::tsvector) → 3"
+        "length('fat:2,4 cat:3 rat:5A'::tsvector) \u2192 3"
     ],
     "Category": [
         "Text Search Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT length(to_tsvector('example text'));"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 273,
+            "Prompt Tokens": 250,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 5.129999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT length(to_tsvector('example text'));"
     ]
 }

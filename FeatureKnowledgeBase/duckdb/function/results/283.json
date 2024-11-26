@@ -17,5 +17,23 @@
     ],
     "Category": [
         "List Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT list_where(['value1', 'value2', 'value3'], [TRUE, FALSE, TRUE])"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 299,
+            "Prompt Tokens": 264,
+            "Completion Tokens": 35,
+            "Total Cost (USD)": 6.0599999999999996e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT list_where(['value1', 'value2', 'value3'], [TRUE, FALSE, TRUE])"
     ]
 }

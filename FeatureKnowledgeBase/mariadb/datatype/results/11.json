@@ -15,5 +15,31 @@
     "Examples": [],
     "Category": [
         "Numeric Data Types"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT CAST(123.456 AS DOUBLE PRECISION);",
+        "SELECT CAST(123.456 AS DOUBLE);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 336,
+            "Prompt Tokens": 312,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 6.12e-05
+        },
+        {
+            "Total Tokens": 515,
+            "Prompt Tokens": 493,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 8.714999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.ProgrammingError) (1064, \"You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'PRECISION)' at line 1\")\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT CAST(123.456 AS DOUBLE);"
     ]
 }

@@ -6,7 +6,7 @@
         "nextval"
     ],
     "Feature": [
-        "nextval ( regclass ) → bigint"
+        "nextval ( regclass ) \u2192 bigint"
     ],
     "Description": [
         "Advances the sequence object to its next value and returns that value. This is done atomically: even if multiple sessions execute nextval concurrently, each will safely receive a distinct sequence value. If the sequence object has been created with default parameters, successive nextval calls will return successive values beginning with 1. Other behaviors can be obtained by using appropriate parameters in the CREATE SEQUENCE command.",
@@ -15,5 +15,53 @@
     "Examples": [],
     "Category": [
         "Sequence Manipulation Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT nextval('your_sequence_name');",
+        "SELECT nextval('your_existing_sequence_name');",
+        "SELECT nextval('your_sequence');",
+        "SELECT nextval('public.your_sequence_name');",
+        "SELECT nextval('my_sequence');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 353,
+            "Prompt Tokens": 332,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 6.24e-05
+        },
+        {
+            "Total Tokens": 516,
+            "Prompt Tokens": 494,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 8.73e-05
+        },
+        {
+            "Total Tokens": 679,
+            "Prompt Tokens": 659,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 0.00011084999999999998
+        },
+        {
+            "Total Tokens": 841,
+            "Prompt Tokens": 818,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 0.00013649999999999998
+        },
+        {
+            "Total Tokens": 1006,
+            "Prompt Tokens": 986,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 0.00015989999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedTable) relation \"your_sequence_name\" does not exist\nLINE 1: SELECT nextval('your_sequence_name');\n                       ^\n\n",
+        "(psycopg2.errors.UndefinedTable) relation \"your_existing_sequence_name\" does not exist\nLINE 1: SELECT nextval('your_existing_sequence_name');\n                       ^\n\n",
+        "(psycopg2.errors.UndefinedTable) relation \"your_sequence\" does not exist\nLINE 1: SELECT nextval('your_sequence');\n                       ^\n\n",
+        "(psycopg2.errors.UndefinedTable) relation \"public.your_sequence_name\" does not exist\nLINE 1: SELECT nextval('public.your_sequence_name');\n                       ^\n\n",
+        "(psycopg2.errors.UndefinedTable) relation \"my_sequence\" does not exist\nLINE 1: SELECT nextval('my_sequence');\n                       ^\n\n"
+    ],
+    "EffectiveSQLs": []
 }

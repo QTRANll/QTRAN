@@ -6,7 +6,7 @@
         "datatype = datatype"
     ],
     "Feature": [
-        "datatype = datatype → boolean"
+        "datatype = datatype \u2192 boolean"
     ],
     "Description": [
         "Equal"
@@ -14,5 +14,31 @@
     "Examples": [],
     "Category": [
         "Comparison Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT * FROM table_name WHERE datatype = datatype;",
+        "SELECT * FROM information_schema.columns WHERE column_name = 'datatype';"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 264,
+            "Prompt Tokens": 242,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 4.949999999999999e-05
+        },
+        {
+            "Total Tokens": 433,
+            "Prompt Tokens": 407,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 7.664999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedTable) relation \"table_name\" does not exist\nLINE 1: SELECT * FROM table_name WHERE datatype = datatype;\n                      ^\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT * FROM information_schema.columns WHERE column_name = 'datatype';"
     ]
 }

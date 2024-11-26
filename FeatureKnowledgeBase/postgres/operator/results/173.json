@@ -6,15 +6,57 @@
         "anymultirange >> anymultirange"
     ],
     "Feature": [
-        "anymultirange >> anymultirange → boolean"
+        "anymultirange >> anymultirange \u2192 boolean"
     ],
     "Description": [
         "Is the first multirange strictly right of the second?"
     ],
     "Examples": [
-        "'{[50,60)}'::int8multirange >> '{[20,30)}'::int8multirange → t"
+        "'{[50,60)}'::int8multirange >> '{[20,30)}'::int8multirange \u2192 t"
     ],
     "Category": [
         "Range divide Multirange Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT (anymultirange1 >> anymultirange2);",
+        "SELECT (ANYMULTIRANGE >> ANYMULTIRANGE);",
+        "SELECT (ANYMULTIRANGE '[[1, 2), [3, 4)]' >> ANYMULTIRANGE '[[2, 3), [4, 5)]');",
+        "SELECT (int4range(1, 2) >> int4range(2, 3));"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 304,
+            "Prompt Tokens": 277,
+            "Completion Tokens": 27,
+            "Total Cost (USD)": 5.7749999999999994e-05
+        },
+        {
+            "Total Tokens": 485,
+            "Prompt Tokens": 460,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 8.4e-05
+        },
+        {
+            "Total Tokens": 690,
+            "Prompt Tokens": 638,
+            "Completion Tokens": 52,
+            "Total Cost (USD)": 0.0001269
+        },
+        {
+            "Total Tokens": 891,
+            "Prompt Tokens": 857,
+            "Completion Tokens": 34,
+            "Total Cost (USD)": 0.00014895
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedColumn) column \"anymultirange1\" does not exist\nLINE 1: SELECT (anymultirange1 >> anymultirange2);\n                ^\n\n",
+        "(psycopg2.errors.UndefinedColumn) column \"anymultirange\" does not exist\nLINE 1: SELECT (ANYMULTIRANGE >> ANYMULTIRANGE);\n                ^\n\n",
+        "(psycopg2.errors.FeatureNotSupported) cannot accept a value of type anymultirange\nLINE 1: SELECT (ANYMULTIRANGE '[[1, 2), [3, 4)]' >> ANYMULTIRANGE '[...\n                              ^\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT (int4range(1, 2) >> int4range(2, 3));"
     ]
 }

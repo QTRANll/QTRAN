@@ -6,16 +6,34 @@
         "jsonb_set_lax"
     ],
     "Feature": [
-        "jsonb_set_lax ( target jsonb, path text[], new_value jsonb [, create_if_missing boolean [, null_value_treatment text ]] ) → jsonb"
+        "jsonb_set_lax ( target jsonb, path text[], new_value jsonb [, create_if_missing boolean [, null_value_treatment text ]] ) \u2192 jsonb"
     ],
     "Description": [
         "If new_value is not NULL, behaves identically to jsonb_set. Otherwise behaves according to the value of null_value_treatment which must be one of 'raise_exception', 'use_json_null', 'delete_key', or 'return_target'. The default is 'use_json_null'."
     ],
     "Examples": [
-        "jsonb_set_lax('[{\"f1\":1,\"f2\":null},2,null,3]', '{0,f1}', null) → [{\"f1\": null, \"f2\": null}, 2, null, 3]",
-        "jsonb_set_lax('[{\"f1\":99,\"f2\":null},2]', '{0,f3}', null, true, 'return_target') → [{\"f1\": 99, \"f2\": null}, 2]"
+        "jsonb_set_lax('[{\"f1\":1,\"f2\":null},2,null,3]', '{0,f1}', null) \u2192 [{\"f1\": null, \"f2\": null}, 2, null, 3]",
+        "jsonb_set_lax('[{\"f1\":99,\"f2\":null},2]', '{0,f3}', null, true, 'return_target') \u2192 [{\"f1\": 99, \"f2\": null}, 2]"
     ],
     "Category": [
         "JSON Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT jsonb_set_lax('{\"key\": \"value\"}'::jsonb, '{key}', '\"new_value\"'::jsonb);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 376,
+            "Prompt Tokens": 332,
+            "Completion Tokens": 44,
+            "Total Cost (USD)": 7.62e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT jsonb_set_lax('{\"key\": \"value\"}'::jsonb, '{key}', '\"new_value\"'::jsonb);"
     ]
 }

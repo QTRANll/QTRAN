@@ -6,7 +6,7 @@
         "pg_terminate_backend"
     ],
     "Feature": [
-        "pg_terminate_backend ( pid integer, timeout bigint DEFAULT 0 ) → boolean"
+        "pg_terminate_backend ( pid integer, timeout bigint DEFAULT 0 ) \u2192 boolean"
     ],
     "Description": [
         "Terminates the session whose backend process has the specified process ID. This is also allowed if the calling role is a member of the role whose backend is being terminated or the calling role has privileges of pg_signal_backend, however only superusers can terminate superuser backends.",
@@ -15,5 +15,23 @@
     "Examples": [],
     "Category": [
         "System Administration Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT pg_terminate_backend(12345);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 418,
+            "Prompt Tokens": 396,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 7.26e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT pg_terminate_backend(12345);"
     ]
 }

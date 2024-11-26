@@ -16,5 +16,23 @@
     ],
     "Category": [
         "Timestamp Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT make_timestamp(1633072800000000);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 289,
+            "Prompt Tokens": 265,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 5.4149999999999995e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT make_timestamp(1633072800000000);"
     ]
 }

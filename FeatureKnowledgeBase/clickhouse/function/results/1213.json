@@ -23,5 +23,9 @@
     ],
     "Category": [
         "Aggregate Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "DROP TABLE IF EXISTS test_data;",
+        "CREATE TABLE test_data(    population Float64,)ENGINE = Log;"
     ]
 }

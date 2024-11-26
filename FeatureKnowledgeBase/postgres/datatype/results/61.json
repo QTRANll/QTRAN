@@ -15,5 +15,23 @@
     "Examples": [],
     "Category": [
         "Pseudo-Types"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT * FROM unnest(ARRAY[1, 2, 3]);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 287,
+            "Prompt Tokens": 258,
+            "Completion Tokens": 29,
+            "Total Cost (USD)": 5.6099999999999995e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT * FROM unnest(ARRAY[1, 2, 3]);"
     ]
 }

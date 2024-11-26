@@ -24,5 +24,8 @@
     ],
     "Category": [
         "Aggregate Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT groupArraySorted(5)(str) FROM (SELECT toString(number) as str FROM numbers(5));"
     ]
 }

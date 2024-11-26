@@ -10,13 +10,22 @@
     ],
     "Description": [
         "REGEXP_SUBSTR()",
-        "返回满足正则表达式的子字符串（与 MySQL 不完全兼容，具体请参考正则函数与 MySQL 的兼容性）",
-        "REGEXP_SUBSTR(str, regexp, [start, [match, [match_type]]]) 函数用于基于正则表达式获取子字符串。"
+        "\u8fd4\u56de\u6ee1\u8db3\u6b63\u5219\u8868\u8fbe\u5f0f\u7684\u5b50\u5b57\u7b26\u4e32\uff08\u4e0e MySQL \u4e0d\u5b8c\u5168\u517c\u5bb9\uff0c\u5177\u4f53\u8bf7\u53c2\u8003\u6b63\u5219\u51fd\u6570\u4e0e MySQL \u7684\u517c\u5bb9\u6027\uff09",
+        "REGEXP_SUBSTR(str, regexp, [start, [match, [match_type]]]) \u51fd\u6570\u7528\u4e8e\u57fa\u4e8e\u6b63\u5219\u8868\u8fbe\u5f0f\u83b7\u53d6\u5b50\u5b57\u7b26\u4e32\u3002"
     ],
     "Examples": [
         "SELECT REGEXP_SUBSTR('This is TiDB','Ti.{2}');\n"
     ],
     "Category": [
-        "字符串函数"
+        "\u5b57\u7b26\u4e32\u51fd\u6570"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT REGEXP_SUBSTR('This is TiDB','Ti.{2}');"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT REGEXP_SUBSTR('This is TiDB','Ti.{2}');"
     ]
 }

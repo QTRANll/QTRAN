@@ -6,15 +6,33 @@
         "overlay"
     ],
     "Feature": [
-        "overlay ( bits bit PLACING newsubstring bit FROM start integer [ FOR count integer ] ) → bit"
+        "overlay ( bits bit PLACING newsubstring bit FROM start integer [ FOR count integer ] ) \u2192 bit"
     ],
     "Description": [
         "Replaces the substring of bits that starts at the start'th bit and extends for count bits with newsubstring. If count is omitted, it defaults to the length of newsubstring."
     ],
     "Examples": [
-        "overlay(B'01010101010101010' placing B'11111' from 2 for 3) → 0111110101010101010"
+        "overlay(B'01010101010101010' placing B'11111' from 2 for 3) \u2192 0111110101010101010"
     ],
     "Category": [
         "Bit String Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT overlay('101010'::bit PLACING '111'::bit FROM 2 FOR 3);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 322,
+            "Prompt Tokens": 287,
+            "Completion Tokens": 35,
+            "Total Cost (USD)": 6.405e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT overlay('101010'::bit PLACING '111'::bit FROM 2 FOR 3);"
     ]
 }

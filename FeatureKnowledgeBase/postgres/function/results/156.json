@@ -6,15 +6,33 @@
         "extract"
     ],
     "Feature": [
-        "extract ( field from interval ) → numeric"
+        "extract ( field from interval ) \u2192 numeric"
     ],
     "Description": [
-        "Get interval subfield; see Section 9.9.1"
+        "Get interval subfield; see Section\u00a09.9.1"
     ],
     "Examples": [
-        "extract(month from interval '2 years 3 months') → 3"
+        "extract(month from interval '2 years 3 months') \u2192 3"
     ],
     "Category": [
         "Date divide Time Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT EXTRACT(MONTH FROM INTERVAL '1 month');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 277,
+            "Prompt Tokens": 251,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 5.324999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT EXTRACT(MONTH FROM INTERVAL '1 month');"
     ]
 }

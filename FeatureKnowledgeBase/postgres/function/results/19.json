@@ -6,15 +6,33 @@
         "mod"
     ],
     "Feature": [
-        "mod ( y numeric_type, x numeric_type ) → numeric_type"
+        "mod ( y numeric_type, x numeric_type ) \u2192 numeric_type"
     ],
     "Description": [
         "Remainder of y/x; available for smallint, integer, bigint, and numeric"
     ],
     "Examples": [
-        "mod(9, 4) → 1"
+        "mod(9, 4) \u2192 1"
     ],
     "Category": [
         "Mathematical Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT MOD(10, 3);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 282,
+            "Prompt Tokens": 261,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 5.175e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT MOD(10, 3);"
     ]
 }

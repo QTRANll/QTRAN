@@ -6,15 +6,33 @@
         "@@ geometric_type"
     ],
     "Feature": [
-        "@@ geometric_type → point"
+        "@@ geometric_type \u2192 point"
     ],
     "Description": [
         "Computes the center point. Available for box, lseg, polygon, circle."
     ],
     "Examples": [
-        "@@ box '(2,2),(0,0)' → (1,1)"
+        "@@ box '(2,2),(0,0)' \u2192 (1,1)"
     ],
     "Category": [
         "Geometric Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT point(0, 0);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 279,
+            "Prompt Tokens": 258,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 5.13e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT point(0, 0);"
     ]
 }

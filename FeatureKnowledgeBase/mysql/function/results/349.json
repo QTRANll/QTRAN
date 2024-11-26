@@ -19,5 +19,31 @@
     "Category": [
         "Built-In Functions and Operators",
         "Spatial Analysis Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT ST_PointFromWKB('01010000005839B4C8765B5C0C0C00000000000000', 4326);",
+        "SELECT ST_PointFromWKB(0x01010000005839B4C8765B5C0C0C00000000000000, 4326);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 387,
+            "Prompt Tokens": 340,
+            "Completion Tokens": 47,
+            "Total Cost (USD)": 7.92e-05
+        },
+        {
+            "Total Tokens": 573,
+            "Prompt Tokens": 524,
+            "Completion Tokens": 49,
+            "Total Cost (USD)": 0.000108
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.OperationalError) (3037, 'Invalid GIS data provided to function st_pointfromwkb.')\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT ST_PointFromWKB(0x01010000005839B4C8765B5C0C0C00000000000000, 4326);"
     ]
 }

@@ -6,15 +6,41 @@
         "convert_from"
     ],
     "Feature": [
-        "convert_from ( bytes bytea, src_encoding name ) → text"
+        "convert_from ( bytes bytea, src_encoding name ) \u2192 text"
     ],
     "Description": [
-        "Converts a binary string representing text in encoding src_encoding to text in the database encoding (see Section 24.3.4 for available conversions)."
+        "Converts a binary string representing text in encoding src_encoding to text in the database encoding (see Section\u00a024.3.4 for available conversions)."
     ],
     "Examples": [
-        "convert_from('text_in_utf8', 'UTF8') → text_in_utf8"
+        "convert_from('text_in_utf8', 'UTF8') \u2192 text_in_utf8"
     ],
     "Category": [
         "Binary String Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT convert_from(your_bytea_column, 'UTF8');",
+        "SELECT convert_from(E'\\x48656c6c6f', 'UTF8');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 302,
+            "Prompt Tokens": 276,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 5.699999999999999e-05
+        },
+        {
+            "Total Tokens": 481,
+            "Prompt Tokens": 449,
+            "Completion Tokens": 32,
+            "Total Cost (USD)": 8.654999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedColumn) column \"your_bytea_column\" does not exist\nLINE 1: SELECT convert_from(your_bytea_column, 'UTF8');\n                            ^\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT convert_from(E'\\x48656c6c6f', 'UTF8');"
     ]
 }

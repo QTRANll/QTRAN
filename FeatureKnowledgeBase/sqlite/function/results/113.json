@@ -1,24 +1,37 @@
 {
-  "HTML": [
-    "https://sqlite.org/lang_datefunc.html"
-  ],
-  "Title": [
-    "Date And Time Functions"
-  ],
-  "Feature": [
-    "date(time-value, modifier, modifier, ...)"
-  ],
-  "Description": [
-    "The date(time-value, modifier, modifier, ...) function returns the date as text in the format: YYYY-MM-DD. The function accepts a time-value and zero or more modifiers to alter the date.",
-    "Parameters: time-value (e.g., 'now', '2024-08-21'), modifiers (e.g., '+1 day', 'start of month').",
-    "Returns: A string in the format YYYY-MM-DD."
-  ],
-  "Examples": [
-    "SELECT date(); -- Returns the current date.",
-    "SELECT date('now', '+1 day'); -- Returns the date one day after the current date.",
-    "SELECT date('2024-08-21'); -- Returns '2024-08-21'."
-  ],
-  "Category": [
-    "Date And Time Functions"
-  ]
+    "HTML": [
+        "https://sqlite.org/lang_datefunc.html"
+    ],
+    "Title": [
+        "Date And Time Functions"
+    ],
+    "Feature": [
+        "date(time-value, modifier, modifier, ...)"
+    ],
+    "Description": [
+        "The date(time-value, modifier, modifier, ...) function returns the date as text in the format: YYYY-MM-DD. The function accepts a time-value and zero or more modifiers to alter the date.",
+        "Parameters: time-value (e.g., 'now', '2024-08-21'), modifiers (e.g., '+1 day', 'start of month').",
+        "Returns: A string in the format YYYY-MM-DD."
+    ],
+    "Examples": [
+        "SELECT date(); -- Returns the current date.",
+        "SELECT date('now', '+1 day'); -- Returns the date one day after the current date.",
+        "SELECT date('2024-08-21'); -- Returns '2024-08-21'."
+    ],
+    "Category": [
+        "Date And Time Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT date();",
+        "SELECT date('now', '+1 day');",
+        "SELECT date('2024-08-21');"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT date();",
+        "SELECT date('now', '+1 day');",
+        "SELECT date('2024-08-21');"
+    ]
 }

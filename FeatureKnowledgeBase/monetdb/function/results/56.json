@@ -18,5 +18,31 @@
     ],
     "Category": [
         "Mathematics Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT sqrt(x);",
+        "SELECT sqrt(4);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 268,
+            "Prompt Tokens": 251,
+            "Completion Tokens": 17,
+            "Total Cost (USD)": 4.785e-05
+        },
+        {
+            "Total Tokens": 414,
+            "Prompt Tokens": 396,
+            "Completion Tokens": 18,
+            "Total Cost (USD)": 7.02e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: identifier 'x' unknown\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT sqrt(4);"
     ]
 }

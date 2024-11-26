@@ -6,15 +6,33 @@
         "cot"
     ],
     "Feature": [
-        "cot ( double precision ) → double precision"
+        "cot ( double precision ) \u2192 double precision"
     ],
     "Description": [
         "Cotangent, argument in radians"
     ],
     "Examples": [
-        "cot(0.5) → 1.830487721712452"
+        "cot(0.5) \u2192 1.830487721712452"
     ],
     "Category": [
         "Mathematical Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT cot(1.0);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 264,
+            "Prompt Tokens": 244,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 4.8599999999999995e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT cot(1.0);"
     ]
 }

@@ -18,5 +18,21 @@
     "Category": [
         "Window Functions"
     ],
-    "EffectiveSQLsRefined": []
+    "EffectiveSQLsRefined": [
+        "create table t1 (\n  pk int primary key,\n  a int,\n  b int\n);",
+        "insert into t1 values\n( 1 , 0, 10),\n( 2 , 0, 10),\n( 3 , 1, 10),\n( 4 , 1, 10),\n( 8 , 2, 10),\n( 5 , 2, 20),\n( 6 , 2, 20),\n( 7 , 2, 20),\n( 9 , 4, 20),\n(10 , 4, 20);",
+        "select pk, a, b,\n    rank() over (order by a) as rank,\n    percent_rank() over (order by a) as pct_rank,\n    cume_dist() over (order by a) as cume_dist\nfrom t1;",
+        "select pk, a, b,\n       percent_rank() over (order by pk) as pct_rank,\n       cume_dist() over (order by pk) as cume_dist\nfrom t1 order by pk;",
+        "select pk, a, b,\n        percent_rank() over (partition by a order by a) as pct_rank,\n        cume_dist() over (partition by a order by a) as cume_dist\nfrom t1;"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "create table t1 (\n  pk int primary key,\n  a int,\n  b int\n);",
+        "insert into t1 values\n( 1 , 0, 10),\n( 2 , 0, 10),\n( 3 , 1, 10),\n( 4 , 1, 10),\n( 8 , 2, 10),\n( 5 , 2, 20),\n( 6 , 2, 20),\n( 7 , 2, 20),\n( 9 , 4, 20),\n(10 , 4, 20);",
+        "select pk, a, b,\n    rank() over (order by a) as rank,\n    percent_rank() over (order by a) as pct_rank,\n    cume_dist() over (order by a) as cume_dist\nfrom t1;",
+        "select pk, a, b,\n       percent_rank() over (order by pk) as pct_rank,\n       cume_dist() over (order by pk) as cume_dist\nfrom t1 order by pk;",
+        "select pk, a, b,\n        percent_rank() over (partition by a order by a) as pct_rank,\n        cume_dist() over (partition by a order by a) as cume_dist\nfrom t1;"
+    ]
 }

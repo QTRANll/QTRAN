@@ -16,5 +16,39 @@
     ],
     "Category": [
         "Cast Conversion Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT blob 'hexadecimals';",
+        "SELECT blob '0x48656c6c6f';",
+        "SELECT blob '48656c6c6f';"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 286,
+            "Prompt Tokens": 266,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 5.19e-05
+        },
+        {
+            "Total Tokens": 453,
+            "Prompt Tokens": 427,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 7.965e-05
+        },
+        {
+            "Total Tokens": 631,
+            "Prompt Tokens": 607,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 0.00010544999999999999
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymonetdb.exceptions.OperationalError) 22M28!incorrect blob hexadecimals in: \"select blob 'hexadecimals';\"\n\n",
+        "(pymonetdb.exceptions.OperationalError) 22M28!incorrect blob 0x48656c6c6f in: \"select blob '0x48656c6c6f';\"\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT blob '48656c6c6f';"
     ]
 }

@@ -18,5 +18,31 @@
     "Category": [
         "Built-In Functions and Operators",
         "Spatial Analysis Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT ST_LineString(POINT(1, 1), POINT(2, 2));",
+        "SELECT LineString(POINT(1, 1), POINT(2, 2));"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 352,
+            "Prompt Tokens": 320,
+            "Completion Tokens": 32,
+            "Total Cost (USD)": 6.72e-05
+        },
+        {
+            "Total Tokens": 521,
+            "Prompt Tokens": 490,
+            "Completion Tokens": 31,
+            "Total Cost (USD)": 9.209999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.ST_LineString does not exist')\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT LineString(POINT(1, 1), POINT(2, 2));"
     ]
 }

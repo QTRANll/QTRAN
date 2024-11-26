@@ -6,7 +6,7 @@
         "pg_logical_slot_get_binary_changes"
     ],
     "Feature": [
-        "pg_logical_slot_get_binary_changes ( slot_name name, upto_lsn pg_lsn, upto_nchanges integer, VARIADIC options text[] ) → setof record ( lsn pg_lsn, xid xid, data bytea )"
+        "pg_logical_slot_get_binary_changes ( slot_name name, upto_lsn pg_lsn, upto_nchanges integer, VARIADIC options text[] ) \u2192 setof record ( lsn pg_lsn, xid xid, data bytea )"
     ],
     "Description": [
         "Behaves just like the pg_logical_slot_get_changes() function, except that changes are returned as bytea."
@@ -14,5 +14,53 @@
     "Examples": [],
     "Category": [
         "System Administration Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT * FROM pg_logical_slot_get_binary_changes('my_slot', '0/0', 10);",
+        "SELECT * FROM pg_logical_slot_get_binary_changes('my_slot', '0/0', 10) WHERE wal_level >= 'logical';",
+        "SELECT * FROM pg_logical_slot_get_binary_changes('my_slot', '0/0', 10);",
+        "SELECT * FROM pg_logical_slot_get_binary_changes('my_slot', '0/0', 10);",
+        "SELECT * FROM pg_logical_slot_get_binary_changes('my_slot', '0/0', 10);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 356,
+            "Prompt Tokens": 321,
+            "Completion Tokens": 35,
+            "Total Cost (USD)": 6.915e-05
+        },
+        {
+            "Total Tokens": 528,
+            "Prompt Tokens": 486,
+            "Completion Tokens": 42,
+            "Total Cost (USD)": 9.81e-05
+        },
+        {
+            "Total Tokens": 721,
+            "Prompt Tokens": 686,
+            "Completion Tokens": 35,
+            "Total Cost (USD)": 0.0001239
+        },
+        {
+            "Total Tokens": 886,
+            "Prompt Tokens": 851,
+            "Completion Tokens": 35,
+            "Total Cost (USD)": 0.00014864999999999998
+        },
+        {
+            "Total Tokens": 1051,
+            "Prompt Tokens": 1016,
+            "Completion Tokens": 35,
+            "Total Cost (USD)": 0.00017339999999999999
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.ObjectNotInPrerequisiteState) logical decoding requires wal_level >= logical\n\n",
+        "(psycopg2.errors.UndefinedColumn) column \"wal_level\" does not exist\nLINE 1: ...ot_get_binary_changes('my_slot', '0/0', 10) WHERE wal_level ...\n                                                             ^\n\n",
+        "(psycopg2.errors.ObjectNotInPrerequisiteState) logical decoding requires wal_level >= logical\n\n",
+        "(psycopg2.errors.ObjectNotInPrerequisiteState) logical decoding requires wal_level >= logical\n\n",
+        "(psycopg2.errors.ObjectNotInPrerequisiteState) logical decoding requires wal_level >= logical\n\n"
+    ],
+    "EffectiveSQLs": []
 }

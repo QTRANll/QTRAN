@@ -6,16 +6,34 @@
         "json_array_elements"
     ],
     "Feature": [
-        "json_array_elements ( json ) → setof json",
-        "jsonb_array_elements ( jsonb ) → setof jsonb"
+        "json_array_elements ( json ) \u2192 setof json",
+        "jsonb_array_elements ( jsonb ) \u2192 setof jsonb"
     ],
     "Description": [
         "Expands the top-level JSON array into a set of JSON values."
     ],
     "Examples": [
-        "select * from json_array_elements('[1,true, [2,false]]') →"
+        "select * from json_array_elements('[1,true, [2,false]]') \u2192"
     ],
     "Category": [
         "JSON Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT json_array_elements('[{\"key\": \"value1\"}, {\"key\": \"value2\"}]');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 311,
+            "Prompt Tokens": 275,
+            "Completion Tokens": 36,
+            "Total Cost (USD)": 6.285e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT json_array_elements('[{\"key\": \"value1\"}, {\"key\": \"value2\"}]');"
     ]
 }

@@ -20,5 +20,53 @@
     ],
     "Category": [
         "Loadable Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT version_tokens_lock_shared('lock1', 'lock2', 10);",
+        "SELECT version_tokens_lock_shared('lock1', 10);",
+        "SELECT version_tokens_lock_shared('lock1');",
+        "SELECT version_tokens_lock_shared();",
+        "SELECT * FROM version_tokens_lock_shared;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 425,
+            "Prompt Tokens": 396,
+            "Completion Tokens": 29,
+            "Total Cost (USD)": 7.68e-05
+        },
+        {
+            "Total Tokens": 587,
+            "Prompt Tokens": 562,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 9.93e-05
+        },
+        {
+            "Total Tokens": 746,
+            "Prompt Tokens": 724,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 0.00012179999999999998
+        },
+        {
+            "Total Tokens": 902,
+            "Prompt Tokens": 883,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 0.00014385
+        },
+        {
+            "Total Tokens": 1059,
+            "Prompt Tokens": 1039,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 0.00016784999999999996
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.version_tokens_lock_shared does not exist')\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.version_tokens_lock_shared does not exist')\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.version_tokens_lock_shared does not exist')\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.version_tokens_lock_shared does not exist')\n",
+        "(pymysql.err.ProgrammingError) (1146, \"Table 'knowledge_base_preprocess_mysql.version_tokens_lock_shared' doesn't exist\")\n"
+    ],
+    "EffectiveSQLs": []
 }

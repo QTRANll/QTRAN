@@ -6,15 +6,63 @@
         "ts_rank_cd"
     ],
     "Feature": [
-        "ts_rank_cd ( [ weights real[], ] vector tsvector, query tsquery [, normalization integer ] ) → real"
+        "ts_rank_cd ( [ weights real[], ] vector tsvector, query tsquery [, normalization integer ] ) \u2192 real"
     ],
     "Description": [
-        "Computes a score showing how well the vector matches the query, using a cover density algorithm. See Section 12.3.3 for details."
+        "Computes a score showing how well the vector matches the query, using a cover density algorithm. See Section\u00a012.3.3 for details."
     ],
     "Examples": [
-        "ts_rank_cd(to_tsvector('raining cats and dogs'), 'cat') → 0.1"
+        "ts_rank_cd(to_tsvector('raining cats and dogs'), 'cat') \u2192 0.1"
     ],
     "Category": [
         "Text Search Functions and Operators"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT ts_rank_cd(vector, query) AS rank_score;",
+        "SELECT ts_rank_cd(ARRAY[1, 1, 1], to_tsvector('example query')) AS rank_score;",
+        "SELECT ts_rank_cd(ARRAY[1.0, 1.0, 1.0]::real[], to_tsvector('example query')) AS rank_score;",
+        "SELECT ts_rank_cd(NULL::real[], to_tsvector('example query')) AS rank_score;",
+        "SELECT ts_rank_cd(NULL, to_tsvector('example query')) AS rank_score;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 314,
+            "Prompt Tokens": 290,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 5.789999999999999e-05
+        },
+        {
+            "Total Tokens": 497,
+            "Prompt Tokens": 458,
+            "Completion Tokens": 39,
+            "Total Cost (USD)": 9.21e-05
+        },
+        {
+            "Total Tokens": 728,
+            "Prompt Tokens": 680,
+            "Completion Tokens": 48,
+            "Total Cost (USD)": 0.0001308
+        },
+        {
+            "Total Tokens": 950,
+            "Prompt Tokens": 918,
+            "Completion Tokens": 32,
+            "Total Cost (USD)": 0.0001569
+        },
+        {
+            "Total Tokens": 1157,
+            "Prompt Tokens": 1127,
+            "Completion Tokens": 30,
+            "Total Cost (USD)": 0.00018705
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedColumn) column \"vector\" does not exist\nLINE 1: SELECT ts_rank_cd(vector, query) AS rank_score;\n                          ^\n\n",
+        "(psycopg2.errors.UndefinedFunction) function ts_rank_cd(integer[], tsvector) does not exist\nLINE 1: SELECT ts_rank_cd(ARRAY[1, 1, 1], to_tsvector('example query...\n               ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.\n\n",
+        "(psycopg2.errors.UndefinedFunction) function ts_rank_cd(real[], tsvector) does not exist\nLINE 1: SELECT ts_rank_cd(ARRAY[1.0, 1.0, 1.0]::real[], to_tsvector(...\n               ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.\n\n",
+        "(psycopg2.errors.UndefinedFunction) function ts_rank_cd(real[], tsvector) does not exist\nLINE 1: SELECT ts_rank_cd(NULL::real[], to_tsvector('example query')...\n               ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.\n\n",
+        "(psycopg2.errors.UndefinedFunction) function ts_rank_cd(unknown, tsvector) does not exist\nLINE 1: SELECT ts_rank_cd(NULL, to_tsvector('example query')) AS ran...\n               ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.\n\n"
+    ],
+    "EffectiveSQLs": []
 }

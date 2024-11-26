@@ -6,15 +6,33 @@
         "abbrev"
     ],
     "Feature": [
-        "abbrev ( cidr ) → text"
+        "abbrev ( cidr ) \u2192 text"
     ],
     "Description": [
-        "Creates an abbreviated display format as text. (The abbreviation consists of dropping all-zero octets to the right of the netmask; more examples are in Table 8.22.)"
+        "Creates an abbreviated display format as text. (The abbreviation consists of dropping all-zero octets to the right of the netmask; more examples are in Table\u00a08.22.)"
     ],
     "Examples": [
-        "abbrev(cidr '10.1.0.0/16') → 10.1/16"
+        "abbrev(cidr '10.1.0.0/16') \u2192 10.1/16"
     ],
     "Category": [
         "Network Address Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT abbrev('192.168.1.0/24');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 304,
+            "Prompt Tokens": 277,
+            "Completion Tokens": 27,
+            "Total Cost (USD)": 5.7749999999999994e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT abbrev('192.168.1.0/24');"
     ]
 }

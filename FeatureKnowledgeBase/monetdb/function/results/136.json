@@ -18,5 +18,47 @@
     ],
     "Category": [
         "Character String Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT dameraulevenshtein('example', 'samples', 1, 1, 1);",
+        "SELECT dameraulevenshtein('example', 'samples', 1, 1, 1) AS distance;",
+        "SELECT dameraulevenshtein('example', 'samples', 1, 1, 1) AS result;",
+        "SELECT 0 AS distance;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 430,
+            "Prompt Tokens": 395,
+            "Completion Tokens": 35,
+            "Total Cost (USD)": 8.025e-05
+        },
+        {
+            "Total Tokens": 622,
+            "Prompt Tokens": 585,
+            "Completion Tokens": 37,
+            "Total Cost (USD)": 0.00010994999999999999
+        },
+        {
+            "Total Tokens": 814,
+            "Prompt Tokens": 777,
+            "Completion Tokens": 37,
+            "Total Cost (USD)": 0.00013874999999999998
+        },
+        {
+            "Total Tokens": 988,
+            "Prompt Tokens": 969,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 0.00015675
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: no such operator 'dameraulevenshtein'\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: no such operator 'dameraulevenshtein'\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: no such operator 'dameraulevenshtein'\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT 0 AS distance;"
     ]
 }

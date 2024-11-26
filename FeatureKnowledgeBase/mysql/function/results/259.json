@@ -24,5 +24,47 @@
     "Category": [
         "Built-In Functions and Operators",
         "Window Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT RANK() OVER (ORDER BY val) AS rank FROM numbers;",
+        "SELECT RANK() OVER (ORDER BY val) AS `rank_value` FROM numbers;",
+        "SELECT RANK() OVER (ORDER BY 1) AS `rank_value`;",
+        "SELECT RANK() OVER (ORDER BY val) AS `rank_value` FROM (SELECT 1 AS val UNION ALL SELECT 2 UNION ALL SELECT 2 UNION ALL SELECT 3) AS numbers;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 842,
+            "Prompt Tokens": 815,
+            "Completion Tokens": 27,
+            "Total Cost (USD)": 0.00013844999999999998
+        },
+        {
+            "Total Tokens": 1034,
+            "Prompt Tokens": 1004,
+            "Completion Tokens": 30,
+            "Total Cost (USD)": 0.00016859999999999998
+        },
+        {
+            "Total Tokens": 1201,
+            "Prompt Tokens": 1172,
+            "Completion Tokens": 29,
+            "Total Cost (USD)": 0.00019319999999999995
+        },
+        {
+            "Total Tokens": 1404,
+            "Prompt Tokens": 1351,
+            "Completion Tokens": 53,
+            "Total Cost (USD)": 0.00023444999999999995
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.ProgrammingError) (1064, \"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'rank FROM numbers' at line 1\")\n",
+        "(pymysql.err.ProgrammingError) (1146, \"Table 'knowledge_base_preprocess_mysql.numbers' doesn't exist\")\n",
+        "(pymysql.err.OperationalError) (3592, \"Window '<unnamed window>': ORDER BY or PARTITION BY uses legacy position indication which is not supported, use expression.\")\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT RANK() OVER (ORDER BY val) AS `rank_value` FROM (SELECT 1 AS val UNION ALL SELECT 2 UNION ALL SELECT 2 UNION ALL SELECT 3) AS numbers;"
     ]
 }

@@ -1,0 +1,45 @@
+{
+    "HTML": [
+        "https://www.monetdb.org/documentation-Aug2024/user-guide/sql-manual/data-types/base-types"
+    ],
+    "Title": [
+        "TIMESTAMP ( Prec )"
+    ],
+    "Feature": [
+        "TIMESTAMP ( Prec )"
+    ],
+    "Description": [
+        "",
+        "combination of date and time including fractions of a seconds. Prec defines the number of fraction digits between 0 and 6"
+    ],
+    "Examples": [],
+    "Category": [
+        "Base Types"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT CURRENT_TIMESTAMP(3);",
+        "SELECT CURRENT_TIMESTAMP;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 295,
+            "Prompt Tokens": 276,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 5.2799999999999996e-05
+        },
+        {
+            "Total Tokens": 452,
+            "Prompt Tokens": 436,
+            "Completion Tokens": 16,
+            "Total Cost (USD)": 7.5e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymonetdb.exceptions.OperationalError) 42000!syntax error, unexpected sqlINT, expecting ')' in: \"select current_timestamp(3\"\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT CURRENT_TIMESTAMP;"
+    ]
+}

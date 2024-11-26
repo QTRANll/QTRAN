@@ -18,5 +18,23 @@
     ],
     "Category": [
         "Date Time Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT current_timestamp();"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 283,
+            "Prompt Tokens": 266,
+            "Completion Tokens": 17,
+            "Total Cost (USD)": 5.01e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT current_timestamp();"
     ]
 }

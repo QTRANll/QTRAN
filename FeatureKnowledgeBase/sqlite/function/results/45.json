@@ -14,5 +14,31 @@
     "Examples": [],
     "Category": [
         "Core SQL Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT upper(X);",
+        "SELECT upper('example_string');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 290,
+            "Prompt Tokens": 273,
+            "Completion Tokens": 17,
+            "Total Cost (USD)": 5.1149999999999996e-05
+        },
+        {
+            "Total Tokens": 426,
+            "Prompt Tokens": 407,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 7.245e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(sqlite3.OperationalError) no such column: X\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT upper('example_string');"
     ]
 }

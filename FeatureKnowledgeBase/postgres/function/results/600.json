@@ -6,8 +6,8 @@
         "pg_try_advisory_xact_lock_shared"
     ],
     "Feature": [
-        "pg_try_advisory_xact_lock_shared ( key bigint ) → boolean",
-        "pg_try_advisory_xact_lock_shared ( key1 integer, key2 integer ) → boolean"
+        "pg_try_advisory_xact_lock_shared ( key bigint ) \u2192 boolean",
+        "pg_try_advisory_xact_lock_shared ( key1 integer, key2 integer ) \u2192 boolean"
     ],
     "Description": [
         "Obtains a shared transaction-level advisory lock if available. This will either obtain the lock immediately and return true, or return false without waiting if the lock cannot be acquired immediately."
@@ -15,5 +15,23 @@
     "Examples": [],
     "Category": [
         "System Administration Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT pg_try_advisory_xact_lock_shared(1);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 352,
+            "Prompt Tokens": 326,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 6.45e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT pg_try_advisory_xact_lock_shared(1);"
     ]
 }

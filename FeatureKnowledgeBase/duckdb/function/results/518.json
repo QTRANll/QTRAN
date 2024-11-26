@@ -16,5 +16,39 @@
     ],
     "Category": [
         "Timestamp Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT time_bucket('1 hour', timestamp) FROM your_table;",
+        "SELECT time_bucket('1 hour', timestamp) FROM pg_tables;",
+        "SELECT time_bucket('1 hour', CURRENT_TIMESTAMP);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 356,
+            "Prompt Tokens": 331,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 6.465e-05
+        },
+        {
+            "Total Tokens": 542,
+            "Prompt Tokens": 517,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 9.255e-05
+        },
+        {
+            "Total Tokens": 744,
+            "Prompt Tokens": 721,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 0.00012194999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.CatalogException) Catalog Error: Table with name your_table does not exist!\nDid you mean \"pg_tables\"?\nLINE 1: ... time_bucket('1 hour', timestamp) FROM your_table;\n                                                  ^\n",
+        "(duckdb.duckdb.BinderException) Binder Error: Referenced column \"timestamp\" not found in FROM clause!\nCandidate bindings: \"pg_tables.tablename\", \"pg_tables.schemaname\", \"pg_tables.tablespace\"\nLINE 1: SELECT time_bucket('1 hour', timestamp) FROM pg_tables;\n                                     ^\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT time_bucket('1 hour', CURRENT_TIMESTAMP);"
     ]
 }

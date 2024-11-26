@@ -15,5 +15,53 @@
     "Examples": [],
     "Category": [
         "Pseudo-Types"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT anycompatiblenonarray(value1, value2);",
+        "SELECT anycompatiblenonarray(1, 2);",
+        "SELECT anycompatiblenonarray('text1', 'text2');",
+        "SELECT anycompatiblenonarray(NULL::text, NULL::text);",
+        "SELECT anycompatiblenonarray(1::numeric, 2::numeric);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 313,
+            "Prompt Tokens": 287,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 5.864999999999999e-05
+        },
+        {
+            "Total Tokens": 488,
+            "Prompt Tokens": 462,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 8.49e-05
+        },
+        {
+            "Total Tokens": 693,
+            "Prompt Tokens": 665,
+            "Completion Tokens": 28,
+            "Total Cost (USD)": 0.00011655
+        },
+        {
+            "Total Tokens": 901,
+            "Prompt Tokens": 873,
+            "Completion Tokens": 28,
+            "Total Cost (USD)": 0.00014774999999999999
+        },
+        {
+            "Total Tokens": 1110,
+            "Prompt Tokens": 1080,
+            "Completion Tokens": 30,
+            "Total Cost (USD)": 0.00018
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedColumn) column \"value1\" does not exist\nLINE 1: SELECT anycompatiblenonarray(value1, value2);\n                                     ^\n\n",
+        "(psycopg2.errors.UndefinedFunction) function anycompatiblenonarray(integer, integer) does not exist\nLINE 1: SELECT anycompatiblenonarray(1, 2);\n               ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.\n\n",
+        "(psycopg2.errors.UndefinedFunction) function anycompatiblenonarray(unknown, unknown) does not exist\nLINE 1: SELECT anycompatiblenonarray('text1', 'text2');\n               ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.\n\n",
+        "(psycopg2.errors.UndefinedFunction) function anycompatiblenonarray(text, text) does not exist\nLINE 1: SELECT anycompatiblenonarray(NULL::text, NULL::text);\n               ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.\n\n",
+        "(psycopg2.errors.UndefinedFunction) function anycompatiblenonarray(numeric, numeric) does not exist\nLINE 1: SELECT anycompatiblenonarray(1::numeric, 2::numeric);\n               ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.\n\n"
+    ],
+    "EffectiveSQLs": []
 }

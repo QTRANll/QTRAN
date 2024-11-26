@@ -28,5 +28,8 @@
     ],
     "Category": [
         "Type Conversion Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT    toDecimal256OrZero(toString(0.0001), 76) AS a,    toTypeName(a),    toDecimal256OrZero(toString('Inf'), 76) as b,    toTypeName(b)FORMAT Vertical;"
     ]
 }

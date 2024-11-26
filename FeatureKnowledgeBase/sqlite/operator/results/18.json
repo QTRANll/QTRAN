@@ -19,5 +19,23 @@
     ],
     "Category": [
         "Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT 'example' LIKE 'ex%'"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 341,
+            "Prompt Tokens": 320,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 6.0599999999999996e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT 'example' LIKE 'ex%'"
     ]
 }

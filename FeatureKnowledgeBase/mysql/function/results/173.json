@@ -23,5 +23,14 @@
     "Category": [
         "Built-In Functions and Operators",
         "JSON Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT JSON_REMOVE(@j, '$[1]');"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT JSON_REMOVE(@j, '$[1]');"
     ]
 }

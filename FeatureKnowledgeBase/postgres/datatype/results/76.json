@@ -15,5 +15,39 @@
     "Examples": [],
     "Category": [
         "Pseudo-Types"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT * FROM index_am_handler;",
+        "SELECT * FROM pg_index WHERE indexrelid = 'index_am_handler'::regclass;",
+        "SELECT * FROM pg_catalog.pg_am WHERE amname = 'index_am_handler';"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 274,
+            "Prompt Tokens": 255,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 4.9649999999999994e-05
+        },
+        {
+            "Total Tokens": 446,
+            "Prompt Tokens": 415,
+            "Completion Tokens": 31,
+            "Total Cost (USD)": 8.084999999999999e-05
+        },
+        {
+            "Total Tokens": 625,
+            "Prompt Tokens": 596,
+            "Completion Tokens": 29,
+            "Total Cost (USD)": 0.0001068
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedTable) relation \"index_am_handler\" does not exist\nLINE 1: SELECT * FROM index_am_handler;\n                      ^\n\n",
+        "(psycopg2.errors.UndefinedTable) relation \"index_am_handler\" does not exist\nLINE 1: SELECT * FROM pg_index WHERE indexrelid = 'index_am_handler'...\n                                                  ^\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT * FROM pg_catalog.pg_am WHERE amname = 'index_am_handler';"
     ]
 }

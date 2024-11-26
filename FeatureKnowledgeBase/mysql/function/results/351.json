@@ -20,5 +20,23 @@
     "Category": [
         "Built-In Functions and Operators",
         "Spatial Analysis Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT ST_PolyFromText('POLYGON((0 0, 1 1, 1 0, 0 0))');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 421,
+            "Prompt Tokens": 378,
+            "Completion Tokens": 43,
+            "Total Cost (USD)": 8.25e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT ST_PolyFromText('POLYGON((0 0, 1 1, 1 0, 0 0))');"
     ]
 }

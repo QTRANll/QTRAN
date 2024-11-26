@@ -21,5 +21,13 @@
         "SELECT STRCMP('text', 'text2');",
         "SELECT STRCMP('text2', 'text');",
         "SELECT STRCMP('text', 'text');"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT STRCMP('text', 'text2');",
+        "SELECT STRCMP('text2', 'text');",
+        "SELECT STRCMP('text', 'text');"
     ]
 }

@@ -18,5 +18,53 @@
     ],
     "Category": [
         "INET Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT sys.broadcast(inet);",
+        "SELECT sys.broadcast();",
+        "SELECT sys.broadcast();",
+        "SELECT sys.broadcast();",
+        "SELECT sys.broadcast();"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 280,
+            "Prompt Tokens": 261,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 5.0549999999999995e-05
+        },
+        {
+            "Total Tokens": 427,
+            "Prompt Tokens": 410,
+            "Completion Tokens": 17,
+            "Total Cost (USD)": 7.17e-05
+        },
+        {
+            "Total Tokens": 575,
+            "Prompt Tokens": 558,
+            "Completion Tokens": 17,
+            "Total Cost (USD)": 9.39e-05
+        },
+        {
+            "Total Tokens": 723,
+            "Prompt Tokens": 706,
+            "Completion Tokens": 17,
+            "Total Cost (USD)": 0.00011609999999999999
+        },
+        {
+            "Total Tokens": 871,
+            "Prompt Tokens": 854,
+            "Completion Tokens": 17,
+            "Total Cost (USD)": 0.0001383
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: identifier 'inet' unknown\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: no such operator 'broadcast'\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: no such operator 'broadcast'\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: no such operator 'broadcast'\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: no such operator 'broadcast'\n\n"
+    ],
+    "EffectiveSQLs": []
 }

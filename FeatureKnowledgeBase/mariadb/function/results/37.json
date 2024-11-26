@@ -17,5 +17,52 @@
     "Category": [
         "Dynamic Columns Functions"
     ],
-    "EffectiveSQLsRefined": []
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT COLUMN_JSON(dyncol_blob) FROM your_table;",
+        "SELECT COLUMN_JSON(dyncol_blob) FROM pinolo_temp_mariadb.dyncol_table;",
+        "SELECT COLUMN_JSON(dyncol_blob) FROM pinolo_temp_mariadb.default_table;",
+        "SELECT COLUMN_JSON(dyncol_blob) FROM pinolo_temp_mariadb.some_table;",
+        "SELECT COLUMN_JSON(dyncol_blob) FROM pinolo_temp_mariadb.any_table;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 294,
+            "Prompt Tokens": 270,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 5.49e-05
+        },
+        {
+            "Total Tokens": 461,
+            "Prompt Tokens": 429,
+            "Completion Tokens": 32,
+            "Total Cost (USD)": 8.355e-05
+        },
+        {
+            "Total Tokens": 627,
+            "Prompt Tokens": 597,
+            "Completion Tokens": 30,
+            "Total Cost (USD)": 0.00010754999999999999
+        },
+        {
+            "Total Tokens": 791,
+            "Prompt Tokens": 761,
+            "Completion Tokens": 30,
+            "Total Cost (USD)": 0.00013215
+        },
+        {
+            "Total Tokens": 955,
+            "Prompt Tokens": 925,
+            "Completion Tokens": 30,
+            "Total Cost (USD)": 0.00015675
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.ProgrammingError) (1146, \"Table 'pinolo_temp_mariadb.your_table' doesn't exist\")\n",
+        "(pymysql.err.ProgrammingError) (1146, \"Table 'pinolo_temp_mariadb.dyncol_table' doesn't exist\")\n",
+        "(pymysql.err.ProgrammingError) (1146, \"Table 'pinolo_temp_mariadb.default_table' doesn't exist\")\n",
+        "(pymysql.err.ProgrammingError) (1146, \"Table 'pinolo_temp_mariadb.some_table' doesn't exist\")\n",
+        "(pymysql.err.ProgrammingError) (1146, \"Table 'pinolo_temp_mariadb.any_table' doesn't exist\")\n"
+    ],
+    "EffectiveSQLs": []
 }

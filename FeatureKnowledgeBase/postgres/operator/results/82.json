@@ -6,15 +6,41 @@
         "geometric_type |&> geometric_type"
     ],
     "Feature": [
-        "geometric_type |&> geometric_type → boolean"
+        "geometric_type |&> geometric_type \u2192 boolean"
     ],
     "Description": [
         "Does first object not extend below second? Available for box, polygon, circle."
     ],
     "Examples": [
-        "box '(3,3),(0,0)' |&> box '(2,2),(0,0)' → t"
+        "box '(3,3),(0,0)' |&> box '(2,2),(0,0)' \u2192 t"
     ],
     "Category": [
         "Geometric Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT box1 |&> box2;",
+        "SELECT '((0,0),(1,1))'::box |&> '((1,1),(2,2))'::box;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 298,
+            "Prompt Tokens": 277,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 5.415e-05
+        },
+        {
+            "Total Tokens": 488,
+            "Prompt Tokens": 445,
+            "Completion Tokens": 43,
+            "Total Cost (USD)": 9.255e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedColumn) column \"box1\" does not exist\nLINE 1: SELECT box1 |&> box2;\n               ^\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT '((0,0),(1,1))'::box |&> '((1,1),(2,2))'::box;"
     ]
 }

@@ -7,10 +7,66 @@
     ],
     "Description": [
         "\nN\n            % M,\n            N\n            MOD M\n",
-        "\n            Modulo operation. Returns the remainder of\n            N divided by\n            M. For more information, see the\n            description for the MOD()\n            function in Section 14.6.2, “Mathematical Functions”.\n"
+        "\n            Modulo operation. Returns the remainder of\n            N divided by\n            M. For more information, see the\n            description for the MOD()\n            function in Section\u00a014.6.2, \u201cMathematical Functions\u201d.\n"
     ],
     "Examples": [],
     "Category": [
         "Arithmetic Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        [
+            "N % M",
+            "N MOD M"
+        ],
+        "N % M",
+        [
+            "SELECT N % M",
+            "SELECT N MOD M"
+        ],
+        "SELECT N % M",
+        "SELECT 1 % 2"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 336,
+            "Prompt Tokens": 310,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 6.209999999999999e-05
+        },
+        {
+            "Total Tokens": 467,
+            "Prompt Tokens": 451,
+            "Completion Tokens": 16,
+            "Total Cost (USD)": 7.725e-05
+        },
+        {
+            "Total Tokens": 652,
+            "Prompt Tokens": 622,
+            "Completion Tokens": 30,
+            "Total Cost (USD)": 0.0001113
+        },
+        {
+            "Total Tokens": 784,
+            "Prompt Tokens": 767,
+            "Completion Tokens": 17,
+            "Total Cost (USD)": 0.00012524999999999998
+        },
+        {
+            "Total Tokens": 930,
+            "Prompt Tokens": 911,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 0.00014805
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "expected string or bytes-like object, got 'list'",
+        "(pymysql.err.ProgrammingError) (1064, 'You have an error in your SQL syntax; check the manual that corresponds to your TiDB version for the right syntax to use line 1 column 1 near \"N % M\" ')\n",
+        "expected string or bytes-like object, got 'list'",
+        "(pymysql.err.OperationalError) (1054, \"Unknown column 'n' in 'field list'\")\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT 1 % 2"
     ]
 }

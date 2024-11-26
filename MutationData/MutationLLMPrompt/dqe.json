@@ -1,0 +1,3 @@
+{
+  "dqe": "Extract the predicate and related tables of the seed SQL, then synthesize five SQLs with the type if select, update and delete in the following formats:\nSELECT <table>.rowid [, <table>.rowid, ...] FROM <table> [, <table>, ...] WHERE <predicate>;\\nUPDATE <table> [, <table>, ...] SET <table>.updated = 1 [, <table>.updated = 1, ...] WHERE <predicate>;\\nSELECT <table>.rowid [, <table>.rowid, ...] FROM <table> [, <table>, ...] WHERE <table>.updated = 1 [OR <table>.updated = 1 OR ...];\\nDELETE FROM <table> [, <table>, ...] WHERE <predicate>;\\nSELECT <table>.rowid [, <table>.rowid, ...] FROM <table> [, <table>, ...];\n\nNote: The synthetic SQLs must belong to the same DBMS of the user-provided seed SQL."
+}

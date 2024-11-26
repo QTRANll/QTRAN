@@ -6,7 +6,7 @@
         "regr_avgx"
     ],
     "Feature": [
-        "regr_avgx ( Y double precision, X double precision ) → double precision"
+        "regr_avgx ( Y double precision, X double precision ) \u2192 double precision"
     ],
     "Description": [
         "Computes the average of the independent variable, sum(X)/N."
@@ -14,5 +14,39 @@
     "Examples": [],
     "Category": [
         "Aggregate Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT regr_avgx(Y, X) FROM your_table;",
+        "SELECT regr_avgx(Y, X);",
+        "SELECT regr_avgx(1, 2);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 294,
+            "Prompt Tokens": 269,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 5.535e-05
+        },
+        {
+            "Total Tokens": 463,
+            "Prompt Tokens": 441,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 7.934999999999999e-05
+        },
+        {
+            "Total Tokens": 629,
+            "Prompt Tokens": 605,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 0.00010514999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedTable) relation \"your_table\" does not exist\nLINE 1: SELECT regr_avgx(Y, X) FROM your_table;\n                                    ^\n\n",
+        "(psycopg2.errors.UndefinedColumn) column \"y\" does not exist\nLINE 1: SELECT regr_avgx(Y, X);\n                         ^\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT regr_avgx(1, 2);"
     ]
 }

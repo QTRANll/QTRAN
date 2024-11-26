@@ -19,5 +19,23 @@
     "Category": [
         "Built-In Functions and Operators",
         "Locking Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT IS_FREE_LOCK('my_lock');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 399,
+            "Prompt Tokens": 378,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 6.929999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT IS_FREE_LOCK('my_lock');"
     ]
 }

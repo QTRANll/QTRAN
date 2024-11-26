@@ -16,5 +16,23 @@
     ],
     "Category": [
         "Timestamp with Time Zone Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT date_trunc('hour', NOW());"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 296,
+            "Prompt Tokens": 274,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 5.43e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT date_trunc('hour', NOW());"
     ]
 }

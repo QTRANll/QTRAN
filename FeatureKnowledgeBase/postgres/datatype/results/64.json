@@ -15,5 +15,47 @@
     "Examples": [],
     "Category": [
         "Pseudo-Types"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT * FROM anyrange;",
+        "SELECT anyrange('[1,10]');",
+        "SELECT '[1,10]'::anyrange;",
+        "SELECT anyrange(NULL);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 282,
+            "Prompt Tokens": 264,
+            "Completion Tokens": 18,
+            "Total Cost (USD)": 5.04e-05
+        },
+        {
+            "Total Tokens": 443,
+            "Prompt Tokens": 420,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 7.679999999999998e-05
+        },
+        {
+            "Total Tokens": 603,
+            "Prompt Tokens": 581,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 0.00010034999999999999
+        },
+        {
+            "Total Tokens": 762,
+            "Prompt Tokens": 744,
+            "Completion Tokens": 18,
+            "Total Cost (USD)": 0.0001224
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedTable) relation \"anyrange\" does not exist\nLINE 1: SELECT * FROM anyrange;\n                      ^\n\n",
+        "(psycopg2.errors.FeatureNotSupported) cannot accept a value of type anyrange\nLINE 1: SELECT anyrange('[1,10]');\n                        ^\n\n",
+        "(psycopg2.errors.FeatureNotSupported) cannot accept a value of type anyrange\nLINE 1: SELECT '[1,10]'::anyrange;\n               ^\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT anyrange(NULL);"
     ]
 }

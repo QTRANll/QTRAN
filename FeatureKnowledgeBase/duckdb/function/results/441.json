@@ -16,5 +16,23 @@
     ],
     "Category": [
         "Text Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT strip_accents('Caf\u00e9')"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 275,
+            "Prompt Tokens": 254,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 5.07e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT strip_accents('Caf\u00e9')"
     ]
 }

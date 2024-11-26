@@ -19,5 +19,39 @@
     ],
     "Category": [
         "Lambda Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT array_filter(your_array, lambda x: x > 10)",
+        "SELECT array_filter(your_array, x -> x > 10)",
+        "SELECT array_filter(array[1, 2, 3, 4, 5], x -> x > 3)"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 316,
+            "Prompt Tokens": 289,
+            "Completion Tokens": 27,
+            "Total Cost (USD)": 5.9549999999999984e-05
+        },
+        {
+            "Total Tokens": 466,
+            "Prompt Tokens": 440,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 8.159999999999999e-05
+        },
+        {
+            "Total Tokens": 656,
+            "Prompt Tokens": 618,
+            "Completion Tokens": 38,
+            "Total Cost (USD)": 0.00011549999999999999
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.ParserException) Parser Error: syntax error at or near \"x\"\n",
+        "(duckdb.duckdb.BinderException) Binder Error: failed to bind function, either: Referenced column \"your_array\" not found in FROM clause!\n or: Referenced column \"your_array\" not found in FROM clause!\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT array_filter(array[1, 2, 3, 4, 5], x -> x > 3)"
     ]
 }

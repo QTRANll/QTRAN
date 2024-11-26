@@ -23,5 +23,10 @@
     ],
     "Category": [
         "Arrays Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT arrayEnumerateDenseRanked(1,[10, 20, 10, 30],1);",
+        "SELECT arrayEnumerateDenseRanked(1,[[10,10,30,20],[40,50,10,30]],2);",
+        "SELECT arrayEnumerateDenseRanked(2,[[10,10,30,20],[40,50,10,30]],2);"
     ]
 }

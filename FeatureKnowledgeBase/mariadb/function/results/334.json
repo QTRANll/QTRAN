@@ -15,5 +15,52 @@
     "Category": [
         "Geographic Functions"
     ],
-    "EffectiveSQLsRefined": []
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT ST_Relate(geom1, geom2, 'F***T****')",
+        "SELECT ST_Relate(geometry_a, geometry_b, 'F***T****')",
+        "SELECT ST_Relate(geometry1, geometry2, 'F***T****')",
+        "SELECT ST_Relate(geom, geom2, 'F***T****')",
+        "SELECT ST_Relate(geometry1, geometry2, 'F***T****')"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 321,
+            "Prompt Tokens": 291,
+            "Completion Tokens": 30,
+            "Total Cost (USD)": 6.164999999999998e-05
+        },
+        {
+            "Total Tokens": 483,
+            "Prompt Tokens": 453,
+            "Completion Tokens": 30,
+            "Total Cost (USD)": 8.595e-05
+        },
+        {
+            "Total Tokens": 645,
+            "Prompt Tokens": 615,
+            "Completion Tokens": 30,
+            "Total Cost (USD)": 0.00011025
+        },
+        {
+            "Total Tokens": 806,
+            "Prompt Tokens": 777,
+            "Completion Tokens": 29,
+            "Total Cost (USD)": 0.00013394999999999998
+        },
+        {
+            "Total Tokens": 967,
+            "Prompt Tokens": 937,
+            "Completion Tokens": 30,
+            "Total Cost (USD)": 0.00015855
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.OperationalError) (1054, \"Unknown column 'geom1' in 'field list'\")\n",
+        "(pymysql.err.OperationalError) (1054, \"Unknown column 'geometry_a' in 'field list'\")\n",
+        "(pymysql.err.OperationalError) (1054, \"Unknown column 'geometry1' in 'field list'\")\n",
+        "(pymysql.err.OperationalError) (1054, \"Unknown column 'geom' in 'field list'\")\n",
+        "(pymysql.err.OperationalError) (1054, \"Unknown column 'geometry1' in 'field list'\")\n"
+    ],
+    "EffectiveSQLs": []
 }

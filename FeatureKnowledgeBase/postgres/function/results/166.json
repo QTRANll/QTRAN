@@ -6,15 +6,33 @@
         "make_timestamp"
     ],
     "Feature": [
-        "make_timestamp ( year int, month int, day int, hour int, min int, sec double precision ) → timestamp"
+        "make_timestamp ( year int, month int, day int, hour int, min int, sec double precision ) \u2192 timestamp"
     ],
     "Description": [
         "Create timestamp from year, month, day, hour, minute and seconds fields (negative years signify BC)"
     ],
     "Examples": [
-        "make_timestamp(2013, 7, 15, 8, 15, 23.5) → 2013-07-15 08:15:23.5"
+        "make_timestamp(2013, 7, 15, 8, 15, 23.5) \u2192 2013-07-15 08:15:23.5"
     ],
     "Category": [
         "Date divide Time Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT make_timestamp(2023, 10, 5, 14, 30, 0);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 313,
+            "Prompt Tokens": 278,
+            "Completion Tokens": 35,
+            "Total Cost (USD)": 6.269999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT make_timestamp(2023, 10, 5, 14, 30, 0);"
     ]
 }

@@ -10,10 +10,28 @@
     ],
     "Description": [
         "SPACE()",
-        "返回指定数量的空格，形式为字符串"
+        "\u8fd4\u56de\u6307\u5b9a\u6570\u91cf\u7684\u7a7a\u683c\uff0c\u5f62\u5f0f\u4e3a\u5b57\u7b26\u4e32"
     ],
     "Examples": [],
     "Category": [
-        "字符串函数"
+        "\u5b57\u7b26\u4e32\u51fd\u6570"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT SPACE(5);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 267,
+            "Prompt Tokens": 249,
+            "Completion Tokens": 18,
+            "Total Cost (USD)": 4.815e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT SPACE(5);"
     ]
 }

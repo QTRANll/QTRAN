@@ -18,5 +18,23 @@
     "Category": [
         "Built-In Functions and Operators",
         "Mathematical Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT POWER(2, 3);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 300,
+            "Prompt Tokens": 279,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 5.445e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT POWER(2, 3);"
     ]
 }

@@ -17,5 +17,30 @@
     "Category": [
         "Geographic Functions"
     ],
-    "EffectiveSQLsRefined": []
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT INTERSECTS(g1, g2);",
+        "SELECT INTERSECTS(POINT(1, 1), POINT(2, 2));"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 332,
+            "Prompt Tokens": 309,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 6.014999999999999e-05
+        },
+        {
+            "Total Tokens": 496,
+            "Prompt Tokens": 464,
+            "Completion Tokens": 32,
+            "Total Cost (USD)": 8.879999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.OperationalError) (1054, \"Unknown column 'g1' in 'field list'\")\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT INTERSECTS(POINT(1, 1), POINT(2, 2));"
+    ]
 }

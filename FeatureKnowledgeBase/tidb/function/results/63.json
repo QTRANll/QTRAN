@@ -13,6 +13,17 @@
         "mysql> SELECT ATAN(2);\n        -> 1.1071487177941\nmysql> SELECT ATAN(-2);\n        -> -1.1071487177941"
     ],
     "Category": [
-        "数值函数与操作符"
+        "\u6570\u503c\u51fd\u6570\u4e0e\u64cd\u4f5c\u7b26"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT ATAN(2);",
+        "SELECT ATAN(-2);"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT ATAN(2);",
+        "SELECT ATAN(-2);"
     ]
 }

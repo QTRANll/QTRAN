@@ -20,6 +20,23 @@
         "mysql> SELECT MOD(34.5,3);\n        -> 1.5"
     ],
     "Category": [
-        "数值函数与操作符"
+        "\u6570\u503c\u51fd\u6570\u4e0e\u64cd\u4f5c\u7b26"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT MOD(234, 10);",
+        "SELECT 253 % 7;",
+        "SELECT MOD(29,9);",
+        "SELECT 29 MOD 9;",
+        "SELECT MOD(34.5,3);"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT MOD(234, 10);",
+        "SELECT 253 % 7;",
+        "SELECT MOD(29,9);",
+        "SELECT 29 MOD 9;",
+        "SELECT MOD(34.5,3);"
     ]
 }

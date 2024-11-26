@@ -6,15 +6,41 @@
         "age"
     ],
     "Feature": [
-        "age ( timestamp ) → interval"
+        "age ( timestamp ) \u2192 interval"
     ],
     "Description": [
         "Subtract argument from current_date (at midnight)"
     ],
     "Examples": [
-        "age(timestamp '1957-06-13') → 62 years 6 mons 10 days"
+        "age(timestamp '1957-06-13') \u2192 62 years 6 mons 10 days"
     ],
     "Category": [
         "Date divide Time Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT current_date - age;",
+        "SELECT current_date - age(current_date);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 263,
+            "Prompt Tokens": 245,
+            "Completion Tokens": 18,
+            "Total Cost (USD)": 4.755e-05
+        },
+        {
+            "Total Tokens": 420,
+            "Prompt Tokens": 399,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 7.245e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedColumn) column \"age\" does not exist\nLINE 1: SELECT current_date - age;\n                              ^\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT current_date - age(current_date);"
     ]
 }

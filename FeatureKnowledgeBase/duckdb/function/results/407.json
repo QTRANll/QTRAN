@@ -16,5 +16,23 @@
     ],
     "Category": [
         "Text Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT nfc_normalize('Your String Here')"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 299,
+            "Prompt Tokens": 276,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 5.519999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT nfc_normalize('Your String Here')"
     ]
 }

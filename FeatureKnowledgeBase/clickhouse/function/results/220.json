@@ -25,5 +25,9 @@
     ],
     "Category": [
         "Dates and Times Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT age('hour', toDateTime('2018-01-01 22:30:00'), toDateTime('2018-01-02 23:00:00'));",
+        "SELECT    toDate('2022-01-01') AS e,    toDate('2021-12-29') AS s,    age('day', s, e) AS day_age,    age('month', s, e) AS month__age,    age('year', s, e) AS year_age;"
     ]
 }

@@ -10,12 +10,21 @@
     ],
     "Description": [
         "LASTVAL()",
-        "LASTVAL() 函数返回当前会话中最近一次生成的序列值。"
+        "LASTVAL() \u51fd\u6570\u8fd4\u56de\u5f53\u524d\u4f1a\u8bdd\u4e2d\u6700\u8fd1\u4e00\u6b21\u751f\u6210\u7684\u5e8f\u5217\u503c\u3002"
     ],
     "Examples": [
         "SELECT LASTVAL(s1);\n"
     ],
     "Category": [
-        "序列函数"
+        "\u5e8f\u5217\u51fd\u6570"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT LASTVAL(s1);"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT LASTVAL(s1);"
     ]
 }

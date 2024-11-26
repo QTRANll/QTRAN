@@ -14,5 +14,23 @@
     "Examples": [],
     "Category": [
         "Core SQL Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT instr('Hello, World!', 'World');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 415,
+            "Prompt Tokens": 392,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 7.26e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT instr('Hello, World!', 'World');"
     ]
 }

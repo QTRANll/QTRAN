@@ -22,5 +22,12 @@
     "EffectiveSQLsRefined": [
         "SELECT INSTR('foobarbar', 'bar');",
         "SELECT INSTR('My', 'Maria');"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT INSTR('foobarbar', 'bar');",
+        "SELECT INSTR('My', 'Maria');"
     ]
 }

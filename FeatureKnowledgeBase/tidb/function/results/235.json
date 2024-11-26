@@ -10,7 +10,7 @@
     ],
     "Description": [
         "RANK()",
-        "RANK() 函数的作用类似于 DENSE_RANK()，但在处理具有相同值和排序条件的行时返回的排名是不连续的。这意味着它提供的是绝对排名。例如，排名 7 意味着有 6 个行的排名更靠前。",
+        "RANK() \u51fd\u6570\u7684\u4f5c\u7528\u7c7b\u4f3c\u4e8e DENSE_RANK()\uff0c\u4f46\u5728\u5904\u7406\u5177\u6709\u76f8\u540c\u503c\u548c\u6392\u5e8f\u6761\u4ef6\u7684\u884c\u65f6\u8fd4\u56de\u7684\u6392\u540d\u662f\u4e0d\u8fde\u7eed\u7684\u3002\u8fd9\u610f\u5473\u7740\u5b83\u63d0\u4f9b\u7684\u662f\u7edd\u5bf9\u6392\u540d\u3002\u4f8b\u5982\uff0c\u6392\u540d 7 \u610f\u5473\u7740\u6709 6 \u4e2a\u884c\u7684\u6392\u540d\u66f4\u9760\u524d\u3002",
         "SELECT\n    *,\n    RANK() OVER (ORDER BY n),\n    DENSE_RANK() OVER (ORDER BY n)\nFROM (\n    SELECT 5 AS 'n'\n    UNION ALL\n    SELECT 8\n    UNION ALL\n    SELECT 5\n    UNION ALL\n    SELECT 30\n    UNION ALL\n    SELECT 31\n    UNION ALL\n    SELECT 32) a;\n",
         "+----+--------------------------+--------------------------------+\n| n  | RANK() OVER (ORDER BY n) | DENSE_RANK() OVER (ORDER BY n) |\n+----+--------------------------+--------------------------------+\n|  5 |                        1 |                              1 |\n|  5 |                        1 |                              1 |\n|  8 |                        3 |                              2 |\n| 30 |                        4 |                              3 |\n| 31 |                        5 |                              4 |\n| 32 |                        6 |                              5 |\n+----+--------------------------+--------------------------------+\n6 rows in set (0.00 sec)\n"
     ],
@@ -18,6 +18,15 @@
         "SELECT\n    *,\n    RANK() OVER (ORDER BY n),\n    DENSE_RANK() OVER (ORDER BY n)\nFROM (\n    SELECT 5 AS 'n'\n    UNION ALL\n    SELECT 8\n    UNION ALL\n    SELECT 5\n    UNION ALL\n    SELECT 30\n    UNION ALL\n    SELECT 31\n    UNION ALL\n    SELECT 32) a;\n"
     ],
     "Category": [
-        "窗口函数"
+        "\u7a97\u53e3\u51fd\u6570"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT\n    *,\n    RANK() OVER (ORDER BY n),\n    DENSE_RANK() OVER (ORDER BY n)\nFROM (\n    SELECT 5 AS 'n'\n    UNION ALL\n    SELECT 8\n    UNION ALL\n    SELECT 5\n    UNION ALL\n    SELECT 30\n    UNION ALL\n    SELECT 31\n    UNION ALL\n    SELECT 32) a;"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT\n    *,\n    RANK() OVER (ORDER BY n),\n    DENSE_RANK() OVER (ORDER BY n)\nFROM (\n    SELECT 5 AS 'n'\n    UNION ALL\n    SELECT 8\n    UNION ALL\n    SELECT 5\n    UNION ALL\n    SELECT 30\n    UNION ALL\n    SELECT 31\n    UNION ALL\n    SELECT 32) a;"
     ]
 }

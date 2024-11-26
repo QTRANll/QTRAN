@@ -10,8 +10,8 @@
     ],
     "Description": [
         "REGEXP_LIKE()",
-        "判断字符串是否满足正则表达式（与 MySQL 不完全兼容，具体请参考正则函数与 MySQL 的兼容性）",
-        "REGEXP_LIKE(str, regex, [match_type]) 函数用于判断正则表达式是否匹配字符串。可选的 match_type 参数可以用于更改匹配行为。"
+        "\u5224\u65ad\u5b57\u7b26\u4e32\u662f\u5426\u6ee1\u8db3\u6b63\u5219\u8868\u8fbe\u5f0f\uff08\u4e0e MySQL \u4e0d\u5b8c\u5168\u517c\u5bb9\uff0c\u5177\u4f53\u8bf7\u53c2\u8003\u6b63\u5219\u51fd\u6570\u4e0e MySQL \u7684\u517c\u5bb9\u6027\uff09",
+        "REGEXP_LIKE(str, regex, [match_type]) \u51fd\u6570\u7528\u4e8e\u5224\u65ad\u6b63\u5219\u8868\u8fbe\u5f0f\u662f\u5426\u5339\u914d\u5b57\u7b26\u4e32\u3002\u53ef\u9009\u7684 match_type \u53c2\u6570\u53ef\u4ee5\u7528\u4e8e\u66f4\u6539\u5339\u914d\u884c\u4e3a\u3002"
     ],
     "Examples": [
         "SELECT REGEXP_LIKE('abc','^a');\n",
@@ -19,6 +19,19 @@
         "SELECT REGEXP_LIKE('abc','^A','i');\n"
     ],
     "Category": [
-        "字符串函数"
+        "\u5b57\u7b26\u4e32\u51fd\u6570"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT REGEXP_LIKE('abc','^a');",
+        "SELECT REGEXP_LIKE('abc','^A');",
+        "SELECT REGEXP_LIKE('abc','^A','i');"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT REGEXP_LIKE('abc','^a');",
+        "SELECT REGEXP_LIKE('abc','^A');",
+        "SELECT REGEXP_LIKE('abc','^A','i');"
     ]
 }

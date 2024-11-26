@@ -6,7 +6,7 @@
         "covar_samp"
     ],
     "Feature": [
-        "covar_samp ( Y double precision, X double precision ) → double precision"
+        "covar_samp ( Y double precision, X double precision ) \u2192 double precision"
     ],
     "Description": [
         "Computes the sample covariance."
@@ -14,5 +14,53 @@
     "Examples": [],
     "Category": [
         "Aggregate Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT covar_samp(Y, X) FROM your_table;",
+        "SELECT covar_samp(Y, X);",
+        "SELECT covar_samp(value_y, value_x);",
+        "SELECT covar_samp(column1, column2);",
+        "SELECT covar_samp(a, b);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 286,
+            "Prompt Tokens": 261,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 5.4149999999999995e-05
+        },
+        {
+            "Total Tokens": 455,
+            "Prompt Tokens": 433,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 7.814999999999999e-05
+        },
+        {
+            "Total Tokens": 621,
+            "Prompt Tokens": 597,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 0.00010394999999999999
+        },
+        {
+            "Total Tokens": 790,
+            "Prompt Tokens": 766,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 0.0001293
+        },
+        {
+            "Total Tokens": 957,
+            "Prompt Tokens": 935,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 0.00015345
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedTable) relation \"your_table\" does not exist\nLINE 1: SELECT covar_samp(Y, X) FROM your_table;\n                                     ^\n\n",
+        "(psycopg2.errors.UndefinedColumn) column \"y\" does not exist\nLINE 1: SELECT covar_samp(Y, X);\n                          ^\n\n",
+        "(psycopg2.errors.UndefinedColumn) column \"value_y\" does not exist\nLINE 1: SELECT covar_samp(value_y, value_x);\n                          ^\n\n",
+        "(psycopg2.errors.UndefinedColumn) column \"column1\" does not exist\nLINE 1: SELECT covar_samp(column1, column2);\n                          ^\n\n",
+        "(psycopg2.errors.UndefinedColumn) column \"a\" does not exist\nLINE 1: SELECT covar_samp(a, b);\n                          ^\n\n"
+    ],
+    "EffectiveSQLs": []
 }

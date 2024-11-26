@@ -18,5 +18,23 @@
     ],
     "Category": [
         "Character String Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT ltrim('    Hello World');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 281,
+            "Prompt Tokens": 260,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 5.16e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT ltrim('    Hello World');"
     ]
 }

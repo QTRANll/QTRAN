@@ -26,5 +26,9 @@
     ],
     "Category": [
         "Arrays Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT arrayAvg([1, 2, 4]) AS res;",
+        "SELECT arrayAvg(x -> (x * x), [2, 4]) AS res;"
     ]
 }

@@ -19,5 +19,23 @@
     "Category": [
         "Built-In Functions and Operators",
         "String Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT UCASE('hello world');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 323,
+            "Prompt Tokens": 303,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 5.7449999999999994e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT UCASE('hello world');"
     ]
 }

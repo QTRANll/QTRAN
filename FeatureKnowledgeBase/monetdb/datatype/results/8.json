@@ -1,0 +1,61 @@
+{
+    "HTML": [
+        "https://www.monetdb.org/documentation-Aug2024/user-guide/sql-manual/data-types/base-types"
+    ],
+    "Title": [
+        "BINARY LARGE OBJECT ( length )"
+    ],
+    "Feature": [
+        "BINARY LARGE OBJECT ( length )"
+    ],
+    "Description": [
+        "BLOB ( length )",
+        "bytes string with length upperbound limit between 1 and 2147483647"
+    ],
+    "Examples": [],
+    "Category": [
+        "Base Types"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "CREATE TABLE example_table (data BINARY LARGE OBJECT (2147483647));",
+        "CREATE TABLE new_table (data BINARY LARGE OBJECT (2147483647));",
+        "CREATE TABLE another_table (data BINARY LARGE OBJECT (2147483647));",
+        "CREATE TABLE yet_another_table (data BINARY LARGE OBJECT (2147483647));"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 309,
+            "Prompt Tokens": 280,
+            "Completion Tokens": 29,
+            "Total Cost (USD)": 5.9399999999999994e-05
+        },
+        {
+            "Total Tokens": 475,
+            "Prompt Tokens": 446,
+            "Completion Tokens": 29,
+            "Total Cost (USD)": 8.43e-05
+        },
+        {
+            "Total Tokens": 641,
+            "Prompt Tokens": 612,
+            "Completion Tokens": 29,
+            "Total Cost (USD)": 0.0001092
+        },
+        {
+            "Total Tokens": 809,
+            "Prompt Tokens": 778,
+            "Completion Tokens": 31,
+            "Total Cost (USD)": 0.00013529999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymonetdb.exceptions.OperationalError) 42S01!CREATE TABLE: name 'example_table' already in use\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42S01!CREATE TABLE: name 'new_table' already in use\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42S01!CREATE TABLE: name 'another_table' already in use\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "CREATE TABLE yet_another_table (data BINARY LARGE OBJECT (2147483647));"
+    ]
+}

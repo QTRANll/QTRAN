@@ -6,15 +6,33 @@
         "setweight"
     ],
     "Feature": [
-        "setweight ( vector tsvector, weight \"char\", lexemes text[] ) → tsvector"
+        "setweight ( vector tsvector, weight \"char\", lexemes text[] ) \u2192 tsvector"
     ],
     "Description": [
         "Assigns the specified weight to elements of the vector that are listed in lexemes. The strings in lexemes are taken as lexemes as-is, without further processing. Strings that do not match any lexeme in vector are ignored."
     ],
     "Examples": [
-        "setweight('fat:2,4 cat:3 rat:5,6B'::tsvector, 'A', '{cat,rat}') → 'cat':3A 'fat':2,4 'rat':5A,6A"
+        "setweight('fat:2,4 cat:3 rat:5,6B'::tsvector, 'A', '{cat,rat}') \u2192 'cat':3A 'fat':2,4 'rat':5A,6A"
     ],
     "Category": [
         "Text Search Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT setweight('your_tsvector', 'A', ARRAY['lexeme1', 'lexeme2']);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 337,
+            "Prompt Tokens": 301,
+            "Completion Tokens": 36,
+            "Total Cost (USD)": 6.675e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT setweight('your_tsvector', 'A', ARRAY['lexeme1', 'lexeme2']);"
     ]
 }

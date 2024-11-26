@@ -3,18 +3,36 @@
         "https://docs.pingcap.com/zh/tidb/v8.3/data-type-string"
     ],
     "Title": [
-        "BLOB 类型"
+        "BLOB \u7c7b\u578b"
     ],
     "Feature": [
-        "BLOB 类型"
+        "BLOB \u7c7b\u578b"
     ],
     "Description": [
-        "BLOB 类型",
-        "二进制大文件。M 表示最大列长度，单位是字节，范围是 0 到 65535。",
+        "BLOB \u7c7b\u578b",
+        "\u4e8c\u8fdb\u5236\u5927\u6587\u4ef6\u3002M \u8868\u793a\u6700\u5927\u5217\u957f\u5ea6\uff0c\u5355\u4f4d\u662f\u5b57\u8282\uff0c\u8303\u56f4\u662f 0 \u5230 65535\u3002",
         "BLOB[(M)]\n"
     ],
     "Examples": [],
     "Category": [
-        "字符串类型"
+        "\u5b57\u7b26\u4e32\u7c7b\u578b"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "CREATE TABLE example_table (data BLOB);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 303,
+            "Prompt Tokens": 281,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 5.535e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "CREATE TABLE example_table (data BLOB);"
     ]
 }

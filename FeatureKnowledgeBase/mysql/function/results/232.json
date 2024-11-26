@@ -18,5 +18,53 @@
     "Category": [
         "Built-In Functions and Operators",
         "Spatial Analysis Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT ST_MultiPolygon(Polygon1, Polygon2);",
+        "SELECT MultiPolygon(Polygon1, Polygon2);",
+        "SELECT MultiPolygon(GeomFromText('POLYGON((...))'), GeomFromText('POLYGON((...))'));",
+        "SELECT MultiPolygon('POLYGON((...))');",
+        "SELECT MultiPolygon(Polygon('POLYGON((0 0, 0 1, 1 1, 1 0, 0 0))'));"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 327,
+            "Prompt Tokens": 302,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 6.0299999999999995e-05
+        },
+        {
+            "Total Tokens": 489,
+            "Prompt Tokens": 466,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 8.369999999999999e-05
+        },
+        {
+            "Total Tokens": 663,
+            "Prompt Tokens": 625,
+            "Completion Tokens": 38,
+            "Total Cost (USD)": 0.00011654999999999999
+        },
+        {
+            "Total Tokens": 825,
+            "Prompt Tokens": 802,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 0.0001341
+        },
+        {
+            "Total Tokens": 1011,
+            "Prompt Tokens": 964,
+            "Completion Tokens": 47,
+            "Total Cost (USD)": 0.0001728
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.ST_MultiPolygon does not exist')\n",
+        "(pymysql.err.OperationalError) (1054, \"Unknown column 'Polygon1' in 'field list'\")\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.GeomFromText does not exist')\n",
+        "(pymysql.err.DataError) (1367, \"Illegal non geometric ''POLYGON((...))'' value found during parsing\")\n",
+        "(pymysql.err.DataError) (1367, \"Illegal non geometric ''POLYGON((0 0, 0 1, 1 1, 1 0, 0 0))'' value found during parsing\")\n"
+    ],
+    "EffectiveSQLs": []
 }

@@ -6,15 +6,33 @@
         "date - date"
     ],
     "Feature": [
-        "date - date → integer"
+        "date - date \u2192 integer"
     ],
     "Description": [
         "Subtract dates, producing the number of days elapsed"
     ],
     "Examples": [
-        "date '2001-10-01' - date '2001-09-28' → 3"
+        "date '2001-10-01' - date '2001-09-28' \u2192 3"
     ],
     "Category": [
         "Date divide Time Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT '2023-10-01'::date - '2023-09-01'::date;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 285,
+            "Prompt Tokens": 250,
+            "Completion Tokens": 35,
+            "Total Cost (USD)": 5.85e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT '2023-10-01'::date - '2023-09-01'::date;"
     ]
 }

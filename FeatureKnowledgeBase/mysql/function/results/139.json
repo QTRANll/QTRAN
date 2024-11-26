@@ -17,5 +17,31 @@
     "Category": [
         "Built-In Functions and Operators",
         "Internal Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT INTERNAL_IS_ENABLED_ROLE('example_role');",
+        "SELECT 'Access to native function is rejected.' AS error_message;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 295,
+            "Prompt Tokens": 273,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 5.4149999999999995e-05
+        },
+        {
+            "Total Tokens": 459,
+            "Prompt Tokens": 434,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 8.01e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.OperationalError) (3566, \"Access to native function 'INTERNAL_IS_ENABLED_ROLE' is rejected.\")\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT 'Access to native function is rejected.' AS error_message;"
     ]
 }

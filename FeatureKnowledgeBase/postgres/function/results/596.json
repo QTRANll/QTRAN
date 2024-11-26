@@ -6,8 +6,8 @@
         "pg_advisory_xact_lock_shared"
     ],
     "Feature": [
-        "pg_advisory_xact_lock_shared ( key bigint ) → void",
-        "pg_advisory_xact_lock_shared ( key1 integer, key2 integer ) → void"
+        "pg_advisory_xact_lock_shared ( key bigint ) \u2192 void",
+        "pg_advisory_xact_lock_shared ( key1 integer, key2 integer ) \u2192 void"
     ],
     "Description": [
         "Obtains a shared transaction-level advisory lock, waiting if necessary."
@@ -15,5 +15,34 @@
     "Examples": [],
     "Category": [
         "System Administration Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        [
+            "SELECT pg_advisory_xact_lock_shared(1);",
+            "SELECT pg_advisory_xact_lock_shared(1, 2);"
+        ],
+        "SELECT pg_advisory_xact_lock_shared(1);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 348,
+            "Prompt Tokens": 299,
+            "Completion Tokens": 49,
+            "Total Cost (USD)": 7.424999999999999e-05
+        },
+        {
+            "Total Tokens": 495,
+            "Prompt Tokens": 470,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 8.549999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "expected string or bytes-like object, got 'list'",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT pg_advisory_xact_lock_shared(1);"
     ]
 }

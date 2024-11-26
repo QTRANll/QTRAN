@@ -6,15 +6,33 @@
         "network"
     ],
     "Feature": [
-        "network ( inet ) → cidr"
+        "network ( inet ) \u2192 cidr"
     ],
     "Description": [
         "Returns the network part of the address, zeroing out whatever is to the right of the netmask. (This is equivalent to casting the value to cidr.)"
     ],
     "Examples": [
-        "network(inet '192.168.1.5/24') → 192.168.1.0/24"
+        "network(inet '192.168.1.5/24') \u2192 192.168.1.0/24"
     ],
     "Category": [
         "Network Address Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT network('192.168.1.10/24');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 296,
+            "Prompt Tokens": 270,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 5.6099999999999995e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT network('192.168.1.10/24');"
     ]
 }

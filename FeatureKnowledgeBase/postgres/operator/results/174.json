@@ -6,15 +6,57 @@
         "anymultirange >> anyrange"
     ],
     "Feature": [
-        "anymultirange >> anyrange → boolean"
+        "anymultirange >> anyrange \u2192 boolean"
     ],
     "Description": [
         "Is the multirange strictly right of the range?"
     ],
     "Examples": [
-        "'{[50,60)}'::int8multirange >> int8range(20,30) → t"
+        "'{[50,60)}'::int8multirange >> int8range(20,30) \u2192 t"
     ],
     "Category": [
         "Range divide Multirange Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT '[1, 5]'::anymultirange >> '[2, 3]'::anyrange;",
+        "SELECT '[[1, 5]]'::anymultirange >> '[2, 3]'::anyrange;",
+        "SELECT '[[1, 5), (6, 10]]'::int4multirange >> '[2, 3]'::int4range;",
+        "SELECT '{[1, 5), [6, 10]}'::int4multirange >> '[2, 3]'::int4range;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 303,
+            "Prompt Tokens": 268,
+            "Completion Tokens": 35,
+            "Total Cost (USD)": 6.12e-05
+        },
+        {
+            "Total Tokens": 501,
+            "Prompt Tokens": 464,
+            "Completion Tokens": 37,
+            "Total Cost (USD)": 9.18e-05
+        },
+        {
+            "Total Tokens": 709,
+            "Prompt Tokens": 664,
+            "Completion Tokens": 45,
+            "Total Cost (USD)": 0.0001266
+        },
+        {
+            "Total Tokens": 939,
+            "Prompt Tokens": 894,
+            "Completion Tokens": 45,
+            "Total Cost (USD)": 0.00016109999999999999
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.FeatureNotSupported) cannot accept a value of type anymultirange\nLINE 1: SELECT '[1, 5]'::anymultirange >> '[2, 3]'::anyrange;\n               ^\n\n",
+        "(psycopg2.errors.FeatureNotSupported) cannot accept a value of type anymultirange\nLINE 1: SELECT '[[1, 5]]'::anymultirange >> '[2, 3]'::anyrange;\n               ^\n\n",
+        "(psycopg2.errors.InvalidTextRepresentation) malformed multirange literal: \"[[1, 5), (6, 10]]\"\nLINE 1: SELECT '[[1, 5), (6, 10]]'::int4multirange >> '[2, 3]'::int4...\n               ^\nDETAIL:  Missing left brace.\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT '{[1, 5), [6, 10]}'::int4multirange >> '[2, 3]'::int4range;"
     ]
 }

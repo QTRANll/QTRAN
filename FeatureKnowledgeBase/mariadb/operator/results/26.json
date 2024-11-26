@@ -21,5 +21,22 @@
     ],
     "Category": [
         "Comparison Operators"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT 1 BETWEEN 2 AND 3;",
+        "SELECT 'b' BETWEEN 'a' AND 'c';",
+        "SELECT 2 BETWEEN 2 AND '3';",
+        "SELECT 2 BETWEEN 2 AND 'x-3';",
+        "SELECT 1 BETWEEN 1 AND NULL;"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT 1 BETWEEN 2 AND 3;",
+        "SELECT 'b' BETWEEN 'a' AND 'c';",
+        "SELECT 2 BETWEEN 2 AND '3';",
+        "SELECT 2 BETWEEN 2 AND 'x-3';",
+        "SELECT 1 BETWEEN 1 AND NULL;"
     ]
 }

@@ -6,7 +6,7 @@
         "pg_replication_origin_advance"
     ],
     "Feature": [
-        "pg_replication_origin_advance ( node_name text, lsn pg_lsn ) → void"
+        "pg_replication_origin_advance ( node_name text, lsn pg_lsn ) \u2192 void"
     ],
     "Description": [
         "Sets replication progress for the given node to the given location. This is primarily useful for setting up the initial location, or setting a new location after configuration changes and similar. Be aware that careless use of this function can lead to inconsistently replicated data."
@@ -14,5 +14,47 @@
     "Examples": [],
     "Category": [
         "System Administration Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT pg_replication_origin_advance('my_node', '0/3000020');",
+        "SELECT pg_replication_origin_advance('new_node', '0/3000020');",
+        "SELECT pg_replication_origin_advance('default_node', '0/3000020');",
+        "SELECT pg_replication_origin_advance('my_replication_origin', '0/3000020');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 345,
+            "Prompt Tokens": 314,
+            "Completion Tokens": 31,
+            "Total Cost (USD)": 6.57e-05
+        },
+        {
+            "Total Tokens": 505,
+            "Prompt Tokens": 474,
+            "Completion Tokens": 31,
+            "Total Cost (USD)": 8.969999999999998e-05
+        },
+        {
+            "Total Tokens": 665,
+            "Prompt Tokens": 634,
+            "Completion Tokens": 31,
+            "Total Cost (USD)": 0.0001137
+        },
+        {
+            "Total Tokens": 827,
+            "Prompt Tokens": 794,
+            "Completion Tokens": 33,
+            "Total Cost (USD)": 0.0001389
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedObject) replication origin \"my_node\" does not exist\n\n",
+        "(psycopg2.errors.UndefinedObject) replication origin \"new_node\" does not exist\n\n",
+        "(psycopg2.errors.UndefinedObject) replication origin \"default_node\" does not exist\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT pg_replication_origin_advance('my_replication_origin', '0/3000020');"
     ]
 }

@@ -16,5 +16,39 @@
     ],
     "Category": [
         "Aggregate Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT max_by(column1, column2, 5)",
+        "SELECT max_by(arg, val, 5) FROM my_table",
+        "SELECT max_by(arg, val, 5) FROM (SELECT 1 AS arg, 10 AS val UNION ALL SELECT 2 AS arg, 20 AS val)"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 303,
+            "Prompt Tokens": 279,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 5.625e-05
+        },
+        {
+            "Total Tokens": 484,
+            "Prompt Tokens": 458,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 8.43e-05
+        },
+        {
+            "Total Tokens": 692,
+            "Prompt Tokens": 645,
+            "Completion Tokens": 47,
+            "Total Cost (USD)": 0.00012495
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.BinderException) Binder Error: Referenced column \"column1\" not found in FROM clause!\nLINE 1: SELECT max_by(column1, column2, 5)\n                      ^\n",
+        "(duckdb.duckdb.CatalogException) Catalog Error: Table with name my_table does not exist!\nDid you mean \"pg_tables\"?\nLINE 1: SELECT max_by(arg, val, 5) FROM my_table\n                                        ^\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT max_by(arg, val, 5) FROM (SELECT 1 AS arg, 10 AS val UNION ALL SELECT 2 AS arg, 20 AS val)"
     ]
 }

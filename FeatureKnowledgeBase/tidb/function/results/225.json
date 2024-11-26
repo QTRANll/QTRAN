@@ -8,10 +8,36 @@
         "\nSTDDEV_SAMP(expr)\n            [over_clause]\n",
         "\n            Returns the sample standard deviation of\n            expr (the square root of\n            VAR_SAMP().\n          ",
         "\n            If there are no matching rows, or if\n            expr is NULL,\n            STDDEV_SAMP() returns\n            NULL.\n          ",
-        "\n            This function executes as a window function if\n            over_clause is present.\n            over_clause is as described in\n            Section 14.20.2, “Window Function Concepts and Syntax”.\n          "
+        "\n            This function executes as a window function if\n            over_clause is present.\n            over_clause is as described in\n            Section\u00a014.20.2, \u201cWindow Function Concepts and Syntax\u201d.\n          "
     ],
     "Examples": [],
     "Category": [
-        "GROUP BY 聚合函数"
+        "GROUP BY \u805a\u5408\u51fd\u6570"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT STDDEV_SAMP(column_name) FROM table_name;",
+        "SELECT STDDEV_SAMP(1);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 395,
+            "Prompt Tokens": 371,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 7.005e-05
+        },
+        {
+            "Total Tokens": 550,
+            "Prompt Tokens": 529,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 9.194999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.ProgrammingError) (1146, \"Table 'knowledge_base_preprocess_tidb.table_name' doesn't exist\")\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT STDDEV_SAMP(1);"
     ]
 }

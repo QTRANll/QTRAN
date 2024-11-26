@@ -18,5 +18,63 @@
     ],
     "Category": [
         "Date Time Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        [
+            "SELECT \"month\"(CURRENT_TIMESTAMP);"
+        ],
+        [
+            "SELECT \"month\"(NOW());"
+        ],
+        [
+            "SELECT \"month\"(CAST('2023-10-01' AS TIMESTAMP));"
+        ],
+        [
+            "SELECT \"month\"(TIMESTAMP '2023-10-01 00:00:00');"
+        ],
+        [
+            "SELECT \"month\"(DATE '2023-10-01');"
+        ]
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 312,
+            "Prompt Tokens": 286,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 5.8499999999999985e-05
+        },
+        {
+            "Total Tokens": 460,
+            "Prompt Tokens": 435,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 8.025e-05
+        },
+        {
+            "Total Tokens": 619,
+            "Prompt Tokens": 583,
+            "Completion Tokens": 36,
+            "Total Cost (USD)": 0.00010904999999999998
+        },
+        {
+            "Total Tokens": 781,
+            "Prompt Tokens": 742,
+            "Completion Tokens": 39,
+            "Total Cost (USD)": 0.0001347
+        },
+        {
+            "Total Tokens": 936,
+            "Prompt Tokens": 904,
+            "Completion Tokens": 32,
+            "Total Cost (USD)": 0.0001548
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "expected string or bytes-like object, got 'list'",
+        "expected string or bytes-like object, got 'list'",
+        "expected string or bytes-like object, got 'list'",
+        "expected string or bytes-like object, got 'list'",
+        "expected string or bytes-like object, got 'list'"
+    ],
+    "EffectiveSQLs": []
 }

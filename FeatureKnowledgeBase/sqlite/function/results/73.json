@@ -17,33 +17,81 @@
         "If the value of a path/value pair is an SQLite TEXT value, then it\nis normally inserted as a quoted JSON string, even if the string looks\nlike valid JSON.  However, if the value is the result of another\njson function (such as json() or json_array() or json_object())\nor if it is the result of the -> operator,\nthen it is interpreted as JSON and is inserted as JSON retaining all\nof its substructure.  Values that are the result of the ->> operator\nare always interpreted as TEXT and are inserted as a JSON string even\nif they look like valid JSON.\n\n",
         "These routines throw an error if the first JSON argument is not\nwell-formed or if any PATH argument is not well-formed or if any\nargument is a BLOB.\n\n",
         "To append an element onto the end of an array, using json_insert()\nwith an array index of \"#\".  Examples:\n\n",
-        "json_insert('[1,2,3,4]','$[#]',99)\n→ '[1,2,3,4,99]'",
-        "json_insert('[1,[2,3],4]','$[1][#]',99)\n→ '[1,[2,3,99],4]'",
+        "json_insert('[1,2,3,4]','$[#]',99)\n\u2192 '[1,2,3,4,99]'",
+        "json_insert('[1,[2,3],4]','$[1][#]',99)\n\u2192 '[1,[2,3,99],4]'",
         "Other examples:\n\n",
-        "json_insert('{\"a\":2,\"c\":4}', '$.a', 99)\n→ '{\"a\":2,\"c\":4}'",
-        "json_insert('{\"a\":2,\"c\":4}', '$.e', 99)\n→ '{\"a\":2,\"c\":4,\"e\":99}'",
-        "json_replace('{\"a\":2,\"c\":4}', '$.a', 99)\n→ '{\"a\":99,\"c\":4}'",
-        "json_replace('{\"a\":2,\"c\":4}', '$.e', 99)\n→ '{\"a\":2,\"c\":4}'",
-        "json_set('{\"a\":2,\"c\":4}', '$.a', 99)\n→ '{\"a\":99,\"c\":4}'",
-        "json_set('{\"a\":2,\"c\":4}', '$.e', 99)\n→ '{\"a\":2,\"c\":4,\"e\":99}'",
-        "json_set('{\"a\":2,\"c\":4}', '$.c', '[97,96]')\n→ '{\"a\":2,\"c\":\"[97,96]\"}'",
-        "json_set('{\"a\":2,\"c\":4}', '$.c', json('[97,96]'))\n→ '{\"a\":2,\"c\":[97,96]}'",
-        "json_set('{\"a\":2,\"c\":4}', '$.c', json_array(97,96))\n→ '{\"a\":2,\"c\":[97,96]}'"
+        "json_insert('{\"a\":2,\"c\":4}', '$.a', 99)\n\u2192 '{\"a\":2,\"c\":4}'",
+        "json_insert('{\"a\":2,\"c\":4}', '$.e', 99)\n\u2192 '{\"a\":2,\"c\":4,\"e\":99}'",
+        "json_replace('{\"a\":2,\"c\":4}', '$.a', 99)\n\u2192 '{\"a\":99,\"c\":4}'",
+        "json_replace('{\"a\":2,\"c\":4}', '$.e', 99)\n\u2192 '{\"a\":2,\"c\":4}'",
+        "json_set('{\"a\":2,\"c\":4}', '$.a', 99)\n\u2192 '{\"a\":99,\"c\":4}'",
+        "json_set('{\"a\":2,\"c\":4}', '$.e', 99)\n\u2192 '{\"a\":2,\"c\":4,\"e\":99}'",
+        "json_set('{\"a\":2,\"c\":4}', '$.c', '[97,96]')\n\u2192 '{\"a\":2,\"c\":\"[97,96]\"}'",
+        "json_set('{\"a\":2,\"c\":4}', '$.c', json('[97,96]'))\n\u2192 '{\"a\":2,\"c\":[97,96]}'",
+        "json_set('{\"a\":2,\"c\":4}', '$.c', json_array(97,96))\n\u2192 '{\"a\":2,\"c\":[97,96]}'"
     ],
     "Examples": [
-        "json_insert('[1,2,3,4]','$[#]',99)\n→ '[1,2,3,4,99]'",
-        "json_insert('[1,[2,3],4]','$[1][#]',99)\n→ '[1,[2,3,99],4]'",
-        "json_insert('{\"a\":2,\"c\":4}', '$.a', 99)\n→ '{\"a\":2,\"c\":4}'",
-        "json_insert('{\"a\":2,\"c\":4}', '$.e', 99)\n→ '{\"a\":2,\"c\":4,\"e\":99}'",
-        "json_replace('{\"a\":2,\"c\":4}', '$.a', 99)\n→ '{\"a\":99,\"c\":4}'",
-        "json_replace('{\"a\":2,\"c\":4}', '$.e', 99)\n→ '{\"a\":2,\"c\":4}'",
-        "json_set('{\"a\":2,\"c\":4}', '$.a', 99)\n→ '{\"a\":99,\"c\":4}'",
-        "json_set('{\"a\":2,\"c\":4}', '$.e', 99)\n→ '{\"a\":2,\"c\":4,\"e\":99}'",
-        "json_set('{\"a\":2,\"c\":4}', '$.c', '[97,96]')\n→ '{\"a\":2,\"c\":\"[97,96]\"}'",
-        "json_set('{\"a\":2,\"c\":4}', '$.c', json('[97,96]'))\n→ '{\"a\":2,\"c\":[97,96]}'",
-        "json_set('{\"a\":2,\"c\":4}', '$.c', json_array(97,96))\n→ '{\"a\":2,\"c\":[97,96]}'"
+        "json_insert('[1,2,3,4]','$[#]',99)\n\u2192 '[1,2,3,4,99]'",
+        "json_insert('[1,[2,3],4]','$[1][#]',99)\n\u2192 '[1,[2,3,99],4]'",
+        "json_insert('{\"a\":2,\"c\":4}', '$.a', 99)\n\u2192 '{\"a\":2,\"c\":4}'",
+        "json_insert('{\"a\":2,\"c\":4}', '$.e', 99)\n\u2192 '{\"a\":2,\"c\":4,\"e\":99}'",
+        "json_replace('{\"a\":2,\"c\":4}', '$.a', 99)\n\u2192 '{\"a\":99,\"c\":4}'",
+        "json_replace('{\"a\":2,\"c\":4}', '$.e', 99)\n\u2192 '{\"a\":2,\"c\":4}'",
+        "json_set('{\"a\":2,\"c\":4}', '$.a', 99)\n\u2192 '{\"a\":99,\"c\":4}'",
+        "json_set('{\"a\":2,\"c\":4}', '$.e', 99)\n\u2192 '{\"a\":2,\"c\":4,\"e\":99}'",
+        "json_set('{\"a\":2,\"c\":4}', '$.c', '[97,96]')\n\u2192 '{\"a\":2,\"c\":\"[97,96]\"}'",
+        "json_set('{\"a\":2,\"c\":4}', '$.c', json('[97,96]'))\n\u2192 '{\"a\":2,\"c\":[97,96]}'",
+        "json_set('{\"a\":2,\"c\":4}', '$.c', json_array(97,96))\n\u2192 '{\"a\":2,\"c\":[97,96]}'"
     ],
     "Category": [
         "JSON Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "json_insert('{\"a\":2,\"c\":4}', '$.e', 99)",
+        "json_insert('{\"a\":2,\"c\":4}', '$.e', 99)",
+        "json_insert('{\"a\":2,\"c\":4}', '$.e', 99)",
+        "json_insert('{\"a\":2,\"c\":4}', '$.e', 99)",
+        "json_insert('{\"a\":2,\"c\":4}', '$.e', 99)"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 1188,
+            "Prompt Tokens": 1157,
+            "Completion Tokens": 31,
+            "Total Cost (USD)": 0.00019214999999999998
+        },
+        {
+            "Total Tokens": 1355,
+            "Prompt Tokens": 1324,
+            "Completion Tokens": 31,
+            "Total Cost (USD)": 0.0002172
+        },
+        {
+            "Total Tokens": 1522,
+            "Prompt Tokens": 1491,
+            "Completion Tokens": 31,
+            "Total Cost (USD)": 0.00024224999999999998
+        },
+        {
+            "Total Tokens": 1689,
+            "Prompt Tokens": 1658,
+            "Completion Tokens": 31,
+            "Total Cost (USD)": 0.0002673
+        },
+        {
+            "Total Tokens": 1856,
+            "Prompt Tokens": 1825,
+            "Completion Tokens": 31,
+            "Total Cost (USD)": 0.00029235
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(sqlalchemy.exc.InvalidRequestError) A value is required for bind parameter '2'\n",
+        "(sqlalchemy.exc.InvalidRequestError) A value is required for bind parameter '2'\n",
+        "(sqlalchemy.exc.InvalidRequestError) A value is required for bind parameter '2'\n",
+        "(sqlalchemy.exc.InvalidRequestError) A value is required for bind parameter '2'\n",
+        "(sqlalchemy.exc.InvalidRequestError) A value is required for bind parameter '2'\n"
+    ],
+    "EffectiveSQLs": []
 }

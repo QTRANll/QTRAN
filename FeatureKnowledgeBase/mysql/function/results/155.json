@@ -24,5 +24,24 @@
     "Category": [
         "Built-In Functions and Operators",
         "JSON Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT JSON_ARRAY_APPEND(@j, '$[1]', 1);",
+        "SELECT JSON_ARRAY_APPEND(@j, '$[0]', 2);",
+        "SELECT JSON_ARRAY_APPEND(@j, '$[1][0]', 3);",
+        "SELECT JSON_ARRAY_APPEND(@j, '$.b', 'x');",
+        "SELECT JSON_ARRAY_APPEND(@j, '$.c', 'y');",
+        "SELECT JSON_ARRAY_APPEND(@j, '$', 'z');"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT JSON_ARRAY_APPEND(@j, '$[1]', 1);",
+        "SELECT JSON_ARRAY_APPEND(@j, '$[0]', 2);",
+        "SELECT JSON_ARRAY_APPEND(@j, '$[1][0]', 3);",
+        "SELECT JSON_ARRAY_APPEND(@j, '$.b', 'x');",
+        "SELECT JSON_ARRAY_APPEND(@j, '$.c', 'y');",
+        "SELECT JSON_ARRAY_APPEND(@j, '$', 'z');"
     ]
 }

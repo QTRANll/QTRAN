@@ -29,5 +29,9 @@
     ],
     "Category": [
         "Maps Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT mapPopulateSeries(map(1, 10, 5, 20), 6);",
+        "SELECT mapPopulateSeries([1,2,4], [11,22,44], 5) AS res, toTypeName(res) AS type;"
     ]
 }

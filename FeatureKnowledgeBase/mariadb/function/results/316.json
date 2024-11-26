@@ -23,5 +23,12 @@
     "EffectiveSQLsRefined": [
         "SELECT ST_INTERSECTS(@g1,@g2);",
         "SELECT ST_INTERSECTS(@g1,@g2);"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT ST_INTERSECTS(@g1,@g2);",
+        "SELECT ST_INTERSECTS(@g1,@g2);"
     ]
 }

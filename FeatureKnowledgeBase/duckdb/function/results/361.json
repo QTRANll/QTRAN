@@ -17,5 +17,23 @@
     ],
     "Category": [
         "Regular Expressions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT regexp_split_to_table('hello,world', ',');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 333,
+            "Prompt Tokens": 308,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 6.12e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT regexp_split_to_table('hello,world', ',');"
     ]
 }

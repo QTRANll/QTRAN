@@ -18,5 +18,53 @@
     ],
     "Category": [
         "Date Time Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT timestampdiff_min(ts_dt_tz, ts_dt_tz);",
+        "SELECT timestampdiff_min('2023-01-01 00:00:00', '2023-01-01 01:00:00');",
+        "SELECT timestampdiff_min(TIMESTAMP '2023-01-01 00:00:00', TIMESTAMP '2023-01-01 01:00:00');",
+        "SELECT timestampdiff_min(TIMESTAMP '2023-01-01 00:00:00 UTC', TIMESTAMP '2023-01-01 01:00:00 UTC');",
+        "SELECT timestampdiff_min(TIMESTAMP '2023-01-01 00:00:00', TIMESTAMP '2023-01-01 01:00:00' AT TIME ZONE 'UTC');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 329,
+            "Prompt Tokens": 302,
+            "Completion Tokens": 27,
+            "Total Cost (USD)": 6.149999999999999e-05
+        },
+        {
+            "Total Tokens": 515,
+            "Prompt Tokens": 470,
+            "Completion Tokens": 45,
+            "Total Cost (USD)": 9.749999999999998e-05
+        },
+        {
+            "Total Tokens": 710,
+            "Prompt Tokens": 660,
+            "Completion Tokens": 50,
+            "Total Cost (USD)": 0.000129
+        },
+        {
+            "Total Tokens": 908,
+            "Prompt Tokens": 856,
+            "Completion Tokens": 52,
+            "Total Cost (USD)": 0.00015959999999999998
+        },
+        {
+            "Total Tokens": 1111,
+            "Prompt Tokens": 1054,
+            "Completion Tokens": 57,
+            "Total Cost (USD)": 0.00019229999999999999
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: identifier 'ts_dt_tz' unknown\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: no such binary operator 'timestampdiff_min(char,char)'\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: no such binary operator 'timestampdiff_min(timestamp,timestamp)'\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: no such binary operator 'timestampdiff_min(timestamp,timestamp)'\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!syntax error, unexpected IDENT, expecting ')' or ',' in: \"select timestampdiff_min(timestamp '2023-01-01 00:00:00', timestamp '2023-01-01 \"\n\n"
+    ],
+    "EffectiveSQLs": []
 }

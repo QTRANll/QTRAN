@@ -16,5 +16,23 @@
     ],
     "Category": [
         "Text Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT position('search' IN 'This is a search string')"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 302,
+            "Prompt Tokens": 276,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 5.699999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT position('search' IN 'This is a search string')"
     ]
 }

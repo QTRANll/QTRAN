@@ -25,5 +25,15 @@
         "SELECT EXTRACT(DAY_MINUTE FROM '2009-07-02 01:02:03');",
         "SELECT EXTRACT(MICROSECOND FROM '2003-01-02 10:30:00.000123');",
         "SELECT EXTRACT(HOUR FROM '26:30:00'), HOUR('26:30:00');"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT EXTRACT(YEAR FROM '2009-07-02');",
+        "SELECT EXTRACT(YEAR_MONTH FROM '2009-07-02 01:02:03');",
+        "SELECT EXTRACT(DAY_MINUTE FROM '2009-07-02 01:02:03');",
+        "SELECT EXTRACT(MICROSECOND FROM '2003-01-02 10:30:00.000123');",
+        "SELECT EXTRACT(HOUR FROM '26:30:00'), HOUR('26:30:00');"
     ]
 }

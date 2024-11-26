@@ -23,5 +23,8 @@
     ],
     "Category": [
         "UUIDs Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT toDateTime('2021-08-15 18:57:56', 'Asia/Shanghai') AS dt, dateTimeToSnowflakeID(dt) AS res;"
     ]
 }

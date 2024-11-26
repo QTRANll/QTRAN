@@ -24,5 +24,15 @@
         "SELECT 0x4D617269614442;",
         "SELECT UNHEX(HEX('string'));",
         "SELECT HEX(UNHEX('1267'));"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT HEX('MariaDB');",
+        "SELECT UNHEX('4D617269614442');",
+        "SELECT 0x4D617269614442;",
+        "SELECT UNHEX(HEX('string'));",
+        "SELECT HEX(UNHEX('1267'));"
     ]
 }

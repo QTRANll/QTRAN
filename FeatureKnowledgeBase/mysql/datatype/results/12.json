@@ -22,5 +22,20 @@
     ],
     "Category": [
         "The ENUM Type"
+    ],
+    "EffectiveSQLsRefined": [
+        "CREATE TABLE shirts (\n    name VARCHAR(40),\n    size ENUM('x-small', 'small', 'medium', 'large', 'x-large')\n);",
+        "INSERT INTO shirts (name, size) VALUES ('dress shirt','large'), ('t-shirt','medium'),\n  ('polo shirt','small');",
+        "SELECT name, size FROM shirts WHERE size = 'medium';",
+        "UPDATE shirts SET size = 'small' WHERE size = 'large';"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "CREATE TABLE shirts (\n    name VARCHAR(40),\n    size ENUM('x-small', 'small', 'medium', 'large', 'x-large')\n);",
+        "INSERT INTO shirts (name, size) VALUES ('dress shirt','large'), ('t-shirt','medium'),\n  ('polo shirt','small');",
+        "SELECT name, size FROM shirts WHERE size = 'medium';",
+        "UPDATE shirts SET size = 'small' WHERE size = 'large';"
     ]
 }

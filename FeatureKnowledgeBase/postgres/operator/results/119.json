@@ -6,16 +6,50 @@
         "json #> text[]"
     ],
     "Feature": [
-        "json #> text[] → json",
-        "jsonb #> text[] → jsonb"
+        "json #> text[] \u2192 json",
+        "jsonb #> text[] \u2192 jsonb"
     ],
     "Description": [
         "Extracts JSON sub-object at the specified path, where path elements can be either field keys or array indexes."
     ],
     "Examples": [
-        "'{\"a\": {\"b\": [\"foo\",\"bar\"]}}'::json #> '{a,b,1}' → \"bar\""
+        "'{\"a\": {\"b\": [\"foo\",\"bar\"]}}'::json #> '{a,b,1}' \u2192 \"bar\""
     ],
     "Category": [
         "JSON Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT json_column #> '{path, to, element}' FROM your_table;",
+        "SELECT json_column #> '{path, to, element}' FROM json_data;",
+        "SELECT json_column #> '{path, to, element}' FROM (SELECT '{}'::json AS json_column) AS temp;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 310,
+            "Prompt Tokens": 282,
+            "Completion Tokens": 28,
+            "Total Cost (USD)": 5.9099999999999986e-05
+        },
+        {
+            "Total Tokens": 489,
+            "Prompt Tokens": 461,
+            "Completion Tokens": 28,
+            "Total Cost (USD)": 8.595e-05
+        },
+        {
+            "Total Tokens": 677,
+            "Prompt Tokens": 640,
+            "Completion Tokens": 37,
+            "Total Cost (USD)": 0.00011819999999999999
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedTable) relation \"your_table\" does not exist\nLINE 1: SELECT json_column #> '{path, to, element}' FROM your_table;\n                                                         ^\n\n",
+        "(psycopg2.errors.UndefinedTable) relation \"json_data\" does not exist\nLINE 1: SELECT json_column #> '{path, to, element}' FROM json_data;\n                                                         ^\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT json_column #> '{path, to, element}' FROM (SELECT '{}'::json AS json_column) AS temp;"
     ]
 }

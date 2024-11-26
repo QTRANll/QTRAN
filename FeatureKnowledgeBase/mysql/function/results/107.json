@@ -30,5 +30,53 @@
         "Built-In Functions and Operators",
         "Replication Functions",
         "Loadable Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT group_replication_set_write_concurrency(10);",
+        "SELECT group_replication_set_write_concurrency(15);",
+        "SELECT group_replication_set_write_concurrency(10);",
+        "SELECT group_replication_set_write_concurrency(20);",
+        "SELECT group_replication_set_write_concurrency(5);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 499,
+            "Prompt Tokens": 475,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 8.565e-05
+        },
+        {
+            "Total Tokens": 665,
+            "Prompt Tokens": 641,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 0.00011054999999999999
+        },
+        {
+            "Total Tokens": 831,
+            "Prompt Tokens": 807,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 0.00013545
+        },
+        {
+            "Total Tokens": 997,
+            "Prompt Tokens": 973,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 0.00016035
+        },
+        {
+            "Total Tokens": 1163,
+            "Prompt Tokens": 1139,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 0.00018524999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.group_replication_set_write_concurrency does not exist')\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.group_replication_set_write_concurrency does not exist')\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.group_replication_set_write_concurrency does not exist')\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.group_replication_set_write_concurrency does not exist')\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.group_replication_set_write_concurrency does not exist')\n"
+    ],
+    "EffectiveSQLs": []
 }

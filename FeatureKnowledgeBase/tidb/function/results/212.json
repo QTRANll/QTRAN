@@ -10,12 +10,21 @@
     ],
     "Description": [
         "JSON_ARRAYAGG()",
-        "JSON_ARRAYAGG(key) 函数可以根据给定的 key 将 key 值聚合到一个 JSON 数组中。key 通常为表达式或列名。"
+        "JSON_ARRAYAGG(key) \u51fd\u6570\u53ef\u4ee5\u6839\u636e\u7ed9\u5b9a\u7684 key \u5c06 key \u503c\u805a\u5408\u5230\u4e00\u4e2a JSON \u6570\u7ec4\u4e2d\u3002key \u901a\u5e38\u4e3a\u8868\u8fbe\u5f0f\u6216\u5217\u540d\u3002"
     ],
     "Examples": [
         "SELECT JSON_ARRAYAGG(v) FROM (SELECT 1 'v' UNION SELECT 2);\n"
     ],
     "Category": [
-        "聚合 JSON 的函数"
+        "\u805a\u5408 JSON \u7684\u51fd\u6570"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT JSON_ARRAYAGG(v) FROM (SELECT 1 'v' UNION SELECT 2);"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT JSON_ARRAYAGG(v) FROM (SELECT 1 'v' UNION SELECT 2);"
     ]
 }

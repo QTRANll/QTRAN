@@ -16,5 +16,23 @@
     ],
     "Category": [
         "Timestamp Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT age(timestamp '2023-10-01 12:00:00', timestamp '2023-09-30 12:00:00');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 306,
+            "Prompt Tokens": 261,
+            "Completion Tokens": 45,
+            "Total Cost (USD)": 6.615e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT age(timestamp '2023-10-01 12:00:00', timestamp '2023-09-30 12:00:00');"
     ]
 }

@@ -6,7 +6,7 @@
         "pg_create_logical_replication_slot"
     ],
     "Feature": [
-        "pg_create_logical_replication_slot ( slot_name name, plugin name [, temporary boolean, twophase boolean ] ) → record ( slot_name name, lsn pg_lsn )"
+        "pg_create_logical_replication_slot ( slot_name name, plugin name [, temporary boolean, twophase boolean ] ) \u2192 record ( slot_name name, lsn pg_lsn )"
     ],
     "Description": [
         "Creates a new logical (decoding) replication slot named slot_name using the output plugin plugin. The optional third parameter, temporary, when set to true, specifies that the slot should not be permanently stored to disk and is only meant for use by the current session. Temporary slots are also released upon any error. The optional fourth parameter, twophase, when set to true, specifies that the decoding of prepared transactions is enabled for this slot. A call to this function has the same effect as the replication protocol command CREATE_REPLICATION_SLOT ... LOGICAL."
@@ -14,5 +14,53 @@
     "Examples": [],
     "Category": [
         "System Administration Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT pg_create_logical_replication_slot('my_slot', 'my_plugin');",
+        "ALTER SYSTEM SET wal_level = 'logical';",
+        "SELECT pg_create_logical_replication_slot('my_slot', 'my_plugin');",
+        "ALTER SYSTEM SET wal_level = 'logical';",
+        "SELECT pg_create_logical_replication_slot('my_slot', 'my_plugin');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 425,
+            "Prompt Tokens": 396,
+            "Completion Tokens": 29,
+            "Total Cost (USD)": 7.68e-05
+        },
+        {
+            "Total Tokens": 577,
+            "Prompt Tokens": 555,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 9.645e-05
+        },
+        {
+            "Total Tokens": 730,
+            "Prompt Tokens": 701,
+            "Completion Tokens": 29,
+            "Total Cost (USD)": 0.00012254999999999997
+        },
+        {
+            "Total Tokens": 882,
+            "Prompt Tokens": 860,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 0.0001422
+        },
+        {
+            "Total Tokens": 1035,
+            "Prompt Tokens": 1006,
+            "Completion Tokens": 29,
+            "Total Cost (USD)": 0.00016829999999999997
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.ObjectNotInPrerequisiteState) logical decoding requires wal_level >= logical\n\n",
+        "This result object does not return rows. It has been closed automatically.",
+        "(psycopg2.errors.ObjectNotInPrerequisiteState) logical decoding requires wal_level >= logical\n\n",
+        "This result object does not return rows. It has been closed automatically.",
+        "(psycopg2.errors.ObjectNotInPrerequisiteState) logical decoding requires wal_level >= logical\n\n"
+    ],
+    "EffectiveSQLs": []
 }

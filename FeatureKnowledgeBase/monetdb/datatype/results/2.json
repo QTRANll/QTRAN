@@ -1,0 +1,45 @@
+{
+    "HTML": [
+        "https://www.monetdb.org/documentation-Aug2024/user-guide/sql-manual/data-types/base-types"
+    ],
+    "Title": [
+        "CHARACTER VARYING ( length )"
+    ],
+    "Feature": [
+        "CHARACTER VARYING ( length )"
+    ],
+    "Description": [
+        "VARCHAR ( length )",
+        "UTF-8 character string with length upperbound limit between 1 and 2147483647"
+    ],
+    "Examples": [],
+    "Category": [
+        "Base Types"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT 'Hello, World!'::CHARACTER VARYING(20);",
+        "SELECT CAST('Hello, World!' AS CHARACTER VARYING(20));"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 314,
+            "Prompt Tokens": 286,
+            "Completion Tokens": 28,
+            "Total Cost (USD)": 5.969999999999999e-05
+        },
+        {
+            "Total Tokens": 472,
+            "Prompt Tokens": 444,
+            "Completion Tokens": 28,
+            "Total Cost (USD)": 8.34e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymonetdb.exceptions.OperationalError) 42000!Unexpected symbol (:)\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT CAST('Hello, World!' AS CHARACTER VARYING(20));"
+    ]
+}

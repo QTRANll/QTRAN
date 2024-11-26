@@ -16,5 +16,31 @@
     ],
     "Category": [
         "Numeric Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT floor(x);",
+        "SELECT floor(1.5);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 262,
+            "Prompt Tokens": 245,
+            "Completion Tokens": 17,
+            "Total Cost (USD)": 4.695e-05
+        },
+        {
+            "Total Tokens": 423,
+            "Prompt Tokens": 403,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 7.245e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.BinderException) Binder Error: Referenced column \"x\" not found in FROM clause!\nLINE 1: SELECT floor(x);\n                     ^\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT floor(1.5);"
     ]
 }

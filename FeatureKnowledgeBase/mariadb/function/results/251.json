@@ -36,5 +36,18 @@
         "SELECT 'a\\nb\\nc' RLIKE '^b$';",
         "SELECT 'a\\nb\\nc' RLIKE '(?m)^b$';",
         "SELECT 'a\\nb\\nc' RLIKE '^b$';"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT 'Monty!' REGEXP 'm%y%%';",
+        "SELECT 'Monty!' REGEXP '.*';",
+        "SELECT 'new*\\n*line' REGEXP 'new\\\\*.\\\\*line';",
+        "SELECT 'a' REGEXP 'A', 'a' REGEXP BINARY 'A';",
+        "SELECT 'a' REGEXP '^[a-d]';",
+        "SELECT 'a\\nb\\nc' RLIKE '^b$';",
+        "SELECT 'a\\nb\\nc' RLIKE '(?m)^b$';",
+        "SELECT 'a\\nb\\nc' RLIKE '^b$';"
     ]
 }

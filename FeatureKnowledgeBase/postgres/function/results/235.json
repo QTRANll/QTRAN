@@ -6,15 +6,49 @@
         "ts_lexize"
     ],
     "Feature": [
-        "ts_lexize ( dict regdictionary, token text ) → text[]"
+        "ts_lexize ( dict regdictionary, token text ) \u2192 text[]"
     ],
     "Description": [
-        "Returns an array of replacement lexemes if the input token is known to the dictionary, or an empty array if the token is known to the dictionary but it is a stop word, or NULL if it is not a known word. See Section 12.8.3 for details."
+        "Returns an array of replacement lexemes if the input token is known to the dictionary, or an empty array if the token is known to the dictionary but it is a stop word, or NULL if it is not a known word. See Section\u00a012.8.3 for details."
     ],
     "Examples": [
-        "ts_lexize('english_stem', 'stars') → {star}"
+        "ts_lexize('english_stem', 'stars') \u2192 {star}"
     ],
     "Category": [
         "Text Search Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT ts_lexize('my_dictionary', 'example_token');",
+        "SELECT ts_lexize('pg_catalog.english', 'example_token');",
+        "SELECT ts_lexize('simple', 'example_token');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 337,
+            "Prompt Tokens": 311,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 6.225e-05
+        },
+        {
+            "Total Tokens": 514,
+            "Prompt Tokens": 486,
+            "Completion Tokens": 28,
+            "Total Cost (USD)": 8.97e-05
+        },
+        {
+            "Total Tokens": 692,
+            "Prompt Tokens": 667,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 0.00011504999999999999
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedObject) text search dictionary \"my_dictionary\" does not exist\nLINE 1: SELECT ts_lexize('my_dictionary', 'example_token');\n                         ^\n\n",
+        "(psycopg2.errors.UndefinedObject) text search dictionary \"pg_catalog.english\" does not exist\nLINE 1: SELECT ts_lexize('pg_catalog.english', 'example_token');\n                         ^\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT ts_lexize('simple', 'example_token');"
     ]
 }

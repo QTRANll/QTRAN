@@ -10,13 +10,24 @@
     ],
     "Description": [
         "TIDB_ENCODE_SQL_DIGEST",
-        "TIDB_ENCODE_SQL_DIGEST(query_str) 函数返回查询字符串的 SQL digest。"
+        "TIDB_ENCODE_SQL_DIGEST(query_str) \u51fd\u6570\u8fd4\u56de\u67e5\u8be2\u5b57\u7b26\u4e32\u7684 SQL digest\u3002"
     ],
     "Examples": [
         "SELECT TIDB_ENCODE_SQL_DIGEST('SELECT 1');\n",
         "SELECT TIDB_ENCODE_SQL_DIGEST('SELECT 2');\n"
     ],
     "Category": [
-        "TiDB 特有的函数"
+        "TiDB \u7279\u6709\u7684\u51fd\u6570"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT TIDB_ENCODE_SQL_DIGEST('SELECT 1');",
+        "SELECT TIDB_ENCODE_SQL_DIGEST('SELECT 2');"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT TIDB_ENCODE_SQL_DIGEST('SELECT 1');",
+        "SELECT TIDB_ENCODE_SQL_DIGEST('SELECT 2');"
     ]
 }

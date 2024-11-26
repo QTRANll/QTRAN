@@ -16,5 +16,23 @@
     ],
     "Category": [
         "Aggregate Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT bit_and(1) AS result;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 278,
+            "Prompt Tokens": 257,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 5.1149999999999996e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT bit_and(1) AS result;"
     ]
 }

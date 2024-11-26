@@ -18,5 +18,53 @@
     ],
     "Category": [
         "Date Time Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "{fn DAYNAME(dt_or_ts)}",
+        "SELECT {fn DAYNAME(CURRENT_TIMESTAMP)}",
+        "{fn DAYNAME('2023-10-01')}",
+        "{fn DAYNAME(CAST('2023-10-01' AS TIMESTAMP))}",
+        "SELECT DAYNAME('2023-10-01')"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 316,
+            "Prompt Tokens": 296,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 5.6399999999999995e-05
+        },
+        {
+            "Total Tokens": 481,
+            "Prompt Tokens": 459,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 8.204999999999999e-05
+        },
+        {
+            "Total Tokens": 650,
+            "Prompt Tokens": 626,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 0.00010829999999999999
+        },
+        {
+            "Total Tokens": 827,
+            "Prompt Tokens": 797,
+            "Completion Tokens": 30,
+            "Total Cost (USD)": 0.00013754999999999998
+        },
+        {
+            "Total Tokens": 1004,
+            "Prompt Tokens": 980,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 0.0001614
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymonetdb.exceptions.OperationalError) 42000!syntax error, unexpected X_BODY in: \"{fn DAYNAME(dt_or_ts)}\"\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!syntax error, unexpected X_BODY in: \"select {fn DAYNAME(CURRENT_TIMESTAMP)}\"\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!syntax error, unexpected X_BODY in: \"{fn DAYNAME('2023-10-01')}\"\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!syntax error, unexpected X_BODY in: \"{fn DAYNAME(CAST('2023-10-01' AS TIMESTAMP))}\"\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: no such unary operator 'dayname(char)'\n\n"
+    ],
+    "EffectiveSQLs": []
 }

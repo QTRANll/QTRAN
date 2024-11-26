@@ -6,15 +6,33 @@
         "lcm"
     ],
     "Feature": [
-        "lcm ( numeric_type, numeric_type ) → numeric_type"
+        "lcm ( numeric_type, numeric_type ) \u2192 numeric_type"
     ],
     "Description": [
         "Least common multiple (the smallest strictly positive number that is an integral multiple of both inputs); returns 0 if either input is zero; available for integer, bigint, and numeric"
     ],
     "Examples": [
-        "lcm(1071, 462) → 23562"
+        "lcm(1071, 462) \u2192 23562"
     ],
     "Category": [
         "Mathematical Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT lcm(12, 15);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 302,
+            "Prompt Tokens": 280,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 5.519999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT lcm(12, 15);"
     ]
 }

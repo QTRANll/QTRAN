@@ -18,5 +18,23 @@
     ],
     "Category": [
         "URL Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT sys.getfile('http://example.com/path/to/file.txt');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 300,
+            "Prompt Tokens": 273,
+            "Completion Tokens": 27,
+            "Total Cost (USD)": 5.714999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT sys.getfile('http://example.com/path/to/file.txt');"
     ]
 }

@@ -1,0 +1,46 @@
+{
+    "HTML": [
+        "https://www.monetdb.org/documentation-Aug2024/user-guide/sql-manual/data-types/temporal-types"
+    ],
+    "Title": [
+        "TIMESTAMP [ time_precision ] WITH TIME ZONE"
+    ],
+    "Feature": [
+        "TIMESTAMP [ time_precision ] WITH TIME ZONE"
+    ],
+    "Description": [
+        "timestamptz",
+        "8-bytes",
+        "date and time with time zone data type combined, optional seconds fraction precision (default 6 decimals)"
+    ],
+    "Examples": [],
+    "Category": [
+        "Temporal Datatypes"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT CURRENT_TIMESTAMP AT TIME ZONE 'UTC';",
+        "SELECT CURRENT_TIMESTAMP;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 324,
+            "Prompt Tokens": 301,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 5.894999999999999e-05
+        },
+        {
+            "Total Tokens": 487,
+            "Prompt Tokens": 471,
+            "Completion Tokens": 16,
+            "Total Cost (USD)": 8.025e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymonetdb.exceptions.OperationalError) 42000!syntax error, unexpected TIME, expecting SCOLON in: \"select current_timestamp at time\"\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT CURRENT_TIMESTAMP;"
+    ]
+}

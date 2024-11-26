@@ -16,5 +16,31 @@
     ],
     "Category": [
         "Array Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT array_cross_product(array1, array2);",
+        "SELECT array_cross_product(ARRAY[1, 2, 3], ARRAY[4, 5, 6]);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 307,
+            "Prompt Tokens": 284,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 5.639999999999999e-05
+        },
+        {
+            "Total Tokens": 499,
+            "Prompt Tokens": 461,
+            "Completion Tokens": 38,
+            "Total Cost (USD)": 9.195e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.BinderException) Binder Error: Referenced column \"array1\" not found in FROM clause!\nLINE 1: SELECT array_cross_product(array1, array2);\n                                   ^\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT array_cross_product(ARRAY[1, 2, 3], ARRAY[4, 5, 6]);"
     ]
 }

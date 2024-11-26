@@ -18,5 +18,53 @@
     ],
     "Category": [
         "Mathematics Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT get_value_for('schema_name', 'sequence_name');",
+        "SELECT get_value_for('public', 'sequence_name');",
+        "SELECT get_value_for('default_schema', 'default_sequence');",
+        "SELECT get_value_for('my_schema', 'my_sequence');",
+        "SELECT get_value_for('example_schema', 'example_sequence');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 305,
+            "Prompt Tokens": 280,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 5.6999999999999996e-05
+        },
+        {
+            "Total Tokens": 463,
+            "Prompt Tokens": 439,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 8.024999999999999e-05
+        },
+        {
+            "Total Tokens": 621,
+            "Prompt Tokens": 596,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 0.00010439999999999999
+        },
+        {
+            "Total Tokens": 780,
+            "Prompt Tokens": 755,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 0.00012825
+        },
+        {
+            "Total Tokens": 939,
+            "Prompt Tokens": 914,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 0.0001521
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymonetdb.exceptions.OperationalError) HY050!Failed to fetch sequence schema_name.sequence_name\n\n",
+        "(pymonetdb.exceptions.OperationalError) HY050!Failed to fetch sequence public.sequence_name\n\n",
+        "(pymonetdb.exceptions.OperationalError) HY050!Failed to fetch sequence default_schema.default_sequence\n\n",
+        "(pymonetdb.exceptions.OperationalError) HY050!Failed to fetch sequence my_schema.my_sequence\n\n",
+        "(pymonetdb.exceptions.OperationalError) HY050!Failed to fetch sequence example_schema.example_sequence\n\n"
+    ],
+    "EffectiveSQLs": []
 }

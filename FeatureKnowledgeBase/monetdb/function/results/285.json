@@ -16,5 +16,53 @@
     "Examples": [],
     "Category": [
         "Window Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT cume_dist(value) FROM your_table;",
+        "SELECT cume_dist() FROM your_table;",
+        "SELECT cume_dist() OVER () FROM your_table;",
+        "SELECT cume_dist() OVER () FROM (SELECT 1 AS value) AS temp;",
+        "SELECT cume_dist() OVER (PARTITION BY value ORDER BY value) FROM (SELECT 1 AS value) AS temp;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 303,
+            "Prompt Tokens": 281,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 5.535e-05
+        },
+        {
+            "Total Tokens": 465,
+            "Prompt Tokens": 444,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 7.919999999999999e-05
+        },
+        {
+            "Total Tokens": 630,
+            "Prompt Tokens": 607,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 0.00010484999999999999
+        },
+        {
+            "Total Tokens": 794,
+            "Prompt Tokens": 764,
+            "Completion Tokens": 30,
+            "Total Cost (USD)": 0.0001326
+        },
+        {
+            "Total Tokens": 966,
+            "Prompt Tokens": 928,
+            "Completion Tokens": 38,
+            "Total Cost (USD)": 0.00016199999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymonetdb.exceptions.OperationalError) 42000!syntax error, unexpected VALUE, expecting ')' in: \"select cume_dist(value\"\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!syntax error, unexpected FROM, expecting OVER in: \"select cume_dist() from\"\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42S02!SELECT: no such table 'your_table'\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: function 'cume_dist' not found\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: function 'cume_dist' not found\n\n"
+    ],
+    "EffectiveSQLs": []
 }

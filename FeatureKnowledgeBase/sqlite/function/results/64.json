@@ -14,12 +14,30 @@
         "If the input is JSON5 text, then it is converted into canonical\nRFC-8259 text prior to being returned.\n\n",
         "If the argument X to json(X) contains JSON objects with duplicate\nlabels, then it is undefined whether or not the duplicates are\npreserved.  The current implementation preserves duplicates.\nHowever, future enhancements\nto this routine may choose to silently remove duplicates.\n\n",
         "\nExample:\n\n",
-        "json(' { \"this\" : \"is\", \"a\": [ \"test\" ] } ')\n→ '{\"this\":\"is\",\"a\":[\"test\"]}'"
+        "json(' { \"this\" : \"is\", \"a\": [ \"test\" ] } ')\n\u2192 '{\"this\":\"is\",\"a\":[\"test\"]}'"
     ],
     "Examples": [
-        "json(' { \"this\" : \"is\", \"a\": [ \"test\" ] } ')\n→ '{\"this\":\"is\",\"a\":[\"test\"]}'"
+        "json(' { \"this\" : \"is\", \"a\": [ \"test\" ] } ')\n\u2192 '{\"this\":\"is\",\"a\":[\"test\"]}'"
     ],
     "Category": [
         "JSON Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT json('{ \"this\" : \"is\", \"a\": [ \"test\" ] }')"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 497,
+            "Prompt Tokens": 464,
+            "Completion Tokens": 33,
+            "Total Cost (USD)": 8.94e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT json('{ \"this\" : \"is\", \"a\": [ \"test\" ] }')"
     ]
 }

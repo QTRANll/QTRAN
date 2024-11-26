@@ -6,13 +6,39 @@
         "regr_sxx"
     ],
     "Feature": [
-        "regr_sxx ( Y double precision, X double precision ) → double precision"
+        "regr_sxx ( Y double precision, X double precision ) \u2192 double precision"
     ],
     "Description": [
-        "Computes the “sum of squares” of the independent variable, sum(X^2) - sum(X)^2/N."
+        "Computes the \u201csum of squares\u201d of the independent variable, sum(X^2) - sum(X)^2/N."
     ],
     "Examples": [],
     "Category": [
         "Aggregate Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT regr_sxx(Y, X) FROM your_table;",
+        "SELECT regr_sxx(Y, X) FROM (SELECT 1 AS Y, 2 AS X) AS temp;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 305,
+            "Prompt Tokens": 280,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 5.6999999999999996e-05
+        },
+        {
+            "Total Tokens": 489,
+            "Prompt Tokens": 452,
+            "Completion Tokens": 37,
+            "Total Cost (USD)": 8.999999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedTable) relation \"your_table\" does not exist\nLINE 1: SELECT regr_sxx(Y, X) FROM your_table;\n                                   ^\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT regr_sxx(Y, X) FROM (SELECT 1 AS Y, 2 AS X) AS temp;"
     ]
 }

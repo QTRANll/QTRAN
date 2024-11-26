@@ -1,0 +1,37 @@
+{
+    "HTML": [
+        "https://www.monetdb.org/documentation-Aug2024/user-guide/sql-manual/data-types/base-types"
+    ],
+    "Title": [
+        "SMALLINT"
+    ],
+    "Feature": [
+        "SMALLINT"
+    ],
+    "Description": [
+        "",
+        "16 bit signed integer between -32767 and 32767"
+    ],
+    "Examples": [],
+    "Category": [
+        "Base Types"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT CAST(123 AS SMALLINT);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 276,
+            "Prompt Tokens": 255,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 5.0849999999999996e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT CAST(123 AS SMALLINT);"
+    ]
+}

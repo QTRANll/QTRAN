@@ -16,5 +16,49 @@
     ],
     "Category": [
         "Cast Conversion Operators"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        [
+            "CREATE TABLE example_table (id INT, event_time TIMESTAMP(3) WITH TIME ZONE);",
+            "INSERT INTO example_table (id, event_time) VALUES (1, '2023-10-01 12:00:00.123456789+00:00');",
+            "SELECT * FROM example_table WHERE event_time > '2023-10-01 00:00:00.000000000+00:00';"
+        ],
+        [
+            "CREATE TABLE example_table (id INT, event_time TIMESTAMP(3) WITH TIME ZONE);",
+            "INSERT INTO example_table (id, event_time) VALUES (1, '2023-10-01 12:00:00.123+00:00');",
+            "SELECT * FROM example_table WHERE event_time > '2023-10-01 00:00:00.000+00:00';"
+        ],
+        [
+            "CREATE TABLE example_table (id INT, event_time TIMESTAMP(3) WITH TIME ZONE);",
+            "INSERT INTO example_table (id, event_time) VALUES (1, '2023-10-01 12:00:00.123+00:00');",
+            "SELECT * FROM example_table WHERE event_time > '2023-10-01 00:00:00.000+00:00';"
+        ]
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 283,
+            "Prompt Tokens": 170,
+            "Completion Tokens": 113,
+            "Total Cost (USD)": 9.329999999999999e-05
+        },
+        {
+            "Total Tokens": 515,
+            "Prompt Tokens": 406,
+            "Completion Tokens": 109,
+            "Total Cost (USD)": 0.00012629999999999998
+        },
+        {
+            "Total Tokens": 747,
+            "Prompt Tokens": 638,
+            "Completion Tokens": 109,
+            "Total Cost (USD)": 0.00016109999999999999
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "expected string or bytes-like object, got 'list'",
+        "expected string or bytes-like object, got 'list'",
+        "expected string or bytes-like object, got 'list'"
+    ],
+    "EffectiveSQLs": []
 }

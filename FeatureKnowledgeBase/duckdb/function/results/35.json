@@ -16,5 +16,39 @@
     ],
     "Category": [
         "Aggregate Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT sum(arg);",
+        "SELECT sum(arg) FROM your_table_name;",
+        "SELECT sum(arg) FROM (SELECT NULL AS arg) AS temp;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 269,
+            "Prompt Tokens": 252,
+            "Completion Tokens": 17,
+            "Total Cost (USD)": 4.8e-05
+        },
+        {
+            "Total Tokens": 431,
+            "Prompt Tokens": 410,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 7.409999999999999e-05
+        },
+        {
+            "Total Tokens": 610,
+            "Prompt Tokens": 584,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 0.00010319999999999999
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.BinderException) Binder Error: Referenced column \"arg\" not found in FROM clause!\nLINE 1: SELECT sum(arg);\n                   ^\n",
+        "(duckdb.duckdb.CatalogException) Catalog Error: Table with name your_table_name does not exist!\nDid you mean \"pg_tablespace\"?\nLINE 1: SELECT sum(arg) FROM your_table_name;\n                             ^\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT sum(arg) FROM (SELECT NULL AS arg) AS temp;"
     ]
 }

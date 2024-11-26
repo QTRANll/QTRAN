@@ -6,7 +6,7 @@
         "ntile"
     ],
     "Feature": [
-        "ntile ( num_buckets integer ) → integer"
+        "ntile ( num_buckets integer ) \u2192 integer"
     ],
     "Description": [
         "Returns an integer ranging from 1 to the argument value, dividing the partition as equally as possible."
@@ -14,5 +14,31 @@
     "Examples": [],
     "Category": [
         "Window Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT ntile(4) OVER (ORDER BY column_name) FROM table_name;",
+        "SELECT ntile(4) OVER () FROM generate_series(1, 100);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 292,
+            "Prompt Tokens": 263,
+            "Completion Tokens": 29,
+            "Total Cost (USD)": 5.685e-05
+        },
+        {
+            "Total Tokens": 471,
+            "Prompt Tokens": 441,
+            "Completion Tokens": 30,
+            "Total Cost (USD)": 8.414999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedTable) relation \"table_name\" does not exist\nLINE 1: SELECT ntile(4) OVER (ORDER BY column_name) FROM table_name;\n                                                         ^\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT ntile(4) OVER () FROM generate_series(1, 100);"
     ]
 }

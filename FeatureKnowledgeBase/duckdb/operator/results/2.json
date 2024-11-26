@@ -16,5 +16,31 @@
     ],
     "Category": [
         "Bitstring Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT 1 XOR 0;",
+        "SELECT 1 ^ 0;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 254,
+            "Prompt Tokens": 235,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 4.6649999999999996e-05
+        },
+        {
+            "Total Tokens": 397,
+            "Prompt Tokens": 378,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 6.81e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.ParserException) Parser Error: syntax error at or near \"0\"\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT 1 ^ 0;"
     ]
 }

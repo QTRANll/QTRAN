@@ -20,5 +20,23 @@
     "Examples": [],
     "Category": [
         "Enumerated Types"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "CREATE TYPE mood AS ENUM ('sad', 'ok', 'happy');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 1256,
+            "Prompt Tokens": 1229,
+            "Completion Tokens": 27,
+            "Total Cost (USD)": 0.00020055
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "CREATE TYPE mood AS ENUM ('sad', 'ok', 'happy');"
     ]
 }

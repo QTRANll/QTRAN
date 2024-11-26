@@ -16,5 +16,31 @@
     "Examples": [],
     "Category": [
         "Aggregate Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT quantile_disc(value, 0.5) FROM your_table;",
+        "SELECT quantile_disc(1, 0.5);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 347,
+            "Prompt Tokens": 320,
+            "Completion Tokens": 27,
+            "Total Cost (USD)": 6.419999999999999e-05
+        },
+        {
+            "Total Tokens": 528,
+            "Prompt Tokens": 503,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 9.044999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.CatalogException) Catalog Error: Table with name your_table does not exist!\nDid you mean \"pg_tables\"?\nLINE 1: SELECT quantile_disc(value, 0.5) FROM your_table;\n                                              ^\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT quantile_disc(1, 0.5);"
     ]
 }

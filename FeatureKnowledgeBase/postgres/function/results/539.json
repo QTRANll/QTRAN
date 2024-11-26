@@ -6,7 +6,7 @@
         "pg_logical_slot_get_changes"
     ],
     "Feature": [
-        "pg_logical_slot_get_changes ( slot_name name, upto_lsn pg_lsn, upto_nchanges integer, VARIADIC options text[] ) → setof record ( lsn pg_lsn, xid xid, data text )"
+        "pg_logical_slot_get_changes ( slot_name name, upto_lsn pg_lsn, upto_nchanges integer, VARIADIC options text[] ) \u2192 setof record ( lsn pg_lsn, xid xid, data text )"
     ],
     "Description": [
         "Returns changes in the slot slot_name, starting from the point from which changes have been consumed last. If upto_lsn and upto_nchanges are NULL, logical decoding will continue until end of WAL. If upto_lsn is non-NULL, decoding will include only those transactions which commit prior to the specified LSN. If upto_nchanges is non-NULL, decoding will stop when the number of rows produced by decoding exceeds the specified value. Note, however, that the actual number of rows returned may be larger, since this limit is only checked after adding the rows produced when decoding each new transaction commit."
@@ -14,5 +14,53 @@
     "Examples": [],
     "Category": [
         "System Administration Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT * FROM pg_logical_slot_get_changes('my_slot', NULL, NULL);",
+        "SET wal_level = 'logical'; SELECT * FROM pg_logical_slot_get_changes('my_slot', NULL, NULL);",
+        "SELECT * FROM pg_logical_slot_get_changes('my_slot', NULL, NULL); -- Ensure wal_level is set to 'logical' before running this.",
+        "-- Please set wal_level to 'logical' in the postgresql.conf file and restart the server before executing this statement.\nSELECT * FROM pg_logical_slot_get_changes('my_slot', NULL, NULL);",
+        "-- Ensure wal_level is set to 'logical' in the postgresql.conf file, restart the server, and then run:\nSELECT * FROM pg_logical_slot_get_changes('my_slot', NULL, NULL);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 445,
+            "Prompt Tokens": 415,
+            "Completion Tokens": 30,
+            "Total Cost (USD)": 8.025e-05
+        },
+        {
+            "Total Tokens": 611,
+            "Prompt Tokens": 574,
+            "Completion Tokens": 37,
+            "Total Cost (USD)": 0.00010829999999999999
+        },
+        {
+            "Total Tokens": 787,
+            "Prompt Tokens": 744,
+            "Completion Tokens": 43,
+            "Total Cost (USD)": 0.00013739999999999998
+        },
+        {
+            "Total Tokens": 970,
+            "Prompt Tokens": 916,
+            "Completion Tokens": 54,
+            "Total Cost (USD)": 0.0001698
+        },
+        {
+            "Total Tokens": 1154,
+            "Prompt Tokens": 1099,
+            "Completion Tokens": 55,
+            "Total Cost (USD)": 0.00019784999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.ObjectNotInPrerequisiteState) logical decoding requires wal_level >= logical\n\n",
+        "(psycopg2.errors.CantChangeRuntimeParam) parameter \"wal_level\" cannot be changed without restarting the server\n\n",
+        "(psycopg2.errors.ObjectNotInPrerequisiteState) logical decoding requires wal_level >= logical\n\n",
+        "(psycopg2.errors.ObjectNotInPrerequisiteState) logical decoding requires wal_level >= logical\n\n",
+        "(psycopg2.errors.ObjectNotInPrerequisiteState) logical decoding requires wal_level >= logical\n\n"
+    ],
+    "EffectiveSQLs": []
 }

@@ -8,7 +8,8 @@ import json
 import os
 import sqlglot
 import re
-from src.Tools.DatabaseConnect.database_connector import exec_sql_statement
+import copy
+from src.Tools.DatabaseConnect.database_connector import exec_sql_statement, run_with_timeout, database_clear
 from langchain.prompts import ChatPromptTemplate
 from langchain.chat_models import ChatOpenAI
 from langchain.output_parsers import ResponseSchema
@@ -20,46 +21,13 @@ from src.DialectRecognition.TokenType_not_op import TokenType_not_op
 from src.Tools.DatabaseConnect.database_connector import get_database_connector_args
 current_file_path = os.path.abspath(__file__)
 current_dir = os.path.dirname(current_file_path)
-
-
-effective_sqls_generator_v2_skip = [
-    "BINLOG_GTID_POS.json",
-    "COLUMN_ADD.json",
-    "COLUMN_DELETE.json",
-    "COLUMN_EXISTS.json",
-    "COLUMN_GET.json",
-    "COLUMN_JSON.json",
-    "CROSSES.json",
-    "LIKE.json",
-    "MATCH AGAINST.json",
-    "NEXT VALUE for sequence_name.json",
-    "NOT LIKE.json",
-    "NOT REGEXP.json",
-    "OVERLAPS.json",
-    "PERCENTILE_DISC.json",
-    "PREVIOUS VALUE FOR sequence_name.json",
-    "RLIKE.json",
-    "SETVAL.json",
-    "SPIDER_BG_DIRECT_SQL.json",
-    "SPIDER_COPY_TABLES.json",
-    "SPIDER_DIRECT_SQL.json",
-    "ST_NUMGEOMETRIES.json",
-    "VALUES _ VALUE.json",
-    "VEC_DISTANCE.json",
-    "WSREP_SYNC_WAIT_UPTO_GTID.json"
-]
-
-
-
 def tokenize_sql(sql):
     lists = sqlglot.tokenize(sql)
     return lists
 
-
 # 判断枚举成员的名称
 def is_member_name(name):
     return name in TokenType_not_op.__members__
-
 
 def potential_features_refiner_single_sql(origin_sql):
     lists = tokenize_sql(origin_sql)  # 利用sqlglot分词函数得到origin_sql的分词列表
@@ -82,23 +50,6 @@ def potential_features_refiner_single_sql(origin_sql):
         if VAL_index + 1 < len(lists) and lists[VAL_index+1].token_type == sqlglot.TokenType.L_PAREN and lists[VAL_index-1].token_type != sqlglot.TokenType.UNKNOWN and lists[VAL_index-1].text.lower() != "table":
             function_name_indexes.append(VAL_index)
             function_names.append(lists[VAL_index].text)
-
-    print(origin_sql)
-    """
-    for item in lists:
-        print(item)
-    """
-    """
-    print("operators features")
-    for index in operator_indexes:
-        print(lists[index])
-
-    print("function features")
-    for index in function_name_indexes:
-        print(lists[index])
-    print('----------------')
-    """
-
     return function_name_indexes, operator_indexes, function_names, operators
 
 
@@ -111,12 +62,11 @@ def potential_features_refiner(db_name, filename, dir_filename):
         # 遍历处理所有测试数据
         content["SqlPotentialFunctionIndexes"], content["SqlPotentialOperatorIndexes"],_,_ = potential_features_refiner_single_sql(content["Sql"])
         results.append(content)
-
     with open(dir_filename, "w", encoding="utf-8") as w:
         json.dump(results, w, indent=4)
 
 def effective_sqls_refiner(tool, exp, dbType, featureType):
-    if featureType.lower() not in ["function", "operator"]:
+    if featureType.lower() not in ["function", "operator","datatype"]:
         return
     args = get_database_connector_args(dbType.lower())
     args["dbname"] = f"{tool}_{exp}_{dbType}"
@@ -144,7 +94,11 @@ def effective_sqls_refiner(tool, exp, dbType, featureType):
         ineffective_wrong_messages = []  # 存储提取过程中的ineffective sqls的执行失败原因
         with open(os.path.join(source_dic, filename), "r", encoding="utf-8") as r:
             content = json.load(r)
-
+        if "EffectiveSQLsRefined" in content:
+            print(filename + " has been refined.")
+            continue
+        # clear the database
+        database_clear(tool, exp, dbType)
         # 对于description和feature都为空的feature，跳过，不包含
         if len(content["Feature"]) == 0 and len(content["Description"]) != 0:
             effective_feature_cnt += 1
@@ -156,7 +110,12 @@ def effective_sqls_refiner(tool, exp, dbType, featureType):
             matches = re.findall(sql_pattern, examples, re.DOTALL)
             for match in matches:
                 # 2.执行提取出来的sql语句，只保留可执行的sql语句
-                exec_result, _, exec_error_message = exec_sql_statement(tool, exp, dbType, match.strip())
+                print(filename + " " + match)
+                try:
+                    exec_result, _, exec_error_message = run_with_timeout(exec_sql_statement, 17, "knowledge_base", "preprocess", dbType, match.strip())
+                except TimeoutError as e:
+                    exec_result, _, exec_error_message = None, None, "error"
+                    print(e)
                 if not exec_error_message:
                     effective_sqls.append(match.strip())
                 else:
@@ -177,7 +136,7 @@ def effective_sqls_refiner(tool, exp, dbType, featureType):
     print("官网未提供Example字符串的feature数量:" + str(none_example_cnt))
 
 
-def sql_generator_llm(tool, db_name, temperature, model, content, max_cnt, with_table, with_examples):
+def sql_generator_llm(tool, exp, dbType, temperature, model, content, max_cnt, with_table, with_examples):
     chat = ChatOpenAI(temperature=temperature, model=model)
     memory = ConversationBufferMemory()  # 内存：对话缓冲区内存
     conversation = ConversationChain(
@@ -235,7 +194,6 @@ def sql_generator_llm(tool, db_name, temperature, model, content, max_cnt, with_
     error message:{error_message}  
     Answer the following information: {format_instructions}  
     """
-
     iterate_prompt_template = ChatPromptTemplate.from_template(iterate_llm_string)
 
     costs = []
@@ -252,7 +210,7 @@ def sql_generator_llm(tool, db_name, temperature, model, content, max_cnt, with_
             # 初始第一条prompt
             if with_examples:
                 prompt_messages = prompt_template.format_messages(
-                    db_name=db_name,
+                    db_name=dbType,
                     feature=str(content["Title"]),
                     syntax=str(content["Feature"]),
                     description=str(content["Description"]),
@@ -261,7 +219,7 @@ def sql_generator_llm(tool, db_name, temperature, model, content, max_cnt, with_
                 )
             else:
                 prompt_messages = prompt_template.format_messages(
-                    db_name=db_name,
+                    db_name=dbType,
                     feature=str(content["Title"]),
                     syntax=str(content["Feature"]),
                     description=str(content["Description"]),
@@ -270,7 +228,6 @@ def sql_generator_llm(tool, db_name, temperature, model, content, max_cnt, with_
                 )
         else:
             # 边界3：判断上一次得到的transfer sql执行是否执行成功，能执行成功则break直接跳出循环，执行失败则进行下面的error信息迭代处理
-
             if len(error_messages) and error_messages[-1] == "None":
                 break
             # error信息迭代处理：
@@ -279,7 +236,7 @@ def sql_generator_llm(tool, db_name, temperature, model, content, max_cnt, with_
             # 迭代的prompt：每次取error_messages数组的最后一个元素，则为最新的报错信息
             prompt_messages = iterate_prompt_template.format_messages(
                 feature=str(content["Title"]),
-                db_name=db_name,
+                db_name=dbType,
                 error_message=error_messages[-1] if len(error_messages) else "",
                 format_instructions=format_instructions
             )
@@ -298,10 +255,9 @@ def sql_generator_llm(tool, db_name, temperature, model, content, max_cnt, with_
                 cost["Total Cost (USD)"] = cb.total_cost  # 用了4o-mini以后变成0.0了，还没修改，也可以用户token乘单价计算
 
                 # 2.执行提取出来的sql语句，只保留可执行的sql语句
-                exec_result, exec_time, error_message = exec_sql_statement(tool, db_name, output_dict["Example SQL"])
-
+                exec_result, exec_time, error_message = exec_sql_statement(tool, exp, dbType, output_dict["Example SQL"])
                 costs.append(cost)
-                generate_results.append(output_dict)
+                generate_results.append(output_dict["Example SQL"])
                 exec_results.append(str(exec_result))
                 exec_times.append(str(exec_time))
                 # 简化error_message,只留下关键部分
@@ -311,167 +267,75 @@ def sql_generator_llm(tool, db_name, temperature, model, content, max_cnt, with_
         except Exception as e:
             print("transfer llm:")
             print(e)
-
         conversation_cnt += 1
-
     return costs, generate_results, exec_results, exec_times, error_messages
 
 
-def effective_sqls_generator(db_name, feature_type, temperature, model, max_cnt):
+def effective_sqls_generator(tool, exp, dbType, featureType, temperature, model, max_cnt):
+    if featureType.lower() not in ["function", "operator","datatype"]:
+        return
+    args = get_database_connector_args(dbType.lower())
+    args["dbname"] = f"{tool}_{exp}_{dbType}"
     # 对于提取effective sql失败的feature：利用llm为该feature生成一个简单的effective sql
-    if feature_type in ["function", "operator"]:
-        none_effective_cnt = 0
-        generate_without_table_fail_cnt = 0
-        generate_with_table_fail_cnt = 0
+    none_effective_cnt = 0
+    generate_without_table_fail_cnt = 0
+    generate_with_table_fail_cnt = 0
+    source_dic = os.path.join(current_dir, "..", "..", "FeatureKnowledgeBase", dbType.lower(), featureType, "results")
+    source_filenames = os.listdir(source_dic)
 
-        source_dic = os.path.join("..", "..", "FeatureKnowledgeBase Processed1", db_name, feature_type,
-                                  feature_type + "_Results")
-
-        source_filenames = os.listdir(source_dic)
-        for filename in source_filenames:
-            with open(os.path.join(source_dic, filename), "r", encoding="utf-8") as r:
-                content = json.load(r)
-
-            if len(content["Effective SQLs Refined"]) == 0:
-                # 提取effective sql失败，需要利用llm为该feature生成简单的sql样例
-                none_effective_cnt += 1
-                if "Effective SQLs Generated1" in content:
-                    if len(content["Effective SQLs Generated1"]):
-                        # 第二轮已经成功生成effective sqls
-                        continue
-                """
-                if "Effective SQLs Generated2" in content:
-                    continue
-                """
-                costs, generate_results, exec_results, exec_times, error_messages = sql_generator_llm(db_name, temperature, model, content, max_cnt, False, True)
-                content["SQLs Generated1"] = generate_results
-                content["SQLs Generated Costs1"] = costs
-                content["SQLs Generated ExecResults1"] = exec_results
-                content["SQLs Generated ExecTimes1"] = exec_times
-                content["SQLs Generated ErrorMessages1"] = error_messages
-
-                if len(error_messages) and error_messages[-1] == "None":
-                    # 第一轮无表格的生成成功
-                    content["Effective SQLs Generated1"] = [generate_results[-1]["Example SQL"]]
-                else:
-                    # 最后一条记录有错误，说明第一轮未能成功生成effective sql
-                    generate_without_table_fail_cnt += 1
-                    content["Effective SQLs Generated1"] = []
-
-                    # 第二轮基于表格进行生成
-                    costs, generate_results, exec_results, exec_times, error_messages = sql_generator_llm(db_name,
-                                                                                                          temperature,
-                                                                                                          model,
-                                                                                                          content,
-                                                                                                          max_cnt,
-                                                                                                          True, False)
-                    content["SQLs Generated2"] = generate_results
-                    content["SQLs Generated Costs2"] = costs
-                    content["SQLs Generated ExecResults2"] = exec_results
-                    content["SQLs Generated ExecTimes2"] = exec_times
-                    content["SQLs Generated ErrorMessages2"] = error_messages
-
-                    if len(error_messages) and error_messages[-1] == "None":
-                        # 第二轮无表格的生成成功
-                        content["Effective SQLs Generated2"] = [generate_results[-1]["Example SQL"]]
-                    else:
-                        # 最后一条记录有错误，说明第一轮未能成功生成effective sql
-                        generate_with_table_fail_cnt += 1
-                        content["Effective SQLs Generated2"] = []
-
-            else:
-                content["SQLs Generated1"] = []
-                content["SQLs Generated Costs1"] = []
-                content["SQLs Generated ExecResults1"] = []
-                content["SQLs Generated ExecTimes1"] = []
-                content["SQLs Generated ErrorMessages1"] = []
-                content["Effective SQLs Generated1"] = []
-                content["SQLs Generated2"] = []
-                content["SQLs Generated Costs2"] = []
-                content["SQLs Generated ExecResults2"] = []
-                content["SQLs Generated ExecTimes2"] = []
-                content["SQLs Generated ErrorMessages2"] = []
-                content["Effective SQLs Generated2"] = []
-            # 3.将生成的sqls更新到feature knowledge base processed中
-            with open(os.path.join(source_dic, filename), "w", encoding="utf-8") as w:
-                json.dump(content, w, indent=4)
-        print("未提取到effective sqls的feature数量:" + str(none_effective_cnt))
-        print("生成sql(无基本表)失败的feature数量:" + str(generate_without_table_fail_cnt))
-        print("生成sql(有基本表)失败的feature数量:" + str(generate_with_table_fail_cnt))
-
-
-def effective_sqls_generator_v2(db_name, feature_type, temperature, model, max_cnt):
-    # 对于提取effective sql失败的feature：利用llm为该feature生成一个简单的effective sql
-    if feature_type in ["function", "operator"]:
-        none_effective_cnt = 0
-        generate_without_table_fail_cnt = 0
-        generate_with_table_fail_cnt = 0
-
-        source_dic = os.path.join("..", "..", "FeatureKnowledgeBase Processed", db_name, feature_type,
-                                  feature_type + "_Results")
-
-        source_filenames = os.listdir(source_dic)
-        for filename in source_filenames:
-            # effective_sqls_generator(version2)
-            if filename not in effective_sqls_generator_v2_skip:
+    for filename in source_filenames:
+        print(filename)
+        with open(os.path.join(source_dic, filename), "r", encoding="utf-8") as r:
+            content = json.load(r)
+        if len(content["EffectiveSQLsRefined"]) == 0:
+            # 提取effective sql失败，需要利用llm为该feature生成简单的sql样例
+            none_effective_cnt += 1
+            if "EffectiveSQLsGenerated" in content and "EffectiveSQLsGeneratedCosts" in content and len(content["EffectiveSQLsGenerated"]):
+                print(filename + " has generated effective sqls.")
                 continue
-
-            with open(os.path.join(source_dic, filename), "r", encoding="utf-8") as r:
-                content = json.load(r)
-
-            if len(content["Effective SQLs Refined"]) == 0:
-                # 提取effective sql失败，需要利用llm为该feature生成简单的sql样例
-                none_effective_cnt += 1
-                if "Effective SQLs Generated1" in content:
-                    if len(content["Effective SQLs Generated1"]):
-                        # 第二轮已经成功生成effective sqls
-                        continue
-
-                    # 第二轮基于表格进行生成
-                    costs, generate_results, exec_results, exec_times, error_messages = sql_generator_llm(db_name,
-                                                                                                          temperature,
-                                                                                                          model,
-                                                                                                          content,
-                                                                                                          max_cnt,
-                                                                                                          True, True)
-                    content["SQLs Generated2"] = generate_results
-                    content["SQLs Generated Costs2"] = costs
-                    content["SQLs Generated ExecResults2"] = exec_results
-                    content["SQLs Generated ExecTimes2"] = exec_times
-                    content["SQLs Generated ErrorMessages2"] = error_messages
-
-                    if len(error_messages) and error_messages[-1] == "None":
-                        # 第二轮无表格的生成成功
-                        content["Effective SQLs Generated2"] = [generate_results[-1]["Example SQL"]]
-                    else:
-                        # 最后一条记录有错误，说明第一轮未能成功生成effective sql
-                        generate_with_table_fail_cnt += 1
-                        content["Effective SQLs Generated2"] = []
-
-            else:
-                content["SQLs Generated1"] = []
-                content["SQLs Generated Costs1"] = []
-                content["SQLs Generated ExecResults1"] = []
-                content["SQLs Generated ExecTimes1"] = []
-                content["SQLs Generated ErrorMessages1"] = []
-                content["Effective SQLs Generated1"] = []
-                content["SQLs Generated2"] = []
-                content["SQLs Generated Costs2"] = []
-                content["SQLs Generated ExecResults2"] = []
-                content["SQLs Generated ExecTimes2"] = []
-                content["SQLs Generated ErrorMessages2"] = []
-                content["Effective SQLs Generated2"] = []
+            database_clear(tool, exp, dbType)
+            costs, generate_results, exec_results, exec_times, error_messages = sql_generator_llm(tool, exp, dbType, temperature,
+                                                                                                  model, content,
+                                                                                                  max_cnt, False, False)
+            content["EffectiveSQLsGenerated"] = generate_results
+            content["EffectiveSQLsGeneratedCosts"] = costs
+            content["EffectiveSQLsGeneratedErrors"] = error_messages
+        else:
+            content["EffectiveSQLsGenerated"] = []
+            content["EffectiveSQLsGeneratedCosts"] = []
+            content["EffectiveSQLsGeneratedErrors"] = []
             # 3.将生成的sqls更新到feature knowledge base processed中
-            with open(os.path.join(source_dic, filename), "w", encoding="utf-8") as w:
-                json.dump(content, w, indent=4)
-        print("未提取到effective sqls的feature数量:" + str(none_effective_cnt))
-        print("生成sql(无基本表)失败的feature数量:" + str(generate_without_table_fail_cnt))
-        print("生成sql(有基本表)失败的feature数量:" + str(generate_with_table_fail_cnt))
+        with open(os.path.join(source_dic, filename), "w", encoding="utf-8") as w:
+            json.dump(content, w, indent=4)
+    print("未提取到effective sqls的feature数量:" + str(none_effective_cnt))
+    print("生成sql(无基本表)失败的feature数量:" + str(generate_without_table_fail_cnt))
+    print("生成sql(有基本表)失败的feature数量:" + str(generate_with_table_fail_cnt))
 
+def merge_effective_sqls(tool, exp, dbType, featureType):
+    if featureType.lower() not in ["function", "operator","datatype"]:
+        return
+    args = get_database_connector_args(dbType.lower())
+    args["dbname"] = f"{tool}_{exp}_{dbType}"
+    source_dic = os.path.join(current_dir, "..", "..", "FeatureKnowledgeBase", dbType.lower(), featureType, "results")
+    source_filenames = os.listdir(source_dic)
+    none_effective_cnt = 0  # 未提取到effective sql的feature数量
+    for filename in source_filenames:
+        with open(os.path.join(source_dic, filename), "r", encoding="utf-8") as r:
+            content = json.load(r)
+        content["EffectiveSQLs"] = copy.deepcopy(content["EffectiveSQLsRefined"])
+        if len(content["EffectiveSQLsGeneratedErrors"]) and content["EffectiveSQLsGeneratedErrors"][-1] == "None":
+            content["EffectiveSQLs"].append(content["EffectiveSQLsGenerated"][-1])
+        with open(os.path.join(source_dic, filename), "w", encoding="utf-8") as w:
+            json.dump(content, w, indent=4)
+
+        if not len(content["EffectiveSQLs"]):
+            none_effective_cnt += 1
+
+    print("总features文件个数:" + str(len(source_filenames)))
+    print("未提取/生成到effective sqls的feature数量:" + str(none_effective_cnt))
 
 def knowledge_base_processing(tool, exp, dbType, featureType):
     effective_sqls_refiner(tool, exp, dbType, featureType)
-    # effective_sqls_generator(db_name, feature_type, 0.3, "gpt-4o-mini", 4)
+    effective_sqls_generator(tool, exp, dbType, featureType,0.3, "gpt-4o-mini", 4)
+    merge_effective_sqls(tool, exp, dbType, featureType)
 
-
-knowledge_base_processing('pinolo', 'temp','mariadb','function')

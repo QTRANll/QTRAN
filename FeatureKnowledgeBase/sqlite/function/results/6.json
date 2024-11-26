@@ -14,5 +14,23 @@
     "Examples": [],
     "Category": [
         "Core SQL Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT format('Hello, %s!', 'World');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 459,
+            "Prompt Tokens": 435,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 7.965e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT format('Hello, %s!', 'World');"
     ]
 }

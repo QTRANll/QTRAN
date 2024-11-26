@@ -6,15 +6,41 @@
         "bound_box"
     ],
     "Feature": [
-        "bound_box ( box, box ) → box"
+        "bound_box ( box, box ) \u2192 box"
     ],
     "Description": [
         "Computes bounding box of two boxes."
     ],
     "Examples": [
-        "bound_box(box '(1,1),(0,0)', box '(4,4),(3,3)') → (4,4),(0,0)"
+        "bound_box(box '(1,1),(0,0)', box '(4,4),(3,3)') \u2192 (4,4),(0,0)"
     ],
     "Category": [
         "Geometric Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT bound_box(box1, box2);",
+        "SELECT bound_box(BOX('(0,0),(1,1)'), BOX('(2,2),(3,3)'));"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 272,
+            "Prompt Tokens": 250,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 5.069999999999999e-05
+        },
+        {
+            "Total Tokens": 451,
+            "Prompt Tokens": 413,
+            "Completion Tokens": 38,
+            "Total Cost (USD)": 8.474999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedColumn) column \"box1\" does not exist\nLINE 1: SELECT bound_box(box1, box2);\n                         ^\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT bound_box(BOX('(0,0),(1,1)'), BOX('(2,2),(3,3)'));"
     ]
 }

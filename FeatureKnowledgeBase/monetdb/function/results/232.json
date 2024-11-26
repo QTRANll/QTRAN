@@ -18,5 +18,39 @@
     ],
     "Category": [
         "JSON Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT json.text(js, ', ') AS result;",
+        "SELECT json.text('value1, value2, value3', ', ') AS result;",
+        "SELECT json.text('[\"value1\", \"value2\", \"value3\"]', ', ') AS result;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 299,
+            "Prompt Tokens": 277,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 5.4749999999999996e-05
+        },
+        {
+            "Total Tokens": 461,
+            "Prompt Tokens": 431,
+            "Completion Tokens": 30,
+            "Total Cost (USD)": 8.265e-05
+        },
+        {
+            "Total Tokens": 629,
+            "Prompt Tokens": 595,
+            "Completion Tokens": 34,
+            "Total Cost (USD)": 0.00010964999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: identifier 'js' unknown\n\n",
+        "(pymonetdb.exceptions.OperationalError) JSON syntax error: json parse failed, expecting '{', '['\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT json.text('[\"value1\", \"value2\", \"value3\"]', ', ') AS result;"
     ]
 }

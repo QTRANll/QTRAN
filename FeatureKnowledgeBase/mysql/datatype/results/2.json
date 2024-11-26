@@ -14,5 +14,23 @@
     "Examples": [],
     "Category": [
         "Floating-Point Types (Approximate Value) - FLOAT, DOUBLE"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "CREATE TABLE example_table (example_column FLOAT);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 843,
+            "Prompt Tokens": 821,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 0.00013634999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "CREATE TABLE example_table (example_column FLOAT);"
     ]
 }

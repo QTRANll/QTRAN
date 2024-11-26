@@ -18,5 +18,16 @@
     ],
     "Category": [
         "Comparison Operators"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT 1 IS TRUE, 0 IS FALSE, NULL IS UNKNOWN;",
+        "SELECT 2 = TRUE, 2 IS TRUE;"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT 1 IS TRUE, 0 IS FALSE, NULL IS UNKNOWN;",
+        "SELECT 2 = TRUE, 2 IS TRUE;"
     ]
 }

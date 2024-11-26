@@ -17,5 +17,31 @@
     ],
     "Category": [
         "Utility Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT if(a, b, c);",
+        "SELECT if(true, 'value_if_true', 'value_if_false');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 310,
+            "Prompt Tokens": 289,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 5.594999999999999e-05
+        },
+        {
+            "Total Tokens": 486,
+            "Prompt Tokens": 459,
+            "Completion Tokens": 27,
+            "Total Cost (USD)": 8.505e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.BinderException) Binder Error: Referenced column \"a\" not found in FROM clause!\nLINE 1: SELECT if(a, b, c);\n                  ^\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT if(true, 'value_if_true', 'value_if_false');"
     ]
 }

@@ -16,5 +16,23 @@
     ],
     "Category": [
         "Struct Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT struct_pack(name := 'example_value')"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 296,
+            "Prompt Tokens": 274,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 5.43e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT struct_pack(name := 'example_value')"
     ]
 }

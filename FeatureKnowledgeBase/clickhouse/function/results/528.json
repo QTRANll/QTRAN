@@ -24,5 +24,9 @@
     ],
     "Category": [
         "Maps Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT mapAdd(map(1,1), map(1,1));",
+        "SELECT mapAdd(([toUInt8(1), 2], [1, 1]), ([toUInt8(1), 2], [1, 1])) as res, toTypeName(res) as type;"
     ]
 }

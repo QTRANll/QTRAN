@@ -6,7 +6,7 @@
         "pg_cancel_backend"
     ],
     "Feature": [
-        "pg_cancel_backend ( pid integer ) → boolean"
+        "pg_cancel_backend ( pid integer ) \u2192 boolean"
     ],
     "Description": [
         "Cancels the current query of the session whose backend process has the specified process ID. This is also allowed if the calling role is a member of the role whose backend is being canceled or the calling role has privileges of pg_signal_backend, however only superusers can cancel superuser backends."
@@ -14,5 +14,23 @@
     "Examples": [],
     "Category": [
         "System Administration Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT pg_cancel_backend(12345);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 324,
+            "Prompt Tokens": 303,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 5.8049999999999995e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT pg_cancel_backend(12345);"
     ]
 }

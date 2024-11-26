@@ -16,5 +16,30 @@
     "Category": [
         "Dynamic Columns Functions"
     ],
-    "EffectiveSQLsRefined": []
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT COLUMN_CHECK(dyncol_blob);",
+        "SELECT COLUMN_CHECK(@dyncol_blob);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 377,
+            "Prompt Tokens": 356,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 6.599999999999999e-05
+        },
+        {
+            "Total Tokens": 530,
+            "Prompt Tokens": 509,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 8.895e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.OperationalError) (1054, \"Unknown column 'dyncol_blob' in 'field list'\")\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT COLUMN_CHECK(@dyncol_blob);"
+    ]
 }

@@ -10,8 +10,8 @@
     ],
     "Description": [
         "CONNECTION_ID()",
-        "CONNECTION_ID() 函数返回连接的 ID。根据 TiDB 的 enable-32bits-connection-id 配置项的值不同，该函数将返回一个 32 位或 64 位的连接 ID。",
-        "如果启用了 enable-global-kill，连接的 ID 可用于在同一集群的多个 TiDB 实例中终止查询。",
+        "CONNECTION_ID() \u51fd\u6570\u8fd4\u56de\u8fde\u63a5\u7684 ID\u3002\u6839\u636e TiDB \u7684 enable-32bits-connection-id \u914d\u7f6e\u9879\u7684\u503c\u4e0d\u540c\uff0c\u8be5\u51fd\u6570\u5c06\u8fd4\u56de\u4e00\u4e2a 32 \u4f4d\u6216 64 \u4f4d\u7684\u8fde\u63a5 ID\u3002",
+        "\u5982\u679c\u542f\u7528\u4e86 enable-global-kill\uff0c\u8fde\u63a5\u7684 ID \u53ef\u7528\u4e8e\u5728\u540c\u4e00\u96c6\u7fa4\u7684\u591a\u4e2a TiDB \u5b9e\u4f8b\u4e2d\u7ec8\u6b62\u67e5\u8be2\u3002",
         "SELECT CONNECTION_ID();\n",
         "+-----------------+\n| CONNECTION_ID() |\n+-----------------+\n|       322961414 |\n+-----------------+\n1 row in set (0.00 sec)\n"
     ],
@@ -19,6 +19,15 @@
         "SELECT CONNECTION_ID();\n"
     ],
     "Category": [
-        "信息函数"
+        "\u4fe1\u606f\u51fd\u6570"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT CONNECTION_ID();"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT CONNECTION_ID();"
     ]
 }

@@ -16,5 +16,53 @@
     ],
     "Category": [
         "Map Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT element_at(map, key);",
+        "SELECT element_at(ARRAY[1, 2, 3], 2);",
+        "SELECT element_at(MAP['key1', 'value1', 'key2', 'value2'], 'key1');",
+        "SELECT element_at(MAP['key1' => 'value1', 'key2' => 'value2'], 'key1');",
+        "SELECT element_at(MAP('key1', 'value1', 'key2', 'value2'), 'key1');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 321,
+            "Prompt Tokens": 301,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 5.714999999999999e-05
+        },
+        {
+            "Total Tokens": 498,
+            "Prompt Tokens": 468,
+            "Completion Tokens": 30,
+            "Total Cost (USD)": 8.82e-05
+        },
+        {
+            "Total Tokens": 667,
+            "Prompt Tokens": 629,
+            "Completion Tokens": 38,
+            "Total Cost (USD)": 0.00011714999999999999
+        },
+        {
+            "Total Tokens": 835,
+            "Prompt Tokens": 795,
+            "Completion Tokens": 40,
+            "Total Cost (USD)": 0.00014324999999999999
+        },
+        {
+            "Total Tokens": 1002,
+            "Prompt Tokens": 964,
+            "Completion Tokens": 38,
+            "Total Cost (USD)": 0.0001674
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.BinderException) Binder Error: Referenced column \"map\" not found in FROM clause!\nLINE 1: SELECT element_at(map, key);\n                          ^\n",
+        "(duckdb.duckdb.BinderException) Binder Error: MAP_EXTRACT can only operate on MAPs\n",
+        "(duckdb.duckdb.ParserException) Parser Error: syntax error at or near \",\"\n",
+        "(duckdb.duckdb.ParserException) Parser Error: syntax error at or near \"=>\"\n",
+        "(duckdb.duckdb.InvalidInputException) Invalid Input Error: Invalid map argument(s). Valid map arguments are a list of key-value pairs (MAP {'key1': 'val1', ...}), two lists (MAP ([1, 2], [10, 11])), or no arguments.\n"
+    ],
+    "EffectiveSQLs": []
 }

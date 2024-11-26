@@ -6,15 +6,65 @@
         "anymultirange -|- anymultirange"
     ],
     "Feature": [
-        "anymultirange -|- anymultirange → boolean"
+        "anymultirange -|- anymultirange \u2192 boolean"
     ],
     "Description": [
         "Are the multiranges adjacent?"
     ],
     "Examples": [
-        "'{[1.1,2.2)}'::nummultirange -|- '{[2.2,3.3)}'::nummultirange → t"
+        "'{[1.1,2.2)}'::nummultirange -|- '{[2.2,3.3)}'::nummultirange \u2192 t"
     ],
     "Category": [
         "Range divide Multirange Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT 'anymultirange'::anymultirange && 'anymultirange'::anymultirange;",
+        "SELECT '[]'::anymultirange && '[]'::anymultirange;",
+        "SELECT NULL::anymultirange && NULL::anymultirange;",
+        "SELECT '[]'::int4range[] && '[]'::int4range[];",
+        "SELECT '{}'::int4range[] && '{}'::int4range[];"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 313,
+            "Prompt Tokens": 276,
+            "Completion Tokens": 37,
+            "Total Cost (USD)": 6.36e-05
+        },
+        {
+            "Total Tokens": 507,
+            "Prompt Tokens": 476,
+            "Completion Tokens": 31,
+            "Total Cost (USD)": 8.999999999999999e-05
+        },
+        {
+            "Total Tokens": 694,
+            "Prompt Tokens": 667,
+            "Completion Tokens": 27,
+            "Total Cost (USD)": 0.00011624999999999999
+        },
+        {
+            "Total Tokens": 867,
+            "Prompt Tokens": 836,
+            "Completion Tokens": 31,
+            "Total Cost (USD)": 0.00014399999999999998
+        },
+        {
+            "Total Tokens": 1060,
+            "Prompt Tokens": 1033,
+            "Completion Tokens": 27,
+            "Total Cost (USD)": 0.00017114999999999996
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.FeatureNotSupported) cannot accept a value of type anymultirange\nLINE 1: SELECT 'anymultirange'::anymultirange && 'anymultirange'::an...\n               ^\n\n",
+        "(psycopg2.errors.FeatureNotSupported) cannot accept a value of type anymultirange\nLINE 1: SELECT '[]'::anymultirange && '[]'::anymultirange;\n               ^\n\n",
+        "(psycopg2.errors.DatatypeMismatch) argument declared anymultirange is not a multirange type but type anymultirange\n\n",
+        "(psycopg2.errors.InvalidTextRepresentation) malformed array literal: \"[]\"\nLINE 1: SELECT '[]'::int4range[] && '[]'::int4range[];\n               ^\nDETAIL:  \"[\" must introduce explicitly-specified array dimensions.\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT '{}'::int4range[] && '{}'::int4range[];"
     ]
 }

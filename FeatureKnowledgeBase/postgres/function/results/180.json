@@ -6,15 +6,49 @@
         "height"
     ],
     "Feature": [
-        "height ( box ) → double precision"
+        "height ( box ) \u2192 double precision"
     ],
     "Description": [
         "Computes vertical size of box."
     ],
     "Examples": [
-        "height(box '(1,2),(0,0)') → 2"
+        "height(box '(1,2),(0,0)') \u2192 2"
     ],
     "Category": [
         "Geometric Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT height(box) AS vertical_size;",
+        "SELECT height(ROW(1, 1, 1, 1)) AS vertical_size;",
+        "SELECT height('(1, 1, 1, 1)'::box) AS vertical_size;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 264,
+            "Prompt Tokens": 244,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 4.8599999999999995e-05
+        },
+        {
+            "Total Tokens": 434,
+            "Prompt Tokens": 402,
+            "Completion Tokens": 32,
+            "Total Cost (USD)": 7.95e-05
+        },
+        {
+            "Total Tokens": 639,
+            "Prompt Tokens": 606,
+            "Completion Tokens": 33,
+            "Total Cost (USD)": 0.00011069999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedColumn) column \"box\" does not exist\nLINE 1: SELECT height(box) AS vertical_size;\n                      ^\n\n",
+        "(psycopg2.errors.UndefinedFunction) function height(record) does not exist\nLINE 1: SELECT height(ROW(1, 1, 1, 1)) AS vertical_size;\n               ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT height('(1, 1, 1, 1)'::box) AS vertical_size;"
     ]
 }

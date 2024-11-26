@@ -6,15 +6,33 @@
         "geometric_type + point"
     ],
     "Feature": [
-        "geometric_type + point → geometric_type"
+        "geometric_type + point \u2192 geometric_type"
     ],
     "Description": [
         "Adds the coordinates of the second point to those of each point of the first argument, thus performing translation. Available for point, box, path, circle."
     ],
     "Examples": [
-        "box '(1,1),(0,0)' + point '(2,0)' → (3,1),(2,0)"
+        "box '(1,1),(0,0)' + point '(2,0)' \u2192 (3,1),(2,0)"
     ],
     "Category": [
         "Geometric Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT point(1, 2) + point(3, 4);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 310,
+            "Prompt Tokens": 281,
+            "Completion Tokens": 29,
+            "Total Cost (USD)": 5.955e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT point(1, 2) + point(3, 4);"
     ]
 }

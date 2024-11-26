@@ -10,16 +10,27 @@
     ],
     "Description": [
         "TO_BASE64()",
-        "TO_BASE64() 函数用于将输入的参数转换为 base-64 编码形式的字符串，并按照当前连接的字符集和排序规则返回结果。base-64 编码的字符串可以使用 FROM_BASE64() 函数进行解码。",
-        "语法：",
+        "TO_BASE64() \u51fd\u6570\u7528\u4e8e\u5c06\u8f93\u5165\u7684\u53c2\u6570\u8f6c\u6362\u4e3a base-64 \u7f16\u7801\u5f62\u5f0f\u7684\u5b57\u7b26\u4e32\uff0c\u5e76\u6309\u7167\u5f53\u524d\u8fde\u63a5\u7684\u5b57\u7b26\u96c6\u548c\u6392\u5e8f\u89c4\u5219\u8fd4\u56de\u7ed3\u679c\u3002base-64 \u7f16\u7801\u7684\u5b57\u7b26\u4e32\u53ef\u4ee5\u4f7f\u7528 FROM_BASE64() \u51fd\u6570\u8fdb\u884c\u89e3\u7801\u3002",
+        "\u8bed\u6cd5\uff1a",
         "TO_BASE64(str)\n",
-        "如果输入参数不是字符串，该函数会将其转换为字符串后再进行 base-64 编码。如果输入参数为 NULL，该函数返回 NULL。"
+        "\u5982\u679c\u8f93\u5165\u53c2\u6570\u4e0d\u662f\u5b57\u7b26\u4e32\uff0c\u8be5\u51fd\u6570\u4f1a\u5c06\u5176\u8f6c\u6362\u4e3a\u5b57\u7b26\u4e32\u540e\u518d\u8fdb\u884c base-64 \u7f16\u7801\u3002\u5982\u679c\u8f93\u5165\u53c2\u6570\u4e3a NULL\uff0c\u8be5\u51fd\u6570\u8fd4\u56de NULL\u3002"
     ],
     "Examples": [
         "SELECT TO_BASE64('abc');\n",
         "SELECT TO_BASE64(6);\n"
     ],
     "Category": [
-        "字符串函数"
+        "\u5b57\u7b26\u4e32\u51fd\u6570"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT TO_BASE64('abc');",
+        "SELECT TO_BASE64(6);"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT TO_BASE64('abc');",
+        "SELECT TO_BASE64(6);"
     ]
 }

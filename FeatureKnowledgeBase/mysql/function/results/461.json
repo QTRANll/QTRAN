@@ -25,5 +25,53 @@
     ],
     "Category": [
         "Loadable Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT gen_rnd_ssn();",
+        "SELECT gen_rnd_ssn();",
+        "SELECT gen_rnd_ssn();",
+        "SELECT gen_rnd_ssn();",
+        "SELECT gen_rnd_ssn();"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 440,
+            "Prompt Tokens": 420,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 7.499999999999998e-05
+        },
+        {
+            "Total Tokens": 598,
+            "Prompt Tokens": 578,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 9.869999999999997e-05
+        },
+        {
+            "Total Tokens": 756,
+            "Prompt Tokens": 736,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 0.0001224
+        },
+        {
+            "Total Tokens": 914,
+            "Prompt Tokens": 894,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 0.00014609999999999997
+        },
+        {
+            "Total Tokens": 1072,
+            "Prompt Tokens": 1052,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 0.00016979999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.gen_rnd_ssn does not exist')\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.gen_rnd_ssn does not exist')\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.gen_rnd_ssn does not exist')\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.gen_rnd_ssn does not exist')\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.gen_rnd_ssn does not exist')\n"
+    ],
+    "EffectiveSQLs": []
 }

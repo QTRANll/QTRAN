@@ -22,5 +22,24 @@
     ],
     "Category": [
         "Comparison Operators"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT COALESCE(NULL,1);",
+        "SELECT COALESCE(NULL,NULL,NULL);",
+        "SELECT COALESCE(@a, @b), IFNULL(@a, @b);",
+        "SELECT * FROM t1;",
+        "SELECT SUM(score) FROM student;",
+        "SELECT COALESCE(SUM(score),0) FROM student;"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT COALESCE(NULL,1);",
+        "SELECT COALESCE(NULL,NULL,NULL);",
+        "SELECT COALESCE(@a, @b), IFNULL(@a, @b);",
+        "SELECT * FROM t1;",
+        "SELECT SUM(score) FROM student;",
+        "SELECT COALESCE(SUM(score),0) FROM student;"
     ]
 }

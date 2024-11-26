@@ -16,5 +16,23 @@
     ],
     "Category": [
         "Utility Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT pg_typeof(1);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 289,
+            "Prompt Tokens": 269,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 5.235e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT pg_typeof(1);"
     ]
 }

@@ -17,5 +17,23 @@
     ],
     "Category": [
         "Text Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT ends_with('example_string', 'string');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 272,
+            "Prompt Tokens": 249,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 5.1149999999999996e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT ends_with('example_string', 'string');"
     ]
 }

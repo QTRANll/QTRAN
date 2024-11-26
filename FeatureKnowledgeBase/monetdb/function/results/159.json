@@ -18,5 +18,23 @@
     ],
     "Category": [
         "Date Time Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT sys.epoch(1609459200.000) AS timestamp;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 334,
+            "Prompt Tokens": 307,
+            "Completion Tokens": 27,
+            "Total Cost (USD)": 6.225e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT sys.epoch(1609459200.000) AS timestamp;"
     ]
 }

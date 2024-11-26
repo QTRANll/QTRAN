@@ -20,5 +20,53 @@
     ],
     "Category": [
         "Loadable Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT version_tokens_set('tok1=value1;tok2=value2');",
+        "SELECT version_tokens_set('tok1=value1;tok2=value2');",
+        "SELECT version_tokens_set(NULL);",
+        "SELECT version_tokens_set('');",
+        "SELECT version_tokens_set('tok1=value1;tok2=value2;tok3=value3');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 455,
+            "Prompt Tokens": 427,
+            "Completion Tokens": 28,
+            "Total Cost (USD)": 8.085e-05
+        },
+        {
+            "Total Tokens": 619,
+            "Prompt Tokens": 591,
+            "Completion Tokens": 28,
+            "Total Cost (USD)": 0.00010544999999999999
+        },
+        {
+            "Total Tokens": 774,
+            "Prompt Tokens": 755,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 0.00012465
+        },
+        {
+            "Total Tokens": 929,
+            "Prompt Tokens": 910,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 0.0001479
+        },
+        {
+            "Total Tokens": 1098,
+            "Prompt Tokens": 1065,
+            "Completion Tokens": 33,
+            "Total Cost (USD)": 0.00017954999999999997
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.version_tokens_set does not exist')\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.version_tokens_set does not exist')\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.version_tokens_set does not exist')\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.version_tokens_set does not exist')\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.version_tokens_set does not exist')\n"
+    ],
+    "EffectiveSQLs": []
 }

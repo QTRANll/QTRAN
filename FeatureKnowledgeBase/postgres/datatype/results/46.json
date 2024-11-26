@@ -19,5 +19,39 @@
     "Examples": [],
     "Category": [
         "Object Identifier Types"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT oid FROM my_table;",
+        "SELECT oid;",
+        "SELECT 564182 AS oid;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 269,
+            "Prompt Tokens": 251,
+            "Completion Tokens": 18,
+            "Total Cost (USD)": 4.844999999999999e-05
+        },
+        {
+            "Total Tokens": 421,
+            "Prompt Tokens": 406,
+            "Completion Tokens": 15,
+            "Total Cost (USD)": 6.989999999999999e-05
+        },
+        {
+            "Total Tokens": 573,
+            "Prompt Tokens": 554,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 9.449999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedTable) relation \"my_table\" does not exist\nLINE 1: SELECT oid FROM my_table;\n                        ^\n\n",
+        "(psycopg2.errors.UndefinedColumn) column \"oid\" does not exist\nLINE 1: SELECT oid;\n               ^\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT 564182 AS oid;"
     ]
 }

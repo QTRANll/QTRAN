@@ -18,5 +18,53 @@
     ],
     "Category": [
         "URL Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT sys.url_extract_host('https://www.example.com/path', true);",
+        "SELECT sys.url_extract_host('https://example.com/path', false);",
+        "SELECT sys.url_extract_host('http://example.com', true);",
+        "SELECT sys.url_extract_host('ftp://example.com/resource', false);",
+        "SELECT sys.url_extract_host('http://example.org', true);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 321,
+            "Prompt Tokens": 293,
+            "Completion Tokens": 28,
+            "Total Cost (USD)": 6.0749999999999986e-05
+        },
+        {
+            "Total Tokens": 492,
+            "Prompt Tokens": 465,
+            "Completion Tokens": 27,
+            "Total Cost (USD)": 8.595e-05
+        },
+        {
+            "Total Tokens": 662,
+            "Prompt Tokens": 636,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 0.00011099999999999999
+        },
+        {
+            "Total Tokens": 833,
+            "Prompt Tokens": 806,
+            "Completion Tokens": 27,
+            "Total Cost (USD)": 0.0001371
+        },
+        {
+            "Total Tokens": 1003,
+            "Prompt Tokens": 977,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 0.00016214999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: no such binary operator 'url_extract_host(char,boolean)'\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: no such binary operator 'url_extract_host(char,boolean)'\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: no such binary operator 'url_extract_host(char,boolean)'\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: no such binary operator 'url_extract_host(char,boolean)'\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: no such binary operator 'url_extract_host(char,boolean)'\n\n"
+    ],
+    "EffectiveSQLs": []
 }

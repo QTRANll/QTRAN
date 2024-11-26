@@ -23,5 +23,20 @@
     ],
     "Category": [
         "String Data Types"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT * FROM varbins;",
+        "INSERT INTO varbins VALUES('A'),('B'),('a'),('b');",
+        "SELECT * FROM varbins ORDER BY a;",
+        "SELECT * FROM varbins ORDER BY CAST(a AS CHAR);"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT * FROM varbins;",
+        "INSERT INTO varbins VALUES('A'),('B'),('a'),('b');",
+        "SELECT * FROM varbins ORDER BY a;",
+        "SELECT * FROM varbins ORDER BY CAST(a AS CHAR);"
     ]
 }

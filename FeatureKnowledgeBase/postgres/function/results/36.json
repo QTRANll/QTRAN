@@ -6,15 +6,33 @@
         "asind"
     ],
     "Feature": [
-        "asind ( double precision ) → double precision"
+        "asind ( double precision ) \u2192 double precision"
     ],
     "Description": [
         "Inverse sine, result in degrees"
     ],
     "Examples": [
-        "asind(0.5) → 30"
+        "asind(0.5) \u2192 30"
     ],
     "Category": [
         "Mathematical Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT asind(0.5);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 269,
+            "Prompt Tokens": 248,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 4.98e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT asind(0.5);"
     ]
 }

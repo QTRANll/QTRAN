@@ -19,5 +19,23 @@
     "Examples": [],
     "Category": [
         "Object Identifier Types"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT 'integer'::regtype;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 275,
+            "Prompt Tokens": 255,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 5.0249999999999995e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT 'integer'::regtype;"
     ]
 }

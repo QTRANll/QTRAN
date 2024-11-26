@@ -23,5 +23,8 @@
     ],
     "Category": [
         "Type Conversion Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT reinterpretAsUInt32(toFloat32(0.2)) as x, reinterpretAsFloat32(x);"
     ]
 }

@@ -20,5 +20,31 @@
     "Category": [
         "Built-In Functions and Operators",
         "Spatial Analysis Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT ST_MLineFromWKB('your_wkb_data_here')",
+        "SELECT ST_MLineFromWKB(UNHEX('your_valid_wkb_data_here'))"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 416,
+            "Prompt Tokens": 389,
+            "Completion Tokens": 27,
+            "Total Cost (USD)": 7.455e-05
+        },
+        {
+            "Total Tokens": 585,
+            "Prompt Tokens": 554,
+            "Completion Tokens": 31,
+            "Total Cost (USD)": 0.0001017
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.OperationalError) (3037, 'Invalid GIS data provided to function st_mlinefromwkb.')\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT ST_MLineFromWKB(UNHEX('your_valid_wkb_data_here'))"
     ]
 }

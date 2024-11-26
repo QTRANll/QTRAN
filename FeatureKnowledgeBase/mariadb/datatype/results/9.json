@@ -20,5 +20,23 @@
     "Examples": [],
     "Category": [
         "Numeric Data Types"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT CAST(1.23 AS FLOAT);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 484,
+            "Prompt Tokens": 462,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 8.25e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT CAST(1.23 AS FLOAT);"
     ]
 }

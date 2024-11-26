@@ -20,5 +20,55 @@
     ],
     "Category": [
         "Loadable Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT version_tokens_unlock();",
+        "SELECT version_tokens_unlock();",
+        "SELECT version_tokens_lock_exclusive();",
+        "SELECT version_tokens_lock_shared();",
+        "SELECT 1;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 358,
+            "Prompt Tokens": 340,
+            "Completion Tokens": 18,
+            "Total Cost (USD)": 6.18e-05
+        },
+        {
+            "Total Tokens": 512,
+            "Prompt Tokens": 494,
+            "Completion Tokens": 18,
+            "Total Cost (USD)": 8.49e-05
+        },
+        {
+            "Total Tokens": 668,
+            "Prompt Tokens": 648,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 0.00010919999999999998
+        },
+        {
+            "Total Tokens": 825,
+            "Prompt Tokens": 806,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 0.0001323
+        },
+        {
+            "Total Tokens": 978,
+            "Prompt Tokens": 962,
+            "Completion Tokens": 16,
+            "Total Cost (USD)": 0.00015389999999999997
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.version_tokens_unlock does not exist')\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.version_tokens_unlock does not exist')\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.version_tokens_lock_exclusive does not exist')\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.version_tokens_lock_shared does not exist')\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT 1;"
     ]
 }

@@ -6,15 +6,33 @@
         "atand"
     ],
     "Feature": [
-        "atand ( double precision ) → double precision"
+        "atand ( double precision ) \u2192 double precision"
     ],
     "Description": [
         "Inverse tangent, result in degrees"
     ],
     "Examples": [
-        "atand(1) → 45"
+        "atand(1) \u2192 45"
     ],
     "Category": [
         "Mathematical Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT atand(1.0);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 269,
+            "Prompt Tokens": 248,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 4.98e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT atand(1.0);"
     ]
 }

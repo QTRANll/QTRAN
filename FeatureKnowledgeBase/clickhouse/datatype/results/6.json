@@ -25,5 +25,10 @@
     ],
     "Category": [
         "Date32"
+    ],
+    "EffectiveSQLsRefined": [
+        "CREATE TABLE dt32(    `timestamp` Date32,    `event_id` UInt8)ENGINE = TinyLog;",
+        "INSERT INTO dt32 VALUES ('2100-01-01', 1), (47482, 2), (4102444800, 3);",
+        "SELECT * FROM dt32;"
     ]
 }

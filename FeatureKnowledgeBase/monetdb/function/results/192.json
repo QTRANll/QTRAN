@@ -18,5 +18,53 @@
     ],
     "Category": [
         "Date Time Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT timestampadd(dt_ts_tm, interval '1 day')",
+        "SELECT timestampadd(dt_ts_tm, interval '1 day') FROM your_table_name",
+        "SELECT timestampadd(dt_ts_tm, '1 day')",
+        "SELECT timestampadd(current_timestamp, '1 day')",
+        "SELECT current_timestamp + interval '1 day'"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 320,
+            "Prompt Tokens": 295,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 5.924999999999999e-05
+        },
+        {
+            "Total Tokens": 496,
+            "Prompt Tokens": 467,
+            "Completion Tokens": 29,
+            "Total Cost (USD)": 8.745e-05
+        },
+        {
+            "Total Tokens": 667,
+            "Prompt Tokens": 643,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 0.00011085
+        },
+        {
+            "Total Tokens": 825,
+            "Prompt Tokens": 802,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 0.0001341
+        },
+        {
+            "Total Tokens": 989,
+            "Prompt Tokens": 968,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 0.0001578
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymonetdb.exceptions.OperationalError) 42000!syntax error, unexpected ')' in: \"select timestampadd(dt_ts_tm, interval '1 day')\"\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!syntax error, unexpected ')' in: \"select timestampadd(dt_ts_tm, interval '1 day')\"\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: identifier 'dt_ts_tm' unknown\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: no such binary operator 'timestampadd(timestamptz,char)'\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!syntax error, unexpected SCOLON in: \"select current_timestamp + interval '1 day'\n!;\"\n\n"
+    ],
+    "EffectiveSQLs": []
 }

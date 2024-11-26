@@ -16,5 +16,31 @@
     ],
     "Category": [
         "Text Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT read_text('source')",
+        "SELECT * FROM read_text('source')"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 332,
+            "Prompt Tokens": 313,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 5.8349999999999995e-05
+        },
+        {
+            "Total Tokens": 519,
+            "Prompt Tokens": 498,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 8.73e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.BinderException) Binder Error: Function \"read_text\" is a table function but it was used as a scalar function. This function has to be called in a FROM clause (similar to a table).\nLINE 1: SELECT read_text('source')\n               ^\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT * FROM read_text('source')"
     ]
 }

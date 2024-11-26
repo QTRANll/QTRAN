@@ -16,5 +16,39 @@
     ],
     "Category": [
         "Aggregate Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT min(arg, 5);",
+        "SELECT min(column_name, 5) FROM table_name;",
+        "SELECT min(arg, 5) FROM (VALUES (1), (2), (3), (4), (5), (6)) AS t(arg);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 287,
+            "Prompt Tokens": 267,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 5.205e-05
+        },
+        {
+            "Total Tokens": 457,
+            "Prompt Tokens": 433,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 7.934999999999999e-05
+        },
+        {
+            "Total Tokens": 659,
+            "Prompt Tokens": 614,
+            "Completion Tokens": 45,
+            "Total Cost (USD)": 0.00011909999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.BinderException) Binder Error: Referenced column \"arg\" not found in FROM clause!\nLINE 1: SELECT min(arg, 5);\n                   ^\n",
+        "(duckdb.duckdb.CatalogException) Catalog Error: Table with name table_name does not exist!\nDid you mean \"pg_tablespace\"?\nLINE 1: SELECT min(column_name, 5) FROM table_name;\n                                        ^\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT min(arg, 5) FROM (VALUES (1), (2), (3), (4), (5), (6)) AS t(arg);"
     ]
 }

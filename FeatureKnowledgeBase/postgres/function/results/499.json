@@ -6,7 +6,7 @@
         "mxid_age"
     ],
     "Feature": [
-        "mxid_age ( xid ) → integer"
+        "mxid_age ( xid ) \u2192 integer"
     ],
     "Description": [
         "Returns the number of multixacts IDs between the supplied multixact ID and the current multixacts counter."
@@ -14,5 +14,53 @@
     "Examples": [],
     "Category": [
         "System Information Functions and Operators"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT mxid_age(1);",
+        "SELECT mxid_age(1::xid);",
+        "SELECT mxid_age(current_multixact_id());",
+        "SELECT mxid_age(pg_current_xact_id());",
+        "SELECT mxid_age(pg_xact_commit_timestamp(pg_current_xact_id()));"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 287,
+            "Prompt Tokens": 267,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 5.205e-05
+        },
+        {
+            "Total Tokens": 473,
+            "Prompt Tokens": 450,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 8.13e-05
+        },
+        {
+            "Total Tokens": 637,
+            "Prompt Tokens": 614,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 0.00010589999999999999
+        },
+        {
+            "Total Tokens": 827,
+            "Prompt Tokens": 804,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 0.0001344
+        },
+        {
+            "Total Tokens": 1023,
+            "Prompt Tokens": 995,
+            "Completion Tokens": 28,
+            "Total Cost (USD)": 0.00016605
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedFunction) function mxid_age(integer) does not exist\nLINE 1: SELECT mxid_age(1);\n               ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.\n\n",
+        "(psycopg2.errors.CannotCoerce) cannot cast type integer to xid\nLINE 1: SELECT mxid_age(1::xid);\n                         ^\n\n",
+        "(psycopg2.errors.UndefinedFunction) function current_multixact_id() does not exist\nLINE 1: SELECT mxid_age(current_multixact_id());\n                        ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.\n\n",
+        "(psycopg2.errors.UndefinedFunction) function mxid_age(xid8) does not exist\nLINE 1: SELECT mxid_age(pg_current_xact_id());\n               ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.\n\n",
+        "(psycopg2.errors.UndefinedFunction) function pg_xact_commit_timestamp(xid8) does not exist\nLINE 1: SELECT mxid_age(pg_xact_commit_timestamp(pg_current_xact_id(...\n                        ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.\n\n"
+    ],
+    "EffectiveSQLs": []
 }

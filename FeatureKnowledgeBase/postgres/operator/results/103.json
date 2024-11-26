@@ -6,15 +6,33 @@
         "inet - bigint"
     ],
     "Feature": [
-        "inet - bigint → inet"
+        "inet - bigint \u2192 inet"
     ],
     "Description": [
         "Subtracts an offset from an address."
     ],
     "Examples": [
-        "inet '192.168.1.43' - 36 → 192.168.1.7"
+        "inet '192.168.1.43' - 36 \u2192 192.168.1.7"
     ],
     "Category": [
         "Network Address Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT (inet '192.168.1.1' - 100) AS new_address;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 281,
+            "Prompt Tokens": 249,
+            "Completion Tokens": 32,
+            "Total Cost (USD)": 5.655e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT (inet '192.168.1.1' - 100) AS new_address;"
     ]
 }

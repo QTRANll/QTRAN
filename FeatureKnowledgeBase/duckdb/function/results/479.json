@@ -16,5 +16,47 @@
     ],
     "Category": [
         "Time Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT datediff(part, starttime, endtime);",
+        "SELECT datediff('part', starttime, endtime);",
+        "SELECT datediff('part', TIMESTAMP '2023-01-01 00:00:00', TIMESTAMP '2023-01-02 00:00:00');",
+        "SELECT datediff('day', TIMESTAMP '2023-01-01 00:00:00', TIMESTAMP '2023-01-02 00:00:00');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 306,
+            "Prompt Tokens": 282,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 5.669999999999999e-05
+        },
+        {
+            "Total Tokens": 486,
+            "Prompt Tokens": 461,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 8.415e-05
+        },
+        {
+            "Total Tokens": 694,
+            "Prompt Tokens": 643,
+            "Completion Tokens": 51,
+            "Total Cost (USD)": 0.00012705
+        },
+        {
+            "Total Tokens": 879,
+            "Prompt Tokens": 828,
+            "Completion Tokens": 51,
+            "Total Cost (USD)": 0.00015479999999999997
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.BinderException) Binder Error: Referenced column \"part\" not found in FROM clause!\nLINE 1: SELECT datediff(part, starttime, endtime);\n                        ^\n",
+        "(duckdb.duckdb.BinderException) Binder Error: Referenced column \"starttime\" not found in FROM clause!\nLINE 1: SELECT datediff('part', starttime, endtime);\n                                ^\n",
+        "(duckdb.duckdb.ConversionException) Conversion Error: extract specifier \"part\" not recognized\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT datediff('day', TIMESTAMP '2023-01-01 00:00:00', TIMESTAMP '2023-01-02 00:00:00');"
     ]
 }

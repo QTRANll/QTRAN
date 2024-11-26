@@ -15,8 +15,8 @@
         "\n            The result is truncated to the maximum length that is given\n            by the group_concat_max_len\n            system variable, which has a default value of 1024. The\n            value can be set higher, although the effective maximum\n            length of the return value is constrained by the value of\n            max_allowed_packet. The\n            syntax to change the value of\n            group_concat_max_len at\n            runtime is as follows, where val\n            is an unsigned integer:\n          ",
         "Press CTRL+C to copy SET [GLOBAL | SESSION] group_concat_max_len = val;",
         "\n            The return value is a nonbinary or binary string, depending\n            on whether the arguments are nonbinary or binary strings.\n            The result type is TEXT or\n            BLOB unless\n            group_concat_max_len is\n            less than or equal to 512, in which case the result type is\n            VARCHAR or\n            VARBINARY.\n          ",
-        "\n            If GROUP_CONCAT() is invoked\n            from within the mysql client, binary\n            string results display using hexadecimal notation, depending\n            on the value of the\n            --binary-as-hex. For more\n            information about that option, see Section 6.5.1, “mysql — The MySQL Command-Line Client”.\n          ",
-        "\n            See also CONCAT() and\n            CONCAT_WS():\n            Section 14.8, “String Functions and Operators”.\n          "
+        "\n            If GROUP_CONCAT() is invoked\n            from within the mysql client, binary\n            string results display using hexadecimal notation, depending\n            on the value of the\n            --binary-as-hex. For more\n            information about that option, see Section\u00a06.5.1, \u201cmysql \u2014 The MySQL Command-Line Client\u201d.\n          ",
+        "\n            See also CONCAT() and\n            CONCAT_WS():\n            Section\u00a014.8, \u201cString Functions and Operators\u201d.\n          "
     ],
     "Examples": [
         "mysql> SELECT student_name,\n         GROUP_CONCAT(test_score)\n       FROM student\n       GROUP BY student_name;",
@@ -24,6 +24,48 @@
         "SET [GLOBAL | SESSION] group_concat_max_len = val;"
     ],
     "Category": [
-        "GROUP BY 聚合函数"
+        "GROUP BY \u805a\u5408\u51fd\u6570"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT GROUP_CONCAT(expr) FROM table_name;",
+        "SELECT GROUP_CONCAT(expr);",
+        "SELECT GROUP_CONCAT(column_name);",
+        "SELECT GROUP_CONCAT('value');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 930,
+            "Prompt Tokens": 908,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 0.0001494
+        },
+        {
+            "Total Tokens": 1082,
+            "Prompt Tokens": 1063,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 0.00017084999999999998
+        },
+        {
+            "Total Tokens": 1229,
+            "Prompt Tokens": 1209,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 0.00019334999999999998
+        },
+        {
+            "Total Tokens": 1377,
+            "Prompt Tokens": 1357,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 0.00021554999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.ProgrammingError) (1146, \"Table 'knowledge_base_preprocess_tidb.table_name' doesn't exist\")\n",
+        "(pymysql.err.OperationalError) (1054, \"Unknown column 'expr' in ''\")\n",
+        "(pymysql.err.OperationalError) (1054, \"Unknown column 'column_name' in ''\")\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT GROUP_CONCAT('value');"
     ]
 }

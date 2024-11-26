@@ -6,15 +6,63 @@
         "anymultirange @> anyelement"
     ],
     "Feature": [
-        "anymultirange @> anyelement → boolean"
+        "anymultirange @> anyelement \u2192 boolean"
     ],
     "Description": [
         "Does the multirange contain the element?"
     ],
     "Examples": [
-        "'{[2011-01-01,2011-03-01)}'::tsmultirange @> '2011-01-10'::timestamp → t"
+        "'{[2011-01-01,2011-03-01)}'::tsmultirange @> '2011-01-10'::timestamp \u2192 t"
     ],
     "Category": [
         "Range divide Multirange Functions and Operators"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT '[1, 5), [10, 15)'::anymultirange @> 3;",
+        "SELECT '[[1, 5), [10, 15)]'::anymultirange @> 3;",
+        "SELECT '[[1, 5), (10, 15)]'::int4range @> 3;",
+        "SELECT '[[1, 5), [10, 15)]'::int4range[] @> 3;",
+        "SELECT '[[1, 5), (10, 15)]'::int4range[] @> ARRAY[3];"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 305,
+            "Prompt Tokens": 270,
+            "Completion Tokens": 35,
+            "Total Cost (USD)": 6.15e-05
+        },
+        {
+            "Total Tokens": 504,
+            "Prompt Tokens": 467,
+            "Completion Tokens": 37,
+            "Total Cost (USD)": 9.224999999999999e-05
+        },
+        {
+            "Total Tokens": 704,
+            "Prompt Tokens": 668,
+            "Completion Tokens": 36,
+            "Total Cost (USD)": 0.00012179999999999999
+        },
+        {
+            "Total Tokens": 921,
+            "Prompt Tokens": 884,
+            "Completion Tokens": 37,
+            "Total Cost (USD)": 0.0001548
+        },
+        {
+            "Total Tokens": 1142,
+            "Prompt Tokens": 1103,
+            "Completion Tokens": 39,
+            "Total Cost (USD)": 0.00018884999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.FeatureNotSupported) cannot accept a value of type anymultirange\nLINE 1: SELECT '[1, 5), [10, 15)'::anymultirange @> 3;\n               ^\n\n",
+        "(psycopg2.errors.FeatureNotSupported) cannot accept a value of type anymultirange\nLINE 1: SELECT '[[1, 5), [10, 15)]'::anymultirange @> 3;\n               ^\n\n",
+        "(psycopg2.errors.InvalidTextRepresentation) malformed range literal: \"[[1, 5), (10, 15)]\"\nLINE 1: SELECT '[[1, 5), (10, 15)]'::int4range @> 3;\n               ^\nDETAIL:  Junk after right parenthesis or bracket.\n\n",
+        "(psycopg2.errors.InvalidTextRepresentation) malformed array literal: \"[[1, 5), [10, 15)]\"\nLINE 1: SELECT '[[1, 5), [10, 15)]'::int4range[] @> 3;\n               ^\nDETAIL:  \"[\" must introduce explicitly-specified array dimensions.\n\n",
+        "(psycopg2.errors.InvalidTextRepresentation) malformed array literal: \"[[1, 5), (10, 15)]\"\nLINE 1: SELECT '[[1, 5), (10, 15)]'::int4range[] @> ARRAY[3];\n               ^\nDETAIL:  \"[\" must introduce explicitly-specified array dimensions.\n\n"
+    ],
+    "EffectiveSQLs": []
 }

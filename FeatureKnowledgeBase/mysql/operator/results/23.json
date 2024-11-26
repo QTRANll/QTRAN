@@ -34,5 +34,24 @@
     "Category": [
         "Built-In Functions and Operators",
         "Cast Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT 'a' = 'A';",
+        "SELECT BINARY 'a' = 'A';",
+        "SELECT 'a' = 'a ';",
+        "SELECT BINARY 'a' = 'a ';",
+        "SELECT 'a' = 'A';",
+        "SELECT _binary 'a' = 'A';"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT 'a' = 'A';",
+        "SELECT BINARY 'a' = 'A';",
+        "SELECT 'a' = 'a ';",
+        "SELECT BINARY 'a' = 'a ';",
+        "SELECT 'a' = 'A';",
+        "SELECT _binary 'a' = 'A';"
     ]
 }

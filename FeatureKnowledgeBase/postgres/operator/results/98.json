@@ -6,15 +6,49 @@
         "~ inet"
     ],
     "Feature": [
-        "~ inet → inet"
+        "~ inet \u2192 inet"
     ],
     "Description": [
         "Computes bitwise NOT."
     ],
     "Examples": [
-        "~ inet '192.168.1.6' → 63.87.254.249"
+        "~ inet '192.168.1.6' \u2192 63.87.254.249"
     ],
     "Category": [
         "Network Address Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "~ inet",
+        "SELECT ~ inet;",
+        "SELECT ~ '0.0.0.0'::inet;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 257,
+            "Prompt Tokens": 243,
+            "Completion Tokens": 14,
+            "Total Cost (USD)": 4.485e-05
+        },
+        {
+            "Total Tokens": 404,
+            "Prompt Tokens": 388,
+            "Completion Tokens": 16,
+            "Total Cost (USD)": 6.78e-05
+        },
+        {
+            "Total Tokens": 565,
+            "Prompt Tokens": 539,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 9.645e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.SyntaxError) syntax error at or near \"~\"\nLINE 1: ~ inet\n        ^\n\n",
+        "(psycopg2.errors.UndefinedColumn) column \"inet\" does not exist\nLINE 1: SELECT ~ inet;\n                 ^\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT ~ '0.0.0.0'::inet;"
     ]
 }

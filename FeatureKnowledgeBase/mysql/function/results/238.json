@@ -28,5 +28,39 @@
     "Category": [
         "Built-In Functions and Operators",
         "Window Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT NTILE(4) OVER (ORDER BY val) AS bucket_number FROM numbers;",
+        "SELECT NTILE(4) OVER (ORDER BY 1) AS bucket_number;",
+        "SELECT NTILE(4) OVER (ORDER BY val) AS bucket_number FROM (SELECT 1 AS val UNION ALL SELECT 2 UNION ALL SELECT 3 UNION ALL SELECT 4 UNION ALL SELECT 5) AS numbers;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 927,
+            "Prompt Tokens": 897,
+            "Completion Tokens": 30,
+            "Total Cost (USD)": 0.00015255
+        },
+        {
+            "Total Tokens": 1094,
+            "Prompt Tokens": 1065,
+            "Completion Tokens": 29,
+            "Total Cost (USD)": 0.00017714999999999997
+        },
+        {
+            "Total Tokens": 1302,
+            "Prompt Tokens": 1244,
+            "Completion Tokens": 58,
+            "Total Cost (USD)": 0.0002214
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.ProgrammingError) (1146, \"Table 'knowledge_base_preprocess_mysql.numbers' doesn't exist\")\n",
+        "(pymysql.err.OperationalError) (3592, \"Window '<unnamed window>': ORDER BY or PARTITION BY uses legacy position indication which is not supported, use expression.\")\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT NTILE(4) OVER (ORDER BY val) AS bucket_number FROM (SELECT 1 AS val UNION ALL SELECT 2 UNION ALL SELECT 3 UNION ALL SELECT 4 UNION ALL SELECT 5) AS numbers;"
     ]
 }

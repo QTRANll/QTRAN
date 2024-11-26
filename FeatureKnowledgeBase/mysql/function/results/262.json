@@ -25,5 +25,16 @@
     "Category": [
         "Built-In Functions and Operators",
         "String Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT REGEXP_REPLACE('a b c', 'b', 'X');",
+        "SELECT REGEXP_REPLACE('abc def ghi', '[a-z]+', 'X', 1, 3);"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT REGEXP_REPLACE('a b c', 'b', 'X');",
+        "SELECT REGEXP_REPLACE('abc def ghi', '[a-z]+', 'X', 1, 3);"
     ]
 }

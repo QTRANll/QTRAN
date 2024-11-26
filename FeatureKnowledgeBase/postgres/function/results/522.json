@@ -6,7 +6,7 @@
         "pg_is_in_recovery"
     ],
     "Feature": [
-        "pg_is_in_recovery () → boolean"
+        "pg_is_in_recovery () \u2192 boolean"
     ],
     "Description": [
         "Returns true if recovery is still in progress."
@@ -14,5 +14,23 @@
     "Examples": [],
     "Category": [
         "System Administration Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT pg_is_in_recovery();"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 279,
+            "Prompt Tokens": 259,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 5.0849999999999996e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT pg_is_in_recovery();"
     ]
 }

@@ -27,5 +27,53 @@
     ],
     "Category": [
         "Loadable Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT asymmetric_verify('RSA', 'The quick brown fox', sig_str, pub_key_str, 'SHA512');",
+        "SELECT asymmetric_verify('RSA', 'The quick brown fox', 'your_signature_string', 'your_public_key_string', 'SHA512');",
+        "SELECT asymmetric_verify('RSA', 'The quick brown fox', 'signature_string', 'public_key_string', 'SHA512');",
+        "SELECT asymmetric_verify('RSA', 'sample_text', 'sample_signature', 'sample_public_key', 'SHA512');",
+        "SELECT asymmetric_verify('RSA', 'text_example', 'signature_example', 'public_key_example', 'SHA512');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 1043,
+            "Prompt Tokens": 1007,
+            "Completion Tokens": 36,
+            "Total Cost (USD)": 0.00017264999999999994
+        },
+        {
+            "Total Tokens": 1219,
+            "Prompt Tokens": 1179,
+            "Completion Tokens": 40,
+            "Total Cost (USD)": 0.00020084999999999998
+        },
+        {
+            "Total Tokens": 1393,
+            "Prompt Tokens": 1355,
+            "Completion Tokens": 38,
+            "Total Cost (USD)": 0.00022605
+        },
+        {
+            "Total Tokens": 1565,
+            "Prompt Tokens": 1529,
+            "Completion Tokens": 36,
+            "Total Cost (USD)": 0.00025094999999999995
+        },
+        {
+            "Total Tokens": 1737,
+            "Prompt Tokens": 1701,
+            "Completion Tokens": 36,
+            "Total Cost (USD)": 0.00027675
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.asymmetric_verify does not exist')\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.asymmetric_verify does not exist')\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.asymmetric_verify does not exist')\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.asymmetric_verify does not exist')\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.asymmetric_verify does not exist')\n"
+    ],
+    "EffectiveSQLs": []
 }

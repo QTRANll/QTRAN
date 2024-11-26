@@ -20,5 +20,14 @@
     ],
     "Category": [
         "Time Zones"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT name, abbrev\nFROM pg_timezone_names()\nORDER BY name;"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT name, abbrev\nFROM pg_timezone_names()\nORDER BY name;"
     ]
 }

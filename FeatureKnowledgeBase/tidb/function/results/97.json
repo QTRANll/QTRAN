@@ -14,6 +14,19 @@
         "mysql> SELECT CURTIME();\n+-----------+\n| CURTIME() |\n+-----------+\n| 19:25:37  |\n+-----------+\n\nmysql> SELECT CURTIME() + 0;\n+---------------+\n| CURTIME() + 0 |\n+---------------+\n|        192537 |\n+---------------+\n\nmysql> SELECT CURTIME(3);\n+--------------+\n| CURTIME(3)   |\n+--------------+\n| 19:25:37.840 |\n+--------------+"
     ],
     "Category": [
-        "日期和时间函数"
+        "\u65e5\u671f\u548c\u65f6\u95f4\u51fd\u6570"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT CURTIME();",
+        "SELECT CURTIME() + 0;",
+        "SELECT CURTIME(3);"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT CURTIME();",
+        "SELECT CURTIME() + 0;",
+        "SELECT CURTIME(3);"
     ]
 }

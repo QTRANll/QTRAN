@@ -22,5 +22,53 @@
     ],
     "Category": [
         "Loadable Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT read_firewall_users('fwuser@localhost', 'RECORDING');",
+        "SELECT read_firewall_users('user@example.com', 'RECORDING');",
+        "SELECT read_firewall_users('test_user', 'RECORDING');",
+        "SELECT read_firewall_users('dummy_user', 'RECORDING');",
+        "SELECT read_firewall_users('non_existent_user', 'RECORDING');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 436,
+            "Prompt Tokens": 407,
+            "Completion Tokens": 29,
+            "Total Cost (USD)": 7.845e-05
+        },
+        {
+            "Total Tokens": 601,
+            "Prompt Tokens": 573,
+            "Completion Tokens": 28,
+            "Total Cost (USD)": 0.00010274999999999999
+        },
+        {
+            "Total Tokens": 765,
+            "Prompt Tokens": 738,
+            "Completion Tokens": 27,
+            "Total Cost (USD)": 0.0001269
+        },
+        {
+            "Total Tokens": 929,
+            "Prompt Tokens": 902,
+            "Completion Tokens": 27,
+            "Total Cost (USD)": 0.00015149999999999997
+        },
+        {
+            "Total Tokens": 1095,
+            "Prompt Tokens": 1066,
+            "Completion Tokens": 29,
+            "Total Cost (USD)": 0.00017729999999999997
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.read_firewall_users does not exist')\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.read_firewall_users does not exist')\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.read_firewall_users does not exist')\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.read_firewall_users does not exist')\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.read_firewall_users does not exist')\n"
+    ],
+    "EffectiveSQLs": []
 }

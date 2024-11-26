@@ -6,16 +6,34 @@
         "regexp_instr"
     ],
     "Feature": [
-        "regexp_instr ( string text, pattern text [, start integer [, N integer [, endoption integer [, flags text [, subexpr integer ] ] ] ] ] ) → integer"
+        "regexp_instr ( string text, pattern text [, start integer [, N integer [, endoption integer [, flags text [, subexpr integer ] ] ] ] ] ) \u2192 integer"
     ],
     "Description": [
-        "Returns the position within string where the N'th match of the POSIX regular expression pattern occurs, or zero if there is no such match; see Section 9.7.3."
+        "Returns the position within string where the N'th match of the POSIX regular expression pattern occurs, or zero if there is no such match; see Section\u00a09.7.3."
     ],
     "Examples": [
-        "regexp_instr('ABCDEF', 'c(.)(..)', 1, 1, 0, 'i') → 3",
-        "regexp_instr('ABCDEF', 'c(.)(..)', 1, 1, 0, 'i', 2) → 5"
+        "regexp_instr('ABCDEF', 'c(.)(..)', 1, 1, 0, 'i') \u2192 3",
+        "regexp_instr('ABCDEF', 'c(.)(..)', 1, 1, 0, 'i', 2) \u2192 5"
     ],
     "Category": [
         "String Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT regexp_instr('example text', 'text', 1, 1);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 333,
+            "Prompt Tokens": 304,
+            "Completion Tokens": 29,
+            "Total Cost (USD)": 6.3e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT regexp_instr('example text', 'text', 1, 1);"
     ]
 }

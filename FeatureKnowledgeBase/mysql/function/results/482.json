@@ -25,5 +25,53 @@
     ],
     "Category": [
         "Loadable Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT mask_pan('1234567890123456');",
+        "SELECT mask_pan('1234567890123456789');",
+        "SELECT mask_pan('12345678901234');",
+        "SELECT mask_pan('123456789012345');",
+        "SELECT mask_pan('12345678901234567');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 652,
+            "Prompt Tokens": 628,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 0.00010859999999999998
+        },
+        {
+            "Total Tokens": 812,
+            "Prompt Tokens": 787,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 0.00013305
+        },
+        {
+            "Total Tokens": 970,
+            "Prompt Tokens": 947,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 0.00015585
+        },
+        {
+            "Total Tokens": 1128,
+            "Prompt Tokens": 1105,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 0.00017955
+        },
+        {
+            "Total Tokens": 1287,
+            "Prompt Tokens": 1263,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 0.00020384999999999997
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.mask_pan does not exist')\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.mask_pan does not exist')\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.mask_pan does not exist')\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.mask_pan does not exist')\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.mask_pan does not exist')\n"
+    ],
+    "EffectiveSQLs": []
 }

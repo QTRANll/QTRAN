@@ -6,15 +6,33 @@
         "get_current_ts_config"
     ],
     "Feature": [
-        "get_current_ts_config ( ) → regconfig"
+        "get_current_ts_config ( ) \u2192 regconfig"
     ],
     "Description": [
         "Returns the OID of the current default text search configuration (as set by default_text_search_config)."
     ],
     "Examples": [
-        "get_current_ts_config() → english"
+        "get_current_ts_config() \u2192 english"
     ],
     "Category": [
         "Text Search Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT get_current_ts_config();"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 287,
+            "Prompt Tokens": 268,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 5.16e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT get_current_ts_config();"
     ]
 }

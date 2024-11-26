@@ -16,5 +16,18 @@
     ],
     "Category": [
         "The CHAR and VARCHAR Types"
+    ],
+    "EffectiveSQLsRefined": [
+        "CREATE TABLE vc (v VARCHAR(4), c CHAR(4));",
+        "INSERT INTO vc VALUES ('ab  ', 'ab  ');",
+        "SELECT CONCAT('(', v, ')'), CONCAT('(', c, ')') FROM vc;"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "CREATE TABLE vc (v VARCHAR(4), c CHAR(4));",
+        "INSERT INTO vc VALUES ('ab  ', 'ab  ');",
+        "SELECT CONCAT('(', v, ')'), CONCAT('(', c, ')') FROM vc;"
     ]
 }

@@ -16,5 +16,53 @@
     ],
     "Category": [
         "Struct Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT struct_insert(my_struct, 'new_field', 42);",
+        "SELECT struct_insert(STRUCT(), 'new_field', 42);",
+        "SELECT struct_insert(struct_pack(), 'new_field', 42);",
+        "SELECT struct_insert(struct_pack('existing_field', 1), 'new_field', 42);",
+        "SELECT struct_insert(struct_pack(existing_field := 1), 'new_field', 42);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 319,
+            "Prompt Tokens": 293,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 5.9549999999999984e-05
+        },
+        {
+            "Total Tokens": 502,
+            "Prompt Tokens": 476,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 8.699999999999999e-05
+        },
+        {
+            "Total Tokens": 689,
+            "Prompt Tokens": 663,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 0.00011504999999999999
+        },
+        {
+            "Total Tokens": 853,
+            "Prompt Tokens": 821,
+            "Completion Tokens": 32,
+            "Total Cost (USD)": 0.00014235
+        },
+        {
+            "Total Tokens": 1025,
+            "Prompt Tokens": 994,
+            "Completion Tokens": 31,
+            "Total Cost (USD)": 0.00016769999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.BinderException) Binder Error: Referenced column \"my_struct\" not found in FROM clause!\nLINE 1: SELECT struct_insert(my_struct, 'new_field', 42);\n                             ^\n",
+        "(duckdb.duckdb.CatalogException) Catalog Error: Scalar Function with name struct does not exist!\nDid you mean \"struct_pack\"?\nLINE 1: SELECT struct_insert(STRUCT(), 'new_field', 42);\n                             ^\n",
+        "(duckdb.duckdb.InvalidInputException) Invalid Input Error: Can't pack nothing into a struct\n",
+        "(duckdb.duckdb.BinderException) Binder Error: Need named argument for struct pack, e.g. STRUCT_PACK(a := b)\n",
+        "(duckdb.duckdb.BinderException) Binder Error: Need named argument for struct insert, e.g. STRUCT_PACK(a := b)\n"
+    ],
+    "EffectiveSQLs": []
 }

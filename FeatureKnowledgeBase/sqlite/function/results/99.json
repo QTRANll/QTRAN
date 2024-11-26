@@ -14,5 +14,31 @@
     "Examples": [],
     "Category": [
         "Built-In Mathematical SQL Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT floor(X);",
+        "SELECT floor(1.5);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 299,
+            "Prompt Tokens": 282,
+            "Completion Tokens": 17,
+            "Total Cost (USD)": 5.249999999999999e-05
+        },
+        {
+            "Total Tokens": 436,
+            "Prompt Tokens": 416,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 7.439999999999998e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(sqlite3.OperationalError) no such column: X\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT floor(1.5);"
     ]
 }

@@ -14,5 +14,31 @@
     "Examples": [],
     "Category": [
         "Integer Types (Exact Value) - INTEGER, INT, SMALLINT, TINYINT, MEDIUMINT, BIGINT"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT CAST(123 AS INTEGER);",
+        "SELECT CAST(123 AS SIGNED);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 631,
+            "Prompt Tokens": 611,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 0.00010364999999999999
+        },
+        {
+            "Total Tokens": 833,
+            "Prompt Tokens": 812,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 0.0001344
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.ProgrammingError) (1064, \"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'INTEGER)' at line 1\")\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT CAST(123 AS SIGNED);"
     ]
 }

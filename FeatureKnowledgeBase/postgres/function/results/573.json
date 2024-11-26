@@ -6,7 +6,7 @@
         "pg_partition_ancestors"
     ],
     "Feature": [
-        "pg_partition_ancestors ( regclass ) → setof regclass"
+        "pg_partition_ancestors ( regclass ) \u2192 setof regclass"
     ],
     "Description": [
         "Lists the ancestor relations of the given partition, including the relation itself. Returns no rows if the relation does not exist or is not a partition or partitioned table."
@@ -14,5 +14,53 @@
     "Examples": [],
     "Category": [
         "System Administration Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT pg_partition_ancestors('your_partition_table'::regclass);",
+        "SELECT pg_partition_ancestors('existing_partition_table'::regclass);",
+        "SELECT pg_partition_ancestors('your_actual_partition_table'::regclass);",
+        "SELECT pg_partition_ancestors('your_partition_name'::regclass);",
+        "SELECT pg_partition_ancestors('some_existing_partition'::regclass);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 317,
+            "Prompt Tokens": 289,
+            "Completion Tokens": 28,
+            "Total Cost (USD)": 6.0149999999999985e-05
+        },
+        {
+            "Total Tokens": 496,
+            "Prompt Tokens": 468,
+            "Completion Tokens": 28,
+            "Total Cost (USD)": 8.7e-05
+        },
+        {
+            "Total Tokens": 675,
+            "Prompt Tokens": 646,
+            "Completion Tokens": 29,
+            "Total Cost (USD)": 0.0001143
+        },
+        {
+            "Total Tokens": 853,
+            "Prompt Tokens": 825,
+            "Completion Tokens": 28,
+            "Total Cost (USD)": 0.00014054999999999997
+        },
+        {
+            "Total Tokens": 1032,
+            "Prompt Tokens": 1004,
+            "Completion Tokens": 28,
+            "Total Cost (USD)": 0.00016739999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedTable) relation \"your_partition_table\" does not exist\nLINE 1: SELECT pg_partition_ancestors('your_partition_table'::regcla...\n                                      ^\n\n",
+        "(psycopg2.errors.UndefinedTable) relation \"existing_partition_table\" does not exist\nLINE 1: SELECT pg_partition_ancestors('existing_partition_table'::re...\n                                      ^\n\n",
+        "(psycopg2.errors.UndefinedTable) relation \"your_actual_partition_table\" does not exist\nLINE 1: SELECT pg_partition_ancestors('your_actual_partition_table':...\n                                      ^\n\n",
+        "(psycopg2.errors.UndefinedTable) relation \"your_partition_name\" does not exist\nLINE 1: SELECT pg_partition_ancestors('your_partition_name'::regclas...\n                                      ^\n\n",
+        "(psycopg2.errors.UndefinedTable) relation \"some_existing_partition\" does not exist\nLINE 1: SELECT pg_partition_ancestors('some_existing_partition'::reg...\n                                      ^\n\n"
+    ],
+    "EffectiveSQLs": []
 }

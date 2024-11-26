@@ -18,5 +18,23 @@
     ],
     "Category": [
         "Character String Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT substring('Hello, World!', 8, 5);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 307,
+            "Prompt Tokens": 281,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 5.7749999999999994e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT substring('Hello, World!', 8, 5);"
     ]
 }

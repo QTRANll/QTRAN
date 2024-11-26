@@ -6,15 +6,33 @@
         "jsonb_path_match"
     ],
     "Feature": [
-        "jsonb_path_match ( target jsonb, path jsonpath [, vars jsonb [, silent boolean ]] ) → boolean"
+        "jsonb_path_match ( target jsonb, path jsonpath [, vars jsonb [, silent boolean ]] ) \u2192 boolean"
     ],
     "Description": [
         "Returns the result of a JSON path predicate check for the specified JSON value. Only the first item of the result is taken into account. If the result is not Boolean, then NULL is returned. The optional vars and silent arguments act the same as for jsonb_path_exists."
     ],
     "Examples": [
-        "jsonb_path_match('{\"a\":[1,2,3,4,5]}', 'exists($.a[*] ? (@ >= $min && @ <= $max))', '{\"min\":2, \"max\":4}') → t"
+        "jsonb_path_match('{\"a\":[1,2,3,4,5]}', 'exists($.a[*] ? (@ >= $min && @ <= $max))', '{\"min\":2, \"max\":4}') \u2192 t"
     ],
     "Category": [
         "JSON Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT jsonb_path_match('{\"name\": \"Alice\"}', '$.name == \"Alice\"');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 351,
+            "Prompt Tokens": 317,
+            "Completion Tokens": 34,
+            "Total Cost (USD)": 6.795e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT jsonb_path_match('{\"name\": \"Alice\"}', '$.name == \"Alice\"');"
     ]
 }

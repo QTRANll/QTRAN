@@ -6,15 +6,33 @@
         "bytea || bytea"
     ],
     "Feature": [
-        "bytea || bytea → bytea"
+        "bytea || bytea \u2192 bytea"
     ],
     "Description": [
         "Concatenates the two binary strings."
     ],
     "Examples": [
-        "'\\x123456'::bytea || '\\x789a00bcde'::bytea → \\x123456789a00bcde"
+        "'\\x123456'::bytea || '\\x789a00bcde'::bytea \u2192 \\x123456789a00bcde"
     ],
     "Category": [
         "Binary String Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT '\\xDEADBEEF'::bytea || '\\xBEEFCAFE'::bytea;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 292,
+            "Prompt Tokens": 258,
+            "Completion Tokens": 34,
+            "Total Cost (USD)": 5.91e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT '\\xDEADBEEF'::bytea || '\\xBEEFCAFE'::bytea;"
     ]
 }

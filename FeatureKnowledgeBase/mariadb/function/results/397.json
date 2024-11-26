@@ -15,5 +15,22 @@
     "Category": [
         "Galera Functions"
     ],
-    "EffectiveSQLsRefined": []
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT WSREP_LAST_WRITTEN_GTID();"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 302,
+            "Prompt Tokens": 279,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 5.565e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT WSREP_LAST_WRITTEN_GTID();"
+    ]
 }

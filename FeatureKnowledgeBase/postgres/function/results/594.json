@@ -6,8 +6,8 @@
         "pg_advisory_unlock_shared"
     ],
     "Feature": [
-        "pg_advisory_unlock_shared ( key bigint ) → boolean",
-        "pg_advisory_unlock_shared ( key1 integer, key2 integer ) → boolean"
+        "pg_advisory_unlock_shared ( key bigint ) \u2192 boolean",
+        "pg_advisory_unlock_shared ( key1 integer, key2 integer ) \u2192 boolean"
     ],
     "Description": [
         "Releases a previously-acquired shared session-level advisory lock. Returns true if the lock is successfully released. If the lock was not held, false is returned, and in addition, an SQL warning will be reported by the server."
@@ -15,5 +15,23 @@
     "Examples": [],
     "Category": [
         "System Administration Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT pg_advisory_unlock_shared(12345);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 346,
+            "Prompt Tokens": 322,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 6.269999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT pg_advisory_unlock_shared(12345);"
     ]
 }

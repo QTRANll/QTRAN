@@ -6,7 +6,7 @@
         "any_value"
     ],
     "Feature": [
-        "any_value ( anyelement ) → same as input type"
+        "any_value ( anyelement ) \u2192 same as input type"
     ],
     "Description": [
         "Returns an arbitrary value from the non-null input values."
@@ -14,5 +14,39 @@
     "Examples": [],
     "Category": [
         "Aggregate Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT any_value(column_name) FROM table_name;",
+        "SELECT any_value(column_name);",
+        "SELECT any_value(1);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 277,
+            "Prompt Tokens": 255,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 5.144999999999999e-05
+        },
+        {
+            "Total Tokens": 438,
+            "Prompt Tokens": 419,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 7.424999999999999e-05
+        },
+        {
+            "Total Tokens": 595,
+            "Prompt Tokens": 576,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 9.779999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedTable) relation \"table_name\" does not exist\nLINE 1: SELECT any_value(column_name) FROM table_name;\n                                           ^\n\n",
+        "(psycopg2.errors.UndefinedColumn) column \"column_name\" does not exist\nLINE 1: SELECT any_value(column_name);\n                         ^\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT any_value(1);"
     ]
 }

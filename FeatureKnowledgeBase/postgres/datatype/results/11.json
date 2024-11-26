@@ -15,5 +15,23 @@
     "Examples": [],
     "Category": [
         "Character Types"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "CREATE TABLE example_table (example_column VARCHAR(255));"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 286,
+            "Prompt Tokens": 262,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 5.37e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "CREATE TABLE example_table (example_column VARCHAR(255));"
     ]
 }

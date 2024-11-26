@@ -6,7 +6,7 @@
         "lastval"
     ],
     "Feature": [
-        "lastval () → bigint"
+        "lastval () \u2192 bigint"
     ],
     "Description": [
         "Returns the value most recently returned by nextval in the current session. This function is identical to currval, except that instead of taking the sequence name as an argument it refers to whichever sequence nextval was most recently applied to in the current session. It is an error to call lastval if nextval has not yet been called in the current session.",
@@ -15,5 +15,53 @@
     "Examples": [],
     "Category": [
         "Sequence Manipulation Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT lastval();",
+        "SELECT nextval('your_sequence_name');",
+        "SELECT nextval(pg_get_serial_sequence('your_table_name', 'your_column_name'));",
+        "SELECT nextval('some_sequence');",
+        "SELECT lastval();"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 341,
+            "Prompt Tokens": 324,
+            "Completion Tokens": 17,
+            "Total Cost (USD)": 5.879999999999999e-05
+        },
+        {
+            "Total Tokens": 489,
+            "Prompt Tokens": 468,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 8.28e-05
+        },
+        {
+            "Total Tokens": 660,
+            "Prompt Tokens": 630,
+            "Completion Tokens": 30,
+            "Total Cost (USD)": 0.0001125
+        },
+        {
+            "Total Tokens": 805,
+            "Prompt Tokens": 785,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 0.00012974999999999998
+        },
+        {
+            "Total Tokens": 961,
+            "Prompt Tokens": 944,
+            "Completion Tokens": 17,
+            "Total Cost (USD)": 0.00015179999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.ObjectNotInPrerequisiteState) lastval is not yet defined in this session\n\n",
+        "(psycopg2.errors.UndefinedTable) relation \"your_sequence_name\" does not exist\nLINE 1: SELECT nextval('your_sequence_name');\n                       ^\n\n",
+        "(psycopg2.errors.UndefinedTable) relation \"your_table_name\" does not exist\n\n",
+        "(psycopg2.errors.UndefinedTable) relation \"some_sequence\" does not exist\nLINE 1: SELECT nextval('some_sequence');\n                       ^\n\n",
+        "(psycopg2.errors.ObjectNotInPrerequisiteState) lastval is not yet defined in this session\n\n"
+    ],
+    "EffectiveSQLs": []
 }

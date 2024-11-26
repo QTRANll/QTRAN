@@ -17,5 +17,30 @@
     "Category": [
         "JSON Functions"
     ],
-    "EffectiveSQLsRefined": []
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT JSON_OBJECT_FILTER_KEYS(your_json_object, 'your_array_keys')",
+        "SELECT JSON_OBJECT_FILTER_KEYS('{\"key1\": \"value1\", \"key2\": \"value2\"}', '[\"key1\"]')"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 327,
+            "Prompt Tokens": 299,
+            "Completion Tokens": 28,
+            "Total Cost (USD)": 6.165e-05
+        },
+        {
+            "Total Tokens": 503,
+            "Prompt Tokens": 461,
+            "Completion Tokens": 42,
+            "Total Cost (USD)": 9.435e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.OperationalError) (1054, \"Unknown column 'your_json_object' in 'field list'\")\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT JSON_OBJECT_FILTER_KEYS('{\"key1\": \"value1\", \"key2\": \"value2\"}', '[\"key1\"]')"
+    ]
 }

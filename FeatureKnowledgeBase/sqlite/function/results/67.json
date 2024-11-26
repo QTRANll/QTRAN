@@ -15,5 +15,23 @@
     "Examples": [],
     "Category": [
         "JSON Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT jsonb_array('[1, 2, 3]');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 355,
+            "Prompt Tokens": 328,
+            "Completion Tokens": 27,
+            "Total Cost (USD)": 6.539999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT jsonb_array('[1, 2, 3]');"
     ]
 }

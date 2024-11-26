@@ -17,5 +17,31 @@
     ],
     "Category": [
         "List Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT list_where(value_list, mask_list);",
+        "SELECT list_where(ARRAY[1, 2, 3], ARRAY[TRUE, FALSE, TRUE]);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 286,
+            "Prompt Tokens": 264,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 5.2799999999999996e-05
+        },
+        {
+            "Total Tokens": 467,
+            "Prompt Tokens": 432,
+            "Completion Tokens": 35,
+            "Total Cost (USD)": 8.579999999999998e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.BinderException) Binder Error: Referenced column \"value_list\" not found in FROM clause!\nLINE 1: SELECT list_where(value_list, mask_list);\n                          ^\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT list_where(ARRAY[1, 2, 3], ARRAY[TRUE, FALSE, TRUE]);"
     ]
 }

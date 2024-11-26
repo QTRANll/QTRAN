@@ -18,5 +18,23 @@
     ],
     "Category": [
         "Mathematics Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT sys.ms_trunc(123.45678, 2);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 314,
+            "Prompt Tokens": 287,
+            "Completion Tokens": 27,
+            "Total Cost (USD)": 5.924999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT sys.ms_trunc(123.45678, 2);"
     ]
 }

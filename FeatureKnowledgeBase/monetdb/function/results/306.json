@@ -15,5 +15,53 @@
     "Examples": [],
     "Category": [
         "Window Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT sys.covar_pop(numeric_a, numeric_b);",
+        "SELECT sys.covar_pop(column_a, column_b) FROM your_table;",
+        "SELECT sys.covar_pop(1, 2);",
+        "SELECT sys.covar_pop(CAST(1 AS DOUBLE), CAST(2 AS DOUBLE));",
+        "SELECT sys.covar_pop(CAST(1 AS FLOAT), CAST(2 AS FLOAT));"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 304,
+            "Prompt Tokens": 279,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 5.685e-05
+        },
+        {
+            "Total Tokens": 468,
+            "Prompt Tokens": 441,
+            "Completion Tokens": 27,
+            "Total Cost (USD)": 8.235e-05
+        },
+        {
+            "Total Tokens": 631,
+            "Prompt Tokens": 607,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 0.00010544999999999999
+        },
+        {
+            "Total Tokens": 809,
+            "Prompt Tokens": 778,
+            "Completion Tokens": 31,
+            "Total Cost (USD)": 0.00013529999999999998
+        },
+        {
+            "Total Tokens": 983,
+            "Prompt Tokens": 952,
+            "Completion Tokens": 31,
+            "Total Cost (USD)": 0.00016139999999999997
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: identifier 'numeric_a' unknown\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42S02!SELECT: no such table 'your_table'\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: no such binary operator 'covar_pop(tinyint,tinyint)'\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: no such binary operator 'covar_pop(double,double)'\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: no such binary operator 'covar_pop(double,double)'\n\n"
+    ],
+    "EffectiveSQLs": []
 }

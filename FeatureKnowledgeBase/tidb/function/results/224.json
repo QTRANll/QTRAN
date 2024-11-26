@@ -8,10 +8,44 @@
         "\nVAR_SAMP(expr)\n            [over_clause]\n",
         "\n            Returns the sample variance of\n            expr. That is, the denominator is\n            the number of rows minus one.\n          ",
         "\n            If there are no matching rows, or if\n            expr is NULL,\n            VAR_SAMP() returns\n            NULL.\n          ",
-        "\n            This function executes as a window function if\n            over_clause is present.\n            over_clause is as described in\n            Section 14.20.2, “Window Function Concepts and Syntax”.\n          "
+        "\n            This function executes as a window function if\n            over_clause is present.\n            over_clause is as described in\n            Section\u00a014.20.2, \u201cWindow Function Concepts and Syntax\u201d.\n          "
     ],
     "Examples": [],
     "Category": [
-        "GROUP BY 聚合函数"
+        "GROUP BY \u805a\u5408\u51fd\u6570"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "VAR_SAMP(column_name)",
+        "SELECT VAR_SAMP(column_name)",
+        "SELECT VAR_SAMP(1)"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 386,
+            "Prompt Tokens": 368,
+            "Completion Tokens": 18,
+            "Total Cost (USD)": 6.599999999999999e-05
+        },
+        {
+            "Total Tokens": 564,
+            "Prompt Tokens": 545,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 9.314999999999999e-05
+        },
+        {
+            "Total Tokens": 711,
+            "Prompt Tokens": 692,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 0.00011519999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.ProgrammingError) (1064, 'You have an error in your SQL syntax; check the manual that corresponds to your TiDB version for the right syntax to use line 1 column 8 near \"VAR_SAMP(column_name)\" ')\n",
+        "(pymysql.err.OperationalError) (1054, \"Unknown column 'column_name' in ''\")\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT VAR_SAMP(1)"
     ]
 }

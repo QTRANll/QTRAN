@@ -6,15 +6,33 @@
         "string . datetime"
     ],
     "Feature": [
-        "string . datetime(template) → datetime_type (see note)"
+        "string . datetime(template) \u2192 datetime_type (see note)"
     ],
     "Description": [
         "Date/time value converted from a string using the specified to_timestamp template"
     ],
     "Examples": [
-        "jsonb_path_query_array('[\"12:30\", \"18:40\"]', '$[*].datetime(\"HH24:MI\")') → [\"12:30:00\", \"18:40:00\"]"
+        "jsonb_path_query_array('[\"12:30\", \"18:40\"]', '$[*].datetime(\"HH24:MI\")') \u2192 [\"12:30:00\", \"18:40:00\"]"
     ],
     "Category": [
         "JSON Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT to_timestamp('2023-10-01 12:00:00', 'YYYY-MM-DD HH24:MI:SS');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 302,
+            "Prompt Tokens": 261,
+            "Completion Tokens": 41,
+            "Total Cost (USD)": 6.374999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT to_timestamp('2023-10-01 12:00:00', 'YYYY-MM-DD HH24:MI:SS');"
     ]
 }

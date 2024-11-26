@@ -6,14 +6,62 @@
         "pg_get_serial_sequence"
     ],
     "Feature": [
-        "pg_get_serial_sequence ( table text, column text ) → text"
+        "pg_get_serial_sequence ( table text, column text ) \u2192 text"
     ],
     "Description": [
-        "Returns the name of the sequence associated with a column, or NULL if no sequence is associated with the column. If the column is an identity column, the associated sequence is the sequence internally created for that column. For columns created using one of the serial types (serial, smallserial, bigserial), it is the sequence created for that serial column definition. In the latter case, the association can be modified or removed with ALTER SEQUENCE OWNED BY. (This function probably should have been called pg_get_owned_sequence; its current name reflects the fact that it has historically been used with serial-type columns.) The first parameter is a table name with optional schema, and the second parameter is a column name. Because the first parameter potentially contains both schema and table names, it is parsed per usual SQL rules, meaning it is lower-cased by default. The second parameter, being just a column name, is treated literally and so has its case preserved. The result is suitably formatted for passing to the sequence functions (see Section 9.17).",
+        "Returns the name of the sequence associated with a column, or NULL if no sequence is associated with the column. If the column is an identity column, the associated sequence is the sequence internally created for that column. For columns created using one of the serial types (serial, smallserial, bigserial), it is the sequence created for that serial column definition. In the latter case, the association can be modified or removed with ALTER SEQUENCE OWNED BY. (This function probably should have been called pg_get_owned_sequence; its current name reflects the fact that it has historically been used with serial-type columns.) The first parameter is a table name with optional schema, and the second parameter is a column name. Because the first parameter potentially contains both schema and table names, it is parsed per usual SQL rules, meaning it is lower-cased by default. The second parameter, being just a column name, is treated literally and so has its case preserved. The result is suitably formatted for passing to the sequence functions (see Section\u00a09.17).",
         "A typical use is in reading the current value of the sequence for an identity or serial column, for example:"
     ],
     "Examples": [],
     "Category": [
         "System Information Functions and Operators"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT pg_get_serial_sequence('my_table', 'my_column');",
+        "SELECT pg_get_serial_sequence('public.my_table', 'my_column');",
+        "SELECT pg_get_serial_sequence('schema_name.table_name', 'my_column');",
+        "SELECT pg_get_serial_sequence('existing_schema.existing_table', 'existing_column');",
+        "SELECT pg_get_serial_sequence('your_table', 'your_column');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 511,
+            "Prompt Tokens": 485,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 8.834999999999999e-05
+        },
+        {
+            "Total Tokens": 664,
+            "Prompt Tokens": 637,
+            "Completion Tokens": 27,
+            "Total Cost (USD)": 0.00011174999999999999
+        },
+        {
+            "Total Tokens": 819,
+            "Prompt Tokens": 791,
+            "Completion Tokens": 28,
+            "Total Cost (USD)": 0.00013544999999999999
+        },
+        {
+            "Total Tokens": 973,
+            "Prompt Tokens": 944,
+            "Completion Tokens": 29,
+            "Total Cost (USD)": 0.00015899999999999996
+        },
+        {
+            "Total Tokens": 1124,
+            "Prompt Tokens": 1098,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 0.0001803
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedTable) relation \"my_table\" does not exist\n\n",
+        "(psycopg2.errors.UndefinedTable) relation \"public.my_table\" does not exist\n\n",
+        "(psycopg2.errors.InvalidSchemaName) schema \"schema_name\" does not exist\n\n",
+        "(psycopg2.errors.InvalidSchemaName) schema \"existing_schema\" does not exist\n\n",
+        "(psycopg2.errors.UndefinedTable) relation \"your_table\" does not exist\n\n"
+    ],
+    "EffectiveSQLs": []
 }

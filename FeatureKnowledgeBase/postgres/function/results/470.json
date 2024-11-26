@@ -6,7 +6,7 @@
         "pg_describe_object"
     ],
     "Feature": [
-        "pg_describe_object ( classid oid, objid oid, objsubid integer ) → text"
+        "pg_describe_object ( classid oid, objid oid, objsubid integer ) \u2192 text"
     ],
     "Description": [
         "Returns a textual description of a database object identified by catalog OID, object OID, and sub-object ID (such as a column number within a table; the sub-object ID is zero when referring to a whole object). This description is intended to be human-readable, and might be translated, depending on server configuration. This is especially useful to determine the identity of an object referenced in the pg_depend catalog. This function returns NULL values for undefined objects."
@@ -14,5 +14,31 @@
     "Examples": [],
     "Category": [
         "System Information Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT pg_describe_object(12345, 67890, 0);",
+        "SELECT pg_describe_object(2606, 12345, 0);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 379,
+            "Prompt Tokens": 350,
+            "Completion Tokens": 29,
+            "Total Cost (USD)": 6.989999999999999e-05
+        },
+        {
+            "Total Tokens": 532,
+            "Prompt Tokens": 503,
+            "Completion Tokens": 29,
+            "Total Cost (USD)": 9.285e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.InternalError_) unrecognized object class: 12345\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT pg_describe_object(2606, 12345, 0);"
     ]
 }

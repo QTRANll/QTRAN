@@ -6,15 +6,57 @@
         "anyrange >> anyrange"
     ],
     "Feature": [
-        "anyrange >> anyrange → boolean"
+        "anyrange >> anyrange \u2192 boolean"
     ],
     "Description": [
         "Is the first range strictly right of the second?"
     ],
     "Examples": [
-        "int8range(50,60) >> int8range(20,30) → t"
+        "int8range(50,60) >> int8range(20,30) \u2192 t"
     ],
     "Category": [
         "Range divide Multirange Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT (anyrange1 >> anyrange2);",
+        "SELECT (anyrange >> anyrange);",
+        "SELECT (NULL::anyrange >> NULL::anyrange);",
+        "SELECT (int4range(1, 5) >> int4range(5, 10));"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 282,
+            "Prompt Tokens": 259,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 5.264999999999999e-05
+        },
+        {
+            "Total Tokens": 449,
+            "Prompt Tokens": 428,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 7.679999999999998e-05
+        },
+        {
+            "Total Tokens": 617,
+            "Prompt Tokens": 592,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 0.00010379999999999999
+        },
+        {
+            "Total Tokens": 782,
+            "Prompt Tokens": 748,
+            "Completion Tokens": 34,
+            "Total Cost (USD)": 0.0001326
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedColumn) column \"anyrange1\" does not exist\nLINE 1: SELECT (anyrange1 >> anyrange2);\n                ^\n\n",
+        "(psycopg2.errors.UndefinedColumn) column \"anyrange\" does not exist\nLINE 1: SELECT (anyrange >> anyrange);\n                ^\n\n",
+        "(psycopg2.errors.DatatypeMismatch) argument declared anyrange is not a range type but type anyrange\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT (int4range(1, 5) >> int4range(5, 10));"
     ]
 }

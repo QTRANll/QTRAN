@@ -15,5 +15,47 @@
     "Examples": [],
     "Category": [
         "Pseudo-Types"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT anycompatible(column_name) FROM table_name;",
+        "SELECT anycompatible(value) FROM (VALUES (1), (2.5), ('text')) AS temp(value);",
+        "SELECT anycompatible(value) FROM (VALUES (1), (2.5)) AS temp(value);",
+        "SELECT anycompatible(value::text) FROM (VALUES ('1'), ('2.5')) AS temp(value);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 291,
+            "Prompt Tokens": 269,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 5.3549999999999994e-05
+        },
+        {
+            "Total Tokens": 469,
+            "Prompt Tokens": 433,
+            "Completion Tokens": 36,
+            "Total Cost (USD)": 8.654999999999999e-05
+        },
+        {
+            "Total Tokens": 656,
+            "Prompt Tokens": 623,
+            "Completion Tokens": 33,
+            "Total Cost (USD)": 0.00011324999999999999
+        },
+        {
+            "Total Tokens": 865,
+            "Prompt Tokens": 830,
+            "Completion Tokens": 35,
+            "Total Cost (USD)": 0.00014549999999999999
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedTable) relation \"table_name\" does not exist\nLINE 1: SELECT anycompatible(column_name) FROM table_name;\n                                               ^\n\n",
+        "(psycopg2.errors.InvalidTextRepresentation) invalid input syntax for type numeric: \"text\"\nLINE 1: ...CT anycompatible(value) FROM (VALUES (1), (2.5), ('text')) A...\n                                                             ^\n\n",
+        "(psycopg2.errors.UndefinedFunction) function anycompatible(numeric) does not exist\nLINE 1: SELECT anycompatible(value) FROM (VALUES (1), (2.5)) AS temp...\n               ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT anycompatible(value::text) FROM (VALUES ('1'), ('2.5')) AS temp(value);"
     ]
 }

@@ -16,5 +16,31 @@
     ],
     "Category": [
         "Numeric Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT a | b;",
+        "SELECT 1 | 2;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 252,
+            "Prompt Tokens": 235,
+            "Completion Tokens": 17,
+            "Total Cost (USD)": 4.5449999999999993e-05
+        },
+        {
+            "Total Tokens": 411,
+            "Prompt Tokens": 392,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 7.02e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.BinderException) Binder Error: Referenced column \"a\" not found in FROM clause!\nLINE 1: SELECT a | b;\n               ^\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT 1 | 2;"
     ]
 }

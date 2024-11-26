@@ -14,5 +14,23 @@
     "Examples": [],
     "Category": [
         "Core SQL Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT zeroblob(10);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 360,
+            "Prompt Tokens": 340,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 6.3e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT zeroblob(10);"
     ]
 }

@@ -17,5 +17,22 @@
     "Category": [
         "JSON Functions"
     ],
-    "EffectiveSQLsRefined": []
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT JSON_QUERY('{\"key\":\"value\"}', '$.key');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 302,
+            "Prompt Tokens": 275,
+            "Completion Tokens": 27,
+            "Total Cost (USD)": 5.745e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT JSON_QUERY('{\"key\":\"value\"}', '$.key');"
+    ]
 }

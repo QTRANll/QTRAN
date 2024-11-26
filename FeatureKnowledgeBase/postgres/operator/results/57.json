@@ -6,15 +6,57 @@
         "timestamp without time zone AT TIME ZONE zone"
     ],
     "Feature": [
-        "timestamp without time zone AT TIME ZONE zone → timestamp with time zone"
+        "timestamp without time zone AT TIME ZONE zone \u2192 timestamp with time zone"
     ],
     "Description": [
         "Converts given time stamp without time zone to time stamp with time zone, assuming the given value is in the named time zone."
     ],
     "Examples": [
-        "timestamp '2001-02-16 20:38:40' at time zone 'America/Denver' → 2001-02-17 03:38:40+00"
+        "timestamp '2001-02-16 20:38:40' at time zone 'America/Denver' \u2192 2001-02-17 03:38:40+00"
     ],
     "Category": [
         "Date divide Time Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT timestamp without time zone AT TIME ZONE 'zone';",
+        "SELECT (timestamp without time zone) AT TIME ZONE 'zone';",
+        "SELECT '2023-01-01 00:00:00'::timestamp without time zone AT TIME ZONE 'zone';",
+        "SELECT '2023-01-01 00:00:00'::timestamp without time zone AT TIME ZONE 'UTC';"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 319,
+            "Prompt Tokens": 294,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 5.909999999999999e-05
+        },
+        {
+            "Total Tokens": 494,
+            "Prompt Tokens": 467,
+            "Completion Tokens": 27,
+            "Total Cost (USD)": 8.625e-05
+        },
+        {
+            "Total Tokens": 683,
+            "Prompt Tokens": 643,
+            "Completion Tokens": 40,
+            "Total Cost (USD)": 0.00012045
+        },
+        {
+            "Total Tokens": 852,
+            "Prompt Tokens": 812,
+            "Completion Tokens": 40,
+            "Total Cost (USD)": 0.0001458
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.SyntaxError) syntax error at or near \"AT\"\nLINE 1: SELECT timestamp without time zone AT TIME ZONE 'zone';\n                                           ^\n\n",
+        "(psycopg2.errors.SyntaxError) syntax error at or near \")\"\nLINE 1: SELECT (timestamp without time zone) AT TIME ZONE 'zone';\n                                           ^\n\n",
+        "(psycopg2.errors.InvalidParameterValue) time zone \"zone\" not recognized\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT '2023-01-01 00:00:00'::timestamp without time zone AT TIME ZONE 'UTC';"
     ]
 }

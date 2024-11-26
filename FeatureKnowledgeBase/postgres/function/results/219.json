@@ -6,15 +6,33 @@
         "querytree"
     ],
     "Feature": [
-        "querytree ( tsquery ) → text"
+        "querytree ( tsquery ) \u2192 text"
     ],
     "Description": [
         "Produces a representation of the indexable portion of a tsquery. A result that is empty or just T indicates a non-indexable query."
     ],
     "Examples": [
-        "querytree('foo & ! bar'::tsquery) → 'foo'"
+        "querytree('foo & ! bar'::tsquery) \u2192 'foo'"
     ],
     "Category": [
         "Text Search Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT querytree(tsquery 'example')"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 290,
+            "Prompt Tokens": 269,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 5.295e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT querytree(tsquery 'example')"
     ]
 }

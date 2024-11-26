@@ -16,5 +16,23 @@
     ],
     "Category": [
         "Numeric Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT trunc(123.456);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 270,
+            "Prompt Tokens": 250,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 4.95e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT trunc(123.456);"
     ]
 }

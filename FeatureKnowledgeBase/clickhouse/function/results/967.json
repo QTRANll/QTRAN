@@ -29,5 +29,8 @@
     ],
     "Category": [
         "Type Conversion Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT    toUInt32OrZero('32'),    toUInt32OrZero('abc')FORMAT Vertical;"
     ]
 }

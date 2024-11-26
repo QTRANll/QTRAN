@@ -6,15 +6,33 @@
         "pg_client_encoding"
     ],
     "Feature": [
-        "pg_client_encoding ( ) → name"
+        "pg_client_encoding ( ) \u2192 name"
     ],
     "Description": [
         "Returns current client encoding name."
     ],
     "Examples": [
-        "pg_client_encoding() → UTF8"
+        "pg_client_encoding() \u2192 UTF8"
     ],
     "Category": [
         "String Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT pg_client_encoding();"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 267,
+            "Prompt Tokens": 249,
+            "Completion Tokens": 18,
+            "Total Cost (USD)": 4.815e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT pg_client_encoding();"
     ]
 }

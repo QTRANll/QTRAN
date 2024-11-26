@@ -6,15 +6,41 @@
         "point ?- point"
     ],
     "Feature": [
-        "point ?- point → boolean"
+        "point ?- point \u2192 boolean"
     ],
     "Description": [
         "Are points horizontally aligned (that is, have same y coordinate)?"
     ],
     "Examples": [
-        "point '(1,0)' ?- point '(0,0)' → t"
+        "point '(1,0)' ?- point '(0,0)' \u2192 t"
     ],
     "Category": [
         "Geometric Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT point1.y = point2.y;",
+        "SELECT (point1.y = point2.y) FROM (VALUES (1, 2), (3, 4)) AS point1(x, y), (VALUES (1, 2), (5, 6)) AS point2(x, y);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 279,
+            "Prompt Tokens": 258,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 5.13e-05
+        },
+        {
+            "Total Tokens": 490,
+            "Prompt Tokens": 424,
+            "Completion Tokens": 66,
+            "Total Cost (USD)": 0.00010319999999999999
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedTable) missing FROM-clause entry for table \"point1\"\nLINE 1: SELECT point1.y = point2.y;\n               ^\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT (point1.y = point2.y) FROM (VALUES (1, 2), (3, 4)) AS point1(x, y), (VALUES (1, 2), (5, 6)) AS point2(x, y);"
     ]
 }

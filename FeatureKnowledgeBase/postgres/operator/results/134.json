@@ -6,15 +6,49 @@
         "+ number"
     ],
     "Feature": [
-        "+ number → number"
+        "+ number \u2192 number"
     ],
     "Description": [
         "Unary plus (no operation); unlike addition, this can iterate over multiple values"
     ],
     "Examples": [
-        "jsonb_path_query_array('{\"x\": [2,3,4]}', '+ $.x') → [2, 3, 4]"
+        "jsonb_path_query_array('{\"x\": [2,3,4]}', '+ $.x') \u2192 [2, 3, 4]"
     ],
     "Category": [
         "JSON Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "+ number",
+        "SELECT + number",
+        "SELECT +1"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 266,
+            "Prompt Tokens": 252,
+            "Completion Tokens": 14,
+            "Total Cost (USD)": 4.62e-05
+        },
+        {
+            "Total Tokens": 412,
+            "Prompt Tokens": 396,
+            "Completion Tokens": 16,
+            "Total Cost (USD)": 6.9e-05
+        },
+        {
+            "Total Tokens": 563,
+            "Prompt Tokens": 547,
+            "Completion Tokens": 16,
+            "Total Cost (USD)": 9.165e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.SyntaxError) syntax error at or near \"+\"\nLINE 1: + number\n        ^\n\n",
+        "(psycopg2.errors.UndefinedColumn) column \"number\" does not exist\nLINE 1: SELECT + number\n                 ^\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT +1"
     ]
 }

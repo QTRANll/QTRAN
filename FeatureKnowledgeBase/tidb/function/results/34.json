@@ -10,10 +10,28 @@
     ],
     "Description": [
         "POSITION()",
-        "与 LOCATE() 功能相同"
+        "\u4e0e LOCATE() \u529f\u80fd\u76f8\u540c"
     ],
     "Examples": [],
     "Category": [
-        "字符串函数"
+        "\u5b57\u7b26\u4e32\u51fd\u6570"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT POSITION('substring' IN 'string')"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 269,
+            "Prompt Tokens": 247,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 5.0249999999999995e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT POSITION('substring' IN 'string')"
     ]
 }

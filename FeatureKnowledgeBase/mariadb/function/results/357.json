@@ -27,5 +27,16 @@
         "SELECT CURDATE();",
         "SELECT TIMESTAMPDIFF(YEAR, '1971-06-06', CURDATE()) AS age;",
         "SELECT TIMESTAMPDIFF(YEAR, '1971-05-06', CURDATE()) AS age;"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT TIMESTAMPDIFF(MONTH,'2003-02-01','2003-05-01');",
+        "SELECT TIMESTAMPDIFF(YEAR,'2002-05-01','2001-01-01');",
+        "SELECT TIMESTAMPDIFF(MINUTE,'2003-02-01','2003-05-01 12:05:55');",
+        "SELECT CURDATE();",
+        "SELECT TIMESTAMPDIFF(YEAR, '1971-06-06', CURDATE()) AS age;",
+        "SELECT TIMESTAMPDIFF(YEAR, '1971-05-06', CURDATE()) AS age;"
     ]
 }

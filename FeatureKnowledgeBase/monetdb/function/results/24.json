@@ -18,5 +18,23 @@
     ],
     "Category": [
         "Mathematics Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT bit_xor(5, 3);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 291,
+            "Prompt Tokens": 268,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 5.4e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT bit_xor(5, 3);"
     ]
 }

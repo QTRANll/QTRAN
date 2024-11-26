@@ -29,5 +29,24 @@
     ],
     "Category": [
         "String Data Types"
+    ],
+    "EffectiveSQLsRefined": [
+        "INSERT INTO fruits\n    (fruit,bushels) VALUES\n    ('pear',20),\n    ('apple',100),\n    ('orange',25);",
+        "SELECT * FROM fruits WHERE fruit=2;",
+        "INSERT INTO enums VALUES ('1'),('2');",
+        "SELECT * FROM enums ORDER BY a ASC;",
+        "SELECT * FROM enums WHERE a=1;",
+        "SELECT * FROM enums WHERE a='1';"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "INSERT INTO fruits\n    (fruit,bushels) VALUES\n    ('pear',20),\n    ('apple',100),\n    ('orange',25);",
+        "SELECT * FROM fruits WHERE fruit=2;",
+        "INSERT INTO enums VALUES ('1'),('2');",
+        "SELECT * FROM enums ORDER BY a ASC;",
+        "SELECT * FROM enums WHERE a=1;",
+        "SELECT * FROM enums WHERE a='1';"
     ]
 }

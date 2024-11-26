@@ -6,15 +6,33 @@
         "inet >> inet"
     ],
     "Feature": [
-        "inet >> inet → boolean"
+        "inet >> inet \u2192 boolean"
     ],
     "Description": [
         "Does subnet strictly contain subnet?"
     ],
     "Examples": [
-        "inet '192.168.1/24' >> inet '192.168.1.5' → t"
+        "inet '192.168.1/24' >> inet '192.168.1.5' \u2192 t"
     ],
     "Category": [
         "Network Address Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT '192.168.1.0/24'::inet >> '192.168.1.128/25'::inet;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 288,
+            "Prompt Tokens": 247,
+            "Completion Tokens": 41,
+            "Total Cost (USD)": 6.165e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT '192.168.1.0/24'::inet >> '192.168.1.128/25'::inet;"
     ]
 }

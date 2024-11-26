@@ -19,5 +19,31 @@
     ],
     "Category": [
         "Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT * FROM my_table WHERE my_column IS NULL;",
+        "SELECT 1 WHERE NULL IS NULL;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 333,
+            "Prompt Tokens": 310,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 6.0299999999999995e-05
+        },
+        {
+            "Total Tokens": 471,
+            "Prompt Tokens": 451,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 7.964999999999998e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(sqlite3.OperationalError) no such table: my_table\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT 1 WHERE NULL IS NULL;"
     ]
 }

@@ -20,5 +20,11 @@
     ],
     "EffectiveSQLsRefined": [
         "SELECT VERSION(),\n sys.version_major() AS major, \n sys.version_minor() AS minor,\n sys.version_patch() AS patch;"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT VERSION(),\n sys.version_major() AS major, \n sys.version_minor() AS minor,\n sys.version_patch() AS patch;"
     ]
 }

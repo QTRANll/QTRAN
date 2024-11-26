@@ -18,5 +18,31 @@
     ],
     "Category": [
         "JSON Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT json.tojsonarray(clob) FROM your_table;",
+        "SELECT json.tojsonarray('your_clob_string');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 302,
+            "Prompt Tokens": 278,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 5.6099999999999995e-05
+        },
+        {
+            "Total Tokens": 468,
+            "Prompt Tokens": 444,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 8.099999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymonetdb.exceptions.OperationalError) 42000!syntax error, unexpected CLOB in: \"select json.tojsonarray(clob\"\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT json.tojsonarray('your_clob_string');"
     ]
 }

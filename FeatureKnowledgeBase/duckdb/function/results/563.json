@@ -16,5 +16,31 @@
     ],
     "Category": [
         "Timestamp with Time Zone Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT timezone('America/New_York', '2023-10-01 12:00:00');",
+        "SELECT timezone('America/New_York', TIMESTAMP '2023-10-01 12:00:00');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 314,
+            "Prompt Tokens": 279,
+            "Completion Tokens": 35,
+            "Total Cost (USD)": 6.285e-05
+        },
+        {
+            "Total Tokens": 581,
+            "Prompt Tokens": 544,
+            "Completion Tokens": 37,
+            "Total Cost (USD)": 0.0001038
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.BinderException) Binder Error: Could not choose a best candidate function for the function call \"timezone(STRING_LITERAL, STRING_LITERAL)\". In order to select one, please add explicit type casts.\n\tCandidate functions:\n\ttimezone(VARCHAR, TIMESTAMP WITH TIME ZONE) -> TIMESTAMP\n\ttimezone(VARCHAR, TIME WITH TIME ZONE) -> TIME WITH TIME ZONE\n\ttimezone(VARCHAR, TIMESTAMP) -> TIMESTAMP WITH TIME ZONE\n\nLINE 1: SELECT timezone('America/New_York', '2023-10-0...\n               ^\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT timezone('America/New_York', TIMESTAMP '2023-10-01 12:00:00');"
     ]
 }

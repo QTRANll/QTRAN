@@ -16,5 +16,23 @@
     ],
     "Category": [
         "Text Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT regexp_split_to_table('hello,world', ',')"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 300,
+            "Prompt Tokens": 275,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 5.625e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT regexp_split_to_table('hello,world', ',')"
     ]
 }

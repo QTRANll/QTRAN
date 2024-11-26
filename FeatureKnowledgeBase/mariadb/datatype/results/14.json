@@ -22,5 +22,24 @@
     ],
     "Category": [
         "String Data Types"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT * FROM bins;",
+        "INSERT INTO bins VALUES('A'),('B'),('a'),('b');",
+        "SELECT * FROM bins ORDER BY a;",
+        "SELECT * FROM bins ORDER BY CAST(a AS CHAR);",
+        "INSERT INTO bins VALUES('12345678');",
+        "SELECT a = '12345678', a = '12345678\\0\\0' from bins;"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT * FROM bins;",
+        "INSERT INTO bins VALUES('A'),('B'),('a'),('b');",
+        "SELECT * FROM bins ORDER BY a;",
+        "SELECT * FROM bins ORDER BY CAST(a AS CHAR);",
+        "INSERT INTO bins VALUES('12345678');",
+        "SELECT a = '12345678', a = '12345678\\0\\0' from bins;"
     ]
 }

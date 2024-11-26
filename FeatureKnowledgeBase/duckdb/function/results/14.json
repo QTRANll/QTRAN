@@ -16,5 +16,23 @@
     ],
     "Category": [
         "Aggregate Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT bool_and(true) AS result;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 276,
+            "Prompt Tokens": 256,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 5.04e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT bool_and(true) AS result;"
     ]
 }

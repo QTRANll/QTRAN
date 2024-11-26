@@ -6,16 +6,42 @@
         "?| line"
     ],
     "Feature": [
-        "?| line → boolean",
-        "?| lseg → boolean"
+        "?| line \u2192 boolean",
+        "?| lseg \u2192 boolean"
     ],
     "Description": [
         "Is line vertical?"
     ],
     "Examples": [
-        "?| lseg '[(-1,0),(1,0)]' → f"
+        "?| lseg '[(-1,0),(1,0)]' \u2192 f"
     ],
     "Category": [
         "Geometric Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT 'Is line vertical?'::boolean;",
+        "SELECT TRUE AS \"Is line vertical?\";"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 269,
+            "Prompt Tokens": 248,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 4.98e-05
+        },
+        {
+            "Total Tokens": 434,
+            "Prompt Tokens": 412,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 7.5e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.InvalidTextRepresentation) invalid input syntax for type boolean: \"Is line vertical?\"\nLINE 1: SELECT 'Is line vertical?'::boolean;\n               ^\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT TRUE AS \"Is line vertical?\";"
     ]
 }

@@ -6,15 +6,33 @@
         "format"
     ],
     "Feature": [
-        "format ( formatstr text [, formatarg \"any\" [, ...] ] ) → text"
+        "format ( formatstr text [, formatarg \"any\" [, ...] ] ) \u2192 text"
     ],
     "Description": [
-        "Formats arguments according to a format string; see Section 9.4.1. This function is similar to the C function sprintf."
+        "Formats arguments according to a format string; see Section\u00a09.4.1. This function is similar to the C function sprintf."
     ],
     "Examples": [
-        "format('Hello %s, %1$s', 'World') → Hello World, World"
+        "format('Hello %s, %1$s', 'World') \u2192 Hello World, World"
     ],
     "Category": [
         "String Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT format('Hello, %s!', 'World');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 299,
+            "Prompt Tokens": 275,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 5.565e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT format('Hello, %s!', 'World');"
     ]
 }

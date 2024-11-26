@@ -8,10 +8,36 @@
         "\nSTD(expr)\n            [over_clause]\n",
         "\n            Returns the population standard deviation of\n            expr.\n            STD() is a synonym for the\n            standard SQL function\n            STDDEV_POP(), provided as a\n            MySQL extension.\n          ",
         "\n            If there are no matching rows, or if\n            expr is NULL,\n            STD() returns\n            NULL.\n          ",
-        "\n            This function executes as a window function if\n            over_clause is present.\n            over_clause is as described in\n            Section 14.20.2, “Window Function Concepts and Syntax”.\n          "
+        "\n            This function executes as a window function if\n            over_clause is present.\n            over_clause is as described in\n            Section\u00a014.20.2, \u201cWindow Function Concepts and Syntax\u201d.\n          "
     ],
     "Examples": [],
     "Category": [
-        "GROUP BY 聚合函数"
+        "GROUP BY \u805a\u5408\u51fd\u6570"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT STD(column_name) FROM table_name;",
+        "SELECT STD(1);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 392,
+            "Prompt Tokens": 371,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 6.824999999999999e-05
+        },
+        {
+            "Total Tokens": 541,
+            "Prompt Tokens": 523,
+            "Completion Tokens": 18,
+            "Total Cost (USD)": 8.925e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.ProgrammingError) (1146, \"Table 'knowledge_base_preprocess_tidb.table_name' doesn't exist\")\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT STD(1);"
     ]
 }

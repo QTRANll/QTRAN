@@ -6,17 +6,35 @@
         "floor"
     ],
     "Feature": [
-        "floor ( numeric ) → numeric",
-        "floor ( double precision ) → double precision"
+        "floor ( numeric ) \u2192 numeric",
+        "floor ( double precision ) \u2192 double precision"
     ],
     "Description": [
         "Nearest integer less than or equal to argument"
     ],
     "Examples": [
-        "floor(42.8) → 42",
-        "floor(-42.8) → -43"
+        "floor(42.8) \u2192 42",
+        "floor(-42.8) \u2192 -43"
     ],
     "Category": [
         "Mathematical Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT floor(3.7);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 274,
+            "Prompt Tokens": 254,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 5.01e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT floor(3.7);"
     ]
 }

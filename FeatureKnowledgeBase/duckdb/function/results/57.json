@@ -15,5 +15,47 @@
     "Examples": [],
     "Category": [
         "Aggregate Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT regr_sxy(y, x) FROM your_table;",
+        "SELECT regr_sxy(y, x);",
+        "SELECT regr_sxy(y, x) FROM (SELECT y, x FROM your_table);",
+        "SELECT regr_sxy(y, x) FROM (SELECT 1 AS y, 2 AS x);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 298,
+            "Prompt Tokens": 273,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 5.595e-05
+        },
+        {
+            "Total Tokens": 480,
+            "Prompt Tokens": 458,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 8.19e-05
+        },
+        {
+            "Total Tokens": 663,
+            "Prompt Tokens": 631,
+            "Completion Tokens": 32,
+            "Total Cost (USD)": 0.00011385
+        },
+        {
+            "Total Tokens": 864,
+            "Prompt Tokens": 829,
+            "Completion Tokens": 35,
+            "Total Cost (USD)": 0.00014534999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.CatalogException) Catalog Error: Table with name your_table does not exist!\nDid you mean \"pg_tables\"?\nLINE 1: SELECT regr_sxy(y, x) FROM your_table;\n                                   ^\n",
+        "(duckdb.duckdb.BinderException) Binder Error: Referenced column \"y\" not found in FROM clause!\nLINE 1: SELECT regr_sxy(y, x);\n                        ^\n",
+        "(duckdb.duckdb.CatalogException) Catalog Error: Table with name your_table does not exist!\nDid you mean \"pg_tables\"?\nLINE 1: ... regr_sxy(y, x) FROM (SELECT y, x FROM your_table);\n                                                  ^\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT regr_sxy(y, x) FROM (SELECT 1 AS y, 2 AS x);"
     ]
 }

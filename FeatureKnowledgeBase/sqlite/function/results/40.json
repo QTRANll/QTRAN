@@ -14,5 +14,39 @@
     "Examples": [],
     "Category": [
         "Core SQL Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT trim(X) FROM table_name;",
+        "SELECT trim(X);",
+        "SELECT trim('   example   ');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 327,
+            "Prompt Tokens": 307,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 5.8049999999999995e-05
+        },
+        {
+            "Total Tokens": 466,
+            "Prompt Tokens": 449,
+            "Completion Tokens": 17,
+            "Total Cost (USD)": 7.755e-05
+        },
+        {
+            "Total Tokens": 608,
+            "Prompt Tokens": 587,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 0.00010064999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(sqlite3.OperationalError) no such table: table_name\n",
+        "(sqlite3.OperationalError) no such column: X\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT trim('   example   ');"
     ]
 }

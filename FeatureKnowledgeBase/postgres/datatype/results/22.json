@@ -23,5 +23,23 @@
     "Examples": [],
     "Category": [
         "Date divide Time Types"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT '12:00:00+00'::time with time zone;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 348,
+            "Prompt Tokens": 320,
+            "Completion Tokens": 28,
+            "Total Cost (USD)": 6.479999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT '12:00:00+00'::time with time zone;"
     ]
 }

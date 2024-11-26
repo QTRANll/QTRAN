@@ -10,13 +10,24 @@
     ],
     "Description": [
         "JSON_KEYS()",
-        "JSON_KEYS(json_doc [,path]) 函数以 JSON 数组的形式返回 JSON 对象的顶层键 (key)。如果指定了 path 参数，则返回所选路径的顶层键 (key)。"
+        "JSON_KEYS(json_doc [,path]) \u51fd\u6570\u4ee5 JSON \u6570\u7ec4\u7684\u5f62\u5f0f\u8fd4\u56de JSON \u5bf9\u8c61\u7684\u9876\u5c42\u952e (key)\u3002\u5982\u679c\u6307\u5b9a\u4e86 path \u53c2\u6570\uff0c\u5219\u8fd4\u56de\u6240\u9009\u8def\u5f84\u7684\u9876\u5c42\u952e (key)\u3002"
     ],
     "Examples": [
         "SELECT JSON_KEYS('{\"name\": {\"first\": \"John\", \"last\": \"Doe\"}, \"type\": \"Person\"}');\n",
         "SELECT JSON_KEYS('{\"name\": {\"first\": \"John\", \"last\": \"Doe\"}, \"type\": \"Person\"}', '$.name');\n"
     ],
     "Category": [
-        "搜索 JSON 的函数"
+        "\u641c\u7d22 JSON \u7684\u51fd\u6570"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT JSON_KEYS('{\"name\": {\"first\": \"John\", \"last\": \"Doe\"}, \"type\": \"Person\"}');",
+        "SELECT JSON_KEYS('{\"name\": {\"first\": \"John\", \"last\": \"Doe\"}, \"type\": \"Person\"}', '$.name');"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT JSON_KEYS('{\"name\": {\"first\": \"John\", \"last\": \"Doe\"}, \"type\": \"Person\"}');",
+        "SELECT JSON_KEYS('{\"name\": {\"first\": \"John\", \"last\": \"Doe\"}, \"type\": \"Person\"}', '$.name');"
     ]
 }

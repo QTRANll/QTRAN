@@ -17,5 +17,39 @@
     ],
     "Category": [
         "Aggregate Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT first(A) FROM your_table;",
+        "SELECT first(A);",
+        "SELECT first(A) FROM (SELECT NULL AS A);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 285,
+            "Prompt Tokens": 265,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 5.175e-05
+        },
+        {
+            "Total Tokens": 452,
+            "Prompt Tokens": 435,
+            "Completion Tokens": 17,
+            "Total Cost (USD)": 7.545e-05
+        },
+        {
+            "Total Tokens": 617,
+            "Prompt Tokens": 593,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 0.00010334999999999999
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.CatalogException) Catalog Error: Table with name your_table does not exist!\nDid you mean \"pg_tables\"?\nLINE 1: SELECT first(A) FROM your_table;\n                             ^\n",
+        "(duckdb.duckdb.BinderException) Binder Error: Referenced column \"A\" not found in FROM clause!\nLINE 1: SELECT first(A);\n                     ^\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT first(A) FROM (SELECT NULL AS A);"
     ]
 }

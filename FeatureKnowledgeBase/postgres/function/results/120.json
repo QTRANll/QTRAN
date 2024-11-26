@@ -6,15 +6,33 @@
         "md5"
     ],
     "Feature": [
-        "md5 ( bytea ) → text"
+        "md5 ( bytea ) \u2192 text"
     ],
     "Description": [
         "Computes the MD5 hash of the binary string, with the result written in hexadecimal."
     ],
     "Examples": [
-        "md5('Th\\000omas'::bytea) → 8ab2d3c9689aaf18​b4958c334c82d8b1"
+        "md5('Th\\000omas'::bytea) \u2192 8ab2d3c9689aaf18\u200bb4958c334c82d8b1"
     ],
     "Category": [
         "Binary String Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT md5('your_binary_string'::bytea);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 284,
+            "Prompt Tokens": 259,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 5.3849999999999994e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT md5('your_binary_string'::bytea);"
     ]
 }

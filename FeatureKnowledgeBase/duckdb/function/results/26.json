@@ -16,5 +16,47 @@
     ],
     "Category": [
         "Aggregate Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT max(arg, 5);",
+        "SELECT max(arg, 5) FROM my_table;",
+        "SELECT max(arg, 5) FROM pg_tables;",
+        "SELECT max(hastriggers, 5) FROM pg_tables;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 287,
+            "Prompt Tokens": 267,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 5.205e-05
+        },
+        {
+            "Total Tokens": 456,
+            "Prompt Tokens": 433,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 7.874999999999999e-05
+        },
+        {
+            "Total Tokens": 634,
+            "Prompt Tokens": 611,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 0.00010544999999999999
+        },
+        {
+            "Total Tokens": 825,
+            "Prompt Tokens": 800,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 0.00013499999999999997
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.BinderException) Binder Error: Referenced column \"arg\" not found in FROM clause!\nLINE 1: SELECT max(arg, 5);\n                   ^\n",
+        "(duckdb.duckdb.CatalogException) Catalog Error: Table with name my_table does not exist!\nDid you mean \"pg_tables\"?\nLINE 1: SELECT max(arg, 5) FROM my_table;\n                                ^\n",
+        "(duckdb.duckdb.BinderException) Binder Error: Referenced column \"arg\" not found in FROM clause!\nCandidate bindings: \"pg_tables.hastriggers\", \"pg_tables.hasrules\"\nLINE 1: SELECT max(arg, 5) FROM pg_tables;\n                   ^\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT max(hastriggers, 5) FROM pg_tables;"
     ]
 }

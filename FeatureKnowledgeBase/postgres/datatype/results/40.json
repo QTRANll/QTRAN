@@ -21,5 +21,23 @@
     "Examples": [],
     "Category": [
         "UUID Type"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT gen_random_uuid();"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 726,
+            "Prompt Tokens": 708,
+            "Completion Tokens": 18,
+            "Total Cost (USD)": 0.00011699999999999997
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT gen_random_uuid();"
     ]
 }

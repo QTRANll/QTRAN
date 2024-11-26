@@ -17,5 +17,31 @@
     "Category": [
         "Built-In Functions and Operators",
         "Internal Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT CAN_ACCESS_COLUMN('column_name');",
+        "SELECT 1;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 290,
+            "Prompt Tokens": 269,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 5.295e-05
+        },
+        {
+            "Total Tokens": 443,
+            "Prompt Tokens": 427,
+            "Completion Tokens": 16,
+            "Total Cost (USD)": 7.365e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.OperationalError) (3566, \"Access to native function 'CAN_ACCESS_COLUMN' is rejected.\")\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT 1;"
     ]
 }

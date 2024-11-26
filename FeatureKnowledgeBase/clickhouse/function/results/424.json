@@ -30,5 +30,9 @@
     ],
     "Category": [
         "Encryption Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT encrypt('aes-256-ofb', 'Secret', '12345678910121314151617181920212', 'iviviviviviviviv') = aes_encrypt_mysql('aes-256-ofb', 'Secret', '12345678910121314151617181920212', 'iviviviviviviviv') AS ciphertexts_equal;",
+        "SELECT hex(aes_encrypt_mysql('aes-256-ofb', 'Secret', '123456789101213141516171819202122', 'iviviviviviviviv123')) AS ciphertext;"
     ]
 }

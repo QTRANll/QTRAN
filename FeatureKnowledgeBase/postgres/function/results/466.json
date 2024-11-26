@@ -6,13 +6,31 @@
         "to_regproc"
     ],
     "Feature": [
-        "to_regproc ( text ) → regproc"
+        "to_regproc ( text ) \u2192 regproc"
     ],
     "Description": [
-        "Translates a textual function or procedure name to its OID. A similar result is obtained by casting the string to type regproc (see Section 8.19); however, this function will return NULL rather than throwing an error if the name is not found or is ambiguous."
+        "Translates a textual function or procedure name to its OID. A similar result is obtained by casting the string to type regproc (see Section\u00a08.19); however, this function will return NULL rather than throwing an error if the name is not found or is ambiguous."
     ],
     "Examples": [],
     "Category": [
         "System Information Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT to_regproc('my_function_name');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 323,
+            "Prompt Tokens": 301,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 5.834999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT to_regproc('my_function_name');"
     ]
 }

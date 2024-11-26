@@ -6,16 +6,50 @@
         "json_object_keys"
     ],
     "Feature": [
-        "json_object_keys ( json ) → setof text",
-        "jsonb_object_keys ( jsonb ) → setof text"
+        "json_object_keys ( json ) \u2192 setof text",
+        "jsonb_object_keys ( jsonb ) \u2192 setof text"
     ],
     "Description": [
         "Returns the set of keys in the top-level JSON object."
     ],
     "Examples": [
-        "select * from json_object_keys('{\"f1\":\"abc\",\"f2\":{\"f3\":\"a\", \"f4\":\"b\"}}') →"
+        "select * from json_object_keys('{\"f1\":\"abc\",\"f2\":{\"f3\":\"a\", \"f4\":\"b\"}}') \u2192"
     ],
     "Category": [
         "JSON Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT json_object_keys(your_json_column) FROM your_table;",
+        "SELECT json_object_keys(your_json_column);",
+        "SELECT json_object_keys('{}'::json);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 297,
+            "Prompt Tokens": 272,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 5.58e-05
+        },
+        {
+            "Total Tokens": 465,
+            "Prompt Tokens": 443,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 7.964999999999998e-05
+        },
+        {
+            "Total Tokens": 630,
+            "Prompt Tokens": 608,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 0.00010439999999999999
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedTable) relation \"your_table\" does not exist\nLINE 1: SELECT json_object_keys(your_json_column) FROM your_table;\n                                                       ^\n\n",
+        "(psycopg2.errors.UndefinedColumn) column \"your_json_column\" does not exist\nLINE 1: SELECT json_object_keys(your_json_column);\n                                ^\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT json_object_keys('{}'::json);"
     ]
 }

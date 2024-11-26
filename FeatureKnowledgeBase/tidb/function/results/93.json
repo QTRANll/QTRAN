@@ -13,6 +13,17 @@
         "mysql> SELECT CURDATE();\n        -> '2008-06-13'\nmysql> SELECT CURDATE() + 0;\n        -> 20080613"
     ],
     "Category": [
-        "日期和时间函数"
+        "\u65e5\u671f\u548c\u65f6\u95f4\u51fd\u6570"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT CURDATE();",
+        "SELECT CURDATE() + 0;"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT CURDATE();",
+        "SELECT CURDATE() + 0;"
     ]
 }

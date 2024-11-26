@@ -16,5 +16,39 @@
     ],
     "Category": [
         "Comparison Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "< 10",
+        "SELECT * FROM table_name WHERE column_name < 10",
+        "SELECT 1 WHERE 1 < 10"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 250,
+            "Prompt Tokens": 235,
+            "Completion Tokens": 15,
+            "Total Cost (USD)": 4.424999999999999e-05
+        },
+        {
+            "Total Tokens": 404,
+            "Prompt Tokens": 380,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 7.14e-05
+        },
+        {
+            "Total Tokens": 555,
+            "Prompt Tokens": 533,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 9.314999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymonetdb.exceptions.OperationalError) 42000!syntax error, unexpected COMPARISON in: \"<\"\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42S02!SELECT: no such table 'table_name'\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT 1 WHERE 1 < 10"
     ]
 }

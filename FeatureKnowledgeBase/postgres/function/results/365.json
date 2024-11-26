@@ -6,7 +6,7 @@
         "dense_rank"
     ],
     "Feature": [
-        "dense_rank () → bigint"
+        "dense_rank () \u2192 bigint"
     ],
     "Description": [
         "Returns the rank of the current row, without gaps; this function effectively counts peer groups."
@@ -14,5 +14,23 @@
     "Examples": [],
     "Category": [
         "Window Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT dense_rank() OVER ()"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 275,
+            "Prompt Tokens": 256,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 4.98e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT dense_rank() OVER ()"
     ]
 }

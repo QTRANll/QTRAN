@@ -24,5 +24,39 @@
     "Examples": [],
     "Category": [
         "Loadable Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT keyring_aws_rotate_cmk();",
+        "SELECT keyring_aws_rotate_cmk();",
+        "SELECT * FROM information_schema.routines WHERE routine_name = 'keyring_aws_rotate_cmk';"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 500,
+            "Prompt Tokens": 478,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 8.489999999999999e-05
+        },
+        {
+            "Total Tokens": 662,
+            "Prompt Tokens": 640,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 0.00010919999999999998
+        },
+        {
+            "Total Tokens": 835,
+            "Prompt Tokens": 802,
+            "Completion Tokens": 33,
+            "Total Cost (USD)": 0.0001401
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.keyring_aws_rotate_cmk does not exist')\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.keyring_aws_rotate_cmk does not exist')\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT * FROM information_schema.routines WHERE routine_name = 'keyring_aws_rotate_cmk';"
     ]
 }

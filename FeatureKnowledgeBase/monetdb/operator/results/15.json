@@ -16,5 +16,23 @@
     ],
     "Category": [
         "Cast Conversion Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT CAST('2023-10-01 12:30:45.123456' AS timestamp(6));"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 304,
+            "Prompt Tokens": 267,
+            "Completion Tokens": 37,
+            "Total Cost (USD)": 6.225e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT CAST('2023-10-01 12:30:45.123456' AS timestamp(6));"
     ]
 }

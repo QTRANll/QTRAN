@@ -6,15 +6,33 @@
         "inet <<= inet"
     ],
     "Feature": [
-        "inet <<= inet → boolean"
+        "inet <<= inet \u2192 boolean"
     ],
     "Description": [
         "Is subnet contained by or equal to subnet?"
     ],
     "Examples": [
-        "inet '192.168.1/24' <<= inet '192.168.1/24' → t"
+        "inet '192.168.1/24' <<= inet '192.168.1/24' \u2192 t"
     ],
     "Category": [
         "Network Address Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT '192.168.1.0/24' <<= '192.168.1.0/16';"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 287,
+            "Prompt Tokens": 250,
+            "Completion Tokens": 37,
+            "Total Cost (USD)": 5.9699999999999994e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT '192.168.1.0/24' <<= '192.168.1.0/16';"
     ]
 }

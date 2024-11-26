@@ -42,3 +42,4 @@ def duckdb_crawler():
         results_category_dic = os.path.join(dic_path, feature, "results_category")
         crawler_results(feature, htmls_filename, results_dic)
         category_classifier(results_dic, results_category_dic)
+

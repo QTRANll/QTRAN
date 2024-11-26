@@ -16,5 +16,23 @@
     ],
     "Category": [
         "Timestamp Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT datepart('year', CURRENT_TIMESTAMP);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 306,
+            "Prompt Tokens": 284,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 5.579999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT datepart('year', CURRENT_TIMESTAMP);"
     ]
 }

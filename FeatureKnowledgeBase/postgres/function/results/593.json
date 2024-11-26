@@ -6,7 +6,7 @@
         "pg_advisory_unlock_all"
     ],
     "Feature": [
-        "pg_advisory_unlock_all () → void"
+        "pg_advisory_unlock_all () \u2192 void"
     ],
     "Description": [
         "Releases all session-level advisory locks held by the current session. (This function is implicitly invoked at session end, even if the client disconnects ungracefully.)"
@@ -14,5 +14,23 @@
     "Examples": [],
     "Category": [
         "System Administration Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT pg_advisory_unlock_all();"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 309,
+            "Prompt Tokens": 288,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 5.5799999999999994e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT pg_advisory_unlock_all();"
     ]
 }

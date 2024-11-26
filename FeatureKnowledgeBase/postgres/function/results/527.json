@@ -6,7 +6,7 @@
         "pg_is_wal_replay_paused"
     ],
     "Feature": [
-        "pg_is_wal_replay_paused () → boolean"
+        "pg_is_wal_replay_paused () \u2192 boolean"
     ],
     "Description": [
         "Returns true if recovery pause is requested."
@@ -14,5 +14,53 @@
     "Examples": [],
     "Category": [
         "System Administration Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT pg_is_wal_replay_paused();",
+        "SELECT pg_is_wal_replay_paused(); -- Ensure recovery is in progress before executing.",
+        "-- Recovery is not in progress, cannot execute pg_is_wal_replay_paused();",
+        "-- No valid SQL statement can be executed due to previous errors.",
+        "-- Unable to provide a valid SQL statement due to prior execution errors."
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 293,
+            "Prompt Tokens": 270,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 5.43e-05
+        },
+        {
+            "Total Tokens": 468,
+            "Prompt Tokens": 437,
+            "Completion Tokens": 31,
+            "Total Cost (USD)": 8.414999999999999e-05
+        },
+        {
+            "Total Tokens": 642,
+            "Prompt Tokens": 612,
+            "Completion Tokens": 30,
+            "Total Cost (USD)": 0.00010979999999999999
+        },
+        {
+            "Total Tokens": 791,
+            "Prompt Tokens": 767,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 0.00012945
+        },
+        {
+            "Total Tokens": 941,
+            "Prompt Tokens": 916,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 0.00015240000000000002
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.ObjectNotInPrerequisiteState) recovery is not in progress\nHINT:  Recovery control functions can only be executed during recovery.\n\n",
+        "(psycopg2.errors.ObjectNotInPrerequisiteState) recovery is not in progress\nHINT:  Recovery control functions can only be executed during recovery.\n\n",
+        "(psycopg2.ProgrammingError) can't execute an empty query\n",
+        "(psycopg2.ProgrammingError) can't execute an empty query\n",
+        "(psycopg2.ProgrammingError) can't execute an empty query\n"
+    ],
+    "EffectiveSQLs": []
 }

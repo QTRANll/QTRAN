@@ -19,6 +19,14 @@
         "Geographic Functions"
     ],
     "EffectiveSQLsRefined": [
+        "CREATE TABLE gis_multi_line (g MULTILINESTRING);",
+        "INSERT INTO gis_multi_line VALUES\n    (MultiLineStringFromText('MULTILINESTRING((10 48,10 21,10 0),(16 0,16 23,16 48))')),\n    (MLineFromText('MULTILINESTRING((10 48,10 21,10 0))')),\n    (MLineFromWKB(AsWKB(MultiLineString(\n      LineString(Point(1, 2), Point(3, 5)), \n      LineString(Point(2, 5), Point(5, 8), Point(21, 7))))));"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "CREATE TABLE gis_multi_line (g MULTILINESTRING);",
         "INSERT INTO gis_multi_line VALUES\n    (MultiLineStringFromText('MULTILINESTRING((10 48,10 21,10 0),(16 0,16 23,16 48))')),\n    (MLineFromText('MULTILINESTRING((10 48,10 21,10 0))')),\n    (MLineFromWKB(AsWKB(MultiLineString(\n      LineString(Point(1, 2), Point(3, 5)), \n      LineString(Point(2, 5), Point(5, 8), Point(21, 7))))));"
     ]
 }

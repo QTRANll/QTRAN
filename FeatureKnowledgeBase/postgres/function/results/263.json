@@ -6,15 +6,33 @@
         "jsonb_path_exists"
     ],
     "Feature": [
-        "jsonb_path_exists ( target jsonb, path jsonpath [, vars jsonb [, silent boolean ]] ) → boolean"
+        "jsonb_path_exists ( target jsonb, path jsonpath [, vars jsonb [, silent boolean ]] ) \u2192 boolean"
     ],
     "Description": [
         "Checks whether the JSON path returns any item for the specified JSON value. If the vars argument is specified, it must be a JSON object, and its fields provide named values to be substituted into the jsonpath expression. If the silent argument is specified and is true, the function suppresses the same errors as the @? and @@ operators do."
     ],
     "Examples": [
-        "jsonb_path_exists('{\"a\":[1,2,3,4,5]}', '$.a[*] ? (@ >= $min && @ <= $max)', '{\"min\":2, \"max\":4}') → t"
+        "jsonb_path_exists('{\"a\":[1,2,3,4,5]}', '$.a[*] ? (@ >= $min && @ <= $max)', '{\"min\":2, \"max\":4}') \u2192 t"
     ],
     "Category": [
         "JSON Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT jsonb_path_exists('{\"key\": \"value\"}', '$.key')"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 361,
+            "Prompt Tokens": 331,
+            "Completion Tokens": 30,
+            "Total Cost (USD)": 6.764999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT jsonb_path_exists('{\"key\": \"value\"}', '$.key')"
     ]
 }

@@ -10,13 +10,24 @@
     ],
     "Description": [
         "JSON_REMOVE()",
-        "JSON_REMOVE(json_doc,path [,path] ...) 函数从 JSON 文档中删除指定 path 的数据并返回结果。"
+        "JSON_REMOVE(json_doc,path [,path] ...) \u51fd\u6570\u4ece JSON \u6587\u6863\u4e2d\u5220\u9664\u6307\u5b9a path \u7684\u6570\u636e\u5e76\u8fd4\u56de\u7ed3\u679c\u3002"
     ],
     "Examples": [
         "SELECT JSON_REMOVE('{\"a\": 61, \"b\": 62, \"c\": 63}','$.b');\n",
         "SELECT JSON_REMOVE('{\"a\": 61, \"b\": 62, \"c\": 63}','$.b','$.c');\n"
     ],
     "Category": [
-        "修改 JSON 的函数"
+        "\u4fee\u6539 JSON \u7684\u51fd\u6570"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT JSON_REMOVE('{\"a\": 61, \"b\": 62, \"c\": 63}','$.b');",
+        "SELECT JSON_REMOVE('{\"a\": 61, \"b\": 62, \"c\": 63}','$.b','$.c');"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT JSON_REMOVE('{\"a\": 61, \"b\": 62, \"c\": 63}','$.b');",
+        "SELECT JSON_REMOVE('{\"a\": 61, \"b\": 62, \"c\": 63}','$.b','$.c');"
     ]
 }

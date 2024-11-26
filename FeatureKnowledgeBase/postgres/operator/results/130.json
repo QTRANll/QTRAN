@@ -6,15 +6,41 @@
         "jsonb #- text[]"
     ],
     "Feature": [
-        "jsonb #- text[] → jsonb"
+        "jsonb #- text[] \u2192 jsonb"
     ],
     "Description": [
         "Deletes the field or array element at the specified path, where path elements can be either field keys or array indexes."
     ],
     "Examples": [
-        "'[\"a\", {\"b\":1}]'::jsonb #- '{1,b}' → [\"a\", {}]"
+        "'[\"a\", {\"b\":1}]'::jsonb #- '{1,b}' \u2192 [\"a\", {}]"
     ],
     "Category": [
         "JSON Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT jsonb #- '{path.to.element}' FROM your_table;",
+        "SELECT jsonb #- '{path.to.element}' FROM (SELECT '{}'::jsonb AS jsonb) AS temp;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 298,
+            "Prompt Tokens": 273,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 5.595e-05
+        },
+        {
+            "Total Tokens": 481,
+            "Prompt Tokens": 446,
+            "Completion Tokens": 35,
+            "Total Cost (USD)": 8.79e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedTable) relation \"your_table\" does not exist\nLINE 1: SELECT jsonb #- '{path.to.element}' FROM your_table;\n                                                 ^\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT jsonb #- '{path.to.element}' FROM (SELECT '{}'::jsonb AS jsonb) AS temp;"
     ]
 }

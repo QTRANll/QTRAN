@@ -18,5 +18,39 @@
     ],
     "Category": [
         "Aggregate Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT sum(decimal_expr);",
+        "SELECT sum(value) FROM table_name;",
+        "SELECT sum(1.0);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 286,
+            "Prompt Tokens": 268,
+            "Completion Tokens": 18,
+            "Total Cost (USD)": 5.1e-05
+        },
+        {
+            "Total Tokens": 436,
+            "Prompt Tokens": 416,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 7.439999999999998e-05
+        },
+        {
+            "Total Tokens": 588,
+            "Prompt Tokens": 568,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 9.719999999999998e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: identifier 'decimal_expr' unknown\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42S02!SELECT: no such table 'table_name'\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT sum(1.0);"
     ]
 }

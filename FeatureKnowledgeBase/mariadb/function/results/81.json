@@ -21,5 +21,12 @@
     "EffectiveSQLsRefined": [
         "SELECT ELT(1, 'ej', 'Heja', 'hej', 'foo');",
         "SELECT ELT(4, 'ej', 'Heja', 'hej', 'foo');"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT ELT(1, 'ej', 'Heja', 'hej', 'foo');",
+        "SELECT ELT(4, 'ej', 'Heja', 'hej', 'foo');"
     ]
 }

@@ -6,7 +6,7 @@
         "pg_table_is_visible"
     ],
     "Feature": [
-        "pg_table_is_visible ( table oid ) → boolean"
+        "pg_table_is_visible ( table oid ) \u2192 boolean"
     ],
     "Description": [
         "Is table visible in search path? (This works for all types of relations, including views, materialized views, indexes, sequences and foreign tables.)"
@@ -14,5 +14,31 @@
     "Examples": [],
     "Category": [
         "System Information Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT pg_table_is_visible('your_table_oid');",
+        "SELECT pg_table_is_visible(12345);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 302,
+            "Prompt Tokens": 279,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 5.565e-05
+        },
+        {
+            "Total Tokens": 470,
+            "Prompt Tokens": 448,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 8.039999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.InvalidTextRepresentation) invalid input syntax for type oid: \"your_table_oid\"\nLINE 1: SELECT pg_table_is_visible('your_table_oid');\n                                   ^\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT pg_table_is_visible(12345);"
     ]
 }

@@ -26,5 +26,10 @@
     ],
     "Category": [
         "Other Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "INSERT INTO db_test.id_val VALUES (1, 11)(2, 12)(4, 13);",
+        "SELECT * FROM db_test.id_val;",
+        "SELECT number, joinGetOrNull(db_test.id_val, 'val', toUInt32(number)) from numbers(4);"
     ]
 }

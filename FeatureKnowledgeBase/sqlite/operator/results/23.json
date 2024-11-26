@@ -19,5 +19,14 @@
     ],
     "Category": [
         "Operators"
+    ],
+    "EffectiveSQLsRefined": [
+        "CREATE TABLE users (id INTEGER PRIMARY KEY, username TEXT NOT NULL);"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "CREATE TABLE users (id INTEGER PRIMARY KEY, username TEXT NOT NULL);"
     ]
 }

@@ -15,5 +15,52 @@
     "Category": [
         "Dynamic Columns Functions"
     ],
-    "EffectiveSQLsRefined": []
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "COLUMN_DELETE(dyncol_blob, 'column_name');",
+        "SELECT COLUMN_DELETE(dyncol_blob, 'column_name');",
+        "COLUMN_DELETE(dynamic_column_blob, 'column_name');",
+        "CALL COLUMN_DELETE('dyncol_blob', 'column_name');",
+        "SET @dyncol_blob = COLUMN_DELETE('column_name');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 316,
+            "Prompt Tokens": 292,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 5.819999999999999e-05
+        },
+        {
+            "Total Tokens": 506,
+            "Prompt Tokens": 481,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 8.714999999999999e-05
+        },
+        {
+            "Total Tokens": 661,
+            "Prompt Tokens": 638,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 0.00010949999999999999
+        },
+        {
+            "Total Tokens": 850,
+            "Prompt Tokens": 825,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 0.00013874999999999998
+        },
+        {
+            "Total Tokens": 1010,
+            "Prompt Tokens": 985,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 0.00016274999999999997
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.ProgrammingError) (1064, \"You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'COLUMN_DELETE(dyncol_blob, 'column_name')' at line 1\")\n",
+        "(pymysql.err.OperationalError) (1054, \"Unknown column 'dyncol_blob' in 'field list'\")\n",
+        "(pymysql.err.ProgrammingError) (1064, \"You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'COLUMN_DELETE(dynamic_column_blob, 'column_name')' at line 1\")\n",
+        "(pymysql.err.OperationalError) (1305, 'PROCEDURE pinolo_temp_mariadb.COLUMN_DELETE does not exist')\n",
+        "(pymysql.err.ProgrammingError) (1064, \"You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ')' at line 1\")\n"
+    ],
+    "EffectiveSQLs": []
 }

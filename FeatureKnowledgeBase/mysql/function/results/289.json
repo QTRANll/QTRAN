@@ -25,5 +25,16 @@
     "Category": [
         "Built-In Functions and Operators",
         "Spatial Analysis Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT ST_Area(ST_GeomFromText(@poly));",
+        "SELECT ST_Area(ST_GeomFromText(@mpoly));"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT ST_Area(ST_GeomFromText(@poly));",
+        "SELECT ST_Area(ST_GeomFromText(@mpoly));"
     ]
 }

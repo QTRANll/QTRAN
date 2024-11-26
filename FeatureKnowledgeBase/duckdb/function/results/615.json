@@ -17,5 +17,31 @@
     ],
     "Category": [
         "Window Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT percent_rank()",
+        "SELECT percent_rank() OVER ()"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 284,
+            "Prompt Tokens": 267,
+            "Completion Tokens": 17,
+            "Total Cost (USD)": 5.025e-05
+        },
+        {
+            "Total Tokens": 450,
+            "Prompt Tokens": 431,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 7.605e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.CatalogException) Catalog Error: Scalar Function with name percent_rank does not exist!\nDid you mean \"current_setting\"?\nLINE 1: SELECT percent_rank()\n               ^\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT percent_rank() OVER ()"
     ]
 }

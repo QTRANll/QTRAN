@@ -18,5 +18,47 @@
     ],
     "Category": [
         "Aggregate Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT sys.corr(numeric_a, numeric_b);",
+        "SELECT sys.corr(column1, column2) FROM your_table;",
+        "SELECT sys.corr(numeric_a, numeric_b);",
+        "SELECT sys.corr(1, 2);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 331,
+            "Prompt Tokens": 307,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 6.044999999999999e-05
+        },
+        {
+            "Total Tokens": 493,
+            "Prompt Tokens": 467,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 8.565e-05
+        },
+        {
+            "Total Tokens": 655,
+            "Prompt Tokens": 631,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 0.00010905
+        },
+        {
+            "Total Tokens": 814,
+            "Prompt Tokens": 791,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 0.00013245
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: identifier 'numeric_a' unknown\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42S02!SELECT: no such table 'your_table'\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: identifier 'numeric_a' unknown\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT sys.corr(1, 2);"
     ]
 }

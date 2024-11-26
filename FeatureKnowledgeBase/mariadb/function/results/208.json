@@ -18,5 +18,38 @@
     "Category": [
         "Geographic Functions"
     ],
-    "EffectiveSQLsRefined": []
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT MPolyFromWKB(your_wkb_value, your_srid_value);",
+        "SELECT MPolyFromWKB(X'0103000000010000000500000001000000...', 4326);",
+        "SELECT MPolyFromWKB(UNHEX('0103000000010000000500000001000000...'), 4326);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 335,
+            "Prompt Tokens": 305,
+            "Completion Tokens": 30,
+            "Total Cost (USD)": 6.374999999999999e-05
+        },
+        {
+            "Total Tokens": 509,
+            "Prompt Tokens": 471,
+            "Completion Tokens": 38,
+            "Total Cost (USD)": 9.345e-05
+        },
+        {
+            "Total Tokens": 725,
+            "Prompt Tokens": 684,
+            "Completion Tokens": 41,
+            "Total Cost (USD)": 0.0001272
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.OperationalError) (1054, \"Unknown column 'your_wkb_value' in 'field list'\")\n",
+        "(pymysql.err.ProgrammingError) (1064, \"You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'X'0103000000010000000500000001000000...', 4326)' at line 1\")\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT MPolyFromWKB(UNHEX('0103000000010000000500000001000000...'), 4326);"
+    ]
 }

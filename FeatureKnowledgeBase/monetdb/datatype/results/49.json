@@ -1,0 +1,38 @@
+{
+    "HTML": [
+        "https://www.monetdb.org/documentation-Aug2024/user-guide/sql-manual/data-types/temporal-types"
+    ],
+    "Title": [
+        "INTERVAL HOUR"
+    ],
+    "Feature": [
+        "INTERVAL HOUR"
+    ],
+    "Description": [
+        "second_interval",
+        "8-bytes",
+        "decimal(19,3) number of seconds with milliseconds precision"
+    ],
+    "Examples": [],
+    "Category": [
+        "Temporal Datatypes"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT INTERVAL '1' HOUR;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 287,
+            "Prompt Tokens": 266,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 5.25e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT INTERVAL '1' HOUR;"
+    ]
+}

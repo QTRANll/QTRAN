@@ -13,13 +13,13 @@
         "Press CTRL+C to copy mysql> SELECT STR_TO_DATE('a09:30:17','a%h:%i:%s');\n        -> '09:30:17'\nmysql> SELECT STR_TO_DATE('a09:30:17','%h:%i:%s');\n        -> NULL\nmysql> SELECT STR_TO_DATE('09:30:17a','%h:%i:%s');\n        -> '09:30:17'",
         "\n          Unspecified date or time parts have a value of 0, so\n          incompletely specified values in\n          str produce a result with some or\n          all parts set to 0:\n        ",
         "Press CTRL+C to copy mysql> SELECT STR_TO_DATE('abc','abc');\n        -> '0000-00-00'\nmysql> SELECT STR_TO_DATE('9','%m');\n        -> '0000-09-00'\nmysql> SELECT STR_TO_DATE('9','%s');\n        -> '00:00:09'",
-        "\n          Range checking on the parts of date values is as described in\n          Section 13.2.2, “The DATE, DATETIME, and TIMESTAMP Types”. This means, for example, that\n          “zero” dates or dates with part values of 0 are\n          permitted unless the SQL mode is set to disallow such values.\n        ",
+        "\n          Range checking on the parts of date values is as described in\n          Section\u00a013.2.2, \u201cThe DATE, DATETIME, and TIMESTAMP Types\u201d. This means, for example, that\n          \u201czero\u201d dates or dates with part values of 0 are\n          permitted unless the SQL mode is set to disallow such values.\n        ",
         "Press CTRL+C to copy mysql> SELECT STR_TO_DATE('00/00/0000', '%m/%d/%Y');\n        -> '0000-00-00'\nmysql> SELECT STR_TO_DATE('04/31/2004', '%m/%d/%Y');\n        -> '2004-04-31'",
         "\n          If the NO_ZERO_DATE SQL mode\n          is enabled, zero dates are disallowed. In that case,\n          STR_TO_DATE() returns\n          NULL and generates a warning:\n        ",
         "Press CTRL+C to copy mysql> SET sql_mode = '';\nmysql> SELECT STR_TO_DATE('00/00/0000', '%m/%d/%Y');\n+---------------------------------------+\n| STR_TO_DATE('00/00/0000', '%m/%d/%Y') |\n+---------------------------------------+\n| 0000-00-00                            |\n+---------------------------------------+\nmysql> SET sql_mode = 'NO_ZERO_DATE';\nmysql> SELECT STR_TO_DATE('00/00/0000', '%m/%d/%Y');\n+---------------------------------------+\n| STR_TO_DATE('00/00/0000', '%m/%d/%Y') |\n+---------------------------------------+\n| NULL                                  |\n+---------------------------------------+\nmysql> SHOW WARNINGS\\G\n*************************** 1. row ***************************\n  Level: Warning\n   Code: 1411\nMessage: Incorrect datetime value: '00/00/0000' for function str_to_date",
         "\n          Prior to MySQL 8.0.35, it was possible to pass an invalid date\n          string such as '2021-11-31' to this\n          function. In MySQL 8.0.35 and later,\n          STR_TO_DATE() performs complete range\n          checking and raises an error if the date after conversion\n          would be invalid.\n",
         "\n\nNote\n\n\n            You cannot use format \"%X%V\" to convert a\n            year-week string to a date because the combination of a year\n            and week does not uniquely identify a year and month if the\n            week crosses a month boundary. To convert a year-week to a\n            date, you should also specify the weekday:\n          Press CTRL+C to copy mysql> SELECT STR_TO_DATE('200442 Monday', '%X%V %W');\n        -> '2004-10-18'\n",
-        "\n          You should also be aware that, for dates and the date portions\n          of datetime values, STR_TO_DATE() checks\n          (only) the individual year, month, and day of month values for\n          validity. More precisely, this means that the year is checked\n          to be sure that it is in the range 0-9999 inclusive, the month\n          is checked to ensure that it is in the range 1-12 inclusive,\n          and the day of month is checked to make sure that it is in the\n          range 1-31 inclusive, but the server does not check the values\n          in combination. For example, SELECT\n          STR_TO_DATE('23-2-31', '%Y-%m-%d') returns\n          2023-02-31. Enabling or disabling the\n          ALLOW_INVALID_DATES server\n          SQL mode has no effect on this behavior. See\n          Section 13.2.2, “The DATE, DATETIME, and TIMESTAMP Types”, for more information.\n        "
+        "\n          You should also be aware that, for dates and the date portions\n          of datetime values, STR_TO_DATE() checks\n          (only) the individual year, month, and day of month values for\n          validity. More precisely, this means that the year is checked\n          to be sure that it is in the range 0-9999 inclusive, the month\n          is checked to ensure that it is in the range 1-12 inclusive,\n          and the day of month is checked to make sure that it is in the\n          range 1-31 inclusive, but the server does not check the values\n          in combination. For example, SELECT\n          STR_TO_DATE('23-2-31', '%Y-%m-%d') returns\n          2023-02-31. Enabling or disabling the\n          ALLOW_INVALID_DATES server\n          SQL mode has no effect on this behavior. See\n          Section\u00a013.2.2, \u201cThe DATE, DATETIME, and TIMESTAMP Types\u201d, for more information.\n        "
     ],
     "Examples": [
         "mysql> SELECT STR_TO_DATE('01,5,2013','%d,%m,%Y');\n        -> '2013-05-01'\nmysql> SELECT STR_TO_DATE('May 1, 2013','%M %d,%Y');\n        -> '2013-05-01'",
@@ -30,6 +30,39 @@
         "mysql> SELECT STR_TO_DATE('200442 Monday', '%X%V %W');\n        -> '2004-10-18'"
     ],
     "Category": [
-        "日期和时间函数"
+        "\u65e5\u671f\u548c\u65f6\u95f4\u51fd\u6570"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT STR_TO_DATE('01,5,2013','%d,%m,%Y');",
+        "SELECT STR_TO_DATE('May 1, 2013','%M %d,%Y');",
+        "SELECT STR_TO_DATE('a09:30:17','a%h:%i:%s');",
+        "SELECT STR_TO_DATE('a09:30:17','%h:%i:%s');",
+        "SELECT STR_TO_DATE('09:30:17a','%h:%i:%s');",
+        "SELECT STR_TO_DATE('abc','abc');",
+        "SELECT STR_TO_DATE('9','%m');",
+        "SELECT STR_TO_DATE('9','%s');",
+        "SELECT STR_TO_DATE('00/00/0000', '%m/%d/%Y');",
+        "SELECT STR_TO_DATE('04/31/2004', '%m/%d/%Y');",
+        "SELECT STR_TO_DATE('00/00/0000', '%m/%d/%Y');",
+        "SELECT STR_TO_DATE('00/00/0000', '%m/%d/%Y');",
+        "SELECT STR_TO_DATE('200442 Monday', '%X%V %W');"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT STR_TO_DATE('01,5,2013','%d,%m,%Y');",
+        "SELECT STR_TO_DATE('May 1, 2013','%M %d,%Y');",
+        "SELECT STR_TO_DATE('a09:30:17','a%h:%i:%s');",
+        "SELECT STR_TO_DATE('a09:30:17','%h:%i:%s');",
+        "SELECT STR_TO_DATE('09:30:17a','%h:%i:%s');",
+        "SELECT STR_TO_DATE('abc','abc');",
+        "SELECT STR_TO_DATE('9','%m');",
+        "SELECT STR_TO_DATE('9','%s');",
+        "SELECT STR_TO_DATE('00/00/0000', '%m/%d/%Y');",
+        "SELECT STR_TO_DATE('04/31/2004', '%m/%d/%Y');",
+        "SELECT STR_TO_DATE('00/00/0000', '%m/%d/%Y');",
+        "SELECT STR_TO_DATE('00/00/0000', '%m/%d/%Y');",
+        "SELECT STR_TO_DATE('200442 Monday', '%X%V %W');"
     ]
 }

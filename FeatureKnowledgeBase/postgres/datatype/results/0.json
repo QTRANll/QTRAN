@@ -19,5 +19,23 @@
     "Examples": [],
     "Category": [
         "Numeric Types"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT CAST(123 AS smallint);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 281,
+            "Prompt Tokens": 260,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 5.16e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT CAST(123 AS smallint);"
     ]
 }

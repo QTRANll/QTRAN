@@ -17,5 +17,23 @@
     ],
     "Category": [
         "List Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT array_has_all(array[1, 2, 3], array[1, 2]);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 295,
+            "Prompt Tokens": 261,
+            "Completion Tokens": 34,
+            "Total Cost (USD)": 5.955e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT array_has_all(array[1, 2, 3], array[1, 2]);"
     ]
 }

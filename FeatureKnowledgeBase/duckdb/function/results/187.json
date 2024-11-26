@@ -21,5 +21,39 @@
     ],
     "Category": [
         "Lambda Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT array_apply(list, lambda x: x * 2) AS transformed_list;",
+        "SELECT array_apply(list, x -> x * 2) AS transformed_list;",
+        "SELECT array_apply(ARRAY[1, 2, 3], x -> x * 2) AS transformed_list;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 331,
+            "Prompt Tokens": 302,
+            "Completion Tokens": 29,
+            "Total Cost (USD)": 6.269999999999999e-05
+        },
+        {
+            "Total Tokens": 484,
+            "Prompt Tokens": 456,
+            "Completion Tokens": 28,
+            "Total Cost (USD)": 8.52e-05
+        },
+        {
+            "Total Tokens": 672,
+            "Prompt Tokens": 635,
+            "Completion Tokens": 37,
+            "Total Cost (USD)": 0.00011745
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.ParserException) Parser Error: syntax error at or near \"x\"\n",
+        "(duckdb.duckdb.BinderException) Binder Error: failed to bind function, either: Referenced column \"list\" not found in FROM clause!\n or: Referenced column \"list\" not found in FROM clause!\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT array_apply(ARRAY[1, 2, 3], x -> x * 2) AS transformed_list;"
     ]
 }

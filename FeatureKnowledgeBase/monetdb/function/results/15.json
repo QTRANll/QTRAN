@@ -18,5 +18,31 @@
     ],
     "Category": [
         "Comparison Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT nullif(column1, column2);",
+        "SELECT nullif(1, 1);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 326,
+            "Prompt Tokens": 304,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 5.879999999999999e-05
+        },
+        {
+            "Total Tokens": 482,
+            "Prompt Tokens": 460,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 8.219999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: identifier 'column1' unknown\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT nullif(1, 1);"
     ]
 }

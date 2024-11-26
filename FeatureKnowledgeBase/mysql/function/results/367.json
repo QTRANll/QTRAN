@@ -20,5 +20,31 @@
     "Category": [
         "Built-In Functions and Operators",
         "Aggregate Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT STD(column_name) FROM table_name;",
+        "SELECT STD(5) AS standard_deviation;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 418,
+            "Prompt Tokens": 397,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 7.214999999999999e-05
+        },
+        {
+            "Total Tokens": 578,
+            "Prompt Tokens": 556,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 9.659999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.ProgrammingError) (1146, \"Table 'knowledge_base_preprocess_mysql.table_name' doesn't exist\")\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT STD(5) AS standard_deviation;"
     ]
 }

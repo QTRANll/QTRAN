@@ -6,15 +6,49 @@
         "integral_type | integral_type"
     ],
     "Feature": [
-        "integral_type | integral_type → integral_type"
+        "integral_type | integral_type \u2192 integral_type"
     ],
     "Description": [
         "Bitwise OR"
     ],
     "Examples": [
-        "32 | 3 → 35"
+        "32 | 3 \u2192 35"
     ],
     "Category": [
         "Mathematical Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT integral_type | integral_type;",
+        "SELECT $1 | $2;",
+        "SELECT 1 | 1;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 276,
+            "Prompt Tokens": 257,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 4.9949999999999994e-05
+        },
+        {
+            "Total Tokens": 439,
+            "Prompt Tokens": 420,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 7.439999999999999e-05
+        },
+        {
+            "Total Tokens": 599,
+            "Prompt Tokens": 580,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 9.839999999999998e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedColumn) column \"integral_type\" does not exist\nLINE 1: SELECT integral_type | integral_type;\n               ^\n\n",
+        "(psycopg2.errors.UndefinedParameter) there is no parameter $1\nLINE 1: SELECT $1 | $2;\n               ^\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT 1 | 1;"
     ]
 }

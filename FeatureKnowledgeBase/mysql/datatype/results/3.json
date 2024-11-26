@@ -14,5 +14,23 @@
     "Examples": [],
     "Category": [
         "Bit-Value Type - BIT"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT b'101' AS bit_value;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 557,
+            "Prompt Tokens": 536,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 9.3e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT b'101' AS bit_value;"
     ]
 }

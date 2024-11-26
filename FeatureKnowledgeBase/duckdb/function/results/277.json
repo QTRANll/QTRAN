@@ -20,5 +20,39 @@
     ],
     "Category": [
         "List Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT array_apply(list, lambda) AS transformed_list;",
+        "SELECT array_apply(ARRAY[1, 2, 3], lambda) AS transformed_list;",
+        "SELECT array_apply(ARRAY[1, 2, 3], x -> x * 2) AS transformed_list;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 306,
+            "Prompt Tokens": 283,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 5.624999999999999e-05
+        },
+        {
+            "Total Tokens": 485,
+            "Prompt Tokens": 453,
+            "Completion Tokens": 32,
+            "Total Cost (USD)": 8.715e-05
+        },
+        {
+            "Total Tokens": 678,
+            "Prompt Tokens": 641,
+            "Completion Tokens": 37,
+            "Total Cost (USD)": 0.00011834999999999999
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.BinderException) Binder Error: Referenced column \"list\" not found in FROM clause!\nLINE 1: SELECT array_apply(list, lambda) AS transformed_list;\n                           ^\n",
+        "(duckdb.duckdb.BinderException) Binder Error: Referenced column \"lambda\" not found in FROM clause!\nLINE 1: SELECT array_apply(ARRAY[1, 2, 3], lambda) AS transformed_list;\n                                           ^\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT array_apply(ARRAY[1, 2, 3], x -> x * 2) AS transformed_list;"
     ]
 }

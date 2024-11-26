@@ -22,5 +22,16 @@
     ],
     "Category": [
         "The SET Type"
+    ],
+    "EffectiveSQLsRefined": [
+        "CREATE TABLE myset (col SET('a', 'b', 'c', 'd'));",
+        "SELECT col FROM myset;"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "CREATE TABLE myset (col SET('a', 'b', 'c', 'd'));",
+        "SELECT col FROM myset;"
     ]
 }

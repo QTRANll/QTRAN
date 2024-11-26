@@ -6,15 +6,63 @@
         "jsonb ?& text[]"
     ],
     "Feature": [
-        "jsonb ?& text[] → boolean"
+        "jsonb ?& text[] \u2192 boolean"
     ],
     "Description": [
         "Do all of the strings in the text array exist as top-level keys or array elements?"
     ],
     "Examples": [
-        "'[\"a\", \"b\", \"c\"]'::jsonb ?& array['a', 'b'] → t"
+        "'[\"a\", \"b\", \"c\"]'::jsonb ?& array['a', 'b'] \u2192 t"
     ],
     "Category": [
         "JSON Functions and Operators"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT jsonb_column ?& ARRAY['key1', 'key2', 'key3'] FROM your_table;",
+        "SELECT jsonb_column ?& ARRAY['key1', 'key2', 'key3'];",
+        "SELECT my_jsonb ?& ARRAY['key1', 'key2', 'key3'];",
+        "SELECT my_jsonb_column ?& ARRAY['key1', 'key2', 'key3'];",
+        "SELECT jsonb_data ?& ARRAY['key1', 'key2', 'key3'];"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 306,
+            "Prompt Tokens": 271,
+            "Completion Tokens": 35,
+            "Total Cost (USD)": 6.165e-05
+        },
+        {
+            "Total Tokens": 497,
+            "Prompt Tokens": 465,
+            "Completion Tokens": 32,
+            "Total Cost (USD)": 8.895e-05
+        },
+        {
+            "Total Tokens": 685,
+            "Prompt Tokens": 653,
+            "Completion Tokens": 32,
+            "Total Cost (USD)": 0.00011715
+        },
+        {
+            "Total Tokens": 874,
+            "Prompt Tokens": 841,
+            "Completion Tokens": 33,
+            "Total Cost (USD)": 0.00014594999999999997
+        },
+        {
+            "Total Tokens": 1064,
+            "Prompt Tokens": 1032,
+            "Completion Tokens": 32,
+            "Total Cost (USD)": 0.000174
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedTable) relation \"your_table\" does not exist\nLINE 1: ...sonb_column ?& ARRAY['key1', 'key2', 'key3'] FROM your_table...\n                                                             ^\n\n",
+        "(psycopg2.errors.UndefinedColumn) column \"jsonb_column\" does not exist\nLINE 1: SELECT jsonb_column ?& ARRAY['key1', 'key2', 'key3'];\n               ^\n\n",
+        "(psycopg2.errors.UndefinedColumn) column \"my_jsonb\" does not exist\nLINE 1: SELECT my_jsonb ?& ARRAY['key1', 'key2', 'key3'];\n               ^\n\n",
+        "(psycopg2.errors.UndefinedColumn) column \"my_jsonb_column\" does not exist\nLINE 1: SELECT my_jsonb_column ?& ARRAY['key1', 'key2', 'key3'];\n               ^\n\n",
+        "(psycopg2.errors.UndefinedColumn) column \"jsonb_data\" does not exist\nLINE 1: SELECT jsonb_data ?& ARRAY['key1', 'key2', 'key3'];\n               ^\n\n"
+    ],
+    "EffectiveSQLs": []
 }

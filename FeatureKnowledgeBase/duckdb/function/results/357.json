@@ -17,5 +17,23 @@
     ],
     "Category": [
         "Regular Expressions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT regexp_full_match('hello world', '^hello world$');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 320,
+            "Prompt Tokens": 294,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 5.969999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT regexp_full_match('hello world', '^hello world$');"
     ]
 }

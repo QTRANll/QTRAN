@@ -10,14 +10,25 @@
     ],
     "Description": [
         "LOWER()",
-        "LOWER(str) 函数用于将输入的参数 str 中的所有字符转换为小写。该参数可以为字符串或数字。",
-        "如果输入参数为字符串，该函数返回字符串的小写形式。如果输入参数为数字，该函数将会去掉该数字中的前导零。如果输入参数为 NULL，该函数返回 NULL。"
+        "LOWER(str) \u51fd\u6570\u7528\u4e8e\u5c06\u8f93\u5165\u7684\u53c2\u6570 str \u4e2d\u7684\u6240\u6709\u5b57\u7b26\u8f6c\u6362\u4e3a\u5c0f\u5199\u3002\u8be5\u53c2\u6570\u53ef\u4ee5\u4e3a\u5b57\u7b26\u4e32\u6216\u6570\u5b57\u3002",
+        "\u5982\u679c\u8f93\u5165\u53c2\u6570\u4e3a\u5b57\u7b26\u4e32\uff0c\u8be5\u51fd\u6570\u8fd4\u56de\u5b57\u7b26\u4e32\u7684\u5c0f\u5199\u5f62\u5f0f\u3002\u5982\u679c\u8f93\u5165\u53c2\u6570\u4e3a\u6570\u5b57\uff0c\u8be5\u51fd\u6570\u5c06\u4f1a\u53bb\u6389\u8be5\u6570\u5b57\u4e2d\u7684\u524d\u5bfc\u96f6\u3002\u5982\u679c\u8f93\u5165\u53c2\u6570\u4e3a NULL\uff0c\u8be5\u51fd\u6570\u8fd4\u56de NULL\u3002"
     ],
     "Examples": [
         "SELECT LOWER(\"TiDB\");\n\n+---------------+\n| LOWER(\"TiDB\") |\n+---------------+\n| tidb          |\n+---------------+\n",
         "SELECT LOWER(-012);\n\n+-------------+\n| LOWER(-012) |\n+-------------+\n| -12         |\n+-------------+\n"
     ],
     "Category": [
-        "字符串函数"
+        "\u5b57\u7b26\u4e32\u51fd\u6570"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT LOWER(\"TiDB\");",
+        "SELECT LOWER(-012);"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT LOWER(\"TiDB\");",
+        "SELECT LOWER(-012);"
     ]
 }

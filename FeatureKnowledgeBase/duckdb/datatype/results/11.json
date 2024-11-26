@@ -46,5 +46,23 @@
     ],
     "Category": [
         "Numeric"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT CAST(123.45 AS NUMERIC(5, 2));"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 1983,
+            "Prompt Tokens": 1955,
+            "Completion Tokens": 28,
+            "Total Cost (USD)": 0.00031005
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT CAST(123.45 AS NUMERIC(5, 2));"
     ]
 }

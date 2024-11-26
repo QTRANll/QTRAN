@@ -6,15 +6,33 @@
         "array_ndims"
     ],
     "Feature": [
-        "array_ndims ( anyarray ) → integer"
+        "array_ndims ( anyarray ) \u2192 integer"
     ],
     "Description": [
         "Returns the number of dimensions of the array."
     ],
     "Examples": [
-        "array_ndims(ARRAY[[1,2,3], [4,5,6]]) → 2"
+        "array_ndims(ARRAY[[1,2,3], [4,5,6]]) \u2192 2"
     ],
     "Category": [
         "Array Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT array_ndims(ARRAY[1, 2, 3]);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 282,
+            "Prompt Tokens": 254,
+            "Completion Tokens": 28,
+            "Total Cost (USD)": 5.489999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT array_ndims(ARRAY[1, 2, 3]);"
     ]
 }

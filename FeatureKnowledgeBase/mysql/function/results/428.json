@@ -32,5 +32,14 @@
     ],
     "Category": [
         "Loadable Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT KEY_ID FROM performance_schema.keyring_keys\n       WHERE KEY_ID LIKE 'audit_log%'\n       ORDER BY KEY_ID;"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT KEY_ID FROM performance_schema.keyring_keys\n       WHERE KEY_ID LIKE 'audit_log%'\n       ORDER BY KEY_ID;"
     ]
 }

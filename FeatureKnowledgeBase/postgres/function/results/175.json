@@ -6,17 +6,65 @@
         "enum_range"
     ],
     "Feature": [
-        "enum_range ( anyenum, anyenum ) → anyarray"
+        "enum_range ( anyenum, anyenum ) \u2192 anyarray"
     ],
     "Description": [
         "Returns the range between the two given enum values, as an ordered array. The values must be from the same enum type. If the first parameter is null, the result will start with the first value of the enum type. If the second parameter is null, the result will end with the last value of the enum type."
     ],
     "Examples": [
-        "enum_range('orange'::rainbow, 'green'::rainbow) → {orange,yellow,green}",
-        "enum_range(NULL, 'green'::rainbow) → {red,orange,​yellow,green}",
-        "enum_range('orange'::rainbow, NULL) → {orange,yellow,green,​blue,purple}"
+        "enum_range('orange'::rainbow, 'green'::rainbow) \u2192 {orange,yellow,green}",
+        "enum_range(NULL, 'green'::rainbow) \u2192 {red,orange,\u200byellow,green}",
+        "enum_range('orange'::rainbow, NULL) \u2192 {orange,yellow,green,\u200bblue,purple}"
     ],
     "Category": [
         "Enum Support Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT enum_range('low', 'high');",
+        "SELECT enum_range(NULL::your_enum_type, NULL::your_enum_type);",
+        "SELECT enum_range(NULL::my_enum, NULL::my_enum);",
+        "SELECT enum_range(NULL::example_enum, NULL::example_enum);",
+        "SELECT enum_range(NULL::my_enum_type, NULL::my_enum_type);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 332,
+            "Prompt Tokens": 310,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 5.9699999999999994e-05
+        },
+        {
+            "Total Tokens": 526,
+            "Prompt Tokens": 498,
+            "Completion Tokens": 28,
+            "Total Cost (USD)": 9.15e-05
+        },
+        {
+            "Total Tokens": 700,
+            "Prompt Tokens": 674,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 0.0001167
+        },
+        {
+            "Total Tokens": 871,
+            "Prompt Tokens": 845,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 0.00014235
+        },
+        {
+            "Total Tokens": 1044,
+            "Prompt Tokens": 1016,
+            "Completion Tokens": 28,
+            "Total Cost (USD)": 0.0001692
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedFunction) function enum_range(unknown, unknown) does not exist\nLINE 1: SELECT enum_range('low', 'high');\n               ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.\n\n",
+        "(psycopg2.errors.UndefinedObject) type \"your_enum_type\" does not exist\nLINE 1: SELECT enum_range(NULL::your_enum_type, NULL::your_enum_type...\n                                ^\n\n",
+        "(psycopg2.errors.UndefinedObject) type \"my_enum\" does not exist\nLINE 1: SELECT enum_range(NULL::my_enum, NULL::my_enum);\n                                ^\n\n",
+        "(psycopg2.errors.UndefinedObject) type \"example_enum\" does not exist\nLINE 1: SELECT enum_range(NULL::example_enum, NULL::example_enum);\n                                ^\n\n",
+        "(psycopg2.errors.UndefinedObject) type \"my_enum_type\" does not exist\nLINE 1: SELECT enum_range(NULL::my_enum_type, NULL::my_enum_type);\n                                ^\n\n"
+    ],
+    "EffectiveSQLs": []
 }

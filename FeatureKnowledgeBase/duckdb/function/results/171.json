@@ -16,5 +16,23 @@
     ],
     "Category": [
         "Interval Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT date_part('year', interval '1 year');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 298,
+            "Prompt Tokens": 274,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 5.55e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT date_part('year', interval '1 year');"
     ]
 }

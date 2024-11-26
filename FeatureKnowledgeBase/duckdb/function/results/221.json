@@ -17,5 +17,23 @@
     ],
     "Category": [
         "List Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT array_intersect([1, 2, 3], [2, 3, 4]);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 305,
+            "Prompt Tokens": 270,
+            "Completion Tokens": 35,
+            "Total Cost (USD)": 6.15e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT array_intersect([1, 2, 3], [2, 3, 4]);"
     ]
 }

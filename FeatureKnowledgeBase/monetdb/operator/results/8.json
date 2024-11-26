@@ -16,5 +16,53 @@
     ],
     "Category": [
         "Cast Conversion Operators"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT x'hexadecimals';",
+        "SELECT CAST(x'hexadecimals' AS BLOB);",
+        "SELECT CONVERT(x'hexadecimals', 'BLOB');",
+        "SELECT x'hexadecimals'::BLOB;",
+        "SELECT x'hexadecimals';"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 289,
+            "Prompt Tokens": 269,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 5.235e-05
+        },
+        {
+            "Total Tokens": 454,
+            "Prompt Tokens": 429,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 7.934999999999999e-05
+        },
+        {
+            "Total Tokens": 638,
+            "Prompt Tokens": 612,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 0.0001074
+        },
+        {
+            "Total Tokens": 818,
+            "Prompt Tokens": 795,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 0.00013305
+        },
+        {
+            "Total Tokens": 990,
+            "Prompt Tokens": 970,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 0.00015749999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymonetdb.exceptions.OperationalError) 22000!type (x) unknown in: \"select x'hexadecimals';\"\n\n",
+        "(pymonetdb.exceptions.OperationalError) 22000!type (x) unknown in: \"select cast(x'hexadecimals' as\"\n!42000!syntax error, unexpected sqlBLOB in: \"blob\"\n\n",
+        "(pymonetdb.exceptions.OperationalError) 22000!type (x) unknown in: \"select convert(x'hexadecimals',\"\n!42000!syntax error, unexpected STRING in: \"'BLOB'\"\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!Unexpected symbol (:)\n!42000!Unexpected symbol (:)\n!42000!syntax error, unexpected sqlBLOB in: \"blob\"\n\n",
+        "(pymonetdb.exceptions.OperationalError) 22000!type (x) unknown in: \"select x'hexadecimals';\"\n\n"
+    ],
+    "EffectiveSQLs": []
 }

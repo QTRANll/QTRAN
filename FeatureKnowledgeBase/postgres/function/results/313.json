@@ -6,7 +6,7 @@
         "array_agg"
     ],
     "Feature": [
-        "array_agg ( anyarray ) → anyarray"
+        "array_agg ( anyarray ) \u2192 anyarray"
     ],
     "Description": [
         "Concatenates all the input arrays into an array of one higher dimension. (The inputs must all have the same dimensionality, and cannot be empty or null.)"
@@ -14,5 +14,39 @@
     "Examples": [],
     "Category": [
         "Aggregate Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT array_agg(array_column) FROM your_table;",
+        "SELECT array_agg(array_column);",
+        "SELECT array_agg(ARRAY[1, 2, 3]);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 302,
+            "Prompt Tokens": 279,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 5.565e-05
+        },
+        {
+            "Total Tokens": 466,
+            "Prompt Tokens": 446,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 7.89e-05
+        },
+        {
+            "Total Tokens": 634,
+            "Prompt Tokens": 606,
+            "Completion Tokens": 28,
+            "Total Cost (USD)": 0.00010769999999999999
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedTable) relation \"your_table\" does not exist\nLINE 1: SELECT array_agg(array_column) FROM your_table;\n                                            ^\n\n",
+        "(psycopg2.errors.UndefinedColumn) column \"array_column\" does not exist\nLINE 1: SELECT array_agg(array_column);\n                         ^\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT array_agg(ARRAY[1, 2, 3]);"
     ]
 }

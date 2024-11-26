@@ -10,15 +10,24 @@
     ],
     "Description": [
         "UUID()",
-        "UUID() 函数用于返回通用唯一标识符 (UUID) version 1。UUID 的定义可参考 RFC 4122。",
+        "UUID() \u51fd\u6570\u7528\u4e8e\u8fd4\u56de\u901a\u7528\u552f\u4e00\u6807\u8bc6\u7b26 (UUID) version 1\u3002UUID \u7684\u5b9a\u4e49\u53ef\u53c2\u8003 RFC 4122\u3002",
         "SELECT UUID();\n",
         "+--------------------------------------+\n| UUID()                               |\n+--------------------------------------+\n| cb4d5ae6-eb6b-11ee-bacf-5405db7aad56 |\n+--------------------------------------+\n1 row in set (0.00 sec)\n",
-        "另请参阅 UUID 最佳实践。"
+        "\u53e6\u8bf7\u53c2\u9605 UUID \u6700\u4f73\u5b9e\u8df5\u3002"
     ],
     "Examples": [
         "SELECT UUID();\n"
     ],
     "Category": [
-        "其它函数"
+        "\u5176\u5b83\u51fd\u6570"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT UUID();"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT UUID();"
     ]
 }

@@ -6,15 +6,33 @@
         "array_position"
     ],
     "Feature": [
-        "array_position ( anycompatiblearray, anycompatible [, integer ] ) → integer"
+        "array_position ( anycompatiblearray, anycompatible [, integer ] ) \u2192 integer"
     ],
     "Description": [
         "Returns the subscript of the first occurrence of the second argument in the array, or NULL if it's not present. If the third argument is given, the search begins at that subscript. The array must be one-dimensional. Comparisons are done using IS NOT DISTINCT FROM semantics, so it is possible to search for NULL."
     ],
     "Examples": [
-        "array_position(ARRAY['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat'], 'mon') → 2"
+        "array_position(ARRAY['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat'], 'mon') \u2192 2"
     ],
     "Category": [
         "Array Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT array_position(ARRAY[1, 2, 3], 2);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 343,
+            "Prompt Tokens": 313,
+            "Completion Tokens": 30,
+            "Total Cost (USD)": 6.494999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT array_position(ARRAY[1, 2, 3], 2);"
     ]
 }

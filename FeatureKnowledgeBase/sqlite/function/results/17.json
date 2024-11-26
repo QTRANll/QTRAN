@@ -14,5 +14,53 @@
     "Examples": [],
     "Category": [
         "Core SQL Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "load_extension('my_extension')",
+        "SELECT load_extension('my_extension')",
+        "SELECT sqlite3_enable_load_extension(1); load_extension('my_extension')",
+        "load_extension('my_extension')",
+        "SELECT load_extension('my_extension');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 500,
+            "Prompt Tokens": 481,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 8.355e-05
+        },
+        {
+            "Total Tokens": 645,
+            "Prompt Tokens": 625,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 0.00010574999999999998
+        },
+        {
+            "Total Tokens": 793,
+            "Prompt Tokens": 765,
+            "Completion Tokens": 28,
+            "Total Cost (USD)": 0.00013155
+        },
+        {
+            "Total Tokens": 939,
+            "Prompt Tokens": 920,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 0.0001494
+        },
+        {
+            "Total Tokens": 1084,
+            "Prompt Tokens": 1064,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 0.0001716
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(sqlite3.OperationalError) near \"load_extension\": syntax error\n",
+        "(sqlite3.OperationalError) not authorized\n",
+        "(sqlite3.OperationalError) no such function: sqlite3_enable_load_extension\n",
+        "(sqlite3.OperationalError) near \"load_extension\": syntax error\n",
+        "(sqlite3.OperationalError) not authorized\n"
+    ],
+    "EffectiveSQLs": []
 }

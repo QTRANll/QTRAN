@@ -19,5 +19,23 @@
     "Examples": [],
     "Category": [
         "Numeric Types"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT CAST(123.456 AS decimal);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 295,
+            "Prompt Tokens": 273,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 5.4149999999999995e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT CAST(123.456 AS decimal);"
     ]
 }

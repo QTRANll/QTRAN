@@ -21,5 +21,22 @@
     "Category": [
         "Encryption, Hashing and Compression Functions"
     ],
-    "EffectiveSQLsRefined": []
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT ENCODE('my_secret_data', 'my_password');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 392,
+            "Prompt Tokens": 367,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 7.005e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT ENCODE('my_secret_data', 'my_password');"
+    ]
 }

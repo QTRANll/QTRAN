@@ -56,5 +56,24 @@
     ],
     "Category": [
         "Union"
+    ],
+    "EffectiveSQLsRefined": [
+        "CREATE TABLE tbl1 (u UNION(num INTEGER, str VARCHAR));",
+        "INSERT INTO tbl1 values (1), ('two'), (union_value(str := 'three'));",
+        "SELECT u FROM tbl1;",
+        "SELECT union_extract(u, 'str') AS str\nFROM tbl1;",
+        "SELECT u.str\nFROM tbl1;",
+        "SELECT union_tag(u) AS t\nFROM tbl1;"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "CREATE TABLE tbl1 (u UNION(num INTEGER, str VARCHAR));",
+        "INSERT INTO tbl1 values (1), ('two'), (union_value(str := 'three'));",
+        "SELECT u FROM tbl1;",
+        "SELECT union_extract(u, 'str') AS str\nFROM tbl1;",
+        "SELECT u.str\nFROM tbl1;",
+        "SELECT union_tag(u) AS t\nFROM tbl1;"
     ]
 }

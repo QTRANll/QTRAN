@@ -16,5 +16,23 @@
     ],
     "Category": [
         "Numeric Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT gamma(5);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 274,
+            "Prompt Tokens": 256,
+            "Completion Tokens": 18,
+            "Total Cost (USD)": 4.9199999999999997e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT gamma(5);"
     ]
 }

@@ -11,12 +11,30 @@
     "Description": [
         "Return type: ",
         "double",
-        "π constant"
+        "\u03c0 constant"
     ],
     "Examples": [
         "pi()"
     ],
     "Category": [
         "Mathematics Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT pi();"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 263,
+            "Prompt Tokens": 247,
+            "Completion Tokens": 16,
+            "Total Cost (USD)": 4.6649999999999996e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT pi();"
     ]
 }

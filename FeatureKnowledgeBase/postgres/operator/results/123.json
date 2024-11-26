@@ -6,16 +6,50 @@
         "jsonb ? text"
     ],
     "Feature": [
-        "jsonb ? text → boolean"
+        "jsonb ? text \u2192 boolean"
     ],
     "Description": [
         "Does the text string exist as a top-level key or array element within the JSON value?"
     ],
     "Examples": [
-        "'{\"a\":1, \"b\":2}'::jsonb ? 'b' → t",
-        "'[\"a\", \"b\", \"c\"]'::jsonb ? 'b' → t"
+        "'{\"a\":1, \"b\":2}'::jsonb ? 'b' \u2192 t",
+        "'[\"a\", \"b\", \"c\"]'::jsonb ? 'b' \u2192 t"
     ],
     "Category": [
         "JSON Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT jsonb_column ? 'key_name' FROM your_table;",
+        "SELECT jsonb_column ? 'key_name';",
+        "SELECT '{}'::jsonb ? 'key_name';"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 288,
+            "Prompt Tokens": 263,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 5.4449999999999995e-05
+        },
+        {
+            "Total Tokens": 457,
+            "Prompt Tokens": 435,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 7.845e-05
+        },
+        {
+            "Total Tokens": 624,
+            "Prompt Tokens": 601,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 0.00010394999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedTable) relation \"your_table\" does not exist\nLINE 1: SELECT jsonb_column ? 'key_name' FROM your_table;\n                                              ^\n\n",
+        "(psycopg2.errors.UndefinedColumn) column \"jsonb_column\" does not exist\nLINE 1: SELECT jsonb_column ? 'key_name';\n               ^\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT '{}'::jsonb ? 'key_name';"
     ]
 }

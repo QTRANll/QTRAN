@@ -16,5 +16,39 @@
     ],
     "Category": [
         "Utility Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT count_if(x) FROM your_table;",
+        "SELECT count_if(x);",
+        "SELECT count_if(true);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 278,
+            "Prompt Tokens": 257,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 5.1149999999999996e-05
+        },
+        {
+            "Total Tokens": 448,
+            "Prompt Tokens": 430,
+            "Completion Tokens": 18,
+            "Total Cost (USD)": 7.529999999999999e-05
+        },
+        {
+            "Total Tokens": 609,
+            "Prompt Tokens": 591,
+            "Completion Tokens": 18,
+            "Total Cost (USD)": 9.944999999999998e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.CatalogException) Catalog Error: Table with name your_table does not exist!\nDid you mean \"pg_tables\"?\nLINE 1: SELECT count_if(x) FROM your_table;\n                                ^\n",
+        "(duckdb.duckdb.BinderException) Binder Error: Referenced column \"x\" not found in FROM clause!\nLINE 1: SELECT count_if(x);\n                        ^\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT count_if(true);"
     ]
 }

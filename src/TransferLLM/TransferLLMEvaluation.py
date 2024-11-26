@@ -7,23 +7,6 @@
 
 import json
 
-
-def exec_database_sql(db_type, host, port, username, password, dbname, sql_statement):
-    if db_type in ["mariadb", "mariadb", "mysql", "mysql", "tidb", "tidb"]:
-        if db_type == "mariadb":
-            db_type_temp = "mariadb"
-        elif db_type == "mysql":
-            db_type_temp = "mysql"
-        elif db_type == "tidb":
-            db_type_temp = "tidb"
-        else:
-            db_type_temp = db_type
-
-        return test_database_mysql_like(db_type_temp, host, port, username, password, dbname, "../../Dataset/Pinolo Output/ddl_mysql_like.json", sql_statement)
-    elif db_type in ["postgres"]:
-        return test_database_postgres(db_type, host, port, username, password, dbname, "", sql_statement)
-
-
 def evaluate_sql_length(results, ranges):
     """分别评估固定区间内的成功率数据"""
     evaluations = {}
@@ -70,8 +53,6 @@ def evaluate_sql_length(results, ranges):
             if result_item["TransferSqlExecError"][-1] == "None":
                 exec_success_cnt += 1
                 # 检验执行结果，transfer前后的各自检索出来的数据条数是否相等
-                origin_exec_args = database_connection_args["mariadb"]
-                target_exec_args = database_connection_args["postgres"]
                 """
                 origin_exec_result, _,_ = exec_database_sql(origin_exec_args["db_type"],
                                                                           origin_exec_args["host"],
@@ -160,40 +141,3 @@ def evaluate_transfer_llm(result_filename, ranges):
     print(result_filename)
     print(evaluations)
     print("\n\n\n")
-
-    # ["单次转换(未错误迭代)执行成功/总样本：","错误迭代/总样本：","错误迭代执行成功/错误迭代：","执行成功/总样本：","执行结果一致/执行成功：","执行结果一致/总样本："]
-    # ["单次转换(未错误迭代)执行成功/总样本：","执行成功/总样本：","执行结果一致/执行成功：","执行结果一致/总样本："]
-
-"""
-sql = "SELECT /*+ AGG_TO_COP()*/t0.c0 FROM t0 GROUP BY t0.c0;"
-origin_exec_args = database_connection_args["mariadb"]
-origin_exec_result, _, _ = exec_database_sql(origin_exec_args["db_type"],
-                                             origin_exec_args["host"],
-                                             origin_exec_args["port"],
-                                             origin_exec_args["username"],
-                                             origin_exec_args["password"],
-                                             origin_exec_args["dbname"],
-                                             sql)
-"""
-
-"""
-with open(
-        "../../Output/TransferLLM/Pinolo/Results_With_Feature_Knowledge/ALL/iterated_output1_mariadb_to_postgres_1_240_originalSqlsim_all.jsonl",
-        "r", encoding="utf-8") as r:
-    contents = r.readlines()
-cnt = 0
-
-
-for line in contents:
-    value = json.loads(line)
-    origin_exec_result, _, _ = exec_database_sql(origin_exec_args["db_type"],
-                                                 origin_exec_args["host"],
-                                                 origin_exec_args["port"],
-                                                 origin_exec_args["username"],
-                                                 origin_exec_args["password"],
-                                                 origin_exec_args["dbname"],
-                                                 value["Sql"])
-    if origin_exec_result:
-        cnt += 1
-print(cnt)
-"""

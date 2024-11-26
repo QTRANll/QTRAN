@@ -6,15 +6,33 @@
         "tand"
     ],
     "Feature": [
-        "tand ( double precision ) → double precision"
+        "tand ( double precision ) \u2192 double precision"
     ],
     "Description": [
         "Tangent, argument in degrees"
     ],
     "Examples": [
-        "tand(45) → 1"
+        "tand(45) \u2192 1"
     ],
     "Category": [
         "Mathematical Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT tand(45);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 266,
+            "Prompt Tokens": 248,
+            "Completion Tokens": 18,
+            "Total Cost (USD)": 4.7999999999999994e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT tand(45);"
     ]
 }

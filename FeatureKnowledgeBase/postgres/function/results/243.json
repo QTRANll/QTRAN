@@ -6,16 +6,34 @@
         "json_build_array"
     ],
     "Feature": [
-        "json_build_array ( VARIADIC \"any\" ) → json",
-        "jsonb_build_array ( VARIADIC \"any\" ) → jsonb"
+        "json_build_array ( VARIADIC \"any\" ) \u2192 json",
+        "jsonb_build_array ( VARIADIC \"any\" ) \u2192 jsonb"
     ],
     "Description": [
         "Builds a possibly-heterogeneously-typed JSON array out of a variadic argument list. Each argument is converted as per to_json or to_jsonb."
     ],
     "Examples": [
-        "json_build_array(1, 2, 'foo', 4, 5) → [1, 2, \"foo\", 4, 5]"
+        "json_build_array(1, 2, 'foo', 4, 5) \u2192 [1, 2, \"foo\", 4, 5]"
     ],
     "Category": [
         "JSON Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT json_build_array(1, 'text', true, NULL);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 328,
+            "Prompt Tokens": 301,
+            "Completion Tokens": 27,
+            "Total Cost (USD)": 6.134999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT json_build_array(1, 'text', true, NULL);"
     ]
 }

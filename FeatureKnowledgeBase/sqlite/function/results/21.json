@@ -14,5 +14,31 @@
     "Examples": [],
     "Category": [
         "Core SQL Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT min(X, Y) AS minimum_value;",
+        "SELECT min(1, 2) AS minimum_value;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 395,
+            "Prompt Tokens": 373,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 6.915e-05
+        },
+        {
+            "Total Tokens": 538,
+            "Prompt Tokens": 514,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 9.149999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(sqlite3.OperationalError) no such column: X\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT min(1, 2) AS minimum_value;"
     ]
 }

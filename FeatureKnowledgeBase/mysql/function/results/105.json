@@ -30,5 +30,53 @@
         "Built-In Functions and Operators",
         "Replication Functions",
         "Loadable Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT group_replication_set_as_primary('00371d66-3c45-11ea-804b-080027337932', 300);",
+        "SELECT group_replication_set_as_primary('member_uuid');",
+        "SELECT group_replication_set_as_primary('member_uuid');",
+        "SELECT group_replication_set_as_primary('valid_member_uuid');",
+        "SELECT group_replication_set_as_primary('dummy_uuid');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 657,
+            "Prompt Tokens": 613,
+            "Completion Tokens": 44,
+            "Total Cost (USD)": 0.00011834999999999998
+        },
+        {
+            "Total Tokens": 822,
+            "Prompt Tokens": 798,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 0.0001341
+        },
+        {
+            "Total Tokens": 987,
+            "Prompt Tokens": 963,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 0.00015884999999999999
+        },
+        {
+            "Total Tokens": 1153,
+            "Prompt Tokens": 1128,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 0.00018419999999999998
+        },
+        {
+            "Total Tokens": 1318,
+            "Prompt Tokens": 1294,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 0.0002085
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.group_replication_set_as_primary does not exist')\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.group_replication_set_as_primary does not exist')\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.group_replication_set_as_primary does not exist')\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.group_replication_set_as_primary does not exist')\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.group_replication_set_as_primary does not exist')\n"
+    ],
+    "EffectiveSQLs": []
 }

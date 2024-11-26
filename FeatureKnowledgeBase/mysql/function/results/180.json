@@ -37,5 +37,20 @@
     "Category": [
         "Built-In Functions and Operators",
         "JSON Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "CREATE TABLE jtable (jcol JSON);",
+        "SELECT @j, JSON_STORAGE_SIZE(@j) AS Size;",
+        "SELECT @j, JSON_STORAGE_SIZE(@j) AS Size;",
+        "SELECT @j, JSON_STORAGE_SIZE(@j) AS Size;"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "CREATE TABLE jtable (jcol JSON);",
+        "SELECT @j, JSON_STORAGE_SIZE(@j) AS Size;",
+        "SELECT @j, JSON_STORAGE_SIZE(@j) AS Size;",
+        "SELECT @j, JSON_STORAGE_SIZE(@j) AS Size;"
     ]
 }

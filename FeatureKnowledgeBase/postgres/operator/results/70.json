@@ -6,15 +6,65 @@
         "geometric_type ## geometric_type"
     ],
     "Feature": [
-        "geometric_type ## geometric_type → point"
+        "geometric_type ## geometric_type \u2192 point"
     ],
     "Description": [
         "Computes the closest point to the first object on the second object. Available for these pairs of types: (point, box), (point, lseg), (point, line), (lseg, box), (lseg, lseg), (line, lseg)."
     ],
     "Examples": [
-        "point '(0,0)' ## lseg '[(2,0),(0,2)]' → (1,1)"
+        "point '(0,0)' ## lseg '[(2,0),(0,2)]' \u2192 (1,1)"
     ],
     "Category": [
         "Geometric Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT closest(point, box);",
+        "SELECT closest(POINT(0, 0), box);",
+        "SELECT closest(POINT(0, 0), BOX(1, 1, 2, 2));",
+        "SELECT closest(POINT(0, 0), '((1, 1), (2, 2))'::box);",
+        "SELECT point(0, 0) <-> '((1, 1), (2, 2))'::box;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 328,
+            "Prompt Tokens": 309,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 5.7749999999999994e-05
+        },
+        {
+            "Total Tokens": 494,
+            "Prompt Tokens": 469,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 8.534999999999999e-05
+        },
+        {
+            "Total Tokens": 677,
+            "Prompt Tokens": 641,
+            "Completion Tokens": 36,
+            "Total Cost (USD)": 0.00011774999999999999
+        },
+        {
+            "Total Tokens": 903,
+            "Prompt Tokens": 863,
+            "Completion Tokens": 40,
+            "Total Cost (USD)": 0.00015344999999999996
+        },
+        {
+            "Total Tokens": 1128,
+            "Prompt Tokens": 1089,
+            "Completion Tokens": 39,
+            "Total Cost (USD)": 0.00018674999999999999
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedColumn) column \"point\" does not exist\nLINE 1: SELECT closest(point, box);\n                       ^\n\n",
+        "(psycopg2.errors.UndefinedColumn) column \"box\" does not exist\nLINE 1: SELECT closest(POINT(0, 0), box);\n                                    ^\n\n",
+        "(psycopg2.errors.UndefinedFunction) function box(integer, integer, integer, integer) does not exist\nLINE 1: SELECT closest(POINT(0, 0), BOX(1, 1, 2, 2));\n                                    ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.\n\n",
+        "(psycopg2.errors.UndefinedFunction) function closest(point, box) does not exist\nLINE 1: SELECT closest(POINT(0, 0), '((1, 1), (2, 2))'::box);\n               ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT point(0, 0) <-> '((1, 1), (2, 2))'::box;"
     ]
 }

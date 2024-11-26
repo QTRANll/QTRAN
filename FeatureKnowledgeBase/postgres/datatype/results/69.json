@@ -15,5 +15,53 @@
     "Examples": [],
     "Category": [
         "Pseudo-Types"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT * FROM my_table WHERE my_range_column && anycompatiblerange;",
+        "SELECT * FROM pg_range WHERE pg_range && anycompatiblerange;",
+        "SELECT * FROM pg_range WHERE pg_range && ANY(ARRAY[1, 2, 3]::int4range);",
+        "SELECT * FROM pg_range WHERE pg_range && int4range(1, 3);",
+        "SELECT * FROM pg_range WHERE pg_range && anycompatiblerange(int4range(1, 3));"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 316,
+            "Prompt Tokens": 288,
+            "Completion Tokens": 28,
+            "Total Cost (USD)": 5.9999999999999995e-05
+        },
+        {
+            "Total Tokens": 492,
+            "Prompt Tokens": 465,
+            "Completion Tokens": 27,
+            "Total Cost (USD)": 8.595e-05
+        },
+        {
+            "Total Tokens": 684,
+            "Prompt Tokens": 645,
+            "Completion Tokens": 39,
+            "Total Cost (USD)": 0.00012014999999999999
+        },
+        {
+            "Total Tokens": 876,
+            "Prompt Tokens": 845,
+            "Completion Tokens": 31,
+            "Total Cost (USD)": 0.00014534999999999998
+        },
+        {
+            "Total Tokens": 1090,
+            "Prompt Tokens": 1054,
+            "Completion Tokens": 36,
+            "Total Cost (USD)": 0.00017969999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedTable) relation \"my_table\" does not exist\nLINE 1: SELECT * FROM my_table WHERE my_range_column && anycompatibl...\n                      ^\n\n",
+        "(psycopg2.errors.UndefinedColumn) column \"anycompatiblerange\" does not exist\nLINE 1: SELECT * FROM pg_range WHERE pg_range && anycompatiblerange;\n                                                 ^\n\n",
+        "(psycopg2.errors.CannotCoerce) cannot cast type integer[] to int4range\nLINE 1: ...FROM pg_range WHERE pg_range && ANY(ARRAY[1, 2, 3]::int4rang...\n                                                             ^\n\n",
+        "(psycopg2.errors.UndefinedFunction) operator does not exist: pg_range && int4range\nLINE 1: SELECT * FROM pg_range WHERE pg_range && int4range(1, 3);\n                                              ^\nHINT:  No operator matches the given name and argument types. You might need to add explicit type casts.\n\n",
+        "(psycopg2.errors.UndefinedFunction) function anycompatiblerange(int4range) does not exist\nLINE 1: SELECT * FROM pg_range WHERE pg_range && anycompatiblerange(...\n                                                 ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.\n\n"
+    ],
+    "EffectiveSQLs": []
 }

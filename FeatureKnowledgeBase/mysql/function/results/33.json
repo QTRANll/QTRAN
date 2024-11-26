@@ -29,5 +29,18 @@
     "Category": [
         "Built-In Functions and Operators",
         "String Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT CHAR(77,121,83,81,'76');",
+        "SELECT CHAR(77,121,83,81,'76' USING utf8mb4);",
+        "SELECT HEX(CHAR(1,0)), HEX(CHAR(256));"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT CHAR(77,121,83,81,'76');",
+        "SELECT CHAR(77,121,83,81,'76' USING utf8mb4);",
+        "SELECT HEX(CHAR(1,0)), HEX(CHAR(256));"
     ]
 }

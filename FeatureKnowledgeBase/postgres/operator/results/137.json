@@ -6,15 +6,33 @@
         "number * number"
     ],
     "Feature": [
-        "number * number → number"
+        "number * number \u2192 number"
     ],
     "Description": [
         "Multiplication"
     ],
     "Examples": [
-        "jsonb_path_query('[4]', '2 * $[0]') → 8"
+        "jsonb_path_query('[4]', '2 * $[0]') \u2192 8"
     ],
     "Category": [
         "JSON Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT 2 * 3;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 262,
+            "Prompt Tokens": 243,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 4.785e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT 2 * 3;"
     ]
 }

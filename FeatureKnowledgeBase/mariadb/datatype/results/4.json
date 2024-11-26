@@ -21,5 +21,24 @@
     ],
     "Category": [
         "Numeric Data Types"
+    ],
+    "EffectiveSQLsRefined": [
+        "INSERT INTO ints VALUES (-10,10,10);",
+        "INSERT INTO ints VALUES (2147483647,2147483648,2147483648);",
+        "SELECT * FROM ints;",
+        "INSERT INTO ints VALUES (-10,10,10);",
+        "INSERT INTO ints VALUES (2147483647,2147483648,2147483648);",
+        "SELECT * FROM ints;"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "INSERT INTO ints VALUES (-10,10,10);",
+        "INSERT INTO ints VALUES (2147483647,2147483648,2147483648);",
+        "SELECT * FROM ints;",
+        "INSERT INTO ints VALUES (-10,10,10);",
+        "INSERT INTO ints VALUES (2147483647,2147483648,2147483648);",
+        "SELECT * FROM ints;"
     ]
 }

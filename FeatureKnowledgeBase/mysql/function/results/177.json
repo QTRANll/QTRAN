@@ -28,5 +28,48 @@
     "Category": [
         "Built-In Functions and Operators",
         "JSON Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT JSON_SEARCH(@j, 'one', 'abc');",
+        "SELECT JSON_SEARCH(@j, 'all', 'abc');",
+        "SELECT JSON_SEARCH(@j, 'all', 'ghi');",
+        "SELECT JSON_SEARCH(@j, 'all', '10');",
+        "SELECT JSON_SEARCH(@j, 'all', '10', NULL, '$');",
+        "SELECT JSON_SEARCH(@j, 'all', '10', NULL, '$[*]');",
+        "SELECT JSON_SEARCH(@j, 'all', '10', NULL, '$**.k');",
+        "SELECT JSON_SEARCH(@j, 'all', '10', NULL, '$[*][0].k');",
+        "SELECT JSON_SEARCH(@j, 'all', '10', NULL, '$[1]');",
+        "SELECT JSON_SEARCH(@j, 'all', '10', NULL, '$[1][0]');",
+        "SELECT JSON_SEARCH(@j, 'all', 'abc', NULL, '$[2]');",
+        "SELECT JSON_SEARCH(@j, 'all', '%a%');",
+        "SELECT JSON_SEARCH(@j, 'all', '%b%');",
+        "SELECT JSON_SEARCH(@j, 'all', '%b%', NULL, '$[0]');",
+        "SELECT JSON_SEARCH(@j, 'all', '%b%', NULL, '$[2]');",
+        "SELECT JSON_SEARCH(@j, 'all', '%b%', NULL, '$[1]');",
+        "SELECT JSON_SEARCH(@j, 'all', '%b%', '', '$[1]');",
+        "SELECT JSON_SEARCH(@j, 'all', '%b%', '', '$[3]');"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT JSON_SEARCH(@j, 'one', 'abc');",
+        "SELECT JSON_SEARCH(@j, 'all', 'abc');",
+        "SELECT JSON_SEARCH(@j, 'all', 'ghi');",
+        "SELECT JSON_SEARCH(@j, 'all', '10');",
+        "SELECT JSON_SEARCH(@j, 'all', '10', NULL, '$');",
+        "SELECT JSON_SEARCH(@j, 'all', '10', NULL, '$[*]');",
+        "SELECT JSON_SEARCH(@j, 'all', '10', NULL, '$**.k');",
+        "SELECT JSON_SEARCH(@j, 'all', '10', NULL, '$[*][0].k');",
+        "SELECT JSON_SEARCH(@j, 'all', '10', NULL, '$[1]');",
+        "SELECT JSON_SEARCH(@j, 'all', '10', NULL, '$[1][0]');",
+        "SELECT JSON_SEARCH(@j, 'all', 'abc', NULL, '$[2]');",
+        "SELECT JSON_SEARCH(@j, 'all', '%a%');",
+        "SELECT JSON_SEARCH(@j, 'all', '%b%');",
+        "SELECT JSON_SEARCH(@j, 'all', '%b%', NULL, '$[0]');",
+        "SELECT JSON_SEARCH(@j, 'all', '%b%', NULL, '$[2]');",
+        "SELECT JSON_SEARCH(@j, 'all', '%b%', NULL, '$[1]');",
+        "SELECT JSON_SEARCH(@j, 'all', '%b%', '', '$[1]');",
+        "SELECT JSON_SEARCH(@j, 'all', '%b%', '', '$[3]');"
     ]
 }

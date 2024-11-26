@@ -25,6 +25,16 @@
     ],
     "EffectiveSQLsRefined": [
         "SELECT UUID_SHORT();",
+        "create table t1 (a bigint unsigned default(uuid_short()) primary key);",
+        "insert into t1 values(),();",
+        "select * from t1;"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT UUID_SHORT();",
+        "create table t1 (a bigint unsigned default(uuid_short()) primary key);",
         "insert into t1 values(),();",
         "select * from t1;"
     ]

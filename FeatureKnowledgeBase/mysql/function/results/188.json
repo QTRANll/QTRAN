@@ -20,5 +20,31 @@
     "Category": [
         "Built-In Functions and Operators",
         "Window Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT LAST_VALUE(column_name) OVER (ORDER BY some_column) FROM your_table;",
+        "SELECT LAST_VALUE(column_name) OVER (ORDER BY some_column) FROM (SELECT 1 AS column_name, 2 AS some_column) AS temp_table;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 392,
+            "Prompt Tokens": 363,
+            "Completion Tokens": 29,
+            "Total Cost (USD)": 7.185e-05
+        },
+        {
+            "Total Tokens": 575,
+            "Prompt Tokens": 531,
+            "Completion Tokens": 44,
+            "Total Cost (USD)": 0.00010604999999999999
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.ProgrammingError) (1146, \"Table 'knowledge_base_preprocess_mysql.your_table' doesn't exist\")\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT LAST_VALUE(column_name) OVER (ORDER BY some_column) FROM (SELECT 1 AS column_name, 2 AS some_column) AS temp_table;"
     ]
 }

@@ -6,15 +6,33 @@
         "numnode"
     ],
     "Feature": [
-        "numnode ( tsquery ) → integer"
+        "numnode ( tsquery ) \u2192 integer"
     ],
     "Description": [
         "Returns the number of lexemes plus operators in the tsquery."
     ],
     "Examples": [
-        "numnode('(fat & rat) | cat'::tsquery) → 5"
+        "numnode('(fat & rat) | cat'::tsquery) \u2192 5"
     ],
     "Category": [
         "Text Search Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT numnode('your_tsquery_here');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 281,
+            "Prompt Tokens": 258,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 5.2499999999999995e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT numnode('your_tsquery_here');"
     ]
 }

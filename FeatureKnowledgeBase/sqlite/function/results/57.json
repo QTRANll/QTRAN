@@ -14,5 +14,39 @@
     "Examples": [],
     "Category": [
         "Window Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT cume_dist() OVER (PARTITION BY column_name ORDER BY column_name) FROM table_name;",
+        "SELECT cume_dist() OVER (ORDER BY column_name);",
+        "SELECT cume_dist() OVER ();"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 332,
+            "Prompt Tokens": 299,
+            "Completion Tokens": 33,
+            "Total Cost (USD)": 6.465e-05
+        },
+        {
+            "Total Tokens": 477,
+            "Prompt Tokens": 452,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 8.28e-05
+        },
+        {
+            "Total Tokens": 617,
+            "Prompt Tokens": 597,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 0.00010154999999999999
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(sqlite3.OperationalError) no such table: table_name\n",
+        "(sqlite3.OperationalError) no such column: column_name\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT cume_dist() OVER ();"
     ]
 }

@@ -32,5 +32,10 @@
     ],
     "Category": [
         "Encoding Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT bin(14);",
+        "SELECT bin(toFloat32(number)) AS bin_presentation FROM numbers(15, 2);",
+        "SELECT bin(toFloat64(number)) AS bin_presentation FROM numbers(15, 2);"
     ]
 }

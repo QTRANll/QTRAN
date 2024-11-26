@@ -26,5 +26,16 @@
         "SELECT ROUND(1.298, 1);",
         "SELECT ROUND(1.298, 0);",
         "SELECT ROUND(23.298, -1);"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT ROUND(-1.23);",
+        "SELECT ROUND(-1.58);",
+        "SELECT ROUND(1.58);",
+        "SELECT ROUND(1.298, 1);",
+        "SELECT ROUND(1.298, 0);",
+        "SELECT ROUND(23.298, -1);"
     ]
 }

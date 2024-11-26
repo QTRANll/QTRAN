@@ -19,5 +19,23 @@
     "Category": [
         "Built-In Functions and Operators",
         "Encryption and Compression Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT AES_DECRYPT('encrypted_data', 'encryption_key');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 401,
+            "Prompt Tokens": 375,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 7.185e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT AES_DECRYPT('encrypted_data', 'encryption_key');"
     ]
 }

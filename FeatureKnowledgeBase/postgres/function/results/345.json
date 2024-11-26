@@ -6,7 +6,7 @@
         "regr_slope"
     ],
     "Feature": [
-        "regr_slope ( Y double precision, X double precision ) → double precision"
+        "regr_slope ( Y double precision, X double precision ) \u2192 double precision"
     ],
     "Description": [
         "Computes the slope of the least-squares-fit linear equation determined by the (X, Y) pairs."
@@ -14,5 +14,31 @@
     "Examples": [],
     "Category": [
         "Aggregate Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT regr_slope(Y, X);",
+        "SELECT regr_slope(1.0, 2.0);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 299,
+            "Prompt Tokens": 277,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 5.4749999999999996e-05
+        },
+        {
+            "Total Tokens": 469,
+            "Prompt Tokens": 441,
+            "Completion Tokens": 28,
+            "Total Cost (USD)": 8.295e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedColumn) column \"y\" does not exist\nLINE 1: SELECT regr_slope(Y, X);\n                          ^\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT regr_slope(1.0, 2.0);"
     ]
 }

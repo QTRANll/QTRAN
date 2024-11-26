@@ -6,15 +6,33 @@
         "pi"
     ],
     "Feature": [
-        "pi ( ) → double precision"
+        "pi ( ) \u2192 double precision"
     ],
     "Description": [
-        "Approximate value of π"
+        "Approximate value of \u03c0"
     ],
     "Examples": [
-        "pi() → 3.141592653589793"
+        "pi() \u2192 3.141592653589793"
     ],
     "Category": [
         "Mathematical Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT pi();"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 257,
+            "Prompt Tokens": 241,
+            "Completion Tokens": 16,
+            "Total Cost (USD)": 4.575e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT pi();"
     ]
 }

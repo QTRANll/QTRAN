@@ -16,5 +16,55 @@
     ],
     "Category": [
         "Utility Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT * FROM query_table(tbl_names, false)",
+        "SELECT * FROM query_table(tbl_names, [false])",
+        "SELECT * FROM query_table(tbl_names, true)",
+        "SELECT * FROM query_table(tbl_names)",
+        "SELECT * FROM query_table(['pg_namespace'])"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 318,
+            "Prompt Tokens": 296,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 5.759999999999999e-05
+        },
+        {
+            "Total Tokens": 531,
+            "Prompt Tokens": 507,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 9.044999999999999e-05
+        },
+        {
+            "Total Tokens": 743,
+            "Prompt Tokens": 721,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 0.00012134999999999998
+        },
+        {
+            "Total Tokens": 952,
+            "Prompt Tokens": 932,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 0.00015179999999999998
+        },
+        {
+            "Total Tokens": 1130,
+            "Prompt Tokens": 1108,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 0.0001794
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.BinderException) Binder Error: No function matches the given name and argument types 'query_table(VARCHAR, BOOLEAN)'. You might need to add explicit type casts.\n\tCandidate functions:\n\tquery_table(VARCHAR)\n\tquery_table(VARCHAR[])\n\tquery_table(VARCHAR[], BOOLEAN)\n\nLINE 1: SELECT * FROM query_table(tbl_names, false)\n                      ^\n",
+        "(duckdb.duckdb.BinderException) Binder Error: No function matches the given name and argument types 'query_table(VARCHAR, BOOLEAN[])'. You might need to add explicit type casts.\n\tCandidate functions:\n\tquery_table(VARCHAR)\n\tquery_table(VARCHAR[])\n\tquery_table(VARCHAR[], BOOLEAN)\n\nLINE 1: SELECT * FROM query_table(tbl_names, [false])\n                      ^\n",
+        "(duckdb.duckdb.BinderException) Binder Error: No function matches the given name and argument types 'query_table(VARCHAR, BOOLEAN)'. You might need to add explicit type casts.\n\tCandidate functions:\n\tquery_table(VARCHAR)\n\tquery_table(VARCHAR[])\n\tquery_table(VARCHAR[], BOOLEAN)\n\nLINE 1: SELECT * FROM query_table(tbl_names, true)\n                      ^\n",
+        "(duckdb.duckdb.CatalogException) Catalog Error: Table with name tbl_names does not exist!\nDid you mean \"pg_namespace\"?\nLINE 1: SELECT * FROM query_table(tbl_names)\n             ^\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT * FROM query_table(['pg_namespace'])"
     ]
 }

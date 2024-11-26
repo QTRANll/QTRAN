@@ -6,15 +6,33 @@
         "anyrange * anyrange"
     ],
     "Feature": [
-        "anyrange * anyrange → anyrange"
+        "anyrange * anyrange \u2192 anyrange"
     ],
     "Description": [
         "Computes the intersection of the ranges."
     ],
     "Examples": [
-        "int8range(5,15) * int8range(10,20) → [10,15)"
+        "int8range(5,15) * int8range(10,20) \u2192 [10,15)"
     ],
     "Category": [
         "Range divide Multirange Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT '[1, 5]'::int4range * '[3, 7]'::int4range;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 293,
+            "Prompt Tokens": 258,
+            "Completion Tokens": 35,
+            "Total Cost (USD)": 5.97e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT '[1, 5]'::int4range * '[3, 7]'::int4range;"
     ]
 }

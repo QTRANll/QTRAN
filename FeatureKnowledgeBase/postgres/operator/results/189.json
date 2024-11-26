@@ -6,15 +6,63 @@
         "aclitem[] @> aclitem"
     ],
     "Feature": [
-        "aclitem[] @> aclitem → boolean"
+        "aclitem[] @> aclitem \u2192 boolean"
     ],
     "Description": [
         "Does array contain the specified privileges? (This is true if there is an array entry that matches the aclitem's grantee and grantor, and has at least the specified set of privileges.)"
     ],
     "Examples": [
-        "'{calvin=r*w/hobbes,hobbes=r*w*/postgres}'::aclitem[] @> 'calvin=r*/hobbes'::aclitem → t"
+        "'{calvin=r*w/hobbes,hobbes=r*w*/postgres}'::aclitem[] @> 'calvin=r*/hobbes'::aclitem \u2192 t"
     ],
     "Category": [
         "System Information Functions and Operators"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT aclitem[] @> aclitem;",
+        "SELECT aclitem @> aclitem;",
+        "SELECT aclitem_array @> aclitem_value;",
+        "SELECT '{}'::aclitem[] @> '{}'::aclitem;",
+        "SELECT '{(user, ALL)}'::aclitem[] @> '{(user, SELECT)}'::aclitem;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 317,
+            "Prompt Tokens": 296,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 5.6999999999999996e-05
+        },
+        {
+            "Total Tokens": 479,
+            "Prompt Tokens": 459,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 8.084999999999999e-05
+        },
+        {
+            "Total Tokens": 646,
+            "Prompt Tokens": 624,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 0.0001068
+        },
+        {
+            "Total Tokens": 819,
+            "Prompt Tokens": 794,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 0.0001341
+        },
+        {
+            "Total Tokens": 1017,
+            "Prompt Tokens": 980,
+            "Completion Tokens": 37,
+            "Total Cost (USD)": 0.0001692
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.SyntaxError) syntax error at or near \"]\"\nLINE 1: SELECT aclitem[] @> aclitem;\n                       ^\n\n",
+        "(psycopg2.errors.UndefinedColumn) column \"aclitem\" does not exist\nLINE 1: SELECT aclitem @> aclitem;\n               ^\n\n",
+        "(psycopg2.errors.UndefinedColumn) column \"aclitem_array\" does not exist\nLINE 1: SELECT aclitem_array @> aclitem_value;\n               ^\n\n",
+        "(psycopg2.errors.InvalidTextRepresentation) unrecognized key word: \"\"\nLINE 1: SELECT '{}'::aclitem[] @> '{}'::aclitem;\n                                  ^\nHINT:  ACL key word must be \"group\" or \"user\".\n\n",
+        "(psycopg2.errors.InvalidTextRepresentation) unrecognized key word: \"\"\nLINE 1: SELECT '{(user, ALL)}'::aclitem[] @> '{(user, SELECT)}'::acl...\n               ^\nHINT:  ACL key word must be \"group\" or \"user\".\n\n"
+    ],
+    "EffectiveSQLs": []
 }

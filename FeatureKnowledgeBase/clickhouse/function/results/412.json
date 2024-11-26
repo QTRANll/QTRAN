@@ -33,5 +33,10 @@
     ],
     "Category": [
         "Encoding Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT hex(1);",
+        "SELECT hex(toFloat32(number)) AS hex_presentation FROM numbers(15, 2);",
+        "SELECT hex(toFloat64(number)) AS hex_presentation FROM numbers(15, 2);"
     ]
 }

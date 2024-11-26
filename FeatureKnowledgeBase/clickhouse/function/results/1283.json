@@ -22,5 +22,8 @@
     ],
     "Category": [
         "Table Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "select toDate('2010-01-01') + number as d FROM numbers(365);"
     ]
 }

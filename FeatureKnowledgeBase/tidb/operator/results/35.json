@@ -8,12 +8,23 @@
         "\n*\n",
         "\n            Multiplication:\n          ",
         "Press CTRL+C to copy mysql> SELECT 3*5;\n        -> 15\nmysql> SELECT 18014398509481984*18014398509481984.0;\n        -> 324518553658426726783156020576256.0\nmysql> SELECT 18014398509481984*18014398509481984;\n        -> out-of-range error",
-        "\n            The last expression produces an error because the result of\n            the integer multiplication exceeds the 64-bit range of\n            BIGINT calculations. (See\n            Section 13.1, “Numeric Data Types”.)\n          "
+        "\n            The last expression produces an error because the result of\n            the integer multiplication exceeds the 64-bit range of\n            BIGINT calculations. (See\n            Section\u00a013.1, \u201cNumeric Data Types\u201d.)\n          "
     ],
     "Examples": [
         "mysql> SELECT 3*5;\n        -> 15\nmysql> SELECT 18014398509481984*18014398509481984.0;\n        -> 324518553658426726783156020576256.0\nmysql> SELECT 18014398509481984*18014398509481984;\n        -> out-of-range error"
     ],
     "Category": [
         "Arithmetic Operators"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT 3*5;",
+        "SELECT 18014398509481984*18014398509481984.0;"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT 3*5;",
+        "SELECT 18014398509481984*18014398509481984.0;"
     ]
 }

@@ -16,5 +16,54 @@
     "Category": [
         "Geographic Functions"
     ],
-    "EffectiveSQLsRefined": []
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT TOUCHES(g1, g2);",
+        "SELECT TOUCHES(geometry1, geometry2);",
+        "SELECT TOUCHES(geom_a, geom_b);",
+        "SELECT TOUCHES(geometry1, geometry2) FROM geometries;",
+        "SELECT TOUCHES(POINT(0, 0), POINT(1, 1));"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 354,
+            "Prompt Tokens": 332,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 6.3e-05
+        },
+        {
+            "Total Tokens": 509,
+            "Prompt Tokens": 486,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 8.669999999999999e-05
+        },
+        {
+            "Total Tokens": 664,
+            "Prompt Tokens": 641,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 0.00010994999999999999
+        },
+        {
+            "Total Tokens": 822,
+            "Prompt Tokens": 796,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 0.000135
+        },
+        {
+            "Total Tokens": 989,
+            "Prompt Tokens": 958,
+            "Completion Tokens": 31,
+            "Total Cost (USD)": 0.00016229999999999996
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.OperationalError) (1054, \"Unknown column 'g1' in 'field list'\")\n",
+        "(pymysql.err.OperationalError) (1054, \"Unknown column 'geometry1' in 'field list'\")\n",
+        "(pymysql.err.OperationalError) (1054, \"Unknown column 'geom_a' in 'field list'\")\n",
+        "(pymysql.err.ProgrammingError) (1146, \"Table 'pinolo_temp_mariadb.geometries' doesn't exist\")\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT TOUCHES(POINT(0, 0), POINT(1, 1));"
+    ]
 }

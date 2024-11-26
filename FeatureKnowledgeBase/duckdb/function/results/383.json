@@ -16,5 +16,23 @@
     ],
     "Category": [
         "Text Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT concat('Hello', ' ', 'World');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 283,
+            "Prompt Tokens": 260,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 5.2799999999999996e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT concat('Hello', ' ', 'World');"
     ]
 }

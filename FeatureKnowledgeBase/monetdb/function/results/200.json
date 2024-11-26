@@ -18,5 +18,53 @@
     ],
     "Category": [
         "Date Time Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT timestampdiff_week(ts_tm_tz, ts_tm_tz);",
+        "SELECT timestampdiff_week(TIMESTAMP '2023-01-01 00:00:00', TIMESTAMP '2023-01-08 00:00:00');",
+        "SELECT timestampdiff_week(TIMESTAMP WITH TIME ZONE '2023-01-01 00:00:00+00', TIMESTAMP WITH TIME ZONE '2023-01-08 00:00:00+00');",
+        "SELECT timestampdiff_week(TIMESTAMP '2023-01-01 00:00:00', TIMESTAMP '2023-01-08 00:00:00');",
+        "SELECT timestampdiff_week(DATE '2023-01-01', DATE '2023-01-08');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 327,
+            "Prompt Tokens": 300,
+            "Completion Tokens": 27,
+            "Total Cost (USD)": 6.12e-05
+        },
+        {
+            "Total Tokens": 518,
+            "Prompt Tokens": 468,
+            "Completion Tokens": 50,
+            "Total Cost (USD)": 0.0001002
+        },
+        {
+            "Total Tokens": 726,
+            "Prompt Tokens": 664,
+            "Completion Tokens": 62,
+            "Total Cost (USD)": 0.0001368
+        },
+        {
+            "Total Tokens": 929,
+            "Prompt Tokens": 879,
+            "Completion Tokens": 50,
+            "Total Cost (USD)": 0.00016184999999999998
+        },
+        {
+            "Total Tokens": 1111,
+            "Prompt Tokens": 1075,
+            "Completion Tokens": 36,
+            "Total Cost (USD)": 0.00018284999999999997
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: identifier 'ts_tm_tz' unknown\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: no such binary operator 'timestampdiff_week(timestamp,timestamp)'\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: no such binary operator 'timestampdiff_week(timestamptz,timestamptz)'\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: no such binary operator 'timestampdiff_week(timestamp,timestamp)'\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: no such binary operator 'timestampdiff_week(date,date)'\n\n"
+    ],
+    "EffectiveSQLs": []
 }

@@ -6,14 +6,14 @@
         "sum"
     ],
     "Feature": [
-        "sum ( smallint ) → bigint",
-        "sum ( integer ) → bigint",
-        "sum ( bigint ) → numeric",
-        "sum ( numeric ) → numeric",
-        "sum ( real ) → real",
-        "sum ( double precision ) → double precision",
-        "sum ( interval ) → interval",
-        "sum ( money ) → money"
+        "sum ( smallint ) \u2192 bigint",
+        "sum ( integer ) \u2192 bigint",
+        "sum ( bigint ) \u2192 numeric",
+        "sum ( numeric ) \u2192 numeric",
+        "sum ( real ) \u2192 real",
+        "sum ( double precision ) \u2192 double precision",
+        "sum ( interval ) \u2192 interval",
+        "sum ( money ) \u2192 money"
     ],
     "Description": [
         "Computes the sum of the non-null input values."
@@ -21,5 +21,39 @@
     "Examples": [],
     "Category": [
         "Aggregate Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT SUM(column_name) FROM table_name;",
+        "SELECT SUM(column_name);",
+        "SELECT SUM(1);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 327,
+            "Prompt Tokens": 306,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 5.85e-05
+        },
+        {
+            "Total Tokens": 485,
+            "Prompt Tokens": 467,
+            "Completion Tokens": 18,
+            "Total Cost (USD)": 8.084999999999999e-05
+        },
+        {
+            "Total Tokens": 639,
+            "Prompt Tokens": 621,
+            "Completion Tokens": 18,
+            "Total Cost (USD)": 0.00010394999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedTable) relation \"table_name\" does not exist\nLINE 1: SELECT SUM(column_name) FROM table_name;\n                                     ^\n\n",
+        "(psycopg2.errors.UndefinedColumn) column \"column_name\" does not exist\nLINE 1: SELECT SUM(column_name);\n                   ^\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT SUM(1);"
     ]
 }

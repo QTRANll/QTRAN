@@ -16,5 +16,39 @@
     "Examples": [],
     "Category": [
         "String Data Types"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "CREATE TABLE example_table (data LONGBLOB);",
+        "ALTER TABLE example_table ADD COLUMN data LONGBLOB;",
+        "SELECT data FROM example_table;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 380,
+            "Prompt Tokens": 356,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 6.78e-05
+        },
+        {
+            "Total Tokens": 534,
+            "Prompt Tokens": 510,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 9.089999999999999e-05
+        },
+        {
+            "Total Tokens": 675,
+            "Prompt Tokens": 657,
+            "Completion Tokens": 18,
+            "Total Cost (USD)": 0.00010935
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.OperationalError) (1050, \"Table 'example_table' already exists\")\n",
+        "This result object does not return rows. It has been closed automatically.",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT data FROM example_table;"
     ]
 }

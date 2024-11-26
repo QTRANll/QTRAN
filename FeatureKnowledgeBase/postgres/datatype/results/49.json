@@ -19,5 +19,23 @@
     "Examples": [],
     "Category": [
         "Object Identifier Types"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT * FROM pg_ts_config WHERE cfgname = 'english';"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 282,
+            "Prompt Tokens": 256,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 5.4e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT * FROM pg_ts_config WHERE cfgname = 'english';"
     ]
 }

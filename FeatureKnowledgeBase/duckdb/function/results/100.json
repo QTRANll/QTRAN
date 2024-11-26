@@ -16,5 +16,23 @@
     ],
     "Category": [
         "Bitstring Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT octet_length('10101010'::bit);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 287,
+            "Prompt Tokens": 262,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 5.43e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT octet_length('10101010'::bit);"
     ]
 }

@@ -14,5 +14,39 @@
     "Examples": [],
     "Category": [
         "Aggregate SQL Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT MIN(X);",
+        "SELECT MIN(column_name) FROM table_name;",
+        "SELECT MIN(value) FROM (SELECT 1 AS value UNION SELECT 2 UNION SELECT 3);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 330,
+            "Prompt Tokens": 313,
+            "Completion Tokens": 17,
+            "Total Cost (USD)": 5.714999999999999e-05
+        },
+        {
+            "Total Tokens": 468,
+            "Prompt Tokens": 447,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 7.964999999999998e-05
+        },
+        {
+            "Total Tokens": 619,
+            "Prompt Tokens": 586,
+            "Completion Tokens": 33,
+            "Total Cost (USD)": 0.00010769999999999999
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(sqlite3.OperationalError) no such column: X\n",
+        "(sqlite3.OperationalError) no such table: table_name\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT MIN(value) FROM (SELECT 1 AS value UNION SELECT 2 UNION SELECT 3);"
     ]
 }

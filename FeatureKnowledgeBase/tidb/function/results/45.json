@@ -10,10 +10,58 @@
     ],
     "Description": [
         "RLIKE",
-        "与 REGEXP 功能相同"
+        "\u4e0e REGEXP \u529f\u80fd\u76f8\u540c"
     ],
     "Examples": [],
     "Category": [
-        "字符串函数"
-    ]
+        "\u5b57\u7b26\u4e32\u51fd\u6570"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT * FROM table_name WHERE column_name RLIKE 'pattern';",
+        "SELECT * FROM your_table WHERE your_column RLIKE 'pattern';",
+        "SELECT * FROM my_table WHERE my_column RLIKE 'pattern';",
+        "SELECT * FROM example_table WHERE example_column RLIKE 'pattern';",
+        "SELECT * FROM test_table WHERE test_column RLIKE 'pattern';"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 273,
+            "Prompt Tokens": 247,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 5.264999999999999e-05
+        },
+        {
+            "Total Tokens": 432,
+            "Prompt Tokens": 406,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 7.649999999999999e-05
+        },
+        {
+            "Total Tokens": 592,
+            "Prompt Tokens": 566,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 0.00010049999999999999
+        },
+        {
+            "Total Tokens": 751,
+            "Prompt Tokens": 725,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 0.00012435
+        },
+        {
+            "Total Tokens": 910,
+            "Prompt Tokens": 884,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 0.0001482
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.ProgrammingError) (1146, \"Table 'knowledge_base_preprocess_tidb.table_name' doesn't exist\")\n",
+        "(pymysql.err.ProgrammingError) (1146, \"Table 'knowledge_base_preprocess_tidb.your_table' doesn't exist\")\n",
+        "(pymysql.err.ProgrammingError) (1146, \"Table 'knowledge_base_preprocess_tidb.my_table' doesn't exist\")\n",
+        "(pymysql.err.ProgrammingError) (1146, \"Table 'knowledge_base_preprocess_tidb.example_table' doesn't exist\")\n",
+        "(pymysql.err.ProgrammingError) (1146, \"Table 'knowledge_base_preprocess_tidb.test_table' doesn't exist\")\n"
+    ],
+    "EffectiveSQLs": []
 }

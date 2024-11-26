@@ -1,0 +1,68 @@
+{
+    "HTML": [
+        "https://www.monetdb.org/documentation-Aug2024/user-guide/sql-manual/data-types/temporal-types"
+    ],
+    "Title": [
+        "departure_date"
+    ],
+    "Feature": [
+        "departure_date"
+    ],
+    "Description": [
+        "date",
+        "yes",
+        "The date at which the voyage started"
+    ],
+    "Examples": [],
+    "Category": [
+        "Temporal Datatypes"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT departure_date;",
+        "SELECT * FROM voyages WHERE departure_date IS NOT NULL;",
+        "SELECT departure_date FROM some_table;",
+        "SELECT departure_date FROM dual;",
+        "SELECT departure_date;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 266,
+            "Prompt Tokens": 250,
+            "Completion Tokens": 16,
+            "Total Cost (USD)": 4.709999999999999e-05
+        },
+        {
+            "Total Tokens": 417,
+            "Prompt Tokens": 394,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 7.29e-05
+        },
+        {
+            "Total Tokens": 566,
+            "Prompt Tokens": 547,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 9.345e-05
+        },
+        {
+            "Total Tokens": 714,
+            "Prompt Tokens": 696,
+            "Completion Tokens": 18,
+            "Total Cost (USD)": 0.00011519999999999998
+        },
+        {
+            "Total Tokens": 859,
+            "Prompt Tokens": 843,
+            "Completion Tokens": 16,
+            "Total Cost (USD)": 0.00013604999999999997
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: identifier 'departure_date' unknown\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42S02!SELECT: no such table 'voyages'\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42S02!SELECT: no such table 'some_table'\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42S02!SELECT: no such table 'dual'\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: identifier 'departure_date' unknown\n\n"
+    ],
+    "EffectiveSQLs": []
+}

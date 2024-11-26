@@ -3,28 +3,46 @@
         "https://docs.pingcap.com/zh/tidb/v8.3/data-type-numeric"
     ],
     "Title": [
-        "DOUBLE 类型"
+        "DOUBLE \u7c7b\u578b"
     ],
     "Feature": [
-        "DOUBLE 类型"
+        "DOUBLE \u7c7b\u578b"
     ],
     "Description": [
-        "DOUBLE 类型",
-        "双精度浮点数，别名为 DOUBLE PRECISION。允许的值范围为：-2^1024 ~ +2^1024，也即是 -1.7976931348623157E+308 到 -2.2250738585072014E-308、0 和 2.2250738585072014E-308 到 1.7976931348623157E+308。这些是基于 IEEE 标准的理论限制。实际的范围根据硬件或操作系统的不同可能稍微小些。",
+        "DOUBLE \u7c7b\u578b",
+        "\u53cc\u7cbe\u5ea6\u6d6e\u70b9\u6570\uff0c\u522b\u540d\u4e3a DOUBLE PRECISION\u3002\u5141\u8bb8\u7684\u503c\u8303\u56f4\u4e3a\uff1a-2^1024 ~ +2^1024\uff0c\u4e5f\u5373\u662f -1.7976931348623157E+308 \u5230 -2.2250738585072014E-308\u30010 \u548c 2.2250738585072014E-308 \u5230 1.7976931348623157E+308\u3002\u8fd9\u4e9b\u662f\u57fa\u4e8e IEEE \u6807\u51c6\u7684\u7406\u8bba\u9650\u5236\u3002\u5b9e\u9645\u7684\u8303\u56f4\u6839\u636e\u786c\u4ef6\u6216\u64cd\u4f5c\u7cfb\u7edf\u7684\u4e0d\u540c\u53ef\u80fd\u7a0d\u5fae\u5c0f\u4e9b\u3002",
         "DOUBLE[(M,D)] [UNSIGNED] [ZEROFILL]\nDOUBLE PRECISION [(M,D)] [UNSIGNED] [ZEROFILL], REAL[(M,D)] [UNSIGNED] [ZEROFILL]\n",
-        "警告与在 MySQL 中一样，DOUBLE 数据类型存储近似值。对于货币之类的精确值，建议使用 DECIMAL 类型。",
-        "注意当 TiDB 将用科学计数法表示的双精度浮点数转换到 CHAR 类型时，其结果在显示上与 MySQL 不一致，详情参见 Cast 函数和操作符。",
-        "存储空间",
-        "每种类型对存储空间的需求如下表所示：",
-        "类型存储空间FLOAT4FLOAT(p)如果 0 <= p <= 24 为 4 个字节，如果 25 <= p <= 53 为 8 个字节DOUBLE8",
-        "定点类型",
-        "TiDB 支持 MySQL 所有的定点类型，包括 DECIMAL、NUMERIC，完整信息参考这篇文档。",
-        "字段说明：",
-        "语法元素说明M小数总位数D小数点后位数UNSIGNED无符号数，如果不加这个标识，则为有符号数ZEROFILL补零标识，如果有这个标识，TiDB 会自动给类型增加 UNSIGNED 标识",
-        "类型定义"
+        "\u8b66\u544a\u4e0e\u5728 MySQL \u4e2d\u4e00\u6837\uff0cDOUBLE \u6570\u636e\u7c7b\u578b\u5b58\u50a8\u8fd1\u4f3c\u503c\u3002\u5bf9\u4e8e\u8d27\u5e01\u4e4b\u7c7b\u7684\u7cbe\u786e\u503c\uff0c\u5efa\u8bae\u4f7f\u7528 DECIMAL \u7c7b\u578b\u3002",
+        "\u6ce8\u610f\u5f53 TiDB \u5c06\u7528\u79d1\u5b66\u8ba1\u6570\u6cd5\u8868\u793a\u7684\u53cc\u7cbe\u5ea6\u6d6e\u70b9\u6570\u8f6c\u6362\u5230 CHAR \u7c7b\u578b\u65f6\uff0c\u5176\u7ed3\u679c\u5728\u663e\u793a\u4e0a\u4e0e MySQL \u4e0d\u4e00\u81f4\uff0c\u8be6\u60c5\u53c2\u89c1 Cast \u51fd\u6570\u548c\u64cd\u4f5c\u7b26\u3002",
+        "\u5b58\u50a8\u7a7a\u95f4",
+        "\u6bcf\u79cd\u7c7b\u578b\u5bf9\u5b58\u50a8\u7a7a\u95f4\u7684\u9700\u6c42\u5982\u4e0b\u8868\u6240\u793a\uff1a",
+        "\u7c7b\u578b\u5b58\u50a8\u7a7a\u95f4FLOAT4FLOAT(p)\u5982\u679c 0 <= p <= 24 \u4e3a 4 \u4e2a\u5b57\u8282\uff0c\u5982\u679c 25 <= p <= 53 \u4e3a 8 \u4e2a\u5b57\u8282DOUBLE8",
+        "\u5b9a\u70b9\u7c7b\u578b",
+        "TiDB \u652f\u6301 MySQL \u6240\u6709\u7684\u5b9a\u70b9\u7c7b\u578b\uff0c\u5305\u62ec DECIMAL\u3001NUMERIC\uff0c\u5b8c\u6574\u4fe1\u606f\u53c2\u8003\u8fd9\u7bc7\u6587\u6863\u3002",
+        "\u5b57\u6bb5\u8bf4\u660e\uff1a",
+        "\u8bed\u6cd5\u5143\u7d20\u8bf4\u660eM\u5c0f\u6570\u603b\u4f4d\u6570D\u5c0f\u6570\u70b9\u540e\u4f4d\u6570UNSIGNED\u65e0\u7b26\u53f7\u6570\uff0c\u5982\u679c\u4e0d\u52a0\u8fd9\u4e2a\u6807\u8bc6\uff0c\u5219\u4e3a\u6709\u7b26\u53f7\u6570ZEROFILL\u8865\u96f6\u6807\u8bc6\uff0c\u5982\u679c\u6709\u8fd9\u4e2a\u6807\u8bc6\uff0cTiDB \u4f1a\u81ea\u52a8\u7ed9\u7c7b\u578b\u589e\u52a0 UNSIGNED \u6807\u8bc6",
+        "\u7c7b\u578b\u5b9a\u4e49"
     ],
     "Examples": [],
     "Category": [
-        "数值类型"
+        "\u6570\u503c\u7c7b\u578b"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT CAST(3.14 AS DOUBLE);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 675,
+            "Prompt Tokens": 653,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 0.00011114999999999999
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT CAST(3.14 AS DOUBLE);"
     ]
 }

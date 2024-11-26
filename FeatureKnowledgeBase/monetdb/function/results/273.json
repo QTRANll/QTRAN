@@ -18,5 +18,31 @@
     ],
     "Category": [
         "Aggregate Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT json.tojsonarray(double) FROM your_table;",
+        "SELECT json.tojsonarray(1.0);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 298,
+            "Prompt Tokens": 275,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 5.5049999999999996e-05
+        },
+        {
+            "Total Tokens": 461,
+            "Prompt Tokens": 438,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 7.95e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymonetdb.exceptions.OperationalError) 42000!syntax error, unexpected sqlDOUBLE in: \"select json.tojsonarray(double\"\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT json.tojsonarray(1.0);"
     ]
 }

@@ -6,15 +6,33 @@
         "array_shuffle"
     ],
     "Feature": [
-        "array_shuffle ( anyarray ) → anyarray"
+        "array_shuffle ( anyarray ) \u2192 anyarray"
     ],
     "Description": [
         "Randomly shuffles the first dimension of the array."
     ],
     "Examples": [
-        "array_shuffle(ARRAY[[1,2],[3,4],[5,6]]) → {{5,6},{1,2},{3,4}}"
+        "array_shuffle(ARRAY[[1,2],[3,4],[5,6]]) \u2192 {{5,6},{1,2},{3,4}}"
     ],
     "Category": [
         "Array Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT array_shuffle(ARRAY[1, 2, 3, 4, 5]);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 286,
+            "Prompt Tokens": 253,
+            "Completion Tokens": 33,
+            "Total Cost (USD)": 5.7749999999999994e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT array_shuffle(ARRAY[1, 2, 3, 4, 5]);"
     ]
 }

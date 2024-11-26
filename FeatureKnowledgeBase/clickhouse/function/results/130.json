@@ -24,5 +24,9 @@
     ],
     "Category": [
         "Bit Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT bitHammingDistance(111, 121);",
+        "SELECT bitHammingDistance(ngramSimHash('cat ate rat'), ngramSimHash('rat ate cat'));"
     ]
 }

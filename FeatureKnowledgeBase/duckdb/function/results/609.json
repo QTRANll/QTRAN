@@ -17,5 +17,39 @@
     ],
     "Category": [
         "Window Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT first_value(column_name IGNORE NULLS) OVER (PARTITION BY partition_column ORDER BY order_column) AS first_value_result",
+        "SELECT first_value(expr IGNORE NULLS) OVER () AS first_value_result",
+        "SELECT first_value(1 IGNORE NULLS) OVER () AS first_value_result"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 340,
+            "Prompt Tokens": 301,
+            "Completion Tokens": 39,
+            "Total Cost (USD)": 6.854999999999999e-05
+        },
+        {
+            "Total Tokens": 527,
+            "Prompt Tokens": 499,
+            "Completion Tokens": 28,
+            "Total Cost (USD)": 9.164999999999999e-05
+        },
+        {
+            "Total Tokens": 714,
+            "Prompt Tokens": 685,
+            "Completion Tokens": 29,
+            "Total Cost (USD)": 0.00012015
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.BinderException) Binder Error: Referenced column \"column_name\" not found in FROM clause!\nLINE 1: SELECT first_value(column_name IGNORE NULLS) OVER (PARTITI...\n                           ^\n",
+        "(duckdb.duckdb.BinderException) Binder Error: Referenced column \"expr\" not found in FROM clause!\nLINE 1: SELECT first_value(expr IGNORE NULLS) OVER () AS first_val...\n                           ^\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT first_value(1 IGNORE NULLS) OVER () AS first_value_result"
     ]
 }

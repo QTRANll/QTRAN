@@ -16,5 +16,23 @@
     ],
     "Category": [
         "Date Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT time_bucket('1 hour', CURRENT_TIMESTAMP);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 342,
+            "Prompt Tokens": 319,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 6.165e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT time_bucket('1 hour', CURRENT_TIMESTAMP);"
     ]
 }

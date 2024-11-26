@@ -6,15 +6,33 @@
         "initcap"
     ],
     "Feature": [
-        "initcap ( text ) → text"
+        "initcap ( text ) \u2192 text"
     ],
     "Description": [
         "Converts the first letter of each word to upper case and the rest to lower case. Words are sequences of alphanumeric characters separated by non-alphanumeric characters."
     ],
     "Examples": [
-        "initcap('hi THOMAS') → Hi Thomas"
+        "initcap('hi THOMAS') \u2192 Hi Thomas"
     ],
     "Category": [
         "String Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT initcap('hello world');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 292,
+            "Prompt Tokens": 272,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 5.28e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT initcap('hello world');"
     ]
 }

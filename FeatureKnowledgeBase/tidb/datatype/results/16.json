@@ -3,20 +3,38 @@
         "https://docs.pingcap.com/zh/tidb/v8.3/data-type-string"
     ],
     "Title": [
-        "VARCHAR 类型"
+        "VARCHAR \u7c7b\u578b"
     ],
     "Feature": [
-        "VARCHAR 类型"
+        "VARCHAR \u7c7b\u578b"
     ],
     "Description": [
-        "VARCHAR 类型",
-        "变长字符串。M 表示最大列长度（字符的最大个数）。VARCHAR 的空间占用大小不得超过 65535 字节。在选择 VARCHAR 长度时，应当根据最长的行的大小和使用的字符集确定。",
-        "对于不同的字符集，单个字符所占用的空间可能有所不同。以下表格是各个字符集下单个字符占用的字节数，以及 VARCHAR 列长度的取值范围：",
-        "字符集单个字符字节数VARCHAR 最大列长度的取值范围ascii1(0, 65535]latin11(0, 65535]binary1(0, 65535]utf83(0, 21845]utf8mb44(0, 16383]",
+        "VARCHAR \u7c7b\u578b",
+        "\u53d8\u957f\u5b57\u7b26\u4e32\u3002M \u8868\u793a\u6700\u5927\u5217\u957f\u5ea6\uff08\u5b57\u7b26\u7684\u6700\u5927\u4e2a\u6570\uff09\u3002VARCHAR \u7684\u7a7a\u95f4\u5360\u7528\u5927\u5c0f\u4e0d\u5f97\u8d85\u8fc7 65535 \u5b57\u8282\u3002\u5728\u9009\u62e9 VARCHAR \u957f\u5ea6\u65f6\uff0c\u5e94\u5f53\u6839\u636e\u6700\u957f\u7684\u884c\u7684\u5927\u5c0f\u548c\u4f7f\u7528\u7684\u5b57\u7b26\u96c6\u786e\u5b9a\u3002",
+        "\u5bf9\u4e8e\u4e0d\u540c\u7684\u5b57\u7b26\u96c6\uff0c\u5355\u4e2a\u5b57\u7b26\u6240\u5360\u7528\u7684\u7a7a\u95f4\u53ef\u80fd\u6709\u6240\u4e0d\u540c\u3002\u4ee5\u4e0b\u8868\u683c\u662f\u5404\u4e2a\u5b57\u7b26\u96c6\u4e0b\u5355\u4e2a\u5b57\u7b26\u5360\u7528\u7684\u5b57\u8282\u6570\uff0c\u4ee5\u53ca VARCHAR \u5217\u957f\u5ea6\u7684\u53d6\u503c\u8303\u56f4\uff1a",
+        "\u5b57\u7b26\u96c6\u5355\u4e2a\u5b57\u7b26\u5b57\u8282\u6570VARCHAR \u6700\u5927\u5217\u957f\u5ea6\u7684\u53d6\u503c\u8303\u56f4ascii1(0, 65535]latin11(0, 65535]binary1(0, 65535]utf83(0, 21845]utf8mb44(0, 16383]",
         "[NATIONAL] VARCHAR(M) [CHARACTER SET charset_name] [COLLATE collation_name]\n"
     ],
     "Examples": [],
     "Category": [
-        "字符串类型"
+        "\u5b57\u7b26\u4e32\u7c7b\u578b"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "CREATE TABLE example_table (example_column VARCHAR(255));"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 451,
+            "Prompt Tokens": 427,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 7.845e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "CREATE TABLE example_table (example_column VARCHAR(255));"
     ]
 }

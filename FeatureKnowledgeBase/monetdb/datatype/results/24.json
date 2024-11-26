@@ -1,0 +1,37 @@
+{
+    "HTML": [
+        "https://www.monetdb.org/documentation-Aug2024/user-guide/sql-manual/data-types/base-types"
+    ],
+    "Title": [
+        "DOUBLE PRECISION"
+    ],
+    "Feature": [
+        "DOUBLE PRECISION"
+    ],
+    "Description": [
+        "DOUBLE, FLOAT, FLOAT(53)",
+        "64 bit signed floating point approximate number"
+    ],
+    "Examples": [],
+    "Category": [
+        "Base Types"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT CAST(123.456 AS DOUBLE PRECISION);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 281,
+            "Prompt Tokens": 257,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 5.294999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT CAST(123.456 AS DOUBLE PRECISION);"
+    ]
+}

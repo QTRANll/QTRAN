@@ -6,15 +6,33 @@
         "tan"
     ],
     "Feature": [
-        "tan ( double precision ) → double precision"
+        "tan ( double precision ) \u2192 double precision"
     ],
     "Description": [
         "Tangent, argument in radians"
     ],
     "Examples": [
-        "tan(1) → 1.5574077246549023"
+        "tan(1) \u2192 1.5574077246549023"
     ],
     "Category": [
         "Mathematical Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT tan(1.0);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 264,
+            "Prompt Tokens": 244,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 4.8599999999999995e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT tan(1.0);"
     ]
 }

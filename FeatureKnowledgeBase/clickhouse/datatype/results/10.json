@@ -20,5 +20,12 @@
     ],
     "Category": [
         "Bool"
+    ],
+    "EffectiveSQLsRefined": [
+        "select true as col, toTypeName(col);",
+        "select true == 1 as col, toTypeName(col);",
+        "CREATE TABLE test_bool(    `A` Int64,    `B` Bool)ENGINE = Memory;",
+        "INSERT INTO test_bool VALUES (1, true),(2,0);",
+        "SELECT * FROM test_bool;"
     ]
 }

@@ -27,5 +27,53 @@
     ],
     "Category": [
         "Loadable Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT audit_log_encryption_password_set('your_password_here');",
+        "SELECT audit_log_encryption_password_set('your_password_here');",
+        "SELECT audit_log_encryption_password_set('new_password_here');",
+        "SELECT audit_log_encryption_password_set('example_password');",
+        "SELECT audit_log_encryption_password_set('test_password');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 594,
+            "Prompt Tokens": 569,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 0.00010034999999999999
+        },
+        {
+            "Total Tokens": 758,
+            "Prompt Tokens": 733,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 0.00012494999999999997
+        },
+        {
+            "Total Tokens": 922,
+            "Prompt Tokens": 897,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 0.00014954999999999998
+        },
+        {
+            "Total Tokens": 1085,
+            "Prompt Tokens": 1061,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 0.00017354999999999996
+        },
+        {
+            "Total Tokens": 1248,
+            "Prompt Tokens": 1224,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 0.000198
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.audit_log_encryption_password_set does not exist')\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.audit_log_encryption_password_set does not exist')\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.audit_log_encryption_password_set does not exist')\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.audit_log_encryption_password_set does not exist')\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.audit_log_encryption_password_set does not exist')\n"
+    ],
+    "EffectiveSQLs": []
 }

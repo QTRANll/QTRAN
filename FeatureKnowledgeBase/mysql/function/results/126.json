@@ -17,5 +17,39 @@
     "Category": [
         "Built-In Functions and Operators",
         "Internal Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT INTERNAL_AVG_ROW_LENGTH(*)",
+        "SELECT INTERNAL_AVG_ROW_LENGTH()",
+        "SELECT 1"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 295,
+            "Prompt Tokens": 275,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 5.325e-05
+        },
+        {
+            "Total Tokens": 475,
+            "Prompt Tokens": 455,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 8.024999999999999e-05
+        },
+        {
+            "Total Tokens": 631,
+            "Prompt Tokens": 615,
+            "Completion Tokens": 16,
+            "Total Cost (USD)": 0.00010185
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.ProgrammingError) (1064, \"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '*)' at line 1\")\n",
+        "(pymysql.err.OperationalError) (3566, \"Access to native function 'INTERNAL_AVG_ROW_LENGTH' is rejected.\")\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT 1"
     ]
 }

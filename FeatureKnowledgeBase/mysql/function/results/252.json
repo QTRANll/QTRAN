@@ -24,5 +24,16 @@
     "Category": [
         "Built-In Functions and Operators",
         "Performance Schema Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT PS_CURRENT_THREAD_ID();",
+        "SELECT PS_THREAD_ID(CONNECTION_ID());"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT PS_CURRENT_THREAD_ID();",
+        "SELECT PS_THREAD_ID(CONNECTION_ID());"
     ]
 }

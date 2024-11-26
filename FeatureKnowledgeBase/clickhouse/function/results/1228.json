@@ -29,5 +29,9 @@
     ],
     "Category": [
         "Aggregate Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT uniqCombined64(number) FROM numbers(1e10);",
+        "SELECT uniqCombined(number) FROM numbers(1e10);"
     ]
 }

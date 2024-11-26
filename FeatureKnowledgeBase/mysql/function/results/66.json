@@ -18,5 +18,23 @@
     "Category": [
         "Built-In Functions and Operators",
         "Date and Time Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT DAY(NOW());"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 299,
+            "Prompt Tokens": 281,
+            "Completion Tokens": 18,
+            "Total Cost (USD)": 5.295e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT DAY(NOW());"
     ]
 }

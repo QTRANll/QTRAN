@@ -23,5 +23,10 @@
     ],
     "Category": [
         "Other Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "CREATE TABLE t_arr (arr Array(Tuple(subcolumn1 UInt32, subcolumn2 String))) ENGINE = MergeTree ORDER BY tuple();",
+        "INSERT INTO t_arr VALUES ([(1, 'Hello'), (2, 'World')]), ([(3, 'This'), (4, 'is'), (5, 'subcolumn')]);",
+        "SELECT getSubcolumn(arr, 'subcolumn1'), getSubcolumn(arr, 'subcolumn2') FROM t_arr;"
     ]
 }

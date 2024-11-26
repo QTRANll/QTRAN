@@ -18,5 +18,23 @@
     ],
     "Category": [
         "Character String Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT locate('s1', 's2');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 309,
+            "Prompt Tokens": 286,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 5.669999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT locate('s1', 's2');"
     ]
 }

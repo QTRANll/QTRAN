@@ -31,5 +31,24 @@
     "Category": [
         "Built-In Functions and Operators",
         "Date and Time Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT UNIX_TIMESTAMP();",
+        "SELECT UNIX_TIMESTAMP('2015-11-13 10:20:19');",
+        "SELECT UNIX_TIMESTAMP('2015-11-13 10:20:19.012');",
+        "SELECT UNIX_TIMESTAMP('2005-03-27 03:00:00');",
+        "SELECT UNIX_TIMESTAMP('2005-03-27 02:00:00');",
+        "SELECT FROM_UNIXTIME(1111885200);"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT UNIX_TIMESTAMP();",
+        "SELECT UNIX_TIMESTAMP('2015-11-13 10:20:19');",
+        "SELECT UNIX_TIMESTAMP('2015-11-13 10:20:19.012');",
+        "SELECT UNIX_TIMESTAMP('2005-03-27 03:00:00');",
+        "SELECT UNIX_TIMESTAMP('2005-03-27 02:00:00');",
+        "SELECT FROM_UNIXTIME(1111885200);"
     ]
 }

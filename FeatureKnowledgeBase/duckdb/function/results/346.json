@@ -16,5 +16,31 @@
     ],
     "Category": [
         "Numeric Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT sin(x);",
+        "SELECT sin(1);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 264,
+            "Prompt Tokens": 247,
+            "Completion Tokens": 17,
+            "Total Cost (USD)": 4.7249999999999997e-05
+        },
+        {
+            "Total Tokens": 423,
+            "Prompt Tokens": 405,
+            "Completion Tokens": 18,
+            "Total Cost (USD)": 7.155e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.BinderException) Binder Error: Referenced column \"x\" not found in FROM clause!\nLINE 1: SELECT sin(x);\n                   ^\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT sin(1);"
     ]
 }

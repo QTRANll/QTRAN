@@ -16,5 +16,23 @@
     ],
     "Category": [
         "Utility Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT constant_or_null('value', NULL);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 301,
+            "Prompt Tokens": 279,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 5.5049999999999996e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT constant_or_null('value', NULL);"
     ]
 }

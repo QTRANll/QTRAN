@@ -20,5 +20,34 @@
     ],
     "Category": [
         "String Data Types"
+    ],
+    "EffectiveSQLsRefined": [
+        "CREATE OR REPLACE TABLE t1 (a INET4);",
+        "INSERT INTO t1 VALUES('0.0.0.0'), ('255.10.0.0'), ('255.255.255.255');",
+        "INSERT INTO t1 VALUES (0xa0000001);",
+        "INSERT INTO t1 VALUES (0xf0000000);",
+        "INSERT INTO t1 VALUES (0xff000001);",
+        "SELECT HEX(a), a FROM t1 ORDER BY a;",
+        "INSERT INTO t1 VALUES('0.0.0.0'), ('255.10.0.0'), ('255.255.255.255');",
+        "INSERT INTO t1 VALUES('0.0.0.0'), ('255.10.0.0'), ('255.255.255.255');",
+        "CREATE OR REPLACE TABLE t1 (i4 INET4, i6 INET6);",
+        "INSERT INTO t1 VALUES('10.10.10.10','::ffff:192.168.0.1');",
+        "SELECT LEAST(i4,i6) FROM t1;"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "CREATE OR REPLACE TABLE t1 (a INET4);",
+        "INSERT INTO t1 VALUES('0.0.0.0'), ('255.10.0.0'), ('255.255.255.255');",
+        "INSERT INTO t1 VALUES (0xa0000001);",
+        "INSERT INTO t1 VALUES (0xf0000000);",
+        "INSERT INTO t1 VALUES (0xff000001);",
+        "SELECT HEX(a), a FROM t1 ORDER BY a;",
+        "INSERT INTO t1 VALUES('0.0.0.0'), ('255.10.0.0'), ('255.255.255.255');",
+        "INSERT INTO t1 VALUES('0.0.0.0'), ('255.10.0.0'), ('255.255.255.255');",
+        "CREATE OR REPLACE TABLE t1 (i4 INET4, i6 INET6);",
+        "INSERT INTO t1 VALUES('10.10.10.10','::ffff:192.168.0.1');",
+        "SELECT LEAST(i4,i6) FROM t1;"
     ]
 }

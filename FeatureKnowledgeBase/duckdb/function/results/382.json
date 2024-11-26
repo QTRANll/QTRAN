@@ -16,5 +16,23 @@
     ],
     "Category": [
         "Text Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT concat_ws(',', 'Hello', 'World', NULL, 'DuckDB');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 299,
+            "Prompt Tokens": 270,
+            "Completion Tokens": 29,
+            "Total Cost (USD)": 5.79e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT concat_ws(',', 'Hello', 'World', NULL, 'DuckDB');"
     ]
 }

@@ -30,5 +30,26 @@
     "Category": [
         "Built-In Functions and Operators",
         "Spatial Analysis Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "CREATE TABLE product (\n  year INTEGER,\n  product VARCHAR(256),\n  location Geometry\n);",
+        "INSERT INTO product\n(year,  product,     location) VALUES\n(2000, \"Calculator\", ST_GeomFromText('point(60 -24)',4326)),\n(2000, \"Computer\"  , ST_GeomFromText('point(28 -77)',4326)),\n(2000, \"Abacus\"    , ST_GeomFromText('point(28 -77)',4326)),\n(2000, \"TV\"        , ST_GeomFromText('point(38  60)',4326)),\n(2001, \"Calculator\", ST_GeomFromText('point(60 -24)',4326)),\n(2001, \"Computer\"  , ST_GeomFromText('point(28 -77)',4326));",
+        "SELECT ST_AsText(ST_Collect(location)) AS result\n       FROM product;",
+        "SELECT ST_AsText(ST_Collect(DISTINCT location)) AS result\n       FROM product;",
+        "SELECT year, ST_AsText(ST_Collect(location)) AS result\n       FROM product GROUP BY year;",
+        "SELECT year, ST_AsText(ST_Collect(DISTINCT location)) AS result\n       FROM product GROUP BY year;",
+        "SELECT ST_AsText(ST_Collect(location)\n         OVER (ORDER BY year, product ROWS BETWEEN 1 PRECEDING AND CURRENT ROW))\n         AS result\n       FROM product;"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "CREATE TABLE product (\n  year INTEGER,\n  product VARCHAR(256),\n  location Geometry\n);",
+        "INSERT INTO product\n(year,  product,     location) VALUES\n(2000, \"Calculator\", ST_GeomFromText('point(60 -24)',4326)),\n(2000, \"Computer\"  , ST_GeomFromText('point(28 -77)',4326)),\n(2000, \"Abacus\"    , ST_GeomFromText('point(28 -77)',4326)),\n(2000, \"TV\"        , ST_GeomFromText('point(38  60)',4326)),\n(2001, \"Calculator\", ST_GeomFromText('point(60 -24)',4326)),\n(2001, \"Computer\"  , ST_GeomFromText('point(28 -77)',4326));",
+        "SELECT ST_AsText(ST_Collect(location)) AS result\n       FROM product;",
+        "SELECT ST_AsText(ST_Collect(DISTINCT location)) AS result\n       FROM product;",
+        "SELECT year, ST_AsText(ST_Collect(location)) AS result\n       FROM product GROUP BY year;",
+        "SELECT year, ST_AsText(ST_Collect(DISTINCT location)) AS result\n       FROM product GROUP BY year;",
+        "SELECT ST_AsText(ST_Collect(location)\n         OVER (ORDER BY year, product ROWS BETWEEN 1 PRECEDING AND CURRENT ROW))\n         AS result\n       FROM product;"
     ]
 }

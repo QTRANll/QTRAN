@@ -24,5 +24,13 @@
         "SELECT GET_FORMAT(DATE, 'EUR');",
         "SELECT DATE_FORMAT('2003-10-03',GET_FORMAT(DATE,'EUR'));",
         "SELECT STR_TO_DATE('10.31.2003',GET_FORMAT(DATE,'USA'));"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT GET_FORMAT(DATE, 'EUR');",
+        "SELECT DATE_FORMAT('2003-10-03',GET_FORMAT(DATE,'EUR'));",
+        "SELECT STR_TO_DATE('10.31.2003',GET_FORMAT(DATE,'USA'));"
     ]
 }

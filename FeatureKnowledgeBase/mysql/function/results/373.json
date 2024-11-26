@@ -26,5 +26,18 @@
     "Category": [
         "Built-In Functions and Operators",
         "Date and Time Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT DATE_SUB('2008-01-02', INTERVAL 31 DAY);",
+        "SELECT SUBDATE('2008-01-02', INTERVAL 31 DAY);",
+        "SELECT SUBDATE('2008-01-02 12:00:00', 31);"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT DATE_SUB('2008-01-02', INTERVAL 31 DAY);",
+        "SELECT SUBDATE('2008-01-02', INTERVAL 31 DAY);",
+        "SELECT SUBDATE('2008-01-02 12:00:00', 31);"
     ]
 }

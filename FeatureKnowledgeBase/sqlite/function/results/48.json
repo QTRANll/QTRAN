@@ -14,5 +14,31 @@
     "Examples": [],
     "Category": [
         "Aggregate SQL Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT COUNT(X), COUNT(*) FROM table_name;",
+        "SELECT COUNT(X), COUNT(*) FROM (SELECT 1 AS X UNION ALL SELECT NULL);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 321,
+            "Prompt Tokens": 299,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 5.804999999999999e-05
+        },
+        {
+            "Total Tokens": 472,
+            "Prompt Tokens": 441,
+            "Completion Tokens": 31,
+            "Total Cost (USD)": 8.475e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(sqlite3.OperationalError) no such table: table_name\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT COUNT(X), COUNT(*) FROM (SELECT 1 AS X UNION ALL SELECT NULL);"
     ]
 }

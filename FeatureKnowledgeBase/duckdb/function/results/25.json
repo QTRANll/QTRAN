@@ -16,5 +16,39 @@
     ],
     "Category": [
         "Aggregate Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT max(arg);",
+        "SELECT max(arg) FROM your_table_name;",
+        "SELECT max(arg) FROM (VALUES (1), (2), (3)) AS your_table(arg);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 265,
+            "Prompt Tokens": 248,
+            "Completion Tokens": 17,
+            "Total Cost (USD)": 4.74e-05
+        },
+        {
+            "Total Tokens": 427,
+            "Prompt Tokens": 406,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 7.35e-05
+        },
+        {
+            "Total Tokens": 614,
+            "Prompt Tokens": 580,
+            "Completion Tokens": 34,
+            "Total Cost (USD)": 0.00010739999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.BinderException) Binder Error: Referenced column \"arg\" not found in FROM clause!\nLINE 1: SELECT max(arg);\n                   ^\n",
+        "(duckdb.duckdb.CatalogException) Catalog Error: Table with name your_table_name does not exist!\nDid you mean \"pg_tablespace\"?\nLINE 1: SELECT max(arg) FROM your_table_name;\n                             ^\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT max(arg) FROM (VALUES (1), (2), (3)) AS your_table(arg);"
     ]
 }

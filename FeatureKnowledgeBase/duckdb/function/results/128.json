@@ -16,5 +16,31 @@
     ],
     "Category": [
         "Date Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT last_day('2023-10-15');",
+        "SELECT last_day(CAST('2023-10-15' AS DATE));"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 279,
+            "Prompt Tokens": 255,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 5.264999999999999e-05
+        },
+        {
+            "Total Tokens": 510,
+            "Prompt Tokens": 481,
+            "Completion Tokens": 29,
+            "Total Cost (USD)": 8.955e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.BinderException) Binder Error: Could not choose a best candidate function for the function call \"last_day(STRING_LITERAL)\". In order to select one, please add explicit type casts.\n\tCandidate functions:\n\tlast_day(TIMESTAMP) -> DATE\n\tlast_day(TIMESTAMP WITH TIME ZONE) -> DATE\n\tlast_day(DATE) -> DATE\n\nLINE 1: SELECT last_day('2023-10-15');\n               ^\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT last_day(CAST('2023-10-15' AS DATE));"
     ]
 }

@@ -18,5 +18,31 @@
     ],
     "Category": [
         "JSON Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT json.tojsonarray(double) FROM DUAL",
+        "SELECT json.tojsonarray(1.0)"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 297,
+            "Prompt Tokens": 274,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 5.49e-05
+        },
+        {
+            "Total Tokens": 459,
+            "Prompt Tokens": 437,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 7.874999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymonetdb.exceptions.OperationalError) 42000!syntax error, unexpected sqlDOUBLE in: \"select json.tojsonarray(double\"\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT json.tojsonarray(1.0)"
     ]
 }

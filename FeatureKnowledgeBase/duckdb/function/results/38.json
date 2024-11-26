@@ -16,5 +16,39 @@
     ],
     "Category": [
         "Aggregate Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT reservoir_quantile(x, 0.5, 8192);",
+        "SELECT reservoir_quantile(column_name, 0.5, 8192) FROM table_name;",
+        "SELECT reservoir_quantile(1, 0.5, 8192);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 345,
+            "Prompt Tokens": 317,
+            "Completion Tokens": 28,
+            "Total Cost (USD)": 6.434999999999999e-05
+        },
+        {
+            "Total Tokens": 542,
+            "Prompt Tokens": 510,
+            "Completion Tokens": 32,
+            "Total Cost (USD)": 9.57e-05
+        },
+        {
+            "Total Tokens": 747,
+            "Prompt Tokens": 718,
+            "Completion Tokens": 29,
+            "Total Cost (USD)": 0.00012509999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.BinderException) Binder Error: Referenced column \"x\" not found in FROM clause!\nLINE 1: SELECT reservoir_quantile(x, 0.5, 8192);\n                                  ^\n",
+        "(duckdb.duckdb.CatalogException) Catalog Error: Table with name table_name does not exist!\nDid you mean \"pg_tablespace\"?\nLINE 1: ..._quantile(column_name, 0.5, 8192) FROM table_name;\n                                                  ^\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT reservoir_quantile(1, 0.5, 8192);"
     ]
 }

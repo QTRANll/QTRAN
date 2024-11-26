@@ -18,5 +18,22 @@
     ],
     "Category": [
         "Arithmetic Operators"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT 1042 % 50;",
+        "SELECT MOD(234, 10);",
+        "SELECT 253 % 7;",
+        "SELECT MOD(29,9);",
+        "SELECT 29 MOD 9;"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT 1042 % 50;",
+        "SELECT MOD(234, 10);",
+        "SELECT 253 % 7;",
+        "SELECT MOD(29,9);",
+        "SELECT 29 MOD 9;"
     ]
 }

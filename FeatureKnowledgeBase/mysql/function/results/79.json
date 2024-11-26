@@ -36,5 +36,18 @@
     "Category": [
         "Built-In Functions and Operators",
         "XML Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT ExtractValue('<a><b/></a>', '/a/b');",
+        "SELECT ExtractValue('<a><b/></a>', 'count(/a/b)');",
+        "SELECT ExtractValue('<a>c</a><b', '//a');"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT ExtractValue('<a><b/></a>', '/a/b');",
+        "SELECT ExtractValue('<a><b/></a>', 'count(/a/b)');",
+        "SELECT ExtractValue('<a>c</a><b', '//a');"
     ]
 }

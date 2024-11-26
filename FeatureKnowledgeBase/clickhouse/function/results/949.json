@@ -29,5 +29,8 @@
     ],
     "Category": [
         "Type Conversion Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT    toInt64OrDefault('-64', CAST('-1', 'Int64')),    toInt64OrDefault('abc', CAST('-1', 'Int64'))FORMAT Vertical;"
     ]
 }

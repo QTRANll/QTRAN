@@ -24,5 +24,9 @@
     ],
     "Category": [
         "Time Series Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT seriesPeriodDetectFFT([1, 4, 6, 1, 4, 6, 1, 4, 6, 1, 4, 6, 1, 4, 6, 1, 4, 6, 1, 4, 6]) AS print_0;",
+        "SELECT seriesPeriodDetectFFT(arrayMap(x -> abs((x % 6) - 3), range(1000))) AS print_0;"
     ]
 }

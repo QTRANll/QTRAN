@@ -31,5 +31,12 @@
     ],
     "Category": [
         "Encoding Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT mortonDecode(3, 53);",
+        "SELECT mortonDecode(1, 1);",
+        "SELECT mortonDecode(tuple(2), 32768);",
+        "insert into morton_numbers (*) values(1,2,3,4,5,6,7,8);",
+        "select untuple(mortonDecode(8, mortonEncode(n1, n2, n3, n4, n5, n6, n7, n8))) from morton_numbers;"
     ]
 }

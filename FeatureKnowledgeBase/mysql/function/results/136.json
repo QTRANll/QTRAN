@@ -17,5 +17,31 @@
     "Category": [
         "Built-In Functions and Operators",
         "Internal Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT INTERNAL_GET_VIEW_WARNING_OR_ERROR('example_argument');",
+        "SELECT 'Access to native function is rejected.' AS message;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 301,
+            "Prompt Tokens": 277,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 5.595e-05
+        },
+        {
+            "Total Tokens": 466,
+            "Prompt Tokens": 442,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 8.07e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.OperationalError) (3566, \"Access to native function 'INTERNAL_GET_VIEW_WARNING_OR_ERROR' is rejected.\")\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT 'Access to native function is rejected.' AS message;"
     ]
 }

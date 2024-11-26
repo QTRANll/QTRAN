@@ -29,5 +29,8 @@
     ],
     "Category": [
         "Type Conversion Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT    toInt32OrDefault('-32', CAST('-1', 'Int32')),    toInt32OrDefault('abc', CAST('-1', 'Int32'))FORMAT Vertical;"
     ]
 }

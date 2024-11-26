@@ -6,16 +6,50 @@
         "jsonb - text"
     ],
     "Feature": [
-        "jsonb - text → jsonb"
+        "jsonb - text \u2192 jsonb"
     ],
     "Description": [
         "Deletes a key (and its value) from a JSON object, or matching string value(s) from a JSON array."
     ],
     "Examples": [
-        "'{\"a\": \"b\", \"c\": \"d\"}'::jsonb - 'a' → {\"c\": \"d\"}",
-        "'[\"a\", \"b\", \"c\", \"b\"]'::jsonb - 'b' → [\"a\", \"c\"]"
+        "'{\"a\": \"b\", \"c\": \"d\"}'::jsonb - 'a' \u2192 {\"c\": \"d\"}",
+        "'[\"a\", \"b\", \"c\", \"b\"]'::jsonb - 'b' \u2192 [\"a\", \"c\"]"
     ],
     "Category": [
         "JSON Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT jsonb - 'key' FROM your_table;",
+        "SELECT jsonb - 'key';",
+        "SELECT '{}'::jsonb - 'key';"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 293,
+            "Prompt Tokens": 270,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 5.43e-05
+        },
+        {
+            "Total Tokens": 458,
+            "Prompt Tokens": 438,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 7.769999999999999e-05
+        },
+        {
+            "Total Tokens": 621,
+            "Prompt Tokens": 599,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 0.00010304999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedTable) relation \"your_table\" does not exist\nLINE 1: SELECT jsonb - 'key' FROM your_table;\n                                  ^\n\n",
+        "(psycopg2.errors.UndefinedColumn) column \"jsonb\" does not exist\nLINE 1: SELECT jsonb - 'key';\n               ^\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT '{}'::jsonb - 'key';"
     ]
 }

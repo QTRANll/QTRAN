@@ -6,16 +6,34 @@
         "json_each"
     ],
     "Feature": [
-        "json_each ( json ) → setof record ( key text, value json )",
-        "jsonb_each ( jsonb ) → setof record ( key text, value jsonb )"
+        "json_each ( json ) \u2192 setof record ( key text, value json )",
+        "jsonb_each ( jsonb ) \u2192 setof record ( key text, value jsonb )"
     ],
     "Description": [
         "Expands the top-level JSON object into a set of key/value pairs."
     ],
     "Examples": [
-        "select * from json_each('{\"a\":\"foo\", \"b\":\"bar\"}') →"
+        "select * from json_each('{\"a\":\"foo\", \"b\":\"bar\"}') \u2192"
     ],
     "Category": [
         "JSON Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT * FROM json_each('{\"key1\": \"value1\", \"key2\": \"value2\"}')"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 321,
+            "Prompt Tokens": 285,
+            "Completion Tokens": 36,
+            "Total Cost (USD)": 6.434999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT * FROM json_each('{\"key1\": \"value1\", \"key2\": \"value2\"}')"
     ]
 }

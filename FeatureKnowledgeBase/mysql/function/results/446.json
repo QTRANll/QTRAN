@@ -26,5 +26,53 @@
     ],
     "Category": [
         "Loadable Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT gen_blocklist('Berlin', 'DE_Cities', 'US_Cities');",
+        "SELECT gen_blocklist('example_term', 'example_from_dict', 'example_to_dict');",
+        "SELECT gen_blocklist('term', 'dictionary1', 'dictionary2');",
+        "SELECT gen_blocklist('sample_term', 'sample_from_dict', 'sample_to_dict');",
+        "SELECT gen_blocklist('test_term', 'test_from_dict', 'test_to_dict');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 663,
+            "Prompt Tokens": 633,
+            "Completion Tokens": 30,
+            "Total Cost (USD)": 0.00011294999999999998
+        },
+        {
+            "Total Tokens": 830,
+            "Prompt Tokens": 799,
+            "Completion Tokens": 31,
+            "Total Cost (USD)": 0.00013845
+        },
+        {
+            "Total Tokens": 994,
+            "Prompt Tokens": 966,
+            "Completion Tokens": 28,
+            "Total Cost (USD)": 0.00016169999999999997
+        },
+        {
+            "Total Tokens": 1161,
+            "Prompt Tokens": 1130,
+            "Completion Tokens": 31,
+            "Total Cost (USD)": 0.00018809999999999996
+        },
+        {
+            "Total Tokens": 1328,
+            "Prompt Tokens": 1297,
+            "Completion Tokens": 31,
+            "Total Cost (USD)": 0.00021314999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.gen_blocklist does not exist')\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.gen_blocklist does not exist')\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.gen_blocklist does not exist')\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.gen_blocklist does not exist')\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.gen_blocklist does not exist')\n"
+    ],
+    "EffectiveSQLs": []
 }

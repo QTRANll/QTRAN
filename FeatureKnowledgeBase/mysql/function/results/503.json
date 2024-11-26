@@ -25,5 +25,53 @@
     ],
     "Category": [
         "Loadable Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT set_firewall_group_mode('g', 'DETECTING');",
+        "SELECT set_firewall_group_mode('g', 'DETECTING', NULL);",
+        "SELECT set_firewall_group_mode('g', 'DETECTING');",
+        "SELECT set_firewall_group_mode('g', 'DETECTING', 'user_name@host_name');",
+        "SELECT set_firewall_group_mode('g', 'DETECTING', NULL);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 594,
+            "Prompt Tokens": 567,
+            "Completion Tokens": 27,
+            "Total Cost (USD)": 0.00010124999999999998
+        },
+        {
+            "Total Tokens": 761,
+            "Prompt Tokens": 732,
+            "Completion Tokens": 29,
+            "Total Cost (USD)": 0.00012719999999999997
+        },
+        {
+            "Total Tokens": 926,
+            "Prompt Tokens": 899,
+            "Completion Tokens": 27,
+            "Total Cost (USD)": 0.00015104999999999999
+        },
+        {
+            "Total Tokens": 1098,
+            "Prompt Tokens": 1064,
+            "Completion Tokens": 34,
+            "Total Cost (USD)": 0.00018
+        },
+        {
+            "Total Tokens": 1265,
+            "Prompt Tokens": 1236,
+            "Completion Tokens": 29,
+            "Total Cost (USD)": 0.00020279999999999997
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.set_firewall_group_mode does not exist')\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.set_firewall_group_mode does not exist')\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.set_firewall_group_mode does not exist')\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.set_firewall_group_mode does not exist')\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.set_firewall_group_mode does not exist')\n"
+    ],
+    "EffectiveSQLs": []
 }

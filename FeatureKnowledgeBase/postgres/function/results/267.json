@@ -6,15 +6,33 @@
         "jsonb_path_query_first"
     ],
     "Feature": [
-        "jsonb_path_query_first ( target jsonb, path jsonpath [, vars jsonb [, silent boolean ]] ) → jsonb"
+        "jsonb_path_query_first ( target jsonb, path jsonpath [, vars jsonb [, silent boolean ]] ) \u2192 jsonb"
     ],
     "Description": [
         "Returns the first JSON item returned by the JSON path for the specified JSON value. Returns NULL if there are no results. The optional vars and silent arguments act the same as for jsonb_path_exists."
     ],
     "Examples": [
-        "jsonb_path_query_first('{\"a\":[1,2,3,4,5]}', '$.a[*] ? (@ >= $min && @ <= $max)', '{\"min\":2, \"max\":4}') → 2"
+        "jsonb_path_query_first('{\"a\":[1,2,3,4,5]}', '$.a[*] ? (@ >= $min && @ <= $max)', '{\"min\":2, \"max\":4}') \u2192 2"
     ],
     "Category": [
         "JSON Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT jsonb_path_query_first('{\"key\": \"value\"}', '$.key')"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 338,
+            "Prompt Tokens": 307,
+            "Completion Tokens": 31,
+            "Total Cost (USD)": 6.465e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT jsonb_path_query_first('{\"key\": \"value\"}', '$.key')"
     ]
 }

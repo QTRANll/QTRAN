@@ -22,5 +22,14 @@
         "SELECT TO_SECONDS('2013-06-13 21:45:13');",
         "SELECT TO_SECONDS(NOW());",
         "SELECT TO_SECONDS(20130513);"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT TO_SECONDS('2013-06-13');",
+        "SELECT TO_SECONDS('2013-06-13 21:45:13');",
+        "SELECT TO_SECONDS(NOW());",
+        "SELECT TO_SECONDS(20130513);"
     ]
 }

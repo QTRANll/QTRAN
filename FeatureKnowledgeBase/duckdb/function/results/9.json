@@ -17,5 +17,39 @@
     ],
     "Category": [
         "Aggregate Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT mean(column_name) FROM table_name;",
+        "SELECT mean(column_name);",
+        "SELECT mean(value) FROM (SELECT 1 AS value UNION ALL SELECT 2 UNION ALL SELECT 3);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 269,
+            "Prompt Tokens": 248,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 4.98e-05
+        },
+        {
+            "Total Tokens": 437,
+            "Prompt Tokens": 419,
+            "Completion Tokens": 18,
+            "Total Cost (USD)": 7.365e-05
+        },
+        {
+            "Total Tokens": 613,
+            "Prompt Tokens": 578,
+            "Completion Tokens": 35,
+            "Total Cost (USD)": 0.00010769999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.CatalogException) Catalog Error: Table with name table_name does not exist!\nDid you mean \"pg_tablespace\"?\nLINE 1: SELECT mean(column_name) FROM table_name;\n                                      ^\n",
+        "(duckdb.duckdb.BinderException) Binder Error: Referenced column \"column_name\" not found in FROM clause!\nLINE 1: SELECT mean(column_name);\n                    ^\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT mean(value) FROM (SELECT 1 AS value UNION ALL SELECT 2 UNION ALL SELECT 3);"
     ]
 }

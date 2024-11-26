@@ -16,5 +16,53 @@
     ],
     "Category": [
         "Enum Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT enum_code('enum_value');",
+        "SELECT enum_code(ENUM('enum_value'));",
+        "SELECT enum_code('enum_value'::enum_type);",
+        "SELECT enum_code('enum_value');",
+        "SELECT enum_code(ENUM('enum_value'));"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 278,
+            "Prompt Tokens": 258,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 5.07e-05
+        },
+        {
+            "Total Tokens": 429,
+            "Prompt Tokens": 407,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 7.424999999999999e-05
+        },
+        {
+            "Total Tokens": 606,
+            "Prompt Tokens": 582,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 0.00010169999999999998
+        },
+        {
+            "Total Tokens": 763,
+            "Prompt Tokens": 743,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 0.00012345
+        },
+        {
+            "Total Tokens": 914,
+            "Prompt Tokens": 892,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 0.000147
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.BinderException) Binder Error: This function needs an ENUM as an argument\n",
+        "(duckdb.duckdb.CatalogException) Catalog Error: Scalar Function with name enum does not exist!\nDid you mean \"enum_code\"?\nLINE 1: SELECT enum_code(ENUM('enum_value'));\n                         ^\n",
+        "(duckdb.duckdb.CatalogException) Catalog Error: Type with name enum_type does not exist!\nDid you mean \"enum\"?\n",
+        "(duckdb.duckdb.BinderException) Binder Error: This function needs an ENUM as an argument\n",
+        "(duckdb.duckdb.CatalogException) Catalog Error: Scalar Function with name enum does not exist!\nDid you mean \"enum_code\"?\nLINE 1: SELECT enum_code(ENUM('enum_value'));\n                         ^\n"
+    ],
+    "EffectiveSQLs": []
 }

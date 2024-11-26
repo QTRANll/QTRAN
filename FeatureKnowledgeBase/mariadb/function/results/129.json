@@ -17,5 +17,22 @@
     "Category": [
         "JSON Functions"
     ],
-    "EffectiveSQLsRefined": []
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT JSON_ARRAY_INTERSECT('[1, 2, 3]', '[2, 3, 4]');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 312,
+            "Prompt Tokens": 274,
+            "Completion Tokens": 38,
+            "Total Cost (USD)": 6.390000000000001e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT JSON_ARRAY_INTERSECT('[1, 2, 3]', '[2, 3, 4]');"
+    ]
 }

@@ -1,0 +1,45 @@
+{
+    "HTML": [
+        "https://www.monetdb.org/documentation-Aug2024/user-guide/sql-manual/data-types/base-types"
+    ],
+    "Title": [
+        "TIME ( Prec )"
+    ],
+    "Feature": [
+        "TIME ( Prec )"
+    ],
+    "Description": [
+        "",
+        "time of day including fractions of a seconds (HH:MI:SS.ffffff). Prec defines the number of fraction digits between 0 and 6"
+    ],
+    "Examples": [],
+    "Category": [
+        "Base Types"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT TIME('12:34:56.789012')",
+        "SELECT TIME '12:34:56.789012'"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 302,
+            "Prompt Tokens": 277,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 5.655e-05
+        },
+        {
+            "Total Tokens": 475,
+            "Prompt Tokens": 451,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 8.204999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymonetdb.exceptions.OperationalError) 42000!syntax error, unexpected STRING, expecting IDENT or sqlINT in: \"select time('12:34:56.789012'\"\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT TIME '12:34:56.789012'"
+    ]
+}

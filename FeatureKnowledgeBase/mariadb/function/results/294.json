@@ -22,5 +22,12 @@
     "EffectiveSQLsRefined": [
         "SELECT ST_WITHIN(@g2,ST_BUFFER(@g1,5));",
         "SELECT ST_WITHIN(@g2,ST_BUFFER(@g1,1));"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT ST_WITHIN(@g2,ST_BUFFER(@g1,5));",
+        "SELECT ST_WITHIN(@g2,ST_BUFFER(@g1,1));"
     ]
 }

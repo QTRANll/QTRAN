@@ -16,5 +16,53 @@
     ],
     "Category": [
         "Aggregate Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT last(column_name) FROM table_name;",
+        "SELECT last(column_name);",
+        "SELECT last(value);",
+        "SELECT last(arg);",
+        "SELECT last(*) FROM my_table;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 276,
+            "Prompt Tokens": 255,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 5.0849999999999996e-05
+        },
+        {
+            "Total Tokens": 446,
+            "Prompt Tokens": 428,
+            "Completion Tokens": 18,
+            "Total Cost (USD)": 7.499999999999998e-05
+        },
+        {
+            "Total Tokens": 606,
+            "Prompt Tokens": 589,
+            "Completion Tokens": 17,
+            "Total Cost (USD)": 9.855e-05
+        },
+        {
+            "Total Tokens": 764,
+            "Prompt Tokens": 747,
+            "Completion Tokens": 17,
+            "Total Cost (USD)": 0.00012225
+        },
+        {
+            "Total Tokens": 924,
+            "Prompt Tokens": 905,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 0.00014715
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.CatalogException) Catalog Error: Table with name table_name does not exist!\nDid you mean \"pg_tablespace\"?\nLINE 1: SELECT last(column_name) FROM table_name;\n                                      ^\n",
+        "(duckdb.duckdb.BinderException) Binder Error: Referenced column \"column_name\" not found in FROM clause!\nLINE 1: SELECT last(column_name);\n                    ^\n",
+        "(duckdb.duckdb.BinderException) Binder Error: Referenced column \"value\" not found in FROM clause!\nLINE 1: SELECT last(value);\n                    ^\n",
+        "(duckdb.duckdb.BinderException) Binder Error: Referenced column \"arg\" not found in FROM clause!\nLINE 1: SELECT last(arg);\n                    ^\n",
+        "(duckdb.duckdb.CatalogException) Catalog Error: Table with name my_table does not exist!\nDid you mean \"pg_tables\"?\nLINE 1: SELECT last(*) FROM my_table;\n                            ^\n"
+    ],
+    "EffectiveSQLs": []
 }

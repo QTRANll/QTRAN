@@ -16,5 +16,23 @@
     ],
     "Category": [
         "Numeric Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT factorial(5) AS result;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 256,
+            "Prompt Tokens": 236,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 4.7399999999999993e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT factorial(5) AS result;"
     ]
 }

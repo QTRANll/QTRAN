@@ -18,5 +18,63 @@
     ],
     "Category": [
         "Date Time Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        [
+            "SELECT \"minute\"(tm_or_ts) FROM your_table_name;"
+        ],
+        [
+            "SELECT \"minute\"(tm_or_ts) FROM (SELECT '2023-10-01 12:34:56'::timestamp AS tm_or_ts) AS subquery;"
+        ],
+        [
+            "SELECT \"minute\"(CAST('2023-10-01 12:34:56' AS TIMESTAMP));"
+        ],
+        [
+            "SELECT \"minute\"(TIMESTAMP '2023-10-01 12:34:56');"
+        ],
+        [
+            "SELECT \"minute\"(TIMESTAMP '2023-10-01 12:34:56') AS minute_value;"
+        ]
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 319,
+            "Prompt Tokens": 288,
+            "Completion Tokens": 31,
+            "Total Cost (USD)": 6.179999999999998e-05
+        },
+        {
+            "Total Tokens": 496,
+            "Prompt Tokens": 442,
+            "Completion Tokens": 54,
+            "Total Cost (USD)": 9.869999999999999e-05
+        },
+        {
+            "Total Tokens": 661,
+            "Prompt Tokens": 619,
+            "Completion Tokens": 42,
+            "Total Cost (USD)": 0.00011805
+        },
+        {
+            "Total Tokens": 823,
+            "Prompt Tokens": 784,
+            "Completion Tokens": 39,
+            "Total Cost (USD)": 0.000141
+        },
+        {
+            "Total Tokens": 988,
+            "Prompt Tokens": 946,
+            "Completion Tokens": 42,
+            "Total Cost (USD)": 0.00016709999999999997
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "expected string or bytes-like object, got 'list'",
+        "expected string or bytes-like object, got 'list'",
+        "expected string or bytes-like object, got 'list'",
+        "expected string or bytes-like object, got 'list'",
+        "expected string or bytes-like object, got 'list'"
+    ],
+    "EffectiveSQLs": []
 }

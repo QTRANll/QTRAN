@@ -29,5 +29,8 @@
     ],
     "Category": [
         "Type Conversion Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT    toDecimal64OrDefault(toString(0.0001), 18) AS a,    toTypeName(a),    toDecimal64OrDefault('Inf', 0, CAST('-1', 'Decimal64(0)')) AS b,    toTypeName(b)FORMAT Vertical;"
     ]
 }

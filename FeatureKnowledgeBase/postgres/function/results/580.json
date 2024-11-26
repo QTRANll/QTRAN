@@ -6,7 +6,7 @@
         "pg_ls_logdir"
     ],
     "Feature": [
-        "pg_ls_logdir () → setof record ( name text, size bigint, modification timestamp with time zone )"
+        "pg_ls_logdir () \u2192 setof record ( name text, size bigint, modification timestamp with time zone )"
     ],
     "Description": [
         "Returns the name, size, and last modification time (mtime) of each ordinary file in the server's log directory. Filenames beginning with a dot, directories, and other special files are excluded.",
@@ -15,5 +15,53 @@
     "Examples": [],
     "Category": [
         "System Administration Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT * FROM pg_ls_logdir();",
+        "SELECT name, size, modification FROM pg_ls_logdir();",
+        "SELECT * FROM pg_ls_logdir() LIMIT 1;",
+        "SELECT name FROM pg_ls_logdir();",
+        "SELECT size FROM pg_ls_logdir();"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 355,
+            "Prompt Tokens": 334,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 6.269999999999999e-05
+        },
+        {
+            "Total Tokens": 510,
+            "Prompt Tokens": 485,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 8.774999999999999e-05
+        },
+        {
+            "Total Tokens": 664,
+            "Prompt Tokens": 640,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 0.00011039999999999999
+        },
+        {
+            "Total Tokens": 815,
+            "Prompt Tokens": 794,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 0.0001317
+        },
+        {
+            "Total Tokens": 966,
+            "Prompt Tokens": 945,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 0.00015434999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedFile) could not open directory \"log\": No such file or directory\n\n",
+        "(psycopg2.errors.UndefinedFile) could not open directory \"log\": No such file or directory\n\n",
+        "(psycopg2.errors.UndefinedFile) could not open directory \"log\": No such file or directory\n\n",
+        "(psycopg2.errors.UndefinedFile) could not open directory \"log\": No such file or directory\n\n",
+        "(psycopg2.errors.UndefinedFile) could not open directory \"log\": No such file or directory\n\n"
+    ],
+    "EffectiveSQLs": []
 }

@@ -23,5 +23,9 @@
     ],
     "Category": [
         "Nullable Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT ifNull('a', 'b');",
+        "SELECT ifNull(NULL, 'b');"
     ]
 }

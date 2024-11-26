@@ -14,5 +14,31 @@
     "Examples": [],
     "Category": [
         "Core SQL Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT rtrim(X) FROM table_name;",
+        "SELECT rtrim(X) FROM (SELECT 'example string' AS X);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 342,
+            "Prompt Tokens": 321,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 6.075e-05
+        },
+        {
+            "Total Tokens": 494,
+            "Prompt Tokens": 466,
+            "Completion Tokens": 28,
+            "Total Cost (USD)": 8.669999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(sqlite3.OperationalError) no such table: table_name\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT rtrim(X) FROM (SELECT 'example string' AS X);"
     ]
 }

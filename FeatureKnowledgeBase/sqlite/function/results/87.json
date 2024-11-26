@@ -14,5 +14,31 @@
     "Examples": [],
     "Category": [
         "Built-In Mathematical SQL Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT acos(X);",
+        "SELECT acos(1);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 276,
+            "Prompt Tokens": 259,
+            "Completion Tokens": 17,
+            "Total Cost (USD)": 4.905e-05
+        },
+        {
+            "Total Tokens": 411,
+            "Prompt Tokens": 393,
+            "Completion Tokens": 18,
+            "Total Cost (USD)": 6.974999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(sqlite3.OperationalError) no such column: X\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT acos(1);"
     ]
 }

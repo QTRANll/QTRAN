@@ -18,5 +18,31 @@
     "Examples": [],
     "Category": [
         "Text Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "array_slice('DuckDB', 1, 3)",
+        "SELECT array_slice('DuckDB', 1, 3)"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 351,
+            "Prompt Tokens": 327,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 6.345e-05
+        },
+        {
+            "Total Tokens": 508,
+            "Prompt Tokens": 483,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 8.744999999999998e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.ParserException) Parser Error: syntax error at or near \"array_slice\"\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT array_slice('DuckDB', 1, 3)"
     ]
 }

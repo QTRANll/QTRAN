@@ -6,7 +6,7 @@
         "pg_get_functiondef"
     ],
     "Feature": [
-        "pg_get_functiondef ( func oid ) → text"
+        "pg_get_functiondef ( func oid ) \u2192 text"
     ],
     "Description": [
         "Reconstructs the creating command for a function or procedure. (This is a decompiled reconstruction, not the original text of the command.) The result is a complete CREATE OR REPLACE FUNCTION or CREATE OR REPLACE PROCEDURE statement."
@@ -14,5 +14,31 @@
     "Examples": [],
     "Category": [
         "System Information Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT pg_get_functiondef('function_oid'::oid);",
+        "SELECT pg_get_functiondef(12345::oid);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 321,
+            "Prompt Tokens": 296,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 5.9399999999999994e-05
+        },
+        {
+            "Total Tokens": 492,
+            "Prompt Tokens": 468,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 8.46e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.InvalidTextRepresentation) invalid input syntax for type oid: \"function_oid\"\nLINE 1: SELECT pg_get_functiondef('function_oid'::oid);\n                                  ^\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT pg_get_functiondef(12345::oid);"
     ]
 }

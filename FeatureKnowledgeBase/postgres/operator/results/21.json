@@ -6,15 +6,41 @@
         "~ integral_type"
     ],
     "Feature": [
-        "~ integral_type → integral_type"
+        "~ integral_type \u2192 integral_type"
     ],
     "Description": [
         "Bitwise NOT"
     ],
     "Examples": [
-        "~1 → -2"
+        "~1 \u2192 -2"
     ],
     "Category": [
         "Mathematical Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT ~ integral_type;",
+        "SELECT ~ 0;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 262,
+            "Prompt Tokens": 245,
+            "Completion Tokens": 17,
+            "Total Cost (USD)": 4.695e-05
+        },
+        {
+            "Total Tokens": 418,
+            "Prompt Tokens": 401,
+            "Completion Tokens": 17,
+            "Total Cost (USD)": 7.035e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedColumn) column \"integral_type\" does not exist\nLINE 1: SELECT ~ integral_type;\n                 ^\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT ~ 0;"
     ]
 }

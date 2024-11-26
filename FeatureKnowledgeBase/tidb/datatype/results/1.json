@@ -3,18 +3,36 @@
         "https://docs.pingcap.com/zh/tidb/v8.3/data-type-numeric"
     ],
     "Title": [
-        "BOOLEAN 类型"
+        "BOOLEAN \u7c7b\u578b"
     ],
     "Feature": [
-        "BOOLEAN 类型"
+        "BOOLEAN \u7c7b\u578b"
     ],
     "Description": [
-        "BOOLEAN 类型",
-        "布尔类型，别名为 BOOL，和 TINYINT(1) 等价。零值被认为是 False，非零值认为是 True。在 TiDB 内部，True 存储为 1，False 存储为 0。",
+        "BOOLEAN \u7c7b\u578b",
+        "\u5e03\u5c14\u7c7b\u578b\uff0c\u522b\u540d\u4e3a BOOL\uff0c\u548c TINYINT(1) \u7b49\u4ef7\u3002\u96f6\u503c\u88ab\u8ba4\u4e3a\u662f False\uff0c\u975e\u96f6\u503c\u8ba4\u4e3a\u662f True\u3002\u5728 TiDB \u5185\u90e8\uff0cTrue \u5b58\u50a8\u4e3a 1\uff0cFalse \u5b58\u50a8\u4e3a 0\u3002",
         "BOOLEAN\n"
     ],
     "Examples": [],
     "Category": [
-        "数值类型"
+        "\u6570\u503c\u7c7b\u578b"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT TRUE;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 313,
+            "Prompt Tokens": 298,
+            "Completion Tokens": 15,
+            "Total Cost (USD)": 5.369999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT TRUE;"
     ]
 }

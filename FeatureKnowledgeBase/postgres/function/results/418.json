@@ -6,13 +6,61 @@
         "aclexplode"
     ],
     "Feature": [
-        "aclexplode ( aclitem[] ) → setof record ( grantor oid, grantee oid, privilege_type text, is_grantable boolean )"
+        "aclexplode ( aclitem[] ) \u2192 setof record ( grantor oid, grantee oid, privilege_type text, is_grantable boolean )"
     ],
     "Description": [
-        "Returns the aclitem array as a set of rows. If the grantee is the pseudo-role PUBLIC, it is represented by zero in the grantee column. Each granted privilege is represented as SELECT, INSERT, etc (see Table 5.1 for a full list). Note that each privilege is broken out as a separate row, so only one keyword appears in the privilege_type column."
+        "Returns the aclitem array as a set of rows. If the grantee is the pseudo-role PUBLIC, it is represented by zero in the grantee column. Each granted privilege is represented as SELECT, INSERT, etc (see Table\u00a05.1 for a full list). Note that each privilege is broken out as a separate row, so only one keyword appears in the privilege_type column."
     ],
     "Examples": [],
     "Category": [
         "System Information Functions and Operators"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT * FROM aclexplode(ARRAY[NULL::aclitem])",
+        "SELECT * FROM aclexplode(ARRAY[('grantor_oid', 'grantee_oid', 'SELECT', true)::aclitem])",
+        "SELECT * FROM aclexplode(ARRAY[('12345', '67890', 'SELECT', true)::aclitem])",
+        "SELECT * FROM aclexplode(ARRAY[('12345'::oid, '67890'::oid, 'SELECT', true)])",
+        "SELECT * FROM aclexplode(ARRAY[('12345'::oid, '67890'::oid, 'SELECT', true)::aclitem])"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 372,
+            "Prompt Tokens": 345,
+            "Completion Tokens": 27,
+            "Total Cost (USD)": 6.794999999999998e-05
+        },
+        {
+            "Total Tokens": 536,
+            "Prompt Tokens": 496,
+            "Completion Tokens": 40,
+            "Total Cost (USD)": 9.839999999999999e-05
+        },
+        {
+            "Total Tokens": 729,
+            "Prompt Tokens": 691,
+            "Completion Tokens": 38,
+            "Total Cost (USD)": 0.00012644999999999998
+        },
+        {
+            "Total Tokens": 926,
+            "Prompt Tokens": 885,
+            "Completion Tokens": 41,
+            "Total Cost (USD)": 0.00015735
+        },
+        {
+            "Total Tokens": 1150,
+            "Prompt Tokens": 1106,
+            "Completion Tokens": 44,
+            "Total Cost (USD)": 0.00019229999999999999
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.NullValueNotAllowed) ACL arrays must not contain null values\n\n",
+        "(psycopg2.errors.CannotCoerce) cannot cast type record to aclitem\nLINE 1: ...RAY[('grantor_oid', 'grantee_oid', 'SELECT', true)::aclitem]...\n                                                             ^\n\n",
+        "(psycopg2.errors.CannotCoerce) cannot cast type record to aclitem\nLINE 1: ...clexplode(ARRAY[('12345', '67890', 'SELECT', true)::aclitem]...\n                                                             ^\n\n",
+        "(psycopg2.errors.UndefinedFunction) function aclexplode(record[]) does not exist\nLINE 1: SELECT * FROM aclexplode(ARRAY[('12345'::oid, '67890'::oid, ...\n                      ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.\n\n",
+        "(psycopg2.errors.CannotCoerce) cannot cast type record to aclitem\nLINE 1: ...ARRAY[('12345'::oid, '67890'::oid, 'SELECT', true)::aclitem]...\n                                                             ^\n\n"
+    ],
+    "EffectiveSQLs": []
 }

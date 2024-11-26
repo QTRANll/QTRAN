@@ -15,5 +15,47 @@
     "Examples": [],
     "Category": [
         "Aggregate Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT mad(x) FROM your_table_name;",
+        "SELECT mad(x);",
+        "SELECT mad(column_name) FROM your_table_name;",
+        "SELECT mad(x) FROM (VALUES (1), (2), (3), (4), (5)) AS t(x);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 282,
+            "Prompt Tokens": 261,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 5.175e-05
+        },
+        {
+            "Total Tokens": 452,
+            "Prompt Tokens": 435,
+            "Completion Tokens": 17,
+            "Total Cost (USD)": 7.545e-05
+        },
+        {
+            "Total Tokens": 615,
+            "Prompt Tokens": 593,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 0.00010214999999999999
+        },
+        {
+            "Total Tokens": 808,
+            "Prompt Tokens": 769,
+            "Completion Tokens": 39,
+            "Total Cost (USD)": 0.00013874999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.CatalogException) Catalog Error: Table with name your_table_name does not exist!\nDid you mean \"pg_tablespace\"?\nLINE 1: SELECT mad(x) FROM your_table_name;\n                           ^\n",
+        "(duckdb.duckdb.BinderException) Binder Error: Referenced column \"x\" not found in FROM clause!\nLINE 1: SELECT mad(x);\n                   ^\n",
+        "(duckdb.duckdb.CatalogException) Catalog Error: Table with name your_table_name does not exist!\nDid you mean \"pg_tablespace\"?\nLINE 1: SELECT mad(column_name) FROM your_table_name;\n                                     ^\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT mad(x) FROM (VALUES (1), (2), (3), (4), (5)) AS t(x);"
     ]
 }

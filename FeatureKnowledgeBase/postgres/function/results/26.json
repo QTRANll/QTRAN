@@ -6,16 +6,34 @@
         "sqrt"
     ],
     "Feature": [
-        "sqrt ( numeric ) → numeric",
-        "sqrt ( double precision ) → double precision"
+        "sqrt ( numeric ) \u2192 numeric",
+        "sqrt ( double precision ) \u2192 double precision"
     ],
     "Description": [
         "Square root"
     ],
     "Examples": [
-        "sqrt(2) → 1.4142135623730951"
+        "sqrt(2) \u2192 1.4142135623730951"
     ],
     "Category": [
         "Mathematical Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT sqrt(16);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 266,
+            "Prompt Tokens": 248,
+            "Completion Tokens": 18,
+            "Total Cost (USD)": 4.7999999999999994e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT sqrt(16);"
     ]
 }

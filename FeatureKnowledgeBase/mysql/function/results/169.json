@@ -41,5 +41,34 @@
     "Category": [
         "Built-In Functions and Operators",
         "Aggregate Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "CREATE TABLE t(c VARCHAR(10), i INT);",
+        "INSERT INTO t VALUES ('key', 3), ('key', 4), ('key', 5);",
+        "SELECT c, i FROM t;",
+        "INSERT INTO t VALUES ('key', 3), ('key', 5), ('key', 4);",
+        "SELECT c, i FROM t;",
+        "SELECT JSON_OBJECTAGG(c, i)\n       OVER () AS json_object FROM t;",
+        "SELECT JSON_OBJECTAGG(c, i)\n       OVER (ORDER BY i) AS json_object FROM t;",
+        "SELECT JSON_OBJECTAGG(c, i)\n       OVER (ORDER BY i DESC) AS json_object FROM t;",
+        "SELECT JSON_OBJECTAGG(c, i)\n       OVER (ORDER BY i\n            ROWS BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING)\n        AS json_object\n       FROM t;",
+        "SELECT JSON_OBJECTAGG(c, i)\n       OVER (ORDER BY i) AS json_object FROM t LIMIT 1;",
+        "SELECT JSON_OBJECTAGG(c, i)\n       OVER (ORDER BY i DESC) AS json_object FROM t LIMIT 1;"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "CREATE TABLE t(c VARCHAR(10), i INT);",
+        "INSERT INTO t VALUES ('key', 3), ('key', 4), ('key', 5);",
+        "SELECT c, i FROM t;",
+        "INSERT INTO t VALUES ('key', 3), ('key', 5), ('key', 4);",
+        "SELECT c, i FROM t;",
+        "SELECT JSON_OBJECTAGG(c, i)\n       OVER () AS json_object FROM t;",
+        "SELECT JSON_OBJECTAGG(c, i)\n       OVER (ORDER BY i) AS json_object FROM t;",
+        "SELECT JSON_OBJECTAGG(c, i)\n       OVER (ORDER BY i DESC) AS json_object FROM t;",
+        "SELECT JSON_OBJECTAGG(c, i)\n       OVER (ORDER BY i\n            ROWS BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING)\n        AS json_object\n       FROM t;",
+        "SELECT JSON_OBJECTAGG(c, i)\n       OVER (ORDER BY i) AS json_object FROM t LIMIT 1;",
+        "SELECT JSON_OBJECTAGG(c, i)\n       OVER (ORDER BY i DESC) AS json_object FROM t LIMIT 1;"
     ]
 }

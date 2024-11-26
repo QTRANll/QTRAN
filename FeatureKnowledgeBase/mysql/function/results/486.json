@@ -25,5 +25,53 @@
     ],
     "Category": [
         "Loadable Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT mask_ssn('123-45-6789');",
+        "SELECT mask_ssn('987654321');",
+        "SELECT mask_ssn('123456789');",
+        "SELECT mask_ssn('111-22-3333');",
+        "SELECT mask_ssn('1234567890');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 711,
+            "Prompt Tokens": 686,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 0.00011789999999999999
+        },
+        {
+            "Total Tokens": 869,
+            "Prompt Tokens": 847,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 0.00014025
+        },
+        {
+            "Total Tokens": 1027,
+            "Prompt Tokens": 1005,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 0.00016394999999999997
+        },
+        {
+            "Total Tokens": 1188,
+            "Prompt Tokens": 1163,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 0.00018944999999999997
+        },
+        {
+            "Total Tokens": 1347,
+            "Prompt Tokens": 1324,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 0.0002124
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.mask_ssn does not exist')\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.mask_ssn does not exist')\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.mask_ssn does not exist')\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.mask_ssn does not exist')\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.mask_ssn does not exist')\n"
+    ],
+    "EffectiveSQLs": []
 }

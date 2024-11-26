@@ -25,5 +25,9 @@
     ],
     "Category": [
         "Aggregate Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT rankCorr(number, number) FROM numbers(100);",
+        "SELECT roundBankers(rankCorr(exp(number), sin(number)), 3) FROM numbers(100);"
     ]
 }

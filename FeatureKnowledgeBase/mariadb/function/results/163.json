@@ -15,5 +15,22 @@
     "Category": [
         "String Functions"
     ],
-    "EffectiveSQLsRefined": []
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT LCASE('Hello World');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 269,
+            "Prompt Tokens": 249,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 4.935e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT LCASE('Hello World');"
+    ]
 }

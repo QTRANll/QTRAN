@@ -18,5 +18,53 @@
     ],
     "Category": [
         "Aggregate Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT sum(sec_interval_expr);",
+        "SELECT sum(sec_interval) FROM your_table_name;",
+        "SELECT sum(sec_interval) FROM (VALUES (INTERVAL '1 second'), (INTERVAL '2 seconds'), (INTERVAL '3 seconds')) AS sec_interval_expr;",
+        "SELECT sum(sec_interval) FROM (SELECT INTERVAL '1 second' AS sec_interval UNION ALL SELECT INTERVAL '2 seconds' UNION ALL SELECT INTERVAL '3 seconds') AS sec_interval_expr;",
+        "SELECT sum(sec_interval) FROM (SELECT INTERVAL '1 second' UNION ALL SELECT INTERVAL '2 seconds' UNION ALL SELECT INTERVAL '3 seconds') sec_interval_expr;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 293,
+            "Prompt Tokens": 274,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 5.25e-05
+        },
+        {
+            "Total Tokens": 447,
+            "Prompt Tokens": 425,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 7.694999999999999e-05
+        },
+        {
+            "Total Tokens": 627,
+            "Prompt Tokens": 581,
+            "Completion Tokens": 46,
+            "Total Cost (USD)": 0.00011474999999999998
+        },
+        {
+            "Total Tokens": 825,
+            "Prompt Tokens": 773,
+            "Completion Tokens": 52,
+            "Total Cost (USD)": 0.00014715
+        },
+        {
+            "Total Tokens": 1019,
+            "Prompt Tokens": 971,
+            "Completion Tokens": 48,
+            "Total Cost (USD)": 0.00017444999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: identifier 'sec_interval_expr' unknown\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42S02!SELECT: no such table 'your_table_name'\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!syntax error, unexpected ')' in: \"select sum(sec_interval) from (values (interval '1 second')\"\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!syntax error, unexpected AS in: \"select sum(sec_interval) from (select interval '1 second' as\"\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!syntax error, unexpected UNION in: \"select sum(sec_interval) from (select interval '1 second' union all\"\n\n"
+    ],
+    "EffectiveSQLs": []
 }

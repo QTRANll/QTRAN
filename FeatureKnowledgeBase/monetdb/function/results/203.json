@@ -18,5 +18,31 @@
     ],
     "Category": [
         "Date Time Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT week(dt_or_ts);",
+        "SELECT week(CURRENT_TIMESTAMP);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 308,
+            "Prompt Tokens": 289,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 5.474999999999999e-05
+        },
+        {
+            "Total Tokens": 459,
+            "Prompt Tokens": 440,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 7.739999999999998e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: identifier 'dt_or_ts' unknown\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT week(CURRENT_TIMESTAMP);"
     ]
 }

@@ -6,13 +6,47 @@
         "pg_visible_in_snapshot"
     ],
     "Feature": [
-        "pg_visible_in_snapshot ( xid8, pg_snapshot ) → boolean"
+        "pg_visible_in_snapshot ( xid8, pg_snapshot ) \u2192 boolean"
     ],
     "Description": [
-        "Is the given transaction ID visible according to this snapshot (that is, was it completed before the snapshot was taken)? Note that this function will not give the correct answer for a subtransaction ID (subxid); see Section 74.3 for details."
+        "Is the given transaction ID visible according to this snapshot (that is, was it completed before the snapshot was taken)? Note that this function will not give the correct answer for a subtransaction ID (subxid); see Section\u00a074.3 for details."
     ],
     "Examples": [],
     "Category": [
         "System Information Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT pg_visible_in_snapshot(12345, pg_current_snapshot());",
+        "SELECT pg_visible_in_snapshot(12345::xid8, pg_current_snapshot());",
+        "SELECT pg_visible_in_snapshot('12345'::xid8, pg_current_snapshot());"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 330,
+            "Prompt Tokens": 304,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 6.12e-05
+        },
+        {
+            "Total Tokens": 534,
+            "Prompt Tokens": 504,
+            "Completion Tokens": 30,
+            "Total Cost (USD)": 9.36e-05
+        },
+        {
+            "Total Tokens": 716,
+            "Prompt Tokens": 685,
+            "Completion Tokens": 31,
+            "Total Cost (USD)": 0.00012135
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedFunction) function pg_visible_in_snapshot(integer, pg_snapshot) does not exist\nLINE 1: SELECT pg_visible_in_snapshot(12345, pg_current_snapshot());\n               ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.\n\n",
+        "(psycopg2.errors.CannotCoerce) cannot cast type integer to xid8\nLINE 1: SELECT pg_visible_in_snapshot(12345::xid8, pg_current_snapsh...\n                                           ^\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT pg_visible_in_snapshot('12345'::xid8, pg_current_snapshot());"
     ]
 }

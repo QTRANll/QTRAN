@@ -16,5 +16,53 @@
     "Examples": [],
     "Category": [
         "Window Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT diff(value) FROM your_table;",
+        "SELECT diff(value) FROM DUAL;",
+        "SELECT diff(value) FROM (SELECT 1 AS value) AS temp;",
+        "SELECT diff(value) FROM (SELECT 1 AS value UNION SELECT 2 AS value) AS temp;",
+        "SELECT diff(value) FROM (SELECT CAST(1 AS INTEGER) AS value UNION SELECT CAST(2 AS INTEGER) AS value) AS temp;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 283,
+            "Prompt Tokens": 263,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 5.145e-05
+        },
+        {
+            "Total Tokens": 435,
+            "Prompt Tokens": 415,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 7.424999999999999e-05
+        },
+        {
+            "Total Tokens": 593,
+            "Prompt Tokens": 566,
+            "Completion Tokens": 27,
+            "Total Cost (USD)": 0.00010109999999999999
+        },
+        {
+            "Total Tokens": 761,
+            "Prompt Tokens": 728,
+            "Completion Tokens": 33,
+            "Total Cost (USD)": 0.000129
+        },
+        {
+            "Total Tokens": 937,
+            "Prompt Tokens": 896,
+            "Completion Tokens": 41,
+            "Total Cost (USD)": 0.000159
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymonetdb.exceptions.OperationalError) 42S02!SELECT: no such table 'your_table'\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42S02!SELECT: no such table 'dual'\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: no such unary operator 'diff(tinyint)'\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: no such unary operator 'diff(tinyint)'\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: no such unary operator 'diff(int)'\n\n"
+    ],
+    "EffectiveSQLs": []
 }

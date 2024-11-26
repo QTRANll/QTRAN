@@ -25,5 +25,47 @@
     ],
     "Category": [
         "Loadable Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT gen_rnd_us_phone();",
+        "SELECT gen_rnd_us_phone();",
+        "SELECT gen_rnd_us_phone();",
+        "SELECT 'Function does not exist';"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 427,
+            "Prompt Tokens": 407,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 7.304999999999999e-05
+        },
+        {
+            "Total Tokens": 585,
+            "Prompt Tokens": 565,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 9.674999999999998e-05
+        },
+        {
+            "Total Tokens": 743,
+            "Prompt Tokens": 723,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 0.00012044999999999999
+        },
+        {
+            "Total Tokens": 901,
+            "Prompt Tokens": 881,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 0.00014414999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.gen_rnd_us_phone does not exist')\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.gen_rnd_us_phone does not exist')\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.gen_rnd_us_phone does not exist')\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT 'Function does not exist';"
     ]
 }

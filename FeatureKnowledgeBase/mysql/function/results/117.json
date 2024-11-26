@@ -25,5 +25,22 @@
     "Category": [
         "Built-In Functions and Operators",
         "Flow Control Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT IFNULL(1,0);",
+        "SELECT IFNULL(NULL,10);",
+        "SELECT IFNULL(1/0,10);",
+        "SELECT IFNULL(1/0,'yes');",
+        "CREATE TABLE tmp SELECT IFNULL(1,'test') AS test;"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT IFNULL(1,0);",
+        "SELECT IFNULL(NULL,10);",
+        "SELECT IFNULL(1/0,10);",
+        "SELECT IFNULL(1/0,'yes');",
+        "CREATE TABLE tmp SELECT IFNULL(1,'test') AS test;"
     ]
 }

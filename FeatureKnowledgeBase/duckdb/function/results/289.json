@@ -16,5 +16,53 @@
     ],
     "Category": [
         "Map Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT map_contains_entry(my_map, 'my_key', 'my_value');",
+        "SELECT map_contains_entry(ARRAY[('my_key', 'my_value')], 'my_key', 'my_value');",
+        "SELECT map_contains_entry(MAP['my_key', 'my_value'], 'my_key', 'my_value');",
+        "SELECT map_contains_entry(MAP['my_key' => 'my_value'], 'my_key', 'my_value');",
+        "SELECT map_contains_entry(MAP['my_key', 'my_value'], 'my_key', 'my_value');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 303,
+            "Prompt Tokens": 275,
+            "Completion Tokens": 28,
+            "Total Cost (USD)": 5.805e-05
+        },
+        {
+            "Total Tokens": 499,
+            "Prompt Tokens": 462,
+            "Completion Tokens": 37,
+            "Total Cost (USD)": 9.15e-05
+        },
+        {
+            "Total Tokens": 667,
+            "Prompt Tokens": 632,
+            "Completion Tokens": 35,
+            "Total Cost (USD)": 0.00011579999999999998
+        },
+        {
+            "Total Tokens": 834,
+            "Prompt Tokens": 798,
+            "Completion Tokens": 36,
+            "Total Cost (USD)": 0.0001413
+        },
+        {
+            "Total Tokens": 1001,
+            "Prompt Tokens": 966,
+            "Completion Tokens": 35,
+            "Total Cost (USD)": 0.00016589999999999997
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.BinderException) Binder Error: Referenced column \"my_map\" not found in FROM clause!\nLINE 1: SELECT map_contains_entry(my_map, 'my_key', 'my_value');\n                                  ^\n",
+        "(duckdb.duckdb.InvalidInputException) Invalid Input Error: The provided argument is not a map\n",
+        "(duckdb.duckdb.ParserException) Parser Error: syntax error at or near \",\"\n",
+        "(duckdb.duckdb.ParserException) Parser Error: syntax error at or near \"=>\"\n",
+        "(duckdb.duckdb.ParserException) Parser Error: syntax error at or near \",\"\n"
+    ],
+    "EffectiveSQLs": []
 }

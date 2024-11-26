@@ -14,5 +14,39 @@
     "Examples": [],
     "Category": [
         "Utility Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT getenv('MY_ENV_VAR');",
+        "SELECT current_setting('MY_ENV_VAR');",
+        "SELECT 'Environment variable not accessible in DuckDB SQL';"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 281,
+            "Prompt Tokens": 261,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 5.1149999999999996e-05
+        },
+        {
+            "Total Tokens": 453,
+            "Prompt Tokens": 432,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 7.739999999999998e-05
+        },
+        {
+            "Total Tokens": 613,
+            "Prompt Tokens": 589,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 0.00010274999999999999
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.CatalogException) Catalog Error: Scalar Function with name getenv does not exist!\nDid you mean \"get_current_time\"?\nLINE 1: SELECT getenv('MY_ENV_VAR');\n               ^\n",
+        "(duckdb.duckdb.CatalogException) Catalog Error: unrecognized configuration parameter \"my_env_var\"\n\nDid you mean: \"user\"\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT 'Environment variable not accessible in DuckDB SQL';"
     ]
 }

@@ -10,7 +10,7 @@
     ],
     "Description": [
         "JSON_OVERLAPS()",
-        "JSON_OVERLAPS(json_doc, json_doc) 函数检查两个 JSON 文档是否有重叠部分。如果有重叠，则返回 1，如果没有重叠，则返回 0。如果任一参数为 NULL，则返回 NULL。"
+        "JSON_OVERLAPS(json_doc, json_doc) \u51fd\u6570\u68c0\u67e5\u4e24\u4e2a JSON \u6587\u6863\u662f\u5426\u6709\u91cd\u53e0\u90e8\u5206\u3002\u5982\u679c\u6709\u91cd\u53e0\uff0c\u5219\u8fd4\u56de 1\uff0c\u5982\u679c\u6ca1\u6709\u91cd\u53e0\uff0c\u5219\u8fd4\u56de 0\u3002\u5982\u679c\u4efb\u4e00\u53c2\u6570\u4e3a NULL\uff0c\u5219\u8fd4\u56de NULL\u3002"
     ],
     "Examples": [
         "SELECT JSON_OVERLAPS(\n    '{\"languages\": [\"Go\",\"Rust\",\"C#\"]}',\n    '{\"languages\": [\"Go\",\"Rust\"]}'\n) AS 'Overlaps';\n",
@@ -18,6 +18,19 @@
         "SELECT JSON_OVERLAPS(\n    '{\"languages\": [\"Go\",\"Rust\",\"C#\"]}',\n    '{\"languages\": [\"Go\",\"Rust\",\"C#\"], \"arch\": [\"arm64\"]}'\n) AS 'Overlaps';\n"
     ],
     "Category": [
-        "搜索 JSON 的函数"
+        "\u641c\u7d22 JSON \u7684\u51fd\u6570"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT JSON_OVERLAPS(\n    '{\"languages\": [\"Go\",\"Rust\",\"C#\"]}',\n    '{\"languages\": [\"Go\",\"Rust\"]}'\n) AS 'Overlaps';",
+        "SELECT JSON_OVERLAPS(\n    '{\"languages\": [\"Go\",\"Rust\",\"C#\"]}',\n    '{\"languages\": [\"Go\",\"Rust\",\"C#\"]}'\n) AS 'Overlaps';",
+        "SELECT JSON_OVERLAPS(\n    '{\"languages\": [\"Go\",\"Rust\",\"C#\"]}',\n    '{\"languages\": [\"Go\",\"Rust\",\"C#\"], \"arch\": [\"arm64\"]}'\n) AS 'Overlaps';"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT JSON_OVERLAPS(\n    '{\"languages\": [\"Go\",\"Rust\",\"C#\"]}',\n    '{\"languages\": [\"Go\",\"Rust\"]}'\n) AS 'Overlaps';",
+        "SELECT JSON_OVERLAPS(\n    '{\"languages\": [\"Go\",\"Rust\",\"C#\"]}',\n    '{\"languages\": [\"Go\",\"Rust\",\"C#\"]}'\n) AS 'Overlaps';",
+        "SELECT JSON_OVERLAPS(\n    '{\"languages\": [\"Go\",\"Rust\",\"C#\"]}',\n    '{\"languages\": [\"Go\",\"Rust\",\"C#\"], \"arch\": [\"arm64\"]}'\n) AS 'Overlaps';"
     ]
 }

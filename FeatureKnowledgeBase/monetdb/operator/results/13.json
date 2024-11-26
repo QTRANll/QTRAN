@@ -16,5 +16,53 @@
     ],
     "Category": [
         "Cast Conversion Operators"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT TIME '12:30:45.123+02:00'::time(3) with time zone;",
+        "SELECT TIME '12:30:45.123' AT TIME ZONE 'UTC'::time(3) with time zone;",
+        "SELECT '12:30:45.123+00:00'::time(3) with time zone;",
+        "SELECT TIME '12:30:45.123' WITH TIME ZONE 'UTC';",
+        "SELECT '12:30:45.123'::time(3) AT TIME ZONE 'UTC';"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 318,
+            "Prompt Tokens": 282,
+            "Completion Tokens": 36,
+            "Total Cost (USD)": 6.389999999999998e-05
+        },
+        {
+            "Total Tokens": 486,
+            "Prompt Tokens": 447,
+            "Completion Tokens": 39,
+            "Total Cost (USD)": 9.044999999999999e-05
+        },
+        {
+            "Total Tokens": 673,
+            "Prompt Tokens": 638,
+            "Completion Tokens": 35,
+            "Total Cost (USD)": 0.00011669999999999999
+        },
+        {
+            "Total Tokens": 833,
+            "Prompt Tokens": 802,
+            "Completion Tokens": 31,
+            "Total Cost (USD)": 0.0001389
+        },
+        {
+            "Total Tokens": 1019,
+            "Prompt Tokens": 984,
+            "Completion Tokens": 35,
+            "Total Cost (USD)": 0.00016859999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymonetdb.exceptions.OperationalError) 42000!Unexpected symbol (:)\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!syntax error, unexpected TIME, expecting SCOLON in: \"select time '12:30:45.123' at time\"\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!Unexpected symbol (:)\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!syntax error, unexpected WITH, expecting SCOLON in: \"select time '12:30:45.123' with\"\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!Unexpected symbol (:)\n\n"
+    ],
+    "EffectiveSQLs": []
 }

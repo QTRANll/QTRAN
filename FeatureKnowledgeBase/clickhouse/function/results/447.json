@@ -23,5 +23,9 @@
     ],
     "Category": [
         "Hash Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT javaHash(toInt32(123));",
+        "SELECT javaHash('Hello, world!');"
     ]
 }

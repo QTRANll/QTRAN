@@ -16,5 +16,23 @@
     ],
     "Category": [
         "Struct Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT row(1, 'example', true);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 279,
+            "Prompt Tokens": 256,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 5.2199999999999995e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT row(1, 'example', true);"
     ]
 }

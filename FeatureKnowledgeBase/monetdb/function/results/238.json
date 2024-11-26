@@ -18,5 +18,23 @@
     ],
     "Category": [
         "URL Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT sys.getcontext('http://example.com/path/to/resource')"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 292,
+            "Prompt Tokens": 266,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 5.5499999999999994e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT sys.getcontext('http://example.com/path/to/resource')"
     ]
 }

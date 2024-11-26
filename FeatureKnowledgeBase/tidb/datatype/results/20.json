@@ -3,18 +3,44 @@
         "https://docs.pingcap.com/zh/tidb/v8.3/data-type-string"
     ],
     "Title": [
-        "LONGTEXT 类型"
+        "LONGTEXT \u7c7b\u578b"
     ],
     "Feature": [
-        "LONGTEXT 类型"
+        "LONGTEXT \u7c7b\u578b"
     ],
     "Description": [
-        "LONGTEXT 类型",
-        "类似于 TEXT，区别在于最大列长度为 4,294,967,295。但由于 txn-entry-size-limit 的限制，TiDB 中默认单行存储最大不超过 6 MiB，可通过配置项将该限制调整至 120 MiB。",
+        "LONGTEXT \u7c7b\u578b",
+        "\u7c7b\u4f3c\u4e8e TEXT\uff0c\u533a\u522b\u5728\u4e8e\u6700\u5927\u5217\u957f\u5ea6\u4e3a 4,294,967,295\u3002\u4f46\u7531\u4e8e txn-entry-size-limit \u7684\u9650\u5236\uff0cTiDB \u4e2d\u9ed8\u8ba4\u5355\u884c\u5b58\u50a8\u6700\u5927\u4e0d\u8d85\u8fc7 6 MiB\uff0c\u53ef\u901a\u8fc7\u914d\u7f6e\u9879\u5c06\u8be5\u9650\u5236\u8c03\u6574\u81f3 120 MiB\u3002",
         "LONGTEXT [CHARACTER SET charset_name] [COLLATE collation_name]\n"
     ],
     "Examples": [],
     "Category": [
-        "字符串类型"
+        "\u5b57\u7b26\u4e32\u7c7b\u578b"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT column_name FROM table_name WHERE column_name IS NOT NULL;",
+        "SELECT column_name FROM information_schema.columns WHERE table_name = 'your_table_name';"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 347,
+            "Prompt Tokens": 322,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 6.33e-05
+        },
+        {
+            "Total Tokens": 510,
+            "Prompt Tokens": 481,
+            "Completion Tokens": 29,
+            "Total Cost (USD)": 8.955e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.ProgrammingError) (1146, \"Table 'knowledge_base_preprocess_tidb.table_name' doesn't exist\")\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT column_name FROM information_schema.columns WHERE table_name = 'your_table_name';"
     ]
 }

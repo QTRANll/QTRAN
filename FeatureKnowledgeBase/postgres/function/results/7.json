@@ -6,15 +6,33 @@
         "div"
     ],
     "Feature": [
-        "div ( y numeric, x numeric ) → numeric"
+        "div ( y numeric, x numeric ) \u2192 numeric"
     ],
     "Description": [
         "Integer quotient of y/x (truncates towards zero)"
     ],
     "Examples": [
-        "div(9, 4) → 2"
+        "div(9, 4) \u2192 2"
     ],
     "Category": [
         "Mathematical Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT DIV(10, 3);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 273,
+            "Prompt Tokens": 252,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 5.04e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT DIV(10, 3);"
     ]
 }

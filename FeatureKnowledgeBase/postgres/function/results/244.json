@@ -6,16 +6,34 @@
         "json_build_object"
     ],
     "Feature": [
-        "json_build_object ( VARIADIC \"any\" ) → json",
-        "jsonb_build_object ( VARIADIC \"any\" ) → jsonb"
+        "json_build_object ( VARIADIC \"any\" ) \u2192 json",
+        "jsonb_build_object ( VARIADIC \"any\" ) \u2192 jsonb"
     ],
     "Description": [
         "Builds a JSON object out of a variadic argument list. By convention, the argument list consists of alternating keys and values. Key arguments are coerced to text; value arguments are converted as per to_json or to_jsonb."
     ],
     "Examples": [
-        "json_build_object('foo', 1, 2, row(3,'bar')) → {\"foo\" : 1, \"2\" : {\"f1\":3,\"f2\":\"bar\"}}"
+        "json_build_object('foo', 1, 2, row(3,'bar')) \u2192 {\"foo\" : 1, \"2\" : {\"f1\":3,\"f2\":\"bar\"}}"
     ],
     "Category": [
         "JSON Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT json_build_object('name', 'Alice', 'age', 30);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 344,
+            "Prompt Tokens": 315,
+            "Completion Tokens": 29,
+            "Total Cost (USD)": 6.465e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT json_build_object('name', 'Alice', 'age', 30);"
     ]
 }

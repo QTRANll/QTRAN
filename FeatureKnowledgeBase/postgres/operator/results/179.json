@@ -6,15 +6,63 @@
         "anymultirange &> anymultirange"
     ],
     "Feature": [
-        "anymultirange &> anymultirange → boolean"
+        "anymultirange &> anymultirange \u2192 boolean"
     ],
     "Description": [
         "Does the first multirange not extend to the left of the second?"
     ],
     "Examples": [
-        "'{[7,20)}'::int8multirange &> '{[5,10)}'::int8multirange → t"
+        "'{[7,20)}'::int8multirange &> '{[5,10)}'::int8multirange \u2192 t"
     ],
     "Category": [
         "Range divide Multirange Functions and Operators"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT $1 && $2;",
+        "SELECT $1 &> $2;",
+        "SELECT '[]'::anymultirange &> '[]'::anymultirange;",
+        "SELECT '((1,2),(3,4))'::anymultirange &> '((2,3),(4,5))'::anymultirange;",
+        "SELECT '[[1,2],[3,4]]'::anymultirange &> '[[2,3],[4,5]]'::anymultirange;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 303,
+            "Prompt Tokens": 284,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 5.399999999999999e-05
+        },
+        {
+            "Total Tokens": 468,
+            "Prompt Tokens": 448,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 7.919999999999999e-05
+        },
+        {
+            "Total Tokens": 646,
+            "Prompt Tokens": 614,
+            "Completion Tokens": 32,
+            "Total Cost (USD)": 0.0001113
+        },
+        {
+            "Total Tokens": 855,
+            "Prompt Tokens": 807,
+            "Completion Tokens": 48,
+            "Total Cost (USD)": 0.00014985
+        },
+        {
+            "Total Tokens": 1077,
+            "Prompt Tokens": 1029,
+            "Completion Tokens": 48,
+            "Total Cost (USD)": 0.00018314999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedParameter) there is no parameter $1\nLINE 1: SELECT $1 && $2;\n               ^\n\n",
+        "(psycopg2.errors.UndefinedParameter) there is no parameter $1\nLINE 1: SELECT $1 &> $2;\n               ^\n\n",
+        "(psycopg2.errors.FeatureNotSupported) cannot accept a value of type anymultirange\nLINE 1: SELECT '[]'::anymultirange &> '[]'::anymultirange;\n               ^\n\n",
+        "(psycopg2.errors.FeatureNotSupported) cannot accept a value of type anymultirange\nLINE 1: SELECT '((1,2),(3,4))'::anymultirange &> '((2,3),(4,5))'::an...\n               ^\n\n",
+        "(psycopg2.errors.FeatureNotSupported) cannot accept a value of type anymultirange\nLINE 1: SELECT '[[1,2],[3,4]]'::anymultirange &> '[[2,3],[4,5]]'::an...\n               ^\n\n"
+    ],
+    "EffectiveSQLs": []
 }

@@ -17,5 +17,23 @@
     "Examples": [],
     "Category": [
         "JSON Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT json_error_position('{\"key\": \"value\"}')"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 599,
+            "Prompt Tokens": 574,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 0.00010109999999999999
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT json_error_position('{\"key\": \"value\"}')"
     ]
 }

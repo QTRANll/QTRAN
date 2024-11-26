@@ -30,5 +30,14 @@
         "Built-In Functions and Operators",
         "Replication Functions",
         "Loadable Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT asynchronous_connection_failover_delete_source('channel2', '127.0.0.1', 3310, '');"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT asynchronous_connection_failover_delete_source('channel2', '127.0.0.1', 3310, '');"
     ]
 }

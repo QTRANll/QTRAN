@@ -6,17 +6,35 @@
         "to_json"
     ],
     "Feature": [
-        "to_json ( anyelement ) → json",
-        "to_jsonb ( anyelement ) → jsonb"
+        "to_json ( anyelement ) \u2192 json",
+        "to_jsonb ( anyelement ) \u2192 jsonb"
     ],
     "Description": [
         "Converts any SQL value to json or jsonb. Arrays and composites are converted recursively to arrays and objects (multidimensional arrays become arrays of arrays in JSON). Otherwise, if there is a cast from the SQL data type to json, the cast function will be used to perform the conversion;[a] otherwise, a scalar JSON value is produced. For any scalar other than a number, a Boolean, or a null value, the text representation will be used, with escaping as necessary to make it a valid JSON string value."
     ],
     "Examples": [
-        "to_json('Fred said \"Hi.\"'::text) → \"Fred said \\\"Hi.\\\"\"",
-        "to_jsonb(row(42, 'Fred said \"Hi.\"'::text)) → {\"f1\": 42, \"f2\": \"Fred said \\\"Hi.\\\"\"}"
+        "to_json('Fred said \"Hi.\"'::text) \u2192 \"Fred said \\\"Hi.\\\"\"",
+        "to_jsonb(row(42, 'Fred said \"Hi.\"'::text)) \u2192 {\"f1\": 42, \"f2\": \"Fred said \\\"Hi.\\\"\"}"
     ],
     "Category": [
         "JSON Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT to_json(42);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 379,
+            "Prompt Tokens": 360,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 6.539999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT to_json(42);"
     ]
 }

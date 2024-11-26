@@ -23,5 +23,53 @@
     "Category": [
         "Built-In Functions and Operators",
         "Window Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT NTH_VALUE(column_name, N) OVER (ORDER BY some_column) AS nth_value_result;",
+        "SELECT NTH_VALUE(some_value, N) OVER (ORDER BY some_column) AS nth_value_result;",
+        "SELECT NTH_VALUE(1, N) OVER (ORDER BY 1) AS nth_value_result;",
+        "SELECT NTH_VALUE(1, 1) OVER (ORDER BY 1) AS nth_value_result;",
+        "SELECT NTH_VALUE(1, 1) OVER (ORDER BY some_expression) AS nth_value_result;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 578,
+            "Prompt Tokens": 545,
+            "Completion Tokens": 33,
+            "Total Cost (USD)": 0.00010155
+        },
+        {
+            "Total Tokens": 748,
+            "Prompt Tokens": 714,
+            "Completion Tokens": 34,
+            "Total Cost (USD)": 0.00012749999999999998
+        },
+        {
+            "Total Tokens": 917,
+            "Prompt Tokens": 884,
+            "Completion Tokens": 33,
+            "Total Cost (USD)": 0.0001524
+        },
+        {
+            "Total Tokens": 1086,
+            "Prompt Tokens": 1052,
+            "Completion Tokens": 34,
+            "Total Cost (USD)": 0.0001782
+        },
+        {
+            "Total Tokens": 1270,
+            "Prompt Tokens": 1236,
+            "Completion Tokens": 34,
+            "Total Cost (USD)": 0.0002058
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.OperationalError) (1054, \"Unknown column 'column_name' in 'field list'\")\n",
+        "(pymysql.err.OperationalError) (1054, \"Unknown column 'some_value' in 'field list'\")\n",
+        "(pymysql.err.OperationalError) (1054, \"Unknown column 'N' in 'field list'\")\n",
+        "(pymysql.err.OperationalError) (3592, \"Window '<unnamed window>': ORDER BY or PARTITION BY uses legacy position indication which is not supported, use expression.\")\n",
+        "(pymysql.err.OperationalError) (1054, \"Unknown column 'some_expression' in 'window order by'\")\n"
+    ],
+    "EffectiveSQLs": []
 }

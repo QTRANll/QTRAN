@@ -6,15 +6,33 @@
         "ts_rank"
     ],
     "Feature": [
-        "ts_rank ( [ weights real[], ] vector tsvector, query tsquery [, normalization integer ] ) → real"
+        "ts_rank ( [ weights real[], ] vector tsvector, query tsquery [, normalization integer ] ) \u2192 real"
     ],
     "Description": [
-        "Computes a score showing how well the vector matches the query. See Section 12.3.3 for details."
+        "Computes a score showing how well the vector matches the query. See Section\u00a012.3.3 for details."
     ],
     "Examples": [
-        "ts_rank(to_tsvector('raining cats and dogs'), 'cat') → 0.06079271"
+        "ts_rank(to_tsvector('raining cats and dogs'), 'cat') \u2192 0.06079271"
     ],
     "Category": [
         "Text Search Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT ts_rank(to_tsvector('example text'), to_tsquery('example'))"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 310,
+            "Prompt Tokens": 280,
+            "Completion Tokens": 30,
+            "Total Cost (USD)": 5.9999999999999995e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT ts_rank(to_tsvector('example text'), to_tsquery('example'))"
     ]
 }

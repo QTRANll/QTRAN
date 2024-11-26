@@ -6,13 +6,39 @@
         "regr_sxy"
     ],
     "Feature": [
-        "regr_sxy ( Y double precision, X double precision ) → double precision"
+        "regr_sxy ( Y double precision, X double precision ) \u2192 double precision"
     ],
     "Description": [
-        "Computes the “sum of products” of independent times dependent variables, sum(X*Y) - sum(X) * sum(Y)/N."
+        "Computes the \u201csum of products\u201d of independent times dependent variables, sum(X*Y) - sum(X) * sum(Y)/N."
     ],
     "Examples": [],
     "Category": [
         "Aggregate Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT regr_sxy(Y, X);",
+        "SELECT regr_sxy(1.0, 2.0);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 306,
+            "Prompt Tokens": 284,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 5.579999999999999e-05
+        },
+        {
+            "Total Tokens": 476,
+            "Prompt Tokens": 448,
+            "Completion Tokens": 28,
+            "Total Cost (USD)": 8.4e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedColumn) column \"y\" does not exist\nLINE 1: SELECT regr_sxy(Y, X);\n                        ^\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT regr_sxy(1.0, 2.0);"
     ]
 }

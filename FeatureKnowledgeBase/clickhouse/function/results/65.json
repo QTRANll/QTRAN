@@ -51,5 +51,14 @@
     ],
     "Category": [
         "Arrays Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT arrayReverseSort([1, 3, 3, 0]);",
+        "SELECT arrayReverseSort(['hello', 'world', '!']);",
+        "SELECT arrayReverseSort([1, nan, 2, NULL, 3, nan, -4, NULL, inf, -inf]) as res;",
+        "SELECT arrayReverseSort((x) -> -x, [1, 2, 3]) as res;",
+        "SELECT arrayReverseSort((x, y) -> y, ['hello', 'world'], [2, 1]) as res;",
+        "SELECT arrayReverseSort((x, y) -> y, [4, 3, 5], ['a', 'b', 'c']) AS res;",
+        "SELECT arrayReverseSort((x, y) -> -y, [4, 3, 5], [1, 2, 3]) AS res;"
     ]
 }

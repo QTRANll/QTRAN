@@ -6,7 +6,7 @@
         "lead"
     ],
     "Feature": [
-        "lead ( value anycompatible [, offset integer [, default anycompatible ]] ) → anycompatible"
+        "lead ( value anycompatible [, offset integer [, default anycompatible ]] ) \u2192 anycompatible"
     ],
     "Description": [
         "Returns value evaluated at the row that is offset rows after the current row within the partition; if there is no such row, instead returns default (which must be of a type compatible with value). Both offset and default are evaluated with respect to the current row. If omitted, offset defaults to 1 and default to NULL."
@@ -14,5 +14,39 @@
     "Examples": [],
     "Category": [
         "Window Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT lead(value) FROM your_table;",
+        "SELECT lead(value) FROM (SELECT 1 AS value) AS temp;",
+        "SELECT lead(value) OVER () FROM (SELECT 1 AS value) AS temp;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 332,
+            "Prompt Tokens": 312,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 5.88e-05
+        },
+        {
+            "Total Tokens": 498,
+            "Prompt Tokens": 471,
+            "Completion Tokens": 27,
+            "Total Cost (USD)": 8.685e-05
+        },
+        {
+            "Total Tokens": 672,
+            "Prompt Tokens": 643,
+            "Completion Tokens": 29,
+            "Total Cost (USD)": 0.00011385
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedTable) relation \"your_table\" does not exist\nLINE 1: SELECT lead(value) FROM your_table;\n                                ^\n\n",
+        "(psycopg2.errors.WrongObjectType) window function lead requires an OVER clause\nLINE 1: SELECT lead(value) FROM (SELECT 1 AS value) AS temp;\n               ^\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT lead(value) OVER () FROM (SELECT 1 AS value) AS temp;"
     ]
 }

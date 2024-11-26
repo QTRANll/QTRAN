@@ -6,7 +6,7 @@
         "currval"
     ],
     "Feature": [
-        "currval ( regclass ) → bigint"
+        "currval ( regclass ) \u2192 bigint"
     ],
     "Description": [
         "Returns the value most recently obtained by nextval for this sequence in the current session. (An error is reported if nextval has never been called for this sequence in this session.) Because this is returning a session-local value, it gives a predictable answer whether or not other sessions have executed nextval since the current session did.",
@@ -15,5 +15,53 @@
     "Examples": [],
     "Category": [
         "Sequence Manipulation Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT currval('your_sequence_name');",
+        "SELECT currval('your_sequence_name');",
+        "SELECT currval('your_sequence');",
+        "SELECT currval(pg_get_serial_sequence('your_table_name', 'your_column_name'));",
+        "SELECT currval('my_sequence');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 340,
+            "Prompt Tokens": 319,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 6.045e-05
+        },
+        {
+            "Total Tokens": 502,
+            "Prompt Tokens": 481,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 8.474999999999999e-05
+        },
+        {
+            "Total Tokens": 663,
+            "Prompt Tokens": 643,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 0.00010845
+        },
+        {
+            "Total Tokens": 832,
+            "Prompt Tokens": 802,
+            "Completion Tokens": 30,
+            "Total Cost (USD)": 0.0001383
+        },
+        {
+            "Total Tokens": 977,
+            "Prompt Tokens": 957,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 0.00015554999999999999
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedTable) relation \"your_sequence_name\" does not exist\nLINE 1: SELECT currval('your_sequence_name');\n                       ^\n\n",
+        "(psycopg2.errors.UndefinedTable) relation \"your_sequence_name\" does not exist\nLINE 1: SELECT currval('your_sequence_name');\n                       ^\n\n",
+        "(psycopg2.errors.UndefinedTable) relation \"your_sequence\" does not exist\nLINE 1: SELECT currval('your_sequence');\n                       ^\n\n",
+        "(psycopg2.errors.UndefinedTable) relation \"your_table_name\" does not exist\n\n",
+        "(psycopg2.errors.UndefinedTable) relation \"my_sequence\" does not exist\nLINE 1: SELECT currval('my_sequence');\n                       ^\n\n"
+    ],
+    "EffectiveSQLs": []
 }

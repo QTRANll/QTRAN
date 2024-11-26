@@ -6,7 +6,7 @@
         "pg_relation_filepath"
     ],
     "Feature": [
-        "pg_relation_filepath ( relation regclass ) → text"
+        "pg_relation_filepath ( relation regclass ) \u2192 text"
     ],
     "Description": [
         "Returns the entire file path name (relative to the database cluster's data directory, PGDATA) of the relation."
@@ -14,5 +14,31 @@
     "Examples": [],
     "Category": [
         "System Administration Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT pg_relation_filepath('your_relation_name');",
+        "SELECT pg_relation_filepath('pg_catalog.pg_class');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 291,
+            "Prompt Tokens": 269,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 5.3549999999999994e-05
+        },
+        {
+            "Total Tokens": 457,
+            "Prompt Tokens": 434,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 7.89e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedTable) relation \"your_relation_name\" does not exist\nLINE 1: SELECT pg_relation_filepath('your_relation_name');\n                                    ^\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT pg_relation_filepath('pg_catalog.pg_class');"
     ]
 }

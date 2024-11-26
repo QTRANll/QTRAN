@@ -6,15 +6,33 @@
         "timestamp + interval"
     ],
     "Feature": [
-        "timestamp + interval → timestamp"
+        "timestamp + interval \u2192 timestamp"
     ],
     "Description": [
         "Add an interval to a timestamp"
     ],
     "Examples": [
-        "timestamp '2001-09-28 01:00' + interval '23 hours' → 2001-09-29 00:00:00"
+        "timestamp '2001-09-28 01:00' + interval '23 hours' \u2192 2001-09-29 00:00:00"
     ],
     "Category": [
         "Date divide Time Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT '2023-10-01 12:00:00'::timestamp + INTERVAL '1 hour';"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 284,
+            "Prompt Tokens": 247,
+            "Completion Tokens": 37,
+            "Total Cost (USD)": 5.925e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT '2023-10-01 12:00:00'::timestamp + INTERVAL '1 hour';"
     ]
 }

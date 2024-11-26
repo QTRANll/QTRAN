@@ -26,5 +26,22 @@
     "Category": [
         "Built-In Functions and Operators",
         "Miscellaneous Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "CREATE TABLE t (c1 VARCHAR(39) CHARACTER SET utf8mb3 DEFAULT NULL);",
+        "SELECT INET6_NTOA(INET6_ATON('fdfe::5a55:caff:fefa:9089'));",
+        "SELECT INET6_NTOA(INET6_ATON('10.0.5.9'));",
+        "SELECT INET6_NTOA(UNHEX('FDFE0000000000005A55CAFFFEFA9089'));",
+        "SELECT INET6_NTOA(UNHEX('0A000509'));"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "CREATE TABLE t (c1 VARCHAR(39) CHARACTER SET utf8mb3 DEFAULT NULL);",
+        "SELECT INET6_NTOA(INET6_ATON('fdfe::5a55:caff:fefa:9089'));",
+        "SELECT INET6_NTOA(INET6_ATON('10.0.5.9'));",
+        "SELECT INET6_NTOA(UNHEX('FDFE0000000000005A55CAFFFEFA9089'));",
+        "SELECT INET6_NTOA(UNHEX('0A000509'));"
     ]
 }

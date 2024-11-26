@@ -33,5 +33,18 @@
     "Category": [
         "Built-In Functions and Operators",
         "Encryption and Compression Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT AES_ENCRYPT('mytext','mykeystring', '', 'hkdf', 'salt', 'info');",
+        "SELECT AES_ENCRYPT('mytext','mykeystring', '', 'pbkdf2_hmac','salt', '2000');",
+        "SELECT CAST(AES_DECRYPT(@crypt_str,@key_str,@init_vector) AS CHAR);"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT AES_ENCRYPT('mytext','mykeystring', '', 'hkdf', 'salt', 'info');",
+        "SELECT AES_ENCRYPT('mytext','mykeystring', '', 'pbkdf2_hmac','salt', '2000');",
+        "SELECT CAST(AES_DECRYPT(@crypt_str,@key_str,@init_vector) AS CHAR);"
     ]
 }

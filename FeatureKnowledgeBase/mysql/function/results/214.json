@@ -19,5 +19,39 @@
     "Category": [
         "Built-In Functions and Operators",
         "Spatial Analysis Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT MBRCovers(geometry1, geometry2);",
+        "SELECT MBRCovers(ST_GeomFromText('POLYGON((...))'), ST_GeomFromText('POLYGON((...))'));",
+        "SELECT MBRCovers(ST_GeomFromText('POINT(0 0)'), ST_GeomFromText('POINT(1 1)'));"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 394,
+            "Prompt Tokens": 370,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 6.989999999999999e-05
+        },
+        {
+            "Total Tokens": 573,
+            "Prompt Tokens": 530,
+            "Completion Tokens": 43,
+            "Total Cost (USD)": 0.00010529999999999998
+        },
+        {
+            "Total Tokens": 753,
+            "Prompt Tokens": 709,
+            "Completion Tokens": 44,
+            "Total Cost (USD)": 0.00013274999999999997
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.OperationalError) (1054, \"Unknown column 'geometry1' in 'field list'\")\n",
+        "(pymysql.err.OperationalError) (3037, 'Invalid GIS data provided to function st_geomfromtext.')\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT MBRCovers(ST_GeomFromText('POINT(0 0)'), ST_GeomFromText('POINT(1 1)'));"
     ]
 }

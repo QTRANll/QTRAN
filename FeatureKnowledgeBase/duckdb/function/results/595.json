@@ -16,5 +16,31 @@
     ],
     "Category": [
         "Utility Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT * FROM query_table('tbl_name');",
+        "SELECT * FROM query_table('pg_namespace');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 281,
+            "Prompt Tokens": 259,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 5.204999999999999e-05
+        },
+        {
+            "Total Tokens": 456,
+            "Prompt Tokens": 434,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 7.829999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.CatalogException) Catalog Error: Table with name tbl_name does not exist!\nDid you mean \"pg_namespace\"?\nLINE 1: SELECT * FROM query_table('tbl_name');\n             ^\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT * FROM query_table('pg_namespace');"
     ]
 }

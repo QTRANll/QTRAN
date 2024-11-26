@@ -19,5 +19,39 @@
     "Category": [
         "Built-In Functions and Operators",
         "Spatial Analysis Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT ST_Intersects(g1, g2);",
+        "SELECT ST_Intersects(GeomFromText('POINT(1 1)'), GeomFromText('POINT(1 1)'));",
+        "SELECT ST_Intersects(POINT(1, 1), POINT(1, 1));"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 356,
+            "Prompt Tokens": 332,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 6.42e-05
+        },
+        {
+            "Total Tokens": 533,
+            "Prompt Tokens": 492,
+            "Completion Tokens": 41,
+            "Total Cost (USD)": 9.839999999999999e-05
+        },
+        {
+            "Total Tokens": 705,
+            "Prompt Tokens": 672,
+            "Completion Tokens": 33,
+            "Total Cost (USD)": 0.0001206
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.OperationalError) (1054, \"Unknown column 'g1' in 'field list'\")\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.GeomFromText does not exist')\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT ST_Intersects(POINT(1, 1), POINT(1, 1));"
     ]
 }

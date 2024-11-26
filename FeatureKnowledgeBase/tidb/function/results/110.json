@@ -6,7 +6,7 @@
     ],
     "Description": [
         "\nFROM_UNIXTIME(unix_timestamp[,format])\n",
-        "\n          Returns a representation of\n          unix_timestamp as a datetime or\n          character string value. The value returned is expressed using\n          the session time zone. (Clients can set the session time zone\n          as described in Section 7.1.15, “MySQL Server Time Zone Support”.)\n          unix_timestamp is an internal\n          timestamp value representing seconds since\n          '1970-01-01 00:00:00' UTC, such as produced\n          by the UNIX_TIMESTAMP()\n          function.\n        ",
+        "\n          Returns a representation of\n          unix_timestamp as a datetime or\n          character string value. The value returned is expressed using\n          the session time zone. (Clients can set the session time zone\n          as described in Section\u00a07.1.15, \u201cMySQL Server Time Zone Support\u201d.)\n          unix_timestamp is an internal\n          timestamp value representing seconds since\n          '1970-01-01 00:00:00' UTC, such as produced\n          by the UNIX_TIMESTAMP()\n          function.\n        ",
         "\n          If format is omitted, this function\n          returns a DATETIME value.\n        ",
         "\n          If unix_timestamp or\n          format is NULL,\n          this function returns NULL.\n        ",
         "\n          If unix_timestamp is an integer,\n          the fractional seconds precision of the\n          DATETIME is zero. When\n          unix_timestamp is a decimal value,\n          the fractional seconds precision of the\n          DATETIME is the same as the precision of\n          the decimal value, up to a maximum of 6. When\n          unix_timestamp is a floating point\n          number, the fractional seconds precision of the datetime is 6.\n        ",
@@ -19,6 +19,17 @@
         "mysql> SELECT FROM_UNIXTIME(1447430881);\n        -> '2015-11-13 10:08:01'\nmysql> SELECT FROM_UNIXTIME(1447430881) + 0;\n        -> 20151113100801\nmysql> SELECT FROM_UNIXTIME(1447430881,\n    ->                      '%Y %D %M %h:%i:%s %x');\n        -> '2015 13th November 10:08:01 2015'"
     ],
     "Category": [
-        "日期和时间函数"
+        "\u65e5\u671f\u548c\u65f6\u95f4\u51fd\u6570"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT FROM_UNIXTIME(1447430881);",
+        "SELECT FROM_UNIXTIME(1447430881) + 0;"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT FROM_UNIXTIME(1447430881);",
+        "SELECT FROM_UNIXTIME(1447430881) + 0;"
     ]
 }

@@ -1,0 +1,53 @@
+{
+    "HTML": [
+        "https://www.monetdb.org/documentation-Aug2024/user-guide/sql-manual/data-types/base-types"
+    ],
+    "Title": [
+        ""
+    ],
+    "Feature": [
+        ""
+    ],
+    "Description": [
+        "",
+        ""
+    ],
+    "Examples": [],
+    "Category": [
+        "Base Types"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT * FROM features WHERE feature_name = ''",
+        "SELECT * FROM ''",
+        "SELECT ''"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 253,
+            "Prompt Tokens": 231,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 4.785e-05
+        },
+        {
+            "Total Tokens": 397,
+            "Prompt Tokens": 380,
+            "Completion Tokens": 17,
+            "Total Cost (USD)": 6.72e-05
+        },
+        {
+            "Total Tokens": 543,
+            "Prompt Tokens": 528,
+            "Completion Tokens": 15,
+            "Total Cost (USD)": 8.82e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymonetdb.exceptions.OperationalError) 42S02!SELECT: no such table 'features'\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!syntax error, unexpected STRING in: \"select * from ''\"\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT ''"
+    ]
+}

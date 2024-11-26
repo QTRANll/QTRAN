@@ -17,5 +17,31 @@
     "Category": [
         "Built-In Functions and Operators",
         "Internal Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT CAN_ACCESS_VIEW('example_args');",
+        "SELECT 'Access to native function is restricted.' AS message;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 290,
+            "Prompt Tokens": 269,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 5.295e-05
+        },
+        {
+            "Total Tokens": 451,
+            "Prompt Tokens": 427,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 7.845e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.OperationalError) (3566, \"Access to native function 'CAN_ACCESS_VIEW' is rejected.\")\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT 'Access to native function is restricted.' AS message;"
     ]
 }

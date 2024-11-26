@@ -6,8 +6,8 @@
         "range_intersect_agg"
     ],
     "Feature": [
-        "range_intersect_agg ( value anyrange ) → anyrange",
-        "range_intersect_agg ( value anymultirange ) → anymultirange"
+        "range_intersect_agg ( value anyrange ) \u2192 anyrange",
+        "range_intersect_agg ( value anymultirange ) \u2192 anymultirange"
     ],
     "Description": [
         "Computes the intersection of the non-null input values."
@@ -15,5 +15,39 @@
     "Examples": [],
     "Category": [
         "Aggregate Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT range_intersect_agg(value) FROM your_table;",
+        "SELECT range_intersect_agg(value) FROM (VALUES (int4range(1, 5)), (int4range(3, 7)), (int4range(6, 10))) AS value;",
+        "SELECT range_intersect_agg(value::int4range) FROM (VALUES (int4range(1, 5)), (int4range(3, 7)), (int4range(6, 10))) AS value(value);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 309,
+            "Prompt Tokens": 285,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 5.714999999999999e-05
+        },
+        {
+            "Total Tokens": 512,
+            "Prompt Tokens": 456,
+            "Completion Tokens": 56,
+            "Total Cost (USD)": 0.00010199999999999999
+        },
+        {
+            "Total Tokens": 752,
+            "Prompt Tokens": 690,
+            "Completion Tokens": 62,
+            "Total Cost (USD)": 0.00014069999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedTable) relation \"your_table\" does not exist\nLINE 1: SELECT range_intersect_agg(value) FROM your_table;\n                                               ^\n\n",
+        "(psycopg2.errors.UndefinedFunction) function range_intersect_agg(record) does not exist\nLINE 1: SELECT range_intersect_agg(value) FROM (VALUES (int4range(1,...\n               ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT range_intersect_agg(value::int4range) FROM (VALUES (int4range(1, 5)), (int4range(3, 7)), (int4range(6, 10))) AS value(value);"
     ]
 }

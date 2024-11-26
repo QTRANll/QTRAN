@@ -16,5 +16,23 @@
     ],
     "Category": [
         "Timestamp with Time Zone Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT current_localtime();"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 279,
+            "Prompt Tokens": 261,
+            "Completion Tokens": 18,
+            "Total Cost (USD)": 4.9949999999999994e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT current_localtime();"
     ]
 }

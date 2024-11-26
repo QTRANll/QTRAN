@@ -1,0 +1,75 @@
+{
+    "HTML": [
+        "https://www.monetdb.org/documentation-Aug2024/user-guide/sql-manual/data-types/base-types"
+    ],
+    "Title": [
+        "TIME WITH TIME ZONE"
+    ],
+    "Feature": [
+        "TIME WITH TIME ZONE"
+    ],
+    "Description": [
+        "TIME(0) WITH TIME ZONE",
+        "time of day with timezone information"
+    ],
+    "Examples": [],
+    "Category": [
+        "Base Types"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        [
+            "CREATE TABLE example_table (id INT, event_time TIME WITH TIME ZONE);",
+            "INSERT INTO example_table (id, event_time) VALUES (1, '2023-10-01 12:00:00+00');",
+            "SELECT * FROM example_table WHERE event_time AT TIME ZONE 'UTC' > '2023-10-01 11:00:00';"
+        ],
+        [
+            "CREATE TABLE example_table (id INT, event_time TIME WITH TIME ZONE);",
+            "INSERT INTO example_table (id, event_time) VALUES (1, '12:00:00+00');",
+            "SELECT * FROM example_table WHERE event_time > '11:00:00+00';"
+        ],
+        [
+            "CREATE TABLE example_table (id INT, event_time TIME WITH TIME ZONE);",
+            "INSERT INTO example_table (id, event_time) VALUES (1, TIME '12:00:00+00');",
+            "SELECT * FROM example_table WHERE event_time > TIME '11:00:00+00';"
+        ],
+        [
+            "CREATE TABLE example_table (id INT, event_time TIME WITH TIME ZONE);",
+            "INSERT INTO example_table (id, event_time) VALUES (1, '12:00:00+00');",
+            "SELECT * FROM example_table WHERE event_time AT TIME ZONE 'UTC' > '11:00:00+00';"
+        ]
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 270,
+            "Prompt Tokens": 168,
+            "Completion Tokens": 102,
+            "Total Cost (USD)": 8.64e-05
+        },
+        {
+            "Total Tokens": 474,
+            "Prompt Tokens": 391,
+            "Completion Tokens": 83,
+            "Total Cost (USD)": 0.00010845
+        },
+        {
+            "Total Tokens": 680,
+            "Prompt Tokens": 595,
+            "Completion Tokens": 85,
+            "Total Cost (USD)": 0.00014025
+        },
+        {
+            "Total Tokens": 891,
+            "Prompt Tokens": 801,
+            "Completion Tokens": 90,
+            "Total Cost (USD)": 0.00017414999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "expected string or bytes-like object, got 'list'",
+        "expected string or bytes-like object, got 'list'",
+        "expected string or bytes-like object, got 'list'",
+        "expected string or bytes-like object, got 'list'"
+    ],
+    "EffectiveSQLs": []
+}

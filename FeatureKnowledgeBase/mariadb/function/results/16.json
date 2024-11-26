@@ -22,8 +22,21 @@
         "Aggregate Functions"
     ],
     "EffectiveSQLsRefined": [
+        "CREATE TABLE vals (x INT);",
         "INSERT INTO vals VALUES(111),(110),(100);",
         "SELECT BIT_AND(x), BIT_OR(x), BIT_XOR(x) FROM vals;",
+        "CREATE TABLE vals2 (category VARCHAR(1), x INT);",
+        "INSERT INTO vals2 VALUES\n  ('a',111),('a',110),('a',100),\n  ('b','000'),('b',001),('b',011);",
+        "SELECT BIT_AND(NULL);"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "CREATE TABLE vals (x INT);",
+        "INSERT INTO vals VALUES(111),(110),(100);",
+        "SELECT BIT_AND(x), BIT_OR(x), BIT_XOR(x) FROM vals;",
+        "CREATE TABLE vals2 (category VARCHAR(1), x INT);",
         "INSERT INTO vals2 VALUES\n  ('a',111),('a',110),('a',100),\n  ('b','000'),('b',001),('b',011);",
         "SELECT BIT_AND(NULL);"
     ]

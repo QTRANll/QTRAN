@@ -6,8 +6,8 @@
         "pg_tablespace_size"
     ],
     "Feature": [
-        "pg_tablespace_size ( name ) → bigint",
-        "pg_tablespace_size ( oid ) → bigint"
+        "pg_tablespace_size ( name ) \u2192 bigint",
+        "pg_tablespace_size ( oid ) \u2192 bigint"
     ],
     "Description": [
         "Computes the total disk space used in the tablespace with the specified name or OID. To use this function, you must have CREATE privilege on the specified tablespace or have privileges of the pg_read_all_stats role, unless it is the default tablespace for the current database."
@@ -15,5 +15,31 @@
     "Examples": [],
     "Category": [
         "System Administration Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT pg_tablespace_size('your_tablespace_name');",
+        "SELECT pg_tablespace_size('pg_default');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 340,
+            "Prompt Tokens": 316,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 6.18e-05
+        },
+        {
+            "Total Tokens": 491,
+            "Prompt Tokens": 469,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 8.354999999999998e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedObject) tablespace \"your_tablespace_name\" does not exist\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT pg_tablespace_size('pg_default');"
     ]
 }

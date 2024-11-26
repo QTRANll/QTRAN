@@ -15,5 +15,47 @@
     "Examples": [],
     "Category": [
         "Aggregate Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT covar_samp(y, x);",
+        "SELECT covar_samp(column_y, column_x) FROM your_table;",
+        "SELECT covar_samp(column_y, column_x);",
+        "SELECT covar_samp(y, x) FROM (SELECT 1 AS y, 2 AS x) AS temp;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 349,
+            "Prompt Tokens": 327,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 6.225e-05
+        },
+        {
+            "Total Tokens": 527,
+            "Prompt Tokens": 500,
+            "Completion Tokens": 27,
+            "Total Cost (USD)": 9.12e-05
+        },
+        {
+            "Total Tokens": 714,
+            "Prompt Tokens": 690,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 0.00011789999999999998
+        },
+        {
+            "Total Tokens": 905,
+            "Prompt Tokens": 868,
+            "Completion Tokens": 37,
+            "Total Cost (USD)": 0.0001524
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.BinderException) Binder Error: Referenced column \"y\" not found in FROM clause!\nLINE 1: SELECT covar_samp(y, x);\n                          ^\n",
+        "(duckdb.duckdb.CatalogException) Catalog Error: Table with name your_table does not exist!\nDid you mean \"pg_tables\"?\nLINE 1: ...CT covar_samp(column_y, column_x) FROM your_table;\n                                                  ^\n",
+        "(duckdb.duckdb.BinderException) Binder Error: Referenced column \"column_y\" not found in FROM clause!\nLINE 1: SELECT covar_samp(column_y, column_x);\n                          ^\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT covar_samp(y, x) FROM (SELECT 1 AS y, 2 AS x) AS temp;"
     ]
 }

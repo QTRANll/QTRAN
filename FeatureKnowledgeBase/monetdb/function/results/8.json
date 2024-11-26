@@ -18,5 +18,23 @@
     ],
     "Category": [
         "Comparison Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT TRUE WHERE 'arg1' = 'arg2';"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 305,
+            "Prompt Tokens": 280,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 5.6999999999999996e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT TRUE WHERE 'arg1' = 'arg2';"
     ]
 }

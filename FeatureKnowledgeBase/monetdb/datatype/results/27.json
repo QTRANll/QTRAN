@@ -1,0 +1,45 @@
+{
+    "HTML": [
+        "https://www.monetdb.org/documentation-Aug2024/user-guide/sql-manual/data-types/base-types"
+    ],
+    "Title": [
+        "DATE"
+    ],
+    "Feature": [
+        "DATE"
+    ],
+    "Description": [
+        "",
+        "Gregorian calendar date (YYYY-MM-DD) between between -4712-01-01 and 170049-12-31"
+    ],
+    "Examples": [],
+    "Category": [
+        "Base Types"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT '2023-10-01'::DATE;",
+        "SELECT DATE '2023-10-01';"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 284,
+            "Prompt Tokens": 260,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 5.34e-05
+        },
+        {
+            "Total Tokens": 430,
+            "Prompt Tokens": 407,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 7.484999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymonetdb.exceptions.OperationalError) 42000!Unexpected symbol (:)\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT DATE '2023-10-01';"
+    ]
+}

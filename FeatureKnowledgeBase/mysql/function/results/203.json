@@ -27,5 +27,16 @@
     "Category": [
         "Built-In Functions and Operators",
         "String Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT LOWER('QUADRATICALLY');",
+        "SELECT LOWER(@str), LOWER(CONVERT(@str USING utf8mb4));"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT LOWER('QUADRATICALLY');",
+        "SELECT LOWER(@str), LOWER(CONVERT(@str USING utf8mb4));"
     ]
 }

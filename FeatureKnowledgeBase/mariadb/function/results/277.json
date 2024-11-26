@@ -17,5 +17,46 @@
     "Category": [
         "String Functions"
     ],
-    "EffectiveSQLsRefined": []
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT * FROM table_name WHERE expr1 SOUNDS LIKE expr2;",
+        "SELECT * FROM information_schema.tables WHERE table_schema = 'pinolo_temp_mariadb' AND expr1 SOUNDS LIKE expr2;",
+        "SELECT * FROM information_schema.tables WHERE SOUNDEX(column_name) SOUNDS LIKE SOUNDEX('some_value');",
+        "SELECT * FROM information_schema.tables WHERE SOUNDEX('some_value') SOUNDS LIKE SOUNDEX('another_value');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 290,
+            "Prompt Tokens": 264,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 5.52e-05
+        },
+        {
+            "Total Tokens": 464,
+            "Prompt Tokens": 425,
+            "Completion Tokens": 39,
+            "Total Cost (USD)": 8.714999999999999e-05
+        },
+        {
+            "Total Tokens": 632,
+            "Prompt Tokens": 596,
+            "Completion Tokens": 36,
+            "Total Cost (USD)": 0.00011099999999999999
+        },
+        {
+            "Total Tokens": 801,
+            "Prompt Tokens": 764,
+            "Completion Tokens": 37,
+            "Total Cost (USD)": 0.0001368
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.ProgrammingError) (1146, \"Table 'pinolo_temp_mariadb.table_name' doesn't exist\")\n",
+        "(pymysql.err.OperationalError) (1054, \"Unknown column 'expr1' in 'where clause'\")\n",
+        "(pymysql.err.OperationalError) (1054, \"Unknown column 'column_name' in 'where clause'\")\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT * FROM information_schema.tables WHERE SOUNDEX('some_value') SOUNDS LIKE SOUNDEX('another_value');"
+    ]
 }

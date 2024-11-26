@@ -22,5 +22,23 @@
     "Category": [
         "Built-In Functions and Operators",
         "Window Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT PERCENT_RANK() OVER () AS rank_percentage;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 476,
+            "Prompt Tokens": 452,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 8.219999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT PERCENT_RANK() OVER () AS rank_percentage;"
     ]
 }

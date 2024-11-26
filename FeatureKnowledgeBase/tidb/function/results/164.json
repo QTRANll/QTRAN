@@ -10,7 +10,7 @@
     ],
     "Description": [
         "UNCOMPRESSED_LENGTH()",
-        "UNCOMPRESSED_LENGTH(data) 函数返回压缩数据的前 4 个字节，即字符串在使用 COMPRESS() 函数压缩之前的长度。",
+        "UNCOMPRESSED_LENGTH(data) \u51fd\u6570\u8fd4\u56de\u538b\u7f29\u6570\u636e\u7684\u524d 4 \u4e2a\u5b57\u8282\uff0c\u5373\u5b57\u7b26\u4e32\u5728\u4f7f\u7528 COMPRESS() \u51fd\u6570\u538b\u7f29\u4e4b\u524d\u7684\u957f\u5ea6\u3002",
         "SELECT UNCOMPRESSED_LENGTH(0x03000000789C72747206040000FFFF018D00C7);\n",
         "+---------------------------------------------------------------+\n| UNCOMPRESSED_LENGTH(0x03000000789C72747206040000FFFF018D00C7) |\n+---------------------------------------------------------------+\n|                                                             3 |\n+---------------------------------------------------------------+\n1 row in set (0.00 sec)\n"
     ],
@@ -18,6 +18,15 @@
         "SELECT UNCOMPRESSED_LENGTH(0x03000000789C72747206040000FFFF018D00C7);\n"
     ],
     "Category": [
-        "加密和压缩函数"
+        "\u52a0\u5bc6\u548c\u538b\u7f29\u51fd\u6570"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT UNCOMPRESSED_LENGTH(0x03000000789C72747206040000FFFF018D00C7);"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT UNCOMPRESSED_LENGTH(0x03000000789C72747206040000FFFF018D00C7);"
     ]
 }

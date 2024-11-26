@@ -16,5 +16,53 @@
     ],
     "Category": [
         "Array Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT array_cosine_similarity(array1, array2);",
+        "SELECT array_cosine_similarity(ARRAY[1, 2, 3], ARRAY[4, 5, 6]);",
+        "SELECT array_cosine_similarity(ARRAY[1.0, 2.0, 3.0], ARRAY[4.0, 5.0, 6.0]);",
+        "SELECT array_cosine_similarity(ARRAY[1.0::FLOAT, 2.0::FLOAT, 3.0::FLOAT], ARRAY[4.0::FLOAT, 5.0::FLOAT, 6.0::FLOAT]);",
+        "SELECT array_cosine_similarity(ARRAY[1.0::DOUBLE, 2.0::DOUBLE, 3.0::DOUBLE], ARRAY[4.0::DOUBLE, 5.0::DOUBLE, 6.0::DOUBLE]);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 330,
+            "Prompt Tokens": 306,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 6.0299999999999995e-05
+        },
+        {
+            "Total Tokens": 525,
+            "Prompt Tokens": 486,
+            "Completion Tokens": 39,
+            "Total Cost (USD)": 9.63e-05
+        },
+        {
+            "Total Tokens": 791,
+            "Prompt Tokens": 740,
+            "Completion Tokens": 51,
+            "Total Cost (USD)": 0.00014159999999999997
+        },
+        {
+            "Total Tokens": 1081,
+            "Prompt Tokens": 1018,
+            "Completion Tokens": 63,
+            "Total Cost (USD)": 0.0001905
+        },
+        {
+            "Total Tokens": 1358,
+            "Prompt Tokens": 1295,
+            "Completion Tokens": 63,
+            "Total Cost (USD)": 0.00023204999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.BinderException) Binder Error: Referenced column \"array1\" not found in FROM clause!\nLINE 1: SELECT array_cosine_similarity(array1, array2);\n                                       ^\n",
+        "(duckdb.duckdb.BinderException) Binder Error: No function matches the given name and argument types 'array_cosine_similarity(INTEGER[], INTEGER[])'. You might need to add explicit type casts.\n\tCandidate functions:\n\tarray_cosine_similarity(FLOAT[ANY], FLOAT[ANY]) -> FLOAT\n\tarray_cosine_similarity(DOUBLE[ANY], DOUBLE[ANY]) -> DOUBLE\n\nLINE 1: SELECT array_cosine_similarity(ARRAY[1, 2, 3],...\n               ^\n",
+        "(duckdb.duckdb.BinderException) Binder Error: No function matches the given name and argument types 'array_cosine_similarity(DECIMAL(2,1)[], DECIMAL(2,1)[])'. You might need to add explicit type casts.\n\tCandidate functions:\n\tarray_cosine_similarity(FLOAT[ANY], FLOAT[ANY]) -> FLOAT\n\tarray_cosine_similarity(DOUBLE[ANY], DOUBLE[ANY]) -> DOUBLE\n\nLINE 1: SELECT array_cosine_similarity(ARRAY[1.0, 2.0,...\n               ^\n",
+        "(duckdb.duckdb.BinderException) Binder Error: No function matches the given name and argument types 'array_cosine_similarity(FLOAT[], FLOAT[])'. You might need to add explicit type casts.\n\tCandidate functions:\n\tarray_cosine_similarity(FLOAT[ANY], FLOAT[ANY]) -> FLOAT\n\tarray_cosine_similarity(DOUBLE[ANY], DOUBLE[ANY]) -> DOUBLE\n\nLINE 1: SELECT array_cosine_similarity(ARRAY[1.0::FLOA...\n               ^\n",
+        "(duckdb.duckdb.BinderException) Binder Error: No function matches the given name and argument types 'array_cosine_similarity(DOUBLE[], DOUBLE[])'. You might need to add explicit type casts.\n\tCandidate functions:\n\tarray_cosine_similarity(FLOAT[ANY], FLOAT[ANY]) -> FLOAT\n\tarray_cosine_similarity(DOUBLE[ANY], DOUBLE[ANY]) -> DOUBLE\n\nLINE 1: SELECT array_cosine_similarity(ARRAY[1.0::DOUB...\n               ^\n"
+    ],
+    "EffectiveSQLs": []
 }

@@ -45,5 +45,36 @@
     "Category": [
         "Built-In Functions and Operators",
         "Information Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT LAST_INSERT_ID();",
+        "CREATE TABLE t (\n       id INT AUTO_INCREMENT NOT NULL PRIMARY KEY,\n       name VARCHAR(10) NOT NULL\n       );",
+        "INSERT INTO t VALUES (NULL, 'Bob');",
+        "SELECT * FROM t;",
+        "SELECT LAST_INSERT_ID();",
+        "SELECT * FROM t;",
+        "SELECT LAST_INSERT_ID();",
+        "SELECT @@innodb_autoinc_lock_mode;",
+        "CREATE TABLE sequence (id INT NOT NULL);",
+        "INSERT INTO sequence VALUES (0);",
+        "UPDATE sequence SET id=LAST_INSERT_ID(id+1);",
+        "SELECT LAST_INSERT_ID();"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT LAST_INSERT_ID();",
+        "CREATE TABLE t (\n       id INT AUTO_INCREMENT NOT NULL PRIMARY KEY,\n       name VARCHAR(10) NOT NULL\n       );",
+        "INSERT INTO t VALUES (NULL, 'Bob');",
+        "SELECT * FROM t;",
+        "SELECT LAST_INSERT_ID();",
+        "SELECT * FROM t;",
+        "SELECT LAST_INSERT_ID();",
+        "SELECT @@innodb_autoinc_lock_mode;",
+        "CREATE TABLE sequence (id INT NOT NULL);",
+        "INSERT INTO sequence VALUES (0);",
+        "UPDATE sequence SET id=LAST_INSERT_ID(id+1);",
+        "SELECT LAST_INSERT_ID();"
     ]
 }

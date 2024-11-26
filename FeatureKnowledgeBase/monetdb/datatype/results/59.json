@@ -1,0 +1,62 @@
+{
+    "HTML": [
+        "https://www.monetdb.org/documentation-Aug2024/user-guide/sql-manual/data-types/temporal-types"
+    ],
+    "Title": [
+        "arrival_time"
+    ],
+    "Feature": [
+        "arrival_time"
+    ],
+    "Description": [
+        "time",
+        "no",
+        "The time at which the voyage ended"
+    ],
+    "Examples": [],
+    "Category": [
+        "Temporal Datatypes"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT arrival_time FROM voyages;",
+        "SELECT arrival_time;",
+        "SELECT * FROM arrival_time;",
+        "SELECT CURRENT_TIMESTAMP;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 268,
+            "Prompt Tokens": 250,
+            "Completion Tokens": 18,
+            "Total Cost (USD)": 4.8299999999999995e-05
+        },
+        {
+            "Total Tokens": 414,
+            "Prompt Tokens": 398,
+            "Completion Tokens": 16,
+            "Total Cost (USD)": 6.93e-05
+        },
+        {
+            "Total Tokens": 560,
+            "Prompt Tokens": 542,
+            "Completion Tokens": 18,
+            "Total Cost (USD)": 9.209999999999999e-05
+        },
+        {
+            "Total Tokens": 706,
+            "Prompt Tokens": 690,
+            "Completion Tokens": 16,
+            "Total Cost (USD)": 0.00011309999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymonetdb.exceptions.OperationalError) 42S02!SELECT: no such table 'voyages'\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: identifier 'arrival_time' unknown\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42S02!SELECT: no such table 'arrival_time'\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT CURRENT_TIMESTAMP;"
+    ]
+}

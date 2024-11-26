@@ -6,15 +6,33 @@
         "interval / double precision"
     ],
     "Feature": [
-        "interval / double precision → interval"
+        "interval / double precision \u2192 interval"
     ],
     "Description": [
         "Divide an interval by a scalar"
     ],
     "Examples": [
-        "interval '1 hour' / 1.5 → 00:40:00"
+        "interval '1 hour' / 1.5 \u2192 00:40:00"
     ],
     "Category": [
         "Date divide Time Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT INTERVAL '1 day' / 2;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 274,
+            "Prompt Tokens": 251,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 5.144999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT INTERVAL '1 day' / 2;"
     ]
 }

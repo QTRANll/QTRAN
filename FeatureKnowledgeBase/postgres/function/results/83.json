@@ -6,15 +6,33 @@
         "quote_nullable"
     ],
     "Feature": [
-        "quote_nullable ( anyelement ) → text"
+        "quote_nullable ( anyelement ) \u2192 text"
     ],
     "Description": [
         "Converts the given value to text and then quotes it as a literal; or, if the argument is null, returns NULL. Embedded single-quotes and backslashes are properly doubled."
     ],
     "Examples": [
-        "quote_nullable(42.5) → '42.5'"
+        "quote_nullable(42.5) \u2192 '42.5'"
     ],
     "Category": [
         "String Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT quote_nullable('Hello, World!');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 300,
+            "Prompt Tokens": 278,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 5.489999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT quote_nullable('Hello, World!');"
     ]
 }

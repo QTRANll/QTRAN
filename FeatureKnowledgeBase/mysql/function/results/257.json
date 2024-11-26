@@ -35,5 +35,20 @@
     "Category": [
         "Built-In Functions and Operators",
         "Mathematical Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT FLOOR(7 + (RAND() * 5));",
+        "CREATE TABLE t (i INT);",
+        "INSERT INTO t VALUES(1),(2),(3);",
+        "SELECT i, RAND() FROM t;"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT FLOOR(7 + (RAND() * 5));",
+        "CREATE TABLE t (i INT);",
+        "INSERT INTO t VALUES(1),(2),(3);",
+        "SELECT i, RAND() FROM t;"
     ]
 }

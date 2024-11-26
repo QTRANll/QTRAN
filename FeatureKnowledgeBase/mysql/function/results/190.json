@@ -24,5 +24,39 @@
     "Category": [
         "Built-In Functions and Operators",
         "Window Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT LEAD(column_name) OVER (PARTITION BY partition_column ORDER BY order_column) AS next_value;",
+        "SELECT LEAD(value) OVER (ORDER BY id) AS next_value FROM my_table;",
+        "SELECT LEAD(1) OVER () AS next_value;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 662,
+            "Prompt Tokens": 628,
+            "Completion Tokens": 34,
+            "Total Cost (USD)": 0.0001146
+        },
+        {
+            "Total Tokens": 828,
+            "Prompt Tokens": 798,
+            "Completion Tokens": 30,
+            "Total Cost (USD)": 0.00013769999999999999
+        },
+        {
+            "Total Tokens": 990,
+            "Prompt Tokens": 966,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 0.00015929999999999997
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.OperationalError) (1054, \"Unknown column 'column_name' in 'field list'\")\n",
+        "(pymysql.err.ProgrammingError) (1146, \"Table 'knowledge_base_preprocess_mysql.my_table' doesn't exist\")\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT LEAD(1) OVER () AS next_value;"
     ]
 }

@@ -17,5 +17,31 @@
     "Category": [
         "Built-In Functions and Operators",
         "Internal Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT INTERNAL_INDEX_COLUMN_CARDINALITY('column_name');",
+        "SELECT 1;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 301,
+            "Prompt Tokens": 277,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 5.595e-05
+        },
+        {
+            "Total Tokens": 458,
+            "Prompt Tokens": 442,
+            "Completion Tokens": 16,
+            "Total Cost (USD)": 7.59e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.OperationalError) (3566, \"Access to native function 'INTERNAL_INDEX_COLUMN_CARDINALITY' is rejected.\")\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT 1;"
     ]
 }

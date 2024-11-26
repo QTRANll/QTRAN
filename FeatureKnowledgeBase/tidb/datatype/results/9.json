@@ -3,18 +3,36 @@
         "https://docs.pingcap.com/zh/tidb/v8.3/data-type-numeric"
     ],
     "Title": [
-        "DECIMAL 类型"
+        "DECIMAL \u7c7b\u578b"
     ],
     "Feature": [
-        "DECIMAL 类型"
+        "DECIMAL \u7c7b\u578b"
     ],
     "Description": [
-        "DECIMAL 类型",
-        "定点数，别名为 NUMERIC。M 是小数位数（精度）的总数，D 是小数点（标度）后面的位数。小数点和 -（负数）符号不包括在 M 中。如果 D 是 0，则值没有小数点或分数部分。如果 D 被省略，默认是 0。如果 M 被省略，默认是 10。",
+        "DECIMAL \u7c7b\u578b",
+        "\u5b9a\u70b9\u6570\uff0c\u522b\u540d\u4e3a NUMERIC\u3002M \u662f\u5c0f\u6570\u4f4d\u6570\uff08\u7cbe\u5ea6\uff09\u7684\u603b\u6570\uff0cD \u662f\u5c0f\u6570\u70b9\uff08\u6807\u5ea6\uff09\u540e\u9762\u7684\u4f4d\u6570\u3002\u5c0f\u6570\u70b9\u548c -\uff08\u8d1f\u6570\uff09\u7b26\u53f7\u4e0d\u5305\u62ec\u5728 M \u4e2d\u3002\u5982\u679c D \u662f 0\uff0c\u5219\u503c\u6ca1\u6709\u5c0f\u6570\u70b9\u6216\u5206\u6570\u90e8\u5206\u3002\u5982\u679c D \u88ab\u7701\u7565\uff0c\u9ed8\u8ba4\u662f 0\u3002\u5982\u679c M \u88ab\u7701\u7565\uff0c\u9ed8\u8ba4\u662f 10\u3002",
         "DECIMAL[(M[,D])] [UNSIGNED] [ZEROFILL]\nNUMERIC[(M[,D])] [UNSIGNED] [ZEROFILL]\n"
     ],
     "Examples": [],
     "Category": [
-        "数值类型"
+        "\u6570\u503c\u7c7b\u578b"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT CAST(123.45 AS DECIMAL(5,2));"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 397,
+            "Prompt Tokens": 370,
+            "Completion Tokens": 27,
+            "Total Cost (USD)": 7.17e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT CAST(123.45 AS DECIMAL(5,2));"
     ]
 }

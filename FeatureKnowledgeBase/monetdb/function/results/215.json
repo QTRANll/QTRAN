@@ -18,5 +18,53 @@
     ],
     "Category": [
         "INET Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT sys.right_shift('192.168.1.1', '255.255.255.0');",
+        "SELECT sys.right_shift('192.168.1.1'::inet, '255.255.255.0'::inet);",
+        "SELECT sys.right_shift('192.168.1.1', '255.255.255.0');",
+        "SELECT sys.right_shift('192.168.1.1'::inet, '255.255.255.0'::inet);",
+        "SELECT sys.right_shift('192.168.1.1', '255.255.255.0');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 305,
+            "Prompt Tokens": 270,
+            "Completion Tokens": 35,
+            "Total Cost (USD)": 6.15e-05
+        },
+        {
+            "Total Tokens": 489,
+            "Prompt Tokens": 448,
+            "Completion Tokens": 41,
+            "Total Cost (USD)": 9.18e-05
+        },
+        {
+            "Total Tokens": 654,
+            "Prompt Tokens": 619,
+            "Completion Tokens": 35,
+            "Total Cost (USD)": 0.00011384999999999999
+        },
+        {
+            "Total Tokens": 838,
+            "Prompt Tokens": 797,
+            "Completion Tokens": 41,
+            "Total Cost (USD)": 0.00014414999999999998
+        },
+        {
+            "Total Tokens": 1003,
+            "Prompt Tokens": 968,
+            "Completion Tokens": 35,
+            "Total Cost (USD)": 0.00016619999999999997
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymonetdb.exceptions.OperationalError) 22018!conversion of string '255.255.255.0' to type int failed.\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!Unexpected symbol (:)\n\n",
+        "(pymonetdb.exceptions.OperationalError) 22018!conversion of string '255.255.255.0' to type int failed.\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!Unexpected symbol (:)\n\n",
+        "(pymonetdb.exceptions.OperationalError) 22018!conversion of string '255.255.255.0' to type int failed.\n\n"
+    ],
+    "EffectiveSQLs": []
 }

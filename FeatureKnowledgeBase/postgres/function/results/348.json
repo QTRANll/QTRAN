@@ -6,13 +6,39 @@
         "regr_syy"
     ],
     "Feature": [
-        "regr_syy ( Y double precision, X double precision ) → double precision"
+        "regr_syy ( Y double precision, X double precision ) \u2192 double precision"
     ],
     "Description": [
-        "Computes the “sum of squares” of the dependent variable, sum(Y^2) - sum(Y)^2/N."
+        "Computes the \u201csum of squares\u201d of the dependent variable, sum(Y^2) - sum(Y)^2/N."
     ],
     "Examples": [],
     "Category": [
         "Aggregate Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT regr_syy(Y, X) FROM your_table;",
+        "SELECT regr_syy(Y, X) FROM (VALUES (1, 2), (3, 4), (5, 6)) AS your_table(Y, X);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 305,
+            "Prompt Tokens": 280,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 5.6999999999999996e-05
+        },
+        {
+            "Total Tokens": 502,
+            "Prompt Tokens": 452,
+            "Completion Tokens": 50,
+            "Total Cost (USD)": 9.779999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedTable) relation \"your_table\" does not exist\nLINE 1: SELECT regr_syy(Y, X) FROM your_table;\n                                   ^\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT regr_syy(Y, X) FROM (VALUES (1, 2), (3, 4), (5, 6)) AS your_table(Y, X);"
     ]
 }

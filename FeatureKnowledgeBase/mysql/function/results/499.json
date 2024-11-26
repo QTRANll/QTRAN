@@ -22,5 +22,53 @@
     ],
     "Category": [
         "Loadable Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT read_firewall_whitelist('fwuser@localhost', fw.rule);",
+        "SELECT read_firewall_whitelist('user', 'rule');",
+        "SELECT read_firewall_whitelist('example_user', 'example_rule');",
+        "SELECT read_firewall_whitelist('test_user', 'test_rule');",
+        "SELECT read_firewall_whitelist('user_placeholder', 'rule_placeholder');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 455,
+            "Prompt Tokens": 427,
+            "Completion Tokens": 28,
+            "Total Cost (USD)": 8.085e-05
+        },
+        {
+            "Total Tokens": 618,
+            "Prompt Tokens": 593,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 0.00010394999999999999
+        },
+        {
+            "Total Tokens": 783,
+            "Prompt Tokens": 756,
+            "Completion Tokens": 27,
+            "Total Cost (USD)": 0.00012959999999999998
+        },
+        {
+            "Total Tokens": 948,
+            "Prompt Tokens": 921,
+            "Completion Tokens": 27,
+            "Total Cost (USD)": 0.00015434999999999998
+        },
+        {
+            "Total Tokens": 1113,
+            "Prompt Tokens": 1086,
+            "Completion Tokens": 27,
+            "Total Cost (USD)": 0.0001791
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.read_firewall_whitelist does not exist')\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.read_firewall_whitelist does not exist')\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.read_firewall_whitelist does not exist')\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.read_firewall_whitelist does not exist')\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.read_firewall_whitelist does not exist')\n"
+    ],
+    "EffectiveSQLs": []
 }

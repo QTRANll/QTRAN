@@ -25,5 +25,14 @@
         "SELECT CONCAT_WS('-','Floor',NULL,'Room');",
         "SELECT CONCAT_WS(', ', @a, @b, @c);",
         "SELECT CONCAT_WS('', @a, @b, @c);"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT CONCAT_WS(',','First name','Second name','Last Name');",
+        "SELECT CONCAT_WS('-','Floor',NULL,'Room');",
+        "SELECT CONCAT_WS(', ', @a, @b, @c);",
+        "SELECT CONCAT_WS('', @a, @b, @c);"
     ]
 }

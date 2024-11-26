@@ -16,5 +16,39 @@
     "Examples": [],
     "Category": [
         "Aggregate Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT stddev(x);",
+        "SELECT stddev(x) FROM your_table_name;",
+        "SELECT stddev(1);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 281,
+            "Prompt Tokens": 263,
+            "Completion Tokens": 18,
+            "Total Cost (USD)": 5.0249999999999995e-05
+        },
+        {
+            "Total Tokens": 446,
+            "Prompt Tokens": 424,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 7.679999999999998e-05
+        },
+        {
+            "Total Tokens": 620,
+            "Prompt Tokens": 601,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 0.00010154999999999997
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.BinderException) Binder Error: Referenced column \"x\" not found in FROM clause!\nLINE 1: SELECT stddev(x);\n                      ^\n",
+        "(duckdb.duckdb.CatalogException) Catalog Error: Table with name your_table_name does not exist!\nDid you mean \"pg_tablespace\"?\nLINE 1: SELECT stddev(x) FROM your_table_name;\n                              ^\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT stddev(1);"
     ]
 }

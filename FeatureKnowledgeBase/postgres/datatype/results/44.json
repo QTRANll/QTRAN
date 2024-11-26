@@ -28,5 +28,63 @@
     "Examples": [],
     "Category": [
         "Range Types"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        [
+            "SELECT '[1,10]'::int4range;"
+        ],
+        [
+            "SELECT '[1,10]'::int4range;"
+        ],
+        [
+            "SELECT '[1,10]'::int4range;"
+        ],
+        [
+            "SELECT '[1,10]'::int4range;"
+        ],
+        [
+            "SELECT '[1,10]'::int4range;"
+        ]
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 4567,
+            "Prompt Tokens": 4539,
+            "Completion Tokens": 28,
+            "Total Cost (USD)": 0.0006976499999999999
+        },
+        {
+            "Total Tokens": 4715,
+            "Prompt Tokens": 4687,
+            "Completion Tokens": 28,
+            "Total Cost (USD)": 0.00071985
+        },
+        {
+            "Total Tokens": 4863,
+            "Prompt Tokens": 4835,
+            "Completion Tokens": 28,
+            "Total Cost (USD)": 0.00074205
+        },
+        {
+            "Total Tokens": 5011,
+            "Prompt Tokens": 4983,
+            "Completion Tokens": 28,
+            "Total Cost (USD)": 0.0007642499999999998
+        },
+        {
+            "Total Tokens": 5159,
+            "Prompt Tokens": 5131,
+            "Completion Tokens": 28,
+            "Total Cost (USD)": 0.00078645
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "expected string or bytes-like object, got 'list'",
+        "expected string or bytes-like object, got 'list'",
+        "expected string or bytes-like object, got 'list'",
+        "expected string or bytes-like object, got 'list'",
+        "expected string or bytes-like object, got 'list'"
+    ],
+    "EffectiveSQLs": []
 }

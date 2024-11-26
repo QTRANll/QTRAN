@@ -6,15 +6,57 @@
         "upper"
     ],
     "Feature": [
-        "upper ( anymultirange ) → anyelement"
+        "upper ( anymultirange ) \u2192 anyelement"
     ],
     "Description": [
         "Extracts the upper bound of the multirange (NULL if the multirange is empty or has no upper bound)."
     ],
     "Examples": [
-        "upper('{[1.1,2.2)}'::nummultirange) → 2.2"
+        "upper('{[1.1,2.2)}'::nummultirange) \u2192 2.2"
     ],
     "Category": [
         "Range divide Multirange Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT upper(ANYMULTIRANGE);",
+        "SELECT upper(ARRAY[1, 2, 3]::int[]);",
+        "SELECT upper(1::int4range);",
+        "SELECT upper(int4range(1, 10));"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 286,
+            "Prompt Tokens": 265,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 5.235e-05
+        },
+        {
+            "Total Tokens": 457,
+            "Prompt Tokens": 427,
+            "Completion Tokens": 30,
+            "Total Cost (USD)": 8.204999999999999e-05
+        },
+        {
+            "Total Tokens": 647,
+            "Prompt Tokens": 625,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 0.00010694999999999998
+        },
+        {
+            "Total Tokens": 811,
+            "Prompt Tokens": 787,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 0.00013245
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedColumn) column \"anymultirange\" does not exist\nLINE 1: SELECT upper(ANYMULTIRANGE);\n                     ^\n\n",
+        "(psycopg2.errors.UndefinedFunction) function upper(integer[]) does not exist\nLINE 1: SELECT upper(ARRAY[1, 2, 3]::int[]);\n               ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.\n\n",
+        "(psycopg2.errors.CannotCoerce) cannot cast type integer to int4range\nLINE 1: SELECT upper(1::int4range);\n                      ^\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT upper(int4range(1, 10));"
     ]
 }

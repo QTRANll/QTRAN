@@ -14,5 +14,47 @@
     "Examples": [],
     "Category": [
         "Aggregate SQL Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT max(X);",
+        "SELECT max(column_name) FROM table_name;",
+        "SELECT max(value) FROM (VALUES (1), (2), (3));",
+        "SELECT max(1) UNION SELECT max(2) UNION SELECT max(3);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 326,
+            "Prompt Tokens": 309,
+            "Completion Tokens": 17,
+            "Total Cost (USD)": 5.654999999999999e-05
+        },
+        {
+            "Total Tokens": 464,
+            "Prompt Tokens": 443,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 7.904999999999998e-05
+        },
+        {
+            "Total Tokens": 611,
+            "Prompt Tokens": 582,
+            "Completion Tokens": 29,
+            "Total Cost (USD)": 0.00010469999999999998
+        },
+        {
+            "Total Tokens": 758,
+            "Prompt Tokens": 728,
+            "Completion Tokens": 30,
+            "Total Cost (USD)": 0.00012719999999999997
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(sqlite3.OperationalError) no such column: X\n",
+        "(sqlite3.OperationalError) no such table: table_name\n",
+        "(sqlite3.OperationalError) no such column: value\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT max(1) UNION SELECT max(2) UNION SELECT max(3);"
     ]
 }

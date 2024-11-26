@@ -10,10 +10,36 @@
     ],
     "Description": [
         "REPLACE()",
-        "替换所有出现的指定字符串"
+        "\u66ff\u6362\u6240\u6709\u51fa\u73b0\u7684\u6307\u5b9a\u5b57\u7b26\u4e32"
     ],
     "Examples": [],
     "Category": [
-        "字符串函数"
+        "\u5b57\u7b26\u4e32\u51fd\u6570"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "REPLACE('Hello World', 'World', 'TiDB')",
+        "SELECT REPLACE('Hello World', 'World', 'TiDB')"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 277,
+            "Prompt Tokens": 251,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 5.324999999999999e-05
+        },
+        {
+            "Total Tokens": 470,
+            "Prompt Tokens": 443,
+            "Completion Tokens": 27,
+            "Total Cost (USD)": 8.264999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.ProgrammingError) (1064, 'You have an error in your SQL syntax; check the manual that corresponds to your TiDB version for the right syntax to use line 1 column 8 near \"(\\'Hello World\\', \\'World\\', \\'TiDB\\')\" ')\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT REPLACE('Hello World', 'World', 'TiDB')"
     ]
 }

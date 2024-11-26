@@ -6,15 +6,57 @@
         "pclose"
     ],
     "Feature": [
-        "pclose ( path ) → path"
+        "pclose ( path ) \u2192 path"
     ],
     "Description": [
         "Converts path to closed form."
     ],
     "Examples": [
-        "pclose(path '[(0,0),(1,1),(2,0)]') → ((0,0),(1,1),(2,0))"
+        "pclose(path '[(0,0),(1,1),(2,0)]') \u2192 ((0,0),(1,1),(2,0))"
     ],
     "Category": [
         "Geometric Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT pclose('/example/path');",
+        "SELECT pclose('example/path');",
+        "SELECT pclose('');",
+        "SELECT pclose(NULL);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 267,
+            "Prompt Tokens": 247,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 4.905e-05
+        },
+        {
+            "Total Tokens": 427,
+            "Prompt Tokens": 407,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 7.304999999999999e-05
+        },
+        {
+            "Total Tokens": 585,
+            "Prompt Tokens": 567,
+            "Completion Tokens": 18,
+            "Total Cost (USD)": 9.584999999999997e-05
+        },
+        {
+            "Total Tokens": 737,
+            "Prompt Tokens": 719,
+            "Completion Tokens": 18,
+            "Total Cost (USD)": 0.00011864999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.InvalidTextRepresentation) invalid input syntax for type path: \"/example/path\"\nLINE 1: SELECT pclose('/example/path');\n                      ^\n\n",
+        "(psycopg2.errors.InvalidTextRepresentation) invalid input syntax for type path: \"example/path\"\nLINE 1: SELECT pclose('example/path');\n                      ^\n\n",
+        "(psycopg2.errors.InvalidTextRepresentation) invalid input syntax for type path: \"\"\nLINE 1: SELECT pclose('');\n                      ^\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT pclose(NULL);"
     ]
 }

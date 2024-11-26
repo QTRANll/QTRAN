@@ -22,5 +22,12 @@
     "EffectiveSQLsRefined": [
         "SELECT sys.format_statement(\n  'SELECT field1, field2, field3, field4, field5, field6 FROM table1'\n  ) AS formatted_statement;",
         "SELECT sys.format_statement( \n  'SELECT field1, field2, field3, field4, field5, field6 FROM table1'\n  ) AS formatted_statement;"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT sys.format_statement(\n  'SELECT field1, field2, field3, field4, field5, field6 FROM table1'\n  ) AS formatted_statement;",
+        "SELECT sys.format_statement( \n  'SELECT field1, field2, field3, field4, field5, field6 FROM table1'\n  ) AS formatted_statement;"
     ]
 }

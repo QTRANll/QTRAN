@@ -16,5 +16,52 @@
     "Category": [
         "Geographic Functions"
     ],
-    "EffectiveSQLsRefined": []
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT ST_IsRing(geometry);",
+        "SELECT ST_IsRing(geom) FROM your_table_name;",
+        "SELECT ST_IsRing(geom);",
+        "SELECT ST_IsRing(geometry_column) FROM your_table;",
+        "SELECT ST_IsRing(geometry);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 328,
+            "Prompt Tokens": 308,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 5.82e-05
+        },
+        {
+            "Total Tokens": 483,
+            "Prompt Tokens": 459,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 8.324999999999999e-05
+        },
+        {
+            "Total Tokens": 640,
+            "Prompt Tokens": 620,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 0.00010499999999999999
+        },
+        {
+            "Total Tokens": 795,
+            "Prompt Tokens": 771,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 0.00013005
+        },
+        {
+            "Total Tokens": 951,
+            "Prompt Tokens": 931,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 0.00015165
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.OperationalError) (1054, \"Unknown column 'geometry' in 'field list'\")\n",
+        "(pymysql.err.ProgrammingError) (1146, \"Table 'pinolo_temp_mariadb.your_table_name' doesn't exist\")\n",
+        "(pymysql.err.OperationalError) (1054, \"Unknown column 'geom' in 'field list'\")\n",
+        "(pymysql.err.ProgrammingError) (1146, \"Table 'pinolo_temp_mariadb.your_table' doesn't exist\")\n",
+        "(pymysql.err.OperationalError) (1054, \"Unknown column 'geometry' in 'field list'\")\n"
+    ],
+    "EffectiveSQLs": []
 }

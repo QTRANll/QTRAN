@@ -6,15 +6,33 @@
         "get_bit"
     ],
     "Feature": [
-        "get_bit ( bytes bytea, n bigint ) → integer"
+        "get_bit ( bytes bytea, n bigint ) \u2192 integer"
     ],
     "Description": [
         "Extracts n'th bit from binary string."
     ],
     "Examples": [
-        "get_bit('\\x1234567890'::bytea, 30) → 1"
+        "get_bit('\\x1234567890'::bytea, 30) \u2192 1"
     ],
     "Category": [
         "Binary String Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT get_bit(E'\\x01'::bytea, 0);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 283,
+            "Prompt Tokens": 254,
+            "Completion Tokens": 29,
+            "Total Cost (USD)": 5.5499999999999994e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT get_bit(E'\\x01'::bytea, 0);"
     ]
 }

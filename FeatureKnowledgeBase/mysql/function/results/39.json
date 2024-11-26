@@ -21,5 +21,18 @@
     "Category": [
         "Built-In Functions and Operators",
         "Information Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT COLLATION('abc');",
+        "SELECT COLLATION(_utf8mb4'abc');",
+        "SELECT COLLATION(_latin1'abc');"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT COLLATION('abc');",
+        "SELECT COLLATION(_utf8mb4'abc');",
+        "SELECT COLLATION(_latin1'abc');"
     ]
 }

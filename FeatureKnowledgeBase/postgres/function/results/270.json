@@ -6,18 +6,36 @@
         "json_typeof"
     ],
     "Feature": [
-        "json_typeof ( json ) → text",
-        "jsonb_typeof ( jsonb ) → text"
+        "json_typeof ( json ) \u2192 text",
+        "jsonb_typeof ( jsonb ) \u2192 text"
     ],
     "Description": [
         "Returns the type of the top-level JSON value as a text string. Possible types are object, array, string, number, boolean, and null. (The null result should not be confused with an SQL NULL; see the examples.)"
     ],
     "Examples": [
-        "json_typeof('-123.4') → number",
-        "json_typeof('null'::json) → null",
-        "json_typeof(NULL::json) IS NULL → t"
+        "json_typeof('-123.4') \u2192 number",
+        "json_typeof('null'::json) \u2192 null",
+        "json_typeof(NULL::json) IS NULL \u2192 t"
     ],
     "Category": [
         "JSON Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT json_typeof('{\"key\": \"value\"}')"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 328,
+            "Prompt Tokens": 303,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 6.044999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT json_typeof('{\"key\": \"value\"}')"
     ]
 }

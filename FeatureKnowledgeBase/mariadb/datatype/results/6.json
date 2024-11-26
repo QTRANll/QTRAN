@@ -24,5 +24,24 @@
     ],
     "Category": [
         "Numeric Data Types"
+    ],
+    "EffectiveSQLsRefined": [
+        "INSERT INTO bigints VALUES (-10,10,10);",
+        "INSERT INTO bigints VALUES (9223372036854775807,9223372036854775808,9223372036854775808);",
+        "SELECT * FROM bigints;",
+        "INSERT INTO bigints VALUES (-10,10,10);",
+        "INSERT INTO bigints VALUES (9223372036854775807,9223372036854775808,9223372036854775808);",
+        "SELECT * FROM bigints;"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "INSERT INTO bigints VALUES (-10,10,10);",
+        "INSERT INTO bigints VALUES (9223372036854775807,9223372036854775808,9223372036854775808);",
+        "SELECT * FROM bigints;",
+        "INSERT INTO bigints VALUES (-10,10,10);",
+        "INSERT INTO bigints VALUES (9223372036854775807,9223372036854775808,9223372036854775808);",
+        "SELECT * FROM bigints;"
     ]
 }

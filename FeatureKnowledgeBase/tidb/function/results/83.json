@@ -6,13 +6,13 @@
     ],
     "Description": [
         "\nRAND([N])\n",
-        "\n            Returns a random floating-point value\n            v in the range\n            0 <= v <\n            1.0. To obtain a random integer\n            R in the range\n            i <=\n            R <\n            j, use the expression\n            FLOOR(i\n            + RAND() * (j\n            − i)).\n            For example, to obtain a random integer in the range the\n            range 7 <=\n            R < 12, use\n            the following statement:\n          ",
+        "\n            Returns a random floating-point value\n            v in the range\n            0 <= v <\n            1.0. To obtain a random integer\n            R in the range\n            i <=\n            R <\n            j, use the expression\n            FLOOR(i\n            + RAND() * (j\n            \u2212 i)).\n            For example, to obtain a random integer in the range the\n            range 7 <=\n            R < 12, use\n            the following statement:\n          ",
         "Press CTRL+C to copy SELECT FLOOR(7 + (RAND() * 5));",
         "\n            If an integer argument N is\n            specified, it is used as the seed value:\n",
         "\n\n                With a constant initializer argument, the seed is\n                initialized once when the statement is prepared, prior\n                to execution.\n              \n                With a nonconstant initializer argument (such as a\n                column name), the seed is initialized with the value for\n                each invocation of\n                RAND().\n\n",
         "\n            One implication of this behavior is that for equal argument\n            values,\n            RAND(N)\n            returns the same value each time, and thus produces a\n            repeatable sequence of column values. In the following\n            example, the sequence of values produced by\n            RAND(3) is the same both places it\n            occurs.\n          ",
         "Press CTRL+C to copy mysql> CREATE TABLE t (i INT);\nQuery OK, 0 rows affected (0.42 sec)\n\nmysql> INSERT INTO t VALUES(1),(2),(3);\nQuery OK, 3 rows affected (0.00 sec)\nRecords: 3  Duplicates: 0  Warnings: 0\n\nmysql> SELECT i, RAND() FROM t;\n+------+------------------+\n| i    | RAND()           |\n+------+------------------+\n|    1 | 0.61914388706828 |\n|    2 | 0.93845168309142 |\n|    3 | 0.83482678498591 |\n+------+------------------+\n3 rows in set (0.00 sec)\n\nmysql> SELECT i, RAND(3) FROM t;\n+------+------------------+\n| i    | RAND(3)          |\n+------+------------------+\n|    1 | 0.90576975597606 |\n|    2 | 0.37307905813035 |\n|    3 | 0.14808605345719 |\n+------+------------------+\n3 rows in set (0.00 sec)\n\nmysql> SELECT i, RAND() FROM t;\n+------+------------------+\n| i    | RAND()           |\n+------+------------------+\n|    1 | 0.35877890638893 |\n|    2 | 0.28941420772058 |\n|    3 | 0.37073435016976 |\n+------+------------------+\n3 rows in set (0.00 sec)\n\nmysql> SELECT i, RAND(3) FROM t;\n+------+------------------+\n| i    | RAND(3)          |\n+------+------------------+\n|    1 | 0.90576975597606 |\n|    2 | 0.37307905813035 |\n|    3 | 0.14808605345719 |\n+------+------------------+\n3 rows in set (0.01 sec)",
-        "\nRAND() in a\n            WHERE clause is evaluated for every row\n            (when selecting from one table) or combination of rows (when\n            selecting from a multiple-table join). Thus, for optimizer\n            purposes, RAND() is not a\n            constant value and cannot be used for index optimizations.\n            For more information, see\n            Section 10.2.1.20, “Function Call Optimization”.\n          ",
+        "\nRAND() in a\n            WHERE clause is evaluated for every row\n            (when selecting from one table) or combination of rows (when\n            selecting from a multiple-table join). Thus, for optimizer\n            purposes, RAND() is not a\n            constant value and cannot be used for index optimizations.\n            For more information, see\n            Section\u00a010.2.1.20, \u201cFunction Call Optimization\u201d.\n          ",
         "\n            Use of a column with RAND()\n            values in an ORDER BY or GROUP\n            BY clause may yield unexpected results because for\n            either clause a RAND()\n            expression can be evaluated multiple times for the same row,\n            each time returning a different result. If the goal is to\n            retrieve rows in random order, you can use a statement like\n            this:\n          ",
         "Press CTRL+C to copy SELECT * FROM tbl_name ORDER BY RAND();",
         "\n            To select a random sample from a set of rows, combine\n            ORDER BY RAND() with\n            LIMIT:\n          ",
@@ -27,6 +27,15 @@
         "SELECT * FROM table1, table2 WHERE a=b AND c<d ORDER BY RAND() LIMIT 1000;"
     ],
     "Category": [
-        "数值函数与操作符"
+        "\u6570\u503c\u51fd\u6570\u4e0e\u64cd\u4f5c\u7b26"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT FLOOR(7 + (RAND() * 5));"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT FLOOR(7 + (RAND() * 5));"
     ]
 }

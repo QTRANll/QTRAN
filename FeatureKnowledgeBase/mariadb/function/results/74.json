@@ -16,5 +16,22 @@
     "Category": [
         "Information Functions"
     ],
-    "EffectiveSQLsRefined": []
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT DECODE_HISTOGRAM('SINGLE_PREC_HB', histogram) FROM mysql.column_stats;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 350,
+            "Prompt Tokens": 317,
+            "Completion Tokens": 33,
+            "Total Cost (USD)": 6.735e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT DECODE_HISTOGRAM('SINGLE_PREC_HB', histogram) FROM mysql.column_stats;"
+    ]
 }

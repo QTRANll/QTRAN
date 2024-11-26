@@ -16,5 +16,47 @@
     ],
     "Category": [
         "Union Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT union_tag(union);",
+        "SELECT union_tag('union');",
+        "SELECT union_tag(union);",
+        "SELECT union_tag(NULL);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 279,
+            "Prompt Tokens": 260,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 5.04e-05
+        },
+        {
+            "Total Tokens": 426,
+            "Prompt Tokens": 407,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 7.245e-05
+        },
+        {
+            "Total Tokens": 617,
+            "Prompt Tokens": 598,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 0.00010109999999999999
+        },
+        {
+            "Total Tokens": 763,
+            "Prompt Tokens": 745,
+            "Completion Tokens": 18,
+            "Total Cost (USD)": 0.00012255
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.ParserException) Parser Error: syntax error at or near \"union\"\n",
+        "(duckdb.duckdb.BinderException) Binder Error: No function matches the given name and argument types 'union_tag(STRING_LITERAL)'. You might need to add explicit type casts.\n\tCandidate functions:\n\tunion_tag(UNION) -> ANY\n\nLINE 1: SELECT union_tag('union');\n               ^\n",
+        "(duckdb.duckdb.ParserException) Parser Error: syntax error at or near \"union\"\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT union_tag(NULL);"
     ]
 }

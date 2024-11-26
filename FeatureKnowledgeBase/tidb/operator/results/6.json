@@ -11,12 +11,23 @@
         "\n\n              Binary-string evaluation occurs when the bit argument has\n              a binary string type, and is not a hexadecimal literal,\n              bit literal, or NULL literal. Numeric\n              evaluation occurs otherwise, with argument conversion to\n              an unsigned 64-bit integer as necessary.\n            \n              Binary-string evaluation produces a binary string of the\n              same length as the bit argument. Numeric evaluation\n              produces an unsigned 64-bit integer.\n\n",
         "\n          For more information, see the introductory discussion in this\n          section.\n        ",
         "Press CTRL+C to copy mysql> SELECT 5 & ~1;\n        -> 4\nmysql> SELECT HEX(~X'0000FFFF1111EEEE');\n        -> 'FFFF0000EEEE1111'",
-        "\n          If bitwise inversion is invoked from within the\n          mysql client, binary string results display\n          using hexadecimal notation, depending on the value of the\n          --binary-as-hex. For more\n          information about that option, see Section 6.5.1, “mysql — The MySQL Command-Line Client”.\n        "
+        "\n          If bitwise inversion is invoked from within the\n          mysql client, binary string results display\n          using hexadecimal notation, depending on the value of the\n          --binary-as-hex. For more\n          information about that option, see Section\u00a06.5.1, \u201cmysql \u2014 The MySQL Command-Line Client\u201d.\n        "
     ],
     "Examples": [
         "mysql> SELECT 5 & ~1;\n        -> 4\nmysql> SELECT HEX(~X'0000FFFF1111EEEE');\n        -> 'FFFF0000EEEE1111'"
     ],
     "Category": [
         "Bit Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT 5 & ~1;",
+        "SELECT HEX(~X'0000FFFF1111EEEE');"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT 5 & ~1;",
+        "SELECT HEX(~X'0000FFFF1111EEEE');"
     ]
 }

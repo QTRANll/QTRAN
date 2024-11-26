@@ -6,15 +6,49 @@
         "trim_scale"
     ],
     "Feature": [
-        "trim_scale ( numeric ) → numeric"
+        "trim_scale ( numeric ) \u2192 numeric"
     ],
     "Description": [
         "Reduces the value's scale (number of fractional decimal digits) by removing trailing zeroes"
     ],
     "Examples": [
-        "trim_scale(8.4100) → 8.41"
+        "trim_scale(8.4100) \u2192 8.41"
     ],
     "Category": [
         "Mathematical Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT trim_scale(numeric_value) FROM your_table;",
+        "SELECT trim_scale(numeric_value);",
+        "SELECT trim_scale(123.45000);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 281,
+            "Prompt Tokens": 258,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 5.2499999999999995e-05
+        },
+        {
+            "Total Tokens": 444,
+            "Prompt Tokens": 424,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 7.559999999999998e-05
+        },
+        {
+            "Total Tokens": 605,
+            "Prompt Tokens": 583,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 0.00010064999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedTable) relation \"your_table\" does not exist\nLINE 1: SELECT trim_scale(numeric_value) FROM your_table;\n                                              ^\n\n",
+        "(psycopg2.errors.UndefinedColumn) column \"numeric_value\" does not exist\nLINE 1: SELECT trim_scale(numeric_value);\n                          ^\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT trim_scale(123.45000);"
     ]
 }

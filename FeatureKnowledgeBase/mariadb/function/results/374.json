@@ -24,5 +24,12 @@
     "EffectiveSQLsRefined": [
         "SELECT USER(),CURRENT_USER();",
         "SELECT SUBSTRING_INDEX(USER(), '@', -1);"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT USER(),CURRENT_USER();",
+        "SELECT SUBSTRING_INDEX(USER(), '@', -1);"
     ]
 }

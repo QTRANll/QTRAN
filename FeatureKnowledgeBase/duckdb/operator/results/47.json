@@ -16,5 +16,23 @@
     ],
     "Category": [
         "Timestamp with Time Zone Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT CURRENT_TIMESTAMP - INTERVAL '1 day';"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 261,
+            "Prompt Tokens": 238,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 4.949999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT CURRENT_TIMESTAMP - INTERVAL '1 day';"
     ]
 }

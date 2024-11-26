@@ -3,20 +3,46 @@
         "https://docs.pingcap.com/zh/tidb/v8.3/data-type-numeric"
     ],
     "Title": [
-        "INTEGER 类型"
+        "INTEGER \u7c7b\u578b"
     ],
     "Feature": [
-        "INTEGER 类型"
+        "INTEGER \u7c7b\u578b"
     ],
     "Description": [
-        "INTEGER 类型",
-        "INTEGER 类型，别名 INT。有符号数的范围是 [-2147483648, 2147483647]。无符号数的范围是 [0, 4294967295]。",
+        "INTEGER \u7c7b\u578b",
+        "INTEGER \u7c7b\u578b\uff0c\u522b\u540d INT\u3002\u6709\u7b26\u53f7\u6570\u7684\u8303\u56f4\u662f [-2147483648, 2147483647]\u3002\u65e0\u7b26\u53f7\u6570\u7684\u8303\u56f4\u662f [0, 4294967295]\u3002",
         "INT[(M)] [UNSIGNED] [ZEROFILL]\n",
-        "或者：",
+        "\u6216\u8005\uff1a",
         "INTEGER[(M)] [UNSIGNED] [ZEROFILL]\n"
     ],
     "Examples": [],
     "Category": [
-        "数值类型"
+        "\u6570\u503c\u7c7b\u578b"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT CAST(123 AS INTEGER);",
+        "SELECT CAST(123 AS SIGNED);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 339,
+            "Prompt Tokens": 319,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 5.985e-05
+        },
+        {
+            "Total Tokens": 515,
+            "Prompt Tokens": 494,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 8.669999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.ProgrammingError) (1064, 'You have an error in your SQL syntax; check the manual that corresponds to your TiDB version for the right syntax to use line 1 column 26 near \"INTEGER);\" ')\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT CAST(123 AS SIGNED);"
     ]
 }

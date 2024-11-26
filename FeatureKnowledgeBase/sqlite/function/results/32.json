@@ -14,5 +14,39 @@
     "Examples": [],
     "Category": [
         "Core SQL Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT soundex('example');",
+        "SELECT soundex('example') AS soundex_result;",
+        "SELECT NULL AS soundex_result;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 348,
+            "Prompt Tokens": 329,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 6.075e-05
+        },
+        {
+            "Total Tokens": 490,
+            "Prompt Tokens": 467,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 8.384999999999999e-05
+        },
+        {
+            "Total Tokens": 628,
+            "Prompt Tokens": 609,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 0.00010274999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(sqlite3.OperationalError) no such function: soundex\n",
+        "(sqlite3.OperationalError) no such function: soundex\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT NULL AS soundex_result;"
     ]
 }

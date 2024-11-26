@@ -27,5 +27,39 @@
         "Built-In Functions and Operators",
         "Replication Functions",
         "Loadable Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT group_replication_get_write_concurrency()",
+        "SELECT @@global.group_replication_max_concurrent_write_transactions",
+        "SELECT @@global.max_connections"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 438,
+            "Prompt Tokens": 416,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 7.559999999999998e-05
+        },
+        {
+            "Total Tokens": 604,
+            "Prompt Tokens": 580,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 0.00010139999999999998
+        },
+        {
+            "Total Tokens": 760,
+            "Prompt Tokens": 742,
+            "Completion Tokens": 18,
+            "Total Cost (USD)": 0.00012209999999999999
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.group_replication_get_write_concurrency does not exist')\n",
+        "(pymysql.err.OperationalError) (1193, \"Unknown system variable 'group_replication_max_concurrent_write_transactions'\")\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT @@global.max_connections"
     ]
 }

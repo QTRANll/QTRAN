@@ -6,15 +6,33 @@
         "regexp_count"
     ],
     "Feature": [
-        "regexp_count ( string text, pattern text [, start integer [, flags text ] ] ) → integer"
+        "regexp_count ( string text, pattern text [, start integer [, flags text ] ] ) \u2192 integer"
     ],
     "Description": [
-        "Returns the number of times the POSIX regular expression pattern matches in the string; see Section 9.7.3."
+        "Returns the number of times the POSIX regular expression pattern matches in the string; see Section\u00a09.7.3."
     ],
     "Examples": [
-        "regexp_count('123456789012', '\\d\\d\\d', 2) → 3"
+        "regexp_count('123456789012', '\\d\\d\\d', 2) \u2192 3"
     ],
     "Category": [
         "String Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT regexp_count('hello world', 'o');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 300,
+            "Prompt Tokens": 277,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 5.535e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT regexp_count('hello world', 'o');"
     ]
 }

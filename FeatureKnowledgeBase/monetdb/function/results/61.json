@@ -18,5 +18,31 @@
     ],
     "Category": [
         "Mathematics Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT asin(x) AS arc_sine_value;",
+        "SELECT asin(0.5) AS arc_sine_value;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 278,
+            "Prompt Tokens": 256,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 5.1599999999999994e-05
+        },
+        {
+            "Total Tokens": 431,
+            "Prompt Tokens": 406,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 7.59e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: identifier 'x' unknown\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT asin(0.5) AS arc_sine_value;"
     ]
 }

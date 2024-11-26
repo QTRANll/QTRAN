@@ -6,15 +6,63 @@
         "geometric_type # geometric_type"
     ],
     "Feature": [
-        "geometric_type # geometric_type → point"
+        "geometric_type # geometric_type \u2192 point"
     ],
     "Description": [
         "Computes the point of intersection, or NULL if there is none. Available for lseg, line."
     ],
     "Examples": [
-        "lseg '[(0,0),(1,1)]' # lseg '[(1,0),(0,1)]' → (0.5,0.5)"
+        "lseg '[(0,0),(1,1)]' # lseg '[(1,0),(0,1)]' \u2192 (0.5,0.5)"
     ],
     "Category": [
         "Geometric Functions and Operators"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT ST_Intersection(geometric_type) AS point;",
+        "SELECT ST_Intersection(geometric_type) AS point FROM your_table_name;",
+        "SELECT ST_Intersection(geometric_type) AS point;",
+        "SELECT ST_Intersection(geometric_type) AS point FROM (SELECT NULL::geometry AS geometric_type) AS temp;",
+        "SELECT ST_Intersection(NULL::text) AS point;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 298,
+            "Prompt Tokens": 274,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 5.55e-05
+        },
+        {
+            "Total Tokens": 475,
+            "Prompt Tokens": 447,
+            "Completion Tokens": 28,
+            "Total Cost (USD)": 8.384999999999999e-05
+        },
+        {
+            "Total Tokens": 652,
+            "Prompt Tokens": 628,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 0.00010859999999999998
+        },
+        {
+            "Total Tokens": 837,
+            "Prompt Tokens": 801,
+            "Completion Tokens": 36,
+            "Total Cost (USD)": 0.00014175
+        },
+        {
+            "Total Tokens": 1012,
+            "Prompt Tokens": 989,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 0.00016214999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedColumn) column \"geometric_type\" does not exist\nLINE 1: SELECT ST_Intersection(geometric_type) AS point;\n                               ^\n\n",
+        "(psycopg2.errors.UndefinedTable) relation \"your_table_name\" does not exist\nLINE 1: ...ECT ST_Intersection(geometric_type) AS point FROM your_table...\n                                                             ^\n\n",
+        "(psycopg2.errors.UndefinedColumn) column \"geometric_type\" does not exist\nLINE 1: SELECT ST_Intersection(geometric_type) AS point;\n                               ^\n\n",
+        "(psycopg2.errors.UndefinedObject) type \"geometry\" does not exist\nLINE 1: ...ction(geometric_type) AS point FROM (SELECT NULL::geometry A...\n                                                             ^\n\n",
+        "(psycopg2.errors.UndefinedFunction) function st_intersection(text) does not exist\nLINE 1: SELECT ST_Intersection(NULL::text) AS point;\n               ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.\n\n"
+    ],
+    "EffectiveSQLs": []
 }

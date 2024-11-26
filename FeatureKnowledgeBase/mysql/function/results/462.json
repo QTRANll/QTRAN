@@ -26,5 +26,47 @@
     ],
     "Category": [
         "Loadable Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT gen_rnd_uk_nin();",
+        "SELECT gen_rnd_uk_nin() FROM dual;",
+        "SELECT gen_rnd_uk_nin();",
+        "SELECT 'Function does not exist';"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 567,
+            "Prompt Tokens": 545,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 9.494999999999999e-05
+        },
+        {
+            "Total Tokens": 731,
+            "Prompt Tokens": 707,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 0.00012044999999999999
+        },
+        {
+            "Total Tokens": 893,
+            "Prompt Tokens": 871,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 0.00014384999999999997
+        },
+        {
+            "Total Tokens": 1053,
+            "Prompt Tokens": 1033,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 0.00016694999999999997
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.gen_rnd_uk_nin does not exist')\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.gen_rnd_uk_nin does not exist')\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.gen_rnd_uk_nin does not exist')\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT 'Function does not exist';"
     ]
 }

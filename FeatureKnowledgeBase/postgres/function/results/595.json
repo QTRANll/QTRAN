@@ -6,8 +6,8 @@
         "pg_advisory_xact_lock"
     ],
     "Feature": [
-        "pg_advisory_xact_lock ( key bigint ) → void",
-        "pg_advisory_xact_lock ( key1 integer, key2 integer ) → void"
+        "pg_advisory_xact_lock ( key bigint ) \u2192 void",
+        "pg_advisory_xact_lock ( key1 integer, key2 integer ) \u2192 void"
     ],
     "Description": [
         "Obtains an exclusive transaction-level advisory lock, waiting if necessary."
@@ -15,5 +15,34 @@
     "Examples": [],
     "Category": [
         "System Administration Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        [
+            "SELECT pg_advisory_xact_lock(12345);",
+            "SELECT pg_advisory_xact_lock(1, 2);"
+        ],
+        "SELECT pg_advisory_xact_lock(12345);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 342,
+            "Prompt Tokens": 294,
+            "Completion Tokens": 48,
+            "Total Cost (USD)": 7.29e-05
+        },
+        {
+            "Total Tokens": 488,
+            "Prompt Tokens": 463,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 8.444999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "expected string or bytes-like object, got 'list'",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT pg_advisory_xact_lock(12345);"
     ]
 }

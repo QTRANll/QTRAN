@@ -6,7 +6,7 @@
         "datatype >= datatype"
     ],
     "Feature": [
-        "datatype >= datatype → boolean"
+        "datatype >= datatype \u2192 boolean"
     ],
     "Description": [
         "Greater than or equal to"
@@ -14,5 +14,31 @@
     "Examples": [],
     "Category": [
         "Comparison Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT * FROM table_name WHERE column_name >= value;",
+        "SELECT * FROM pg_catalog.pg_tables WHERE tablename >= 'value';"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 269,
+            "Prompt Tokens": 246,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 5.069999999999999e-05
+        },
+        {
+            "Total Tokens": 440,
+            "Prompt Tokens": 413,
+            "Completion Tokens": 27,
+            "Total Cost (USD)": 7.814999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedTable) relation \"table_name\" does not exist\nLINE 1: SELECT * FROM table_name WHERE column_name >= value;\n                      ^\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT * FROM pg_catalog.pg_tables WHERE tablename >= 'value';"
     ]
 }

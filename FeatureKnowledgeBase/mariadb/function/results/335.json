@@ -21,5 +21,11 @@
     ],
     "EffectiveSQLsRefined": [
         "SELECT SRID(GeomFromText('LineString(1 1,2 2)',101));"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT SRID(GeomFromText('LineString(1 1,2 2)',101));"
     ]
 }

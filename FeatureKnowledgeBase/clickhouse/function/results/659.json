@@ -27,5 +27,9 @@
     ],
     "Category": [
         "Other Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT uniqMerge(state) FROM (SELECT initializeAggregation('uniqState', number % 3) AS state FROM numbers(10000));",
+        "SELECT finalizeAggregation(state), toTypeName(state) FROM (SELECT initializeAggregation('sumState', number % 3) AS state FROM numbers(5));"
     ]
 }

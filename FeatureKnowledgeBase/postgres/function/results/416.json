@@ -6,7 +6,7 @@
         "row_security_active"
     ],
     "Feature": [
-        "row_security_active ( table text or oid ) → boolean"
+        "row_security_active ( table text or oid ) \u2192 boolean"
     ],
     "Description": [
         "Is row-level security active for the specified table in the context of the current user and current environment?"
@@ -14,5 +14,31 @@
     "Examples": [],
     "Category": [
         "System Information Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT row_security_active('your_table_name');",
+        "SELECT row_security_active('pg_catalog.pg_class');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 289,
+            "Prompt Tokens": 267,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 5.324999999999999e-05
+        },
+        {
+            "Total Tokens": 438,
+            "Prompt Tokens": 415,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 7.604999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedTable) relation \"your_table_name\" does not exist\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT row_security_active('pg_catalog.pg_class');"
     ]
 }

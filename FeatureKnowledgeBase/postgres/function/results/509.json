@@ -6,7 +6,7 @@
         "pg_rotate_logfile"
     ],
     "Feature": [
-        "pg_rotate_logfile () → boolean"
+        "pg_rotate_logfile () \u2192 boolean"
     ],
     "Description": [
         "Signals the log-file manager to switch to a new output file immediately. This works only when the built-in log collector is running, since otherwise there is no log-file manager subprocess."
@@ -14,5 +14,23 @@
     "Examples": [],
     "Category": [
         "System Administration Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT pg_rotate_logfile();"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 301,
+            "Prompt Tokens": 282,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 5.369999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT pg_rotate_logfile();"
     ]
 }

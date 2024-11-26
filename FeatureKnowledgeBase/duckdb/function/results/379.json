@@ -16,5 +16,39 @@
     ],
     "Category": [
         "Text Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "bar(x, 0, 100)",
+        "SELECT bar(x, 0, 100)",
+        "SELECT bar(50, 0, 100)"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 314,
+            "Prompt Tokens": 293,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 5.654999999999999e-05
+        },
+        {
+            "Total Tokens": 468,
+            "Prompt Tokens": 446,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 8.01e-05
+        },
+        {
+            "Total Tokens": 644,
+            "Prompt Tokens": 621,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 0.00010694999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.ParserException) Parser Error: syntax error at or near \"bar\"\n",
+        "(duckdb.duckdb.BinderException) Binder Error: Referenced column \"x\" not found in FROM clause!\nLINE 1: SELECT bar(x, 0, 100)\n                   ^\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT bar(50, 0, 100)"
     ]
 }

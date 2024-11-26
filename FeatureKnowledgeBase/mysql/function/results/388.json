@@ -23,5 +23,18 @@
     "Category": [
         "Built-In Functions and Operators",
         "Date and Time Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT TIMESTAMPDIFF(MONTH,'2003-02-01','2003-05-01');",
+        "SELECT TIMESTAMPDIFF(YEAR,'2002-05-01','2001-01-01');",
+        "SELECT TIMESTAMPDIFF(MINUTE,'2003-02-01','2003-05-01 12:05:55');"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT TIMESTAMPDIFF(MONTH,'2003-02-01','2003-05-01');",
+        "SELECT TIMESTAMPDIFF(YEAR,'2002-05-01','2001-01-01');",
+        "SELECT TIMESTAMPDIFF(MINUTE,'2003-02-01','2003-05-01 12:05:55');"
     ]
 }

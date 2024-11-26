@@ -14,5 +14,39 @@
     "Examples": [],
     "Category": [
         "String Data Types"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "CREATE TABLE example_table (example_column TINYTEXT);",
+        "ALTER TABLE example_table ADD COLUMN new_column TINYTEXT;",
+        "SELECT example_column FROM example_table;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 336,
+            "Prompt Tokens": 312,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 6.12e-05
+        },
+        {
+            "Total Tokens": 489,
+            "Prompt Tokens": 465,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 8.415e-05
+        },
+        {
+            "Total Tokens": 636,
+            "Prompt Tokens": 617,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 0.00010394999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.OperationalError) (1050, \"Table 'example_table' already exists\")\n",
+        "(pymysql.err.OperationalError) (1060, \"Duplicate column name 'new_column'\")\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT example_column FROM example_table;"
     ]
 }

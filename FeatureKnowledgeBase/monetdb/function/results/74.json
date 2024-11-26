@@ -14,9 +14,27 @@
         "Unicode code point of the first character of the string s"
     ],
     "Examples": [
-        "ascii(R'€')"
+        "ascii(R'\u20ac')"
     ],
     "Category": [
         "Character String Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT ascii('A');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 278,
+            "Prompt Tokens": 260,
+            "Completion Tokens": 18,
+            "Total Cost (USD)": 4.98e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT ascii('A');"
     ]
 }

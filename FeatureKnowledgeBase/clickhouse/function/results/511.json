@@ -26,5 +26,10 @@
     ],
     "Category": [
         "IP Addresses Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT isIPAddressInRange('127.0.0.1', '127.0.0.0/8');",
+        "SELECT isIPAddressInRange('127.0.0.1', 'ffff::/16');",
+        "SELECT isIPAddressInRange('::ffff:192.168.0.1', '::ffff:192.168.0.4/128');"
     ]
 }

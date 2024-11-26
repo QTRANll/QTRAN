@@ -16,5 +16,53 @@
     ],
     "Category": [
         "Struct Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT struct.entry FROM your_table;",
+        "SELECT struct.entry;",
+        "SELECT entry FROM struct;",
+        "SELECT entry;",
+        "SELECT struct_extract('entry');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 270,
+            "Prompt Tokens": 251,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 4.904999999999999e-05
+        },
+        {
+            "Total Tokens": 434,
+            "Prompt Tokens": 418,
+            "Completion Tokens": 16,
+            "Total Cost (USD)": 7.23e-05
+        },
+        {
+            "Total Tokens": 588,
+            "Prompt Tokens": 571,
+            "Completion Tokens": 17,
+            "Total Cost (USD)": 9.584999999999999e-05
+        },
+        {
+            "Total Tokens": 748,
+            "Prompt Tokens": 733,
+            "Completion Tokens": 15,
+            "Total Cost (USD)": 0.00011894999999999999
+        },
+        {
+            "Total Tokens": 906,
+            "Prompt Tokens": 887,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 0.00014445
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.CatalogException) Catalog Error: Table with name your_table does not exist!\nDid you mean \"pg_tables\"?\nLINE 1: SELECT struct.entry FROM your_table;\n                                 ^\n",
+        "(duckdb.duckdb.BinderException) Binder Error: Referenced table \"struct\" not found!\nLINE 1: SELECT struct.entry;\n               ^\n",
+        "(duckdb.duckdb.CatalogException) Catalog Error: Table with name struct does not exist!\nDid you mean \"pg_settings\"?\nLINE 1: SELECT entry FROM struct;\n                          ^\n",
+        "(duckdb.duckdb.BinderException) Binder Error: Referenced column \"entry\" not found in FROM clause!\nLINE 1: SELECT entry;\n               ^\n",
+        "(duckdb.duckdb.BinderException) Binder Error: No function matches the given name and argument types 'struct_extract(STRING_LITERAL)'. You might need to add explicit type casts.\n\tCandidate functions:\n\tstruct_extract(STRUCT, VARCHAR) -> ANY\n\tstruct_extract(STRUCT, BIGINT) -> ANY\n\nLINE 1: SELECT struct_extract('entry');\n               ^\n"
+    ],
+    "EffectiveSQLs": []
 }

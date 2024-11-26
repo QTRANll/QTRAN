@@ -6,15 +6,49 @@
         "box <^ box"
     ],
     "Feature": [
-        "box <^ box → boolean"
+        "box <^ box \u2192 boolean"
     ],
     "Description": [
         "Is first object below second (allows edges to touch)?"
     ],
     "Examples": [
-        "box '((1,1),(0,0))' <^ box '((2,2),(1,1))' → t"
+        "box '((1,1),(0,0))' <^ box '((2,2),(1,1))' \u2192 t"
     ],
     "Category": [
         "Geometric Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT box <^ box;",
+        "SELECT 'box'::box <^ 'box'::box;",
+        "SELECT '((0,0),(1,1))'::box <^ '((1,1),(2,2))'::box;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 274,
+            "Prompt Tokens": 256,
+            "Completion Tokens": 18,
+            "Total Cost (USD)": 4.9199999999999997e-05
+        },
+        {
+            "Total Tokens": 439,
+            "Prompt Tokens": 413,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 7.754999999999999e-05
+        },
+        {
+            "Total Tokens": 629,
+            "Prompt Tokens": 587,
+            "Completion Tokens": 42,
+            "Total Cost (USD)": 0.00011324999999999999
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedColumn) column \"box\" does not exist\nLINE 1: SELECT box <^ box;\n               ^\n\n",
+        "(psycopg2.errors.InvalidTextRepresentation) invalid input syntax for type box: \"box\"\nLINE 1: SELECT 'box'::box <^ 'box'::box;\n               ^\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT '((0,0),(1,1))'::box <^ '((1,1),(2,2))'::box;"
     ]
 }

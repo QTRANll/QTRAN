@@ -27,5 +27,14 @@
         "SELECT LPAD('hello',2,'.');",
         "SELECT LPAD('hello',10);",
         "SELECT LPAD('',0),LPAD_ORACLE('',0);"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT LPAD('hello',10,'.');",
+        "SELECT LPAD('hello',2,'.');",
+        "SELECT LPAD('hello',10);",
+        "SELECT LPAD('',0),LPAD_ORACLE('',0);"
     ]
 }

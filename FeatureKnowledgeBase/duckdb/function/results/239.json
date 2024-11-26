@@ -17,5 +17,39 @@
     ],
     "Category": [
         "List Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT list_slice(my_list, 1:3);",
+        "SELECT list_slice(my_list, 1, 3);",
+        "SELECT list_slice([1, 2, 3, 4, 5], 1, 3);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 277,
+            "Prompt Tokens": 253,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 5.234999999999999e-05
+        },
+        {
+            "Total Tokens": 426,
+            "Prompt Tokens": 401,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 7.515e-05
+        },
+        {
+            "Total Tokens": 612,
+            "Prompt Tokens": 575,
+            "Completion Tokens": 37,
+            "Total Cost (USD)": 0.00010844999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.ParserException) Parser Error: syntax error at or near \":\"\n",
+        "(duckdb.duckdb.BinderException) Binder Error: Referenced column \"my_list\" not found in FROM clause!\nLINE 1: SELECT list_slice(my_list, 1, 3);\n                          ^\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT list_slice([1, 2, 3, 4, 5], 1, 3);"
     ]
 }

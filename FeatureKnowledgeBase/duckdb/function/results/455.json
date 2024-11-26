@@ -16,5 +16,23 @@
     ],
     "Category": [
         "Text Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT jaro_similarity('string1', 'string2');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 323,
+            "Prompt Tokens": 298,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 5.9699999999999994e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT jaro_similarity('string1', 'string2');"
     ]
 }

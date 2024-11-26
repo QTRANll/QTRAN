@@ -26,5 +26,62 @@
     ],
     "Category": [
         "Loadable Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        [
+            "SELECT mask_outer('abcdef', 1, 2);",
+            "SELECT mask_outer('abcdef', 0, 5);",
+            "SELECT mask_outer('abcdef', 1, 2, '*');",
+            "SELECT mask_outer('abcdef', 0, 5, '#');"
+        ],
+        [
+            "SELECT mask_outer('abcdef', 1, 2);"
+        ],
+        "SELECT mask_outer('abcdef', 1, 2);",
+        "SELECT mask_outer('abcdef', 1, 2);",
+        "SELECT 'Function mask_outer does not exist';"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 843,
+            "Prompt Tokens": 761,
+            "Completion Tokens": 82,
+            "Total Cost (USD)": 0.00016334999999999999
+        },
+        {
+            "Total Tokens": 994,
+            "Prompt Tokens": 964,
+            "Completion Tokens": 30,
+            "Total Cost (USD)": 0.0001626
+        },
+        {
+            "Total Tokens": 1140,
+            "Prompt Tokens": 1115,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 0.00018224999999999996
+        },
+        {
+            "Total Tokens": 1300,
+            "Prompt Tokens": 1275,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 0.00020624999999999994
+        },
+        {
+            "Total Tokens": 1457,
+            "Prompt Tokens": 1435,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 0.00022845
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "expected string or bytes-like object, got 'list'",
+        "expected string or bytes-like object, got 'list'",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.mask_outer does not exist')\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.mask_outer does not exist')\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT 'Function mask_outer does not exist';"
     ]
 }

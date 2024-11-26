@@ -18,5 +18,23 @@
     ],
     "Category": [
         "Mathematics Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT sys.ms_round(123.45678, 2, 1);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 331,
+            "Prompt Tokens": 302,
+            "Completion Tokens": 29,
+            "Total Cost (USD)": 6.269999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT sys.ms_round(123.45678, 2, 1);"
     ]
 }

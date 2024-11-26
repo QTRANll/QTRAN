@@ -14,5 +14,39 @@
     "Examples": [],
     "Category": [
         "Window Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT lead(column_name) FROM table_name;",
+        "SELECT lead(column_name) FROM (SELECT 1 AS column_name);",
+        "SELECT lead(column_name) OVER () FROM (SELECT 1 AS column_name);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 473,
+            "Prompt Tokens": 452,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 8.039999999999999e-05
+        },
+        {
+            "Total Tokens": 631,
+            "Prompt Tokens": 604,
+            "Completion Tokens": 27,
+            "Total Cost (USD)": 0.0001068
+        },
+        {
+            "Total Tokens": 791,
+            "Prompt Tokens": 762,
+            "Completion Tokens": 29,
+            "Total Cost (USD)": 0.00013169999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(sqlite3.OperationalError) no such table: table_name\n",
+        "(sqlite3.OperationalError) misuse of window function lead()\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT lead(column_name) OVER () FROM (SELECT 1 AS column_name);"
     ]
 }

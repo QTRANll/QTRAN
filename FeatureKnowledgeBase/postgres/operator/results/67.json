@@ -6,15 +6,49 @@
         "# geometric_type"
     ],
     "Feature": [
-        "# geometric_type → integer"
+        "# geometric_type \u2192 integer"
     ],
     "Description": [
         "Returns the number of points. Available for path, polygon."
     ],
     "Examples": [
-        "# path '((1,0),(0,1),(-1,0))' → 3"
+        "# path '((1,0),(0,1),(-1,0))' \u2192 3"
     ],
     "Category": [
         "Geometric Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT COUNT(*) FROM (SELECT * FROM path) AS subquery;",
+        "SELECT COUNT(*) FROM (SELECT * FROM polygon) AS subquery;",
+        "SELECT COUNT(*) FROM (SELECT * FROM (VALUES (1), (2), (3)) AS path_or_polygon(point)) AS subquery;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 279,
+            "Prompt Tokens": 253,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 5.354999999999999e-05
+        },
+        {
+            "Total Tokens": 451,
+            "Prompt Tokens": 425,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 7.934999999999999e-05
+        },
+        {
+            "Total Tokens": 638,
+            "Prompt Tokens": 597,
+            "Completion Tokens": 41,
+            "Total Cost (USD)": 0.00011415
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedTable) relation \"path\" does not exist\nLINE 1: SELECT COUNT(*) FROM (SELECT * FROM path) AS subquery;\n                                            ^\n\n",
+        "(psycopg2.errors.UndefinedTable) relation \"polygon\" does not exist\nLINE 1: SELECT COUNT(*) FROM (SELECT * FROM polygon) AS subquery;\n                                            ^\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT COUNT(*) FROM (SELECT * FROM (VALUES (1), (2), (3)) AS path_or_polygon(point)) AS subquery;"
     ]
 }

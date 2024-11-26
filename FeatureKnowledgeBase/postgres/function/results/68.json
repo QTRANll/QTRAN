@@ -6,15 +6,33 @@
         "trim"
     ],
     "Feature": [
-        "trim ( [ LEADING | TRAILING | BOTH ] [ FROM ] string text [, characters text ] ) → text"
+        "trim ( [ LEADING | TRAILING | BOTH ] [ FROM ] string text [, characters text ] ) \u2192 text"
     ],
     "Description": [
         "This is a non-standard syntax for trim()."
     ],
     "Examples": [
-        "trim(both from 'yxTomxx', 'xyz') → Tom"
+        "trim(both from 'yxTomxx', 'xyz') \u2192 Tom"
     ],
     "Category": [
         "String Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT TRIM('   Hello World!   ');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 286,
+            "Prompt Tokens": 262,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 5.37e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT TRIM('   Hello World!   ');"
     ]
 }

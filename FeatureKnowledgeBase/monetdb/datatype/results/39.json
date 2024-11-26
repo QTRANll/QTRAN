@@ -1,0 +1,68 @@
+{
+    "HTML": [
+        "https://www.monetdb.org/documentation-Aug2024/user-guide/sql-manual/data-types/temporal-types"
+    ],
+    "Title": [
+        "TIME [ time_precision ] WITH TIME ZONE"
+    ],
+    "Feature": [
+        "TIME [ time_precision ] WITH TIME ZONE"
+    ],
+    "Description": [
+        "timetz",
+        "8-bytes",
+        "time of day (HH:MI:SS.sss) with time zone information and optional seconds fraction precision (default 0 decimals)"
+    ],
+    "Examples": [],
+    "Category": [
+        "Temporal Datatypes"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT TIME '12:30:00' AT TIME ZONE 'UTC';",
+        "SELECT TIME '12:30:00' WITH TIME ZONE 'UTC';",
+        "SELECT TIME '12:30:00' AT TIME ZONE 'UTC';",
+        "SELECT '12:30:00'::TIME WITH TIME ZONE 'UTC';",
+        "SELECT TIME '12:30:00' AT TIME ZONE 'UTC';"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 330,
+            "Prompt Tokens": 301,
+            "Completion Tokens": 29,
+            "Total Cost (USD)": 6.254999999999999e-05
+        },
+        {
+            "Total Tokens": 511,
+            "Prompt Tokens": 482,
+            "Completion Tokens": 29,
+            "Total Cost (USD)": 8.97e-05
+        },
+        {
+            "Total Tokens": 691,
+            "Prompt Tokens": 662,
+            "Completion Tokens": 29,
+            "Total Cost (USD)": 0.0001167
+        },
+        {
+            "Total Tokens": 873,
+            "Prompt Tokens": 843,
+            "Completion Tokens": 30,
+            "Total Cost (USD)": 0.00014445
+        },
+        {
+            "Total Tokens": 1033,
+            "Prompt Tokens": 1004,
+            "Completion Tokens": 29,
+            "Total Cost (USD)": 0.00016799999999999996
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymonetdb.exceptions.OperationalError) 42000!syntax error, unexpected TIME, expecting SCOLON in: \"select time '12:30:00' at time\"\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!syntax error, unexpected WITH, expecting SCOLON in: \"select time '12:30:00' with\"\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!syntax error, unexpected TIME, expecting SCOLON in: \"select time '12:30:00' at time\"\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!Unexpected symbol (:)\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!syntax error, unexpected TIME, expecting SCOLON in: \"select time '12:30:00' at time\"\n\n"
+    ],
+    "EffectiveSQLs": []
+}

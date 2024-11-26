@@ -14,5 +14,23 @@
     "Examples": [],
     "Category": [
         "Storage Classes and Datatypes"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "CREATE TABLE example (value REAL);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 284,
+            "Prompt Tokens": 264,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 5.16e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "CREATE TABLE example (value REAL);"
     ]
 }

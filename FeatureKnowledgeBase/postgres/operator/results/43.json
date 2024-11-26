@@ -6,15 +6,33 @@
         "interval + interval"
     ],
     "Feature": [
-        "interval + interval → interval"
+        "interval + interval \u2192 interval"
     ],
     "Description": [
         "Add intervals"
     ],
     "Examples": [
-        "interval '1 day' + interval '1 hour' → 1 day 01:00:00"
+        "interval '1 day' + interval '1 hour' \u2192 1 day 01:00:00"
     ],
     "Category": [
         "Date divide Time Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT INTERVAL '1 day' + INTERVAL '2 hours';"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 270,
+            "Prompt Tokens": 243,
+            "Completion Tokens": 27,
+            "Total Cost (USD)": 5.264999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT INTERVAL '1 day' + INTERVAL '2 hours';"
     ]
 }

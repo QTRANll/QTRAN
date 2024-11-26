@@ -6,15 +6,63 @@
         "anymultirange @> anymultirange"
     ],
     "Feature": [
-        "anymultirange @> anymultirange → boolean"
+        "anymultirange @> anymultirange \u2192 boolean"
     ],
     "Description": [
         "Does the first multirange contain the second?"
     ],
     "Examples": [
-        "'{[2,4)}'::int4multirange @> '{[2,3)}'::int4multirange → t"
+        "'{[2,4)}'::int4multirange @> '{[2,3)}'::int4multirange \u2192 t"
     ],
     "Category": [
         "Range divide Multirange Functions and Operators"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT '[1, 5]'::int4multirange @> '[2, 3]'::int4multirange;",
+        "SELECT '[[1, 5]]'::int4multirange @> '[[2, 3]]'::int4multirange;",
+        "SELECT '[[1, 5), (6, 10)]'::int4multirange @> '[[2, 3)]'::int4multirange;",
+        "SELECT '[[1, 5), [6, 10)]'::int4multirange @> '[[2, 3)]'::int4multirange;",
+        "SELECT '[[1, 5), [6, 10)'::int4multirange @> '[[2, 3)]'::int4multirange;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 319,
+            "Prompt Tokens": 279,
+            "Completion Tokens": 40,
+            "Total Cost (USD)": 6.585e-05
+        },
+        {
+            "Total Tokens": 539,
+            "Prompt Tokens": 495,
+            "Completion Tokens": 44,
+            "Total Cost (USD)": 0.00010064999999999998
+        },
+        {
+            "Total Tokens": 770,
+            "Prompt Tokens": 720,
+            "Completion Tokens": 50,
+            "Total Cost (USD)": 0.000138
+        },
+        {
+            "Total Tokens": 1010,
+            "Prompt Tokens": 960,
+            "Completion Tokens": 50,
+            "Total Cost (USD)": 0.00017399999999999997
+        },
+        {
+            "Total Tokens": 1249,
+            "Prompt Tokens": 1200,
+            "Completion Tokens": 49,
+            "Total Cost (USD)": 0.0002094
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.InvalidTextRepresentation) malformed multirange literal: \"[1, 5]\"\nLINE 1: SELECT '[1, 5]'::int4multirange @> '[2, 3]'::int4multirange;\n               ^\nDETAIL:  Missing left brace.\n\n",
+        "(psycopg2.errors.InvalidTextRepresentation) malformed multirange literal: \"[[1, 5]]\"\nLINE 1: SELECT '[[1, 5]]'::int4multirange @> '[[2, 3]]'::int4multira...\n               ^\nDETAIL:  Missing left brace.\n\n",
+        "(psycopg2.errors.InvalidTextRepresentation) malformed multirange literal: \"[[1, 5), (6, 10)]\"\nLINE 1: SELECT '[[1, 5), (6, 10)]'::int4multirange @> '[[2, 3)]'::in...\n               ^\nDETAIL:  Missing left brace.\n\n",
+        "(psycopg2.errors.InvalidTextRepresentation) malformed multirange literal: \"[[1, 5), [6, 10)]\"\nLINE 1: SELECT '[[1, 5), [6, 10)]'::int4multirange @> '[[2, 3)]'::in...\n               ^\nDETAIL:  Missing left brace.\n\n",
+        "(psycopg2.errors.InvalidTextRepresentation) malformed multirange literal: \"[[1, 5), [6, 10)\"\nLINE 1: SELECT '[[1, 5), [6, 10)'::int4multirange @> '[[2, 3)]'::int...\n               ^\nDETAIL:  Missing left brace.\n\n"
+    ],
+    "EffectiveSQLs": []
 }

@@ -15,5 +15,31 @@
     "Examples": [],
     "Category": [
         "Pseudo-Types"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT void;",
+        "SELECT NULL;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 258,
+            "Prompt Tokens": 243,
+            "Completion Tokens": 15,
+            "Total Cost (USD)": 4.5449999999999993e-05
+        },
+        {
+            "Total Tokens": 406,
+            "Prompt Tokens": 391,
+            "Completion Tokens": 15,
+            "Total Cost (USD)": 6.764999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedColumn) column \"void\" does not exist\nLINE 1: SELECT void;\n               ^\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT NULL;"
     ]
 }

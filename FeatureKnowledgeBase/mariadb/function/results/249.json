@@ -22,6 +22,20 @@
         "Numeric Functions"
     ],
     "EffectiveSQLsRefined": [
+        "CREATE TABLE t (i INT);",
+        "INSERT INTO t VALUES(1),(2),(3);",
+        "SELECT i, RAND() FROM t;",
+        "SELECT i, RAND(3) FROM t;",
+        "SELECT i, RAND() FROM t;",
+        "SELECT i, RAND(3) FROM t;",
+        "SELECT FLOOR(5 + (RAND() * 11));"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "CREATE TABLE t (i INT);",
+        "INSERT INTO t VALUES(1),(2),(3);",
         "SELECT i, RAND() FROM t;",
         "SELECT i, RAND(3) FROM t;",
         "SELECT i, RAND() FROM t;",

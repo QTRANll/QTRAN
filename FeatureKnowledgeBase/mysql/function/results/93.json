@@ -17,5 +17,31 @@
     "Category": [
         "Built-In Functions and Operators",
         "Internal Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT GET_DD_COLUMN_PRIVILEGES('your_column_name');",
+        "SELECT * FROM information_schema.columns WHERE column_name = 'your_column_name';"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 303,
+            "Prompt Tokens": 277,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 5.714999999999999e-05
+        },
+        {
+            "Total Tokens": 472,
+            "Prompt Tokens": 444,
+            "Completion Tokens": 28,
+            "Total Cost (USD)": 8.34e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.OperationalError) (3566, \"Access to native function 'GET_DD_COLUMN_PRIVILEGES' is rejected.\")\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT * FROM information_schema.columns WHERE column_name = 'your_column_name';"
     ]
 }

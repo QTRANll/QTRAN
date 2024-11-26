@@ -10,7 +10,7 @@
     ],
     "Description": [
         "USER()",
-        "USER() 函数返回当前连接的用户。该函数的输出可能与 CURRENT_USER() 的输出略有不同，因为 USER() 显示的是实际 IP 地址，而不是通配符。",
+        "USER() \u51fd\u6570\u8fd4\u56de\u5f53\u524d\u8fde\u63a5\u7684\u7528\u6237\u3002\u8be5\u51fd\u6570\u7684\u8f93\u51fa\u53ef\u80fd\u4e0e CURRENT_USER() \u7684\u8f93\u51fa\u7565\u6709\u4e0d\u540c\uff0c\u56e0\u4e3a USER() \u663e\u793a\u7684\u662f\u5b9e\u9645 IP \u5730\u5740\uff0c\u800c\u4e0d\u662f\u901a\u914d\u7b26\u3002",
         "SELECT USER(), CURRENT_USER();\n",
         "+----------------+----------------+\n| USER()         | CURRENT_USER() |\n+----------------+----------------+\n| root@127.0.0.1 | root@%         |\n+----------------+----------------+\n1 row in set (0.00 sec)\n"
     ],
@@ -18,6 +18,15 @@
         "SELECT USER(), CURRENT_USER();\n"
     ],
     "Category": [
-        "信息函数"
+        "\u4fe1\u606f\u51fd\u6570"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT USER(), CURRENT_USER();"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT USER(), CURRENT_USER();"
     ]
 }

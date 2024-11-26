@@ -6,15 +6,41 @@
         "width"
     ],
     "Feature": [
-        "width ( box ) → double precision"
+        "width ( box ) \u2192 double precision"
     ],
     "Description": [
         "Computes horizontal size of box."
     ],
     "Examples": [
-        "width(box '(1,2),(0,0)') → 1"
+        "width(box '(1,2),(0,0)') \u2192 1"
     ],
     "Category": [
         "Geometric Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT width(BOX) FROM your_table;",
+        "SELECT width(BOX) FROM (VALUES (NULL::box)) AS temp(BOX);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 265,
+            "Prompt Tokens": 244,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 4.9199999999999997e-05
+        },
+        {
+            "Total Tokens": 436,
+            "Prompt Tokens": 405,
+            "Completion Tokens": 31,
+            "Total Cost (USD)": 7.935e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedTable) relation \"your_table\" does not exist\nLINE 1: SELECT width(BOX) FROM your_table;\n                               ^\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT width(BOX) FROM (VALUES (NULL::box)) AS temp(BOX);"
     ]
 }

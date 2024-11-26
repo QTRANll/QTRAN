@@ -6,10 +6,10 @@
         "bit_xor"
     ],
     "Feature": [
-        "bit_xor ( smallint ) → smallint",
-        "bit_xor ( integer ) → integer",
-        "bit_xor ( bigint ) → bigint",
-        "bit_xor ( bit ) → bit"
+        "bit_xor ( smallint ) \u2192 smallint",
+        "bit_xor ( integer ) \u2192 integer",
+        "bit_xor ( bigint ) \u2192 bigint",
+        "bit_xor ( bit ) \u2192 bit"
     ],
     "Description": [
         "Computes the bitwise exclusive OR of all non-null input values. Can be useful as a checksum for an unordered set of values."
@@ -17,5 +17,31 @@
     "Examples": [],
     "Category": [
         "Aggregate Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT bit_xor(column_name) FROM table_name;",
+        "SELECT bit_xor(1);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 326,
+            "Prompt Tokens": 303,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 5.924999999999999e-05
+        },
+        {
+            "Total Tokens": 490,
+            "Prompt Tokens": 470,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 8.249999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedTable) relation \"table_name\" does not exist\nLINE 1: SELECT bit_xor(column_name) FROM table_name;\n                                         ^\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT bit_xor(1);"
     ]
 }

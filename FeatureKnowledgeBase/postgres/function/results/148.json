@@ -6,15 +6,33 @@
         "current_date"
     ],
     "Feature": [
-        "current_date → date"
+        "current_date \u2192 date"
     ],
     "Description": [
-        "Current date; see Section 9.9.5"
+        "Current date; see Section\u00a09.9.5"
     ],
     "Examples": [
-        "current_date → 2019-12-23"
+        "current_date \u2192 2019-12-23"
     ],
     "Category": [
         "Date divide Time Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT current_date;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 264,
+            "Prompt Tokens": 248,
+            "Completion Tokens": 16,
+            "Total Cost (USD)": 4.68e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT current_date;"
     ]
 }

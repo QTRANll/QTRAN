@@ -28,5 +28,15 @@
         "SELECT REGEXP_SUBSTR('ABC','b');",
         "SELECT REGEXP_SUBSTR(BINARY'ABC','b');",
         "SELECT REGEXP_SUBSTR('ABC','(?i)b');"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT REGEXP_SUBSTR('ab12cd','[0-9]+');",
+        "SELECT REGEXP_SUBSTR(\n  'See https://mariadb.org/en/foundation/ for details',\n  'https?://[^/]*');",
+        "SELECT REGEXP_SUBSTR('ABC','b');",
+        "SELECT REGEXP_SUBSTR(BINARY'ABC','b');",
+        "SELECT REGEXP_SUBSTR('ABC','(?i)b');"
     ]
 }

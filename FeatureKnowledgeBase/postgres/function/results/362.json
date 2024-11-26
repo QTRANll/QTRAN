@@ -6,7 +6,7 @@
         "GROUPING"
     ],
     "Feature": [
-        "GROUPING ( group_by_expression(s) ) → integer"
+        "GROUPING ( group_by_expression(s) ) \u2192 integer"
     ],
     "Description": [
         "Returns a bit mask indicating which GROUP BY expressions are not included in the current grouping set. Bits are assigned with the rightmost argument corresponding to the least-significant bit; each bit is 0 if the corresponding expression is included in the grouping criteria of the grouping set generating the current result row, and 1 if it is not included."
@@ -14,5 +14,31 @@
     "Examples": [],
     "Category": [
         "Aggregate Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT GROUPING(column_name) FROM table_name GROUP BY column_name;",
+        "SELECT GROUPING(column_name) FROM (VALUES (1), (2)) AS temp(column_name) GROUP BY column_name;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 338,
+            "Prompt Tokens": 312,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 6.24e-05
+        },
+        {
+            "Total Tokens": 520,
+            "Prompt Tokens": 483,
+            "Completion Tokens": 37,
+            "Total Cost (USD)": 9.464999999999998e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedTable) relation \"table_name\" does not exist\nLINE 1: SELECT GROUPING(column_name) FROM table_name GROUP BY column...\n                                          ^\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT GROUPING(column_name) FROM (VALUES (1), (2)) AS temp(column_name) GROUP BY column_name;"
     ]
 }

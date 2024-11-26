@@ -69,5 +69,38 @@
     ],
     "Category": [
         "List"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT [1, 2, 3];",
+        "SELECT ['duck', 'goose', NULL, 'heron'];",
+        "SELECT [['duck', 'goose', 'heron'], NULL, ['frog', 'toad'], []];",
+        "SELECT list_value(1, 2, 3);",
+        "CREATE TABLE list_table (int_list INTEGER[], varchar_list VARCHAR[]);",
+        "SELECT [1, 2] < [1, 3] AS result;",
+        "SELECT [[1], [2, 4, 5]] < [[2]] AS result;",
+        "SELECT [ ] < [1] AS result;",
+        "SELECT [ ] < [ ] AS result;",
+        "SELECT [1, 2] < [1] AS result;",
+        "SELECT [1, 2] < [1, NULL, 4] AS result;",
+        "CREATE TABLE tbl (id INTEGER PRIMARY KEY, lst INTEGER[], comment VARCHAR);",
+        "INSERT INTO tbl VALUES (1, [12, 34], 'asd');"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT [1, 2, 3];",
+        "SELECT ['duck', 'goose', NULL, 'heron'];",
+        "SELECT [['duck', 'goose', 'heron'], NULL, ['frog', 'toad'], []];",
+        "SELECT list_value(1, 2, 3);",
+        "CREATE TABLE list_table (int_list INTEGER[], varchar_list VARCHAR[]);",
+        "SELECT [1, 2] < [1, 3] AS result;",
+        "SELECT [[1], [2, 4, 5]] < [[2]] AS result;",
+        "SELECT [ ] < [1] AS result;",
+        "SELECT [ ] < [ ] AS result;",
+        "SELECT [1, 2] < [1] AS result;",
+        "SELECT [1, 2] < [1, NULL, 4] AS result;",
+        "CREATE TABLE tbl (id INTEGER PRIMARY KEY, lst INTEGER[], comment VARCHAR);",
+        "INSERT INTO tbl VALUES (1, [12, 34], 'asd');"
     ]
 }

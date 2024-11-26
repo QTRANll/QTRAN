@@ -16,5 +16,23 @@
     ],
     "Category": [
         "Utility Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT icu_sort_key('example_string', 'en_US');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 314,
+            "Prompt Tokens": 288,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 5.879999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT icu_sort_key('example_string', 'en_US');"
     ]
 }

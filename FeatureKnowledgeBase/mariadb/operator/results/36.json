@@ -20,5 +20,18 @@
     ],
     "Category": [
         "Comparison Operators"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT LEAST(2,0);",
+        "SELECT LEAST(34.0,3.0,5.0,767.0);",
+        "SELECT LEAST('B','A','C');"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT LEAST(2,0);",
+        "SELECT LEAST(34.0,3.0,5.0,767.0);",
+        "SELECT LEAST('B','A','C');"
     ]
 }

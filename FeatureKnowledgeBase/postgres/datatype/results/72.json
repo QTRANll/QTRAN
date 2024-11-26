@@ -15,5 +15,23 @@
     "Examples": [],
     "Category": [
         "Pseudo-Types"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT * FROM pg_catalog.pg_type WHERE typname = 'internal';"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 276,
+            "Prompt Tokens": 249,
+            "Completion Tokens": 27,
+            "Total Cost (USD)": 5.355e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT * FROM pg_catalog.pg_type WHERE typname = 'internal';"
     ]
 }

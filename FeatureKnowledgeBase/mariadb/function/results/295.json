@@ -20,5 +20,11 @@
     ],
     "EffectiveSQLsRefined": [
         "SELECT ST_AsText(ST_Centroid(@poly)) AS center;"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT ST_AsText(ST_Centroid(@poly)) AS center;"
     ]
 }

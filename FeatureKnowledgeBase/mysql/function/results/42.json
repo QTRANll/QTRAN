@@ -22,5 +22,16 @@
     "Category": [
         "Built-In Functions and Operators",
         "String Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT CONCAT_WS(',', 'First name', 'Second name', 'Last Name');",
+        "SELECT CONCAT_WS(',', 'First name', NULL, 'Last Name');"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT CONCAT_WS(',', 'First name', 'Second name', 'Last Name');",
+        "SELECT CONCAT_WS(',', 'First name', NULL, 'Last Name');"
     ]
 }

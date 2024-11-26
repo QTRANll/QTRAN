@@ -14,5 +14,23 @@
     "Examples": [],
     "Category": [
         "Core SQL Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT sqlite_compileoption_used('ENABLE_JSON1');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 361,
+            "Prompt Tokens": 338,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 6.45e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT sqlite_compileoption_used('ENABLE_JSON1');"
     ]
 }

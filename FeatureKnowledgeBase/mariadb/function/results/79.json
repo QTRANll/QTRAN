@@ -29,5 +29,22 @@
     "Category": [
         "Encryption, Hashing and Compression Functions"
     ],
-    "EffectiveSQLsRefined": []
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT DES_ENCRYPT('your_string_here');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 687,
+            "Prompt Tokens": 665,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 0.00011295
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT DES_ENCRYPT('your_string_here');"
+    ]
 }

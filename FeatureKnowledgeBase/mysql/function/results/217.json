@@ -19,5 +19,47 @@
     "Category": [
         "Built-In Functions and Operators",
         "Spatial Analysis Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT MBRIntersects(g1, g2);",
+        "SELECT MBRIntersects(GeomFromText('POINT(1 1)'), GeomFromText('POINT(2 2)'));",
+        "SELECT MBRIntersects(GeomFromWKB(0x01010000005839B4C0D2D0C0C0D2D0C0C0D2D0C0C0), GeomFromWKB(0x01010000005839B4C0D2D0C0C0D2D0C0C0D2D0C0C0));",
+        "SELECT MBRIntersects(ST_GeomFromText('POLYGON((0 0, 0 1, 1 1, 1 0, 0 0))'), ST_GeomFromText('POLYGON((0.5 0.5, 0.5 1.5, 1.5 1.5, 1.5 0.5, 0.5 0.5))'));"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 366,
+            "Prompt Tokens": 342,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 6.57e-05
+        },
+        {
+            "Total Tokens": 543,
+            "Prompt Tokens": 502,
+            "Completion Tokens": 41,
+            "Total Cost (USD)": 9.989999999999999e-05
+        },
+        {
+            "Total Tokens": 784,
+            "Prompt Tokens": 682,
+            "Completion Tokens": 102,
+            "Total Cost (USD)": 0.0001635
+        },
+        {
+            "Total Tokens": 1032,
+            "Prompt Tokens": 924,
+            "Completion Tokens": 108,
+            "Total Cost (USD)": 0.0002034
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.OperationalError) (1054, \"Unknown column 'g1' in 'field list'\")\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.GeomFromText does not exist')\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.GeomFromWKB does not exist')\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT MBRIntersects(ST_GeomFromText('POLYGON((0 0, 0 1, 1 1, 1 0, 0 0))'), ST_GeomFromText('POLYGON((0.5 0.5, 0.5 1.5, 1.5 1.5, 1.5 0.5, 0.5 0.5))'));"
     ]
 }

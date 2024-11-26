@@ -6,7 +6,7 @@
         "pg_get_expr"
     ],
     "Feature": [
-        "pg_get_expr ( expr pg_node_tree, relation oid [, pretty boolean ] ) → text"
+        "pg_get_expr ( expr pg_node_tree, relation oid [, pretty boolean ] ) \u2192 text"
     ],
     "Description": [
         "Decompiles the internal form of an expression stored in the system catalogs, such as the default value for a column. If the expression might contain Vars, specify the OID of the relation they refer to as the second parameter; if no Vars are expected, passing zero is sufficient."
@@ -14,5 +14,39 @@
     "Examples": [],
     "Category": [
         "System Information Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT pg_get_expr('my_expression'::pg_node_tree, 0);",
+        "SELECT pg_get_expr('my_expression', 0);",
+        "SELECT pg_get_expr(NULL, 0);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 340,
+            "Prompt Tokens": 311,
+            "Completion Tokens": 29,
+            "Total Cost (USD)": 6.405e-05
+        },
+        {
+            "Total Tokens": 513,
+            "Prompt Tokens": 489,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 8.774999999999999e-05
+        },
+        {
+            "Total Tokens": 679,
+            "Prompt Tokens": 657,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 0.00011174999999999999
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.FeatureNotSupported) cannot accept a value of type pg_node_tree\nLINE 1: SELECT pg_get_expr('my_expression'::pg_node_tree, 0);\n                           ^\n\n",
+        "(psycopg2.errors.FeatureNotSupported) cannot accept a value of type pg_node_tree\nLINE 1: SELECT pg_get_expr('my_expression', 0);\n                           ^\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT pg_get_expr(NULL, 0);"
     ]
 }

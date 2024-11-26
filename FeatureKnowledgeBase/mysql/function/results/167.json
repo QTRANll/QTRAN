@@ -25,5 +25,14 @@
     "Category": [
         "Built-In Functions and Operators",
         "JSON Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT JSON_MERGE_PRESERVE('[1, 2]', '[true, false]');"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT JSON_MERGE_PRESERVE('[1, 2]', '[true, false]');"
     ]
 }

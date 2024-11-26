@@ -16,5 +16,23 @@
     ],
     "Category": [
         "Cast Conversion Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT inet '192.168.1.1';"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 287,
+            "Prompt Tokens": 263,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 5.3849999999999994e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT inet '192.168.1.1';"
     ]
 }

@@ -6,15 +6,33 @@
         "sha512"
     ],
     "Feature": [
-        "sha512 ( bytea ) → bytea"
+        "sha512 ( bytea ) \u2192 bytea"
     ],
     "Description": [
         "Computes the SHA-512 hash of the binary string."
     ],
     "Examples": [
-        "sha512('abc'::bytea) → \\xddaf35a193617abacc417349ae204131​12e6fa4e89a97ea20a9eeee64b55d39a​2192992a274fc1a836ba3c23a3feebbd​454d4423643ce80e2a9ac94fa54ca49f"
+        "sha512('abc'::bytea) \u2192 \\xddaf35a193617abacc417349ae204131\u200b12e6fa4e89a97ea20a9eeee64b55d39a\u200b2192992a274fc1a836ba3c23a3feebbd\u200b454d4423643ce80e2a9ac94fa54ca49f"
     ],
     "Category": [
         "Binary String Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT sha512('your_binary_data'::bytea);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 279,
+            "Prompt Tokens": 254,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 5.3099999999999996e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT sha512('your_binary_data'::bytea);"
     ]
 }

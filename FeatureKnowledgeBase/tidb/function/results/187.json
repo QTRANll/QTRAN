@@ -10,16 +10,25 @@
     ],
     "Description": [
         "JSON_QUOTE()",
-        "JSON_QUOTE(str) 函数将字符串返回为带引号的 JSON 值。",
+        "JSON_QUOTE(str) \u51fd\u6570\u5c06\u5b57\u7b26\u4e32\u8fd4\u56de\u4e3a\u5e26\u5f15\u53f7\u7684 JSON \u503c\u3002",
         "SELECT JSON_QUOTE('The name is \"O\\'Neil\"');\n",
         "+-------------------------------------+\n| JSON_QUOTE('The name is \"O\\'Neil\"') |\n+-------------------------------------+\n| \"The name is \\\"O'Neil\\\"\"            |\n+-------------------------------------+\n1 row in set (0.00 sec)\n",
-        "另请参阅",
-        "JSON 函数JSON 数据类型"
+        "\u53e6\u8bf7\u53c2\u9605",
+        "JSON \u51fd\u6570JSON \u6570\u636e\u7c7b\u578b"
     ],
     "Examples": [
         "SELECT JSON_QUOTE('The name is \"O\\'Neil\"');\n"
     ],
     "Category": [
-        "创建 JSON 的函数"
+        "\u521b\u5efa JSON \u7684\u51fd\u6570"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT JSON_QUOTE('The name is \"O\\'Neil\"');"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT JSON_QUOTE('The name is \"O\\'Neil\"');"
     ]
 }

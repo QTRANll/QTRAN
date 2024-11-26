@@ -36,5 +36,20 @@
     ],
     "Category": [
         "Time"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT TIME '1992-09-20 11:30:00.123456';",
+        "SELECT TIMETZ '1992-09-20 11:30:00.123456';",
+        "SELECT TIMETZ '1992-09-20 11:30:00.123456-02:00';",
+        "SELECT TIMETZ '1992-09-20 11:30:00.123456+05:30';"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT TIME '1992-09-20 11:30:00.123456';",
+        "SELECT TIMETZ '1992-09-20 11:30:00.123456';",
+        "SELECT TIMETZ '1992-09-20 11:30:00.123456-02:00';",
+        "SELECT TIMETZ '1992-09-20 11:30:00.123456+05:30';"
     ]
 }

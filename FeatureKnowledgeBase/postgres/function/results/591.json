@@ -6,8 +6,8 @@
         "pg_advisory_lock_shared"
     ],
     "Feature": [
-        "pg_advisory_lock_shared ( key bigint ) → void",
-        "pg_advisory_lock_shared ( key1 integer, key2 integer ) → void"
+        "pg_advisory_lock_shared ( key bigint ) \u2192 void",
+        "pg_advisory_lock_shared ( key1 integer, key2 integer ) \u2192 void"
     ],
     "Description": [
         "Obtains a shared session-level advisory lock, waiting if necessary."
@@ -15,5 +15,23 @@
     "Examples": [],
     "Category": [
         "System Administration Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT pg_advisory_lock_shared(12345);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 313,
+            "Prompt Tokens": 289,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 5.774999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT pg_advisory_lock_shared(12345);"
     ]
 }

@@ -22,5 +22,14 @@
     "Category": [
         "Built-In Functions and Operators",
         "Information Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "CREATE TABLE t (c VARCHAR(288) DEFAULT (SESSION_USER()));"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "CREATE TABLE t (c VARCHAR(288) DEFAULT (SESSION_USER()));"
     ]
 }

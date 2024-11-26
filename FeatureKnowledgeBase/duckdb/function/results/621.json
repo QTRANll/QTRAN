@@ -16,5 +16,55 @@
     "Examples": [],
     "Category": [
         "Window Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT nth_value(column, 2) FROM table_name;",
+        "SELECT nth_value(your_column_name, 2) FROM your_table_name;",
+        "SELECT nth_value(column, 2) OVER () FROM your_table_name;",
+        "SELECT nth_value(your_column_name, 2) OVER () FROM your_table_name;",
+        "SELECT nth_value(your_column_name, 2) OVER () FROM (SELECT 1 AS your_column_name);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 340,
+            "Prompt Tokens": 316,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 6.18e-05
+        },
+        {
+            "Total Tokens": 498,
+            "Prompt Tokens": 470,
+            "Completion Tokens": 28,
+            "Total Cost (USD)": 8.73e-05
+        },
+        {
+            "Total Tokens": 690,
+            "Prompt Tokens": 663,
+            "Completion Tokens": 27,
+            "Total Cost (USD)": 0.00011564999999999999
+        },
+        {
+            "Total Tokens": 850,
+            "Prompt Tokens": 820,
+            "Completion Tokens": 30,
+            "Total Cost (USD)": 0.00014099999999999998
+        },
+        {
+            "Total Tokens": 1051,
+            "Prompt Tokens": 1015,
+            "Completion Tokens": 36,
+            "Total Cost (USD)": 0.00017384999999999997
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.ParserException) Parser Error: syntax error at or near \"column\"\n",
+        "(duckdb.duckdb.CatalogException) Catalog Error: Table with name your_table_name does not exist!\nDid you mean \"pg_tablespace\"?\nLINE 1: ...CT nth_value(your_column_name, 2) FROM your_table_name;\n                                                  ^\n",
+        "(duckdb.duckdb.ParserException) Parser Error: syntax error at or near \"column\"\n",
+        "(duckdb.duckdb.CatalogException) Catalog Error: Table with name your_table_name does not exist!\nDid you mean \"pg_tablespace\"?\nLINE 1: ...alue(your_column_name, 2) OVER () FROM your_table_name;\n                                                  ^\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT nth_value(your_column_name, 2) OVER () FROM (SELECT 1 AS your_column_name);"
     ]
 }

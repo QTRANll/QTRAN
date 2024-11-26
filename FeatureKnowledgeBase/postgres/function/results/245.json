@@ -6,16 +6,34 @@
         "json_object"
     ],
     "Feature": [
-        "json_object ( keys text[], values text[] ) → json",
-        "jsonb_object ( keys text[], values text[] ) → jsonb"
+        "json_object ( keys text[], values text[] ) \u2192 json",
+        "jsonb_object ( keys text[], values text[] ) \u2192 jsonb"
     ],
     "Description": [
         "This form of json_object takes keys and values pairwise from separate text arrays. Otherwise it is identical to the one-argument form."
     ],
     "Examples": [
-        "json_object('{a,b}', '{1,2}') → {\"a\": \"1\", \"b\": \"2\"}"
+        "json_object('{a,b}', '{1,2}') \u2192 {\"a\": \"1\", \"b\": \"2\"}"
     ],
     "Category": [
         "JSON Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT json_object(ARRAY['key1', 'key2'], ARRAY['value1', 'value2']);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 323,
+            "Prompt Tokens": 288,
+            "Completion Tokens": 35,
+            "Total Cost (USD)": 6.419999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT json_object(ARRAY['key1', 'key2'], ARRAY['value1', 'value2']);"
     ]
 }

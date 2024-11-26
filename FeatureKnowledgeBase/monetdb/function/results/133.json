@@ -14,9 +14,27 @@
         "normalisation of a string s. Converts letters to uppercase and removes all characters not in a..zA..Z0..9 or space"
     ],
     "Examples": [
-        "qgramnormalize(R'Prize €50!')"
+        "qgramnormalize(R'Prize \u20ac50!')"
     ],
     "Category": [
         "Character String Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT qgramnormalize('Hello, World! 123')"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 312,
+            "Prompt Tokens": 287,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 5.8049999999999995e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT qgramnormalize('Hello, World! 123')"
     ]
 }

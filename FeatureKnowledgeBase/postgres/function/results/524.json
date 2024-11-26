@@ -6,7 +6,7 @@
         "pg_last_wal_replay_lsn"
     ],
     "Feature": [
-        "pg_last_wal_replay_lsn () → pg_lsn"
+        "pg_last_wal_replay_lsn () \u2192 pg_lsn"
     ],
     "Description": [
         "Returns the last write-ahead log location that has been replayed during recovery. If recovery is still in progress this will increase monotonically. If recovery has completed then this will remain static at the location of the last WAL record applied during recovery. When the server has been started normally without recovery, the function returns NULL."
@@ -14,5 +14,23 @@
     "Examples": [],
     "Category": [
         "System Administration Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT pg_last_wal_replay_lsn();"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 351,
+            "Prompt Tokens": 328,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 6.3e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT pg_last_wal_replay_lsn();"
     ]
 }

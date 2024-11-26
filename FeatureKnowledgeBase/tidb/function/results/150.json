@@ -10,10 +10,28 @@
     ],
     "Description": [
         "BINARY",
-        "BINARY 运算符从 MySQL 8.0.27 版本起已被废弃。建议在 TiDB 和 MySQL 中都改用 CAST(... AS BINARY)。"
+        "BINARY \u8fd0\u7b97\u7b26\u4ece MySQL 8.0.27 \u7248\u672c\u8d77\u5df2\u88ab\u5e9f\u5f03\u3002\u5efa\u8bae\u5728 TiDB \u548c MySQL \u4e2d\u90fd\u6539\u7528 CAST(... AS BINARY)\u3002"
     ],
     "Examples": [],
     "Category": [
-        "Cast 函数和操作符"
+        "Cast \u51fd\u6570\u548c\u64cd\u4f5c\u7b26"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT CAST('example' AS BINARY);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 301,
+            "Prompt Tokens": 279,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 5.5049999999999996e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT CAST('example' AS BINARY);"
     ]
 }

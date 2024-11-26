@@ -22,5 +22,53 @@
     "Category": [
         "Built-In Functions and Operators",
         "Miscellaneous Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "UPDATE t SET i = DEFAULT(i) + 1 WHERE id < 100;",
+        "SELECT DEFAULT(i) FROM t WHERE id < 100;",
+        "SELECT DEFAULT(col_name);",
+        "SELECT DEFAULT('your_column_name');",
+        "SELECT DEFAULT('column_name');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 398,
+            "Prompt Tokens": 369,
+            "Completion Tokens": 29,
+            "Total Cost (USD)": 7.274999999999999e-05
+        },
+        {
+            "Total Tokens": 559,
+            "Prompt Tokens": 535,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 9.465e-05
+        },
+        {
+            "Total Tokens": 714,
+            "Prompt Tokens": 696,
+            "Completion Tokens": 18,
+            "Total Cost (USD)": 0.00011519999999999998
+        },
+        {
+            "Total Tokens": 870,
+            "Prompt Tokens": 850,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 0.00013949999999999998
+        },
+        {
+            "Total Tokens": 1052,
+            "Prompt Tokens": 1033,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 0.00016634999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.ProgrammingError) (1146, \"Table 'knowledge_base_preprocess_mysql.t' doesn't exist\")\n",
+        "(pymysql.err.ProgrammingError) (1146, \"Table 'knowledge_base_preprocess_mysql.t' doesn't exist\")\n",
+        "(pymysql.err.OperationalError) (1054, \"Unknown column 'col_name' in 'field list'\")\n",
+        "(pymysql.err.ProgrammingError) (1064, \"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''your_column_name')' at line 1\")\n",
+        "(pymysql.err.ProgrammingError) (1064, \"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''column_name')' at line 1\")\n"
+    ],
+    "EffectiveSQLs": []
 }

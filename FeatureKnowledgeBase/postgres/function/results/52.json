@@ -6,15 +6,33 @@
         "asinh"
     ],
     "Feature": [
-        "asinh ( double precision ) → double precision"
+        "asinh ( double precision ) \u2192 double precision"
     ],
     "Description": [
         "Inverse hyperbolic sine"
     ],
     "Examples": [
-        "asinh(1) → 0.881373587019543"
+        "asinh(1) \u2192 0.881373587019543"
     ],
     "Category": [
         "Mathematical Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT asinh(1.0);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 268,
+            "Prompt Tokens": 247,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 4.965e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT asinh(1.0);"
     ]
 }

@@ -6,15 +6,49 @@
         "overlay"
     ],
     "Feature": [
-        "overlay ( string text PLACING newsubstring text FROM start integer [ FOR count integer ] ) → text"
+        "overlay ( string text PLACING newsubstring text FROM start integer [ FOR count integer ] ) \u2192 text"
     ],
     "Description": [
         "Replaces the substring of string that starts at the start'th character and extends for count characters with newsubstring. If count is omitted, it defaults to the length of newsubstring."
     ],
     "Examples": [
-        "overlay('Txxxxas' placing 'hom' from 2 for 4) → Thomas"
+        "overlay('Txxxxas' placing 'hom' from 2 for 4) \u2192 Thomas"
     ],
     "Category": [
         "String Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT overlay('Hello World', 'AI', FROM 7);",
+        "SELECT overlay('Hello World', 'AI' PLACING FROM 7);",
+        "SELECT overlay('Hello World' PLACING 'AI' FROM 7);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 313,
+            "Prompt Tokens": 287,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 5.864999999999999e-05
+        },
+        {
+            "Total Tokens": 482,
+            "Prompt Tokens": 454,
+            "Completion Tokens": 28,
+            "Total Cost (USD)": 8.49e-05
+        },
+        {
+            "Total Tokens": 654,
+            "Prompt Tokens": 626,
+            "Completion Tokens": 28,
+            "Total Cost (USD)": 0.0001107
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.SyntaxError) syntax error at or near \"FROM\"\nLINE 1: SELECT overlay('Hello World', 'AI', FROM 7);\n                                            ^\n\n",
+        "(psycopg2.errors.SyntaxError) syntax error at or near \"PLACING\"\nLINE 1: SELECT overlay('Hello World', 'AI' PLACING FROM 7);\n                                           ^\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT overlay('Hello World' PLACING 'AI' FROM 7);"
     ]
 }

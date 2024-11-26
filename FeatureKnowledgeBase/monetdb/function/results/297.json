@@ -16,5 +16,53 @@
     "Examples": [],
     "Category": [
         "Window Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT row_number(value) FROM your_table;",
+        "SELECT row_number() OVER () AS row_num;",
+        "SELECT row_number() OVER () AS row_num FROM your_table;",
+        "SELECT row_number() OVER () AS row_num;",
+        "SELECT row_number() OVER () AS row_num;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 291,
+            "Prompt Tokens": 270,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 5.31e-05
+        },
+        {
+            "Total Tokens": 452,
+            "Prompt Tokens": 430,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 7.769999999999999e-05
+        },
+        {
+            "Total Tokens": 590,
+            "Prompt Tokens": 565,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 9.974999999999999e-05
+        },
+        {
+            "Total Tokens": 745,
+            "Prompt Tokens": 723,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 0.00012164999999999999
+        },
+        {
+            "Total Tokens": 880,
+            "Prompt Tokens": 858,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 0.00014189999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymonetdb.exceptions.OperationalError) 42000!syntax error, unexpected VALUE, expecting ')' in: \"select row_number(value\"\n\n",
+        "Server closed connection",
+        "(pymonetdb.exceptions.OperationalError) 42S02!SELECT: no such table 'your_table'\n\n",
+        "Server closed connection",
+        "Server closed connection"
+    ],
+    "EffectiveSQLs": []
 }

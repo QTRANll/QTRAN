@@ -25,5 +25,53 @@
     ],
     "Category": [
         "Loadable Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT gen_range(10, 50);",
+        "SELECT gen_range(1, 100);",
+        "SELECT gen_range(0, 10);",
+        "SELECT gen_range(-10, 10);",
+        "SELECT gen_range(5, 15);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 546,
+            "Prompt Tokens": 524,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 9.18e-05
+        },
+        {
+            "Total Tokens": 703,
+            "Prompt Tokens": 681,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 0.00011535
+        },
+        {
+            "Total Tokens": 860,
+            "Prompt Tokens": 838,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 0.0001389
+        },
+        {
+            "Total Tokens": 1017,
+            "Prompt Tokens": 995,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 0.00016245
+        },
+        {
+            "Total Tokens": 1174,
+            "Prompt Tokens": 1152,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 0.00018599999999999997
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.gen_range does not exist')\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.gen_range does not exist')\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.gen_range does not exist')\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.gen_range does not exist')\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.gen_range does not exist')\n"
+    ],
+    "EffectiveSQLs": []
 }

@@ -6,16 +6,50 @@
         "json -> text"
     ],
     "Feature": [
-        "json -> text → json",
-        "jsonb -> text → jsonb"
+        "json -> text \u2192 json",
+        "jsonb -> text \u2192 jsonb"
     ],
     "Description": [
         "Extracts JSON object field with the given key."
     ],
     "Examples": [
-        "'{\"a\": {\"b\":\"foo\"}}'::json -> 'a' → {\"b\":\"foo\"}"
+        "'{\"a\": {\"b\":\"foo\"}}'::json -> 'a' \u2192 {\"b\":\"foo\"}"
     ],
     "Category": [
         "JSON Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT json_column->>'key' FROM table_name;",
+        "SELECT json_column->>'key' FROM json_data;",
+        "SELECT '{}'::json->>'key';"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 283,
+            "Prompt Tokens": 260,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 5.2799999999999996e-05
+        },
+        {
+            "Total Tokens": 450,
+            "Prompt Tokens": 427,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 7.785e-05
+        },
+        {
+            "Total Tokens": 615,
+            "Prompt Tokens": 594,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 0.00010169999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedTable) relation \"table_name\" does not exist\nLINE 1: SELECT json_column->>'key' FROM table_name;\n                                        ^\n\n",
+        "(psycopg2.errors.UndefinedTable) relation \"json_data\" does not exist\nLINE 1: SELECT json_column->>'key' FROM json_data;\n                                        ^\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT '{}'::json->>'key';"
     ]
 }

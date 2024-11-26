@@ -6,15 +6,33 @@
         "degrees"
     ],
     "Feature": [
-        "degrees ( double precision ) → double precision"
+        "degrees ( double precision ) \u2192 double precision"
     ],
     "Description": [
         "Converts radians to degrees"
     ],
     "Examples": [
-        "degrees(0.5) → 28.64788975654116"
+        "degrees(0.5) \u2192 28.64788975654116"
     ],
     "Category": [
         "Mathematical Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT degrees(1.5708);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 264,
+            "Prompt Tokens": 243,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 4.905e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT degrees(1.5708);"
     ]
 }

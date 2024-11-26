@@ -28,5 +28,17 @@
         "SELECT ADD_MONTHS('2012-01-31', 2);",
         "SELECT ADD_MONTHS('2012-01-31', 3);",
         "SELECT ADD_MONTHS('2011-01-15', 2.5);"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT ADD_MONTHS('2012-01-31', 2);",
+        "SELECT ADD_MONTHS('2012-01-31', -5);",
+        "SELECT ADD_MONTHS('2011-01-31', 1);",
+        "SELECT ADD_MONTHS('2012-01-31', 1);",
+        "SELECT ADD_MONTHS('2012-01-31', 2);",
+        "SELECT ADD_MONTHS('2012-01-31', 3);",
+        "SELECT ADD_MONTHS('2011-01-15', 2.5);"
     ]
 }

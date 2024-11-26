@@ -20,5 +20,11 @@
     ],
     "EffectiveSQLsRefined": [
         "SELECT JSON_VALUE(@json,'$.key1') AS Name , json_value(@json,'$.key2') as ID;"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT JSON_VALUE(@json,'$.key1') AS Name , json_value(@json,'$.key2') as ID;"
     ]
 }

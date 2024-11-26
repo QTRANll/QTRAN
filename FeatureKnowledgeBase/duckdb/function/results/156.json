@@ -16,5 +16,31 @@
     ],
     "Category": [
         "Date Part Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT quarter(date);",
+        "SELECT quarter(current_date);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 259,
+            "Prompt Tokens": 242,
+            "Completion Tokens": 17,
+            "Total Cost (USD)": 4.649999999999999e-05
+        },
+        {
+            "Total Tokens": 418,
+            "Prompt Tokens": 400,
+            "Completion Tokens": 18,
+            "Total Cost (USD)": 7.079999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.BinderException) Binder Error: Referenced column \"date\" not found in FROM clause!\nLINE 1: SELECT quarter(date);\n                       ^\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT quarter(current_date);"
     ]
 }

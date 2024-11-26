@@ -15,5 +15,55 @@
     "Examples": [],
     "Category": [
         "Pseudo-Types"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT * FROM my_table WHERE my_column && ANYMULTIRANGE('[[1, 5], [10, 15]]');",
+        "SELECT * WHERE my_column && ANYMULTIRANGE('[[1, 5], [10, 15]]');",
+        "SELECT ANYMULTIRANGE('[[1, 5], [10, 15]]');",
+        "SELECT '[1, 5), [10, 15)'::anymultirange;",
+        "SELECT '[1, 5), [10, 15)'::text;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 314,
+            "Prompt Tokens": 274,
+            "Completion Tokens": 40,
+            "Total Cost (USD)": 6.51e-05
+        },
+        {
+            "Total Tokens": 502,
+            "Prompt Tokens": 465,
+            "Completion Tokens": 37,
+            "Total Cost (USD)": 9.195e-05
+        },
+        {
+            "Total Tokens": 691,
+            "Prompt Tokens": 659,
+            "Completion Tokens": 32,
+            "Total Cost (USD)": 0.00011805
+        },
+        {
+            "Total Tokens": 876,
+            "Prompt Tokens": 845,
+            "Completion Tokens": 31,
+            "Total Cost (USD)": 0.00014534999999999998
+        },
+        {
+            "Total Tokens": 1058,
+            "Prompt Tokens": 1030,
+            "Completion Tokens": 28,
+            "Total Cost (USD)": 0.0001713
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedTable) relation \"my_table\" does not exist\nLINE 1: SELECT * FROM my_table WHERE my_column && ANYMULTIRANGE('[[1...\n                      ^\n\n",
+        "(psycopg2.errors.SyntaxError) SELECT * with no tables specified is not valid\nLINE 1: SELECT * WHERE my_column && ANYMULTIRANGE('[[1, 5], [10, 15]...\n               ^\n\n",
+        "(psycopg2.errors.FeatureNotSupported) cannot accept a value of type anymultirange\nLINE 1: SELECT ANYMULTIRANGE('[[1, 5], [10, 15]]');\n                             ^\n\n",
+        "(psycopg2.errors.FeatureNotSupported) cannot accept a value of type anymultirange\nLINE 1: SELECT '[1, 5), [10, 15)'::anymultirange;\n               ^\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT '[1, 5), [10, 15)'::text;"
     ]
 }

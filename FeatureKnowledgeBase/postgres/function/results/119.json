@@ -6,15 +6,49 @@
         "length"
     ],
     "Feature": [
-        "length ( bytes bytea, encoding name ) → integer"
+        "length ( bytes bytea, encoding name ) \u2192 integer"
     ],
     "Description": [
         "Returns the number of characters in the binary string, assuming that it is text in the given encoding."
     ],
     "Examples": [
-        "length('jose'::bytea, 'UTF8') → 4"
+        "length('jose'::bytea, 'UTF8') \u2192 4"
     ],
     "Category": [
         "Binary String Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT length(your_bytea_column, 'UTF8') FROM your_table;",
+        "SELECT length(your_bytea_column, 'UTF8');",
+        "SELECT length(E'\\x48656c6c6f', 'UTF8');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 289,
+            "Prompt Tokens": 261,
+            "Completion Tokens": 28,
+            "Total Cost (USD)": 5.594999999999999e-05
+        },
+        {
+            "Total Tokens": 461,
+            "Prompt Tokens": 436,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 8.039999999999999e-05
+        },
+        {
+            "Total Tokens": 637,
+            "Prompt Tokens": 606,
+            "Completion Tokens": 31,
+            "Total Cost (USD)": 0.00010949999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedTable) relation \"your_table\" does not exist\nLINE 1: SELECT length(your_bytea_column, 'UTF8') FROM your_table;\n                                                      ^\n\n",
+        "(psycopg2.errors.UndefinedColumn) column \"your_bytea_column\" does not exist\nLINE 1: SELECT length(your_bytea_column, 'UTF8');\n                      ^\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT length(E'\\x48656c6c6f', 'UTF8');"
     ]
 }

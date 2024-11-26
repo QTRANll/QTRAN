@@ -18,5 +18,53 @@
     "Category": [
         "Built-In Functions and Operators",
         "Spatial Analysis Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT Polygon(LineString(0 0, 0 1, 1 1, 1 0, 0 0));",
+        "SELECT Polygon(LineString(0 0, 0 1, 1 1, 1 0, 0 0));",
+        "SELECT Polygon(LineString(0 0, 0 1, 1 1, 1 0, 0 0));",
+        "SELECT Polygon(LineString(0 0, 0 1, 1 1, 1 0, 0 0));",
+        "SELECT Polygon(LineString(0 0, 0 1, 1 1, 1 0, 0 0));"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 377,
+            "Prompt Tokens": 335,
+            "Completion Tokens": 42,
+            "Total Cost (USD)": 7.545e-05
+        },
+        {
+            "Total Tokens": 600,
+            "Prompt Tokens": 558,
+            "Completion Tokens": 42,
+            "Total Cost (USD)": 0.0001089
+        },
+        {
+            "Total Tokens": 823,
+            "Prompt Tokens": 781,
+            "Completion Tokens": 42,
+            "Total Cost (USD)": 0.00014235
+        },
+        {
+            "Total Tokens": 1046,
+            "Prompt Tokens": 1004,
+            "Completion Tokens": 42,
+            "Total Cost (USD)": 0.00017579999999999996
+        },
+        {
+            "Total Tokens": 1269,
+            "Prompt Tokens": 1227,
+            "Completion Tokens": 42,
+            "Total Cost (USD)": 0.00020925
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.ProgrammingError) (1064, \"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '0, 0 1, 1 1, 1 0, 0 0))' at line 1\")\n",
+        "(pymysql.err.ProgrammingError) (1064, \"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '0, 0 1, 1 1, 1 0, 0 0))' at line 1\")\n",
+        "(pymysql.err.ProgrammingError) (1064, \"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '0, 0 1, 1 1, 1 0, 0 0))' at line 1\")\n",
+        "(pymysql.err.ProgrammingError) (1064, \"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '0, 0 1, 1 1, 1 0, 0 0))' at line 1\")\n",
+        "(pymysql.err.ProgrammingError) (1064, \"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '0, 0 1, 1 1, 1 0, 0 0))' at line 1\")\n"
+    ],
+    "EffectiveSQLs": []
 }

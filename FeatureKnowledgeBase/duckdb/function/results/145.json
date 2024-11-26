@@ -16,5 +16,31 @@
     ],
     "Category": [
         "Date Part Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT decade(date);",
+        "SELECT decade(current_date);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 269,
+            "Prompt Tokens": 252,
+            "Completion Tokens": 17,
+            "Total Cost (USD)": 4.8e-05
+        },
+        {
+            "Total Tokens": 429,
+            "Prompt Tokens": 411,
+            "Completion Tokens": 18,
+            "Total Cost (USD)": 7.245e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.BinderException) Binder Error: Referenced column \"date\" not found in FROM clause!\nLINE 1: SELECT decade(date);\n                      ^\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT decade(current_date);"
     ]
 }

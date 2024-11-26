@@ -6,15 +6,41 @@
         "set_byte"
     ],
     "Feature": [
-        "set_byte ( bytes bytea, n integer, newvalue integer ) → bytea"
+        "set_byte ( bytes bytea, n integer, newvalue integer ) \u2192 bytea"
     ],
     "Description": [
         "Sets n'th byte in binary string to newvalue."
     ],
     "Examples": [
-        "set_byte('\\x1234567890'::bytea, 4, 64) → \\x1234567840"
+        "set_byte('\\x1234567890'::bytea, 4, 64) \u2192 \\x1234567840"
     ],
     "Category": [
         "Binary String Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT set_byte(E'\\x00ff', 1, 0);",
+        "SELECT set_byte(E'\\x01ff', 1, 0);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 290,
+            "Prompt Tokens": 261,
+            "Completion Tokens": 29,
+            "Total Cost (USD)": 5.654999999999999e-05
+        },
+        {
+            "Total Tokens": 449,
+            "Prompt Tokens": 420,
+            "Completion Tokens": 29,
+            "Total Cost (USD)": 8.039999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.CharacterNotInRepertoire) invalid byte sequence for encoding \"UTF8\": 0x00\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT set_byte(E'\\x01ff', 1, 0);"
     ]
 }

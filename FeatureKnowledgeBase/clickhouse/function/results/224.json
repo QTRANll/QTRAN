@@ -28,5 +28,9 @@
     ],
     "Category": [
         "Dates and Times Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT date_sub(YEAR, 3, toDate('2018-01-01'));",
+        "SELECT date_sub(toDate('2018-01-01'), INTERVAL 3 YEAR);"
     ]
 }

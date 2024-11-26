@@ -16,5 +16,31 @@
     ],
     "Category": [
         "Timestamp with Time Zone Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT isinf(timestamptz);",
+        "SELECT isinf(current_timestamp);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 296,
+            "Prompt Tokens": 274,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 5.43e-05
+        },
+        {
+            "Total Tokens": 470,
+            "Prompt Tokens": 451,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 7.905e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.BinderException) Binder Error: Referenced column \"timestamptz\" not found in FROM clause!\nLINE 1: SELECT isinf(timestamptz);\n                     ^\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT isinf(current_timestamp);"
     ]
 }

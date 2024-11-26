@@ -14,6 +14,17 @@
         "mysql> SELECT CEILING(1.23);\n        -> 2\nmysql> SELECT CEILING(-1.23);\n        -> -1"
     ],
     "Category": [
-        "数值函数与操作符"
+        "\u6570\u503c\u51fd\u6570\u4e0e\u64cd\u4f5c\u7b26"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT CEILING(1.23);",
+        "SELECT CEILING(-1.23);"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT CEILING(1.23);",
+        "SELECT CEILING(-1.23);"
     ]
 }

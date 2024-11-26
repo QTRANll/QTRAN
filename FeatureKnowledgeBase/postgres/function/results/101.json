@@ -6,15 +6,33 @@
         "strpos"
     ],
     "Feature": [
-        "strpos ( string text, substring text ) → integer"
+        "strpos ( string text, substring text ) \u2192 integer"
     ],
     "Description": [
         "Returns first starting index of the specified substring within string, or zero if it's not present. (Same as position(substring in string), but note the reversed argument order.)"
     ],
     "Examples": [
-        "strpos('high', 'ig') → 2"
+        "strpos('high', 'ig') \u2192 2"
     ],
     "Category": [
         "String Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT strpos('Hello, world!', 'world');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 297,
+            "Prompt Tokens": 274,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 5.49e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT strpos('Hello, world!', 'world');"
     ]
 }

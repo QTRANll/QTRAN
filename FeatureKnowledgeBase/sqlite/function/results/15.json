@@ -14,5 +14,31 @@
     "Examples": [],
     "Category": [
         "Core SQL Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT likelihood(X, 0.5);",
+        "SELECT likelihood(1, 0.5);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 438,
+            "Prompt Tokens": 416,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 7.559999999999998e-05
+        },
+        {
+            "Total Tokens": 580,
+            "Prompt Tokens": 557,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 9.735e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(sqlite3.OperationalError) no such column: X\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT likelihood(1, 0.5);"
     ]
 }

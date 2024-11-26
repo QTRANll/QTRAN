@@ -20,5 +20,31 @@
     "Category": [
         "Built-In Functions and Operators",
         "Spatial Analysis Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT ST_IsEmpty(geometry_collection) AS is_empty;",
+        "SELECT ST_IsEmpty(ST_GeomFromText('GEOMETRYCOLLECTION EMPTY')) AS is_empty;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 384,
+            "Prompt Tokens": 360,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 6.84e-05
+        },
+        {
+            "Total Tokens": 554,
+            "Prompt Tokens": 520,
+            "Completion Tokens": 34,
+            "Total Cost (USD)": 9.84e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.OperationalError) (1054, \"Unknown column 'geometry_collection' in 'field list'\")\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT ST_IsEmpty(ST_GeomFromText('GEOMETRYCOLLECTION EMPTY')) AS is_empty;"
     ]
 }

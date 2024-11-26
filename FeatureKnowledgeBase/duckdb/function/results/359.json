@@ -17,5 +17,23 @@
     ],
     "Category": [
         "Regular Expressions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT regexp_replace('Hello World', 'World', 'DuckDB')"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 333,
+            "Prompt Tokens": 306,
+            "Completion Tokens": 27,
+            "Total Cost (USD)": 6.209999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT regexp_replace('Hello World', 'World', 'DuckDB')"
     ]
 }

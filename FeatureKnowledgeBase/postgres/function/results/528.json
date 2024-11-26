@@ -6,7 +6,7 @@
         "pg_get_wal_replay_pause_state"
     ],
     "Feature": [
-        "pg_get_wal_replay_pause_state () → text"
+        "pg_get_wal_replay_pause_state () \u2192 text"
     ],
     "Description": [
         "Returns recovery pause state. The return values are not paused if pause is not requested, pause requested if pause is requested but recovery is not yet paused, and paused if the recovery is actually paused."
@@ -14,5 +14,31 @@
     "Examples": [],
     "Category": [
         "System Administration Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT pg_get_wal_replay_pause_state();",
+        "SELECT pg_is_in_recovery();"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 324,
+            "Prompt Tokens": 301,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 5.894999999999999e-05
+        },
+        {
+            "Total Tokens": 488,
+            "Prompt Tokens": 468,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 8.219999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.ObjectNotInPrerequisiteState) recovery is not in progress\nHINT:  Recovery control functions can only be executed during recovery.\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT pg_is_in_recovery();"
     ]
 }

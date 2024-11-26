@@ -10,8 +10,8 @@
     ],
     "Description": [
         "JSON_STORAGE_FREE()",
-        "JSON_STORAGE_FREE(json_doc) 函数返回 JSON 值在原地更新操作后释放了多少存储空间，以二进制表示。",
-        "注意由于 TiDB 的存储架构与 MySQL 不同，因此对于有效的 JSON 值，该函数总是返回 0，而且它的实现是为了与 MySQL 8.0 兼容。请注意，TiDB 不能进行原地更新。更多信息，请参阅 RocksDB 的空间占用。",
+        "JSON_STORAGE_FREE(json_doc) \u51fd\u6570\u8fd4\u56de JSON \u503c\u5728\u539f\u5730\u66f4\u65b0\u64cd\u4f5c\u540e\u91ca\u653e\u4e86\u591a\u5c11\u5b58\u50a8\u7a7a\u95f4\uff0c\u4ee5\u4e8c\u8fdb\u5236\u8868\u793a\u3002",
+        "\u6ce8\u610f\u7531\u4e8e TiDB \u7684\u5b58\u50a8\u67b6\u6784\u4e0e MySQL \u4e0d\u540c\uff0c\u56e0\u6b64\u5bf9\u4e8e\u6709\u6548\u7684 JSON \u503c\uff0c\u8be5\u51fd\u6570\u603b\u662f\u8fd4\u56de 0\uff0c\u800c\u4e14\u5b83\u7684\u5b9e\u73b0\u662f\u4e3a\u4e86\u4e0e MySQL 8.0 \u517c\u5bb9\u3002\u8bf7\u6ce8\u610f\uff0cTiDB \u4e0d\u80fd\u8fdb\u884c\u539f\u5730\u66f4\u65b0\u3002\u66f4\u591a\u4fe1\u606f\uff0c\u8bf7\u53c2\u9605 RocksDB \u7684\u7a7a\u95f4\u5360\u7528\u3002",
         "SELECT JSON_STORAGE_FREE('{}');\n",
         "+-------------------------+\n| JSON_STORAGE_FREE('{}') |\n+-------------------------+\n|                       0 |\n+-------------------------+\n1 row in set (0.00 sec)\n"
     ],
@@ -19,6 +19,15 @@
         "SELECT JSON_STORAGE_FREE('{}');\n"
     ],
     "Category": [
-        "JSON 效用函数"
+        "JSON \u6548\u7528\u51fd\u6570"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT JSON_STORAGE_FREE('{}');"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT JSON_STORAGE_FREE('{}');"
     ]
 }

@@ -17,5 +17,39 @@
     ],
     "Category": [
         "Aggregate Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT argmin(arg, val) FROM your_table;",
+        "SELECT argmin(arg, val);",
+        "SELECT argmin(arg, val) FROM (VALUES (1, 10), (2, 5), (3, 20)) AS t(arg, val);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 321,
+            "Prompt Tokens": 298,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 5.849999999999999e-05
+        },
+        {
+            "Total Tokens": 497,
+            "Prompt Tokens": 477,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 8.354999999999998e-05
+        },
+        {
+            "Total Tokens": 691,
+            "Prompt Tokens": 644,
+            "Completion Tokens": 47,
+            "Total Cost (USD)": 0.0001248
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.CatalogException) Catalog Error: Table with name your_table does not exist!\nDid you mean \"pg_tables\"?\nLINE 1: SELECT argmin(arg, val) FROM your_table;\n                                     ^\n",
+        "(duckdb.duckdb.BinderException) Binder Error: Referenced column \"arg\" not found in FROM clause!\nLINE 1: SELECT argmin(arg, val);\n                      ^\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT argmin(arg, val) FROM (VALUES (1, 10), (2, 5), (3, 20)) AS t(arg, val);"
     ]
 }

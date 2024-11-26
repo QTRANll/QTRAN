@@ -6,15 +6,33 @@
         "array_upper"
     ],
     "Feature": [
-        "array_upper ( anyarray, integer ) → integer"
+        "array_upper ( anyarray, integer ) \u2192 integer"
     ],
     "Description": [
         "Returns the upper bound of the requested array dimension."
     ],
     "Examples": [
-        "array_upper(ARRAY[1,8,3,7], 1) → 4"
+        "array_upper(ARRAY[1,8,3,7], 1) \u2192 4"
     ],
     "Category": [
         "Array Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT array_upper(ARRAY[1, 2, 3], 1);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 283,
+            "Prompt Tokens": 253,
+            "Completion Tokens": 30,
+            "Total Cost (USD)": 5.594999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT array_upper(ARRAY[1, 2, 3], 1);"
     ]
 }

@@ -38,5 +38,28 @@
     "Category": [
         "Built-In Functions and Operators",
         "JSON Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "CREATE TABLE jtable (jcol JSON);",
+        "SELECT * FROM jtable;",
+        "SELECT * FROM jtable;",
+        "SELECT JSON_STORAGE_FREE(jcol) FROM jtable;",
+        "UPDATE jtable SET jcol = '{\"a\": 10, \"b\": 1}';",
+        "SELECT JSON_STORAGE_FREE(jcol) FROM jtable;",
+        "SELECT @j, JSON_STORAGE_FREE(@j) AS Free;",
+        "SELECT JSON_STORAGE_FREE('{\"a\": 10, \"b\": \"wxyz\", \"c\": \"1\"}') AS Free;"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "CREATE TABLE jtable (jcol JSON);",
+        "SELECT * FROM jtable;",
+        "SELECT * FROM jtable;",
+        "SELECT JSON_STORAGE_FREE(jcol) FROM jtable;",
+        "UPDATE jtable SET jcol = '{\"a\": 10, \"b\": 1}';",
+        "SELECT JSON_STORAGE_FREE(jcol) FROM jtable;",
+        "SELECT @j, JSON_STORAGE_FREE(@j) AS Free;",
+        "SELECT JSON_STORAGE_FREE('{\"a\": 10, \"b\": \"wxyz\", \"c\": \"1\"}') AS Free;"
     ]
 }

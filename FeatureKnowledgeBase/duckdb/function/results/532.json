@@ -16,5 +16,31 @@
     ],
     "Category": [
         "Timestamp with Time Zone Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT age('2023-10-01 12:00:00+00', '2023-09-01 12:00:00+00');",
+        "SELECT age(TIMESTAMPTZ '2023-10-01 12:00:00+00', TIMESTAMPTZ '2023-09-01 12:00:00+00');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 336,
+            "Prompt Tokens": 289,
+            "Completion Tokens": 47,
+            "Total Cost (USD)": 7.154999999999999e-05
+        },
+        {
+            "Total Tokens": 624,
+            "Prompt Tokens": 566,
+            "Completion Tokens": 58,
+            "Total Cost (USD)": 0.00011969999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.BinderException) Binder Error: Could not choose a best candidate function for the function call \"age(STRING_LITERAL, STRING_LITERAL)\". In order to select one, please add explicit type casts.\n\tCandidate functions:\n\tage(TIMESTAMP WITH TIME ZONE, TIMESTAMP WITH TIME ZONE) -> INTERVAL\n\tage(TIMESTAMP, TIMESTAMP) -> INTERVAL\n\nLINE 1: SELECT age('2023-10-01 12:00:00+00', '2023-09-...\n               ^\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT age(TIMESTAMPTZ '2023-10-01 12:00:00+00', TIMESTAMPTZ '2023-09-01 12:00:00+00');"
     ]
 }

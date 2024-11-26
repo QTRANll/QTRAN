@@ -10,7 +10,7 @@
     ],
     "Description": [
         "IS_IPV4_COMPAT()",
-        "IS_IPV4_COMPAT() 函数用于判断输入的参数是否为兼容 IPv4 的地址。",
+        "IS_IPV4_COMPAT() \u51fd\u6570\u7528\u4e8e\u5224\u65ad\u8f93\u5165\u7684\u53c2\u6570\u662f\u5426\u4e3a\u517c\u5bb9 IPv4 \u7684\u5730\u5740\u3002",
         "SELECT IS_IPV4_COMPAT(INET6_ATON('::127.0.0.1'));\n",
         "+-------------------------------------------+\n| IS_IPV4_COMPAT(INET6_ATON('::127.0.0.1')) |\n+-------------------------------------------+\n|                                         1 |\n+-------------------------------------------+\n1 row in set (0.00 sec)\n"
     ],
@@ -18,6 +18,15 @@
         "SELECT IS_IPV4_COMPAT(INET6_ATON('::127.0.0.1'));\n"
     ],
     "Category": [
-        "其它函数"
+        "\u5176\u5b83\u51fd\u6570"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT IS_IPV4_COMPAT(INET6_ATON('::127.0.0.1'));"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT IS_IPV4_COMPAT(INET6_ATON('::127.0.0.1'));"
     ]
 }

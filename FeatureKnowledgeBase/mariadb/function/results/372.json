@@ -17,5 +17,30 @@
     "Category": [
         "String Functions"
     ],
-    "EffectiveSQLsRefined": []
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "UPDATE my_table SET my_xml_column = UpdateXML(my_xml_column, '/path/to/node', '<new_xml/>') WHERE id = 1",
+        "SELECT UpdateXML('<root><node>old_value</node></root>', '/root/node', '<new_value/>') AS updated_xml"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 384,
+            "Prompt Tokens": 342,
+            "Completion Tokens": 42,
+            "Total Cost (USD)": 7.65e-05
+        },
+        {
+            "Total Tokens": 560,
+            "Prompt Tokens": 520,
+            "Completion Tokens": 40,
+            "Total Cost (USD)": 0.000102
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.ProgrammingError) (1146, \"Table 'pinolo_temp_mariadb.my_table' doesn't exist\")\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT UpdateXML('<root><node>old_value</node></root>', '/root/node', '<new_value/>') AS updated_xml"
+    ]
 }

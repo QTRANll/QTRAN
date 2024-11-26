@@ -23,5 +23,22 @@
     "Category": [
         "Built-In Functions and Operators",
         "Comparison Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT 1 = 0;",
+        "SELECT '0' = 0;",
+        "SELECT '0.0' = 0;",
+        "SELECT '0.01' = 0;",
+        "SELECT '.01' = 0.01;"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT 1 = 0;",
+        "SELECT '0' = 0;",
+        "SELECT '0.0' = 0;",
+        "SELECT '0.01' = 0;",
+        "SELECT '.01' = 0.01;"
     ]
 }

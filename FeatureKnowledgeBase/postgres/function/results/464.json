@@ -6,13 +6,31 @@
         "to_regoper"
     ],
     "Feature": [
-        "to_regoper ( text ) → regoper"
+        "to_regoper ( text ) \u2192 regoper"
     ],
     "Description": [
-        "Translates a textual operator name to its OID. A similar result is obtained by casting the string to type regoper (see Section 8.19); however, this function will return NULL rather than throwing an error if the name is not found or is ambiguous."
+        "Translates a textual operator name to its OID. A similar result is obtained by casting the string to type regoper (see Section\u00a08.19); however, this function will return NULL rather than throwing an error if the name is not found or is ambiguous."
     ],
     "Examples": [],
     "Category": [
         "System Information Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT to_regoper('your_operator_name');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 321,
+            "Prompt Tokens": 299,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 5.804999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT to_regoper('your_operator_name');"
     ]
 }

@@ -6,15 +6,63 @@
         "@-@ geometric_type"
     ],
     "Feature": [
-        "@-@ geometric_type → double precision"
+        "@-@ geometric_type \u2192 double precision"
     ],
     "Description": [
         "Computes the total length. Available for lseg, path."
     ],
     "Examples": [
-        "@-@ path '[(0,0),(1,0),(1,1)]' → 2"
+        "@-@ path '[(0,0),(1,0),(1,1)]' \u2192 2"
     ],
     "Category": [
         "Geometric Functions and Operators"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT SUM(ST_Length(geom)) FROM your_table WHERE geom IS NOT NULL;",
+        "SELECT SUM(ST_Length(geom)) WHERE geom IS NOT NULL;",
+        "SELECT SUM(ST_Length(geom)) FROM lseg WHERE geom IS NOT NULL;",
+        "SELECT SUM(ST_Length(geom)) WHERE geom IS NOT NULL;",
+        "SELECT SUM(ST_Length(geom)) FROM (SELECT NULL::lseg AS geom) AS temp WHERE geom IS NOT NULL;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 291,
+            "Prompt Tokens": 263,
+            "Completion Tokens": 28,
+            "Total Cost (USD)": 5.625e-05
+        },
+        {
+            "Total Tokens": 466,
+            "Prompt Tokens": 441,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 8.115e-05
+        },
+        {
+            "Total Tokens": 641,
+            "Prompt Tokens": 613,
+            "Completion Tokens": 28,
+            "Total Cost (USD)": 0.00010874999999999999
+        },
+        {
+            "Total Tokens": 817,
+            "Prompt Tokens": 792,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 0.0001338
+        },
+        {
+            "Total Tokens": 1001,
+            "Prompt Tokens": 964,
+            "Completion Tokens": 37,
+            "Total Cost (USD)": 0.0001668
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedTable) relation \"your_table\" does not exist\nLINE 1: SELECT SUM(ST_Length(geom)) FROM your_table WHERE geom IS NO...\n                                         ^\n\n",
+        "(psycopg2.errors.UndefinedColumn) column \"geom\" does not exist\nLINE 1: SELECT SUM(ST_Length(geom)) WHERE geom IS NOT NULL;\n                             ^\n\n",
+        "(psycopg2.errors.UndefinedTable) relation \"lseg\" does not exist\nLINE 1: SELECT SUM(ST_Length(geom)) FROM lseg WHERE geom IS NOT NULL...\n                                         ^\n\n",
+        "(psycopg2.errors.UndefinedColumn) column \"geom\" does not exist\nLINE 1: SELECT SUM(ST_Length(geom)) WHERE geom IS NOT NULL;\n                             ^\n\n",
+        "(psycopg2.errors.UndefinedFunction) function st_length(lseg) does not exist\nLINE 1: SELECT SUM(ST_Length(geom)) FROM (SELECT NULL::lseg AS geom)...\n                   ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.\n\n"
+    ],
+    "EffectiveSQLs": []
 }

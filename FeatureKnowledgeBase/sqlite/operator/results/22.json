@@ -19,5 +19,39 @@
     ],
     "Category": [
         "Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT NOTNULL(column_name) FROM table_name;",
+        "SELECT column_name IS NOT NULL FROM table_name;",
+        "SELECT 1 IS NOT NULL;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 319,
+            "Prompt Tokens": 297,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 5.774999999999999e-05
+        },
+        {
+            "Total Tokens": 460,
+            "Prompt Tokens": 438,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 7.89e-05
+        },
+        {
+            "Total Tokens": 597,
+            "Prompt Tokens": 578,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 9.809999999999997e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(sqlite3.OperationalError) near \"NOTNULL\": syntax error\n",
+        "(sqlite3.OperationalError) no such table: table_name\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT 1 IS NOT NULL;"
     ]
 }

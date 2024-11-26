@@ -19,5 +19,23 @@
     "Examples": [],
     "Category": [
         "Geometric Types"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT lseg '((1,2),(3,4))';"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 292,
+            "Prompt Tokens": 265,
+            "Completion Tokens": 27,
+            "Total Cost (USD)": 5.594999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT lseg '((1,2),(3,4))';"
     ]
 }

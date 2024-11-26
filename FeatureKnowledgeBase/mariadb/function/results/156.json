@@ -27,5 +27,13 @@
         "SELECT JSON_UNQUOTE('\"Monty\"');",
         "SELECT JSON_UNQUOTE('Si\\bng\\ting');",
         "SELECT JSON_UNQUOTE('Si\\bng\\ting');"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT JSON_UNQUOTE('\"Monty\"');",
+        "SELECT JSON_UNQUOTE('Si\\bng\\ting');",
+        "SELECT JSON_UNQUOTE('Si\\bng\\ting');"
     ]
 }

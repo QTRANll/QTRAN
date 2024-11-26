@@ -19,5 +19,11 @@
     ],
     "EffectiveSQLsRefined": [
         "SELECT ST_AsText(ST_Difference(@g1, @g2));"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT ST_AsText(ST_Difference(@g1, @g2));"
     ]
 }

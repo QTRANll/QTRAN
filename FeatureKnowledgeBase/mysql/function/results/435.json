@@ -35,5 +35,53 @@
     ],
     "Category": [
         "Loadable Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT audit_log_read();",
+        "SELECT audit_log_read(null);",
+        "SELECT audit_log_read(audit_log_read_bookmark());",
+        "SELECT audit_log_read('null');",
+        "SELECT audit_log_read(NULL);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 1280,
+            "Prompt Tokens": 1262,
+            "Completion Tokens": 18,
+            "Total Cost (USD)": 0.00020009999999999998
+        },
+        {
+            "Total Tokens": 1435,
+            "Prompt Tokens": 1416,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 0.00022379999999999996
+        },
+        {
+            "Total Tokens": 1595,
+            "Prompt Tokens": 1571,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 0.00025005
+        },
+        {
+            "Total Tokens": 1751,
+            "Prompt Tokens": 1731,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 0.00027165
+        },
+        {
+            "Total Tokens": 1906,
+            "Prompt Tokens": 1887,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 0.00029445
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.audit_log_read does not exist')\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.audit_log_read does not exist')\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.audit_log_read does not exist')\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.audit_log_read does not exist')\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.audit_log_read does not exist')\n"
+    ],
+    "EffectiveSQLs": []
 }

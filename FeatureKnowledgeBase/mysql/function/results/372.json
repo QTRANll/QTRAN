@@ -28,5 +28,24 @@
         "Built-In Functions and Operators",
         "Comparison Functions and Operators",
         "String Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT STRCMP('text', 'text2');",
+        "SELECT STRCMP('text2', 'text');",
+        "SELECT STRCMP('text', 'text');",
+        "SELECT STRCMP(@s1, @s2), STRCMP(@s3, @s4);",
+        "SELECT STRCMP(@s1, @s3);",
+        "SELECT STRCMP(@s1, @s3 COLLATE utf8mb4_0900_ai_ci);"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT STRCMP('text', 'text2');",
+        "SELECT STRCMP('text2', 'text');",
+        "SELECT STRCMP('text', 'text');",
+        "SELECT STRCMP(@s1, @s2), STRCMP(@s3, @s4);",
+        "SELECT STRCMP(@s1, @s3);",
+        "SELECT STRCMP(@s1, @s3 COLLATE utf8mb4_0900_ai_ci);"
     ]
 }

@@ -29,5 +29,16 @@
     ],
     "Category": [
         "Other Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "CREATE DATABASE db_test;",
+        "CREATE TABLE db_test.id_val(`id` UInt32, `val` UInt32) ENGINE = Join(ANY, LEFT, id);",
+        "INSERT INTO db_test.id_val VALUES (1, 11)(2, 12)(4, 13);",
+        "SELECT * FROM db_test.id_val;",
+        "SELECT number, joinGet(db_test.id_val, 'val', toUInt32(number)) from numbers(4);",
+        "CREATE TABLE db_test.id_val_nulls(`id` UInt32, `val` UInt32) ENGINE = Join(ANY, LEFT, id) SETTINGS join_use_nulls=1;",
+        "INSERT INTO db_test.id_val_nulls VALUES (1, 11)(2, 12)(4, 13);",
+        "SELECT * FROM db_test.id_val_nulls;",
+        "SELECT number, joinGet(db_test.id_val_nulls, 'val', toUInt32(number)) from numbers(4);"
     ]
 }

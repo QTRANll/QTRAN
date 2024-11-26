@@ -85,5 +85,46 @@
     ],
     "Category": [
         "Literal Types"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT 1.5;",
+        "SELECT .50;",
+        "SELECT 2.;",
+        "SELECT 1e2;",
+        "SELECT 6.02214e23;",
+        "SELECT 1e-10;",
+        "SELECT 100_000_000;",
+        "SELECT '0xFF_FF'::INTEGER;",
+        "SELECT 1_2.1_2E0_1;",
+        "SELECT '0b0_1_0_1'::INTEGER;",
+        "SELECT 'Hello'\n    ' '\n    'World' AS greeting;",
+        "SELECT 'Hello'\n    || ' '\n    || 'World' AS greeting;",
+        "SELECT d > '1992-01-01' AS result FROM (VALUES (DATE '1992-01-01')) t(d);",
+        "SELECT E'Hello\\nworld' AS msg;",
+        "SELECT e'Hello\\nworld' AS msg;",
+        "SELECT $$Hello\nworld$$ AS msg;",
+        "SELECT $$The price is $9.95$$ AS msg;"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT 1.5;",
+        "SELECT .50;",
+        "SELECT 2.;",
+        "SELECT 1e2;",
+        "SELECT 6.02214e23;",
+        "SELECT 1e-10;",
+        "SELECT 100_000_000;",
+        "SELECT '0xFF_FF'::INTEGER;",
+        "SELECT 1_2.1_2E0_1;",
+        "SELECT '0b0_1_0_1'::INTEGER;",
+        "SELECT 'Hello'\n    ' '\n    'World' AS greeting;",
+        "SELECT 'Hello'\n    || ' '\n    || 'World' AS greeting;",
+        "SELECT d > '1992-01-01' AS result FROM (VALUES (DATE '1992-01-01')) t(d);",
+        "SELECT E'Hello\\nworld' AS msg;",
+        "SELECT e'Hello\\nworld' AS msg;",
+        "SELECT $$Hello\nworld$$ AS msg;",
+        "SELECT $$The price is $9.95$$ AS msg;"
     ]
 }

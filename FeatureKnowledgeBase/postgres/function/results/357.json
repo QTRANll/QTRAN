@@ -6,7 +6,7 @@
         "percentile_disc"
     ],
     "Feature": [
-        "percentile_disc ( fractions double precision[] ) WITHIN GROUP ( ORDER BY anyelement ) → anyarray"
+        "percentile_disc ( fractions double precision[] ) WITHIN GROUP ( ORDER BY anyelement ) \u2192 anyarray"
     ],
     "Description": [
         "Computes multiple discrete percentiles. The result is an array of the same dimensions as the fractions parameter, with each non-null element replaced by the input value corresponding to that percentile. The aggregated argument must be of a sortable type."
@@ -14,5 +14,47 @@
     "Examples": [],
     "Category": [
         "Aggregate Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT percentile_disc(ARRAY[0.5, 0.75]) WITHIN GROUP (ORDER BY value) FROM your_table;",
+        "SELECT percentile_disc(ARRAY[0.5, 0.75]) WITHIN GROUP (ORDER BY value);",
+        "SELECT percentile_disc(ARRAY[0.5, 0.75]) WITHIN GROUP (ORDER BY some_column);",
+        "SELECT percentile_disc(ARRAY[0.5, 0.75]) WITHIN GROUP (ORDER BY 1);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 342,
+            "Prompt Tokens": 303,
+            "Completion Tokens": 39,
+            "Total Cost (USD)": 6.884999999999999e-05
+        },
+        {
+            "Total Tokens": 535,
+            "Prompt Tokens": 499,
+            "Completion Tokens": 36,
+            "Total Cost (USD)": 9.644999999999999e-05
+        },
+        {
+            "Total Tokens": 728,
+            "Prompt Tokens": 691,
+            "Completion Tokens": 37,
+            "Total Cost (USD)": 0.00012585
+        },
+        {
+            "Total Tokens": 923,
+            "Prompt Tokens": 886,
+            "Completion Tokens": 37,
+            "Total Cost (USD)": 0.00015509999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedTable) relation \"your_table\" does not exist\nLINE 1: ...AY[0.5, 0.75]) WITHIN GROUP (ORDER BY value) FROM your_table...\n                                                             ^\n\n",
+        "(psycopg2.errors.UndefinedColumn) column \"value\" does not exist\nLINE 1: ...entile_disc(ARRAY[0.5, 0.75]) WITHIN GROUP (ORDER BY value);\n                                                                ^\n\n",
+        "(psycopg2.errors.UndefinedColumn) column \"some_column\" does not exist\nLINE 1: ...ile_disc(ARRAY[0.5, 0.75]) WITHIN GROUP (ORDER BY some_colum...\n                                                             ^\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT percentile_disc(ARRAY[0.5, 0.75]) WITHIN GROUP (ORDER BY 1);"
     ]
 }

@@ -11,5 +11,53 @@
     "Examples": [],
     "Category": [
         "Comparison Functions and Operators"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT * FROM table_name WHERE column_name NOT BETWEEN 10 AND 20",
+        "SELECT * FROM your_table WHERE column_name NOT BETWEEN 10 AND 20",
+        "SELECT * FROM example_table WHERE column_name NOT BETWEEN 10 AND 20",
+        "SELECT * FROM some_table WHERE column_name NOT BETWEEN 10 AND 20",
+        "SELECT * FROM my_table WHERE column_name NOT BETWEEN 10 AND 20"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 313,
+            "Prompt Tokens": 285,
+            "Completion Tokens": 28,
+            "Total Cost (USD)": 5.955e-05
+        },
+        {
+            "Total Tokens": 475,
+            "Prompt Tokens": 447,
+            "Completion Tokens": 28,
+            "Total Cost (USD)": 8.384999999999999e-05
+        },
+        {
+            "Total Tokens": 638,
+            "Prompt Tokens": 610,
+            "Completion Tokens": 28,
+            "Total Cost (USD)": 0.00010829999999999999
+        },
+        {
+            "Total Tokens": 800,
+            "Prompt Tokens": 772,
+            "Completion Tokens": 28,
+            "Total Cost (USD)": 0.0001326
+        },
+        {
+            "Total Tokens": 962,
+            "Prompt Tokens": 934,
+            "Completion Tokens": 28,
+            "Total Cost (USD)": 0.0001569
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.ProgrammingError) (1146, \"Table 'knowledge_base_preprocess_tidb.table_name' doesn't exist\")\n",
+        "(pymysql.err.ProgrammingError) (1146, \"Table 'knowledge_base_preprocess_tidb.your_table' doesn't exist\")\n",
+        "(pymysql.err.ProgrammingError) (1146, \"Table 'knowledge_base_preprocess_tidb.example_table' doesn't exist\")\n",
+        "(pymysql.err.ProgrammingError) (1146, \"Table 'knowledge_base_preprocess_tidb.some_table' doesn't exist\")\n",
+        "(pymysql.err.ProgrammingError) (1146, \"Table 'knowledge_base_preprocess_tidb.my_table' doesn't exist\")\n"
+    ],
+    "EffectiveSQLs": []
 }

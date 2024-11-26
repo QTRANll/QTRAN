@@ -25,5 +25,53 @@
     ],
     "Category": [
         "Loadable Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT mask_uuid('123e4567-e89b-12d3-a456-426614174000');",
+        "SELECT mask_uuid('xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx');",
+        "SELECT mask_uuid('xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx');",
+        "SELECT mask_uuid('123e4567-e89b-12d3-a456-426614174000');",
+        "SELECT mask_uuid('xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 684,
+            "Prompt Tokens": 648,
+            "Completion Tokens": 36,
+            "Total Cost (USD)": 0.00011879999999999999
+        },
+        {
+            "Total Tokens": 847,
+            "Prompt Tokens": 819,
+            "Completion Tokens": 28,
+            "Total Cost (USD)": 0.00013964999999999998
+        },
+        {
+            "Total Tokens": 1004,
+            "Prompt Tokens": 982,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 0.00016049999999999997
+        },
+        {
+            "Total Tokens": 1175,
+            "Prompt Tokens": 1139,
+            "Completion Tokens": 36,
+            "Total Cost (USD)": 0.00019245
+        },
+        {
+            "Total Tokens": 1338,
+            "Prompt Tokens": 1310,
+            "Completion Tokens": 28,
+            "Total Cost (USD)": 0.00021329999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.mask_uuid does not exist')\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.mask_uuid does not exist')\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.mask_uuid does not exist')\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.mask_uuid does not exist')\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.mask_uuid does not exist')\n"
+    ],
+    "EffectiveSQLs": []
 }

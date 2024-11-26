@@ -18,5 +18,53 @@
     ],
     "Category": [
         "Date Time Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT timestampdiff(ts_tstz, ts_tstz);",
+        "SELECT timestampdiff('2023-01-01 00:00:00+00', '2023-01-02 00:00:00+00');",
+        "SELECT timestampdiff('2023-01-01 00:00:00+00'::timestamp with time zone, '2023-01-02 00:00:00+00'::timestamp with time zone);",
+        "SELECT timestampdiff('2023-01-01 00:00:00+00', '2023-01-02 00:00:00+00');",
+        "SELECT timestampdiff(TIMESTAMP '2023-01-01 00:00:00', TIMESTAMP '2023-01-02 00:00:00');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 323,
+            "Prompt Tokens": 297,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 6.0149999999999985e-05
+        },
+        {
+            "Total Tokens": 511,
+            "Prompt Tokens": 463,
+            "Completion Tokens": 48,
+            "Total Cost (USD)": 9.824999999999999e-05
+        },
+        {
+            "Total Tokens": 714,
+            "Prompt Tokens": 654,
+            "Completion Tokens": 60,
+            "Total Cost (USD)": 0.0001341
+        },
+        {
+            "Total Tokens": 896,
+            "Prompt Tokens": 848,
+            "Completion Tokens": 48,
+            "Total Cost (USD)": 0.00015599999999999997
+        },
+        {
+            "Total Tokens": 1088,
+            "Prompt Tokens": 1039,
+            "Completion Tokens": 49,
+            "Total Cost (USD)": 0.00018524999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: identifier 'ts_tstz' unknown\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: no such binary operator 'timestampdiff(char,char)'\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!Unexpected symbol (:)\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: no such binary operator 'timestampdiff(char,char)'\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: no such binary operator 'timestampdiff(timestamp,timestamp)'\n\n"
+    ],
+    "EffectiveSQLs": []
 }

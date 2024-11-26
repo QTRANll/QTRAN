@@ -21,5 +21,12 @@
     "EffectiveSQLsRefined": [
         "SELECT ASTEXT(ST_UNION(@g1,@g2));",
         "SELECT ASTEXT(ST_UNION(@g1,@g2));"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT ASTEXT(ST_UNION(@g1,@g2));",
+        "SELECT ASTEXT(ST_UNION(@g1,@g2));"
     ]
 }

@@ -6,15 +6,63 @@
         "anyrange - anyrange"
     ],
     "Feature": [
-        "anyrange - anyrange → anyrange"
+        "anyrange - anyrange \u2192 anyrange"
     ],
     "Description": [
         "Computes the difference of the ranges. The second range must not be contained in the first in such a way that the difference would not be a single range."
     ],
     "Examples": [
-        "int8range(5,15) - int8range(10,20) → [5,10)"
+        "int8range(5,15) - int8range(10,20) \u2192 [5,10)"
     ],
     "Category": [
         "Range divide Multirange Functions and Operators"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT (range1 - range2) AS difference FROM your_table;",
+        "SELECT (range1 - range2) AS difference;",
+        "SELECT (ANYRANGE1 - ANYRANGE2) AS difference;",
+        "SELECT (ANYRANGE - ANYRANGE) AS difference;",
+        "SELECT (ANYRANGE - ANYRANGE) AS difference FROM (SELECT NULL::anyrange AS ANYRANGE) AS dummy;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 308,
+            "Prompt Tokens": 282,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 5.7899999999999984e-05
+        },
+        {
+            "Total Tokens": 480,
+            "Prompt Tokens": 457,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 8.235e-05
+        },
+        {
+            "Total Tokens": 653,
+            "Prompt Tokens": 626,
+            "Completion Tokens": 27,
+            "Total Cost (USD)": 0.00011009999999999999
+        },
+        {
+            "Total Tokens": 829,
+            "Prompt Tokens": 804,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 0.0001356
+        },
+        {
+            "Total Tokens": 1016,
+            "Prompt Tokens": 977,
+            "Completion Tokens": 39,
+            "Total Cost (USD)": 0.00016994999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedTable) relation \"your_table\" does not exist\nLINE 1: SELECT (range1 - range2) AS difference FROM your_table;\n                                                    ^\n\n",
+        "(psycopg2.errors.UndefinedColumn) column \"range1\" does not exist\nLINE 1: SELECT (range1 - range2) AS difference;\n                ^\n\n",
+        "(psycopg2.errors.UndefinedColumn) column \"anyrange1\" does not exist\nLINE 1: SELECT (ANYRANGE1 - ANYRANGE2) AS difference;\n                ^\n\n",
+        "(psycopg2.errors.UndefinedColumn) column \"anyrange\" does not exist\nLINE 1: SELECT (ANYRANGE - ANYRANGE) AS difference;\n                ^\n\n",
+        "(psycopg2.errors.DatatypeMismatch) argument declared anyrange is not a range type but type anyrange\n\n"
+    ],
+    "EffectiveSQLs": []
 }

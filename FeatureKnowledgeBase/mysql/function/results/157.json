@@ -22,5 +22,31 @@
     "Category": [
         "Built-In Functions and Operators",
         "Aggregate Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT JSON_ARRAYAGG(attribute) AS attributes FROM t3 GROUP BY o_id;",
+        "SELECT JSON_ARRAYAGG('example') AS attributes;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 673,
+            "Prompt Tokens": 644,
+            "Completion Tokens": 29,
+            "Total Cost (USD)": 0.00011399999999999999
+        },
+        {
+            "Total Tokens": 834,
+            "Prompt Tokens": 811,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 0.00013545
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.ProgrammingError) (1146, \"Table 'knowledge_base_preprocess_mysql.t3' doesn't exist\")\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT JSON_ARRAYAGG('example') AS attributes;"
     ]
 }

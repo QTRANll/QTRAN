@@ -34,5 +34,9 @@
     ],
     "Category": [
         "UUIDs Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT toUUIDOrDefault('61f0c404-5cb3-11e7-907b-a6006ad3dba0', cast('59f0c404-5cb3-11e7-907b-a6006ad3dba0' as UUID));",
+        "SELECT toUUIDOrDefault('-----61f0c404-5cb3-11e7-907b-a6006ad3dba0', cast('59f0c404-5cb3-11e7-907b-a6006ad3dba0' as UUID));"
     ]
 }

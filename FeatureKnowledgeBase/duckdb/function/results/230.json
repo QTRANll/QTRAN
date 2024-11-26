@@ -16,5 +16,31 @@
     ],
     "Category": [
         "List Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT list_slice(my_list, 1, 3);",
+        "SELECT list_slice([1, 2, 3, 4, 5], 1, 3);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 301,
+            "Prompt Tokens": 276,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 5.6399999999999995e-05
+        },
+        {
+            "Total Tokens": 493,
+            "Prompt Tokens": 456,
+            "Completion Tokens": 37,
+            "Total Cost (USD)": 9.059999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.BinderException) Binder Error: Referenced column \"my_list\" not found in FROM clause!\nLINE 1: SELECT list_slice(my_list, 1, 3);\n                          ^\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT list_slice([1, 2, 3, 4, 5], 1, 3);"
     ]
 }

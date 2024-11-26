@@ -6,15 +6,33 @@
         "regexp_match"
     ],
     "Feature": [
-        "regexp_match ( string text, pattern text [, flags text ] ) → text[]"
+        "regexp_match ( string text, pattern text [, flags text ] ) \u2192 text[]"
     ],
     "Description": [
-        "Returns substrings within the first match of the POSIX regular expression pattern to the string; see Section 9.7.3."
+        "Returns substrings within the first match of the POSIX regular expression pattern to the string; see Section\u00a09.7.3."
     ],
     "Examples": [
-        "regexp_match('foobarbequebaz', '(bar)(beque)') → {bar,beque}"
+        "regexp_match('foobarbequebaz', '(bar)(beque)') \u2192 {bar,beque}"
     ],
     "Category": [
         "String Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT regexp_match('hello world', 'o')"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 299,
+            "Prompt Tokens": 276,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 5.519999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT regexp_match('hello world', 'o')"
     ]
 }

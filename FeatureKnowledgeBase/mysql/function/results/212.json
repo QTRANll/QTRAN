@@ -22,5 +22,14 @@
     "Category": [
         "Built-In Functions and Operators",
         "Spatial Analysis Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT MBRContains(@g1,@g2), MBRWithin(@g2,@g1);"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT MBRContains(@g1,@g2), MBRWithin(@g2,@g1);"
     ]
 }

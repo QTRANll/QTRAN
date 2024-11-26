@@ -10,10 +10,28 @@
     ],
     "Description": [
         "TRIM()",
-        "去掉前缀和后缀空格"
+        "\u53bb\u6389\u524d\u7f00\u548c\u540e\u7f00\u7a7a\u683c"
     ],
     "Examples": [],
     "Category": [
-        "字符串函数"
+        "\u5b57\u7b26\u4e32\u51fd\u6570"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT TRIM('   Hello, World!   ');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 280,
+            "Prompt Tokens": 255,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 5.324999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT TRIM('   Hello, World!   ');"
     ]
 }

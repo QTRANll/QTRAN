@@ -18,5 +18,53 @@
     ],
     "Category": [
         "Character String Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT jarowinkler('string1', 'string2');",
+        "SELECT jarowinkler('string1', 'string2')::double;",
+        "SELECT jarowinkler('string1', 'string2');",
+        "SELECT jarowinkler('string1', 'string2');",
+        "SELECT jarowinkler('string1'::text, 'string2'::text);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 333,
+            "Prompt Tokens": 307,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 6.165e-05
+        },
+        {
+            "Total Tokens": 504,
+            "Prompt Tokens": 476,
+            "Completion Tokens": 28,
+            "Total Cost (USD)": 8.819999999999999e-05
+        },
+        {
+            "Total Tokens": 662,
+            "Prompt Tokens": 636,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 0.00011099999999999999
+        },
+        {
+            "Total Tokens": 831,
+            "Prompt Tokens": 805,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 0.00013634999999999998
+        },
+        {
+            "Total Tokens": 1006,
+            "Prompt Tokens": 974,
+            "Completion Tokens": 32,
+            "Total Cost (USD)": 0.00016529999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: no such binary operator 'jarowinkler(char,char)'\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!Unexpected symbol (:)\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: no such binary operator 'jarowinkler(char,char)'\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: no such binary operator 'jarowinkler(char,char)'\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!Unexpected symbol (:)\n\n"
+    ],
+    "EffectiveSQLs": []
 }

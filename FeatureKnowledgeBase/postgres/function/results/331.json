@@ -6,8 +6,8 @@
         "range_agg"
     ],
     "Feature": [
-        "range_agg ( value anyrange ) → anymultirange",
-        "range_agg ( value anymultirange ) → anymultirange"
+        "range_agg ( value anyrange ) \u2192 anymultirange",
+        "range_agg ( value anymultirange ) \u2192 anymultirange"
     ],
     "Description": [
         "Computes the union of the non-null input values."
@@ -15,5 +15,47 @@
     "Examples": [],
     "Category": [
         "Aggregate Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT range_agg(value) FROM your_table;",
+        "SELECT range_agg(value) FROM (VALUES (1), (2), (3)) AS value;",
+        "SELECT range_agg(value::int) FROM (VALUES (1::int), (2::int), (3::int)) AS value(value);",
+        "SELECT range_agg(int4range(value::int, value::int + 1)) FROM (VALUES (1), (2), (3)) AS value(value);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 299,
+            "Prompt Tokens": 277,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 5.4749999999999996e-05
+        },
+        {
+            "Total Tokens": 475,
+            "Prompt Tokens": 442,
+            "Completion Tokens": 33,
+            "Total Cost (USD)": 8.61e-05
+        },
+        {
+            "Total Tokens": 695,
+            "Prompt Tokens": 652,
+            "Completion Tokens": 43,
+            "Total Cost (USD)": 0.0001236
+        },
+        {
+            "Total Tokens": 920,
+            "Prompt Tokens": 873,
+            "Completion Tokens": 47,
+            "Total Cost (USD)": 0.00015915
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedTable) relation \"your_table\" does not exist\nLINE 1: SELECT range_agg(value) FROM your_table;\n                                     ^\n\n",
+        "(psycopg2.errors.UndefinedFunction) function range_agg(record) does not exist\nLINE 1: SELECT range_agg(value) FROM (VALUES (1), (2), (3)) AS value...\n               ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.\n\n",
+        "(psycopg2.errors.UndefinedFunction) function range_agg(integer) does not exist\nLINE 1: SELECT range_agg(value::int) FROM (VALUES (1::int), (2::int)...\n               ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT range_agg(int4range(value::int, value::int + 1)) FROM (VALUES (1), (2), (3)) AS value(value);"
     ]
 }

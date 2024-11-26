@@ -6,15 +6,33 @@
         "sha256"
     ],
     "Feature": [
-        "sha256 ( bytea ) → bytea"
+        "sha256 ( bytea ) \u2192 bytea"
     ],
     "Description": [
         "Computes the SHA-256 hash of the binary string."
     ],
     "Examples": [
-        "sha256('abc'::bytea) → \\xba7816bf8f01cfea414140de5dae2223​b00361a396177a9cb410ff61f20015ad"
+        "sha256('abc'::bytea) \u2192 \\xba7816bf8f01cfea414140de5dae2223\u200bb00361a396177a9cb410ff61f20015ad"
     ],
     "Category": [
         "Binary String Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT sha256('your_binary_data'::bytea);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 279,
+            "Prompt Tokens": 254,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 5.3099999999999996e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT sha256('your_binary_data'::bytea);"
     ]
 }

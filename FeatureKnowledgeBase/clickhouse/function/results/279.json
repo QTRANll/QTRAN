@@ -21,5 +21,9 @@
     ],
     "Category": [
         "Dates and Times Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT fromUnixTimestamp(423543535);",
+        "SELECT fromUnixTimestamp(1234334543, '%Y-%m-%d %R:%S') AS DateTime;"
     ]
 }

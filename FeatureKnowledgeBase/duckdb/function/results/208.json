@@ -19,5 +19,63 @@
     ],
     "Category": [
         "List Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        [
+            "SELECT array_cat(array[1, 2, 3], array[4, 5, 6]);"
+        ],
+        [
+            "SELECT array_cat('[1, 2, 3]', '[4, 5, 6]');"
+        ],
+        [
+            "SELECT array_cat(array[1, 2, 3], array[4, 5, 6]);"
+        ],
+        [
+            "SELECT array_cat(ARRAY[1, 2, 3], ARRAY[4, 5, 6]);"
+        ],
+        [
+            "SELECT array_cat(ARRAY['1', '2', '3'], ARRAY['4', '5', '6']);"
+        ]
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 307,
+            "Prompt Tokens": 266,
+            "Completion Tokens": 41,
+            "Total Cost (USD)": 6.45e-05
+        },
+        {
+            "Total Tokens": 464,
+            "Prompt Tokens": 424,
+            "Completion Tokens": 40,
+            "Total Cost (USD)": 8.759999999999999e-05
+        },
+        {
+            "Total Tokens": 622,
+            "Prompt Tokens": 581,
+            "Completion Tokens": 41,
+            "Total Cost (USD)": 0.00011174999999999999
+        },
+        {
+            "Total Tokens": 781,
+            "Prompt Tokens": 739,
+            "Completion Tokens": 42,
+            "Total Cost (USD)": 0.00013604999999999997
+        },
+        {
+            "Total Tokens": 940,
+            "Prompt Tokens": 898,
+            "Completion Tokens": 42,
+            "Total Cost (USD)": 0.00015989999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "expected string or bytes-like object, got 'list'",
+        "expected string or bytes-like object, got 'list'",
+        "expected string or bytes-like object, got 'list'",
+        "expected string or bytes-like object, got 'list'",
+        "expected string or bytes-like object, got 'list'"
+    ],
+    "EffectiveSQLs": []
 }

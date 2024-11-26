@@ -18,5 +18,53 @@
     ],
     "Category": [
         "Cast Conversion Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "CAST(column_name AS INTEGER)",
+        "SELECT CAST(column_name AS INTEGER)",
+        "CAST(1 AS INTEGER)",
+        "CAST('123' AS INTEGER)",
+        "CAST(123 AS INTEGER)"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 300,
+            "Prompt Tokens": 282,
+            "Completion Tokens": 18,
+            "Total Cost (USD)": 5.309999999999999e-05
+        },
+        {
+            "Total Tokens": 454,
+            "Prompt Tokens": 435,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 7.664999999999999e-05
+        },
+        {
+            "Total Tokens": 605,
+            "Prompt Tokens": 587,
+            "Completion Tokens": 18,
+            "Total Cost (USD)": 9.884999999999999e-05
+        },
+        {
+            "Total Tokens": 759,
+            "Prompt Tokens": 740,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 0.0001224
+        },
+        {
+            "Total Tokens": 912,
+            "Prompt Tokens": 894,
+            "Completion Tokens": 18,
+            "Total Cost (USD)": 0.00014489999999999997
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymonetdb.exceptions.OperationalError) 42000!syntax error, unexpected CAST in: \"cast\"\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: identifier 'column_name' unknown\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!syntax error, unexpected CAST in: \"cast\"\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!syntax error, unexpected CAST in: \"cast\"\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!syntax error, unexpected CAST in: \"cast\"\n\n"
+    ],
+    "EffectiveSQLs": []
 }

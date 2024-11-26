@@ -6,15 +6,33 @@
         "strip"
     ],
     "Feature": [
-        "strip ( tsvector ) → tsvector"
+        "strip ( tsvector ) \u2192 tsvector"
     ],
     "Description": [
         "Removes positions and weights from the tsvector."
     ],
     "Examples": [
-        "strip('fat:2,4 cat:3 rat:5A'::tsvector) → 'cat' 'fat' 'rat'"
+        "strip('fat:2,4 cat:3 rat:5A'::tsvector) \u2192 'cat' 'fat' 'rat'"
     ],
     "Category": [
         "Text Search Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT strip(to_tsvector('This is a test text'));"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 277,
+            "Prompt Tokens": 251,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 5.324999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT strip(to_tsvector('This is a test text'));"
     ]
 }

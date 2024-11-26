@@ -15,5 +15,30 @@
     "Category": [
         "Regular Expressions Functions"
     ],
-    "EffectiveSQLsRefined": []
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT * FROM table_name WHERE column_name RLIKE 'pattern';",
+        "SELECT * FROM information_schema.tables WHERE table_name RLIKE 'pattern';"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 280,
+            "Prompt Tokens": 254,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 5.369999999999999e-05
+        },
+        {
+            "Total Tokens": 441,
+            "Prompt Tokens": 414,
+            "Completion Tokens": 27,
+            "Total Cost (USD)": 7.829999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.ProgrammingError) (1146, \"Table 'pinolo_temp_mariadb.table_name' doesn't exist\")\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT * FROM information_schema.tables WHERE table_name RLIKE 'pattern';"
+    ]
 }

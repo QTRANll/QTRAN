@@ -20,5 +20,31 @@
     "Category": [
         "Built-In Functions and Operators",
         "Spatial Analysis Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT ST_Touches(g1, g2);",
+        "SELECT ST_Touches(POINT(1, 1), POINT(1, 2));"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 432,
+            "Prompt Tokens": 409,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 7.514999999999998e-05
+        },
+        {
+            "Total Tokens": 600,
+            "Prompt Tokens": 568,
+            "Completion Tokens": 32,
+            "Total Cost (USD)": 0.00010439999999999999
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.OperationalError) (1054, \"Unknown column 'g1' in 'field list'\")\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT ST_Touches(POINT(1, 1), POINT(1, 2));"
     ]
 }

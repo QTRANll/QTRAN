@@ -37,5 +37,23 @@
     "Examples": [],
     "Category": [
         "JSON Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT * FROM json_each('{\"key\": \"value\"}');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 1680,
+            "Prompt Tokens": 1653,
+            "Completion Tokens": 27,
+            "Total Cost (USD)": 0.00026415
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT * FROM json_each('{\"key\": \"value\"}');"
     ]
 }

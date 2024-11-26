@@ -3,26 +3,60 @@
         "https://docs.pingcap.com/zh/tidb/v8.3/data-type-numeric"
     ],
     "Title": [
-        "BIGINT 类型"
+        "BIGINT \u7c7b\u578b"
     ],
     "Feature": [
-        "BIGINT 类型"
+        "BIGINT \u7c7b\u578b"
     ],
     "Description": [
-        "BIGINT 类型",
-        "BIGINT 类型。有符号数的范围是 [-9223372036854775808, 9223372036854775807]。无符号数的范围是 [0, 18446744073709551615]。",
+        "BIGINT \u7c7b\u578b",
+        "BIGINT \u7c7b\u578b\u3002\u6709\u7b26\u53f7\u6570\u7684\u8303\u56f4\u662f [-9223372036854775808, 9223372036854775807]\u3002\u65e0\u7b26\u53f7\u6570\u7684\u8303\u56f4\u662f [0, 18446744073709551615]\u3002",
         "BIGINT[(M)] [UNSIGNED] [ZEROFILL]\n",
-        "存储空间以及取值范围",
-        "每种类型对存储空间的需求以及最大/最小值如下表所示：",
-        "类型存储空间最小值(有符号/无符号)最大值(有符号/无符号)TINYINT1-128 / 0127 / 255SMALLINT2-32768 / 032767 / 65535MEDIUMINT3-8388608 / 08388607 / 16777215INT4-2147483648 / 02147483647 / 4294967295BIGINT8-9223372036854775808 / 09223372036854775807 / 18446744073709551615",
-        "浮点类型",
-        "TiDB 支持 MySQL 所有的浮点类型，包括 FLOAT、DOUBLE，完整信息参考这篇文档。",
-        "字段说明：",
-        "语法元素说明M小数总位数D小数点后位数UNSIGNED无符号数，如果不加这个标识，则为有符号数ZEROFILL补零标识，如果有这个标识，TiDB 会自动给类型增加 UNSIGNED 标识",
-        "类型定义"
+        "\u5b58\u50a8\u7a7a\u95f4\u4ee5\u53ca\u53d6\u503c\u8303\u56f4",
+        "\u6bcf\u79cd\u7c7b\u578b\u5bf9\u5b58\u50a8\u7a7a\u95f4\u7684\u9700\u6c42\u4ee5\u53ca\u6700\u5927/\u6700\u5c0f\u503c\u5982\u4e0b\u8868\u6240\u793a\uff1a",
+        "\u7c7b\u578b\u5b58\u50a8\u7a7a\u95f4\u6700\u5c0f\u503c(\u6709\u7b26\u53f7/\u65e0\u7b26\u53f7)\u6700\u5927\u503c(\u6709\u7b26\u53f7/\u65e0\u7b26\u53f7)TINYINT1-128 / 0127 / 255SMALLINT2-32768 / 032767 / 65535MEDIUMINT3-8388608 / 08388607 / 16777215INT4-2147483648 / 02147483647 / 4294967295BIGINT8-9223372036854775808 / 09223372036854775807 / 18446744073709551615",
+        "\u6d6e\u70b9\u7c7b\u578b",
+        "TiDB \u652f\u6301 MySQL \u6240\u6709\u7684\u6d6e\u70b9\u7c7b\u578b\uff0c\u5305\u62ec FLOAT\u3001DOUBLE\uff0c\u5b8c\u6574\u4fe1\u606f\u53c2\u8003\u8fd9\u7bc7\u6587\u6863\u3002",
+        "\u5b57\u6bb5\u8bf4\u660e\uff1a",
+        "\u8bed\u6cd5\u5143\u7d20\u8bf4\u660eM\u5c0f\u6570\u603b\u4f4d\u6570D\u5c0f\u6570\u70b9\u540e\u4f4d\u6570UNSIGNED\u65e0\u7b26\u53f7\u6570\uff0c\u5982\u679c\u4e0d\u52a0\u8fd9\u4e2a\u6807\u8bc6\uff0c\u5219\u4e3a\u6709\u7b26\u53f7\u6570ZEROFILL\u8865\u96f6\u6807\u8bc6\uff0c\u5982\u679c\u6709\u8fd9\u4e2a\u6807\u8bc6\uff0cTiDB \u4f1a\u81ea\u52a8\u7ed9\u7c7b\u578b\u589e\u52a0 UNSIGNED \u6807\u8bc6",
+        "\u7c7b\u578b\u5b9a\u4e49"
     ],
     "Examples": [],
     "Category": [
-        "数值类型"
+        "\u6570\u503c\u7c7b\u578b"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT CAST(1234567890123456789 AS BIGINT);",
+        "SELECT 1234567890123456789 AS BIGINT;",
+        "SELECT 1234567890123456789;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 594,
+            "Prompt Tokens": 567,
+            "Completion Tokens": 27,
+            "Total Cost (USD)": 0.00010124999999999998
+        },
+        {
+            "Total Tokens": 776,
+            "Prompt Tokens": 751,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 0.00012764999999999999
+        },
+        {
+            "Total Tokens": 955,
+            "Prompt Tokens": 933,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 0.00015314999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.ProgrammingError) (1064, 'You have an error in your SQL syntax; check the manual that corresponds to your TiDB version for the right syntax to use line 1 column 41 near \"BIGINT);\" ')\n",
+        "(pymysql.err.ProgrammingError) (1064, 'You have an error in your SQL syntax; check the manual that corresponds to your TiDB version for the right syntax to use line 1 column 36 near \"BIGINT;\" ')\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT 1234567890123456789;"
     ]
 }

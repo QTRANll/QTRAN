@@ -16,5 +16,39 @@
     ],
     "Category": [
         "Timestamp Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT datediff(part, '2023-01-01', '2023-01-10')",
+        "SELECT datediff('2023-01-01', '2023-01-10')",
+        "SELECT datediff('day', DATE '2023-01-01', DATE '2023-01-10')"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 316,
+            "Prompt Tokens": 282,
+            "Completion Tokens": 34,
+            "Total Cost (USD)": 6.269999999999999e-05
+        },
+        {
+            "Total Tokens": 513,
+            "Prompt Tokens": 481,
+            "Completion Tokens": 32,
+            "Total Cost (USD)": 9.135e-05
+        },
+        {
+            "Total Tokens": 802,
+            "Prompt Tokens": 765,
+            "Completion Tokens": 37,
+            "Total Cost (USD)": 0.00013695
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.BinderException) Binder Error: Referenced column \"part\" not found in FROM clause!\nLINE 1: SELECT datediff(part, '2023-01-01', '2023-01-10')\n                        ^\n",
+        "(duckdb.duckdb.BinderException) Binder Error: No function matches the given name and argument types 'datediff(STRING_LITERAL, STRING_LITERAL)'. You might need to add explicit type casts.\n\tCandidate functions:\n\tdatediff(VARCHAR, DATE, DATE) -> BIGINT\n\tdatediff(VARCHAR, TIMESTAMP, TIMESTAMP) -> BIGINT\n\tdatediff(VARCHAR, TIME, TIME) -> BIGINT\n\tdatediff(VARCHAR, TIMESTAMP WITH TIME ZONE, TIMESTAMP WITH TIME ZONE) -> BIGINT\n\nLINE 1: SELECT datediff('2023-01-01', '2023-01-10')\n               ^\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT datediff('day', DATE '2023-01-01', DATE '2023-01-10')"
     ]
 }

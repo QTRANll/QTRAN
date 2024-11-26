@@ -16,5 +16,31 @@
     ],
     "Category": [
         "Date Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT dayname('2023-10-01');",
+        "SELECT dayname(DATE '2023-10-01');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 277,
+            "Prompt Tokens": 253,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 5.234999999999999e-05
+        },
+        {
+            "Total Tokens": 508,
+            "Prompt Tokens": 482,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 8.79e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.BinderException) Binder Error: Could not choose a best candidate function for the function call \"dayname(STRING_LITERAL)\". In order to select one, please add explicit type casts.\n\tCandidate functions:\n\tdayname(TIMESTAMP) -> VARCHAR\n\tdayname(TIMESTAMP WITH TIME ZONE) -> VARCHAR\n\tdayname(DATE) -> VARCHAR\n\nLINE 1: SELECT dayname('2023-10-01');\n               ^\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT dayname(DATE '2023-10-01');"
     ]
 }

@@ -15,5 +15,39 @@
     "Examples": [],
     "Category": [
         "Aggregate Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT kurtosis(x);",
+        "SELECT kurtosis(column_name) FROM table_name;",
+        "SELECT kurtosis(x) FROM (SELECT 1 AS x);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 286,
+            "Prompt Tokens": 268,
+            "Completion Tokens": 18,
+            "Total Cost (USD)": 5.1e-05
+        },
+        {
+            "Total Tokens": 452,
+            "Prompt Tokens": 430,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 7.769999999999999e-05
+        },
+        {
+            "Total Tokens": 633,
+            "Prompt Tokens": 607,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 0.00010664999999999999
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.BinderException) Binder Error: Referenced column \"x\" not found in FROM clause!\nLINE 1: SELECT kurtosis(x);\n                        ^\n",
+        "(duckdb.duckdb.CatalogException) Catalog Error: Table with name table_name does not exist!\nDid you mean \"pg_tablespace\"?\nLINE 1: SELECT kurtosis(column_name) FROM table_name;\n                                          ^\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT kurtosis(x) FROM (SELECT 1 AS x);"
     ]
 }

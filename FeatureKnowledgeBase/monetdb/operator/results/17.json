@@ -16,5 +16,31 @@
     ],
     "Category": [
         "Cast Conversion Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT INTERVAL '2023-10' MONTH;",
+        "SELECT INTERVAL '10' MONTH;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 266,
+            "Prompt Tokens": 243,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 5.0249999999999995e-05
+        },
+        {
+            "Total Tokens": 412,
+            "Prompt Tokens": 392,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 7.08e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymonetdb.exceptions.OperationalError) 42000!Interval type miss match '-10'\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT INTERVAL '10' MONTH;"
     ]
 }

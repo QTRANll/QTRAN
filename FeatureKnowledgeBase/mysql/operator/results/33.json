@@ -18,5 +18,55 @@
     "Category": [
         "Built-In Functions and Operators",
         "Comparison Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT * FROM your_table WHERE your_column NOT BETWEEN min_value AND max_value;",
+        "SELECT NOT BETWEEN min_value AND max_value;",
+        "SELECT expr NOT BETWEEN min_value AND max_value;",
+        "SELECT NOT BETWEEN 10 AND 20;",
+        "SELECT 1 NOT BETWEEN 10 AND 20;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 330,
+            "Prompt Tokens": 302,
+            "Completion Tokens": 28,
+            "Total Cost (USD)": 6.209999999999999e-05
+        },
+        {
+            "Total Tokens": 490,
+            "Prompt Tokens": 469,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 8.294999999999998e-05
+        },
+        {
+            "Total Tokens": 678,
+            "Prompt Tokens": 656,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 0.00011159999999999999
+        },
+        {
+            "Total Tokens": 834,
+            "Prompt Tokens": 813,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 0.00013455
+        },
+        {
+            "Total Tokens": 1023,
+            "Prompt Tokens": 1000,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 0.0001638
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.ProgrammingError) (1146, \"Table 'knowledge_base_preprocess_mysql.your_table' doesn't exist\")\n",
+        "(pymysql.err.ProgrammingError) (1064, \"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'BETWEEN min_value AND max_value' at line 1\")\n",
+        "(pymysql.err.OperationalError) (1054, \"Unknown column 'expr' in 'field list'\")\n",
+        "(pymysql.err.ProgrammingError) (1064, \"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'BETWEEN 10 AND 20' at line 1\")\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT 1 NOT BETWEEN 10 AND 20;"
     ]
 }

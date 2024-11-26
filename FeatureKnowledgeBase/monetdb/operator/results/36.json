@@ -16,5 +16,47 @@
     ],
     "Category": [
         "INET Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "< 10",
+        "SELECT * FROM table_name WHERE column_name < 10",
+        "SELECT column_name FROM system WHERE column_name < 10",
+        "SELECT 1 WHERE 1 < 10"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 251,
+            "Prompt Tokens": 236,
+            "Completion Tokens": 15,
+            "Total Cost (USD)": 4.4399999999999995e-05
+        },
+        {
+            "Total Tokens": 405,
+            "Prompt Tokens": 381,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 7.154999999999999e-05
+        },
+        {
+            "Total Tokens": 558,
+            "Prompt Tokens": 534,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 9.449999999999999e-05
+        },
+        {
+            "Total Tokens": 708,
+            "Prompt Tokens": 686,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 0.00011609999999999999
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymonetdb.exceptions.OperationalError) 42000!syntax error, unexpected COMPARISON in: \"<\"\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42S02!SELECT: no such table 'table_name'\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42S02!SELECT: no such table 'system'\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT 1 WHERE 1 < 10"
     ]
 }

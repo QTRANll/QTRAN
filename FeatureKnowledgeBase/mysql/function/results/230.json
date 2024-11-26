@@ -18,5 +18,47 @@
     "Category": [
         "Built-In Functions and Operators",
         "Spatial Analysis Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT ST_MultiLineString(LS1, LS2);",
+        "SELECT MultiLineString(LS1, LS2);",
+        "SELECT MultiLineString('LINESTRING(0 0, 1 1)', 'LINESTRING(1 1, 2 2)');",
+        "SELECT ST_GeomFromText('MULTILINESTRING((0 0, 1 1), (1 1, 2 2))');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 330,
+            "Prompt Tokens": 304,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 6.12e-05
+        },
+        {
+            "Total Tokens": 494,
+            "Prompt Tokens": 470,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 8.489999999999999e-05
+        },
+        {
+            "Total Tokens": 674,
+            "Prompt Tokens": 630,
+            "Completion Tokens": 44,
+            "Total Cost (USD)": 0.00012089999999999998
+        },
+        {
+            "Total Tokens": 866,
+            "Prompt Tokens": 820,
+            "Completion Tokens": 46,
+            "Total Cost (USD)": 0.00015059999999999997
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.ST_MultiLineString does not exist')\n",
+        "(pymysql.err.OperationalError) (1054, \"Unknown column 'LS1' in 'field list'\")\n",
+        "(pymysql.err.DataError) (1367, \"Illegal non geometric ''LINESTRING(0 0, 1 1)'' value found during parsing\")\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT ST_GeomFromText('MULTILINESTRING((0 0, 1 1), (1 1, 2 2))');"
     ]
 }

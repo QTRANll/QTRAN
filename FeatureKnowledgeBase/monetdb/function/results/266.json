@@ -18,5 +18,53 @@
     ],
     "Category": [
         "Aggregate Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT sum(month_interval_expr);",
+        "SELECT sum(month_interval) FROM your_table_name;",
+        "SELECT sum(month_interval) FROM (VALUES (INTERVAL '1 month'), (INTERVAL '2 months'), (INTERVAL '3 months')) AS temp(month_interval);",
+        "SELECT sum(month_interval) FROM (SELECT INTERVAL '1 month' AS month_interval UNION ALL SELECT INTERVAL '2 months' UNION ALL SELECT INTERVAL '3 months') AS temp;",
+        "SELECT sum(month_interval) FROM (SELECT INTERVAL '1 month' UNION ALL SELECT INTERVAL '2 months' UNION ALL SELECT INTERVAL '3 months') temp;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 293,
+            "Prompt Tokens": 274,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 5.25e-05
+        },
+        {
+            "Total Tokens": 447,
+            "Prompt Tokens": 425,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 7.694999999999999e-05
+        },
+        {
+            "Total Tokens": 628,
+            "Prompt Tokens": 581,
+            "Completion Tokens": 47,
+            "Total Cost (USD)": 0.00011534999999999998
+        },
+        {
+            "Total Tokens": 824,
+            "Prompt Tokens": 774,
+            "Completion Tokens": 50,
+            "Total Cost (USD)": 0.00014609999999999997
+        },
+        {
+            "Total Tokens": 1016,
+            "Prompt Tokens": 970,
+            "Completion Tokens": 46,
+            "Total Cost (USD)": 0.00017309999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: identifier 'month_interval_expr' unknown\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42S02!SELECT: no such table 'your_table_name'\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!syntax error, unexpected ')' in: \"select sum(month_interval) from (values (interval '1 month')\"\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!syntax error, unexpected AS in: \"select sum(month_interval) from (select interval '1 month' as\"\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!syntax error, unexpected UNION in: \"select sum(month_interval) from (select interval '1 month' union all\"\n\n"
+    ],
+    "EffectiveSQLs": []
 }

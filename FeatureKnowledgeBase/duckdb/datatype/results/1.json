@@ -34,5 +34,18 @@
     ],
     "Category": [
         "Bitstring"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT '101010'::BITSTRING AS b;",
+        "SELECT bitstring('0101011', 12) AS b;",
+        "SELECT 123::BITSTRING AS b;"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT '101010'::BITSTRING AS b;",
+        "SELECT bitstring('0101011', 12) AS b;",
+        "SELECT 123::BITSTRING AS b;"
     ]
 }

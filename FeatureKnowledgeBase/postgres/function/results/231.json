@@ -6,15 +6,41 @@
         "tsquery_phrase"
     ],
     "Feature": [
-        "tsquery_phrase ( query1 tsquery, query2 tsquery, distance integer ) → tsquery"
+        "tsquery_phrase ( query1 tsquery, query2 tsquery, distance integer ) \u2192 tsquery"
     ],
     "Description": [
         "Constructs a phrase query that searches for matches of query1 and query2 that occur exactly distance lexemes apart."
     ],
     "Examples": [
-        "tsquery_phrase(to_tsquery('fat'), to_tsquery('cat'), 10) → 'fat' <10> 'cat'"
+        "tsquery_phrase(to_tsquery('fat'), to_tsquery('cat'), 10) \u2192 'fat' <10> 'cat'"
     ],
     "Category": [
         "Text Search Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "tsquery_phrase('word1', 'word2', 3)",
+        "SELECT tsquery_phrase('word1', 'word2', 3);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 305,
+            "Prompt Tokens": 279,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 5.745e-05
+        },
+        {
+            "Total Tokens": 479,
+            "Prompt Tokens": 451,
+            "Completion Tokens": 28,
+            "Total Cost (USD)": 8.444999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.SyntaxError) syntax error at or near \"tsquery_phrase\"\nLINE 1: tsquery_phrase('word1', 'word2', 3)\n        ^\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT tsquery_phrase('word1', 'word2', 3);"
     ]
 }

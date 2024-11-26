@@ -6,15 +6,41 @@
         "substring"
     ],
     "Feature": [
-        "substring ( bytes bytea [ FROM start integer ] [ FOR count integer ] ) → bytea"
+        "substring ( bytes bytea [ FROM start integer ] [ FOR count integer ] ) \u2192 bytea"
     ],
     "Description": [
         "Extracts the substring of bytes starting at the start'th byte if that is specified, and stopping after count bytes if that is specified. Provide at least one of start and count."
     ],
     "Examples": [
-        "substring('\\x1234567890'::bytea from 3 for 2) → \\x5678"
+        "substring('\\x1234567890'::bytea from 3 for 2) \u2192 \\x5678"
     ],
     "Category": [
         "Binary String Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT substring(b'Hello, World!' FROM 1 FOR 5);",
+        "SELECT substring(E'Hello, World!'::bytea FROM 1 FOR 5);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 314,
+            "Prompt Tokens": 286,
+            "Completion Tokens": 28,
+            "Total Cost (USD)": 5.969999999999999e-05
+        },
+        {
+            "Total Tokens": 491,
+            "Prompt Tokens": 460,
+            "Completion Tokens": 31,
+            "Total Cost (USD)": 8.759999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.InvalidTextRepresentation) \"H\" is not a valid binary digit\nLINE 1: SELECT substring(b'Hello, World!' FROM 1 FOR 5);\n                         ^\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT substring(E'Hello, World!'::bytea FROM 1 FOR 5);"
     ]
 }

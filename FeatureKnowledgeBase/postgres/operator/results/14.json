@@ -6,19 +6,37 @@
         "numeric ^ numeric"
     ],
     "Feature": [
-        "numeric ^ numeric → numeric",
-        "double precision ^ double precision → double precision"
+        "numeric ^ numeric \u2192 numeric",
+        "double precision ^ double precision \u2192 double precision"
     ],
     "Description": [
         "Exponentiation",
         "Unlike typical mathematical practice, multiple uses of ^ will associate left to right by default:"
     ],
     "Examples": [
-        "2 ^ 3 → 8",
-        "2 ^ 3 ^ 3 → 512",
-        "2 ^ (3 ^ 3) → 134217728"
+        "2 ^ 3 \u2192 8",
+        "2 ^ 3 ^ 3 \u2192 512",
+        "2 ^ (3 ^ 3) \u2192 134217728"
     ],
     "Category": [
         "Mathematical Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT 2 ^ 3;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 291,
+            "Prompt Tokens": 272,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 5.22e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT 2 ^ 3;"
     ]
 }

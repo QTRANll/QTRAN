@@ -20,5 +20,53 @@
     "Category": [
         "Built-In Functions and Operators",
         "Spatial Analysis Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT ST_MPolyFromWKB('your_wkb_data_here', 4326);",
+        "SELECT ST_MultiPolygonFromWKB('your_valid_wkb_data_here', 4326);",
+        "SELECT ST_MPolyFromWKB('your_correct_wkb_data_here');",
+        "SELECT ST_MultiPolygonFromWKB('your_correct_wkb_data_here');",
+        "SELECT ST_MultiPolygonFromWKB('your_valid_wkb_data_here', 4326);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 417,
+            "Prompt Tokens": 386,
+            "Completion Tokens": 31,
+            "Total Cost (USD)": 7.649999999999999e-05
+        },
+        {
+            "Total Tokens": 588,
+            "Prompt Tokens": 555,
+            "Completion Tokens": 33,
+            "Total Cost (USD)": 0.00010305000000000001
+        },
+        {
+            "Total Tokens": 755,
+            "Prompt Tokens": 727,
+            "Completion Tokens": 28,
+            "Total Cost (USD)": 0.00012584999999999997
+        },
+        {
+            "Total Tokens": 922,
+            "Prompt Tokens": 893,
+            "Completion Tokens": 29,
+            "Total Cost (USD)": 0.00015135
+        },
+        {
+            "Total Tokens": 1094,
+            "Prompt Tokens": 1061,
+            "Completion Tokens": 33,
+            "Total Cost (USD)": 0.00017894999999999996
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.OperationalError) (3037, 'Invalid GIS data provided to function st_mpolyfromwkb.')\n",
+        "(pymysql.err.OperationalError) (3037, 'Invalid GIS data provided to function st_multipolygonfromwkb.')\n",
+        "(pymysql.err.OperationalError) (3037, 'Invalid GIS data provided to function st_mpolyfromwkb.')\n",
+        "(pymysql.err.OperationalError) (3037, 'Invalid GIS data provided to function st_multipolygonfromwkb.')\n",
+        "(pymysql.err.OperationalError) (3037, 'Invalid GIS data provided to function st_multipolygonfromwkb.')\n"
+    ],
+    "EffectiveSQLs": []
 }

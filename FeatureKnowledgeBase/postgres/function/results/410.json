@@ -6,7 +6,7 @@
         "has_sequence_privilege"
     ],
     "Feature": [
-        "has_sequence_privilege ( [ user name or oid, ] sequence text or oid, privilege text ) → boolean"
+        "has_sequence_privilege ( [ user name or oid, ] sequence text or oid, privilege text ) \u2192 boolean"
     ],
     "Description": [
         "Does user have privilege for sequence? Allowable privilege types are USAGE, SELECT, and UPDATE."
@@ -14,5 +14,53 @@
     "Examples": [],
     "Category": [
         "System Information Functions and Operators"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT has_sequence_privilege('username', 'sequence_name', 'USAGE');",
+        "SELECT has_sequence_privilege('existing_username', 'sequence_name', 'USAGE');",
+        "SELECT has_sequence_privilege('valid_username', 'sequence_name', 'USAGE');",
+        "SELECT has_sequence_privilege(current_user, 'sequence_name', 'USAGE');",
+        "SELECT has_sequence_privilege(current_user, 'existing_sequence', 'USAGE');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 310,
+            "Prompt Tokens": 281,
+            "Completion Tokens": 29,
+            "Total Cost (USD)": 5.955e-05
+        },
+        {
+            "Total Tokens": 465,
+            "Prompt Tokens": 435,
+            "Completion Tokens": 30,
+            "Total Cost (USD)": 8.324999999999999e-05
+        },
+        {
+            "Total Tokens": 621,
+            "Prompt Tokens": 591,
+            "Completion Tokens": 30,
+            "Total Cost (USD)": 0.00010664999999999999
+        },
+        {
+            "Total Tokens": 776,
+            "Prompt Tokens": 747,
+            "Completion Tokens": 29,
+            "Total Cost (USD)": 0.00012944999999999998
+        },
+        {
+            "Total Tokens": 931,
+            "Prompt Tokens": 902,
+            "Completion Tokens": 29,
+            "Total Cost (USD)": 0.00015269999999999997
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedObject) role \"username\" does not exist\n\n",
+        "(psycopg2.errors.UndefinedObject) role \"existing_username\" does not exist\n\n",
+        "(psycopg2.errors.UndefinedObject) role \"valid_username\" does not exist\n\n",
+        "(psycopg2.errors.UndefinedTable) relation \"sequence_name\" does not exist\n\n",
+        "(psycopg2.errors.UndefinedTable) relation \"existing_sequence\" does not exist\n\n"
+    ],
+    "EffectiveSQLs": []
 }

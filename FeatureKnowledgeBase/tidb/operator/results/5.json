@@ -11,12 +11,23 @@
         "\n\n              Binary-string evaluation occurs when the arguments have a\n              binary string type, and at least one of them is not a\n              hexadecimal literal, bit literal, or\n              NULL literal. Numeric evaluation occurs\n              otherwise, with argument conversion to unsigned 64-bit\n              integers as necessary.\n            \n              Binary-string evaluation produces a binary string of the\n              same length as the arguments. If the arguments have\n              unequal lengths, an\n              ER_INVALID_BITWISE_OPERANDS_SIZE\n              error occurs. Numeric evaluation produces an unsigned\n              64-bit integer.\n\n",
         "\n          For more information, see the introductory discussion in this\n          section.\n        ",
         "Press CTRL+C to copy mysql> SELECT 29 & 15;\n        -> 13\nmysql> SELECT HEX(_binary X'FF' & b'11110000');\n        -> 'F0'",
-        "\n          If bitwise AND is invoked from within the\n          mysql client, binary string results display\n          using hexadecimal notation, depending on the value of the\n          --binary-as-hex. For more\n          information about that option, see Section 6.5.1, “mysql — The MySQL Command-Line Client”.\n        "
+        "\n          If bitwise AND is invoked from within the\n          mysql client, binary string results display\n          using hexadecimal notation, depending on the value of the\n          --binary-as-hex. For more\n          information about that option, see Section\u00a06.5.1, \u201cmysql \u2014 The MySQL Command-Line Client\u201d.\n        "
     ],
     "Examples": [
         "mysql> SELECT 29 & 15;\n        -> 13\nmysql> SELECT HEX(_binary X'FF' & b'11110000');\n        -> 'F0'"
     ],
     "Category": [
         "Bit Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT 29 & 15;",
+        "SELECT HEX(_binary X'FF' & b'11110000');"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT 29 & 15;",
+        "SELECT HEX(_binary X'FF' & b'11110000');"
     ]
 }

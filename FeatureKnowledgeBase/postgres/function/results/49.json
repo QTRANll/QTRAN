@@ -6,15 +6,33 @@
         "sinh"
     ],
     "Feature": [
-        "sinh ( double precision ) → double precision"
+        "sinh ( double precision ) \u2192 double precision"
     ],
     "Description": [
         "Hyperbolic sine"
     ],
     "Examples": [
-        "sinh(1) → 1.1752011936438014"
+        "sinh(1) \u2192 1.1752011936438014"
     ],
     "Category": [
         "Mathematical Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT sinh(1.0);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 266,
+            "Prompt Tokens": 246,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 4.8899999999999996e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT sinh(1.0);"
     ]
 }

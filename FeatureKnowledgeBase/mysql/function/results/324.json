@@ -21,5 +21,31 @@
     "Category": [
         "Built-In Functions and Operators",
         "Spatial Analysis Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT ST_IsSimple(geometry) FROM dual;",
+        "SELECT ST_IsSimple(ST_GeomFromText('POINT(1 1)')) FROM dual;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 604,
+            "Prompt Tokens": 582,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 0.00010049999999999998
+        },
+        {
+            "Total Tokens": 772,
+            "Prompt Tokens": 739,
+            "Completion Tokens": 33,
+            "Total Cost (USD)": 0.00013064999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.OperationalError) (1054, \"Unknown column 'geometry' in 'field list'\")\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT ST_IsSimple(ST_GeomFromText('POINT(1 1)')) FROM dual;"
     ]
 }

@@ -6,7 +6,7 @@
         "pg_function_is_visible"
     ],
     "Feature": [
-        "pg_function_is_visible ( function oid ) → boolean"
+        "pg_function_is_visible ( function oid ) \u2192 boolean"
     ],
     "Description": [
         "Is function visible in search path? (This also works for procedures and aggregates.)"
@@ -14,5 +14,47 @@
     "Examples": [],
     "Category": [
         "System Information Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT pg_function_is_visible('function_name'::regprocedure);",
+        "SELECT pg_function_is_visible('function_name'::regprocedure);",
+        "SELECT pg_function_is_visible('function_name');",
+        "SELECT pg_function_is_visible(oid) FROM pg_proc WHERE proname = 'function_name';"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 291,
+            "Prompt Tokens": 265,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 5.534999999999999e-05
+        },
+        {
+            "Total Tokens": 461,
+            "Prompt Tokens": 435,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 8.085e-05
+        },
+        {
+            "Total Tokens": 627,
+            "Prompt Tokens": 605,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 0.00010394999999999998
+        },
+        {
+            "Total Tokens": 803,
+            "Prompt Tokens": 771,
+            "Completion Tokens": 32,
+            "Total Cost (USD)": 0.00013485
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.InvalidTextRepresentation) expected a left parenthesis\nLINE 1: SELECT pg_function_is_visible('function_name'::regprocedure)...\n                                      ^\n\n",
+        "(psycopg2.errors.InvalidTextRepresentation) expected a left parenthesis\nLINE 1: SELECT pg_function_is_visible('function_name'::regprocedure)...\n                                      ^\n\n",
+        "(psycopg2.errors.InvalidTextRepresentation) invalid input syntax for type oid: \"function_name\"\nLINE 1: SELECT pg_function_is_visible('function_name');\n                                      ^\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT pg_function_is_visible(oid) FROM pg_proc WHERE proname = 'function_name';"
     ]
 }

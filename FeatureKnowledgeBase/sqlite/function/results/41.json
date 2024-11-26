@@ -14,5 +14,31 @@
     "Examples": [],
     "Category": [
         "Core SQL Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT typeof(X);",
+        "SELECT typeof(NULL);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 296,
+            "Prompt Tokens": 279,
+            "Completion Tokens": 17,
+            "Total Cost (USD)": 5.2050000000000005e-05
+        },
+        {
+            "Total Tokens": 430,
+            "Prompt Tokens": 413,
+            "Completion Tokens": 17,
+            "Total Cost (USD)": 7.214999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(sqlite3.OperationalError) no such column: X\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT typeof(NULL);"
     ]
 }

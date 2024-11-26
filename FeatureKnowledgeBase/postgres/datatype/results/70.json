@@ -15,5 +15,53 @@
     "Examples": [],
     "Category": [
         "Pseudo-Types"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT anycompatiblemultirange(ARRAY[1, 2, 3]::int4multirange);",
+        "SELECT anycompatiblemultirange(ARRAY[1, 2, 3]::int4range[]);",
+        "SELECT anycompatiblemultirange(ARRAY[1, 2, 3]::int4range);",
+        "SELECT anycompatiblemultirange(ARRAY[1, 2, 3]::int4range[]);",
+        "SELECT anycompatiblemultirange(ARRAY[int4range(1, 2), int4range(2, 3)]);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 327,
+            "Prompt Tokens": 290,
+            "Completion Tokens": 37,
+            "Total Cost (USD)": 6.57e-05
+        },
+        {
+            "Total Tokens": 525,
+            "Prompt Tokens": 489,
+            "Completion Tokens": 36,
+            "Total Cost (USD)": 9.494999999999999e-05
+        },
+        {
+            "Total Tokens": 717,
+            "Prompt Tokens": 682,
+            "Completion Tokens": 35,
+            "Total Cost (USD)": 0.0001233
+        },
+        {
+            "Total Tokens": 911,
+            "Prompt Tokens": 875,
+            "Completion Tokens": 36,
+            "Total Cost (USD)": 0.00015285
+        },
+        {
+            "Total Tokens": 1109,
+            "Prompt Tokens": 1068,
+            "Completion Tokens": 41,
+            "Total Cost (USD)": 0.0001848
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.CannotCoerce) cannot cast type integer[] to int4multirange\nLINE 1: SELECT anycompatiblemultirange(ARRAY[1, 2, 3]::int4multirang...\n                                                     ^\n\n",
+        "(psycopg2.errors.CannotCoerce) cannot cast type integer to int4range\nLINE 1: SELECT anycompatiblemultirange(ARRAY[1, 2, 3]::int4range[]);\n                                             ^\n\n",
+        "(psycopg2.errors.CannotCoerce) cannot cast type integer[] to int4range\nLINE 1: SELECT anycompatiblemultirange(ARRAY[1, 2, 3]::int4range);\n                                                     ^\n\n",
+        "(psycopg2.errors.CannotCoerce) cannot cast type integer to int4range\nLINE 1: SELECT anycompatiblemultirange(ARRAY[1, 2, 3]::int4range[]);\n                                             ^\n\n",
+        "(psycopg2.errors.UndefinedFunction) function anycompatiblemultirange(int4range[]) does not exist\nLINE 1: SELECT anycompatiblemultirange(ARRAY[int4range(1, 2), int4ra...\n               ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.\n\n"
+    ],
+    "EffectiveSQLs": []
 }

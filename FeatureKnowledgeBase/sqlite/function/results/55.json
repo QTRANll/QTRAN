@@ -14,5 +14,39 @@
     "Examples": [],
     "Category": [
         "Window Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT dense_rank() OVER (ORDER BY column_name) FROM table_name;",
+        "SELECT dense_rank() OVER (ORDER BY column_name);",
+        "SELECT dense_rank() OVER ();"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 345,
+            "Prompt Tokens": 318,
+            "Completion Tokens": 27,
+            "Total Cost (USD)": 6.39e-05
+        },
+        {
+            "Total Tokens": 488,
+            "Prompt Tokens": 464,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 8.4e-05
+        },
+        {
+            "Total Tokens": 626,
+            "Prompt Tokens": 607,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 0.00010245
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(sqlite3.OperationalError) no such table: table_name\n",
+        "(sqlite3.OperationalError) no such column: column_name\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT dense_rank() OVER ();"
     ]
 }

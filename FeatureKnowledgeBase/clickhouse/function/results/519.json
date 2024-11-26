@@ -76,5 +76,28 @@
     ],
     "Category": [
         "JSON Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT JSONExtractUInt('{\"a\": \"hello\", \"b\": [-100, 200.0, 300]}', 'b', -1) as x, toTypeName(x);",
+        "SELECT JSONExtractInt('{\"a\": \"hello\", \"b\": [-100, 200.0, 300]}', 'b', -1) as x, toTypeName(x);",
+        "SELECT JSONExtractFloat('{\"a\": \"hello\", \"b\": [-100, 200.0, 300]}', 'b', 2) as x, toTypeName(x);",
+        "SELECT JSONExtractBool('{\"passed\": true}', 'passed');",
+        "SELECT JSONExtractKeysAndValues('{\"x\": {\"a\": 5, \"b\": 7, \"c\": 11}}', 'x', 'Int8') = [('a',5),('b',7),('c',11)];",
+        "SELECT JSONExtractKeys('{\"a\": \"hello\", \"b\": [-100, 200.0, 300]}');",
+        "SELECT JSONExtractRaw('{\"a\": \"hello\", \"b\": [-100, 200.0, 300]}', 'b') = '[-100, 200.0, 300]';",
+        "SELECT JSONExtractArrayRaw('{\"a\": \"hello\", \"b\": [-100, 200.0, \"hello\"]}', 'b') = ['-100', '200.0', '\"hello\"'];",
+        "SELECT JSONExtractKeysAndValuesRaw('{\"a\": [-100, 200.0], \"b\":{\"c\": {\"d\": \"hello\", \"f\": \"world\"}}}');",
+        "SELECT JSONExtractKeysAndValuesRaw('{\"a\": [-100, 200.0], \"b\":{\"c\": {\"d\": \"hello\", \"f\": \"world\"}}}', 'b');",
+        "SELECT JSONExtractKeysAndValuesRaw('{\"a\": [-100, 200.0], \"b\":{\"c\": {\"d\": \"hello\", \"f\": \"world\"}}}', -1, 'c');",
+        "SELECT JSON_EXISTS('{\"hello\":[\"world\"]}', '$.hello[*]');",
+        "SELECT JSON_EXISTS('{\"hello\":[\"world\"]}', '$.hello[0]');",
+        "SELECT JSON_QUERY('{\"hello\":\"world\"}', '$.hello');",
+        "SELECT JSON_QUERY('{\"array\":[[0, 1, 2, 3, 4, 5], [0, -1, -2, -3, -4, -5]]}', '$.array[*][0 to 2, 4]');",
+        "SELECT JSON_VALUE('{\"hello\":\"world\"}', '$.hello');",
+        "SELECT JSON_VALUE('{\"array\":[[0, 1, 2, 3, 4, 5], [0, -1, -2, -3, -4, -5]]}', '$.array[*][0 to 2, 4]');",
+        "select JSON_VALUE('{\"hello\":\"world\"}', '$.b') settings function_json_value_return_type_allow_nullable=true;",
+        "select JSON_VALUE('{\"hello\":{\"world\":\"!\"}}', '$.hello') settings function_json_value_return_type_allow_complex=true;",
+        "SELECT toJSONString(map('key1', 1, 'key2', 2));",
+        "SELECT toJSONString(tuple(1.25, NULL, NaN, +inf, -inf, [])) SETTINGS output_format_json_quote_denormals = 1;"
     ]
 }

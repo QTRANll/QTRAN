@@ -6,13 +6,31 @@
         "pg_get_keywords"
     ],
     "Feature": [
-        "pg_get_keywords () → setof record ( word text, catcode \"char\", barelabel boolean, catdesc text, baredesc text )"
+        "pg_get_keywords () \u2192 setof record ( word text, catcode \"char\", barelabel boolean, catdesc text, baredesc text )"
     ],
     "Description": [
-        "Returns a set of records describing the SQL keywords recognized by the server. The word column contains the keyword. The catcode column contains a category code: U for an unreserved keyword, C for a keyword that can be a column name, T for a keyword that can be a type or function name, or R for a fully reserved keyword. The barelabel column contains true if the keyword can be used as a “bare” column label in SELECT lists, or false if it can only be used after AS. The catdesc column contains a possibly-localized string describing the keyword's category. The baredesc column contains a possibly-localized string describing the keyword's column label status."
+        "Returns a set of records describing the SQL keywords recognized by the server. The word column contains the keyword. The catcode column contains a category code: U for an unreserved keyword, C for a keyword that can be a column name, T for a keyword that can be a type or function name, or R for a fully reserved keyword. The barelabel column contains true if the keyword can be used as a \u201cbare\u201d column label in SELECT lists, or false if it can only be used after AS. The catdesc column contains a possibly-localized string describing the keyword's category. The baredesc column contains a possibly-localized string describing the keyword's column label status."
     ],
     "Examples": [],
     "Category": [
         "System Information Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT * FROM pg_get_keywords();"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 424,
+            "Prompt Tokens": 404,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 7.259999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT * FROM pg_get_keywords();"
     ]
 }

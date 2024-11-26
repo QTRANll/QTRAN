@@ -19,5 +19,23 @@
     "Examples": [],
     "Category": [
         "Numeric Types"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT CAST(1234567890123456789 AS bigint);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 296,
+            "Prompt Tokens": 270,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 5.6099999999999995e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT CAST(1234567890123456789 AS bigint);"
     ]
 }

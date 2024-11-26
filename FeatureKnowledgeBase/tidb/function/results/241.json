@@ -10,10 +10,58 @@
     ],
     "Description": [
         "GROUPING()",
-        "参见 GROUP BY 修饰符。"
+        "\u53c2\u89c1 GROUP BY \u4fee\u9970\u7b26\u3002"
     ],
     "Examples": [],
     "Category": [
-        "其它函数"
-    ]
+        "\u5176\u5b83\u51fd\u6570"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT GROUPING(column_name) FROM table_name GROUP BY column_name",
+        "SELECT GROUPING(column_name) FROM dual GROUP BY column_name",
+        "SELECT GROUPING(*) FROM dual GROUP BY 1",
+        "SELECT GROUPING(1) FROM dual GROUP BY 1",
+        "SELECT GROUPING() FROM dual"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 278,
+            "Prompt Tokens": 252,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 5.34e-05
+        },
+        {
+            "Total Tokens": 437,
+            "Prompt Tokens": 412,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 7.68e-05
+        },
+        {
+            "Total Tokens": 591,
+            "Prompt Tokens": 568,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 9.899999999999998e-05
+        },
+        {
+            "Total Tokens": 778,
+            "Prompt Tokens": 753,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 0.00012795
+        },
+        {
+            "Total Tokens": 923,
+            "Prompt Tokens": 904,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 0.000147
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.ProgrammingError) (1146, \"Table 'knowledge_base_preprocess_tidb.table_name' doesn't exist\")\n",
+        "(pymysql.err.OperationalError) (1054, \"Unknown column 'column_name' in 'group statement'\")\n",
+        "(pymysql.err.ProgrammingError) (1064, 'You have an error in your SQL syntax; check the manual that corresponds to your TiDB version for the right syntax to use line 1 column 17 near \"*) FROM dual GROUP BY 1\" ')\n",
+        "(pymysql.err.ProgrammingError) (1111, 'Invalid use of group function')\n",
+        "(pymysql.err.ProgrammingError) (1111, 'Invalid use of group function')\n"
+    ],
+    "EffectiveSQLs": []
 }

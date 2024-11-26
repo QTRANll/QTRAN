@@ -52,5 +52,18 @@
     "Category": [
         "Built-In Functions and Operators",
         "JSON Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT JSON_VALUE('{\"fname\": \"Joe\", \"lname\": \"Palmer\"}', '$.fname');",
+        "CREATE TABLE t1(\n    j JSON,\n    INDEX i1 ( (JSON_VALUE(j, '$.id' RETURNING UNSIGNED)) )\n);",
+        "CREATE TABLE t2 (\n    j JSON,\n    g INT GENERATED ALWAYS AS (j->\"$.id\"),\n    INDEX i1 (g)\n);"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT JSON_VALUE('{\"fname\": \"Joe\", \"lname\": \"Palmer\"}', '$.fname');",
+        "CREATE TABLE t1(\n    j JSON,\n    INDEX i1 ( (JSON_VALUE(j, '$.id' RETURNING UNSIGNED)) )\n);",
+        "CREATE TABLE t2 (\n    j JSON,\n    g INT GENERATED ALWAYS AS (j->\"$.id\"),\n    INDEX i1 (g)\n);"
     ]
 }

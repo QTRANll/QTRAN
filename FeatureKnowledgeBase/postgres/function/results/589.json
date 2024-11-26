@@ -6,7 +6,7 @@
         "pg_stat_file"
     ],
     "Feature": [
-        "pg_stat_file ( filename text [, missing_ok boolean ] ) → record ( size bigint, access timestamp with time zone, modification timestamp with time zone, change timestamp with time zone, creation timestamp with time zone, isdir boolean )"
+        "pg_stat_file ( filename text [, missing_ok boolean ] ) \u2192 record ( size bigint, access timestamp with time zone, modification timestamp with time zone, change timestamp with time zone, creation timestamp with time zone, isdir boolean )"
     ],
     "Description": [
         "Returns a record containing the file's size, last access time stamp, last modification time stamp, last file status change time stamp (Unix platforms only), file creation time stamp (Windows only), and a flag indicating if it is a directory.",
@@ -15,5 +15,53 @@
     "Examples": [],
     "Category": [
         "System Administration Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT pg_stat_file('example.txt');",
+        "SELECT pg_stat_file('non_existent_file.txt');",
+        "SELECT pg_stat_file('another_non_existent_file.txt');",
+        "SELECT pg_stat_file('dummy_file.txt');",
+        "SELECT pg_stat_file('valid_file.txt');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 375,
+            "Prompt Tokens": 354,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 6.569999999999998e-05
+        },
+        {
+            "Total Tokens": 529,
+            "Prompt Tokens": 505,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 9.015e-05
+        },
+        {
+            "Total Tokens": 687,
+            "Prompt Tokens": 662,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 0.0001143
+        },
+        {
+            "Total Tokens": 843,
+            "Prompt Tokens": 821,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 0.00013634999999999998
+        },
+        {
+            "Total Tokens": 996,
+            "Prompt Tokens": 974,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 0.00015929999999999997
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedFile) could not stat file \"example.txt\": No such file or directory\n\n",
+        "(psycopg2.errors.UndefinedFile) could not stat file \"non_existent_file.txt\": No such file or directory\n\n",
+        "(psycopg2.errors.UndefinedFile) could not stat file \"another_non_existent_file.txt\": No such file or directory\n\n",
+        "(psycopg2.errors.UndefinedFile) could not stat file \"dummy_file.txt\": No such file or directory\n\n",
+        "(psycopg2.errors.UndefinedFile) could not stat file \"valid_file.txt\": No such file or directory\n\n"
+    ],
+    "EffectiveSQLs": []
 }

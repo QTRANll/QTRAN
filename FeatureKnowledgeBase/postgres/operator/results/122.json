@@ -6,15 +6,20 @@
         "jsonb <@ jsonb"
     ],
     "Feature": [
-        "jsonb <@ jsonb → boolean"
+        "jsonb <@ jsonb \u2192 boolean"
     ],
     "Description": [
         "Is the first JSON value contained in the second?"
     ],
     "Examples": [
-        "'{\"b\":2}'::jsonb <@ '{\"a\":1, \"b\":2}'::jsonb → t"
+        "'{\"b\":2}'::jsonb <@ '{\"a\":1, \"b\":2}'::jsonb \u2192 t"
     ],
     "Category": [
         "JSON Functions and Operators"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": []
 }

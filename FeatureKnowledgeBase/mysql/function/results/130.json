@@ -17,5 +17,31 @@
     "Category": [
         "Built-In Functions and Operators",
         "Internal Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT INTERNAL_DATA_LENGTH('example_string');",
+        "SELECT CHAR_LENGTH('example_string');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 292,
+            "Prompt Tokens": 271,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 5.325e-05
+        },
+        {
+            "Total Tokens": 450,
+            "Prompt Tokens": 430,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 7.649999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.OperationalError) (3566, \"Access to native function 'INTERNAL_DATA_LENGTH' is rejected.\")\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT CHAR_LENGTH('example_string');"
     ]
 }

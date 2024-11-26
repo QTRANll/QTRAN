@@ -27,5 +27,53 @@
     ],
     "Category": [
         "Loadable Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT keyring_key_fetch('RSA_key');",
+        "SELECT keyring_key_fetch('non_existent_key');",
+        "SELECT keyring_key_fetch('dummy_key');",
+        "SELECT keyring_key_fetch('test_key');",
+        "SELECT keyring_key_fetch('example_key');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 775,
+            "Prompt Tokens": 753,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 0.00012615
+        },
+        {
+            "Total Tokens": 936,
+            "Prompt Tokens": 912,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 0.0001512
+        },
+        {
+            "Total Tokens": 1095,
+            "Prompt Tokens": 1073,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 0.00017414999999999998
+        },
+        {
+            "Total Tokens": 1254,
+            "Prompt Tokens": 1232,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 0.000198
+        },
+        {
+            "Total Tokens": 1413,
+            "Prompt Tokens": 1391,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 0.00022184999999999997
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.keyring_key_fetch does not exist')\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.keyring_key_fetch does not exist')\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.keyring_key_fetch does not exist')\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.keyring_key_fetch does not exist')\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.keyring_key_fetch does not exist')\n"
+    ],
+    "EffectiveSQLs": []
 }

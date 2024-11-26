@@ -6,14 +6,32 @@
         "current_catalog"
     ],
     "Feature": [
-        "current_catalog → name",
-        "current_database () → name"
+        "current_catalog \u2192 name",
+        "current_database () \u2192 name"
     ],
     "Description": [
-        "Returns the name of the current database. (Databases are called “catalogs” in the SQL standard, so current_catalog is the standard's spelling.)"
+        "Returns the name of the current database. (Databases are called \u201ccatalogs\u201d in the SQL standard, so current_catalog is the standard's spelling.)"
     ],
     "Examples": [],
     "Category": [
         "System Information Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT current_catalog;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 291,
+            "Prompt Tokens": 275,
+            "Completion Tokens": 16,
+            "Total Cost (USD)": 5.085e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT current_catalog;"
     ]
 }

@@ -16,5 +16,39 @@
     ],
     "Category": [
         "Date Part Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT era(date) FROM your_table;",
+        "SELECT era(date);",
+        "SELECT era(current_date);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 263,
+            "Prompt Tokens": 243,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 4.845e-05
+        },
+        {
+            "Total Tokens": 430,
+            "Prompt Tokens": 413,
+            "Completion Tokens": 17,
+            "Total Cost (USD)": 7.214999999999999e-05
+        },
+        {
+            "Total Tokens": 589,
+            "Prompt Tokens": 571,
+            "Completion Tokens": 18,
+            "Total Cost (USD)": 9.644999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.CatalogException) Catalog Error: Table with name your_table does not exist!\nDid you mean \"pg_tables\"?\nLINE 1: SELECT era(date) FROM your_table;\n                              ^\n",
+        "(duckdb.duckdb.BinderException) Binder Error: Referenced column \"date\" not found in FROM clause!\nLINE 1: SELECT era(date);\n                   ^\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT era(current_date);"
     ]
 }

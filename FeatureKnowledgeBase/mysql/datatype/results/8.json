@@ -17,5 +17,16 @@
     ],
     "Category": [
         "Conversion Between Date and Time Types"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT CURTIME(), CURTIME()+0, CURTIME(3)+0;",
+        "SELECT NOW(), NOW()+0, NOW(3)+0;"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT CURTIME(), CURTIME()+0, CURTIME(3)+0;",
+        "SELECT NOW(), NOW()+0, NOW(3)+0;"
     ]
 }

@@ -6,15 +6,63 @@
         "aclitem[] ~ aclitem"
     ],
     "Feature": [
-        "aclitem[] ~ aclitem → boolean"
+        "aclitem[] ~ aclitem \u2192 boolean"
     ],
     "Description": [
         "This is a deprecated alias for @>."
     ],
     "Examples": [
-        "'{calvin=r*w/hobbes,hobbes=r*w*/postgres}'::aclitem[] ~ 'calvin=r*/hobbes'::aclitem → t"
+        "'{calvin=r*w/hobbes,hobbes=r*w*/postgres}'::aclitem[] ~ 'calvin=r*/hobbes'::aclitem \u2192 t"
     ],
     "Category": [
         "System Information Functions and Operators"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT aclitem[] ~ aclitem;",
+        "SELECT aclitem ~ aclitem;",
+        "SELECT aclitem_array ~ aclitem_element;",
+        "SELECT '{}'::aclitem[] ~ '{}'::aclitem;",
+        "SELECT ARRAY[ROW('user', 'ALL')]::aclitem[] ~ ARRAY[ROW('user', 'ALL')]::aclitem;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 281,
+            "Prompt Tokens": 261,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 5.1149999999999996e-05
+        },
+        {
+            "Total Tokens": 440,
+            "Prompt Tokens": 421,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 7.455e-05
+        },
+        {
+            "Total Tokens": 604,
+            "Prompt Tokens": 583,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 0.00010004999999999998
+        },
+        {
+            "Total Tokens": 774,
+            "Prompt Tokens": 750,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 0.0001269
+        },
+        {
+            "Total Tokens": 973,
+            "Prompt Tokens": 933,
+            "Completion Tokens": 40,
+            "Total Cost (USD)": 0.00016394999999999997
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.SyntaxError) syntax error at or near \"]\"\nLINE 1: SELECT aclitem[] ~ aclitem;\n                       ^\n\n",
+        "(psycopg2.errors.UndefinedColumn) column \"aclitem\" does not exist\nLINE 1: SELECT aclitem ~ aclitem;\n               ^\n\n",
+        "(psycopg2.errors.UndefinedColumn) column \"aclitem_array\" does not exist\nLINE 1: SELECT aclitem_array ~ aclitem_element;\n               ^\n\n",
+        "(psycopg2.errors.InvalidTextRepresentation) unrecognized key word: \"\"\nLINE 1: SELECT '{}'::aclitem[] ~ '{}'::aclitem;\n                                 ^\nHINT:  ACL key word must be \"group\" or \"user\".\n\n",
+        "(psycopg2.errors.CannotCoerce) cannot cast type record to aclitem\nLINE 1: SELECT ARRAY[ROW('user', 'ALL')]::aclitem[] ~ ARRAY[ROW('use...\n                     ^\n\n"
+    ],
+    "EffectiveSQLs": []
 }

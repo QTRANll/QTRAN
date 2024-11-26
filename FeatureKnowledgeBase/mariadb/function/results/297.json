@@ -24,5 +24,13 @@
         "SELECT ST_ASTEXT(ST_CONVEXHULL(@g));",
         "SELECT ST_ASTEXT(ST_CONVEXHULL(@g));",
         "SELECT ST_ASTEXT(ST_CONVEXHULL(@g));"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT ST_ASTEXT(ST_CONVEXHULL(@g));",
+        "SELECT ST_ASTEXT(ST_CONVEXHULL(@g));",
+        "SELECT ST_ASTEXT(ST_CONVEXHULL(@g));"
     ]
 }

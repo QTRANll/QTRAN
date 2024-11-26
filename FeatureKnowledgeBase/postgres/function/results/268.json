@@ -6,19 +6,37 @@
         "jsonb_path_exists_tz"
     ],
     "Feature": [
-        "jsonb_path_exists_tz ( target jsonb, path jsonpath [, vars jsonb [, silent boolean ]] ) → boolean",
-        "jsonb_path_match_tz ( target jsonb, path jsonpath [, vars jsonb [, silent boolean ]] ) → boolean",
-        "jsonb_path_query_tz ( target jsonb, path jsonpath [, vars jsonb [, silent boolean ]] ) → setof jsonb",
-        "jsonb_path_query_array_tz ( target jsonb, path jsonpath [, vars jsonb [, silent boolean ]] ) → jsonb",
-        "jsonb_path_query_first_tz ( target jsonb, path jsonpath [, vars jsonb [, silent boolean ]] ) → jsonb"
+        "jsonb_path_exists_tz ( target jsonb, path jsonpath [, vars jsonb [, silent boolean ]] ) \u2192 boolean",
+        "jsonb_path_match_tz ( target jsonb, path jsonpath [, vars jsonb [, silent boolean ]] ) \u2192 boolean",
+        "jsonb_path_query_tz ( target jsonb, path jsonpath [, vars jsonb [, silent boolean ]] ) \u2192 setof jsonb",
+        "jsonb_path_query_array_tz ( target jsonb, path jsonpath [, vars jsonb [, silent boolean ]] ) \u2192 jsonb",
+        "jsonb_path_query_first_tz ( target jsonb, path jsonpath [, vars jsonb [, silent boolean ]] ) \u2192 jsonb"
     ],
     "Description": [
         "These functions act like their counterparts described above without the _tz suffix, except that these functions support comparisons of date/time values that require timezone-aware conversions. The example below requires interpretation of the date-only value 2015-08-02 as a timestamp with time zone, so the result depends on the current TimeZone setting. Due to this dependency, these functions are marked as stable, which means these functions cannot be used in indexes. Their counterparts are immutable, and so can be used in indexes; but they will throw errors if asked to make such comparisons."
     ],
     "Examples": [
-        "jsonb_path_exists_tz('[\"2015-08-01 12:00:00-05\"]', '$[*] ? (@.datetime() < \"2015-08-02\".datetime())') → t"
+        "jsonb_path_exists_tz('[\"2015-08-01 12:00:00-05\"]', '$[*] ? (@.datetime() < \"2015-08-02\".datetime())') \u2192 t"
     ],
     "Category": [
         "JSON Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT jsonb_path_exists_tz('{\"date\": \"2015-08-02T00:00:00Z\"}', '$.date')"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 687,
+            "Prompt Tokens": 643,
+            "Completion Tokens": 44,
+            "Total Cost (USD)": 0.00012285
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT jsonb_path_exists_tz('{\"date\": \"2015-08-02T00:00:00Z\"}', '$.date')"
     ]
 }

@@ -19,5 +19,11 @@
     ],
     "EffectiveSQLsRefined": [
         "SELECT MBRContains(@g1,@g2), MBRContains(@g2,@g1);"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT MBRContains(@g1,@g2), MBRContains(@g2,@g1);"
     ]
 }

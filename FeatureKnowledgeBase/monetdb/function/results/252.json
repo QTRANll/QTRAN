@@ -18,5 +18,23 @@
     ],
     "Category": [
         "UUID Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT sys.isauuid('123e4567-e89b-12d3-a456-426614174000');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 325,
+            "Prompt Tokens": 287,
+            "Completion Tokens": 38,
+            "Total Cost (USD)": 6.585e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT sys.isauuid('123e4567-e89b-12d3-a456-426614174000');"
     ]
 }

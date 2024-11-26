@@ -10,9 +10,9 @@
     ],
     "Description": [
         "SHA2()",
-        "SHA2(str, n) 函数使用 SHA-2 系列中的算法计算哈希值。参数 n 用于选择算法。如果任一参数为 NULL 或 n 指定的算法未知或不受支持，SHA2() 返回 NULL。",
-        "以下列出支持的算法：",
-        "n算法0SHA-256224SHA-224256SHA-256384SHA-384512SHA-512",
+        "SHA2(str, n) \u51fd\u6570\u4f7f\u7528 SHA-2 \u7cfb\u5217\u4e2d\u7684\u7b97\u6cd5\u8ba1\u7b97\u54c8\u5e0c\u503c\u3002\u53c2\u6570 n \u7528\u4e8e\u9009\u62e9\u7b97\u6cd5\u3002\u5982\u679c\u4efb\u4e00\u53c2\u6570\u4e3a NULL \u6216 n \u6307\u5b9a\u7684\u7b97\u6cd5\u672a\u77e5\u6216\u4e0d\u53d7\u652f\u6301\uff0cSHA2() \u8fd4\u56de NULL\u3002",
+        "\u4ee5\u4e0b\u5217\u51fa\u652f\u6301\u7684\u7b97\u6cd5\uff1a",
+        "n\u7b97\u6cd50SHA-256224SHA-224256SHA-256384SHA-384512SHA-512",
         "SELECT SHA2('abc',224);\n",
         "+----------------------------------------------------------+\n| SHA2('abc',224)                                          |\n+----------------------------------------------------------+\n| 23097d223405d8228642a477bda255b32aadbce4bda0b3f7e36c9da7 |\n+----------------------------------------------------------+\n1 row in set (0.00 sec)\n"
     ],
@@ -20,6 +20,15 @@
         "SELECT SHA2('abc',224);\n"
     ],
     "Category": [
-        "加密和压缩函数"
+        "\u52a0\u5bc6\u548c\u538b\u7f29\u51fd\u6570"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT SHA2('abc',224);"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT SHA2('abc',224);"
     ]
 }

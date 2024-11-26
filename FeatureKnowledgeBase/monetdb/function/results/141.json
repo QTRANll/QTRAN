@@ -18,5 +18,31 @@
     ],
     "Category": [
         "Binary String Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT length(blob);",
+        "SELECT length('your_blob_data_here');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 273,
+            "Prompt Tokens": 256,
+            "Completion Tokens": 17,
+            "Total Cost (USD)": 4.86e-05
+        },
+        {
+            "Total Tokens": 430,
+            "Prompt Tokens": 409,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 7.394999999999998e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymonetdb.exceptions.OperationalError) 42000!syntax error, unexpected ')', expecting STRING in: \"select length(blob)\"\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT length('your_blob_data_here');"
     ]
 }

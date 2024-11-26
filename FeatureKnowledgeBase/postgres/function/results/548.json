@@ -6,7 +6,7 @@
         "pg_replication_origin_session_reset"
     ],
     "Feature": [
-        "pg_replication_origin_session_reset () → void"
+        "pg_replication_origin_session_reset () \u2192 void"
     ],
     "Description": [
         "Cancels the effects of pg_replication_origin_session_setup()."
@@ -14,5 +14,47 @@
     "Examples": [],
     "Category": [
         "System Administration Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT pg_replication_origin_session_reset();",
+        "SELECT pg_replication_origin_session_reset(); -- Ensure a replication origin is configured before executing.",
+        "SELECT pg_replication_origin_session_setup('origin_name'); -- Set up a replication origin before resetting.",
+        "SELECT pg_replication_origin_create('origin_name'); -- Create a replication origin before using it."
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 287,
+            "Prompt Tokens": 266,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 5.25e-05
+        },
+        {
+            "Total Tokens": 444,
+            "Prompt Tokens": 414,
+            "Completion Tokens": 30,
+            "Total Cost (USD)": 8.01e-05
+        },
+        {
+            "Total Tokens": 603,
+            "Prompt Tokens": 571,
+            "Completion Tokens": 32,
+            "Total Cost (USD)": 0.00010484999999999997
+        },
+        {
+            "Total Tokens": 763,
+            "Prompt Tokens": 732,
+            "Completion Tokens": 31,
+            "Total Cost (USD)": 0.00012839999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.ObjectNotInPrerequisiteState) no replication origin is configured\n\n",
+        "(psycopg2.errors.ObjectNotInPrerequisiteState) no replication origin is configured\n\n",
+        "(psycopg2.errors.UndefinedObject) replication origin \"origin_name\" does not exist\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT pg_replication_origin_create('origin_name'); -- Create a replication origin before using it."
     ]
 }

@@ -6,15 +6,33 @@
         "left"
     ],
     "Feature": [
-        "left ( string text, n integer ) → text"
+        "left ( string text, n integer ) \u2192 text"
     ],
     "Description": [
         "Returns first n characters in the string, or when n is negative, returns all but last |n| characters."
     ],
     "Examples": [
-        "left('abcde', 2) → ab"
+        "left('abcde', 2) \u2192 ab"
     ],
     "Category": [
         "String Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT left('Hello, World!', 5);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 286,
+            "Prompt Tokens": 263,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 5.324999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT left('Hello, World!', 5);"
     ]
 }

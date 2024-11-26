@@ -25,5 +25,14 @@
     ],
     "Category": [
         "Aggregate Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "select * from test;",
+        "SELECT argMax(a, b), max(b) FROM test;",
+        "SELECT argMax(tuple(a), b) FROM test;",
+        "SELECT (argMax((a, b), b) as t).1 argMaxA, t.2 argMaxB FROM test;",
+        "SELECT argMax(a, b), max(b) FROM test WHERE a IS NULL AND b IS NULL;",
+        "SELECT argMax(a, (b,a)) FROM test;",
+        "SELECT argMax(a, tuple(b)) FROM test;"
     ]
 }

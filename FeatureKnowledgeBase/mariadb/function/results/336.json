@@ -20,5 +20,11 @@
     ],
     "EffectiveSQLsRefined": [
         "SELECT AsText(StartPoint(GeomFromText(@ls)));"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT AsText(StartPoint(GeomFromText(@ls)));"
     ]
 }

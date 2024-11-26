@@ -19,5 +19,18 @@
     ],
     "Category": [
         "Comparison Operators"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT 1 NOT BETWEEN 2 AND 3;",
+        "SELECT 'b' NOT BETWEEN 'a' AND 'c';",
+        "SELECT 1 NOT BETWEEN 1 AND NULL;"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT 1 NOT BETWEEN 2 AND 3;",
+        "SELECT 'b' NOT BETWEEN 'a' AND 'c';",
+        "SELECT 1 NOT BETWEEN 1 AND NULL;"
     ]
 }

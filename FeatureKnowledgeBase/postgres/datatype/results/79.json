@@ -15,5 +15,53 @@
     "Examples": [],
     "Category": [
         "Pseudo-Types"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "CREATE TRIGGER my_trigger BEFORE INSERT ON my_table FOR EACH ROW EXECUTE FUNCTION my_function();",
+        "CREATE TRIGGER my_trigger BEFORE INSERT ON some_existing_table FOR EACH ROW EXECUTE FUNCTION my_function();",
+        "CREATE TRIGGER my_trigger BEFORE INSERT ON another_table FOR EACH ROW EXECUTE FUNCTION my_function();",
+        "CREATE TRIGGER my_trigger BEFORE INSERT ON existing_table FOR EACH ROW EXECUTE FUNCTION my_function();",
+        "CREATE TRIGGER my_trigger BEFORE INSERT ON some_table FOR EACH ROW EXECUTE FUNCTION my_function();"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 275,
+            "Prompt Tokens": 243,
+            "Completion Tokens": 32,
+            "Total Cost (USD)": 5.565e-05
+        },
+        {
+            "Total Tokens": 431,
+            "Prompt Tokens": 398,
+            "Completion Tokens": 33,
+            "Total Cost (USD)": 7.950000000000001e-05
+        },
+        {
+            "Total Tokens": 587,
+            "Prompt Tokens": 555,
+            "Completion Tokens": 32,
+            "Total Cost (USD)": 0.00010245
+        },
+        {
+            "Total Tokens": 742,
+            "Prompt Tokens": 710,
+            "Completion Tokens": 32,
+            "Total Cost (USD)": 0.0001257
+        },
+        {
+            "Total Tokens": 897,
+            "Prompt Tokens": 865,
+            "Completion Tokens": 32,
+            "Total Cost (USD)": 0.00014895
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedTable) relation \"my_table\" does not exist\n\n",
+        "(psycopg2.errors.UndefinedTable) relation \"some_existing_table\" does not exist\n\n",
+        "(psycopg2.errors.UndefinedTable) relation \"another_table\" does not exist\n\n",
+        "(psycopg2.errors.UndefinedTable) relation \"existing_table\" does not exist\n\n",
+        "(psycopg2.errors.UndefinedTable) relation \"some_table\" does not exist\n\n"
+    ],
+    "EffectiveSQLs": []
 }

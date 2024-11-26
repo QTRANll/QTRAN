@@ -6,15 +6,33 @@
         "sin"
     ],
     "Feature": [
-        "sin ( double precision ) → double precision"
+        "sin ( double precision ) \u2192 double precision"
     ],
     "Description": [
         "Sine, argument in radians"
     ],
     "Examples": [
-        "sin(1) → 0.8414709848078965"
+        "sin(1) \u2192 0.8414709848078965"
     ],
     "Category": [
         "Mathematical Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT sin(1.0);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 264,
+            "Prompt Tokens": 244,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 4.8599999999999995e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT sin(1.0);"
     ]
 }

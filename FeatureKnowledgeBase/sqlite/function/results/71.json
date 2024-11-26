@@ -15,5 +15,31 @@
     "Examples": [],
     "Category": [
         "JSON Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT jsonb_extract(your_json_column, '$.your_key') FROM your_table;",
+        "SELECT jsonb_extract('[]', '$[0]');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 395,
+            "Prompt Tokens": 365,
+            "Completion Tokens": 30,
+            "Total Cost (USD)": 7.274999999999999e-05
+        },
+        {
+            "Total Tokens": 702,
+            "Prompt Tokens": 677,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 0.00011655
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(sqlite3.OperationalError) no such table: your_table\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT jsonb_extract('[]', '$[0]');"
     ]
 }

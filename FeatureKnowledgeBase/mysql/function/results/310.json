@@ -25,5 +25,14 @@
     "Category": [
         "Built-In Functions and Operators",
         "Spatial Analysis Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT ST_GeoHash(180,0,10), ST_GeoHash(-180,-90,15);"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT ST_GeoHash(180,0,10), ST_GeoHash(-180,-90,15);"
     ]
 }

@@ -22,5 +22,11 @@
     ],
     "EffectiveSQLsRefined": [
         "SELECT\n    sys.format_time(43) AS ps,\n    sys.format_time(4321) AS ns, \n    sys.format_time(43211234) AS us,\n    sys.format_time(432112344321) AS ms,\n    sys.format_time(43211234432123) AS s,\n    sys.format_time(432112344321234) AS m,\n    sys.format_time(4321123443212345) AS h,\n    sys.format_time(432112344321234545) AS d,\n    sys.format_time(43211234432123444543) AS w;"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT\n    sys.format_time(43) AS ps,\n    sys.format_time(4321) AS ns, \n    sys.format_time(43211234) AS us,\n    sys.format_time(432112344321) AS ms,\n    sys.format_time(43211234432123) AS s,\n    sys.format_time(432112344321234) AS m,\n    sys.format_time(4321123443212345) AS h,\n    sys.format_time(432112344321234545) AS d,\n    sys.format_time(43211234432123444543) AS w;"
     ]
 }

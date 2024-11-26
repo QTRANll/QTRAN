@@ -6,7 +6,7 @@
         "pg_last_committed_xact"
     ],
     "Feature": [
-        "pg_last_committed_xact () → record ( xid xid, timestamp timestamp with time zone, roident oid )"
+        "pg_last_committed_xact () \u2192 record ( xid xid, timestamp timestamp with time zone, roident oid )"
     ],
     "Description": [
         "Returns the transaction ID, commit timestamp and replication origin of the latest committed transaction."
@@ -14,5 +14,53 @@
     "Examples": [],
     "Category": [
         "System Information Functions and Operators"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT pg_last_committed_xact();",
+        "SET track_commit_timestamp = on; SELECT pg_last_committed_xact();",
+        "SELECT pg_last_committed_xact(); -- Please ensure 'track_commit_timestamp' is set to 'on' in the configuration file and restart the server.",
+        "-- Please ensure 'track_commit_timestamp' is set to 'on' in the configuration file and restart the server before executing the following SQL: SELECT pg_last_committed_xact();",
+        "SELECT pg_last_committed_xact(); -- Ensure 'track_commit_timestamp' is enabled and the server is restarted before running this query."
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 305,
+            "Prompt Tokens": 284,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 5.519999999999999e-05
+        },
+        {
+            "Total Tokens": 479,
+            "Prompt Tokens": 451,
+            "Completion Tokens": 28,
+            "Total Cost (USD)": 8.444999999999999e-05
+        },
+        {
+            "Total Tokens": 656,
+            "Prompt Tokens": 613,
+            "Completion Tokens": 43,
+            "Total Cost (USD)": 0.00011774999999999999
+        },
+        {
+            "Total Tokens": 850,
+            "Prompt Tokens": 802,
+            "Completion Tokens": 48,
+            "Total Cost (USD)": 0.0001491
+        },
+        {
+            "Total Tokens": 1012,
+            "Prompt Tokens": 973,
+            "Completion Tokens": 39,
+            "Total Cost (USD)": 0.00016935
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.ObjectNotInPrerequisiteState) could not get commit timestamp data\nHINT:  Make sure the configuration parameter \"track_commit_timestamp\" is set.\n\n",
+        "(psycopg2.errors.CantChangeRuntimeParam) parameter \"track_commit_timestamp\" cannot be changed without restarting the server\n\n",
+        "(psycopg2.errors.ObjectNotInPrerequisiteState) could not get commit timestamp data\nHINT:  Make sure the configuration parameter \"track_commit_timestamp\" is set.\n\n",
+        "(psycopg2.ProgrammingError) can't execute an empty query\n",
+        "(psycopg2.errors.ObjectNotInPrerequisiteState) could not get commit timestamp data\nHINT:  Make sure the configuration parameter \"track_commit_timestamp\" is set.\n\n"
+    ],
+    "EffectiveSQLs": []
 }

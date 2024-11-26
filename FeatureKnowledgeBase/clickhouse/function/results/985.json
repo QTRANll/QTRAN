@@ -27,5 +27,8 @@
     ],
     "Category": [
         "Type Conversion Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT    toFloat32OrDefault('8', CAST('0', 'Float32')),    toFloat32OrDefault('abc', CAST('0', 'Float32'))FORMAT Vertical;"
     ]
 }

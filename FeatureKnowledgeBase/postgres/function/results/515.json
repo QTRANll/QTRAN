@@ -6,7 +6,7 @@
         "pg_backup_start"
     ],
     "Feature": [
-        "pg_backup_start ( label text [, fast boolean ] ) → pg_lsn"
+        "pg_backup_start ( label text [, fast boolean ] ) \u2192 pg_lsn"
     ],
     "Description": [
         "Prepares the server to begin an on-line backup. The only required parameter is an arbitrary user-defined label for the backup. (Typically this would be the name under which the backup dump file will be stored.) If the optional second parameter is given as true, it specifies executing pg_backup_start as quickly as possible. This forces an immediate checkpoint which will cause a spike in I/O operations, slowing any concurrently executing queries.",
@@ -15,5 +15,23 @@
     "Examples": [],
     "Category": [
         "System Administration Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT pg_backup_start('my_backup_label');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 381,
+            "Prompt Tokens": 359,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 6.704999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT pg_backup_start('my_backup_label');"
     ]
 }

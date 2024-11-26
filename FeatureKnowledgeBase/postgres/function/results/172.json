@@ -6,15 +6,33 @@
         "to_timestamp"
     ],
     "Feature": [
-        "to_timestamp ( double precision ) → timestamp with time zone"
+        "to_timestamp ( double precision ) \u2192 timestamp with time zone"
     ],
     "Description": [
         "Convert Unix epoch (seconds since 1970-01-01 00:00:00+00) to timestamp with time zone"
     ],
     "Examples": [
-        "to_timestamp(1284352323) → 2010-09-13 04:32:03+00"
+        "to_timestamp(1284352323) \u2192 2010-09-13 04:32:03+00"
     ],
     "Category": [
         "Date divide Time Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT to_timestamp(1609459200);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 293,
+            "Prompt Tokens": 271,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 5.3849999999999994e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT to_timestamp(1609459200);"
     ]
 }

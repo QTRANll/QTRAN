@@ -6,16 +6,34 @@
         "make_timestamptz"
     ],
     "Feature": [
-        "make_timestamptz ( year int, month int, day int, hour int, min int, sec double precision [, timezone text ] ) → timestamp with time zone"
+        "make_timestamptz ( year int, month int, day int, hour int, min int, sec double precision [, timezone text ] ) \u2192 timestamp with time zone"
     ],
     "Description": [
         "Create timestamp with time zone from year, month, day, hour, minute and seconds fields (negative years signify BC). If timezone is not specified, the current time zone is used; the examples assume the session time zone is Europe/London"
     ],
     "Examples": [
-        "make_timestamptz(2013, 7, 15, 8, 15, 23.5) → 2013-07-15 08:15:23.5+01",
-        "make_timestamptz(2013, 7, 15, 8, 15, 23.5, 'America/New_York') → 2013-07-15 13:15:23.5+01"
+        "make_timestamptz(2013, 7, 15, 8, 15, 23.5) \u2192 2013-07-15 08:15:23.5+01",
+        "make_timestamptz(2013, 7, 15, 8, 15, 23.5, 'America/New_York') \u2192 2013-07-15 13:15:23.5+01"
     ],
     "Category": [
         "Date divide Time Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT make_timestamptz(2023, 10, 1, 12, 0, 0);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 367,
+            "Prompt Tokens": 328,
+            "Completion Tokens": 39,
+            "Total Cost (USD)": 7.26e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT make_timestamptz(2023, 10, 1, 12, 0, 0);"
     ]
 }

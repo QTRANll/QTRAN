@@ -17,5 +17,31 @@
     "Category": [
         "Built-In Functions and Operators",
         "Internal Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT INTERNAL_UPDATE_TIME('example_argument');",
+        "SELECT NOW();"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 292,
+            "Prompt Tokens": 271,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 5.325e-05
+        },
+        {
+            "Total Tokens": 446,
+            "Prompt Tokens": 430,
+            "Completion Tokens": 16,
+            "Total Cost (USD)": 7.41e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.OperationalError) (3566, \"Access to native function 'INTERNAL_UPDATE_TIME' is rejected.\")\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT NOW();"
     ]
 }

@@ -18,5 +18,63 @@
     ],
     "Category": [
         "Logical Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        [
+            "SELECT xor(true, false);"
+        ],
+        [
+            "SELECT xor('true', 'false');"
+        ],
+        [
+            "SELECT xor(1, 0);"
+        ],
+        [
+            "SELECT xor(false, true);"
+        ],
+        [
+            "SELECT xor(0, 1);"
+        ]
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 307,
+            "Prompt Tokens": 283,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 5.684999999999999e-05
+        },
+        {
+            "Total Tokens": 458,
+            "Prompt Tokens": 432,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 8.039999999999999e-05
+        },
+        {
+            "Total Tokens": 609,
+            "Prompt Tokens": 583,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 0.00010304999999999998
+        },
+        {
+            "Total Tokens": 758,
+            "Prompt Tokens": 734,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 0.0001245
+        },
+        {
+            "Total Tokens": 909,
+            "Prompt Tokens": 883,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 0.00014805
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "expected string or bytes-like object, got 'list'",
+        "expected string or bytes-like object, got 'list'",
+        "expected string or bytes-like object, got 'list'",
+        "expected string or bytes-like object, got 'list'",
+        "expected string or bytes-like object, got 'list'"
+    ],
+    "EffectiveSQLs": []
 }

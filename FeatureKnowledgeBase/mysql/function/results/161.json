@@ -23,5 +23,18 @@
     "Category": [
         "Built-In Functions and Operators",
         "JSON Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT JSON_EXTRACT('[10, 20, [30, 40]]', '$[1]');",
+        "SELECT JSON_EXTRACT('[10, 20, [30, 40]]', '$[1]', '$[0]');",
+        "SELECT JSON_EXTRACT('[10, 20, [30, 40]]', '$[2][*]');"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT JSON_EXTRACT('[10, 20, [30, 40]]', '$[1]');",
+        "SELECT JSON_EXTRACT('[10, 20, [30, 40]]', '$[1]', '$[0]');",
+        "SELECT JSON_EXTRACT('[10, 20, [30, 40]]', '$[2][*]');"
     ]
 }

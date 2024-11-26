@@ -20,6 +20,15 @@
         "String Functions"
     ],
     "EffectiveSQLsRefined": [
+        "CREATE TABLE ft_myisam(copy TEXT,FULLTEXT(copy)) ENGINE=MyISAM;",
+        "INSERT INTO ft_myisam(copy) VALUES ('Once upon a time'), ('There was a wicked witch'), \n ('Who ate everybody up');",
+        "SELECT * FROM ft_myisam WHERE MATCH(copy) AGAINST('wicked');"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "CREATE TABLE ft_myisam(copy TEXT,FULLTEXT(copy)) ENGINE=MyISAM;",
         "INSERT INTO ft_myisam(copy) VALUES ('Once upon a time'), ('There was a wicked witch'), \n ('Who ate everybody up');",
         "SELECT * FROM ft_myisam WHERE MATCH(copy) AGAINST('wicked');"
     ]

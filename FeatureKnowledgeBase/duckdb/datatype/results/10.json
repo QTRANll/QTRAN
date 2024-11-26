@@ -78,5 +78,40 @@
     ],
     "Category": [
         "NULL Values"
+    ],
+    "EffectiveSQLsRefined": [
+        "CREATE TABLE integers (i INTEGER);",
+        "INSERT INTO integers VALUES (NULL);",
+        "SELECT NULL = NULL;",
+        "SELECT NULL IS NOT DISTINCT FROM NULL;",
+        "SELECT NULL IS NULL;",
+        "SELECT cos(NULL);",
+        "SELECT coalesce(NULL, NULL, 1);",
+        "SELECT coalesce(10, 20);",
+        "SELECT coalesce(NULL, NULL);",
+        "SELECT ifnull(NULL, 'default_string');",
+        "SELECT ifnull(1, 'default_string');",
+        "INSERT INTO integers VALUES (1), (10), (NULL);",
+        "SELECT min(i) FROM integers;",
+        "SELECT max(i) FROM integers;"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "CREATE TABLE integers (i INTEGER);",
+        "INSERT INTO integers VALUES (NULL);",
+        "SELECT NULL = NULL;",
+        "SELECT NULL IS NOT DISTINCT FROM NULL;",
+        "SELECT NULL IS NULL;",
+        "SELECT cos(NULL);",
+        "SELECT coalesce(NULL, NULL, 1);",
+        "SELECT coalesce(10, 20);",
+        "SELECT coalesce(NULL, NULL);",
+        "SELECT ifnull(NULL, 'default_string');",
+        "SELECT ifnull(1, 'default_string');",
+        "INSERT INTO integers VALUES (1), (10), (NULL);",
+        "SELECT min(i) FROM integers;",
+        "SELECT max(i) FROM integers;"
     ]
 }

@@ -22,5 +22,35 @@
     "Examples": [],
     "Category": [
         "Composite Types"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        [
+            "CREATE TYPE complex AS (r double precision, i double precision);",
+            "CREATE TYPE inventory_item AS (name text, supplier_id integer, price numeric);",
+            "INSERT INTO mytab (complex_col) VALUES((1.1,2.2));"
+        ],
+        "CREATE TYPE complex AS (r double precision, i double precision);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 4000,
+            "Prompt Tokens": 3927,
+            "Completion Tokens": 73,
+            "Total Cost (USD)": 0.0006328499999999999
+        },
+        {
+            "Total Tokens": 4146,
+            "Prompt Tokens": 4120,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 0.0006335999999999999
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "expected string or bytes-like object, got 'list'",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "CREATE TYPE complex AS (r double precision, i double precision);"
     ]
 }

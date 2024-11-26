@@ -18,5 +18,39 @@
     ],
     "Category": [
         "Character String Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT greatest('apple', 'banana');",
+        "SELECT max('apple', 'banana');",
+        "SELECT max('apple' || 'banana');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 317,
+            "Prompt Tokens": 296,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 5.6999999999999996e-05
+        },
+        {
+            "Total Tokens": 477,
+            "Prompt Tokens": 456,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 8.099999999999999e-05
+        },
+        {
+            "Total Tokens": 641,
+            "Prompt Tokens": 619,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 0.00010604999999999999
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: no such binary operator 'greatest(char,char)'\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!syntax error, unexpected ',', expecting ')' in: \"select max('apple',\"\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT max('apple' || 'banana');"
     ]
 }

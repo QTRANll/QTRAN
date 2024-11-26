@@ -6,7 +6,7 @@
         "stddev_pop"
     ],
     "Feature": [
-        "stddev_pop ( numeric_type ) → double precision for real or double precision, otherwise numeric"
+        "stddev_pop ( numeric_type ) \u2192 double precision for real or double precision, otherwise numeric"
     ],
     "Description": [
         "Computes the population standard deviation of the input values."
@@ -14,5 +14,53 @@
     "Examples": [],
     "Category": [
         "Aggregate Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT stddev_pop(column_name) FROM table_name;",
+        "SELECT stddev_pop(1, 2, 3, 4, 5);",
+        "SELECT stddev_pop(ARRAY[1.0, 2.0, 3.0, 4.0, 5.0]);",
+        "SELECT stddev_pop(ARRAY[1.0::numeric, 2.0::numeric, 3.0::numeric, 4.0::numeric, 5.0::numeric]);",
+        "SELECT stddev_pop(1.0::double precision, 2.0::double precision, 3.0::double precision, 4.0::double precision, 5.0::double precision);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 288,
+            "Prompt Tokens": 265,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 5.3549999999999994e-05
+        },
+        {
+            "Total Tokens": 464,
+            "Prompt Tokens": 432,
+            "Completion Tokens": 32,
+            "Total Cost (USD)": 8.399999999999998e-05
+        },
+        {
+            "Total Tokens": 691,
+            "Prompt Tokens": 647,
+            "Completion Tokens": 44,
+            "Total Cost (USD)": 0.00012345
+        },
+        {
+            "Total Tokens": 933,
+            "Prompt Tokens": 879,
+            "Completion Tokens": 54,
+            "Total Cost (USD)": 0.00016424999999999998
+        },
+        {
+            "Total Tokens": 1174,
+            "Prompt Tokens": 1117,
+            "Completion Tokens": 57,
+            "Total Cost (USD)": 0.00020174999999999997
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedTable) relation \"table_name\" does not exist\nLINE 1: SELECT stddev_pop(column_name) FROM table_name;\n                                            ^\n\n",
+        "(psycopg2.errors.UndefinedFunction) function stddev_pop(integer, integer, integer, integer, integer) does not exist\nLINE 1: SELECT stddev_pop(1, 2, 3, 4, 5);\n               ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.\n\n",
+        "(psycopg2.errors.UndefinedFunction) function stddev_pop(numeric[]) does not exist\nLINE 1: SELECT stddev_pop(ARRAY[1.0, 2.0, 3.0, 4.0, 5.0]);\n               ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.\n\n",
+        "(psycopg2.errors.UndefinedFunction) function stddev_pop(numeric[]) does not exist\nLINE 1: SELECT stddev_pop(ARRAY[1.0::numeric, 2.0::numeric, 3.0::num...\n               ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.\n\n",
+        "(psycopg2.errors.UndefinedFunction) function stddev_pop(double precision, double precision, double precision, double precision, double precision) does not exist\nLINE 1: SELECT stddev_pop(1.0::double precision, 2.0::double precisi...\n               ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.\n\n"
+    ],
+    "EffectiveSQLs": []
 }

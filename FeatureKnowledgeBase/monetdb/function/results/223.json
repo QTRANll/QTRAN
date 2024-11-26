@@ -18,5 +18,31 @@
     ],
     "Category": [
         "JSON Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT json.isarray(js);",
+        "SELECT json.isarray('[]');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 285,
+            "Prompt Tokens": 266,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 5.13e-05
+        },
+        {
+            "Total Tokens": 435,
+            "Prompt Tokens": 415,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 7.424999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: identifier 'js' unknown\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT json.isarray('[]');"
     ]
 }

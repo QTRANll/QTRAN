@@ -29,5 +29,16 @@
     ],
     "Category": [
         "Date"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT DATE '1992-09-20';",
+        "SELECT\n    '-infinity'::DATE AS negative,\n    'epoch'::DATE AS epoch,\n    'infinity'::DATE AS positive;"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT DATE '1992-09-20';",
+        "SELECT\n    '-infinity'::DATE AS negative,\n    'epoch'::DATE AS epoch,\n    'infinity'::DATE AS positive;"
     ]
 }

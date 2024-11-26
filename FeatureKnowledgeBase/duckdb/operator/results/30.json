@@ -16,5 +16,55 @@
     ],
     "Category": [
         "Numeric Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "// SELECT * FROM table_name WHERE column_name = 'value';",
+        "SELECT division FROM table_name;",
+        "SELECT division;",
+        "SELECT *;",
+        "SELECT 1;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 258,
+            "Prompt Tokens": 233,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 4.9949999999999994e-05
+        },
+        {
+            "Total Tokens": 399,
+            "Prompt Tokens": 381,
+            "Completion Tokens": 18,
+            "Total Cost (USD)": 6.795e-05
+        },
+        {
+            "Total Tokens": 561,
+            "Prompt Tokens": 546,
+            "Completion Tokens": 15,
+            "Total Cost (USD)": 9.09e-05
+        },
+        {
+            "Total Tokens": 714,
+            "Prompt Tokens": 699,
+            "Completion Tokens": 15,
+            "Total Cost (USD)": 0.00011384999999999999
+        },
+        {
+            "Total Tokens": 853,
+            "Prompt Tokens": 837,
+            "Completion Tokens": 16,
+            "Total Cost (USD)": 0.00013514999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.ParserException) Parser Error: syntax error at or near \"//\"\n",
+        "(duckdb.duckdb.CatalogException) Catalog Error: Table with name table_name does not exist!\nDid you mean \"pg_tablespace\"?\nLINE 1: SELECT division FROM table_name;\n                             ^\n",
+        "(duckdb.duckdb.BinderException) Binder Error: Referenced column \"division\" not found in FROM clause!\nLINE 1: SELECT division;\n               ^\n",
+        "(duckdb.duckdb.BinderException) Binder Error: * expression without FROM clause!\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT 1;"
     ]
 }

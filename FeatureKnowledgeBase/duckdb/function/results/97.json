@@ -16,5 +16,23 @@
     ],
     "Category": [
         "Bitstring Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT bitstring('1010', 4);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 287,
+            "Prompt Tokens": 264,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 5.34e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT bitstring('1010', 4);"
     ]
 }

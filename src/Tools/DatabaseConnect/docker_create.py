@@ -176,4 +176,3 @@ def run_container(tool, exp, dbType):
         print(f"标准输出: {e.output}")
         print(f"标准错误: {e.stderr}")
 
-docker_create_databases("sqlancer", "temp","clickhouse")

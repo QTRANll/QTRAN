@@ -1,24 +1,37 @@
 {
-  "HTML": [
-    "https://sqlite.org/lang_datefunc.html"
-  ],
-  "Title": [
-    "Date And Time Functions"
-  ],
-  "Feature": [
-    "strftime(format, time-value, modifier, modifier, ...)"
-  ],
-  "Description": [
-    "The strftime(format, time-value, modifier, modifier, ...) function returns the date and time formatted according to the format string specified as the first argument. The function supports various format substitutions and accepts a time-value and zero or more modifiers.",
-    "Parameters: format string (e.g., '%F %T'), time-value (e.g., 'now'), modifiers (e.g., '+1 hour').",
-    "Returns: A string formatted according to the specified format string."
-  ],
-  "Examples": [
-    "SELECT strftime('%F'); -- Returns the current date formatted as YYYY-MM-DD.",
-    "SELECT strftime('%T'); -- Returns the current time formatted as HH:MM:SS.",
-    "SELECT strftime('%F %T', 'now', '+1 hour'); -- Returns the date and time one hour after the current time, formatted as YYYY-MM-DD HH:MM:SS."
-  ],
-  "Category": [
-    "Date And Time Functions"
-  ]
+    "HTML": [
+        "https://sqlite.org/lang_datefunc.html"
+    ],
+    "Title": [
+        "Date And Time Functions"
+    ],
+    "Feature": [
+        "strftime(format, time-value, modifier, modifier, ...)"
+    ],
+    "Description": [
+        "The strftime(format, time-value, modifier, modifier, ...) function returns the date and time formatted according to the format string specified as the first argument. The function supports various format substitutions and accepts a time-value and zero or more modifiers.",
+        "Parameters: format string (e.g., '%F %T'), time-value (e.g., 'now'), modifiers (e.g., '+1 hour').",
+        "Returns: A string formatted according to the specified format string."
+    ],
+    "Examples": [
+        "SELECT strftime('%F'); -- Returns the current date formatted as YYYY-MM-DD.",
+        "SELECT strftime('%T'); -- Returns the current time formatted as HH:MM:SS.",
+        "SELECT strftime('%F %T', 'now', '+1 hour'); -- Returns the date and time one hour after the current time, formatted as YYYY-MM-DD HH:MM:SS."
+    ],
+    "Category": [
+        "Date And Time Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT strftime('%F');",
+        "SELECT strftime('%T');",
+        "SELECT strftime('%F %T', 'now', '+1 hour');"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT strftime('%F');",
+        "SELECT strftime('%T');",
+        "SELECT strftime('%F %T', 'now', '+1 hour');"
+    ]
 }

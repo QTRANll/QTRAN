@@ -6,15 +6,49 @@
         "anyelement <@ anyrange"
     ],
     "Feature": [
-        "anyelement <@ anyrange → boolean"
+        "anyelement <@ anyrange \u2192 boolean"
     ],
     "Description": [
         "Is the element contained in the range?"
     ],
     "Examples": [
-        "42 <@ int4range(1,7) → f"
+        "42 <@ int4range(1,7) \u2192 f"
     ],
     "Category": [
         "Range divide Multirange Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT 'anyelement' <@ 'anyrange';",
+        "SELECT 'anyelement'::integer <@ int4range(1, 10);",
+        "SELECT '5'::integer <@ int4range(1, 10);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 285,
+            "Prompt Tokens": 261,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 5.3549999999999994e-05
+        },
+        {
+            "Total Tokens": 484,
+            "Prompt Tokens": 453,
+            "Completion Tokens": 31,
+            "Total Cost (USD)": 8.654999999999999e-05
+        },
+        {
+            "Total Tokens": 669,
+            "Prompt Tokens": 639,
+            "Completion Tokens": 30,
+            "Total Cost (USD)": 0.00011385
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.AmbiguousFunction) operator is not unique: unknown <@ unknown\nLINE 1: SELECT 'anyelement' <@ 'anyrange';\n                            ^\nHINT:  Could not choose a best candidate operator. You might need to add explicit type casts.\n\n",
+        "(psycopg2.errors.InvalidTextRepresentation) invalid input syntax for type integer: \"anyelement\"\nLINE 1: SELECT 'anyelement'::integer <@ int4range(1, 10);\n               ^\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT '5'::integer <@ int4range(1, 10);"
     ]
 }

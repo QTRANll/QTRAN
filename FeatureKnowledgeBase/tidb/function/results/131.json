@@ -14,6 +14,17 @@
         "mysql> SELECT TIME('2003-12-31 01:02:03');\n        -> '01:02:03'\nmysql> SELECT TIME('2003-12-31 01:02:03.000123');\n        -> '01:02:03.000123'"
     ],
     "Category": [
-        "日期和时间函数"
+        "\u65e5\u671f\u548c\u65f6\u95f4\u51fd\u6570"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT TIME('2003-12-31 01:02:03');",
+        "SELECT TIME('2003-12-31 01:02:03.000123');"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT TIME('2003-12-31 01:02:03');",
+        "SELECT TIME('2003-12-31 01:02:03.000123');"
     ]
 }

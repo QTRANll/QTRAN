@@ -6,8 +6,8 @@
         "pg_logical_emit_message"
     ],
     "Feature": [
-        "pg_logical_emit_message ( transactional boolean, prefix text, content text ) → pg_lsn",
-        "pg_logical_emit_message ( transactional boolean, prefix text, content bytea ) → pg_lsn"
+        "pg_logical_emit_message ( transactional boolean, prefix text, content text ) \u2192 pg_lsn",
+        "pg_logical_emit_message ( transactional boolean, prefix text, content bytea ) \u2192 pg_lsn"
     ],
     "Description": [
         "Emits a logical decoding message. This can be used to pass generic messages to logical decoding plugins through WAL. The transactional parameter specifies if the message should be part of the current transaction, or if it should be written immediately and decoded as soon as the logical decoder reads the record. The prefix parameter is a textual prefix that can be used by logical decoding plugins to easily recognize messages that are interesting for them. The content parameter is the content of the message, given either in text or binary form."
@@ -15,5 +15,23 @@
     "Examples": [],
     "Category": [
         "System Administration Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT pg_logical_emit_message(true, 'info', 'This is a test message');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 413,
+            "Prompt Tokens": 382,
+            "Completion Tokens": 31,
+            "Total Cost (USD)": 7.59e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT pg_logical_emit_message(true, 'info', 'This is a test message');"
     ]
 }

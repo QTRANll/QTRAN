@@ -6,7 +6,7 @@
         "stddev"
     ],
     "Feature": [
-        "stddev ( numeric_type ) → double precision for real or double precision, otherwise numeric"
+        "stddev ( numeric_type ) \u2192 double precision for real or double precision, otherwise numeric"
     ],
     "Description": [
         "This is a historical alias for stddev_samp."
@@ -14,5 +14,53 @@
     "Examples": [],
     "Category": [
         "Aggregate Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT stddev(1, 2, 3, 4, 5);",
+        "SELECT stddev(1.0, 2.0, 3.0, 4.0, 5.0);",
+        "SELECT stddev(ARRAY[1.0, 2.0, 3.0, 4.0, 5.0]);",
+        "SELECT stddev_samp(1::double precision, 2::double precision, 3::double precision, 4::double precision, 5::double precision);",
+        "SELECT stddev_samp(ARRAY[1::numeric, 2::numeric, 3::numeric, 4::numeric, 5::numeric]);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 292,
+            "Prompt Tokens": 261,
+            "Completion Tokens": 31,
+            "Total Cost (USD)": 5.7749999999999994e-05
+        },
+        {
+            "Total Tokens": 513,
+            "Prompt Tokens": 472,
+            "Completion Tokens": 41,
+            "Total Cost (USD)": 9.539999999999999e-05
+        },
+        {
+            "Total Tokens": 747,
+            "Prompt Tokens": 704,
+            "Completion Tokens": 43,
+            "Total Cost (USD)": 0.00013139999999999997
+        },
+        {
+            "Total Tokens": 980,
+            "Prompt Tokens": 932,
+            "Completion Tokens": 48,
+            "Total Cost (USD)": 0.00016859999999999998
+        },
+        {
+            "Total Tokens": 1211,
+            "Prompt Tokens": 1166,
+            "Completion Tokens": 45,
+            "Total Cost (USD)": 0.00020189999999999997
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedFunction) function stddev(integer, integer, integer, integer, integer) does not exist\nLINE 1: SELECT stddev(1, 2, 3, 4, 5);\n               ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.\n\n",
+        "(psycopg2.errors.UndefinedFunction) function stddev(numeric, numeric, numeric, numeric, numeric) does not exist\nLINE 1: SELECT stddev(1.0, 2.0, 3.0, 4.0, 5.0);\n               ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.\n\n",
+        "(psycopg2.errors.UndefinedFunction) function stddev(numeric[]) does not exist\nLINE 1: SELECT stddev(ARRAY[1.0, 2.0, 3.0, 4.0, 5.0]);\n               ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.\n\n",
+        "(psycopg2.errors.UndefinedFunction) function stddev_samp(double precision, double precision, double precision, double precision, double precision) does not exist\nLINE 1: SELECT stddev_samp(1::double precision, 2::double precision,...\n               ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.\n\n",
+        "(psycopg2.errors.UndefinedFunction) function stddev_samp(numeric[]) does not exist\nLINE 1: SELECT stddev_samp(ARRAY[1::numeric, 2::numeric, 3::numeric,...\n               ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.\n\n"
+    ],
+    "EffectiveSQLs": []
 }

@@ -14,5 +14,31 @@
     "Examples": [],
     "Category": [
         "Core SQL Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "replace('Hello World', 'World', 'SQLite')",
+        "SELECT replace('Hello World', 'World', 'SQLite')"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 355,
+            "Prompt Tokens": 331,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 6.405e-05
+        },
+        {
+            "Total Tokens": 499,
+            "Prompt Tokens": 474,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 8.609999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(sqlite3.OperationalError) near \"(\": syntax error\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT replace('Hello World', 'World', 'SQLite')"
     ]
 }

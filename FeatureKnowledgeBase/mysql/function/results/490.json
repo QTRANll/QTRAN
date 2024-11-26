@@ -25,5 +25,53 @@
     ],
     "Category": [
         "Loadable Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT masking_dictionary_remove('mydict');",
+        "SELECT masking_dictionary_remove('example_dict');",
+        "SELECT masking_dictionary_remove('test_dict');",
+        "SELECT masking_dictionary_remove('sample_dict');",
+        "SELECT masking_dictionary_remove('dummy_dict');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 522,
+            "Prompt Tokens": 501,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 8.774999999999999e-05
+        },
+        {
+            "Total Tokens": 680,
+            "Prompt Tokens": 659,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 0.00011144999999999998
+        },
+        {
+            "Total Tokens": 838,
+            "Prompt Tokens": 817,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 0.00013514999999999998
+        },
+        {
+            "Total Tokens": 996,
+            "Prompt Tokens": 975,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 0.00015884999999999999
+        },
+        {
+            "Total Tokens": 1154,
+            "Prompt Tokens": 1133,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 0.00018255
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.masking_dictionary_remove does not exist')\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.masking_dictionary_remove does not exist')\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.masking_dictionary_remove does not exist')\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.masking_dictionary_remove does not exist')\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.masking_dictionary_remove does not exist')\n"
+    ],
+    "EffectiveSQLs": []
 }

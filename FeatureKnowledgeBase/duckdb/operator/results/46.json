@@ -16,5 +16,23 @@
     ],
     "Category": [
         "Timestamp with Time Zone Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT TIMESTAMPTZ '2023-10-01 12:00:00+00' - TIMESTAMPTZ '2023-10-01 10:00:00+00';"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 298,
+            "Prompt Tokens": 241,
+            "Completion Tokens": 57,
+            "Total Cost (USD)": 7.035e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT TIMESTAMPTZ '2023-10-01 12:00:00+00' - TIMESTAMPTZ '2023-10-01 10:00:00+00';"
     ]
 }

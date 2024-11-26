@@ -6,15 +6,33 @@
         "date + time"
     ],
     "Feature": [
-        "date + time → timestamp"
+        "date + time \u2192 timestamp"
     ],
     "Description": [
         "Add a time-of-day to a date"
     ],
     "Examples": [
-        "date '2001-09-28' + time '03:00' → 2001-09-28 03:00:00"
+        "date '2001-09-28' + time '03:00' \u2192 2001-09-28 03:00:00"
     ],
     "Category": [
         "Date divide Time Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT '2023-10-01 12:30:00'::timestamp;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 279,
+            "Prompt Tokens": 249,
+            "Completion Tokens": 30,
+            "Total Cost (USD)": 5.535e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT '2023-10-01 12:30:00'::timestamp;"
     ]
 }

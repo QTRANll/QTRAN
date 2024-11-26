@@ -10,10 +10,28 @@
     ],
     "Description": [
         "UUID_TO_BIN",
-        "参见 BIN_TO_UUID()。"
+        "\u53c2\u89c1 BIN_TO_UUID()\u3002"
     ],
     "Examples": [],
     "Category": [
-        "其它函数"
+        "\u5176\u5b83\u51fd\u6570"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT UUID_TO_BIN('550e8400-e29b-41d4-a716-446655440000');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 289,
+            "Prompt Tokens": 252,
+            "Completion Tokens": 37,
+            "Total Cost (USD)": 5.9999999999999995e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT UUID_TO_BIN('550e8400-e29b-41d4-a716-446655440000');"
     ]
 }

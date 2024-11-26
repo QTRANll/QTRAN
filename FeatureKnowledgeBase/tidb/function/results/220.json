@@ -6,9 +6,9 @@
     ],
     "Description": [
         "\nMIN([DISTINCT]\n            expr)\n            [over_clause]\n",
-        "\n            Returns the minimum value of\n            expr.\n            MIN() may take a string\n            argument; in such cases, it returns the minimum string\n            value. See Section 10.3.1, “How MySQL Uses Indexes”. The\n            DISTINCT keyword can be used to find the\n            minimum of the distinct values of\n            expr, however, this produces the\n            same result as omitting DISTINCT.\n          ",
+        "\n            Returns the minimum value of\n            expr.\n            MIN() may take a string\n            argument; in such cases, it returns the minimum string\n            value. See Section\u00a010.3.1, \u201cHow MySQL Uses Indexes\u201d. The\n            DISTINCT keyword can be used to find the\n            minimum of the distinct values of\n            expr, however, this produces the\n            same result as omitting DISTINCT.\n          ",
         "\n            If there are no matching rows, or if\n            expr is NULL,\n            MIN() returns\n            NULL.\n          ",
-        "\n            This function executes as a window function if\n            over_clause is present.\n            over_clause is as described in\n            Section 14.20.2, “Window Function Concepts and Syntax”; it cannot be used\n            with DISTINCT.\n          ",
+        "\n            This function executes as a window function if\n            over_clause is present.\n            over_clause is as described in\n            Section\u00a014.20.2, \u201cWindow Function Concepts and Syntax\u201d; it cannot be used\n            with DISTINCT.\n          ",
         "Press CTRL+C to copy mysql> SELECT student_name, MIN(test_score), MAX(test_score)\n       FROM student\n       GROUP BY student_name;",
         "\n            For MIN(), MySQL currently\n            compares ENUM and\n            SET columns by their string\n            value rather than by the string's relative position in the\n            set. This differs from how ORDER BY\n            compares them.\n          "
     ],
@@ -16,6 +16,40 @@
         "mysql> SELECT student_name, MIN(test_score), MAX(test_score)\n       FROM student\n       GROUP BY student_name;"
     ],
     "Category": [
-        "GROUP BY 聚合函数"
+        "GROUP BY \u805a\u5408\u51fd\u6570"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT MIN(expr);",
+        "SELECT MIN(test_score) FROM student;",
+        "SELECT MIN(1);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 540,
+            "Prompt Tokens": 523,
+            "Completion Tokens": 17,
+            "Total Cost (USD)": 8.865e-05
+        },
+        {
+            "Total Tokens": 685,
+            "Prompt Tokens": 665,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 0.00011174999999999999
+        },
+        {
+            "Total Tokens": 833,
+            "Prompt Tokens": 815,
+            "Completion Tokens": 18,
+            "Total Cost (USD)": 0.00013304999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.OperationalError) (1054, \"Unknown column 'expr' in ''\")\n",
+        "(pymysql.err.ProgrammingError) (1146, \"Table 'knowledge_base_preprocess_tidb.student' doesn't exist\")\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT MIN(1);"
     ]
 }

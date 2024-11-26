@@ -10,10 +10,36 @@
     ],
     "Description": [
         "JSON_APPEND()",
-        "该函数为 JSON_ARRAY_APPEND() 的别名。"
+        "\u8be5\u51fd\u6570\u4e3a JSON_ARRAY_APPEND() \u7684\u522b\u540d\u3002"
     ],
     "Examples": [],
     "Category": [
-        "修改 JSON 的函数"
+        "\u4fee\u6539 JSON \u7684\u51fd\u6570"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT JSON_APPEND('{}', '$.key', 'value');",
+        "SELECT JSON_ARRAY_APPEND('{}', '$', 'value');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 280,
+            "Prompt Tokens": 255,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 5.324999999999999e-05
+        },
+        {
+            "Total Tokens": 437,
+            "Prompt Tokens": 413,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 7.634999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_tidb.json_append does not exist')\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT JSON_ARRAY_APPEND('{}', '$', 'value');"
     ]
 }

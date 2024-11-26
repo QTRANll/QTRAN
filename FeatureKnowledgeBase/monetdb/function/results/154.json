@@ -18,5 +18,31 @@
     ],
     "Category": [
         "Date Time Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT dayofmonth(dt_or_ts);",
+        "SELECT dayofmonth(CURRENT_TIMESTAMP);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 314,
+            "Prompt Tokens": 293,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 5.654999999999999e-05
+        },
+        {
+            "Total Tokens": 469,
+            "Prompt Tokens": 448,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 7.979999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: identifier 'dt_or_ts' unknown\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT dayofmonth(CURRENT_TIMESTAMP);"
     ]
 }

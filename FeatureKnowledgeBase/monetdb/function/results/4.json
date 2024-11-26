@@ -18,5 +18,47 @@
     ],
     "Category": [
         "Comparison Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "<(arg1, arg2)",
+        "arg1 < arg2",
+        "SELECT CASE WHEN arg1 < arg2 THEN TRUE ELSE FALSE END",
+        "SELECT CASE WHEN 1 < 2 THEN TRUE ELSE FALSE END"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 295,
+            "Prompt Tokens": 276,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 5.2799999999999996e-05
+        },
+        {
+            "Total Tokens": 450,
+            "Prompt Tokens": 432,
+            "Completion Tokens": 18,
+            "Total Cost (USD)": 7.56e-05
+        },
+        {
+            "Total Tokens": 613,
+            "Prompt Tokens": 587,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 0.00010364999999999999
+        },
+        {
+            "Total Tokens": 773,
+            "Prompt Tokens": 747,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 0.00012764999999999999
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymonetdb.exceptions.OperationalError) 42000!syntax error, unexpected COMPARISON in: \"<\"\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!syntax error, unexpected IDENT in: \"arg1\"\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: identifier 'arg1' unknown\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT CASE WHEN 1 < 2 THEN TRUE ELSE FALSE END"
     ]
 }

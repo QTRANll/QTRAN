@@ -28,5 +28,16 @@
         "CREATE OR REPLACE TABLE student_test (name CHAR(10), test CHAR(10), score TINYINT);",
         "INSERT INTO student_test VALUES \n    ('Chun', 'SQL', 75), ('Chun', 'Tuning', 73), \n    ('Esben', 'SQL', 43), ('Esben', 'Tuning', 31), \n    ('Kaolin', 'SQL', 56), ('Kaolin', 'Tuning', 88), \n    ('Tatiana', 'SQL', 87);",
         "SELECT name, test, score, VAR_SAMP(score) \n  OVER (PARTITION BY test) AS variance_results FROM student_test;"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "CREATE OR REPLACE TABLE stats (category VARCHAR(2), x INT);",
+        "INSERT INTO stats VALUES \n  ('a',1),('a',2),('a',3),\n  ('b',11),('b',12),('b',20),('b',30),('b',60);",
+        "SELECT category, STDDEV_POP(x), STDDEV_SAMP(x), VAR_POP(x) \n  FROM stats GROUP BY category;",
+        "CREATE OR REPLACE TABLE student_test (name CHAR(10), test CHAR(10), score TINYINT);",
+        "INSERT INTO student_test VALUES \n    ('Chun', 'SQL', 75), ('Chun', 'Tuning', 73), \n    ('Esben', 'SQL', 43), ('Esben', 'Tuning', 31), \n    ('Kaolin', 'SQL', 56), ('Kaolin', 'Tuning', 88), \n    ('Tatiana', 'SQL', 87);",
+        "SELECT name, test, score, VAR_SAMP(score) \n  OVER (PARTITION BY test) AS variance_results FROM student_test;"
     ]
 }

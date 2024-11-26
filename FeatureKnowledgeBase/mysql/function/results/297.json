@@ -19,5 +19,53 @@
     "Category": [
         "Built-In Functions and Operators",
         "Spatial Analysis Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT ST_Contains(g1, g2);",
+        "SELECT ST_Contains(GeomFromText('POLYGON((...))'), GeomFromText('POINT(...)'));",
+        "SELECT ST_Contains('POLYGON((...))', 'POINT(...)');",
+        "SELECT ST_Contains('GEOMETRYCOLLECTION(...)', 'GEOMETRY(...)');",
+        "SELECT ST_Contains('GEOMETRYCOLLECTION(...)', 'GEOMETRY(...)');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 364,
+            "Prompt Tokens": 341,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 6.494999999999999e-05
+        },
+        {
+            "Total Tokens": 536,
+            "Prompt Tokens": 500,
+            "Completion Tokens": 36,
+            "Total Cost (USD)": 9.659999999999999e-05
+        },
+        {
+            "Total Tokens": 703,
+            "Prompt Tokens": 675,
+            "Completion Tokens": 28,
+            "Total Cost (USD)": 0.00011805
+        },
+        {
+            "Total Tokens": 873,
+            "Prompt Tokens": 842,
+            "Completion Tokens": 31,
+            "Total Cost (USD)": 0.00014489999999999997
+        },
+        {
+            "Total Tokens": 1043,
+            "Prompt Tokens": 1012,
+            "Completion Tokens": 31,
+            "Total Cost (USD)": 0.00017039999999999997
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.OperationalError) (1054, \"Unknown column 'g1' in 'field list'\")\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.GeomFromText does not exist')\n",
+        "(pymysql.err.OperationalError) (3548, \"There's no spatial reference system with SRID 1498173264.\")\n",
+        "(pymysql.err.OperationalError) (3548, \"There's no spatial reference system with SRID 1297040711.\")\n",
+        "(pymysql.err.OperationalError) (3548, \"There's no spatial reference system with SRID 1297040711.\")\n"
+    ],
+    "EffectiveSQLs": []
 }

@@ -17,5 +17,23 @@
     ],
     "Category": [
         "Bitstring Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT bit_position('101', '110101')"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 343,
+            "Prompt Tokens": 320,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 6.18e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT bit_position('101', '110101')"
     ]
 }

@@ -19,5 +19,23 @@
     ],
     "Category": [
         "List Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT array_indexof(ARRAY[1, 2, 3, 4], 3);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 314,
+            "Prompt Tokens": 280,
+            "Completion Tokens": 34,
+            "Total Cost (USD)": 6.24e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT array_indexof(ARRAY[1, 2, 3, 4], 3);"
     ]
 }

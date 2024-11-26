@@ -16,5 +16,31 @@
     ],
     "Category": [
         "Timestamp with Time Zone Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT range('2023-01-01 00:00:00+00', '2023-01-02 00:00:00+00', interval '1 hour');",
+        "SELECT range('2023-01-01 00:00:00+00'::timestamptz, '2023-01-02 00:00:00+00'::timestamptz, interval '1 hour');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 364,
+            "Prompt Tokens": 312,
+            "Completion Tokens": 52,
+            "Total Cost (USD)": 7.8e-05
+        },
+        {
+            "Total Tokens": 672,
+            "Prompt Tokens": 606,
+            "Completion Tokens": 66,
+            "Total Cost (USD)": 0.00013049999999999997
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.BinderException) Binder Error: Could not choose a best candidate function for the function call \"range(STRING_LITERAL, STRING_LITERAL, INTERVAL)\". In order to select one, please add explicit type casts.\n\tCandidate functions:\n\trange(TIMESTAMP WITH TIME ZONE, TIMESTAMP WITH TIME ZONE, INTERVAL) -> TIMESTAMP WITH TIME ZONE[]\n\trange(TIMESTAMP, TIMESTAMP, INTERVAL) -> TIMESTAMP[]\n\nLINE 1: SELECT range('2023-01-01 00:00:00+00', '2023-0...\n               ^\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT range('2023-01-01 00:00:00+00'::timestamptz, '2023-01-02 00:00:00+00'::timestamptz, interval '1 hour');"
     ]
 }

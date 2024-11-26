@@ -6,15 +6,57 @@
         "integral_type & integral_type"
     ],
     "Feature": [
-        "integral_type & integral_type → integral_type"
+        "integral_type & integral_type \u2192 integral_type"
     ],
     "Description": [
         "Bitwise AND"
     ],
     "Examples": [
-        "91 & 15 → 11"
+        "91 & 15 \u2192 11"
     ],
     "Category": [
         "Mathematical Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT integral_type & integral_type;",
+        "SELECT $1::integral_type & $2::integral_type;",
+        "SELECT $1 & $2;",
+        "SELECT 1 & 1;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 276,
+            "Prompt Tokens": 257,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 4.9949999999999994e-05
+        },
+        {
+            "Total Tokens": 447,
+            "Prompt Tokens": 420,
+            "Completion Tokens": 27,
+            "Total Cost (USD)": 7.919999999999999e-05
+        },
+        {
+            "Total Tokens": 618,
+            "Prompt Tokens": 599,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 0.00010125
+        },
+        {
+            "Total Tokens": 778,
+            "Prompt Tokens": 759,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 0.00012524999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedColumn) column \"integral_type\" does not exist\nLINE 1: SELECT integral_type & integral_type;\n               ^\n\n",
+        "(psycopg2.errors.UndefinedObject) type \"integral_type\" does not exist\nLINE 1: SELECT $1::integral_type & $2::integral_type;\n                   ^\n\n",
+        "(psycopg2.errors.UndefinedParameter) there is no parameter $1\nLINE 1: SELECT $1 & $2;\n               ^\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT 1 & 1;"
     ]
 }

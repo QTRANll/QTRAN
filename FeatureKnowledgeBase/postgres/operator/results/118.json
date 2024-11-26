@@ -6,16 +6,40 @@
         "json ->> text"
     ],
     "Feature": [
-        "json ->> text → text",
-        "jsonb ->> text → text"
+        "json ->> text \u2192 text",
+        "jsonb ->> text \u2192 text"
     ],
     "Description": [
         "Extracts JSON object field with the given key, as text."
     ],
     "Examples": [
-        "'{\"a\":1,\"b\":2}'::json ->> 'b' → 2"
+        "'{\"a\":1,\"b\":2}'::json ->> 'b' \u2192 2"
     ],
     "Category": [
         "JSON Functions and Operators"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT json ->> 'key' FROM table_name;",
+        "SELECT json ->> 'key';"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 290,
+            "Prompt Tokens": 267,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 5.3849999999999994e-05
+        },
+        {
+            "Total Tokens": 455,
+            "Prompt Tokens": 435,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 7.725e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedTable) relation \"table_name\" does not exist\nLINE 1: SELECT json ->> 'key' FROM table_name;\n                                   ^\n\n",
+        "(psycopg2.errors.UndefinedColumn) column \"json\" does not exist\nLINE 1: SELECT json ->> 'key';\n               ^\n\n"
+    ],
+    "EffectiveSQLs": []
 }

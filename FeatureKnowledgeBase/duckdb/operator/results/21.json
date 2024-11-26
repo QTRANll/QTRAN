@@ -16,5 +16,53 @@
     ],
     "Category": [
         "List Operators"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "@> (my_list, sublist)",
+        "my_list @> sublist",
+        "SELECT * FROM my_table WHERE my_list @> sublist",
+        "SELECT * FROM pg_tables WHERE my_list @> sublist",
+        "SELECT * FROM pg_tables WHERE tablespace @> sublist"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 276,
+            "Prompt Tokens": 256,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 5.04e-05
+        },
+        {
+            "Total Tokens": 419,
+            "Prompt Tokens": 400,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 7.14e-05
+        },
+        {
+            "Total Tokens": 570,
+            "Prompt Tokens": 545,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 9.675e-05
+        },
+        {
+            "Total Tokens": 749,
+            "Prompt Tokens": 724,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 0.00012359999999999997
+        },
+        {
+            "Total Tokens": 933,
+            "Prompt Tokens": 908,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 0.0001512
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.ParserException) Parser Error: syntax error at or near \"@>\"\n",
+        "(duckdb.duckdb.ParserException) Parser Error: syntax error at or near \"my_list\"\n",
+        "(duckdb.duckdb.CatalogException) Catalog Error: Table with name my_table does not exist!\nDid you mean \"pg_tables\"?\nLINE 1: SELECT * FROM my_table WHERE my_list @> sublist\n                      ^\n",
+        "(duckdb.duckdb.BinderException) Binder Error: Referenced column \"my_list\" not found in FROM clause!\nCandidate bindings: \"pg_tables.tablespace\"\nLINE 1: SELECT * FROM pg_tables WHERE my_list @> sublist\n                                      ^\n",
+        "(duckdb.duckdb.BinderException) Binder Error: Referenced column \"sublist\" not found in FROM clause!\nCandidate bindings: \"pg_tables.hasrules\", \"pg_tables.tablespace\", \"pg_tables.hasindexes\", \"pg_tables.tablename\"\nLINE 1: ...T * FROM pg_tables WHERE tablespace @> sublist\n                                                  ^\n"
+    ],
+    "EffectiveSQLs": []
 }

@@ -6,15 +6,33 @@
         "concat_ws"
     ],
     "Feature": [
-        "concat_ws ( sep text, val1 \"any\" [, val2 \"any\" [, ...] ] ) → text"
+        "concat_ws ( sep text, val1 \"any\" [, val2 \"any\" [, ...] ] ) \u2192 text"
     ],
     "Description": [
         "Concatenates all but the first argument, with separators. The first argument is used as the separator string, and should not be NULL. Other NULL arguments are ignored."
     ],
     "Examples": [
-        "concat_ws(',', 'abcde', 2, NULL, 22) → abcde,2,22"
+        "concat_ws(',', 'abcde', 2, NULL, 22) \u2192 abcde,2,22"
     ],
     "Category": [
         "String Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT concat_ws(',', 'Hello', 'World', NULL, 'PostgreSQL');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 321,
+            "Prompt Tokens": 291,
+            "Completion Tokens": 30,
+            "Total Cost (USD)": 6.164999999999998e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT concat_ws(',', 'Hello', 'World', NULL, 'PostgreSQL');"
     ]
 }

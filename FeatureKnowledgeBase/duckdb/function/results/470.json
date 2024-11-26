@@ -18,5 +18,23 @@
     ],
     "Category": [
         "Text Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT string_to_array('apple,banana,cherry', ',');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 285,
+            "Prompt Tokens": 259,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 5.4449999999999995e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT string_to_array('apple,banana,cherry', ',');"
     ]
 }

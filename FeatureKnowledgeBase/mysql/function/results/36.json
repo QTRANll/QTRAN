@@ -21,5 +21,18 @@
     "Category": [
         "Built-In Functions and Operators",
         "Information Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT CHARSET('abc');",
+        "SELECT CHARSET(CONVERT('abc' USING latin1));",
+        "SELECT CHARSET(USER());"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT CHARSET('abc');",
+        "SELECT CHARSET(CONVERT('abc' USING latin1));",
+        "SELECT CHARSET(USER());"
     ]
 }

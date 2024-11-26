@@ -10,7 +10,7 @@
     ],
     "Description": [
         "SLEEP()",
-        "SLEEP() 函数用于将查询暂停执行几秒。",
+        "SLEEP() \u51fd\u6570\u7528\u4e8e\u5c06\u67e5\u8be2\u6682\u505c\u6267\u884c\u51e0\u79d2\u3002",
         "SELECT SLEEP(1.5);\n",
         "+------------+\n| SLEEP(1.5) |\n+------------+\n|          0 |\n+------------+\n1 row in set (1.50 sec)\n"
     ],
@@ -18,6 +18,15 @@
         "SELECT SLEEP(1.5);\n"
     ],
     "Category": [
-        "其它函数"
+        "\u5176\u5b83\u51fd\u6570"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT SLEEP(1.5);"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT SLEEP(1.5);"
     ]
 }

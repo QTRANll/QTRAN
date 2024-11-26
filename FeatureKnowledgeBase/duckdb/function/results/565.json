@@ -16,5 +16,53 @@
     ],
     "Category": [
         "Union Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT union.tag FROM some_table;",
+        "SELECT union_extract(tag) FROM some_table;",
+        "SELECT union_extract(tag);",
+        "SELECT union_extract(tag) FROM (SELECT NULL AS tag);",
+        "SELECT union_extract(NULL::VARCHAR) AS tag;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 265,
+            "Prompt Tokens": 246,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 4.8299999999999995e-05
+        },
+        {
+            "Total Tokens": 410,
+            "Prompt Tokens": 389,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 7.094999999999999e-05
+        },
+        {
+            "Total Tokens": 578,
+            "Prompt Tokens": 560,
+            "Completion Tokens": 18,
+            "Total Cost (USD)": 9.48e-05
+        },
+        {
+            "Total Tokens": 744,
+            "Prompt Tokens": 719,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 0.00012284999999999998
+        },
+        {
+            "Total Tokens": 941,
+            "Prompt Tokens": 919,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 0.00015104999999999999
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.ParserException) Parser Error: syntax error at or near \".\"\n",
+        "(duckdb.duckdb.CatalogException) Catalog Error: Table with name some_table does not exist!\nDid you mean \"sqlite_master\"?\nLINE 1: SELECT union_extract(tag) FROM some_table;\n                                       ^\n",
+        "(duckdb.duckdb.BinderException) Binder Error: Referenced column \"tag\" not found in FROM clause!\nLINE 1: SELECT union_extract(tag);\n                             ^\n",
+        "(duckdb.duckdb.BinderException) Binder Error: No function matches the given name and argument types 'union_extract(\"NULL\")'. You might need to add explicit type casts.\n\tCandidate functions:\n\tunion_extract(UNION, VARCHAR) -> ANY\n\nLINE 1: SELECT union_extract(tag) FROM (SELECT NULL AS...\n               ^\n",
+        "(duckdb.duckdb.BinderException) Binder Error: No function matches the given name and argument types 'union_extract(VARCHAR)'. You might need to add explicit type casts.\n\tCandidate functions:\n\tunion_extract(UNION, VARCHAR) -> ANY\n\nLINE 1: SELECT union_extract(NULL::VARCHAR) AS tag;\n               ^\n"
+    ],
+    "EffectiveSQLs": []
 }

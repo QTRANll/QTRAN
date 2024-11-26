@@ -6,15 +6,41 @@
         "integral_type >> integer"
     ],
     "Feature": [
-        "integral_type >> integer → integral_type"
+        "integral_type >> integer \u2192 integral_type"
     ],
     "Description": [
         "Bitwise shift right"
     ],
     "Examples": [
-        "8 >> 2 → 2"
+        "8 >> 2 \u2192 2"
     ],
     "Category": [
         "Mathematical Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT integral_type >> integer;",
+        "SELECT 1 >> 2;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 272,
+            "Prompt Tokens": 254,
+            "Completion Tokens": 18,
+            "Total Cost (USD)": 4.8899999999999996e-05
+        },
+        {
+            "Total Tokens": 433,
+            "Prompt Tokens": 414,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 7.35e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedColumn) column \"integral_type\" does not exist\nLINE 1: SELECT integral_type >> integer;\n               ^\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT 1 >> 2;"
     ]
 }

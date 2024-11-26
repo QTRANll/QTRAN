@@ -6,15 +6,33 @@
         "line"
     ],
     "Feature": [
-        "line ( point, point ) → line"
+        "line ( point, point ) \u2192 line"
     ],
     "Description": [
         "Converts two points to the line through them."
     ],
     "Examples": [
-        "line(point '(-1,0)', point '(1,0)') → {0,-1,0}"
+        "line(point '(-1,0)', point '(1,0)') \u2192 {0,-1,0}"
     ],
     "Category": [
         "Geometric Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT line(point(1, 2), point(3, 4));"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 277,
+            "Prompt Tokens": 248,
+            "Completion Tokens": 29,
+            "Total Cost (USD)": 5.46e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT line(point(1, 2), point(3, 4));"
     ]
 }

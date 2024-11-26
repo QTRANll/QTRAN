@@ -23,5 +23,8 @@
     ],
     "Category": [
         "Strings Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT length('\u00e2'), normalizeUTF8NFD('\u00e2') AS nfd, length(nfd) AS nfd_len;"
     ]
 }

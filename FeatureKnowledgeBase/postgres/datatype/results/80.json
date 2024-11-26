@@ -15,5 +15,53 @@
     "Examples": [],
     "Category": [
         "Pseudo-Types"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "CREATE EVENT TRIGGER my_event_trigger ON ddl_command_start EXECUTE FUNCTION my_function();",
+        "CREATE EVENT TRIGGER my_event_trigger ON ddl_command_start EXECUTE FUNCTION pg_event_trigger_ddl_commands();",
+        "CREATE EVENT TRIGGER my_event_trigger ON ddl_command_start EXECUTE FUNCTION my_event_trigger_function();",
+        "CREATE EVENT TRIGGER my_event_trigger ON ddl_command_start EXECUTE FUNCTION event_trigger();",
+        "CREATE EVENT TRIGGER my_event_trigger ON ddl_command_start EXECUTE FUNCTION my_custom_event_trigger_function();"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 279,
+            "Prompt Tokens": 249,
+            "Completion Tokens": 30,
+            "Total Cost (USD)": 5.535e-05
+        },
+        {
+            "Total Tokens": 436,
+            "Prompt Tokens": 402,
+            "Completion Tokens": 34,
+            "Total Cost (USD)": 8.07e-05
+        },
+        {
+            "Total Tokens": 595,
+            "Prompt Tokens": 563,
+            "Completion Tokens": 32,
+            "Total Cost (USD)": 0.00010364999999999997
+        },
+        {
+            "Total Tokens": 750,
+            "Prompt Tokens": 720,
+            "Completion Tokens": 30,
+            "Total Cost (USD)": 0.00012599999999999997
+        },
+        {
+            "Total Tokens": 906,
+            "Prompt Tokens": 873,
+            "Completion Tokens": 33,
+            "Total Cost (USD)": 0.00015074999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedFunction) function my_function() does not exist\n\n",
+        "(psycopg2.errors.InvalidObjectDefinition) function pg_event_trigger_ddl_commands must return type event_trigger\n\n",
+        "(psycopg2.errors.UndefinedFunction) function my_event_trigger_function() does not exist\n\n",
+        "(psycopg2.errors.UndefinedFunction) function event_trigger() does not exist\n\n",
+        "(psycopg2.errors.UndefinedFunction) function my_custom_event_trigger_function() does not exist\n\n"
+    ],
+    "EffectiveSQLs": []
 }

@@ -18,5 +18,53 @@
     ],
     "Category": [
         "Date Time Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "{fn MONTHNAME(dt_or_ts)}",
+        "SELECT MONTHNAME(dt_or_ts) FROM your_table_name",
+        "SELECT {fn MONTHNAME(dt_or_ts)}",
+        "SELECT MONTHNAME(CURRENT_DATE)",
+        "SELECT {fn MONTHNAME(CURRENT_TIMESTAMP)}"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 316,
+            "Prompt Tokens": 296,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 5.6399999999999995e-05
+        },
+        {
+            "Total Tokens": 483,
+            "Prompt Tokens": 459,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 8.324999999999999e-05
+        },
+        {
+            "Total Tokens": 642,
+            "Prompt Tokens": 620,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 0.00010619999999999999
+        },
+        {
+            "Total Tokens": 806,
+            "Prompt Tokens": 787,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 0.00012945
+        },
+        {
+            "Total Tokens": 966,
+            "Prompt Tokens": 944,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 0.00015479999999999997
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymonetdb.exceptions.OperationalError) 42000!syntax error, unexpected X_BODY in: \"{fn MONTHNAME(dt_or_ts)}\"\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42S02!SELECT: no such table 'your_table_name'\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!syntax error, unexpected X_BODY in: \"select {fn MONTHNAME(dt_or_ts)}\"\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: no such unary operator 'monthname(date)'\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!syntax error, unexpected X_BODY in: \"select {fn MONTHNAME(CURRENT_TIMESTAMP)}\"\n\n"
+    ],
+    "EffectiveSQLs": []
 }

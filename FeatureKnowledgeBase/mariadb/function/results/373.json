@@ -19,5 +19,22 @@
     "Category": [
         "String Functions"
     ],
-    "EffectiveSQLsRefined": []
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT UPPER('hello world');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 494,
+            "Prompt Tokens": 474,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 8.309999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT UPPER('hello world');"
+    ]
 }

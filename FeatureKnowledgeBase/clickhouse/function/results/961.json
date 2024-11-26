@@ -29,5 +29,8 @@
     ],
     "Category": [
         "Type Conversion Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT    toUInt8OrDefault('8', CAST('0', 'UInt8')),    toUInt8OrDefault('abc', CAST('0', 'UInt8'))FORMAT Vertical;"
     ]
 }

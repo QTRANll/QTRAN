@@ -14,6 +14,17 @@
         "mysql> SELECT TIMESTAMP('2003-12-31');\n        -> '2003-12-31 00:00:00'\nmysql> SELECT TIMESTAMP('2003-12-31 12:00:00','12:00:00');\n        -> '2004-01-01 00:00:00'"
     ],
     "Category": [
-        "日期和时间函数"
+        "\u65e5\u671f\u548c\u65f6\u95f4\u51fd\u6570"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT TIMESTAMP('2003-12-31');",
+        "SELECT TIMESTAMP('2003-12-31 12:00:00','12:00:00');"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT TIMESTAMP('2003-12-31');",
+        "SELECT TIMESTAMP('2003-12-31 12:00:00','12:00:00');"
     ]
 }

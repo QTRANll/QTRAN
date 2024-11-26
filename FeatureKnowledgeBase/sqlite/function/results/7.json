@@ -14,5 +14,39 @@
     "Examples": [],
     "Category": [
         "Core SQL Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT * FROM table_name WHERE glob('*helium*', name);",
+        "SELECT glob('*helium*', name);",
+        "SELECT glob('*pattern*', 'string_to_match');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 410,
+            "Prompt Tokens": 383,
+            "Completion Tokens": 27,
+            "Total Cost (USD)": 7.364999999999999e-05
+        },
+        {
+            "Total Tokens": 551,
+            "Prompt Tokens": 529,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 9.254999999999999e-05
+        },
+        {
+            "Total Tokens": 693,
+            "Prompt Tokens": 669,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 0.00011475
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(sqlite3.OperationalError) no such table: table_name\n",
+        "(sqlite3.OperationalError) no such column: name\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT glob('*pattern*', 'string_to_match');"
     ]
 }

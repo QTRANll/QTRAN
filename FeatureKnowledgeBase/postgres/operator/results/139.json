@@ -6,15 +6,33 @@
         "number % number"
     ],
     "Feature": [
-        "number % number → number"
+        "number % number \u2192 number"
     ],
     "Description": [
         "Modulo (remainder)"
     ],
     "Examples": [
-        "jsonb_path_query('[32]', '$[0] % 10') → 2"
+        "jsonb_path_query('[32]', '$[0] % 10') \u2192 2"
     ],
     "Category": [
         "JSON Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT 10 % 3;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 265,
+            "Prompt Tokens": 246,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 4.8299999999999995e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT 10 % 3;"
     ]
 }

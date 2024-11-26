@@ -10,14 +10,32 @@
     ],
     "Description": [
         "IF()",
-        "IF() 函数可以根据值或表达式是否为真执行不同的操作。",
-        "语法：",
+        "IF() \u51fd\u6570\u53ef\u4ee5\u6839\u636e\u503c\u6216\u8868\u8fbe\u5f0f\u662f\u5426\u4e3a\u771f\u6267\u884c\u4e0d\u540c\u7684\u64cd\u4f5c\u3002",
+        "\u8bed\u6cd5\uff1a",
         "IF(condition, value_if_true, value_if_false)\n"
     ],
     "Examples": [
         "WITH RECURSIVE d AS (SELECT 1 AS n UNION ALL SELECT n+1 FROM d WHERE n<10)\nSELECT n, IF(n MOD 2, \"odd\", \"even\") FROM d;\n"
     ],
     "Category": [
-        "控制流程函数"
+        "\u63a7\u5236\u6d41\u7a0b\u51fd\u6570"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT IF(1 > 0, 'True', 'False');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 304,
+            "Prompt Tokens": 277,
+            "Completion Tokens": 27,
+            "Total Cost (USD)": 5.7749999999999994e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT IF(1 > 0, 'True', 'False');"
     ]
 }

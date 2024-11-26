@@ -16,5 +16,31 @@
     ],
     "Category": [
         "Text Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "not_like_escape('example_string', '%ex%', '\\')",
+        "SELECT not_like_escape('example_string', '%ex%', '\\')"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 335,
+            "Prompt Tokens": 310,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 6.15e-05
+        },
+        {
+            "Total Tokens": 498,
+            "Prompt Tokens": 472,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 8.639999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.ParserException) Parser Error: syntax error at or near \"not_like_escape\"\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT not_like_escape('example_string', '%ex%', '\\')"
     ]
 }

@@ -23,5 +23,8 @@
     ],
     "Category": [
         "Type Conversion Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT reinterpret(toInt8(-1), 'UInt8') as int_to_uint,    reinterpret(toInt8(1), 'Float32') as int_to_float,    reinterpret('1', 'UInt32') as string_to_int;"
     ]
 }

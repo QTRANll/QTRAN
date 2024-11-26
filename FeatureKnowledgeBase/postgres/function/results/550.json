@@ -6,7 +6,7 @@
         "pg_replication_origin_session_progress"
     ],
     "Feature": [
-        "pg_replication_origin_session_progress ( flush boolean ) → pg_lsn"
+        "pg_replication_origin_session_progress ( flush boolean ) \u2192 pg_lsn"
     ],
     "Description": [
         "Returns the replay location for the replication origin selected in the current session. The parameter flush determines whether the corresponding local transaction will be guaranteed to have been flushed to disk or not."
@@ -14,5 +14,39 @@
     "Examples": [],
     "Category": [
         "System Administration Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT pg_replication_origin_session_progress(false);",
+        "SELECT pg_replication_origin_session_progress(true);",
+        "SELECT pg_replication_origin_session_progress(NULL);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 316,
+            "Prompt Tokens": 294,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 5.729999999999999e-05
+        },
+        {
+            "Total Tokens": 465,
+            "Prompt Tokens": 443,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 7.964999999999998e-05
+        },
+        {
+            "Total Tokens": 614,
+            "Prompt Tokens": 592,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 0.00010199999999999999
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.ObjectNotInPrerequisiteState) no replication origin is configured\n\n",
+        "(psycopg2.errors.ObjectNotInPrerequisiteState) no replication origin is configured\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT pg_replication_origin_session_progress(NULL);"
     ]
 }

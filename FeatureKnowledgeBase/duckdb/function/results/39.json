@@ -15,5 +15,47 @@
     "Examples": [],
     "Category": [
         "Aggregate Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT corr(y, x);",
+        "SELECT corr(y, x) FROM your_table_name;",
+        "SELECT corr(y, x) FROM (SELECT y, x FROM your_table_name);",
+        "SELECT corr(y, x) FROM (VALUES (1, 2), (3, 4)) AS t(y, x);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 292,
+            "Prompt Tokens": 273,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 5.235e-05
+        },
+        {
+            "Total Tokens": 460,
+            "Prompt Tokens": 437,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 7.934999999999999e-05
+        },
+        {
+            "Total Tokens": 647,
+            "Prompt Tokens": 617,
+            "Completion Tokens": 30,
+            "Total Cost (USD)": 0.00011054999999999998
+        },
+        {
+            "Total Tokens": 851,
+            "Prompt Tokens": 811,
+            "Completion Tokens": 40,
+            "Total Cost (USD)": 0.00014565
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.BinderException) Binder Error: Referenced column \"y\" not found in FROM clause!\nLINE 1: SELECT corr(y, x);\n                    ^\n",
+        "(duckdb.duckdb.CatalogException) Catalog Error: Table with name your_table_name does not exist!\nDid you mean \"pg_tablespace\"?\nLINE 1: SELECT corr(y, x) FROM your_table_name;\n                               ^\n",
+        "(duckdb.duckdb.CatalogException) Catalog Error: Table with name your_table_name does not exist!\nDid you mean \"pg_tablespace\"?\nLINE 1: ...LECT corr(y, x) FROM (SELECT y, x FROM your_table_name);\n                                                  ^\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT corr(y, x) FROM (VALUES (1, 2), (3, 4)) AS t(y, x);"
     ]
 }

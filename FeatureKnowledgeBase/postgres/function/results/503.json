@@ -6,13 +6,31 @@
         "pg_control_recovery"
     ],
     "Feature": [
-        "pg_control_recovery () → record"
+        "pg_control_recovery () \u2192 record"
     ],
     "Description": [
-        "Returns information about recovery state, as shown in Table 9.88."
+        "Returns information about recovery state, as shown in Table\u00a09.88."
     ],
     "Examples": [],
     "Category": [
         "System Information Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT pg_control_recovery();"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 280,
+            "Prompt Tokens": 261,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 5.0549999999999995e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT pg_control_recovery();"
     ]
 }

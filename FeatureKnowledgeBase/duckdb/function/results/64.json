@@ -14,5 +14,55 @@
     "Examples": [],
     "Category": [
         "Aggregate Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT grouping() FROM your_table GROUP BY your_column WITH ROLLUP",
+        "SELECT grouping() FROM your_table GROUP BY your_column",
+        "SELECT grouping(1) FROM your_table GROUP BY your_column",
+        "SELECT grouping(1) FROM pg_tables GROUP BY tablename",
+        "SELECT grouping(tablename) FROM pg_tables GROUP BY tablename"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 306,
+            "Prompt Tokens": 279,
+            "Completion Tokens": 27,
+            "Total Cost (USD)": 5.805e-05
+        },
+        {
+            "Total Tokens": 454,
+            "Prompt Tokens": 431,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 7.845e-05
+        },
+        {
+            "Total Tokens": 604,
+            "Prompt Tokens": 579,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 0.00010184999999999998
+        },
+        {
+            "Total Tokens": 784,
+            "Prompt Tokens": 759,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 0.00012885
+        },
+        {
+            "Total Tokens": 958,
+            "Prompt Tokens": 933,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 0.00015495
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.ParserException) Parser Error: syntax error at or near \")\"\n",
+        "(duckdb.duckdb.ParserException) Parser Error: syntax error at or near \")\"\n",
+        "(duckdb.duckdb.CatalogException) Catalog Error: Table with name your_table does not exist!\nDid you mean \"pg_tables\"?\nLINE 1: SELECT grouping(1) FROM your_table GROUP BY your_column\n                                ^\n",
+        "(duckdb.duckdb.BinderException) Binder Error: GROUPING child \"1\" must be a grouping column\nLINE 1: SELECT grouping(1) FROM pg_tables GROUP BY tab...\n               ^\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT grouping(tablename) FROM pg_tables GROUP BY tablename"
     ]
 }

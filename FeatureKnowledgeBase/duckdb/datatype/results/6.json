@@ -55,5 +55,26 @@
     ],
     "Category": [
         "Interval"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT\n    INTERVAL 1 YEAR, -- single unit using YEAR keyword;",
+        "SELECT INTERVAL '1.5' YEARS;",
+        "SELECT DATE '2000-01-01' + INTERVAL (i) MONTH\nFROM range(12) t(i);",
+        "SELECT\n    period = list_reduce(\n        [INTERVAL (datepart(part, period) || part) FOR part IN\n             ['year', 'month', 'day', 'hour', 'minute', 'microsecond']\n        ],\n        (i1, i2) -> i1 + i2\n    ) -- always true\nFROM (\n    VALUES (\n        INTERVAL (random() * 123_456_789_123) MICROSECONDS\n        + INTERVAL (random() * 12_345) DAYS\n        + INTERVAL (random() * 12_345) MONTHS\n    )\n) _(period);",
+        "SELECT\n    DATE '2000-01-01' + INTERVAL 1 YEAR,\n    TIMESTAMP '2000-01-01 01:33:30' - INTERVAL '1 month 13 hours',\n    TIME '02:00:00' - INTERVAL '3 days 23 hours', -- wraps;",
+        "SELECT\n    TIMESTAMP '2000-02-06 12:00:00' - TIMESTAMP '2000-01-01 11:00:00', -- 36 days 1 hour\n    TIMESTAMP '2000-02-01' + (TIMESTAMP '2000-02-01' - TIMESTAMP '2000-01-01'), -- '2000-03-03', NOT '2000-03-01'\n;",
+        "SELECT\n    datediff('day', TIMESTAMP '2020-01-01 01:00:00', TIMESTAMP '2020-01-02 00:00:00'), -- 1\n    datepart('day', TIMESTAMP '2020-01-02 00:00:00' - TIMESTAMP '2020-01-01 01:00:00'), -- 0\n;"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT\n    INTERVAL 1 YEAR, -- single unit using YEAR keyword;",
+        "SELECT INTERVAL '1.5' YEARS;",
+        "SELECT DATE '2000-01-01' + INTERVAL (i) MONTH\nFROM range(12) t(i);",
+        "SELECT\n    period = list_reduce(\n        [INTERVAL (datepart(part, period) || part) FOR part IN\n             ['year', 'month', 'day', 'hour', 'minute', 'microsecond']\n        ],\n        (i1, i2) -> i1 + i2\n    ) -- always true\nFROM (\n    VALUES (\n        INTERVAL (random() * 123_456_789_123) MICROSECONDS\n        + INTERVAL (random() * 12_345) DAYS\n        + INTERVAL (random() * 12_345) MONTHS\n    )\n) _(period);",
+        "SELECT\n    DATE '2000-01-01' + INTERVAL 1 YEAR,\n    TIMESTAMP '2000-01-01 01:33:30' - INTERVAL '1 month 13 hours',\n    TIME '02:00:00' - INTERVAL '3 days 23 hours', -- wraps;",
+        "SELECT\n    TIMESTAMP '2000-02-06 12:00:00' - TIMESTAMP '2000-01-01 11:00:00', -- 36 days 1 hour\n    TIMESTAMP '2000-02-01' + (TIMESTAMP '2000-02-01' - TIMESTAMP '2000-01-01'), -- '2000-03-03', NOT '2000-03-01'\n;",
+        "SELECT\n    datediff('day', TIMESTAMP '2020-01-01 01:00:00', TIMESTAMP '2020-01-02 00:00:00'), -- 1\n    datepart('day', TIMESTAMP '2020-01-02 00:00:00' - TIMESTAMP '2020-01-01 01:00:00'), -- 0\n;"
     ]
 }

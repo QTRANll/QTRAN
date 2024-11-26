@@ -6,15 +6,33 @@
         "anyarray && anyarray"
     ],
     "Feature": [
-        "anyarray && anyarray → boolean"
+        "anyarray && anyarray \u2192 boolean"
     ],
     "Description": [
         "Do the arrays overlap, that is, have any elements in common?"
     ],
     "Examples": [
-        "ARRAY[1,4,3] && ARRAY[2,1] → t"
+        "ARRAY[1,4,3] && ARRAY[2,1] \u2192 t"
     ],
     "Category": [
         "Array Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT ARRAY[1, 2, 3] && ARRAY[3, 4, 5];"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 298,
+            "Prompt Tokens": 263,
+            "Completion Tokens": 35,
+            "Total Cost (USD)": 6.044999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT ARRAY[1, 2, 3] && ARRAY[3, 4, 5];"
     ]
 }

@@ -15,6 +15,25 @@
         "mysql> SELECT TRUNCATE(1.223,1);\n        -> 1.2\nmysql> SELECT TRUNCATE(1.999,1);\n        -> 1.9\nmysql> SELECT TRUNCATE(1.999,0);\n        -> 1\nmysql> SELECT TRUNCATE(-1.999,1);\n        -> -1.9\nmysql> SELECT TRUNCATE(122,-2);\n       -> 100\nmysql> SELECT TRUNCATE(10.28*100,0);\n       -> 1028"
     ],
     "Category": [
-        "数值函数与操作符"
+        "\u6570\u503c\u51fd\u6570\u4e0e\u64cd\u4f5c\u7b26"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT TRUNCATE(1.223,1);",
+        "SELECT TRUNCATE(1.999,1);",
+        "SELECT TRUNCATE(1.999,0);",
+        "SELECT TRUNCATE(-1.999,1);",
+        "SELECT TRUNCATE(122,-2);",
+        "SELECT TRUNCATE(10.28*100,0);"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT TRUNCATE(1.223,1);",
+        "SELECT TRUNCATE(1.999,1);",
+        "SELECT TRUNCATE(1.999,0);",
+        "SELECT TRUNCATE(-1.999,1);",
+        "SELECT TRUNCATE(122,-2);",
+        "SELECT TRUNCATE(10.28*100,0);"
     ]
 }

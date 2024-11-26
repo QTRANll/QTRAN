@@ -15,5 +15,39 @@
     "Examples": [],
     "Category": [
         "Aggregate Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT regr_count(y, x);",
+        "SELECT regr_count(y, x) FROM your_table_name;",
+        "SELECT regr_count(y, x) FROM (SELECT NULL AS y, NULL AS x) AS temp;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 286,
+            "Prompt Tokens": 265,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 5.235e-05
+        },
+        {
+            "Total Tokens": 460,
+            "Prompt Tokens": 435,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 8.025e-05
+        },
+        {
+            "Total Tokens": 655,
+            "Prompt Tokens": 621,
+            "Completion Tokens": 34,
+            "Total Cost (USD)": 0.00011355
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.BinderException) Binder Error: Referenced column \"y\" not found in FROM clause!\nLINE 1: SELECT regr_count(y, x);\n                          ^\n",
+        "(duckdb.duckdb.CatalogException) Catalog Error: Table with name your_table_name does not exist!\nDid you mean \"pg_tablespace\"?\nLINE 1: SELECT regr_count(y, x) FROM your_table_name;\n                                     ^\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT regr_count(y, x) FROM (SELECT NULL AS y, NULL AS x) AS temp;"
     ]
 }

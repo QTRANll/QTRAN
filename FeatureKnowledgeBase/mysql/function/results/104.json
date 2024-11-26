@@ -31,5 +31,31 @@
         "Built-In Functions and Operators",
         "Replication Functions",
         "Loadable Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT group_replication_reset_member_actions();",
+        "SELECT 'group_replication_reset_member_actions() does not exist';"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 563,
+            "Prompt Tokens": 542,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 9.389999999999999e-05
+        },
+        {
+            "Total Tokens": 730,
+            "Prompt Tokens": 704,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 0.00012119999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.group_replication_reset_member_actions does not exist')\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT 'group_replication_reset_member_actions() does not exist';"
     ]
 }

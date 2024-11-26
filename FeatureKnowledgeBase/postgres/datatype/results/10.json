@@ -19,5 +19,23 @@
     "Examples": [],
     "Category": [
         "Monetary Types"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT CAST(100.00 AS money);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 289,
+            "Prompt Tokens": 267,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 5.324999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT CAST(100.00 AS money);"
     ]
 }

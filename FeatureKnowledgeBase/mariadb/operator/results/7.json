@@ -19,5 +19,16 @@
     ],
     "Category": [
         "Assignment Operators"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT @x := 10;",
+        "SELECT @x, @y := @x;"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT @x := 10;",
+        "SELECT @x, @y := @x;"
     ]
 }

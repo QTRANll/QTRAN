@@ -16,5 +16,23 @@
     ],
     "Category": [
         "Date Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT INTERVAL '1 day' - INTERVAL '2 hours';"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 265,
+            "Prompt Tokens": 238,
+            "Completion Tokens": 27,
+            "Total Cost (USD)": 5.189999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT INTERVAL '1 day' - INTERVAL '2 hours';"
     ]
 }

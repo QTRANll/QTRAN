@@ -19,5 +19,23 @@
     "Examples": [],
     "Category": [
         "Object Identifier Types"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT * FROM pg_authid WHERE rolname = 'smithee';"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 285,
+            "Prompt Tokens": 257,
+            "Completion Tokens": 28,
+            "Total Cost (USD)": 5.534999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT * FROM pg_authid WHERE rolname = 'smithee';"
     ]
 }

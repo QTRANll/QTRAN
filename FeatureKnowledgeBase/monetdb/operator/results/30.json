@@ -16,5 +16,31 @@
     ],
     "Category": [
         "Mathematics Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT ~column_name FROM table_name;",
+        "SELECT ~1;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 261,
+            "Prompt Tokens": 241,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 4.815e-05
+        },
+        {
+            "Total Tokens": 406,
+            "Prompt Tokens": 390,
+            "Completion Tokens": 16,
+            "Total Cost (USD)": 6.81e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymonetdb.exceptions.OperationalError) 42S02!SELECT: no such table 'table_name'\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT ~1;"
     ]
 }

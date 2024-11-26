@@ -17,5 +17,22 @@
     ],
     "Category": [
         "Logical Operators"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT 1 && 1;",
+        "SELECT 1 && 0;",
+        "SELECT 1 && NULL;",
+        "SELECT 0 && NULL;",
+        "SELECT NULL && 0;"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT 1 && 1;",
+        "SELECT 1 && 0;",
+        "SELECT 1 && NULL;",
+        "SELECT 0 && NULL;",
+        "SELECT NULL && 0;"
     ]
 }

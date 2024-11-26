@@ -18,5 +18,30 @@
     "Category": [
         "No Category"
     ],
-    "EffectiveSQLsRefined": []
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT sys.ps_thread_trx_info(thread_id);",
+        "SELECT sys.ps_thread_trx_info(1);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 406,
+            "Prompt Tokens": 383,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 7.125e-05
+        },
+        {
+            "Total Tokens": 563,
+            "Prompt Tokens": 540,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 9.48e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.OperationalError) (1054, \"Unknown column 'thread_id' in 'field list'\")\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT sys.ps_thread_trx_info(1);"
+    ]
 }

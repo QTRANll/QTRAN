@@ -22,5 +22,20 @@
     "Category": [
         "Built-In Functions and Operators",
         "String Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT FORMAT(12332.123456, 4);",
+        "SELECT FORMAT(12332.1,4);",
+        "SELECT FORMAT(12332.2,0);",
+        "SELECT FORMAT(12332.2,2,'de_DE');"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT FORMAT(12332.123456, 4);",
+        "SELECT FORMAT(12332.1,4);",
+        "SELECT FORMAT(12332.2,0);",
+        "SELECT FORMAT(12332.2,2,'de_DE');"
     ]
 }

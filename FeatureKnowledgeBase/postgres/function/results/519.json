@@ -6,7 +6,7 @@
         "pg_walfile_name_offset"
     ],
     "Feature": [
-        "pg_walfile_name_offset ( lsn pg_lsn ) → record ( file_name text, file_offset integer )"
+        "pg_walfile_name_offset ( lsn pg_lsn ) \u2192 record ( file_name text, file_offset integer )"
     ],
     "Description": [
         "Converts a write-ahead log location to a WAL file name and byte offset within that file."
@@ -14,5 +14,23 @@
     "Examples": [],
     "Category": [
         "System Administration Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT pg_walfile_name_offset(pg_lsn '0/3000020');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 319,
+            "Prompt Tokens": 289,
+            "Completion Tokens": 30,
+            "Total Cost (USD)": 6.134999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT pg_walfile_name_offset(pg_lsn '0/3000020');"
     ]
 }

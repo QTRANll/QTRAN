@@ -23,5 +23,13 @@
         "SELECT JSON_OVERLAPS('false', 'false');",
         "SELECT JSON_OVERLAPS('true', '[\"abc\", 1, 2, true, false]');",
         "SELECT JSON_OVERLAPS('[1, 2, true, false, null]', '[3, 4, [1]]') AS is_overlap;"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT JSON_OVERLAPS('false', 'false');",
+        "SELECT JSON_OVERLAPS('true', '[\"abc\", 1, 2, true, false]');",
+        "SELECT JSON_OVERLAPS('[1, 2, true, false, null]', '[3, 4, [1]]') AS is_overlap;"
     ]
 }

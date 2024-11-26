@@ -10,12 +10,30 @@
     ],
     "Description": [
         "OCT()",
-        "OCT() 函数用于返回一个数值的八进制表示，形式为字符串。"
+        "OCT() \u51fd\u6570\u7528\u4e8e\u8fd4\u56de\u4e00\u4e2a\u6570\u503c\u7684\u516b\u8fdb\u5236\u8868\u793a\uff0c\u5f62\u5f0f\u4e3a\u5b57\u7b26\u4e32\u3002"
     ],
     "Examples": [
         "WITH RECURSIVE nr(n) AS (\n    SELECT 0 AS n\n    UNION ALL\n    SELECT n+1 FROM nr WHERE n<20\n)\nSELECT n, OCT(n) FROM nr;\n"
     ],
     "Category": [
-        "字符串函数"
+        "\u5b57\u7b26\u4e32\u51fd\u6570"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT OCT(10);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 283,
+            "Prompt Tokens": 265,
+            "Completion Tokens": 18,
+            "Total Cost (USD)": 5.0549999999999995e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT OCT(10);"
     ]
 }

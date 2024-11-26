@@ -6,13 +6,31 @@
         "to_regcollation"
     ],
     "Feature": [
-        "to_regcollation ( text ) → regcollation"
+        "to_regcollation ( text ) \u2192 regcollation"
     ],
     "Description": [
-        "Translates a textual collation name to its OID. A similar result is obtained by casting the string to type regcollation (see Section 8.19); however, this function will return NULL rather than throwing an error if the name is not found."
+        "Translates a textual collation name to its OID. A similar result is obtained by casting the string to type regcollation (see Section\u00a08.19); however, this function will return NULL rather than throwing an error if the name is not found."
     ],
     "Examples": [],
     "Category": [
         "System Information Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT to_regcollation('your_collation_name');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 327,
+            "Prompt Tokens": 303,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 5.984999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT to_regcollation('your_collation_name');"
     ]
 }

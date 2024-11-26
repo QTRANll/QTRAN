@@ -18,5 +18,31 @@
     ],
     "Category": [
         "Character String Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT difference(s1, s2);",
+        "SELECT difference('example1', 'example2');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 337,
+            "Prompt Tokens": 316,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 5.9999999999999995e-05
+        },
+        {
+            "Total Tokens": 493,
+            "Prompt Tokens": 470,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 8.429999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: identifier 's1' unknown\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT difference('example1', 'example2');"
     ]
 }

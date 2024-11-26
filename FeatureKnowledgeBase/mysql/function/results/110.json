@@ -51,5 +51,53 @@
     "Category": [
         "Built-In Functions and Operators",
         "Miscellaneous Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT name, size, SUM(quantity) AS quantity, GROUPING(name) AS grp_name, GROUPING(size) AS grp_size FROM t1 GROUP BY name, size WITH ROLLUP;",
+        "SELECT GROUPING(name) AS grp_name, GROUPING(size) AS grp_size;",
+        "SELECT GROUPING(*) AS grp_all;",
+        "SELECT GROUPING(1) AS grp_example;",
+        "SELECT GROUPING(0) AS grp_example;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 2817,
+            "Prompt Tokens": 2766,
+            "Completion Tokens": 51,
+            "Total Cost (USD)": 0.00044549999999999993
+        },
+        {
+            "Total Tokens": 2984,
+            "Prompt Tokens": 2955,
+            "Completion Tokens": 29,
+            "Total Cost (USD)": 0.00046064999999999995
+        },
+        {
+            "Total Tokens": 3139,
+            "Prompt Tokens": 3119,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 0.00047985000000000004
+        },
+        {
+            "Total Tokens": 3324,
+            "Prompt Tokens": 3302,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 0.0005085
+        },
+        {
+            "Total Tokens": 3478,
+            "Prompt Tokens": 3456,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 0.0005315999999999999
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.ProgrammingError) (1146, \"Table 'knowledge_base_preprocess_mysql.t1' doesn't exist\")\n",
+        "(pymysql.err.OperationalError) (1054, \"Unknown column 'name' in 'field list'\")\n",
+        "(pymysql.err.ProgrammingError) (1064, \"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '*) AS grp_all' at line 1\")\n",
+        "(pymysql.err.OperationalError) (1210, 'Incorrect arguments to GROUPING function')\n",
+        "(pymysql.err.OperationalError) (1210, 'Incorrect arguments to GROUPING function')\n"
+    ],
+    "EffectiveSQLs": []
 }

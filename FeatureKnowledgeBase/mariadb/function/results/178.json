@@ -22,5 +22,12 @@
     "EffectiveSQLsRefined": [
         "SELECT LOWER('QUADRATICALLY');",
         "SELECT LOWER(@str), LOWER(CONVERT(@str USING latin1));"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT LOWER('QUADRATICALLY');",
+        "SELECT LOWER(@str), LOWER(CONVERT(@str USING latin1));"
     ]
 }

@@ -19,5 +19,11 @@
     ],
     "Category": [
         "Operators for Working with Dates and Times"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT now() AS current_date_time, current_date_time + INTERVAL 4 DAY + INTERVAL 3 HOUR;",
+        "SELECT now() AS current_date_time, current_date_time + INTERVAL '4 day' + INTERVAL '3 hour';",
+        "SELECT now() AS current_date_time, current_date_time + INTERVAL '4' day + INTERVAL '3' hour;",
+        "SELECT toDateTime('2014-10-26 00:00:00', 'Asia/Istanbul') AS time, time + 60 * 60 * 24 AS time_plus_24_hours, time + toIntervalDay(1) AS time_plus_1_day;"
     ]
 }

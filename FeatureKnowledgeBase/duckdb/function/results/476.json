@@ -16,5 +16,47 @@
     ],
     "Category": [
         "Time Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT date_diff(part, '2023-01-01', '2023-01-10')",
+        "SELECT date_diff('2023-01-01', '2023-01-10')",
+        "SELECT date_diff('part', DATE '2023-01-01', DATE '2023-01-10')",
+        "SELECT date_diff('day', DATE '2023-01-01', DATE '2023-01-10')"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 311,
+            "Prompt Tokens": 277,
+            "Completion Tokens": 34,
+            "Total Cost (USD)": 6.195e-05
+        },
+        {
+            "Total Tokens": 508,
+            "Prompt Tokens": 476,
+            "Completion Tokens": 32,
+            "Total Cost (USD)": 9.059999999999998e-05
+        },
+        {
+            "Total Tokens": 793,
+            "Prompt Tokens": 756,
+            "Completion Tokens": 37,
+            "Total Cost (USD)": 0.0001356
+        },
+        {
+            "Total Tokens": 964,
+            "Prompt Tokens": 927,
+            "Completion Tokens": 37,
+            "Total Cost (USD)": 0.00016125
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.BinderException) Binder Error: Referenced column \"part\" not found in FROM clause!\nLINE 1: SELECT date_diff(part, '2023-01-01', '2023-01-10')\n                         ^\n",
+        "(duckdb.duckdb.BinderException) Binder Error: No function matches the given name and argument types 'date_diff(STRING_LITERAL, STRING_LITERAL)'. You might need to add explicit type casts.\n\tCandidate functions:\n\tdate_diff(VARCHAR, DATE, DATE) -> BIGINT\n\tdate_diff(VARCHAR, TIMESTAMP, TIMESTAMP) -> BIGINT\n\tdate_diff(VARCHAR, TIME, TIME) -> BIGINT\n\tdate_diff(VARCHAR, TIMESTAMP WITH TIME ZONE, TIMESTAMP WITH TIME ZONE) -> BIGINT\n\nLINE 1: SELECT date_diff('2023-01-01', '2023-01-10')\n               ^\n",
+        "(duckdb.duckdb.ConversionException) Conversion Error: extract specifier \"part\" not recognized\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT date_diff('day', DATE '2023-01-01', DATE '2023-01-10')"
     ]
 }

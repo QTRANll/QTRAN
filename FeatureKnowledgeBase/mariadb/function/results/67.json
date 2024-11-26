@@ -22,5 +22,12 @@
     "EffectiveSQLsRefined": [
         "SELECT DATE_SUB('1998-01-02', INTERVAL 31 DAY);",
         "SELECT DATE_SUB('2005-01-01 00:00:00', INTERVAL '1 1:1:1' DAY_SECOND);"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT DATE_SUB('1998-01-02', INTERVAL 31 DAY);",
+        "SELECT DATE_SUB('2005-01-01 00:00:00', INTERVAL '1 1:1:1' DAY_SECOND);"
     ]
 }

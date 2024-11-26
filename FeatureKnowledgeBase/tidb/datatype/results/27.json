@@ -3,23 +3,49 @@
         "https://docs.pingcap.com/zh/tidb/v8.3/data-type-string"
     ],
     "Title": [
-        "ENUM 类型"
+        "ENUM \u7c7b\u578b"
     ],
     "Feature": [
-        "ENUM 类型"
+        "ENUM \u7c7b\u578b"
     ],
     "Description": [
-        "ENUM 类型",
-        "枚举类型是一个字符串，它只能有一个值的字符串对象。其值必须是从一个固定集合中选取，这个固定集合在创建表的时候定义，语法是：",
+        "ENUM \u7c7b\u578b",
+        "\u679a\u4e3e\u7c7b\u578b\u662f\u4e00\u4e2a\u5b57\u7b26\u4e32\uff0c\u5b83\u53ea\u80fd\u6709\u4e00\u4e2a\u503c\u7684\u5b57\u7b26\u4e32\u5bf9\u8c61\u3002\u5176\u503c\u5fc5\u987b\u662f\u4ece\u4e00\u4e2a\u56fa\u5b9a\u96c6\u5408\u4e2d\u9009\u53d6\uff0c\u8fd9\u4e2a\u56fa\u5b9a\u96c6\u5408\u5728\u521b\u5efa\u8868\u7684\u65f6\u5019\u5b9a\u4e49\uff0c\u8bed\u6cd5\u662f\uff1a",
         "ENUM('value1','value2',...) [CHARACTER SET charset_name] [COLLATE collation_name]\n",
-        "例如：",
+        "\u4f8b\u5982\uff1a",
         "ENUM('apple', 'orange', 'pear')\n",
-        "枚举类型的值在 TiDB 内部使用数值来存储，每个值会按照定义的顺序转换为一个数字，比如上面的例子中，每个字符串值都会映射为一个数字：",
-        "值数字NULLNULL''0'apple'1'orange'2'pear'3",
-        "更多信息参考 MySQL 枚举文档。"
+        "\u679a\u4e3e\u7c7b\u578b\u7684\u503c\u5728 TiDB \u5185\u90e8\u4f7f\u7528\u6570\u503c\u6765\u5b58\u50a8\uff0c\u6bcf\u4e2a\u503c\u4f1a\u6309\u7167\u5b9a\u4e49\u7684\u987a\u5e8f\u8f6c\u6362\u4e3a\u4e00\u4e2a\u6570\u5b57\uff0c\u6bd4\u5982\u4e0a\u9762\u7684\u4f8b\u5b50\u4e2d\uff0c\u6bcf\u4e2a\u5b57\u7b26\u4e32\u503c\u90fd\u4f1a\u6620\u5c04\u4e3a\u4e00\u4e2a\u6570\u5b57\uff1a",
+        "\u503c\u6570\u5b57NULLNULL''0'apple'1'orange'2'pear'3",
+        "\u66f4\u591a\u4fe1\u606f\u53c2\u8003 MySQL \u679a\u4e3e\u6587\u6863\u3002"
     ],
     "Examples": [],
     "Category": [
-        "字符串类型"
+        "\u5b57\u7b26\u4e32\u7c7b\u578b"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "ENUM('apple', 'orange', 'pear')",
+        "CREATE TABLE example_table (fruit ENUM('apple', 'orange', 'pear'))"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 429,
+            "Prompt Tokens": 406,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 7.47e-05
+        },
+        {
+            "Total Tokens": 622,
+            "Prompt Tokens": 593,
+            "Completion Tokens": 29,
+            "Total Cost (USD)": 0.00010635
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.ProgrammingError) (1064, 'You have an error in your SQL syntax; check the manual that corresponds to your TiDB version for the right syntax to use line 1 column 4 near \"ENUM(\\'apple\\', \\'orange\\', \\'pear\\')\" ')\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "CREATE TABLE example_table (fruit ENUM('apple', 'orange', 'pear'))"
     ]
 }

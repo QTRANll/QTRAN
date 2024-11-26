@@ -6,7 +6,7 @@
         "pg_replication_origin_create"
     ],
     "Feature": [
-        "pg_replication_origin_create ( node_name text ) → oid"
+        "pg_replication_origin_create ( node_name text ) \u2192 oid"
     ],
     "Description": [
         "Creates a replication origin with the given external name, and returns the internal ID assigned to it."
@@ -14,5 +14,23 @@
     "Examples": [],
     "Category": [
         "System Administration Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT pg_replication_origin_create('my_replication_origin');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 298,
+            "Prompt Tokens": 273,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 5.595e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT pg_replication_origin_create('my_replication_origin');"
     ]
 }

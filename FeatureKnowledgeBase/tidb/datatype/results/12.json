@@ -3,18 +3,36 @@
         "https://docs.pingcap.com/zh/tidb/v8.3/data-type-date-and-time"
     ],
     "Title": [
-        "DATETIME 类型"
+        "DATETIME \u7c7b\u578b"
     ],
     "Feature": [
-        "DATETIME 类型"
+        "DATETIME \u7c7b\u578b"
     ],
     "Description": [
-        "DATETIME 类型",
-        "DATETIME 类型是日期和时间的组合，格式为 YYYY-MM-DD HH:MM:SS[.fraction]。支持的范围是 0000-01-01 00:00:00.000000 到 9999-12-31 23:59:59.999999。fsp 参数表示秒精度，取值范围为 0~6，默认值为 0。TiDB 支持字符串或数字转换为 DATETIME 类型。",
+        "DATETIME \u7c7b\u578b",
+        "DATETIME \u7c7b\u578b\u662f\u65e5\u671f\u548c\u65f6\u95f4\u7684\u7ec4\u5408\uff0c\u683c\u5f0f\u4e3a YYYY-MM-DD HH:MM:SS[.fraction]\u3002\u652f\u6301\u7684\u8303\u56f4\u662f 0000-01-01 00:00:00.000000 \u5230 9999-12-31 23:59:59.999999\u3002fsp \u53c2\u6570\u8868\u793a\u79d2\u7cbe\u5ea6\uff0c\u53d6\u503c\u8303\u56f4\u4e3a 0~6\uff0c\u9ed8\u8ba4\u503c\u4e3a 0\u3002TiDB \u652f\u6301\u5b57\u7b26\u4e32\u6216\u6570\u5b57\u8f6c\u6362\u4e3a DATETIME \u7c7b\u578b\u3002",
         "DATETIME[(fsp)]\n"
     ],
     "Examples": [],
     "Category": [
-        "日期和时间类型"
+        "\u65e5\u671f\u548c\u65f6\u95f4\u7c7b\u578b"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT NOW();"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 368,
+            "Prompt Tokens": 352,
+            "Completion Tokens": 16,
+            "Total Cost (USD)": 6.239999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT NOW();"
     ]
 }

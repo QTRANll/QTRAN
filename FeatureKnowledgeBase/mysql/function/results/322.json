@@ -25,5 +25,18 @@
     "Category": [
         "Built-In Functions and Operators",
         "Spatial Analysis Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT ST_IsClosed(ST_GeomFromText(@ls1));",
+        "SELECT ST_IsClosed(ST_GeomFromText(@ls2));",
+        "SELECT ST_IsClosed(ST_GeomFromText(@ls3));"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT ST_IsClosed(ST_GeomFromText(@ls1));",
+        "SELECT ST_IsClosed(ST_GeomFromText(@ls2));",
+        "SELECT ST_IsClosed(ST_GeomFromText(@ls3));"
     ]
 }

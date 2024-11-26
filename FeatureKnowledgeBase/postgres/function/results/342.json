@@ -6,7 +6,7 @@
         "regr_count"
     ],
     "Feature": [
-        "regr_count ( Y double precision, X double precision ) → bigint"
+        "regr_count ( Y double precision, X double precision ) \u2192 bigint"
     ],
     "Description": [
         "Computes the number of rows in which both inputs are non-null."
@@ -14,5 +14,39 @@
     "Examples": [],
     "Category": [
         "Aggregate Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT regr_count(Y, X) FROM your_table;",
+        "SELECT regr_count(Y, X);",
+        "SELECT regr_count(1, 1);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 288,
+            "Prompt Tokens": 264,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 5.4e-05
+        },
+        {
+            "Total Tokens": 454,
+            "Prompt Tokens": 433,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 7.754999999999999e-05
+        },
+        {
+            "Total Tokens": 617,
+            "Prompt Tokens": 594,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 0.00010289999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedTable) relation \"your_table\" does not exist\nLINE 1: SELECT regr_count(Y, X) FROM your_table;\n                                     ^\n\n",
+        "(psycopg2.errors.UndefinedColumn) column \"y\" does not exist\nLINE 1: SELECT regr_count(Y, X);\n                          ^\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT regr_count(1, 1);"
     ]
 }

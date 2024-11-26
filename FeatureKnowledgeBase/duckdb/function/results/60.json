@@ -15,5 +15,39 @@
     "Examples": [],
     "Category": [
         "Aggregate Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT stddev_pop(x);",
+        "SELECT stddev_pop(column_name) FROM table_name;",
+        "SELECT stddev_pop(x) FROM (VALUES (1), (2), (3), (4), (5)) AS t(x);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 278,
+            "Prompt Tokens": 259,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 5.0249999999999995e-05
+        },
+        {
+            "Total Tokens": 446,
+            "Prompt Tokens": 423,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 7.725e-05
+        },
+        {
+            "Total Tokens": 643,
+            "Prompt Tokens": 602,
+            "Completion Tokens": 41,
+            "Total Cost (USD)": 0.00011489999999999999
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.BinderException) Binder Error: Referenced column \"x\" not found in FROM clause!\nLINE 1: SELECT stddev_pop(x);\n                          ^\n",
+        "(duckdb.duckdb.CatalogException) Catalog Error: Table with name table_name does not exist!\nDid you mean \"pg_tablespace\"?\nLINE 1: SELECT stddev_pop(column_name) FROM table_name;\n                                            ^\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT stddev_pop(x) FROM (VALUES (1), (2), (3), (4), (5)) AS t(x);"
     ]
 }

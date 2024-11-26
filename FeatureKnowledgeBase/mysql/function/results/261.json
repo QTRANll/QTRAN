@@ -32,5 +32,26 @@
     "Category": [
         "Built-In Functions and Operators",
         "String Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT REGEXP_LIKE('CamelCase', 'CAMELCASE');",
+        "SELECT REGEXP_LIKE('CamelCase', 'CAMELCASE' COLLATE utf8mb4_0900_as_cs);",
+        "SELECT REGEXP_LIKE('Michael!', '.*');",
+        "SELECT REGEXP_LIKE('new*\\n*line', 'new\\\\*.\\\\*line');",
+        "SELECT REGEXP_LIKE('a', '^[a-d]');",
+        "SELECT REGEXP_LIKE('abc', 'ABC');",
+        "SELECT REGEXP_LIKE('abc', 'ABC', 'c');"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT REGEXP_LIKE('CamelCase', 'CAMELCASE');",
+        "SELECT REGEXP_LIKE('CamelCase', 'CAMELCASE' COLLATE utf8mb4_0900_as_cs);",
+        "SELECT REGEXP_LIKE('Michael!', '.*');",
+        "SELECT REGEXP_LIKE('new*\\n*line', 'new\\\\*.\\\\*line');",
+        "SELECT REGEXP_LIKE('a', '^[a-d]');",
+        "SELECT REGEXP_LIKE('abc', 'ABC');",
+        "SELECT REGEXP_LIKE('abc', 'ABC', 'c');"
     ]
 }

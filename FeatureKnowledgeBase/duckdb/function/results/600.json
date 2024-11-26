@@ -16,5 +16,39 @@
     ],
     "Category": [
         "Utility Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "stats(column_name)",
+        "SELECT stats(column_name)",
+        "SELECT stats(1)"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 277,
+            "Prompt Tokens": 261,
+            "Completion Tokens": 16,
+            "Total Cost (USD)": 4.874999999999999e-05
+        },
+        {
+            "Total Tokens": 420,
+            "Prompt Tokens": 403,
+            "Completion Tokens": 17,
+            "Total Cost (USD)": 7.065e-05
+        },
+        {
+            "Total Tokens": 580,
+            "Prompt Tokens": 563,
+            "Completion Tokens": 17,
+            "Total Cost (USD)": 9.464999999999998e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.ParserException) Parser Error: syntax error at or near \"stats\"\n",
+        "(duckdb.duckdb.BinderException) Binder Error: Referenced column \"column_name\" not found in FROM clause!\nLINE 1: SELECT stats(column_name)\n                     ^\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT stats(1)"
     ]
 }

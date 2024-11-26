@@ -6,7 +6,7 @@
         "pg_current_wal_lsn"
     ],
     "Feature": [
-        "pg_current_wal_lsn () → pg_lsn"
+        "pg_current_wal_lsn () \u2192 pg_lsn"
     ],
     "Description": [
         "Returns the current write-ahead log write location (see notes below)."
@@ -14,5 +14,23 @@
     "Examples": [],
     "Category": [
         "System Administration Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT pg_current_wal_lsn();"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 291,
+            "Prompt Tokens": 270,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 5.31e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT pg_current_wal_lsn();"
     ]
 }

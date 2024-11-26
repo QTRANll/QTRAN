@@ -18,5 +18,23 @@
     "Category": [
         "Built-In Functions and Operators",
         "Mathematical Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT CEIL(3.14);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 304,
+            "Prompt Tokens": 283,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 5.5049999999999996e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT CEIL(3.14);"
     ]
 }

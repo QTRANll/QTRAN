@@ -14,5 +14,31 @@
     "Examples": [],
     "Category": [
         "Window Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT percent_rank() OVER (PARTITION BY column_name ORDER BY column_name) AS rank_value;",
+        "SELECT percent_rank() OVER () AS rank_value;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 365,
+            "Prompt Tokens": 333,
+            "Completion Tokens": 32,
+            "Total Cost (USD)": 6.915e-05
+        },
+        {
+            "Total Tokens": 506,
+            "Prompt Tokens": 484,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 8.579999999999998e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(sqlite3.OperationalError) no such column: column_name\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT percent_rank() OVER () AS rank_value;"
     ]
 }

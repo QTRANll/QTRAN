@@ -29,5 +29,8 @@
     ],
     "Category": [
         "Type Conversion Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT    toInt16OrDefault('-16', CAST('-1', 'Int16')),    toInt16OrDefault('abc', CAST('-1', 'Int16'))FORMAT Vertical;"
     ]
 }

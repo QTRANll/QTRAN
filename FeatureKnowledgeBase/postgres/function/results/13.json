@@ -6,15 +6,33 @@
         "gcd"
     ],
     "Feature": [
-        "gcd ( numeric_type, numeric_type ) → numeric_type"
+        "gcd ( numeric_type, numeric_type ) \u2192 numeric_type"
     ],
     "Description": [
         "Greatest common divisor (the largest positive number that divides both inputs with no remainder); returns 0 if both inputs are zero; available for integer, bigint, and numeric"
     ],
     "Examples": [
-        "gcd(1071, 462) → 21"
+        "gcd(1071, 462) \u2192 21"
     ],
     "Category": [
         "Mathematical Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT gcd(12, 8);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 300,
+            "Prompt Tokens": 279,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 5.445e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT gcd(12, 8);"
     ]
 }

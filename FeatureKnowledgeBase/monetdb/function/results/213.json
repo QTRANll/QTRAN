@@ -18,5 +18,23 @@
     ],
     "Category": [
         "INET Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT sys.netmask(inet '192.168.1.0/24');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 296,
+            "Prompt Tokens": 266,
+            "Completion Tokens": 30,
+            "Total Cost (USD)": 5.79e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT sys.netmask(inet '192.168.1.0/24');"
     ]
 }

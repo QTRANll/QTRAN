@@ -6,15 +6,33 @@
         "numeric_type * numeric_type"
     ],
     "Feature": [
-        "numeric_type * numeric_type → numeric_type"
+        "numeric_type * numeric_type \u2192 numeric_type"
     ],
     "Description": [
         "Multiplication"
     ],
     "Examples": [
-        "2 * 3 → 6"
+        "2 * 3 \u2192 6"
     ],
     "Category": [
         "Mathematical Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT 5 * 10;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 271,
+            "Prompt Tokens": 252,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 4.9199999999999997e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT 5 * 10;"
     ]
 }

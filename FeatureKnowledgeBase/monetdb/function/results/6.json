@@ -18,5 +18,47 @@
     ],
     "Category": [
         "Comparison Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "<= arg1, arg2",
+        "arg1 <= arg2",
+        "SELECT * FROM table_name WHERE column_name1 <= column_name2",
+        "SELECT TRUE WHERE 1 <= 2"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 302,
+            "Prompt Tokens": 283,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 5.3849999999999994e-05
+        },
+        {
+            "Total Tokens": 459,
+            "Prompt Tokens": 441,
+            "Completion Tokens": 18,
+            "Total Cost (USD)": 7.695e-05
+        },
+        {
+            "Total Tokens": 623,
+            "Prompt Tokens": 597,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 0.00010515
+        },
+        {
+            "Total Tokens": 781,
+            "Prompt Tokens": 760,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 0.0001266
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymonetdb.exceptions.OperationalError) 42000!syntax error, unexpected COMPARISON in: \"<=\"\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!syntax error, unexpected IDENT in: \"arg1\"\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42S02!SELECT: no such table 'table_name'\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT TRUE WHERE 1 <= 2"
     ]
 }

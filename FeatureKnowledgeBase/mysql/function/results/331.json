@@ -24,5 +24,31 @@
     "Category": [
         "Built-In Functions and Operators",
         "Spatial Analysis Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT ST_LineInterpolatePoint(LineString('LINESTRING(0 0, 1 1)'), 0.5);",
+        "SELECT ST_LineInterpolatePoint(ST_GeomFromText('LINESTRING(0 0, 1 1)'), 0.5);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 715,
+            "Prompt Tokens": 676,
+            "Completion Tokens": 39,
+            "Total Cost (USD)": 0.0001248
+        },
+        {
+            "Total Tokens": 904,
+            "Prompt Tokens": 861,
+            "Completion Tokens": 43,
+            "Total Cost (USD)": 0.00015495
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.DataError) (1367, \"Illegal non geometric ''LINESTRING(0 0, 1 1)'' value found during parsing\")\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT ST_LineInterpolatePoint(ST_GeomFromText('LINESTRING(0 0, 1 1)'), 0.5);"
     ]
 }

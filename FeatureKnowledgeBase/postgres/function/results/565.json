@@ -6,7 +6,7 @@
         "pg_total_relation_size"
     ],
     "Feature": [
-        "pg_total_relation_size ( regclass ) → bigint"
+        "pg_total_relation_size ( regclass ) \u2192 bigint"
     ],
     "Description": [
         "Computes the total disk space used by the specified table, including all indexes and TOAST data. The result is equivalent to pg_table_size + pg_indexes_size."
@@ -14,5 +14,39 @@
     "Examples": [],
     "Category": [
         "System Administration Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT pg_total_relation_size('your_table_name');",
+        "SELECT pg_total_relation_size('public.your_table_name');",
+        "SELECT pg_total_relation_size('pg_catalog.pg_class');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 305,
+            "Prompt Tokens": 282,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 5.609999999999999e-05
+        },
+        {
+            "Total Tokens": 475,
+            "Prompt Tokens": 450,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 8.25e-05
+        },
+        {
+            "Total Tokens": 648,
+            "Prompt Tokens": 624,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 0.000108
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedTable) relation \"your_table_name\" does not exist\nLINE 1: SELECT pg_total_relation_size('your_table_name');\n                                      ^\n\n",
+        "(psycopg2.errors.UndefinedTable) relation \"public.your_table_name\" does not exist\nLINE 1: SELECT pg_total_relation_size('public.your_table_name');\n                                      ^\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT pg_total_relation_size('pg_catalog.pg_class');"
     ]
 }

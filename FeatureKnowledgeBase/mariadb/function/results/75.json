@@ -23,7 +23,21 @@
         "Information Functions"
     ],
     "EffectiveSQLsRefined": [
-        "SELECT i FROM t WHERE i != DEFAULT(i);",
+        "CREATE OR REPLACE TABLE t (\n  i INT NOT NULL AUTO_INCREMENT, \n  j INT NOT NULL, \n  k INT DEFAULT 3, \n  l INT NOT NULL DEFAULT 4, \n  m INT, \n  PRIMARY KEY (i)\n);",
+        "INSERT INTO t (j) VALUES (1);",
+        "INSERT INTO t (j,m) VALUES (2,2);",
+        "INSERT INTO t (j,l,m) VALUES (3,3,3);",
+        "SELECT * FROM t;",
+        "SELECT DEFAULT(i), DEFAULT(k), DEFAULT (l), DEFAULT(m) FROM t;",
+        "SELECT * FROM t WHERE i = DEFAULT(i);",
+        "SELECT * FROM t WHERE k = DEFAULT(k);",
+        "SELECT * FROM t WHERE l = DEFAULT(l);",
+        "SELECT * FROM t WHERE m = DEFAULT(m);"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
         "CREATE OR REPLACE TABLE t (\n  i INT NOT NULL AUTO_INCREMENT, \n  j INT NOT NULL, \n  k INT DEFAULT 3, \n  l INT NOT NULL DEFAULT 4, \n  m INT, \n  PRIMARY KEY (i)\n);",
         "INSERT INTO t (j) VALUES (1);",
         "INSERT INTO t (j,m) VALUES (2,2);",

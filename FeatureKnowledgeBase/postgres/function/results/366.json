@@ -6,7 +6,7 @@
         "percent_rank"
     ],
     "Feature": [
-        "percent_rank () → double precision"
+        "percent_rank () \u2192 double precision"
     ],
     "Description": [
         "Returns the relative rank of the current row, that is (rank - 1) / (total partition rows - 1). The value thus ranges from 0 to 1 inclusive."
@@ -14,5 +14,31 @@
     "Examples": [],
     "Category": [
         "Window Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT percent_rank()",
+        "SELECT percent_rank() OVER ()"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 294,
+            "Prompt Tokens": 277,
+            "Completion Tokens": 17,
+            "Total Cost (USD)": 5.175e-05
+        },
+        {
+            "Total Tokens": 449,
+            "Prompt Tokens": 430,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 7.59e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.WrongObjectType) window function percent_rank requires an OVER clause\nLINE 1: SELECT percent_rank()\n               ^\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT percent_rank() OVER ()"
     ]
 }

@@ -6,15 +6,41 @@
         "macaddr8_set7bit"
     ],
     "Feature": [
-        "macaddr8_set7bit ( macaddr8 ) → macaddr8"
+        "macaddr8_set7bit ( macaddr8 ) \u2192 macaddr8"
     ],
     "Description": [
         "Sets the 7th bit of the address to one, creating what is known as modified EUI-64, for inclusion in an IPv6 address."
     ],
     "Examples": [
-        "macaddr8_set7bit(macaddr8 '00:34:56:ab:cd:ef') → 02:34:56:ff:fe:ab:cd:ef"
+        "macaddr8_set7bit(macaddr8 '00:34:56:ab:cd:ef') \u2192 02:34:56:ff:fe:ab:cd:ef"
     ],
     "Category": [
         "Network Address Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT macaddr8_set7bit(your_macaddr8_value);",
+        "SELECT macaddr8_set7bit('00:00:00:00:00:00:00:00');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 318,
+            "Prompt Tokens": 291,
+            "Completion Tokens": 27,
+            "Total Cost (USD)": 5.984999999999999e-05
+        },
+        {
+            "Total Tokens": 508,
+            "Prompt Tokens": 471,
+            "Completion Tokens": 37,
+            "Total Cost (USD)": 9.285e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedColumn) column \"your_macaddr8_value\" does not exist\nLINE 1: SELECT macaddr8_set7bit(your_macaddr8_value);\n                                ^\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT macaddr8_set7bit('00:00:00:00:00:00:00:00');"
     ]
 }

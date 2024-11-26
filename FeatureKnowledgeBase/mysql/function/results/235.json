@@ -18,5 +18,47 @@
     "Category": [
         "Built-In Functions and Operators",
         "Comparison Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT * FROM table_name WHERE expr NOT IN (value1, value2, ...);",
+        "SELECT * FROM table_name WHERE expr NOT IN (value1, value2);",
+        "SELECT expr FROM dual WHERE expr NOT IN (value1, value2);",
+        "SELECT 1 WHERE 1 NOT IN (2, 3);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 330,
+            "Prompt Tokens": 299,
+            "Completion Tokens": 31,
+            "Total Cost (USD)": 6.345e-05
+        },
+        {
+            "Total Tokens": 519,
+            "Prompt Tokens": 490,
+            "Completion Tokens": 29,
+            "Total Cost (USD)": 9.09e-05
+        },
+        {
+            "Total Tokens": 685,
+            "Prompt Tokens": 657,
+            "Completion Tokens": 28,
+            "Total Cost (USD)": 0.00011535
+        },
+        {
+            "Total Tokens": 847,
+            "Prompt Tokens": 820,
+            "Completion Tokens": 27,
+            "Total Cost (USD)": 0.00013919999999999997
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.ProgrammingError) (1064, \"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '...)' at line 1\")\n",
+        "(pymysql.err.ProgrammingError) (1146, \"Table 'knowledge_base_preprocess_mysql.table_name' doesn't exist\")\n",
+        "(pymysql.err.OperationalError) (1054, \"Unknown column 'expr' in 'field list'\")\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT 1 WHERE 1 NOT IN (2, 3);"
     ]
 }

@@ -1,0 +1,4 @@
+{"index": 479, "a_db": "mysql", "b_db": "monetdb", "molt": "tlp (where extended)", "sql": "CREATE TABLE t0(c0 TEXT);"}
+{"index": 479, "a_db": "mysql", "b_db": "monetdb", "molt": "tlp (where extended)", "sql": "INSERT INTO t0(c0) VALUES(0);"}
+{"index": 479, "a_db": "mysql", "b_db": "monetdb", "molt": "tlp (where extended)", "sql": "CREATE INDEX i0 ON t0(c0(1));"}
+{"index": 479, "a_db": "mysql", "b_db": "monetdb", "molt": "tlp (where extended)", "sql": "SELECT * FROM t0 WHERE t0.c0 NOT BETWEEN '\u05a3a' AND NULL; -- expected: {0}, actual: {}"}

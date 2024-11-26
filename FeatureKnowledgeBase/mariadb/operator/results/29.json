@@ -20,5 +20,24 @@
     ],
     "Category": [
         "Comparison Operators"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT 2 IN (0,3,5,7);",
+        "SELECT 'wefwf' IN ('wee','wefwf','weg');",
+        "SELECT 1 IN ('1', '2', '3');",
+        "SELECT NULL IN (1, 2, 3);",
+        "SELECT 1 IN (1, 2, NULL);",
+        "SELECT 5 IN (1, 2, NULL);"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT 2 IN (0,3,5,7);",
+        "SELECT 'wefwf' IN ('wee','wefwf','weg');",
+        "SELECT 1 IN ('1', '2', '3');",
+        "SELECT NULL IN (1, 2, 3);",
+        "SELECT 1 IN (1, 2, NULL);",
+        "SELECT 5 IN (1, 2, NULL);"
     ]
 }

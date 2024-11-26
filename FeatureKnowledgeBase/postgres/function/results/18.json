@@ -6,15 +6,33 @@
         "min_scale"
     ],
     "Feature": [
-        "min_scale ( numeric ) → integer"
+        "min_scale ( numeric ) \u2192 integer"
     ],
     "Description": [
         "Minimum scale (number of fractional decimal digits) needed to represent the supplied value precisely"
     ],
     "Examples": [
-        "min_scale(8.4100) → 2"
+        "min_scale(8.4100) \u2192 2"
     ],
     "Category": [
         "Mathematical Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT min_scale(123.456);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 277,
+            "Prompt Tokens": 256,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 5.1e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT min_scale(123.456);"
     ]
 }

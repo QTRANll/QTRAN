@@ -3,18 +3,36 @@
         "https://docs.pingcap.com/zh/tidb/v8.3/data-type-string"
     ],
     "Title": [
-        "TINYTEXT 类型"
+        "TINYTEXT \u7c7b\u578b"
     ],
     "Feature": [
-        "TINYTEXT 类型"
+        "TINYTEXT \u7c7b\u578b"
     ],
     "Description": [
-        "TINYTEXT 类型",
-        "类似于 TEXT，区别在于最大列长度为 255。",
+        "TINYTEXT \u7c7b\u578b",
+        "\u7c7b\u4f3c\u4e8e TEXT\uff0c\u533a\u522b\u5728\u4e8e\u6700\u5927\u5217\u957f\u5ea6\u4e3a 255\u3002",
         "TINYTEXT [CHARACTER SET charset_name] [COLLATE collation_name]\n"
     ],
     "Examples": [],
     "Category": [
-        "字符串类型"
+        "\u5b57\u7b26\u4e32\u7c7b\u578b"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "CREATE TABLE example_table (example_column TINYTEXT);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 309,
+            "Prompt Tokens": 285,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 5.714999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "CREATE TABLE example_table (example_column TINYTEXT);"
     ]
 }

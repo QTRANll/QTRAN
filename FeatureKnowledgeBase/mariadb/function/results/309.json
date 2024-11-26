@@ -20,5 +20,11 @@
     ],
     "EffectiveSQLsRefined": [
         "SELECT ST_AsText(ST_GeomCollFromWKB(@g));"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT ST_AsText(ST_GeomCollFromWKB(@g));"
     ]
 }

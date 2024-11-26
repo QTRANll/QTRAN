@@ -6,15 +6,31 @@
         "jsonb @@ jsonpath"
     ],
     "Feature": [
-        "jsonb @@ jsonpath → boolean"
+        "jsonb @@ jsonpath \u2192 boolean"
     ],
     "Description": [
         "Returns the result of a JSON path predicate check for the specified JSON value. Only the first item of the result is taken into account. If the result is not Boolean, then NULL is returned."
     ],
     "Examples": [
-        "'{\"a\":[1,2,3,4,5]}'::jsonb @@ '$.a[*] > 2' → t"
+        "'{\"a\":[1,2,3,4,5]}'::jsonb @@ '$.a[*] > 2' \u2192 t"
     ],
     "Category": [
         "JSON Functions and Operators"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT jsonb @@ '$.store.book[*].price < 10' FROM my_table;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 319,
+            "Prompt Tokens": 288,
+            "Completion Tokens": 31,
+            "Total Cost (USD)": 6.179999999999998e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedTable) relation \"my_table\" does not exist\nLINE 1: SELECT jsonb @@ '$.store.book[*].price < 10' FROM my_table;\n                                                          ^\n\n"
+    ],
+    "EffectiveSQLs": []
 }

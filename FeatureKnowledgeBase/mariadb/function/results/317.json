@@ -21,5 +21,12 @@
     "EffectiveSQLsRefined": [
         "SELECT ST_ISCLOSED(GEOMFROMTEXT(@ls));",
         "SELECT ST_ISCLOSED(GEOMFROMTEXT(@ls));"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT ST_ISCLOSED(GEOMFROMTEXT(@ls));",
+        "SELECT ST_ISCLOSED(GEOMFROMTEXT(@ls));"
     ]
 }

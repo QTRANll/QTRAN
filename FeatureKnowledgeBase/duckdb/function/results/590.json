@@ -17,5 +17,31 @@
     ],
     "Category": [
         "Utility Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT md5_number_higher('example_string')",
+        "SELECT md5_number('example_string')"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 313,
+            "Prompt Tokens": 290,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 5.729999999999999e-05
+        },
+        {
+            "Total Tokens": 495,
+            "Prompt Tokens": 474,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 8.369999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.CatalogException) Catalog Error: Scalar Function with name md5_number_higher does not exist!\nDid you mean \"md5_number\"?\nLINE 1: SELECT md5_number_higher('example_string')\n               ^\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT md5_number('example_string')"
     ]
 }

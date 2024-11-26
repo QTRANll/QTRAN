@@ -6,15 +6,33 @@
         "abs"
     ],
     "Feature": [
-        "abs ( numeric_type ) → numeric_type"
+        "abs ( numeric_type ) \u2192 numeric_type"
     ],
     "Description": [
         "Absolute value"
     ],
     "Examples": [
-        "abs(-17.4) → 17.4"
+        "abs(-17.4) \u2192 17.4"
     ],
     "Category": [
         "Mathematical Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT abs(-5);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 258,
+            "Prompt Tokens": 240,
+            "Completion Tokens": 18,
+            "Total Cost (USD)": 4.679999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT abs(-5);"
     ]
 }

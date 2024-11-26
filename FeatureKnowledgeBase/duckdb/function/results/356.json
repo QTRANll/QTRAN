@@ -17,5 +17,23 @@
     ],
     "Category": [
         "Regular Expressions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT regexp_extract_all('example text 123, example text 456', '\\d+', 0);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 358,
+            "Prompt Tokens": 324,
+            "Completion Tokens": 34,
+            "Total Cost (USD)": 6.9e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT regexp_extract_all('example text 123, example text 456', '\\d+', 0);"
     ]
 }

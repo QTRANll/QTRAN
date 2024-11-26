@@ -16,5 +16,23 @@
     ],
     "Category": [
         "Date Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT least('2023-01-01', '2023-02-01');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 285,
+            "Prompt Tokens": 254,
+            "Completion Tokens": 31,
+            "Total Cost (USD)": 5.6699999999999996e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT least('2023-01-01', '2023-02-01');"
     ]
 }

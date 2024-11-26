@@ -15,5 +15,31 @@
     "Examples": [],
     "Category": [
         "JSON Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT jsonb_remove('{\"key1\": \"value1\", \"key2\": \"value2\"}', 'key1');",
+        "SELECT jsonb_remove('{\"key1\": \"value1\", \"key2\": \"value2\"}', '$.key1');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 352,
+            "Prompt Tokens": 313,
+            "Completion Tokens": 39,
+            "Total Cost (USD)": 7.035e-05
+        },
+        {
+            "Total Tokens": 519,
+            "Prompt Tokens": 479,
+            "Completion Tokens": 40,
+            "Total Cost (USD)": 9.584999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(sqlite3.OperationalError) bad JSON path: 'key1'\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT jsonb_remove('{\"key1\": \"value1\", \"key2\": \"value2\"}', '$.key1');"
     ]
 }

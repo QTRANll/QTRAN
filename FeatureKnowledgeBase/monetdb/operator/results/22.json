@@ -16,5 +16,31 @@
     ],
     "Category": [
         "Mathematics Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "+ 5 10",
+        "SELECT 5 + 10"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 251,
+            "Prompt Tokens": 234,
+            "Completion Tokens": 17,
+            "Total Cost (USD)": 4.53e-05
+        },
+        {
+            "Total Tokens": 398,
+            "Prompt Tokens": 379,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 6.824999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymonetdb.exceptions.OperationalError) 42000!syntax error, unexpected '+' in: \"+\"\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT 5 + 10"
     ]
 }

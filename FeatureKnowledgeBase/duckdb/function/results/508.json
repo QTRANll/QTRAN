@@ -16,5 +16,31 @@
     ],
     "Category": [
         "Timestamp Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT isinf(timestamp);",
+        "SELECT isinf(TIMESTAMP '2023-01-01 00:00:00');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 273,
+            "Prompt Tokens": 255,
+            "Completion Tokens": 18,
+            "Total Cost (USD)": 4.904999999999999e-05
+        },
+        {
+            "Total Tokens": 449,
+            "Prompt Tokens": 416,
+            "Completion Tokens": 33,
+            "Total Cost (USD)": 8.219999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.BinderException) Binder Error: Referenced column \"timestamp\" not found in FROM clause!\nLINE 1: SELECT isinf(timestamp);\n                     ^\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT isinf(TIMESTAMP '2023-01-01 00:00:00');"
     ]
 }

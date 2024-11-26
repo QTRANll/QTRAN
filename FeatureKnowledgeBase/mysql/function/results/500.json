@@ -17,5 +17,53 @@
     "Examples": [],
     "Category": [
         "Loadable Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT service_get_read_locks('my_namespace', 'my_lock', 30);",
+        "SELECT service_get_read_locks('my_namespace', 'my_lock_1', 30);",
+        "SELECT service_get_read_locks('my_namespace', 'my_lock_2', 30);",
+        "SELECT service_get_read_locks('my_namespace', 'my_lock_3', 30);",
+        "SELECT service_get_read_locks('my_namespace', 'my_lock_4', 30);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 378,
+            "Prompt Tokens": 348,
+            "Completion Tokens": 30,
+            "Total Cost (USD)": 7.02e-05
+        },
+        {
+            "Total Tokens": 548,
+            "Prompt Tokens": 516,
+            "Completion Tokens": 32,
+            "Total Cost (USD)": 9.659999999999999e-05
+        },
+        {
+            "Total Tokens": 718,
+            "Prompt Tokens": 686,
+            "Completion Tokens": 32,
+            "Total Cost (USD)": 0.00012209999999999999
+        },
+        {
+            "Total Tokens": 888,
+            "Prompt Tokens": 856,
+            "Completion Tokens": 32,
+            "Total Cost (USD)": 0.00014759999999999998
+        },
+        {
+            "Total Tokens": 1058,
+            "Prompt Tokens": 1026,
+            "Completion Tokens": 32,
+            "Total Cost (USD)": 0.0001731
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.service_get_read_locks does not exist')\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.service_get_read_locks does not exist')\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.service_get_read_locks does not exist')\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.service_get_read_locks does not exist')\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.service_get_read_locks does not exist')\n"
+    ],
+    "EffectiveSQLs": []
 }

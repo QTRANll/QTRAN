@@ -6,15 +6,63 @@
         "isclosed"
     ],
     "Feature": [
-        "isclosed ( path ) → boolean"
+        "isclosed ( path ) \u2192 boolean"
     ],
     "Description": [
         "Is path closed?"
     ],
     "Examples": [
-        "isclosed(path '((0,0),(1,1),(2,0))') → t"
+        "isclosed(path '((0,0),(1,1),(2,0))') \u2192 t"
     ],
     "Category": [
         "Geometric Functions and Operators"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT isclosed('/some/path');",
+        "SELECT isclosed('[]');",
+        "SELECT isclosed('()');",
+        "SELECT isclosed('[]'::path);",
+        "SELECT isclosed('()'::path);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 264,
+            "Prompt Tokens": 244,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 4.8599999999999995e-05
+        },
+        {
+            "Total Tokens": 423,
+            "Prompt Tokens": 404,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 7.199999999999999e-05
+        },
+        {
+            "Total Tokens": 580,
+            "Prompt Tokens": 561,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 9.554999999999999e-05
+        },
+        {
+            "Total Tokens": 739,
+            "Prompt Tokens": 717,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 0.00012074999999999998
+        },
+        {
+            "Total Tokens": 902,
+            "Prompt Tokens": 880,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 0.00014519999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.InvalidTextRepresentation) invalid input syntax for type path: \"/some/path\"\nLINE 1: SELECT isclosed('/some/path');\n                        ^\n\n",
+        "(psycopg2.errors.InvalidTextRepresentation) invalid input syntax for type path: \"[]\"\nLINE 1: SELECT isclosed('[]');\n                        ^\n\n",
+        "(psycopg2.errors.InvalidTextRepresentation) invalid input syntax for type path: \"()\"\nLINE 1: SELECT isclosed('()');\n                        ^\n\n",
+        "(psycopg2.errors.InvalidTextRepresentation) invalid input syntax for type path: \"[]\"\nLINE 1: SELECT isclosed('[]'::path);\n                        ^\n\n",
+        "(psycopg2.errors.InvalidTextRepresentation) invalid input syntax for type path: \"()\"\nLINE 1: SELECT isclosed('()'::path);\n                        ^\n\n"
+    ],
+    "EffectiveSQLs": []
 }

@@ -16,5 +16,23 @@
     "Examples": [],
     "Category": [
         "JSON Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT jsonb('{\"key\": \"value\"}')"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 396,
+            "Prompt Tokens": 372,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 7.02e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT jsonb('{\"key\": \"value\"}')"
     ]
 }

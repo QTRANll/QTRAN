@@ -6,16 +6,34 @@
         "split_part"
     ],
     "Feature": [
-        "split_part ( string text, delimiter text, n integer ) → text"
+        "split_part ( string text, delimiter text, n integer ) \u2192 text"
     ],
     "Description": [
         "Splits string at occurrences of delimiter and returns the n'th field (counting from one), or when n is negative, returns the |n|'th-from-last field."
     ],
     "Examples": [
-        "split_part('abc~@~def~@~ghi', '~@~', 2) → def",
-        "split_part('abc,def,ghi,jkl', ',', -2) → ghi"
+        "split_part('abc~@~def~@~ghi', '~@~', 2) \u2192 def",
+        "split_part('abc,def,ghi,jkl', ',', -2) \u2192 ghi"
     ],
     "Category": [
         "String Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT split_part('apple,banana,cherry', ',', 2);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 309,
+            "Prompt Tokens": 282,
+            "Completion Tokens": 27,
+            "Total Cost (USD)": 5.8499999999999985e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT split_part('apple,banana,cherry', ',', 2);"
     ]
 }

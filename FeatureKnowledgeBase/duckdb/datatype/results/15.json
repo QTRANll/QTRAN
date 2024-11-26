@@ -87,5 +87,40 @@
     ],
     "Category": [
         "Timestamp"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT TIMESTAMP_NS '1992-09-20 11:30:00.123456789';",
+        "SELECT TIMESTAMP '1992-09-20 11:30:00.123456789';",
+        "SELECT DATETIME '1992-09-20 11:30:00.123456789';",
+        "SELECT TIMESTAMP_MS '1992-09-20 11:30:00.123456789';",
+        "SELECT TIMESTAMP_S '1992-09-20 11:30:00.123456789';",
+        "SELECT TIMESTAMPTZ '1992-09-20 11:30:00.123456789';",
+        "SELECT TIMESTAMP WITH TIME ZONE '1992-09-20 11:30:00.123456789';",
+        "SELECT '-infinity'::TIMESTAMP, 'epoch'::TIMESTAMP, 'infinity'::TIMESTAMP;",
+        "SET TimeZone = 'America/Los_Angeles';",
+        "SELECT\n    name,\n    abbrev,\n    utc_offset\nFROM pg_timezone_names()\nORDER BY\n    name;",
+        "SET Calendar = 'japanese';",
+        "SELECT name\nFROM icu_calendar_names()\nORDER BY 1;",
+        "SELECT *\nFROM duckdb_settings()\nWHERE name = 'TimeZone';",
+        "SELECT *\nFROM duckdb_settings()\nWHERE name = 'Calendar';"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT TIMESTAMP_NS '1992-09-20 11:30:00.123456789';",
+        "SELECT TIMESTAMP '1992-09-20 11:30:00.123456789';",
+        "SELECT DATETIME '1992-09-20 11:30:00.123456789';",
+        "SELECT TIMESTAMP_MS '1992-09-20 11:30:00.123456789';",
+        "SELECT TIMESTAMP_S '1992-09-20 11:30:00.123456789';",
+        "SELECT TIMESTAMPTZ '1992-09-20 11:30:00.123456789';",
+        "SELECT TIMESTAMP WITH TIME ZONE '1992-09-20 11:30:00.123456789';",
+        "SELECT '-infinity'::TIMESTAMP, 'epoch'::TIMESTAMP, 'infinity'::TIMESTAMP;",
+        "SET TimeZone = 'America/Los_Angeles';",
+        "SELECT\n    name,\n    abbrev,\n    utc_offset\nFROM pg_timezone_names()\nORDER BY\n    name;",
+        "SET Calendar = 'japanese';",
+        "SELECT name\nFROM icu_calendar_names()\nORDER BY 1;",
+        "SELECT *\nFROM duckdb_settings()\nWHERE name = 'TimeZone';",
+        "SELECT *\nFROM duckdb_settings()\nWHERE name = 'Calendar';"
     ]
 }

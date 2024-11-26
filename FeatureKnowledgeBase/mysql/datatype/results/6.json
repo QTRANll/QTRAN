@@ -14,5 +14,23 @@
     "Examples": [],
     "Category": [
         "The TIME Type"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT TIME('12:30:45');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 1003,
+            "Prompt Tokens": 981,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 0.00016034999999999997
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT TIME('12:30:45');"
     ]
 }

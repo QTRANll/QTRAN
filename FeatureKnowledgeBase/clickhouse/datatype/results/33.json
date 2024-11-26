@@ -184,5 +184,8 @@
     ],
     "Category": [
         "JSON"
+    ],
+    "EffectiveSQLsRefined": [
+        "CREATE TABLE test (json String) ENGINE=MergeTree ORDeR BY tuple();"
     ]
 }

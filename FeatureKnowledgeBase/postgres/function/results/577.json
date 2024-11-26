@@ -6,7 +6,7 @@
         "brin_desummarize_range"
     ],
     "Feature": [
-        "brin_desummarize_range ( index regclass, blockNumber bigint ) → void"
+        "brin_desummarize_range ( index regclass, blockNumber bigint ) \u2192 void"
     ],
     "Description": [
         "Removes the BRIN index tuple that summarizes the page range covering the given table block, if there is one."
@@ -14,5 +14,53 @@
     "Examples": [],
     "Category": [
         "System Administration Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT brin_desummarize_range('your_index_name', your_block_number);",
+        "SELECT brin_desummarize_range('your_index_name', 0);",
+        "SELECT brin_desummarize_range('actual_index_name', 0);",
+        "SELECT brin_desummarize_range('my_existing_index', 0);",
+        "SELECT brin_desummarize_range('valid_index_name', 0);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 314,
+            "Prompt Tokens": 285,
+            "Completion Tokens": 29,
+            "Total Cost (USD)": 6.015e-05
+        },
+        {
+            "Total Tokens": 495,
+            "Prompt Tokens": 467,
+            "Completion Tokens": 28,
+            "Total Cost (USD)": 8.685e-05
+        },
+        {
+            "Total Tokens": 675,
+            "Prompt Tokens": 647,
+            "Completion Tokens": 28,
+            "Total Cost (USD)": 0.00011385
+        },
+        {
+            "Total Tokens": 855,
+            "Prompt Tokens": 827,
+            "Completion Tokens": 28,
+            "Total Cost (USD)": 0.00014084999999999998
+        },
+        {
+            "Total Tokens": 1035,
+            "Prompt Tokens": 1007,
+            "Completion Tokens": 28,
+            "Total Cost (USD)": 0.00016784999999999996
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedColumn) column \"your_block_number\" does not exist\nLINE 1: SELECT brin_desummarize_range('your_index_name', your_block_...\n                                                         ^\n\n",
+        "(psycopg2.errors.UndefinedTable) relation \"your_index_name\" does not exist\nLINE 1: SELECT brin_desummarize_range('your_index_name', 0);\n                                      ^\n\n",
+        "(psycopg2.errors.UndefinedTable) relation \"actual_index_name\" does not exist\nLINE 1: SELECT brin_desummarize_range('actual_index_name', 0);\n                                      ^\n\n",
+        "(psycopg2.errors.UndefinedTable) relation \"my_existing_index\" does not exist\nLINE 1: SELECT brin_desummarize_range('my_existing_index', 0);\n                                      ^\n\n",
+        "(psycopg2.errors.UndefinedTable) relation \"valid_index_name\" does not exist\nLINE 1: SELECT brin_desummarize_range('valid_index_name', 0);\n                                      ^\n\n"
+    ],
+    "EffectiveSQLs": []
 }

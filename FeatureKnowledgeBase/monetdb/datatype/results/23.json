@@ -1,0 +1,37 @@
+{
+    "HTML": [
+        "https://www.monetdb.org/documentation-Aug2024/user-guide/sql-manual/data-types/base-types"
+    ],
+    "Title": [
+        "REAL"
+    ],
+    "Feature": [
+        "REAL"
+    ],
+    "Description": [
+        "FLOAT(24)",
+        "32 bit signed floating point approximate number"
+    ],
+    "Examples": [],
+    "Category": [
+        "Base Types"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT CAST(1.23 AS REAL);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 267,
+            "Prompt Tokens": 245,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 4.9949999999999994e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT CAST(1.23 AS REAL);"
+    ]
+}

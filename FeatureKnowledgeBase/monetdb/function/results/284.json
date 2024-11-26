@@ -18,5 +18,39 @@
     ],
     "Category": [
         "Aggregate Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT sys.var_samp(numeric_column) FROM your_table;",
+        "SELECT sys.var_samp(numeric_column);",
+        "SELECT sys.var_samp(1.0);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 336,
+            "Prompt Tokens": 311,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 6.165e-05
+        },
+        {
+            "Total Tokens": 494,
+            "Prompt Tokens": 472,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 8.399999999999998e-05
+        },
+        {
+            "Total Tokens": 651,
+            "Prompt Tokens": 628,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 0.00010799999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymonetdb.exceptions.OperationalError) 42S02!SELECT: no such table 'your_table'\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: identifier 'numeric_column' unknown\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT sys.var_samp(1.0);"
     ]
 }

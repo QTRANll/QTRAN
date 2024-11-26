@@ -6,7 +6,7 @@
         "pg_promote"
     ],
     "Feature": [
-        "pg_promote ( wait boolean DEFAULT true, wait_seconds integer DEFAULT 60 ) → boolean"
+        "pg_promote ( wait boolean DEFAULT true, wait_seconds integer DEFAULT 60 ) \u2192 boolean"
     ],
     "Description": [
         "Promotes a standby server to primary status. With wait set to true (the default), the function waits until promotion is completed or wait_seconds seconds have passed, and returns true if promotion is successful and false otherwise. If wait is set to false, the function returns true immediately after sending a SIGUSR1 signal to the postmaster to trigger promotion.",
@@ -15,5 +15,53 @@
     "Examples": [],
     "Category": [
         "System Administration Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT pg_promote();",
+        "SELECT pg_promote(false);",
+        "SELECT pg_promote(true);",
+        "SELECT pg_promote();",
+        "-- pg_promote can only be executed during recovery, so no valid SQL can be generated."
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 366,
+            "Prompt Tokens": 348,
+            "Completion Tokens": 18,
+            "Total Cost (USD)": 6.299999999999999e-05
+        },
+        {
+            "Total Tokens": 524,
+            "Prompt Tokens": 505,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 8.715e-05
+        },
+        {
+            "Total Tokens": 682,
+            "Prompt Tokens": 663,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 0.00011084999999999998
+        },
+        {
+            "Total Tokens": 839,
+            "Prompt Tokens": 821,
+            "Completion Tokens": 18,
+            "Total Cost (USD)": 0.00013394999999999998
+        },
+        {
+            "Total Tokens": 1008,
+            "Prompt Tokens": 978,
+            "Completion Tokens": 30,
+            "Total Cost (USD)": 0.0001647
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.ObjectNotInPrerequisiteState) recovery is not in progress\nHINT:  Recovery control functions can only be executed during recovery.\n\n",
+        "(psycopg2.errors.ObjectNotInPrerequisiteState) recovery is not in progress\nHINT:  Recovery control functions can only be executed during recovery.\n\n",
+        "(psycopg2.errors.ObjectNotInPrerequisiteState) recovery is not in progress\nHINT:  Recovery control functions can only be executed during recovery.\n\n",
+        "(psycopg2.errors.ObjectNotInPrerequisiteState) recovery is not in progress\nHINT:  Recovery control functions can only be executed during recovery.\n\n",
+        "(psycopg2.ProgrammingError) can't execute an empty query\n"
+    ],
+    "EffectiveSQLs": []
 }

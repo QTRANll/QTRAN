@@ -6,15 +6,65 @@
         "polygon"
     ],
     "Feature": [
-        "polygon ( path ) → polygon"
+        "polygon ( path ) \u2192 polygon"
     ],
     "Description": [
         "Converts closed path to a polygon with the same list of points."
     ],
     "Examples": [
-        "polygon(path '((0,0),(1,1),(2,0))') → ((0,0),(1,1),(2,0))"
+        "polygon(path '((0,0),(1,1),(2,0))') \u2192 ((0,0),(1,1),(2,0))"
     ],
     "Category": [
         "Geometric Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT polygon(ARRAY[POINT(1, 1), POINT(1, 4), POINT(4, 4), POINT(4, 1), POINT(1, 1)])",
+        "SELECT polygon(ARRAY[LINE(POINT(1, 1), POINT(1, 4)), LINE(POINT(1, 4), POINT(4, 4)), LINE(POINT(4, 4), POINT(4, 1)), LINE(POINT(4, 1), POINT(1, 1))])",
+        "SELECT polygon(ARRAY[POINT(1, 1), POINT(1, 4), POINT(4, 4), POINT(4, 1), POINT(1, 1)]::geometry[])",
+        "SELECT polygon(ARRAY[ROW(1, 1), ROW(1, 4), ROW(4, 4), ROW(4, 1), ROW(1, 1)])",
+        "SELECT polygon('((1, 1), (1, 4), (4, 4), (4, 1), (1, 1))')"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 303,
+            "Prompt Tokens": 250,
+            "Completion Tokens": 53,
+            "Total Cost (USD)": 6.929999999999999e-05
+        },
+        {
+            "Total Tokens": 565,
+            "Prompt Tokens": 482,
+            "Completion Tokens": 83,
+            "Total Cost (USD)": 0.00012209999999999999
+        },
+        {
+            "Total Tokens": 798,
+            "Prompt Tokens": 742,
+            "Completion Tokens": 56,
+            "Total Cost (USD)": 0.0001449
+        },
+        {
+            "Total Tokens": 1014,
+            "Prompt Tokens": 961,
+            "Completion Tokens": 53,
+            "Total Cost (USD)": 0.00017594999999999997
+        },
+        {
+            "Total Tokens": 1243,
+            "Prompt Tokens": 1196,
+            "Completion Tokens": 47,
+            "Total Cost (USD)": 0.00020759999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedFunction) function polygon(point[]) does not exist\nLINE 1: SELECT polygon(ARRAY[POINT(1, 1), POINT(1, 4), POINT(4, 4), ...\n               ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.\n\n",
+        "(psycopg2.errors.UndefinedFunction) function polygon(line[]) does not exist\nLINE 1: SELECT polygon(ARRAY[LINE(POINT(1, 1), POINT(1, 4)), LINE(PO...\n               ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.\n\n",
+        "(psycopg2.errors.UndefinedObject) type \"geometry[]\" does not exist\nLINE 1: ...NT(1, 4), POINT(4, 4), POINT(4, 1), POINT(1, 1)]::geometry[]...\n                                                             ^\n\n",
+        "(psycopg2.errors.UndefinedFunction) function polygon(record[]) does not exist\nLINE 1: SELECT polygon(ARRAY[ROW(1, 1), ROW(1, 4), ROW(4, 4), ROW(4,...\n               ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT polygon('((1, 1), (1, 4), (4, 4), (4, 1), (1, 1))')"
     ]
 }

@@ -29,5 +29,20 @@
     "Category": [
         "Built-In Functions and Operators",
         "Date and Time Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT TO_DAYS(950501);",
+        "SELECT TO_DAYS('2007-10-07');",
+        "SELECT TO_DAYS('2008-10-07'), TO_DAYS('08-10-07');",
+        "SELECT TO_DAYS('0000-00-00');"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT TO_DAYS(950501);",
+        "SELECT TO_DAYS('2007-10-07');",
+        "SELECT TO_DAYS('2008-10-07'), TO_DAYS('08-10-07');",
+        "SELECT TO_DAYS('0000-00-00');"
     ]
 }

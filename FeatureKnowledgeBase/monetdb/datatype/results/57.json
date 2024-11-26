@@ -16,5 +16,53 @@
     "Examples": [],
     "Category": [
         "Temporal Datatypes"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT departure_timestamp FROM your_table;",
+        "SELECT departure_timestamp;",
+        "SELECT * FROM your_table WHERE departure_timestamp IS NOT NULL;",
+        "SELECT departure_timestamp FROM DUAL;",
+        "SELECT departure_timestamp;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 269,
+            "Prompt Tokens": 250,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 4.8899999999999996e-05
+        },
+        {
+            "Total Tokens": 415,
+            "Prompt Tokens": 399,
+            "Completion Tokens": 16,
+            "Total Cost (USD)": 6.945e-05
+        },
+        {
+            "Total Tokens": 567,
+            "Prompt Tokens": 543,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 9.585e-05
+        },
+        {
+            "Total Tokens": 716,
+            "Prompt Tokens": 697,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 0.00011594999999999997
+        },
+        {
+            "Total Tokens": 861,
+            "Prompt Tokens": 845,
+            "Completion Tokens": 16,
+            "Total Cost (USD)": 0.00013634999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymonetdb.exceptions.OperationalError) 42S02!SELECT: no such table 'your_table'\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: identifier 'departure_timestamp' unknown\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42S02!SELECT: no such table 'your_table'\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42S02!SELECT: no such table 'dual'\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: identifier 'departure_timestamp' unknown\n\n"
+    ],
+    "EffectiveSQLs": []
 }

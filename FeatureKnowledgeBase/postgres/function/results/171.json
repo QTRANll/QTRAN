@@ -6,15 +6,33 @@
         "transaction_timestamp"
     ],
     "Feature": [
-        "transaction_timestamp ( ) → timestamp with time zone"
+        "transaction_timestamp ( ) \u2192 timestamp with time zone"
     ],
     "Description": [
-        "Current date and time (start of current transaction); see Section 9.9.5"
+        "Current date and time (start of current transaction); see Section\u00a09.9.5"
     ],
     "Examples": [
-        "transaction_timestamp() → 2019-12-23 14:39:53.662522-05"
+        "transaction_timestamp() \u2192 2019-12-23 14:39:53.662522-05"
     ],
     "Category": [
         "Date divide Time Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT transaction_timestamp();"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 277,
+            "Prompt Tokens": 260,
+            "Completion Tokens": 17,
+            "Total Cost (USD)": 4.92e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT transaction_timestamp();"
     ]
 }

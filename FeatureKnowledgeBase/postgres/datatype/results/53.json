@@ -19,5 +19,31 @@
     "Examples": [],
     "Category": [
         "Object Identifier Types"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT * FROM pg_operator WHERE oprname = '*' AND oprleft = 'integer' AND oprright = 'integer';",
+        "SELECT * FROM pg_operator WHERE oprname = '*' AND oprleft = (SELECT oid FROM pg_type WHERE typname = 'integer') AND oprright = (SELECT oid FROM pg_type WHERE typname = 'integer');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 309,
+            "Prompt Tokens": 272,
+            "Completion Tokens": 37,
+            "Total Cost (USD)": 6.3e-05
+        },
+        {
+            "Total Tokens": 515,
+            "Prompt Tokens": 458,
+            "Completion Tokens": 57,
+            "Total Cost (USD)": 0.00010290000000000001
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.InvalidTextRepresentation) invalid input syntax for type oid: \"integer\"\nLINE 1: ...ROM pg_operator WHERE oprname = '*' AND oprleft = 'integer' ...\n                                                             ^\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT * FROM pg_operator WHERE oprname = '*' AND oprleft = (SELECT oid FROM pg_type WHERE typname = 'integer') AND oprright = (SELECT oid FROM pg_type WHERE typname = 'integer');"
     ]
 }

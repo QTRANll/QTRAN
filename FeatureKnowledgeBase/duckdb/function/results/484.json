@@ -16,5 +16,23 @@
     ],
     "Category": [
         "Time Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT make_time(12, 30, 0.0);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 298,
+            "Prompt Tokens": 271,
+            "Completion Tokens": 27,
+            "Total Cost (USD)": 5.685e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT make_time(12, 30, 0.0);"
     ]
 }

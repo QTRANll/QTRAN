@@ -19,5 +19,23 @@
     ],
     "Category": [
         "Lambda Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT array_reduce([1, 2, 3, 4], (acc, x) -> acc + x)"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 384,
+            "Prompt Tokens": 347,
+            "Completion Tokens": 37,
+            "Total Cost (USD)": 7.424999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT array_reduce([1, 2, 3, 4], (acc, x) -> acc + x)"
     ]
 }

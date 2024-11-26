@@ -1,0 +1,68 @@
+{
+    "HTML": [
+        "https://www.monetdb.org/documentation-Aug2024/user-guide/sql-manual/data-types/temporal-types"
+    ],
+    "Title": [
+        "INTERVAL DAY TO HOUR"
+    ],
+    "Feature": [
+        "INTERVAL DAY TO HOUR"
+    ],
+    "Description": [
+        "second_interval",
+        "8-bytes",
+        "decimal(19,3) number of seconds with milliseconds precision"
+    ],
+    "Examples": [],
+    "Category": [
+        "Temporal Datatypes"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT INTERVAL '1 DAY 5 HOURS' AS interval_example;",
+        "SELECT INTERVAL '1 DAY 5 HOURS';",
+        "SELECT INTERVAL '1 DAY 5 HOURS'",
+        "SELECT INTERVAL '1 DAY 5 HOURS'",
+        "SELECT INTERVAL '1 DAY 5 HOURS'"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 300,
+            "Prompt Tokens": 274,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 5.6699999999999996e-05
+        },
+        {
+            "Total Tokens": 466,
+            "Prompt Tokens": 443,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 8.024999999999999e-05
+        },
+        {
+            "Total Tokens": 632,
+            "Prompt Tokens": 610,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 0.00010469999999999998
+        },
+        {
+            "Total Tokens": 800,
+            "Prompt Tokens": 778,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 0.00012989999999999999
+        },
+        {
+            "Total Tokens": 968,
+            "Prompt Tokens": 946,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 0.00015509999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymonetdb.exceptions.OperationalError) 42000!syntax error, unexpected AS in: \"select interval '1 DAY 5 HOURS' as\"\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!syntax error, unexpected SCOLON in: \"select interval '1 DAY 5 HOURS';\"\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!syntax error, unexpected SCOLON in: \"select interval '1 DAY 5 HOURS'\n!;\"\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!syntax error, unexpected SCOLON in: \"select interval '1 DAY 5 HOURS'\n!;\"\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!syntax error, unexpected SCOLON in: \"select interval '1 DAY 5 HOURS'\n!;\"\n\n"
+    ],
+    "EffectiveSQLs": []
+}

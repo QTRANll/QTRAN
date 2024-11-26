@@ -6,13 +6,39 @@
         "pg_wal_lsn_diff"
     ],
     "Feature": [
-        "pg_wal_lsn_diff ( lsn1 pg_lsn, lsn2 pg_lsn ) → numeric"
+        "pg_wal_lsn_diff ( lsn1 pg_lsn, lsn2 pg_lsn ) \u2192 numeric"
     ],
     "Description": [
-        "Calculates the difference in bytes (lsn1 - lsn2) between two write-ahead log locations. This can be used with pg_stat_replication or some of the functions shown in Table 9.91 to get the replication lag."
+        "Calculates the difference in bytes (lsn1 - lsn2) between two write-ahead log locations. This can be used with pg_stat_replication or some of the functions shown in Table\u00a09.91 to get the replication lag."
     ],
     "Examples": [],
     "Category": [
         "System Administration Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT pg_wal_lsn_diff(lsn1, lsn2);",
+        "SELECT pg_wal_lsn_diff(pg_current_wal_lsn(), '0/0');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 346,
+            "Prompt Tokens": 318,
+            "Completion Tokens": 28,
+            "Total Cost (USD)": 6.45e-05
+        },
+        {
+            "Total Tokens": 530,
+            "Prompt Tokens": 498,
+            "Completion Tokens": 32,
+            "Total Cost (USD)": 9.39e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedColumn) column \"lsn1\" does not exist\nLINE 1: SELECT pg_wal_lsn_diff(lsn1, lsn2);\n                               ^\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT pg_wal_lsn_diff(pg_current_wal_lsn(), '0/0');"
     ]
 }

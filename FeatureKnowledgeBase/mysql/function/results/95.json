@@ -17,5 +17,31 @@
     "Category": [
         "Built-In Functions and Operators",
         "Internal Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT GET_DD_INDEX_SUB_PART_LENGTH('example_arg');",
+        "SELECT 'Access to native function is rejected';"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 302,
+            "Prompt Tokens": 277,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 5.655e-05
+        },
+        {
+            "Total Tokens": 465,
+            "Prompt Tokens": 443,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 7.964999999999998e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.OperationalError) (3566, \"Access to native function 'GET_DD_INDEX_SUB_PART_LENGTH' is rejected.\")\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT 'Access to native function is rejected';"
     ]
 }

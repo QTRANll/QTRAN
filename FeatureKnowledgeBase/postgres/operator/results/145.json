@@ -6,15 +6,49 @@
         "anycompatiblearray || anycompatible"
     ],
     "Feature": [
-        "anycompatiblearray || anycompatible → anycompatiblearray"
+        "anycompatiblearray || anycompatible \u2192 anycompatiblearray"
     ],
     "Description": [
         "Concatenates an element onto the end of an array (which must be empty or one-dimensional)."
     ],
     "Examples": [
-        "ARRAY[4,5,6] || 7 → {4,5,6,7}"
+        "ARRAY[4,5,6] || 7 \u2192 {4,5,6,7}"
     ],
     "Category": [
         "Array Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT ARRAY[] || 'element';",
+        "SELECT ARRAY[]::text[] || 'element';",
+        "SELECT ARRAY['element']::text[];"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 295,
+            "Prompt Tokens": 275,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 5.325e-05
+        },
+        {
+            "Total Tokens": 478,
+            "Prompt Tokens": 455,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 8.204999999999999e-05
+        },
+        {
+            "Total Tokens": 655,
+            "Prompt Tokens": 634,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 0.00010769999999999999
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.IndeterminateDatatype) cannot determine type of empty array\nLINE 1: SELECT ARRAY[] || 'element';\n               ^\nHINT:  Explicitly cast to the desired type, for example ARRAY[]::integer[].\n\n",
+        "(psycopg2.errors.InvalidTextRepresentation) malformed array literal: \"element\"\nLINE 1: SELECT ARRAY[]::text[] || 'element';\n                                  ^\nDETAIL:  Array value must start with \"{\" or dimension information.\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT ARRAY['element']::text[];"
     ]
 }

@@ -16,5 +16,55 @@
     ],
     "Category": [
         "Array Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT array_negative_inner_product(array1, array2);",
+        "SELECT array_negative_inner_product(ARRAY[1, 2, 3], ARRAY[4, 5, 6]);",
+        "SELECT array_negative_inner_product(ARRAY[1.0, 2.0, 3.0]::FLOAT[], ARRAY[4.0, 5.0, 6.0]::FLOAT[]);",
+        "SELECT array_negative_inner_product(ARRAY[1.0, 2.0, 3.0]::DOUBLE[], ARRAY[4.0, 5.0, 6.0]::DOUBLE[]);",
+        "SELECT array_negative_inner_product(ARRAY[1.0, 2.0, 3.0]::FLOAT[3], ARRAY[4.0, 5.0, 6.0]::FLOAT[3]);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 339,
+            "Prompt Tokens": 315,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 6.165e-05
+        },
+        {
+            "Total Tokens": 534,
+            "Prompt Tokens": 495,
+            "Completion Tokens": 39,
+            "Total Cost (USD)": 9.764999999999999e-05
+        },
+        {
+            "Total Tokens": 803,
+            "Prompt Tokens": 745,
+            "Completion Tokens": 58,
+            "Total Cost (USD)": 0.00014654999999999998
+        },
+        {
+            "Total Tokens": 1071,
+            "Prompt Tokens": 1013,
+            "Completion Tokens": 58,
+            "Total Cost (USD)": 0.00018674999999999999
+        },
+        {
+            "Total Tokens": 1343,
+            "Prompt Tokens": 1282,
+            "Completion Tokens": 61,
+            "Total Cost (USD)": 0.00022889999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.BinderException) Binder Error: Referenced column \"array1\" not found in FROM clause!\nLINE 1: SELECT array_negative_inner_product(array1, array2);\n                                            ^\n",
+        "(duckdb.duckdb.BinderException) Binder Error: No function matches the given name and argument types 'array_negative_inner_product(INTEGER[], INTEGER[])'. You might need to add explicit type casts.\n\tCandidate functions:\n\tarray_negative_inner_product(FLOAT[ANY], FLOAT[ANY]) -> FLOAT\n\tarray_negative_inner_product(DOUBLE[ANY], DOUBLE[ANY]) -> DOUBLE\n\nLINE 1: SELECT array_negative_inner_product(ARRAY[1, 2...\n               ^\n",
+        "(duckdb.duckdb.BinderException) Binder Error: No function matches the given name and argument types 'array_negative_inner_product(FLOAT[], FLOAT[])'. You might need to add explicit type casts.\n\tCandidate functions:\n\tarray_negative_inner_product(FLOAT[ANY], FLOAT[ANY]) -> FLOAT\n\tarray_negative_inner_product(DOUBLE[ANY], DOUBLE[ANY]) -> DOUBLE\n\nLINE 1: SELECT array_negative_inner_product(ARRAY[1.0,...\n               ^\n",
+        "(duckdb.duckdb.BinderException) Binder Error: No function matches the given name and argument types 'array_negative_inner_product(DOUBLE[], DOUBLE[])'. You might need to add explicit type casts.\n\tCandidate functions:\n\tarray_negative_inner_product(FLOAT[ANY], FLOAT[ANY]) -> FLOAT\n\tarray_negative_inner_product(DOUBLE[ANY], DOUBLE[ANY]) -> DOUBLE\n\nLINE 1: SELECT array_negative_inner_product(ARRAY[1.0,...\n               ^\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT array_negative_inner_product(ARRAY[1.0, 2.0, 3.0]::FLOAT[3], ARRAY[4.0, 5.0, 6.0]::FLOAT[3]);"
     ]
 }

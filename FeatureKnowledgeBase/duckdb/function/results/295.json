@@ -16,5 +16,53 @@
     ],
     "Category": [
         "Map Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT map_values(map);",
+        "SELECT map_values(ROW(map));",
+        "SELECT map_values(ARRAY[1, 2, 3]);",
+        "SELECT map_values(MAP['key1', 'value1', 'key2', 'value2']);",
+        "SELECT map_values(MAP['key1' => 'value1', 'key2' => 'value2']);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 272,
+            "Prompt Tokens": 254,
+            "Completion Tokens": 18,
+            "Total Cost (USD)": 4.8899999999999996e-05
+        },
+        {
+            "Total Tokens": 435,
+            "Prompt Tokens": 415,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 7.424999999999999e-05
+        },
+        {
+            "Total Tokens": 607,
+            "Prompt Tokens": 580,
+            "Completion Tokens": 27,
+            "Total Cost (USD)": 0.00010319999999999999
+        },
+        {
+            "Total Tokens": 769,
+            "Prompt Tokens": 735,
+            "Completion Tokens": 34,
+            "Total Cost (USD)": 0.00013064999999999998
+        },
+        {
+            "Total Tokens": 931,
+            "Prompt Tokens": 895,
+            "Completion Tokens": 36,
+            "Total Cost (USD)": 0.00015584999999999997
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.BinderException) Binder Error: Referenced column \"map\" not found in FROM clause!\nLINE 1: SELECT map_values(map);\n                          ^\n",
+        "(duckdb.duckdb.BinderException) Binder Error: Referenced column \"map\" not found in FROM clause!\nLINE 1: SELECT map_values(ROW(map));\n                              ^\n",
+        "(duckdb.duckdb.InvalidInputException) Invalid Input Error: The provided argument is not a map\n",
+        "(duckdb.duckdb.ParserException) Parser Error: syntax error at or near \",\"\n",
+        "(duckdb.duckdb.ParserException) Parser Error: syntax error at or near \"=>\"\n"
+    ],
+    "EffectiveSQLs": []
 }

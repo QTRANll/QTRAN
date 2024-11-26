@@ -6,7 +6,7 @@
         "pg_log_standby_snapshot"
     ],
     "Feature": [
-        "pg_log_standby_snapshot () → pg_lsn"
+        "pg_log_standby_snapshot () \u2192 pg_lsn"
     ],
     "Description": [
         "Take a snapshot of running transactions and write it to WAL, without having to wait for bgwriter or checkpointer to log one. This is useful for logical decoding on standby, as logical slot creation has to wait until such a record is replayed on the standby."
@@ -14,5 +14,23 @@
     "Examples": [],
     "Category": [
         "System Administration Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT pg_log_standby_snapshot();"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 330,
+            "Prompt Tokens": 309,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 5.8949999999999996e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT pg_log_standby_snapshot();"
     ]
 }

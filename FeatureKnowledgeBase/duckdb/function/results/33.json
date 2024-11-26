@@ -16,5 +16,55 @@
     ],
     "Category": [
         "Aggregate Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT product(arg) FROM your_table;",
+        "SELECT product(arg);",
+        "SELECT product(column_name) FROM your_table;",
+        "SELECT product(arg) FROM (SELECT arg FROM pg_tables);",
+        "SELECT product(value) FROM (SELECT 1 AS value UNION ALL SELECT 2 UNION ALL SELECT NULL UNION ALL SELECT 3);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 272,
+            "Prompt Tokens": 252,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 4.98e-05
+        },
+        {
+            "Total Tokens": 439,
+            "Prompt Tokens": 422,
+            "Completion Tokens": 17,
+            "Total Cost (USD)": 7.35e-05
+        },
+        {
+            "Total Tokens": 601,
+            "Prompt Tokens": 580,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 9.959999999999998e-05
+        },
+        {
+            "Total Tokens": 777,
+            "Prompt Tokens": 752,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 0.0001278
+        },
+        {
+            "Total Tokens": 981,
+            "Prompt Tokens": 942,
+            "Completion Tokens": 39,
+            "Total Cost (USD)": 0.0001647
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.CatalogException) Catalog Error: Table with name your_table does not exist!\nDid you mean \"pg_tables\"?\nLINE 1: SELECT product(arg) FROM your_table;\n                                 ^\n",
+        "(duckdb.duckdb.BinderException) Binder Error: Referenced column \"arg\" not found in FROM clause!\nLINE 1: SELECT product(arg);\n                       ^\n",
+        "(duckdb.duckdb.CatalogException) Catalog Error: Table with name your_table does not exist!\nDid you mean \"pg_tables\"?\nLINE 1: SELECT product(column_name) FROM your_table;\n                                         ^\n",
+        "(duckdb.duckdb.BinderException) Binder Error: Referenced column \"arg\" not found in FROM clause!\nCandidate bindings: \"pg_tables.hastriggers\", \"pg_tables.hasrules\"\nLINE 1: SELECT product(arg) FROM (SELECT arg FROM pg_tables);\n                                         ^\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT product(value) FROM (SELECT 1 AS value UNION ALL SELECT 2 UNION ALL SELECT NULL UNION ALL SELECT 3);"
     ]
 }

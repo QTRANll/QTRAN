@@ -6,15 +6,33 @@
         "make_time"
     ],
     "Feature": [
-        "make_time ( hour int, min int, sec double precision ) → time"
+        "make_time ( hour int, min int, sec double precision ) \u2192 time"
     ],
     "Description": [
         "Create time from hour, minute and seconds fields"
     ],
     "Examples": [
-        "make_time(8, 15, 23.5) → 08:15:23.5"
+        "make_time(8, 15, 23.5) \u2192 08:15:23.5"
     ],
     "Category": [
         "Date divide Time Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT make_time(12, 30, 45);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 282,
+            "Prompt Tokens": 257,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 5.3549999999999994e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT make_time(12, 30, 45);"
     ]
 }

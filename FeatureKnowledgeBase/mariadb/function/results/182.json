@@ -23,5 +23,14 @@
         "SELECT MAKETIME(-13,57,33);",
         "SELECT MAKETIME(13,67,33);",
         "SELECT MAKETIME(-1000,57,33);"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT MAKETIME(13,57,33);",
+        "SELECT MAKETIME(-13,57,33);",
+        "SELECT MAKETIME(13,67,33);",
+        "SELECT MAKETIME(-1000,57,33);"
     ]
 }

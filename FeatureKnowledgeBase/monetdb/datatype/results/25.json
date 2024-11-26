@@ -1,0 +1,37 @@
+{
+    "HTML": [
+        "https://www.monetdb.org/documentation-Aug2024/user-guide/sql-manual/data-types/base-types"
+    ],
+    "Title": [
+        "FLOAT ( Prec )"
+    ],
+    "Feature": [
+        "FLOAT ( Prec )"
+    ],
+    "Description": [
+        "",
+        "32 or 64 bit signed floating point approximate number with binary (radix 2) precision Prec. Prec must be between 1 and 53. FLOAT(24) is same as REAL, FLOAT(53) is same as DOUBLE PRECISION"
+    ],
+    "Examples": [],
+    "Category": [
+        "Base Types"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT CAST(3.14 AS FLOAT(24));"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 321,
+            "Prompt Tokens": 297,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 5.894999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT CAST(3.14 AS FLOAT(24));"
+    ]
+}

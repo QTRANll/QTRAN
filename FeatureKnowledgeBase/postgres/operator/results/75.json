@@ -6,15 +6,57 @@
         "geometric_type << geometric_type"
     ],
     "Feature": [
-        "geometric_type << geometric_type → boolean"
+        "geometric_type << geometric_type \u2192 boolean"
     ],
     "Description": [
         "Is first object strictly left of second? Available for point, box, polygon, circle."
     ],
     "Examples": [
-        "circle '<(0,0),1>' << circle '<(5,0),1>' → t"
+        "circle '<(0,0),1>' << circle '<(5,0),1>' \u2192 t"
     ],
     "Category": [
         "Geometric Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT geometric_type << geometric_type;",
+        "SELECT $1 << $2;",
+        "SELECT 'point'::geometry << 'box'::geometry;",
+        "SELECT '((1,1),(2,2))'::box << '((3,3),(4,4))'::box;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 290,
+            "Prompt Tokens": 271,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 5.205e-05
+        },
+        {
+            "Total Tokens": 453,
+            "Prompt Tokens": 434,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 7.649999999999999e-05
+        },
+        {
+            "Total Tokens": 619,
+            "Prompt Tokens": 594,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 0.00010409999999999998
+        },
+        {
+            "Total Tokens": 808,
+            "Prompt Tokens": 767,
+            "Completion Tokens": 41,
+            "Total Cost (USD)": 0.00013964999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedColumn) column \"geometric_type\" does not exist\nLINE 1: SELECT geometric_type << geometric_type;\n               ^\n\n",
+        "(psycopg2.errors.UndefinedParameter) there is no parameter $1\nLINE 1: SELECT $1 << $2;\n               ^\n\n",
+        "(psycopg2.errors.UndefinedObject) type \"geometry\" does not exist\nLINE 1: SELECT 'point'::geometry << 'box'::geometry;\n                        ^\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT '((1,1),(2,2))'::box << '((3,3),(4,4))'::box;"
     ]
 }

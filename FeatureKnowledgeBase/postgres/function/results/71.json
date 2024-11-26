@@ -6,15 +6,33 @@
         "chr"
     ],
     "Feature": [
-        "chr ( integer ) → text"
+        "chr ( integer ) \u2192 text"
     ],
     "Description": [
         "Returns the character with the given code. In UTF8 encoding the argument is treated as a Unicode code point. In other multibyte encodings the argument must designate an ASCII character. chr(0) is disallowed because text data types cannot store that character."
     ],
     "Examples": [
-        "chr(65) → A"
+        "chr(65) \u2192 A"
     ],
     "Category": [
         "String Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT chr(65);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 307,
+            "Prompt Tokens": 289,
+            "Completion Tokens": 18,
+            "Total Cost (USD)": 5.414999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT chr(65);"
     ]
 }

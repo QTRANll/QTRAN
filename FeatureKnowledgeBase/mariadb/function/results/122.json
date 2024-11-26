@@ -21,5 +21,12 @@
     "EffectiveSQLsRefined": [
         "SELECT IS_IPV4_COMPAT(INET6_ATON('::10.0.1.1'));",
         "SELECT IS_IPV4_COMPAT(INET6_ATON('::48f3::d432:1431:ba23:846f'));"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT IS_IPV4_COMPAT(INET6_ATON('::10.0.1.1'));",
+        "SELECT IS_IPV4_COMPAT(INET6_ATON('::48f3::d432:1431:ba23:846f'));"
     ]
 }

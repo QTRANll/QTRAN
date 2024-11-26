@@ -6,15 +6,49 @@
         "anyrange &< anyrange"
     ],
     "Feature": [
-        "anyrange &< anyrange → boolean"
+        "anyrange &< anyrange \u2192 boolean"
     ],
     "Description": [
         "Does the first range not extend to the right of the second?"
     ],
     "Examples": [
-        "int8range(1,20) &< int8range(18,20) → t"
+        "int8range(1,20) &< int8range(18,20) \u2192 t"
     ],
     "Category": [
         "Range divide Multirange Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT $1 &< $2;",
+        "SELECT '[]'::anyrange &< '[1,2)'::anyrange;",
+        "SELECT '[1,2)'::int4range &< '[2,3)'::int4range;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 286,
+            "Prompt Tokens": 266,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 5.19e-05
+        },
+        {
+            "Total Tokens": 458,
+            "Prompt Tokens": 428,
+            "Completion Tokens": 30,
+            "Total Cost (USD)": 8.219999999999999e-05
+        },
+        {
+            "Total Tokens": 645,
+            "Prompt Tokens": 611,
+            "Completion Tokens": 34,
+            "Total Cost (USD)": 0.00011204999999999999
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedParameter) there is no parameter $1\nLINE 1: SELECT $1 &< $2;\n               ^\n\n",
+        "(psycopg2.errors.FeatureNotSupported) cannot accept a value of type anyrange\nLINE 1: SELECT '[]'::anyrange &< '[1,2)'::anyrange;\n               ^\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT '[1,2)'::int4range &< '[2,3)'::int4range;"
     ]
 }

@@ -20,5 +20,15 @@
     "Category": [
         "JSON Functions"
     ],
-    "EffectiveSQLsRefined": []
+    "EffectiveSQLsRefined": [
+        "CREATE TABLE t1 (\n id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,\n val JSON,\n /* other columns here */\n PRIMARY KEY (id)\n);",
+        "INSERT INTO t1 (val) VALUES ('{\"name\":\"alice\",\"color\":\"blue\"}');"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "CREATE TABLE t1 (\n id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,\n val JSON,\n /* other columns here */\n PRIMARY KEY (id)\n);",
+        "INSERT INTO t1 (val) VALUES ('{\"name\":\"alice\",\"color\":\"blue\"}');"
+    ]
 }

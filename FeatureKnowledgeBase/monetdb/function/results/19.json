@@ -18,5 +18,53 @@
     ],
     "Category": [
         "Cast Conversion Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "CONVERT(some_column, INTEGER)",
+        "CAST(some_column AS INTEGER)",
+        "SELECT some_column::INTEGER",
+        "SELECT CONVERT(some_column, 'INTEGER')",
+        "SELECT CONVERT(some_column, INTEGER)"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 306,
+            "Prompt Tokens": 286,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 5.489999999999999e-05
+        },
+        {
+            "Total Tokens": 462,
+            "Prompt Tokens": 443,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 7.785e-05
+        },
+        {
+            "Total Tokens": 616,
+            "Prompt Tokens": 598,
+            "Completion Tokens": 18,
+            "Total Cost (USD)": 0.00010049999999999998
+        },
+        {
+            "Total Tokens": 769,
+            "Prompt Tokens": 746,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 0.0001257
+        },
+        {
+            "Total Tokens": 934,
+            "Prompt Tokens": 913,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 0.00014955
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymonetdb.exceptions.OperationalError) 42000!syntax error, unexpected CONVERT in: \"convert\"\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!syntax error, unexpected CAST in: \"cast\"\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!Unexpected symbol (:)\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!syntax error, unexpected STRING in: \"select convert(some_column, 'INTEGER'\"\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: identifier 'some_column' unknown\n\n"
+    ],
+    "EffectiveSQLs": []
 }

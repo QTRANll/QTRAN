@@ -19,5 +19,23 @@
     ],
     "Category": [
         "Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT 'example' COLLATE NOCASE;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 320,
+            "Prompt Tokens": 299,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 5.7449999999999994e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT 'example' COLLATE NOCASE;"
     ]
 }

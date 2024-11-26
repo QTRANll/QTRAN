@@ -24,5 +24,9 @@
     ],
     "Category": [
         "Maps Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT mapConcat(map('key1', 1, 'key3', 3), map('key2', 2)) AS map;",
+        "SELECT mapConcat(map('key1', 1, 'key2', 2), map('key1', 3)) AS map, map['key1'];"
     ]
 }

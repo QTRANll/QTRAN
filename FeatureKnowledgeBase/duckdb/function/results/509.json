@@ -16,5 +16,31 @@
     ],
     "Category": [
         "Timestamp Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT last_day(timestamp);",
+        "SELECT last_day(current_timestamp);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 269,
+            "Prompt Tokens": 251,
+            "Completion Tokens": 18,
+            "Total Cost (USD)": 4.844999999999999e-05
+        },
+        {
+            "Total Tokens": 431,
+            "Prompt Tokens": 412,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 7.319999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.BinderException) Binder Error: Referenced column \"timestamp\" not found in FROM clause!\nLINE 1: SELECT last_day(timestamp);\n                        ^\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT last_day(current_timestamp);"
     ]
 }

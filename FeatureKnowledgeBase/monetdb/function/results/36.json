@@ -18,5 +18,53 @@
     ],
     "Category": [
         "Mathematics Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT log(b, x);",
+        "SELECT log(2, x);",
+        "SELECT log(2, 10);",
+        "SELECT log(2.0, 10.0);",
+        "SELECT log(2.0::float, 10.0::float);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 308,
+            "Prompt Tokens": 289,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 5.474999999999999e-05
+        },
+        {
+            "Total Tokens": 458,
+            "Prompt Tokens": 438,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 7.769999999999999e-05
+        },
+        {
+            "Total Tokens": 609,
+            "Prompt Tokens": 588,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 0.00010079999999999998
+        },
+        {
+            "Total Tokens": 773,
+            "Prompt Tokens": 748,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 0.0001272
+        },
+        {
+            "Total Tokens": 938,
+            "Prompt Tokens": 909,
+            "Completion Tokens": 29,
+            "Total Cost (USD)": 0.00015374999999999997
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: identifier 'b' unknown\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: identifier 'x' unknown\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: no such binary operator 'log(tinyint,tinyint)'\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: no such binary operator 'log(decimal,decimal)'\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!Unexpected symbol (:)\n\n"
+    ],
+    "EffectiveSQLs": []
 }

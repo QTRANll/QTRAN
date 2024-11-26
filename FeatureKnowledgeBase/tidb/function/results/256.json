@@ -10,7 +10,7 @@
     ],
     "Description": [
         "NEXTVAL()",
-        "NEXTVAL() 函数返回序列的下一个值。"
+        "NEXTVAL() \u51fd\u6570\u8fd4\u56de\u5e8f\u5217\u7684\u4e0b\u4e00\u4e2a\u503c\u3002"
     ],
     "Examples": [
         "CREATE SEQUENCE s1;\n",
@@ -19,6 +19,19 @@
         "SELECT NEXT VALUE FOR s1;\n"
     ],
     "Category": [
-        "序列函数"
+        "\u5e8f\u5217\u51fd\u6570"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT NEXTVAL(s1);",
+        "SELECT NEXTVAL(s1);",
+        "SELECT NEXT VALUE FOR s1;"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT NEXTVAL(s1);",
+        "SELECT NEXTVAL(s1);",
+        "SELECT NEXT VALUE FOR s1;"
     ]
 }

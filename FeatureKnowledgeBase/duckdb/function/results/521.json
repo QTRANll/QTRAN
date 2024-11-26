@@ -16,5 +16,23 @@
     ],
     "Category": [
         "Timestamp Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT try_strptime('2023-10-01 12:00:00', '%Y-%m-%d %H:%M:%S');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 318,
+            "Prompt Tokens": 274,
+            "Completion Tokens": 44,
+            "Total Cost (USD)": 6.75e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT try_strptime('2023-10-01 12:00:00', '%Y-%m-%d %H:%M:%S');"
     ]
 }

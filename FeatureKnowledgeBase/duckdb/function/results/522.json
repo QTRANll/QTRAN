@@ -16,5 +16,23 @@
     ],
     "Category": [
         "Timestamp Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT generate_series('2023-01-01 00:00:00'::timestamp, '2023-01-02 00:00:00'::timestamp, '1 hour'::interval);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 332,
+            "Prompt Tokens": 275,
+            "Completion Tokens": 57,
+            "Total Cost (USD)": 7.544999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT generate_series('2023-01-01 00:00:00'::timestamp, '2023-01-02 00:00:00'::timestamp, '1 hour'::interval);"
     ]
 }

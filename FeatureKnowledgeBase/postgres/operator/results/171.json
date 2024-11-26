@@ -6,15 +6,63 @@
         "anymultirange << anyrange"
     ],
     "Feature": [
-        "anymultirange << anyrange → boolean"
+        "anymultirange << anyrange \u2192 boolean"
     ],
     "Description": [
         "Is the multirange strictly left of the range?"
     ],
     "Examples": [
-        "'{[1,10)}'::int8multirange << int8range(100,110) → t"
+        "'{[1,10)}'::int8multirange << int8range(100,110) \u2192 t"
     ],
     "Category": [
         "Range divide Multirange Functions and Operators"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT (ANYMULTIRANGE << ANYRANGE);",
+        "SELECT (ARRAY[1, 2, 3]::anymultirange << '[4, 5)'::anyrange);",
+        "SELECT (MULTIRANGE(ARRAY[1, 2, 3]) << '[4, 5)'::anyrange);",
+        "SELECT (MULTIRANGE(ARRAY[1::int4, 2::int4]) << '[3, 4)'::anyrange);",
+        "SELECT (MULTIRANGE(ARRAY[1::int4, 2::int4, 3::int4]) << '[4, 5)'::anyrange);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 292,
+            "Prompt Tokens": 268,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 5.46e-05
+        },
+        {
+            "Total Tokens": 483,
+            "Prompt Tokens": 442,
+            "Completion Tokens": 41,
+            "Total Cost (USD)": 9.09e-05
+        },
+        {
+            "Total Tokens": 691,
+            "Prompt Tokens": 651,
+            "Completion Tokens": 40,
+            "Total Cost (USD)": 0.00012164999999999999
+        },
+        {
+            "Total Tokens": 921,
+            "Prompt Tokens": 878,
+            "Completion Tokens": 43,
+            "Total Cost (USD)": 0.00015749999999999998
+        },
+        {
+            "Total Tokens": 1159,
+            "Prompt Tokens": 1110,
+            "Completion Tokens": 49,
+            "Total Cost (USD)": 0.00019590000000000002
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedColumn) column \"anymultirange\" does not exist\nLINE 1: SELECT (ANYMULTIRANGE << ANYRANGE);\n                ^\n\n",
+        "(psycopg2.errors.CannotCoerce) cannot cast type integer[] to anymultirange\nLINE 1: SELECT (ARRAY[1, 2, 3]::anymultirange << '[4, 5)'::anyrange)...\n                              ^\n\n",
+        "(psycopg2.errors.UndefinedFunction) function multirange(integer[]) does not exist\nLINE 1: SELECT (MULTIRANGE(ARRAY[1, 2, 3]) << '[4, 5)'::anyrange);\n                ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.\n\n",
+        "(psycopg2.errors.UndefinedFunction) function multirange(integer[]) does not exist\nLINE 1: SELECT (MULTIRANGE(ARRAY[1::int4, 2::int4]) << '[3, 4)'::any...\n                ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.\n\n",
+        "(psycopg2.errors.UndefinedFunction) function multirange(integer[]) does not exist\nLINE 1: SELECT (MULTIRANGE(ARRAY[1::int4, 2::int4, 3::int4]) << '[4,...\n                ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.\n\n"
+    ],
+    "EffectiveSQLs": []
 }

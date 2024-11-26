@@ -6,15 +6,33 @@
         "cos"
     ],
     "Feature": [
-        "cos ( double precision ) → double precision"
+        "cos ( double precision ) \u2192 double precision"
     ],
     "Description": [
         "Cosine, argument in radians"
     ],
     "Examples": [
-        "cos(0) → 1"
+        "cos(0) \u2192 1"
     ],
     "Category": [
         "Mathematical Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT cos(1.0);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 264,
+            "Prompt Tokens": 244,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 4.8599999999999995e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT cos(1.0);"
     ]
 }

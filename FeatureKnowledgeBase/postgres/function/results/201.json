@@ -6,15 +6,33 @@
         "host"
     ],
     "Feature": [
-        "host ( inet ) → text"
+        "host ( inet ) \u2192 text"
     ],
     "Description": [
         "Returns the IP address as text, ignoring the netmask."
     ],
     "Examples": [
-        "host(inet '192.168.1.0/24') → 192.168.1.0"
+        "host(inet '192.168.1.0/24') \u2192 192.168.1.0"
     ],
     "Category": [
         "Network Address Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT host('192.168.1.1');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 272,
+            "Prompt Tokens": 248,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 5.1599999999999994e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT host('192.168.1.1');"
     ]
 }

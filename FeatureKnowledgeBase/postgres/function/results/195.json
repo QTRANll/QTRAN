@@ -6,15 +6,33 @@
         "path"
     ],
     "Feature": [
-        "path ( polygon ) → path"
+        "path ( polygon ) \u2192 path"
     ],
     "Description": [
         "Converts polygon to a closed path with the same list of points."
     ],
     "Examples": [
-        "path(polygon '((0,0),(1,1),(2,0))') → ((0,0),(1,1),(2,0))"
+        "path(polygon '((0,0),(1,1),(2,0))') \u2192 ((0,0),(1,1),(2,0))"
     ],
     "Category": [
         "Geometric Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT path(geom) FROM (SELECT '((0,0),(1,1),(1,0),(0,0))'::polygon AS geom) AS subquery;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 298,
+            "Prompt Tokens": 250,
+            "Completion Tokens": 48,
+            "Total Cost (USD)": 6.63e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT path(geom) FROM (SELECT '((0,0),(1,1),(1,0),(0,0))'::polygon AS geom) AS subquery;"
     ]
 }

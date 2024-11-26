@@ -1,0 +1,67 @@
+{
+    "HTML": [
+        "https://www.monetdb.org/documentation-Aug2024/user-guide/sql-manual/data-types/base-types"
+    ],
+    "Title": [
+        "INTERVAL interval_qualifier"
+    ],
+    "Feature": [
+        "INTERVAL interval_qualifier"
+    ],
+    "Description": [
+        "",
+        "a months/days/seconds interval such as: INTERVAL DAY TO SECOND. See Temporal Types for all possible interval_qualifier values"
+    ],
+    "Examples": [],
+    "Category": [
+        "Base Types"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "INTERVAL '1 DAY'",
+        "SELECT INTERVAL '1 DAY'",
+        "INTERVAL '1 DAY'::INTERVAL",
+        "INTERVAL '1 DAY'",
+        "SELECT INTERVAL '1 DAY' AS interval_value"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 300,
+            "Prompt Tokens": 282,
+            "Completion Tokens": 18,
+            "Total Cost (USD)": 5.309999999999999e-05
+        },
+        {
+            "Total Tokens": 454,
+            "Prompt Tokens": 435,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 7.664999999999999e-05
+        },
+        {
+            "Total Tokens": 619,
+            "Prompt Tokens": 597,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 0.00010274999999999999
+        },
+        {
+            "Total Tokens": 772,
+            "Prompt Tokens": 754,
+            "Completion Tokens": 18,
+            "Total Cost (USD)": 0.00012389999999999998
+        },
+        {
+            "Total Tokens": 930,
+            "Prompt Tokens": 907,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 0.00014985
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymonetdb.exceptions.OperationalError) 42000!syntax error, unexpected INTERVAL in: \"interval\"\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!syntax error, unexpected SCOLON in: \"select interval '1 DAY'\n!;\"\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!syntax error, unexpected INTERVAL in: \"interval\"\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!syntax error, unexpected INTERVAL in: \"interval\"\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!syntax error, unexpected AS in: \"select interval '1 DAY' as\"\n\n"
+    ],
+    "EffectiveSQLs": []
+}

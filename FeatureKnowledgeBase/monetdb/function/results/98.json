@@ -14,9 +14,27 @@
         "number of bytes in UTF-8 string s"
     ],
     "Examples": [
-        "octet_length(R'2€')"
+        "octet_length(R'2\u20ac')"
     ],
     "Category": [
         "Character String Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT octet_length('example string');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 287,
+            "Prompt Tokens": 266,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 5.25e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT octet_length('example string');"
     ]
 }

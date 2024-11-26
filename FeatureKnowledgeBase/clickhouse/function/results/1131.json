@@ -25,5 +25,14 @@
     ],
     "Category": [
         "Aggregate Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "select * from test;",
+        "SELECT argMin(a, b), min(b) FROM test;",
+        "SELECT argMin(tuple(a), b) FROM test;",
+        "SELECT (argMin((a, b), b) as t).1 argMinA, t.2 argMinB from test;",
+        "SELECT argMin(a, b), min(b) FROM test WHERE a IS NULL and b IS NULL;",
+        "SELECT argMin(a, (b, a)), min(tuple(b, a)) FROM test;",
+        "SELECT argMin((a, b), (b, a)), min(tuple(b, a)) FROM test;"
     ]
 }

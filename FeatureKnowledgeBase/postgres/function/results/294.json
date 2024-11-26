@@ -6,15 +6,33 @@
         "array_replace"
     ],
     "Feature": [
-        "array_replace ( anycompatiblearray, anycompatible, anycompatible ) → anycompatiblearray"
+        "array_replace ( anycompatiblearray, anycompatible, anycompatible ) \u2192 anycompatiblearray"
     ],
     "Description": [
         "Replaces each array element equal to the second argument with the third argument."
     ],
     "Examples": [
-        "array_replace(ARRAY[1,2,5,4], 5, 3) → {1,2,3,4}"
+        "array_replace(ARRAY[1,2,5,4], 5, 3) \u2192 {1,2,3,4}"
     ],
     "Category": [
         "Array Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT array_replace(ARRAY[1, 2, 3, 2], 2, 4);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 301,
+            "Prompt Tokens": 265,
+            "Completion Tokens": 36,
+            "Total Cost (USD)": 6.135e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT array_replace(ARRAY[1, 2, 3, 2], 2, 4);"
     ]
 }

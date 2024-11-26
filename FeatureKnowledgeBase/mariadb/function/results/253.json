@@ -33,5 +33,17 @@
         "SELECT REGEXP_REPLACE(BINARY 'ABC','b','-') AS binary_data;",
         "SELECT REGEXP_REPLACE('ABC','(?-i)b','-') AS force_case_sensitive;",
         "SELECT REGEXP_REPLACE(BINARY 'ABC','(?i)b','-') AS force_case_insensitive;"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT REGEXP_REPLACE('ab12cd','[0-9]','') AS remove_digits;",
+        "SELECT REGEXP_REPLACE('<html><head><title>title</title><body>body</body></htm>', '<.+?>',' ')\nAS strip_html;",
+        "SELECT REGEXP_REPLACE('James Bond','^(.*) (.*)$','\\\\2, \\\\1') AS reorder_name;",
+        "SELECT REGEXP_REPLACE('ABC','b','-') AS case_insensitive;",
+        "SELECT REGEXP_REPLACE(BINARY 'ABC','b','-') AS binary_data;",
+        "SELECT REGEXP_REPLACE('ABC','(?-i)b','-') AS force_case_sensitive;",
+        "SELECT REGEXP_REPLACE(BINARY 'ABC','(?i)b','-') AS force_case_insensitive;"
     ]
 }

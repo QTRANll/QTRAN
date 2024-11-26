@@ -10,7 +10,7 @@
     ],
     "Description": [
         "JSON_CONTAINS()",
-        "通过返回 1 或 0，JSON_CONTAINS(json_doc, candidate [,path]) 函数用于确认指定的 JSON 文档 candidate 是否包含在目标 JSON 文档中。"
+        "\u901a\u8fc7\u8fd4\u56de 1 \u6216 0\uff0cJSON_CONTAINS(json_doc, candidate [,path]) \u51fd\u6570\u7528\u4e8e\u786e\u8ba4\u6307\u5b9a\u7684 JSON \u6587\u6863 candidate \u662f\u5426\u5305\u542b\u5728\u76ee\u6807 JSON \u6587\u6863\u4e2d\u3002"
     ],
     "Examples": [
         "SELECT JSON_CONTAINS('[\"a\",\"b\",\"c\"]','\"a\"');\n",
@@ -20,6 +20,23 @@
         "SELECT JSON_CONTAINS('{\"foo\": \"bar\", \"aaa\": 5}','\"bar\"', '$.foo');\n"
     ],
     "Category": [
-        "搜索 JSON 的函数"
+        "\u641c\u7d22 JSON \u7684\u51fd\u6570"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT JSON_CONTAINS('[\"a\",\"b\",\"c\"]','\"a\"');",
+        "SELECT JSON_CONTAINS('[\"a\",\"b\",\"c\"]','\"e\"');",
+        "SELECT JSON_CONTAINS('{\"foo\": \"bar\", \"aaa\": 5}','{\"foo\": \"bar\"}');",
+        "SELECT JSON_CONTAINS('{\"foo\": \"bar\", \"aaa\": 5}','\"bar\"');",
+        "SELECT JSON_CONTAINS('{\"foo\": \"bar\", \"aaa\": 5}','\"bar\"', '$.foo');"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT JSON_CONTAINS('[\"a\",\"b\",\"c\"]','\"a\"');",
+        "SELECT JSON_CONTAINS('[\"a\",\"b\",\"c\"]','\"e\"');",
+        "SELECT JSON_CONTAINS('{\"foo\": \"bar\", \"aaa\": 5}','{\"foo\": \"bar\"}');",
+        "SELECT JSON_CONTAINS('{\"foo\": \"bar\", \"aaa\": 5}','\"bar\"');",
+        "SELECT JSON_CONTAINS('{\"foo\": \"bar\", \"aaa\": 5}','\"bar\"', '$.foo');"
     ]
 }

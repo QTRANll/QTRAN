@@ -6,7 +6,7 @@
         "var_pop"
     ],
     "Feature": [
-        "var_pop ( numeric_type ) → double precision for real or double precision, otherwise numeric"
+        "var_pop ( numeric_type ) \u2192 double precision for real or double precision, otherwise numeric"
     ],
     "Description": [
         "Computes the population variance of the input values (square of the population standard deviation)."
@@ -14,5 +14,53 @@
     "Examples": [],
     "Category": [
         "Aggregate Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT var_pop(column_name) FROM table_name;",
+        "SELECT var_pop(column_name);",
+        "SELECT var_pop(1, 2, 3, 4, 5);",
+        "SELECT var_pop(ARRAY[1::numeric, 2::numeric, 3::numeric, 4::numeric, 5::numeric]);",
+        "SELECT var_pop(1::double precision, 2::double precision, 3::double precision, 4::double precision, 5::double precision);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 289,
+            "Prompt Tokens": 267,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 5.324999999999999e-05
+        },
+        {
+            "Total Tokens": 450,
+            "Prompt Tokens": 431,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 7.605e-05
+        },
+        {
+            "Total Tokens": 619,
+            "Prompt Tokens": 588,
+            "Completion Tokens": 31,
+            "Total Cost (USD)": 0.0001068
+        },
+        {
+            "Total Tokens": 842,
+            "Prompt Tokens": 799,
+            "Completion Tokens": 43,
+            "Total Cost (USD)": 0.00014565
+        },
+        {
+            "Total Tokens": 1067,
+            "Prompt Tokens": 1021,
+            "Completion Tokens": 46,
+            "Total Cost (USD)": 0.00018074999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedTable) relation \"table_name\" does not exist\nLINE 1: SELECT var_pop(column_name) FROM table_name;\n                                         ^\n\n",
+        "(psycopg2.errors.UndefinedColumn) column \"column_name\" does not exist\nLINE 1: SELECT var_pop(column_name);\n                       ^\n\n",
+        "(psycopg2.errors.UndefinedFunction) function var_pop(integer, integer, integer, integer, integer) does not exist\nLINE 1: SELECT var_pop(1, 2, 3, 4, 5);\n               ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.\n\n",
+        "(psycopg2.errors.UndefinedFunction) function var_pop(numeric[]) does not exist\nLINE 1: SELECT var_pop(ARRAY[1::numeric, 2::numeric, 3::numeric, 4::...\n               ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.\n\n",
+        "(psycopg2.errors.UndefinedFunction) function var_pop(double precision, double precision, double precision, double precision, double precision) does not exist\nLINE 1: SELECT var_pop(1::double precision, 2::double precision, 3::...\n               ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.\n\n"
+    ],
+    "EffectiveSQLs": []
 }

@@ -25,5 +25,9 @@
     ],
     "Category": [
         "Dates and Times Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT now(), date_trunc('hour', now());",
+        "SELECT now(), date_trunc('hour', now(), 'Asia/Istanbul');"
     ]
 }

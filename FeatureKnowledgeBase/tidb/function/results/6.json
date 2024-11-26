@@ -10,7 +10,7 @@
     ],
     "Description": [
         "BIT_LENGTH()",
-        "BIT_LENGTH() 函数用于返回输入参数的长度，单位为 bit。"
+        "BIT_LENGTH() \u51fd\u6570\u7528\u4e8e\u8fd4\u56de\u8f93\u5165\u53c2\u6570\u7684\u957f\u5ea6\uff0c\u5355\u4f4d\u4e3a bit\u3002"
     ],
     "Examples": [
         "SELECT BIT_LENGTH(\"TiDB\");\n\n+--------------------+\n| BIT_LENGTH(\"TiDB\") |\n+--------------------+\n|                 32 |\n+--------------------+\n",
@@ -18,6 +18,17 @@
         "SELECT CustomerName, BIT_LENGTH(CustomerName) AS BitLengthOfName FROM Customers;\n\n+--------------------+-----------------+\n| CustomerName       | BitLengthOfName |\n+--------------------+-----------------+\n| Albert Einstein    |             120 |\n| Robert Oppenheimer |             144 |\n+--------------------+-----------------+\n"
     ],
     "Category": [
-        "字符串函数"
+        "\u5b57\u7b26\u4e32\u51fd\u6570"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT BIT_LENGTH(\"TiDB\");",
+        "SELECT BIT_LENGTH(\"PingCAP 123\");"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT BIT_LENGTH(\"TiDB\");",
+        "SELECT BIT_LENGTH(\"PingCAP 123\");"
     ]
 }

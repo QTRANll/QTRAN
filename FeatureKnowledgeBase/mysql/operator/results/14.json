@@ -35,5 +35,22 @@
     "Category": [
         "Built-In Functions and Operators",
         "JSON Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "CREATE TABLE tj10 (a JSON, b INT);",
+        "SELECT a->\"$[4]\" FROM tj10;",
+        "SELECT * FROM tj10 WHERE a->\"$[4][1]\" IS NOT NULL;",
+        "SELECT a->\"$[4][1]\" FROM tj10;",
+        "SELECT JSON_EXTRACT(a, \"$[4][1]\") FROM tj10;"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "CREATE TABLE tj10 (a JSON, b INT);",
+        "SELECT a->\"$[4]\" FROM tj10;",
+        "SELECT * FROM tj10 WHERE a->\"$[4][1]\" IS NOT NULL;",
+        "SELECT a->\"$[4][1]\" FROM tj10;",
+        "SELECT JSON_EXTRACT(a, \"$[4][1]\") FROM tj10;"
     ]
 }

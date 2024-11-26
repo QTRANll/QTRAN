@@ -32,5 +32,12 @@
     ],
     "Category": [
         "Encoding Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT hilbertDecode(2, 31);",
+        "SELECT hilbertDecode(1, 1);",
+        "SELECT hilbertDecode(tuple(2), 32768);",
+        "insert into hilbert_numbers (*) values(1,2);",
+        "select untuple(hilbertDecode(2, hilbertEncode(n1, n2))) from hilbert_numbers;"
     ]
 }

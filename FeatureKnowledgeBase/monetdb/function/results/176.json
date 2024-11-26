@@ -18,5 +18,31 @@
     ],
     "Category": [
         "Date Time Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT sql_add('2023-01-01', 3);",
+        "SELECT sql_add(TIMESTAMP '2023-01-01 00:00:00', 3);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 320,
+            "Prompt Tokens": 293,
+            "Completion Tokens": 27,
+            "Total Cost (USD)": 6.0149999999999985e-05
+        },
+        {
+            "Total Tokens": 496,
+            "Prompt Tokens": 460,
+            "Completion Tokens": 36,
+            "Total Cost (USD)": 9.059999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymonetdb.exceptions.OperationalError) 22007!Daytime (2023-01-01) has incorrect format\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT sql_add(TIMESTAMP '2023-01-01 00:00:00', 3);"
     ]
 }

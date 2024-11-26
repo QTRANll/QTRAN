@@ -14,5 +14,31 @@
     "Examples": [],
     "Category": [
         "Built-In Mathematical SQL Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT trunc(X);",
+        "SELECT trunc(5.7);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 350,
+            "Prompt Tokens": 333,
+            "Completion Tokens": 17,
+            "Total Cost (USD)": 6.015e-05
+        },
+        {
+            "Total Tokens": 488,
+            "Prompt Tokens": 468,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 8.219999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(sqlite3.OperationalError) no such column: X\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT trunc(5.7);"
     ]
 }

@@ -18,5 +18,53 @@
     ],
     "Category": [
         "Comparison Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "{fn IFNULL(arg1, arg2)}",
+        "IFNULL(arg1, arg2)",
+        "SELECT IFNULL(arg1, arg2);",
+        "SELECT IFNULL(column1, column2) FROM table_name;",
+        "SELECT IFNULL(1, 2);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 319,
+            "Prompt Tokens": 297,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 5.774999999999999e-05
+        },
+        {
+            "Total Tokens": 486,
+            "Prompt Tokens": 466,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 8.189999999999998e-05
+        },
+        {
+            "Total Tokens": 647,
+            "Prompt Tokens": 625,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 0.00010694999999999998
+        },
+        {
+            "Total Tokens": 808,
+            "Prompt Tokens": 783,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 0.00013245
+        },
+        {
+            "Total Tokens": 968,
+            "Prompt Tokens": 946,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 0.00015509999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymonetdb.exceptions.OperationalError) 42000!syntax error, unexpected X_BODY in: \"{fn IFNULL(arg1, arg2)}\"\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!syntax error, unexpected IDENT in: \"ifnull\"\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: identifier 'arg1' unknown\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42S02!SELECT: no such table 'table_name'\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: no such binary operator 'ifnull(tinyint,tinyint)'\n\n"
+    ],
+    "EffectiveSQLs": []
 }

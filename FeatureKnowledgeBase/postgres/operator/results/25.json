@@ -6,16 +6,34 @@
         "text || anynonarray"
     ],
     "Feature": [
-        "text || anynonarray → text",
-        "anynonarray || text → text"
+        "text || anynonarray \u2192 text",
+        "anynonarray || text \u2192 text"
     ],
     "Description": [
         "Converts the non-string input to text, then concatenates the two strings. (The non-string input cannot be of an array type, because that would create ambiguity with the array || operators. If you want to concatenate an array's text equivalent, cast it to text explicitly.)"
     ],
     "Examples": [
-        "'Value: ' || 42 → Value: 42"
+        "'Value: ' || 42 \u2192 Value: 42"
     ],
     "Category": [
         "String Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT 'Hello ' || 'World';"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 335,
+            "Prompt Tokens": 314,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 5.9699999999999994e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT 'Hello ' || 'World';"
     ]
 }

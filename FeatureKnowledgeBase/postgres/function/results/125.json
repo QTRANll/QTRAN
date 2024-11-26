@@ -6,15 +6,33 @@
         "sha384"
     ],
     "Feature": [
-        "sha384 ( bytea ) → bytea"
+        "sha384 ( bytea ) \u2192 bytea"
     ],
     "Description": [
         "Computes the SHA-384 hash of the binary string."
     ],
     "Examples": [
-        "sha384('abc'::bytea) → \\xcb00753f45a35e8bb5a03d699ac65007​272c32ab0eded1631a8b605a43ff5bed​8086072ba1e7cc2358baeca134c825a7"
+        "sha384('abc'::bytea) \u2192 \\xcb00753f45a35e8bb5a03d699ac65007\u200b272c32ab0eded1631a8b605a43ff5bed\u200b8086072ba1e7cc2358baeca134c825a7"
     ],
     "Category": [
         "Binary String Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT sha384('your_binary_data'::bytea);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 279,
+            "Prompt Tokens": 254,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 5.3099999999999996e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT sha384('your_binary_data'::bytea);"
     ]
 }

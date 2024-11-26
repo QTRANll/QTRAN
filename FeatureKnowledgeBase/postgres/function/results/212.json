@@ -6,15 +6,33 @@
         "array_to_tsvector"
     ],
     "Feature": [
-        "array_to_tsvector ( text[] ) → tsvector"
+        "array_to_tsvector ( text[] ) \u2192 tsvector"
     ],
     "Description": [
         "Converts an array of text strings to a tsvector. The given strings are used as lexemes as-is, without further processing. Array elements must not be empty strings or NULL."
     ],
     "Examples": [
-        "array_to_tsvector('{fat,cat,rat}'::text[]) → 'cat' 'fat' 'rat'"
+        "array_to_tsvector('{fat,cat,rat}'::text[]) \u2192 'cat' 'fat' 'rat'"
     ],
     "Category": [
         "Text Search Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT array_to_tsvector(ARRAY['example', 'text', 'strings']);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 323,
+            "Prompt Tokens": 293,
+            "Completion Tokens": 30,
+            "Total Cost (USD)": 6.194999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT array_to_tsvector(ARRAY['example', 'text', 'strings']);"
     ]
 }

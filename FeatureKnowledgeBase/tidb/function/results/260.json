@@ -10,10 +10,58 @@
     ],
     "Description": [
         "TIDB_BOUNDED_STALENESS",
-        "TIDB_BOUNDED_STALENESS() 函数用作 AS OF TIMESTAMP 语法的一部分。"
+        "TIDB_BOUNDED_STALENESS() \u51fd\u6570\u7528\u4f5c AS OF TIMESTAMP \u8bed\u6cd5\u7684\u4e00\u90e8\u5206\u3002"
     ],
     "Examples": [],
     "Category": [
-        "TiDB 特有的函数"
-    ]
+        "TiDB \u7279\u6709\u7684\u51fd\u6570"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT * FROM your_table AS OF TIMESTAMP '2023-10-01 10:00:00' WITH BOUNDED STALENESS",
+        "SELECT * FROM your_table AS OF TIMESTAMP '2023-10-01 10:00:00' BOUNDED STALENESS '10s'",
+        "SELECT * FROM your_table AS OF TIMESTAMP '2023-10-01 10:00:00' BOUNDED STALENESS 10",
+        "SELECT * FROM your_table AS OF TIMESTAMP '2023-10-01 10:00:00' BOUNDED STALENESS '10s'",
+        "SELECT * FROM your_table AS OF TIMESTAMP '2023-10-01 10:00:00' BOUNDED STALENESS 10"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 350,
+            "Prompt Tokens": 306,
+            "Completion Tokens": 44,
+            "Total Cost (USD)": 7.23e-05
+        },
+        {
+            "Total Tokens": 566,
+            "Prompt Tokens": 520,
+            "Completion Tokens": 46,
+            "Total Cost (USD)": 0.00010559999999999999
+        },
+        {
+            "Total Tokens": 784,
+            "Prompt Tokens": 739,
+            "Completion Tokens": 45,
+            "Total Cost (USD)": 0.00013785
+        },
+        {
+            "Total Tokens": 1001,
+            "Prompt Tokens": 955,
+            "Completion Tokens": 46,
+            "Total Cost (USD)": 0.00017084999999999998
+        },
+        {
+            "Total Tokens": 1219,
+            "Prompt Tokens": 1174,
+            "Completion Tokens": 45,
+            "Total Cost (USD)": 0.00020309999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.ProgrammingError) (1064, 'You have an error in your SQL syntax; check the manual that corresponds to your TiDB version for the right syntax to use line 1 column 67 near \"WITH BOUNDED STALENESS\" ')\n",
+        "(pymysql.err.ProgrammingError) (1064, 'You have an error in your SQL syntax; check the manual that corresponds to your TiDB version for the right syntax to use line 1 column 70 near \"BOUNDED STALENESS \\'10s\\'\" ')\n",
+        "(pymysql.err.ProgrammingError) (1064, 'You have an error in your SQL syntax; check the manual that corresponds to your TiDB version for the right syntax to use line 1 column 70 near \"BOUNDED STALENESS 10\" ')\n",
+        "(pymysql.err.ProgrammingError) (1064, 'You have an error in your SQL syntax; check the manual that corresponds to your TiDB version for the right syntax to use line 1 column 70 near \"BOUNDED STALENESS \\'10s\\'\" ')\n",
+        "(pymysql.err.ProgrammingError) (1064, 'You have an error in your SQL syntax; check the manual that corresponds to your TiDB version for the right syntax to use line 1 column 70 near \"BOUNDED STALENESS 10\" ')\n"
+    ],
+    "EffectiveSQLs": []
 }

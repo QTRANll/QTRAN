@@ -6,7 +6,7 @@
         "pg_database_collation_actual_version"
     ],
     "Feature": [
-        "pg_database_collation_actual_version ( oid ) → text"
+        "pg_database_collation_actual_version ( oid ) \u2192 text"
     ],
     "Description": [
         "Returns the actual version of the database's collation as it is currently installed in the operating system. If this is different from the value in pg_database.datcollversion, then objects depending on the collation might need to be rebuilt. See also ALTER DATABASE."
@@ -14,5 +14,31 @@
     "Examples": [],
     "Category": [
         "System Administration Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT pg_database_collation_actual_version(oid);",
+        "SELECT pg_database_collation_actual_version(pg_database.oid) FROM pg_database;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 331,
+            "Prompt Tokens": 308,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 5.9999999999999995e-05
+        },
+        {
+            "Total Tokens": 504,
+            "Prompt Tokens": 476,
+            "Completion Tokens": 28,
+            "Total Cost (USD)": 8.819999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedColumn) column \"oid\" does not exist\nLINE 1: SELECT pg_database_collation_actual_version(oid);\n                                                    ^\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT pg_database_collation_actual_version(pg_database.oid) FROM pg_database;"
     ]
 }

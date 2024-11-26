@@ -22,5 +22,14 @@
         "SELECT TAN(PI());",
         "SELECT TAN(PI()+1);",
         "SELECT TAN(RADIANS(PI()));"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT TAN(0.7853981633974483);",
+        "SELECT TAN(PI());",
+        "SELECT TAN(PI()+1);",
+        "SELECT TAN(RADIANS(PI()));"
     ]
 }

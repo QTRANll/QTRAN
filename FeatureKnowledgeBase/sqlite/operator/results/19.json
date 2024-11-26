@@ -19,5 +19,23 @@
     ],
     "Category": [
         "Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT 'example_text' REGEXP 'ex.*t';"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 330,
+            "Prompt Tokens": 305,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 6.074999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT 'example_text' REGEXP 'ex.*t';"
     ]
 }

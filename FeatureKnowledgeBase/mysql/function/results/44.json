@@ -22,5 +22,20 @@
     "Category": [
         "Built-In Functions and Operators",
         "Mathematical Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT CONV('a',16,2);",
+        "SELECT CONV('6E',18,8);",
+        "SELECT CONV(-17,10,-18);",
+        "SELECT CONV(10+'10'+'10'+X'0a',10,10);"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT CONV('a',16,2);",
+        "SELECT CONV('6E',18,8);",
+        "SELECT CONV(-17,10,-18);",
+        "SELECT CONV(10+'10'+'10'+X'0a',10,10);"
     ]
 }

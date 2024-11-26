@@ -16,5 +16,53 @@
     "Examples": [],
     "Category": [
         "Generate Series Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT generate_series(1, 10);",
+        "SELECT generate_series(1::int, 10::int);",
+        "SELECT generate_series(1, 10);",
+        "SELECT generate_series(1::bigint, 10::bigint);",
+        "SELECT generate_series(1, 10);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 312,
+            "Prompt Tokens": 290,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 5.669999999999999e-05
+        },
+        {
+            "Total Tokens": 479,
+            "Prompt Tokens": 453,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 8.355e-05
+        },
+        {
+            "Total Tokens": 629,
+            "Prompt Tokens": 607,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 0.00010424999999999999
+        },
+        {
+            "Total Tokens": 798,
+            "Prompt Tokens": 770,
+            "Completion Tokens": 28,
+            "Total Cost (USD)": 0.0001323
+        },
+        {
+            "Total Tokens": 948,
+            "Prompt Tokens": 926,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 0.00015209999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: no such binary operator 'generate_series(tinyint,tinyint)'\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!Unexpected symbol (:)\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: no such binary operator 'generate_series(tinyint,tinyint)'\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!Unexpected symbol (:)\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: no such binary operator 'generate_series(tinyint,tinyint)'\n\n"
+    ],
+    "EffectiveSQLs": []
 }

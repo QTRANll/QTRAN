@@ -18,5 +18,55 @@
     ],
     "Category": [
         "Character String Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT levenshtein('kitten', 'sitting', 1, 1);",
+        "SELECT levenshtein('kitten', 'sitting', 1, 1) AS distance;",
+        "SELECT levenshtein('kitten', 'sitting', 1, 1) AS result FROM DUAL;",
+        "SELECT levenshtein('kitten', 'sitting', 1, 1);",
+        "SELECT 0;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 392,
+            "Prompt Tokens": 361,
+            "Completion Tokens": 31,
+            "Total Cost (USD)": 7.274999999999999e-05
+        },
+        {
+            "Total Tokens": 571,
+            "Prompt Tokens": 538,
+            "Completion Tokens": 33,
+            "Total Cost (USD)": 0.0001005
+        },
+        {
+            "Total Tokens": 753,
+            "Prompt Tokens": 717,
+            "Completion Tokens": 36,
+            "Total Cost (USD)": 0.00012914999999999997
+        },
+        {
+            "Total Tokens": 928,
+            "Prompt Tokens": 897,
+            "Completion Tokens": 31,
+            "Total Cost (USD)": 0.00015314999999999998
+        },
+        {
+            "Total Tokens": 1090,
+            "Prompt Tokens": 1074,
+            "Completion Tokens": 16,
+            "Total Cost (USD)": 0.00017069999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: no such operator 'levenshtein'\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: no such operator 'levenshtein'\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42S02!SELECT: no such table 'dual'\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: no such operator 'levenshtein'\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT 0;"
     ]
 }

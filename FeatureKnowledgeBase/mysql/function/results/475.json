@@ -17,5 +17,31 @@
     "Examples": [],
     "Category": [
         "Loadable Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT load_rewrite_rules();",
+        "SELECT * FROM information_schema.routines WHERE routine_name = 'load_rewrite_rules';"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 304,
+            "Prompt Tokens": 285,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 5.4149999999999995e-05
+        },
+        {
+            "Total Tokens": 471,
+            "Prompt Tokens": 441,
+            "Completion Tokens": 30,
+            "Total Cost (USD)": 8.414999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.load_rewrite_rules does not exist')\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT * FROM information_schema.routines WHERE routine_name = 'load_rewrite_rules';"
     ]
 }

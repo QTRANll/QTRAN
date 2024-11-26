@@ -19,5 +19,31 @@
     "Examples": [],
     "Category": [
         "Geometric Types"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT 'path'::path;",
+        "SELECT '((0,0), (1,1), (2,2))'::path;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 282,
+            "Prompt Tokens": 263,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 5.0849999999999996e-05
+        },
+        {
+            "Total Tokens": 453,
+            "Prompt Tokens": 420,
+            "Completion Tokens": 33,
+            "Total Cost (USD)": 8.279999999999998e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.InvalidTextRepresentation) invalid input syntax for type path: \"path\"\nLINE 1: SELECT 'path'::path;\n               ^\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT '((0,0), (1,1), (2,2))'::path;"
     ]
 }

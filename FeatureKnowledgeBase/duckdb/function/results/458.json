@@ -16,5 +16,31 @@
     ],
     "Category": [
         "Text Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT mismatches(s1, s2) FROM your_table;",
+        "SELECT mismatches('example1', 'example2');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 336,
+            "Prompt Tokens": 311,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 6.165e-05
+        },
+        {
+            "Total Tokens": 521,
+            "Prompt Tokens": 497,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 8.895e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.CatalogException) Catalog Error: Table with name your_table does not exist!\nDid you mean \"pg_tables\"?\nLINE 1: SELECT mismatches(s1, s2) FROM your_table;\n                                       ^\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT mismatches('example1', 'example2');"
     ]
 }

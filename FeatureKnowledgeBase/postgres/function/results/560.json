@@ -6,17 +6,43 @@
         "pg_relation_size"
     ],
     "Feature": [
-        "pg_relation_size ( relation regclass [, fork text ] ) → bigint"
+        "pg_relation_size ( relation regclass [, fork text ] ) \u2192 bigint"
     ],
     "Description": [
-        "Computes the disk space used by one “fork” of the specified relation. (Note that for most purposes it is more convenient to use the higher-level functions pg_total_relation_size or pg_table_size, which sum the sizes of all forks.) With one argument, this returns the size of the main data fork of the relation. The second argument can be provided to specify which fork to examine:",
+        "Computes the disk space used by one \u201cfork\u201d of the specified relation. (Note that for most purposes it is more convenient to use the higher-level functions pg_total_relation_size or pg_table_size, which sum the sizes of all forks.) With one argument, this returns the size of the main data fork of the relation. The second argument can be provided to specify which fork to examine:",
         "main returns the size of the main data fork of the relation.",
-        "fsm returns the size of the Free Space Map (see Section 73.3) associated with the relation.",
-        "vm returns the size of the Visibility Map (see Section 73.4) associated with the relation.",
+        "fsm returns the size of the Free Space Map (see Section\u00a073.3) associated with the relation.",
+        "vm returns the size of the Visibility Map (see Section\u00a073.4) associated with the relation.",
         "init returns the size of the initialization fork, if any, associated with the relation."
     ],
     "Examples": [],
     "Category": [
         "System Administration Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT pg_relation_size('your_relation_name');",
+        "SELECT pg_relation_size('pg_class');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 428,
+            "Prompt Tokens": 406,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 7.41e-05
+        },
+        {
+            "Total Tokens": 592,
+            "Prompt Tokens": 571,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 9.824999999999998e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedTable) relation \"your_relation_name\" does not exist\nLINE 1: SELECT pg_relation_size('your_relation_name');\n                                ^\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT pg_relation_size('pg_class');"
     ]
 }

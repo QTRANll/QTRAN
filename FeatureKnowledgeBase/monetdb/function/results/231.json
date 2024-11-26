@@ -18,5 +18,53 @@
     ],
     "Category": [
         "JSON Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT json.text(js) FROM dual",
+        "SELECT json.text(js)",
+        "SELECT json.text('your_input_here')",
+        "SELECT json.text('example_value')",
+        "SELECT json.text('sample_input')"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 285,
+            "Prompt Tokens": 265,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 5.175e-05
+        },
+        {
+            "Total Tokens": 433,
+            "Prompt Tokens": 416,
+            "Completion Tokens": 17,
+            "Total Cost (USD)": 7.259999999999999e-05
+        },
+        {
+            "Total Tokens": 583,
+            "Prompt Tokens": 562,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 9.69e-05
+        },
+        {
+            "Total Tokens": 741,
+            "Prompt Tokens": 721,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 0.00012014999999999998
+        },
+        {
+            "Total Tokens": 899,
+            "Prompt Tokens": 879,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 0.00014384999999999997
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymonetdb.exceptions.OperationalError) 42S02!SELECT: no such table 'dual'\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: identifier 'js' unknown\n\n",
+        "(pymonetdb.exceptions.OperationalError) 'json.text' undefined in:     X_5:str := json.text(X_4:str);\n\n",
+        "(pymonetdb.exceptions.OperationalError) 'json.text' undefined in:     X_5:str := json.text(X_4:str);\n\n",
+        "(pymonetdb.exceptions.OperationalError) 'json.text' undefined in:     X_5:str := json.text(X_4:str);\n\n"
+    ],
+    "EffectiveSQLs": []
 }

@@ -24,5 +24,15 @@
         "SELECT COERCIBILITY('abc');",
         "SELECT COERCIBILITY(1);",
         "SELECT COERCIBILITY(NULL);"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT COERCIBILITY(CAST(1 AS CHAR));",
+        "SELECT COERCIBILITY(USER());",
+        "SELECT COERCIBILITY('abc');",
+        "SELECT COERCIBILITY(1);",
+        "SELECT COERCIBILITY(NULL);"
     ]
 }

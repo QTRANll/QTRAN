@@ -6,7 +6,7 @@
         "pg_column_compression"
     ],
     "Feature": [
-        "pg_column_compression ( \"any\" ) → text"
+        "pg_column_compression ( \"any\" ) \u2192 text"
     ],
     "Description": [
         "Shows the compression algorithm that was used to compress an individual variable-length value. Returns NULL if the value is not compressed."
@@ -14,5 +14,23 @@
     "Examples": [],
     "Category": [
         "System Administration Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT pg_column_compression('your_column_name');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 297,
+            "Prompt Tokens": 274,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 5.49e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT pg_column_compression('your_column_name');"
     ]
 }

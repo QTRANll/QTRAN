@@ -6,14 +6,62 @@
         "pg_ls_dir"
     ],
     "Feature": [
-        "pg_ls_dir ( dirname text [, missing_ok boolean, include_dot_dirs boolean ] ) → setof text"
+        "pg_ls_dir ( dirname text [, missing_ok boolean, include_dot_dirs boolean ] ) \u2192 setof text"
     ],
     "Description": [
-        "Returns the names of all files (and directories and other special files) in the specified directory. The include_dot_dirs parameter indicates whether “.” and “..” are to be included in the result set; the default is to exclude them. Including them can be useful when missing_ok is true, to distinguish an empty directory from a non-existent directory.",
+        "Returns the names of all files (and directories and other special files) in the specified directory. The include_dot_dirs parameter indicates whether \u201c.\u201d and \u201c..\u201d are to be included in the result set; the default is to exclude them. Including them can be useful when missing_ok is true, to distinguish an empty directory from a non-existent directory.",
         "This function is restricted to superusers by default, but other users can be granted EXECUTE to run the function."
     ],
     "Examples": [],
     "Category": [
         "System Administration Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT * FROM pg_ls_dir('/your/directory/path');",
+        "SELECT * FROM pg_ls_dir('/existing/directory/path');",
+        "SELECT * FROM pg_ls_dir('/another/existing/directory/path');",
+        "SELECT * FROM pg_ls_dir('/yet/another/existing/directory/path');",
+        "SELECT * FROM pg_ls_dir('/some/valid/directory/path');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 376,
+            "Prompt Tokens": 351,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 6.764999999999999e-05
+        },
+        {
+            "Total Tokens": 533,
+            "Prompt Tokens": 508,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 9.12e-05
+        },
+        {
+            "Total Tokens": 692,
+            "Prompt Tokens": 665,
+            "Completion Tokens": 27,
+            "Total Cost (USD)": 0.00011595
+        },
+        {
+            "Total Tokens": 855,
+            "Prompt Tokens": 826,
+            "Completion Tokens": 29,
+            "Total Cost (USD)": 0.00014129999999999997
+        },
+        {
+            "Total Tokens": 1018,
+            "Prompt Tokens": 991,
+            "Completion Tokens": 27,
+            "Total Cost (USD)": 0.00016484999999999997
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedFile) could not open directory \"/your/directory/path\": No such file or directory\n\n",
+        "(psycopg2.errors.UndefinedFile) could not open directory \"/existing/directory/path\": No such file or directory\n\n",
+        "(psycopg2.errors.UndefinedFile) could not open directory \"/another/existing/directory/path\": No such file or directory\n\n",
+        "(psycopg2.errors.UndefinedFile) could not open directory \"/yet/another/existing/directory/path\": No such file or directory\n\n",
+        "(psycopg2.errors.UndefinedFile) could not open directory \"/some/valid/directory/path\": No such file or directory\n\n"
+    ],
+    "EffectiveSQLs": []
 }

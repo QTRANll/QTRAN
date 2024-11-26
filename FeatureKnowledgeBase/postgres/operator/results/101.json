@@ -6,15 +6,33 @@
         "inet + bigint"
     ],
     "Feature": [
-        "inet + bigint → inet"
+        "inet + bigint \u2192 inet"
     ],
     "Description": [
         "Adds an offset to an address."
     ],
     "Examples": [
-        "inet '192.168.1.6' + 25 → 192.168.1.31"
+        "inet '192.168.1.6' + 25 \u2192 192.168.1.31"
     ],
     "Category": [
         "Network Address Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT '192.168.1.1'::inet + 10::bigint;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 279,
+            "Prompt Tokens": 248,
+            "Completion Tokens": 31,
+            "Total Cost (USD)": 5.5799999999999994e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT '192.168.1.1'::inet + 10::bigint;"
     ]
 }

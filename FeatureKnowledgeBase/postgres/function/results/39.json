@@ -6,15 +6,41 @@
         "atan2"
     ],
     "Feature": [
-        "atan2 ( y double precision, x double precision ) → double precision"
+        "atan2 ( y double precision, x double precision ) \u2192 double precision"
     ],
     "Description": [
         "Inverse tangent of y/x, result in radians"
     ],
     "Examples": [
-        "atan2(1, 0) → 1.5707963267948966"
+        "atan2(1, 0) \u2192 1.5707963267948966"
     ],
     "Category": [
         "Mathematical Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT atan2(y, x);",
+        "SELECT atan2(1.0, 1.0);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 276,
+            "Prompt Tokens": 256,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 5.04e-05
+        },
+        {
+            "Total Tokens": 440,
+            "Prompt Tokens": 414,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 7.769999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedColumn) column \"y\" does not exist\nLINE 1: SELECT atan2(y, x);\n                     ^\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT atan2(1.0, 1.0);"
     ]
 }

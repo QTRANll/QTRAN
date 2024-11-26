@@ -10,14 +10,29 @@
     ],
     "Description": [
         "LENGTH()",
-        "LENGTH() 函数用于返回字符串的字节长度。LENGTH() 将单个多字节字符视为多个字节，而 CHAR_LENGTH() 将单个多字节字符视为单个字符。",
-        "如果输入参数为 NULL，该函数将返回 NULL。"
+        "LENGTH() \u51fd\u6570\u7528\u4e8e\u8fd4\u56de\u5b57\u7b26\u4e32\u7684\u5b57\u8282\u957f\u5ea6\u3002LENGTH() \u5c06\u5355\u4e2a\u591a\u5b57\u8282\u5b57\u7b26\u89c6\u4e3a\u591a\u4e2a\u5b57\u8282\uff0c\u800c CHAR_LENGTH() \u5c06\u5355\u4e2a\u591a\u5b57\u8282\u5b57\u7b26\u89c6\u4e3a\u5355\u4e2a\u5b57\u7b26\u3002",
+        "\u5982\u679c\u8f93\u5165\u53c2\u6570\u4e3a NULL\uff0c\u8be5\u51fd\u6570\u5c06\u8fd4\u56de NULL\u3002"
     ],
     "Examples": [
-        "SELECT LENGTH('ABC');\n+---------------+\n| LENGTH('ABC') |\n+---------------+\n|             3 |\n+---------------+\n\nSELECT LENGTH('🍣ABC');\n+-------------------+\n| LENGTH('🍣ABC')     |\n+-------------------+\n|                 7 |\n+-------------------+\n\nSELECT CHAR_LENGTH('🍣ABC');\n+------------------------+\n| CHAR_LENGTH('🍣ABC')     |\n+------------------------+\n|                      4 |\n+------------------------+\n",
+        "SELECT LENGTH('ABC');\n+---------------+\n| LENGTH('ABC') |\n+---------------+\n|             3 |\n+---------------+\n\nSELECT LENGTH('\ud83c\udf63ABC');\n+-------------------+\n| LENGTH('\ud83c\udf63ABC')     |\n+-------------------+\n|                 7 |\n+-------------------+\n\nSELECT CHAR_LENGTH('\ud83c\udf63ABC');\n+------------------------+\n| CHAR_LENGTH('\ud83c\udf63ABC')     |\n+------------------------+\n|                      4 |\n+------------------------+\n",
         "SELECT LENGTH(NULL);\n+--------------+\n| LENGTH(NULL) |\n+--------------+\n|         NULL |\n+--------------+\n"
     ],
     "Category": [
-        "字符串函数"
+        "\u5b57\u7b26\u4e32\u51fd\u6570"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT LENGTH('ABC');",
+        "SELECT LENGTH('\ud83c\udf63ABC');",
+        "SELECT CHAR_LENGTH('\ud83c\udf63ABC');",
+        "SELECT LENGTH(NULL);"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT LENGTH('ABC');",
+        "SELECT LENGTH('\ud83c\udf63ABC');",
+        "SELECT CHAR_LENGTH('\ud83c\udf63ABC');",
+        "SELECT LENGTH(NULL);"
     ]
 }

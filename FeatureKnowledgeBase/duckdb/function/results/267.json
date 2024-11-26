@@ -18,5 +18,53 @@
     ],
     "Category": [
         "List Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT array_push_front(1, [2, 3, 4]);",
+        "SELECT array_push_front(1, ARRAY[2, 3, 4]);",
+        "SELECT array_push_front(1, CAST(ARRAY[2, 3, 4] AS INTEGER[]));",
+        "SELECT array_push_front(1, ARRAY[2::INTEGER, 3::INTEGER, 4::INTEGER]);",
+        "SELECT array_push_front(1, ARRAY[2, 3, 4]::INTEGER[]);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 288,
+            "Prompt Tokens": 259,
+            "Completion Tokens": 29,
+            "Total Cost (USD)": 5.625e-05
+        },
+        {
+            "Total Tokens": 502,
+            "Prompt Tokens": 472,
+            "Completion Tokens": 30,
+            "Total Cost (USD)": 8.879999999999999e-05
+        },
+        {
+            "Total Tokens": 723,
+            "Prompt Tokens": 687,
+            "Completion Tokens": 36,
+            "Total Cost (USD)": 0.00012465
+        },
+        {
+            "Total Tokens": 947,
+            "Prompt Tokens": 911,
+            "Completion Tokens": 36,
+            "Total Cost (USD)": 0.00015824999999999997
+        },
+        {
+            "Total Tokens": 1165,
+            "Prompt Tokens": 1131,
+            "Completion Tokens": 34,
+            "Total Cost (USD)": 0.00019004999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.BinderException) Binder Error: No function matches the given name and argument types 'list_concat(INTEGER[][], INTEGER_LITERAL)'. You might need to add explicit type casts.\n\tCandidate functions:\n\tlist_concat(ANY[], ANY[]) -> ANY[]\n\nLINE 1: SELECT array_push_front(1, [2, 3, 4]);\n               ^\n",
+        "(duckdb.duckdb.BinderException) Binder Error: No function matches the given name and argument types 'list_concat(INTEGER[][], INTEGER_LITERAL)'. You might need to add explicit type casts.\n\tCandidate functions:\n\tlist_concat(ANY[], ANY[]) -> ANY[]\n\nLINE 1: SELECT array_push_front(1, ARRAY[2, 3, 4]);\n               ^\n",
+        "(duckdb.duckdb.BinderException) Binder Error: No function matches the given name and argument types 'list_concat(INTEGER[][], INTEGER_LITERAL)'. You might need to add explicit type casts.\n\tCandidate functions:\n\tlist_concat(ANY[], ANY[]) -> ANY[]\n\nLINE 1: SELECT array_push_front(1, CAST(ARRAY[2, 3, 4]...\n               ^\n",
+        "(duckdb.duckdb.BinderException) Binder Error: No function matches the given name and argument types 'list_concat(INTEGER[][], INTEGER_LITERAL)'. You might need to add explicit type casts.\n\tCandidate functions:\n\tlist_concat(ANY[], ANY[]) -> ANY[]\n\nLINE 1: SELECT array_push_front(1, ARRAY[2::INTEGER, 3...\n               ^\n",
+        "(duckdb.duckdb.BinderException) Binder Error: No function matches the given name and argument types 'list_concat(INTEGER[][], INTEGER_LITERAL)'. You might need to add explicit type casts.\n\tCandidate functions:\n\tlist_concat(ANY[], ANY[]) -> ANY[]\n\nLINE 1: SELECT array_push_front(1, ARRAY[2, 3, 4]::INT...\n               ^\n"
+    ],
+    "EffectiveSQLs": []
 }

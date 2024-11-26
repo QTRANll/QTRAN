@@ -18,5 +18,53 @@
     ],
     "Category": [
         "Date Time Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT century(current_date);",
+        "SELECT century('2023-10-01'::date);",
+        "SELECT century('2023-10-01');",
+        "SELECT century(DATE '2023-10-01');",
+        "SELECT century(current_timestamp);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 283,
+            "Prompt Tokens": 265,
+            "Completion Tokens": 18,
+            "Total Cost (USD)": 5.0549999999999995e-05
+        },
+        {
+            "Total Tokens": 443,
+            "Prompt Tokens": 417,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 7.814999999999999e-05
+        },
+        {
+            "Total Tokens": 592,
+            "Prompt Tokens": 569,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 9.914999999999998e-05
+        },
+        {
+            "Total Tokens": 751,
+            "Prompt Tokens": 726,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 0.00012389999999999998
+        },
+        {
+            "Total Tokens": 903,
+            "Prompt Tokens": 885,
+            "Completion Tokens": 18,
+            "Total Cost (USD)": 0.00014355
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: no such unary operator 'century(date)'\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!Unexpected symbol (:)\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: no such unary operator 'century(char)'\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: no such unary operator 'century(date)'\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: no such unary operator 'century(timestamptz)'\n\n"
+    ],
+    "EffectiveSQLs": []
 }

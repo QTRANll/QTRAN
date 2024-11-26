@@ -15,5 +15,53 @@
     "Examples": [],
     "Category": [
         "Aggregate Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT regr_avgy(y, x) FROM your_table_name;",
+        "SELECT regr_avgy(y, x);",
+        "SELECT regr_avgy(y, x) FROM your_table_name WHERE y IS NOT NULL AND x IS NOT NULL;",
+        "SELECT regr_avgy(y, x) WHERE y IS NOT NULL AND x IS NOT NULL;",
+        "SELECT regr_avgy(y, x) FROM (SELECT y, x FROM your_table_name WHERE y IS NOT NULL AND x IS NOT NULL) AS subquery;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 312,
+            "Prompt Tokens": 286,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 5.8499999999999985e-05
+        },
+        {
+            "Total Tokens": 497,
+            "Prompt Tokens": 475,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 8.444999999999999e-05
+        },
+        {
+            "Total Tokens": 684,
+            "Prompt Tokens": 648,
+            "Completion Tokens": 36,
+            "Total Cost (USD)": 0.00011879999999999999
+        },
+        {
+            "Total Tokens": 885,
+            "Prompt Tokens": 853,
+            "Completion Tokens": 32,
+            "Total Cost (USD)": 0.00014715
+        },
+        {
+            "Total Tokens": 1093,
+            "Prompt Tokens": 1047,
+            "Completion Tokens": 46,
+            "Total Cost (USD)": 0.00018464999999999996
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.CatalogException) Catalog Error: Table with name your_table_name does not exist!\nDid you mean \"pg_tablespace\"?\nLINE 1: SELECT regr_avgy(y, x) FROM your_table_name;\n                                    ^\n",
+        "(duckdb.duckdb.BinderException) Binder Error: Referenced column \"y\" not found in FROM clause!\nLINE 1: SELECT regr_avgy(y, x);\n                         ^\n",
+        "(duckdb.duckdb.CatalogException) Catalog Error: Table with name your_table_name does not exist!\nDid you mean \"pg_tablespace\"?\nLINE 1: SELECT regr_avgy(y, x) FROM your_table_name WHERE y IS NOT NULL AND...\n                                    ^\n",
+        "(duckdb.duckdb.BinderException) Binder Error: Referenced column \"y\" not found in FROM clause!\nLINE 1: SELECT regr_avgy(y, x) WHERE y IS NOT NULL AND x IS NOT NULL;\n                                     ^\n",
+        "(duckdb.duckdb.CatalogException) Catalog Error: Table with name your_table_name does not exist!\nDid you mean \"pg_tablespace\"?\nLINE 1: ...regr_avgy(y, x) FROM (SELECT y, x FROM your_table_name WHERE y IS NOT NULL AND...\n                                                  ^\n"
+    ],
+    "EffectiveSQLs": []
 }

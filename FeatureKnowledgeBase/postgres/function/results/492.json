@@ -6,7 +6,7 @@
         "txid_snapshot_xmin"
     ],
     "Feature": [
-        "txid_snapshot_xmin ( txid_snapshot ) → bigint"
+        "txid_snapshot_xmin ( txid_snapshot ) \u2192 bigint"
     ],
     "Description": [
         "See pg_snapshot_xmin()."
@@ -14,5 +14,31 @@
     "Examples": [],
     "Category": [
         "System Information Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT txid_snapshot_xmin(txid_snapshot);",
+        "SELECT txid_snapshot_xmin(NULL);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 283,
+            "Prompt Tokens": 260,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 5.2799999999999996e-05
+        },
+        {
+            "Total Tokens": 450,
+            "Prompt Tokens": 429,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 7.694999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedColumn) column \"txid_snapshot\" does not exist\nLINE 1: SELECT txid_snapshot_xmin(txid_snapshot);\n                                  ^\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT txid_snapshot_xmin(NULL);"
     ]
 }

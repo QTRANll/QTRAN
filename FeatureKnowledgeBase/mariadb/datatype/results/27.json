@@ -26,5 +26,48 @@
     ],
     "Category": [
         "String Data Types"
+    ],
+    "EffectiveSQLsRefined": [
+        "CREATE TABLE t1 (a INT, b VARCHAR(32));",
+        "INSERT INTO t1 VALUES (10,'b10');",
+        "INSERT INTO t1 VALUES (20,'b20');",
+        "INSERT INTO t1 VALUES (30,'b30');",
+        "SELECT a,b FROM t1;",
+        "CREATE TABLE t1 (a INT, b VARCHAR(32));",
+        "INSERT INTO t1 VALUES (10,'b10');",
+        "INSERT INTO t1 VALUES (20,'b20');",
+        "INSERT INTO t1 VALUES (30,'b30');",
+        "SELECT a,b FROM t1;",
+        "CREATE TABLE t1 (a INT, b VARCHAR(32));",
+        "INSERT INTO t1 VALUES (10,'b10');",
+        "CREATE TABLE t1 (a INT, b VARCHAR(32));",
+        "INSERT INTO t1 VALUES (10,'b10');",
+        "CREATE TABLE t1 (a INT, b VARCHAR(32));",
+        "INSERT INTO t1 VALUES (10,'b10');",
+        "CREATE TABLE t1 (a INT, b VARCHAR(32));",
+        "INSERT INTO t1 VALUES (10,'b10');"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "CREATE TABLE t1 (a INT, b VARCHAR(32));",
+        "INSERT INTO t1 VALUES (10,'b10');",
+        "INSERT INTO t1 VALUES (20,'b20');",
+        "INSERT INTO t1 VALUES (30,'b30');",
+        "SELECT a,b FROM t1;",
+        "CREATE TABLE t1 (a INT, b VARCHAR(32));",
+        "INSERT INTO t1 VALUES (10,'b10');",
+        "INSERT INTO t1 VALUES (20,'b20');",
+        "INSERT INTO t1 VALUES (30,'b30');",
+        "SELECT a,b FROM t1;",
+        "CREATE TABLE t1 (a INT, b VARCHAR(32));",
+        "INSERT INTO t1 VALUES (10,'b10');",
+        "CREATE TABLE t1 (a INT, b VARCHAR(32));",
+        "INSERT INTO t1 VALUES (10,'b10');",
+        "CREATE TABLE t1 (a INT, b VARCHAR(32));",
+        "INSERT INTO t1 VALUES (10,'b10');",
+        "CREATE TABLE t1 (a INT, b VARCHAR(32));",
+        "INSERT INTO t1 VALUES (10,'b10');"
     ]
 }

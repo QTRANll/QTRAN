@@ -6,15 +6,33 @@
         "acosh"
     ],
     "Feature": [
-        "acosh ( double precision ) → double precision"
+        "acosh ( double precision ) \u2192 double precision"
     ],
     "Description": [
         "Inverse hyperbolic cosine"
     ],
     "Examples": [
-        "acosh(1) → 0"
+        "acosh(1) \u2192 0"
     ],
     "Category": [
         "Mathematical Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT acosh(1.5);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 268,
+            "Prompt Tokens": 247,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 4.965e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT acosh(1.5);"
     ]
 }

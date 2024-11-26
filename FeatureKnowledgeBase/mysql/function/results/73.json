@@ -20,5 +20,47 @@
     "Category": [
         "Built-In Functions and Operators",
         "Window Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT DENSE_RANK() OVER (ORDER BY column_name) AS rank FROM table_name;",
+        "SELECT DENSE_RANK() OVER (ORDER BY column_name) AS `rank` FROM table_name;",
+        "SELECT DENSE_RANK() OVER (ORDER BY column_name) AS `rank` FROM your_table_name;",
+        "SELECT DENSE_RANK() OVER (ORDER BY column_name) AS `rank` FROM (SELECT 1 AS column_name) AS temp_table;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 447,
+            "Prompt Tokens": 416,
+            "Completion Tokens": 31,
+            "Total Cost (USD)": 8.099999999999999e-05
+        },
+        {
+            "Total Tokens": 643,
+            "Prompt Tokens": 610,
+            "Completion Tokens": 33,
+            "Total Cost (USD)": 0.0001113
+        },
+        {
+            "Total Tokens": 815,
+            "Prompt Tokens": 781,
+            "Completion Tokens": 34,
+            "Total Cost (USD)": 0.00013754999999999998
+        },
+        {
+            "Total Tokens": 997,
+            "Prompt Tokens": 955,
+            "Completion Tokens": 42,
+            "Total Cost (USD)": 0.00016844999999999997
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.ProgrammingError) (1064, \"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'rank FROM table_name' at line 1\")\n",
+        "(pymysql.err.ProgrammingError) (1146, \"Table 'knowledge_base_preprocess_mysql.table_name' doesn't exist\")\n",
+        "(pymysql.err.ProgrammingError) (1146, \"Table 'knowledge_base_preprocess_mysql.your_table_name' doesn't exist\")\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT DENSE_RANK() OVER (ORDER BY column_name) AS `rank` FROM (SELECT 1 AS column_name) AS temp_table;"
     ]
 }

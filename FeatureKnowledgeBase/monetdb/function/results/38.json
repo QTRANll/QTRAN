@@ -18,5 +18,53 @@
     ],
     "Category": [
         "Mathematics Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT log2(x);",
+        "SELECT log2(2);",
+        "SELECT log2(4.0);",
+        "SELECT log2(8.0);",
+        "SELECT log2(16);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 276,
+            "Prompt Tokens": 258,
+            "Completion Tokens": 18,
+            "Total Cost (USD)": 4.95e-05
+        },
+        {
+            "Total Tokens": 424,
+            "Prompt Tokens": 405,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 7.214999999999999e-05
+        },
+        {
+            "Total Tokens": 581,
+            "Prompt Tokens": 560,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 9.659999999999999e-05
+        },
+        {
+            "Total Tokens": 736,
+            "Prompt Tokens": 715,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 0.00011984999999999999
+        },
+        {
+            "Total Tokens": 889,
+            "Prompt Tokens": 870,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 0.0001419
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: identifier 'x' unknown\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: no such unary operator 'log2(tinyint)'\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: no such unary operator 'log2(decimal)'\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: no such unary operator 'log2(decimal)'\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: no such unary operator 'log2(tinyint)'\n\n"
+    ],
+    "EffectiveSQLs": []
 }

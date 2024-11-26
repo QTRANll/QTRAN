@@ -6,15 +6,41 @@
         "bit_length"
     ],
     "Feature": [
-        "bit_length ( bytea ) → integer"
+        "bit_length ( bytea ) \u2192 integer"
     ],
     "Description": [
         "Returns number of bits in the binary string (8 times the octet_length)."
     ],
     "Examples": [
-        "bit_length('\\x123456'::bytea) → 24"
+        "bit_length('\\x123456'::bytea) \u2192 24"
     ],
     "Category": [
         "Binary String Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT bit_length(your_bytea_column) FROM your_table;",
+        "SELECT bit_length(E'\\x68656c6c6f') AS bit_length_value;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 282,
+            "Prompt Tokens": 257,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 5.3549999999999994e-05
+        },
+        {
+            "Total Tokens": 459,
+            "Prompt Tokens": 427,
+            "Completion Tokens": 32,
+            "Total Cost (USD)": 8.324999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedTable) relation \"your_table\" does not exist\nLINE 1: SELECT bit_length(your_bytea_column) FROM your_table;\n                                                  ^\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT bit_length(E'\\x68656c6c6f') AS bit_length_value;"
     ]
 }

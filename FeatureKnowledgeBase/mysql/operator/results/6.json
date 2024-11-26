@@ -26,5 +26,16 @@
     "Category": [
         "Built-In Functions and Operators",
         "Bit Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT 1 << 2;",
+        "SELECT HEX(_binary X'00FF00FF00FF' << 8);"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT 1 << 2;",
+        "SELECT HEX(_binary X'00FF00FF00FF' << 8);"
     ]
 }

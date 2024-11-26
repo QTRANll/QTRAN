@@ -15,5 +15,31 @@
     "Examples": [],
     "Category": [
         "Pseudo-Types"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT $1::anyelement;",
+        "SELECT NULL::anyelement;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 276,
+            "Prompt Tokens": 257,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 4.9949999999999994e-05
+        },
+        {
+            "Total Tokens": 431,
+            "Prompt Tokens": 413,
+            "Completion Tokens": 18,
+            "Total Cost (USD)": 7.274999999999998e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedParameter) there is no parameter $1\nLINE 1: SELECT $1::anyelement;\n               ^\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT NULL::anyelement;"
     ]
 }

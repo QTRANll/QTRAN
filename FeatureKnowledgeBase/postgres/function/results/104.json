@@ -6,16 +6,34 @@
         "to_hex"
     ],
     "Feature": [
-        "to_hex ( integer ) → text",
-        "to_hex ( bigint ) → text"
+        "to_hex ( integer ) \u2192 text",
+        "to_hex ( bigint ) \u2192 text"
     ],
     "Description": [
         "Converts the number to its equivalent hexadecimal representation."
     ],
     "Examples": [
-        "to_hex(2147483647) → 7fffffff"
+        "to_hex(2147483647) \u2192 7fffffff"
     ],
     "Category": [
         "String Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT to_hex(255);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 278,
+            "Prompt Tokens": 259,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 5.0249999999999995e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT to_hex(255);"
     ]
 }

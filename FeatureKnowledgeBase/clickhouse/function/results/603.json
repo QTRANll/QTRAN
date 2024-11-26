@@ -23,5 +23,9 @@
     ],
     "Category": [
         "Nullable Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT toTypeName(10);",
+        "SELECT toTypeName(toNullable(10));"
     ]
 }

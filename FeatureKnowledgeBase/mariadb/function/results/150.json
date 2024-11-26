@@ -22,5 +22,12 @@
     "EffectiveSQLsRefined": [
         "SELECT JSON_REMOVE('{\"A\": 1, \"B\": 2, \"C\": {\"D\": 3}}', '$.C');",
         "SELECT JSON_REMOVE('[\"A\", \"B\", [\"C\", \"D\"], \"E\"]', '$[1]');"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT JSON_REMOVE('{\"A\": 1, \"B\": 2, \"C\": {\"D\": 3}}', '$.C');",
+        "SELECT JSON_REMOVE('[\"A\", \"B\", [\"C\", \"D\"], \"E\"]', '$[1]');"
     ]
 }

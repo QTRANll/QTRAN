@@ -201,5 +201,10 @@
     ],
     "Category": [
         "Dynamic"
+    ],
+    "EffectiveSQLsRefined": [
+        "SET allow_experimental_variant_type = 1, use_variant_as_common_type = 1;",
+        "SET cast_string_to_dynamic_use_inference = 1;",
+        "SELECT JSONExtract('{\"a\" : [1, 2, 3]}', 'a', 'Dynamic') AS dynamic, dynamicType(dynamic) AS dynamic_type;"
     ]
 }

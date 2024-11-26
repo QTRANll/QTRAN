@@ -18,5 +18,23 @@
     ],
     "Category": [
         "INET Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT sys.masklen(inet '192.168.1.1');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 293,
+            "Prompt Tokens": 265,
+            "Completion Tokens": 28,
+            "Total Cost (USD)": 5.654999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT sys.masklen(inet '192.168.1.1');"
     ]
 }

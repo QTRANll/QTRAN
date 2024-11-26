@@ -6,15 +6,33 @@
         "row_to_json"
     ],
     "Feature": [
-        "row_to_json ( record [, boolean ] ) → json"
+        "row_to_json ( record [, boolean ] ) \u2192 json"
     ],
     "Description": [
         "Converts an SQL composite value to a JSON object. The behavior is the same as to_json except that line feeds will be added between top-level elements if the optional boolean parameter is true."
     ],
     "Examples": [
-        "row_to_json(row(1,'foo')) → {\"f1\":1,\"f2\":\"foo\"}"
+        "row_to_json(row(1,'foo')) \u2192 {\"f1\":1,\"f2\":\"foo\"}"
     ],
     "Category": [
         "JSON Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT row_to_json(record) FROM (SELECT 1 AS id, 'example' AS name) AS record;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 320,
+            "Prompt Tokens": 285,
+            "Completion Tokens": 35,
+            "Total Cost (USD)": 6.374999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT row_to_json(record) FROM (SELECT 1 AS id, 'example' AS name) AS record;"
     ]
 }

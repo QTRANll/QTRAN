@@ -6,13 +6,22 @@
     ],
     "Description": [
         "\nMONTHNAME(date)\n",
-        "\n          Returns the full name of the month for\n          date. The language used for the\n          name is controlled by the value of the\n          lc_time_names system variable\n          (Section 12.16, “MySQL Server Locale Support”). Returns\n          NULL if date is\n          NULL.\n        ",
+        "\n          Returns the full name of the month for\n          date. The language used for the\n          name is controlled by the value of the\n          lc_time_names system variable\n          (Section\u00a012.16, \u201cMySQL Server Locale Support\u201d). Returns\n          NULL if date is\n          NULL.\n        ",
         "Press CTRL+C to copy mysql> SELECT MONTHNAME('2008-02-03');\n        -> 'February'"
     ],
     "Examples": [
         "mysql> SELECT MONTHNAME('2008-02-03');\n        -> 'February'"
     ],
     "Category": [
-        "日期和时间函数"
+        "\u65e5\u671f\u548c\u65f6\u95f4\u51fd\u6570"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT MONTHNAME('2008-02-03');"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT MONTHNAME('2008-02-03');"
     ]
 }

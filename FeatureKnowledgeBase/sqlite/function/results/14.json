@@ -14,5 +14,53 @@
     "Examples": [],
     "Category": [
         "Core SQL Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "like('%pattern%', column_name)",
+        "SELECT * FROM table_name WHERE column_name LIKE '%pattern%'",
+        "SELECT * FROM sqlite_master WHERE type='table' AND name='your_table_name' AND column_name LIKE '%pattern%'",
+        "SELECT * FROM your_table_name WHERE your_column_name LIKE '%pattern%'",
+        "SELECT * FROM sqlite_master WHERE type='table' AND name='example_table' AND example_column LIKE '%pattern%'"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 514,
+            "Prompt Tokens": 495,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 8.565e-05
+        },
+        {
+            "Total Tokens": 663,
+            "Prompt Tokens": 638,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 0.0001107
+        },
+        {
+            "Total Tokens": 824,
+            "Prompt Tokens": 787,
+            "Completion Tokens": 37,
+            "Total Cost (USD)": 0.00014025
+        },
+        {
+            "Total Tokens": 975,
+            "Prompt Tokens": 948,
+            "Completion Tokens": 27,
+            "Total Cost (USD)": 0.00015839999999999997
+        },
+        {
+            "Total Tokens": 1136,
+            "Prompt Tokens": 1100,
+            "Completion Tokens": 36,
+            "Total Cost (USD)": 0.00018659999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(sqlite3.OperationalError) near \"like\": syntax error\n",
+        "(sqlite3.OperationalError) no such table: table_name\n",
+        "(sqlite3.OperationalError) no such column: column_name\n",
+        "(sqlite3.OperationalError) no such table: your_table_name\n",
+        "(sqlite3.OperationalError) no such column: example_column\n"
+    ],
+    "EffectiveSQLs": []
 }

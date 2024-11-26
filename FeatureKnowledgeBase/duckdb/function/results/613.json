@@ -16,5 +16,55 @@
     "Examples": [],
     "Category": [
         "Window Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT nth_value(column, 2) FROM your_table;",
+        "SELECT nth_value(your_column, 2) FROM your_table;",
+        "SELECT nth_value(your_column, 2) FROM pg_tables;",
+        "SELECT any_value(your_column) FROM pg_tables;",
+        "SELECT any_value(tablename) FROM pg_tables;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 340,
+            "Prompt Tokens": 316,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 6.18e-05
+        },
+        {
+            "Total Tokens": 496,
+            "Prompt Tokens": 470,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 8.609999999999999e-05
+        },
+        {
+            "Total Tokens": 682,
+            "Prompt Tokens": 656,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 0.00011399999999999999
+        },
+        {
+            "Total Tokens": 866,
+            "Prompt Tokens": 843,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 0.00014025
+        },
+        {
+            "Total Tokens": 1050,
+            "Prompt Tokens": 1028,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 0.00016739999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.ParserException) Parser Error: syntax error at or near \"column\"\n",
+        "(duckdb.duckdb.CatalogException) Catalog Error: Table with name your_table does not exist!\nDid you mean \"pg_tables\"?\nLINE 1: SELECT nth_value(your_column, 2) FROM your_table;\n                                              ^\n",
+        "(duckdb.duckdb.CatalogException) Catalog Error: Scalar Function with name nth_value does not exist!\nDid you mean \"any_value\"?\nLINE 1: SELECT nth_value(your_column, 2) FROM pg_table...\n               ^\n",
+        "(duckdb.duckdb.BinderException) Binder Error: Referenced column \"your_column\" not found in FROM clause!\nCandidate bindings: \"pg_tables.tablename\"\nLINE 1: SELECT any_value(your_column) FROM pg_tables;\n                         ^\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT any_value(tablename) FROM pg_tables;"
     ]
 }

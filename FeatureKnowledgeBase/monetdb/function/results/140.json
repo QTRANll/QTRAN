@@ -18,5 +18,23 @@
     ],
     "Category": [
         "Character String Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT levenshtein('kitten', 'sitting', 1, 1, 1);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 395,
+            "Prompt Tokens": 361,
+            "Completion Tokens": 34,
+            "Total Cost (USD)": 7.455e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT levenshtein('kitten', 'sitting', 1, 1, 1);"
     ]
 }

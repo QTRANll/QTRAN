@@ -18,5 +18,31 @@
     ],
     "Category": [
         "Timestamp Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT epoch_ms(timestamp);",
+        "SELECT epoch_ms(current_timestamp);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 283,
+            "Prompt Tokens": 265,
+            "Completion Tokens": 18,
+            "Total Cost (USD)": 5.0549999999999995e-05
+        },
+        {
+            "Total Tokens": 445,
+            "Prompt Tokens": 426,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 7.529999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.BinderException) Binder Error: Referenced column \"timestamp\" not found in FROM clause!\nLINE 1: SELECT epoch_ms(timestamp);\n                        ^\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT epoch_ms(current_timestamp);"
     ]
 }

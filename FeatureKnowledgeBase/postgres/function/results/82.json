@@ -6,15 +6,33 @@
         "quote_literal"
     ],
     "Feature": [
-        "quote_literal ( anyelement ) → text"
+        "quote_literal ( anyelement ) \u2192 text"
     ],
     "Description": [
         "Converts the given value to text and then quotes it as a literal. Embedded single-quotes and backslashes are properly doubled."
     ],
     "Examples": [
-        "quote_literal(42.5) → '42.5'"
+        "quote_literal(42.5) \u2192 '42.5'"
     ],
     "Category": [
         "String Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT quote_literal('Hello, World!');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 289,
+            "Prompt Tokens": 267,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 5.324999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT quote_literal('Hello, World!');"
     ]
 }

@@ -16,5 +16,53 @@
     ],
     "Category": [
         "Map Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT map_extract(map, 'key_name')",
+        "SELECT map_extract(ARRAY[1, 2, 3]::map<int, text>, 'key_name')",
+        "SELECT map_extract(ARRAY[('key_name', 'value')]::map<text, text>, 'key_name')",
+        "SELECT map_extract(MAP['key_name'] := 'value', 'key_name')",
+        "SELECT map_extract(MAP['key_name'], 'key_name')"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 328,
+            "Prompt Tokens": 306,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 5.909999999999999e-05
+        },
+        {
+            "Total Tokens": 514,
+            "Prompt Tokens": 477,
+            "Completion Tokens": 37,
+            "Total Cost (USD)": 9.374999999999999e-05
+        },
+        {
+            "Total Tokens": 679,
+            "Prompt Tokens": 642,
+            "Completion Tokens": 37,
+            "Total Cost (USD)": 0.0001185
+        },
+        {
+            "Total Tokens": 837,
+            "Prompt Tokens": 807,
+            "Completion Tokens": 30,
+            "Total Cost (USD)": 0.00013905
+        },
+        {
+            "Total Tokens": 991,
+            "Prompt Tokens": 965,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 0.00016035
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.BinderException) Binder Error: Referenced column \"map\" not found in FROM clause!\nLINE 1: SELECT map_extract(map, 'key_name')\n                           ^\n",
+        "(duckdb.duckdb.ParserException) Parser Error: syntax error at or near \"<\"\n",
+        "(duckdb.duckdb.ParserException) Parser Error: syntax error at or near \"<\"\n",
+        "(duckdb.duckdb.ParserException) Parser Error: syntax error at or near \":=\"\n",
+        "(duckdb.duckdb.BinderException) Binder Error: Referenced column \"MAP\" not found in FROM clause!\nLINE 1: SELECT map_extract(MAP['key_name'], 'key_name')\n                           ^\n"
+    ],
+    "EffectiveSQLs": []
 }

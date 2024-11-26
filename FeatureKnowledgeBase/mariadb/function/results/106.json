@@ -52,5 +52,26 @@
         "SELECT GET_LOCK('lock6',10);",
         "SELECT GET_LOCK('lock6',10);",
         "SELECT GET_LOCK('lock5',10);"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT GET_LOCK('lock1',10);",
+        "SELECT IS_FREE_LOCK('lock1'), IS_USED_LOCK('lock1');",
+        "SELECT IS_FREE_LOCK('lock2'), IS_USED_LOCK('lock2');",
+        "SELECT GET_LOCK('lock2',10);",
+        "SELECT IS_FREE_LOCK('lock1'), IS_FREE_LOCK('lock2');",
+        "SELECT RELEASE_LOCK('lock1'), RELEASE_LOCK('lock2');",
+        "SELECT GET_LOCK('lock3',10);",
+        "SELECT GET_LOCK('lock3',10);",
+        "SELECT RELEASE_LOCK('lock3');",
+        "SELECT RELEASE_LOCK('lock3');",
+        "SELECT GET_LOCK('lock4',10);",
+        "SELECT GET_LOCK('lock4',10);",
+        "SELECT GET_LOCK('lock5',10);",
+        "SELECT GET_LOCK('lock6',10);",
+        "SELECT GET_LOCK('lock6',10);",
+        "SELECT GET_LOCK('lock5',10);"
     ]
 }

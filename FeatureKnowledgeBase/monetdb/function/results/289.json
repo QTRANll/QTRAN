@@ -16,5 +16,53 @@
     "Examples": [],
     "Category": [
         "Window Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT first_value(value) OVER ()",
+        "SELECT first_value(value) FROM your_table_name",
+        "SELECT first_value(value) FROM (VALUES (1), (2), (3)) AS temp(value)",
+        "SELECT first_value(value) FROM (SELECT 1 AS value UNION ALL SELECT 2 UNION ALL SELECT 3) AS temp",
+        "SELECT first_value(value) FROM (SELECT CAST(1 AS INT) AS value UNION ALL SELECT CAST(2 AS INT) UNION ALL SELECT CAST(3 AS INT)) AS temp"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 292,
+            "Prompt Tokens": 272,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 5.28e-05
+        },
+        {
+            "Total Tokens": 457,
+            "Prompt Tokens": 435,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 7.845e-05
+        },
+        {
+            "Total Tokens": 624,
+            "Prompt Tokens": 591,
+            "Completion Tokens": 33,
+            "Total Cost (USD)": 0.00010844999999999998
+        },
+        {
+            "Total Tokens": 799,
+            "Prompt Tokens": 761,
+            "Completion Tokens": 38,
+            "Total Cost (USD)": 0.00013695
+        },
+        {
+            "Total Tokens": 985,
+            "Prompt Tokens": 936,
+            "Completion Tokens": 49,
+            "Total Cost (USD)": 0.0001698
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymonetdb.exceptions.OperationalError) 42000!syntax error, unexpected OVER, expecting SCOLON in: \"select first_value(value) over\"\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42S02!SELECT: no such table 'your_table_name'\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: no such unary operator 'first_value(tinyint)'\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: no such unary operator 'first_value(tinyint)'\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: no such unary operator 'first_value(int)'\n\n"
+    ],
+    "EffectiveSQLs": []
 }

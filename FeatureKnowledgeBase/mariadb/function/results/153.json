@@ -19,5 +19,30 @@
     "Category": [
         "JSON Functions"
     ],
-    "EffectiveSQLsRefined": []
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "JSON_SET('{\"name\":\"John\"}', '$.age', 30)",
+        "SELECT JSON_SET('{\"name\":\"John\"}', '$.age', 30);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 361,
+            "Prompt Tokens": 333,
+            "Completion Tokens": 28,
+            "Total Cost (USD)": 6.675e-05
+        },
+        {
+            "Total Tokens": 561,
+            "Prompt Tokens": 531,
+            "Completion Tokens": 30,
+            "Total Cost (USD)": 9.764999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.ProgrammingError) (1064, 'You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near \\'JSON_SET(\\'{\"name\":\"John\"}\\', \\'$.age\\', 30)\\' at line 1')\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT JSON_SET('{\"name\":\"John\"}', '$.age', 30);"
+    ]
 }

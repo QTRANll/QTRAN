@@ -25,5 +25,16 @@
         "SELECT TO_CHAR('99-12-31 23:59:59', 'YY-MM-DD HH24:MI:SS');",
         "SELECT TO_CHAR('9999-12-31 23:59:59', 'YY-MM-DD HH24:MI:SS');",
         "SELECT TO_CHAR('21-01-03 08:30:00', 'Y-MONTH-DY HH:MI:SS');"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT TO_CHAR('1980-01-11 04:50:39', 'YYYY-MM-DD');",
+        "SELECT TO_CHAR('1980-01-11 04:50:39', 'HH24-MI-SS');",
+        "SELECT TO_CHAR('00-01-01 00:00:00', 'YY-MM-DD HH24:MI:SS');",
+        "SELECT TO_CHAR('99-12-31 23:59:59', 'YY-MM-DD HH24:MI:SS');",
+        "SELECT TO_CHAR('9999-12-31 23:59:59', 'YY-MM-DD HH24:MI:SS');",
+        "SELECT TO_CHAR('21-01-03 08:30:00', 'Y-MONTH-DY HH:MI:SS');"
     ]
 }

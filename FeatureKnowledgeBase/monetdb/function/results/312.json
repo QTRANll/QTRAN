@@ -15,5 +15,39 @@
     "Examples": [],
     "Category": [
         "Window Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT sys.group_concat(col_expr) FROM your_table;",
+        "SELECT sys.group_concat(col_expr) FROM DUAL;",
+        "SELECT sys.group_concat(col_expr) FROM (SELECT 'example' AS col_expr) AS temp;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 291,
+            "Prompt Tokens": 268,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 5.4e-05
+        },
+        {
+            "Total Tokens": 450,
+            "Prompt Tokens": 427,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 7.785e-05
+        },
+        {
+            "Total Tokens": 617,
+            "Prompt Tokens": 585,
+            "Completion Tokens": 32,
+            "Total Cost (USD)": 0.00010695
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymonetdb.exceptions.OperationalError) 42S02!SELECT: no such table 'your_table'\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42S02!SELECT: no such table 'dual'\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT sys.group_concat(col_expr) FROM (SELECT 'example' AS col_expr) AS temp;"
     ]
 }

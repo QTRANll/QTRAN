@@ -14,5 +14,31 @@
     "Examples": [],
     "Category": [
         "Window Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT rank() FROM table_name;",
+        "SELECT rank() OVER () AS rank_value;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 307,
+            "Prompt Tokens": 288,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 5.459999999999999e-05
+        },
+        {
+            "Total Tokens": 446,
+            "Prompt Tokens": 425,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 7.634999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(sqlite3.OperationalError) no such table: table_name\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT rank() OVER () AS rank_value;"
     ]
 }

@@ -17,5 +17,23 @@
     ],
     "Category": [
         "Window Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT ntile(5) OVER ()"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 295,
+            "Prompt Tokens": 274,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 5.3700000000000004e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT ntile(5) OVER ()"
     ]
 }

@@ -39,5 +39,55 @@
     "Category": [
         "Built-In Functions and Operators",
         "Miscellaneous Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT name, ANY_VALUE(address), MAX(age) FROM t GROUP BY name;",
+        "SELECT ANY_VALUE(name), MAX(age) FROM t;",
+        "SELECT ANY_VALUE(name), MAX(age) FROM dual;",
+        "SELECT ANY_VALUE(column_name) FROM dual;",
+        "SELECT ANY_VALUE(1);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 1247,
+            "Prompt Tokens": 1219,
+            "Completion Tokens": 28,
+            "Total Cost (USD)": 0.00019965
+        },
+        {
+            "Total Tokens": 1407,
+            "Prompt Tokens": 1384,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 0.0002214
+        },
+        {
+            "Total Tokens": 1567,
+            "Prompt Tokens": 1544,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 0.0002454
+        },
+        {
+            "Total Tokens": 1723,
+            "Prompt Tokens": 1702,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 0.00026789999999999995
+        },
+        {
+            "Total Tokens": 1878,
+            "Prompt Tokens": 1859,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 0.00029025
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.ProgrammingError) (1146, \"Table 'knowledge_base_preprocess_mysql.t' doesn't exist\")\n",
+        "(pymysql.err.ProgrammingError) (1146, \"Table 'knowledge_base_preprocess_mysql.t' doesn't exist\")\n",
+        "(pymysql.err.OperationalError) (1054, \"Unknown column 'name' in 'field list'\")\n",
+        "(pymysql.err.OperationalError) (1054, \"Unknown column 'column_name' in 'field list'\")\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT ANY_VALUE(1);"
     ]
 }

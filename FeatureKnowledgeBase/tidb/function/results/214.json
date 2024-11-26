@@ -10,9 +10,9 @@
     ],
     "Description": [
         "JSON_SCHEMA_VALID()",
-        "JSON_SCHEMA_VALID(schema, json_doc) 函数根据 schema 验证 JSON 文档，确保数据的完整性和一致性。该函数可以与 CHECK 约束一起使用，以便在修改表时自动进行 schema 验证。该函数遵循 JSON Schema specification。",
-        "验证关键词如下：",
-        "验证关键词适用于描述typeAny测试类型，如 array、stringenumAny测试某个值是否在指定的值数组中constAny与 enum 相似，但只适用于单个值allOfAny匹配所有指定的 schemaanyOfAny匹配任意指定的 schemamultipleOfnumber/integer测试值是否是指定值的倍数maximumnumber/integer测试数值是否小于最大值（包括最大值在内）exclusiveMaximumnumber/integer测试数值是否小于最大值（不包括最大值）minimumnumber/integer测试数值是否大于最小值（包括最小值在内）exclusiveMinimumnumber/integer测试值是否大于最小值（不包括最小值）maxlengthstring测试值的长度是否不超过指定值minLengthstring测试值的长度是否不低于指定值formatstring测试字符串是否符合指定格式patternstring测试字符串是否与模式匹配itemsarray适用于数组项的 schemaprefixItemsarray适用于数组的位置项的 schemamaxItemsarray测试数组中的元素数量是否不超过指定值minItemsarray测试数组中的元素数量是否不低于指定值uniqueItemsarray测试数组中的元素是否唯一，true/falsecontainsarray为数组中的元素设置 schemamaxContainsarray与 contains 一起使用时，用于测试某些元素出现的最多次数minContainsarray与 contains 一起使用时，用于测试某些元素出现的最少次数propertiesobject适用于对象属性的 schemapatternPropertiesobject根据属性名称的模式匹配，应用于某些属性的 schemaadditionalPropertiesobject是否允许额外的属性，true/falseminPropertiesobject测试对象的最小属性数量maxPropertiesobject测试对象的最大属性数量requiredobject必须填写的属性名称"
+        "JSON_SCHEMA_VALID(schema, json_doc) \u51fd\u6570\u6839\u636e schema \u9a8c\u8bc1 JSON \u6587\u6863\uff0c\u786e\u4fdd\u6570\u636e\u7684\u5b8c\u6574\u6027\u548c\u4e00\u81f4\u6027\u3002\u8be5\u51fd\u6570\u53ef\u4ee5\u4e0e CHECK \u7ea6\u675f\u4e00\u8d77\u4f7f\u7528\uff0c\u4ee5\u4fbf\u5728\u4fee\u6539\u8868\u65f6\u81ea\u52a8\u8fdb\u884c schema \u9a8c\u8bc1\u3002\u8be5\u51fd\u6570\u9075\u5faa JSON Schema specification\u3002",
+        "\u9a8c\u8bc1\u5173\u952e\u8bcd\u5982\u4e0b\uff1a",
+        "\u9a8c\u8bc1\u5173\u952e\u8bcd\u9002\u7528\u4e8e\u63cf\u8ff0typeAny\u6d4b\u8bd5\u7c7b\u578b\uff0c\u5982 array\u3001stringenumAny\u6d4b\u8bd5\u67d0\u4e2a\u503c\u662f\u5426\u5728\u6307\u5b9a\u7684\u503c\u6570\u7ec4\u4e2dconstAny\u4e0e enum \u76f8\u4f3c\uff0c\u4f46\u53ea\u9002\u7528\u4e8e\u5355\u4e2a\u503callOfAny\u5339\u914d\u6240\u6709\u6307\u5b9a\u7684 schemaanyOfAny\u5339\u914d\u4efb\u610f\u6307\u5b9a\u7684 schemamultipleOfnumber/integer\u6d4b\u8bd5\u503c\u662f\u5426\u662f\u6307\u5b9a\u503c\u7684\u500d\u6570maximumnumber/integer\u6d4b\u8bd5\u6570\u503c\u662f\u5426\u5c0f\u4e8e\u6700\u5927\u503c\uff08\u5305\u62ec\u6700\u5927\u503c\u5728\u5185\uff09exclusiveMaximumnumber/integer\u6d4b\u8bd5\u6570\u503c\u662f\u5426\u5c0f\u4e8e\u6700\u5927\u503c\uff08\u4e0d\u5305\u62ec\u6700\u5927\u503c\uff09minimumnumber/integer\u6d4b\u8bd5\u6570\u503c\u662f\u5426\u5927\u4e8e\u6700\u5c0f\u503c\uff08\u5305\u62ec\u6700\u5c0f\u503c\u5728\u5185\uff09exclusiveMinimumnumber/integer\u6d4b\u8bd5\u503c\u662f\u5426\u5927\u4e8e\u6700\u5c0f\u503c\uff08\u4e0d\u5305\u62ec\u6700\u5c0f\u503c\uff09maxlengthstring\u6d4b\u8bd5\u503c\u7684\u957f\u5ea6\u662f\u5426\u4e0d\u8d85\u8fc7\u6307\u5b9a\u503cminLengthstring\u6d4b\u8bd5\u503c\u7684\u957f\u5ea6\u662f\u5426\u4e0d\u4f4e\u4e8e\u6307\u5b9a\u503cformatstring\u6d4b\u8bd5\u5b57\u7b26\u4e32\u662f\u5426\u7b26\u5408\u6307\u5b9a\u683c\u5f0fpatternstring\u6d4b\u8bd5\u5b57\u7b26\u4e32\u662f\u5426\u4e0e\u6a21\u5f0f\u5339\u914ditemsarray\u9002\u7528\u4e8e\u6570\u7ec4\u9879\u7684 schemaprefixItemsarray\u9002\u7528\u4e8e\u6570\u7ec4\u7684\u4f4d\u7f6e\u9879\u7684 schemamaxItemsarray\u6d4b\u8bd5\u6570\u7ec4\u4e2d\u7684\u5143\u7d20\u6570\u91cf\u662f\u5426\u4e0d\u8d85\u8fc7\u6307\u5b9a\u503cminItemsarray\u6d4b\u8bd5\u6570\u7ec4\u4e2d\u7684\u5143\u7d20\u6570\u91cf\u662f\u5426\u4e0d\u4f4e\u4e8e\u6307\u5b9a\u503cuniqueItemsarray\u6d4b\u8bd5\u6570\u7ec4\u4e2d\u7684\u5143\u7d20\u662f\u5426\u552f\u4e00\uff0ctrue/falsecontainsarray\u4e3a\u6570\u7ec4\u4e2d\u7684\u5143\u7d20\u8bbe\u7f6e schemamaxContainsarray\u4e0e contains \u4e00\u8d77\u4f7f\u7528\u65f6\uff0c\u7528\u4e8e\u6d4b\u8bd5\u67d0\u4e9b\u5143\u7d20\u51fa\u73b0\u7684\u6700\u591a\u6b21\u6570minContainsarray\u4e0e contains \u4e00\u8d77\u4f7f\u7528\u65f6\uff0c\u7528\u4e8e\u6d4b\u8bd5\u67d0\u4e9b\u5143\u7d20\u51fa\u73b0\u7684\u6700\u5c11\u6b21\u6570propertiesobject\u9002\u7528\u4e8e\u5bf9\u8c61\u5c5e\u6027\u7684 schemapatternPropertiesobject\u6839\u636e\u5c5e\u6027\u540d\u79f0\u7684\u6a21\u5f0f\u5339\u914d\uff0c\u5e94\u7528\u4e8e\u67d0\u4e9b\u5c5e\u6027\u7684 schemaadditionalPropertiesobject\u662f\u5426\u5141\u8bb8\u989d\u5916\u7684\u5c5e\u6027\uff0ctrue/falseminPropertiesobject\u6d4b\u8bd5\u5bf9\u8c61\u7684\u6700\u5c0f\u5c5e\u6027\u6570\u91cfmaxPropertiesobject\u6d4b\u8bd5\u5bf9\u8c61\u7684\u6700\u5927\u5c5e\u6027\u6570\u91cfrequiredobject\u5fc5\u987b\u586b\u5199\u7684\u5c5e\u6027\u540d\u79f0"
     ],
     "Examples": [
         "SET @j := '{\"fruits\": [\"orange\", \"apple\", \"pear\"], \"vegetables\": [\"carrot\", \"pepper\", \"kale\"]}';\n",
@@ -39,6 +39,55 @@
         "SELECT JSON_SCHEMA_VALID('{\"anyOf\": [{\"type\": \"string\"},{\"type\": \"integer\"}]}', '5');\n"
     ],
     "Category": [
-        "验证 JSON 的函数"
+        "\u9a8c\u8bc1 JSON \u7684\u51fd\u6570"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT JSON_SCHEMA_VALID('{\"type\": \"object\"}',@j);",
+        "SELECT JSON_SCHEMA_VALID('{\"type\": \"array\"}',@j);",
+        "SELECT JSON_TYPE(@j);",
+        "SELECT JSON_SCHEMA_VALID('{\"required\": [\"fruits\",\"vegetables\"]}',@j);",
+        "SELECT JSON_SCHEMA_VALID('{\"required\": [\"fruits\",\"vegetables\",\"grains\"]}',@j);",
+        "SELECT JSON_SCHEMA_VALID('{\"properties\": {\"fruits\": {\"type\": \"array\"}}}',@j);",
+        "SELECT JSON_SCHEMA_VALID('{\"properties\": {\"fruits\": {\"type\": \"string\"}}}',@j);",
+        "SELECT JSON_SCHEMA_VALID('{\"properties\": {\"fruits\": {\"type\": \"array\", \"minItems\": 3}}}',@j);",
+        "SELECT JSON_SCHEMA_VALID('{\"properties\": {\"fruits\": {\"type\": \"array\", \"minItems\": 4}}}',@j);",
+        "SELECT JSON_SCHEMA_VALID('{\"type\": \"integer\", \"minimum\": 40, \"maximum\": 45}', '42');",
+        "SELECT JSON_SCHEMA_VALID('{\"type\": \"integer\", \"minimum\": 40, \"maximum\": 45}', '123');",
+        "SELECT JSON_SCHEMA_VALID('{\"type\": \"string\", \"pattern\": \"^Ti\"}', '\"TiDB\"');",
+        "SELECT JSON_SCHEMA_VALID('{\"type\": \"string\", \"pattern\": \"^Ti\"}', '\"PingCAP\"');",
+        "SELECT JSON_SCHEMA_VALID('{\"format\": \"ipv4\"}', '\"127.0.0.1\"');",
+        "SELECT JSON_SCHEMA_VALID('{\"format\": \"ipv4\"}', '\"327.0.0.1\"');",
+        "SELECT JSON_SCHEMA_VALID('{\"enum\": [\"TiDB\", \"MySQL\"]}', '\"TiDB\"');",
+        "SELECT JSON_SCHEMA_VALID('{\"enum\": [\"TiDB\", \"MySQL\"]}', '\"MySQL\"');",
+        "SELECT JSON_SCHEMA_VALID('{\"enum\": [\"TiDB\", \"MySQL\"]}', '\"SQLite\"');",
+        "SELECT JSON_SCHEMA_VALID('{\"anyOf\": [{\"type\": \"string\"},{\"type\": \"integer\"}]}', '\"TiDB\"');",
+        "SELECT JSON_SCHEMA_VALID('{\"anyOf\": [{\"type\": \"string\"},{\"type\": \"integer\"}]}', '[\"TiDB\", \"MySQL\"]');",
+        "SELECT JSON_SCHEMA_VALID('{\"anyOf\": [{\"type\": \"string\"},{\"type\": \"integer\"}]}', '5');"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT JSON_SCHEMA_VALID('{\"type\": \"object\"}',@j);",
+        "SELECT JSON_SCHEMA_VALID('{\"type\": \"array\"}',@j);",
+        "SELECT JSON_TYPE(@j);",
+        "SELECT JSON_SCHEMA_VALID('{\"required\": [\"fruits\",\"vegetables\"]}',@j);",
+        "SELECT JSON_SCHEMA_VALID('{\"required\": [\"fruits\",\"vegetables\",\"grains\"]}',@j);",
+        "SELECT JSON_SCHEMA_VALID('{\"properties\": {\"fruits\": {\"type\": \"array\"}}}',@j);",
+        "SELECT JSON_SCHEMA_VALID('{\"properties\": {\"fruits\": {\"type\": \"string\"}}}',@j);",
+        "SELECT JSON_SCHEMA_VALID('{\"properties\": {\"fruits\": {\"type\": \"array\", \"minItems\": 3}}}',@j);",
+        "SELECT JSON_SCHEMA_VALID('{\"properties\": {\"fruits\": {\"type\": \"array\", \"minItems\": 4}}}',@j);",
+        "SELECT JSON_SCHEMA_VALID('{\"type\": \"integer\", \"minimum\": 40, \"maximum\": 45}', '42');",
+        "SELECT JSON_SCHEMA_VALID('{\"type\": \"integer\", \"minimum\": 40, \"maximum\": 45}', '123');",
+        "SELECT JSON_SCHEMA_VALID('{\"type\": \"string\", \"pattern\": \"^Ti\"}', '\"TiDB\"');",
+        "SELECT JSON_SCHEMA_VALID('{\"type\": \"string\", \"pattern\": \"^Ti\"}', '\"PingCAP\"');",
+        "SELECT JSON_SCHEMA_VALID('{\"format\": \"ipv4\"}', '\"127.0.0.1\"');",
+        "SELECT JSON_SCHEMA_VALID('{\"format\": \"ipv4\"}', '\"327.0.0.1\"');",
+        "SELECT JSON_SCHEMA_VALID('{\"enum\": [\"TiDB\", \"MySQL\"]}', '\"TiDB\"');",
+        "SELECT JSON_SCHEMA_VALID('{\"enum\": [\"TiDB\", \"MySQL\"]}', '\"MySQL\"');",
+        "SELECT JSON_SCHEMA_VALID('{\"enum\": [\"TiDB\", \"MySQL\"]}', '\"SQLite\"');",
+        "SELECT JSON_SCHEMA_VALID('{\"anyOf\": [{\"type\": \"string\"},{\"type\": \"integer\"}]}', '\"TiDB\"');",
+        "SELECT JSON_SCHEMA_VALID('{\"anyOf\": [{\"type\": \"string\"},{\"type\": \"integer\"}]}', '[\"TiDB\", \"MySQL\"]');",
+        "SELECT JSON_SCHEMA_VALID('{\"anyOf\": [{\"type\": \"string\"},{\"type\": \"integer\"}]}', '5');"
     ]
 }

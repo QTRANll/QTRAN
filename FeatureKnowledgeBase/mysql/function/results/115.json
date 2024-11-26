@@ -18,5 +18,23 @@
     "Category": [
         "Built-In Functions and Operators",
         "Information Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT ICU_VERSION();"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 338,
+            "Prompt Tokens": 321,
+            "Completion Tokens": 17,
+            "Total Cost (USD)": 5.8349999999999995e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT ICU_VERSION();"
     ]
 }

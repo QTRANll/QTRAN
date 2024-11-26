@@ -17,5 +17,31 @@
     ],
     "Category": [
         "Blob Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT decode(blob) AS decoded_value;",
+        "SELECT decode('your_blob_data_here') AS decoded_value;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 294,
+            "Prompt Tokens": 274,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 5.31e-05
+        },
+        {
+            "Total Tokens": 463,
+            "Prompt Tokens": 439,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 8.024999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.BinderException) Binder Error: Referenced column \"blob\" not found in FROM clause!\nLINE 1: SELECT decode(blob) AS decoded_value;\n                      ^\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT decode('your_blob_data_here') AS decoded_value;"
     ]
 }

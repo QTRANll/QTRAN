@@ -6,15 +6,49 @@
         "ltrim"
     ],
     "Feature": [
-        "ltrim ( bytes bytea, bytesremoved bytea ) → bytea"
+        "ltrim ( bytes bytea, bytesremoved bytea ) \u2192 bytea"
     ],
     "Description": [
         "Removes the longest string containing only bytes appearing in bytesremoved from the start of bytes."
     ],
     "Examples": [
-        "ltrim('\\x1234567890'::bytea, '\\x9012'::bytea) → \\x34567890"
+        "ltrim('\\x1234567890'::bytea, '\\x9012'::bytea) \u2192 \\x34567890"
     ],
     "Category": [
         "Binary String Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT ltrim(your_bytea_column, your_bytesremoved) FROM your_table;",
+        "SELECT ltrim(b'example_bytes', b'remove_bytes');",
+        "SELECT ltrim(E'\\x6578616d706c655f6279746573', E'\\x72');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 295,
+            "Prompt Tokens": 266,
+            "Completion Tokens": 29,
+            "Total Cost (USD)": 5.73e-05
+        },
+        {
+            "Total Tokens": 470,
+            "Prompt Tokens": 444,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 8.219999999999999e-05
+        },
+        {
+            "Total Tokens": 654,
+            "Prompt Tokens": 615,
+            "Completion Tokens": 39,
+            "Total Cost (USD)": 0.00011564999999999999
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedTable) relation \"your_table\" does not exist\nLINE 1: ... ltrim(your_bytea_column, your_bytesremoved) FROM your_table...\n                                                             ^\n\n",
+        "(psycopg2.errors.InvalidTextRepresentation) \"e\" is not a valid binary digit\nLINE 1: SELECT ltrim(b'example_bytes', b'remove_bytes');\n                     ^\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT ltrim(E'\\x6578616d706c655f6279746573', E'\\x72');"
     ]
 }

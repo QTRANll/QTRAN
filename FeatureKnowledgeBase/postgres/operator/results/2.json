@@ -6,7 +6,7 @@
         "datatype <= datatype"
     ],
     "Feature": [
-        "datatype <= datatype → boolean"
+        "datatype <= datatype \u2192 boolean"
     ],
     "Description": [
         "Less than or equal to"
@@ -14,5 +14,47 @@
     "Examples": [],
     "Category": [
         "Comparison Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT * FROM table WHERE column1 <= column2;",
+        "SELECT * FROM my_table WHERE column1 <= column2;",
+        "SELECT * FROM information_schema.columns WHERE table_name = 'your_table_name' AND column_name1 <= column_name2;",
+        "SELECT * FROM information_schema.columns WHERE table_name = 'your_table_name' AND column_name <= column_name;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 269,
+            "Prompt Tokens": 246,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 5.069999999999999e-05
+        },
+        {
+            "Total Tokens": 434,
+            "Prompt Tokens": 410,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 7.589999999999999e-05
+        },
+        {
+            "Total Tokens": 615,
+            "Prompt Tokens": 579,
+            "Completion Tokens": 36,
+            "Total Cost (USD)": 0.00010844999999999998
+        },
+        {
+            "Total Tokens": 814,
+            "Prompt Tokens": 780,
+            "Completion Tokens": 34,
+            "Total Cost (USD)": 0.0001374
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.SyntaxError) syntax error at or near \"table\"\nLINE 1: SELECT * FROM table WHERE column1 <= column2;\n                      ^\n\n",
+        "(psycopg2.errors.UndefinedTable) relation \"my_table\" does not exist\nLINE 1: SELECT * FROM my_table WHERE column1 <= column2;\n                      ^\n\n",
+        "(psycopg2.errors.UndefinedColumn) column \"column_name1\" does not exist\nLINE 1: ....columns WHERE table_name = 'your_table_name' AND column_nam...\n                                                             ^\nHINT:  Perhaps you meant to reference the column \"columns.column_name\".\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT * FROM information_schema.columns WHERE table_name = 'your_table_name' AND column_name <= column_name;"
     ]
 }

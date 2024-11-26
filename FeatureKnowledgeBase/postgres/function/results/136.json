@@ -6,15 +6,33 @@
         "octet_length"
     ],
     "Feature": [
-        "octet_length ( bit ) → integer"
+        "octet_length ( bit ) \u2192 integer"
     ],
     "Description": [
         "Returns number of bytes in the bit string."
     ],
     "Examples": [
-        "octet_length(B'1011111011') → 2"
+        "octet_length(B'1011111011') \u2192 2"
     ],
     "Category": [
         "Bit String Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT octet_length(B'101010');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 275,
+            "Prompt Tokens": 253,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 5.114999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT octet_length(B'101010');"
     ]
 }

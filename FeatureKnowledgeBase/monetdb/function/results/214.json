@@ -18,5 +18,39 @@
     ],
     "Category": [
         "INET Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT sys.network(inet) FROM DUAL;",
+        "SELECT sys.network(inet);",
+        "SELECT sys.network('0.0.0.0');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 284,
+            "Prompt Tokens": 262,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 5.2499999999999995e-05
+        },
+        {
+            "Total Tokens": 435,
+            "Prompt Tokens": 416,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 7.379999999999998e-05
+        },
+        {
+            "Total Tokens": 590,
+            "Prompt Tokens": 565,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 9.974999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymonetdb.exceptions.OperationalError) 42S02!SELECT: no such table 'dual'\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: identifier 'inet' unknown\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT sys.network('0.0.0.0');"
     ]
 }

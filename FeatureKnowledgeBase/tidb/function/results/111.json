@@ -18,6 +18,17 @@
         "mysql> SELECT DATE_FORMAT('2003-10-03',GET_FORMAT(DATE,'EUR'));\n        -> '03.10.2003'\nmysql> SELECT STR_TO_DATE('10.31.2003',GET_FORMAT(DATE,'USA'));\n        -> '2003-10-31'"
     ],
     "Category": [
-        "日期和时间函数"
+        "\u65e5\u671f\u548c\u65f6\u95f4\u51fd\u6570"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT DATE_FORMAT('2003-10-03',GET_FORMAT(DATE,'EUR'));",
+        "SELECT STR_TO_DATE('10.31.2003',GET_FORMAT(DATE,'USA'));"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT DATE_FORMAT('2003-10-03',GET_FORMAT(DATE,'EUR'));",
+        "SELECT STR_TO_DATE('10.31.2003',GET_FORMAT(DATE,'USA'));"
     ]
 }

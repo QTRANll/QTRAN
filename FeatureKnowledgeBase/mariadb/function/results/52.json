@@ -24,5 +24,12 @@
     "EffectiveSQLsRefined": [
         "SELECT CRC32C('MariaDB');",
         "SELECT CRC32C(CRC32C('Maria'),'DB');"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT CRC32C('MariaDB');",
+        "SELECT CRC32C(CRC32C('Maria'),'DB');"
     ]
 }

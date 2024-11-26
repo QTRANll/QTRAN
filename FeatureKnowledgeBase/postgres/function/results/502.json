@@ -6,13 +6,31 @@
         "pg_control_init"
     ],
     "Feature": [
-        "pg_control_init () → record"
+        "pg_control_init () \u2192 record"
     ],
     "Description": [
-        "Returns information about cluster initialization state, as shown in Table 9.87."
+        "Returns information about cluster initialization state, as shown in Table\u00a09.87."
     ],
     "Examples": [],
     "Category": [
         "System Information Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT pg_control_init();"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 276,
+            "Prompt Tokens": 258,
+            "Completion Tokens": 18,
+            "Total Cost (USD)": 4.95e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT pg_control_init();"
     ]
 }

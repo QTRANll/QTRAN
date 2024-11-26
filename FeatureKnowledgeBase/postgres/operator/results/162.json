@@ -6,15 +6,41 @@
         "anyrange @> anymultirange"
     ],
     "Feature": [
-        "anyrange @> anymultirange → boolean"
+        "anyrange @> anymultirange \u2192 boolean"
     ],
     "Description": [
         "Does the range contain the multirange?"
     ],
     "Examples": [
-        "'[2,4)'::int4range @> '{[2,3)}'::int4multirange → t"
+        "'[2,4)'::int4range @> '{[2,3)}'::int4multirange \u2192 t"
     ],
     "Category": [
         "Range divide Multirange Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT '[1,10]'::int4range @> '[[2,3], [4,5]]'::int4multirange;",
+        "SELECT '[1,10]'::int4range @> '{(2,3),(4,5)}'::int4multirange;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 313,
+            "Prompt Tokens": 270,
+            "Completion Tokens": 43,
+            "Total Cost (USD)": 6.63e-05
+        },
+        {
+            "Total Tokens": 537,
+            "Prompt Tokens": 495,
+            "Completion Tokens": 42,
+            "Total Cost (USD)": 9.944999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.InvalidTextRepresentation) malformed multirange literal: \"[[2,3], [4,5]]\"\nLINE 1: SELECT '[1,10]'::int4range @> '[[2,3], [4,5]]'::int4multiran...\n                                      ^\nDETAIL:  Missing left brace.\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT '[1,10]'::int4range @> '{(2,3),(4,5)}'::int4multirange;"
     ]
 }

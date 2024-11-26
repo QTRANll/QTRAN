@@ -6,16 +6,34 @@
         "json_array_elements_text"
     ],
     "Feature": [
-        "json_array_elements_text ( json ) → setof text",
-        "jsonb_array_elements_text ( jsonb ) → setof text"
+        "json_array_elements_text ( json ) \u2192 setof text",
+        "jsonb_array_elements_text ( jsonb ) \u2192 setof text"
     ],
     "Description": [
         "Expands the top-level JSON array into a set of text values."
     ],
     "Examples": [
-        "select * from json_array_elements_text('[\"foo\", \"bar\"]') →"
+        "select * from json_array_elements_text('[\"foo\", \"bar\"]') \u2192"
     ],
     "Category": [
         "JSON Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT json_array_elements_text('[]');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 300,
+            "Prompt Tokens": 279,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 5.445e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT json_array_elements_text('[]');"
     ]
 }

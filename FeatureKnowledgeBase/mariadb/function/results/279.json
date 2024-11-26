@@ -18,5 +18,52 @@
     "Category": [
         "Spider Functions"
     ],
-    "EffectiveSQLsRefined": []
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SPIDER_BG_DIRECT_SQL('SELECT * FROM my_table', 'temp_table', 'param1, param2')",
+        "SELECT SPIDER_BG_DIRECT_SQL('SELECT * FROM my_table', 'temp_table', 'param1, param2')",
+        "SPIDER_BG_DIRECT_SQL('SELECT 1', 'temp_table', '')",
+        "CALL SPIDER_BG_DIRECT_SQL('SELECT 1', 'temp_table', '')",
+        "SELECT SPIDER_BG_DIRECT_SQL('SELECT 1', 'temp_table', '')"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 385,
+            "Prompt Tokens": 349,
+            "Completion Tokens": 36,
+            "Total Cost (USD)": 7.394999999999998e-05
+        },
+        {
+            "Total Tokens": 602,
+            "Prompt Tokens": 565,
+            "Completion Tokens": 37,
+            "Total Cost (USD)": 0.00010694999999999998
+        },
+        {
+            "Total Tokens": 770,
+            "Prompt Tokens": 742,
+            "Completion Tokens": 28,
+            "Total Cost (USD)": 0.0001281
+        },
+        {
+            "Total Tokens": 971,
+            "Prompt Tokens": 942,
+            "Completion Tokens": 29,
+            "Total Cost (USD)": 0.00015869999999999998
+        },
+        {
+            "Total Tokens": 1142,
+            "Prompt Tokens": 1113,
+            "Completion Tokens": 29,
+            "Total Cost (USD)": 0.00018434999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.ProgrammingError) (1064, \"You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'SPIDER_BG_DIRECT_SQL('SELECT * FROM my_table', 'temp_table', 'param1, param2')' at line 1\")\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION pinolo_temp_mariadb.SPIDER_BG_DIRECT_SQL does not exist')\n",
+        "(pymysql.err.ProgrammingError) (1064, \"You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'SPIDER_BG_DIRECT_SQL('SELECT 1', 'temp_table', '')' at line 1\")\n",
+        "(pymysql.err.OperationalError) (1305, 'PROCEDURE pinolo_temp_mariadb.SPIDER_BG_DIRECT_SQL does not exist')\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION pinolo_temp_mariadb.SPIDER_BG_DIRECT_SQL does not exist')\n"
+    ],
+    "EffectiveSQLs": []
 }

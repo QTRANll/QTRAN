@@ -18,5 +18,31 @@
     ],
     "Category": [
         "Character String Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT endswith('Hello World', 'World', true);",
+        "SELECT CASE WHEN 'Hello World' LIKE '%World' THEN TRUE ELSE FALSE END;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 346,
+            "Prompt Tokens": 321,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 6.314999999999999e-05
+        },
+        {
+            "Total Tokens": 513,
+            "Prompt Tokens": 484,
+            "Completion Tokens": 29,
+            "Total Cost (USD)": 8.999999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: no such operator 'endswith'\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT CASE WHEN 'Hello World' LIKE '%World' THEN TRUE ELSE FALSE END;"
     ]
 }

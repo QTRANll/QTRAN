@@ -6,15 +6,33 @@
         "regexp_split_to_table"
     ],
     "Feature": [
-        "regexp_split_to_table ( string text, pattern text [, flags text ] ) → setof text"
+        "regexp_split_to_table ( string text, pattern text [, flags text ] ) \u2192 setof text"
     ],
     "Description": [
-        "Splits string using a POSIX regular expression as the delimiter, producing a set of results; see Section 9.7.3."
+        "Splits string using a POSIX regular expression as the delimiter, producing a set of results; see Section\u00a09.7.3."
     ],
     "Examples": [
-        "regexp_split_to_table('hello world', '\\s+') →"
+        "regexp_split_to_table('hello world', '\\s+') \u2192"
     ],
     "Category": [
         "String Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT regexp_split_to_table('apple,banana,cherry', ',');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 313,
+            "Prompt Tokens": 286,
+            "Completion Tokens": 27,
+            "Total Cost (USD)": 5.9099999999999986e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT regexp_split_to_table('apple,banana,cherry', ',');"
     ]
 }

@@ -6,15 +6,33 @@
         "set_masklen"
     ],
     "Feature": [
-        "set_masklen ( cidr, integer ) → cidr"
+        "set_masklen ( cidr, integer ) \u2192 cidr"
     ],
     "Description": [
         "Sets the netmask length for a cidr value. Address bits to the right of the new netmask are set to zero."
     ],
     "Examples": [
-        "set_masklen(cidr '192.168.1.0/24', 16) → 192.168.0.0/16"
+        "set_masklen(cidr '192.168.1.0/24', 16) \u2192 192.168.0.0/16"
     ],
     "Category": [
         "Network Address Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT set_masklen('192.168.1.0/24', 16);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 305,
+            "Prompt Tokens": 274,
+            "Completion Tokens": 31,
+            "Total Cost (USD)": 5.97e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT set_masklen('192.168.1.0/24', 16);"
     ]
 }

@@ -21,5 +21,30 @@
     "Category": [
         "Miscellaneous Functions"
     ],
-    "EffectiveSQLsRefined": []
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT MASTER_GTID_WAIT('your-gtid-list');",
+        "SELECT MASTER_GTID_WAIT('');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 874,
+            "Prompt Tokens": 849,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 0.00014234999999999996
+        },
+        {
+            "Total Tokens": 1023,
+            "Prompt Tokens": 1003,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 0.00016244999999999996
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.OperationalError) (1941, 'Could not parse GTID list')\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT MASTER_GTID_WAIT('');"
+    ]
 }

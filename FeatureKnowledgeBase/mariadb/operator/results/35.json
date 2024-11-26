@@ -17,5 +17,16 @@
     ],
     "Category": [
         "Comparison Operators"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT ISNULL(1+1);",
+        "SELECT ISNULL(1/0);"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT ISNULL(1+1);",
+        "SELECT ISNULL(1/0);"
     ]
 }

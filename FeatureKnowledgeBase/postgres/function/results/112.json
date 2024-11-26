@@ -6,15 +6,49 @@
         "position"
     ],
     "Feature": [
-        "position ( substring bytea IN bytes bytea ) → integer"
+        "position ( substring bytea IN bytes bytea ) \u2192 integer"
     ],
     "Description": [
         "Returns first starting index of the specified substring within bytes, or zero if it's not present."
     ],
     "Examples": [
-        "position('\\x5678'::bytea in '\\x1234567890'::bytea) → 3"
+        "position('\\x5678'::bytea in '\\x1234567890'::bytea) \u2192 3"
     ],
     "Category": [
         "Binary String Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT position('substring' IN bytes_column) FROM your_table;",
+        "SELECT position('substring' IN b'example bytes') AS index;",
+        "SELECT position('substring' IN E'\\x6578616d706c65206279746573') AS index;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 285,
+            "Prompt Tokens": 260,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 5.4e-05
+        },
+        {
+            "Total Tokens": 455,
+            "Prompt Tokens": 429,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 7.994999999999999e-05
+        },
+        {
+            "Total Tokens": 637,
+            "Prompt Tokens": 600,
+            "Completion Tokens": 37,
+            "Total Cost (USD)": 0.00011219999999999999
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedTable) relation \"your_table\" does not exist\nLINE 1: SELECT position('substring' IN bytes_column) FROM your_table...\n                                                          ^\n\n",
+        "(psycopg2.errors.InvalidTextRepresentation) \"e\" is not a valid binary digit\nLINE 1: SELECT position('substring' IN b'example bytes') AS index;\n                                       ^\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT position('substring' IN E'\\x6578616d706c65206279746573') AS index;"
     ]
 }

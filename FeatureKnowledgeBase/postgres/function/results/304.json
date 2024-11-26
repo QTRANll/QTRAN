@@ -6,15 +6,63 @@
         "isempty"
     ],
     "Feature": [
-        "isempty ( anymultirange ) → boolean"
+        "isempty ( anymultirange ) \u2192 boolean"
     ],
     "Description": [
         "Is the multirange empty?"
     ],
     "Examples": [
-        "isempty('{[1.1,2.2)}'::nummultirange) → f"
+        "isempty('{[1.1,2.2)}'::nummultirange) \u2192 f"
     ],
     "Category": [
         "Range divide Multirange Functions and Operators"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT isempty(ANYMULTIRANGE) AS is_empty;",
+        "SELECT isempty(ARRAY[]::int[]) AS is_empty;",
+        "SELECT isempty(ARRAY[]::int4range[]) AS is_empty;",
+        "SELECT isempty(ARRAY[]::int8range[]) AS is_empty;",
+        "SELECT isempty(ARRAY[]::numrange[]) AS is_empty;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 270,
+            "Prompt Tokens": 246,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 5.129999999999999e-05
+        },
+        {
+            "Total Tokens": 439,
+            "Prompt Tokens": 415,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 7.664999999999999e-05
+        },
+        {
+            "Total Tokens": 629,
+            "Prompt Tokens": 603,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 0.00010604999999999999
+        },
+        {
+            "Total Tokens": 823,
+            "Prompt Tokens": 797,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 0.00013514999999999998
+        },
+        {
+            "Total Tokens": 1016,
+            "Prompt Tokens": 991,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 0.00016365
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedColumn) column \"anymultirange\" does not exist\nLINE 1: SELECT isempty(ANYMULTIRANGE) AS is_empty;\n                       ^\n\n",
+        "(psycopg2.errors.UndefinedFunction) function isempty(integer[]) does not exist\nLINE 1: SELECT isempty(ARRAY[]::int[]) AS is_empty;\n               ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.\n\n",
+        "(psycopg2.errors.UndefinedFunction) function isempty(int4range[]) does not exist\nLINE 1: SELECT isempty(ARRAY[]::int4range[]) AS is_empty;\n               ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.\n\n",
+        "(psycopg2.errors.UndefinedFunction) function isempty(int8range[]) does not exist\nLINE 1: SELECT isempty(ARRAY[]::int8range[]) AS is_empty;\n               ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.\n\n",
+        "(psycopg2.errors.UndefinedFunction) function isempty(numrange[]) does not exist\nLINE 1: SELECT isempty(ARRAY[]::numrange[]) AS is_empty;\n               ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.\n\n"
+    ],
+    "EffectiveSQLs": []
 }

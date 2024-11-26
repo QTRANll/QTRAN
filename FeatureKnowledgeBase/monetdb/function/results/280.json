@@ -18,5 +18,53 @@
     ],
     "Category": [
         "Aggregate Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT sys.quantile_avg(column_name, 0.5) FROM table_name;",
+        "SELECT sys.quantile_avg(1.0, 0.5);",
+        "SELECT sys.quantile_avg(1.0::double, 0.5);",
+        "SELECT sys.quantile_avg(1.0, 0.5);",
+        "SELECT sys.quantile_avg(1.0::real, 0.5);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 349,
+            "Prompt Tokens": 320,
+            "Completion Tokens": 29,
+            "Total Cost (USD)": 6.539999999999999e-05
+        },
+        {
+            "Total Tokens": 515,
+            "Prompt Tokens": 487,
+            "Completion Tokens": 28,
+            "Total Cost (USD)": 8.984999999999999e-05
+        },
+        {
+            "Total Tokens": 688,
+            "Prompt Tokens": 658,
+            "Completion Tokens": 30,
+            "Total Cost (USD)": 0.00011669999999999999
+        },
+        {
+            "Total Tokens": 848,
+            "Prompt Tokens": 820,
+            "Completion Tokens": 28,
+            "Total Cost (USD)": 0.00013979999999999998
+        },
+        {
+            "Total Tokens": 1021,
+            "Prompt Tokens": 991,
+            "Completion Tokens": 30,
+            "Total Cost (USD)": 0.00016664999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymonetdb.exceptions.OperationalError) 42S02!SELECT: no such table 'table_name'\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: no such binary operator 'quantile_avg(decimal,decimal)'\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!Unexpected symbol (:)\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: no such binary operator 'quantile_avg(decimal,decimal)'\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!Unexpected symbol (:)\n\n"
+    ],
+    "EffectiveSQLs": []
 }

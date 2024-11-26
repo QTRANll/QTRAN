@@ -18,5 +18,53 @@
     "Examples": [],
     "Category": [
         "Loadable Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT service_release_locks('your_namespace');",
+        "SELECT service_release_locks('namespace_example');",
+        "SELECT service_release_locks('default_namespace');",
+        "SELECT service_release_locks('test_namespace');",
+        "SELECT service_release_locks('namespace');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 351,
+            "Prompt Tokens": 329,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 6.255e-05
+        },
+        {
+            "Total Tokens": 510,
+            "Prompt Tokens": 488,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 8.639999999999999e-05
+        },
+        {
+            "Total Tokens": 669,
+            "Prompt Tokens": 647,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 0.00011025
+        },
+        {
+            "Total Tokens": 828,
+            "Prompt Tokens": 806,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 0.0001341
+        },
+        {
+            "Total Tokens": 986,
+            "Prompt Tokens": 965,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 0.00015735
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.service_release_locks does not exist')\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.service_release_locks does not exist')\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.service_release_locks does not exist')\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.service_release_locks does not exist')\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.service_release_locks does not exist')\n"
+    ],
+    "EffectiveSQLs": []
 }

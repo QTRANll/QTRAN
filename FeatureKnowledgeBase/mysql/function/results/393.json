@@ -23,5 +23,24 @@
     "Category": [
         "Built-In Functions and Operators",
         "Mathematical Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT TRUNCATE(1.223,1);",
+        "SELECT TRUNCATE(1.999,1);",
+        "SELECT TRUNCATE(1.999,0);",
+        "SELECT TRUNCATE(-1.999,1);",
+        "SELECT TRUNCATE(122,-2);",
+        "SELECT TRUNCATE(10.28*100,0);"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT TRUNCATE(1.223,1);",
+        "SELECT TRUNCATE(1.999,1);",
+        "SELECT TRUNCATE(1.999,0);",
+        "SELECT TRUNCATE(-1.999,1);",
+        "SELECT TRUNCATE(122,-2);",
+        "SELECT TRUNCATE(10.28*100,0);"
     ]
 }

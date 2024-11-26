@@ -34,5 +34,18 @@
     "Category": [
         "Built-In Functions and Operators",
         "Spatial Analysis Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT ST_AsText(ST_GeomFromGeoJSON(@json));",
+        "SELECT ST_SRID(ST_GeomFromGeoJSON(@json));",
+        "SELECT ST_AsText(ST_SRID(ST_GeomFromGeoJSON(@json),0));"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT ST_AsText(ST_GeomFromGeoJSON(@json));",
+        "SELECT ST_SRID(ST_GeomFromGeoJSON(@json));",
+        "SELECT ST_AsText(ST_SRID(ST_GeomFromGeoJSON(@json),0));"
     ]
 }

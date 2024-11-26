@@ -6,15 +6,33 @@
         "justify_hours"
     ],
     "Feature": [
-        "justify_hours ( interval ) → interval"
+        "justify_hours ( interval ) \u2192 interval"
     ],
     "Description": [
         "Adjust interval, converting 24-hour time periods to days"
     ],
     "Examples": [
-        "justify_hours(interval '50 hours 10 minutes') → 2 days 02:10:00"
+        "justify_hours(interval '50 hours 10 minutes') \u2192 2 days 02:10:00"
     ],
     "Category": [
         "Date divide Time Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT justify_hours('24 hours');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 271,
+            "Prompt Tokens": 251,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 4.9649999999999994e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT justify_hours('24 hours');"
     ]
 }

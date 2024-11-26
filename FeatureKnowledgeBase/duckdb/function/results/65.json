@@ -17,5 +17,39 @@
     ],
     "Category": [
         "Aggregate Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT first(A);",
+        "SELECT first(A) FROM your_table_name;",
+        "SELECT first(A) FROM (SELECT 1 AS A) AS temp;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 282,
+            "Prompt Tokens": 265,
+            "Completion Tokens": 17,
+            "Total Cost (USD)": 4.9949999999999994e-05
+        },
+        {
+            "Total Tokens": 444,
+            "Prompt Tokens": 423,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 7.604999999999999e-05
+        },
+        {
+            "Total Tokens": 624,
+            "Prompt Tokens": 597,
+            "Completion Tokens": 27,
+            "Total Cost (USD)": 0.00010575
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.BinderException) Binder Error: Referenced column \"A\" not found in FROM clause!\nLINE 1: SELECT first(A);\n                     ^\n",
+        "(duckdb.duckdb.CatalogException) Catalog Error: Table with name your_table_name does not exist!\nDid you mean \"pg_tablespace\"?\nLINE 1: SELECT first(A) FROM your_table_name;\n                             ^\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT first(A) FROM (SELECT 1 AS A) AS temp;"
     ]
 }

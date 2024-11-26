@@ -16,5 +16,31 @@
     ],
     "Category": [
         "Numeric Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT << 2;",
+        "SELECT CAST(1 AS INTEGER) << 2;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 253,
+            "Prompt Tokens": 236,
+            "Completion Tokens": 17,
+            "Total Cost (USD)": 4.56e-05
+        },
+        {
+            "Total Tokens": 578,
+            "Prompt Tokens": 555,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 9.705e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.BinderException) Binder Error: No function matches the given name and argument types '<<(INTEGER_LITERAL)'. You might need to add explicit type casts.\n\tCandidate functions:\n\t<<(TINYINT, TINYINT) -> TINYINT\n\t<<(SMALLINT, SMALLINT) -> SMALLINT\n\t<<(INTEGER, INTEGER) -> INTEGER\n\t<<(BIGINT, BIGINT) -> BIGINT\n\t<<(HUGEINT, HUGEINT) -> HUGEINT\n\t<<(UTINYINT, UTINYINT) -> UTINYINT\n\t<<(USMALLINT, USMALLINT) -> USMALLINT\n\t<<(UINTEGER, UINTEGER) -> UINTEGER\n\t<<(UBIGINT, UBIGINT) -> UBIGINT\n\t<<(UHUGEINT, UHUGEINT) -> UHUGEINT\n\t<<(BIT, INTEGER) -> BIT\n\nLINE 1: SELECT << 2;\n               ^\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT CAST(1 AS INTEGER) << 2;"
     ]
 }

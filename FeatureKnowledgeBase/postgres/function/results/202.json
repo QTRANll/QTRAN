@@ -6,15 +6,33 @@
         "hostmask"
     ],
     "Feature": [
-        "hostmask ( inet ) → inet"
+        "hostmask ( inet ) \u2192 inet"
     ],
     "Description": [
         "Computes the host mask for the address's network."
     ],
     "Examples": [
-        "hostmask(inet '192.168.23.20/30') → 0.0.0.3"
+        "hostmask(inet '192.168.23.20/30') \u2192 0.0.0.3"
     ],
     "Category": [
         "Network Address Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT hostmask('192.168.1.1'::inet);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 279,
+            "Prompt Tokens": 251,
+            "Completion Tokens": 28,
+            "Total Cost (USD)": 5.4449999999999995e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT hostmask('192.168.1.1'::inet);"
     ]
 }

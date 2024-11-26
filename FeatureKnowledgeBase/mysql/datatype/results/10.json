@@ -16,5 +16,18 @@
     ],
     "Category": [
         "The BINARY and VARBINARY Types"
+    ],
+    "EffectiveSQLsRefined": [
+        "CREATE TABLE t (c BINARY(3));",
+        "INSERT INTO t SET c = 'a';",
+        "SELECT HEX(c), c = 'a', c = 'a\\0\\0' from t;"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "CREATE TABLE t (c BINARY(3));",
+        "INSERT INTO t SET c = 'a';",
+        "SELECT HEX(c), c = 'a', c = 'a\\0\\0' from t;"
     ]
 }

@@ -15,5 +15,47 @@
     "Examples": [],
     "Category": [
         "Aggregate Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT skewness(x);",
+        "SELECT skewness(column_name) FROM table_name;",
+        "SELECT skewness(x) FROM (SELECT x FROM your_table_name);",
+        "SELECT skewness(x) FROM (VALUES (1), (2), (3)) AS your_table(x);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 271,
+            "Prompt Tokens": 253,
+            "Completion Tokens": 18,
+            "Total Cost (USD)": 4.874999999999999e-05
+        },
+        {
+            "Total Tokens": 437,
+            "Prompt Tokens": 415,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 7.544999999999999e-05
+        },
+        {
+            "Total Tokens": 619,
+            "Prompt Tokens": 592,
+            "Completion Tokens": 27,
+            "Total Cost (USD)": 0.00010499999999999999
+        },
+        {
+            "Total Tokens": 814,
+            "Prompt Tokens": 779,
+            "Completion Tokens": 35,
+            "Total Cost (USD)": 0.00013785
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.BinderException) Binder Error: Referenced column \"x\" not found in FROM clause!\nLINE 1: SELECT skewness(x);\n                        ^\n",
+        "(duckdb.duckdb.CatalogException) Catalog Error: Table with name table_name does not exist!\nDid you mean \"pg_tablespace\"?\nLINE 1: SELECT skewness(column_name) FROM table_name;\n                                          ^\n",
+        "(duckdb.duckdb.CatalogException) Catalog Error: Table with name your_table_name does not exist!\nDid you mean \"pg_tablespace\"?\nLINE 1: SELECT skewness(x) FROM (SELECT x FROM your_table_name);\n                                               ^\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT skewness(x) FROM (VALUES (1), (2), (3)) AS your_table(x);"
     ]
 }

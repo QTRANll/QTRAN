@@ -6,15 +6,33 @@
         "array_prepend"
     ],
     "Feature": [
-        "array_prepend ( anycompatible, anycompatiblearray ) → anycompatiblearray"
+        "array_prepend ( anycompatible, anycompatiblearray ) \u2192 anycompatiblearray"
     ],
     "Description": [
         "Prepends an element to the beginning of an array (same as the anycompatible || anycompatiblearray operator)."
     ],
     "Examples": [
-        "array_prepend(1, ARRAY[2,3]) → {1,2,3}"
+        "array_prepend(1, ARRAY[2,3]) \u2192 {1,2,3}"
     ],
     "Category": [
         "Array Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT array_prepend(1, ARRAY[2, 3, 4]);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 303,
+            "Prompt Tokens": 273,
+            "Completion Tokens": 30,
+            "Total Cost (USD)": 5.8949999999999996e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT array_prepend(1, ARRAY[2, 3, 4]);"
     ]
 }

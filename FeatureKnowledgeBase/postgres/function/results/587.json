@@ -6,7 +6,7 @@
         "pg_read_file"
     ],
     "Feature": [
-        "pg_read_file ( filename text [, offset bigint, length bigint ] [, missing_ok boolean ] ) → text"
+        "pg_read_file ( filename text [, offset bigint, length bigint ] [, missing_ok boolean ] ) \u2192 text"
     ],
     "Description": [
         "Returns all or part of a text file, starting at the given byte offset, returning at most length bytes (less if the end of file is reached first). If offset is negative, it is relative to the end of the file. If offset and length are omitted, the entire file is returned. The bytes read from the file are interpreted as a string in the database's encoding; an error is thrown if they are not valid in that encoding.",
@@ -15,5 +15,53 @@
     "Examples": [],
     "Category": [
         "System Administration Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT pg_read_file('example.txt');",
+        "SELECT pg_read_file('non_existent_file.txt');",
+        "SELECT pg_read_file('another_non_existent_file.txt');",
+        "SELECT pg_read_file('yet_another_non_existent_file.txt');",
+        "SELECT pg_read_file('file_that_does_not_exist.txt');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 392,
+            "Prompt Tokens": 371,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 6.824999999999999e-05
+        },
+        {
+            "Total Tokens": 549,
+            "Prompt Tokens": 525,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 9.314999999999999e-05
+        },
+        {
+            "Total Tokens": 710,
+            "Prompt Tokens": 685,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 0.00011775
+        },
+        {
+            "Total Tokens": 874,
+            "Prompt Tokens": 847,
+            "Completion Tokens": 27,
+            "Total Cost (USD)": 0.00014324999999999999
+        },
+        {
+            "Total Tokens": 1039,
+            "Prompt Tokens": 1013,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 0.00016754999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedFile) could not open file \"example.txt\" for reading: No such file or directory\n\n",
+        "(psycopg2.errors.UndefinedFile) could not open file \"non_existent_file.txt\" for reading: No such file or directory\n\n",
+        "(psycopg2.errors.UndefinedFile) could not open file \"another_non_existent_file.txt\" for reading: No such file or directory\n\n",
+        "(psycopg2.errors.UndefinedFile) could not open file \"yet_another_non_existent_file.txt\" for reading: No such file or directory\n\n",
+        "(psycopg2.errors.UndefinedFile) could not open file \"file_that_does_not_exist.txt\" for reading: No such file or directory\n\n"
+    ],
+    "EffectiveSQLs": []
 }

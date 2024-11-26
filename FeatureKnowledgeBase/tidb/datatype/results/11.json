@@ -3,19 +3,37 @@
         "https://docs.pingcap.com/zh/tidb/v8.3/data-type-date-and-time"
     ],
     "Title": [
-        "TIME 类型"
+        "TIME \u7c7b\u578b"
     ],
     "Feature": [
-        "TIME 类型"
+        "TIME \u7c7b\u578b"
     ],
     "Description": [
-        "TIME 类型",
-        "TIME 类型的格式为 HH:MM:SS[.fraction]，支持的范围是 -838:59:59.000000 到 838:59:59.000000。TIME 不仅可用于指示一天内的时间，还可用于指两个事件之间的时间间隔。fsp 参数表示秒精度，取值范围为：0 ~ 6，默认值为 0。",
+        "TIME \u7c7b\u578b",
+        "TIME \u7c7b\u578b\u7684\u683c\u5f0f\u4e3a HH:MM:SS[.fraction]\uff0c\u652f\u6301\u7684\u8303\u56f4\u662f -838:59:59.000000 \u5230 838:59:59.000000\u3002TIME \u4e0d\u4ec5\u53ef\u7528\u4e8e\u6307\u793a\u4e00\u5929\u5185\u7684\u65f6\u95f4\uff0c\u8fd8\u53ef\u7528\u4e8e\u6307\u4e24\u4e2a\u4e8b\u4ef6\u4e4b\u95f4\u7684\u65f6\u95f4\u95f4\u9694\u3002fsp \u53c2\u6570\u8868\u793a\u79d2\u7cbe\u5ea6\uff0c\u53d6\u503c\u8303\u56f4\u4e3a\uff1a0 ~ 6\uff0c\u9ed8\u8ba4\u503c\u4e3a 0\u3002",
         "TIME[(fsp)]\n",
-        "注意注意 TIME 的缩写形式。例如，11:12 表示 11:12:00 而不是 00:11:12。但是，1112 表示 00:11:12。这些差异取决于 : 字符的存在与否。"
+        "\u6ce8\u610f\u6ce8\u610f TIME \u7684\u7f29\u5199\u5f62\u5f0f\u3002\u4f8b\u5982\uff0c11:12 \u8868\u793a 11:12:00 \u800c\u4e0d\u662f 00:11:12\u3002\u4f46\u662f\uff0c1112 \u8868\u793a 00:11:12\u3002\u8fd9\u4e9b\u5dee\u5f02\u53d6\u51b3\u4e8e : \u5b57\u7b26\u7684\u5b58\u5728\u4e0e\u5426\u3002"
     ],
     "Examples": [],
     "Category": [
-        "日期和时间类型"
+        "\u65e5\u671f\u548c\u65f6\u95f4\u7c7b\u578b"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT TIME('12:30:00');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 413,
+            "Prompt Tokens": 391,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 7.185e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT TIME('12:30:00');"
     ]
 }

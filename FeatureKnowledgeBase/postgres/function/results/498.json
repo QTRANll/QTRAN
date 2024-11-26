@@ -6,7 +6,7 @@
         "age"
     ],
     "Feature": [
-        "age ( xid ) → integer"
+        "age ( xid ) \u2192 integer"
     ],
     "Description": [
         "Returns the number of transactions between the supplied transaction id and the current transaction counter."
@@ -14,5 +14,55 @@
     "Examples": [],
     "Category": [
         "System Information Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT age(xid);",
+        "SELECT age(current_transaction);",
+        "SELECT age(pg_current_xact_id());",
+        "SELECT age(pg_xact_commit_timestamp(pg_current_xact_id()));",
+        "SELECT age(now());"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 270,
+            "Prompt Tokens": 252,
+            "Completion Tokens": 18,
+            "Total Cost (USD)": 4.8599999999999995e-05
+        },
+        {
+            "Total Tokens": 424,
+            "Prompt Tokens": 406,
+            "Completion Tokens": 18,
+            "Total Cost (USD)": 7.17e-05
+        },
+        {
+            "Total Tokens": 581,
+            "Prompt Tokens": 560,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 9.659999999999999e-05
+        },
+        {
+            "Total Tokens": 769,
+            "Prompt Tokens": 743,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 0.00012704999999999997
+        },
+        {
+            "Total Tokens": 957,
+            "Prompt Tokens": 940,
+            "Completion Tokens": 17,
+            "Total Cost (USD)": 0.0001512
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedColumn) column \"xid\" does not exist\nLINE 1: SELECT age(xid);\n                   ^\n\n",
+        "(psycopg2.errors.UndefinedColumn) column \"current_transaction\" does not exist\nLINE 1: SELECT age(current_transaction);\n                   ^\n\n",
+        "(psycopg2.errors.UndefinedFunction) function age(xid8) does not exist\nLINE 1: SELECT age(pg_current_xact_id());\n               ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.\n\n",
+        "(psycopg2.errors.UndefinedFunction) function pg_xact_commit_timestamp(xid8) does not exist\nLINE 1: SELECT age(pg_xact_commit_timestamp(pg_current_xact_id()));\n                   ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT age(now());"
     ]
 }

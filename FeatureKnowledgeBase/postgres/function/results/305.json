@@ -6,15 +6,65 @@
         "lower_inc"
     ],
     "Feature": [
-        "lower_inc ( anymultirange ) → boolean"
+        "lower_inc ( anymultirange ) \u2192 boolean"
     ],
     "Description": [
         "Is the multirange's lower bound inclusive?"
     ],
     "Examples": [
-        "lower_inc('{[1.1,2.2)}'::nummultirange) → t"
+        "lower_inc('{[1.1,2.2)}'::nummultirange) \u2192 t"
     ],
     "Category": [
         "Range divide Multirange Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT lower_inc(ANYMULTIRANGE);",
+        "SELECT lower_inc(ARRAY[1, 2, 3]::int4multirange);",
+        "SELECT lower_inc( int4multirange('[1, 5), (10, 15)') );",
+        "SELECT lower_inc(int4multirange('[[1, 5), [10, 15)]'));",
+        "SELECT lower_inc(int4multirange('{[1, 5), [10, 15)}'));"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 275,
+            "Prompt Tokens": 253,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 5.114999999999999e-05
+        },
+        {
+            "Total Tokens": 452,
+            "Prompt Tokens": 418,
+            "Completion Tokens": 34,
+            "Total Cost (USD)": 8.309999999999999e-05
+        },
+        {
+            "Total Tokens": 644,
+            "Prompt Tokens": 608,
+            "Completion Tokens": 36,
+            "Total Cost (USD)": 0.00011279999999999999
+        },
+        {
+            "Total Tokens": 848,
+            "Prompt Tokens": 813,
+            "Completion Tokens": 35,
+            "Total Cost (USD)": 0.00014294999999999998
+        },
+        {
+            "Total Tokens": 1053,
+            "Prompt Tokens": 1018,
+            "Completion Tokens": 35,
+            "Total Cost (USD)": 0.0001737
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedColumn) column \"anymultirange\" does not exist\nLINE 1: SELECT lower_inc(ANYMULTIRANGE);\n                         ^\n\n",
+        "(psycopg2.errors.CannotCoerce) cannot cast type integer[] to int4multirange\nLINE 1: SELECT lower_inc(ARRAY[1, 2, 3]::int4multirange);\n                                       ^\n\n",
+        "(psycopg2.errors.InvalidTextRepresentation) malformed multirange literal: \"[1, 5), (10, 15)\"\nLINE 1: SELECT lower_inc( int4multirange('[1, 5), (10, 15)') );\n                                         ^\nDETAIL:  Missing left brace.\n\n",
+        "(psycopg2.errors.InvalidTextRepresentation) malformed multirange literal: \"[[1, 5), [10, 15)]\"\nLINE 1: SELECT lower_inc(int4multirange('[[1, 5), [10, 15)]'));\n                                        ^\nDETAIL:  Missing left brace.\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT lower_inc(int4multirange('{[1, 5), [10, 15)}'));"
     ]
 }

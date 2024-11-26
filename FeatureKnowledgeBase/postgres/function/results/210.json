@@ -6,15 +6,33 @@
         "trunc"
     ],
     "Feature": [
-        "trunc ( macaddr8 ) → macaddr8"
+        "trunc ( macaddr8 ) \u2192 macaddr8"
     ],
     "Description": [
         "Sets the last 5 bytes of the address to zero. The remaining prefix can be associated with a particular manufacturer (using data not included in PostgreSQL)."
     ],
     "Examples": [
-        "trunc(macaddr8 '12:34:56:78:90:ab:cd:ef') → 12:34:56:00:00:00:00:00"
+        "trunc(macaddr8 '12:34:56:78:90:ab:cd:ef') \u2192 12:34:56:00:00:00:00:00"
     ],
     "Category": [
         "Network Address Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT trunc(macaddr8 '08:00:20:4C:00:00')"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 307,
+            "Prompt Tokens": 275,
+            "Completion Tokens": 32,
+            "Total Cost (USD)": 6.045e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT trunc(macaddr8 '08:00:20:4C:00:00')"
     ]
 }

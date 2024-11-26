@@ -18,5 +18,41 @@
     ],
     "Category": [
         "Character String Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        [
+            "SELECT * FROM sys.ms_stuff('example_string', 1, 10, 'another_string');",
+            "SELECT s1, pos, nr, s2 FROM sys.ms_stuff('test', 2, 5, 'sample');",
+            "INSERT INTO sys.ms_stuff VALUES ('data', 3, 15, 'info');",
+            "UPDATE sys.ms_stuff SET s1 = 'updated_string' WHERE pos = 1;",
+            "DELETE FROM sys.ms_stuff WHERE nr = 10;"
+        ],
+        [
+            "SELECT * FROM sys.ms_stuff('example_string', 1, 10, 'another_string');",
+            "SELECT s1, pos, nr, s2 FROM sys.ms_stuff('test', 2, 5, 'sample');",
+            "INSERT INTO sys.ms_stuff(s1, pos, nr, s2) VALUES ('data', 3, 15, 'info');",
+            "UPDATE sys.ms_stuff SET s1 = 'updated_string' WHERE pos = 1;",
+            "DELETE FROM sys.ms_stuff WHERE nr = 10;"
+        ]
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 318,
+            "Prompt Tokens": 188,
+            "Completion Tokens": 130,
+            "Total Cost (USD)": 0.00010619999999999999
+        },
+        {
+            "Total Tokens": 599,
+            "Prompt Tokens": 459,
+            "Completion Tokens": 140,
+            "Total Cost (USD)": 0.00015285
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "expected string or bytes-like object, got 'list'",
+        "expected string or bytes-like object, got 'list'"
+    ],
+    "EffectiveSQLs": []
 }

@@ -22,5 +22,14 @@
         "SELECT ACOS(1.0001);",
         "SELECT ACOS(0);",
         "SELECT ACOS(0.234);"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT ACOS(1);",
+        "SELECT ACOS(1.0001);",
+        "SELECT ACOS(0);",
+        "SELECT ACOS(0.234);"
     ]
 }

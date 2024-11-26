@@ -18,5 +18,23 @@
     "Category": [
         "Built-In Functions and Operators",
         "Encryption and Compression Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT STATEMENT_DIGEST_TEXT('SELECT * FROM users WHERE id = 1');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 366,
+            "Prompt Tokens": 336,
+            "Completion Tokens": 30,
+            "Total Cost (USD)": 6.84e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT STATEMENT_DIGEST_TEXT('SELECT * FROM users WHERE id = 1');"
     ]
 }

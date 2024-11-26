@@ -6,15 +6,63 @@
         "ts_filter"
     ],
     "Feature": [
-        "ts_filter ( vector tsvector, weights \"char\"[] ) → tsvector"
+        "ts_filter ( vector tsvector, weights \"char\"[] ) \u2192 tsvector"
     ],
     "Description": [
         "Selects only elements with the given weights from the vector."
     ],
     "Examples": [
-        "ts_filter('fat:2,4 cat:3b,7c rat:5A'::tsvector, '{a,b}') → 'cat':3B 'rat':5A"
+        "ts_filter('fat:2,4 cat:3b,7c rat:5A'::tsvector, '{a,b}') \u2192 'cat':3B 'rat':5A"
     ],
     "Category": [
         "Text Search Functions and Operators"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT ts_filter(vector, ARRAY['A', 'B'])",
+        "SELECT ts_filter(tsvector_column, ARRAY['A', 'B'])",
+        "SELECT ts_filter(ROW_TO_TSVECTOR('example text'), ARRAY['A', 'B'])",
+        "SELECT ts_filter(to_tsvector('example text'), ARRAY['A', 'B'])",
+        "SELECT ts_filter(to_tsvector('example text')::tsvector, ARRAY['A', 'B']::text[])"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 288,
+            "Prompt Tokens": 263,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 5.4449999999999995e-05
+        },
+        {
+            "Total Tokens": 458,
+            "Prompt Tokens": 431,
+            "Completion Tokens": 27,
+            "Total Cost (USD)": 8.085e-05
+        },
+        {
+            "Total Tokens": 638,
+            "Prompt Tokens": 605,
+            "Completion Tokens": 33,
+            "Total Cost (USD)": 0.00011054999999999998
+        },
+        {
+            "Total Tokens": 844,
+            "Prompt Tokens": 813,
+            "Completion Tokens": 31,
+            "Total Cost (USD)": 0.00014054999999999997
+        },
+        {
+            "Total Tokens": 1058,
+            "Prompt Tokens": 1020,
+            "Completion Tokens": 38,
+            "Total Cost (USD)": 0.0001758
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedColumn) column \"vector\" does not exist\nLINE 1: SELECT ts_filter(vector, ARRAY['A', 'B'])\n                         ^\n\n",
+        "(psycopg2.errors.UndefinedColumn) column \"tsvector_column\" does not exist\nLINE 1: SELECT ts_filter(tsvector_column, ARRAY['A', 'B'])\n                         ^\n\n",
+        "(psycopg2.errors.UndefinedFunction) function row_to_tsvector(unknown) does not exist\nLINE 1: SELECT ts_filter(ROW_TO_TSVECTOR('example text'), ARRAY['A',...\n                         ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.\n\n",
+        "(psycopg2.errors.UndefinedFunction) function ts_filter(tsvector, text[]) does not exist\nLINE 1: SELECT ts_filter(to_tsvector('example text'), ARRAY['A', 'B'...\n               ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.\n\n",
+        "(psycopg2.errors.UndefinedFunction) function ts_filter(tsvector, text[]) does not exist\nLINE 1: SELECT ts_filter(to_tsvector('example text')::tsvector, ARRA...\n               ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.\n\n"
+    ],
+    "EffectiveSQLs": []
 }

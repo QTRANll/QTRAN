@@ -6,15 +6,33 @@
         "regexp_split_to_array"
     ],
     "Feature": [
-        "regexp_split_to_array ( string text, pattern text [, flags text ] ) → text[]"
+        "regexp_split_to_array ( string text, pattern text [, flags text ] ) \u2192 text[]"
     ],
     "Description": [
-        "Splits string using a POSIX regular expression as the delimiter, producing an array of results; see Section 9.7.3."
+        "Splits string using a POSIX regular expression as the delimiter, producing an array of results; see Section\u00a09.7.3."
     ],
     "Examples": [
-        "regexp_split_to_array('hello world', '\\s+') → {hello,world}"
+        "regexp_split_to_array('hello world', '\\s+') \u2192 {hello,world}"
     ],
     "Category": [
         "String Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT regexp_split_to_array('hello,world', ',');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 310,
+            "Prompt Tokens": 285,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 5.7749999999999994e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT regexp_split_to_array('hello,world', ',');"
     ]
 }

@@ -6,7 +6,7 @@
         "pg_replication_origin_xact_setup"
     ],
     "Feature": [
-        "pg_replication_origin_xact_setup ( origin_lsn pg_lsn, origin_timestamp timestamp with time zone ) → void"
+        "pg_replication_origin_xact_setup ( origin_lsn pg_lsn, origin_timestamp timestamp with time zone ) \u2192 void"
     ],
     "Description": [
         "Marks the current transaction as replaying a transaction that has committed at the given LSN and timestamp. Can only be called when a replication origin has been selected using pg_replication_origin_session_setup."
@@ -14,5 +14,31 @@
     "Examples": [],
     "Category": [
         "System Administration Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT pg_replication_origin_xact_setup('0/3000028', '2023-10-01 12:00:00+00');",
+        "SELECT pg_replication_origin_session_setup('my_replication_origin');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 355,
+            "Prompt Tokens": 311,
+            "Completion Tokens": 44,
+            "Total Cost (USD)": 7.304999999999999e-05
+        },
+        {
+            "Total Tokens": 509,
+            "Prompt Tokens": 483,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 8.804999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.ObjectNotInPrerequisiteState) no replication origin is configured\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT pg_replication_origin_session_setup('my_replication_origin');"
     ]
 }

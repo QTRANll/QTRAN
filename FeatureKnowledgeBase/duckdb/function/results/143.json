@@ -16,5 +16,31 @@
     ],
     "Category": [
         "Date Part Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT dayofweek(date);",
+        "SELECT dayofweek(current_date);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 280,
+            "Prompt Tokens": 261,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 5.0549999999999995e-05
+        },
+        {
+            "Total Tokens": 445,
+            "Prompt Tokens": 425,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 7.574999999999998e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.BinderException) Binder Error: Referenced column \"date\" not found in FROM clause!\nLINE 1: SELECT dayofweek(date);\n                         ^\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT dayofweek(current_date);"
     ]
 }

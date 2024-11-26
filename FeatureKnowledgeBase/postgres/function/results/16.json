@@ -6,15 +6,33 @@
         "log"
     ],
     "Feature": [
-        "log ( b numeric, x numeric ) → numeric"
+        "log ( b numeric, x numeric ) \u2192 numeric"
     ],
     "Description": [
         "Logarithm of x to base b"
     ],
     "Examples": [
-        "log(2.0, 64.0) → 6.0000000000000000"
+        "log(2.0, 64.0) \u2192 6.0000000000000000"
     ],
     "Category": [
         "Mathematical Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT log(10, 100);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 269,
+            "Prompt Tokens": 248,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 4.98e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT log(10, 100);"
     ]
 }

@@ -25,5 +25,53 @@
     ],
     "Category": [
         "Loadable Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT mask_iban('IE12 BOFI 9000 0112 3456 78');",
+        "SELECT mask_iban('GB29 NWBK 6016 1331 9268 19');",
+        "SELECT mask_iban('DE89370400440532013000');",
+        "SELECT mask_iban('IT60X0542811101000000123456');",
+        "SELECT mask_iban('FR76 3000 6000 0112 3456 7890 1234');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 815,
+            "Prompt Tokens": 781,
+            "Completion Tokens": 34,
+            "Total Cost (USD)": 0.00013754999999999998
+        },
+        {
+            "Total Tokens": 985,
+            "Prompt Tokens": 951,
+            "Completion Tokens": 34,
+            "Total Cost (USD)": 0.00016304999999999998
+        },
+        {
+            "Total Tokens": 1148,
+            "Prompt Tokens": 1121,
+            "Completion Tokens": 27,
+            "Total Cost (USD)": 0.00018434999999999998
+        },
+        {
+            "Total Tokens": 1314,
+            "Prompt Tokens": 1284,
+            "Completion Tokens": 30,
+            "Total Cost (USD)": 0.0002106
+        },
+        {
+            "Total Tokens": 1489,
+            "Prompt Tokens": 1450,
+            "Completion Tokens": 39,
+            "Total Cost (USD)": 0.00024089999999999997
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.mask_iban does not exist')\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.mask_iban does not exist')\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.mask_iban does not exist')\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.mask_iban does not exist')\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.mask_iban does not exist')\n"
+    ],
+    "EffectiveSQLs": []
 }

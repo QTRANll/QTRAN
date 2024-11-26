@@ -27,5 +27,10 @@
     ],
     "Category": [
         "Encryption Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "CREATE TABLE encryption_test(    `comment` String,    `secret` String)ENGINE = Memory;",
+        "SELECT comment, hex(secret) FROM encryption_test;",
+        "SELECT comment, hex(secret) FROM encryption_test WHERE comment LIKE '%gcm%';"
     ]
 }

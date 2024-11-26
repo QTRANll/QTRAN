@@ -18,5 +18,53 @@
     ],
     "Category": [
         "Mathematics Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT ln(x);",
+        "SELECT ln(1);",
+        "SELECT ln(2.71828);",
+        "SELECT ln(3.0);",
+        "SELECT ln(4.0::float);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 269,
+            "Prompt Tokens": 252,
+            "Completion Tokens": 17,
+            "Total Cost (USD)": 4.8e-05
+        },
+        {
+            "Total Tokens": 415,
+            "Prompt Tokens": 397,
+            "Completion Tokens": 18,
+            "Total Cost (USD)": 7.035e-05
+        },
+        {
+            "Total Tokens": 570,
+            "Prompt Tokens": 549,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 9.494999999999999e-05
+        },
+        {
+            "Total Tokens": 722,
+            "Prompt Tokens": 702,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 0.00011729999999999998
+        },
+        {
+            "Total Tokens": 876,
+            "Prompt Tokens": 854,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 0.0001413
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: identifier 'x' unknown\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: no such unary operator 'ln(tinyint)'\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: no such unary operator 'ln(decimal)'\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: no such unary operator 'ln(decimal)'\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!Unexpected symbol (:)\n\n"
+    ],
+    "EffectiveSQLs": []
 }

@@ -16,5 +16,39 @@
     "Examples": [],
     "Category": [
         "Aggregate Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT regr_slope(y, x);",
+        "SELECT regr_slope(y, x) FROM your_table_name;",
+        "SELECT regr_slope(y, x) FROM (SELECT 1 AS x, 2 AS y) AS temp;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 344,
+            "Prompt Tokens": 322,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 6.149999999999999e-05
+        },
+        {
+            "Total Tokens": 521,
+            "Prompt Tokens": 495,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 8.984999999999999e-05
+        },
+        {
+            "Total Tokens": 721,
+            "Prompt Tokens": 684,
+            "Completion Tokens": 37,
+            "Total Cost (USD)": 0.0001248
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.BinderException) Binder Error: Referenced column \"y\" not found in FROM clause!\nLINE 1: SELECT regr_slope(y, x);\n                          ^\n",
+        "(duckdb.duckdb.CatalogException) Catalog Error: Table with name your_table_name does not exist!\nDid you mean \"pg_tablespace\"?\nLINE 1: SELECT regr_slope(y, x) FROM your_table_name;\n                                     ^\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT regr_slope(y, x) FROM (SELECT 1 AS x, 2 AS y) AS temp;"
     ]
 }

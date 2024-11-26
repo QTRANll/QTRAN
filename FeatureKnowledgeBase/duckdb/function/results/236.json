@@ -14,5 +14,31 @@
     "Examples": [],
     "Category": [
         "List Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT list_zip(list_1, list_2) AS zipped_list",
+        "SELECT list_zip(ARRAY[1, 2, 3], ARRAY['a', 'b', 'c']) AS zipped_list"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 371,
+            "Prompt Tokens": 344,
+            "Completion Tokens": 27,
+            "Total Cost (USD)": 6.78e-05
+        },
+        {
+            "Total Tokens": 576,
+            "Prompt Tokens": 536,
+            "Completion Tokens": 40,
+            "Total Cost (USD)": 0.0001044
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.BinderException) Binder Error: Referenced column \"list_1\" not found in FROM clause!\nLINE 1: SELECT list_zip(list_1, list_2) AS zipped_list\n                        ^\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT list_zip(ARRAY[1, 2, 3], ARRAY['a', 'b', 'c']) AS zipped_list"
     ]
 }

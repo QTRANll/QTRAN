@@ -10,10 +10,28 @@
     ],
     "Description": [
         "SCHEMA()",
-        "SCHEMA() 函数与 DATABASE() 同义。"
+        "SCHEMA() \u51fd\u6570\u4e0e DATABASE() \u540c\u4e49\u3002"
     ],
     "Examples": [],
     "Category": [
-        "信息函数"
+        "\u4fe1\u606f\u51fd\u6570"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT SCHEMA();"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 273,
+            "Prompt Tokens": 256,
+            "Completion Tokens": 17,
+            "Total Cost (USD)": 4.86e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT SCHEMA();"
     ]
 }

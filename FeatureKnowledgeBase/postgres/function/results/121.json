@@ -6,15 +6,63 @@
         "set_bit"
     ],
     "Feature": [
-        "set_bit ( bytes bytea, n bigint, newvalue integer ) → bytea"
+        "set_bit ( bytes bytea, n bigint, newvalue integer ) \u2192 bytea"
     ],
     "Description": [
         "Sets n'th bit in binary string to newvalue."
     ],
     "Examples": [
-        "set_bit('\\x1234567890'::bytea, 30, 0) → \\x1234563890"
+        "set_bit('\\x1234567890'::bytea, 30, 0) \u2192 \\x1234563890"
     ],
     "Category": [
         "Binary String Functions and Operators"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT set_bit(E'\\x00', 1, 1);",
+        "SELECT set_bit(E'\\x01', 1, 1);",
+        "SELECT set_bit(E'\\x00', 0, 1);",
+        "SELECT set_bit(E'\\x02', 1, 1);",
+        "SELECT set_bit(E'\\x03', 1, 1);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 289,
+            "Prompt Tokens": 261,
+            "Completion Tokens": 28,
+            "Total Cost (USD)": 5.594999999999999e-05
+        },
+        {
+            "Total Tokens": 447,
+            "Prompt Tokens": 419,
+            "Completion Tokens": 28,
+            "Total Cost (USD)": 7.965e-05
+        },
+        {
+            "Total Tokens": 621,
+            "Prompt Tokens": 593,
+            "Completion Tokens": 28,
+            "Total Cost (USD)": 0.00010575
+        },
+        {
+            "Total Tokens": 779,
+            "Prompt Tokens": 751,
+            "Completion Tokens": 28,
+            "Total Cost (USD)": 0.00012944999999999998
+        },
+        {
+            "Total Tokens": 953,
+            "Prompt Tokens": 925,
+            "Completion Tokens": 28,
+            "Total Cost (USD)": 0.00015554999999999999
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.CharacterNotInRepertoire) invalid byte sequence for encoding \"UTF8\": 0x00\n\n",
+        "(psycopg2.errors.InvalidTextRepresentation) \"\u0001\" is not a valid binary digit\nLINE 1: SELECT set_bit(E'\\x01', 1, 1);\n                       ^\n\n",
+        "(psycopg2.errors.CharacterNotInRepertoire) invalid byte sequence for encoding \"UTF8\": 0x00\n\n",
+        "(psycopg2.errors.InvalidTextRepresentation) \"\u0002\" is not a valid binary digit\nLINE 1: SELECT set_bit(E'\\x02', 1, 1);\n                       ^\n\n",
+        "(psycopg2.errors.InvalidTextRepresentation) \"\u0003\" is not a valid binary digit\nLINE 1: SELECT set_bit(E'\\x03', 1, 1);\n                       ^\n\n"
+    ],
+    "EffectiveSQLs": []
 }

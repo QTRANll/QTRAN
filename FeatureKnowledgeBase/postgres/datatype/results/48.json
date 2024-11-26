@@ -19,5 +19,39 @@
     "Examples": [],
     "Category": [
         "Object Identifier Types"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT 'POSIX'::regcollation;",
+        "SELECT 'C'::regcollation;",
+        "SELECT 'default'::regcollation;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 284,
+            "Prompt Tokens": 262,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 5.2499999999999995e-05
+        },
+        {
+            "Total Tokens": 455,
+            "Prompt Tokens": 434,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 7.769999999999999e-05
+        },
+        {
+            "Total Tokens": 624,
+            "Prompt Tokens": 603,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 0.00010304999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedObject) collation \"posix\" for encoding \"UTF8\" does not exist\nLINE 1: SELECT 'POSIX'::regcollation;\n               ^\n\n",
+        "(psycopg2.errors.UndefinedObject) collation \"c\" for encoding \"UTF8\" does not exist\nLINE 1: SELECT 'C'::regcollation;\n               ^\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT 'default'::regcollation;"
     ]
 }

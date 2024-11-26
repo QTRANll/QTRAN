@@ -6,7 +6,7 @@
         "setval"
     ],
     "Feature": [
-        "setval ( regclass, bigint [, boolean ] ) → bigint"
+        "setval ( regclass, bigint [, boolean ] ) \u2192 bigint"
     ],
     "Description": [
         "Sets the sequence object's current value, and optionally its is_called flag. The two-parameter form sets the sequence's last_value field to the specified value and sets its is_called field to true, meaning that the next nextval will advance the sequence before returning a value. The value that will be reported by currval is also set to the specified value. In the three-parameter form, is_called can be set to either true or false. true has the same effect as the two-parameter form. If it is set to false, the next nextval will return exactly the specified value, and sequence advancement commences with the following nextval. Furthermore, the value reported by currval is not changed in this case. For example,",
@@ -16,5 +16,53 @@
     "Examples": [],
     "Category": [
         "Sequence Manipulation Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT setval('your_sequence_name', 10);",
+        "SELECT setval('my_sequence', 10);",
+        "SELECT setval('public.my_sequence', 10);",
+        "SELECT setval('my_sequence_name', 10);",
+        "SELECT setval('sequence_name', 10);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 444,
+            "Prompt Tokens": 420,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 7.739999999999998e-05
+        },
+        {
+            "Total Tokens": 611,
+            "Prompt Tokens": 588,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 0.00010199999999999999
+        },
+        {
+            "Total Tokens": 777,
+            "Prompt Tokens": 753,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 0.00012735
+        },
+        {
+            "Total Tokens": 945,
+            "Prompt Tokens": 921,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 0.00015255
+        },
+        {
+            "Total Tokens": 1112,
+            "Prompt Tokens": 1089,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 0.00017715
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedTable) relation \"your_sequence_name\" does not exist\nLINE 1: SELECT setval('your_sequence_name', 10);\n                      ^\n\n",
+        "(psycopg2.errors.UndefinedTable) relation \"my_sequence\" does not exist\nLINE 1: SELECT setval('my_sequence', 10);\n                      ^\n\n",
+        "(psycopg2.errors.UndefinedTable) relation \"public.my_sequence\" does not exist\nLINE 1: SELECT setval('public.my_sequence', 10);\n                      ^\n\n",
+        "(psycopg2.errors.UndefinedTable) relation \"my_sequence_name\" does not exist\nLINE 1: SELECT setval('my_sequence_name', 10);\n                      ^\n\n",
+        "(psycopg2.errors.UndefinedTable) relation \"sequence_name\" does not exist\nLINE 1: SELECT setval('sequence_name', 10);\n                      ^\n\n"
+    ],
+    "EffectiveSQLs": []
 }

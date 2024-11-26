@@ -1,0 +1,6 @@
+{"index": 318, "a_db": "sqlite", "b_db": "monetdb", "molt": "norec", "sql": "PRAGMA encoding = 'UTF16be';"}
+{"index": 318, "a_db": "sqlite", "b_db": "monetdb", "molt": "norec", "sql": "CREATE TABLE t0(c0, c1);"}
+{"index": 318, "a_db": "sqlite", "b_db": "monetdb", "molt": "norec", "sql": "INSERT INTO t0(c0) VALUES (x'00');"}
+{"index": 318, "a_db": "sqlite", "b_db": "monetdb", "molt": "norec", "sql": "CREATE INDEX i0 ON t0(c0 COLLATE BINARY);"}
+{"index": 318, "a_db": "sqlite", "b_db": "monetdb", "molt": "norec", "sql": "INSERT INTO t0(c0) VALUES (1);"}
+{"index": 318, "a_db": "sqlite", "b_db": "monetdb", "molt": "norec", "sql": "SELECT COUNT(*) FROM t0 WHERE SUBSTR(t0.c0, ','); -- expected: 1, actual: 2"}

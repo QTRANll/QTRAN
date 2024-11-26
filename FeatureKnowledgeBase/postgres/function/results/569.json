@@ -6,7 +6,7 @@
         "pg_collation_actual_version"
     ],
     "Feature": [
-        "pg_collation_actual_version ( oid ) → text"
+        "pg_collation_actual_version ( oid ) \u2192 text"
     ],
     "Description": [
         "Returns the actual version of the collation object as it is currently installed in the operating system. If this is different from the value in pg_collation.collversion, then objects depending on the collation might need to be rebuilt. See also ALTER COLLATION."
@@ -14,5 +14,23 @@
     "Examples": [],
     "Category": [
         "System Administration Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT pg_collation_actual_version(oid) FROM pg_collation;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 330,
+            "Prompt Tokens": 304,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 6.12e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT pg_collation_actual_version(oid) FROM pg_collation;"
     ]
 }

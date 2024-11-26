@@ -21,5 +21,24 @@
     ],
     "Category": [
         "Numeric Data Types"
+    ],
+    "EffectiveSQLsRefined": [
+        "INSERT INTO mediumints VALUES (-10,10,10);",
+        "INSERT INTO mediumints VALUES (8388607,8388608,8388608);",
+        "SELECT * FROM mediumints;",
+        "INSERT INTO mediumints VALUES (-10,10,10);",
+        "INSERT INTO mediumints VALUES (8388607,8388608,8388608);",
+        "SELECT * FROM mediumints;"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "INSERT INTO mediumints VALUES (-10,10,10);",
+        "INSERT INTO mediumints VALUES (8388607,8388608,8388608);",
+        "SELECT * FROM mediumints;",
+        "INSERT INTO mediumints VALUES (-10,10,10);",
+        "INSERT INTO mediumints VALUES (8388607,8388608,8388608);",
+        "SELECT * FROM mediumints;"
     ]
 }

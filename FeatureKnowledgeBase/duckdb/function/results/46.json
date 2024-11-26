@@ -15,5 +15,47 @@
     "Examples": [],
     "Category": [
         "Aggregate Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT median(x);",
+        "SELECT median(column_name) FROM table_name;",
+        "SELECT median(x) FROM (SELECT x FROM your_table) AS subquery;",
+        "SELECT median(x) FROM (VALUES (1), (2), (3), (4), (5)) AS your_table(x);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 292,
+            "Prompt Tokens": 275,
+            "Completion Tokens": 17,
+            "Total Cost (USD)": 5.1450000000000004e-05
+        },
+        {
+            "Total Tokens": 454,
+            "Prompt Tokens": 433,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 7.754999999999999e-05
+        },
+        {
+            "Total Tokens": 634,
+            "Prompt Tokens": 606,
+            "Completion Tokens": 28,
+            "Total Cost (USD)": 0.00010769999999999999
+        },
+        {
+            "Total Tokens": 832,
+            "Prompt Tokens": 792,
+            "Completion Tokens": 40,
+            "Total Cost (USD)": 0.0001428
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.BinderException) Binder Error: Referenced column \"x\" not found in FROM clause!\nLINE 1: SELECT median(x);\n                      ^\n",
+        "(duckdb.duckdb.CatalogException) Catalog Error: Table with name table_name does not exist!\nDid you mean \"pg_tablespace\"?\nLINE 1: SELECT median(column_name) FROM table_name;\n                                        ^\n",
+        "(duckdb.duckdb.CatalogException) Catalog Error: Table with name your_table does not exist!\nDid you mean \"pg_tables\"?\nLINE 1: SELECT median(x) FROM (SELECT x FROM your_table) AS subquery;\n                                             ^\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT median(x) FROM (VALUES (1), (2), (3), (4), (5)) AS your_table(x);"
     ]
 }

@@ -10,11 +10,29 @@
     ],
     "Description": [
         "TIDB_DECODE_BINARY_PLAN",
-        "TIDB_DECODE_BINARY_PLAN(binary_plan) 函数用于解码以二进制格式编码的执行计划，例如 STATEMENTS_SUMMARY 表中 BINARY_PLAN 列的计划。",
-        "必须将 tidb_generate_binary_plan 变量设置为 ON，二进制计划才可用。"
+        "TIDB_DECODE_BINARY_PLAN(binary_plan) \u51fd\u6570\u7528\u4e8e\u89e3\u7801\u4ee5\u4e8c\u8fdb\u5236\u683c\u5f0f\u7f16\u7801\u7684\u6267\u884c\u8ba1\u5212\uff0c\u4f8b\u5982 STATEMENTS_SUMMARY \u8868\u4e2d BINARY_PLAN \u5217\u7684\u8ba1\u5212\u3002",
+        "\u5fc5\u987b\u5c06 tidb_generate_binary_plan \u53d8\u91cf\u8bbe\u7f6e\u4e3a ON\uff0c\u4e8c\u8fdb\u5236\u8ba1\u5212\u624d\u53ef\u7528\u3002"
     ],
     "Examples": [],
     "Category": [
-        "TiDB 特有的函数"
+        "TiDB \u7279\u6709\u7684\u51fd\u6570"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT TIDB_DECODE_BINARY_PLAN('your_binary_plan_here');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 355,
+            "Prompt Tokens": 328,
+            "Completion Tokens": 27,
+            "Total Cost (USD)": 6.539999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT TIDB_DECODE_BINARY_PLAN('your_binary_plan_here');"
     ]
 }

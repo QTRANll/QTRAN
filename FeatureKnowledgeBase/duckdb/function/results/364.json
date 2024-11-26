@@ -16,5 +16,39 @@
     ],
     "Category": [
         "Struct Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT struct[1] FROM my_table",
+        "SELECT struct[1]",
+        "SELECT struct[1] FROM (VALUES (ROW(1, 'example'))) AS t(struct)"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 286,
+            "Prompt Tokens": 265,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 5.235e-05
+        },
+        {
+            "Total Tokens": 454,
+            "Prompt Tokens": 437,
+            "Completion Tokens": 17,
+            "Total Cost (USD)": 7.575e-05
+        },
+        {
+            "Total Tokens": 628,
+            "Prompt Tokens": 596,
+            "Completion Tokens": 32,
+            "Total Cost (USD)": 0.00010859999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.CatalogException) Catalog Error: Table with name my_table does not exist!\nDid you mean \"pg_tables\"?\nLINE 1: SELECT struct[1] FROM my_table\n                              ^\n",
+        "(duckdb.duckdb.BinderException) Binder Error: Referenced column \"struct\" not found in FROM clause!\nLINE 1: SELECT struct[1]\n               ^\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT struct[1] FROM (VALUES (ROW(1, 'example'))) AS t(struct)"
     ]
 }

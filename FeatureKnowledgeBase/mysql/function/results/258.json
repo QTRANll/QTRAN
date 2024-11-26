@@ -21,5 +21,23 @@
     "Category": [
         "Built-In Functions and Operators",
         "Encryption and Compression Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT RANDOM_BYTES(16);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 543,
+            "Prompt Tokens": 524,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 8.999999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT RANDOM_BYTES(16);"
     ]
 }

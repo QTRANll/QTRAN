@@ -22,5 +22,11 @@
     ],
     "EffectiveSQLsRefined": [
         "SELECT JSON_SEARCH(@json, 'one', 'AB');"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT JSON_SEARCH(@json, 'one', 'AB');"
     ]
 }

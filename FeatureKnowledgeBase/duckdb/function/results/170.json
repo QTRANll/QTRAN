@@ -17,5 +17,53 @@
     ],
     "Category": [
         "Enum Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT enum_range_boundary('enum_value1', 'enum_value2');",
+        "SELECT enum_range_boundary(enum_type('enum_value1'), enum_type('enum_value2'));",
+        "SELECT enum_range_boundary('enum_value1'::enum_type, 'enum_value2'::enum_type);",
+        "SELECT enum_range_boundary('enum_value1'::enum, 'enum_value2'::enum);",
+        "SELECT enum_range_boundary('enum_value1', 'enum_value2') FROM (VALUES ('enum_value1'::enum), ('enum_value2'::enum)) AS t(enum);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 358,
+            "Prompt Tokens": 331,
+            "Completion Tokens": 27,
+            "Total Cost (USD)": 6.585e-05
+        },
+        {
+            "Total Tokens": 520,
+            "Prompt Tokens": 489,
+            "Completion Tokens": 31,
+            "Total Cost (USD)": 9.194999999999999e-05
+        },
+        {
+            "Total Tokens": 718,
+            "Prompt Tokens": 683,
+            "Completion Tokens": 35,
+            "Total Cost (USD)": 0.00012345
+        },
+        {
+            "Total Tokens": 890,
+            "Prompt Tokens": 857,
+            "Completion Tokens": 33,
+            "Total Cost (USD)": 0.00014834999999999997
+        },
+        {
+            "Total Tokens": 1068,
+            "Prompt Tokens": 1018,
+            "Completion Tokens": 50,
+            "Total Cost (USD)": 0.0001827
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.BinderException) Binder Error: This function needs an ENUM as an argument\n",
+        "(duckdb.duckdb.CatalogException) Catalog Error: Scalar Function with name enum_type does not exist!\nDid you mean \"enum_code\"?\nLINE 1: SELECT enum_range_boundary(enum_type('enum_value1'), enum_type('en...\n                                   ^\n",
+        "(duckdb.duckdb.CatalogException) Catalog Error: Type with name enum_type does not exist!\nDid you mean \"enum\"?\n",
+        "(duckdb.duckdb.ParserException) Parser Error: Enum needs a set of entries\n",
+        "(duckdb.duckdb.ParserException) Parser Error: Enum needs a set of entries\n"
+    ],
+    "EffectiveSQLs": []
 }

@@ -6,7 +6,7 @@
         "pg_replication_origin_session_setup"
     ],
     "Feature": [
-        "pg_replication_origin_session_setup ( node_name text ) → void"
+        "pg_replication_origin_session_setup ( node_name text ) \u2192 void"
     ],
     "Description": [
         "Marks the current session as replaying from the given origin, allowing replay progress to be tracked. Can only be used if no origin is currently selected. Use pg_replication_origin_session_reset to undo."
@@ -14,5 +14,53 @@
     "Examples": [],
     "Category": [
         "System Administration Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT pg_replication_origin_session_setup('my_origin');",
+        "SELECT pg_replication_origin_session_setup('new_origin');",
+        "SELECT pg_replication_origin_session_setup('default_origin');",
+        "SELECT pg_replication_origin_session_setup('example_origin');",
+        "SELECT pg_replication_origin_session_setup('test_origin');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 322,
+            "Prompt Tokens": 298,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 5.909999999999999e-05
+        },
+        {
+            "Total Tokens": 475,
+            "Prompt Tokens": 451,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 8.204999999999999e-05
+        },
+        {
+            "Total Tokens": 628,
+            "Prompt Tokens": 604,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 0.00010499999999999999
+        },
+        {
+            "Total Tokens": 781,
+            "Prompt Tokens": 757,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 0.00012795
+        },
+        {
+            "Total Tokens": 934,
+            "Prompt Tokens": 910,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 0.00015089999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedObject) replication origin \"my_origin\" does not exist\n\n",
+        "(psycopg2.errors.UndefinedObject) replication origin \"new_origin\" does not exist\n\n",
+        "(psycopg2.errors.UndefinedObject) replication origin \"default_origin\" does not exist\n\n",
+        "(psycopg2.errors.UndefinedObject) replication origin \"example_origin\" does not exist\n\n",
+        "(psycopg2.errors.UndefinedObject) replication origin \"test_origin\" does not exist\n\n"
+    ],
+    "EffectiveSQLs": []
 }

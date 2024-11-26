@@ -16,5 +16,31 @@
     ],
     "Category": [
         "Timestamp with Time Zone Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT time_bucket('1 hour', '2023-10-01 12:00:00+00');",
+        "SELECT time_bucket(INTERVAL '1 hour', TIMESTAMPTZ '2023-10-01 12:00:00+00');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 389,
+            "Prompt Tokens": 353,
+            "Completion Tokens": 36,
+            "Total Cost (USD)": 7.455e-05
+        },
+        {
+            "Total Tokens": 669,
+            "Prompt Tokens": 625,
+            "Completion Tokens": 44,
+            "Total Cost (USD)": 0.00012014999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.BinderException) Binder Error: Could not choose a best candidate function for the function call \"time_bucket(STRING_LITERAL, STRING_LITERAL)\". In order to select one, please add explicit type casts.\n\tCandidate functions:\n\ttime_bucket(INTERVAL, TIMESTAMP) -> TIMESTAMP\n\ttime_bucket(INTERVAL, TIMESTAMP WITH TIME ZONE) -> TIMESTAMP WITH TIME ZONE\n\ttime_bucket(INTERVAL, DATE) -> DATE\n\nLINE 1: SELECT time_bucket('1 hour', '2023-10-01 12:00...\n               ^\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT time_bucket(INTERVAL '1 hour', TIMESTAMPTZ '2023-10-01 12:00:00+00');"
     ]
 }

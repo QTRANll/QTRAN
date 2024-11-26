@@ -16,5 +16,39 @@
     ],
     "Category": [
         "Bitstring Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT bitstring_agg(arg, 0, 10);",
+        "SELECT bitstring_agg(column_name, 0, 10) FROM table_name;",
+        "SELECT bitstring_agg(1, 0, 10);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 331,
+            "Prompt Tokens": 305,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 6.134999999999999e-05
+        },
+        {
+            "Total Tokens": 518,
+            "Prompt Tokens": 488,
+            "Completion Tokens": 30,
+            "Total Cost (USD)": 9.12e-05
+        },
+        {
+            "Total Tokens": 713,
+            "Prompt Tokens": 686,
+            "Completion Tokens": 27,
+            "Total Cost (USD)": 0.0001191
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.BinderException) Binder Error: Referenced column \"arg\" not found in FROM clause!\nLINE 1: SELECT bitstring_agg(arg, 0, 10);\n                             ^\n",
+        "(duckdb.duckdb.CatalogException) Catalog Error: Table with name table_name does not exist!\nDid you mean \"pg_tablespace\"?\nLINE 1: ...bitstring_agg(column_name, 0, 10) FROM table_name;\n                                                  ^\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT bitstring_agg(1, 0, 10);"
     ]
 }

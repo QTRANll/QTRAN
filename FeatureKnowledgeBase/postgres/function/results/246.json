@@ -14,5 +14,31 @@
     "Examples": [],
     "Category": [
         "JSON Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "expression IS JSON",
+        "SELECT 'your_expression' IS JSON"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 429,
+            "Prompt Tokens": 413,
+            "Completion Tokens": 16,
+            "Total Cost (USD)": 7.154999999999999e-05
+        },
+        {
+            "Total Tokens": 610,
+            "Prompt Tokens": 590,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 0.00010049999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.SyntaxError) syntax error at or near \"expression\"\nLINE 1: expression IS JSON\n        ^\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT 'your_expression' IS JSON"
     ]
 }

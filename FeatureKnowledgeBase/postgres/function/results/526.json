@@ -6,7 +6,7 @@
         "pg_get_wal_resource_managers"
     ],
     "Feature": [
-        "pg_get_wal_resource_managers () → setof record ( rm_id integer, rm_name text, rm_builtin boolean )"
+        "pg_get_wal_resource_managers () \u2192 setof record ( rm_id integer, rm_name text, rm_builtin boolean )"
     ],
     "Description": [
         "Returns the currently-loaded WAL resource managers in the system. The column rm_builtin indicates whether it's a built-in resource manager, or a custom resource manager loaded by an extension."
@@ -14,5 +14,23 @@
     "Examples": [],
     "Category": [
         "System Administration Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT * FROM pg_get_wal_resource_managers();"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 331,
+            "Prompt Tokens": 307,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 6.044999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT * FROM pg_get_wal_resource_managers();"
     ]
 }

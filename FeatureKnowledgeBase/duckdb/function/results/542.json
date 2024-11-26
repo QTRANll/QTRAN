@@ -16,5 +16,31 @@
     ],
     "Category": [
         "Timestamp with Time Zone Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT datesub('month', '2023-01-01', '2023-10-01')",
+        "SELECT datesub('month', CAST('2023-01-01' AS DATE), CAST('2023-10-01' AS DATE))"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 317,
+            "Prompt Tokens": 282,
+            "Completion Tokens": 35,
+            "Total Cost (USD)": 6.33e-05
+        },
+        {
+            "Total Tokens": 621,
+            "Prompt Tokens": 578,
+            "Completion Tokens": 43,
+            "Total Cost (USD)": 0.00011249999999999997
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.BinderException) Binder Error: Could not choose a best candidate function for the function call \"datesub(STRING_LITERAL, STRING_LITERAL, STRING_LITERAL)\". In order to select one, please add explicit type casts.\n\tCandidate functions:\n\tdatesub(VARCHAR, TIMESTAMP, TIMESTAMP) -> BIGINT\n\tdatesub(VARCHAR, TIME, TIME) -> BIGINT\n\tdatesub(VARCHAR, TIMESTAMP WITH TIME ZONE, TIMESTAMP WITH TIME ZONE) -> BIGINT\n\tdatesub(VARCHAR, DATE, DATE) -> BIGINT\n\nLINE 1: SELECT datesub('month', '2023-01-01', '2023-10...\n               ^\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT datesub('month', CAST('2023-01-01' AS DATE), CAST('2023-10-01' AS DATE))"
     ]
 }

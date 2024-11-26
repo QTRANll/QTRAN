@@ -1,0 +1,45 @@
+{
+    "HTML": [
+        "https://www.monetdb.org/documentation-Aug2024/user-guide/sql-manual/data-types/base-types"
+    ],
+    "Title": [
+        "CHARACTER ( length )"
+    ],
+    "Feature": [
+        "CHARACTER ( length )"
+    ],
+    "Description": [
+        "CHAR( length )",
+        "UTF-8 character string with length upperbound limit between 1 and 2147483647. Warning: NO spaces are padded at the end"
+    ],
+    "Examples": [],
+    "Category": [
+        "Base Types"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT 'Hello'::CHARACTER(5);",
+        "SELECT CAST('Hello' AS CHARACTER(5));"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 307,
+            "Prompt Tokens": 284,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 5.639999999999999e-05
+        },
+        {
+            "Total Tokens": 457,
+            "Prompt Tokens": 434,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 7.89e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymonetdb.exceptions.OperationalError) 42000!Unexpected symbol (:)\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT CAST('Hello' AS CHARACTER(5));"
+    ]
+}

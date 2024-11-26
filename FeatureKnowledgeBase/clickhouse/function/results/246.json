@@ -23,5 +23,8 @@
     ],
     "Category": [
         "Dates and Times Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT changeMinute(toDate('1999-01-01'), 15), changeMinute(toDateTime64('1999-01-01 00:00:00.000', 3), 15);"
     ]
 }

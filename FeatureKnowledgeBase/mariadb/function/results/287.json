@@ -18,5 +18,38 @@
     "Category": [
         "Aggregate Functions"
     ],
-    "EffectiveSQLsRefined": []
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT STDDEV_SAMP(column_name) FROM table_name;",
+        "SELECT STDDEV_SAMP(column_name);",
+        "SELECT STDDEV_SAMP(value) FROM (SELECT 1 AS value UNION ALL SELECT 2 UNION ALL SELECT 3) AS temp;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 336,
+            "Prompt Tokens": 312,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 6.12e-05
+        },
+        {
+            "Total Tokens": 493,
+            "Prompt Tokens": 472,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 8.339999999999998e-05
+        },
+        {
+            "Total Tokens": 666,
+            "Prompt Tokens": 626,
+            "Completion Tokens": 40,
+            "Total Cost (USD)": 0.00011789999999999999
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.ProgrammingError) (1146, \"Table 'pinolo_temp_mariadb.table_name' doesn't exist\")\n",
+        "(pymysql.err.OperationalError) (1054, \"Unknown column 'column_name' in 'field list'\")\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT STDDEV_SAMP(value) FROM (SELECT 1 AS value UNION ALL SELECT 2 UNION ALL SELECT 3) AS temp;"
+    ]
 }

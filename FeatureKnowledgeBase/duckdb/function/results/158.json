@@ -16,5 +16,31 @@
     ],
     "Category": [
         "Date Part Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT timezone_hour(date);",
+        "SELECT timezone_hour(current_timestamp);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 268,
+            "Prompt Tokens": 250,
+            "Completion Tokens": 18,
+            "Total Cost (USD)": 4.8299999999999995e-05
+        },
+        {
+            "Total Tokens": 430,
+            "Prompt Tokens": 411,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 7.304999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.BinderException) Binder Error: Referenced column \"date\" not found in FROM clause!\nLINE 1: SELECT timezone_hour(date);\n                             ^\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT timezone_hour(current_timestamp);"
     ]
 }

@@ -6,15 +6,63 @@
         "anyrange &> anymultirange"
     ],
     "Feature": [
-        "anyrange &> anymultirange → boolean"
+        "anyrange &> anymultirange \u2192 boolean"
     ],
     "Description": [
         "Does the range not extend to the left of the multirange?"
     ],
     "Examples": [
-        "int8range(7,20) &> '{[5,10)}'::int8multirange → t"
+        "int8range(7,20) &> '{[5,10)}'::int8multirange \u2192 t"
     ],
     "Category": [
         "Range divide Multirange Functions and Operators"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT anyrange &&> anymultirange;",
+        "SELECT '[1,5]'::int4range &&> '[[2,3], [4,6]]'::int4multirange;",
+        "SELECT '[1,5]'::int4range &&> '{{2,3}, {4,6}}'::int4multirange;",
+        "SELECT '[1,5]'::int4range &&> '{(2,3), (4,6)}'::int4multirange;",
+        "SELECT '[1,5]'::int4range &&> '[2,3]'::int4range::int4multirange;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 297,
+            "Prompt Tokens": 275,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 5.4449999999999995e-05
+        },
+        {
+            "Total Tokens": 488,
+            "Prompt Tokens": 445,
+            "Completion Tokens": 43,
+            "Total Cost (USD)": 9.255e-05
+        },
+        {
+            "Total Tokens": 712,
+            "Prompt Tokens": 670,
+            "Completion Tokens": 42,
+            "Total Cost (USD)": 0.0001257
+        },
+        {
+            "Total Tokens": 935,
+            "Prompt Tokens": 892,
+            "Completion Tokens": 43,
+            "Total Cost (USD)": 0.0001596
+        },
+        {
+            "Total Tokens": 1172,
+            "Prompt Tokens": 1132,
+            "Completion Tokens": 40,
+            "Total Cost (USD)": 0.00019379999999999997
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedColumn) column \"anyrange\" does not exist\nLINE 1: SELECT anyrange &&> anymultirange;\n               ^\n\n",
+        "(psycopg2.errors.InvalidTextRepresentation) malformed multirange literal: \"[[2,3], [4,6]]\"\nLINE 1: SELECT '[1,5]'::int4range &&> '[[2,3], [4,6]]'::int4multiran...\n                                      ^\nDETAIL:  Missing left brace.\n\n",
+        "(psycopg2.errors.InvalidTextRepresentation) malformed multirange literal: \"{{2,3}, {4,6}}\"\nLINE 1: SELECT '[1,5]'::int4range &&> '{{2,3}, {4,6}}'::int4multiran...\n                                      ^\nDETAIL:  Expected range start.\n\n",
+        "(psycopg2.errors.UndefinedFunction) operator does not exist: int4range &&> int4multirange\nLINE 1: SELECT '[1,5]'::int4range &&> '{(2,3), (4,6)}'::int4multiran...\n                                  ^\nHINT:  No operator matches the given name and argument types. You might need to add explicit type casts.\n\n",
+        "(psycopg2.errors.UndefinedFunction) operator does not exist: int4range &&> int4multirange\nLINE 1: SELECT '[1,5]'::int4range &&> '[2,3]'::int4range::int4multir...\n                                  ^\nHINT:  No operator matches the given name and argument types. You might need to add explicit type casts.\n\n"
+    ],
+    "EffectiveSQLs": []
 }

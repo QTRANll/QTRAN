@@ -6,15 +6,49 @@
         "btrim"
     ],
     "Feature": [
-        "btrim ( bytes bytea, bytesremoved bytea ) → bytea"
+        "btrim ( bytes bytea, bytesremoved bytea ) \u2192 bytea"
     ],
     "Description": [
         "Removes the longest string containing only bytes appearing in bytesremoved from the start and end of bytes."
     ],
     "Examples": [
-        "btrim('\\x1234567890'::bytea, '\\x9012'::bytea) → \\x345678"
+        "btrim('\\x1234567890'::bytea, '\\x9012'::bytea) \u2192 \\x345678"
     ],
     "Category": [
         "Binary String Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT btrim(your_bytea_column, your_bytes_removed) FROM your_table;",
+        "SELECT btrim(your_bytea_column, your_bytes_removed);",
+        "SELECT btrim(E'\\x1234\\x5678', E'\\x12');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 297,
+            "Prompt Tokens": 268,
+            "Completion Tokens": 29,
+            "Total Cost (USD)": 5.7600000000000004e-05
+        },
+        {
+            "Total Tokens": 472,
+            "Prompt Tokens": 446,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 8.25e-05
+        },
+        {
+            "Total Tokens": 652,
+            "Prompt Tokens": 619,
+            "Completion Tokens": 33,
+            "Total Cost (USD)": 0.00011265
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedTable) relation \"your_table\" does not exist\nLINE 1: ...btrim(your_bytea_column, your_bytes_removed) FROM your_table...\n                                                             ^\n\n",
+        "(psycopg2.errors.UndefinedColumn) column \"your_bytea_column\" does not exist\nLINE 1: SELECT btrim(your_bytea_column, your_bytes_removed);\n                     ^\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT btrim(E'\\x1234\\x5678', E'\\x12');"
     ]
 }

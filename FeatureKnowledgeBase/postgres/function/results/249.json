@@ -6,17 +6,35 @@
         "json_array_length"
     ],
     "Feature": [
-        "json_array_length ( json ) → integer",
-        "jsonb_array_length ( jsonb ) → integer"
+        "json_array_length ( json ) \u2192 integer",
+        "jsonb_array_length ( jsonb ) \u2192 integer"
     ],
     "Description": [
         "Returns the number of elements in the top-level JSON array."
     ],
     "Examples": [
-        "json_array_length('[1,2,3,{\"f1\":1,\"f2\":[5,6]},4]') → 5",
-        "jsonb_array_length('[]') → 0"
+        "json_array_length('[1,2,3,{\"f1\":1,\"f2\":[5,6]},4]') \u2192 5",
+        "jsonb_array_length('[]') \u2192 0"
     ],
     "Category": [
         "JSON Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT json_array_length('[1, 2, 3]');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 295,
+            "Prompt Tokens": 268,
+            "Completion Tokens": 27,
+            "Total Cost (USD)": 5.64e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT json_array_length('[1, 2, 3]');"
     ]
 }

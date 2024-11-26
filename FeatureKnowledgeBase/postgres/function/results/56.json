@@ -6,15 +6,33 @@
         "bit_length"
     ],
     "Feature": [
-        "bit_length ( text ) → integer"
+        "bit_length ( text ) \u2192 integer"
     ],
     "Description": [
         "Returns number of bits in the string (8 times the octet_length)."
     ],
     "Examples": [
-        "bit_length('jose') → 32"
+        "bit_length('jose') \u2192 32"
     ],
     "Category": [
         "String Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT bit_length('example');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 274,
+            "Prompt Tokens": 255,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 4.9649999999999994e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT bit_length('example');"
     ]
 }

@@ -28,5 +28,31 @@
         "Built-In Functions and Operators",
         "Replication Functions",
         "Loadable Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT group_replication_switch_to_multi_primary_mode()",
+        "SELECT 'group_replication_switch_to_multi_primary_mode() function does not exist'"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 478,
+            "Prompt Tokens": 455,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 8.204999999999999e-05
+        },
+        {
+            "Total Tokens": 649,
+            "Prompt Tokens": 621,
+            "Completion Tokens": 28,
+            "Total Cost (USD)": 0.00010994999999999999
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.group_replication_switch_to_multi_primary_mode does not exist')\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT 'group_replication_switch_to_multi_primary_mode() function does not exist'"
     ]
 }

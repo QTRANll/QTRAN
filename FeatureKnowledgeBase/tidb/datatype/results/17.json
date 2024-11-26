@@ -3,18 +3,36 @@
         "https://docs.pingcap.com/zh/tidb/v8.3/data-type-string"
     ],
     "Title": [
-        "TEXT 类型"
+        "TEXT \u7c7b\u578b"
     ],
     "Feature": [
-        "TEXT 类型"
+        "TEXT \u7c7b\u578b"
     ],
     "Description": [
-        "TEXT 类型",
-        "文本串。最大列长为 65,535 字节。可选的 M 参数以字符为单位，用于自动选择 TEXT 列的最合适类型。例如 TEXT(60) 会产生一个 TINYTEXT 数据类型，最多可容纳 255 字节，即容纳一个 60 字符的 UTF-8 字符串，每个字符最多包含 4 字节（即 4×60=240）。不推荐使用 M 参数。",
+        "TEXT \u7c7b\u578b",
+        "\u6587\u672c\u4e32\u3002\u6700\u5927\u5217\u957f\u4e3a 65,535 \u5b57\u8282\u3002\u53ef\u9009\u7684 M \u53c2\u6570\u4ee5\u5b57\u7b26\u4e3a\u5355\u4f4d\uff0c\u7528\u4e8e\u81ea\u52a8\u9009\u62e9 TEXT \u5217\u7684\u6700\u5408\u9002\u7c7b\u578b\u3002\u4f8b\u5982 TEXT(60) \u4f1a\u4ea7\u751f\u4e00\u4e2a TINYTEXT \u6570\u636e\u7c7b\u578b\uff0c\u6700\u591a\u53ef\u5bb9\u7eb3 255 \u5b57\u8282\uff0c\u5373\u5bb9\u7eb3\u4e00\u4e2a 60 \u5b57\u7b26\u7684 UTF-8 \u5b57\u7b26\u4e32\uff0c\u6bcf\u4e2a\u5b57\u7b26\u6700\u591a\u5305\u542b 4 \u5b57\u8282\uff08\u5373 4\u00d760=240\uff09\u3002\u4e0d\u63a8\u8350\u4f7f\u7528 M \u53c2\u6570\u3002",
         "TEXT[(M)] [CHARACTER SET charset_name] [COLLATE collation_name]\n"
     ],
     "Examples": [],
     "Category": [
-        "字符串类型"
+        "\u5b57\u7b26\u4e32\u7c7b\u578b"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "CREATE TABLE example_table (example_column TEXT);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 380,
+            "Prompt Tokens": 358,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 6.689999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "CREATE TABLE example_table (example_column TEXT);"
     ]
 }

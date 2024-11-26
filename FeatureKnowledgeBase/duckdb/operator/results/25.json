@@ -16,5 +16,53 @@
     ],
     "Category": [
         "List Operators"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "<->",
+        "SELECT list_distance(column1, column2) FROM table_name",
+        "SELECT list_distance(column1, column2)",
+        "SELECT list_distance(a, b)",
+        "SELECT list_distance()"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 255,
+            "Prompt Tokens": 241,
+            "Completion Tokens": 14,
+            "Total Cost (USD)": 4.455e-05
+        },
+        {
+            "Total Tokens": 405,
+            "Prompt Tokens": 380,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 7.199999999999999e-05
+        },
+        {
+            "Total Tokens": 582,
+            "Prompt Tokens": 561,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 9.675e-05
+        },
+        {
+            "Total Tokens": 747,
+            "Prompt Tokens": 728,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 0.00012059999999999998
+        },
+        {
+            "Total Tokens": 907,
+            "Prompt Tokens": 890,
+            "Completion Tokens": 17,
+            "Total Cost (USD)": 0.0001437
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.ParserException) Parser Error: syntax error at or near \"<->\"\n",
+        "(duckdb.duckdb.CatalogException) Catalog Error: Table with name table_name does not exist!\nDid you mean \"pg_tablespace\"?\nLINE 1: ...T list_distance(column1, column2) FROM table_name\n                                                  ^\n",
+        "(duckdb.duckdb.BinderException) Binder Error: Referenced column \"column1\" not found in FROM clause!\nLINE 1: SELECT list_distance(column1, column2)\n                             ^\n",
+        "(duckdb.duckdb.BinderException) Binder Error: Referenced column \"a\" not found in FROM clause!\nLINE 1: SELECT list_distance(a, b)\n                             ^\n",
+        "(duckdb.duckdb.BinderException) Binder Error: No function matches the given name and argument types 'list_distance()'. You might need to add explicit type casts.\n\tCandidate functions:\n\tlist_distance(FLOAT[], FLOAT[]) -> FLOAT\n\tlist_distance(DOUBLE[], DOUBLE[]) -> DOUBLE\n\nLINE 1: SELECT list_distance()\n               ^\n"
+    ],
+    "EffectiveSQLs": []
 }

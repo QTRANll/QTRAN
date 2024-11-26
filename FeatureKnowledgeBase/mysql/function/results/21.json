@@ -21,5 +21,18 @@
     "Category": [
         "Built-In Functions and Operators",
         "Bit Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT BIT_COUNT(64), BIT_COUNT(BINARY 64);",
+        "SELECT BIT_COUNT('64'), BIT_COUNT(_binary '64');",
+        "SELECT BIT_COUNT(X'40'), BIT_COUNT(_binary X'40');"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT BIT_COUNT(64), BIT_COUNT(BINARY 64);",
+        "SELECT BIT_COUNT('64'), BIT_COUNT(_binary '64');",
+        "SELECT BIT_COUNT(X'40'), BIT_COUNT(_binary X'40');"
     ]
 }

@@ -20,5 +20,23 @@
     "Category": [
         "Built-In Functions and Operators",
         "Spatial Analysis Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT ST_LineFromText('LINESTRING(0 0, 1 1)');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 410,
+            "Prompt Tokens": 378,
+            "Completion Tokens": 32,
+            "Total Cost (USD)": 7.59e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT ST_LineFromText('LINESTRING(0 0, 1 1)');"
     ]
 }

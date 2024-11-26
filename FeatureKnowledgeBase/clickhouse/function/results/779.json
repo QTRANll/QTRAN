@@ -23,5 +23,8 @@
     ],
     "Category": [
         "Searching in Strings Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT extractGroups('hello abc=111 world', '(\"[^\"]+\"|\\\\w+)=(\"[^\"]+\"|\\\\w+)') AS result;"
     ]
 }

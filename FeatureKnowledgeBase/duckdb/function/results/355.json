@@ -17,5 +17,23 @@
     ],
     "Category": [
         "Regular Expressions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT regexp_extract('example string', '^(?P<first>\\w+) (?P<second>\\w+)$', ['first', 'second'])"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 370,
+            "Prompt Tokens": 324,
+            "Completion Tokens": 46,
+            "Total Cost (USD)": 7.62e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT regexp_extract('example string', '^(?P<first>\\w+) (?P<second>\\w+)$', ['first', 'second'])"
     ]
 }

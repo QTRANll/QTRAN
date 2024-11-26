@@ -6,8 +6,8 @@
         "pg_advisory_unlock"
     ],
     "Feature": [
-        "pg_advisory_unlock ( key bigint ) → boolean",
-        "pg_advisory_unlock ( key1 integer, key2 integer ) → boolean"
+        "pg_advisory_unlock ( key bigint ) \u2192 boolean",
+        "pg_advisory_unlock ( key1 integer, key2 integer ) \u2192 boolean"
     ],
     "Description": [
         "Releases a previously-acquired exclusive session-level advisory lock. Returns true if the lock is successfully released. If the lock was not held, false is returned, and in addition, an SQL warning will be reported by the server."
@@ -15,5 +15,23 @@
     "Examples": [],
     "Category": [
         "System Administration Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT pg_advisory_unlock(12345);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 340,
+            "Prompt Tokens": 317,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 6.135e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT pg_advisory_unlock(12345);"
     ]
 }

@@ -14,5 +14,23 @@
     "Examples": [],
     "Category": [
         "Core SQL Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT unhex('48656c6c6f20576f726c6421')"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 503,
+            "Prompt Tokens": 471,
+            "Completion Tokens": 32,
+            "Total Cost (USD)": 8.984999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT unhex('48656c6c6f20576f726c6421')"
     ]
 }

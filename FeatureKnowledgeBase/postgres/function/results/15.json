@@ -6,16 +6,34 @@
         "ln"
     ],
     "Feature": [
-        "ln ( numeric ) → numeric",
-        "ln ( double precision ) → double precision"
+        "ln ( numeric ) \u2192 numeric",
+        "ln ( double precision ) \u2192 double precision"
     ],
     "Description": [
         "Natural logarithm"
     ],
     "Examples": [
-        "ln(2.0) → 0.6931471805599453"
+        "ln(2.0) \u2192 0.6931471805599453"
     ],
     "Category": [
         "Mathematical Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT ln(10);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 267,
+            "Prompt Tokens": 249,
+            "Completion Tokens": 18,
+            "Total Cost (USD)": 4.815e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT ln(10);"
     ]
 }

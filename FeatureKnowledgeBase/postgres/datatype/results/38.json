@@ -22,5 +22,20 @@
     ],
     "Category": [
         "Bit String Types"
+    ],
+    "EffectiveSQLsRefined": [
+        "CREATE TABLE test (a BIT(3), b BIT VARYING(5));",
+        "INSERT INTO test VALUES (B'101', B'00');",
+        "INSERT INTO test VALUES (B'10'::bit(3), B'101');",
+        "SELECT * FROM test;"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "CREATE TABLE test (a BIT(3), b BIT VARYING(5));",
+        "INSERT INTO test VALUES (B'101', B'00');",
+        "INSERT INTO test VALUES (B'10'::bit(3), B'101');",
+        "SELECT * FROM test;"
     ]
 }

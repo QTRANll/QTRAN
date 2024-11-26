@@ -28,5 +28,62 @@
     ],
     "Category": [
         "Loadable Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        [
+            "SELECT mask_inner('abcdef', 1, 2);",
+            "SELECT mask_inner('abcdef', 0, 5);",
+            "SELECT mask_inner('abcdef', 1, 2, '*');",
+            "SELECT mask_inner('abcdef', 0, 5, '#');"
+        ],
+        [
+            "SELECT mask_inner('abcdef', 1, 2);"
+        ],
+        "SELECT mask_inner('abcdef', 1, 2);",
+        "SELECT mask_inner('abcdef', 1, 2);",
+        "SELECT 'mask_inner' AS function_name;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 937,
+            "Prompt Tokens": 855,
+            "Completion Tokens": 82,
+            "Total Cost (USD)": 0.00017744999999999998
+        },
+        {
+            "Total Tokens": 1088,
+            "Prompt Tokens": 1058,
+            "Completion Tokens": 30,
+            "Total Cost (USD)": 0.00017669999999999999
+        },
+        {
+            "Total Tokens": 1234,
+            "Prompt Tokens": 1209,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 0.00019634999999999998
+        },
+        {
+            "Total Tokens": 1394,
+            "Prompt Tokens": 1369,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 0.00022034999999999996
+        },
+        {
+            "Total Tokens": 1550,
+            "Prompt Tokens": 1529,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 0.00024194999999999997
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "expected string or bytes-like object, got 'list'",
+        "expected string or bytes-like object, got 'list'",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.mask_inner does not exist')\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.mask_inner does not exist')\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT 'mask_inner' AS function_name;"
     ]
 }

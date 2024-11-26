@@ -18,5 +18,61 @@
     ],
     "Category": [
         "Date Time Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        [
+            "SELECT \"day\"(INTERVAL '1 day')"
+        ],
+        [
+            "SELECT \"day\"(INTERVAL '1 day'::sec_interval)"
+        ],
+        [
+            "SELECT \"day\"(INTERVAL '1 day')"
+        ],
+        "SELECT \"day\"(INTERVAL '1 day'::sec_interval)",
+        [
+            "SELECT \"day\"(INTERVAL '1 day')"
+        ]
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 301,
+            "Prompt Tokens": 272,
+            "Completion Tokens": 29,
+            "Total Cost (USD)": 5.8200000000000005e-05
+        },
+        {
+            "Total Tokens": 455,
+            "Prompt Tokens": 423,
+            "Completion Tokens": 32,
+            "Total Cost (USD)": 8.265e-05
+        },
+        {
+            "Total Tokens": 606,
+            "Prompt Tokens": 577,
+            "Completion Tokens": 29,
+            "Total Cost (USD)": 0.00010394999999999999
+        },
+        {
+            "Total Tokens": 755,
+            "Prompt Tokens": 728,
+            "Completion Tokens": 27,
+            "Total Cost (USD)": 0.00012539999999999999
+        },
+        {
+            "Total Tokens": 912,
+            "Prompt Tokens": 883,
+            "Completion Tokens": 29,
+            "Total Cost (USD)": 0.00014984999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "expected string or bytes-like object, got 'list'",
+        "expected string or bytes-like object, got 'list'",
+        "expected string or bytes-like object, got 'list'",
+        "(pymonetdb.exceptions.OperationalError) 42000!Unexpected symbol (:)\n\n",
+        "expected string or bytes-like object, got 'list'"
+    ],
+    "EffectiveSQLs": []
 }

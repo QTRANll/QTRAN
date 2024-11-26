@@ -16,5 +16,23 @@
     ],
     "Category": [
         "Cast Conversion Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT json 'valid json string';"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 279,
+            "Prompt Tokens": 259,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 5.0849999999999996e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT json 'valid json string';"
     ]
 }

@@ -18,5 +18,53 @@
     ],
     "Category": [
         "Character String Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT contains('Hello World', 'hello', true);",
+        "SELECT contains('Hello World', 'hello', true) AS result;",
+        "SELECT contains('Hello World', 'hello', true)::boolean;",
+        "SELECT contains('Hello World', 'hello', true);",
+        "SELECT CASE WHEN contains('Hello World', 'hello', true) THEN 1 ELSE 0 END;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 341,
+            "Prompt Tokens": 317,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 6.195e-05
+        },
+        {
+            "Total Tokens": 512,
+            "Prompt Tokens": 486,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 8.85e-05
+        },
+        {
+            "Total Tokens": 682,
+            "Prompt Tokens": 657,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 0.00011355
+        },
+        {
+            "Total Tokens": 838,
+            "Prompt Tokens": 814,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 0.00013649999999999998
+        },
+        {
+            "Total Tokens": 1016,
+            "Prompt Tokens": 983,
+            "Completion Tokens": 33,
+            "Total Cost (USD)": 0.00016724999999999997
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymonetdb.exceptions.OperationalError) 42000!types boolean(1,0) and double(53,0) are not equal\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!types boolean(1,0) and double(53,0) are not equal\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!Unexpected symbol (:)\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!types boolean(1,0) and double(53,0) are not equal\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!types boolean(1,0) and double(53,0) are not equal\n\n"
+    ],
+    "EffectiveSQLs": []
 }

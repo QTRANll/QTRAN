@@ -27,5 +27,24 @@
     "Category": [
         "Built-In Functions and Operators",
         "String Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT SUBSTRING('Quadratically',5);",
+        "SELECT SUBSTRING('foobarbar' FROM 4);",
+        "SELECT SUBSTRING('Quadratically',5,6);",
+        "SELECT SUBSTRING('Sakila', -3);",
+        "SELECT SUBSTRING('Sakila', -5, 3);",
+        "SELECT SUBSTRING('Sakila' FROM -4 FOR 2);"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT SUBSTRING('Quadratically',5);",
+        "SELECT SUBSTRING('foobarbar' FROM 4);",
+        "SELECT SUBSTRING('Quadratically',5,6);",
+        "SELECT SUBSTRING('Sakila', -3);",
+        "SELECT SUBSTRING('Sakila', -5, 3);",
+        "SELECT SUBSTRING('Sakila' FROM -4 FOR 2);"
     ]
 }

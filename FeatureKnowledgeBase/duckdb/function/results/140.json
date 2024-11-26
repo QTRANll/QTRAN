@@ -16,5 +16,31 @@
     ],
     "Category": [
         "Date Part Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT century(date) AS century_value;",
+        "SELECT century(current_date) AS century_value;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 266,
+            "Prompt Tokens": 246,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 4.8899999999999996e-05
+        },
+        {
+            "Total Tokens": 433,
+            "Prompt Tokens": 412,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 7.439999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.BinderException) Binder Error: Referenced column \"date\" not found in FROM clause!\nLINE 1: SELECT century(date) AS century_value;\n                       ^\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT century(current_date) AS century_value;"
     ]
 }

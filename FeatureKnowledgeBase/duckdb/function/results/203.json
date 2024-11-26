@@ -16,5 +16,31 @@
     ],
     "Category": [
         "List Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT flatten(list_of_lists);",
+        "SELECT flatten(ARRAY[[1, 2], [3, 4]]);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 292,
+            "Prompt Tokens": 273,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 5.235e-05
+        },
+        {
+            "Total Tokens": 469,
+            "Prompt Tokens": 439,
+            "Completion Tokens": 30,
+            "Total Cost (USD)": 8.384999999999998e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.BinderException) Binder Error: Referenced column \"list_of_lists\" not found in FROM clause!\nLINE 1: SELECT flatten(list_of_lists);\n                       ^\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT flatten(ARRAY[[1, 2], [3, 4]]);"
     ]
 }

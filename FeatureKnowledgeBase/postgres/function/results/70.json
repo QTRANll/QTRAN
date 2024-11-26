@@ -6,15 +6,33 @@
         "ascii"
     ],
     "Feature": [
-        "ascii ( text ) → integer"
+        "ascii ( text ) \u2192 integer"
     ],
     "Description": [
         "Returns the numeric code of the first character of the argument. In UTF8 encoding, returns the Unicode code point of the character. In other multibyte encodings, the argument must be an ASCII character."
     ],
     "Examples": [
-        "ascii('x') → 120"
+        "ascii('x') \u2192 120"
     ],
     "Category": [
         "String Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT ascii('A');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 296,
+            "Prompt Tokens": 278,
+            "Completion Tokens": 18,
+            "Total Cost (USD)": 5.2499999999999995e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT ascii('A');"
     ]
 }

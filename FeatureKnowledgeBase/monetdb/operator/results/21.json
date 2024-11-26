@@ -16,5 +16,55 @@
     ],
     "Category": [
         "Cast Conversion Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT uuid 'valid uuid string';",
+        "SELECT CAST('valid uuid string' AS UUID);",
+        "SELECT uuid_generate_v4();",
+        "SELECT 'valid uuid string'::UUID;",
+        "SELECT 'valid uuid string' AS uuid;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 279,
+            "Prompt Tokens": 259,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 5.0849999999999996e-05
+        },
+        {
+            "Total Tokens": 442,
+            "Prompt Tokens": 419,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 7.664999999999999e-05
+        },
+        {
+            "Total Tokens": 584,
+            "Prompt Tokens": 565,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 9.614999999999998e-05
+        },
+        {
+            "Total Tokens": 740,
+            "Prompt Tokens": 719,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 0.00012044999999999999
+        },
+        {
+            "Total Tokens": 889,
+            "Prompt Tokens": 868,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 0.0001428
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymonetdb.exceptions.OperationalError) 22000!type (uuid) unknown in: \"select uuid 'valid uuid string';\"\n\n",
+        "(pymonetdb.exceptions.OperationalError) Not a UUID\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: no such operator 'uuid_generate_v4'\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!Unexpected symbol (:)\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT 'valid uuid string' AS uuid;"
     ]
 }

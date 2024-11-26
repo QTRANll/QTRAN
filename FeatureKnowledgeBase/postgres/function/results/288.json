@@ -6,15 +6,33 @@
         "array_lower"
     ],
     "Feature": [
-        "array_lower ( anyarray, integer ) → integer"
+        "array_lower ( anyarray, integer ) \u2192 integer"
     ],
     "Description": [
         "Returns the lower bound of the requested array dimension."
     ],
     "Examples": [
-        "array_lower('[0:2]={1,2,3}'::integer[], 1) → 0"
+        "array_lower('[0:2]={1,2,3}'::integer[], 1) \u2192 0"
     ],
     "Category": [
         "Array Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT array_lower(ARRAY[1, 2, 3], 1);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 283,
+            "Prompt Tokens": 253,
+            "Completion Tokens": 30,
+            "Total Cost (USD)": 5.594999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT array_lower(ARRAY[1, 2, 3], 1);"
     ]
 }

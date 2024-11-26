@@ -16,5 +16,53 @@
     ],
     "Category": [
         "Enum Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT enum_range('your_enum_type')",
+        "SELECT enum_range(enum_type) FROM (VALUES (NULL::your_enum_type)) AS t(enum_type)",
+        "SELECT enum_range('enum')",
+        "SELECT enum_range(NULL::enum)",
+        "SELECT enum_range('enum'::enum_type) FROM (VALUES ('value1'::enum_type), ('value2'::enum_type)) AS t(enum_type)"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 277,
+            "Prompt Tokens": 256,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 5.1e-05
+        },
+        {
+            "Total Tokens": 438,
+            "Prompt Tokens": 405,
+            "Completion Tokens": 33,
+            "Total Cost (USD)": 8.055e-05
+        },
+        {
+            "Total Tokens": 594,
+            "Prompt Tokens": 575,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 9.764999999999999e-05
+        },
+        {
+            "Total Tokens": 741,
+            "Prompt Tokens": 722,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 0.00011969999999999998
+        },
+        {
+            "Total Tokens": 912,
+            "Prompt Tokens": 866,
+            "Completion Tokens": 46,
+            "Total Cost (USD)": 0.00015749999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.BinderException) Binder Error: This function needs an ENUM as an argument\n",
+        "(duckdb.duckdb.CatalogException) Catalog Error: Type with name your_enum_type does not exist!\nDid you mean \"enum\"?\n",
+        "(duckdb.duckdb.BinderException) Binder Error: This function needs an ENUM as an argument\n",
+        "(duckdb.duckdb.ParserException) Parser Error: Enum needs a set of entries\n",
+        "(duckdb.duckdb.CatalogException) Catalog Error: Type with name enum_type does not exist!\nDid you mean \"enum\"?\n"
+    ],
+    "EffectiveSQLs": []
 }

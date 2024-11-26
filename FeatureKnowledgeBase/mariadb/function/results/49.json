@@ -20,6 +20,16 @@
         "Aggregate Functions"
     ],
     "EffectiveSQLsRefined": [
+        "CREATE TABLE student (name CHAR(10), test CHAR(10), score TINYINT);",
+        "INSERT INTO student VALUES \n  ('Chun', 'SQL', 75), ('Chun', 'Tuning', 73), \n  ('Esben', 'SQL', 43), ('Esben', 'Tuning', 31), \n  ('Kaolin', 'SQL', 56), ('Kaolin', 'Tuning', 88), \n  ('Tatiana', 'SQL', 87), ('Tatiana', 'Tuning', 83);",
+        "SELECT COUNT(*) FROM student;",
+        "SELECT COUNT(DISTINCT (name)) FROM student;"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "CREATE TABLE student (name CHAR(10), test CHAR(10), score TINYINT);",
         "INSERT INTO student VALUES \n  ('Chun', 'SQL', 75), ('Chun', 'Tuning', 73), \n  ('Esben', 'SQL', 43), ('Esben', 'Tuning', 31), \n  ('Kaolin', 'SQL', 56), ('Kaolin', 'Tuning', 88), \n  ('Tatiana', 'SQL', 87), ('Tatiana', 'Tuning', 83);",
         "SELECT COUNT(*) FROM student;",
         "SELECT COUNT(DISTINCT (name)) FROM student;"

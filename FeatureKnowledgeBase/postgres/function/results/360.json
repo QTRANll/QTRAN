@@ -6,7 +6,7 @@
         "percent_rank"
     ],
     "Feature": [
-        "percent_rank ( args ) WITHIN GROUP ( ORDER BY sorted_args ) → double precision"
+        "percent_rank ( args ) WITHIN GROUP ( ORDER BY sorted_args ) \u2192 double precision"
     ],
     "Description": [
         "Computes the relative rank of the hypothetical row, that is (rank - 1) / (total rows - 1). The value thus ranges from 0 to 1 inclusive."
@@ -14,5 +14,31 @@
     "Examples": [],
     "Category": [
         "Aggregate Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT percent_rank()",
+        "SELECT percent_rank() OVER ()"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 305,
+            "Prompt Tokens": 288,
+            "Completion Tokens": 17,
+            "Total Cost (USD)": 5.34e-05
+        },
+        {
+            "Total Tokens": 460,
+            "Prompt Tokens": 441,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 7.754999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.WrongObjectType) window function percent_rank requires an OVER clause\nLINE 1: SELECT percent_rank()\n               ^\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT percent_rank() OVER ()"
     ]
 }

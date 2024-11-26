@@ -16,5 +16,31 @@
     ],
     "Category": [
         "Date Part Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT epoch(date) AS seconds_since_epoch;",
+        "SELECT epoch(current_timestamp) AS seconds_since_epoch;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 271,
+            "Prompt Tokens": 250,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 5.01e-05
+        },
+        {
+            "Total Tokens": 439,
+            "Prompt Tokens": 417,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 7.574999999999998e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.BinderException) Binder Error: Referenced column \"date\" not found in FROM clause!\nLINE 1: SELECT epoch(date) AS seconds_since_epoch;\n                     ^\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT epoch(current_timestamp) AS seconds_since_epoch;"
     ]
 }

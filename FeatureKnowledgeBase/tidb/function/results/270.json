@@ -10,15 +10,15 @@
     ],
     "Description": [
         "TIDB_ROW_CHECKSUM",
-        "TIDB_ROW_CHECKSUM() 函数用于查询行数据的 Checksum 值。该函数只能用于 FastPlan 流程的 SELECT 语句，即你可通过形如 SELECT TIDB_ROW_CHECKSUM() FROM t WHERE id = ? 或 SELECT TIDB_ROW_CHECKSUM() FROM t WHERE id IN (?, ?, ...) 的语句进行查询。",
-        "在 TiDB 中开启行数据 Checksum 功能 tidb_enable_row_level_checksum：",
+        "TIDB_ROW_CHECKSUM() \u51fd\u6570\u7528\u4e8e\u67e5\u8be2\u884c\u6570\u636e\u7684 Checksum \u503c\u3002\u8be5\u51fd\u6570\u53ea\u80fd\u7528\u4e8e FastPlan \u6d41\u7a0b\u7684 SELECT \u8bed\u53e5\uff0c\u5373\u4f60\u53ef\u901a\u8fc7\u5f62\u5982 SELECT TIDB_ROW_CHECKSUM() FROM t WHERE id = ? \u6216 SELECT TIDB_ROW_CHECKSUM() FROM t WHERE id IN (?, ?, ...) \u7684\u8bed\u53e5\u8fdb\u884c\u67e5\u8be2\u3002",
+        "\u5728 TiDB \u4e2d\u5f00\u542f\u884c\u6570\u636e Checksum \u529f\u80fd tidb_enable_row_level_checksum\uff1a",
         "SET GLOBAL tidb_enable_row_level_checksum = ON;\n",
-        "上述配置仅对新创建的会话生效，因此需要重新连接 TiDB。",
-        "创建表 t 并插入数据：",
+        "\u4e0a\u8ff0\u914d\u7f6e\u4ec5\u5bf9\u65b0\u521b\u5efa\u7684\u4f1a\u8bdd\u751f\u6548\uff0c\u56e0\u6b64\u9700\u8981\u91cd\u65b0\u8fde\u63a5 TiDB\u3002",
+        "\u521b\u5efa\u8868 t \u5e76\u63d2\u5165\u6570\u636e\uff1a",
         "USE test;\nCREATE TABLE t (id INT PRIMARY KEY, k INT, c CHAR(1));\nINSERT INTO t VALUES (1, 10, 'a');\n",
-        "查询表 t 中 id = 1 的行数据的 Checksum 值：",
+        "\u67e5\u8be2\u8868 t \u4e2d id = 1 \u7684\u884c\u6570\u636e\u7684 Checksum \u503c\uff1a",
         "SELECT *, TIDB_ROW_CHECKSUM() FROM t WHERE id = 1;\n",
-        "输出结果如下：",
+        "\u8f93\u51fa\u7ed3\u679c\u5982\u4e0b\uff1a",
         "+----+------+------+---------------------+\n| id | k    | c    | TIDB_ROW_CHECKSUM() |\n+----+------+------+---------------------+\n|  1 |   10 | a    | 3813955661          |\n+----+------+------+---------------------+\n1 row in set (0.000 sec)\n"
     ],
     "Examples": [
@@ -27,6 +27,54 @@
         "SELECT *, TIDB_ROW_CHECKSUM() FROM t WHERE id = 1;\n"
     ],
     "Category": [
-        "TiDB 特有的函数"
-    ]
+        "TiDB \u7279\u6709\u7684\u51fd\u6570"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT TIDB_ROW_CHECKSUM() FROM t WHERE id = 1;",
+        "SELECT TIDB_ROW_CHECKSUM() FROM t WHERE id IN (1);",
+        "SELECT TIDB_ROW_CHECKSUM();",
+        "SELECT TIDB_ROW_CHECKSUM() FROM t LIMIT 1;",
+        "SELECT TIDB_ROW_CHECKSUM() FROM (SELECT 1) AS dummy;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 589,
+            "Prompt Tokens": 561,
+            "Completion Tokens": 28,
+            "Total Cost (USD)": 0.00010095
+        },
+        {
+            "Total Tokens": 754,
+            "Prompt Tokens": 725,
+            "Completion Tokens": 29,
+            "Total Cost (USD)": 0.00012614999999999998
+        },
+        {
+            "Total Tokens": 911,
+            "Prompt Tokens": 890,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 0.0001461
+        },
+        {
+            "Total Tokens": 1079,
+            "Prompt Tokens": 1053,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 0.00017354999999999996
+        },
+        {
+            "Total Tokens": 1244,
+            "Prompt Tokens": 1215,
+            "Completion Tokens": 29,
+            "Total Cost (USD)": 0.00019964999999999997
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.ProgrammingError) (1146, \"Table 'knowledge_base_preprocess_tidb.t' doesn't exist\")\n",
+        "(pymysql.err.ProgrammingError) (1146, \"Table 'knowledge_base_preprocess_tidb.t' doesn't exist\")\n",
+        "(pymysql.err.NotSupportedError) (1235, 'FUNCTION tidb_row_checksum can only be used as a select field in a fast point plan')\n",
+        "(pymysql.err.ProgrammingError) (1146, \"Table 'knowledge_base_preprocess_tidb.t' doesn't exist\")\n",
+        "(pymysql.err.NotSupportedError) (1235, 'FUNCTION tidb_row_checksum can only be used as a select field in a fast point plan')\n"
+    ],
+    "EffectiveSQLs": []
 }

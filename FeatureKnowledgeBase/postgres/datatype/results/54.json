@@ -19,5 +19,53 @@
     "Examples": [],
     "Category": [
         "Object Identifier Types"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT 'sum'::regproc;",
+        "SELECT 'public.sum'::regproc;",
+        "SELECT 'sum'::regproc;",
+        "SELECT 'pg_catalog.sum'::regproc;",
+        "SELECT 'sum(float8)'::regproc;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 274,
+            "Prompt Tokens": 254,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 5.01e-05
+        },
+        {
+            "Total Tokens": 434,
+            "Prompt Tokens": 413,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 7.454999999999998e-05
+        },
+        {
+            "Total Tokens": 595,
+            "Prompt Tokens": 575,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 9.824999999999998e-05
+        },
+        {
+            "Total Tokens": 756,
+            "Prompt Tokens": 734,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 0.0001233
+        },
+        {
+            "Total Tokens": 921,
+            "Prompt Tokens": 899,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 0.00014805
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.AmbiguousFunction) more than one function named \"sum\"\nLINE 1: SELECT 'sum'::regproc;\n               ^\n\n",
+        "(psycopg2.errors.UndefinedFunction) function \"public.sum\" does not exist\nLINE 1: SELECT 'public.sum'::regproc;\n               ^\n\n",
+        "(psycopg2.errors.AmbiguousFunction) more than one function named \"sum\"\nLINE 1: SELECT 'sum'::regproc;\n               ^\n\n",
+        "(psycopg2.errors.AmbiguousFunction) more than one function named \"pg_catalog.sum\"\nLINE 1: SELECT 'pg_catalog.sum'::regproc;\n               ^\n\n",
+        "(psycopg2.errors.UndefinedFunction) function \"sum(float8)\" does not exist\nLINE 1: SELECT 'sum(float8)'::regproc;\n               ^\n\n"
+    ],
+    "EffectiveSQLs": []
 }

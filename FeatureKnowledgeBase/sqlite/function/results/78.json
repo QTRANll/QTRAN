@@ -15,5 +15,23 @@
     "Examples": [],
     "Category": [
         "JSON Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT jsonb_patch('{\"key\": \"value\"}', '{\"key\": \"new_value\"}')"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 346,
+            "Prompt Tokens": 312,
+            "Completion Tokens": 34,
+            "Total Cost (USD)": 6.720000000000001e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT jsonb_patch('{\"key\": \"value\"}', '{\"key\": \"new_value\"}')"
     ]
 }

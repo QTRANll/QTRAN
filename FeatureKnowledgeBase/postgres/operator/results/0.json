@@ -6,7 +6,7 @@
         "datatype < datatype"
     ],
     "Feature": [
-        "datatype < datatype → boolean"
+        "datatype < datatype \u2192 boolean"
     ],
     "Description": [
         "Less than"
@@ -14,5 +14,23 @@
     "Examples": [],
     "Category": [
         "Comparison Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT (5 < 10);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 263,
+            "Prompt Tokens": 243,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 4.845e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT (5 < 10);"
     ]
 }

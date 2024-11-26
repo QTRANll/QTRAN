@@ -1,0 +1,38 @@
+{
+    "HTML": [
+        "https://www.monetdb.org/documentation-Aug2024/user-guide/sql-manual/data-types/temporal-types"
+    ],
+    "Title": [
+        "INTERVAL DAY TO SECOND"
+    ],
+    "Feature": [
+        "INTERVAL DAY TO SECOND"
+    ],
+    "Description": [
+        "second_interval",
+        "8-bytes",
+        "decimal(19,3) number of seconds with milliseconds precision"
+    ],
+    "Examples": [],
+    "Category": [
+        "Temporal Datatypes"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT INTERVAL '1 12:30:45' DAY TO SECOND;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 298,
+            "Prompt Tokens": 270,
+            "Completion Tokens": 28,
+            "Total Cost (USD)": 5.73e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT INTERVAL '1 12:30:45' DAY TO SECOND;"
+    ]
+}

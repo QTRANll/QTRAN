@@ -1,0 +1,53 @@
+{
+    "HTML": [
+        "https://www.monetdb.org/documentation-Aug2024/user-guide/sql-manual/data-types/base-types"
+    ],
+    "Title": [
+        ""
+    ],
+    "Feature": [
+        ""
+    ],
+    "Description": [
+        "",
+        "Note: HUGEINT is only available on platforms with a C-compiler that supports the __int128 or __int128_t data type (e.g. recent gcc, clang and icc on Linux or macOS)"
+    ],
+    "Examples": [],
+    "Category": [
+        "Base Types"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT * FROM my_table WHERE my_column = 'value';",
+        "SELECT * FROM information_schema.tables;",
+        "SELECT 1;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 300,
+            "Prompt Tokens": 275,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 5.625e-05
+        },
+        {
+            "Total Tokens": 447,
+            "Prompt Tokens": 428,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 7.56e-05
+        },
+        {
+            "Total Tokens": 591,
+            "Prompt Tokens": 575,
+            "Completion Tokens": 16,
+            "Total Cost (USD)": 9.584999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymonetdb.exceptions.OperationalError) 42S02!SELECT: no such table 'my_table'\n\n",
+        "(pymonetdb.exceptions.OperationalError) 3F000!SELECT: no such schema 'information_schema'\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT 1;"
+    ]
+}

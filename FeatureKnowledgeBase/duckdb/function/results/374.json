@@ -16,5 +16,47 @@
     ],
     "Category": [
         "Text Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT * FROM table_name WHERE column_name LIKE 'target';",
+        "SELECT * WHERE column_name LIKE 'target';",
+        "SELECT column_name FROM some_table WHERE column_name LIKE 'target';",
+        "SELECT 'example_string' WHERE 'example_string' LIKE 'target';"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 280,
+            "Prompt Tokens": 255,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 5.324999999999999e-05
+        },
+        {
+            "Total Tokens": 458,
+            "Prompt Tokens": 436,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 7.859999999999999e-05
+        },
+        {
+            "Total Tokens": 609,
+            "Prompt Tokens": 583,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 0.00010304999999999998
+        },
+        {
+            "Total Tokens": 792,
+            "Prompt Tokens": 765,
+            "Completion Tokens": 27,
+            "Total Cost (USD)": 0.00013094999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.CatalogException) Catalog Error: Table with name table_name does not exist!\nDid you mean \"pg_tablespace\"?\nLINE 1: SELECT * FROM table_name WHERE column_name LIKE 'targ...\n                      ^\n",
+        "(duckdb.duckdb.BinderException) Binder Error: * expression without FROM clause!\n",
+        "(duckdb.duckdb.CatalogException) Catalog Error: Table with name some_table does not exist!\nDid you mean \"sqlite_master\"?\nLINE 1: SELECT column_name FROM some_table WHERE column_name LIKE 'targ...\n                                ^\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT 'example_string' WHERE 'example_string' LIKE 'target';"
     ]
 }

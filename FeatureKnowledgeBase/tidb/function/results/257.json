@@ -10,7 +10,7 @@
     ],
     "Description": [
         "SETVAL()",
-        "SETVAL(n) 函数设置序列的当前值。"
+        "SETVAL(n) \u51fd\u6570\u8bbe\u7f6e\u5e8f\u5217\u7684\u5f53\u524d\u503c\u3002"
     ],
     "Examples": [
         "SELECT NEXTVAL(s1);\n",
@@ -18,6 +18,19 @@
         "SELECT NEXTVAL(s1);\n"
     ],
     "Category": [
-        "序列函数"
+        "\u5e8f\u5217\u51fd\u6570"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT NEXTVAL(s1);",
+        "SELECT SETVAL(s1, 10);",
+        "SELECT NEXTVAL(s1);"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT NEXTVAL(s1);",
+        "SELECT SETVAL(s1, 10);",
+        "SELECT NEXTVAL(s1);"
     ]
 }

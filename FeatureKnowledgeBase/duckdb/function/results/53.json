@@ -15,5 +15,31 @@
     "Examples": [],
     "Category": [
         "Aggregate Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT regr_intercept(y, x) FROM your_table;",
+        "SELECT regr_intercept(y, x) FROM (VALUES (1, 2), (2, 3), (3, 5)) AS data(y, x);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 335,
+            "Prompt Tokens": 310,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 6.15e-05
+        },
+        {
+            "Total Tokens": 544,
+            "Prompt Tokens": 495,
+            "Completion Tokens": 49,
+            "Total Cost (USD)": 0.00010364999999999999
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.CatalogException) Catalog Error: Table with name your_table does not exist!\nDid you mean \"pg_tables\"?\nLINE 1: SELECT regr_intercept(y, x) FROM your_table;\n                                         ^\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT regr_intercept(y, x) FROM (VALUES (1, 2), (2, 3), (3, 5)) AS data(y, x);"
     ]
 }

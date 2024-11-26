@@ -6,15 +6,49 @@
         "aclitem = aclitem"
     ],
     "Feature": [
-        "aclitem = aclitem → boolean"
+        "aclitem = aclitem \u2192 boolean"
     ],
     "Description": [
         "Are aclitems equal? (Notice that type aclitem lacks the usual set of comparison operators; it has only equality. In turn, aclitem arrays can only be compared for equality.)"
     ],
     "Examples": [
-        "'calvin=r*w/hobbes'::aclitem = 'calvin=r*w*/hobbes'::aclitem → f"
+        "'calvin=r*w/hobbes'::aclitem = 'calvin=r*w*/hobbes'::aclitem \u2192 f"
     ],
     "Category": [
         "System Information Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT aclitem = aclitem;",
+        "SELECT $1::aclitem = $2::aclitem;",
+        "SELECT aclitem1 = aclitem2 FROM (SELECT NULL::aclitem AS aclitem1, NULL::aclitem AS aclitem2) AS subquery;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 305,
+            "Prompt Tokens": 286,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 5.429999999999999e-05
+        },
+        {
+            "Total Tokens": 472,
+            "Prompt Tokens": 447,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 8.204999999999999e-05
+        },
+        {
+            "Total Tokens": 663,
+            "Prompt Tokens": 618,
+            "Completion Tokens": 45,
+            "Total Cost (USD)": 0.00011969999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedColumn) column \"aclitem\" does not exist\nLINE 1: SELECT aclitem = aclitem;\n               ^\n\n",
+        "(psycopg2.errors.UndefinedParameter) there is no parameter $1\nLINE 1: SELECT $1::aclitem = $2::aclitem;\n               ^\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT aclitem1 = aclitem2 FROM (SELECT NULL::aclitem AS aclitem1, NULL::aclitem AS aclitem2) AS subquery;"
     ]
 }

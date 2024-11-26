@@ -23,5 +23,13 @@
         "SELECT HOUR('10:05:03');",
         "SELECT HOUR('272:59:59');",
         "SELECT EXTRACT(HOUR FROM '26:30:00'), HOUR('26:30:00');"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT HOUR('10:05:03');",
+        "SELECT HOUR('272:59:59');",
+        "SELECT EXTRACT(HOUR FROM '26:30:00'), HOUR('26:30:00');"
     ]
 }

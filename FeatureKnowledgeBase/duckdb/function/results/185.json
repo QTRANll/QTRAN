@@ -16,5 +16,23 @@
     ],
     "Category": [
         "Interval Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT to_weeks(5);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 273,
+            "Prompt Tokens": 253,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 4.9949999999999994e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT to_weeks(5);"
     ]
 }

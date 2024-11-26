@@ -39,5 +39,11 @@
     ],
     "EffectiveSQLsRefined": [
         "SELECT\n    ExtractValue('<a>ccc<b>ddd</b></a>', '/a')            AS val1,\n    ExtractValue('<a>ccc<b>ddd</b></a>', '/a/b')          AS val2,\n    ExtractValue('<a>ccc<b>ddd</b></a>', '//b')           AS val3,\n    ExtractValue('<a>ccc<b>ddd</b></a>', '/b')            AS val4,\n    ExtractValue('<a>ccc<b>ddd</b><b>eee</b></a>', '//b') AS val5;"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT\n    ExtractValue('<a>ccc<b>ddd</b></a>', '/a')            AS val1,\n    ExtractValue('<a>ccc<b>ddd</b></a>', '/a/b')          AS val2,\n    ExtractValue('<a>ccc<b>ddd</b></a>', '//b')           AS val3,\n    ExtractValue('<a>ccc<b>ddd</b></a>', '/b')            AS val4,\n    ExtractValue('<a>ccc<b>ddd</b><b>eee</b></a>', '//b') AS val5;"
     ]
 }

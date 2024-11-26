@@ -15,5 +15,31 @@
     "Examples": [],
     "Category": [
         "JSON Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT jsonb_object('{\"key1\": \"value1\", \"key2\": \"value2\"}')",
+        "SELECT jsonb_object('key1', 'value1', 'key2', 'value2')"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 347,
+            "Prompt Tokens": 312,
+            "Completion Tokens": 35,
+            "Total Cost (USD)": 6.78e-05
+        },
+        {
+            "Total Tokens": 508,
+            "Prompt Tokens": 475,
+            "Completion Tokens": 33,
+            "Total Cost (USD)": 9.104999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(sqlite3.OperationalError) json_object() requires an even number of arguments\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT jsonb_object('key1', 'value1', 'key2', 'value2')"
     ]
 }

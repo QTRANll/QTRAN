@@ -19,5 +19,63 @@
     "Examples": [],
     "Category": [
         "Object Identifier Types"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        [
+            "SELECT '+'::regoper;"
+        ],
+        [
+            "SELECT '+'::regoper::text;"
+        ],
+        [
+            "SELECT '+'::regoper::text::varchar;"
+        ],
+        [
+            "SELECT '+'::regoper::text::varchar(1);"
+        ],
+        [
+            "SELECT '+'::regoper::text::varchar(10);"
+        ]
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 276,
+            "Prompt Tokens": 253,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 5.174999999999999e-05
+        },
+        {
+            "Total Tokens": 417,
+            "Prompt Tokens": 392,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 7.38e-05
+        },
+        {
+            "Total Tokens": 560,
+            "Prompt Tokens": 533,
+            "Completion Tokens": 27,
+            "Total Cost (USD)": 9.614999999999999e-05
+        },
+        {
+            "Total Tokens": 706,
+            "Prompt Tokens": 676,
+            "Completion Tokens": 30,
+            "Total Cost (USD)": 0.0001194
+        },
+        {
+            "Total Tokens": 852,
+            "Prompt Tokens": 822,
+            "Completion Tokens": 30,
+            "Total Cost (USD)": 0.0001413
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "expected string or bytes-like object, got 'list'",
+        "expected string or bytes-like object, got 'list'",
+        "expected string or bytes-like object, got 'list'",
+        "expected string or bytes-like object, got 'list'",
+        "expected string or bytes-like object, got 'list'"
+    ],
+    "EffectiveSQLs": []
 }

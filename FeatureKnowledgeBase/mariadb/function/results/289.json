@@ -26,5 +26,13 @@
         "SELECT STR_TO_DATE('Wednesday, June 2, 2014', '%W, %M %e, %Y');",
         "SELECT STR_TO_DATE('Wednesday23423, June 2, 2014', '%W, %M %e, %Y');",
         "SELECT STR_TO_DATE('Wednesday23423, June 2, 2014', '%W%#, %M %e, %Y');"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT STR_TO_DATE('Wednesday, June 2, 2014', '%W, %M %e, %Y');",
+        "SELECT STR_TO_DATE('Wednesday23423, June 2, 2014', '%W, %M %e, %Y');",
+        "SELECT STR_TO_DATE('Wednesday23423, June 2, 2014', '%W%#, %M %e, %Y');"
     ]
 }

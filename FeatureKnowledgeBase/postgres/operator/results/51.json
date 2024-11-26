@@ -6,15 +6,33 @@
         "time - interval"
     ],
     "Feature": [
-        "time - interval → time"
+        "time - interval \u2192 time"
     ],
     "Description": [
         "Subtract an interval from a time"
     ],
     "Examples": [
-        "time '05:00' - interval '2 hours' → 03:00:00"
+        "time '05:00' - interval '2 hours' \u2192 03:00:00"
     ],
     "Category": [
         "Date divide Time Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT '12:00:00'::time - interval '1 hour';"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 276,
+            "Prompt Tokens": 247,
+            "Completion Tokens": 29,
+            "Total Cost (USD)": 5.4449999999999995e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT '12:00:00'::time - interval '1 hour';"
     ]
 }

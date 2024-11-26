@@ -6,15 +6,33 @@
         "array_append"
     ],
     "Feature": [
-        "array_append ( anycompatiblearray, anycompatible ) → anycompatiblearray"
+        "array_append ( anycompatiblearray, anycompatible ) \u2192 anycompatiblearray"
     ],
     "Description": [
         "Appends an element to the end of an array (same as the anycompatiblearray || anycompatible operator)."
     ],
     "Examples": [
-        "array_append(ARRAY[1,2], 3) → {1,2,3}"
+        "array_append(ARRAY[1,2], 3) \u2192 {1,2,3}"
     ],
     "Category": [
         "Array Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT array_append(ARRAY[1, 2, 3], 4);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 299,
+            "Prompt Tokens": 269,
+            "Completion Tokens": 30,
+            "Total Cost (USD)": 5.8349999999999995e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT array_append(ARRAY[1, 2, 3], 4);"
     ]
 }

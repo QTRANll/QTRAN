@@ -18,5 +18,47 @@
     ],
     "Category": [
         "Character String Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "insert(s1, 2, 3, s2)",
+        "INSERT INTO table_name VALUES (insert(s1, 2, 3, s2))",
+        "SELECT insert(s1, 2, 3, s2)",
+        "SELECT insert('example_string', 2, 3, 'new_string')"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 358,
+            "Prompt Tokens": 333,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 6.495e-05
+        },
+        {
+            "Total Tokens": 535,
+            "Prompt Tokens": 503,
+            "Completion Tokens": 32,
+            "Total Cost (USD)": 9.465e-05
+        },
+        {
+            "Total Tokens": 703,
+            "Prompt Tokens": 677,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 0.00011715
+        },
+        {
+            "Total Tokens": 871,
+            "Prompt Tokens": 842,
+            "Completion Tokens": 29,
+            "Total Cost (USD)": 0.00014369999999999997
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymonetdb.exceptions.OperationalError) 42000!syntax error, unexpected '(', expecting INTO in: \"insert(\"\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42S02!INSERT INTO: no such table 'table_name'\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: identifier 's1' unknown\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT insert('example_string', 2, 3, 'new_string')"
     ]
 }

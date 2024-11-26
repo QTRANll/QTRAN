@@ -1,0 +1,4 @@
+{"index": 76, "a_db": "sqlite", "b_db": "tidb", "molt": "norec", "sql": "CREATE TABLE t0(c0 COLLATE NOCASE);"}
+{"index": 76, "a_db": "sqlite", "b_db": "tidb", "molt": "norec", "sql": "INSERT INTO t0(c0) VALUES ('B');"}
+{"index": 76, "a_db": "sqlite", "b_db": "tidb", "molt": "norec", "sql": "CREATE VIEW v0(c0, c1) AS SELECT DISTINCT t0.c0, 'a' FROM t0;"}
+{"index": 76, "a_db": "sqlite", "b_db": "tidb", "molt": "norec", "sql": "SELECT COUNT(*) FROM v0 WHERE v0.c1 >= v0.c0;-- actual: 1, expected: 0"}

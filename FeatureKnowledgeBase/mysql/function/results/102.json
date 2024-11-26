@@ -30,5 +30,31 @@
         "Built-In Functions and Operators",
         "Replication Functions",
         "Loadable Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT group_replication_get_communication_protocol();",
+        "SELECT 'Function does not exist';"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 594,
+            "Prompt Tokens": 572,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 9.899999999999998e-05
+        },
+        {
+            "Total Tokens": 756,
+            "Prompt Tokens": 736,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 0.0001224
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.group_replication_get_communication_protocol does not exist')\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT 'Function does not exist';"
     ]
 }

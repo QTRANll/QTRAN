@@ -16,5 +16,23 @@
     "Examples": [],
     "Category": [
         "pg_lsn Type"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT pg_lsn '16/B374D848';"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 521,
+            "Prompt Tokens": 497,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 8.895e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT pg_lsn '16/B374D848';"
     ]
 }

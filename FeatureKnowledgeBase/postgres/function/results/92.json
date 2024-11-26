@@ -6,16 +6,34 @@
         "regexp_substr"
     ],
     "Feature": [
-        "regexp_substr ( string text, pattern text [, start integer [, N integer [, flags text [, subexpr integer ] ] ] ] ) → text"
+        "regexp_substr ( string text, pattern text [, start integer [, N integer [, flags text [, subexpr integer ] ] ] ] ) \u2192 text"
     ],
     "Description": [
-        "Returns the substring within string that matches the N'th occurrence of the POSIX regular expression pattern, or NULL if there is no such match; see Section 9.7.3."
+        "Returns the substring within string that matches the N'th occurrence of the POSIX regular expression pattern, or NULL if there is no such match; see Section\u00a09.7.3."
     ],
     "Examples": [
-        "regexp_substr('ABCDEF', 'c(.)(..)', 1, 1, 'i') → CDEF",
-        "regexp_substr('ABCDEF', 'c(.)(..)', 1, 1, 'i', 2) → EF"
+        "regexp_substr('ABCDEF', 'c(.)(..)', 1, 1, 'i') \u2192 CDEF",
+        "regexp_substr('ABCDEF', 'c(.)(..)', 1, 1, 'i', 2) \u2192 EF"
     ],
     "Category": [
         "String Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT regexp_substr('Hello World', 'o', 1, 1);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 333,
+            "Prompt Tokens": 303,
+            "Completion Tokens": 30,
+            "Total Cost (USD)": 6.345e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT regexp_substr('Hello World', 'o', 1, 1);"
     ]
 }

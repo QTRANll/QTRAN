@@ -18,5 +18,53 @@
     ],
     "Category": [
         "Character String Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT contains('hello world', 'world');",
+        "SELECT contains('hello world', 'world'::text);",
+        "SELECT contains('hello world', 'world');",
+        "SELECT contains('hello world', 'world'::varchar);",
+        "SELECT contains('hello world', 'world');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 308,
+            "Prompt Tokens": 286,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 5.609999999999999e-05
+        },
+        {
+            "Total Tokens": 470,
+            "Prompt Tokens": 445,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 8.175e-05
+        },
+        {
+            "Total Tokens": 621,
+            "Prompt Tokens": 599,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 0.00010304999999999998
+        },
+        {
+            "Total Tokens": 783,
+            "Prompt Tokens": 758,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 0.00012869999999999998
+        },
+        {
+            "Total Tokens": 934,
+            "Prompt Tokens": 912,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 0.00015
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: no such binary operator 'contains(char,char)'\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!Unexpected symbol (:)\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: no such binary operator 'contains(char,char)'\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!Unexpected symbol (:)\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: no such binary operator 'contains(char,char)'\n\n"
+    ],
+    "EffectiveSQLs": []
 }

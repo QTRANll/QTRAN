@@ -34,5 +34,20 @@
         "SELECT SUBSTR('abc',1,2);",
         "SELECT SUBSTR('abc',0,3);",
         "SELECT SUBSTR('abc',1,2);"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT SUBSTRING('Knowledgebase',5);",
+        "SELECT SUBSTRING('MariaDB' FROM 6);",
+        "SELECT SUBSTRING('Knowledgebase',3,7);",
+        "SELECT SUBSTRING('Knowledgebase', -4);",
+        "SELECT SUBSTRING('Knowledgebase', -8, 4);",
+        "SELECT SUBSTRING('Knowledgebase' FROM -8 FOR 4);",
+        "SELECT SUBSTR('abc',0,3);",
+        "SELECT SUBSTR('abc',1,2);",
+        "SELECT SUBSTR('abc',0,3);",
+        "SELECT SUBSTR('abc',1,2);"
     ]
 }

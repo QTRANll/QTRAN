@@ -19,5 +19,47 @@
     ],
     "Category": [
         "Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT ISNULL(column_name) FROM table_name;",
+        "SELECT column_name IS NULL FROM table_name;",
+        "SELECT column_name IS NULL;",
+        "SELECT NULL IS NULL;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 315,
+            "Prompt Tokens": 293,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 5.7149999999999986e-05
+        },
+        {
+            "Total Tokens": 455,
+            "Prompt Tokens": 434,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 7.769999999999999e-05
+        },
+        {
+            "Total Tokens": 591,
+            "Prompt Tokens": 573,
+            "Completion Tokens": 18,
+            "Total Cost (USD)": 9.675e-05
+        },
+        {
+            "Total Tokens": 726,
+            "Prompt Tokens": 709,
+            "Completion Tokens": 17,
+            "Total Cost (USD)": 0.00011654999999999999
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(sqlite3.OperationalError) near \"ISNULL\": syntax error\n",
+        "(sqlite3.OperationalError) no such table: table_name\n",
+        "(sqlite3.OperationalError) no such column: column_name\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT NULL IS NULL;"
     ]
 }

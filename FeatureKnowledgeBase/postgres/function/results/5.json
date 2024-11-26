@@ -6,16 +6,34 @@
         "ceiling"
     ],
     "Feature": [
-        "ceiling ( numeric ) → numeric",
-        "ceiling ( double precision ) → double precision"
+        "ceiling ( numeric ) \u2192 numeric",
+        "ceiling ( double precision ) \u2192 double precision"
     ],
     "Description": [
         "Nearest integer greater than or equal to argument (same as ceil)"
     ],
     "Examples": [
-        "ceiling(95.3) → 96"
+        "ceiling(95.3) \u2192 96"
     ],
     "Category": [
         "Mathematical Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT ceiling(3.7);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 284,
+            "Prompt Tokens": 264,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 5.16e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT ceiling(3.7);"
     ]
 }

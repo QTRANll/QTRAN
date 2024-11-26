@@ -21,5 +21,31 @@
     "Category": [
         "Built-In Functions and Operators",
         "Comparison Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT NOT EXISTS (SELECT * FROM t WHERE col LIKE 'c%');",
+        "SELECT NOT EXISTS (SELECT * FROM information_schema.tables WHERE table_name = 'non_existent_table');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 364,
+            "Prompt Tokens": 336,
+            "Completion Tokens": 28,
+            "Total Cost (USD)": 6.72e-05
+        },
+        {
+            "Total Tokens": 534,
+            "Prompt Tokens": 501,
+            "Completion Tokens": 33,
+            "Total Cost (USD)": 9.495e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.ProgrammingError) (1146, \"Table 'knowledge_base_preprocess_mysql.t' doesn't exist\")\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT NOT EXISTS (SELECT * FROM information_schema.tables WHERE table_name = 'non_existent_table');"
     ]
 }

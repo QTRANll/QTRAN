@@ -24,5 +24,12 @@
     ],
     "Category": [
         "Table Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT count(*) FROM file('{some,another}_dir/some_file_{1..3}', 'TSV', 'name String, value UInt32');",
+        "SELECT count(*) FROM file('{some,another}_dir/*', 'TSV', 'name String, value UInt32');",
+        "SELECT count(*) FROM file('big_dir/file{0..9}{0..9}{0..9}', 'CSV', 'name String, value UInt32');",
+        "SELECT count(*) FROM file('big_dir/**', 'CSV', 'name String, value UInt32');",
+        "SELECT count(*) FROM file('big_dir/**/file002', 'CSV', 'name String, value UInt32');"
     ]
 }

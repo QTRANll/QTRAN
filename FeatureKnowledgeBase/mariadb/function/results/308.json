@@ -19,6 +19,14 @@
         "Geographic Functions"
     ],
     "EffectiveSQLsRefined": [
+        "CREATE TABLE gis_geometrycollection  (g GEOMETRYCOLLECTION);",
+        "INSERT INTO gis_geometrycollection VALUES\n    (GeomCollFromText('GEOMETRYCOLLECTION(POINT(0 0), LINESTRING(0 0,10 10))')),\n    (GeometryFromWKB(AsWKB(GeometryCollection(Point(44, 6), LineString(Point(3, 6), Point(7, 9)))))),\n    (GeomFromText('GeometryCollection()')),\n    (GeomFromText('GeometryCollection EMPTY'));"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "CREATE TABLE gis_geometrycollection  (g GEOMETRYCOLLECTION);",
         "INSERT INTO gis_geometrycollection VALUES\n    (GeomCollFromText('GEOMETRYCOLLECTION(POINT(0 0), LINESTRING(0 0,10 10))')),\n    (GeometryFromWKB(AsWKB(GeometryCollection(Point(44, 6), LineString(Point(3, 6), Point(7, 9)))))),\n    (GeomFromText('GeometryCollection()')),\n    (GeomFromText('GeometryCollection EMPTY'));"
     ]
 }

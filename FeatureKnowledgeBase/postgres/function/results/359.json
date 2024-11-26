@@ -6,7 +6,7 @@
         "dense_rank"
     ],
     "Feature": [
-        "dense_rank ( args ) WITHIN GROUP ( ORDER BY sorted_args ) → bigint"
+        "dense_rank ( args ) WITHIN GROUP ( ORDER BY sorted_args ) \u2192 bigint"
     ],
     "Description": [
         "Computes the rank of the hypothetical row, without gaps; this function effectively counts peer groups."
@@ -14,5 +14,55 @@
     "Examples": [],
     "Category": [
         "Aggregate Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT dense_rank() OVER (ORDER BY column_name) FROM table_name;",
+        "SELECT dense_rank() OVER (ORDER BY column_name);",
+        "SELECT dense_rank() OVER (ORDER BY some_column);",
+        "SELECT dense_rank();",
+        "SELECT dense_rank() OVER ();"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 295,
+            "Prompt Tokens": 268,
+            "Completion Tokens": 27,
+            "Total Cost (USD)": 5.64e-05
+        },
+        {
+            "Total Tokens": 467,
+            "Prompt Tokens": 443,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 8.084999999999999e-05
+        },
+        {
+            "Total Tokens": 634,
+            "Prompt Tokens": 610,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 0.00010589999999999999
+        },
+        {
+            "Total Tokens": 794,
+            "Prompt Tokens": 777,
+            "Completion Tokens": 17,
+            "Total Cost (USD)": 0.00012675
+        },
+        {
+            "Total Tokens": 949,
+            "Prompt Tokens": 930,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 0.0001509
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedTable) relation \"table_name\" does not exist\nLINE 1: ...ECT dense_rank() OVER (ORDER BY column_name) FROM table_name...\n                                                             ^\n\n",
+        "(psycopg2.errors.UndefinedColumn) column \"column_name\" does not exist\nLINE 1: SELECT dense_rank() OVER (ORDER BY column_name);\n                                           ^\n\n",
+        "(psycopg2.errors.UndefinedColumn) column \"some_column\" does not exist\nLINE 1: SELECT dense_rank() OVER (ORDER BY some_column);\n                                           ^\n\n",
+        "(psycopg2.errors.WrongObjectType) window function dense_rank requires an OVER clause\nLINE 1: SELECT dense_rank();\n               ^\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT dense_rank() OVER ();"
     ]
 }

@@ -19,5 +19,31 @@
     ],
     "Category": [
         "Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT * FROM table_name WHERE column_name BETWEEN value1 AND value2;",
+        "SELECT * FROM sqlite_master WHERE type='table' AND name BETWEEN 'A' AND 'Z';"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 339,
+            "Prompt Tokens": 312,
+            "Completion Tokens": 27,
+            "Total Cost (USD)": 6.3e-05
+        },
+        {
+            "Total Tokens": 490,
+            "Prompt Tokens": 457,
+            "Completion Tokens": 33,
+            "Total Cost (USD)": 8.835e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(sqlite3.OperationalError) no such table: table_name\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT * FROM sqlite_master WHERE type='table' AND name BETWEEN 'A' AND 'Z';"
     ]
 }

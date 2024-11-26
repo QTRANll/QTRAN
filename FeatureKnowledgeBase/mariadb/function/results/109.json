@@ -25,5 +25,14 @@
         "SELECT 0x4D617269614442;",
         "SELECT HEX('MariaDB');",
         "SELECT HEX(CAST('2001:db8::ff00:42:8329' AS INET6));"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT HEX(255);",
+        "SELECT 0x4D617269614442;",
+        "SELECT HEX('MariaDB');",
+        "SELECT HEX(CAST('2001:db8::ff00:42:8329' AS INET6));"
     ]
 }

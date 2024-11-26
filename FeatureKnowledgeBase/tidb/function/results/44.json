@@ -10,10 +10,28 @@
     ],
     "Description": [
         "RIGHT()",
-        "返回指定数量的最右侧的字符"
+        "\u8fd4\u56de\u6307\u5b9a\u6570\u91cf\u7684\u6700\u53f3\u4fa7\u7684\u5b57\u7b26"
     ],
     "Examples": [],
     "Category": [
-        "字符串函数"
+        "\u5b57\u7b26\u4e32\u51fd\u6570"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT RIGHT('Hello, World!', 6);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 271,
+            "Prompt Tokens": 248,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 5.099999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT RIGHT('Hello, World!', 6);"
     ]
 }

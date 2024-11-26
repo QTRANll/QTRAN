@@ -20,8 +20,22 @@
     "Category": [
         "JSON Functions"
     ],
-    "EffectiveSQLsRefined": [
-        "select * from t1;",
-        "SELECT JSON_OBJECTAGG(a, b) FROM t1;"
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT JSON_OBJECTAGG('key', 'value');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 372,
+            "Prompt Tokens": 348,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 6.659999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT JSON_OBJECTAGG('key', 'value');"
     ]
 }

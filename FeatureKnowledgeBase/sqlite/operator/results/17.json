@@ -19,5 +19,23 @@
     ],
     "Category": [
         "Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT 1 WHERE 1 IN (1, 2, 3);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 350,
+            "Prompt Tokens": 321,
+            "Completion Tokens": 29,
+            "Total Cost (USD)": 6.555e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT 1 WHERE 1 IN (1, 2, 3);"
     ]
 }

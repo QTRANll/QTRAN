@@ -25,6 +25,20 @@
         "SEQUENCE Functions"
     ],
     "EffectiveSQLsRefined": [
+        "CREATE SEQUENCE s START WITH 100 INCREMENT BY 10;",
+        "SELECT PREVIOUS VALUE FOR s;",
+        "SELECT NEXT VALUE FOR s;",
+        "SELECT PREVIOUS VALUE FOR s;",
+        "CREATE OR REPLACE SEQUENCE s MAXVALUE=2;",
+        "SELECT NEXTVAL(s), LASTVAL(s);",
+        "SELECT NEXTVAL(s), LASTVAL(s);",
+        "SELECT LASTVAL(s);"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "CREATE SEQUENCE s START WITH 100 INCREMENT BY 10;",
         "SELECT PREVIOUS VALUE FOR s;",
         "SELECT NEXT VALUE FOR s;",
         "SELECT PREVIOUS VALUE FOR s;",

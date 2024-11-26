@@ -6,15 +6,33 @@
         "convert_to"
     ],
     "Feature": [
-        "convert_to ( string text, dest_encoding name ) → bytea"
+        "convert_to ( string text, dest_encoding name ) \u2192 bytea"
     ],
     "Description": [
-        "Converts a text string (in the database encoding) to a binary string encoded in encoding dest_encoding (see Section 24.3.4 for available conversions)."
+        "Converts a text string (in the database encoding) to a binary string encoded in encoding dest_encoding (see Section\u00a024.3.4 for available conversions)."
     ],
     "Examples": [
-        "convert_to('some_text', 'UTF8') → \\x736f6d655f74657874"
+        "convert_to('some_text', 'UTF8') \u2192 \\x736f6d655f74657874"
     ],
     "Category": [
         "Binary String Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT convert_to('Hello, World!', 'UTF8');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 304,
+            "Prompt Tokens": 279,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 5.685e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT convert_to('Hello, World!', 'UTF8');"
     ]
 }

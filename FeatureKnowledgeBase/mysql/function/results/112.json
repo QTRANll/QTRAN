@@ -22,5 +22,23 @@
     "Category": [
         "Built-In Functions and Operators",
         "Replication Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT GTID_SUBTRACT('3E11FA47-71CA-11E1-9E33-C80AA9429562:21-57', '3E11FA47-71CA-11E1-9E33-C80AA9429562:21')"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 1182,
+            "Prompt Tokens": 1110,
+            "Completion Tokens": 72,
+            "Total Cost (USD)": 0.0002097
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT GTID_SUBTRACT('3E11FA47-71CA-11E1-9E33-C80AA9429562:21-57', '3E11FA47-71CA-11E1-9E33-C80AA9429562:21')"
     ]
 }

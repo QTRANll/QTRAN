@@ -36,5 +36,28 @@
     "Category": [
         "Built-In Functions and Operators",
         "Miscellaneous Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT HEX(UUID_TO_BIN(@uuid));",
+        "SELECT HEX(UUID_TO_BIN(@uuid, 0));",
+        "SELECT HEX(UUID_TO_BIN(@uuid, 1));",
+        "SELECT BIN_TO_UUID(UUID_TO_BIN(@uuid));",
+        "SELECT BIN_TO_UUID(UUID_TO_BIN(@uuid,0),0);",
+        "SELECT BIN_TO_UUID(UUID_TO_BIN(@uuid,1),1);",
+        "SELECT BIN_TO_UUID(UUID_TO_BIN(@uuid,0),1);",
+        "SELECT BIN_TO_UUID(UUID_TO_BIN(@uuid,1),0);"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT HEX(UUID_TO_BIN(@uuid));",
+        "SELECT HEX(UUID_TO_BIN(@uuid, 0));",
+        "SELECT HEX(UUID_TO_BIN(@uuid, 1));",
+        "SELECT BIN_TO_UUID(UUID_TO_BIN(@uuid));",
+        "SELECT BIN_TO_UUID(UUID_TO_BIN(@uuid,0),0);",
+        "SELECT BIN_TO_UUID(UUID_TO_BIN(@uuid,1),1);",
+        "SELECT BIN_TO_UUID(UUID_TO_BIN(@uuid,0),1);",
+        "SELECT BIN_TO_UUID(UUID_TO_BIN(@uuid,1),0);"
     ]
 }

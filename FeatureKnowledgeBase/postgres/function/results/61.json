@@ -6,15 +6,33 @@
         "normalize"
     ],
     "Feature": [
-        "normalize ( text [, form ] ) → text"
+        "normalize ( text [, form ] ) \u2192 text"
     ],
     "Description": [
         "Converts the string to the specified Unicode normalization form. The optional form key word specifies the form: NFC (the default), NFD, NFKC, or NFKD. This function can only be used when the server encoding is UTF8."
     ],
     "Examples": [
-        "normalize(U&'\\0061\\0308bc', NFC) → U&'\\00E4bc'"
+        "normalize(U&'\\0061\\0308bc', NFC) \u2192 U&'\\00E4bc'"
     ],
     "Category": [
         "String Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT normalize('example text');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 309,
+            "Prompt Tokens": 290,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 5.489999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT normalize('example text');"
     ]
 }

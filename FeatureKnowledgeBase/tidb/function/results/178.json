@@ -10,13 +10,24 @@
     ],
     "Description": [
         "ROW_COUNT()",
-        "ROW_COUNT() 函数返回受影响的行数。",
+        "ROW_COUNT() \u51fd\u6570\u8fd4\u56de\u53d7\u5f71\u54cd\u7684\u884c\u6570\u3002",
         "CREATE TABLE t1(id BIGINT UNSIGNED PRIMARY KEY AUTO_RANDOM);\nQuery OK, 0 rows affected, 1 warning (0.16 sec)\n\nINSERT INTO t1() VALUES (),(),();\nQuery OK, 3 rows affected (0.02 sec)\nRecords: 3  Duplicates: 0  Warnings: 0\n\nSELECT ROW_COUNT();\n+-------------+\n| ROW_COUNT() |\n+-------------+\n|           3 |\n+-------------+\n1 row in set (0.00 sec)\n"
     ],
     "Examples": [
         "CREATE TABLE t1(id BIGINT UNSIGNED PRIMARY KEY AUTO_RANDOM);\nQuery OK, 0 rows affected, 1 warning (0.16 sec)\n\nINSERT INTO t1() VALUES (),(),();\nQuery OK, 3 rows affected (0.02 sec)\nRecords: 3  Duplicates: 0  Warnings: 0\n\nSELECT ROW_COUNT();\n+-------------+\n| ROW_COUNT() |\n+-------------+\n|           3 |\n+-------------+\n1 row in set (0.00 sec)\n"
     ],
     "Category": [
-        "信息函数"
+        "\u4fe1\u606f\u51fd\u6570"
+    ],
+    "EffectiveSQLsRefined": [
+        "INSERT INTO t1() VALUES (),(),();",
+        "SELECT ROW_COUNT();"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "INSERT INTO t1() VALUES (),(),();",
+        "SELECT ROW_COUNT();"
     ]
 }

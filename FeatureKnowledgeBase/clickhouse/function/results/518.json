@@ -40,5 +40,32 @@
     ],
     "Category": [
         "JSON Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "CREATE TABLE jsons(    `json` String)ENGINE = Memory;",
+        "SELECT simpleJSONHas(json, 'foo') FROM jsons;",
+        "SELECT simpleJSONHas(json, 'bar') FROM jsons;",
+        "INSERT INTO jsons VALUES ('{\"foo\":\"4e3\"}');",
+        "INSERT INTO jsons VALUES ('{\"foo\":\"not1number\"}');",
+        "SELECT simpleJSONExtractUInt(json, 'foo') FROM jsons ORDER BY json;",
+        "INSERT INTO jsons VALUES ('{\"foo\":\"-4e3\"}');",
+        "INSERT INTO jsons VALUES ('{\"foo\":-3.4}');",
+        "INSERT INTO jsons VALUES ('{\"foo\":\"not1number\"}');",
+        "SELECT simpleJSONExtractInt(json, 'foo') FROM jsons ORDER BY json;",
+        "INSERT INTO jsons VALUES ('{\"foo\":\"-4e3\"}');",
+        "INSERT INTO jsons VALUES ('{\"foo\":-3.4}');",
+        "INSERT INTO jsons VALUES ('{\"foo\":\"not1number\"}');",
+        "SELECT simpleJSONExtractFloat(json, 'foo') FROM jsons ORDER BY json;",
+        "SELECT simpleJSONExtractBool(json, 'bar') FROM jsons ORDER BY json;",
+        "SELECT simpleJSONExtractBool(json, 'foo') FROM jsons ORDER BY json;",
+        "INSERT INTO jsons VALUES ('{\"foo\":\"-4e3\"}');",
+        "INSERT INTO jsons VALUES ('{\"foo\":-3.4}');",
+        "INSERT INTO jsons VALUES ('{\"foo\":{\"def\":[1,2,3]}}');",
+        "SELECT simpleJSONExtractRaw(json, 'foo') FROM jsons ORDER BY json;",
+        "INSERT INTO jsons VALUES ('{\"foo\":\"\\\\n\\\\u0000\"}');",
+        "INSERT INTO jsons VALUES ('{\"foo\":\"\\\\u263\"}');",
+        "INSERT INTO jsons VALUES ('{\"foo\":\"\\\\u263a\"}');",
+        "INSERT INTO jsons VALUES ('{\"foo\":\"hello}');",
+        "SELECT simpleJSONExtractString(json, 'foo') FROM jsons ORDER BY json;"
     ]
 }

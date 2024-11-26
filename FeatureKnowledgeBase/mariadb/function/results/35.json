@@ -15,5 +15,52 @@
     "Category": [
         "Dynamic Columns Functions"
     ],
-    "EffectiveSQLsRefined": []
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "COLUMN_EXISTS(dyncol_blob, column_name);",
+        "SELECT COLUMN_EXISTS('dyncol_blob', 'column_name');",
+        "SELECT COLUMN_EXISTS(dyncol_blob, 'column_name');",
+        "SELECT COLUMN_EXISTS('my_dynamic_column', 'column_name');",
+        "SELECT COLUMN_EXISTS('my_dynamic_column', 'column_name');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 313,
+            "Prompt Tokens": 290,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 5.729999999999999e-05
+        },
+        {
+            "Total Tokens": 501,
+            "Prompt Tokens": 476,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 8.639999999999999e-05
+        },
+        {
+            "Total Tokens": 655,
+            "Prompt Tokens": 630,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 0.00010949999999999999
+        },
+        {
+            "Total Tokens": 812,
+            "Prompt Tokens": 787,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 0.00013305
+        },
+        {
+            "Total Tokens": 966,
+            "Prompt Tokens": 941,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 0.00015614999999999997
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.ProgrammingError) (1064, \"You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'COLUMN_EXISTS(dyncol_blob, column_name)' at line 1\")\n",
+        "(pymysql.err.OperationalError) (1919, 'Encountered illegal format of dynamic column string')\n",
+        "(pymysql.err.OperationalError) (1054, \"Unknown column 'dyncol_blob' in 'field list'\")\n",
+        "(pymysql.err.OperationalError) (1919, 'Encountered illegal format of dynamic column string')\n",
+        "(pymysql.err.OperationalError) (1919, 'Encountered illegal format of dynamic column string')\n"
+    ],
+    "EffectiveSQLs": []
 }

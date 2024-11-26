@@ -16,5 +16,55 @@
     ],
     "Category": [
         "Aggregate Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT arg_max_null(arg, val) FROM your_table;",
+        "SELECT arg_max_null(arg, val);",
+        "SELECT arg_max_null(arg, val) FROM my_table;",
+        "SELECT arg_max_null(arg, val) FROM pg_tables;",
+        "SELECT arg_max_null('default_arg', 1);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 315,
+            "Prompt Tokens": 291,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 5.804999999999999e-05
+        },
+        {
+            "Total Tokens": 494,
+            "Prompt Tokens": 473,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 8.354999999999998e-05
+        },
+        {
+            "Total Tokens": 667,
+            "Prompt Tokens": 643,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 0.00011085
+        },
+        {
+            "Total Tokens": 849,
+            "Prompt Tokens": 825,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 0.00013814999999999997
+        },
+        {
+            "Total Tokens": 1042,
+            "Prompt Tokens": 1018,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 0.0001671
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.CatalogException) Catalog Error: Table with name your_table does not exist!\nDid you mean \"pg_tables\"?\nLINE 1: SELECT arg_max_null(arg, val) FROM your_table;\n                                           ^\n",
+        "(duckdb.duckdb.BinderException) Binder Error: Referenced column \"arg\" not found in FROM clause!\nLINE 1: SELECT arg_max_null(arg, val);\n                            ^\n",
+        "(duckdb.duckdb.CatalogException) Catalog Error: Table with name my_table does not exist!\nDid you mean \"pg_tables\"?\nLINE 1: SELECT arg_max_null(arg, val) FROM my_table;\n                                           ^\n",
+        "(duckdb.duckdb.BinderException) Binder Error: Referenced column \"arg\" not found in FROM clause!\nCandidate bindings: \"pg_tables.hastriggers\", \"pg_tables.hasrules\"\nLINE 1: SELECT arg_max_null(arg, val) FROM pg_tables;\n                            ^\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT arg_max_null('default_arg', 1);"
     ]
 }

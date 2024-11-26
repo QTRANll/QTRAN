@@ -6,16 +6,34 @@
         "substr"
     ],
     "Feature": [
-        "substr ( string text, start integer [, count integer ] ) → text"
+        "substr ( string text, start integer [, count integer ] ) \u2192 text"
     ],
     "Description": [
         "Extracts the substring of string starting at the start'th character, and extending for count characters if that is specified. (Same as substring(string from start for count).)"
     ],
     "Examples": [
-        "substr('alphabet', 3) → phabet",
-        "substr('alphabet', 3, 2) → ph"
+        "substr('alphabet', 3) \u2192 phabet",
+        "substr('alphabet', 3, 2) \u2192 ph"
     ],
     "Category": [
         "String Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT substr('Hello, World!', 1, 5);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 305,
+            "Prompt Tokens": 279,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 5.745e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT substr('Hello, World!', 1, 5);"
     ]
 }

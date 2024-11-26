@@ -37,5 +37,16 @@
         "SELECT HEX(WEIGHT_STRING(0xaa22ee LEVEL 1));",
         "SELECT HEX(WEIGHT_STRING(0xaa22ee LEVEL 1 DESC));",
         "SELECT HEX(WEIGHT_STRING(0xaa22ee LEVEL 1 REVERSE));"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT HEX(WEIGHT_STRING('x'));",
+        "SELECT HEX(WEIGHT_STRING('x' AS BINARY(4)));",
+        "SELECT HEX(WEIGHT_STRING('x' AS CHAR(4)));",
+        "SELECT HEX(WEIGHT_STRING(0xaa22ee LEVEL 1));",
+        "SELECT HEX(WEIGHT_STRING(0xaa22ee LEVEL 1 DESC));",
+        "SELECT HEX(WEIGHT_STRING(0xaa22ee LEVEL 1 REVERSE));"
     ]
 }

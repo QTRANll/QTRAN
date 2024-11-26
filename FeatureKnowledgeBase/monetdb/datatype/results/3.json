@@ -1,0 +1,61 @@
+{
+    "HTML": [
+        "https://www.monetdb.org/documentation-Aug2024/user-guide/sql-manual/data-types/base-types"
+    ],
+    "Title": [
+        "CHARACTER VARYING"
+    ],
+    "Feature": [
+        "CHARACTER VARYING"
+    ],
+    "Description": [
+        "VARCHAR",
+        "UTF-8 character string with unbounded length"
+    ],
+    "Examples": [],
+    "Category": [
+        "Base Types"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT 'Hello, World!'::CHARACTER VARYING;",
+        "SELECT 'Hello, World!' AS greeting::CHARACTER VARYING;",
+        "SELECT 'Hello, World!'::VARCHAR;",
+        "SELECT 'Hello, World!' AS greeting;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 286,
+            "Prompt Tokens": 261,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 5.4149999999999995e-05
+        },
+        {
+            "Total Tokens": 440,
+            "Prompt Tokens": 413,
+            "Completion Tokens": 27,
+            "Total Cost (USD)": 7.814999999999999e-05
+        },
+        {
+            "Total Tokens": 588,
+            "Prompt Tokens": 567,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 9.764999999999997e-05
+        },
+        {
+            "Total Tokens": 736,
+            "Prompt Tokens": 715,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 0.00011984999999999999
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymonetdb.exceptions.OperationalError) 42000!Unexpected symbol (:)\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!Unexpected symbol (:)\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!Unexpected symbol (:)\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT 'Hello, World!' AS greeting;"
+    ]
+}

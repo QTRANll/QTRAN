@@ -6,15 +6,41 @@
         "- number"
     ],
     "Feature": [
-        "- number → number"
+        "- number \u2192 number"
     ],
     "Description": [
         "Negation; unlike subtraction, this can iterate over multiple values"
     ],
     "Examples": [
-        "jsonb_path_query_array('{\"x\": [2,3,4]}', '- $.x') → [-2, -3, -4]"
+        "jsonb_path_query_array('{\"x\": [2,3,4]}', '- $.x') \u2192 [-2, -3, -4]"
     ],
     "Category": [
         "JSON Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT -number;",
+        "SELECT -1;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 265,
+            "Prompt Tokens": 249,
+            "Completion Tokens": 16,
+            "Total Cost (USD)": 4.695e-05
+        },
+        {
+            "Total Tokens": 416,
+            "Prompt Tokens": 400,
+            "Completion Tokens": 16,
+            "Total Cost (USD)": 6.96e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedColumn) column \"number\" does not exist\nLINE 1: SELECT -number;\n                ^\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT -1;"
     ]
 }

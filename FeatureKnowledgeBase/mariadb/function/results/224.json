@@ -16,5 +16,52 @@
     "Category": [
         "Geographic Functions"
     ],
-    "EffectiveSQLsRefined": []
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT OVERLAPS(geom1, geom2);",
+        "SELECT OVERLAPS(geometry1, geometry2);",
+        "SELECT OVERLAPS(geom_a, geom_b);",
+        "SELECT OVERLAPS(geometry, geometry);",
+        "SELECT OVERLAPS(?, ?);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 355,
+            "Prompt Tokens": 331,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 6.405e-05
+        },
+        {
+            "Total Tokens": 511,
+            "Prompt Tokens": 487,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 8.744999999999998e-05
+        },
+        {
+            "Total Tokens": 667,
+            "Prompt Tokens": 643,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 0.00011085
+        },
+        {
+            "Total Tokens": 821,
+            "Prompt Tokens": 799,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 0.00013305
+        },
+        {
+            "Total Tokens": 973,
+            "Prompt Tokens": 952,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 0.00015539999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.OperationalError) (1054, \"Unknown column 'geom1' in 'field list'\")\n",
+        "(pymysql.err.OperationalError) (1054, \"Unknown column 'geometry1' in 'field list'\")\n",
+        "(pymysql.err.OperationalError) (1054, \"Unknown column 'geom_a' in 'field list'\")\n",
+        "(pymysql.err.OperationalError) (1054, \"Unknown column 'geometry' in 'field list'\")\n",
+        "(pymysql.err.ProgrammingError) (1064, \"You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '?, ?)' at line 1\")\n"
+    ],
+    "EffectiveSQLs": []
 }

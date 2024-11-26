@@ -6,13 +6,39 @@
         "pg_relation_filenode"
     ],
     "Feature": [
-        "pg_relation_filenode ( relation regclass ) → oid"
+        "pg_relation_filenode ( relation regclass ) \u2192 oid"
     ],
     "Description": [
-        "Returns the “filenode” number currently assigned to the specified relation. The filenode is the base component of the file name(s) used for the relation (see Section 73.1 for more information). For most relations the result is the same as pg_class.relfilenode, but for certain system catalogs relfilenode is zero and this function must be used to get the correct value. The function returns NULL if passed a relation that does not have storage, such as a view."
+        "Returns the \u201cfilenode\u201d number currently assigned to the specified relation. The filenode is the base component of the file name(s) used for the relation (see Section\u00a073.1 for more information). For most relations the result is the same as pg_class.relfilenode, but for certain system catalogs relfilenode is zero and this function must be used to get the correct value. The function returns NULL if passed a relation that does not have storage, such as a view."
     ],
     "Examples": [],
     "Category": [
         "System Administration Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT pg_relation_filenode('your_relation_name');",
+        "SELECT pg_relation_filenode('pg_class');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 380,
+            "Prompt Tokens": 356,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 6.78e-05
+        },
+        {
+            "Total Tokens": 550,
+            "Prompt Tokens": 527,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 9.285e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedTable) relation \"your_relation_name\" does not exist\nLINE 1: SELECT pg_relation_filenode('your_relation_name');\n                                    ^\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT pg_relation_filenode('pg_class');"
     ]
 }

@@ -10,7 +10,7 @@
     ],
     "Description": [
         "TIDB_PARSE_TSO_LOGICAL",
-        "TIDB_PARSE_TSO_LOGICAL(tso) 函数返回从 TiDB TSO 时间戳中提取的逻辑时间戳。",
+        "TIDB_PARSE_TSO_LOGICAL(tso) \u51fd\u6570\u8fd4\u56de\u4ece TiDB TSO \u65f6\u95f4\u6233\u4e2d\u63d0\u53d6\u7684\u903b\u8f91\u65f6\u95f4\u6233\u3002",
         "SELECT TIDB_PARSE_TSO_LOGICAL(450456244814610433);\n",
         "+--------------------------------------------+\n| TIDB_PARSE_TSO_LOGICAL(450456244814610433) |\n+--------------------------------------------+\n|                                          1 |\n+--------------------------------------------+\n1 row in set (0.00 sec)\n",
         "SELECT TIDB_PARSE_TSO_LOGICAL(450456244814610434);\n",
@@ -21,6 +21,17 @@
         "SELECT TIDB_PARSE_TSO_LOGICAL(450456244814610434);\n"
     ],
     "Category": [
-        "TiDB 特有的函数"
+        "TiDB \u7279\u6709\u7684\u51fd\u6570"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT TIDB_PARSE_TSO_LOGICAL(450456244814610433);",
+        "SELECT TIDB_PARSE_TSO_LOGICAL(450456244814610434);"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT TIDB_PARSE_TSO_LOGICAL(450456244814610433);",
+        "SELECT TIDB_PARSE_TSO_LOGICAL(450456244814610434);"
     ]
 }

@@ -18,5 +18,53 @@
     ],
     "Category": [
         "INET Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT sys.host(inet);",
+        "SELECT sys.host();",
+        "SELECT sys.host();",
+        "SELECT sys.host();",
+        "SELECT sys.host();"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 282,
+            "Prompt Tokens": 263,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 5.0849999999999996e-05
+        },
+        {
+            "Total Tokens": 429,
+            "Prompt Tokens": 412,
+            "Completion Tokens": 17,
+            "Total Cost (USD)": 7.2e-05
+        },
+        {
+            "Total Tokens": 577,
+            "Prompt Tokens": 560,
+            "Completion Tokens": 17,
+            "Total Cost (USD)": 9.42e-05
+        },
+        {
+            "Total Tokens": 725,
+            "Prompt Tokens": 708,
+            "Completion Tokens": 17,
+            "Total Cost (USD)": 0.00011639999999999998
+        },
+        {
+            "Total Tokens": 873,
+            "Prompt Tokens": 856,
+            "Completion Tokens": 17,
+            "Total Cost (USD)": 0.00013859999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: identifier 'inet' unknown\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: no such operator 'host'\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: no such operator 'host'\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: no such operator 'host'\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: no such operator 'host'\n\n"
+    ],
+    "EffectiveSQLs": []
 }

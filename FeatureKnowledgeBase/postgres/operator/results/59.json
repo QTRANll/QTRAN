@@ -6,15 +6,41 @@
         "time with time zone AT TIME ZONE zone"
     ],
     "Feature": [
-        "time with time zone AT TIME ZONE zone → time with time zone"
+        "time with time zone AT TIME ZONE zone \u2192 time with time zone"
     ],
     "Description": [
         "Converts given time with time zone to a new time zone. Since no date is supplied, this uses the currently active UTC offset for the named destination zone."
     ],
     "Examples": [
-        "time with time zone '05:34:17-05' at time zone 'UTC' → 10:34:17+00"
+        "time with time zone '05:34:17-05' at time zone 'UTC' \u2192 10:34:17+00"
     ],
     "Category": [
         "Date divide Time Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT time with time zone AT TIME ZONE 'America/New_York';",
+        "SELECT '2023-10-01 12:00:00+00'::timestamptz AT TIME ZONE 'America/New_York';"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 328,
+            "Prompt Tokens": 300,
+            "Completion Tokens": 28,
+            "Total Cost (USD)": 6.18e-05
+        },
+        {
+            "Total Tokens": 525,
+            "Prompt Tokens": 479,
+            "Completion Tokens": 46,
+            "Total Cost (USD)": 9.944999999999998e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.SyntaxError) syntax error at or near \"AT\"\nLINE 1: SELECT time with time zone AT TIME ZONE 'America/New_York';\n                                   ^\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT '2023-10-01 12:00:00+00'::timestamptz AT TIME ZONE 'America/New_York';"
     ]
 }

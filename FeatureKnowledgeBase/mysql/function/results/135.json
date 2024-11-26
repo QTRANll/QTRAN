@@ -17,5 +17,31 @@
     "Category": [
         "Built-In Functions and Operators",
         "Internal Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT INTERNAL_GET_USERNAME('example_arg');",
+        "SELECT CURRENT_USER();"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 292,
+            "Prompt Tokens": 271,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 5.325e-05
+        },
+        {
+            "Total Tokens": 447,
+            "Prompt Tokens": 430,
+            "Completion Tokens": 17,
+            "Total Cost (USD)": 7.47e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.OperationalError) (3566, \"Access to native function 'INTERNAL_GET_USERNAME' is rejected.\")\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT CURRENT_USER();"
     ]
 }

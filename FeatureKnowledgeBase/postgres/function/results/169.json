@@ -6,15 +6,33 @@
         "statement_timestamp"
     ],
     "Feature": [
-        "statement_timestamp ( ) → timestamp with time zone"
+        "statement_timestamp ( ) \u2192 timestamp with time zone"
     ],
     "Description": [
-        "Current date and time (start of current statement); see Section 9.9.5"
+        "Current date and time (start of current statement); see Section\u00a09.9.5"
     ],
     "Examples": [
-        "statement_timestamp() → 2019-12-23 14:39:53.662522-05"
+        "statement_timestamp() \u2192 2019-12-23 14:39:53.662522-05"
     ],
     "Category": [
         "Date divide Time Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT statement_timestamp();"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 277,
+            "Prompt Tokens": 260,
+            "Completion Tokens": 17,
+            "Total Cost (USD)": 4.92e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT statement_timestamp();"
     ]
 }

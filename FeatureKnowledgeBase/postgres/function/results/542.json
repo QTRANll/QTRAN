@@ -6,7 +6,7 @@
         "pg_logical_slot_peek_binary_changes"
     ],
     "Feature": [
-        "pg_logical_slot_peek_binary_changes ( slot_name name, upto_lsn pg_lsn, upto_nchanges integer, VARIADIC options text[] ) → setof record ( lsn pg_lsn, xid xid, data bytea )"
+        "pg_logical_slot_peek_binary_changes ( slot_name name, upto_lsn pg_lsn, upto_nchanges integer, VARIADIC options text[] ) \u2192 setof record ( lsn pg_lsn, xid xid, data bytea )"
     ],
     "Description": [
         "Behaves just like the pg_logical_slot_peek_changes() function, except that changes are returned as bytea."
@@ -14,5 +14,53 @@
     "Examples": [],
     "Category": [
         "System Administration Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT * FROM pg_logical_slot_peek_binary_changes('my_slot', '0/0', 10);",
+        "SET wal_level = 'logical'; SELECT * FROM pg_logical_slot_peek_binary_changes('my_slot', '0/0', 10);",
+        "SELECT pg_reload_conf(); SELECT * FROM pg_logical_slot_peek_binary_changes('my_slot', '0/0', 10);",
+        "SELECT pg_create_logical_replication_slot('my_slot', 'pgoutput');",
+        "SELECT * FROM pg_logical_slot_peek_binary_changes('my_slot', '0/0', 10); -- Ensure wal_level is set to 'logical' before executing."
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 362,
+            "Prompt Tokens": 326,
+            "Completion Tokens": 36,
+            "Total Cost (USD)": 7.049999999999999e-05
+        },
+        {
+            "Total Tokens": 536,
+            "Prompt Tokens": 493,
+            "Completion Tokens": 43,
+            "Total Cost (USD)": 9.974999999999999e-05
+        },
+        {
+            "Total Tokens": 712,
+            "Prompt Tokens": 671,
+            "Completion Tokens": 41,
+            "Total Cost (USD)": 0.00012524999999999998
+        },
+        {
+            "Total Tokens": 872,
+            "Prompt Tokens": 843,
+            "Completion Tokens": 29,
+            "Total Cost (USD)": 0.00014384999999999997
+        },
+        {
+            "Total Tokens": 1051,
+            "Prompt Tokens": 1003,
+            "Completion Tokens": 48,
+            "Total Cost (USD)": 0.00017924999999999997
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.ObjectNotInPrerequisiteState) logical decoding requires wal_level >= logical\n\n",
+        "(psycopg2.errors.CantChangeRuntimeParam) parameter \"wal_level\" cannot be changed without restarting the server\n\n",
+        "(psycopg2.errors.ObjectNotInPrerequisiteState) logical decoding requires wal_level >= logical\n\n",
+        "(psycopg2.errors.ObjectNotInPrerequisiteState) logical decoding requires wal_level >= logical\n\n",
+        "(psycopg2.errors.ObjectNotInPrerequisiteState) logical decoding requires wal_level >= logical\n\n"
+    ],
+    "EffectiveSQLs": []
 }

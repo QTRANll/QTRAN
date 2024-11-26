@@ -15,5 +15,20 @@
     ],
     "Category": [
         "Logical Operators"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT 1 XOR 1;",
+        "SELECT 1 XOR 0;",
+        "SELECT 1 XOR NULL;",
+        "SELECT 1 XOR 1 XOR 1;"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT 1 XOR 1;",
+        "SELECT 1 XOR 0;",
+        "SELECT 1 XOR NULL;",
+        "SELECT 1 XOR 1 XOR 1;"
     ]
 }

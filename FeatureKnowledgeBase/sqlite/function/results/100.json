@@ -14,5 +14,31 @@
     "Examples": [],
     "Category": [
         "Built-In Mathematical SQL Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT ln(X);",
+        "SELECT ln(1);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 268,
+            "Prompt Tokens": 251,
+            "Completion Tokens": 17,
+            "Total Cost (USD)": 4.785e-05
+        },
+        {
+            "Total Tokens": 403,
+            "Prompt Tokens": 385,
+            "Completion Tokens": 18,
+            "Total Cost (USD)": 6.854999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(sqlite3.OperationalError) no such column: X\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT ln(1);"
     ]
 }

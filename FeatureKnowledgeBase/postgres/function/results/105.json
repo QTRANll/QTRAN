@@ -6,15 +6,33 @@
         "translate"
     ],
     "Feature": [
-        "translate ( string text, from text, to text ) → text"
+        "translate ( string text, from text, to text ) \u2192 text"
     ],
     "Description": [
         "Replaces each character in string that matches a character in the from set with the corresponding character in the to set. If from is longer than to, occurrences of the extra characters in from are deleted."
     ],
     "Examples": [
-        "translate('12345', '143', 'ax') → a2x5"
+        "translate('12345', '143', 'ax') \u2192 a2x5"
     ],
     "Category": [
         "String Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT translate('hello', 'h', 'j');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 307,
+            "Prompt Tokens": 283,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 5.684999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT translate('hello', 'h', 'j');"
     ]
 }

@@ -18,5 +18,23 @@
     ],
     "Category": [
         "Character String Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT levenshtein('example', 'samples', 1, 0, 0);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 389,
+            "Prompt Tokens": 357,
+            "Completion Tokens": 32,
+            "Total Cost (USD)": 7.274999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT levenshtein('example', 'samples', 1, 0, 0);"
     ]
 }

@@ -10,10 +10,28 @@
     ],
     "Description": [
         "RTRIM()",
-        "去掉后缀空格"
+        "\u53bb\u6389\u540e\u7f00\u7a7a\u683c"
     ],
     "Examples": [],
     "Category": [
-        "字符串函数"
+        "\u5b57\u7b26\u4e32\u51fd\u6570"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT RTRIM('Hello World   ');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 273,
+            "Prompt Tokens": 251,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 5.084999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT RTRIM('Hello World   ');"
     ]
 }

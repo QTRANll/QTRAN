@@ -20,5 +20,11 @@
     ],
     "EffectiveSQLsRefined": [
         "SELECT ST_AsText(ST_LineFromWKB(@g)) AS l;"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT ST_AsText(ST_LineFromWKB(@g)) AS l;"
     ]
 }

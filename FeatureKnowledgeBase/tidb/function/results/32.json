@@ -10,10 +10,28 @@
     ],
     "Description": [
         "OCTET_LENGTH()",
-        "与 LENGTH() 功能相同"
+        "\u4e0e LENGTH() \u529f\u80fd\u76f8\u540c"
     ],
     "Examples": [],
     "Category": [
-        "字符串函数"
+        "\u5b57\u7b26\u4e32\u51fd\u6570"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT OCTET_LENGTH('Hello, World!');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 284,
+            "Prompt Tokens": 261,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 5.294999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT OCTET_LENGTH('Hello, World!');"
     ]
 }

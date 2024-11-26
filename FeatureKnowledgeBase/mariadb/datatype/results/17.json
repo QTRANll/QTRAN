@@ -20,5 +20,18 @@
     ],
     "Category": [
         "String Data Types"
+    ],
+    "EffectiveSQLsRefined": [
+        "INSERT INTO strtest VALUES('Maria   ');",
+        "SELECT c='Maria',c='Maria   ' FROM strtest;",
+        "SELECT c LIKE 'Maria',c LIKE 'Maria   ' FROM strtest;"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "INSERT INTO strtest VALUES('Maria   ');",
+        "SELECT c='Maria',c='Maria   ' FROM strtest;",
+        "SELECT c LIKE 'Maria',c LIKE 'Maria   ' FROM strtest;"
     ]
 }

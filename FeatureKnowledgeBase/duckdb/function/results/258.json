@@ -18,5 +18,47 @@
     ],
     "Category": [
         "List Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT array_filter(your_array, lambda x: x > 10)",
+        "SELECT array_filter(your_array, (x) => x > 10)",
+        "SELECT array_filter(your_array, x -> x > 10)",
+        "SELECT array_filter(array[1, 2, 3, 4, 5], x -> x > 3)"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 298,
+            "Prompt Tokens": 271,
+            "Completion Tokens": 27,
+            "Total Cost (USD)": 5.685e-05
+        },
+        {
+            "Total Tokens": 450,
+            "Prompt Tokens": 422,
+            "Completion Tokens": 28,
+            "Total Cost (USD)": 8.01e-05
+        },
+        {
+            "Total Tokens": 600,
+            "Prompt Tokens": 574,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 0.00010169999999999999
+        },
+        {
+            "Total Tokens": 790,
+            "Prompt Tokens": 752,
+            "Completion Tokens": 38,
+            "Total Cost (USD)": 0.0001356
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.ParserException) Parser Error: syntax error at or near \"x\"\n",
+        "(duckdb.duckdb.ParserException) Parser Error: syntax error at or near \"=>\"\n",
+        "(duckdb.duckdb.BinderException) Binder Error: failed to bind function, either: Referenced column \"your_array\" not found in FROM clause!\n or: Referenced column \"your_array\" not found in FROM clause!\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT array_filter(array[1, 2, 3, 4, 5], x -> x > 3)"
     ]
 }

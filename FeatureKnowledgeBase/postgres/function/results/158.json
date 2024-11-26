@@ -6,15 +6,33 @@
         "justify_days"
     ],
     "Feature": [
-        "justify_days ( interval ) → interval"
+        "justify_days ( interval ) \u2192 interval"
     ],
     "Description": [
         "Adjust interval, converting 30-day time periods to months"
     ],
     "Examples": [
-        "justify_days(interval '1 year 65 days') → 1 year 2 mons 5 days"
+        "justify_days(interval '1 year 65 days') \u2192 1 year 2 mons 5 days"
     ],
     "Category": [
         "Date divide Time Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT justify_days('30 days'::interval);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 274,
+            "Prompt Tokens": 251,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 5.144999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT justify_days('30 days'::interval);"
     ]
 }

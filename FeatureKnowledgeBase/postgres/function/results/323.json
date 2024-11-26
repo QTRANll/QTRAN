@@ -12,9 +12,57 @@
         "Behaves like json_object, but as an aggregate function, so it only takes one key_expression and one value_expression parameter."
     ],
     "Examples": [
-        "SELECT json_objectagg(k:v) FROM (VALUES ('a'::text,current_date),('b',current_date + 1)) AS t(k,v) → { \"a\" : \"2022-05-10\", \"b\" : \"2022-05-11\" }"
+        "SELECT json_objectagg(k:v) FROM (VALUES ('a'::text,current_date),('b',current_date + 1)) AS t(k,v) \u2192 { \"a\" : \"2022-05-10\", \"b\" : \"2022-05-11\" }"
     ],
     "Category": [
         "Aggregate Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT json_objectagg(key, value) FROM your_table;",
+        "SELECT json_objectagg(key, value) FROM (VALUES ('key1', 'value1'), ('key2', 'value2')) AS t(key, value);",
+        "SELECT json_objectagg(key, value) FROM (SELECT 'key1' AS key, 'value1' AS value UNION SELECT 'key2', 'value2') AS t;",
+        "SELECT json_objectagg(key, value) FROM (VALUES ('key1', 'value1'), ('key2', 'value2')) AS t(key, value);",
+        "SELECT json_objectagg(key, value) FROM (SELECT 'key1' AS key, 'value1' AS value UNION ALL SELECT 'key2', 'value2') AS t;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 341,
+            "Prompt Tokens": 317,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 6.195e-05
+        },
+        {
+            "Total Tokens": 528,
+            "Prompt Tokens": 482,
+            "Completion Tokens": 46,
+            "Total Cost (USD)": 9.989999999999999e-05
+        },
+        {
+            "Total Tokens": 724,
+            "Prompt Tokens": 675,
+            "Completion Tokens": 49,
+            "Total Cost (USD)": 0.00013065
+        },
+        {
+            "Total Tokens": 917,
+            "Prompt Tokens": 871,
+            "Completion Tokens": 46,
+            "Total Cost (USD)": 0.00015824999999999997
+        },
+        {
+            "Total Tokens": 1114,
+            "Prompt Tokens": 1064,
+            "Completion Tokens": 50,
+            "Total Cost (USD)": 0.0001896
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.SyntaxError) syntax error at or near \",\"\nLINE 1: SELECT json_objectagg(key, value) FROM your_table;\n                                 ^\n\n",
+        "(psycopg2.errors.SyntaxError) syntax error at or near \",\"\nLINE 1: SELECT json_objectagg(key, value) FROM (VALUES ('key1', 'val...\n                                 ^\n\n",
+        "(psycopg2.errors.SyntaxError) syntax error at or near \",\"\nLINE 1: SELECT json_objectagg(key, value) FROM (SELECT 'key1' AS key...\n                                 ^\n\n",
+        "(psycopg2.errors.SyntaxError) syntax error at or near \",\"\nLINE 1: SELECT json_objectagg(key, value) FROM (VALUES ('key1', 'val...\n                                 ^\n\n",
+        "(psycopg2.errors.SyntaxError) syntax error at or near \",\"\nLINE 1: SELECT json_objectagg(key, value) FROM (SELECT 'key1' AS key...\n                                 ^\n\n"
+    ],
+    "EffectiveSQLs": []
 }

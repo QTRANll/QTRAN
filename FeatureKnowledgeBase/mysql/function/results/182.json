@@ -29,5 +29,22 @@
     "Category": [
         "Built-In Functions and Operators",
         "JSON Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT JSON_TYPE(@j);",
+        "SELECT JSON_TYPE(JSON_EXTRACT(@j, '$.a'));",
+        "SELECT JSON_TYPE(JSON_EXTRACT(@j, '$.a[0]'));",
+        "SELECT JSON_TYPE(JSON_EXTRACT(@j, '$.a[1]'));",
+        "SELECT JSON_TYPE(NULL);"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT JSON_TYPE(@j);",
+        "SELECT JSON_TYPE(JSON_EXTRACT(@j, '$.a'));",
+        "SELECT JSON_TYPE(JSON_EXTRACT(@j, '$.a[0]'));",
+        "SELECT JSON_TYPE(JSON_EXTRACT(@j, '$.a[1]'));",
+        "SELECT JSON_TYPE(NULL);"
     ]
 }

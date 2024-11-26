@@ -6,15 +6,33 @@
         "time + interval"
     ],
     "Feature": [
-        "time + interval → time"
+        "time + interval \u2192 time"
     ],
     "Description": [
         "Add an interval to a time"
     ],
     "Examples": [
-        "time '01:00' + interval '3 hours' → 04:00:00"
+        "time '01:00' + interval '3 hours' \u2192 04:00:00"
     ],
     "Category": [
         "Date divide Time Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT '12:00:00'::time + INTERVAL '1 hour';"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 277,
+            "Prompt Tokens": 247,
+            "Completion Tokens": 30,
+            "Total Cost (USD)": 5.5049999999999996e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT '12:00:00'::time + INTERVAL '1 hour';"
     ]
 }

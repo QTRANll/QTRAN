@@ -6,15 +6,33 @@
         "to_date"
     ],
     "Feature": [
-        "to_date ( text, text ) → date"
+        "to_date ( text, text ) \u2192 date"
     ],
     "Description": [
         "Converts string to date according to the given format."
     ],
     "Examples": [
-        "to_date('05 Dec 2000', 'DD Mon YYYY') → 2000-12-05"
+        "to_date('05 Dec 2000', 'DD Mon YYYY') \u2192 2000-12-05"
     ],
     "Category": [
         "Data Type Formatting Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT to_date('2023-10-01', 'YYYY-MM-DD');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 282,
+            "Prompt Tokens": 253,
+            "Completion Tokens": 29,
+            "Total Cost (USD)": 5.534999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT to_date('2023-10-01', 'YYYY-MM-DD');"
     ]
 }

@@ -17,5 +17,22 @@
     "Category": [
         "Encryption, Hashing and Compression Functions"
     ],
-    "EffectiveSQLsRefined": []
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT OLD_PASSWORD('your_old_password_here');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 433,
+            "Prompt Tokens": 411,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 7.484999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT OLD_PASSWORD('your_old_password_here');"
+    ]
 }

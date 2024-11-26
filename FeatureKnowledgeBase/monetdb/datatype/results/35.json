@@ -1,0 +1,61 @@
+{
+    "HTML": [
+        "https://www.monetdb.org/documentation-Aug2024/user-guide/sql-manual/data-types/base-types"
+    ],
+    "Title": [
+        "TIMESTAMP ( Prec ) WITH TIME ZONE"
+    ],
+    "Feature": [
+        "TIMESTAMP ( Prec ) WITH TIME ZONE"
+    ],
+    "Description": [
+        "",
+        "timestamp including fractions of a seconds with timezone information. Prec defines the number of fraction digits between 0 and 6"
+    ],
+    "Examples": [],
+    "Category": [
+        "Base Types"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT CURRENT_TIMESTAMP(3) AT TIME ZONE 'UTC';",
+        "SELECT CURRENT_TIMESTAMP AT TIME ZONE 'UTC';",
+        "SELECT CURRENT_TIMESTAMP WITH TIME ZONE;",
+        "SELECT TIMESTAMP '2023-10-01 12:00:00+00:00';"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 316,
+            "Prompt Tokens": 290,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 5.9099999999999986e-05
+        },
+        {
+            "Total Tokens": 484,
+            "Prompt Tokens": 461,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 8.295e-05
+        },
+        {
+            "Total Tokens": 650,
+            "Prompt Tokens": 630,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 0.00010649999999999999
+        },
+        {
+            "Total Tokens": 829,
+            "Prompt Tokens": 795,
+            "Completion Tokens": 34,
+            "Total Cost (USD)": 0.00013965
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymonetdb.exceptions.OperationalError) 42000!syntax error, unexpected sqlINT, expecting ')' in: \"select current_timestamp(3\"\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!syntax error, unexpected TIME, expecting SCOLON in: \"select current_timestamp at time\"\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!syntax error, unexpected WITH, expecting SCOLON in: \"select current_timestamp with\"\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT TIMESTAMP '2023-10-01 12:00:00+00:00';"
+    ]
+}

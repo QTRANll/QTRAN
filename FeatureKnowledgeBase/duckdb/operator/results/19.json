@@ -16,5 +16,23 @@
     ],
     "Category": [
         "Interval Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT TIME '12:00:00' - INTERVAL '1 hour';"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 266,
+            "Prompt Tokens": 237,
+            "Completion Tokens": 29,
+            "Total Cost (USD)": 5.295e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT TIME '12:00:00' - INTERVAL '1 hour';"
     ]
 }

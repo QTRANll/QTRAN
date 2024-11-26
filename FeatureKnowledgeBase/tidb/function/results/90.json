@@ -18,6 +18,19 @@
         "mysql> SELECT ADDDATE('2008-01-02', 31);\n        -> '2008-02-02'"
     ],
     "Category": [
-        "日期和时间函数"
+        "\u65e5\u671f\u548c\u65f6\u95f4\u51fd\u6570"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT DATE_ADD('2008-01-02', INTERVAL 31 DAY);",
+        "SELECT ADDDATE('2008-01-02', INTERVAL 31 DAY);",
+        "SELECT ADDDATE('2008-01-02', 31);"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT DATE_ADD('2008-01-02', INTERVAL 31 DAY);",
+        "SELECT ADDDATE('2008-01-02', INTERVAL 31 DAY);",
+        "SELECT ADDDATE('2008-01-02', 31);"
     ]
 }

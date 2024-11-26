@@ -20,5 +20,31 @@
     "Category": [
         "Built-In Functions and Operators",
         "Spatial Analysis Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT ST_MLineFromText('LINESTRING(0 0, 1 1, 2 2)', 4326);",
+        "SELECT ST_MultiLineStringFromText('MULTILINESTRING((0 0, 1 1), (2 2, 3 3))', 4326);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 426,
+            "Prompt Tokens": 385,
+            "Completion Tokens": 41,
+            "Total Cost (USD)": 8.235e-05
+        },
+        {
+            "Total Tokens": 620,
+            "Prompt Tokens": 569,
+            "Completion Tokens": 51,
+            "Total Cost (USD)": 0.00011594999999999999
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.OperationalError) (3516, 'WKT value is a geometry of unexpected type LINESTRING in st_mlinefromtext.')\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT ST_MultiLineStringFromText('MULTILINESTRING((0 0, 1 1), (2 2, 3 3))', 4326);"
     ]
 }

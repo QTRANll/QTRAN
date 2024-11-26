@@ -19,5 +19,47 @@
     ],
     "Category": [
         "Assignment Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SET @myVariable = 10;",
+        "SET @myVariable := 10;",
+        "SET @myVariable = 10;",
+        "SELECT @myVariable := 10;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 371,
+            "Prompt Tokens": 351,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 6.464999999999999e-05
+        },
+        {
+            "Total Tokens": 514,
+            "Prompt Tokens": 494,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 8.609999999999999e-05
+        },
+        {
+            "Total Tokens": 657,
+            "Prompt Tokens": 637,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 0.00010754999999999999
+        },
+        {
+            "Total Tokens": 800,
+            "Prompt Tokens": 780,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 0.000129
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "This result object does not return rows. It has been closed automatically.",
+        "This result object does not return rows. It has been closed automatically.",
+        "This result object does not return rows. It has been closed automatically.",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT @myVariable := 10;"
     ]
 }

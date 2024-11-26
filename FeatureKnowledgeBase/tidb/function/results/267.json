@@ -10,7 +10,7 @@
     ],
     "Description": [
         "TIDB_IS_DDL_OWNER",
-        "如果你连接的 TiDB 实例是 DDL Owner，TIDB_IS_DDL_OWNER() 函数返回 1。",
+        "\u5982\u679c\u4f60\u8fde\u63a5\u7684 TiDB \u5b9e\u4f8b\u662f DDL Owner\uff0cTIDB_IS_DDL_OWNER() \u51fd\u6570\u8fd4\u56de 1\u3002",
         "SELECT TIDB_IS_DDL_OWNER();\n",
         "+---------------------+\n| TIDB_IS_DDL_OWNER() |\n+---------------------+\n|                   1 |\n+---------------------+\n1 row in set (0.00 sec)\n"
     ],
@@ -18,6 +18,15 @@
         "SELECT TIDB_IS_DDL_OWNER();\n"
     ],
     "Category": [
-        "TiDB 特有的函数"
+        "TiDB \u7279\u6709\u7684\u51fd\u6570"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT TIDB_IS_DDL_OWNER();"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT TIDB_IS_DDL_OWNER();"
     ]
 }

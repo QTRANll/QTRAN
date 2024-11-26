@@ -6,15 +6,33 @@
         "erfc"
     ],
     "Feature": [
-        "erfc ( double precision ) → double precision"
+        "erfc ( double precision ) \u2192 double precision"
     ],
     "Description": [
         "Complementary error function (1 - erf(x), without loss of precision for large inputs)"
     ],
     "Examples": [
-        "erfc(1.0) → 0.15729920705028513"
+        "erfc(1.0) \u2192 0.15729920705028513"
     ],
     "Category": [
         "Mathematical Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT erfc(1.0);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 281,
+            "Prompt Tokens": 260,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 5.16e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT erfc(1.0);"
     ]
 }

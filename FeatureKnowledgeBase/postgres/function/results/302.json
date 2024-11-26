@@ -6,15 +6,65 @@
         "lower"
     ],
     "Feature": [
-        "lower ( anymultirange ) → anyelement"
+        "lower ( anymultirange ) \u2192 anyelement"
     ],
     "Description": [
         "Extracts the lower bound of the multirange (NULL if the multirange is empty has no lower bound)."
     ],
     "Examples": [
-        "lower('{[1.1,2.2)}'::nummultirange) → 1.1"
+        "lower('{[1.1,2.2)}'::nummultirange) \u2192 1.1"
     ],
     "Category": [
         "Range divide Multirange Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT lower(your_multirange_column) FROM your_table;",
+        "SELECT lower(your_multirange_column);",
+        "SELECT lower(ARRAY[1, 2, 3]::int[]);",
+        "SELECT lower(ANYMULTIRANGE(ARRAY[1, 2, 3]::int[]));",
+        "SELECT lower(NULL::int4range);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 289,
+            "Prompt Tokens": 264,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 5.46e-05
+        },
+        {
+            "Total Tokens": 455,
+            "Prompt Tokens": 433,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 7.814999999999999e-05
+        },
+        {
+            "Total Tokens": 628,
+            "Prompt Tokens": 598,
+            "Completion Tokens": 30,
+            "Total Cost (USD)": 0.00010769999999999999
+        },
+        {
+            "Total Tokens": 831,
+            "Prompt Tokens": 796,
+            "Completion Tokens": 35,
+            "Total Cost (USD)": 0.0001404
+        },
+        {
+            "Total Tokens": 1029,
+            "Prompt Tokens": 1008,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 0.0001638
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedTable) relation \"your_table\" does not exist\nLINE 1: SELECT lower(your_multirange_column) FROM your_table;\n                                                  ^\n\n",
+        "(psycopg2.errors.UndefinedColumn) column \"your_multirange_column\" does not exist\nLINE 1: SELECT lower(your_multirange_column);\n                     ^\n\n",
+        "(psycopg2.errors.UndefinedFunction) function lower(integer[]) does not exist\nLINE 1: SELECT lower(ARRAY[1, 2, 3]::int[]);\n               ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.\n\n",
+        "(psycopg2.errors.UndefinedFunction) function anymultirange(integer[]) does not exist\nLINE 1: SELECT lower(ANYMULTIRANGE(ARRAY[1, 2, 3]::int[]));\n                     ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT lower(NULL::int4range);"
     ]
 }

@@ -24,5 +24,13 @@
         "SELECT IF(1>2,2,3);",
         "SELECT IF(1<2,'yes','no');",
         "SELECT IF(STRCMP('test','test1'),'no','yes');"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT IF(1>2,2,3);",
+        "SELECT IF(1<2,'yes','no');",
+        "SELECT IF(STRCMP('test','test1'),'no','yes');"
     ]
 }

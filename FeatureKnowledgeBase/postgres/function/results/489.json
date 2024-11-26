@@ -6,7 +6,7 @@
         "txid_current_snapshot"
     ],
     "Feature": [
-        "txid_current_snapshot () → txid_snapshot"
+        "txid_current_snapshot () \u2192 txid_snapshot"
     ],
     "Description": [
         "See pg_current_snapshot()."
@@ -14,5 +14,23 @@
     "Examples": [],
     "Category": [
         "System Information Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT txid_current_snapshot();"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 272,
+            "Prompt Tokens": 253,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 4.934999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT txid_current_snapshot();"
     ]
 }

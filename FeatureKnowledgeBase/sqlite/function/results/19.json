@@ -14,5 +14,31 @@
     "Examples": [],
     "Category": [
         "Core SQL Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT ltrim(X, Y);",
+        "SELECT ltrim('example string', 'ex');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 341,
+            "Prompt Tokens": 321,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 6.015e-05
+        },
+        {
+            "Total Tokens": 487,
+            "Prompt Tokens": 464,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 8.34e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(sqlite3.OperationalError) no such column: X\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT ltrim('example string', 'ex');"
     ]
 }

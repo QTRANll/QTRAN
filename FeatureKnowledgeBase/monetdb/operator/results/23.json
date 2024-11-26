@@ -16,5 +16,31 @@
     ],
     "Category": [
         "Mathematics Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT a - b AS result;",
+        "SELECT 1 - 1 AS result;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 254,
+            "Prompt Tokens": 235,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 4.6649999999999996e-05
+        },
+        {
+            "Total Tokens": 401,
+            "Prompt Tokens": 380,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 6.96e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: identifier 'a' unknown\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT 1 - 1 AS result;"
     ]
 }

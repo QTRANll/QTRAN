@@ -15,5 +15,39 @@
     "Examples": [],
     "Category": [
         "Window Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT avg(numeric_expr);",
+        "SELECT avg(column_name) FROM table_name;",
+        "SELECT avg(1);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 274,
+            "Prompt Tokens": 255,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 4.9649999999999994e-05
+        },
+        {
+            "Total Tokens": 426,
+            "Prompt Tokens": 405,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 7.335e-05
+        },
+        {
+            "Total Tokens": 577,
+            "Prompt Tokens": 559,
+            "Completion Tokens": 18,
+            "Total Cost (USD)": 9.465e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: identifier 'numeric_expr' unknown\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42S02!SELECT: no such table 'table_name'\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT avg(1);"
     ]
 }

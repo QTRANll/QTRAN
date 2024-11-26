@@ -15,6 +15,15 @@
         "mysql> SELECT UTC_TIME(), UTC_TIME() + 0;\n        -> '18:07:53', 180753.000000"
     ],
     "Category": [
-        "日期和时间函数"
+        "\u65e5\u671f\u548c\u65f6\u95f4\u51fd\u6570"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT UTC_TIME(), UTC_TIME() + 0;"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT UTC_TIME(), UTC_TIME() + 0;"
     ]
 }

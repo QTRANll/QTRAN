@@ -17,5 +17,17 @@
     "Category": [
         "Window Functions"
     ],
-    "EffectiveSQLsRefined": []
+    "EffectiveSQLsRefined": [
+        "CREATE TABLE student(course VARCHAR(10), mark int, name varchar(10));",
+        "INSERT INTO student VALUES \n  ('Maths', 60, 'Thulile'),\n  ('Maths', 60, 'Pritha'),\n  ('Maths', 70, 'Voitto'),\n  ('Maths', 55, 'Chun'),\n  ('Biology', 60, 'Bilal'),\n   ('Biology', 70, 'Roger');",
+        "SELECT \n  RANK() OVER (PARTITION BY course ORDER BY mark DESC) AS rank, \n  DENSE_RANK() OVER (PARTITION BY course ORDER BY mark DESC) AS dense_rank, \n  ROW_NUMBER() OVER (PARTITION BY course ORDER BY mark DESC) AS row_num, \n  course, mark, name \nFROM student ORDER BY course, mark DESC;"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "CREATE TABLE student(course VARCHAR(10), mark int, name varchar(10));",
+        "INSERT INTO student VALUES \n  ('Maths', 60, 'Thulile'),\n  ('Maths', 60, 'Pritha'),\n  ('Maths', 70, 'Voitto'),\n  ('Maths', 55, 'Chun'),\n  ('Biology', 60, 'Bilal'),\n   ('Biology', 70, 'Roger');",
+        "SELECT \n  RANK() OVER (PARTITION BY course ORDER BY mark DESC) AS rank, \n  DENSE_RANK() OVER (PARTITION BY course ORDER BY mark DESC) AS dense_rank, \n  ROW_NUMBER() OVER (PARTITION BY course ORDER BY mark DESC) AS row_num, \n  course, mark, name \nFROM student ORDER BY course, mark DESC;"
+    ]
 }

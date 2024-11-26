@@ -19,5 +19,23 @@
     "Category": [
         "Built-In Functions and Operators",
         "Locking Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT RELEASE_ALL_LOCKS();"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 359,
+            "Prompt Tokens": 340,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 6.24e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT RELEASE_ALL_LOCKS();"
     ]
 }

@@ -6,16 +6,34 @@
         "geometric_type / point"
     ],
     "Feature": [
-        "geometric_type / point → geometric_type"
+        "geometric_type / point \u2192 geometric_type"
     ],
     "Description": [
         "Divides each point of the first argument by the second point (treating a point as being a complex number represented by real and imaginary parts, and performing standard complex division). If one interprets the second point as a vector, this is equivalent to scaling the object's size and distance from the origin down by the length of the vector, and rotating it clockwise around the origin by the vector's angle from the x axis. Available for point, box,[a] path, circle."
     ],
     "Examples": [
-        "path '((0,0),(1,0),(1,1))' / point '(2.0,0)' → ((0,0),(0.5,0),(0.5,0.5))",
-        "path '((0,0),(1,0),(1,1))' / point(cosd(45), sind(45)) → ((0,0),​(0.7071067811865476,-0.7071067811865476),​(1.4142135623730951,0))"
+        "path '((0,0),(1,0),(1,1))' / point '(2.0,0)' \u2192 ((0,0),(0.5,0),(0.5,0.5))",
+        "path '((0,0),(1,0),(1,1))' / point(cosd(45), sind(45)) \u2192 ((0,0),\u200b(0.7071067811865476,-0.7071067811865476),\u200b(1.4142135623730951,0))"
     ],
     "Category": [
         "Geometric Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT point(1, 2) / point(3, 4);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 376,
+            "Prompt Tokens": 347,
+            "Completion Tokens": 29,
+            "Total Cost (USD)": 6.945e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT point(1, 2) / point(3, 4);"
     ]
 }

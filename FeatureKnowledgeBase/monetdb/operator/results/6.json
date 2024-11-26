@@ -16,5 +16,47 @@
     ],
     "Category": [
         "Cast Conversion Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT E'string with backslash escapes';",
+        "SELECT E'string with backslash escapes'::text;",
+        "SELECT E'string with backslash escapes';",
+        "SELECT 'string with backslash escapes';"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 311,
+            "Prompt Tokens": 289,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 5.6549999999999985e-05
+        },
+        {
+            "Total Tokens": 479,
+            "Prompt Tokens": 455,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 8.264999999999999e-05
+        },
+        {
+            "Total Tokens": 654,
+            "Prompt Tokens": 632,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 0.00010799999999999998
+        },
+        {
+            "Total Tokens": 819,
+            "Prompt Tokens": 798,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 0.0001323
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymonetdb.exceptions.OperationalError) 22000!type (e) unknown in: \"select e'string with backslash escapes';\"\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!Unexpected symbol (:)\n!42000!Unexpected symbol (:)\n!42000!syntax error, unexpected sqlTEXT in: \"text\"\n\n",
+        "(pymonetdb.exceptions.OperationalError) 22000!type (e) unknown in: \"select e'string with backslash escapes';\"\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT 'string with backslash escapes';"
     ]
 }

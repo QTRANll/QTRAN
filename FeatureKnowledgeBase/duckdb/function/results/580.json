@@ -16,5 +16,47 @@
     ],
     "Category": [
         "Utility Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "force_checkpoint(database);",
+        "CALL force_checkpoint('database');",
+        "CALL force_checkpoint();",
+        "COMMIT; CALL force_checkpoint();"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 275,
+            "Prompt Tokens": 258,
+            "Completion Tokens": 17,
+            "Total Cost (USD)": 4.8899999999999996e-05
+        },
+        {
+            "Total Tokens": 422,
+            "Prompt Tokens": 403,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 7.185e-05
+        },
+        {
+            "Total Tokens": 565,
+            "Prompt Tokens": 548,
+            "Completion Tokens": 17,
+            "Total Cost (USD)": 9.240000000000001e-05
+        },
+        {
+            "Total Tokens": 719,
+            "Prompt Tokens": 699,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 0.00011684999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.ParserException) Parser Error: syntax error at or near \"force_checkpoint\"\n",
+        "(duckdb.duckdb.BinderException) Binder Error: Database \"database\" not found\n",
+        "(duckdb.duckdb.TransactionException) TransactionContext Error: Cannot FORCE CHECKPOINT: the current transaction has been started for this database\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "COMMIT; CALL force_checkpoint();"
     ]
 }

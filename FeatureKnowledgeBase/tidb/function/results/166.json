@@ -19,15 +19,30 @@
         "\nGET_LOCK() can be used to\n          implement application locks or to simulate record locks. Names\n          are locked on a server-wide basis. If a name has been locked\n          within one session, GET_LOCK()\n          blocks any request by another session for a lock with the same\n          name. This enables clients that agree on a given lock name to\n          use the name to perform cooperative advisory locking. But be\n          aware that it also enables a client that is not among the set\n          of cooperating clients to lock a name, either inadvertently or\n          deliberately, and thus prevent any of the cooperating clients\n          from locking that name. One way to reduce the likelihood of\n          this is to use lock names that are database-specific or\n          application-specific. For example, use lock names of the form\n          db_name.str or\n          app_name.str.\n        ",
         "\n          If multiple clients are waiting for a lock, the order in which\n          they acquire it is undefined. Applications should not assume\n          that clients acquire the lock in the same order that they\n          issued the lock requests.\n        ",
         "\nGET_LOCK() is unsafe for\n          statement-based replication. A warning is logged if you use\n          this function when\n          binlog_format is set to\n          STATEMENT.\n        ",
-        "\n          Since GET_LOCK() establishes a lock only on\n          a single mysqld, it is not suitable for use\n          with NDB Cluster, which has no way of enforcing an SQL lock\n          across multiple MySQL servers. See\n          Section 25.2.7.10, “Limitations Relating to Multiple NDB Cluster Nodes”,\n          for more information.\n",
+        "\n          Since GET_LOCK() establishes a lock only on\n          a single mysqld, it is not suitable for use\n          with NDB Cluster, which has no way of enforcing an SQL lock\n          across multiple MySQL servers. See\n          Section\u00a025.2.7.10, \u201cLimitations Relating to Multiple NDB Cluster Nodes\u201d,\n          for more information.\n",
         "\n\nCaution\n\n\n            With the capability of acquiring multiple named locks, it is\n            possible for a single statement to acquire a large number of\n            locks. For example:\n          Press CTRL+C to copy INSERT INTO ... SELECT GET_LOCK(t1.col_name) FROM t1;\n            These types of statements may have certain adverse effects.\n            For example, if the statement fails part way through and\n            rolls back, locks acquired up to the point of failure still\n            exist. If the intent is for there to be a correspondence\n            between rows inserted and locks acquired, that intent is not\n            satisfied. Also, if it is important that locks are granted\n            in a certain order, be aware that result set order may\n            differ depending on which execution plan the optimizer\n            chooses. For these reasons, it may be best to limit\n            applications to a single lock-acquisition call per\n            statement.\n\n",
-        "\n          A different locking interface is available as either a plugin\n          service or a set of loadable functions. This interface\n          provides lock namespaces and distinct read and write locks,\n          unlike the interface provided by\n          GET_LOCK() and related\n          functions. For details, see Section 7.6.9.1, “The Locking Service”.\n        "
+        "\n          A different locking interface is available as either a plugin\n          service or a set of loadable functions. This interface\n          provides lock namespaces and distinct read and write locks,\n          unlike the interface provided by\n          GET_LOCK() and related\n          functions. For details, see Section\u00a07.6.9.1, \u201cThe Locking Service\u201d.\n        "
     ],
     "Examples": [
         "SELECT GET_LOCK('lock1',10);\nSELECT GET_LOCK('lock2',10);\nSELECT RELEASE_LOCK('lock2');\nSELECT RELEASE_LOCK('lock1');",
         "INSERT INTO ... SELECT GET_LOCK(t1.col_name) FROM t1;"
     ],
     "Category": [
-        "锁函数"
+        "\u9501\u51fd\u6570"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT GET_LOCK('lock1',10);",
+        "SELECT GET_LOCK('lock2',10);",
+        "SELECT RELEASE_LOCK('lock2');",
+        "SELECT RELEASE_LOCK('lock1');"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT GET_LOCK('lock1',10);",
+        "SELECT GET_LOCK('lock2',10);",
+        "SELECT RELEASE_LOCK('lock2');",
+        "SELECT RELEASE_LOCK('lock1');"
     ]
 }

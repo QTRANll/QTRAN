@@ -6,15 +6,57 @@
         "decode"
     ],
     "Feature": [
-        "decode ( string text, format text ) → bytea"
+        "decode ( string text, format text ) \u2192 bytea"
     ],
     "Description": [
         "Decodes binary data from a textual representation; supported format values are the same as for encode."
     ],
     "Examples": [
-        "decode('MTIzAAE=', 'base64') → \\x3132330001"
+        "decode('MTIzAAE=', 'base64') \u2192 \\x3132330001"
     ],
     "Category": [
         "Binary String Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT decode('your_text_here', 'your_format_here');",
+        "SELECT decode('your_text_here', 'base64');",
+        "SELECT decode('your_text_here', 'hex');",
+        "SELECT decode('your_text_here', 'escape');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 285,
+            "Prompt Tokens": 260,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 5.4e-05
+        },
+        {
+            "Total Tokens": 432,
+            "Prompt Tokens": 408,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 7.56e-05
+        },
+        {
+            "Total Tokens": 578,
+            "Prompt Tokens": 555,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 9.705e-05
+        },
+        {
+            "Total Tokens": 722,
+            "Prompt Tokens": 699,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 0.00011864999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.InvalidParameterValue) unrecognized encoding: \"your_format_here\"\n\n",
+        "(psycopg2.errors.InvalidParameterValue) invalid symbol \"_\" found while decoding base64 sequence\n\n",
+        "(psycopg2.errors.InvalidParameterValue) invalid hexadecimal digit: \"y\"\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT decode('your_text_here', 'escape');"
     ]
 }

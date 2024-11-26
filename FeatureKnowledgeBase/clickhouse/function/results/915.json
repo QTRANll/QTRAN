@@ -25,5 +25,10 @@
     ],
     "Category": [
         "Tuples Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "INSERT INTO tupletest VALUES (tuple(1, 2));",
+        "SELECT tupleNames(col) FROM tupletest;",
+        "SELECT tupleNames(tuple(3, 2, 1));"
     ]
 }

@@ -6,7 +6,7 @@
     ],
     "Description": [
         "\nTIMEDIFF(expr1,expr2)\n",
-        "\nTIMEDIFF() returns\n          expr1 −\n          expr2 expressed as a time value.\n          expr1 and\n          expr2 are strings which are\n          converted to TIME or\n          DATETIME expressions; these must be of the\n          same type following conversion. Returns\n          NULL if expr1 or\n          expr2 is NULL.\n        ",
+        "\nTIMEDIFF() returns\n          expr1 \u2212\n          expr2 expressed as a time value.\n          expr1 and\n          expr2 are strings which are\n          converted to TIME or\n          DATETIME expressions; these must be of the\n          same type following conversion. Returns\n          NULL if expr1 or\n          expr2 is NULL.\n        ",
         "\n          The result returned by TIMEDIFF() is\n          limited to the range allowed for\n          TIME values. Alternatively, you\n          can use either of the functions\n          TIMESTAMPDIFF() and\n          UNIX_TIMESTAMP(), both of which\n          return integers.\n        ",
         "Press CTRL+C to copy mysql> SELECT TIMEDIFF('2000-01-01 00:00:00',\n    ->                 '2000-01-01 00:00:00.000001');\n        -> '-00:00:00.000001'\nmysql> SELECT TIMEDIFF('2008-12-31 23:59:59.000001',\n    ->                 '2008-12-30 01:01:01.000002');\n        -> '46:58:57.999999'"
     ],
@@ -14,6 +14,24 @@
         "mysql> SELECT TIMEDIFF('2000-01-01 00:00:00',\n    ->                 '2000-01-01 00:00:00.000001');\n        -> '-00:00:00.000001'\nmysql> SELECT TIMEDIFF('2008-12-31 23:59:59.000001',\n    ->                 '2008-12-30 01:01:01.000002');\n        -> '46:58:57.999999'"
     ],
     "Category": [
-        "日期和时间函数"
+        "\u65e5\u671f\u548c\u65f6\u95f4\u51fd\u6570"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT TIMEDIFF('2000-01-01 00:00:00', '2000-01-01 00:00:00.000001');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 564,
+            "Prompt Tokens": 516,
+            "Completion Tokens": 48,
+            "Total Cost (USD)": 0.00010619999999999999
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT TIMEDIFF('2000-01-01 00:00:00', '2000-01-01 00:00:00.000001');"
     ]
 }

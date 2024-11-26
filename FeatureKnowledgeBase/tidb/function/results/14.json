@@ -10,12 +10,21 @@
     ],
     "Description": [
         "FIELD()",
-        "返回参数在后续参数中出现的第一个位置"
+        "\u8fd4\u56de\u53c2\u6570\u5728\u540e\u7eed\u53c2\u6570\u4e2d\u51fa\u73b0\u7684\u7b2c\u4e00\u4e2a\u4f4d\u7f6e"
     ],
     "Examples": [
         "SELECT FIELD('needle', 'A', 'needle', 'in', 'a', 'haystack');\n+-------------------------------------------------------+\n| FIELD('needle', 'A', 'needle', 'in', 'a', 'haystack') |\n+-------------------------------------------------------+\n|                                                     2 |\n+-------------------------------------------------------+\n1 row in set (0.00 sec)\n"
     ],
     "Category": [
-        "字符串函数"
+        "\u5b57\u7b26\u4e32\u51fd\u6570"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT FIELD('needle', 'A', 'needle', 'in', 'a', 'haystack');"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT FIELD('needle', 'A', 'needle', 'in', 'a', 'haystack');"
     ]
 }

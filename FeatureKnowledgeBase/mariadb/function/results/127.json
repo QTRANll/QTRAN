@@ -23,5 +23,13 @@
         "SELECT JSON_ARRAY_APPEND(@json, '$[1]', 6, '$[2]', 7);",
         "SELECT JSON_ARRAY_APPEND(@json, '$', 5);",
         "SELECT JSON_ARRAY_APPEND(@json, '$.B', 5);"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT JSON_ARRAY_APPEND(@json, '$[1]', 6, '$[2]', 7);",
+        "SELECT JSON_ARRAY_APPEND(@json, '$', 5);",
+        "SELECT JSON_ARRAY_APPEND(@json, '$.B', 5);"
     ]
 }

@@ -6,15 +6,57 @@
         "geometric_type <<| geometric_type"
     ],
     "Feature": [
-        "geometric_type <<| geometric_type → boolean"
+        "geometric_type <<| geometric_type \u2192 boolean"
     ],
     "Description": [
         "Is first object strictly below second? Available for point, box, polygon, circle."
     ],
     "Examples": [
-        "box '(3,3),(0,0)' <<| box '(5,5),(3,4)' → t"
+        "box '(3,3),(0,0)' <<| box '(5,5),(3,4)' \u2192 t"
     ],
     "Category": [
         "Geometric Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT (geometric_type <<| geometric_type) AS is_strictly_below;",
+        "SELECT (a.geometric_type <<| b.geometric_type) AS is_strictly_below FROM table_name AS a, table_name AS b;",
+        "SELECT (a.geometric_type <<| b.geometric_type) AS is_strictly_below FROM (SELECT NULL::geometric_type AS geometric_type) AS a, (SELECT NULL::geometric_type AS geometric_type) AS b;",
+        "SELECT (point '0,0' <<| point '1,1') AS is_strictly_below;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 304,
+            "Prompt Tokens": 274,
+            "Completion Tokens": 30,
+            "Total Cost (USD)": 5.91e-05
+        },
+        {
+            "Total Tokens": 502,
+            "Prompt Tokens": 459,
+            "Completion Tokens": 43,
+            "Total Cost (USD)": 9.465e-05
+        },
+        {
+            "Total Tokens": 720,
+            "Prompt Tokens": 659,
+            "Completion Tokens": 61,
+            "Total Cost (USD)": 0.00013544999999999999
+        },
+        {
+            "Total Tokens": 914,
+            "Prompt Tokens": 878,
+            "Completion Tokens": 36,
+            "Total Cost (USD)": 0.00015329999999999999
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedColumn) column \"geometric_type\" does not exist\nLINE 1: SELECT (geometric_type <<| geometric_type) AS is_strictly_be...\n                ^\n\n",
+        "(psycopg2.errors.UndefinedTable) relation \"table_name\" does not exist\nLINE 1: ...e <<| b.geometric_type) AS is_strictly_below FROM table_name...\n                                                             ^\n\n",
+        "(psycopg2.errors.UndefinedObject) type \"geometric_type\" does not exist\nLINE 1: ...ric_type) AS is_strictly_below FROM (SELECT NULL::geometric_...\n                                                             ^\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT (point '0,0' <<| point '1,1') AS is_strictly_below;"
     ]
 }

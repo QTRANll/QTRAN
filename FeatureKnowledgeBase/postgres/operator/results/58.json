@@ -6,15 +6,33 @@
         "timestamp with time zone AT TIME ZONE zone"
     ],
     "Feature": [
-        "timestamp with time zone AT TIME ZONE zone → timestamp without time zone"
+        "timestamp with time zone AT TIME ZONE zone \u2192 timestamp without time zone"
     ],
     "Description": [
         "Converts given time stamp with time zone to time stamp without time zone, as the time would appear in that zone."
     ],
     "Examples": [
-        "timestamp with time zone '2001-02-16 20:38:40-05' at time zone 'America/Denver' → 2001-02-16 18:38:40"
+        "timestamp with time zone '2001-02-16 20:38:40-05' at time zone 'America/Denver' \u2192 2001-02-16 18:38:40"
     ],
     "Category": [
         "Date divide Time Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT timestamp with time zone '2023-10-01 12:00:00+00' AT TIME ZONE 'America/New_York';"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 336,
+            "Prompt Tokens": 292,
+            "Completion Tokens": 44,
+            "Total Cost (USD)": 7.019999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT timestamp with time zone '2023-10-01 12:00:00+00' AT TIME ZONE 'America/New_York';"
     ]
 }

@@ -17,5 +17,47 @@
     ],
     "Category": [
         "Numeric Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT abs(column_name) FROM table_name;",
+        "SELECT abs(@);",
+        "SELECT abs(@) AS absolute_value;",
+        "SELECT abs(0);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 260,
+            "Prompt Tokens": 239,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 4.845e-05
+        },
+        {
+            "Total Tokens": 427,
+            "Prompt Tokens": 410,
+            "Completion Tokens": 17,
+            "Total Cost (USD)": 7.17e-05
+        },
+        {
+            "Total Tokens": 570,
+            "Prompt Tokens": 550,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 9.449999999999999e-05
+        },
+        {
+            "Total Tokens": 711,
+            "Prompt Tokens": 693,
+            "Completion Tokens": 18,
+            "Total Cost (USD)": 0.00011474999999999997
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.CatalogException) Catalog Error: Table with name table_name does not exist!\nDid you mean \"pg_tablespace\"?\nLINE 1: SELECT abs(column_name) FROM table_name;\n                                     ^\n",
+        "(duckdb.duckdb.ParserException) Parser Error: syntax error at or near \")\"\n",
+        "(duckdb.duckdb.ParserException) Parser Error: syntax error at or near \")\"\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT abs(0);"
     ]
 }

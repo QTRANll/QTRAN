@@ -16,5 +16,47 @@
     ],
     "Category": [
         "List Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT * FROM my_table WHERE my_column && my_list;",
+        "SELECT * FROM pg_tables WHERE tablename && my_list;",
+        "SELECT * FROM pg_tables WHERE tablename && ARRAY['value1', 'value2'];",
+        "SELECT * FROM pg_tables WHERE ARRAY[tablename] && ARRAY['value1', 'value2'];"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 262,
+            "Prompt Tokens": 238,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 5.009999999999999e-05
+        },
+        {
+            "Total Tokens": 438,
+            "Prompt Tokens": 414,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 7.649999999999999e-05
+        },
+        {
+            "Total Tokens": 627,
+            "Prompt Tokens": 596,
+            "Completion Tokens": 31,
+            "Total Cost (USD)": 0.000108
+        },
+        {
+            "Total Tokens": 841,
+            "Prompt Tokens": 808,
+            "Completion Tokens": 33,
+            "Total Cost (USD)": 0.00014099999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.CatalogException) Catalog Error: Table with name my_table does not exist!\nDid you mean \"pg_tables\"?\nLINE 1: SELECT * FROM my_table WHERE my_column && my_list;\n                      ^\n",
+        "(duckdb.duckdb.BinderException) Binder Error: Referenced column \"my_list\" not found in FROM clause!\nCandidate bindings: \"pg_tables.tablespace\"\nLINE 1: ...CT * FROM pg_tables WHERE tablename && my_list;\n                                                  ^\n",
+        "(duckdb.duckdb.BinderException) Binder Error: No function matches the given name and argument types '&&(VARCHAR, VARCHAR[])'. You might need to add explicit type casts.\n\tCandidate functions:\n\t&&(ANY[], ANY[]) -> BOOLEAN\n\nLINE 1: ...ELECT * FROM pg_tables WHERE tablename && ARRAY['value1', 'value2'];\n                                                  ^\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT * FROM pg_tables WHERE ARRAY[tablename] && ARRAY['value1', 'value2'];"
     ]
 }

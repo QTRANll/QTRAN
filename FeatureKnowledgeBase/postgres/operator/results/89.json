@@ -6,15 +6,65 @@
         "point ?| point"
     ],
     "Feature": [
-        "point ?| point → boolean"
+        "point ?| point \u2192 boolean"
     ],
     "Description": [
         "Are points vertically aligned (that is, have same x coordinate)?"
     ],
     "Examples": [
-        "point '(0,1)' ?| point '(0,0)' → t"
+        "point '(0,1)' ?| point '(0,0)' \u2192 t"
     ],
     "Category": [
         "Geometric Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT point1 ?| point2;",
+        "SELECT point1 ?| point2 FROM your_table_name;",
+        "SELECT point1 ?| point2;",
+        "SELECT point ?| point FROM (SELECT '(1,2)'::point AS point1, '(1,3)'::point AS point2) AS subquery;",
+        "SELECT point1 ?| point2 FROM (SELECT '(1,2)'::point AS point1, '(1,3)'::point AS point2) AS subquery;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 278,
+            "Prompt Tokens": 258,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 5.07e-05
+        },
+        {
+            "Total Tokens": 444,
+            "Prompt Tokens": 420,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 7.739999999999998e-05
+        },
+        {
+            "Total Tokens": 611,
+            "Prompt Tokens": 591,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 0.00010064999999999998
+        },
+        {
+            "Total Tokens": 799,
+            "Prompt Tokens": 753,
+            "Completion Tokens": 46,
+            "Total Cost (USD)": 0.00014055
+        },
+        {
+            "Total Tokens": 1024,
+            "Prompt Tokens": 976,
+            "Completion Tokens": 48,
+            "Total Cost (USD)": 0.00017519999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedColumn) column \"point1\" does not exist\nLINE 1: SELECT point1 ?| point2;\n               ^\n\n",
+        "(psycopg2.errors.UndefinedTable) relation \"your_table_name\" does not exist\nLINE 1: SELECT point1 ?| point2 FROM your_table_name;\n                                     ^\n\n",
+        "(psycopg2.errors.UndefinedColumn) column \"point1\" does not exist\nLINE 1: SELECT point1 ?| point2;\n               ^\n\n",
+        "(psycopg2.errors.UndefinedColumn) column \"point\" does not exist\nLINE 1: SELECT point ?| point FROM (SELECT '(1,2)'::point AS point1,...\n               ^\nHINT:  Perhaps you meant to reference the column \"subquery.point1\" or the column \"subquery.point2\".\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT point1 ?| point2 FROM (SELECT '(1,2)'::point AS point1, '(1,3)'::point AS point2) AS subquery;"
     ]
 }

@@ -6,7 +6,7 @@
         "mode"
     ],
     "Feature": [
-        "mode () WITHIN GROUP ( ORDER BY anyelement ) → anyelement"
+        "mode () WITHIN GROUP ( ORDER BY anyelement ) \u2192 anyelement"
     ],
     "Description": [
         "Computes the mode, the most frequent value of the aggregated argument (arbitrarily choosing the first one if there are multiple equally-frequent values). The aggregated argument must be of a sortable type."
@@ -14,5 +14,53 @@
     "Examples": [],
     "Category": [
         "Aggregate Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT mode(value) FROM your_table WITHIN GROUP (ORDER BY value);",
+        "SELECT mode() WITHIN GROUP (ORDER BY value) FROM your_table;",
+        "SELECT mode() WITHIN GROUP (ORDER BY value);",
+        "SELECT mode() WITHIN GROUP (ORDER BY anyelement);",
+        "SELECT mode() WITHIN GROUP (ORDER BY some_column);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 312,
+            "Prompt Tokens": 284,
+            "Completion Tokens": 28,
+            "Total Cost (USD)": 5.9399999999999994e-05
+        },
+        {
+            "Total Tokens": 481,
+            "Prompt Tokens": 454,
+            "Completion Tokens": 27,
+            "Total Cost (USD)": 8.43e-05
+        },
+        {
+            "Total Tokens": 651,
+            "Prompt Tokens": 627,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 0.00010845
+        },
+        {
+            "Total Tokens": 817,
+            "Prompt Tokens": 792,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 0.0001338
+        },
+        {
+            "Total Tokens": 985,
+            "Prompt Tokens": 960,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 0.00015899999999999996
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.SyntaxError) syntax error at or near \"(\"\nLINE 1: SELECT mode(value) FROM your_table WITHIN GROUP (ORDER BY va...\n                                                        ^\n\n",
+        "(psycopg2.errors.UndefinedTable) relation \"your_table\" does not exist\nLINE 1: SELECT mode() WITHIN GROUP (ORDER BY value) FROM your_table;\n                                                         ^\n\n",
+        "(psycopg2.errors.UndefinedColumn) column \"value\" does not exist\nLINE 1: SELECT mode() WITHIN GROUP (ORDER BY value);\n                                             ^\n\n",
+        "(psycopg2.errors.UndefinedColumn) column \"anyelement\" does not exist\nLINE 1: SELECT mode() WITHIN GROUP (ORDER BY anyelement);\n                                             ^\n\n",
+        "(psycopg2.errors.UndefinedColumn) column \"some_column\" does not exist\nLINE 1: SELECT mode() WITHIN GROUP (ORDER BY some_column);\n                                             ^\n\n"
+    ],
+    "EffectiveSQLs": []
 }

@@ -17,5 +17,22 @@
     "Category": [
         "Miscellaneous Functions"
     ],
-    "EffectiveSQLsRefined": []
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT IS_USED_LOCK('my_lock_name');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 357,
+            "Prompt Tokens": 335,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 6.345e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT IS_USED_LOCK('my_lock_name');"
+    ]
 }

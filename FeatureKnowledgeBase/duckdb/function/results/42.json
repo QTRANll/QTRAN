@@ -15,5 +15,47 @@
     "Examples": [],
     "Category": [
         "Aggregate Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT entropy(x);",
+        "SELECT entropy(column_name) FROM your_table;",
+        "SELECT entropy(column_name) FROM pg_tables;",
+        "SELECT entropy(schemaname) FROM pg_tables;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 264,
+            "Prompt Tokens": 247,
+            "Completion Tokens": 17,
+            "Total Cost (USD)": 4.7249999999999997e-05
+        },
+        {
+            "Total Tokens": 426,
+            "Prompt Tokens": 405,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 7.335e-05
+        },
+        {
+            "Total Tokens": 598,
+            "Prompt Tokens": 577,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 9.914999999999998e-05
+        },
+        {
+            "Total Tokens": 797,
+            "Prompt Tokens": 774,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 0.00012989999999999999
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.BinderException) Binder Error: Referenced column \"x\" not found in FROM clause!\nLINE 1: SELECT entropy(x);\n                       ^\n",
+        "(duckdb.duckdb.CatalogException) Catalog Error: Table with name your_table does not exist!\nDid you mean \"pg_tables\"?\nLINE 1: SELECT entropy(column_name) FROM your_table;\n                                         ^\n",
+        "(duckdb.duckdb.BinderException) Binder Error: Referenced column \"column_name\" not found in FROM clause!\nCandidate bindings: \"pg_tables.schemaname\", \"pg_tables.tablename\", \"pg_tables.tablespace\", \"pg_tables.tableowner\"\nLINE 1: SELECT entropy(column_name) FROM pg_tables;\n                       ^\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT entropy(schemaname) FROM pg_tables;"
     ]
 }

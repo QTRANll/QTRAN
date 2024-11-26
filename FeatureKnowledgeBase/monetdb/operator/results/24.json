@@ -16,5 +16,55 @@
     ],
     "Category": [
         "Mathematics Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT * FROM table_name WHERE feature = 'multiplication';",
+        "SELECT * FROM information_schema.tables WHERE table_name = '*';",
+        "SELECT * FROM sys.tables WHERE table_name = '*';",
+        "SELECT * FROM sys.columns WHERE column_name = '*';",
+        "SELECT * FROM sys.tables;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 260,
+            "Prompt Tokens": 235,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 5.0249999999999995e-05
+        },
+        {
+            "Total Tokens": 414,
+            "Prompt Tokens": 389,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 7.335e-05
+        },
+        {
+            "Total Tokens": 567,
+            "Prompt Tokens": 543,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 9.585e-05
+        },
+        {
+            "Total Tokens": 718,
+            "Prompt Tokens": 694,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 0.00011849999999999998
+        },
+        {
+            "Total Tokens": 863,
+            "Prompt Tokens": 845,
+            "Completion Tokens": 18,
+            "Total Cost (USD)": 0.00013754999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymonetdb.exceptions.OperationalError) 42S02!SELECT: no such table 'table_name'\n\n",
+        "(pymonetdb.exceptions.OperationalError) 3F000!SELECT: no such schema 'information_schema'\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: identifier 'table_name' unknown\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: identifier 'column_name' unknown\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT * FROM sys.tables;"
     ]
 }

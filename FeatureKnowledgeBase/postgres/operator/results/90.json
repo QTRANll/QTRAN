@@ -6,16 +6,50 @@
         "line ?-| line"
     ],
     "Feature": [
-        "line ?-| line → boolean",
-        "lseg ?-| lseg → boolean"
+        "line ?-| line \u2192 boolean",
+        "lseg ?-| lseg \u2192 boolean"
     ],
     "Description": [
         "Are lines perpendicular?"
     ],
     "Examples": [
-        "lseg '[(0,0),(0,1)]' ?-| lseg '[(0,0),(1,0)]' → t"
+        "lseg '[(0,0),(0,1)]' ?-| lseg '[(0,0),(1,0)]' \u2192 t"
     ],
     "Category": [
         "Geometric Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT line1 ?-| line2;",
+        "SELECT line ?-| line FROM your_table;",
+        "SELECT line1 ?-| line2 FROM (SELECT '((0,0),(1,1))'::line AS line1, '((1,0),(0,1))'::line AS line2) AS temp;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 279,
+            "Prompt Tokens": 259,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 5.0849999999999996e-05
+        },
+        {
+            "Total Tokens": 442,
+            "Prompt Tokens": 421,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 7.574999999999998e-05
+        },
+        {
+            "Total Tokens": 644,
+            "Prompt Tokens": 585,
+            "Completion Tokens": 59,
+            "Total Cost (USD)": 0.00012314999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedColumn) column \"line1\" does not exist\nLINE 1: SELECT line1 ?-| line2;\n               ^\n\n",
+        "(psycopg2.errors.UndefinedTable) relation \"your_table\" does not exist\nLINE 1: SELECT line ?-| line FROM your_table;\n                                  ^\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT line1 ?-| line2 FROM (SELECT '((0,0),(1,1))'::line AS line1, '((1,0),(0,1))'::line AS line2) AS temp;"
     ]
 }

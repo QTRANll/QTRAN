@@ -6,16 +6,64 @@
         "line ?|| line"
     ],
     "Feature": [
-        "line ?|| line → boolean",
-        "lseg ?|| lseg → boolean"
+        "line ?|| line \u2192 boolean",
+        "lseg ?|| lseg \u2192 boolean"
     ],
     "Description": [
         "Are lines parallel?"
     ],
     "Examples": [
-        "lseg '[(-1,0),(1,0)]' ?|| lseg '[(-1,2),(1,2)]' → t"
+        "lseg '[(-1,0),(1,0)]' ?|| lseg '[(-1,2),(1,2)]' \u2192 t"
     ],
     "Category": [
         "Geometric Functions and Operators"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT line1 ?|| line2 AS are_parallel;",
+        "SELECT $1 ?|| $2 AS are_parallel;",
+        "SELECT line ?|| line AS are_parallel;",
+        "SELECT lseg1 ?|| lseg2 AS are_parallel;",
+        "SELECT lseg ?|| lseg AS are_parallel;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 282,
+            "Prompt Tokens": 259,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 5.264999999999999e-05
+        },
+        {
+            "Total Tokens": 450,
+            "Prompt Tokens": 427,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 7.785e-05
+        },
+        {
+            "Total Tokens": 614,
+            "Prompt Tokens": 593,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 0.00010154999999999999
+        },
+        {
+            "Total Tokens": 781,
+            "Prompt Tokens": 756,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 0.00012839999999999998
+        },
+        {
+            "Total Tokens": 952,
+            "Prompt Tokens": 929,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 0.00015315
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedColumn) column \"line1\" does not exist\nLINE 1: SELECT line1 ?|| line2 AS are_parallel;\n               ^\n\n",
+        "(psycopg2.errors.UndefinedParameter) there is no parameter $1\nLINE 1: SELECT $1 ?|| $2 AS are_parallel;\n               ^\n\n",
+        "(psycopg2.errors.UndefinedColumn) column \"line\" does not exist\nLINE 1: SELECT line ?|| line AS are_parallel;\n               ^\n\n",
+        "(psycopg2.errors.UndefinedColumn) column \"lseg1\" does not exist\nLINE 1: SELECT lseg1 ?|| lseg2 AS are_parallel;\n               ^\n\n",
+        "(psycopg2.errors.UndefinedColumn) column \"lseg\" does not exist\nLINE 1: SELECT lseg ?|| lseg AS are_parallel;\n               ^\n\n"
+    ],
+    "EffectiveSQLs": []
 }

@@ -10,12 +10,38 @@
     ],
     "Description": [
         "NULLIF()",
-        "NULLIF(expr1,expr2) 函数用于在两个参数相同或第一个参数为 NULL 时返回 NULL。否则，返回第一个参数。"
+        "NULLIF(expr1,expr2) \u51fd\u6570\u7528\u4e8e\u5728\u4e24\u4e2a\u53c2\u6570\u76f8\u540c\u6216\u7b2c\u4e00\u4e2a\u53c2\u6570\u4e3a NULL \u65f6\u8fd4\u56de NULL\u3002\u5426\u5219\uff0c\u8fd4\u56de\u7b2c\u4e00\u4e2a\u53c2\u6570\u3002"
     ],
     "Examples": [
         "WITH RECURSIVE d AS (SELECT 1 AS n UNION ALL SELECT n+1 FROM d WHERE n<10)\nSELECT n, NULLIF(n+n, n+2) FROM d;\n"
     ],
     "Category": [
-        "控制流程函数"
+        "\u63a7\u5236\u6d41\u7a0b\u51fd\u6570"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT NULLIF(column1, column2);",
+        "SELECT NULLIF(1, 1);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 300,
+            "Prompt Tokens": 278,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 5.489999999999999e-05
+        },
+        {
+            "Total Tokens": 453,
+            "Prompt Tokens": 431,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 7.785e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.OperationalError) (1054, \"Unknown column 'column1' in 'field list'\")\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT NULLIF(1, 1);"
     ]
 }

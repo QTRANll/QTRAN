@@ -36,5 +36,59 @@
     "Category": [
         "Built-In Functions and Operators",
         "Window Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        [
+            "SELECT LAG(val) OVER () AS 'lag' FROM series;"
+        ],
+        [
+            "SELECT LAG(val) OVER () AS lag FROM series;"
+        ],
+        "SELECT LAG(val) OVER () AS lag FROM series;",
+        [
+            "SELECT LAG(val) OVER () AS `lag` FROM series;"
+        ],
+        "SELECT LAG(val) OVER () AS `lag` FROM series;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 1680,
+            "Prompt Tokens": 1649,
+            "Completion Tokens": 31,
+            "Total Cost (USD)": 0.00026595
+        },
+        {
+            "Total Tokens": 1832,
+            "Prompt Tokens": 1803,
+            "Completion Tokens": 29,
+            "Total Cost (USD)": 0.00028785
+        },
+        {
+            "Total Tokens": 1979,
+            "Prompt Tokens": 1955,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 0.00030765
+        },
+        {
+            "Total Tokens": 2172,
+            "Prompt Tokens": 2141,
+            "Completion Tokens": 31,
+            "Total Cost (USD)": 0.00033975
+        },
+        {
+            "Total Tokens": 2321,
+            "Prompt Tokens": 2295,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 0.00035984999999999994
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "expected string or bytes-like object, got 'list'",
+        "expected string or bytes-like object, got 'list'",
+        "(pymysql.err.ProgrammingError) (1064, \"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'lag FROM series' at line 1\")\n",
+        "expected string or bytes-like object, got 'list'",
+        "(pymysql.err.ProgrammingError) (1146, \"Table 'knowledge_base_preprocess_mysql.series' doesn't exist\")\n"
+    ],
+    "EffectiveSQLs": []
 }

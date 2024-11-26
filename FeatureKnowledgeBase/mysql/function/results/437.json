@@ -25,5 +25,39 @@
     ],
     "Category": [
         "Loadable Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT audit_log_rotate();",
+        "SELECT audit_log_rotate();",
+        "SELECT NULL;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 354,
+            "Prompt Tokens": 336,
+            "Completion Tokens": 18,
+            "Total Cost (USD)": 6.12e-05
+        },
+        {
+            "Total Tokens": 508,
+            "Prompt Tokens": 490,
+            "Completion Tokens": 18,
+            "Total Cost (USD)": 8.429999999999999e-05
+        },
+        {
+            "Total Tokens": 659,
+            "Prompt Tokens": 644,
+            "Completion Tokens": 15,
+            "Total Cost (USD)": 0.00010559999999999999
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.audit_log_rotate does not exist')\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.audit_log_rotate does not exist')\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT NULL;"
     ]
 }

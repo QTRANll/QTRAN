@@ -27,5 +27,18 @@
     "Category": [
         "Built-In Functions and Operators",
         "Miscellaneous Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT IS_IPV4_COMPAT(INET6_ATON('::10.0.5.9'));",
+        "SELECT IS_IPV4_COMPAT(INET6_ATON('::ffff:10.0.5.9'));",
+        "SELECT HEX(INET6_ATON('198.51.100.1'));"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT IS_IPV4_COMPAT(INET6_ATON('::10.0.5.9'));",
+        "SELECT IS_IPV4_COMPAT(INET6_ATON('::ffff:10.0.5.9'));",
+        "SELECT HEX(INET6_ATON('198.51.100.1'));"
     ]
 }

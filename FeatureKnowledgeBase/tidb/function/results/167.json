@@ -11,6 +11,24 @@
     ],
     "Examples": [],
     "Category": [
-        "锁函数"
+        "\u9501\u51fd\u6570"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT IS_FREE_LOCK('my_lock');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 379,
+            "Prompt Tokens": 358,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 6.629999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT IS_FREE_LOCK('my_lock');"
     ]
 }

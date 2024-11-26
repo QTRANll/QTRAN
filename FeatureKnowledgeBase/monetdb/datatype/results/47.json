@@ -1,0 +1,68 @@
+{
+    "HTML": [
+        "https://www.monetdb.org/documentation-Aug2024/user-guide/sql-manual/data-types/temporal-types"
+    ],
+    "Title": [
+        "INTERVAL DAY TO MINUTE"
+    ],
+    "Feature": [
+        "INTERVAL DAY TO MINUTE"
+    ],
+    "Description": [
+        "second_interval",
+        "8-bytes",
+        "decimal(19,3) number of seconds with milliseconds precision"
+    ],
+    "Examples": [],
+    "Category": [
+        "Temporal Datatypes"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT INTERVAL '1 DAY 12 MINUTE' AS example_interval;",
+        "SELECT INTERVAL '1 DAY 12 MINUTE';",
+        "SELECT INTERVAL '1 DAY 12 MINUTE'",
+        "SELECT INTERVAL '1 DAY 12 MINUTE'",
+        "SELECT INTERVAL '1 DAY 12 MINUTE'::INTERVAL DAY TO MINUTE"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 301,
+            "Prompt Tokens": 274,
+            "Completion Tokens": 27,
+            "Total Cost (USD)": 5.73e-05
+        },
+        {
+            "Total Tokens": 469,
+            "Prompt Tokens": 445,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 8.115e-05
+        },
+        {
+            "Total Tokens": 637,
+            "Prompt Tokens": 614,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 0.00010589999999999999
+        },
+        {
+            "Total Tokens": 807,
+            "Prompt Tokens": 784,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 0.0001314
+        },
+        {
+            "Total Tokens": 985,
+            "Prompt Tokens": 954,
+            "Completion Tokens": 31,
+            "Total Cost (USD)": 0.00016169999999999997
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymonetdb.exceptions.OperationalError) 42000!syntax error, unexpected AS in: \"select interval '1 DAY 12 MINUTE' as\"\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!syntax error, unexpected SCOLON in: \"select interval '1 DAY 12 MINUTE';\"\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!syntax error, unexpected SCOLON in: \"select interval '1 DAY 12 MINUTE'\n!;\"\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!syntax error, unexpected SCOLON in: \"select interval '1 DAY 12 MINUTE'\n!;\"\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!Unexpected symbol (:)\n\n"
+    ],
+    "EffectiveSQLs": []
+}

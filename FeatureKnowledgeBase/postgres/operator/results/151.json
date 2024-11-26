@@ -6,15 +6,57 @@
         "anyrange << anyrange"
     ],
     "Feature": [
-        "anyrange << anyrange → boolean"
+        "anyrange << anyrange \u2192 boolean"
     ],
     "Description": [
         "Is the first range strictly left of the second?"
     ],
     "Examples": [
-        "int8range(1,10) << int8range(100,110) → t"
+        "int8range(1,10) << int8range(100,110) \u2192 t"
     ],
     "Category": [
         "Range divide Multirange Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT (range1 << range2) AS is_left;",
+        "SELECT (anyrange1 << anyrange2) AS is_left;",
+        "SELECT (anyrange << anyrange) AS is_left;",
+        "SELECT (int4range(1, 5) << int4range(6, 10)) AS is_left;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 283,
+            "Prompt Tokens": 259,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 5.324999999999999e-05
+        },
+        {
+            "Total Tokens": 456,
+            "Prompt Tokens": 430,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 8.01e-05
+        },
+        {
+            "Total Tokens": 630,
+            "Prompt Tokens": 606,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 0.00010529999999999998
+        },
+        {
+            "Total Tokens": 814,
+            "Prompt Tokens": 777,
+            "Completion Tokens": 37,
+            "Total Cost (USD)": 0.00013874999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedColumn) column \"range1\" does not exist\nLINE 1: SELECT (range1 << range2) AS is_left;\n                ^\n\n",
+        "(psycopg2.errors.UndefinedColumn) column \"anyrange1\" does not exist\nLINE 1: SELECT (anyrange1 << anyrange2) AS is_left;\n                ^\n\n",
+        "(psycopg2.errors.UndefinedColumn) column \"anyrange\" does not exist\nLINE 1: SELECT (anyrange << anyrange) AS is_left;\n                ^\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT (int4range(1, 5) << int4range(6, 10)) AS is_left;"
     ]
 }

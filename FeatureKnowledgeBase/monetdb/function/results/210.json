@@ -18,5 +18,39 @@
     ],
     "Category": [
         "INET Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT sys.left_shift('192.168.1.1'::inet, '255.255.255.0'::inet);",
+        "SELECT sys.left_shift('192.168.1.1', '255.255.255.0');",
+        "SELECT sys.left_shift('192.168.1.1', '8');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 313,
+            "Prompt Tokens": 272,
+            "Completion Tokens": 41,
+            "Total Cost (USD)": 6.54e-05
+        },
+        {
+            "Total Tokens": 478,
+            "Prompt Tokens": 443,
+            "Completion Tokens": 35,
+            "Total Cost (USD)": 8.744999999999998e-05
+        },
+        {
+            "Total Tokens": 650,
+            "Prompt Tokens": 621,
+            "Completion Tokens": 29,
+            "Total Cost (USD)": 0.00011054999999999999
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymonetdb.exceptions.OperationalError) 42000!Unexpected symbol (:)\n\n",
+        "(pymonetdb.exceptions.OperationalError) 22018!conversion of string '255.255.255.0' to type int failed.\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT sys.left_shift('192.168.1.1', '8');"
     ]
 }

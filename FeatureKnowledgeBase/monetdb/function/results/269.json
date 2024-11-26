@@ -18,5 +18,53 @@
     ],
     "Category": [
         "Aggregate Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT listagg(column_name, ', ') FROM table_name;",
+        "SELECT listagg(column_name, ', ');",
+        "SELECT listagg('value1', ', ');",
+        "SELECT listagg('value1', ', ') OVER ();",
+        "SELECT listagg('value1', ', ');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 329,
+            "Prompt Tokens": 305,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 6.014999999999999e-05
+        },
+        {
+            "Total Tokens": 487,
+            "Prompt Tokens": 465,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 8.295e-05
+        },
+        {
+            "Total Tokens": 644,
+            "Prompt Tokens": 621,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 0.00010694999999999998
+        },
+        {
+            "Total Tokens": 807,
+            "Prompt Tokens": 783,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 0.00013185
+        },
+        {
+            "Total Tokens": 980,
+            "Prompt Tokens": 957,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 0.00015735
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymonetdb.exceptions.OperationalError) 42S02!SELECT: no such table 'table_name'\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: identifier 'column_name' unknown\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: no such binary operator 'listagg(char,char)'\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!syntax error, unexpected OVER, expecting SCOLON in: \"select listagg('value1', ', ') over\"\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: no such binary operator 'listagg(char,char)'\n\n"
+    ],
+    "EffectiveSQLs": []
 }

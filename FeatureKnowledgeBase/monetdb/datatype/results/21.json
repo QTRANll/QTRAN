@@ -1,0 +1,37 @@
+{
+    "HTML": [
+        "https://www.monetdb.org/documentation-Aug2024/user-guide/sql-manual/data-types/base-types"
+    ],
+    "Title": [
+        "DECIMAL ( Prec , Scale )"
+    ],
+    "Feature": [
+        "DECIMAL ( Prec , Scale )"
+    ],
+    "Description": [
+        "DEC ( Prec , Scale ), NUMERIC ( Prec , Scale )",
+        "Exact signed decimal number with specified precision Prec and scale Scale. Prec must be between 1 and 18 (or 38 when HUGEINT is also supported). Scale must be between 0 and Prec"
+    ],
+    "Examples": [],
+    "Category": [
+        "Base Types"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT CAST(123.45 AS DECIMAL(5, 2));"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 340,
+            "Prompt Tokens": 312,
+            "Completion Tokens": 28,
+            "Total Cost (USD)": 6.36e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT CAST(123.45 AS DECIMAL(5, 2));"
+    ]
+}

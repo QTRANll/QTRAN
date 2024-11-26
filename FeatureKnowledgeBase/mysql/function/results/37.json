@@ -22,5 +22,16 @@
     "Category": [
         "Built-In Functions and Operators",
         "Comparison Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT COALESCE(NULL,1);",
+        "SELECT COALESCE(NULL,NULL,NULL);"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT COALESCE(NULL,1);",
+        "SELECT COALESCE(NULL,NULL,NULL);"
     ]
 }

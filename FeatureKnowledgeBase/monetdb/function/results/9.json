@@ -18,5 +18,53 @@
     ],
     "Category": [
         "Comparison Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "<>(arg1, arg2)",
+        "arg1 <> arg2",
+        "SELECT arg1 <> arg2",
+        "SELECT * FROM table_name WHERE arg1 <> arg2",
+        "SELECT 1 WHERE arg1 <> arg2"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 300,
+            "Prompt Tokens": 281,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 5.355e-05
+        },
+        {
+            "Total Tokens": 457,
+            "Prompt Tokens": 439,
+            "Completion Tokens": 18,
+            "Total Cost (USD)": 7.664999999999999e-05
+        },
+        {
+            "Total Tokens": 614,
+            "Prompt Tokens": 595,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 0.00010064999999999998
+        },
+        {
+            "Total Tokens": 773,
+            "Prompt Tokens": 749,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 0.00012675
+        },
+        {
+            "Total Tokens": 932,
+            "Prompt Tokens": 910,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 0.00014969999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymonetdb.exceptions.OperationalError) 42000!syntax error, unexpected COMPARISON in: \"<>\"\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!syntax error, unexpected IDENT in: \"arg1\"\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: identifier 'arg1' unknown\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42S02!SELECT: no such table 'table_name'\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: identifier 'arg1' unknown\n\n"
+    ],
+    "EffectiveSQLs": []
 }

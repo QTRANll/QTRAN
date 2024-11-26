@@ -16,5 +16,53 @@
     "Examples": [],
     "Category": [
         "Window Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT lag(value) FROM your_table;",
+        "SELECT lag(value, 1, null) FROM your_table;",
+        "SELECT lag(value) FROM your_table;",
+        "SELECT lag(value, 1) FROM your_table;",
+        "SELECT lag(value) FROM (SELECT 1 AS value) AS temp;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 365,
+            "Prompt Tokens": 345,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 6.374999999999999e-05
+        },
+        {
+            "Total Tokens": 533,
+            "Prompt Tokens": 508,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 9.12e-05
+        },
+        {
+            "Total Tokens": 699,
+            "Prompt Tokens": 679,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 0.00011384999999999999
+        },
+        {
+            "Total Tokens": 865,
+            "Prompt Tokens": 842,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 0.0001401
+        },
+        {
+            "Total Tokens": 1030,
+            "Prompt Tokens": 1003,
+            "Completion Tokens": 27,
+            "Total Cost (USD)": 0.00016664999999999996
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymonetdb.exceptions.OperationalError) 42000!syntax error, unexpected ')', expecting ',' in: \"select lag(value)\"\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!syntax error, unexpected ',', expecting ')' in: \"select lag(value, 1,\"\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!syntax error, unexpected ')', expecting ',' in: \"select lag(value)\"\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42S02!SELECT: no such table 'your_table'\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!syntax error, unexpected ')', expecting ',' in: \"select lag(value)\"\n\n"
+    ],
+    "EffectiveSQLs": []
 }

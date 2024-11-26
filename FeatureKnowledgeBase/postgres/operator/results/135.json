@@ -6,15 +6,33 @@
         "number - number"
     ],
     "Feature": [
-        "number - number → number"
+        "number - number \u2192 number"
     ],
     "Description": [
         "Subtraction"
     ],
     "Examples": [
-        "jsonb_path_query('[2]', '7 - $[0]') → 5"
+        "jsonb_path_query('[2]', '7 - $[0]') \u2192 5"
     ],
     "Category": [
         "JSON Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT 5 - 3;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 262,
+            "Prompt Tokens": 243,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 4.785e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT 5 - 3;"
     ]
 }

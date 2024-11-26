@@ -6,7 +6,7 @@
         "pg_get_statisticsobjdef"
     ],
     "Feature": [
-        "pg_get_statisticsobjdef ( statobj oid ) → text"
+        "pg_get_statisticsobjdef ( statobj oid ) \u2192 text"
     ],
     "Description": [
         "Reconstructs the creating command for an extended statistics object. (This is a decompiled reconstruction, not the original text of the command.)"
@@ -14,5 +14,39 @@
     "Examples": [],
     "Category": [
         "System Information Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT pg_get_statisticsobjdef(statobj);",
+        "SELECT pg_get_statisticsobjdef(oid) FROM pg_statistic;",
+        "SELECT pg_get_statisticsobjdef(1);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 304,
+            "Prompt Tokens": 282,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 5.549999999999999e-05
+        },
+        {
+            "Total Tokens": 474,
+            "Prompt Tokens": 448,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 8.28e-05
+        },
+        {
+            "Total Tokens": 644,
+            "Prompt Tokens": 622,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 0.00010649999999999999
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedColumn) column \"statobj\" does not exist\nLINE 1: SELECT pg_get_statisticsobjdef(statobj);\n                                       ^\n\n",
+        "(psycopg2.errors.UndefinedColumn) column \"oid\" does not exist\nLINE 1: SELECT pg_get_statisticsobjdef(oid) FROM pg_statistic;\n                                       ^\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT pg_get_statisticsobjdef(1);"
     ]
 }

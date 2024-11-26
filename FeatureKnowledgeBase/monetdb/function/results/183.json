@@ -18,5 +18,31 @@
     ],
     "Category": [
         "Date Time Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT sql_sub('2023-10-01 12:00:00', '2023-10-01 11:00:00');",
+        "SELECT sql_sub(TIMESTAMP '2023-10-01 12:00:00', TIMESTAMP '2023-10-01 11:00:00');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 321,
+            "Prompt Tokens": 277,
+            "Completion Tokens": 44,
+            "Total Cost (USD)": 6.795e-05
+        },
+        {
+            "Total Tokens": 510,
+            "Prompt Tokens": 461,
+            "Completion Tokens": 49,
+            "Total Cost (USD)": 9.855e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymonetdb.exceptions.OperationalError) 42000!Wrong format (2023-10-01 11:00:00)\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT sql_sub(TIMESTAMP '2023-10-01 12:00:00', TIMESTAMP '2023-10-01 11:00:00');"
     ]
 }

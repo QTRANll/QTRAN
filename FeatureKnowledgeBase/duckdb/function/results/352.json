@@ -17,5 +17,39 @@
     ],
     "Category": [
         "Numeric Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT abs(column_name) FROM table_name;",
+        "SELECT abs(x);",
+        "SELECT abs(-5);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 271,
+            "Prompt Tokens": 250,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 5.01e-05
+        },
+        {
+            "Total Tokens": 438,
+            "Prompt Tokens": 421,
+            "Completion Tokens": 17,
+            "Total Cost (USD)": 7.335e-05
+        },
+        {
+            "Total Tokens": 595,
+            "Prompt Tokens": 577,
+            "Completion Tokens": 18,
+            "Total Cost (USD)": 9.734999999999998e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.CatalogException) Catalog Error: Table with name table_name does not exist!\nDid you mean \"pg_tablespace\"?\nLINE 1: SELECT abs(column_name) FROM table_name;\n                                     ^\n",
+        "(duckdb.duckdb.BinderException) Binder Error: Referenced column \"x\" not found in FROM clause!\nLINE 1: SELECT abs(x);\n                   ^\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT abs(-5);"
     ]
 }

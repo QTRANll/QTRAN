@@ -14,5 +14,31 @@
     "Examples": [],
     "Category": [
         "Core SQL Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT octet_length(X);",
+        "SELECT octet_length('example string');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 515,
+            "Prompt Tokens": 496,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 8.58e-05
+        },
+        {
+            "Total Tokens": 655,
+            "Prompt Tokens": 634,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 0.00010769999999999999
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(sqlite3.OperationalError) no such column: X\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT octet_length('example string');"
     ]
 }

@@ -25,5 +25,31 @@
     ],
     "Category": [
         "Loadable Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT gen_rnd_uuid();",
+        "SELECT UUID();"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 421,
+            "Prompt Tokens": 402,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 7.17e-05
+        },
+        {
+            "Total Tokens": 574,
+            "Prompt Tokens": 558,
+            "Completion Tokens": 16,
+            "Total Cost (USD)": 9.33e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.gen_rnd_uuid does not exist')\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT UUID();"
     ]
 }

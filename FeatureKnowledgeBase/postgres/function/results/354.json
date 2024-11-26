@@ -6,7 +6,7 @@
         "var_samp"
     ],
     "Feature": [
-        "var_samp ( numeric_type ) → double precision for real or double precision, otherwise numeric"
+        "var_samp ( numeric_type ) \u2192 double precision for real or double precision, otherwise numeric"
     ],
     "Description": [
         "Computes the sample variance of the input values (square of the sample standard deviation)."
@@ -14,5 +14,53 @@
     "Examples": [],
     "Category": [
         "Aggregate Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT var_samp(column_name) FROM table_name;",
+        "SELECT var_samp(column_name);",
+        "SELECT var_samp(ARRAY[1, 2, 3, 4, 5]);",
+        "SELECT var_samp(1::double precision, 2::double precision, 3::double precision, 4::double precision, 5::double precision);",
+        "SELECT var_samp(ARRAY[1::double precision, 2::double precision, 3::double precision, 4::double precision, 5::double precision]::double precision[]);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 294,
+            "Prompt Tokens": 271,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 5.4449999999999995e-05
+        },
+        {
+            "Total Tokens": 458,
+            "Prompt Tokens": 438,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 7.769999999999999e-05
+        },
+        {
+            "Total Tokens": 632,
+            "Prompt Tokens": 598,
+            "Completion Tokens": 34,
+            "Total Cost (USD)": 0.00011009999999999999
+        },
+        {
+            "Total Tokens": 856,
+            "Prompt Tokens": 809,
+            "Completion Tokens": 47,
+            "Total Cost (USD)": 0.00014955
+        },
+        {
+            "Total Tokens": 1099,
+            "Prompt Tokens": 1045,
+            "Completion Tokens": 54,
+            "Total Cost (USD)": 0.00018915
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedTable) relation \"table_name\" does not exist\nLINE 1: SELECT var_samp(column_name) FROM table_name;\n                                          ^\n\n",
+        "(psycopg2.errors.UndefinedColumn) column \"column_name\" does not exist\nLINE 1: SELECT var_samp(column_name);\n                        ^\n\n",
+        "(psycopg2.errors.UndefinedFunction) function var_samp(integer[]) does not exist\nLINE 1: SELECT var_samp(ARRAY[1, 2, 3, 4, 5]);\n               ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.\n\n",
+        "(psycopg2.errors.UndefinedFunction) function var_samp(double precision, double precision, double precision, double precision, double precision) does not exist\nLINE 1: SELECT var_samp(1::double precision, 2::double precision, 3:...\n               ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.\n\n",
+        "(psycopg2.errors.UndefinedFunction) function var_samp(double precision[]) does not exist\nLINE 1: SELECT var_samp(ARRAY[1::double precision, 2::double precisi...\n               ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.\n\n"
+    ],
+    "EffectiveSQLs": []
 }

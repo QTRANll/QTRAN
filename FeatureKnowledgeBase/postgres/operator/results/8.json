@@ -6,15 +6,41 @@
         "+ numeric_type"
     ],
     "Feature": [
-        "+ numeric_type → numeric_type"
+        "+ numeric_type \u2192 numeric_type"
     ],
     "Description": [
         "Unary plus (no operation)"
     ],
     "Examples": [
-        "+ 3.5 → 3.5"
+        "+ 3.5 \u2192 3.5"
     ],
     "Category": [
         "Mathematical Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "+1",
+        "SELECT +1;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 262,
+            "Prompt Tokens": 248,
+            "Completion Tokens": 14,
+            "Total Cost (USD)": 4.56e-05
+        },
+        {
+            "Total Tokens": 409,
+            "Prompt Tokens": 393,
+            "Completion Tokens": 16,
+            "Total Cost (USD)": 6.855e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.SyntaxError) syntax error at or near \"+\"\nLINE 1: +1\n        ^\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT +1;"
     ]
 }

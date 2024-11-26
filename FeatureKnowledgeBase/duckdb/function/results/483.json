@@ -16,5 +16,23 @@
     ],
     "Category": [
         "Time Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT get_current_time();"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 270,
+            "Prompt Tokens": 252,
+            "Completion Tokens": 18,
+            "Total Cost (USD)": 4.8599999999999995e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT get_current_time();"
     ]
 }

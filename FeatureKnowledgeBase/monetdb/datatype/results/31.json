@@ -1,0 +1,67 @@
+{
+    "HTML": [
+        "https://www.monetdb.org/documentation-Aug2024/user-guide/sql-manual/data-types/base-types"
+    ],
+    "Title": [
+        "TIME ( Prec ) WITH TIME ZONE"
+    ],
+    "Feature": [
+        "TIME ( Prec ) WITH TIME ZONE"
+    ],
+    "Description": [
+        "",
+        "time of day including fractions of a seconds with timezone information. Prec defines the number of fraction digits between 0 and 6"
+    ],
+    "Examples": [],
+    "Category": [
+        "Base Types"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT CURRENT_TIME(3) AT TIME ZONE 'UTC';",
+        "SELECT CURRENT_TIME(3) AT TIME ZONE 'UTC'::TIMETZ;",
+        "SELECT CURRENT_TIME AT TIME ZONE 'UTC';",
+        "SELECT TIMEZONE('UTC', CURRENT_TIMESTAMP);",
+        "SELECT CURRENT_TIMESTAMP AT TIME ZONE 'UTC';"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 314,
+            "Prompt Tokens": 288,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 5.879999999999999e-05
+        },
+        {
+            "Total Tokens": 488,
+            "Prompt Tokens": 458,
+            "Completion Tokens": 30,
+            "Total Cost (USD)": 8.669999999999999e-05
+        },
+        {
+            "Total Tokens": 655,
+            "Prompt Tokens": 632,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 0.00010859999999999998
+        },
+        {
+            "Total Tokens": 822,
+            "Prompt Tokens": 800,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 0.00013319999999999999
+        },
+        {
+            "Total Tokens": 987,
+            "Prompt Tokens": 964,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 0.0001584
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymonetdb.exceptions.OperationalError) 42000!syntax error, unexpected sqlINT, expecting ')' in: \"select current_time(3\"\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!syntax error, unexpected sqlINT, expecting ')' in: \"select current_time(3\"\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!syntax error, unexpected TIME, expecting SCOLON in: \"select current_time at time\"\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: no such binary operator 'timezone(char,timestamptz)'\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!syntax error, unexpected TIME, expecting SCOLON in: \"select current_timestamp at time\"\n\n"
+    ],
+    "EffectiveSQLs": []
+}

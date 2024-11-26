@@ -6,15 +6,33 @@
         "tsvector || tsvector"
     ],
     "Feature": [
-        "tsvector || tsvector → tsvector"
+        "tsvector || tsvector \u2192 tsvector"
     ],
     "Description": [
         "Concatenates two tsvectors. If both inputs contain lexeme positions, the second input's positions are adjusted accordingly."
     ],
     "Examples": [
-        "'a:1 b:2'::tsvector || 'c:1 d:2 b:3'::tsvector → 'a':1 'b':2,5 'c':3 'd':4"
+        "'a:1 b:2'::tsvector || 'c:1 d:2 b:3'::tsvector \u2192 'a':1 'b':2,5 'c':3 'd':4"
     ],
     "Category": [
         "Text Search Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT 'text1'::tsvector || 'text2'::tsvector;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 309,
+            "Prompt Tokens": 280,
+            "Completion Tokens": 29,
+            "Total Cost (USD)": 5.9399999999999994e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT 'text1'::tsvector || 'text2'::tsvector;"
     ]
 }

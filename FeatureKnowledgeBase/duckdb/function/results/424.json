@@ -16,5 +16,31 @@
     ],
     "Category": [
         "Text Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "regexp_replace('hello world', 'world', 'DuckDB')",
+        "SELECT regexp_replace('hello world', 'world', 'DuckDB')"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 304,
+            "Prompt Tokens": 278,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 5.73e-05
+        },
+        {
+            "Total Tokens": 463,
+            "Prompt Tokens": 436,
+            "Completion Tokens": 27,
+            "Total Cost (USD)": 8.159999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.ParserException) Parser Error: syntax error at or near \"regexp_replace\"\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT regexp_replace('hello world', 'world', 'DuckDB')"
     ]
 }

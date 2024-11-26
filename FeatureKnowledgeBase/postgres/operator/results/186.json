@@ -6,15 +6,63 @@
         "anymultirange * anymultirange"
     ],
     "Feature": [
-        "anymultirange * anymultirange → anymultirange"
+        "anymultirange * anymultirange \u2192 anymultirange"
     ],
     "Description": [
         "Computes the intersection of the multiranges."
     ],
     "Examples": [
-        "'{[5,15)}'::int8multirange * '{[10,20)}'::int8multirange → {[10,15)}"
+        "'{[5,15)}'::int8multirange * '{[10,20)}'::int8multirange \u2192 {[10,15)}"
     ],
     "Category": [
         "Range divide Multirange Functions and Operators"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT (anymultirange1 * anymultirange2);",
+        "SELECT (ANYMULTIRANGE * ANYMULTIRANGE);",
+        "SELECT (ANYMULTIRANGE '[[1,2], [3,4]]' * ANYMULTIRANGE '[[2,3], [4,5]]');",
+        "SELECT (ANYMULTIRANGE '[[1,2]]' * ANYMULTIRANGE '[[1,2]]');",
+        "SELECT (NULL::anymultirange * NULL::anymultirange);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 305,
+            "Prompt Tokens": 278,
+            "Completion Tokens": 27,
+            "Total Cost (USD)": 5.79e-05
+        },
+        {
+            "Total Tokens": 486,
+            "Prompt Tokens": 461,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 8.415e-05
+        },
+        {
+            "Total Tokens": 687,
+            "Prompt Tokens": 639,
+            "Completion Tokens": 48,
+            "Total Cost (USD)": 0.00012465
+        },
+        {
+            "Total Tokens": 892,
+            "Prompt Tokens": 854,
+            "Completion Tokens": 38,
+            "Total Cost (USD)": 0.00015089999999999998
+        },
+        {
+            "Total Tokens": 1086,
+            "Prompt Tokens": 1057,
+            "Completion Tokens": 29,
+            "Total Cost (USD)": 0.00017594999999999997
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedColumn) column \"anymultirange1\" does not exist\nLINE 1: SELECT (anymultirange1 * anymultirange2);\n                ^\n\n",
+        "(psycopg2.errors.UndefinedColumn) column \"anymultirange\" does not exist\nLINE 1: SELECT (ANYMULTIRANGE * ANYMULTIRANGE);\n                ^\n\n",
+        "(psycopg2.errors.FeatureNotSupported) cannot accept a value of type anymultirange\nLINE 1: SELECT (ANYMULTIRANGE '[[1,2], [3,4]]' * ANYMULTIRANGE '[[2,...\n                              ^\n\n",
+        "(psycopg2.errors.FeatureNotSupported) cannot accept a value of type anymultirange\nLINE 1: SELECT (ANYMULTIRANGE '[[1,2]]' * ANYMULTIRANGE '[[1,2]]');\n                              ^\n\n",
+        "(psycopg2.errors.DatatypeMismatch) argument declared anymultirange is not a multirange type but type anymultirange\n\n"
+    ],
+    "EffectiveSQLs": []
 }

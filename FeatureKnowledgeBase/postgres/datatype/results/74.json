@@ -15,5 +15,53 @@
     "Examples": [],
     "Category": [
         "Pseudo-Types"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "CREATE FOREIGN DATA WRAPPER my_fdw HANDLER my_fdw_handler;",
+        "CREATE FOREIGN DATA WRAPPER my_fdw HANDLER my_new_fdw_handler;",
+        "CREATE FOREIGN DATA WRAPPER my_fdw HANDLER default_fdw_handler;",
+        "CREATE FOREIGN DATA WRAPPER my_fdw HANDLER pg_catalog.default_fdw_handler;",
+        "CREATE FOREIGN DATA WRAPPER my_fdw HANDLER pg_catalog.fdwhandler;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 282,
+            "Prompt Tokens": 255,
+            "Completion Tokens": 27,
+            "Total Cost (USD)": 5.4449999999999995e-05
+        },
+        {
+            "Total Tokens": 436,
+            "Prompt Tokens": 408,
+            "Completion Tokens": 28,
+            "Total Cost (USD)": 7.8e-05
+        },
+        {
+            "Total Tokens": 590,
+            "Prompt Tokens": 563,
+            "Completion Tokens": 27,
+            "Total Cost (USD)": 0.00010064999999999998
+        },
+        {
+            "Total Tokens": 745,
+            "Prompt Tokens": 716,
+            "Completion Tokens": 29,
+            "Total Cost (USD)": 0.00012479999999999997
+        },
+        {
+            "Total Tokens": 901,
+            "Prompt Tokens": 873,
+            "Completion Tokens": 28,
+            "Total Cost (USD)": 0.00014774999999999999
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedFunction) function my_fdw_handler() does not exist\n\n",
+        "(psycopg2.errors.UndefinedFunction) function my_new_fdw_handler() does not exist\n\n",
+        "(psycopg2.errors.UndefinedFunction) function default_fdw_handler() does not exist\n\n",
+        "(psycopg2.errors.UndefinedFunction) function pg_catalog.default_fdw_handler() does not exist\n\n",
+        "(psycopg2.errors.UndefinedFunction) function pg_catalog.fdwhandler() does not exist\n\n"
+    ],
+    "EffectiveSQLs": []
 }

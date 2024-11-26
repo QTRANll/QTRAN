@@ -14,9 +14,57 @@
         "Replace all non-ASCII characters in string s with ASCII equivalents"
     ],
     "Examples": [
-        "asciify(R'a € sign')"
+        "asciify(R'a \u20ac sign')"
     ],
     "Category": [
         "Character String Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT asciify('Hello, \u4e16\u754c!')",
+        "SELECT asciify('Hello, \u4e16\u754c!')::text",
+        "SELECT asciify('Hello, \u4e16\u754c!')",
+        "SELECT asciify('Hello, \u4e16\u754c!') AS result",
+        "SELECT asciify('Hello, \u4e16\u754c!')"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 293,
+            "Prompt Tokens": 271,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 5.3849999999999994e-05
+        },
+        {
+            "Total Tokens": 453,
+            "Prompt Tokens": 429,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 7.874999999999999e-05
+        },
+        {
+            "Total Tokens": 602,
+            "Prompt Tokens": 580,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 0.00010019999999999998
+        },
+        {
+            "Total Tokens": 762,
+            "Prompt Tokens": 738,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 0.0001251
+        },
+        {
+            "Total Tokens": 920,
+            "Prompt Tokens": 898,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 0.0001479
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: no such unary operator 'asciify(char)'\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!Unexpected symbol (:)\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: no such unary operator 'asciify(char)'\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: no such unary operator 'asciify(char)'\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: no such unary operator 'asciify(char)'\n\n"
+    ],
+    "EffectiveSQLs": []
 }

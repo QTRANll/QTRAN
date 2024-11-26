@@ -19,5 +19,53 @@
     "Examples": [],
     "Category": [
         "Geometric Types"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT ST_AsText(ST_MakePolygon(ST_MakeLine(ARRAY[POINT(x1, y1), POINT(x2, y2), POINT(x3, y3), POINT(x1, y1)])))",
+        "SELECT ST_AsText(ST_MakePolygon(ST_MakeLine(ARRAY[POINT(0, 0), POINT(1, 1), POINT(1, 0), POINT(0, 0)])))",
+        "SELECT ST_AsText(ST_MakePolygon(ARRAY[POINT(0, 0), POINT(1, 1), POINT(1, 0), POINT(0, 0)]))",
+        "SELECT ST_AsText('POLYGON((0 0, 1 1, 1 0, 0 0))')",
+        "SELECT 'POLYGON((0 0, 1 1, 1 0, 0 0))'::geometry"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 320,
+            "Prompt Tokens": 263,
+            "Completion Tokens": 57,
+            "Total Cost (USD)": 7.365e-05
+        },
+        {
+            "Total Tokens": 532,
+            "Prompt Tokens": 475,
+            "Completion Tokens": 57,
+            "Total Cost (USD)": 0.00010544999999999999
+        },
+        {
+            "Total Tokens": 762,
+            "Prompt Tokens": 709,
+            "Completion Tokens": 53,
+            "Total Cost (USD)": 0.00013814999999999997
+        },
+        {
+            "Total Tokens": 980,
+            "Prompt Tokens": 939,
+            "Completion Tokens": 41,
+            "Total Cost (USD)": 0.00016544999999999998
+        },
+        {
+            "Total Tokens": 1203,
+            "Prompt Tokens": 1163,
+            "Completion Tokens": 40,
+            "Total Cost (USD)": 0.00019844999999999997
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedColumn) column \"x1\" does not exist\nLINE 1: ... ST_AsText(ST_MakePolygon(ST_MakeLine(ARRAY[POINT(x1, y1), P...\n                                                             ^\n\n",
+        "(psycopg2.errors.UndefinedFunction) function st_makeline(point[]) does not exist\nLINE 1: SELECT ST_AsText(ST_MakePolygon(ST_MakeLine(ARRAY[POINT(0, 0...\n                                        ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.\n\n",
+        "(psycopg2.errors.UndefinedFunction) function st_makepolygon(point[]) does not exist\nLINE 1: SELECT ST_AsText(ST_MakePolygon(ARRAY[POINT(0, 0), POINT(1, ...\n                         ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.\n\n",
+        "(psycopg2.errors.UndefinedFunction) function st_astext(unknown) does not exist\nLINE 1: SELECT ST_AsText('POLYGON((0 0, 1 1, 1 0, 0 0))')\n               ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.\n\n",
+        "(psycopg2.errors.UndefinedObject) type \"geometry\" does not exist\nLINE 1: SELECT 'POLYGON((0 0, 1 1, 1 0, 0 0))'::geometry\n                                                ^\n\n"
+    ],
+    "EffectiveSQLs": []
 }

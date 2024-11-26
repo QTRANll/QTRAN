@@ -27,5 +27,9 @@
     ],
     "Category": [
         "Type Conversion Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT    CAST(toInt8(-1), 'UInt8') AS cast_int_to_uint,    CAST(1.5 AS Decimal(3,2)) AS cast_float_to_decimal,    '1'::Int32 AS cast_string_to_int;",
+        "SELECT    '2016-06-15 23:00:00' AS timestamp,    CAST(timestamp AS DateTime) AS datetime,    CAST(timestamp AS Date) AS date,    CAST(timestamp, 'String') AS string,    CAST(timestamp, 'FixedString(22)') AS fixed_string;"
     ]
 }

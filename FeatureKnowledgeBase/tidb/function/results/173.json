@@ -10,7 +10,7 @@
     ],
     "Description": [
         "CURRENT_ROLE()",
-        "CURRENT_ROLE() 函数返回当前会话的当前角色。",
+        "CURRENT_ROLE() \u51fd\u6570\u8fd4\u56de\u5f53\u524d\u4f1a\u8bdd\u7684\u5f53\u524d\u89d2\u8272\u3002",
         "SELECT CURRENT_ROLE();\n",
         "+----------------+\n| CURRENT_ROLE() |\n+----------------+\n| NONE           |\n+----------------+\n1 row in set (0.00 sec)\n"
     ],
@@ -18,6 +18,15 @@
         "SELECT CURRENT_ROLE();\n"
     ],
     "Category": [
-        "信息函数"
+        "\u4fe1\u606f\u51fd\u6570"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT CURRENT_ROLE();"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT CURRENT_ROLE();"
     ]
 }

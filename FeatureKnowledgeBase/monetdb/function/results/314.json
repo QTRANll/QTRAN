@@ -15,5 +15,53 @@
     "Examples": [],
     "Category": [
         "Window Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT listagg(col_expr) FROM your_table;",
+        "SELECT listagg(col_expr) FROM (SELECT 'example' AS col_expr) AS temp_table;",
+        "SELECT listagg(col_expr) FROM (SELECT 'example' AS col_expr) AS temp_table GROUP BY col_expr;",
+        "SELECT listagg(col_expr) FROM (SELECT 'example' AS col_expr) AS temp_table GROUP BY 1;",
+        "SELECT listagg(col_expr) FROM (SELECT 'example' AS col_expr) AS temp_table;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 281,
+            "Prompt Tokens": 259,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 5.204999999999999e-05
+        },
+        {
+            "Total Tokens": 447,
+            "Prompt Tokens": 415,
+            "Completion Tokens": 32,
+            "Total Cost (USD)": 8.145e-05
+        },
+        {
+            "Total Tokens": 619,
+            "Prompt Tokens": 583,
+            "Completion Tokens": 36,
+            "Total Cost (USD)": 0.00010904999999999998
+        },
+        {
+            "Total Tokens": 791,
+            "Prompt Tokens": 755,
+            "Completion Tokens": 36,
+            "Total Cost (USD)": 0.00013485
+        },
+        {
+            "Total Tokens": 977,
+            "Prompt Tokens": 945,
+            "Completion Tokens": 32,
+            "Total Cost (USD)": 0.00016094999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymonetdb.exceptions.OperationalError) 42S02!SELECT: no such table 'your_table'\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: no such unary operator 'listagg(char)'\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: no such unary operator 'listagg(char)'\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!syntax error, unexpected sqlINT in: \"select listagg(col_expr) from (select 'example' as col_expr) as temp_table group\"\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: no such unary operator 'listagg(char)'\n\n"
+    ],
+    "EffectiveSQLs": []
 }

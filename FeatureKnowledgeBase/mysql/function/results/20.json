@@ -25,5 +25,31 @@
     "Category": [
         "Built-In Functions and Operators",
         "Aggregate Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT BIT_AND(expr) FROM your_table;",
+        "SELECT BIT_AND(1) AS result;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 752,
+            "Prompt Tokens": 731,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 0.00012225
+        },
+        {
+            "Total Tokens": 912,
+            "Prompt Tokens": 891,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 0.00014625
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.ProgrammingError) (1146, \"Table 'knowledge_base_preprocess_mysql.your_table' doesn't exist\")\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT BIT_AND(1) AS result;"
     ]
 }

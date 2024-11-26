@@ -14,5 +14,31 @@
     "Examples": [],
     "Category": [
         "Aggregate SQL Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT group_concat(X) FROM your_table;",
+        "SELECT group_concat(X) FROM (SELECT 'example' AS X);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 455,
+            "Prompt Tokens": 434,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 7.769999999999999e-05
+        },
+        {
+            "Total Tokens": 612,
+            "Prompt Tokens": 585,
+            "Completion Tokens": 27,
+            "Total Cost (USD)": 0.00010394999999999999
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(sqlite3.OperationalError) no such table: your_table\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT group_concat(X) FROM (SELECT 'example' AS X);"
     ]
 }

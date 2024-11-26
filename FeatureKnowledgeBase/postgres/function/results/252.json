@@ -6,16 +6,50 @@
         "json_extract_path"
     ],
     "Feature": [
-        "json_extract_path ( from_json json, VARIADIC path_elems text[] ) → json",
-        "jsonb_extract_path ( from_json jsonb, VARIADIC path_elems text[] ) → jsonb"
+        "json_extract_path ( from_json json, VARIADIC path_elems text[] ) \u2192 json",
+        "jsonb_extract_path ( from_json jsonb, VARIADIC path_elems text[] ) \u2192 jsonb"
     ],
     "Description": [
         "Extracts JSON sub-object at the specified path. (This is functionally equivalent to the #> operator, but writing the path out as a variadic list can be more convenient in some cases.)"
     ],
     "Examples": [
-        "json_extract_path('{\"f2\":{\"f3\":1},\"f4\":{\"f5\":99,\"f6\":\"foo\"}}', 'f4', 'f6') → \"foo\""
+        "json_extract_path('{\"f2\":{\"f3\":1},\"f4\":{\"f5\":99,\"f6\":\"foo\"}}', 'f4', 'f6') \u2192 \"foo\""
     ],
     "Category": [
         "JSON Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT json_extract_path(my_json_column, 'path', 'to', 'element') FROM my_table;",
+        "SELECT json_extract_path(my_json, 'path', 'to', 'element');",
+        "SELECT json_extract_path('{\"path\": {\"to\": {\"element\": \"value\"}}}', 'path', 'to', 'element');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 354,
+            "Prompt Tokens": 321,
+            "Completion Tokens": 33,
+            "Total Cost (USD)": 6.795e-05
+        },
+        {
+            "Total Tokens": 535,
+            "Prompt Tokens": 506,
+            "Completion Tokens": 29,
+            "Total Cost (USD)": 9.329999999999999e-05
+        },
+        {
+            "Total Tokens": 916,
+            "Prompt Tokens": 873,
+            "Completion Tokens": 43,
+            "Total Cost (USD)": 0.00015675
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedTable) relation \"my_table\" does not exist\nLINE 1: ...path(my_json_column, 'path', 'to', 'element') FROM my_table;\n                                                              ^\n\n",
+        "(psycopg2.errors.UndefinedColumn) column \"my_json\" does not exist\nLINE 1: SELECT json_extract_path(my_json, 'path', 'to', 'element');\n                                 ^\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT json_extract_path('{\"path\": {\"to\": {\"element\": \"value\"}}}', 'path', 'to', 'element');"
     ]
 }

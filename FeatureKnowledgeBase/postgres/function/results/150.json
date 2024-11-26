@@ -6,15 +6,33 @@
         "current_timestamp"
     ],
     "Feature": [
-        "current_timestamp ( integer ) → timestamp with time zone"
+        "current_timestamp ( integer ) \u2192 timestamp with time zone"
     ],
     "Description": [
-        "Current date and time (start of current transaction), with limited precision; see Section 9.9.5"
+        "Current date and time (start of current transaction), with limited precision; see Section\u00a09.9.5"
     ],
     "Examples": [
-        "current_timestamp(0) → 2019-12-23 14:39:53-05"
+        "current_timestamp(0) \u2192 2019-12-23 14:39:53-05"
     ],
     "Category": [
         "Date divide Time Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT current_timestamp;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 281,
+            "Prompt Tokens": 265,
+            "Completion Tokens": 16,
+            "Total Cost (USD)": 4.934999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT current_timestamp;"
     ]
 }

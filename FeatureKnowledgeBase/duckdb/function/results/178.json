@@ -16,5 +16,23 @@
     ],
     "Category": [
         "Interval Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT to_hours(5);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 268,
+            "Prompt Tokens": 249,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 4.875e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT to_hours(5);"
     ]
 }

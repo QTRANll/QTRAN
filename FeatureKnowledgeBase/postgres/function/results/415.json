@@ -6,7 +6,7 @@
         "pg_has_role"
     ],
     "Feature": [
-        "pg_has_role ( [ user name or oid, ] role text or oid, privilege text ) → boolean"
+        "pg_has_role ( [ user name or oid, ] role text or oid, privilege text ) \u2192 boolean"
     ],
     "Description": [
         "Does user have privilege for role? Allowable privilege types are MEMBER, USAGE, and SET. MEMBER denotes direct or indirect membership in the role without regard to what specific privileges may be conferred. USAGE denotes whether the privileges of the role are immediately available without doing SET ROLE, while SET denotes whether it is possible to change to the role using the SET ROLE command. This function does not allow the special case of setting user to public, because the PUBLIC pseudo-role can never be a member of real roles."
@@ -14,5 +14,53 @@
     "Examples": [],
     "Category": [
         "System Information Functions and Operators"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT pg_has_role('username', 'role_name', 'MEMBER');",
+        "SELECT pg_has_role('existing_user', 'role_name', 'MEMBER');",
+        "SELECT pg_has_role('valid_user', 'role_name', 'MEMBER');",
+        "SELECT pg_has_role('current_user', 'role_name', 'MEMBER');",
+        "SELECT pg_has_role(SESSION_USER, 'role_name', 'MEMBER');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 388,
+            "Prompt Tokens": 360,
+            "Completion Tokens": 28,
+            "Total Cost (USD)": 7.079999999999999e-05
+        },
+        {
+            "Total Tokens": 541,
+            "Prompt Tokens": 512,
+            "Completion Tokens": 29,
+            "Total Cost (USD)": 9.42e-05
+        },
+        {
+            "Total Tokens": 695,
+            "Prompt Tokens": 666,
+            "Completion Tokens": 29,
+            "Total Cost (USD)": 0.0001173
+        },
+        {
+            "Total Tokens": 849,
+            "Prompt Tokens": 820,
+            "Completion Tokens": 29,
+            "Total Cost (USD)": 0.00014039999999999997
+        },
+        {
+            "Total Tokens": 1003,
+            "Prompt Tokens": 974,
+            "Completion Tokens": 29,
+            "Total Cost (USD)": 0.00016349999999999996
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedObject) role \"username\" does not exist\n\n",
+        "(psycopg2.errors.UndefinedObject) role \"existing_user\" does not exist\n\n",
+        "(psycopg2.errors.UndefinedObject) role \"valid_user\" does not exist\n\n",
+        "(psycopg2.errors.UndefinedObject) role \"current_user\" does not exist\n\n",
+        "(psycopg2.errors.UndefinedObject) role \"role_name\" does not exist\n\n"
+    ],
+    "EffectiveSQLs": []
 }

@@ -19,5 +19,31 @@
     "Examples": [],
     "Category": [
         "String Data Types"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "CREATE TABLE example_table (id INT PRIMARY KEY, data BLOB);",
+        "CREATE TABLE new_table (id INT PRIMARY KEY, data BLOB);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 447,
+            "Prompt Tokens": 420,
+            "Completion Tokens": 27,
+            "Total Cost (USD)": 7.919999999999999e-05
+        },
+        {
+            "Total Tokens": 606,
+            "Prompt Tokens": 579,
+            "Completion Tokens": 27,
+            "Total Cost (USD)": 0.00010304999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.OperationalError) (1050, \"Table 'example_table' already exists\")\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "CREATE TABLE new_table (id INT PRIMARY KEY, data BLOB);"
     ]
 }

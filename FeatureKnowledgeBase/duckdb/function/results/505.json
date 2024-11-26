@@ -16,5 +16,31 @@
     ],
     "Category": [
         "Timestamp Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT extract(YEAR FROM timestamp) AS year;",
+        "SELECT extract(YEAR FROM CURRENT_TIMESTAMP) AS year;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 277,
+            "Prompt Tokens": 255,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 5.144999999999999e-05
+        },
+        {
+            "Total Tokens": 449,
+            "Prompt Tokens": 426,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 7.769999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.BinderException) Binder Error: Referenced column \"timestamp\" not found in FROM clause!\nLINE 1: SELECT extract(YEAR FROM timestamp) AS year;\n                                 ^\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT extract(YEAR FROM CURRENT_TIMESTAMP) AS year;"
     ]
 }

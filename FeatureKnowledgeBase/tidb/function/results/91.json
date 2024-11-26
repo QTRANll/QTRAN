@@ -15,6 +15,17 @@
         "mysql> SELECT ADDTIME('2007-12-31 23:59:59.999999', '1 1:1:1.000002');\n        -> '2008-01-02 01:01:01.000001'\nmysql> SELECT ADDTIME('01:00:00.999999', '02:00:00.999998');\n        -> '03:00:01.999997'"
     ],
     "Category": [
-        "日期和时间函数"
+        "\u65e5\u671f\u548c\u65f6\u95f4\u51fd\u6570"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT ADDTIME('2007-12-31 23:59:59.999999', '1 1:1:1.000002');",
+        "SELECT ADDTIME('01:00:00.999999', '02:00:00.999998');"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT ADDTIME('2007-12-31 23:59:59.999999', '1 1:1:1.000002');",
+        "SELECT ADDTIME('01:00:00.999999', '02:00:00.999998');"
     ]
 }

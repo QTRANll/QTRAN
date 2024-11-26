@@ -29,5 +29,8 @@
     ],
     "Category": [
         "Type Conversion Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT    toUInt32OrDefault('32', CAST('0', 'UInt32')),    toUInt32OrDefault('abc', CAST('0', 'UInt32'))FORMAT Vertical;"
     ]
 }

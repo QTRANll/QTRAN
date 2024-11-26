@@ -23,5 +23,8 @@
     ],
     "Category": [
         "Strings Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT length('\u00e2'), normalizeUTF8NFC('\u00e2') AS nfc, length(nfc) AS nfc_len;"
     ]
 }

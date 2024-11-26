@@ -21,5 +21,24 @@
     ],
     "Category": [
         "Logical Operators"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT 1 || 1;",
+        "SELECT 1 || 0;",
+        "SELECT 0 || 0;",
+        "SELECT 0 || NULL;",
+        "SELECT 1 || NULL;",
+        "SELECT 0 || NULL;"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT 1 || 1;",
+        "SELECT 1 || 0;",
+        "SELECT 0 || 0;",
+        "SELECT 0 || NULL;",
+        "SELECT 1 || NULL;",
+        "SELECT 0 || NULL;"
     ]
 }

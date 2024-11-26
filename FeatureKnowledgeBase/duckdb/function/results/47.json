@@ -15,5 +15,39 @@
     "Examples": [],
     "Category": [
         "Aggregate Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT mode(x);",
+        "SELECT mode(x) FROM your_table_name;",
+        "SELECT mode(x) FROM (VALUES (1), (2), (2), (3)) AS your_table_name(x);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 263,
+            "Prompt Tokens": 246,
+            "Completion Tokens": 17,
+            "Total Cost (USD)": 4.709999999999999e-05
+        },
+        {
+            "Total Tokens": 425,
+            "Prompt Tokens": 404,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 7.319999999999999e-05
+        },
+        {
+            "Total Tokens": 616,
+            "Prompt Tokens": 578,
+            "Completion Tokens": 38,
+            "Total Cost (USD)": 0.00010949999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.BinderException) Binder Error: Referenced column \"x\" not found in FROM clause!\nLINE 1: SELECT mode(x);\n                    ^\n",
+        "(duckdb.duckdb.CatalogException) Catalog Error: Table with name your_table_name does not exist!\nDid you mean \"pg_tablespace\"?\nLINE 1: SELECT mode(x) FROM your_table_name;\n                            ^\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT mode(x) FROM (VALUES (1), (2), (2), (3)) AS your_table_name(x);"
     ]
 }

@@ -6,15 +6,33 @@
         "cbrt"
     ],
     "Feature": [
-        "cbrt ( double precision ) → double precision"
+        "cbrt ( double precision ) \u2192 double precision"
     ],
     "Description": [
         "Cube root"
     ],
     "Examples": [
-        "cbrt(64.0) → 4"
+        "cbrt(64.0) \u2192 4"
     ],
     "Category": [
         "Mathematical Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT cbrt(27);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 268,
+            "Prompt Tokens": 248,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 4.9199999999999997e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT cbrt(27);"
     ]
 }

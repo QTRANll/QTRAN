@@ -16,5 +16,53 @@
     ],
     "Category": [
         "Time Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT date_sub(part, '2023-01-01', '2023-01-10')",
+        "SELECT date_sub(1, '2023-01-01', '2023-01-10')",
+        "SELECT date_sub('2023-01-10', '2023-01-01')",
+        "SELECT date_sub('2023-01-01', DATE '2023-01-10')",
+        "SELECT date_sub('2023-01-01', DATE '2023-01-10')"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 311,
+            "Prompt Tokens": 277,
+            "Completion Tokens": 34,
+            "Total Cost (USD)": 6.195e-05
+        },
+        {
+            "Total Tokens": 511,
+            "Prompt Tokens": 476,
+            "Completion Tokens": 35,
+            "Total Cost (USD)": 9.239999999999998e-05
+        },
+        {
+            "Total Tokens": 797,
+            "Prompt Tokens": 765,
+            "Completion Tokens": 32,
+            "Total Cost (USD)": 0.00013395
+        },
+        {
+            "Total Tokens": 1078,
+            "Prompt Tokens": 1045,
+            "Completion Tokens": 33,
+            "Total Cost (USD)": 0.00017654999999999998
+        },
+        {
+            "Total Tokens": 1359,
+            "Prompt Tokens": 1326,
+            "Completion Tokens": 33,
+            "Total Cost (USD)": 0.00021869999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.BinderException) Binder Error: Referenced column \"part\" not found in FROM clause!\nLINE 1: SELECT date_sub(part, '2023-01-01', '2023-01-10')\n                        ^\n",
+        "(duckdb.duckdb.BinderException) Binder Error: No function matches the given name and argument types 'date_sub(INTEGER_LITERAL, STRING_LITERAL, STRING_LITERAL)'. You might need to add explicit type casts.\n\tCandidate functions:\n\tdate_sub(VARCHAR, DATE, DATE) -> BIGINT\n\tdate_sub(VARCHAR, TIMESTAMP, TIMESTAMP) -> BIGINT\n\tdate_sub(VARCHAR, TIME, TIME) -> BIGINT\n\tdate_sub(VARCHAR, TIMESTAMP WITH TIME ZONE, TIMESTAMP WITH TIME ZONE) -> BIGINT\n\nLINE 1: SELECT date_sub(1, '2023-01-01', '2023-01-10')\n               ^\n",
+        "(duckdb.duckdb.BinderException) Binder Error: No function matches the given name and argument types 'date_sub(STRING_LITERAL, STRING_LITERAL)'. You might need to add explicit type casts.\n\tCandidate functions:\n\tdate_sub(VARCHAR, DATE, DATE) -> BIGINT\n\tdate_sub(VARCHAR, TIMESTAMP, TIMESTAMP) -> BIGINT\n\tdate_sub(VARCHAR, TIME, TIME) -> BIGINT\n\tdate_sub(VARCHAR, TIMESTAMP WITH TIME ZONE, TIMESTAMP WITH TIME ZONE) -> BIGINT\n\nLINE 1: SELECT date_sub('2023-01-10', '2023-01-01')\n               ^\n",
+        "(duckdb.duckdb.BinderException) Binder Error: No function matches the given name and argument types 'date_sub(STRING_LITERAL, DATE)'. You might need to add explicit type casts.\n\tCandidate functions:\n\tdate_sub(VARCHAR, DATE, DATE) -> BIGINT\n\tdate_sub(VARCHAR, TIMESTAMP, TIMESTAMP) -> BIGINT\n\tdate_sub(VARCHAR, TIME, TIME) -> BIGINT\n\tdate_sub(VARCHAR, TIMESTAMP WITH TIME ZONE, TIMESTAMP WITH TIME ZONE) -> BIGINT\n\nLINE 1: SELECT date_sub('2023-01-01', DATE '2023-01-10...\n               ^\n",
+        "(duckdb.duckdb.BinderException) Binder Error: No function matches the given name and argument types 'date_sub(STRING_LITERAL, DATE)'. You might need to add explicit type casts.\n\tCandidate functions:\n\tdate_sub(VARCHAR, DATE, DATE) -> BIGINT\n\tdate_sub(VARCHAR, TIMESTAMP, TIMESTAMP) -> BIGINT\n\tdate_sub(VARCHAR, TIME, TIME) -> BIGINT\n\tdate_sub(VARCHAR, TIMESTAMP WITH TIME ZONE, TIMESTAMP WITH TIME ZONE) -> BIGINT\n\nLINE 1: SELECT date_sub('2023-01-01', DATE '2023-01-10...\n               ^\n"
+    ],
+    "EffectiveSQLs": []
 }

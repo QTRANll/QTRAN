@@ -6,15 +6,33 @@
         "cosd"
     ],
     "Feature": [
-        "cosd ( double precision ) → double precision"
+        "cosd ( double precision ) \u2192 double precision"
     ],
     "Description": [
         "Cosine, argument in degrees"
     ],
     "Examples": [
-        "cosd(60) → 0.5"
+        "cosd(60) \u2192 0.5"
     ],
     "Category": [
         "Mathematical Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT cosd(45);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 267,
+            "Prompt Tokens": 248,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 4.8599999999999995e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT cosd(45);"
     ]
 }

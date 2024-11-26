@@ -18,5 +18,53 @@
     ],
     "Category": [
         "Date Time Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT epoch_ms('2023-10-01 12:00:00')",
+        "SELECT epoch_ms(TIMESTAMP '2023-10-01 12:00:00')",
+        "SELECT epoch_ms(TO_TIMESTAMP('2023-10-01 12:00:00'))",
+        "SELECT epoch_ms(DATE '2023-10-01')",
+        "SELECT epoch_ms(INTERVAL '1 DAY')"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 340,
+            "Prompt Tokens": 310,
+            "Completion Tokens": 30,
+            "Total Cost (USD)": 6.45e-05
+        },
+        {
+            "Total Tokens": 513,
+            "Prompt Tokens": 480,
+            "Completion Tokens": 33,
+            "Total Cost (USD)": 9.179999999999998e-05
+        },
+        {
+            "Total Tokens": 686,
+            "Prompt Tokens": 653,
+            "Completion Tokens": 33,
+            "Total Cost (USD)": 0.00011774999999999999
+        },
+        {
+            "Total Tokens": 852,
+            "Prompt Tokens": 826,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 0.00013949999999999998
+        },
+        {
+            "Total Tokens": 1015,
+            "Prompt Tokens": 992,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 0.0001626
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: no such unary operator 'epoch_ms(char)'\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: no such unary operator 'epoch_ms(timestamp)'\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: no such unary operator 'to_timestamp(char)'\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: no such unary operator 'epoch_ms(date)'\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!syntax error, unexpected ')' in: \"select epoch_ms(interval '1 DAY')\"\n\n"
+    ],
+    "EffectiveSQLs": []
 }

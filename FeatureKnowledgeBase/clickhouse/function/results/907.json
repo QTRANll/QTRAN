@@ -25,5 +25,8 @@
     ],
     "Category": [
         "Time Window Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT hopStart(now(), INTERVAL '1' DAY, INTERVAL '2' DAY);"
     ]
 }

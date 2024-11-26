@@ -6,15 +6,33 @@
         "number . ceiling"
     ],
     "Feature": [
-        "number . ceiling() → number"
+        "number . ceiling() \u2192 number"
     ],
     "Description": [
         "Nearest integer greater than or equal to the given number"
     ],
     "Examples": [
-        "jsonb_path_query('{\"h\": 1.3}', '$.h.ceiling()') → 2"
+        "jsonb_path_query('{\"h\": 1.3}', '$.h.ceiling()') \u2192 2"
     ],
     "Category": [
         "JSON Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT CEILING(3.14);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 273,
+            "Prompt Tokens": 252,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 5.04e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT CEILING(3.14);"
     ]
 }

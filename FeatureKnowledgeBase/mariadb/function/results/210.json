@@ -18,6 +18,14 @@
         "Geographic Functions"
     ],
     "EffectiveSQLsRefined": [
+        "CREATE TABLE gis_multi_point (g MULTIPOINT);",
+        "INSERT INTO gis_multi_point VALUES\n    (MultiPointFromText('MULTIPOINT(0 0,10 10,10 20,20 20)')),\n    (MPointFromText('MULTIPOINT(1 1,11 11,11 21,21 21)')),\n    (MPointFromWKB(AsWKB(MultiPoint(Point(3, 6), Point(4, 10)))));"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "CREATE TABLE gis_multi_point (g MULTIPOINT);",
         "INSERT INTO gis_multi_point VALUES\n    (MultiPointFromText('MULTIPOINT(0 0,10 10,10 20,20 20)')),\n    (MPointFromText('MULTIPOINT(1 1,11 11,11 21,21 21)')),\n    (MPointFromWKB(AsWKB(MultiPoint(Point(3, 6), Point(4, 10)))));"
     ]
 }

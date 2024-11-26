@@ -6,15 +6,33 @@
         "bit_length"
     ],
     "Feature": [
-        "bit_length ( bit ) → integer"
+        "bit_length ( bit ) \u2192 integer"
     ],
     "Description": [
         "Returns number of bits in the bit string."
     ],
     "Examples": [
-        "bit_length(B'10111') → 5"
+        "bit_length(B'10111') \u2192 5"
     ],
     "Category": [
         "Bit String Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT bit_length(B'101010');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 270,
+            "Prompt Tokens": 249,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 4.995e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT bit_length(B'101010');"
     ]
 }

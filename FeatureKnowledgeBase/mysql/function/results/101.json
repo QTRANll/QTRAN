@@ -30,5 +30,53 @@
         "Built-In Functions and Operators",
         "Replication Functions",
         "Loadable Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT group_replication_enable_member_action('mysql_disable_super_read_only_if_primary', 'AFTER_PRIMARY_ELECTION');",
+        "SELECT group_replication_enable_member_action('mysql_enable_super_read_only_if_primary', 'BEFORE_PRIMARY_ELECTION');",
+        "SELECT group_replication_enable_member_action('mysql_enable_super_read_only', 'AFTER_PRIMARY_ELECTION');",
+        "SELECT group_replication_enable_member_action('mysql_enable_read_only', 'AFTER_PRIMARY_ELECTION');",
+        "SELECT group_replication_enable_member_action('mysql_enable_super_read_only', 'BEFORE_PRIMARY_ELECTION');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 592,
+            "Prompt Tokens": 556,
+            "Completion Tokens": 36,
+            "Total Cost (USD)": 0.00010499999999999999
+        },
+        {
+            "Total Tokens": 769,
+            "Prompt Tokens": 733,
+            "Completion Tokens": 36,
+            "Total Cost (USD)": 0.00013154999999999997
+        },
+        {
+            "Total Tokens": 944,
+            "Prompt Tokens": 910,
+            "Completion Tokens": 34,
+            "Total Cost (USD)": 0.0001569
+        },
+        {
+            "Total Tokens": 1118,
+            "Prompt Tokens": 1085,
+            "Completion Tokens": 33,
+            "Total Cost (USD)": 0.00018254999999999996
+        },
+        {
+            "Total Tokens": 1293,
+            "Prompt Tokens": 1259,
+            "Completion Tokens": 34,
+            "Total Cost (USD)": 0.00020924999999999996
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.group_replication_enable_member_action does not exist')\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.group_replication_enable_member_action does not exist')\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.group_replication_enable_member_action does not exist')\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.group_replication_enable_member_action does not exist')\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.group_replication_enable_member_action does not exist')\n"
+    ],
+    "EffectiveSQLs": []
 }

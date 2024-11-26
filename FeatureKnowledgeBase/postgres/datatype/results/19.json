@@ -23,5 +23,23 @@
     "Examples": [],
     "Category": [
         "Date divide Time Types"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT NOW() AT TIME ZONE 'UTC';"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 331,
+            "Prompt Tokens": 308,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 5.9999999999999995e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT NOW() AT TIME ZONE 'UTC';"
     ]
 }

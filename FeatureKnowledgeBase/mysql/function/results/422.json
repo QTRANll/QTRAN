@@ -23,5 +23,31 @@
     "Examples": [],
     "Category": [
         "Loadable Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT asymmetric_decrypt('RSA', 'encrypted_string', 'private_key')",
+        "SELECT NULL"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 724,
+            "Prompt Tokens": 696,
+            "Completion Tokens": 28,
+            "Total Cost (USD)": 0.00012119999999999999
+        },
+        {
+            "Total Tokens": 876,
+            "Prompt Tokens": 861,
+            "Completion Tokens": 15,
+            "Total Cost (USD)": 0.00013815
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.asymmetric_decrypt does not exist')\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT NULL"
     ]
 }

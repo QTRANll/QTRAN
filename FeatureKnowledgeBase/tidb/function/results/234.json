@@ -10,7 +10,7 @@
     ],
     "Description": [
         "PERCENT_RANK()",
-        "PERCENT_RANK() 函数返回一个介于 0 和 1 之间的数字，表示值小于当前行值的行的百分比。",
+        "PERCENT_RANK() \u51fd\u6570\u8fd4\u56de\u4e00\u4e2a\u4ecb\u4e8e 0 \u548c 1 \u4e4b\u95f4\u7684\u6570\u5b57\uff0c\u8868\u793a\u503c\u5c0f\u4e8e\u5f53\u524d\u884c\u503c\u7684\u884c\u7684\u767e\u5206\u6bd4\u3002",
         "SELECT\n    *,\n    PERCENT_RANK() OVER (ORDER BY n),\n    PERCENT_RANK() OVER (ORDER BY n DESC)\nFROM (\n    SELECT 5 AS 'n'\n    UNION ALL\n    SELECT 8\n    UNION ALL\n    SELECT 5\n    UNION ALL\n    SELECT 30\n    UNION ALL\n    SELECT 31\n    UNION ALL\n    SELECT 32) a;\n",
         "+----+----------------------------------+---------------------------------------+\n| n  | PERCENT_RANK() OVER (ORDER BY n) | PERCENT_RANK() OVER (ORDER BY n DESC) |\n+----+----------------------------------+---------------------------------------+\n|  5 |                                0 |                                   0.8 |\n|  5 |                                0 |                                   0.8 |\n|  8 |                              0.4 |                                   0.6 |\n| 30 |                              0.6 |                                   0.4 |\n| 31 |                              0.8 |                                   0.2 |\n| 32 |                                1 |                                     0 |\n+----+----------------------------------+---------------------------------------+\n6 rows in set (0.00 sec)\n"
     ],
@@ -18,6 +18,15 @@
         "SELECT\n    *,\n    PERCENT_RANK() OVER (ORDER BY n),\n    PERCENT_RANK() OVER (ORDER BY n DESC)\nFROM (\n    SELECT 5 AS 'n'\n    UNION ALL\n    SELECT 8\n    UNION ALL\n    SELECT 5\n    UNION ALL\n    SELECT 30\n    UNION ALL\n    SELECT 31\n    UNION ALL\n    SELECT 32) a;\n"
     ],
     "Category": [
-        "窗口函数"
+        "\u7a97\u53e3\u51fd\u6570"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT\n    *,\n    PERCENT_RANK() OVER (ORDER BY n),\n    PERCENT_RANK() OVER (ORDER BY n DESC)\nFROM (\n    SELECT 5 AS 'n'\n    UNION ALL\n    SELECT 8\n    UNION ALL\n    SELECT 5\n    UNION ALL\n    SELECT 30\n    UNION ALL\n    SELECT 31\n    UNION ALL\n    SELECT 32) a;"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT\n    *,\n    PERCENT_RANK() OVER (ORDER BY n),\n    PERCENT_RANK() OVER (ORDER BY n DESC)\nFROM (\n    SELECT 5 AS 'n'\n    UNION ALL\n    SELECT 8\n    UNION ALL\n    SELECT 5\n    UNION ALL\n    SELECT 30\n    UNION ALL\n    SELECT 31\n    UNION ALL\n    SELECT 32) a;"
     ]
 }

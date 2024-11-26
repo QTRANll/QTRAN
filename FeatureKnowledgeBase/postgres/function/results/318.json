@@ -6,7 +6,7 @@
         "bool_and"
     ],
     "Feature": [
-        "bool_and ( boolean ) → boolean"
+        "bool_and ( boolean ) \u2192 boolean"
     ],
     "Description": [
         "Returns true if all non-null input values are true, otherwise false."
@@ -14,5 +14,23 @@
     "Examples": [],
     "Category": [
         "Aggregate Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT bool_and(true);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 272,
+            "Prompt Tokens": 254,
+            "Completion Tokens": 18,
+            "Total Cost (USD)": 4.8899999999999996e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT bool_and(true);"
     ]
 }

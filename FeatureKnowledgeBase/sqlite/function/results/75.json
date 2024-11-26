@@ -14,16 +14,34 @@
         "The json_object() function currently allows duplicate labels without\ncomplaint, though this might change in a future enhancement.\n\n",
         "An argument with SQL type TEXT it is normally converted into a quoted \nJSON string even if the input text is well-formed JSON.  \nHowever, if the argument is the direct result from another JSON\nfunction or the -> operator (but not the ->> operator), \nthen it is treated as JSON and all of its JSON type information\nand substructure is preserved.  This allows calls to json_object()\nand json_array() to be nested.  The json() function can also\nbe used to force strings to be recognized as JSON.\n\n",
         "Examples:\n\n",
-        "json_object('a',2,'c',4)\n→ '{\"a\":2,\"c\":4}'",
-        "json_object('a',2,'c','{e:5}')\n→ '{\"a\":2,\"c\":\"{e:5}\"}'",
-        "json_object('a',2,'c',json_object('e',5))\n→ '{\"a\":2,\"c\":{\"e\":5}}'"
+        "json_object('a',2,'c',4)\n\u2192 '{\"a\":2,\"c\":4}'",
+        "json_object('a',2,'c','{e:5}')\n\u2192 '{\"a\":2,\"c\":\"{e:5}\"}'",
+        "json_object('a',2,'c',json_object('e',5))\n\u2192 '{\"a\":2,\"c\":{\"e\":5}}'"
     ],
     "Examples": [
-        "json_object('a',2,'c',4)\n→ '{\"a\":2,\"c\":4}'",
-        "json_object('a',2,'c','{e:5}')\n→ '{\"a\":2,\"c\":\"{e:5}\"}'",
-        "json_object('a',2,'c',json_object('e',5))\n→ '{\"a\":2,\"c\":{\"e\":5}}'"
+        "json_object('a',2,'c',4)\n\u2192 '{\"a\":2,\"c\":4}'",
+        "json_object('a',2,'c','{e:5}')\n\u2192 '{\"a\":2,\"c\":\"{e:5}\"}'",
+        "json_object('a',2,'c',json_object('e',5))\n\u2192 '{\"a\":2,\"c\":{\"e\":5}}'"
     ],
     "Category": [
         "JSON Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT json_object('a', 2, 'c', 4);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 624,
+            "Prompt Tokens": 596,
+            "Completion Tokens": 28,
+            "Total Cost (USD)": 0.00010619999999999999
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT json_object('a', 2, 'c', 4);"
     ]
 }

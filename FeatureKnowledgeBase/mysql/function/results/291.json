@@ -25,5 +25,14 @@
     "Category": [
         "Built-In Functions and Operators",
         "Spatial Analysis Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT ST_AsGeoJSON(ST_GeomFromText('POINT(11.11111 12.22222)'),2);"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT ST_AsGeoJSON(ST_GeomFromText('POINT(11.11111 12.22222)'),2);"
     ]
 }

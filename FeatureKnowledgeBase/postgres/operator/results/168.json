@@ -6,15 +6,57 @@
         "anymultirange && anyrange"
     ],
     "Feature": [
-        "anymultirange && anyrange → boolean"
+        "anymultirange && anyrange \u2192 boolean"
     ],
     "Description": [
         "Does the multirange overlap the range?"
     ],
     "Examples": [
-        "'{[3,7)}'::int8multirange && int8range(4,12) → t"
+        "'{[3,7)}'::int8multirange && int8range(4,12) \u2192 t"
     ],
     "Category": [
         "Range divide Multirange Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT 'anymultirange' && 'anyrange';",
+        "SELECT '[[1, 5], [10, 15]]'::int4multirange && '[3, 12]'::int4range;",
+        "SELECT '[[1, 5], [10, 15]]'::int4multirange && '{3, 12}'::int4range;",
+        "SELECT '{(1, 5), (10, 15)}'::int4multirange && '[3, 12]'::int4range;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 291,
+            "Prompt Tokens": 266,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 5.49e-05
+        },
+        {
+            "Total Tokens": 505,
+            "Prompt Tokens": 460,
+            "Completion Tokens": 45,
+            "Total Cost (USD)": 9.599999999999999e-05
+        },
+        {
+            "Total Tokens": 734,
+            "Prompt Tokens": 689,
+            "Completion Tokens": 45,
+            "Total Cost (USD)": 0.00013034999999999997
+        },
+        {
+            "Total Tokens": 963,
+            "Prompt Tokens": 918,
+            "Completion Tokens": 45,
+            "Total Cost (USD)": 0.0001647
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.AmbiguousFunction) operator is not unique: unknown && unknown\nLINE 1: SELECT 'anymultirange' && 'anyrange';\n                               ^\nHINT:  Could not choose a best candidate operator. You might need to add explicit type casts.\n\n",
+        "(psycopg2.errors.InvalidTextRepresentation) malformed multirange literal: \"[[1, 5], [10, 15]]\"\nLINE 1: SELECT '[[1, 5], [10, 15]]'::int4multirange && '[3, 12]'::in...\n               ^\nDETAIL:  Missing left brace.\n\n",
+        "(psycopg2.errors.InvalidTextRepresentation) malformed multirange literal: \"[[1, 5], [10, 15]]\"\nLINE 1: SELECT '[[1, 5], [10, 15]]'::int4multirange && '{3, 12}'::in...\n               ^\nDETAIL:  Missing left brace.\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT '{(1, 5), (10, 15)}'::int4multirange && '[3, 12]'::int4range;"
     ]
 }

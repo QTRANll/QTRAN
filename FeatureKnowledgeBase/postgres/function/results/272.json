@@ -6,15 +6,49 @@
         "value . size"
     ],
     "Feature": [
-        "value . size() → number"
+        "value . size() \u2192 number"
     ],
     "Description": [
         "Size of the JSON item (number of array elements, or 1 if not an array)"
     ],
     "Examples": [
-        "jsonb_path_query('{\"m\": [11, 15]}', '$.m.size()') → 2"
+        "jsonb_path_query('{\"m\": [11, 15]}', '$.m.size()') \u2192 2"
     ],
     "Category": [
         "JSON Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT jsonb_array_length(value) AS size FROM your_table;",
+        "SELECT jsonb_array_length(value) AS size;",
+        "SELECT jsonb_array_length('[]'::jsonb) AS size;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 286,
+            "Prompt Tokens": 261,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 5.4149999999999995e-05
+        },
+        {
+            "Total Tokens": 454,
+            "Prompt Tokens": 432,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 7.799999999999999e-05
+        },
+        {
+            "Total Tokens": 623,
+            "Prompt Tokens": 596,
+            "Completion Tokens": 27,
+            "Total Cost (USD)": 0.00010559999999999999
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedTable) relation \"your_table\" does not exist\nLINE 1: SELECT jsonb_array_length(value) AS size FROM your_table;\n                                                      ^\n\n",
+        "(psycopg2.errors.UndefinedColumn) column \"value\" does not exist\nLINE 1: SELECT jsonb_array_length(value) AS size;\n                                  ^\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT jsonb_array_length('[]'::jsonb) AS size;"
     ]
 }

@@ -19,5 +19,30 @@
     "Category": [
         "Geographic Functions"
     ],
-    "EffectiveSQLsRefined": []
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT EQUALS(g1, g2);",
+        "SELECT EQUALS(POINT(1, 1), POINT(1, 1));"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 358,
+            "Prompt Tokens": 335,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 6.405e-05
+        },
+        {
+            "Total Tokens": 522,
+            "Prompt Tokens": 490,
+            "Completion Tokens": 32,
+            "Total Cost (USD)": 9.27e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.OperationalError) (1054, \"Unknown column 'g1' in 'field list'\")\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT EQUALS(POINT(1, 1), POINT(1, 1));"
+    ]
 }

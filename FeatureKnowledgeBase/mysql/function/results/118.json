@@ -38,5 +38,22 @@
     "Category": [
         "Built-In Functions and Operators",
         "Comparison Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT 2 IN (0,3,5,7);",
+        "SELECT 'wefwf' IN ('wee','wefwf','weg');",
+        "SELECT (3,4) IN ((1,2), (3,4));",
+        "SELECT (3,4) IN ((1,2), (3,5));",
+        "SELECT 'a' IN (0), 0 IN ('b');"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT 2 IN (0,3,5,7);",
+        "SELECT 'wefwf' IN ('wee','wefwf','weg');",
+        "SELECT (3,4) IN ((1,2), (3,4));",
+        "SELECT (3,4) IN ((1,2), (3,5));",
+        "SELECT 'a' IN (0), 0 IN ('b');"
     ]
 }

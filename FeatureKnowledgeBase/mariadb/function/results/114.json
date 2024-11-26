@@ -22,5 +22,12 @@
     "EffectiveSQLsRefined": [
         "SELECT INET6_NTOA(UNHEX('0A000101'));",
         "SELECT INET6_NTOA(UNHEX('48F3000000000000D4321431BA23846F'));"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT INET6_NTOA(UNHEX('0A000101'));",
+        "SELECT INET6_NTOA(UNHEX('48F3000000000000D4321431BA23846F'));"
     ]
 }

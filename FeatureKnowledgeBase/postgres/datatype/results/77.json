@@ -15,5 +15,55 @@
     "Examples": [],
     "Category": [
         "Pseudo-Types"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT * FROM my_table TABLESAMPLE tsm_handler;",
+        "SELECT * FROM my_table TABLESAMPLE SYSTEM (10);",
+        "SELECT * FROM some_table TABLESAMPLE SYSTEM (10);",
+        "SELECT * FROM pg_catalog.pg_tables TABLESAMPLE SYSTEM (10);",
+        "SELECT * FROM pg_catalog.pg_class TABLESAMPLE SYSTEM (10);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 279,
+            "Prompt Tokens": 255,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 5.264999999999999e-05
+        },
+        {
+            "Total Tokens": 445,
+            "Prompt Tokens": 420,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 7.799999999999999e-05
+        },
+        {
+            "Total Tokens": 615,
+            "Prompt Tokens": 590,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 0.00010349999999999998
+        },
+        {
+            "Total Tokens": 787,
+            "Prompt Tokens": 760,
+            "Completion Tokens": 27,
+            "Total Cost (USD)": 0.0001302
+        },
+        {
+            "Total Tokens": 966,
+            "Prompt Tokens": 939,
+            "Completion Tokens": 27,
+            "Total Cost (USD)": 0.00015704999999999997
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.SyntaxError) syntax error at or near \";\"\nLINE 1: SELECT * FROM my_table TABLESAMPLE tsm_handler;\n                                                      ^\n\n",
+        "(psycopg2.errors.UndefinedTable) relation \"my_table\" does not exist\nLINE 1: SELECT * FROM my_table TABLESAMPLE SYSTEM (10);\n                      ^\n\n",
+        "(psycopg2.errors.UndefinedTable) relation \"some_table\" does not exist\nLINE 1: SELECT * FROM some_table TABLESAMPLE SYSTEM (10);\n                      ^\n\n",
+        "(psycopg2.errors.FeatureNotSupported) TABLESAMPLE clause can only be applied to tables and materialized views\nLINE 1: SELECT * FROM pg_catalog.pg_tables TABLESAMPLE SYSTEM (10);\n                      ^\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT * FROM pg_catalog.pg_class TABLESAMPLE SYSTEM (10);"
     ]
 }

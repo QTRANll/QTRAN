@@ -10,13 +10,22 @@
     ],
     "Description": [
         "FIND_IN_SET()",
-        "返回第一个参数在第二个参数中出现的位置",
-        "该函数通常与 SET 数据类型一起使用。"
+        "\u8fd4\u56de\u7b2c\u4e00\u4e2a\u53c2\u6570\u5728\u7b2c\u4e8c\u4e2a\u53c2\u6570\u4e2d\u51fa\u73b0\u7684\u4f4d\u7f6e",
+        "\u8be5\u51fd\u6570\u901a\u5e38\u4e0e SET \u6570\u636e\u7c7b\u578b\u4e00\u8d77\u4f7f\u7528\u3002"
     ],
     "Examples": [
         "SELECT FIND_IN_SET('Go', 'COBOL,BASIC,Rust,Go,Java,Fortran');\n+-------------------------------------------------------+\n| FIND_IN_SET('Go', 'COBOL,BASIC,Rust,Go,Java,Fortran') |\n+-------------------------------------------------------+\n|                                                     4 |\n+-------------------------------------------------------+\n1 row in set (0.00 sec)\n"
     ],
     "Category": [
-        "字符串函数"
+        "\u5b57\u7b26\u4e32\u51fd\u6570"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT FIND_IN_SET('Go', 'COBOL,BASIC,Rust,Go,Java,Fortran');"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT FIND_IN_SET('Go', 'COBOL,BASIC,Rust,Go,Java,Fortran');"
     ]
 }

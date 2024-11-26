@@ -18,5 +18,23 @@
     "Examples": [],
     "Category": [
         "Text Search Types"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT to_tsvector('english', 'The quick brown fox jumps over the lazy dog');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 1777,
+            "Prompt Tokens": 1745,
+            "Completion Tokens": 32,
+            "Total Cost (USD)": 0.00028094999999999997
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT to_tsvector('english', 'The quick brown fox jumps over the lazy dog');"
     ]
 }

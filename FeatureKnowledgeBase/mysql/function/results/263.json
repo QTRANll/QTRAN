@@ -25,5 +25,16 @@
     "Category": [
         "Built-In Functions and Operators",
         "String Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT REGEXP_SUBSTR('abc def ghi', '[a-z]+');",
+        "SELECT REGEXP_SUBSTR('abc def ghi', '[a-z]+', 1, 3);"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT REGEXP_SUBSTR('abc def ghi', '[a-z]+');",
+        "SELECT REGEXP_SUBSTR('abc def ghi', '[a-z]+', 1, 3);"
     ]
 }

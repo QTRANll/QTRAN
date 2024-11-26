@@ -25,5 +25,53 @@
     ],
     "Category": [
         "Loadable Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT mask_pan_relaxed('1234567890123456');",
+        "SELECT mask_pan_relaxed('4111111111111111');",
+        "SELECT mask_pan_relaxed('5500000000000004');",
+        "SELECT mask_pan_relaxed('6011000000000000');",
+        "SELECT mask_pan_relaxed('1234567812345678');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 589,
+            "Prompt Tokens": 563,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 0.00010004999999999998
+        },
+        {
+            "Total Tokens": 752,
+            "Prompt Tokens": 726,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 0.0001245
+        },
+        {
+            "Total Tokens": 915,
+            "Prompt Tokens": 889,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 0.00014895
+        },
+        {
+            "Total Tokens": 1078,
+            "Prompt Tokens": 1052,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 0.00017339999999999999
+        },
+        {
+            "Total Tokens": 1241,
+            "Prompt Tokens": 1215,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 0.00019784999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.mask_pan_relaxed does not exist')\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.mask_pan_relaxed does not exist')\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.mask_pan_relaxed does not exist')\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.mask_pan_relaxed does not exist')\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.mask_pan_relaxed does not exist')\n"
+    ],
+    "EffectiveSQLs": []
 }

@@ -16,5 +16,18 @@
     "Category": [
         "Comparison Functions and Operators",
         "String Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [
+        "CREATE TABLE foo (bar VARCHAR(10));",
+        "INSERT INTO foo VALUES (NULL), (NULL);",
+        "SELECT COUNT(*) FROM foo WHERE bar NOT LIKE '%baz%' OR bar IS NULL;"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "CREATE TABLE foo (bar VARCHAR(10));",
+        "INSERT INTO foo VALUES (NULL), (NULL);",
+        "SELECT COUNT(*) FROM foo WHERE bar NOT LIKE '%baz%' OR bar IS NULL;"
     ]
 }

@@ -17,5 +17,31 @@
     ],
     "Category": [
         "Window Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT cume_dist()",
+        "SELECT cume_dist() OVER ()"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 285,
+            "Prompt Tokens": 267,
+            "Completion Tokens": 18,
+            "Total Cost (USD)": 5.0849999999999996e-05
+        },
+        {
+            "Total Tokens": 455,
+            "Prompt Tokens": 435,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 7.725e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.CatalogException) Catalog Error: Scalar Function with name cume_dist does not exist!\nDid you mean \"enum_first\"?\nLINE 1: SELECT cume_dist()\n               ^\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT cume_dist() OVER ()"
     ]
 }

@@ -6,15 +6,57 @@
         "anyrange <@ anymultirange"
     ],
     "Feature": [
-        "anyrange <@ anymultirange → boolean"
+        "anyrange <@ anymultirange \u2192 boolean"
     ],
     "Description": [
         "Is the range contained by the multirange?"
     ],
     "Examples": [
-        "int4range(2,4) <@ '{[1,7)}'::int4multirange → t"
+        "int4range(2,4) <@ '{[1,7)}'::int4multirange \u2192 t"
     ],
     "Category": [
         "Range divide Multirange Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT 'anyrange' <@ 'anymultirange';",
+        "SELECT '[]'::int4range <@ '[1, 5)'::int4multirange;",
+        "SELECT '[1, 3)'::int4range <@ '[[1, 5), [6, 10)]'::int4multirange;",
+        "SELECT '[1, 3)'::int4range <@ '{[1, 5), [6, 10)}'::int4multirange;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 297,
+            "Prompt Tokens": 271,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 5.625e-05
+        },
+        {
+            "Total Tokens": 504,
+            "Prompt Tokens": 469,
+            "Completion Tokens": 35,
+            "Total Cost (USD)": 9.134999999999998e-05
+        },
+        {
+            "Total Tokens": 716,
+            "Prompt Tokens": 670,
+            "Completion Tokens": 46,
+            "Total Cost (USD)": 0.0001281
+        },
+        {
+            "Total Tokens": 948,
+            "Prompt Tokens": 902,
+            "Completion Tokens": 46,
+            "Total Cost (USD)": 0.00016289999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.AmbiguousFunction) operator is not unique: unknown <@ unknown\nLINE 1: SELECT 'anyrange' <@ 'anymultirange';\n                          ^\nHINT:  Could not choose a best candidate operator. You might need to add explicit type casts.\n\n",
+        "(psycopg2.errors.InvalidTextRepresentation) malformed range literal: \"[]\"\nLINE 1: SELECT '[]'::int4range <@ '[1, 5)'::int4multirange;\n               ^\nDETAIL:  Missing comma after lower bound.\n\n",
+        "(psycopg2.errors.InvalidTextRepresentation) malformed multirange literal: \"[[1, 5), [6, 10)]\"\nLINE 1: SELECT '[1, 3)'::int4range <@ '[[1, 5), [6, 10)]'::int4multi...\n                                      ^\nDETAIL:  Missing left brace.\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT '[1, 3)'::int4range <@ '{[1, 5), [6, 10)}'::int4multirange;"
     ]
 }

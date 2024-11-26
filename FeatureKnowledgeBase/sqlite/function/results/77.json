@@ -13,20 +13,68 @@
         "The json_patch(T,P) SQL function runs the\nRFC-7396 MergePatch algorithm\nto apply patch P against input T.  The patched copy of T is returned.\n\n",
         "MergePatch can add, modify, or delete elements of a JSON Object,\nand so for JSON Objects, the json_patch() routine is a generalized\nreplacement for json_set() and json_remove().  However, MergePatch\ntreats JSON Array objects as atomic.  MergePatch cannot append to an\nArray nor modify individual elements of an Array.  It can only insert,\nreplace, or delete the whole Array as a single unit.  Hence, json_patch()\nis not as useful when dealing with JSON that includes Arrays,\nespecially Arrays with lots of substructure.\n\n",
         "Examples:\n\n",
-        "json_patch('{\"a\":1,\"b\":2}','{\"c\":3,\"d\":4}')\n→ '{\"a\":1,\"b\":2,\"c\":3,\"d\":4}'",
-        "json_patch('{\"a\":[1,2],\"b\":2}','{\"a\":9}')\n→ '{\"a\":9,\"b\":2}'",
-        "json_patch('{\"a\":[1,2],\"b\":2}','{\"a\":null}')\n→ '{\"b\":2}'",
-        "json_patch('{\"a\":1,\"b\":2}','{\"a\":9,\"b\":null,\"c\":8}')\n→ '{\"a\":9,\"c\":8}'",
-        "json_patch('{\"a\":{\"x\":1,\"y\":2},\"b\":3}','{\"a\":{\"y\":9},\"c\":8}')\n→ '{\"a\":{\"x\":1,\"y\":9},\"b\":3,\"c\":8}'"
+        "json_patch('{\"a\":1,\"b\":2}','{\"c\":3,\"d\":4}')\n\u2192 '{\"a\":1,\"b\":2,\"c\":3,\"d\":4}'",
+        "json_patch('{\"a\":[1,2],\"b\":2}','{\"a\":9}')\n\u2192 '{\"a\":9,\"b\":2}'",
+        "json_patch('{\"a\":[1,2],\"b\":2}','{\"a\":null}')\n\u2192 '{\"b\":2}'",
+        "json_patch('{\"a\":1,\"b\":2}','{\"a\":9,\"b\":null,\"c\":8}')\n\u2192 '{\"a\":9,\"c\":8}'",
+        "json_patch('{\"a\":{\"x\":1,\"y\":2},\"b\":3}','{\"a\":{\"y\":9},\"c\":8}')\n\u2192 '{\"a\":{\"x\":1,\"y\":9},\"b\":3,\"c\":8}'"
     ],
     "Examples": [
-        "json_patch('{\"a\":1,\"b\":2}','{\"c\":3,\"d\":4}')\n→ '{\"a\":1,\"b\":2,\"c\":3,\"d\":4}'",
-        "json_patch('{\"a\":[1,2],\"b\":2}','{\"a\":9}')\n→ '{\"a\":9,\"b\":2}'",
-        "json_patch('{\"a\":[1,2],\"b\":2}','{\"a\":null}')\n→ '{\"b\":2}'",
-        "json_patch('{\"a\":1,\"b\":2}','{\"a\":9,\"b\":null,\"c\":8}')\n→ '{\"a\":9,\"c\":8}'",
-        "json_patch('{\"a\":{\"x\":1,\"y\":2},\"b\":3}','{\"a\":{\"y\":9},\"c\":8}')\n→ '{\"a\":{\"x\":1,\"y\":9},\"b\":3,\"c\":8}'"
+        "json_patch('{\"a\":1,\"b\":2}','{\"c\":3,\"d\":4}')\n\u2192 '{\"a\":1,\"b\":2,\"c\":3,\"d\":4}'",
+        "json_patch('{\"a\":[1,2],\"b\":2}','{\"a\":9}')\n\u2192 '{\"a\":9,\"b\":2}'",
+        "json_patch('{\"a\":[1,2],\"b\":2}','{\"a\":null}')\n\u2192 '{\"b\":2}'",
+        "json_patch('{\"a\":1,\"b\":2}','{\"a\":9,\"b\":null,\"c\":8}')\n\u2192 '{\"a\":9,\"c\":8}'",
+        "json_patch('{\"a\":{\"x\":1,\"y\":2},\"b\":3}','{\"a\":{\"y\":9},\"c\":8}')\n\u2192 '{\"a\":{\"x\":1,\"y\":9},\"b\":3,\"c\":8}'"
     ],
     "Category": [
         "JSON Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT json_patch('{\"a\":1,\"b\":2}', '{\"c\":3,\"d\":4}');",
+        "SELECT json_patch(?, ?);",
+        "SELECT json_patch('{\"a\":1,\"b\":2}', '{\"c\":3,\"d\":4}');",
+        "SELECT json_patch('{\"a\":1,\"b\":2}', '{\"c\":3,\"d\":4}');",
+        "SELECT json_patch('{\"a\":1,\"b\":2}', '{\"c\":3,\"d\":4}');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 699,
+            "Prompt Tokens": 662,
+            "Completion Tokens": 37,
+            "Total Cost (USD)": 0.0001215
+        },
+        {
+            "Total Tokens": 848,
+            "Prompt Tokens": 828,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 0.00013619999999999998
+        },
+        {
+            "Total Tokens": 1023,
+            "Prompt Tokens": 986,
+            "Completion Tokens": 37,
+            "Total Cost (USD)": 0.0001701
+        },
+        {
+            "Total Tokens": 1189,
+            "Prompt Tokens": 1152,
+            "Completion Tokens": 37,
+            "Total Cost (USD)": 0.00019499999999999997
+        },
+        {
+            "Total Tokens": 1355,
+            "Prompt Tokens": 1318,
+            "Completion Tokens": 37,
+            "Total Cost (USD)": 0.00021989999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(sqlalchemy.exc.InvalidRequestError) A value is required for bind parameter '1'\n",
+        "(sqlite3.ProgrammingError) Incorrect number of bindings supplied. The current statement uses 2, and there are 0 supplied.\n",
+        "(sqlalchemy.exc.InvalidRequestError) A value is required for bind parameter '1'\n",
+        "(sqlalchemy.exc.InvalidRequestError) A value is required for bind parameter '1'\n",
+        "(sqlalchemy.exc.InvalidRequestError) A value is required for bind parameter '1'\n"
+    ],
+    "EffectiveSQLs": []
 }

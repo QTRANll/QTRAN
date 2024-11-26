@@ -16,5 +16,22 @@
     "Category": [
         "String Functions"
     ],
-    "EffectiveSQLsRefined": []
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT POSITION('substr' IN 'str');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 286,
+            "Prompt Tokens": 264,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 5.2799999999999996e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT POSITION('substr' IN 'str');"
+    ]
 }

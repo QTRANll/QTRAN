@@ -6,15 +6,33 @@
         "rtrim"
     ],
     "Feature": [
-        "rtrim ( string text [, characters text ] ) → text"
+        "rtrim ( string text [, characters text ] ) \u2192 text"
     ],
     "Description": [
         "Removes the longest string containing only characters in characters (a space by default) from the end of string."
     ],
     "Examples": [
-        "rtrim('testxxzx', 'xyz') → test"
+        "rtrim('testxxzx', 'xyz') \u2192 test"
     ],
     "Category": [
         "String Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT rtrim('Hello World   ');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 289,
+            "Prompt Tokens": 267,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 5.324999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT rtrim('Hello World   ');"
     ]
 }

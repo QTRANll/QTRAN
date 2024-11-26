@@ -6,8 +6,8 @@
         "string_agg"
     ],
     "Feature": [
-        "string_agg ( value text, delimiter text ) → text",
-        "string_agg ( value bytea, delimiter bytea ) → bytea"
+        "string_agg ( value text, delimiter text ) \u2192 text",
+        "string_agg ( value bytea, delimiter bytea ) \u2192 bytea"
     ],
     "Description": [
         "Concatenates the non-null input values into a string. Each value after the first is preceded by the corresponding delimiter (if it's not null)."
@@ -15,5 +15,39 @@
     "Examples": [],
     "Category": [
         "Aggregate Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT string_agg(value, ', ') FROM your_table;",
+        "SELECT string_agg(value, ', ');",
+        "SELECT string_agg('example', ', ');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 318,
+            "Prompt Tokens": 294,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 5.849999999999999e-05
+        },
+        {
+            "Total Tokens": 485,
+            "Prompt Tokens": 463,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 8.264999999999999e-05
+        },
+        {
+            "Total Tokens": 648,
+            "Prompt Tokens": 625,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 0.00010754999999999999
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedTable) relation \"your_table\" does not exist\nLINE 1: SELECT string_agg(value, ', ') FROM your_table;\n                                            ^\n\n",
+        "(psycopg2.errors.UndefinedColumn) column \"value\" does not exist\nLINE 1: SELECT string_agg(value, ', ');\n                          ^\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT string_agg('example', ', ');"
     ]
 }

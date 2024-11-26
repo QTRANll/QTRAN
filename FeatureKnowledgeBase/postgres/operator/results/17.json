@@ -6,15 +6,41 @@
         "@ numeric_type"
     ],
     "Feature": [
-        "@ numeric_type → numeric_type"
+        "@ numeric_type \u2192 numeric_type"
     ],
     "Description": [
         "Absolute value"
     ],
     "Examples": [
-        "@ -5.0 → 5.0"
+        "@ -5.0 \u2192 5.0"
     ],
     "Category": [
         "Mathematical Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT ABS(column_name) FROM table_name;",
+        "SELECT ABS(0);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 265,
+            "Prompt Tokens": 244,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 4.9199999999999997e-05
+        },
+        {
+            "Total Tokens": 425,
+            "Prompt Tokens": 407,
+            "Completion Tokens": 18,
+            "Total Cost (USD)": 7.184999999999998e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedTable) relation \"table_name\" does not exist\nLINE 1: SELECT ABS(column_name) FROM table_name;\n                                     ^\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT ABS(0);"
     ]
 }

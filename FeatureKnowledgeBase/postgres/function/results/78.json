@@ -6,15 +6,33 @@
         "md5"
     ],
     "Feature": [
-        "md5 ( text ) → text"
+        "md5 ( text ) \u2192 text"
     ],
     "Description": [
         "Computes the MD5 hash of the argument, with the result written in hexadecimal."
     ],
     "Examples": [
-        "md5('abc') → 900150983cd24fb0​d6963f7d28e17f72"
+        "md5('abc') \u2192 900150983cd24fb0\u200bd6963f7d28e17f72"
     ],
     "Category": [
         "String Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT md5('your_input_string');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 278,
+            "Prompt Tokens": 257,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 5.1149999999999996e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT md5('your_input_string');"
     ]
 }

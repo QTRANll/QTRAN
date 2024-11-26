@@ -16,5 +16,23 @@
     ],
     "Category": [
         "Text Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT parse_filename('/path/to/file.txt', true, 'forward_slash')"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 344,
+            "Prompt Tokens": 315,
+            "Completion Tokens": 29,
+            "Total Cost (USD)": 6.465e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT parse_filename('/path/to/file.txt', true, 'forward_slash')"
     ]
 }

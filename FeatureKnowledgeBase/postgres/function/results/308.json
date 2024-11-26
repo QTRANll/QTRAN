@@ -6,15 +6,41 @@
         "upper_inf"
     ],
     "Feature": [
-        "upper_inf ( anymultirange ) → boolean"
+        "upper_inf ( anymultirange ) \u2192 boolean"
     ],
     "Description": [
         "Does the multirange have no upper bound? (An upper bound of Infinity returns false.)"
     ],
     "Examples": [
-        "upper_inf('{(,)}'::datemultirange) → t"
+        "upper_inf('{(,)}'::datemultirange) \u2192 t"
     ],
     "Category": [
         "Range divide Multirange Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT upper_inf(1, 2) AS has_no_upper_bound;",
+        "SELECT upper_inf(int4range(1, 2)) AS has_no_upper_bound;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 289,
+            "Prompt Tokens": 262,
+            "Completion Tokens": 27,
+            "Total Cost (USD)": 5.5499999999999994e-05
+        },
+        {
+            "Total Tokens": 490,
+            "Prompt Tokens": 460,
+            "Completion Tokens": 30,
+            "Total Cost (USD)": 8.7e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedFunction) function upper_inf(integer, integer) does not exist\nLINE 1: SELECT upper_inf(1, 2) AS has_no_upper_bound;\n               ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT upper_inf(int4range(1, 2)) AS has_no_upper_bound;"
     ]
 }

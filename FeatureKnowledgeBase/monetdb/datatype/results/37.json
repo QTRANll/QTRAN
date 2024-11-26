@@ -1,0 +1,38 @@
+{
+    "HTML": [
+        "https://www.monetdb.org/documentation-Aug2024/user-guide/sql-manual/data-types/temporal-types"
+    ],
+    "Title": [
+        "DATE"
+    ],
+    "Feature": [
+        "DATE"
+    ],
+    "Description": [
+        "date",
+        "4-bytes",
+        "a date in the Gregorian calendar YYYY-MM-DD, e.g. 1999-12-31"
+    ],
+    "Examples": [],
+    "Category": [
+        "Temporal Datatypes"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT DATE '2023-10-01';"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 284,
+            "Prompt Tokens": 261,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 5.294999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT DATE '2023-10-01';"
+    ]
+}

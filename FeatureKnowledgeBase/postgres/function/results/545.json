@@ -6,7 +6,7 @@
         "pg_replication_origin_drop"
     ],
     "Feature": [
-        "pg_replication_origin_drop ( node_name text ) → void"
+        "pg_replication_origin_drop ( node_name text ) \u2192 void"
     ],
     "Description": [
         "Deletes a previously-created replication origin, including any associated replay progress."
@@ -14,5 +14,53 @@
     "Examples": [],
     "Category": [
         "System Administration Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT pg_replication_origin_drop('origin_name');",
+        "SELECT pg_replication_origin_drop('existing_origin_name');",
+        "SELECT pg_replication_origin_drop('non_existing_origin_name');",
+        "SELECT pg_replication_origin_drop('another_non_existing_origin_name');",
+        "SELECT pg_replication_origin_drop('valid_origin_name');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 290,
+            "Prompt Tokens": 267,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 5.3849999999999994e-05
+        },
+        {
+            "Total Tokens": 442,
+            "Prompt Tokens": 418,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 7.709999999999999e-05
+        },
+        {
+            "Total Tokens": 596,
+            "Prompt Tokens": 571,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 0.00010064999999999998
+        },
+        {
+            "Total Tokens": 752,
+            "Prompt Tokens": 726,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 0.0001245
+        },
+        {
+            "Total Tokens": 907,
+            "Prompt Tokens": 883,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 0.00014685
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedObject) replication origin \"origin_name\" does not exist\n\n",
+        "(psycopg2.errors.UndefinedObject) replication origin \"existing_origin_name\" does not exist\n\n",
+        "(psycopg2.errors.UndefinedObject) replication origin \"non_existing_origin_name\" does not exist\n\n",
+        "(psycopg2.errors.UndefinedObject) replication origin \"another_non_existing_origin_name\" does not exist\n\n",
+        "(psycopg2.errors.UndefinedObject) replication origin \"valid_origin_name\" does not exist\n\n"
+    ],
+    "EffectiveSQLs": []
 }

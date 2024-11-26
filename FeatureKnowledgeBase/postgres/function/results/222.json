@@ -6,15 +6,33 @@
         "to_tsquery"
     ],
     "Feature": [
-        "to_tsquery ( [ config regconfig, ] query text ) → tsquery"
+        "to_tsquery ( [ config regconfig, ] query text ) \u2192 tsquery"
     ],
     "Description": [
         "Converts text to a tsquery, normalizing words according to the specified or default configuration. The words must be combined by valid tsquery operators."
     ],
     "Examples": [
-        "to_tsquery('english', 'The & Fat & Rats') → 'fat' & 'rat'"
+        "to_tsquery('english', 'The & Fat & Rats') \u2192 'fat' & 'rat'"
     ],
     "Category": [
         "Text Search Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT to_tsquery('example & query');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 304,
+            "Prompt Tokens": 282,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 5.549999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT to_tsquery('example & query');"
     ]
 }

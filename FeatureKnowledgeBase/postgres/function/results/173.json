@@ -6,15 +6,63 @@
         "enum_first"
     ],
     "Feature": [
-        "enum_first ( anyenum ) → anyenum"
+        "enum_first ( anyenum ) \u2192 anyenum"
     ],
     "Description": [
         "Returns the first value of the input enum type."
     ],
     "Examples": [
-        "enum_first(null::rainbow) → red"
+        "enum_first(null::rainbow) \u2192 red"
     ],
     "Category": [
         "Enum Support Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT enum_first('value1'::my_enum);",
+        "SELECT enum_first('value1'::text);",
+        "SELECT enum_first('value1'::anyenum);",
+        "SELECT enum_first(NULL::anyenum);",
+        "SELECT enum_first('value1'::anyenum);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 276,
+            "Prompt Tokens": 252,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 5.2199999999999995e-05
+        },
+        {
+            "Total Tokens": 442,
+            "Prompt Tokens": 419,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 7.664999999999999e-05
+        },
+        {
+            "Total Tokens": 630,
+            "Prompt Tokens": 606,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 0.00010529999999999998
+        },
+        {
+            "Total Tokens": 793,
+            "Prompt Tokens": 772,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 0.0001284
+        },
+        {
+            "Total Tokens": 956,
+            "Prompt Tokens": 932,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 0.00015419999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedObject) type \"my_enum\" does not exist\nLINE 1: SELECT enum_first('value1'::my_enum);\n                                    ^\n\n",
+        "(psycopg2.errors.UndefinedFunction) function enum_first(text) does not exist\nLINE 1: SELECT enum_first('value1'::text);\n               ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.\n\n",
+        "(psycopg2.errors.CannotCoerce) cannot cast type unknown to anyenum\nLINE 1: SELECT enum_first('value1'::anyenum);\n                                  ^\n\n",
+        "(psycopg2.errors.CannotCoerce) cannot cast type unknown to anyenum\nLINE 1: SELECT enum_first(NULL::anyenum);\n                              ^\n\n",
+        "(psycopg2.errors.CannotCoerce) cannot cast type unknown to anyenum\nLINE 1: SELECT enum_first('value1'::anyenum);\n                                  ^\n\n"
+    ],
+    "EffectiveSQLs": []
 }

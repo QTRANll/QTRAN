@@ -6,15 +6,33 @@
         "inet | inet"
     ],
     "Feature": [
-        "inet | inet → inet"
+        "inet | inet \u2192 inet"
     ],
     "Description": [
         "Computes bitwise OR."
     ],
     "Examples": [
-        "inet '192.168.1.6' | inet '0.0.0.255' → 192.168.1.255"
+        "inet '192.168.1.6' | inet '0.0.0.255' \u2192 192.168.1.255"
     ],
     "Category": [
         "Network Address Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT '192.168.1.1'::inet | '10.0.0.1'::inet;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 284,
+            "Prompt Tokens": 247,
+            "Completion Tokens": 37,
+            "Total Cost (USD)": 5.925e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT '192.168.1.1'::inet | '10.0.0.1'::inet;"
     ]
 }

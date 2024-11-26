@@ -26,5 +26,18 @@
     "Category": [
         "Built-In Functions and Operators",
         "Date and Time Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT DATE_ADD('2008-01-02', INTERVAL 31 DAY);",
+        "SELECT ADDDATE('2008-01-02', INTERVAL 31 DAY);",
+        "SELECT ADDDATE('2008-01-02', 31);"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT DATE_ADD('2008-01-02', INTERVAL 31 DAY);",
+        "SELECT ADDDATE('2008-01-02', INTERVAL 31 DAY);",
+        "SELECT ADDDATE('2008-01-02', 31);"
     ]
 }

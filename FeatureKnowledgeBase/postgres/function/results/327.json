@@ -12,9 +12,27 @@
         "Behaves in the same way as json_array but as an aggregate function so it only takes one value_expression parameter. If ABSENT ON NULL is specified, any NULL values are omitted. If ORDER BY is specified, the elements will appear in the array in that order rather than in the input order."
     ],
     "Examples": [
-        "SELECT json_arrayagg(v) FROM (VALUES(2),(1)) t(v) → [2, 1]"
+        "SELECT json_arrayagg(v) FROM (VALUES(2),(1)) t(v) \u2192 [2, 1]"
     ],
     "Category": [
         "Aggregate Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT json_arrayagg(value) FROM (VALUES (1), (2), (3)) AS t(value);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 372,
+            "Prompt Tokens": 337,
+            "Completion Tokens": 35,
+            "Total Cost (USD)": 7.155e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT json_arrayagg(value) FROM (VALUES (1), (2), (3)) AS t(value);"
     ]
 }

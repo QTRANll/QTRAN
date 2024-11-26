@@ -6,16 +6,34 @@
         "substring"
     ],
     "Feature": [
-        "substring ( string text SIMILAR pattern text ESCAPE escape text ) → text",
-        "substring ( string text FROM pattern text FOR escape text ) → text"
+        "substring ( string text SIMILAR pattern text ESCAPE escape text ) \u2192 text",
+        "substring ( string text FROM pattern text FOR escape text ) \u2192 text"
     ],
     "Description": [
-        "Extracts the first substring matching SQL regular expression; see Section 9.7.2. The first form has been specified since SQL:2003; the second form was only in SQL:1999 and should be considered obsolete."
+        "Extracts the first substring matching SQL regular expression; see Section\u00a09.7.2. The first form has been specified since SQL:2003; the second form was only in SQL:1999 and should be considered obsolete."
     ],
     "Examples": [
-        "substring('Thomas' similar '%#\"o_a#\"_' escape '#') → oma"
+        "substring('Thomas' similar '%#\"o_a#\"_' escape '#') \u2192 oma"
     ],
     "Category": [
         "String Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT substring('Hello, World!' FROM 'W.*')"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 333,
+            "Prompt Tokens": 308,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 6.12e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT substring('Hello, World!' FROM 'W.*')"
     ]
 }

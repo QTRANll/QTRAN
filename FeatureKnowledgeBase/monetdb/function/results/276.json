@@ -18,5 +18,53 @@
     ],
     "Category": [
         "Aggregate Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT sys.covar_samp(numeric_a, numeric_b);",
+        "SELECT sys.covar_samp(column_a, column_b) FROM your_table;",
+        "SELECT sys.covar_samp(1, 2);",
+        "SELECT sys.covar_samp(CAST(1 AS DOUBLE), CAST(2 AS DOUBLE));",
+        "SELECT sys.covar_samp(CAST(NULL AS DOUBLE), CAST(NULL AS DOUBLE));"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 360,
+            "Prompt Tokens": 334,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 6.57e-05
+        },
+        {
+            "Total Tokens": 526,
+            "Prompt Tokens": 498,
+            "Completion Tokens": 28,
+            "Total Cost (USD)": 9.15e-05
+        },
+        {
+            "Total Tokens": 691,
+            "Prompt Tokens": 666,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 0.0001149
+        },
+        {
+            "Total Tokens": 872,
+            "Prompt Tokens": 840,
+            "Completion Tokens": 32,
+            "Total Cost (USD)": 0.00014519999999999998
+        },
+        {
+            "Total Tokens": 1047,
+            "Prompt Tokens": 1017,
+            "Completion Tokens": 30,
+            "Total Cost (USD)": 0.00017054999999999997
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: identifier 'numeric_a' unknown\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42S02!SELECT: no such table 'your_table'\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: no such binary operator 'covar_samp(tinyint,tinyint)'\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: no such binary operator 'covar_samp(double,double)'\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: no such binary operator 'covar_samp(double,double)'\n\n"
+    ],
+    "EffectiveSQLs": []
 }

@@ -21,5 +21,23 @@
     "Category": [
         "Built-In Functions and Operators",
         "String Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT MID('Hello, World!', 8, 5);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 373,
+            "Prompt Tokens": 347,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 6.764999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT MID('Hello, World!', 8, 5);"
     ]
 }

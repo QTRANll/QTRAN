@@ -21,5 +21,23 @@
     "Category": [
         "Built-In Functions and Operators",
         "Encryption and Compression Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT VALIDATE_PASSWORD_STRENGTH('your_password_here');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 648,
+            "Prompt Tokens": 622,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 0.00010889999999999999
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT VALIDATE_PASSWORD_STRENGTH('your_password_here');"
     ]
 }

@@ -26,5 +26,53 @@
     ],
     "Category": [
         "Loadable Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT audit_log_filter_remove_user('user1@localhost');",
+        "SELECT audit_log_filter_remove_user('%');",
+        "SELECT audit_log_filter_remove_user('default_user@localhost');",
+        "SELECT audit_log_filter_remove_user('user@host');",
+        "SELECT audit_log_filter_remove_user('unknown_user@localhost');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 558,
+            "Prompt Tokens": 533,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 9.494999999999999e-05
+        },
+        {
+            "Total Tokens": 717,
+            "Prompt Tokens": 696,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 0.00011699999999999998
+        },
+        {
+            "Total Tokens": 880,
+            "Prompt Tokens": 855,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 0.00014324999999999999
+        },
+        {
+            "Total Tokens": 1042,
+            "Prompt Tokens": 1018,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 0.0001671
+        },
+        {
+            "Total Tokens": 1205,
+            "Prompt Tokens": 1180,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 0.00019199999999999995
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.audit_log_filter_remove_user does not exist')\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.audit_log_filter_remove_user does not exist')\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.audit_log_filter_remove_user does not exist')\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.audit_log_filter_remove_user does not exist')\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.audit_log_filter_remove_user does not exist')\n"
+    ],
+    "EffectiveSQLs": []
 }

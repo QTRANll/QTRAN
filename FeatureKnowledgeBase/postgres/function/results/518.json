@@ -6,7 +6,7 @@
         "pg_walfile_name"
     ],
     "Feature": [
-        "pg_walfile_name ( lsn pg_lsn ) → text"
+        "pg_walfile_name ( lsn pg_lsn ) \u2192 text"
     ],
     "Description": [
         "Converts a write-ahead log location to the name of the WAL file holding that location."
@@ -14,5 +14,23 @@
     "Examples": [],
     "Category": [
         "System Administration Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT pg_walfile_name(pg_lsn '0/3000020');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 304,
+            "Prompt Tokens": 275,
+            "Completion Tokens": 29,
+            "Total Cost (USD)": 5.865e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT pg_walfile_name(pg_lsn '0/3000020');"
     ]
 }

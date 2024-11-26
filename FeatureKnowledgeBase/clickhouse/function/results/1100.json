@@ -28,5 +28,10 @@
     ],
     "Category": [
         "UUIDs Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "INSERT INTO tab SELECT generateUUIDv7();",
+        "SELECT * FROM tab;",
+        "SELECT generateUUIDv7(1), generateUUIDv7(2);"
     ]
 }

@@ -6,15 +6,57 @@
         "anymultirange + anymultirange"
     ],
     "Feature": [
-        "anymultirange + anymultirange → anymultirange"
+        "anymultirange + anymultirange \u2192 anymultirange"
     ],
     "Description": [
         "Computes the union of the multiranges. The multiranges need not overlap or be adjacent."
     ],
     "Examples": [
-        "'{[5,10)}'::nummultirange + '{[15,20)}'::nummultirange → {[5,10), [15,20)}"
+        "'{[5,10)}'::nummultirange + '{[15,20)}'::nummultirange \u2192 {[5,10), [15,20)}"
     ],
     "Category": [
         "Range divide Multirange Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT anymultirange1 + anymultirange2;",
+        "SELECT '[[1, 5], [10, 15]]'::anymultirange + '[[3, 7], [12, 18]]'::anymultirange;",
+        "SELECT '[[1, 5], [10, 15]]'::int4range + '[[3, 7], [12, 18]]'::int4range;",
+        "SELECT int4range(1, 5) + int4range(3, 7);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 314,
+            "Prompt Tokens": 289,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 5.834999999999999e-05
+        },
+        {
+            "Total Tokens": 522,
+            "Prompt Tokens": 469,
+            "Completion Tokens": 53,
+            "Total Cost (USD)": 0.00010214999999999999
+        },
+        {
+            "Total Tokens": 745,
+            "Prompt Tokens": 694,
+            "Completion Tokens": 51,
+            "Total Cost (USD)": 0.00013469999999999997
+        },
+        {
+            "Total Tokens": 969,
+            "Prompt Tokens": 936,
+            "Completion Tokens": 33,
+            "Total Cost (USD)": 0.0001602
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedColumn) column \"anymultirange1\" does not exist\nLINE 1: SELECT anymultirange1 + anymultirange2;\n               ^\n\n",
+        "(psycopg2.errors.FeatureNotSupported) cannot accept a value of type anymultirange\nLINE 1: SELECT '[[1, 5], [10, 15]]'::anymultirange + '[[3, 7], [12, ...\n               ^\n\n",
+        "(psycopg2.errors.InvalidTextRepresentation) malformed range literal: \"[[1, 5], [10, 15]]\"\nLINE 1: SELECT '[[1, 5], [10, 15]]'::int4range + '[[3, 7], [12, 18]]...\n               ^\nDETAIL:  Junk after right parenthesis or bracket.\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT int4range(1, 5) + int4range(3, 7);"
     ]
 }

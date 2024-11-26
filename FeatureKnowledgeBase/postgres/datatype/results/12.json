@@ -15,5 +15,23 @@
     "Examples": [],
     "Category": [
         "Character Types"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT 'example'::character(10), 'example'::char(10), 'example'::bpchar(10);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 315,
+            "Prompt Tokens": 276,
+            "Completion Tokens": 39,
+            "Total Cost (USD)": 6.48e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT 'example'::character(10), 'example'::char(10), 'example'::bpchar(10);"
     ]
 }

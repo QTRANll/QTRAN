@@ -25,5 +25,53 @@
     ],
     "Category": [
         "Loadable Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT mask_uk_nin('QQ 12 34 56 C');",
+        "SELECT mask_uk_nin('123-45-6789');",
+        "SELECT mask_uk_nin('123456789');",
+        "SELECT mask_uk_nin('987654321');",
+        "SELECT mask_uk_nin('111222333');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 758,
+            "Prompt Tokens": 729,
+            "Completion Tokens": 29,
+            "Total Cost (USD)": 0.00012675
+        },
+        {
+            "Total Tokens": 923,
+            "Prompt Tokens": 896,
+            "Completion Tokens": 27,
+            "Total Cost (USD)": 0.00015059999999999997
+        },
+        {
+            "Total Tokens": 1085,
+            "Prompt Tokens": 1061,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 0.00017354999999999996
+        },
+        {
+            "Total Tokens": 1247,
+            "Prompt Tokens": 1223,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 0.00019784999999999998
+        },
+        {
+            "Total Tokens": 1409,
+            "Prompt Tokens": 1385,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 0.00022214999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.mask_uk_nin does not exist')\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.mask_uk_nin does not exist')\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.mask_uk_nin does not exist')\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.mask_uk_nin does not exist')\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.mask_uk_nin does not exist')\n"
+    ],
+    "EffectiveSQLs": []
 }

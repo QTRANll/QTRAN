@@ -6,7 +6,7 @@
         "pg_indexes_size"
     ],
     "Feature": [
-        "pg_indexes_size ( regclass ) → bigint"
+        "pg_indexes_size ( regclass ) \u2192 bigint"
     ],
     "Description": [
         "Computes the total disk space used by indexes attached to the specified table."
@@ -14,5 +14,31 @@
     "Examples": [],
     "Category": [
         "System Administration Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT pg_indexes_size('your_table_name');",
+        "SELECT pg_indexes_size('pg_catalog.pg_class');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 282,
+            "Prompt Tokens": 260,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 5.2199999999999995e-05
+        },
+        {
+            "Total Tokens": 448,
+            "Prompt Tokens": 425,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 7.754999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedTable) relation \"your_table_name\" does not exist\nLINE 1: SELECT pg_indexes_size('your_table_name');\n                               ^\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT pg_indexes_size('pg_catalog.pg_class');"
     ]
 }

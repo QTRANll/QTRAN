@@ -16,5 +16,31 @@
     ],
     "Category": [
         "Numeric Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT sign(x);",
+        "SELECT sign(1);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 272,
+            "Prompt Tokens": 255,
+            "Completion Tokens": 17,
+            "Total Cost (USD)": 4.845e-05
+        },
+        {
+            "Total Tokens": 431,
+            "Prompt Tokens": 413,
+            "Completion Tokens": 18,
+            "Total Cost (USD)": 7.274999999999998e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.BinderException) Binder Error: Referenced column \"x\" not found in FROM clause!\nLINE 1: SELECT sign(x);\n                    ^\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT sign(1);"
     ]
 }

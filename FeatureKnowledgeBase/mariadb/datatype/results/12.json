@@ -21,5 +21,20 @@
     ],
     "Category": [
         "Numeric Data Types"
+    ],
+    "EffectiveSQLsRefined": [
+        "INSERT INTO b VALUES (b'11111111');",
+        "INSERT INTO b VALUES (b'01010101');",
+        "SELECT b1+0, HEX(b1), OCT(b1), BIN(b1) FROM b;",
+        "SELECT b1+0, HEX(b1), OCT(b1), BIN(b1) FROM b;"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "INSERT INTO b VALUES (b'11111111');",
+        "INSERT INTO b VALUES (b'01010101');",
+        "SELECT b1+0, HEX(b1), OCT(b1), BIN(b1) FROM b;",
+        "SELECT b1+0, HEX(b1), OCT(b1), BIN(b1) FROM b;"
     ]
 }

@@ -23,5 +23,16 @@
     "Category": [
         "Built-In Functions and Operators",
         "Spatial Analysis Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT ST_Y(Point(56.7, 53.34));",
+        "SELECT ST_AsText(ST_Y(Point(56.7, 53.34), 10.5));"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT ST_Y(Point(56.7, 53.34));",
+        "SELECT ST_AsText(ST_Y(Point(56.7, 53.34), 10.5));"
     ]
 }

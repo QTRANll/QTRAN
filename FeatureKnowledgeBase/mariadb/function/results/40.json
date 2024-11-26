@@ -31,5 +31,15 @@
         "SELECT CONCAT(42.0);",
         "SELECT CONCAT('The value of @v is: ', IFNULL(@v, ''));",
         "SELECT CONCAT('Ma', 'ria', NULL, 'DB');"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT CONCAT('Ma', 'ria', 'DB');",
+        "SELECT CONCAT('Ma', 'ria', NULL, 'DB');",
+        "SELECT CONCAT(42.0);",
+        "SELECT CONCAT('The value of @v is: ', IFNULL(@v, ''));",
+        "SELECT CONCAT('Ma', 'ria', NULL, 'DB');"
     ]
 }

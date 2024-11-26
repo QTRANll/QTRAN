@@ -6,15 +6,63 @@
         "range_merge"
     ],
     "Feature": [
-        "range_merge ( anymultirange ) → anyrange"
+        "range_merge ( anymultirange ) \u2192 anyrange"
     ],
     "Description": [
         "Computes the smallest range that includes the entire multirange."
     ],
     "Examples": [
-        "range_merge('{[1,2), [3,4)}'::int4multirange) → [1,4)"
+        "range_merge('{[1,2), [3,4)}'::int4multirange) \u2192 [1,4)"
     ],
     "Category": [
         "Range divide Multirange Functions and Operators"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT range_merge(ARRAY[int4range(1, 5), int4range(3, 7)])",
+        "SELECT range_merge(ARRAY[int4range(1, 5)::int4range, int4range(3, 7)::int4range])",
+        "SELECT range_merge(ARRAY[int4range(1, 5), int4range(3, 7)]::int4range[]);",
+        "SELECT range_merge(ROW(int4range(1, 5), int4range(3, 7))::anymultirange);",
+        "SELECT range_merge(ARRAY[int4range(1, 5), int4range(3, 7)]::int4range[]::anymultirange);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 294,
+            "Prompt Tokens": 257,
+            "Completion Tokens": 37,
+            "Total Cost (USD)": 6.074999999999999e-05
+        },
+        {
+            "Total Tokens": 517,
+            "Prompt Tokens": 472,
+            "Completion Tokens": 45,
+            "Total Cost (USD)": 9.779999999999998e-05
+        },
+        {
+            "Total Tokens": 736,
+            "Prompt Tokens": 694,
+            "Completion Tokens": 42,
+            "Total Cost (USD)": 0.00012929999999999997
+        },
+        {
+            "Total Tokens": 959,
+            "Prompt Tokens": 917,
+            "Completion Tokens": 42,
+            "Total Cost (USD)": 0.00016274999999999997
+        },
+        {
+            "Total Tokens": 1166,
+            "Prompt Tokens": 1119,
+            "Completion Tokens": 47,
+            "Total Cost (USD)": 0.00019605
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedFunction) function range_merge(int4range[]) does not exist\nLINE 1: SELECT range_merge(ARRAY[int4range(1, 5), int4range(3, 7)])\n               ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.\n\n",
+        "(psycopg2.errors.UndefinedFunction) function range_merge(int4range[]) does not exist\nLINE 1: SELECT range_merge(ARRAY[int4range(1, 5)::int4range, int4ran...\n               ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.\n\n",
+        "(psycopg2.errors.UndefinedFunction) function range_merge(int4range[]) does not exist\nLINE 1: SELECT range_merge(ARRAY[int4range(1, 5), int4range(3, 7)]::...\n               ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.\n\n",
+        "(psycopg2.errors.CannotCoerce) cannot cast type record to anymultirange\nLINE 1: ... range_merge(ROW(int4range(1, 5), int4range(3, 7))::anymulti...\n                                                             ^\n\n",
+        "(psycopg2.errors.CannotCoerce) cannot cast type int4range[] to anymultirange\nLINE 1: ...RAY[int4range(1, 5), int4range(3, 7)]::int4range[]::anymulti...\n                                                             ^\n\n"
+    ],
+    "EffectiveSQLs": []
 }

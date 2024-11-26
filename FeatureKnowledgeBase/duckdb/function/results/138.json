@@ -18,5 +18,31 @@
     ],
     "Category": [
         "Date Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT date_sub('day', '2023-10-01', '2023-10-10')",
+        "SELECT date_sub('day', CAST('2023-10-01' AS DATE), CAST('2023-10-10' AS DATE))"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 306,
+            "Prompt Tokens": 271,
+            "Completion Tokens": 35,
+            "Total Cost (USD)": 6.165e-05
+        },
+        {
+            "Total Tokens": 599,
+            "Prompt Tokens": 556,
+            "Completion Tokens": 43,
+            "Total Cost (USD)": 0.0001092
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.BinderException) Binder Error: Could not choose a best candidate function for the function call \"date_sub(STRING_LITERAL, STRING_LITERAL, STRING_LITERAL)\". In order to select one, please add explicit type casts.\n\tCandidate functions:\n\tdate_sub(VARCHAR, TIMESTAMP, TIMESTAMP) -> BIGINT\n\tdate_sub(VARCHAR, TIME, TIME) -> BIGINT\n\tdate_sub(VARCHAR, TIMESTAMP WITH TIME ZONE, TIMESTAMP WITH TIME ZONE) -> BIGINT\n\tdate_sub(VARCHAR, DATE, DATE) -> BIGINT\n\nLINE 1: SELECT date_sub('day', '2023-10-01', '2023-10-...\n               ^\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT date_sub('day', CAST('2023-10-01' AS DATE), CAST('2023-10-10' AS DATE))"
     ]
 }

@@ -26,5 +26,10 @@
     ],
     "Category": [
         "Rounding Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT number / 2 AS x, round(x) FROM system.numbers LIMIT 3;",
+        "SELECT cast(number / 2 AS  Decimal(10,4)) AS x, round(x) FROM system.numbers LIMIT 3;",
+        "SELECT cast(number / 2 AS  Decimal(10,4)) AS x, round(x) FROM system.numbers LIMIT 3 settings output_format_decimal_trailing_zeros=1;"
     ]
 }

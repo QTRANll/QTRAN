@@ -18,5 +18,31 @@
     ],
     "Category": [
         "Comparison Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT \"between\"(5, 1, 10, true, false, false, false, false);",
+        "SELECT CASE WHEN 5 >= 1 AND 5 <= 10 THEN true ELSE false END;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 394,
+            "Prompt Tokens": 358,
+            "Completion Tokens": 36,
+            "Total Cost (USD)": 7.529999999999999e-05
+        },
+        {
+            "Total Tokens": 580,
+            "Prompt Tokens": 548,
+            "Completion Tokens": 32,
+            "Total Cost (USD)": 0.0001014
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: no such operator 'between'\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT CASE WHEN 5 >= 1 AND 5 <= 10 THEN true ELSE false END;"
     ]
 }

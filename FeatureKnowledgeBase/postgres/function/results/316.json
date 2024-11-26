@@ -6,10 +6,10 @@
         "bit_or"
     ],
     "Feature": [
-        "bit_or ( smallint ) → smallint",
-        "bit_or ( integer ) → integer",
-        "bit_or ( bigint ) → bigint",
-        "bit_or ( bit ) → bit"
+        "bit_or ( smallint ) \u2192 smallint",
+        "bit_or ( integer ) \u2192 integer",
+        "bit_or ( bigint ) \u2192 bigint",
+        "bit_or ( bit ) \u2192 bit"
     ],
     "Description": [
         "Computes the bitwise OR of all non-null input values."
@@ -17,5 +17,31 @@
     "Examples": [],
     "Category": [
         "Aggregate Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT bit_or(column_name) FROM table_name;",
+        "SELECT bit_or(1) AS result;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 304,
+            "Prompt Tokens": 282,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 5.549999999999999e-05
+        },
+        {
+            "Total Tokens": 467,
+            "Prompt Tokens": 446,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 7.95e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedTable) relation \"table_name\" does not exist\nLINE 1: SELECT bit_or(column_name) FROM table_name;\n                                        ^\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT bit_or(1) AS result;"
     ]
 }

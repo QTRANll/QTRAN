@@ -16,5 +16,53 @@
     "Examples": [],
     "Category": [
         "Window Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT rank(value) FROM your_table;",
+        "SELECT rank(*) FROM your_table;",
+        "SELECT rank() FROM your_table;",
+        "SELECT rank() OVER () AS rank_value;",
+        "SELECT rank() OVER (ORDER BY some_column) AS rank_value;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 280,
+            "Prompt Tokens": 260,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 5.1e-05
+        },
+        {
+            "Total Tokens": 436,
+            "Prompt Tokens": 417,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 7.394999999999998e-05
+        },
+        {
+            "Total Tokens": 592,
+            "Prompt Tokens": 573,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 9.734999999999998e-05
+        },
+        {
+            "Total Tokens": 751,
+            "Prompt Tokens": 730,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 0.00012209999999999999
+        },
+        {
+            "Total Tokens": 889,
+            "Prompt Tokens": 863,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 0.00014504999999999997
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymonetdb.exceptions.OperationalError) 42000!syntax error, unexpected VALUE, expecting ')' in: \"select rank(value\"\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!syntax error, unexpected '*', expecting ')' in: \"select rank(*\"\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!syntax error, unexpected FROM, expecting OVER in: \"select rank() from\"\n\n",
+        "Server closed connection",
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: identifier 'some_column' unknown\n\n"
+    ],
+    "EffectiveSQLs": []
 }

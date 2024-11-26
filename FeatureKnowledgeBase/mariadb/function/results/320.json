@@ -20,5 +20,11 @@
     ],
     "EffectiveSQLsRefined": [
         "SELECT ST_ISSIMPLE(GEOMFROMTEXT(@g));"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT ST_ISSIMPLE(GEOMFROMTEXT(@g));"
     ]
 }

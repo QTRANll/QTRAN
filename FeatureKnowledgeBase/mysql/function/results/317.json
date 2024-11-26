@@ -20,5 +20,53 @@
     "Category": [
         "Built-In Functions and Operators",
         "Spatial Analysis Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT ST_GeomFromWKB('your_wkb_data_here', 4326);",
+        "SELECT ST_GeomFromWKB(0x01010000005839B4C76E3F4C3F4C3F4C3F4C3F4C3F4C3F, 4326);",
+        "SELECT ST_GeomFromWKB(0x01010000005839B4C76E3F4C3F4C3F4C3F4C3F4C3F4C3F, 4326);",
+        "SELECT ST_GeomFromWKB(0x0000000001, 4326);",
+        "SELECT ST_GeomFromWKB(0x01010000005839B4C76E3F4C3F4C3F4C3F4C3F4C3F4C3F, 4326);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 422,
+            "Prompt Tokens": 390,
+            "Completion Tokens": 32,
+            "Total Cost (USD)": 7.769999999999999e-05
+        },
+        {
+            "Total Tokens": 624,
+            "Prompt Tokens": 559,
+            "Completion Tokens": 65,
+            "Total Cost (USD)": 0.00012285
+        },
+        {
+            "Total Tokens": 826,
+            "Prompt Tokens": 761,
+            "Completion Tokens": 65,
+            "Total Cost (USD)": 0.00015315
+        },
+        {
+            "Total Tokens": 996,
+            "Prompt Tokens": 963,
+            "Completion Tokens": 33,
+            "Total Cost (USD)": 0.00016424999999999998
+        },
+        {
+            "Total Tokens": 1198,
+            "Prompt Tokens": 1133,
+            "Completion Tokens": 65,
+            "Total Cost (USD)": 0.00020894999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.OperationalError) (3037, 'Invalid GIS data provided to function st_geomfromwkb.')\n",
+        "(pymysql.err.OperationalError) (3037, 'Invalid GIS data provided to function st_geomfromwkb.')\n",
+        "(pymysql.err.OperationalError) (3037, 'Invalid GIS data provided to function st_geomfromwkb.')\n",
+        "(pymysql.err.OperationalError) (3037, 'Invalid GIS data provided to function st_geomfromwkb.')\n",
+        "(pymysql.err.OperationalError) (3037, 'Invalid GIS data provided to function st_geomfromwkb.')\n"
+    ],
+    "EffectiveSQLs": []
 }

@@ -6,13 +6,31 @@
         "pg_current_snapshot"
     ],
     "Feature": [
-        "pg_current_snapshot () → pg_snapshot"
+        "pg_current_snapshot () \u2192 pg_snapshot"
     ],
     "Description": [
-        "Returns a current snapshot, a data structure showing which transaction IDs are now in-progress. Only top-level transaction IDs are included in the snapshot; subtransaction IDs are not shown; see Section 74.3 for details."
+        "Returns a current snapshot, a data structure showing which transaction IDs are now in-progress. Only top-level transaction IDs are included in the snapshot; subtransaction IDs are not shown; see Section\u00a074.3 for details."
     ],
     "Examples": [],
     "Category": [
         "System Information Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT pg_current_snapshot();"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 305,
+            "Prompt Tokens": 287,
+            "Completion Tokens": 18,
+            "Total Cost (USD)": 5.3849999999999994e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT pg_current_snapshot();"
     ]
 }

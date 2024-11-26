@@ -6,15 +6,33 @@
         "jsonb_path_query_array"
     ],
     "Feature": [
-        "jsonb_path_query_array ( target jsonb, path jsonpath [, vars jsonb [, silent boolean ]] ) → jsonb"
+        "jsonb_path_query_array ( target jsonb, path jsonpath [, vars jsonb [, silent boolean ]] ) \u2192 jsonb"
     ],
     "Description": [
         "Returns all JSON items returned by the JSON path for the specified JSON value, as a JSON array. The optional vars and silent arguments act the same as for jsonb_path_exists."
     ],
     "Examples": [
-        "jsonb_path_query_array('{\"a\":[1,2,3,4,5]}', '$.a[*] ? (@ >= $min && @ <= $max)', '{\"min\":2, \"max\":4}') → [2, 3, 4]"
+        "jsonb_path_query_array('{\"a\":[1,2,3,4,5]}', '$.a[*] ? (@ >= $min && @ <= $max)', '{\"min\":2, \"max\":4}') \u2192 [2, 3, 4]"
     ],
     "Category": [
         "JSON Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT jsonb_path_query_array('{\"name\": \"Alice\", \"age\": 30}', '$.name')"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 483,
+            "Prompt Tokens": 447,
+            "Completion Tokens": 36,
+            "Total Cost (USD)": 8.864999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT jsonb_path_query_array('{\"name\": \"Alice\", \"age\": 30}', '$.name')"
     ]
 }

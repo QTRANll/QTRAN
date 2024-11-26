@@ -18,5 +18,47 @@
     ],
     "Category": [
         "Aggregate Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT kahan_sum(column_name) FROM table_name;",
+        "SELECT kahan_sum(column_name) FROM some_existing_table;",
+        "SELECT kahan_sum(column_name) FROM sqlite_temp_master;",
+        "SELECT kahan_sum(rootpage) FROM sqlite_temp_master;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 290,
+            "Prompt Tokens": 267,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 5.3849999999999994e-05
+        },
+        {
+            "Total Tokens": 468,
+            "Prompt Tokens": 444,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 8.099999999999999e-05
+        },
+        {
+            "Total Tokens": 648,
+            "Prompt Tokens": 624,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 0.000108
+        },
+        {
+            "Total Tokens": 839,
+            "Prompt Tokens": 815,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 0.00013665
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.CatalogException) Catalog Error: Table with name table_name does not exist!\nDid you mean \"pg_tablespace\"?\nLINE 1: SELECT kahan_sum(column_name) FROM table_name;\n                                           ^\n",
+        "(duckdb.duckdb.CatalogException) Catalog Error: Table with name some_existing_table does not exist!\nDid you mean \"sqlite_temp_master\"?\nLINE 1: SELECT kahan_sum(column_name) FROM some_existing_table;\n                                           ^\n",
+        "(duckdb.duckdb.BinderException) Binder Error: Referenced column \"column_name\" not found in FROM clause!\nCandidate bindings: \"sqlite_temp_master.tbl_name\", \"sqlite_temp_master.rootpage\"\nLINE 1: SELECT kahan_sum(column_name) FROM sqlite_temp_master;\n                         ^\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT kahan_sum(rootpage) FROM sqlite_temp_master;"
     ]
 }

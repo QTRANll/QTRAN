@@ -16,5 +16,39 @@
     ],
     "Category": [
         "List Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT list[1:10:2];",
+        "SELECT list_slice(list, 1, 10, 2);",
+        "SELECT list_slice(ARRAY[1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 1, 10, 2);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 289,
+            "Prompt Tokens": 267,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 5.324999999999999e-05
+        },
+        {
+            "Total Tokens": 466,
+            "Prompt Tokens": 439,
+            "Completion Tokens": 27,
+            "Total Cost (USD)": 8.204999999999999e-05
+        },
+        {
+            "Total Tokens": 678,
+            "Prompt Tokens": 621,
+            "Completion Tokens": 57,
+            "Total Cost (USD)": 0.00012734999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.BinderException) Binder Error: Referenced column \"list\" not found in FROM clause!\nLINE 1: SELECT list[1:10:2];\n               ^\n",
+        "(duckdb.duckdb.BinderException) Binder Error: Referenced column \"list\" not found in FROM clause!\nLINE 1: SELECT list_slice(list, 1, 10, 2);\n                          ^\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT list_slice(ARRAY[1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 1, 10, 2);"
     ]
 }

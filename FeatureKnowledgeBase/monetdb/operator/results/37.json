@@ -16,5 +16,61 @@
     ],
     "Category": [
         "INET Operators"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        [
+            "SELECT * FROM your_table WHERE your_column <= your_value;",
+            "UPDATE your_table SET your_column = new_value WHERE your_column <= your_value;",
+            "DELETE FROM your_table WHERE your_column <= your_value;"
+        ],
+        [
+            "SELECT * FROM your_table WHERE your_column <= 'your_value';",
+            "UPDATE your_table SET your_column = 'new_value' WHERE your_column <= 'your_value';",
+            "DELETE FROM your_table WHERE your_column <= 'your_value';"
+        ],
+        [
+            "SELECT * FROM your_table WHERE your_column <= 'your_value';",
+            "UPDATE your_table SET your_column = 'new_value' WHERE your_column <= 'your_value';",
+            "DELETE FROM your_table WHERE your_column <= 'your_value';"
+        ],
+        [
+            "SELECT * FROM your_table WHERE your_column <= 'your_value';",
+            "UPDATE your_table SET your_column = 'new_value' WHERE your_column <= 'your_value';",
+            "DELETE FROM your_table WHERE your_column <= 'your_value';"
+        ]
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 226,
+            "Prompt Tokens": 164,
+            "Completion Tokens": 62,
+            "Total Cost (USD)": 6.18e-05
+        },
+        {
+            "Total Tokens": 413,
+            "Prompt Tokens": 343,
+            "Completion Tokens": 70,
+            "Total Cost (USD)": 9.345e-05
+        },
+        {
+            "Total Tokens": 600,
+            "Prompt Tokens": 530,
+            "Completion Tokens": 70,
+            "Total Cost (USD)": 0.0001215
+        },
+        {
+            "Total Tokens": 787,
+            "Prompt Tokens": 717,
+            "Completion Tokens": 70,
+            "Total Cost (USD)": 0.00014954999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "expected string or bytes-like object, got 'list'",
+        "expected string or bytes-like object, got 'list'",
+        "expected string or bytes-like object, got 'list'",
+        "expected string or bytes-like object, got 'list'"
+    ],
+    "EffectiveSQLs": []
 }

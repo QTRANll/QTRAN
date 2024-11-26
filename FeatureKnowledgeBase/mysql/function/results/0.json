@@ -23,5 +23,16 @@
     ],
     "Examples": [
         "mysql> SELECT ABS(2);\n        -> 2\nmysql> SELECT ABS(-32);\n        -> 32"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT ABS(2);",
+        "SELECT ABS(-32);"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT ABS(2);",
+        "SELECT ABS(-32);"
     ]
 }

@@ -18,5 +18,31 @@
     ],
     "Category": [
         "Character String Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT locate('s1', 's2', pos);",
+        "SELECT locate('s1', 's2', 1);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 327,
+            "Prompt Tokens": 302,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 6.0299999999999995e-05
+        },
+        {
+            "Total Tokens": 489,
+            "Prompt Tokens": 463,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 8.505e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: identifier 'pos' unknown\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT locate('s1', 's2', 1);"
     ]
 }

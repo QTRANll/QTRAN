@@ -15,5 +15,31 @@
     "Examples": [],
     "Category": [
         "Window Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT sys.corr(numeric_a, numeric_b);",
+        "SELECT sys.corr(1.0, 2.0);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 299,
+            "Prompt Tokens": 275,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 5.565e-05
+        },
+        {
+            "Total Tokens": 462,
+            "Prompt Tokens": 435,
+            "Completion Tokens": 27,
+            "Total Cost (USD)": 8.145e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: identifier 'numeric_a' unknown\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT sys.corr(1.0, 2.0);"
     ]
 }

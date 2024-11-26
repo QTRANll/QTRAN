@@ -6,15 +6,63 @@
         "get_byte"
     ],
     "Feature": [
-        "get_byte ( bytes bytea, n integer ) → integer"
+        "get_byte ( bytes bytea, n integer ) \u2192 integer"
     ],
     "Description": [
         "Extracts n'th byte from binary string."
     ],
     "Examples": [
-        "get_byte('\\x1234567890'::bytea, 4) → 144"
+        "get_byte('\\x1234567890'::bytea, 4) \u2192 144"
     ],
     "Category": [
         "Binary String Functions and Operators"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT get_byte(your_bytea_column, n) FROM your_table;",
+        "SELECT get_byte(your_bytea_column, n);",
+        "SELECT get_byte(E'\\xDEADBEEF', 1);",
+        "SELECT get_byte(E'\\x00DEADBEEF', 1);",
+        "SELECT get_byte(E'\\xDEADBEEF', 0);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 281,
+            "Prompt Tokens": 254,
+            "Completion Tokens": 27,
+            "Total Cost (USD)": 5.429999999999999e-05
+        },
+        {
+            "Total Tokens": 452,
+            "Prompt Tokens": 428,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 7.859999999999999e-05
+        },
+        {
+            "Total Tokens": 624,
+            "Prompt Tokens": 597,
+            "Completion Tokens": 27,
+            "Total Cost (USD)": 0.00010575
+        },
+        {
+            "Total Tokens": 785,
+            "Prompt Tokens": 757,
+            "Completion Tokens": 28,
+            "Total Cost (USD)": 0.00013035
+        },
+        {
+            "Total Tokens": 942,
+            "Prompt Tokens": 915,
+            "Completion Tokens": 27,
+            "Total Cost (USD)": 0.00015345
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedTable) relation \"your_table\" does not exist\nLINE 1: SELECT get_byte(your_bytea_column, n) FROM your_table;\n                                                   ^\n\n",
+        "(psycopg2.errors.UndefinedColumn) column \"your_bytea_column\" does not exist\nLINE 1: SELECT get_byte(your_bytea_column, n);\n                        ^\n\n",
+        "(psycopg2.errors.CharacterNotInRepertoire) invalid byte sequence for encoding \"UTF8\": 0xde 0x41\n\n",
+        "(psycopg2.errors.CharacterNotInRepertoire) invalid byte sequence for encoding \"UTF8\": 0x00\n\n",
+        "(psycopg2.errors.CharacterNotInRepertoire) invalid byte sequence for encoding \"UTF8\": 0xde 0x41\n\n"
+    ],
+    "EffectiveSQLs": []
 }

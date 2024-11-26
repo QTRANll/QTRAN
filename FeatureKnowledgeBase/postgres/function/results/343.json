@@ -6,7 +6,7 @@
         "regr_intercept"
     ],
     "Feature": [
-        "regr_intercept ( Y double precision, X double precision ) → double precision"
+        "regr_intercept ( Y double precision, X double precision ) \u2192 double precision"
     ],
     "Description": [
         "Computes the y-intercept of the least-squares-fit linear equation determined by the (X, Y) pairs."
@@ -14,5 +14,31 @@
     "Examples": [],
     "Category": [
         "Aggregate Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT regr_intercept(Y, X);",
+        "SELECT regr_intercept(1.0, 2.0);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 301,
+            "Prompt Tokens": 279,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 5.5049999999999996e-05
+        },
+        {
+            "Total Tokens": 471,
+            "Prompt Tokens": 443,
+            "Completion Tokens": 28,
+            "Total Cost (USD)": 8.324999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedColumn) column \"y\" does not exist\nLINE 1: SELECT regr_intercept(Y, X);\n                              ^\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT regr_intercept(1.0, 2.0);"
     ]
 }

@@ -6,15 +6,41 @@
         "octet_length"
     ],
     "Feature": [
-        "octet_length ( bytea ) → integer"
+        "octet_length ( bytea ) \u2192 integer"
     ],
     "Description": [
         "Returns number of bytes in the binary string."
     ],
     "Examples": [
-        "octet_length('\\x123456'::bytea) → 3"
+        "octet_length('\\x123456'::bytea) \u2192 3"
     ],
     "Category": [
         "Binary String Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT octet_length(your_bytea_column) FROM your_table;",
+        "SELECT octet_length(E'\\x48656c6c6f') AS byte_length;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 280,
+            "Prompt Tokens": 254,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 5.369999999999999e-05
+        },
+        {
+            "Total Tokens": 459,
+            "Prompt Tokens": 427,
+            "Completion Tokens": 32,
+            "Total Cost (USD)": 8.324999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedTable) relation \"your_table\" does not exist\nLINE 1: SELECT octet_length(your_bytea_column) FROM your_table;\n                                                    ^\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT octet_length(E'\\x48656c6c6f') AS byte_length;"
     ]
 }

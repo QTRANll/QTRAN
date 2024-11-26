@@ -38,5 +38,16 @@
     "Category": [
         "Built-In Functions and Operators",
         "Spatial Analysis Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT ST_AsText(ST_Buffer(@pt, 0));",
+        "SELECT ST_AsText(ST_Buffer(@pt, 2, @pt_strategy));"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT ST_AsText(ST_Buffer(@pt, 0));",
+        "SELECT ST_AsText(ST_Buffer(@pt, 2, @pt_strategy));"
     ]
 }

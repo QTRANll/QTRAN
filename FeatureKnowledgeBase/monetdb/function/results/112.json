@@ -18,5 +18,47 @@
     ],
     "Category": [
         "Character String Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT startswith('hello', 'he');",
+        "SELECT startswith('hello', 'he')::boolean;",
+        "SELECT startswith('hello', 'he');",
+        "SELECT CASE WHEN 'hello' LIKE 'he%' THEN TRUE ELSE FALSE END;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 308,
+            "Prompt Tokens": 286,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 5.609999999999999e-05
+        },
+        {
+            "Total Tokens": 469,
+            "Prompt Tokens": 445,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 8.115e-05
+        },
+        {
+            "Total Tokens": 620,
+            "Prompt Tokens": 598,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 0.00010289999999999998
+        },
+        {
+            "Total Tokens": 785,
+            "Prompt Tokens": 757,
+            "Completion Tokens": 28,
+            "Total Cost (USD)": 0.00013035
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: no such binary operator 'startswith(char,char)'\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!Unexpected symbol (:)\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: no such binary operator 'startswith(char,char)'\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT CASE WHEN 'hello' LIKE 'he%' THEN TRUE ELSE FALSE END;"
     ]
 }

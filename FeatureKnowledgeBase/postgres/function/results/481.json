@@ -6,7 +6,7 @@
         "pg_xact_status"
     ],
     "Feature": [
-        "pg_xact_status ( xid8 ) → text"
+        "pg_xact_status ( xid8 ) \u2192 text"
     ],
     "Description": [
         "Reports the commit status of a recent transaction. The result is one of in progress, committed, or aborted, provided that the transaction is recent enough that the system retains the commit status of that transaction. If it is old enough that no references to the transaction survive in the system and the commit status information has been discarded, the result is NULL. Applications might use this function, for example, to determine whether their transaction committed or aborted after the application and database server become disconnected while a COMMIT is in progress. Note that prepared transactions are reported as in progress; applications must check pg_prepared_xacts if they need to determine whether a transaction ID belongs to a prepared transaction."
@@ -14,5 +14,53 @@
     "Examples": [],
     "Category": [
         "System Information Functions and Operators"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT pg_xact_status(xid) FROM pg_xact_status;",
+        "SELECT pg_xact_status(xid);",
+        "SELECT pg_xact_status(0);",
+        "SELECT pg_xact_status(1::xid);",
+        "SELECT pg_xact_status(current_transaction_id());"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 410,
+            "Prompt Tokens": 384,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 7.319999999999999e-05
+        },
+        {
+            "Total Tokens": 581,
+            "Prompt Tokens": 560,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 9.659999999999999e-05
+        },
+        {
+            "Total Tokens": 744,
+            "Prompt Tokens": 723,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 0.00012104999999999999
+        },
+        {
+            "Total Tokens": 934,
+            "Prompt Tokens": 910,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 0.00015089999999999998
+        },
+        {
+            "Total Tokens": 1099,
+            "Prompt Tokens": 1077,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 0.00017474999999999997
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedTable) relation \"pg_xact_status\" does not exist\nLINE 1: SELECT pg_xact_status(xid) FROM pg_xact_status;\n                                        ^\n\n",
+        "(psycopg2.errors.UndefinedColumn) column \"xid\" does not exist\nLINE 1: SELECT pg_xact_status(xid);\n                              ^\n\n",
+        "(psycopg2.errors.UndefinedFunction) function pg_xact_status(integer) does not exist\nLINE 1: SELECT pg_xact_status(0);\n               ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.\n\n",
+        "(psycopg2.errors.CannotCoerce) cannot cast type integer to xid\nLINE 1: SELECT pg_xact_status(1::xid);\n                               ^\n\n",
+        "(psycopg2.errors.UndefinedFunction) function current_transaction_id() does not exist\nLINE 1: SELECT pg_xact_status(current_transaction_id());\n                              ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.\n\n"
+    ],
+    "EffectiveSQLs": []
 }

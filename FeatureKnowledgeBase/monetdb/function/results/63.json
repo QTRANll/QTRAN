@@ -18,5 +18,31 @@
     ],
     "Category": [
         "Mathematics Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT atan(x, y);",
+        "SELECT atan(1, 1);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 284,
+            "Prompt Tokens": 265,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 5.1149999999999996e-05
+        },
+        {
+            "Total Tokens": 435,
+            "Prompt Tokens": 414,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 7.469999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: identifier 'x' unknown\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT atan(1, 1);"
     ]
 }

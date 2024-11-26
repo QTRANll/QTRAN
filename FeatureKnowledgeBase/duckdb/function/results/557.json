@@ -16,5 +16,31 @@
     ],
     "Category": [
         "Timestamp with Time Zone Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT generate_series('2023-01-01 00:00:00+00', '2023-01-02 00:00:00+00', '1 hour')",
+        "SELECT generate_series(TIMESTAMP WITH TIME ZONE '2023-01-01 00:00:00+00', TIMESTAMP WITH TIME ZONE '2023-01-02 00:00:00+00', INTERVAL '1 hour')"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 365,
+            "Prompt Tokens": 313,
+            "Completion Tokens": 52,
+            "Total Cost (USD)": 7.814999999999999e-05
+        },
+        {
+            "Total Tokens": 692,
+            "Prompt Tokens": 625,
+            "Completion Tokens": 67,
+            "Total Cost (USD)": 0.00013394999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.BinderException) Binder Error: Could not choose a best candidate function for the function call \"generate_series(STRING_LITERAL, STRING_LITERAL, STRING_LITERAL)\". In order to select one, please add explicit type casts.\n\tCandidate functions:\n\tgenerate_series(TIMESTAMP, TIMESTAMP, INTERVAL) -> TIMESTAMP[]\n\tgenerate_series(TIMESTAMP WITH TIME ZONE, TIMESTAMP WITH TIME ZONE, INTERVAL) -> TIMESTAMP WITH TIME ZONE[]\n\tgenerate_series(BIGINT, BIGINT, BIGINT) -> BIGINT[]\n\nLINE 1: SELECT generate_series('2023-01-01 00:00:00+00...\n               ^\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT generate_series(TIMESTAMP WITH TIME ZONE '2023-01-01 00:00:00+00', TIMESTAMP WITH TIME ZONE '2023-01-02 00:00:00+00', INTERVAL '1 hour')"
     ]
 }

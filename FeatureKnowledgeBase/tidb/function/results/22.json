@@ -10,18 +10,39 @@
     ],
     "Description": [
         "LEFT()",
-        "LEFT() 函数用于返回字符串左侧指定数量的字符。",
-        "语法：",
+        "LEFT() \u51fd\u6570\u7528\u4e8e\u8fd4\u56de\u5b57\u7b26\u4e32\u5de6\u4fa7\u6307\u5b9a\u6570\u91cf\u7684\u5b57\u7b26\u3002",
+        "\u8bed\u6cd5\uff1a",
         "LEFT(`str`, `len`)\n",
-        "str：要提取字符的原始字符串。如果 str 包含一个多字节字符，该函数将其视为一个字符。len：要返回的字符长度。如果 len 小于或等于 0，该函数返回空字符串。如果 len 大于或等于 str 的长度，该函数将返回原始的 str。如果任何参数为 NULL，该函数返回 NULL。"
+        "str\uff1a\u8981\u63d0\u53d6\u5b57\u7b26\u7684\u539f\u59cb\u5b57\u7b26\u4e32\u3002\u5982\u679c str \u5305\u542b\u4e00\u4e2a\u591a\u5b57\u8282\u5b57\u7b26\uff0c\u8be5\u51fd\u6570\u5c06\u5176\u89c6\u4e3a\u4e00\u4e2a\u5b57\u7b26\u3002len\uff1a\u8981\u8fd4\u56de\u7684\u5b57\u7b26\u957f\u5ea6\u3002\u5982\u679c len \u5c0f\u4e8e\u6216\u7b49\u4e8e 0\uff0c\u8be5\u51fd\u6570\u8fd4\u56de\u7a7a\u5b57\u7b26\u4e32\u3002\u5982\u679c len \u5927\u4e8e\u6216\u7b49\u4e8e str \u7684\u957f\u5ea6\uff0c\u8be5\u51fd\u6570\u5c06\u8fd4\u56de\u539f\u59cb\u7684 str\u3002\u5982\u679c\u4efb\u4f55\u53c2\u6570\u4e3a NULL\uff0c\u8be5\u51fd\u6570\u8fd4\u56de NULL\u3002"
     ],
     "Examples": [
         "SELECT LEFT('ABCED', 3);\n+------------------+\n| LEFT('ABCED', 3) |\n+------------------+\n| ABC              |\n+------------------+\n\nSELECT LEFT('ABCED', 6);\n+------------------+\n| LEFT('ABCED', 6) |\n+------------------+\n| ABCED            |\n+------------------+\n",
         "SELECT LEFT('ABCED', 0);\n+------------------+\n| LEFT('ABCED', 0) |\n+------------------+\n|                  |\n+------------------+\n\nSELECT LEFT('ABCED', -1);\n+-------------------+\n| LEFT('ABCED', -1) |\n+-------------------+\n|                   |\n+-------------------+\n",
-        "SELECT LEFT('🍣ABC', 3);\n+--------------------+\n| LEFT('🍣ABC', 3)     |\n+--------------------+\n| 🍣AB                 |\n+--------------------+\n",
+        "SELECT LEFT('\ud83c\udf63ABC', 3);\n+--------------------+\n| LEFT('\ud83c\udf63ABC', 3)     |\n+--------------------+\n| \ud83c\udf63AB                 |\n+--------------------+\n",
         "SELECT LEFT('ABC', NULL);\n+-------------------+\n| LEFT('ABC', NULL) |\n+-------------------+\n| NULL              |\n+-------------------+\n\nSELECT LEFT(NULL, 3);\n+------------------------------+\n| LEFT(NULL, 3)                |\n+------------------------------+\n| NULL                         |\n+------------------------------+\n"
     ],
     "Category": [
-        "字符串函数"
+        "\u5b57\u7b26\u4e32\u51fd\u6570"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT LEFT('ABCED', 3);",
+        "SELECT LEFT('ABCED', 6);",
+        "SELECT LEFT('ABCED', 0);",
+        "SELECT LEFT('ABCED', -1);",
+        "SELECT LEFT('\ud83c\udf63ABC', 3);",
+        "SELECT LEFT('ABC', NULL);",
+        "SELECT LEFT(NULL, 3);"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT LEFT('ABCED', 3);",
+        "SELECT LEFT('ABCED', 6);",
+        "SELECT LEFT('ABCED', 0);",
+        "SELECT LEFT('ABCED', -1);",
+        "SELECT LEFT('\ud83c\udf63ABC', 3);",
+        "SELECT LEFT('ABC', NULL);",
+        "SELECT LEFT(NULL, 3);"
     ]
 }

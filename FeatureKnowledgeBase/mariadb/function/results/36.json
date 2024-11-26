@@ -23,5 +23,52 @@
     "Category": [
         "Dynamic Columns Functions"
     ],
-    "EffectiveSQLsRefined": []
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT COLUMN_GET(dyncol_blob, 'column_name' as CHAR(255));",
+        "SELECT COLUMN_GET(your_blob_column, 'column_name' as CHAR(255));",
+        "SELECT COLUMN_GET(dyncol_blob, 'column_name' as CHAR(255));",
+        "SELECT COLUMN_GET(blob_column, 'column_name' as CHAR(255));",
+        "SELECT COLUMN_GET(dyncol_blob_placeholder, 'column_name' as CHAR(255));"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 581,
+            "Prompt Tokens": 551,
+            "Completion Tokens": 30,
+            "Total Cost (USD)": 0.00010065000000000001
+        },
+        {
+            "Total Tokens": 743,
+            "Prompt Tokens": 713,
+            "Completion Tokens": 30,
+            "Total Cost (USD)": 0.00012494999999999997
+        },
+        {
+            "Total Tokens": 905,
+            "Prompt Tokens": 875,
+            "Completion Tokens": 30,
+            "Total Cost (USD)": 0.00014925
+        },
+        {
+            "Total Tokens": 1065,
+            "Prompt Tokens": 1037,
+            "Completion Tokens": 28,
+            "Total Cost (USD)": 0.00017235
+        },
+        {
+            "Total Tokens": 1227,
+            "Prompt Tokens": 1196,
+            "Completion Tokens": 31,
+            "Total Cost (USD)": 0.00019799999999999996
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.OperationalError) (1054, \"Unknown column 'dyncol_blob' in 'field list'\")\n",
+        "(pymysql.err.OperationalError) (1054, \"Unknown column 'your_blob_column' in 'field list'\")\n",
+        "(pymysql.err.OperationalError) (1054, \"Unknown column 'dyncol_blob' in 'field list'\")\n",
+        "(pymysql.err.OperationalError) (1054, \"Unknown column 'blob_column' in 'field list'\")\n",
+        "(pymysql.err.OperationalError) (1054, \"Unknown column 'dyncol_blob_placeholder' in 'field list'\")\n"
+    ],
+    "EffectiveSQLs": []
 }

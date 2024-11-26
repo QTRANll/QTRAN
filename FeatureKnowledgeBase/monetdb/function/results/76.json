@@ -14,9 +14,27 @@
         "number of UTF-8 characters in UTF-8 string s"
     ],
     "Examples": [
-        "char_length(R'2€')"
+        "char_length(R'2\u20ac')"
     ],
     "Category": [
         "Character String Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT char_length('Hello, world!');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 287,
+            "Prompt Tokens": 265,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 5.294999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT char_length('Hello, world!');"
     ]
 }

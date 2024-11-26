@@ -16,5 +16,47 @@
     ],
     "Category": [
         "Map Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT map_from_entries(STRUCT('key1', 'value1'), STRUCT('key2', 'value2'))",
+        "SELECT map_from_entries(ARRAY['key1', 'key2'], ARRAY['value1', 'value2'])",
+        "SELECT map_from_entries(ARRAY[STRUCT('key1', 'value1'), STRUCT('key2', 'value2')])",
+        "SELECT map_from_entries(ARRAY[ROW('key1', 'value1'), ROW('key2', 'value2')])"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 315,
+            "Prompt Tokens": 279,
+            "Completion Tokens": 36,
+            "Total Cost (USD)": 6.345e-05
+        },
+        {
+            "Total Tokens": 520,
+            "Prompt Tokens": 484,
+            "Completion Tokens": 36,
+            "Total Cost (USD)": 9.419999999999999e-05
+        },
+        {
+            "Total Tokens": 696,
+            "Prompt Tokens": 657,
+            "Completion Tokens": 39,
+            "Total Cost (USD)": 0.00012195
+        },
+        {
+            "Total Tokens": 906,
+            "Prompt Tokens": 867,
+            "Completion Tokens": 39,
+            "Total Cost (USD)": 0.00015345
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.CatalogException) Catalog Error: Scalar Function with name struct does not exist!\nDid you mean \"struct_pack\"?\nLINE 1: SELECT map_from_entries(STRUCT('key1', 'value1'), STRUCT('key2'...\n                                ^\n",
+        "(duckdb.duckdb.InvalidInputException) Invalid Input Error: The input argument must be a list of structs.\n",
+        "(duckdb.duckdb.CatalogException) Catalog Error: Scalar Function with name struct does not exist!\nDid you mean \"struct_pack\"?\nLINE 1: SELECT map_from_entries(ARRAY[STRUCT('key1', 'value1'), STRUCT('key2'...\n                                      ^\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT map_from_entries(ARRAY[ROW('key1', 'value1'), ROW('key2', 'value2')])"
     ]
 }

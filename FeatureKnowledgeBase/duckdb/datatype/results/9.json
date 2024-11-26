@@ -59,5 +59,30 @@
     ],
     "Category": [
         "Map"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT MAP {'key1': 10, 'key2': 20, 'key3': 30};",
+        "SELECT map_from_entries([('key1', 10), ('key2', 20), ('key3', 30)]);",
+        "SELECT MAP(['key1', 'key2', 'key3'], [10, 20, 30]);",
+        "SELECT MAP {1: 42.001, 5: -32.1};",
+        "SELECT MAP {['a', 'b']: [1.1, 2.2], ['c', 'd']: [3.3, 4.4]};",
+        "SELECT MAP {'key1': 5, 'key2': 43}['key1'];",
+        "SELECT MAP {'key1': 5, 'key2': 43}['key1'][1];",
+        "SELECT MAP {'key1': 5, 'key2': 43}['key3'];",
+        "SELECT element_at(MAP {'key1': 5, 'key2': 43}, 'key1');"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT MAP {'key1': 10, 'key2': 20, 'key3': 30};",
+        "SELECT map_from_entries([('key1', 10), ('key2', 20), ('key3', 30)]);",
+        "SELECT MAP(['key1', 'key2', 'key3'], [10, 20, 30]);",
+        "SELECT MAP {1: 42.001, 5: -32.1};",
+        "SELECT MAP {['a', 'b']: [1.1, 2.2], ['c', 'd']: [3.3, 4.4]};",
+        "SELECT MAP {'key1': 5, 'key2': 43}['key1'];",
+        "SELECT MAP {'key1': 5, 'key2': 43}['key1'][1];",
+        "SELECT MAP {'key1': 5, 'key2': 43}['key3'];",
+        "SELECT element_at(MAP {'key1': 5, 'key2': 43}, 'key1');"
     ]
 }

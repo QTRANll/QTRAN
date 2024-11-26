@@ -22,5 +22,11 @@
     ],
     "EffectiveSQLsRefined": [
         "select hex(kdf('foo', 'bar', 'infa', 'hkdf'));"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "select hex(kdf('foo', 'bar', 'infa', 'hkdf'));"
     ]
 }

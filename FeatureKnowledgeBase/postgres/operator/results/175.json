@@ -6,15 +6,49 @@
         "anyrange >> anymultirange"
     ],
     "Feature": [
-        "anyrange >> anymultirange → boolean"
+        "anyrange >> anymultirange \u2192 boolean"
     ],
     "Description": [
         "Is the range strictly right of the multirange?"
     ],
     "Examples": [
-        "int8range(50,60) >> '{[20,30)}'::int8multirange → t"
+        "int8range(50,60) >> '{[20,30)}'::int8multirange \u2192 t"
     ],
     "Category": [
         "Range divide Multirange Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT (anyrange >> anymultirange);",
+        "SELECT (NULL::anyrange >> NULL::anymultirange);",
+        "SELECT (NULL::int4range >> NULL::int4multirange);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 291,
+            "Prompt Tokens": 268,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 5.4e-05
+        },
+        {
+            "Total Tokens": 465,
+            "Prompt Tokens": 438,
+            "Completion Tokens": 27,
+            "Total Cost (USD)": 8.19e-05
+        },
+        {
+            "Total Tokens": 633,
+            "Prompt Tokens": 604,
+            "Completion Tokens": 29,
+            "Total Cost (USD)": 0.000108
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedColumn) column \"anyrange\" does not exist\nLINE 1: SELECT (anyrange >> anymultirange);\n                ^\n\n",
+        "(psycopg2.errors.DatatypeMismatch) argument declared anymultirange is not a multirange type but type anymultirange\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT (NULL::int4range >> NULL::int4multirange);"
     ]
 }

@@ -17,5 +17,39 @@
     ],
     "Category": [
         "List Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT array_grade_up(list) FROM your_table;",
+        "SELECT array_grade_up(list);",
+        "SELECT array_grade_up(ARRAY[1, 2, 3, 4]);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 293,
+            "Prompt Tokens": 271,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 5.3849999999999994e-05
+        },
+        {
+            "Total Tokens": 464,
+            "Prompt Tokens": 445,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 7.815e-05
+        },
+        {
+            "Total Tokens": 638,
+            "Prompt Tokens": 607,
+            "Completion Tokens": 31,
+            "Total Cost (USD)": 0.00010964999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.CatalogException) Catalog Error: Table with name your_table does not exist!\nDid you mean \"pg_tables\"?\nLINE 1: SELECT array_grade_up(list) FROM your_table;\n                                         ^\n",
+        "(duckdb.duckdb.BinderException) Binder Error: Referenced column \"list\" not found in FROM clause!\nLINE 1: SELECT array_grade_up(list);\n                              ^\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT array_grade_up(ARRAY[1, 2, 3, 4]);"
     ]
 }

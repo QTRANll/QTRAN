@@ -14,5 +14,39 @@
     "Examples": [],
     "Category": [
         "Window Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT lag(column_name) FROM table_name;",
+        "SELECT lag(column_name) FROM (SELECT 1 AS column_name UNION ALL SELECT 2 UNION ALL SELECT 3);",
+        "SELECT lag(column_name) OVER () FROM (SELECT 1 AS column_name UNION ALL SELECT 2 UNION ALL SELECT 3);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 474,
+            "Prompt Tokens": 453,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 8.054999999999999e-05
+        },
+        {
+            "Total Tokens": 642,
+            "Prompt Tokens": 605,
+            "Completion Tokens": 37,
+            "Total Cost (USD)": 0.00011294999999999998
+        },
+        {
+            "Total Tokens": 812,
+            "Prompt Tokens": 773,
+            "Completion Tokens": 39,
+            "Total Cost (USD)": 0.00013935
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(sqlite3.OperationalError) no such table: table_name\n",
+        "(sqlite3.OperationalError) misuse of window function lag()\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT lag(column_name) OVER () FROM (SELECT 1 AS column_name UNION ALL SELECT 2 UNION ALL SELECT 3);"
     ]
 }

@@ -6,16 +6,50 @@
         "ts_headline"
     ],
     "Feature": [
-        "ts_headline ( [ config regconfig, ] document json, query tsquery [, options text ] ) → text",
-        "ts_headline ( [ config regconfig, ] document jsonb, query tsquery [, options text ] ) → text"
+        "ts_headline ( [ config regconfig, ] document json, query tsquery [, options text ] ) \u2192 text",
+        "ts_headline ( [ config regconfig, ] document jsonb, query tsquery [, options text ] ) \u2192 text"
     ],
     "Description": [
-        "Displays, in an abbreviated form, match(es) for the query that occur in string values within the JSON document. See Section 12.3.4 for more details."
+        "Displays, in an abbreviated form, match(es) for the query that occur in string values within the JSON document. See Section\u00a012.3.4 for more details."
     ],
     "Examples": [
-        "ts_headline('{\"cat\":\"raining cats and dogs\"}'::jsonb, 'cat') → {\"cat\": \"raining <b>cats</b> and dogs\"}"
+        "ts_headline('{\"cat\":\"raining cats and dogs\"}'::jsonb, 'cat') \u2192 {\"cat\": \"raining <b>cats</b> and dogs\"}"
     ],
     "Category": [
         "Text Search Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT ts_headline('english', document, query) FROM my_table;",
+        "SELECT ts_headline('english', document, query) FROM json_data;",
+        "SELECT ts_headline('english', '{}'::json, 'search_query');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 347,
+            "Prompt Tokens": 320,
+            "Completion Tokens": 27,
+            "Total Cost (USD)": 6.419999999999999e-05
+        },
+        {
+            "Total Tokens": 524,
+            "Prompt Tokens": 497,
+            "Completion Tokens": 27,
+            "Total Cost (USD)": 9.075e-05
+        },
+        {
+            "Total Tokens": 701,
+            "Prompt Tokens": 673,
+            "Completion Tokens": 28,
+            "Total Cost (USD)": 0.00011775
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedTable) relation \"my_table\" does not exist\nLINE 1: ...ELECT ts_headline('english', document, query) FROM my_table;\n                                                              ^\n\n",
+        "(psycopg2.errors.UndefinedTable) relation \"json_data\" does not exist\nLINE 1: ...LECT ts_headline('english', document, query) FROM json_data;\n                                                             ^\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT ts_headline('english', '{}'::json, 'search_query');"
     ]
 }

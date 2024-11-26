@@ -6,15 +6,65 @@
         "path + path"
     ],
     "Feature": [
-        "path + path → path"
+        "path + path \u2192 path"
     ],
     "Description": [
         "Concatenates two open paths (returns NULL if either path is closed)."
     ],
     "Examples": [
-        "path '[(0,0),(1,1)]' + path '[(2,2),(3,3),(4,4)]' → [(0,0),(1,1),(2,2),(3,3),(4,4)]"
+        "path '[(0,0),(1,1)]' + path '[(2,2),(3,3),(4,4)]' \u2192 [(0,0),(1,1),(2,2),(3,3),(4,4)]"
     ],
     "Category": [
         "Geometric Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT path1 || path2;",
+        "SELECT $1 || $2;",
+        "SELECT path('((0,0),(1,1))') || path('((2,2),(3,3))');",
+        "SELECT path('((0,0),(1,1))')::path || path('((2,2),(3,3))')::path;",
+        "SELECT path('((0,0),(1,1))')::path + path('((2,2),(3,3))')::path;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 275,
+            "Prompt Tokens": 256,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 4.98e-05
+        },
+        {
+            "Total Tokens": 434,
+            "Prompt Tokens": 415,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 7.365e-05
+        },
+        {
+            "Total Tokens": 611,
+            "Prompt Tokens": 572,
+            "Completion Tokens": 39,
+            "Total Cost (USD)": 0.00010919999999999998
+        },
+        {
+            "Total Tokens": 835,
+            "Prompt Tokens": 792,
+            "Completion Tokens": 43,
+            "Total Cost (USD)": 0.0001446
+        },
+        {
+            "Total Tokens": 1062,
+            "Prompt Tokens": 1019,
+            "Completion Tokens": 43,
+            "Total Cost (USD)": 0.00017864999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedColumn) column \"path1\" does not exist\nLINE 1: SELECT path1 || path2;\n               ^\n\n",
+        "(psycopg2.errors.UndefinedParameter) there is no parameter $1\nLINE 1: SELECT $1 || $2;\n               ^\n\n",
+        "(psycopg2.errors.UndefinedFunction) operator does not exist: path || path\nLINE 1: SELECT path('((0,0),(1,1))') || path('((2,2),(3,3))');\n                                     ^\nHINT:  No operator matches the given name and argument types. You might need to add explicit type casts.\n\n",
+        "(psycopg2.errors.UndefinedFunction) operator does not exist: path || path\nLINE 1: SELECT path('((0,0),(1,1))')::path || path('((2,2),(3,3))'):...\n                                           ^\nHINT:  No operator matches the given name and argument types. You might need to add explicit type casts.\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT path('((0,0),(1,1))')::path + path('((2,2),(3,3))')::path;"
     ]
 }

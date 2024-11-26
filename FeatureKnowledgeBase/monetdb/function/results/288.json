@@ -16,5 +16,53 @@
     "Examples": [],
     "Category": [
         "Window Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT diff(true, 42);",
+        "SELECT diff(true, 'value');",
+        "SELECT diff(true, 1);",
+        "SELECT diff(true, false);",
+        "SELECT diff(true, NULL);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 291,
+            "Prompt Tokens": 271,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 5.265e-05
+        },
+        {
+            "Total Tokens": 449,
+            "Prompt Tokens": 429,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 7.634999999999999e-05
+        },
+        {
+            "Total Tokens": 605,
+            "Prompt Tokens": 585,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 9.974999999999999e-05
+        },
+        {
+            "Total Tokens": 762,
+            "Prompt Tokens": 743,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 0.00012284999999999998
+        },
+        {
+            "Total Tokens": 918,
+            "Prompt Tokens": 899,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 0.00014625
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: no such binary operator 'diff(boolean,tinyint)'\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: no such binary operator 'diff(boolean,char)'\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: no such binary operator 'diff(boolean,tinyint)'\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: no such binary operator 'diff(boolean,boolean)'\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: no such binary operator 'diff(boolean,any)'\n\n"
+    ],
+    "EffectiveSQLs": []
 }

@@ -19,5 +19,28 @@
     ],
     "Category": [
         "Numeric Data Types"
+    ],
+    "EffectiveSQLsRefined": [
+        "INSERT INTO tinyints VALUES (-10,10,10);",
+        "SELECT * FROM tinyints;",
+        "INSERT INTO tinyints VALUES (127,128,128);",
+        "SELECT * FROM tinyints;",
+        "INSERT INTO tinyints VALUES (-10,10,10);",
+        "SELECT * FROM tinyints;",
+        "INSERT INTO tinyints VALUES (127,128,128);",
+        "SELECT * FROM tinyints;"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "INSERT INTO tinyints VALUES (-10,10,10);",
+        "SELECT * FROM tinyints;",
+        "INSERT INTO tinyints VALUES (127,128,128);",
+        "SELECT * FROM tinyints;",
+        "INSERT INTO tinyints VALUES (-10,10,10);",
+        "SELECT * FROM tinyints;",
+        "INSERT INTO tinyints VALUES (127,128,128);",
+        "SELECT * FROM tinyints;"
     ]
 }

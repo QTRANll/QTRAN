@@ -16,5 +16,46 @@
     "Category": [
         "Geographic Functions"
     ],
-    "EffectiveSQLsRefined": []
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT ST_PointOnSurface(geometry) AS point;",
+        "SELECT ST_PointOnSurface(geom) AS point;",
+        "SELECT ST_PointOnSurface(geometry_column) AS point;",
+        "SELECT ST_PointOnSurface(ST_GeomFromText('POINT(0 0)')) AS point;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 316,
+            "Prompt Tokens": 293,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 5.774999999999999e-05
+        },
+        {
+            "Total Tokens": 472,
+            "Prompt Tokens": 449,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 8.115e-05
+        },
+        {
+            "Total Tokens": 629,
+            "Prompt Tokens": 605,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 0.00010514999999999998
+        },
+        {
+            "Total Tokens": 797,
+            "Prompt Tokens": 763,
+            "Completion Tokens": 34,
+            "Total Cost (USD)": 0.00013485
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.OperationalError) (1054, \"Unknown column 'geometry' in 'field list'\")\n",
+        "(pymysql.err.OperationalError) (1054, \"Unknown column 'geom' in 'field list'\")\n",
+        "(pymysql.err.OperationalError) (1054, \"Unknown column 'geometry_column' in 'field list'\")\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT ST_PointOnSurface(ST_GeomFromText('POINT(0 0)')) AS point;"
+    ]
 }

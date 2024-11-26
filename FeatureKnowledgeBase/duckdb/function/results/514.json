@@ -16,5 +16,31 @@
     ],
     "Category": [
         "Timestamp Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT strftime('2023-10-01 12:00:00', '%Y-%m-%d %H:%M:%S');",
+        "SELECT strftime(TIMESTAMP '2023-10-01 12:00:00', '%Y-%m-%d %H:%M:%S');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 302,
+            "Prompt Tokens": 259,
+            "Completion Tokens": 43,
+            "Total Cost (USD)": 6.465e-05
+        },
+        {
+            "Total Tokens": 616,
+            "Prompt Tokens": 570,
+            "Completion Tokens": 46,
+            "Total Cost (USD)": 0.00011309999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.BinderException) Binder Error: Could not choose a best candidate function for the function call \"strftime(STRING_LITERAL, STRING_LITERAL)\". In order to select one, please add explicit type casts.\n\tCandidate functions:\n\tstrftime(TIMESTAMP, VARCHAR) -> VARCHAR\n\tstrftime(TIMESTAMP_NS, VARCHAR) -> VARCHAR\n\tstrftime(VARCHAR, DATE) -> VARCHAR\n\tstrftime(VARCHAR, TIMESTAMP) -> VARCHAR\n\tstrftime(VARCHAR, TIMESTAMP_NS) -> VARCHAR\n\tstrftime(TIMESTAMP WITH TIME ZONE, VARCHAR) -> VARCHAR\n\tstrftime(DATE, VARCHAR) -> VARCHAR\n\nLINE 1: SELECT strftime('2023-10-01 12:00:00', '%Y-%m-...\n               ^\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT strftime(TIMESTAMP '2023-10-01 12:00:00', '%Y-%m-%d %H:%M:%S');"
     ]
 }

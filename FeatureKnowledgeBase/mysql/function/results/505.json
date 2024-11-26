@@ -24,5 +24,47 @@
     ],
     "Category": [
         "Loadable Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT version_tokens_delete('tok1;tok3');",
+        "SELECT version_tokens_set(NULL);",
+        "SELECT version_tokens_delete('');",
+        "SELECT NULL;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 592,
+            "Prompt Tokens": 568,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 9.959999999999998e-05
+        },
+        {
+            "Total Tokens": 747,
+            "Prompt Tokens": 728,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 0.00012059999999999998
+        },
+        {
+            "Total Tokens": 902,
+            "Prompt Tokens": 883,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 0.00014385
+        },
+        {
+            "Total Tokens": 1053,
+            "Prompt Tokens": 1038,
+            "Completion Tokens": 15,
+            "Total Cost (USD)": 0.0001647
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.version_tokens_delete does not exist')\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.version_tokens_set does not exist')\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.version_tokens_delete does not exist')\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT NULL;"
     ]
 }

@@ -6,7 +6,7 @@
         "rank"
     ],
     "Feature": [
-        "rank ( args ) WITHIN GROUP ( ORDER BY sorted_args ) → bigint"
+        "rank ( args ) WITHIN GROUP ( ORDER BY sorted_args ) \u2192 bigint"
     ],
     "Description": [
         "Computes the rank of the hypothetical row, with gaps; that is, the row number of the first row in its peer group."
@@ -14,5 +14,55 @@
     "Examples": [],
     "Category": [
         "Aggregate Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT rank() OVER (ORDER BY some_column) AS rank_value;",
+        "SELECT rank() OVER (ORDER BY id) AS rank_value;",
+        "SELECT rank() OVER (ORDER BY value) AS rank_value;",
+        "SELECT rank() OVER (ORDER BY some_numeric_column) AS rank_value;",
+        "SELECT rank() OVER (ORDER BY 1) AS rank_value;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 298,
+            "Prompt Tokens": 272,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 5.64e-05
+        },
+        {
+            "Total Tokens": 468,
+            "Prompt Tokens": 443,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 8.144999999999999e-05
+        },
+        {
+            "Total Tokens": 636,
+            "Prompt Tokens": 611,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 0.00010664999999999999
+        },
+        {
+            "Total Tokens": 806,
+            "Prompt Tokens": 779,
+            "Completion Tokens": 27,
+            "Total Cost (USD)": 0.00013304999999999998
+        },
+        {
+            "Total Tokens": 979,
+            "Prompt Tokens": 953,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 0.00015854999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedColumn) column \"some_column\" does not exist\nLINE 1: SELECT rank() OVER (ORDER BY some_column) AS rank_value;\n                                     ^\n\n",
+        "(psycopg2.errors.UndefinedColumn) column \"id\" does not exist\nLINE 1: SELECT rank() OVER (ORDER BY id) AS rank_value;\n                                     ^\n\n",
+        "(psycopg2.errors.UndefinedColumn) column \"value\" does not exist\nLINE 1: SELECT rank() OVER (ORDER BY value) AS rank_value;\n                                     ^\n\n",
+        "(psycopg2.errors.UndefinedColumn) column \"some_numeric_column\" does not exist\nLINE 1: SELECT rank() OVER (ORDER BY some_numeric_column) AS rank_va...\n                                     ^\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT rank() OVER (ORDER BY 1) AS rank_value;"
     ]
 }

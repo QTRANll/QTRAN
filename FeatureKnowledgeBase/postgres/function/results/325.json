@@ -6,8 +6,8 @@
         "json_object_agg_strict"
     ],
     "Feature": [
-        "json_object_agg_strict ( key \"any\", value \"any\" ) → json",
-        "jsonb_object_agg_strict ( key \"any\", value \"any\" ) → jsonb"
+        "json_object_agg_strict ( key \"any\", value \"any\" ) \u2192 json",
+        "jsonb_object_agg_strict ( key \"any\", value \"any\" ) \u2192 jsonb"
     ],
     "Description": [
         "Collects all the key/value pairs into a JSON object. Key arguments are coerced to text; value arguments are converted as per to_json or to_jsonb. The key can not be null. If the value is null then the entry is skipped,"
@@ -15,5 +15,23 @@
     "Examples": [],
     "Category": [
         "Aggregate Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT json_object_agg_strict('key1', 'value1')"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 364,
+            "Prompt Tokens": 336,
+            "Completion Tokens": 28,
+            "Total Cost (USD)": 6.72e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT json_object_agg_strict('key1', 'value1')"
     ]
 }

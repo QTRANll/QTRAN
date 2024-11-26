@@ -6,15 +6,33 @@
         "jsonb - integer"
     ],
     "Feature": [
-        "jsonb - integer → jsonb"
+        "jsonb - integer \u2192 jsonb"
     ],
     "Description": [
         "Deletes the array element with specified index (negative integers count from the end). Throws an error if JSON value is not an array."
     ],
     "Examples": [
-        "'[\"a\", \"b\"]'::jsonb - 1 → [\"a\"]"
+        "'[\"a\", \"b\"]'::jsonb - 1 \u2192 [\"a\"]"
     ],
     "Category": [
         "JSON Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT jsonb_set('[]'::jsonb, '{0}', '1'::jsonb, true);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 308,
+            "Prompt Tokens": 272,
+            "Completion Tokens": 36,
+            "Total Cost (USD)": 6.24e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT jsonb_set('[]'::jsonb, '{0}', '1'::jsonb, true);"
     ]
 }

@@ -20,5 +20,39 @@
     "Category": [
         "Built-In Functions and Operators",
         "Spatial Analysis Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT MBRTouches(g1, g2);",
+        "SELECT MBRTouches(GeomFromText('POINT(1 1)'), GeomFromText('POINT(2 2)'));",
+        "SELECT MBRTouches(ST_GeomFromText('POINT(1 1)'), ST_GeomFromText('POINT(2 2)'));"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 409,
+            "Prompt Tokens": 386,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 7.17e-05
+        },
+        {
+            "Total Tokens": 585,
+            "Prompt Tokens": 545,
+            "Completion Tokens": 40,
+            "Total Cost (USD)": 0.00010575
+        },
+        {
+            "Total Tokens": 768,
+            "Prompt Tokens": 724,
+            "Completion Tokens": 44,
+            "Total Cost (USD)": 0.00013499999999999997
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.OperationalError) (1054, \"Unknown column 'g1' in 'field list'\")\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.GeomFromText does not exist')\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT MBRTouches(ST_GeomFromText('POINT(1 1)'), ST_GeomFromText('POINT(2 2)'));"
     ]
 }

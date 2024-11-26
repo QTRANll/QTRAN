@@ -6,15 +6,33 @@
         "cotd"
     ],
     "Feature": [
-        "cotd ( double precision ) → double precision"
+        "cotd ( double precision ) \u2192 double precision"
     ],
     "Description": [
         "Cotangent, argument in degrees"
     ],
     "Examples": [
-        "cotd(45) → 1"
+        "cotd(45) \u2192 1"
     ],
     "Category": [
         "Mathematical Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT cotd(45);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 267,
+            "Prompt Tokens": 248,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 4.8599999999999995e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT cotd(45);"
     ]
 }

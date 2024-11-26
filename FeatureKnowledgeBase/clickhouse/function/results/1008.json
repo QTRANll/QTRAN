@@ -28,5 +28,8 @@
     ],
     "Category": [
         "Type Conversion Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT    toDecimal32OrNull(toString(-1.111), 5) AS a,    toTypeName(a),    toDecimal32OrNull(toString('Inf'), 5) as b,    toTypeName(b)FORMAT Vertical;"
     ]
 }

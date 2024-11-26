@@ -18,5 +18,22 @@
     "Category": [
         "Miscellaneous Functions"
     ],
-    "EffectiveSQLsRefined": []
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT MASTER_POS_WAIT('mysql-bin.000001', 12345);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 525,
+            "Prompt Tokens": 497,
+            "Completion Tokens": 28,
+            "Total Cost (USD)": 9.135e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT MASTER_POS_WAIT('mysql-bin.000001', 12345);"
+    ]
 }

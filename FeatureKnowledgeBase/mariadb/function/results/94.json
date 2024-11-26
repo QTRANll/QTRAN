@@ -23,5 +23,14 @@
         "SELECT FORMAT(1234567.89, 4) AS 'Format';",
         "SELECT FORMAT(1234567.89, 0) AS 'Format';",
         "SELECT FORMAT(123456789,2,'rm_CH') AS 'Format';"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT FORMAT(1234567890.09876543210, 4) AS 'Format';",
+        "SELECT FORMAT(1234567.89, 4) AS 'Format';",
+        "SELECT FORMAT(1234567.89, 0) AS 'Format';",
+        "SELECT FORMAT(123456789,2,'rm_CH') AS 'Format';"
     ]
 }

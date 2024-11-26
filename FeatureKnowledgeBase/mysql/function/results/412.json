@@ -20,5 +20,31 @@
     "Category": [
         "Built-In Functions and Operators",
         "Aggregate Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT VARIANCE(column_name) FROM table_name;",
+        "SELECT VARIANCE(1);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 426,
+            "Prompt Tokens": 403,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 7.425e-05
+        },
+        {
+            "Total Tokens": 584,
+            "Prompt Tokens": 564,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 9.659999999999998e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.ProgrammingError) (1146, \"Table 'knowledge_base_preprocess_mysql.table_name' doesn't exist\")\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT VARIANCE(1);"
     ]
 }

@@ -6,15 +6,63 @@
         "ts_token_type"
     ],
     "Feature": [
-        "ts_token_type ( parser_oid oid ) → setof record ( tokid integer, alias text, description text )"
+        "ts_token_type ( parser_oid oid ) \u2192 setof record ( tokid integer, alias text, description text )"
     ],
     "Description": [
-        "Returns a table that describes each type of token a parser specified by OID can recognize. See Section 12.8.2 for details."
+        "Returns a table that describes each type of token a parser specified by OID can recognize. See Section\u00a012.8.2 for details."
     ],
     "Examples": [
-        "ts_token_type(3722) → (1,asciiword,\"Word, all ASCII\") ..."
+        "ts_token_type(3722) \u2192 (1,asciiword,\"Word, all ASCII\") ..."
     ],
     "Category": [
         "Text Search Functions and Operators"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT * FROM ts_token_type(12345);",
+        "SELECT * FROM ts_token_type(0);",
+        "SELECT * FROM ts_token_type(1);",
+        "SELECT * FROM ts_token_type(2);",
+        "SELECT * FROM ts_token_type(3);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 311,
+            "Prompt Tokens": 288,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 5.699999999999999e-05
+        },
+        {
+            "Total Tokens": 458,
+            "Prompt Tokens": 436,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 7.859999999999999e-05
+        },
+        {
+            "Total Tokens": 604,
+            "Prompt Tokens": 582,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 0.00010049999999999998
+        },
+        {
+            "Total Tokens": 750,
+            "Prompt Tokens": 728,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 0.0001224
+        },
+        {
+            "Total Tokens": 896,
+            "Prompt Tokens": 874,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 0.00014429999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.InternalError_) cache lookup failed for text search parser 12345\n\n",
+        "(psycopg2.errors.InternalError_) cache lookup failed for text search parser 0\n\n",
+        "(psycopg2.errors.InternalError_) cache lookup failed for text search parser 1\n\n",
+        "(psycopg2.errors.InternalError_) cache lookup failed for text search parser 2\n\n",
+        "(psycopg2.errors.InternalError_) cache lookup failed for text search parser 3\n\n"
+    ],
+    "EffectiveSQLs": []
 }

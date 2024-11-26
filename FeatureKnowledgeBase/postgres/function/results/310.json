@@ -6,15 +6,41 @@
         "multirange"
     ],
     "Feature": [
-        "multirange ( anyrange ) → anymultirange"
+        "multirange ( anyrange ) \u2192 anymultirange"
     ],
     "Description": [
         "Returns a multirange containing just the given range."
     ],
     "Examples": [
-        "multirange('[1,2)'::int4range) → {[1,2)}"
+        "multirange('[1,2)'::int4range) \u2192 {[1,2)}"
     ],
     "Category": [
         "Range divide Multirange Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT multirange(1, 10);",
+        "SELECT multirange(int4range(1, 10));"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 282,
+            "Prompt Tokens": 259,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 5.264999999999999e-05
+        },
+        {
+            "Total Tokens": 476,
+            "Prompt Tokens": 450,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 8.31e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedFunction) function multirange(integer, integer) does not exist\nLINE 1: SELECT multirange(1, 10);\n               ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT multirange(int4range(1, 10));"
     ]
 }

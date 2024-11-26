@@ -17,5 +17,31 @@
     "Examples": [],
     "Category": [
         "Network Address Types"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT 'macaddr8'::macaddr8;",
+        "SELECT '00:00:00:00:00:00:00:00'::macaddr8;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 282,
+            "Prompt Tokens": 259,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 5.264999999999999e-05
+        },
+        {
+            "Total Tokens": 465,
+            "Prompt Tokens": 430,
+            "Completion Tokens": 35,
+            "Total Cost (USD)": 8.549999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.InvalidTextRepresentation) invalid input syntax for type macaddr8: \"macaddr8\"\nLINE 1: SELECT 'macaddr8'::macaddr8;\n               ^\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT '00:00:00:00:00:00:00:00'::macaddr8;"
     ]
 }

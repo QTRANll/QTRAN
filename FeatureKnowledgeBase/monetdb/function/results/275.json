@@ -18,5 +18,53 @@
     ],
     "Category": [
         "Aggregate Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT sys.covar_pop(numeric_a, numeric_b);",
+        "SELECT sys.covar_pop(column_a, column_b) FROM your_table;",
+        "SELECT sys.covar_pop(1.0, 2.0);",
+        "SELECT sys.covar_pop(1, 2);",
+        "SELECT sys.covar_pop(1.0, 2.0);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 355,
+            "Prompt Tokens": 330,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 6.45e-05
+        },
+        {
+            "Total Tokens": 519,
+            "Prompt Tokens": 492,
+            "Completion Tokens": 27,
+            "Total Cost (USD)": 8.999999999999999e-05
+        },
+        {
+            "Total Tokens": 686,
+            "Prompt Tokens": 658,
+            "Completion Tokens": 28,
+            "Total Cost (USD)": 0.0001155
+        },
+        {
+            "Total Tokens": 854,
+            "Prompt Tokens": 830,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 0.0001389
+        },
+        {
+            "Total Tokens": 1029,
+            "Prompt Tokens": 1001,
+            "Completion Tokens": 28,
+            "Total Cost (USD)": 0.00016694999999999997
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: identifier 'numeric_a' unknown\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42S02!SELECT: no such table 'your_table'\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: no such binary operator 'covar_pop(decimal,decimal)'\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: no such binary operator 'covar_pop(tinyint,tinyint)'\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: no such binary operator 'covar_pop(decimal,decimal)'\n\n"
+    ],
+    "EffectiveSQLs": []
 }

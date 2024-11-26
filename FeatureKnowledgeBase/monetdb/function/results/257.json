@@ -18,5 +18,39 @@
     ],
     "Category": [
         "Aggregate Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT COUNT(DISTINCT col_expr);",
+        "SELECT COUNT(DISTINCT some_column) FROM some_table;",
+        "SELECT COUNT(DISTINCT 1);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 297,
+            "Prompt Tokens": 276,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 5.4e-05
+        },
+        {
+            "Total Tokens": 453,
+            "Prompt Tokens": 429,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 7.874999999999999e-05
+        },
+        {
+            "Total Tokens": 608,
+            "Prompt Tokens": 587,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 0.00010064999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: identifier 'col_expr' unknown\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42S02!SELECT: no such table 'some_table'\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT COUNT(DISTINCT 1);"
     ]
 }

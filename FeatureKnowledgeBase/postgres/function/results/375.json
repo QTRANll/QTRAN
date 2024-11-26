@@ -6,7 +6,7 @@
         "generate_subscripts"
     ],
     "Feature": [
-        "generate_subscripts ( array anyarray, dim integer, reverse boolean ) → setof integer"
+        "generate_subscripts ( array anyarray, dim integer, reverse boolean ) \u2192 setof integer"
     ],
     "Description": [
         "Generates a series comprising the valid subscripts of the dim'th dimension of the given array. When reverse is true, returns the series in reverse order."
@@ -14,5 +14,23 @@
     "Examples": [],
     "Category": [
         "Set Returning Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT generate_subscripts(ARRAY[1, 2, 3], 1, false);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 319,
+            "Prompt Tokens": 286,
+            "Completion Tokens": 33,
+            "Total Cost (USD)": 6.269999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT generate_subscripts(ARRAY[1, 2, 3], 1, false);"
     ]
 }

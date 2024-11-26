@@ -10,13 +10,61 @@
     ],
     "Description": [
         "DEFAULT()",
-        "DEFAULT() 函数用于获取列的默认值。",
+        "DEFAULT() \u51fd\u6570\u7528\u4e8e\u83b7\u53d6\u5217\u7684\u9ed8\u8ba4\u503c\u3002",
         "CREATE TABLE t1 (id INT PRIMARY KEY, c1 INT DEFAULT 5);\nQuery OK, 0 rows affected (0.15 sec)\n\nINSERT INTO t1 VALUES (1, 1);\nQuery OK, 1 row affected (0.01 sec)\n\nUPDATE t1 SET c1=DEFAULT(c1)+3;\nQuery OK, 1 row affected (0.02 sec)\nRows matched: 1  Changed: 1  Warnings: 0\n\nTABLE t1;\n+----+------+\n| id | c1   |\n+----+------+\n|  1 |    8 |\n+----+------+\n1 row in set (0.00 sec)\n"
     ],
     "Examples": [
         "CREATE TABLE t1 (id INT PRIMARY KEY, c1 INT DEFAULT 5);\nQuery OK, 0 rows affected (0.15 sec)\n\nINSERT INTO t1 VALUES (1, 1);\nQuery OK, 1 row affected (0.01 sec)\n\nUPDATE t1 SET c1=DEFAULT(c1)+3;\nQuery OK, 1 row affected (0.02 sec)\nRows matched: 1  Changed: 1  Warnings: 0\n\nTABLE t1;\n+----+------+\n| id | c1   |\n+----+------+\n|  1 |    8 |\n+----+------+\n1 row in set (0.00 sec)\n"
     ],
     "Category": [
-        "其它函数"
-    ]
+        "\u5176\u5b83\u51fd\u6570"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "UPDATE t1 SET c1 = DEFAULT(c1);",
+        "SELECT DEFAULT(c1);",
+        "SELECT DEFAULT(5);",
+        "SELECT DEFAULT();",
+        "SELECT DEFAULT(c1) FROM t1 LIMIT 1;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 435,
+            "Prompt Tokens": 411,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 7.604999999999999e-05
+        },
+        {
+            "Total Tokens": 586,
+            "Prompt Tokens": 568,
+            "Completion Tokens": 18,
+            "Total Cost (USD)": 9.599999999999998e-05
+        },
+        {
+            "Total Tokens": 734,
+            "Prompt Tokens": 716,
+            "Completion Tokens": 18,
+            "Total Cost (USD)": 0.00011819999999999997
+        },
+        {
+            "Total Tokens": 905,
+            "Prompt Tokens": 889,
+            "Completion Tokens": 16,
+            "Total Cost (USD)": 0.00014294999999999998
+        },
+        {
+            "Total Tokens": 1083,
+            "Prompt Tokens": 1059,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 0.00017324999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.ProgrammingError) (1146, \"Table 'knowledge_base_preprocess_tidb.t1' doesn't exist\")\n",
+        "(pymysql.err.OperationalError) (1054, \"Unknown column 'c1' in 'field list'\")\n",
+        "(pymysql.err.ProgrammingError) (1064, 'You have an error in your SQL syntax; check the manual that corresponds to your TiDB version for the right syntax to use line 1 column 16 near \"5);\" ')\n",
+        "(pymysql.err.ProgrammingError) (1064, 'You have an error in your SQL syntax; check the manual that corresponds to your TiDB version for the right syntax to use line 1 column 16 near \");\" ')\n",
+        "(pymysql.err.ProgrammingError) (1146, \"Table 'knowledge_base_preprocess_tidb.t1' doesn't exist\")\n"
+    ],
+    "EffectiveSQLs": []
 }

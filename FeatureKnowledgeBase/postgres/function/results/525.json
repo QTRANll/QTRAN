@@ -6,7 +6,7 @@
         "pg_last_xact_replay_timestamp"
     ],
     "Feature": [
-        "pg_last_xact_replay_timestamp () → timestamp with time zone"
+        "pg_last_xact_replay_timestamp () \u2192 timestamp with time zone"
     ],
     "Description": [
         "Returns the time stamp of the last transaction replayed during recovery. This is the time at which the commit or abort WAL record for that transaction was generated on the primary. If no transactions have been replayed during recovery, the function returns NULL. Otherwise, if recovery is still in progress this will increase monotonically. If recovery has completed then this will remain static at the time of the last transaction applied during recovery. When the server has been started normally without recovery, the function returns NULL."
@@ -14,5 +14,23 @@
     "Examples": [],
     "Category": [
         "System Administration Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT pg_last_xact_replay_timestamp();"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 381,
+            "Prompt Tokens": 359,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 6.704999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT pg_last_xact_replay_timestamp();"
     ]
 }

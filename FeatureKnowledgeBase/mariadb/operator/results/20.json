@@ -20,5 +20,18 @@
     ],
     "Category": [
         "Comparison Operators"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT 2 < 2;",
+        "SELECT 3<'4';",
+        "SELECT 'a'<'A';"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT 2 < 2;",
+        "SELECT 3<'4';",
+        "SELECT 'a'<'A';"
     ]
 }

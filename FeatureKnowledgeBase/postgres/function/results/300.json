@@ -6,15 +6,33 @@
         "trim_array"
     ],
     "Feature": [
-        "trim_array ( array anyarray, n integer ) → anyarray"
+        "trim_array ( array anyarray, n integer ) \u2192 anyarray"
     ],
     "Description": [
         "Trims an array by removing the last n elements. If the array is multidimensional, only the first dimension is trimmed."
     ],
     "Examples": [
-        "trim_array(ARRAY[1,2,3,4,5,6], 2) → {1,2,3,4}"
+        "trim_array(ARRAY[1,2,3,4,5,6], 2) \u2192 {1,2,3,4}"
     ],
     "Category": [
         "Array Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT trim_array(ARRAY[1, 2, 3, 4, 5], 2);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 307,
+            "Prompt Tokens": 271,
+            "Completion Tokens": 36,
+            "Total Cost (USD)": 6.225e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT trim_array(ARRAY[1, 2, 3, 4, 5], 2);"
     ]
 }

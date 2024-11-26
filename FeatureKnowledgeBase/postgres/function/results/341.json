@@ -6,7 +6,7 @@
         "regr_avgy"
     ],
     "Feature": [
-        "regr_avgy ( Y double precision, X double precision ) → double precision"
+        "regr_avgy ( Y double precision, X double precision ) \u2192 double precision"
     ],
     "Description": [
         "Computes the average of the dependent variable, sum(Y)/N."
@@ -14,5 +14,31 @@
     "Examples": [],
     "Category": [
         "Aggregate Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT regr_avgy(Y, X);",
+        "SELECT regr_avgy(1.0, 2.0);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 291,
+            "Prompt Tokens": 269,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 5.3549999999999994e-05
+        },
+        {
+            "Total Tokens": 461,
+            "Prompt Tokens": 433,
+            "Completion Tokens": 28,
+            "Total Cost (USD)": 8.175e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedColumn) column \"y\" does not exist\nLINE 1: SELECT regr_avgy(Y, X);\n                         ^\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT regr_avgy(1.0, 2.0);"
     ]
 }

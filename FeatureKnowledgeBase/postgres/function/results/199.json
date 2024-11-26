@@ -6,15 +6,33 @@
         "broadcast"
     ],
     "Feature": [
-        "broadcast ( inet ) → inet"
+        "broadcast ( inet ) \u2192 inet"
     ],
     "Description": [
         "Computes the broadcast address for the address's network."
     ],
     "Examples": [
-        "broadcast(inet '192.168.1.5/24') → 192.168.1.255/24"
+        "broadcast(inet '192.168.1.5/24') \u2192 192.168.1.255/24"
     ],
     "Category": [
         "Network Address Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT broadcast('192.168.1.10'::inet);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 274,
+            "Prompt Tokens": 247,
+            "Completion Tokens": 27,
+            "Total Cost (USD)": 5.324999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT broadcast('192.168.1.10'::inet);"
     ]
 }

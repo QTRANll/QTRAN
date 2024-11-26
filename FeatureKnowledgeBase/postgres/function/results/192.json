@@ -6,15 +6,41 @@
         "circle"
     ],
     "Feature": [
-        "circle ( polygon ) → circle"
+        "circle ( polygon ) \u2192 circle"
     ],
     "Description": [
         "Converts polygon to circle. The circle's center is the mean of the positions of the polygon's points, and the radius is the average distance of the polygon's points from that center."
     ],
     "Examples": [
-        "circle(polygon '((0,0),(1,3),(2,0))') → <(1,1),1.6094757082487299>"
+        "circle(polygon '((0,0),(1,3),(2,0))') \u2192 <(1,1),1.6094757082487299>"
     ],
     "Category": [
         "Geometric Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT circle( polygon )",
+        "SELECT circle( '((0,0), (1,1), (1,0), (0,1))'::polygon )"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 292,
+            "Prompt Tokens": 274,
+            "Completion Tokens": 18,
+            "Total Cost (USD)": 5.19e-05
+        },
+        {
+            "Total Tokens": 468,
+            "Prompt Tokens": 427,
+            "Completion Tokens": 41,
+            "Total Cost (USD)": 8.865e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedColumn) column \"polygon\" does not exist\nLINE 1: SELECT circle( polygon )\n                       ^\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT circle( '((0,0), (1,1), (1,0), (0,1))'::polygon )"
     ]
 }

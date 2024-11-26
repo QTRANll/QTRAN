@@ -6,15 +6,63 @@
         "tsquery || tsquery"
     ],
     "Feature": [
-        "tsquery || tsquery → tsquery"
+        "tsquery || tsquery \u2192 tsquery"
     ],
     "Description": [
         "ORs two tsquerys together, producing a query that matches documents that match either input query."
     ],
     "Examples": [
-        "'fat | rat'::tsquery || 'cat'::tsquery → 'fat' | 'rat' | 'cat'"
+        "'fat | rat'::tsquery || 'cat'::tsquery \u2192 'fat' | 'rat' | 'cat'"
     ],
     "Category": [
         "Text Search Functions and Operators"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "tsquery1 || tsquery2",
+        "to_tsquery('tsquery1') || to_tsquery('tsquery2')",
+        "'tsquery1'::tsquery || 'tsquery2'::tsquery",
+        "tsquery 'tsquery1' || tsquery 'tsquery2'",
+        "to_tsquery('tsquery1') || to_tsquery('tsquery2')"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 290,
+            "Prompt Tokens": 270,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 5.25e-05
+        },
+        {
+            "Total Tokens": 462,
+            "Prompt Tokens": 432,
+            "Completion Tokens": 30,
+            "Total Cost (USD)": 8.279999999999998e-05
+        },
+        {
+            "Total Tokens": 642,
+            "Prompt Tokens": 613,
+            "Completion Tokens": 29,
+            "Total Cost (USD)": 0.00010934999999999999
+        },
+        {
+            "Total Tokens": 821,
+            "Prompt Tokens": 794,
+            "Completion Tokens": 27,
+            "Total Cost (USD)": 0.00013529999999999998
+        },
+        {
+            "Total Tokens": 999,
+            "Prompt Tokens": 969,
+            "Completion Tokens": 30,
+            "Total Cost (USD)": 0.00016334999999999999
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.SyntaxError) syntax error at or near \"tsquery1\"\nLINE 1: tsquery1 || tsquery2\n        ^\n\n",
+        "(psycopg2.errors.SyntaxError) syntax error at or near \"to_tsquery\"\nLINE 1: to_tsquery('tsquery1') || to_tsquery('tsquery2')\n        ^\n\n",
+        "(psycopg2.errors.SyntaxError) syntax error at or near \"'tsquery1'\"\nLINE 1: 'tsquery1'::tsquery || 'tsquery2'::tsquery\n        ^\n\n",
+        "(psycopg2.errors.SyntaxError) syntax error at or near \"tsquery\"\nLINE 1: tsquery 'tsquery1' || tsquery 'tsquery2'\n        ^\n\n",
+        "(psycopg2.errors.SyntaxError) syntax error at or near \"to_tsquery\"\nLINE 1: to_tsquery('tsquery1') || to_tsquery('tsquery2')\n        ^\n\n"
+    ],
+    "EffectiveSQLs": []
 }

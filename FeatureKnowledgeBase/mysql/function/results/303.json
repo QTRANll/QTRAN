@@ -26,5 +26,20 @@
     "Category": [
         "Built-In Functions and Operators",
         "Spatial Analysis Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT ST_Distance(@g1, @g2);",
+        "SELECT ST_Distance(@g1, @g2);",
+        "SELECT ST_Distance(@g1, @g2, 'metre');",
+        "SELECT ST_Distance(@g1, @g2, 'foot');"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT ST_Distance(@g1, @g2);",
+        "SELECT ST_Distance(@g1, @g2);",
+        "SELECT ST_Distance(@g1, @g2, 'metre');",
+        "SELECT ST_Distance(@g1, @g2, 'foot');"
     ]
 }

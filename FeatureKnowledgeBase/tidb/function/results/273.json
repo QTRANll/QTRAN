@@ -10,12 +10,21 @@
     ],
     "Description": [
         "VITESS_HASH",
-        "VITESS_HASH(num) 函数以与 Vitess 相同的方式返回数值的哈希值。这有助于将数据从 Vitess 迁移到 TiDB。"
+        "VITESS_HASH(num) \u51fd\u6570\u4ee5\u4e0e Vitess \u76f8\u540c\u7684\u65b9\u5f0f\u8fd4\u56de\u6570\u503c\u7684\u54c8\u5e0c\u503c\u3002\u8fd9\u6709\u52a9\u4e8e\u5c06\u6570\u636e\u4ece Vitess \u8fc1\u79fb\u5230 TiDB\u3002"
     ],
     "Examples": [
         "SELECT VITESS_HASH(123);\n"
     ],
     "Category": [
-        "TiDB 特有的函数"
+        "TiDB \u7279\u6709\u7684\u51fd\u6570"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT VITESS_HASH(123);"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT VITESS_HASH(123);"
     ]
 }

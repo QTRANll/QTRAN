@@ -18,7 +18,6 @@ import threading
 import sys
 
 current_file_path = os.path.abspath(__file__)
-# 获取当前文件所在目录
 current_dir = os.path.dirname(current_file_path)
 
 class DatabaseConnectionPool:
@@ -155,7 +154,7 @@ class DatabaseConnectionPool:
 # 每次执行后要清除数据库内的所有表格
 def database_clear(tool, exp, dbType):
     args = get_database_connector_args(dbType.lower())
-    args["dbname"] = f"{tool}_{exp}_{dbType}".lower()
+    args["dbname"] = f"{tool}_{exp}_{dbType}".lower() if "tlp" not in exp else f"{tool}_tlp_{dbType}".lower()
     # 特殊处理：删除对应的db文件即可
     if dbType.lower() in ["sqlite"]:
         db_filepath = os.path.join(current_dir,f'{args["dbname"]}.db')
@@ -197,7 +196,8 @@ def exec_sql_statement(tool, exp, dbType, sql_statement):
     if tool.lower() in ["sqlancer", "sqlright"]:
         tool = "sqlancer"
     args = get_database_connector_args(dbType.lower())
-    args["dbname"] = f"{tool}_{exp}_{dbType}"
+
+    args["dbname"] = f"{tool}_{exp}_{dbType}".lower() if "tlp" not in exp else f"{tool}_tlp_{dbType}".lower()
     # 先检查容器是否打开，即数据库是否能正常链接，如果没有正常链接则打开容器
     pool = DatabaseConnectionPool(args["dbType"], args["host"], args["port"], args["username"], args["password"], args["dbname"])
 
@@ -225,40 +225,6 @@ def run_with_timeout(func, timeout, *args, **kwargs):
 
     return result[0], result[1], result[2]  # 返回函数的执行结果
 
-"""
-def exec_sql_statement(tool, exp, dbType, sql_statement):
-    # 创建连接池实例
-    if tool.lower() in ["sqlancer", "sqlright"]:
-        tool = "sqlancer"
-    args = get_database_connector_args(dbType.lower())
-    args["dbname"] = f"{tool}_{exp}_{dbType}"
-
-    # 先检查容器是否打开，即数据库是否能正常链接，如果没有正常链接则打开容器
-    pool = DatabaseConnectionPool(args["dbType"], args["host"], args["port"], args["username"], args["password"],args["dbname"])
-    if not pool.check_connection():
-        run_container(tool, exp, dbType)
-    # 定义运行结果变量
-    result, exec_time, error_message = None, None, None
-    # 超时控制
-    def run_sql():
-        nonlocal result, exec_time, error_message
-        try:
-            result, exec_time, error_message = pool.execSQL(sql_statement)
-        except Exception as e:
-            error_message = str(e)
-    # 创建线程执行 SQL 语句
-    sql_thread = threading.Thread(target=run_sql)
-    sql_thread.start()
-    sql_thread.join(timeout=2)  # 等待线程完成，最多 10 秒
-    if sql_thread.is_alive():  # 检查线程是否仍在运行
-        error_message = True  # 设置超时错误
-        result, exec_time = None, None  # 清空结果
-        sql_thread.join()  # 确保线程被清理
-    # 关闭连接池
-    pool.close()
-    return result, exec_time, error_message
-"""
-
 def database_define_pinolo(tool, exp, dbType):
     # 创建连接池实例
     args = get_database_connector_args(dbType.lower())
@@ -277,7 +243,7 @@ def get_database_connector_args(dbType):
     if dbType.lower() in database_connection_args:
         return database_connection_args[dbType.lower()]
 
-if __name__ == "__main__":
+def database_connect_test():
     # 1.PINOLO
     # database_define_pinolo('pinolo', 'exp1','mysql')
     # database_define_pinolo('pinolo', 'exp1','mariadb')
@@ -435,3 +401,5 @@ if __name__ == "__main__":
         print(sqls.index(sql))
         print(exec_sql_statement("sqlancer",'exp1','clickhouse', sql))  #TEST OK
     print(database_clear("sqlancer",'exp1','clickhouse'))
+
+exec_sql_statement("pinolo", "exp1", "clickhouse", "SELECT 1;")

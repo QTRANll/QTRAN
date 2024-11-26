@@ -23,5 +23,11 @@
     ],
     "Category": [
         "Table Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT * FROM numbers(10, 5);",
+        "SELECT * FROM generate_series(10, 14);",
+        "SELECT * FROM numbers(10, 11) WHERE number % 3 == (10 % 3);",
+        "SELECT * FROM generate_series(10, 20, 3) ;"
     ]
 }

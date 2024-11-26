@@ -14,5 +14,47 @@
     "Examples": [],
     "Category": [
         "Numeric Data Types"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "CREATE TABLE example_table (example_column DEC(10,2));",
+        "ALTER TABLE example_table ADD COLUMN new_column DEC(10,2);",
+        "SELECT DEC(10,2) AS example_value;",
+        "SELECT CAST(123.45 AS DECIMAL(10,2)) AS example_value;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 356,
+            "Prompt Tokens": 330,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 6.51e-05
+        },
+        {
+            "Total Tokens": 516,
+            "Prompt Tokens": 489,
+            "Completion Tokens": 27,
+            "Total Cost (USD)": 8.955e-05
+        },
+        {
+            "Total Tokens": 671,
+            "Prompt Tokens": 648,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 0.00011099999999999999
+        },
+        {
+            "Total Tokens": 869,
+            "Prompt Tokens": 839,
+            "Completion Tokens": 30,
+            "Total Cost (USD)": 0.00014385
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.OperationalError) (1050, \"Table 'example_table' already exists\")\n",
+        "(pymysql.err.OperationalError) (1060, \"Duplicate column name 'new_column'\")\n",
+        "(pymysql.err.ProgrammingError) (1064, \"You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'DEC(10,2) AS example_value' at line 1\")\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT CAST(123.45 AS DECIMAL(10,2)) AS example_value;"
     ]
 }

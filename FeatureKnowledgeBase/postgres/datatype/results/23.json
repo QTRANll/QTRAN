@@ -23,5 +23,23 @@
     "Examples": [],
     "Category": [
         "Date divide Time Types"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT INTERVAL '1 day';"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 324,
+            "Prompt Tokens": 304,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 5.76e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT INTERVAL '1 day';"
     ]
 }

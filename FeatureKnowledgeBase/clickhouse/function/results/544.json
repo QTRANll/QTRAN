@@ -18,5 +18,9 @@
     ],
     "Category": [
         "Maps Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT mapReverseSort(map('key2', 2, 'key3', 1, 'key1', 3)) AS map;",
+        "SELECT mapReverseSort((k, v) -> v, map('key2', 2, 'key3', 1, 'key1', 3)) AS map;"
     ]
 }

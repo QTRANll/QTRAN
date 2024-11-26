@@ -16,5 +16,31 @@
     "Examples": [],
     "Category": [
         "Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT * FROM table_name WHERE column_name LIKE '100\\%' ESCAPE '\\';",
+        "SELECT '100%' LIKE '100\\%' ESCAPE '\\';"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 331,
+            "Prompt Tokens": 301,
+            "Completion Tokens": 30,
+            "Total Cost (USD)": 6.314999999999999e-05
+        },
+        {
+            "Total Tokens": 475,
+            "Prompt Tokens": 449,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 8.295e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(sqlite3.OperationalError) no such table: table_name\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT '100%' LIKE '100\\%' ESCAPE '\\';"
     ]
 }

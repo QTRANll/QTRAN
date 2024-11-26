@@ -12,33 +12,81 @@
         "4.7. The json_extract() function",
         "The json_extract(X,P1,P2,...) extracts and returns one or more \nvalues from the\nwell-formed JSON at X.  If only a single path P1 is provided, then the\nSQL datatype of the result is NULL for a JSON null, INTEGER or REAL\nfor a JSON numeric value, an INTEGER zero for a JSON false value,\nan INTEGER one for a JSON true value, the dequoted text for a \nJSON string value, and a text representation for JSON object and array values.\nIf there are multiple path arguments (P1, P2, and so forth) then this\nroutine returns SQLite text which is a well-formed JSON array holding\nthe various values.\n\n",
         "Examples:\n\n",
-        "json_extract('{\"a\":2,\"c\":[4,5,{\"f\":7}]}', '$')\n→ '{\"a\":2,\"c\":[4,5,{\"f\":7}]}'",
-        "json_extract('{\"a\":2,\"c\":[4,5,{\"f\":7}]}', '$.c')\n→ '[4,5,{\"f\":7}]'",
-        "json_extract('{\"a\":2,\"c\":[4,5,{\"f\":7}]}', '$.c[2]')\n→ '{\"f\":7}'",
-        "json_extract('{\"a\":2,\"c\":[4,5,{\"f\":7}]}', '$.c[2].f')\n→ 7",
-        "json_extract('{\"a\":2,\"c\":[4,5],\"f\":7}','$.c','$.a')\n→ '[[4,5],2]'",
-        "json_extract('{\"a\":2,\"c\":[4,5],\"f\":7}','$.c[#-1]')\n→ 5",
-        "json_extract('{\"a\":2,\"c\":[4,5,{\"f\":7}]}', '$.x')\n→ NULL",
-        "json_extract('{\"a\":2,\"c\":[4,5,{\"f\":7}]}', '$.x', '$.a')\n→ '[null,2]'",
-        "json_extract('{\"a\":\"xyz\"}', '$.a')\n→ 'xyz'",
-        "json_extract('{\"a\":null}', '$.a')\n→ NULL",
+        "json_extract('{\"a\":2,\"c\":[4,5,{\"f\":7}]}', '$')\n\u2192 '{\"a\":2,\"c\":[4,5,{\"f\":7}]}'",
+        "json_extract('{\"a\":2,\"c\":[4,5,{\"f\":7}]}', '$.c')\n\u2192 '[4,5,{\"f\":7}]'",
+        "json_extract('{\"a\":2,\"c\":[4,5,{\"f\":7}]}', '$.c[2]')\n\u2192 '{\"f\":7}'",
+        "json_extract('{\"a\":2,\"c\":[4,5,{\"f\":7}]}', '$.c[2].f')\n\u2192 7",
+        "json_extract('{\"a\":2,\"c\":[4,5],\"f\":7}','$.c','$.a')\n\u2192 '[[4,5],2]'",
+        "json_extract('{\"a\":2,\"c\":[4,5],\"f\":7}','$.c[#-1]')\n\u2192 5",
+        "json_extract('{\"a\":2,\"c\":[4,5,{\"f\":7}]}', '$.x')\n\u2192 NULL",
+        "json_extract('{\"a\":2,\"c\":[4,5,{\"f\":7}]}', '$.x', '$.a')\n\u2192 '[null,2]'",
+        "json_extract('{\"a\":\"xyz\"}', '$.a')\n\u2192 'xyz'",
+        "json_extract('{\"a\":null}', '$.a')\n\u2192 NULL",
         "There is a subtle incompatibility between the json_extract() function\nin SQLite and the json_extract() function in MySQL.  The MySQL version\nof json_extract() always returns JSON.  The SQLite version of\njson_extract() only returns JSON if there are two or more PATH arguments\n(because the result is then a JSON array) or if the single PATH argument\nreferences an array or object.  In SQLite, if json_extract() has only\na single PATH argument and that PATH references a JSON null or a string\nor a numeric value, then json_extract() returns the corresponding SQL\nNULL, TEXT, INTEGER, or REAL value.\n\n",
         "The difference between MySQL json_extract() and SQLite json_extract()\nreally only stands out when accessing individual values within the JSON\nthat are strings or NULLs.  The following table demonstrates the difference:\n\n",
         "\n\nOperationSQLite ResultMySQL Result\njson_extract('{\"a\":null,\"b\":\"xyz\"}','$.a')NULL'null'\njson_extract('{\"a\":null,\"b\":\"xyz\"}','$.b')'xyz''\"xyz\"'\n"
     ],
     "Examples": [
-        "json_extract('{\"a\":2,\"c\":[4,5,{\"f\":7}]}', '$')\n→ '{\"a\":2,\"c\":[4,5,{\"f\":7}]}'",
-        "json_extract('{\"a\":2,\"c\":[4,5,{\"f\":7}]}', '$.c')\n→ '[4,5,{\"f\":7}]'",
-        "json_extract('{\"a\":2,\"c\":[4,5,{\"f\":7}]}', '$.c[2]')\n→ '{\"f\":7}'",
-        "json_extract('{\"a\":2,\"c\":[4,5,{\"f\":7}]}', '$.c[2].f')\n→ 7",
-        "json_extract('{\"a\":2,\"c\":[4,5],\"f\":7}','$.c','$.a')\n→ '[[4,5],2]'",
-        "json_extract('{\"a\":2,\"c\":[4,5],\"f\":7}','$.c[#-1]')\n→ 5",
-        "json_extract('{\"a\":2,\"c\":[4,5,{\"f\":7}]}', '$.x')\n→ NULL",
-        "json_extract('{\"a\":2,\"c\":[4,5,{\"f\":7}]}', '$.x', '$.a')\n→ '[null,2]'",
-        "json_extract('{\"a\":\"xyz\"}', '$.a')\n→ 'xyz'",
-        "json_extract('{\"a\":null}', '$.a')\n→ NULL"
+        "json_extract('{\"a\":2,\"c\":[4,5,{\"f\":7}]}', '$')\n\u2192 '{\"a\":2,\"c\":[4,5,{\"f\":7}]}'",
+        "json_extract('{\"a\":2,\"c\":[4,5,{\"f\":7}]}', '$.c')\n\u2192 '[4,5,{\"f\":7}]'",
+        "json_extract('{\"a\":2,\"c\":[4,5,{\"f\":7}]}', '$.c[2]')\n\u2192 '{\"f\":7}'",
+        "json_extract('{\"a\":2,\"c\":[4,5,{\"f\":7}]}', '$.c[2].f')\n\u2192 7",
+        "json_extract('{\"a\":2,\"c\":[4,5],\"f\":7}','$.c','$.a')\n\u2192 '[[4,5],2]'",
+        "json_extract('{\"a\":2,\"c\":[4,5],\"f\":7}','$.c[#-1]')\n\u2192 5",
+        "json_extract('{\"a\":2,\"c\":[4,5,{\"f\":7}]}', '$.x')\n\u2192 NULL",
+        "json_extract('{\"a\":2,\"c\":[4,5,{\"f\":7}]}', '$.x', '$.a')\n\u2192 '[null,2]'",
+        "json_extract('{\"a\":\"xyz\"}', '$.a')\n\u2192 'xyz'",
+        "json_extract('{\"a\":null}', '$.a')\n\u2192 NULL"
     ],
     "Category": [
         "JSON Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "json_extract('{\"a\":2,\"c\":[4,5,{\"f\":7}]}', '$.c')",
+        "json_extract('{\"a\":2,\"c\":[4,5,{\"f\":7}]}', '$.c[1]')",
+        "json_extract('{\"a\":2,\"c\":[4,5,{\"f\":7}]}', '$.c[0]')",
+        "json_extract('{\"a\":2,\"c\":[4,5,{\"f\":7}]}', '$.a')",
+        "json_extract('{\"a\":2,\"c\":[4,5,{\"f\":7}]}', '$.c[#-1]')"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 1072,
+            "Prompt Tokens": 1033,
+            "Completion Tokens": 39,
+            "Total Cost (USD)": 0.00017834999999999997
+        },
+        {
+            "Total Tokens": 1243,
+            "Prompt Tokens": 1201,
+            "Completion Tokens": 42,
+            "Total Cost (USD)": 0.00020534999999999998
+        },
+        {
+            "Total Tokens": 1414,
+            "Prompt Tokens": 1372,
+            "Completion Tokens": 42,
+            "Total Cost (USD)": 0.00023099999999999998
+        },
+        {
+            "Total Tokens": 1582,
+            "Prompt Tokens": 1543,
+            "Completion Tokens": 39,
+            "Total Cost (USD)": 0.00025484999999999993
+        },
+        {
+            "Total Tokens": 1754,
+            "Prompt Tokens": 1711,
+            "Completion Tokens": 43,
+            "Total Cost (USD)": 0.00028244999999999995
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(sqlalchemy.exc.InvalidRequestError) A value is required for bind parameter '2'\n",
+        "(sqlalchemy.exc.InvalidRequestError) A value is required for bind parameter '2'\n",
+        "(sqlalchemy.exc.InvalidRequestError) A value is required for bind parameter '2'\n",
+        "(sqlalchemy.exc.InvalidRequestError) A value is required for bind parameter '2'\n",
+        "(sqlalchemy.exc.InvalidRequestError) A value is required for bind parameter '2'\n"
+    ],
+    "EffectiveSQLs": []
 }

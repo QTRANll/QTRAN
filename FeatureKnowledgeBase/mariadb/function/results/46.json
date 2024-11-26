@@ -27,5 +27,13 @@
         "SELECT CONVERT_TZ('2016-01-01 12:00:00','+00:00','+10:00');",
         "SELECT CONVERT_TZ('2016-01-01 12:00:00','GMT','Africa/Johannesburg');",
         "SELECT CONVERT_TZ('1969-12-31 22:00:00','+00:00','+10:00');"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT CONVERT_TZ('2016-01-01 12:00:00','+00:00','+10:00');",
+        "SELECT CONVERT_TZ('2016-01-01 12:00:00','GMT','Africa/Johannesburg');",
+        "SELECT CONVERT_TZ('1969-12-31 22:00:00','+00:00','+10:00');"
     ]
 }

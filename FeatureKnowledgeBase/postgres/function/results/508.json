@@ -6,7 +6,7 @@
         "pg_reload_conf"
     ],
     "Feature": [
-        "pg_reload_conf () → boolean"
+        "pg_reload_conf () \u2192 boolean"
     ],
     "Description": [
         "Causes all processes of the PostgreSQL server to reload their configuration files. (This is initiated by sending a SIGHUP signal to the postmaster process, which in turn sends SIGHUP to each of its children.) You can use the pg_file_settings, pg_hba_file_rules and pg_ident_file_mappings views to check the configuration files for possible errors, before reloading."
@@ -14,5 +14,23 @@
     "Examples": [],
     "Category": [
         "System Administration Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT pg_reload_conf();"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 338,
+            "Prompt Tokens": 320,
+            "Completion Tokens": 18,
+            "Total Cost (USD)": 5.879999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT pg_reload_conf();"
     ]
 }

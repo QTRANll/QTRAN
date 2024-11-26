@@ -16,5 +16,31 @@
     ],
     "Category": [
         "Date Part Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT timezone('2023-10-01 12:00:00')",
+        "SELECT timezone(TIMESTAMP '2023-10-01 12:00:00')"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 275,
+            "Prompt Tokens": 246,
+            "Completion Tokens": 29,
+            "Total Cost (USD)": 5.429999999999999e-05
+        },
+        {
+            "Total Tokens": 525,
+            "Prompt Tokens": 493,
+            "Completion Tokens": 32,
+            "Total Cost (USD)": 9.314999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.BinderException) Binder Error: Could not choose a best candidate function for the function call \"timezone(STRING_LITERAL)\". In order to select one, please add explicit type casts.\n\tCandidate functions:\n\ttimezone(TIMESTAMP) -> BIGINT\n\ttimezone(INTERVAL) -> BIGINT\n\ttimezone(TIMESTAMP WITH TIME ZONE) -> BIGINT\n\ttimezone(DATE) -> BIGINT\n\nLINE 1: SELECT timezone('2023-10-01 12:00:00')\n               ^\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT timezone(TIMESTAMP '2023-10-01 12:00:00')"
     ]
 }

@@ -20,7 +20,20 @@
         "Date & Time Functions"
     ],
     "EffectiveSQLsRefined": [
+        "CREATE TABLE t1 (d DATETIME);",
+        "INSERT INTO t1 VALUES\n    (\"2007-01-30 21:31:07\"),\n    (\"1983-10-15 06:42:51\"),\n    (\"2011-04-21 12:34:56\"),\n    (\"2011-10-30 06:31:41\"),\n    (\"2011-01-30 14:03:25\"),\n    (\"2004-10-07 11:19:34\");",
         "SELECT * FROM t1;",
+        "SELECT * FROM t1 WHERE YEAR(d) = 2011;",
+        "SELECT YEAR('1987-01-01');"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "CREATE TABLE t1 (d DATETIME);",
+        "INSERT INTO t1 VALUES\n    (\"2007-01-30 21:31:07\"),\n    (\"1983-10-15 06:42:51\"),\n    (\"2011-04-21 12:34:56\"),\n    (\"2011-10-30 06:31:41\"),\n    (\"2011-01-30 14:03:25\"),\n    (\"2004-10-07 11:19:34\");",
+        "SELECT * FROM t1;",
+        "SELECT * FROM t1 WHERE YEAR(d) = 2011;",
         "SELECT YEAR('1987-01-01');"
     ]
 }

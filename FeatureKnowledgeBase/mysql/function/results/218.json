@@ -20,5 +20,39 @@
     "Category": [
         "Built-In Functions and Operators",
         "Spatial Analysis Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT MBROverlaps(g1, g2);",
+        "SELECT MBROverlaps(GeomFromText('POINT(1 1)'), GeomFromText('POINT(2 2)'));",
+        "SELECT MBROverlaps(ST_GeomFromText('POINT(1 1)'), ST_GeomFromText('POINT(2 2)'));"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 411,
+            "Prompt Tokens": 387,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 7.245e-05
+        },
+        {
+            "Total Tokens": 588,
+            "Prompt Tokens": 547,
+            "Completion Tokens": 41,
+            "Total Cost (USD)": 0.00010665
+        },
+        {
+            "Total Tokens": 772,
+            "Prompt Tokens": 727,
+            "Completion Tokens": 45,
+            "Total Cost (USD)": 0.00013604999999999997
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.OperationalError) (1054, \"Unknown column 'g1' in 'field list'\")\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.GeomFromText does not exist')\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT MBROverlaps(ST_GeomFromText('POINT(1 1)'), ST_GeomFromText('POINT(2 2)'));"
     ]
 }

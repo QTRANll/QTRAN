@@ -18,5 +18,65 @@
     ],
     "Category": [
         "Character String Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        [
+            "SELECT LOWER(column_name) FROM table_name;",
+            "SELECT LOWER(some_string) AS lowercase_string FROM another_table;",
+            "UPDATE table_name SET column_name = LOWER(column_name) WHERE condition;",
+            "INSERT INTO table_name (column_name) VALUES (LOWER('Some String'));"
+        ],
+        [
+            "SELECT LOWER(column_name) FROM table_name WHERE column_name IS NOT NULL;",
+            "SELECT LOWER(some_string) AS lowercase_string FROM another_table WHERE some_string IS NOT NULL;",
+            "UPDATE table_name SET column_name = LOWER(column_name) WHERE condition AND column_name IS NOT NULL;",
+            "INSERT INTO table_name (column_name) VALUES (LOWER('Some String')) ON CONFLICT DO NOTHING;"
+        ],
+        [
+            "SELECT LOWER(column_name::text) FROM table_name WHERE column_name IS NOT NULL;",
+            "SELECT LOWER(some_string::text) AS lowercase_string FROM another_table WHERE some_string IS NOT NULL;",
+            "UPDATE table_name SET column_name = LOWER(column_name::text) WHERE condition AND column_name IS NOT NULL;",
+            "INSERT INTO table_name (column_name) VALUES (LOWER('Some String'::text)) ON CONFLICT DO NOTHING;"
+        ],
+        [
+            "SELECT LOWER(CAST(column_name AS VARCHAR)) FROM table_name WHERE column_name IS NOT NULL;",
+            "SELECT LOWER(CAST(some_string AS VARCHAR)) AS lowercase_string FROM another_table WHERE some_string IS NOT NULL;",
+            "UPDATE table_name SET column_name = LOWER(CAST(column_name AS VARCHAR)) WHERE condition AND column_name IS NOT NULL;",
+            "INSERT INTO table_name (column_name) VALUES (LOWER(CAST('Some String' AS VARCHAR))) ON CONFLICT DO NOTHING;"
+        ]
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 245,
+            "Prompt Tokens": 166,
+            "Completion Tokens": 79,
+            "Total Cost (USD)": 7.23e-05
+        },
+        {
+            "Total Tokens": 466,
+            "Prompt Tokens": 364,
+            "Completion Tokens": 102,
+            "Total Cost (USD)": 0.0001158
+        },
+        {
+            "Total Tokens": 696,
+            "Prompt Tokens": 585,
+            "Completion Tokens": 111,
+            "Total Cost (USD)": 0.00015434999999999998
+        },
+        {
+            "Total Tokens": 934,
+            "Prompt Tokens": 815,
+            "Completion Tokens": 119,
+            "Total Cost (USD)": 0.00019364999999999996
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "expected string or bytes-like object, got 'list'",
+        "expected string or bytes-like object, got 'list'",
+        "expected string or bytes-like object, got 'list'",
+        "expected string or bytes-like object, got 'list'"
+    ],
+    "EffectiveSQLs": []
 }

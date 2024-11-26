@@ -18,5 +18,39 @@
     ],
     "Category": [
         "Aggregate Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT sum(integer_expr);",
+        "SELECT sum(column_name) FROM table_name;",
+        "SELECT sum(1);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 290,
+            "Prompt Tokens": 272,
+            "Completion Tokens": 18,
+            "Total Cost (USD)": 5.16e-05
+        },
+        {
+            "Total Tokens": 441,
+            "Prompt Tokens": 420,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 7.559999999999998e-05
+        },
+        {
+            "Total Tokens": 591,
+            "Prompt Tokens": 573,
+            "Completion Tokens": 18,
+            "Total Cost (USD)": 9.675e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: identifier 'integer_expr' unknown\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42S02!SELECT: no such table 'table_name'\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT sum(1);"
     ]
 }

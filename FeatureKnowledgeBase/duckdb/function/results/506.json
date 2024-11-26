@@ -16,5 +16,31 @@
     ],
     "Category": [
         "Timestamp Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT greatest(timestamp1, timestamp2);",
+        "SELECT greatest(current_timestamp, current_timestamp);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 279,
+            "Prompt Tokens": 258,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 5.13e-05
+        },
+        {
+            "Total Tokens": 449,
+            "Prompt Tokens": 428,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 7.679999999999998e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.BinderException) Binder Error: Referenced column \"timestamp1\" not found in FROM clause!\nLINE 1: SELECT greatest(timestamp1, timestamp2);\n                        ^\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT greatest(current_timestamp, current_timestamp);"
     ]
 }

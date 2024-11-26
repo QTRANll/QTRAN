@@ -34,5 +34,31 @@
     "Category": [
         "Built-In Functions and Operators",
         "Aggregate Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT COUNT(*) FROM student;",
+        "SELECT COUNT(*) FROM information_schema.tables;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 1002,
+            "Prompt Tokens": 984,
+            "Completion Tokens": 18,
+            "Total Cost (USD)": 0.00015839999999999997
+        },
+        {
+            "Total Tokens": 1159,
+            "Prompt Tokens": 1139,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 0.00018284999999999997
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.ProgrammingError) (1146, \"Table 'knowledge_base_preprocess_mysql.student' doesn't exist\")\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT COUNT(*) FROM information_schema.tables;"
     ]
 }

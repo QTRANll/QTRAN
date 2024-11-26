@@ -20,5 +20,53 @@
     ],
     "Category": [
         "List Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT array_aggr(column_name) FROM table_name;",
+        "SELECT array_aggr(column_name);",
+        "SELECT array_aggr(column_name) FROM some_table;",
+        "SELECT array_aggr(column_name) FROM (VALUES (1), (2), (3)) AS some_table(column_name);",
+        "SELECT array_aggr(column_name::VARCHAR) FROM (VALUES ('a'), ('b'), ('c')) AS some_table(column_name);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 306,
+            "Prompt Tokens": 283,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 5.624999999999999e-05
+        },
+        {
+            "Total Tokens": 480,
+            "Prompt Tokens": 460,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 8.099999999999999e-05
+        },
+        {
+            "Total Tokens": 648,
+            "Prompt Tokens": 625,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 0.00010754999999999999
+        },
+        {
+            "Total Tokens": 839,
+            "Prompt Tokens": 801,
+            "Completion Tokens": 38,
+            "Total Cost (USD)": 0.00014294999999999998
+        },
+        {
+            "Total Tokens": 1062,
+            "Prompt Tokens": 1022,
+            "Completion Tokens": 40,
+            "Total Cost (USD)": 0.00017729999999999997
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.CatalogException) Catalog Error: Table with name table_name does not exist!\nDid you mean \"pg_tablespace\"?\nLINE 1: SELECT array_aggr(column_name) FROM table_name;\n                                            ^\n",
+        "(duckdb.duckdb.BinderException) Binder Error: Referenced column \"column_name\" not found in FROM clause!\nLINE 1: SELECT array_aggr(column_name);\n                          ^\n",
+        "(duckdb.duckdb.CatalogException) Catalog Error: Table with name some_table does not exist!\nDid you mean \"sqlite_master\"?\nLINE 1: SELECT array_aggr(column_name) FROM some_table;\n                                            ^\n",
+        "(duckdb.duckdb.BinderException) Binder Error: No function matches the given name and argument types 'array_aggr(INTEGER)'. You might need to add explicit type casts.\n\tCandidate functions:\n\tarray_aggr(ANY[], VARCHAR, [ANY...]) -> ANY\n\nLINE 1: SELECT array_aggr(column_name) FROM (VALUES (1...\n               ^\n",
+        "(duckdb.duckdb.BinderException) Binder Error: No function matches the given name and argument types 'array_aggr(VARCHAR)'. You might need to add explicit type casts.\n\tCandidate functions:\n\tarray_aggr(ANY[], VARCHAR, [ANY...]) -> ANY\n\nLINE 1: SELECT array_aggr(column_name::VARCHAR) FROM (...\n               ^\n"
+    ],
+    "EffectiveSQLs": []
 }

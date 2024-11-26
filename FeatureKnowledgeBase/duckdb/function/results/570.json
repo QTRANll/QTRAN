@@ -16,5 +16,31 @@
     ],
     "Category": [
         "Utility Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "CHECKPOINT(database);",
+        "CHECKPOINT;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 272,
+            "Prompt Tokens": 255,
+            "Completion Tokens": 17,
+            "Total Cost (USD)": 4.845e-05
+        },
+        {
+            "Total Tokens": 412,
+            "Prompt Tokens": 397,
+            "Completion Tokens": 15,
+            "Total Cost (USD)": 6.855e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.ParserException) Parser Error: syntax error at or near \"(\"\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "CHECKPOINT;"
     ]
 }

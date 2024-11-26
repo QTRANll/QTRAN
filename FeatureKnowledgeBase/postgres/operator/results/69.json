@@ -6,15 +6,63 @@
         "box # box"
     ],
     "Feature": [
-        "box # box → box"
+        "box # box \u2192 box"
     ],
     "Description": [
         "Computes the intersection of two boxes, or NULL if there is none."
     ],
     "Examples": [
-        "box '(2,2),(-1,-1)' # box '(1,1),(-2,-2)' → (1,1),(-1,-1)"
+        "box '(2,2),(-1,-1)' # box '(1,1),(-2,-2)' \u2192 (1,1),(-1,-1)"
     ],
     "Category": [
         "Geometric Functions and Operators"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT box # box;",
+        "SELECT $1 # $2;",
+        "SELECT box1 # box2;",
+        "SELECT NULL # NULL;",
+        "SELECT box1::box # box2::box;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 273,
+            "Prompt Tokens": 256,
+            "Completion Tokens": 17,
+            "Total Cost (USD)": 4.86e-05
+        },
+        {
+            "Total Tokens": 429,
+            "Prompt Tokens": 410,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 7.289999999999998e-05
+        },
+        {
+            "Total Tokens": 586,
+            "Prompt Tokens": 567,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 9.644999999999999e-05
+        },
+        {
+            "Total Tokens": 743,
+            "Prompt Tokens": 726,
+            "Completion Tokens": 17,
+            "Total Cost (USD)": 0.0001191
+        },
+        {
+            "Total Tokens": 924,
+            "Prompt Tokens": 901,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 0.00014895
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedColumn) column \"box\" does not exist\nLINE 1: SELECT box # box;\n               ^\n\n",
+        "(psycopg2.errors.UndefinedParameter) there is no parameter $1\nLINE 1: SELECT $1 # $2;\n               ^\n\n",
+        "(psycopg2.errors.UndefinedColumn) column \"box1\" does not exist\nLINE 1: SELECT box1 # box2;\n               ^\n\n",
+        "(psycopg2.errors.AmbiguousFunction) operator is not unique: unknown # unknown\nLINE 1: SELECT NULL # NULL;\n                    ^\nHINT:  Could not choose a best candidate operator. You might need to add explicit type casts.\n\n",
+        "(psycopg2.errors.UndefinedColumn) column \"box1\" does not exist\nLINE 1: SELECT box1::box # box2::box;\n               ^\n\n"
+    ],
+    "EffectiveSQLs": []
 }

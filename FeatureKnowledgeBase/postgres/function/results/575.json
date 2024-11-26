@@ -6,7 +6,7 @@
         "brin_summarize_new_values"
     ],
     "Feature": [
-        "brin_summarize_new_values ( index regclass ) → integer"
+        "brin_summarize_new_values ( index regclass ) \u2192 integer"
     ],
     "Description": [
         "Scans the specified BRIN index to find page ranges in the base table that are not currently summarized by the index; for any such range it creates a new summary index tuple by scanning those table pages. Returns the number of new page range summaries that were inserted into the index."
@@ -14,5 +14,53 @@
     "Examples": [],
     "Category": [
         "System Administration Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT brin_summarize_new_values('your_index_name');",
+        "SELECT brin_summarize_new_values('existing_index_name');",
+        "SELECT brin_summarize_new_values('valid_index_name');",
+        "SELECT brin_summarize_new_values('any_existing_index_name');",
+        "SELECT brin_summarize_new_values('your_actual_brin_index');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 344,
+            "Prompt Tokens": 318,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 6.33e-05
+        },
+        {
+            "Total Tokens": 521,
+            "Prompt Tokens": 495,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 8.984999999999999e-05
+        },
+        {
+            "Total Tokens": 698,
+            "Prompt Tokens": 672,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 0.0001164
+        },
+        {
+            "Total Tokens": 876,
+            "Prompt Tokens": 849,
+            "Completion Tokens": 27,
+            "Total Cost (USD)": 0.00014354999999999997
+        },
+        {
+            "Total Tokens": 1057,
+            "Prompt Tokens": 1029,
+            "Completion Tokens": 28,
+            "Total Cost (USD)": 0.00017114999999999999
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedTable) relation \"your_index_name\" does not exist\nLINE 1: SELECT brin_summarize_new_values('your_index_name');\n                                         ^\n\n",
+        "(psycopg2.errors.UndefinedTable) relation \"existing_index_name\" does not exist\nLINE 1: SELECT brin_summarize_new_values('existing_index_name');\n                                         ^\n\n",
+        "(psycopg2.errors.UndefinedTable) relation \"valid_index_name\" does not exist\nLINE 1: SELECT brin_summarize_new_values('valid_index_name');\n                                         ^\n\n",
+        "(psycopg2.errors.UndefinedTable) relation \"any_existing_index_name\" does not exist\nLINE 1: SELECT brin_summarize_new_values('any_existing_index_name');\n                                         ^\n\n",
+        "(psycopg2.errors.UndefinedTable) relation \"your_actual_brin_index\" does not exist\nLINE 1: SELECT brin_summarize_new_values('your_actual_brin_index');\n                                         ^\n\n"
+    ],
+    "EffectiveSQLs": []
 }

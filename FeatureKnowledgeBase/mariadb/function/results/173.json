@@ -15,5 +15,22 @@
     "Category": [
         "Date & Time Functions"
     ],
-    "EffectiveSQLsRefined": []
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT LOCALTIMESTAMP;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 288,
+            "Prompt Tokens": 270,
+            "Completion Tokens": 18,
+            "Total Cost (USD)": 5.13e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT LOCALTIMESTAMP;"
+    ]
 }

@@ -14,5 +14,47 @@
     "Examples": [],
     "Category": [
         "Core SQL Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT sqlite_offset(X);",
+        "SELECT sqlite_offset('your_column_name') FROM your_table_name;",
+        "SELECT sqlite_offset('your_column_name');",
+        "SELECT NULL;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 437,
+            "Prompt Tokens": 419,
+            "Completion Tokens": 18,
+            "Total Cost (USD)": 7.365e-05
+        },
+        {
+            "Total Tokens": 580,
+            "Prompt Tokens": 555,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 9.825e-05
+        },
+        {
+            "Total Tokens": 721,
+            "Prompt Tokens": 700,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 0.00011759999999999999
+        },
+        {
+            "Total Tokens": 855,
+            "Prompt Tokens": 840,
+            "Completion Tokens": 15,
+            "Total Cost (USD)": 0.00013499999999999997
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(sqlite3.OperationalError) no such column: X\n",
+        "(sqlite3.OperationalError) no such table: your_table_name\n",
+        "(sqlite3.OperationalError) no such function: sqlite_offset\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT NULL;"
     ]
 }

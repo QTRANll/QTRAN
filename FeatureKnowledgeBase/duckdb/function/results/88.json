@@ -17,5 +17,55 @@
     ],
     "Category": [
         "Array Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT array_cosine_distance(array1, array2);",
+        "SELECT array_cosine_distance(ARRAY[1, 2, 3], ARRAY[4, 5, 6]);",
+        "SELECT array_cosine_distance(ARRAY[1.0, 2.0, 3.0]::FLOAT[], ARRAY[4.0, 5.0, 6.0]::FLOAT[]);",
+        "SELECT array_cosine_distance(ARRAY[1.0, 2.0, 3.0]::DOUBLE[], ARRAY[4.0, 5.0, 6.0]::DOUBLE[]);",
+        "SELECT array_cosine_distance(ARRAY[1.0, 2.0, 3.0]::FLOAT[3], ARRAY[4.0, 5.0, 6.0]::FLOAT[3]);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 397,
+            "Prompt Tokens": 373,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 7.035e-05
+        },
+        {
+            "Total Tokens": 592,
+            "Prompt Tokens": 553,
+            "Completion Tokens": 39,
+            "Total Cost (USD)": 0.00010635
+        },
+        {
+            "Total Tokens": 866,
+            "Prompt Tokens": 808,
+            "Completion Tokens": 58,
+            "Total Cost (USD)": 0.000156
+        },
+        {
+            "Total Tokens": 1142,
+            "Prompt Tokens": 1084,
+            "Completion Tokens": 58,
+            "Total Cost (USD)": 0.0001974
+        },
+        {
+            "Total Tokens": 1422,
+            "Prompt Tokens": 1361,
+            "Completion Tokens": 61,
+            "Total Cost (USD)": 0.00024074999999999997
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.BinderException) Binder Error: Referenced column \"array1\" not found in FROM clause!\nLINE 1: SELECT array_cosine_distance(array1, array2);\n                                     ^\n",
+        "(duckdb.duckdb.BinderException) Binder Error: No function matches the given name and argument types 'array_cosine_distance(INTEGER[], INTEGER[])'. You might need to add explicit type casts.\n\tCandidate functions:\n\tarray_cosine_distance(FLOAT[ANY], FLOAT[ANY]) -> FLOAT\n\tarray_cosine_distance(DOUBLE[ANY], DOUBLE[ANY]) -> DOUBLE\n\nLINE 1: SELECT array_cosine_distance(ARRAY[1, 2, 3], A...\n               ^\n",
+        "(duckdb.duckdb.BinderException) Binder Error: No function matches the given name and argument types 'array_cosine_distance(FLOAT[], FLOAT[])'. You might need to add explicit type casts.\n\tCandidate functions:\n\tarray_cosine_distance(FLOAT[ANY], FLOAT[ANY]) -> FLOAT\n\tarray_cosine_distance(DOUBLE[ANY], DOUBLE[ANY]) -> DOUBLE\n\nLINE 1: SELECT array_cosine_distance(ARRAY[1.0, 2.0, 3...\n               ^\n",
+        "(duckdb.duckdb.BinderException) Binder Error: No function matches the given name and argument types 'array_cosine_distance(DOUBLE[], DOUBLE[])'. You might need to add explicit type casts.\n\tCandidate functions:\n\tarray_cosine_distance(FLOAT[ANY], FLOAT[ANY]) -> FLOAT\n\tarray_cosine_distance(DOUBLE[ANY], DOUBLE[ANY]) -> DOUBLE\n\nLINE 1: SELECT array_cosine_distance(ARRAY[1.0, 2.0, 3...\n               ^\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT array_cosine_distance(ARRAY[1.0, 2.0, 3.0]::FLOAT[3], ARRAY[4.0, 5.0, 6.0]::FLOAT[3]);"
     ]
 }

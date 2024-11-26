@@ -6,7 +6,7 @@
         "first_value"
     ],
     "Feature": [
-        "first_value ( value anyelement ) → anyelement"
+        "first_value ( value anyelement ) \u2192 anyelement"
     ],
     "Description": [
         "Returns value evaluated at the row that is the first row of the window frame."
@@ -14,5 +14,55 @@
     "Examples": [],
     "Category": [
         "Window Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT first_value(column_name) OVER () FROM table_name;",
+        "SELECT first_value(column_name) OVER ();",
+        "SELECT first_value(value) OVER ();",
+        "SELECT first_value(NULL) OVER ();",
+        "SELECT first_value(NULL::text) OVER ();"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 283,
+            "Prompt Tokens": 259,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 5.324999999999999e-05
+        },
+        {
+            "Total Tokens": 448,
+            "Prompt Tokens": 427,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 7.664999999999999e-05
+        },
+        {
+            "Total Tokens": 608,
+            "Prompt Tokens": 588,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 0.00010019999999999998
+        },
+        {
+            "Total Tokens": 766,
+            "Prompt Tokens": 746,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 0.0001239
+        },
+        {
+            "Total Tokens": 914,
+            "Prompt Tokens": 892,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 0.000147
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedTable) relation \"table_name\" does not exist\nLINE 1: SELECT first_value(column_name) OVER () FROM table_name;\n                                                     ^\n\n",
+        "(psycopg2.errors.UndefinedColumn) column \"column_name\" does not exist\nLINE 1: SELECT first_value(column_name) OVER ();\n                           ^\n\n",
+        "(psycopg2.errors.UndefinedColumn) column \"value\" does not exist\nLINE 1: SELECT first_value(value) OVER ();\n                           ^\n\n",
+        "(psycopg2.errors.DatatypeMismatch) could not determine polymorphic type because input has type unknown\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT first_value(NULL::text) OVER ();"
     ]
 }

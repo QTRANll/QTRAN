@@ -6,15 +6,33 @@
         "array_to_json"
     ],
     "Feature": [
-        "array_to_json ( anyarray [, boolean ] ) → json"
+        "array_to_json ( anyarray [, boolean ] ) \u2192 json"
     ],
     "Description": [
         "Converts an SQL array to a JSON array. The behavior is the same as to_json except that line feeds will be added between top-level array elements if the optional boolean parameter is true."
     ],
     "Examples": [
-        "array_to_json('{{1,5},{99,100}}'::int[]) → [[1,5],[99,100]]"
+        "array_to_json('{{1,5},{99,100}}'::int[]) \u2192 [[1,5],[99,100]]"
     ],
     "Category": [
         "JSON Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT array_to_json(ARRAY[1, 2, 3]);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 314,
+            "Prompt Tokens": 286,
+            "Completion Tokens": 28,
+            "Total Cost (USD)": 5.969999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT array_to_json(ARRAY[1, 2, 3]);"
     ]
 }

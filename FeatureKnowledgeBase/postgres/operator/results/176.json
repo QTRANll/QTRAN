@@ -6,15 +6,63 @@
         "anymultirange &< anymultirange"
     ],
     "Feature": [
-        "anymultirange &< anymultirange → boolean"
+        "anymultirange &< anymultirange \u2192 boolean"
     ],
     "Description": [
         "Does the first multirange not extend to the right of the second?"
     ],
     "Examples": [
-        "'{[1,20)}'::int8multirange &< '{[18,20)}'::int8multirange → t"
+        "'{[1,20)}'::int8multirange &< '{[18,20)}'::int8multirange \u2192 t"
     ],
     "Category": [
         "Range divide Multirange Functions and Operators"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT (anymultirange &< anymultirange);",
+        "SELECT (ANYMULTIRANGE &< ANYMULTIRANGE) FROM (VALUES (NULL::anymultirange), (NULL::anymultirange)) AS t(a, b);",
+        "SELECT (ANYMULTIRANGE1 &< ANYMULTIRANGE2) FROM (VALUES (NULL::anymultirange), (NULL::anymultirange)) AS t(ANYMULTIRANGE1, ANYMULTIRANGE2);",
+        "SELECT (ANYMULTIRANGE1 &< ANYMULTIRANGE2) FROM (VALUES (NULL::anymultirange)) AS t(ANYMULTIRANGE1);",
+        "SELECT (ANYMULTIRANGE1 &< ANYMULTIRANGE1) FROM (VALUES (NULL::anymultirange)) AS t(ANYMULTIRANGE1);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 310,
+            "Prompt Tokens": 284,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 5.819999999999999e-05
+        },
+        {
+            "Total Tokens": 516,
+            "Prompt Tokens": 465,
+            "Completion Tokens": 51,
+            "Total Cost (USD)": 0.00010035
+        },
+        {
+            "Total Tokens": 715,
+            "Prompt Tokens": 653,
+            "Completion Tokens": 62,
+            "Total Cost (USD)": 0.00013515
+        },
+        {
+            "Total Tokens": 900,
+            "Prompt Tokens": 852,
+            "Completion Tokens": 48,
+            "Total Cost (USD)": 0.00015659999999999998
+        },
+        {
+            "Total Tokens": 1130,
+            "Prompt Tokens": 1082,
+            "Completion Tokens": 48,
+            "Total Cost (USD)": 0.00019109999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedColumn) column \"anymultirange\" does not exist\nLINE 1: SELECT (anymultirange &< anymultirange);\n                ^\n\n",
+        "(psycopg2.errors.InvalidColumnReference) table \"t\" has 1 columns available but 2 columns specified\n\n",
+        "(psycopg2.errors.InvalidColumnReference) table \"t\" has 1 columns available but 2 columns specified\n\n",
+        "(psycopg2.errors.UndefinedColumn) column \"anymultirange2\" does not exist\nLINE 1: SELECT (ANYMULTIRANGE1 &< ANYMULTIRANGE2) FROM (VALUES (NULL...\n                                  ^\nHINT:  Perhaps you meant to reference the column \"t.anymultirange1\".\n\n",
+        "(psycopg2.errors.DatatypeMismatch) argument declared anymultirange is not a multirange type but type anymultirange\n\n"
+    ],
+    "EffectiveSQLs": []
 }

@@ -6,7 +6,7 @@
         "pg_copy_physical_replication_slot"
     ],
     "Feature": [
-        "pg_copy_physical_replication_slot ( src_slot_name name, dst_slot_name name [, temporary boolean ] ) → record ( slot_name name, lsn pg_lsn )"
+        "pg_copy_physical_replication_slot ( src_slot_name name, dst_slot_name name [, temporary boolean ] ) \u2192 record ( slot_name name, lsn pg_lsn )"
     ],
     "Description": [
         "Copies an existing physical replication slot named src_slot_name to a physical replication slot named dst_slot_name. The copied physical slot starts to reserve WAL from the same LSN as the source slot. temporary is optional. If temporary is omitted, the same value as the source slot is used."
@@ -14,5 +14,53 @@
     "Examples": [],
     "Category": [
         "System Administration Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT pg_copy_physical_replication_slot('source_slot', 'destination_slot');",
+        "SELECT pg_copy_physical_replication_slot('existing_slot', 'new_slot');",
+        "SELECT pg_copy_physical_replication_slot('valid_source_slot', 'valid_destination_slot');",
+        "SELECT pg_copy_physical_replication_slot('another_existing_slot', 'another_new_slot');",
+        "SELECT pg_copy_physical_replication_slot('some_existing_slot', 'new_slot_name');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 369,
+            "Prompt Tokens": 340,
+            "Completion Tokens": 29,
+            "Total Cost (USD)": 6.84e-05
+        },
+        {
+            "Total Tokens": 528,
+            "Prompt Tokens": 499,
+            "Completion Tokens": 29,
+            "Total Cost (USD)": 9.224999999999999e-05
+        },
+        {
+            "Total Tokens": 689,
+            "Prompt Tokens": 658,
+            "Completion Tokens": 31,
+            "Total Cost (USD)": 0.0001173
+        },
+        {
+            "Total Tokens": 851,
+            "Prompt Tokens": 820,
+            "Completion Tokens": 31,
+            "Total Cost (USD)": 0.00014159999999999997
+        },
+        {
+            "Total Tokens": 1013,
+            "Prompt Tokens": 982,
+            "Completion Tokens": 31,
+            "Total Cost (USD)": 0.00016589999999999997
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedObject) replication slot \"source_slot\" does not exist\n\n",
+        "(psycopg2.errors.UndefinedObject) replication slot \"existing_slot\" does not exist\n\n",
+        "(psycopg2.errors.UndefinedObject) replication slot \"valid_source_slot\" does not exist\n\n",
+        "(psycopg2.errors.UndefinedObject) replication slot \"another_existing_slot\" does not exist\n\n",
+        "(psycopg2.errors.UndefinedObject) replication slot \"some_existing_slot\" does not exist\n\n"
+    ],
+    "EffectiveSQLs": []
 }

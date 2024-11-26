@@ -1,0 +1,45 @@
+{
+    "HTML": [
+        "https://www.monetdb.org/documentation-Aug2024/user-guide/sql-manual/data-types/base-types"
+    ],
+    "Title": [
+        "TIMESTAMP WITH TIME ZONE"
+    ],
+    "Feature": [
+        "TIMESTAMP WITH TIME ZONE"
+    ],
+    "Description": [
+        "TIMESTAMP(6) WITH TIME ZONE",
+        "timestamp(6) with timezone information"
+    ],
+    "Examples": [],
+    "Category": [
+        "Base Types"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT CURRENT_TIMESTAMP AT TIME ZONE 'UTC';",
+        "SELECT CURRENT_TIMESTAMP;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 294,
+            "Prompt Tokens": 271,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 5.4449999999999995e-05
+        },
+        {
+            "Total Tokens": 453,
+            "Prompt Tokens": 437,
+            "Completion Tokens": 16,
+            "Total Cost (USD)": 7.515e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymonetdb.exceptions.OperationalError) 42000!syntax error, unexpected TIME, expecting SCOLON in: \"select current_timestamp at time\"\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT CURRENT_TIMESTAMP;"
+    ]
+}

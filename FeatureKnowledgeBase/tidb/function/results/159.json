@@ -10,10 +10,28 @@
     ],
     "Description": [
         "SHA()",
-        "SHA() 函数是 SHA1 的别名。"
+        "SHA() \u51fd\u6570\u662f SHA1 \u7684\u522b\u540d\u3002"
     ],
     "Examples": [],
     "Category": [
-        "加密和压缩函数"
+        "\u52a0\u5bc6\u548c\u538b\u7f29\u51fd\u6570"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT SHA('your_input_string');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 271,
+            "Prompt Tokens": 251,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 4.9649999999999994e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT SHA('your_input_string');"
     ]
 }

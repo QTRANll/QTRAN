@@ -6,15 +6,33 @@
         "encode"
     ],
     "Feature": [
-        "encode ( bytes bytea, format text ) → text"
+        "encode ( bytes bytea, format text ) \u2192 text"
     ],
     "Description": [
         "Encodes binary data into a textual representation; supported format values are: base64, escape, hex."
     ],
     "Examples": [
-        "encode('123\\000\\001', 'base64') → MTIzAAE="
+        "encode('123\\000\\001', 'base64') \u2192 MTIzAAE="
     ],
     "Category": [
         "Binary String Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT encode('your_binary_data'::bytea, 'base64');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 290,
+            "Prompt Tokens": 262,
+            "Completion Tokens": 28,
+            "Total Cost (USD)": 5.6099999999999995e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT encode('your_binary_data'::bytea, 'base64');"
     ]
 }

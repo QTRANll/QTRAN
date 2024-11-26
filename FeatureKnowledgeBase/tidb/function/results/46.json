@@ -10,10 +10,28 @@
     ],
     "Description": [
         "RPAD()",
-        "以指定次数添加字符串"
+        "\u4ee5\u6307\u5b9a\u6b21\u6570\u6dfb\u52a0\u5b57\u7b26\u4e32"
     ],
     "Examples": [],
     "Category": [
-        "字符串函数"
+        "\u5b57\u7b26\u4e32\u51fd\u6570"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT RPAD('Hello', 10, '*');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 273,
+            "Prompt Tokens": 249,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 5.175e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT RPAD('Hello', 10, '*');"
     ]
 }

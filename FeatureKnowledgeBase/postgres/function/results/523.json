@@ -6,7 +6,7 @@
         "pg_last_wal_receive_lsn"
     ],
     "Feature": [
-        "pg_last_wal_receive_lsn () → pg_lsn"
+        "pg_last_wal_receive_lsn () \u2192 pg_lsn"
     ],
     "Description": [
         "Returns the last write-ahead log location that has been received and synced to disk by streaming replication. While streaming replication is in progress this will increase monotonically. If recovery has completed then this will remain static at the location of the last WAL record received and synced to disk during recovery. If streaming replication is disabled, or if it has not yet started, the function returns NULL."
@@ -14,5 +14,23 @@
     "Examples": [],
     "Category": [
         "System Administration Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT pg_last_wal_receive_lsn();"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 358,
+            "Prompt Tokens": 336,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 6.36e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT pg_last_wal_receive_lsn();"
     ]
 }

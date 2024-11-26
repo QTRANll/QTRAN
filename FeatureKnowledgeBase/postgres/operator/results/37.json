@@ -6,15 +6,33 @@
         "text ~* text"
     ],
     "Feature": [
-        "text ~* text → boolean"
+        "text ~* text \u2192 boolean"
     ],
     "Description": [
         "String matches regular expression, case-insensitively"
     ],
     "Examples": [
-        "'thomas' ~* 'T.*ma' → t"
+        "'thomas' ~* 'T.*ma' \u2192 t"
     ],
     "Category": [
         "Pattern Matching"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT 'example text' ~* 'pattern';"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 278,
+            "Prompt Tokens": 255,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 5.204999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT 'example text' ~* 'pattern';"
     ]
 }

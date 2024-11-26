@@ -40,5 +40,24 @@
     "Category": [
         "Built-In Functions and Operators",
         "JSON Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT 17 MEMBER OF('[23, \"abc\", 17, \"ab\", 10]');",
+        "SELECT 7 MEMBER OF('[23, \"abc\", 17, \"ab\", 10]');",
+        "SELECT 'a' MEMBER OF('[23, \"abc\", 17, \"ab\", 10]');",
+        "SELECT CAST('[4,5]' AS JSON) MEMBER OF('[[3,4],[4,5]]');",
+        "SELECT JSON_ARRAY(4,5) MEMBER OF('[[3,4],[4,5]]');",
+        "SELECT @a MEMBER OF(@c), @b MEMBER OF(@c);"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT 17 MEMBER OF('[23, \"abc\", 17, \"ab\", 10]');",
+        "SELECT 7 MEMBER OF('[23, \"abc\", 17, \"ab\", 10]');",
+        "SELECT 'a' MEMBER OF('[23, \"abc\", 17, \"ab\", 10]');",
+        "SELECT CAST('[4,5]' AS JSON) MEMBER OF('[[3,4],[4,5]]');",
+        "SELECT JSON_ARRAY(4,5) MEMBER OF('[[3,4],[4,5]]');",
+        "SELECT @a MEMBER OF(@c), @b MEMBER OF(@c);"
     ]
 }

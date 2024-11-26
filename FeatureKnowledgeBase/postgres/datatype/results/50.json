@@ -19,5 +19,23 @@
     "Examples": [],
     "Category": [
         "Object Identifier Types"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT * FROM pg_ts_dict WHERE dictname = 'regdictionary';"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 283,
+            "Prompt Tokens": 256,
+            "Completion Tokens": 27,
+            "Total Cost (USD)": 5.46e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT * FROM pg_ts_dict WHERE dictname = 'regdictionary';"
     ]
 }

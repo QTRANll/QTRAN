@@ -6,17 +6,65 @@
         "json_populate_recordset"
     ],
     "Feature": [
-        "json_populate_recordset ( base anyelement, from_json json ) → setof anyelement",
-        "jsonb_populate_recordset ( base anyelement, from_json jsonb ) → setof anyelement"
+        "json_populate_recordset ( base anyelement, from_json json ) \u2192 setof anyelement",
+        "jsonb_populate_recordset ( base anyelement, from_json jsonb ) \u2192 setof anyelement"
     ],
     "Description": [
         "Expands the top-level JSON array of objects to a set of rows having the composite type of the base argument. Each element of the JSON array is processed as described above for json[b]_populate_record.",
         "create type twoints as (a int, b int);"
     ],
     "Examples": [
-        "select * from json_populate_recordset(null::twoints, '[{\"a\":1,\"b\":2}, {\"a\":3,\"b\":4}]') →"
+        "select * from json_populate_recordset(null::twoints, '[{\"a\":1,\"b\":2}, {\"a\":3,\"b\":4}]') \u2192"
     ],
     "Category": [
         "JSON Functions and Operators"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT * FROM json_populate_recordset(NULL::twoints, '[{\"a\": 1, \"b\": 2}, {\"a\": 3, \"b\": 4}]')",
+        "SELECT * FROM json_populate_recordset(NULL::record, '[{\"a\": 1, \"b\": 2}, {\"a\": 3, \"b\": 4}]')",
+        "SELECT * FROM json_populate_recordset(NULL::text[], '[{\"a\": 1, \"b\": 2}, {\"a\": 3, \"b\": 4}]')",
+        "SELECT * FROM json_populate_recordset(NULL::record(\"a\" int, \"b\" int), '[{\"a\": 1, \"b\": 2}, {\"a\": 3, \"b\": 4}]')",
+        "SELECT * FROM json_populate_recordset(NULL::record, '[{\"a\": 1, \"b\": 2}, {\"a\": 3, \"b\": 4}]'::json)"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 391,
+            "Prompt Tokens": 338,
+            "Completion Tokens": 53,
+            "Total Cost (USD)": 8.25e-05
+        },
+        {
+            "Total Tokens": 596,
+            "Prompt Tokens": 544,
+            "Completion Tokens": 52,
+            "Total Cost (USD)": 0.0001128
+        },
+        {
+            "Total Tokens": 801,
+            "Prompt Tokens": 749,
+            "Completion Tokens": 52,
+            "Total Cost (USD)": 0.00014355
+        },
+        {
+            "Total Tokens": 993,
+            "Prompt Tokens": 932,
+            "Completion Tokens": 61,
+            "Total Cost (USD)": 0.00017639999999999998
+        },
+        {
+            "Total Tokens": 1201,
+            "Prompt Tokens": 1147,
+            "Completion Tokens": 54,
+            "Total Cost (USD)": 0.00020444999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedObject) type \"twoints\" does not exist\nLINE 1: SELECT * FROM json_populate_recordset(NULL::twoints, '[{\"a\":...\n                                                    ^\n\n",
+        "(psycopg2.errors.SyntaxError) a column definition list is required for functions returning \"record\"\nLINE 1: SELECT * FROM json_populate_recordset(NULL::record, '[{\"a\": ...\n                      ^\n\n",
+        "(psycopg2.errors.DatatypeMismatch) first argument of json_populate_recordset must be a row type\n\n",
+        "(psycopg2.errors.SyntaxError) syntax error at or near \"int\"\nLINE 1: ...T * FROM json_populate_recordset(NULL::record(\"a\" int, \"b\" i...\n                                                             ^\n\n",
+        "(psycopg2.errors.SyntaxError) a column definition list is required for functions returning \"record\"\nLINE 1: SELECT * FROM json_populate_recordset(NULL::record, '[{\"a\": ...\n                      ^\n\n"
+    ],
+    "EffectiveSQLs": []
 }

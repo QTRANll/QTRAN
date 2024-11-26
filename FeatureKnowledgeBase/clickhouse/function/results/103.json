@@ -27,5 +27,9 @@
     ],
     "Category": [
         "Arrays Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT arrayMax([1, 2, 4]) AS res;",
+        "SELECT arrayMax(x -> (-x), [1, 2, 4]) AS res;"
     ]
 }

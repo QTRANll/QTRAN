@@ -28,6 +28,23 @@
         "SELECT WEEK('2008-02-20',1);",
         "SELECT WEEK('2008-12-31',0);",
         "SELECT WEEK('2008-12-31',1);",
-        "SELECT WEEK('2019-12-30',3);"
+        "SELECT WEEK('2019-12-30',3);",
+        "CREATE TABLE t1 (d DATETIME);",
+        "INSERT INTO t1 VALUES\n    (\"2007-01-30 21:31:07\"),\n    (\"1983-10-15 06:42:51\"),\n    (\"2011-04-21 12:34:56\"),\n    (\"2011-10-30 06:31:41\"),\n    (\"2011-01-30 14:03:25\"),\n    (\"2004-10-07 11:19:34\");",
+        "SELECT d, WEEK(d,0), WEEK(d,1) from t1;"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT WEEK('2008-02-20');",
+        "SELECT WEEK('2008-02-20',0);",
+        "SELECT WEEK('2008-02-20',1);",
+        "SELECT WEEK('2008-12-31',0);",
+        "SELECT WEEK('2008-12-31',1);",
+        "SELECT WEEK('2019-12-30',3);",
+        "CREATE TABLE t1 (d DATETIME);",
+        "INSERT INTO t1 VALUES\n    (\"2007-01-30 21:31:07\"),\n    (\"1983-10-15 06:42:51\"),\n    (\"2011-04-21 12:34:56\"),\n    (\"2011-10-30 06:31:41\"),\n    (\"2011-01-30 14:03:25\"),\n    (\"2004-10-07 11:19:34\");",
+        "SELECT d, WEEK(d,0), WEEK(d,1) from t1;"
     ]
 }

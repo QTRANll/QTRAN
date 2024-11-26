@@ -6,7 +6,7 @@
         "rank"
     ],
     "Feature": [
-        "rank () → bigint"
+        "rank () \u2192 bigint"
     ],
     "Description": [
         "Returns the rank of the current row, with gaps; that is, the row_number of the first row in its peer group."
@@ -14,5 +14,23 @@
     "Examples": [],
     "Category": [
         "Window Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT rank() OVER ()"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 278,
+            "Prompt Tokens": 260,
+            "Completion Tokens": 18,
+            "Total Cost (USD)": 4.98e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT rank() OVER ()"
     ]
 }

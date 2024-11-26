@@ -6,16 +6,50 @@
         "json ->> integer"
     ],
     "Feature": [
-        "json ->> integer → text",
-        "jsonb ->> integer → text"
+        "json ->> integer \u2192 text",
+        "jsonb ->> integer \u2192 text"
     ],
     "Description": [
         "Extracts n'th element of JSON array, as text."
     ],
     "Examples": [
-        "'[1,2,3]'::json ->> 2 → 3"
+        "'[1,2,3]'::json ->> 2 \u2192 3"
     ],
     "Category": [
         "JSON Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT json->>0 AS element FROM your_table;",
+        "SELECT json->>0 AS element;",
+        "SELECT '{}'::json->>0 AS element;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 289,
+            "Prompt Tokens": 266,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 5.37e-05
+        },
+        {
+            "Total Tokens": 454,
+            "Prompt Tokens": 434,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 7.709999999999999e-05
+        },
+        {
+            "Total Tokens": 617,
+            "Prompt Tokens": 595,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 0.00010244999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedTable) relation \"your_table\" does not exist\nLINE 1: SELECT json->>0 AS element FROM your_table;\n                                        ^\n\n",
+        "(psycopg2.errors.UndefinedColumn) column \"json\" does not exist\nLINE 1: SELECT json->>0 AS element;\n               ^\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT '{}'::json->>0 AS element;"
     ]
 }

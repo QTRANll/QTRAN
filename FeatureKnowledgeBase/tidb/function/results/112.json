@@ -13,6 +13,17 @@
         "mysql> SELECT HOUR('10:05:03');\n        -> 10\nmysql> SELECT HOUR('272:59:59');\n        -> 272"
     ],
     "Category": [
-        "日期和时间函数"
+        "\u65e5\u671f\u548c\u65f6\u95f4\u51fd\u6570"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT HOUR('10:05:03');",
+        "SELECT HOUR('272:59:59');"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT HOUR('10:05:03');",
+        "SELECT HOUR('272:59:59');"
     ]
 }

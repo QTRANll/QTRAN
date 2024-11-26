@@ -6,7 +6,7 @@
         "pg_blocking_pids"
     ],
     "Feature": [
-        "pg_blocking_pids ( integer ) → integer[]"
+        "pg_blocking_pids ( integer ) \u2192 integer[]"
     ],
     "Description": [
         "Returns an array of the process ID(s) of the sessions that are blocking the server process with the specified process ID from acquiring a lock, or an empty array if there is no such server process or it is not blocked.",
@@ -16,5 +16,23 @@
     "Examples": [],
     "Category": [
         "System Information Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT pg_blocking_pids(pg_backend_pid());"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 481,
+            "Prompt Tokens": 458,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 8.25e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT pg_blocking_pids(pg_backend_pid());"
     ]
 }

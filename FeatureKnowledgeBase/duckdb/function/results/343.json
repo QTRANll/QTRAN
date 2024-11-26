@@ -16,5 +16,53 @@
     ],
     "Category": [
         "Numeric Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "setseed(42);",
+        "SELECT setseed(42);",
+        "SETSEED(0.5);",
+        "CALL setseed(0.5);",
+        "SET SEED 0.5;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 273,
+            "Prompt Tokens": 255,
+            "Completion Tokens": 18,
+            "Total Cost (USD)": 4.904999999999999e-05
+        },
+        {
+            "Total Tokens": 420,
+            "Prompt Tokens": 401,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 7.155e-05
+        },
+        {
+            "Total Tokens": 580,
+            "Prompt Tokens": 559,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 9.645e-05
+        },
+        {
+            "Total Tokens": 730,
+            "Prompt Tokens": 709,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 0.00011894999999999998
+        },
+        {
+            "Total Tokens": 891,
+            "Prompt Tokens": 871,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 0.00014264999999999997
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.ParserException) Parser Error: syntax error at or near \"setseed\"\n",
+        "(duckdb.duckdb.InvalidInputException) Invalid Input Error: SETSEED accepts seed values between -1.0 and 1.0, inclusive\n",
+        "(duckdb.duckdb.ParserException) Parser Error: syntax error at or near \"SETSEED\"\n",
+        "(duckdb.duckdb.CatalogException) Catalog Error: Table Function with name setseed does not exist!\nDid you mean \"json_execute_serialized_sql\"?\n",
+        "(duckdb.duckdb.ParserException) Parser Error: syntax error at or near \"0.5\"\n"
+    ],
+    "EffectiveSQLs": []
 }

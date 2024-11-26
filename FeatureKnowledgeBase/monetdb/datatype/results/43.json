@@ -1,0 +1,38 @@
+{
+    "HTML": [
+        "https://www.monetdb.org/documentation-Aug2024/user-guide/sql-manual/data-types/temporal-types"
+    ],
+    "Title": [
+        "INTERVAL YEAR TO MONTH"
+    ],
+    "Feature": [
+        "INTERVAL YEAR TO MONTH"
+    ],
+    "Description": [
+        "month_interval",
+        "4-bytes",
+        "integer number of months"
+    ],
+    "Examples": [],
+    "Category": [
+        "Temporal Datatypes"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT INTERVAL '2-3' YEAR TO MONTH;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 286,
+            "Prompt Tokens": 262,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 5.37e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT INTERVAL '2-3' YEAR TO MONTH;"
+    ]
+}

@@ -18,5 +18,23 @@
     ],
     "Category": [
         "Date Time Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT sys.timestamp_to_str(CURRENT_TIMESTAMP, 'YYYY-MM-DD HH24:MI:SS');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 340,
+            "Prompt Tokens": 307,
+            "Completion Tokens": 33,
+            "Total Cost (USD)": 6.585e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT sys.timestamp_to_str(CURRENT_TIMESTAMP, 'YYYY-MM-DD HH24:MI:SS');"
     ]
 }

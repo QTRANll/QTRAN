@@ -15,5 +15,39 @@
     "Examples": [],
     "Category": [
         "Window Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT * FROM feature;",
+        "SELECT * FROM information_schema.tables;",
+        "SELECT 1;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 251,
+            "Prompt Tokens": 234,
+            "Completion Tokens": 17,
+            "Total Cost (USD)": 4.53e-05
+        },
+        {
+            "Total Tokens": 397,
+            "Prompt Tokens": 378,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 6.81e-05
+        },
+        {
+            "Total Tokens": 541,
+            "Prompt Tokens": 525,
+            "Completion Tokens": 16,
+            "Total Cost (USD)": 8.834999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymonetdb.exceptions.OperationalError) 42S02!SELECT: no such table 'feature'\n\n",
+        "(pymonetdb.exceptions.OperationalError) 3F000!SELECT: no such schema 'information_schema'\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT 1;"
     ]
 }

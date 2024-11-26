@@ -16,5 +16,53 @@
     "Examples": [],
     "Category": [
         "Aggregate Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT variance(arg, val) FROM your_table;",
+        "SELECT variance(arg, val);",
+        "SELECT variance(val) FROM your_table;",
+        "SELECT variance(val);",
+        "SELECT variance(arg) FROM your_table;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 328,
+            "Prompt Tokens": 306,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 5.909999999999999e-05
+        },
+        {
+            "Total Tokens": 501,
+            "Prompt Tokens": 482,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 8.37e-05
+        },
+        {
+            "Total Tokens": 666,
+            "Prompt Tokens": 646,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 0.00010889999999999999
+        },
+        {
+            "Total Tokens": 835,
+            "Prompt Tokens": 818,
+            "Completion Tokens": 17,
+            "Total Cost (USD)": 0.00013289999999999998
+        },
+        {
+            "Total Tokens": 998,
+            "Prompt Tokens": 978,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 0.00015869999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.CatalogException) Catalog Error: Table with name your_table does not exist!\nDid you mean \"pg_tables\"?\nLINE 1: SELECT variance(arg, val) FROM your_table;\n                                       ^\n",
+        "(duckdb.duckdb.BinderException) Binder Error: Referenced column \"arg\" not found in FROM clause!\nLINE 1: SELECT variance(arg, val);\n                        ^\n",
+        "(duckdb.duckdb.CatalogException) Catalog Error: Table with name your_table does not exist!\nDid you mean \"pg_tables\"?\nLINE 1: SELECT variance(val) FROM your_table;\n                                  ^\n",
+        "(duckdb.duckdb.BinderException) Binder Error: Referenced column \"val\" not found in FROM clause!\nLINE 1: SELECT variance(val);\n                        ^\n",
+        "(duckdb.duckdb.CatalogException) Catalog Error: Table with name your_table does not exist!\nDid you mean \"pg_tables\"?\nLINE 1: SELECT variance(arg) FROM your_table;\n                                  ^\n"
+    ],
+    "EffectiveSQLs": []
 }

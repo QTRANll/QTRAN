@@ -51,5 +51,20 @@
     "Category": [
         "Built-In Functions and Operators",
         "JSON Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT JSON_SCHEMA_VALID(@schema, @document);",
+        "SELECT JSON_SCHEMA_VALID(@schema, @document);",
+        "SELECT JSON_SCHEMA_VALID(@schema, @document);",
+        "SELECT JSON_SCHEMA_VALID('{\"type\":\"string\",\"pattern\":\"(\"}', '\"abc\"');"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT JSON_SCHEMA_VALID(@schema, @document);",
+        "SELECT JSON_SCHEMA_VALID(@schema, @document);",
+        "SELECT JSON_SCHEMA_VALID(@schema, @document);",
+        "SELECT JSON_SCHEMA_VALID('{\"type\":\"string\",\"pattern\":\"(\"}', '\"abc\"');"
     ]
 }

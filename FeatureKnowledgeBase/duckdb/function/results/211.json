@@ -17,5 +17,31 @@
     ],
     "Category": [
         "List Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT list_cosine_distance(list1, list2)",
+        "SELECT list_cosine_distance(ARRAY[1, 2, 3], ARRAY[4, 5, 6])"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 331,
+            "Prompt Tokens": 308,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 5.9999999999999995e-05
+        },
+        {
+            "Total Tokens": 526,
+            "Prompt Tokens": 487,
+            "Completion Tokens": 39,
+            "Total Cost (USD)": 9.644999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.BinderException) Binder Error: Referenced column \"list1\" not found in FROM clause!\nLINE 1: SELECT list_cosine_distance(list1, list2)\n                                    ^\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT list_cosine_distance(ARRAY[1, 2, 3], ARRAY[4, 5, 6])"
     ]
 }

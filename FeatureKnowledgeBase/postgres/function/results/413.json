@@ -6,7 +6,7 @@
         "has_tablespace_privilege"
     ],
     "Feature": [
-        "has_tablespace_privilege ( [ user name or oid, ] tablespace text or oid, privilege text ) → boolean"
+        "has_tablespace_privilege ( [ user name or oid, ] tablespace text or oid, privilege text ) \u2192 boolean"
     ],
     "Description": [
         "Does user have privilege for tablespace? The only allowable privilege type is CREATE."
@@ -14,5 +14,47 @@
     "Examples": [],
     "Category": [
         "System Information Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT has_tablespace_privilege('username', 'tablespace_name', 'CREATE');",
+        "SELECT has_tablespace_privilege(current_user, 'tablespace_name', 'CREATE');",
+        "SELECT has_tablespace_privilege(current_user, 'existing_tablespace', 'CREATE');",
+        "SELECT has_tablespace_privilege(current_user, 'pg_default', 'CREATE');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 312,
+            "Prompt Tokens": 282,
+            "Completion Tokens": 30,
+            "Total Cost (USD)": 6.029999999999999e-05
+        },
+        {
+            "Total Tokens": 468,
+            "Prompt Tokens": 438,
+            "Completion Tokens": 30,
+            "Total Cost (USD)": 8.37e-05
+        },
+        {
+            "Total Tokens": 627,
+            "Prompt Tokens": 597,
+            "Completion Tokens": 30,
+            "Total Cost (USD)": 0.00010754999999999999
+        },
+        {
+            "Total Tokens": 785,
+            "Prompt Tokens": 756,
+            "Completion Tokens": 29,
+            "Total Cost (USD)": 0.00013079999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedObject) role \"username\" does not exist\n\n",
+        "(psycopg2.errors.UndefinedObject) tablespace \"tablespace_name\" does not exist\n\n",
+        "(psycopg2.errors.UndefinedObject) tablespace \"existing_tablespace\" does not exist\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT has_tablespace_privilege(current_user, 'pg_default', 'CREATE');"
     ]
 }

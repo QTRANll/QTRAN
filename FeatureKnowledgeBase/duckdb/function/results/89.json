@@ -16,5 +16,53 @@
     ],
     "Category": [
         "Array Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT array_distance(array[1, 2, 3], array[4, 5, 6]);",
+        "SELECT array_distance(array[1.0, 2.0, 3.0], array[4.0, 5.0, 6.0]);",
+        "SELECT array_distance(array[1.0::FLOAT, 2.0::FLOAT, 3.0::FLOAT], array[4.0::FLOAT, 5.0::FLOAT, 6.0::FLOAT]);",
+        "SELECT array_distance(array[1.0::DOUBLE, 2.0::DOUBLE, 3.0::DOUBLE], array[4.0::DOUBLE, 5.0::DOUBLE, 6.0::DOUBLE]);",
+        "SELECT array_distance(array[1.0::FLOAT, 2.0::FLOAT, 3.0::FLOAT], array[4.0::FLOAT, 5.0::FLOAT, 6.0::FLOAT]);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 333,
+            "Prompt Tokens": 297,
+            "Completion Tokens": 36,
+            "Total Cost (USD)": 6.614999999999998e-05
+        },
+        {
+            "Total Tokens": 588,
+            "Prompt Tokens": 540,
+            "Completion Tokens": 48,
+            "Total Cost (USD)": 0.0001098
+        },
+        {
+            "Total Tokens": 871,
+            "Prompt Tokens": 811,
+            "Completion Tokens": 60,
+            "Total Cost (USD)": 0.00015765
+        },
+        {
+            "Total Tokens": 1139,
+            "Prompt Tokens": 1079,
+            "Completion Tokens": 60,
+            "Total Cost (USD)": 0.00019784999999999996
+        },
+        {
+            "Total Tokens": 1407,
+            "Prompt Tokens": 1347,
+            "Completion Tokens": 60,
+            "Total Cost (USD)": 0.00023804999999999996
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.BinderException) Binder Error: No function matches the given name and argument types 'array_distance(INTEGER[], INTEGER[])'. You might need to add explicit type casts.\n\tCandidate functions:\n\tarray_distance(FLOAT[ANY], FLOAT[ANY]) -> FLOAT\n\tarray_distance(DOUBLE[ANY], DOUBLE[ANY]) -> DOUBLE\n\nLINE 1: SELECT array_distance(array[1, 2, 3], array[4,...\n               ^\n",
+        "(duckdb.duckdb.BinderException) Binder Error: No function matches the given name and argument types 'array_distance(DECIMAL(2,1)[], DECIMAL(2,1)[])'. You might need to add explicit type casts.\n\tCandidate functions:\n\tarray_distance(FLOAT[ANY], FLOAT[ANY]) -> FLOAT\n\tarray_distance(DOUBLE[ANY], DOUBLE[ANY]) -> DOUBLE\n\nLINE 1: SELECT array_distance(array[1.0, 2.0, 3.0], ar...\n               ^\n",
+        "(duckdb.duckdb.BinderException) Binder Error: No function matches the given name and argument types 'array_distance(FLOAT[], FLOAT[])'. You might need to add explicit type casts.\n\tCandidate functions:\n\tarray_distance(FLOAT[ANY], FLOAT[ANY]) -> FLOAT\n\tarray_distance(DOUBLE[ANY], DOUBLE[ANY]) -> DOUBLE\n\nLINE 1: SELECT array_distance(array[1.0::FLOAT, 2.0::F...\n               ^\n",
+        "(duckdb.duckdb.BinderException) Binder Error: No function matches the given name and argument types 'array_distance(DOUBLE[], DOUBLE[])'. You might need to add explicit type casts.\n\tCandidate functions:\n\tarray_distance(FLOAT[ANY], FLOAT[ANY]) -> FLOAT\n\tarray_distance(DOUBLE[ANY], DOUBLE[ANY]) -> DOUBLE\n\nLINE 1: SELECT array_distance(array[1.0::DOUBLE, 2.0::...\n               ^\n",
+        "(duckdb.duckdb.BinderException) Binder Error: No function matches the given name and argument types 'array_distance(FLOAT[], FLOAT[])'. You might need to add explicit type casts.\n\tCandidate functions:\n\tarray_distance(FLOAT[ANY], FLOAT[ANY]) -> FLOAT\n\tarray_distance(DOUBLE[ANY], DOUBLE[ANY]) -> DOUBLE\n\nLINE 1: SELECT array_distance(array[1.0::FLOAT, 2.0::F...\n               ^\n"
+    ],
+    "EffectiveSQLs": []
 }

@@ -25,5 +25,14 @@
     "Category": [
         "Built-In Functions and Operators",
         "Information Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT BENCHMARK(1000000,AES_ENCRYPT('hello','goodbye'));"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT BENCHMARK(1000000,AES_ENCRYPT('hello','goodbye'));"
     ]
 }

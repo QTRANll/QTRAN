@@ -6,15 +6,63 @@
         "anymultirange << anymultirange"
     ],
     "Feature": [
-        "anymultirange << anymultirange → boolean"
+        "anymultirange << anymultirange \u2192 boolean"
     ],
     "Description": [
         "Is the first multirange strictly left of the second?"
     ],
     "Examples": [
-        "'{[1,10)}'::int8multirange << '{[100,110)}'::int8multirange → t"
+        "'{[1,10)}'::int8multirange << '{[100,110)}'::int8multirange \u2192 t"
     ],
     "Category": [
         "Range divide Multirange Functions and Operators"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT anymultirange1 << anymultirange2;",
+        "SELECT '[1, 2)'::anymultirange << '[2, 3)'::anymultirange;",
+        "SELECT '[[1, 2)]'::anymultirange << '[[2, 3)]'::anymultirange;",
+        "SELECT '[[1, 2), [3, 4)]'::anymultirange << '[[2, 3), [4, 5)]'::anymultirange;",
+        "SELECT '[[1, 2), [3, 4)]'::text << '[[2, 3), [4, 5)]'::text;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 302,
+            "Prompt Tokens": 277,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 5.655e-05
+        },
+        {
+            "Total Tokens": 494,
+            "Prompt Tokens": 457,
+            "Completion Tokens": 37,
+            "Total Cost (USD)": 9.075e-05
+        },
+        {
+            "Total Tokens": 700,
+            "Prompt Tokens": 659,
+            "Completion Tokens": 41,
+            "Total Cost (USD)": 0.00012345
+        },
+        {
+            "Total Tokens": 922,
+            "Prompt Tokens": 869,
+            "Completion Tokens": 53,
+            "Total Cost (USD)": 0.00016214999999999998
+        },
+        {
+            "Total Tokens": 1144,
+            "Prompt Tokens": 1097,
+            "Completion Tokens": 47,
+            "Total Cost (USD)": 0.00019275
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedColumn) column \"anymultirange1\" does not exist\nLINE 1: SELECT anymultirange1 << anymultirange2;\n               ^\n\n",
+        "(psycopg2.errors.FeatureNotSupported) cannot accept a value of type anymultirange\nLINE 1: SELECT '[1, 2)'::anymultirange << '[2, 3)'::anymultirange;\n               ^\n\n",
+        "(psycopg2.errors.FeatureNotSupported) cannot accept a value of type anymultirange\nLINE 1: SELECT '[[1, 2)]'::anymultirange << '[[2, 3)]'::anymultirang...\n               ^\n\n",
+        "(psycopg2.errors.FeatureNotSupported) cannot accept a value of type anymultirange\nLINE 1: SELECT '[[1, 2), [3, 4)]'::anymultirange << '[[2, 3), [4, 5)...\n               ^\n\n",
+        "(psycopg2.errors.UndefinedFunction) operator does not exist: text << text\nLINE 1: SELECT '[[1, 2), [3, 4)]'::text << '[[2, 3), [4, 5)]'::text;\n                                        ^\nHINT:  No operator matches the given name and argument types. You might need to add explicit type casts.\n\n"
+    ],
+    "EffectiveSQLs": []
 }

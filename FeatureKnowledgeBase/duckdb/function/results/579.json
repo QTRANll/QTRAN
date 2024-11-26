@@ -16,5 +16,53 @@
     ],
     "Category": [
         "Utility Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT error('This is an error message');",
+        "SELECT raise_error('This is an error message');",
+        "SELECT throw_error('This is an error message');",
+        "SELECT raise('This is an error message');",
+        "SELECT error('This is an error message');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 268,
+            "Prompt Tokens": 246,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 5.009999999999999e-05
+        },
+        {
+            "Total Tokens": 416,
+            "Prompt Tokens": 393,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 7.274999999999999e-05
+        },
+        {
+            "Total Tokens": 595,
+            "Prompt Tokens": 572,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 9.959999999999998e-05
+        },
+        {
+            "Total Tokens": 770,
+            "Prompt Tokens": 748,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 0.00012539999999999999
+        },
+        {
+            "Total Tokens": 942,
+            "Prompt Tokens": 920,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 0.0001512
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.InvalidInputException) Invalid Input Error: This is an error message\n",
+        "(duckdb.duckdb.CatalogException) Catalog Error: Scalar Function with name raise_error does not exist!\nDid you mean \"reservoir_quantile\"?\nLINE 1: SELECT raise_error('This is an error message')...\n               ^\n",
+        "(duckdb.duckdb.CatalogException) Catalog Error: Scalar Function with name throw_error does not exist!\nDid you mean \"row\"?\nLINE 1: SELECT throw_error('This is an error message')...\n               ^\n",
+        "(duckdb.duckdb.CatalogException) Catalog Error: Scalar Function with name raise does not exist!\nDid you mean \"range\"?\nLINE 1: SELECT raise('This is an error message');\n               ^\n",
+        "(duckdb.duckdb.InvalidInputException) Invalid Input Error: This is an error message\n"
+    ],
+    "EffectiveSQLs": []
 }

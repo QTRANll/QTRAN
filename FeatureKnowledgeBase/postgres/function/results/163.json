@@ -6,15 +6,33 @@
         "make_date"
     ],
     "Feature": [
-        "make_date ( year int, month int, day int ) → date"
+        "make_date ( year int, month int, day int ) \u2192 date"
     ],
     "Description": [
         "Create date from year, month and day fields (negative years signify BC)"
     ],
     "Examples": [
-        "make_date(2013, 7, 15) → 2013-07-15"
+        "make_date(2013, 7, 15) \u2192 2013-07-15"
     ],
     "Category": [
         "Date divide Time Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT make_date(2023, 10, 5);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 288,
+            "Prompt Tokens": 262,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 5.489999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT make_date(2023, 10, 5);"
     ]
 }

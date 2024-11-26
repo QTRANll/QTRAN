@@ -24,5 +24,13 @@
         "SELECT JSON_EXTRACT(@json, '$[1]');",
         "SELECT JSON_EXTRACT(@json, '$[2]');",
         "SELECT JSON_EXTRACT(@json, '$[2][1]');"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT JSON_EXTRACT(@json, '$[1]');",
+        "SELECT JSON_EXTRACT(@json, '$[2]');",
+        "SELECT JSON_EXTRACT(@json, '$[2][1]');"
     ]
 }

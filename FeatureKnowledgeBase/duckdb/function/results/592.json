@@ -17,5 +17,39 @@
     ],
     "Category": [
         "Utility Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT nullif(a, b);",
+        "SELECT nullif(column1, column2) FROM your_table;",
+        "SELECT nullif(1, 1);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 321,
+            "Prompt Tokens": 301,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 5.714999999999999e-05
+        },
+        {
+            "Total Tokens": 493,
+            "Prompt Tokens": 468,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 8.52e-05
+        },
+        {
+            "Total Tokens": 673,
+            "Prompt Tokens": 651,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 0.00011084999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.BinderException) Binder Error: Referenced column \"a\" not found in FROM clause!\nLINE 1: SELECT nullif(a, b);\n                      ^\n",
+        "(duckdb.duckdb.CatalogException) Catalog Error: Table with name your_table does not exist!\nDid you mean \"pg_tables\"?\nLINE 1: SELECT nullif(column1, column2) FROM your_table;\n                                             ^\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT nullif(1, 1);"
     ]
 }

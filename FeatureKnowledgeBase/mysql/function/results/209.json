@@ -25,5 +25,23 @@
     "Category": [
         "Built-In Functions and Operators",
         "Replication Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT MASTER_POS_WAIT('mysql-bin.000001', 154);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 1020,
+            "Prompt Tokens": 993,
+            "Completion Tokens": 27,
+            "Total Cost (USD)": 0.00016514999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT MASTER_POS_WAIT('mysql-bin.000001', 154);"
     ]
 }

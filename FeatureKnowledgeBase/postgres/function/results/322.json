@@ -6,8 +6,8 @@
         "json_agg"
     ],
     "Feature": [
-        "json_agg ( anyelement ) → json",
-        "jsonb_agg ( anyelement ) → jsonb"
+        "json_agg ( anyelement ) \u2192 json",
+        "jsonb_agg ( anyelement ) \u2192 jsonb"
     ],
     "Description": [
         "Collects all the input values, including nulls, into a JSON array. Values are converted to JSON as per to_json or to_jsonb."
@@ -15,5 +15,39 @@
     "Examples": [],
     "Category": [
         "Aggregate Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT json_agg(column_name) FROM table_name;",
+        "SELECT json_agg(column_name);",
+        "SELECT json_agg(value) FROM (VALUES (1), (2), (3)) AS temp(value);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 311,
+            "Prompt Tokens": 288,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 5.699999999999999e-05
+        },
+        {
+            "Total Tokens": 475,
+            "Prompt Tokens": 455,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 8.024999999999999e-05
+        },
+        {
+            "Total Tokens": 650,
+            "Prompt Tokens": 615,
+            "Completion Tokens": 35,
+            "Total Cost (USD)": 0.00011324999999999999
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedTable) relation \"table_name\" does not exist\nLINE 1: SELECT json_agg(column_name) FROM table_name;\n                                          ^\n\n",
+        "(psycopg2.errors.UndefinedColumn) column \"column_name\" does not exist\nLINE 1: SELECT json_agg(column_name);\n                        ^\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT json_agg(value) FROM (VALUES (1), (2), (3)) AS temp(value);"
     ]
 }

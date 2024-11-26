@@ -18,5 +18,47 @@
     ],
     "Category": [
         "Aggregate Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT count(*) FROM your_table_name;",
+        "SELECT count(*) FROM your_table;",
+        "SELECT count(*) FROM dual;",
+        "SELECT count(*) FROM (SELECT 1) AS temp;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 283,
+            "Prompt Tokens": 263,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 5.145e-05
+        },
+        {
+            "Total Tokens": 433,
+            "Prompt Tokens": 414,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 7.35e-05
+        },
+        {
+            "Total Tokens": 581,
+            "Prompt Tokens": 563,
+            "Completion Tokens": 18,
+            "Total Cost (USD)": 9.524999999999998e-05
+        },
+        {
+            "Total Tokens": 734,
+            "Prompt Tokens": 710,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 0.00012089999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymonetdb.exceptions.OperationalError) 42S02!SELECT: no such table 'your_table_name'\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42S02!SELECT: no such table 'your_table'\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42S02!SELECT: no such table 'dual'\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT count(*) FROM (SELECT 1) AS temp;"
     ]
 }

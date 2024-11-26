@@ -3,18 +3,60 @@
         "https://docs.pingcap.com/zh/tidb/v8.3/data-type-string"
     ],
     "Title": [
-        "VARBINARY 类型"
+        "VARBINARY \u7c7b\u578b"
     ],
     "Feature": [
-        "VARBINARY 类型"
+        "VARBINARY \u7c7b\u578b"
     ],
     "Description": [
-        "VARBINARY 类型",
-        "类似于 VARCHAR，区别在于 VARBINARY 存储的是二进制字符串。",
+        "VARBINARY \u7c7b\u578b",
+        "\u7c7b\u4f3c\u4e8e VARCHAR\uff0c\u533a\u522b\u5728\u4e8e VARBINARY \u5b58\u50a8\u7684\u662f\u4e8c\u8fdb\u5236\u5b57\u7b26\u4e32\u3002",
         "VARBINARY(M)\n"
     ],
     "Examples": [],
     "Category": [
-        "字符串类型"
+        "\u5b57\u7b26\u4e32\u7c7b\u578b"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT CAST('example' AS VARBINARY(10));",
+        "SELECT CAST('example' AS VARBINARY);",
+        "SELECT VARBINARY('example');",
+        "SELECT HEX('example');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 302,
+            "Prompt Tokens": 277,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 5.655e-05
+        },
+        {
+            "Total Tokens": 487,
+            "Prompt Tokens": 464,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 8.34e-05
+        },
+        {
+            "Total Tokens": 666,
+            "Prompt Tokens": 646,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 0.00010889999999999999
+        },
+        {
+            "Total Tokens": 847,
+            "Prompt Tokens": 829,
+            "Completion Tokens": 18,
+            "Total Cost (USD)": 0.00013514999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.ProgrammingError) (1064, 'You have an error in your SQL syntax; check the manual that corresponds to your TiDB version for the right syntax to use line 1 column 34 near \"VARBINARY(10));\" ')\n",
+        "(pymysql.err.ProgrammingError) (1064, 'You have an error in your SQL syntax; check the manual that corresponds to your TiDB version for the right syntax to use line 1 column 34 near \"VARBINARY);\" ')\n",
+        "(pymysql.err.ProgrammingError) (1064, 'You have an error in your SQL syntax; check the manual that corresponds to your TiDB version for the right syntax to use line 1 column 16 near \"VARBINARY(\\'example\\');\" ')\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT HEX('example');"
     ]
 }

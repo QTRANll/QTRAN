@@ -1,0 +1,45 @@
+{
+    "HTML": [
+        "https://www.monetdb.org/documentation-Aug2024/user-guide/sql-manual/data-types/base-types"
+    ],
+    "Title": [
+        "CHARACTER LARGE OBJECT ( length )"
+    ],
+    "Feature": [
+        "CHARACTER LARGE OBJECT ( length )"
+    ],
+    "Description": [
+        "CLOB ( length ), TEXT ( length ), STRING ( length )",
+        "UTF-8 character string with length upperbound limit between 1 and 2147483647"
+    ],
+    "Examples": [],
+    "Category": [
+        "Base Types"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "CREATE TABLE example_table (example_column CHARACTER LARGE OBJECT (100));",
+        "CREATE TABLE new_table (new_column CHARACTER LARGE OBJECT (100));"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 317,
+            "Prompt Tokens": 291,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 5.924999999999999e-05
+        },
+        {
+            "Total Tokens": 480,
+            "Prompt Tokens": 454,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 8.37e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymonetdb.exceptions.OperationalError) 42S01!CREATE TABLE: name 'example_table' already in use\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "CREATE TABLE new_table (new_column CHARACTER LARGE OBJECT (100));"
+    ]
+}

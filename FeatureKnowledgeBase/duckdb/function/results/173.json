@@ -16,5 +16,23 @@
     ],
     "Category": [
         "Interval Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT extract(year FROM interval '1 year 2 months 3 days');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 281,
+            "Prompt Tokens": 253,
+            "Completion Tokens": 28,
+            "Total Cost (USD)": 5.474999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT extract(year FROM interval '1 year 2 months 3 days');"
     ]
 }

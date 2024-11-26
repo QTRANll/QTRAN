@@ -14,5 +14,31 @@
     "Examples": [],
     "Category": [
         "Core SQL Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT iif(condition, value_if_true, value_if_false);",
+        "SELECT iif(1=1, 'True', 'False');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 339,
+            "Prompt Tokens": 313,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 6.254999999999999e-05
+        },
+        {
+            "Total Tokens": 486,
+            "Prompt Tokens": 459,
+            "Completion Tokens": 27,
+            "Total Cost (USD)": 8.505e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(sqlite3.OperationalError) no such column: condition\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT iif(1=1, 'True', 'False');"
     ]
 }

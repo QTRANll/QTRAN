@@ -6,15 +6,33 @@
         "geometric_type - point"
     ],
     "Feature": [
-        "geometric_type - point → geometric_type"
+        "geometric_type - point \u2192 geometric_type"
     ],
     "Description": [
         "Subtracts the coordinates of the second point from those of each point of the first argument, thus performing translation. Available for point, box, path, circle."
     ],
     "Examples": [
-        "box '(1,1),(0,0)' - point '(2,0)' → (-1,1),(-2,0)"
+        "box '(1,1),(0,0)' - point '(2,0)' \u2192 (-1,1),(-2,0)"
     ],
     "Category": [
         "Geometric Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT point(1, 2) - point(3, 4);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 311,
+            "Prompt Tokens": 282,
+            "Completion Tokens": 29,
+            "Total Cost (USD)": 5.969999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT point(1, 2) - point(3, 4);"
     ]
 }

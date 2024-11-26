@@ -33,5 +33,11 @@
     ],
     "Category": [
         "Table Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT * FROM fuzzJSON(json_fuzzer) LIMIT 3;",
+        "SELECT * FROM fuzzJSON(json_fuzzer, json_str='{\"name\" : \"value\"}', random_seed=1234) LIMIT 3;",
+        "SELECT * FROM fuzzJSON(json_fuzzer, json_str='{\"students\" : [\"Alice\", \"Bob\"]}', reuse_output=true) LIMIT 3;",
+        "SELECT * FROM fuzzJSON(json_fuzzer, json_str='{\"students\" : [\"Alice\", \"Bob\"]}', max_output_length=512) LIMIT 3;"
     ]
 }

@@ -20,5 +20,31 @@
     "Category": [
         "Built-In Functions and Operators",
         "Locking Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "RELEASE_LOCK('my_lock')",
+        "SELECT RELEASE_LOCK('my_lock')"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 465,
+            "Prompt Tokens": 445,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 7.874999999999999e-05
+        },
+        {
+            "Total Tokens": 651,
+            "Prompt Tokens": 631,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 0.00010664999999999999
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.ProgrammingError) (1064, \"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'RELEASE_LOCK('my_lock')' at line 1\")\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT RELEASE_LOCK('my_lock')"
     ]
 }

@@ -6,14 +6,62 @@
         "tsvector_update_trigger_column"
     ],
     "Feature": [
-        "tsvector_update_trigger_column ( ) → trigger"
+        "tsvector_update_trigger_column ( ) \u2192 trigger"
     ],
     "Description": [
-        "Automatically updates a tsvector column from associated plain-text document column(s). The text search configuration to use is taken from a regconfig column of the table. See Section 12.4.3 for details.",
+        "Automatically updates a tsvector column from associated plain-text document column(s). The text search configuration to use is taken from a regconfig column of the table. See Section\u00a012.4.3 for details.",
         "CREATE TRIGGER ... tsvector_update_trigger_column(tsvcol, tsconfigcol, title, body)"
     ],
     "Examples": [],
     "Category": [
         "Trigger Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "CREATE TRIGGER my_trigger BEFORE INSERT OR UPDATE ON my_table FOR EACH ROW EXECUTE FUNCTION tsvector_update_trigger_column(tsvcol, tsconfigcol, title, body);",
+        "CREATE TRIGGER my_trigger BEFORE INSERT OR UPDATE ON your_table FOR EACH ROW EXECUTE FUNCTION tsvector_update_trigger_column(tsvcol, tsconfigcol, title, body);",
+        "CREATE TRIGGER my_trigger BEFORE INSERT OR UPDATE ON example_table FOR EACH ROW EXECUTE FUNCTION tsvector_update_trigger_column(tsvcol, tsconfigcol, title, body);",
+        "CREATE TRIGGER my_trigger BEFORE INSERT OR UPDATE ON sample_table FOR EACH ROW EXECUTE FUNCTION tsvector_update_trigger_column(tsvcol, tsconfigcol, title, body);",
+        "CREATE TRIGGER my_trigger BEFORE INSERT OR UPDATE ON my_custom_table FOR EACH ROW EXECUTE FUNCTION tsvector_update_trigger_column(tsvcol, tsconfigcol, title, body);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 366,
+            "Prompt Tokens": 317,
+            "Completion Tokens": 49,
+            "Total Cost (USD)": 7.695e-05
+        },
+        {
+            "Total Tokens": 542,
+            "Prompt Tokens": 493,
+            "Completion Tokens": 49,
+            "Total Cost (USD)": 0.00010334999999999999
+        },
+        {
+            "Total Tokens": 718,
+            "Prompt Tokens": 669,
+            "Completion Tokens": 49,
+            "Total Cost (USD)": 0.00012975
+        },
+        {
+            "Total Tokens": 894,
+            "Prompt Tokens": 845,
+            "Completion Tokens": 49,
+            "Total Cost (USD)": 0.00015615
+        },
+        {
+            "Total Tokens": 1071,
+            "Prompt Tokens": 1021,
+            "Completion Tokens": 50,
+            "Total Cost (USD)": 0.00018314999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedTable) relation \"my_table\" does not exist\n\n",
+        "(psycopg2.errors.UndefinedTable) relation \"your_table\" does not exist\n\n",
+        "(psycopg2.errors.UndefinedTable) relation \"example_table\" does not exist\n\n",
+        "(psycopg2.errors.UndefinedTable) relation \"sample_table\" does not exist\n\n",
+        "(psycopg2.errors.UndefinedTable) relation \"my_custom_table\" does not exist\n\n"
+    ],
+    "EffectiveSQLs": []
 }

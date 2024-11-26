@@ -10,5 +10,31 @@
     "Examples": [],
     "Category": [
         "Bit Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT * FROM Parentheses;",
+        "SELECT 'Parentheses' AS example;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 253,
+            "Prompt Tokens": 235,
+            "Completion Tokens": 18,
+            "Total Cost (USD)": 4.6049999999999994e-05
+        },
+        {
+            "Total Tokens": 407,
+            "Prompt Tokens": 387,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 7.005e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.ProgrammingError) (1146, \"Table 'pinolo_temp_mariadb.Parentheses' doesn't exist\")\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT 'Parentheses' AS example;"
     ]
 }

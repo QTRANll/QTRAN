@@ -24,5 +24,22 @@
     "Category": [
         "Built-In Functions and Operators",
         "Logical Operators"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT 1 OR 1;",
+        "SELECT 1 OR 0;",
+        "SELECT 0 OR 0;",
+        "SELECT 0 OR NULL;",
+        "SELECT 1 OR NULL;"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT 1 OR 1;",
+        "SELECT 1 OR 0;",
+        "SELECT 0 OR 0;",
+        "SELECT 0 OR NULL;",
+        "SELECT 1 OR NULL;"
     ]
 }

@@ -6,15 +6,33 @@
         "bit | bit"
     ],
     "Feature": [
-        "bit | bit → bit"
+        "bit | bit \u2192 bit"
     ],
     "Description": [
         "Bitwise OR (inputs must be of equal length)"
     ],
     "Examples": [
-        "B'10001' | B'01101' → 11101"
+        "B'10001' | B'01101' \u2192 11101"
     ],
     "Category": [
         "Bit String Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT B'1010' | B'1100';"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 277,
+            "Prompt Tokens": 252,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 5.2799999999999996e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT B'1010' | B'1100';"
     ]
 }

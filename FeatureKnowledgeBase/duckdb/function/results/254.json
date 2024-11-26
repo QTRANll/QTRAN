@@ -17,5 +17,31 @@
     ],
     "Category": [
         "List Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT list_inner_product(list1, list2);",
+        "SELECT list_inner_product(ARRAY[1, 2, 3], ARRAY[4, 5, 6]);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 286,
+            "Prompt Tokens": 263,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 5.324999999999999e-05
+        },
+        {
+            "Total Tokens": 472,
+            "Prompt Tokens": 434,
+            "Completion Tokens": 38,
+            "Total Cost (USD)": 8.79e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.BinderException) Binder Error: Referenced column \"list1\" not found in FROM clause!\nLINE 1: SELECT list_inner_product(list1, list2);\n                                  ^\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT list_inner_product(ARRAY[1, 2, 3], ARRAY[4, 5, 6]);"
     ]
 }

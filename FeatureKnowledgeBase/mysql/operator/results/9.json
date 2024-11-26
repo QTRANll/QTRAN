@@ -19,5 +19,23 @@
     "Category": [
         "Built-In Functions and Operators",
         "Arithmetic Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT 10 % 3;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 355,
+            "Prompt Tokens": 336,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 6.18e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT 10 % 3;"
     ]
 }

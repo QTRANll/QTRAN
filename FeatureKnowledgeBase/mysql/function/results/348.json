@@ -19,5 +19,23 @@
     "Category": [
         "Built-In Functions and Operators",
         "Spatial Analysis Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT ST_PointFromText('POINT(1 1)', 4326);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 366,
+            "Prompt Tokens": 337,
+            "Completion Tokens": 29,
+            "Total Cost (USD)": 6.795e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT ST_PointFromText('POINT(1 1)', 4326);"
     ]
 }

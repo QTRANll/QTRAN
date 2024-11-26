@@ -16,5 +16,39 @@
     ],
     "Category": [
         "Aggregate Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT histogram(arg);",
+        "SELECT histogram(column_name) FROM table_name;",
+        "SELECT histogram(arg) FROM (SELECT 1 AS arg UNION ALL SELECT 2 UNION ALL SELECT 2 UNION ALL SELECT 3) AS temp;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 273,
+            "Prompt Tokens": 256,
+            "Completion Tokens": 17,
+            "Total Cost (USD)": 4.86e-05
+        },
+        {
+            "Total Tokens": 436,
+            "Prompt Tokens": 415,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 7.484999999999999e-05
+        },
+        {
+            "Total Tokens": 631,
+            "Prompt Tokens": 589,
+            "Completion Tokens": 42,
+            "Total Cost (USD)": 0.00011355
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.BinderException) Binder Error: Referenced column \"arg\" not found in FROM clause!\nLINE 1: SELECT histogram(arg);\n                         ^\n",
+        "(duckdb.duckdb.CatalogException) Catalog Error: Table with name table_name does not exist!\nDid you mean \"pg_tablespace\"?\nLINE 1: SELECT histogram(column_name) FROM table_name;\n                                           ^\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT histogram(arg) FROM (SELECT 1 AS arg UNION ALL SELECT 2 UNION ALL SELECT 2 UNION ALL SELECT 3) AS temp;"
     ]
 }

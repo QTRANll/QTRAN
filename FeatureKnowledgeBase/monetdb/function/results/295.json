@@ -16,5 +16,53 @@
     "Examples": [],
     "Category": [
         "Window Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT percent_rank(value) FROM your_table;",
+        "SELECT percent_rank(*) FROM your_table;",
+        "SELECT percent_rank() FROM your_table;",
+        "SELECT percent_rank() OVER () AS rank;",
+        "SELECT percent_rank() OVER (PARTITION BY some_column ORDER BY some_column) AS rank;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 300,
+            "Prompt Tokens": 279,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 5.445e-05
+        },
+        {
+            "Total Tokens": 459,
+            "Prompt Tokens": 439,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 7.784999999999998e-05
+        },
+        {
+            "Total Tokens": 618,
+            "Prompt Tokens": 598,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 0.00010169999999999998
+        },
+        {
+            "Total Tokens": 779,
+            "Prompt Tokens": 758,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 0.00012629999999999998
+        },
+        {
+            "Total Tokens": 923,
+            "Prompt Tokens": 892,
+            "Completion Tokens": 31,
+            "Total Cost (USD)": 0.0001524
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymonetdb.exceptions.OperationalError) 42000!syntax error, unexpected VALUE, expecting ')' in: \"select percent_rank(value\"\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!syntax error, unexpected '*', expecting ')' in: \"select percent_rank(*\"\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!syntax error, unexpected FROM, expecting OVER in: \"select percent_rank() from\"\n\n",
+        "Server closed connection",
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: identifier 'some_column' unknown\n\n"
+    ],
+    "EffectiveSQLs": []
 }

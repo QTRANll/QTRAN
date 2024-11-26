@@ -15,5 +15,31 @@
     "Examples": [],
     "Category": [
         "Pseudo-Types"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT * FROM table_am_handler;",
+        "SELECT * FROM information_schema.tables WHERE table_name = 'table_am_handler';"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 274,
+            "Prompt Tokens": 255,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 4.9649999999999994e-05
+        },
+        {
+            "Total Tokens": 443,
+            "Prompt Tokens": 415,
+            "Completion Tokens": 28,
+            "Total Cost (USD)": 7.905e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedTable) relation \"table_am_handler\" does not exist\nLINE 1: SELECT * FROM table_am_handler;\n                      ^\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT * FROM information_schema.tables WHERE table_name = 'table_am_handler';"
     ]
 }

@@ -16,5 +16,23 @@
     ],
     "Category": [
         "List Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT array_pop_front([1, 2, 3, 4, 5]);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 288,
+            "Prompt Tokens": 256,
+            "Completion Tokens": 32,
+            "Total Cost (USD)": 5.76e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT array_pop_front([1, 2, 3, 4, 5]);"
     ]
 }

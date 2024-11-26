@@ -21,5 +21,20 @@
     "Category": [
         "Built-In Functions and Operators",
         "Date and Time Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT LAST_DAY('2003-02-05');",
+        "SELECT LAST_DAY('2004-02-05');",
+        "SELECT LAST_DAY('2004-01-01 01:01:01');",
+        "SELECT LAST_DAY('2003-03-32');"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT LAST_DAY('2003-02-05');",
+        "SELECT LAST_DAY('2004-02-05');",
+        "SELECT LAST_DAY('2004-01-01 01:01:01');",
+        "SELECT LAST_DAY('2003-03-32');"
     ]
 }

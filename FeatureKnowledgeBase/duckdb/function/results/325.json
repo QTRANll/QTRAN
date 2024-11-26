@@ -16,5 +16,31 @@
     ],
     "Category": [
         "Numeric Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT isnan(x);",
+        "SELECT isnan(1.0);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 277,
+            "Prompt Tokens": 259,
+            "Completion Tokens": 18,
+            "Total Cost (USD)": 4.9649999999999994e-05
+        },
+        {
+            "Total Tokens": 441,
+            "Prompt Tokens": 420,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 7.559999999999998e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.BinderException) Binder Error: Referenced column \"x\" not found in FROM clause!\nLINE 1: SELECT isnan(x);\n                     ^\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT isnan(1.0);"
     ]
 }

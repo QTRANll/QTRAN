@@ -6,15 +6,49 @@
         "value . type"
     ],
     "Feature": [
-        "value . type() → string"
+        "value . type() \u2192 string"
     ],
     "Description": [
         "Type of the JSON item (see json_typeof)"
     ],
     "Examples": [
-        "jsonb_path_query_array('[1, \"2\", {}]', '$[*].type()') → [\"number\", \"string\", \"object\"]"
+        "jsonb_path_query_array('[1, \"2\", {}]', '$[*].type()') \u2192 [\"number\", \"string\", \"object\"]"
     ],
     "Category": [
         "JSON Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT json_typeof(value) FROM your_table;",
+        "SELECT json_typeof(value);",
+        "SELECT json_typeof('{}'::json);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 275,
+            "Prompt Tokens": 253,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 5.114999999999999e-05
+        },
+        {
+            "Total Tokens": 437,
+            "Prompt Tokens": 418,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 7.409999999999999e-05
+        },
+        {
+            "Total Tokens": 597,
+            "Prompt Tokens": 575,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 9.944999999999998e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedTable) relation \"your_table\" does not exist\nLINE 1: SELECT json_typeof(value) FROM your_table;\n                                       ^\n\n",
+        "(psycopg2.errors.UndefinedColumn) column \"value\" does not exist\nLINE 1: SELECT json_typeof(value);\n                           ^\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT json_typeof('{}'::json);"
     ]
 }

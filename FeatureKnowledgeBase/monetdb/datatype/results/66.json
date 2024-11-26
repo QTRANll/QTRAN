@@ -1,0 +1,38 @@
+{
+    "HTML": [
+        "https://www.monetdb.org/documentation-Aug2024/user-guide/sql-manual/data-types/udf-types"
+    ],
+    "Title": [
+        "User Defined Datatypes"
+    ],
+    "Feature": [
+        "User Defined Datatypes"
+    ],
+    "Description": [
+        "User Defined Datatypes",
+        "The MonetDB kernel supports creation of user defined types, e.g. complex types.",
+        "Relationship between SQL and MAL world is expressed using an external name.",
+        "CREATE TYPE [schema_name '.'] type_name EXTERNAL NAME type_identification\n\nDROP TYPE [schema_name '.'] type_name [RESTRICT | CASCADE]\n",
+        "Example",
+        "CREATE TYPE xml EXTERNAL NAME xml;\n\nSELECT * FROM sys.types WHERE sqlname = 'xml';\n-- returns 1 row for the new type: xml\n\nCREATE TABLE msgs (msg xml);\n\nSELECT * FROM msgs;\n\nDROP TYPE xml CASCADE;\n-- note: this drop type will also drop the created table because CASCADE is specified\n",
+        "The C code implementation of new atomary types is best postponed until there is no other performance-wise acceptable solution.\nAddition of an atomary type in the kernel would be beneficial if it is also\ncomplemented with bulk-operations for fast bulk processing,\nfunctions which accept the new type as argument and\ntype specific optimizers which could exploit their semantics."
+    ],
+    "Examples": [
+        "CREATE TYPE [schema_name '.'] type_name EXTERNAL NAME type_identification\n\nDROP TYPE [schema_name '.'] type_name [RESTRICT | CASCADE]\n",
+        "CREATE TYPE xml EXTERNAL NAME xml;\n\nSELECT * FROM sys.types WHERE sqlname = 'xml';\n-- returns 1 row for the new type: xml\n\nCREATE TABLE msgs (msg xml);\n\nSELECT * FROM msgs;\n\nDROP TYPE xml CASCADE;\n-- note: this drop type will also drop the created table because CASCADE is specified\n"
+    ],
+    "Category": [
+        "User Defined Datatypes"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT * FROM sys.types WHERE sqlname = 'xml';",
+        "SELECT * FROM msgs;"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT * FROM sys.types WHERE sqlname = 'xml';",
+        "SELECT * FROM msgs;"
+    ]
+}

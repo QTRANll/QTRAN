@@ -30,5 +30,17 @@
         "SELECT REGEXP_INSTR('ABC','b');",
         "SELECT REGEXP_INSTR(BINARY'ABC','b');",
         "SELECT REGEXP_INSTR('ABC','(?-i)b');"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT REGEXP_INSTR('abc','b');",
+        "SELECT REGEXP_INSTR('abc','x');",
+        "SELECT REGEXP_INSTR('BJ\u00d6RN','N');",
+        "SELECT REGEXP_INSTR(BINARY 'BJ\u00d6RN','N') AS cast_utf8_to_binary;",
+        "SELECT REGEXP_INSTR('ABC','b');",
+        "SELECT REGEXP_INSTR(BINARY'ABC','b');",
+        "SELECT REGEXP_INSTR('ABC','(?-i)b');"
     ]
 }

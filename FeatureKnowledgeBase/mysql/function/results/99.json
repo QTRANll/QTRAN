@@ -32,5 +32,39 @@
     "Category": [
         "Built-In Functions and Operators",
         "Aggregate Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT GROUP_CONCAT(expr) FROM table_name;",
+        "SELECT GROUP_CONCAT(expr) FROM DUAL;",
+        "SELECT GROUP_CONCAT('sample_value') FROM DUAL;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 950,
+            "Prompt Tokens": 928,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 0.0001524
+        },
+        {
+            "Total Tokens": 1110,
+            "Prompt Tokens": 1088,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 0.0001764
+        },
+        {
+            "Total Tokens": 1269,
+            "Prompt Tokens": 1245,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 0.00020115
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.ProgrammingError) (1146, \"Table 'knowledge_base_preprocess_mysql.table_name' doesn't exist\")\n",
+        "(pymysql.err.OperationalError) (1054, \"Unknown column 'expr' in 'field list'\")\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT GROUP_CONCAT('sample_value') FROM DUAL;"
     ]
 }

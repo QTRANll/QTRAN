@@ -16,5 +16,23 @@
     ],
     "Category": [
         "List Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT 'Hello' || ' World';"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 266,
+            "Prompt Tokens": 245,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 4.935e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT 'Hello' || ' World';"
     ]
 }

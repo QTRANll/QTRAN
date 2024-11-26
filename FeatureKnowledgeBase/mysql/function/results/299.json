@@ -22,5 +22,31 @@
     "Category": [
         "Built-In Functions and Operators",
         "Spatial Analysis Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT ST_Crosses(geometry1, geometry2);",
+        "SELECT ST_Crosses(POINT(1, 1), POINT(2, 2));"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 560,
+            "Prompt Tokens": 535,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 9.525e-05
+        },
+        {
+            "Total Tokens": 729,
+            "Prompt Tokens": 696,
+            "Completion Tokens": 33,
+            "Total Cost (USD)": 0.00012419999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.OperationalError) (1054, \"Unknown column 'geometry1' in 'field list'\")\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT ST_Crosses(POINT(1, 1), POINT(2, 2));"
     ]
 }

@@ -14,5 +14,31 @@
     "Examples": [],
     "Category": [
         "Built-In Mathematical SQL Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT tan(X);",
+        "SELECT tan(0);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 272,
+            "Prompt Tokens": 255,
+            "Completion Tokens": 17,
+            "Total Cost (USD)": 4.845e-05
+        },
+        {
+            "Total Tokens": 407,
+            "Prompt Tokens": 389,
+            "Completion Tokens": 18,
+            "Total Cost (USD)": 6.915e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(sqlite3.OperationalError) no such column: X\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT tan(0);"
     ]
 }

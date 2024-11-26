@@ -6,15 +6,33 @@
         "btrim"
     ],
     "Feature": [
-        "btrim ( string text [, characters text ] ) → text"
+        "btrim ( string text [, characters text ] ) \u2192 text"
     ],
     "Description": [
         "Removes the longest string containing only characters in characters (a space by default) from the start and end of string."
     ],
     "Examples": [
-        "btrim('xyxtrimyyx', 'xyz') → trim"
+        "btrim('xyxtrimyyx', 'xyz') \u2192 trim"
     ],
     "Category": [
         "String Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT btrim('   Hello World!   ');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 293,
+            "Prompt Tokens": 269,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 5.4749999999999996e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT btrim('   Hello World!   ');"
     ]
 }

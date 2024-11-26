@@ -16,5 +16,47 @@
     ],
     "Category": [
         "Aggregate Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT any_value(column_name) FROM table_name;",
+        "SELECT any_value(column_name);",
+        "SELECT any_value(arg);",
+        "SELECT any_value(NULL);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 282,
+            "Prompt Tokens": 260,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 5.2199999999999995e-05
+        },
+        {
+            "Total Tokens": 455,
+            "Prompt Tokens": 436,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 7.68e-05
+        },
+        {
+            "Total Tokens": 618,
+            "Prompt Tokens": 600,
+            "Completion Tokens": 18,
+            "Total Cost (USD)": 0.00010079999999999998
+        },
+        {
+            "Total Tokens": 779,
+            "Prompt Tokens": 761,
+            "Completion Tokens": 18,
+            "Total Cost (USD)": 0.00012495
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.CatalogException) Catalog Error: Table with name table_name does not exist!\nDid you mean \"pg_tablespace\"?\nLINE 1: SELECT any_value(column_name) FROM table_name;\n                                           ^\n",
+        "(duckdb.duckdb.BinderException) Binder Error: Referenced column \"column_name\" not found in FROM clause!\nLINE 1: SELECT any_value(column_name);\n                         ^\n",
+        "(duckdb.duckdb.BinderException) Binder Error: Referenced column \"arg\" not found in FROM clause!\nLINE 1: SELECT any_value(arg);\n                         ^\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT any_value(NULL);"
     ]
 }

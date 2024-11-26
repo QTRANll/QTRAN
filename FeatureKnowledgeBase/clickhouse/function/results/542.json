@@ -18,5 +18,9 @@
     ],
     "Category": [
         "Maps Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT mapSort(map('key2', 2, 'key3', 1, 'key1', 3)) AS map;",
+        "SELECT mapSort((k, v) -> v, map('key2', 2, 'key3', 1, 'key1', 3)) AS map;"
     ]
 }

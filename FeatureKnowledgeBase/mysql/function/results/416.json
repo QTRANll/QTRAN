@@ -35,5 +35,28 @@
     "Category": [
         "Built-In Functions and Operators",
         "Date and Time Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT WEEK('2008-02-20');",
+        "SELECT WEEK('2008-02-20',0);",
+        "SELECT WEEK('2008-02-20',1);",
+        "SELECT WEEK('2008-12-31',1);",
+        "SELECT YEAR('2000-01-01'), WEEK('2000-01-01',0);",
+        "SELECT WEEK('2000-01-01',2);",
+        "SELECT YEARWEEK('2000-01-01');",
+        "SELECT MID(YEARWEEK('2000-01-01'),5,2);"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT WEEK('2008-02-20');",
+        "SELECT WEEK('2008-02-20',0);",
+        "SELECT WEEK('2008-02-20',1);",
+        "SELECT WEEK('2008-12-31',1);",
+        "SELECT YEAR('2000-01-01'), WEEK('2000-01-01',0);",
+        "SELECT WEEK('2000-01-01',2);",
+        "SELECT YEARWEEK('2000-01-01');",
+        "SELECT MID(YEARWEEK('2000-01-01'),5,2);"
     ]
 }

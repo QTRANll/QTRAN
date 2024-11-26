@@ -21,5 +21,18 @@
     "Category": [
         "Built-In Functions and Operators",
         "Comparison Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [
+        "CREATE TABLE t (col VARCHAR(3));",
+        "SELECT EXISTS (SELECT * FROM t WHERE col LIKE 'c%');",
+        "SELECT EXISTS (SELECT * FROM t WHERE col LIKE 'd%');"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "CREATE TABLE t (col VARCHAR(3));",
+        "SELECT EXISTS (SELECT * FROM t WHERE col LIKE 'c%');",
+        "SELECT EXISTS (SELECT * FROM t WHERE col LIKE 'd%');"
     ]
 }

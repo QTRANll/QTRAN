@@ -16,5 +16,55 @@
     "Examples": [],
     "Category": [
         "Window Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT lag(column, 3, 0) FROM your_table;",
+        "SELECT lag(your_column, 3, 0) FROM your_table;",
+        "SELECT lag(your_column, 3, 0) FROM pg_tables;",
+        "SELECT lag(your_column, 3, 0) OVER () FROM pg_tables;",
+        "SELECT lag(tablename, 3, 0) OVER () FROM pg_tables;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 393,
+            "Prompt Tokens": 367,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 7.065e-05
+        },
+        {
+            "Total Tokens": 553,
+            "Prompt Tokens": 525,
+            "Completion Tokens": 28,
+            "Total Cost (USD)": 9.554999999999999e-05
+        },
+        {
+            "Total Tokens": 745,
+            "Prompt Tokens": 717,
+            "Completion Tokens": 28,
+            "Total Cost (USD)": 0.00012435
+        },
+        {
+            "Total Tokens": 938,
+            "Prompt Tokens": 908,
+            "Completion Tokens": 30,
+            "Total Cost (USD)": 0.0001542
+        },
+        {
+            "Total Tokens": 1139,
+            "Prompt Tokens": 1110,
+            "Completion Tokens": 29,
+            "Total Cost (USD)": 0.0001839
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.ParserException) Parser Error: syntax error at or near \"column\"\n",
+        "(duckdb.duckdb.CatalogException) Catalog Error: Table with name your_table does not exist!\nDid you mean \"pg_tables\"?\nLINE 1: SELECT lag(your_column, 3, 0) FROM your_table;\n                                           ^\n",
+        "(duckdb.duckdb.CatalogException) Catalog Error: Scalar Function with name lag does not exist!\nDid you mean \"log\"?\nLINE 1: SELECT lag(your_column, 3, 0) FROM pg_tables;\n               ^\n",
+        "(duckdb.duckdb.BinderException) Binder Error: Referenced column \"your_column\" not found in FROM clause!\nCandidate bindings: \"pg_tables.tablename\"\nLINE 1: SELECT lag(your_column, 3, 0) OVER () FROM pg_tabl...\n                   ^\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT lag(tablename, 3, 0) OVER () FROM pg_tables;"
     ]
 }

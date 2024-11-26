@@ -16,5 +16,23 @@
     ],
     "Category": [
         "Timestamp with Time Zone Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT datetrunc('hour', '2023-10-01 12:34:56+00'::timestamptz);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 323,
+            "Prompt Tokens": 280,
+            "Completion Tokens": 43,
+            "Total Cost (USD)": 6.78e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT datetrunc('hour', '2023-10-01 12:34:56+00'::timestamptz);"
     ]
 }

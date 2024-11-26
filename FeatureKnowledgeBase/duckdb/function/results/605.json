@@ -16,5 +16,31 @@
     ],
     "Category": [
         "Utility Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT glob('*.txt') AS file;",
+        "SELECT * FROM glob('*.txt');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 293,
+            "Prompt Tokens": 272,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 5.3400000000000004e-05
+        },
+        {
+            "Total Tokens": 482,
+            "Prompt Tokens": 461,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 8.175e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.BinderException) Binder Error: Function \"glob\" is a table function but it was used as a scalar function. This function has to be called in a FROM clause (similar to a table).\nLINE 1: SELECT glob('*.txt') AS file;\n               ^\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT * FROM glob('*.txt');"
     ]
 }

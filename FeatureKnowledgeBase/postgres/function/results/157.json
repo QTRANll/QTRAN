@@ -6,15 +6,33 @@
         "isfinite"
     ],
     "Feature": [
-        "isfinite ( interval ) → boolean"
+        "isfinite ( interval ) \u2192 boolean"
     ],
     "Description": [
         "Test for finite interval (currently always true)"
     ],
     "Examples": [
-        "isfinite(interval '4 hours') → true"
+        "isfinite(interval '4 hours') \u2192 true"
     ],
     "Category": [
         "Date divide Time Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT isfinite(interval '1 day');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 270,
+            "Prompt Tokens": 249,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 4.995e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT isfinite(interval '1 day');"
     ]
 }

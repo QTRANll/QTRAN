@@ -6,7 +6,7 @@
         "pg_xact_commit_timestamp"
     ],
     "Feature": [
-        "pg_xact_commit_timestamp ( xid ) → timestamp with time zone"
+        "pg_xact_commit_timestamp ( xid ) \u2192 timestamp with time zone"
     ],
     "Description": [
         "Returns the commit timestamp of a transaction."
@@ -14,5 +14,53 @@
     "Examples": [],
     "Category": [
         "System Information Functions and Operators"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT pg_xact_commit_timestamp(xid);",
+        "SELECT pg_xact_commit_timestamp(txid_current());",
+        "SELECT pg_xact_commit_timestamp(pg_current_xact_id());",
+        "SELECT pg_xact_commit_timestamp(pg_backend_xid());",
+        "SELECT pg_xact_commit_timestamp(pg_current_xact_id()::xid);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 285,
+            "Prompt Tokens": 263,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 5.264999999999999e-05
+        },
+        {
+            "Total Tokens": 452,
+            "Prompt Tokens": 429,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 7.814999999999999e-05
+        },
+        {
+            "Total Tokens": 648,
+            "Prompt Tokens": 623,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 0.00010845
+        },
+        {
+            "Total Tokens": 846,
+            "Prompt Tokens": 822,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 0.00013769999999999999
+        },
+        {
+            "Total Tokens": 1044,
+            "Prompt Tokens": 1015,
+            "Completion Tokens": 29,
+            "Total Cost (USD)": 0.00016964999999999995
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedColumn) column \"xid\" does not exist\nLINE 1: SELECT pg_xact_commit_timestamp(xid);\n                                        ^\n\n",
+        "(psycopg2.errors.UndefinedFunction) function pg_xact_commit_timestamp(bigint) does not exist\nLINE 1: SELECT pg_xact_commit_timestamp(txid_current());\n               ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.\n\n",
+        "(psycopg2.errors.UndefinedFunction) function pg_xact_commit_timestamp(xid8) does not exist\nLINE 1: SELECT pg_xact_commit_timestamp(pg_current_xact_id());\n               ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.\n\n",
+        "(psycopg2.errors.UndefinedFunction) function pg_backend_xid() does not exist\nLINE 1: SELECT pg_xact_commit_timestamp(pg_backend_xid());\n                                        ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.\n\n",
+        "(psycopg2.errors.ObjectNotInPrerequisiteState) could not get commit timestamp data\nHINT:  Make sure the configuration parameter \"track_commit_timestamp\" is set.\n\n"
+    ],
+    "EffectiveSQLs": []
 }

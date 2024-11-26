@@ -24,5 +24,9 @@
     ],
     "Category": [
         "Type Conversion Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT toTypeName(accurateCastOrNull(5, 'UInt8'));",
+        "SELECT    accurateCastOrNull(-1, 'UInt8') as uint8,    accurateCastOrNull(128, 'Int8') as int8,    accurateCastOrNull('Test', 'FixedString(2)') as fixed_string;"
     ]
 }

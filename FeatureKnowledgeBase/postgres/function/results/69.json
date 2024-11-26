@@ -6,15 +6,33 @@
         "upper"
     ],
     "Feature": [
-        "upper ( text ) → text"
+        "upper ( text ) \u2192 text"
     ],
     "Description": [
         "Converts the string to all upper case, according to the rules of the database's locale."
     ],
     "Examples": [
-        "upper('tom') → TOM"
+        "upper('tom') \u2192 TOM"
     ],
     "Category": [
         "String Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT upper('hello world');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 274,
+            "Prompt Tokens": 255,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 4.9649999999999994e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT upper('hello world');"
     ]
 }

@@ -16,5 +16,31 @@
     ],
     "Category": [
         "Timestamp Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT least(timestamp1, timestamp2);",
+        "SELECT least(current_timestamp, current_timestamp);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 275,
+            "Prompt Tokens": 254,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 5.07e-05
+        },
+        {
+            "Total Tokens": 444,
+            "Prompt Tokens": 423,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 7.604999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.BinderException) Binder Error: Referenced column \"timestamp1\" not found in FROM clause!\nLINE 1: SELECT least(timestamp1, timestamp2);\n                     ^\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT least(current_timestamp, current_timestamp);"
     ]
 }

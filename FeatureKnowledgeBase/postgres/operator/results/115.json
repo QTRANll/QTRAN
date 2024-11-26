@@ -6,17 +6,51 @@
         "json -> integer"
     ],
     "Feature": [
-        "json -> integer → json",
-        "jsonb -> integer → jsonb"
+        "json -> integer \u2192 json",
+        "jsonb -> integer \u2192 jsonb"
     ],
     "Description": [
         "Extracts n'th element of JSON array (array elements are indexed from zero, but negative integers count from the end)."
     ],
     "Examples": [
-        "'[{\"a\":\"foo\"},{\"b\":\"bar\"},{\"c\":\"baz\"}]'::json -> 2 → {\"c\":\"baz\"}",
-        "'[{\"a\":\"foo\"},{\"b\":\"bar\"},{\"c\":\"baz\"}]'::json -> -3 → {\"a\":\"foo\"}"
+        "'[{\"a\":\"foo\"},{\"b\":\"bar\"},{\"c\":\"baz\"}]'::json -> 2 \u2192 {\"c\":\"baz\"}",
+        "'[{\"a\":\"foo\"},{\"b\":\"bar\"},{\"c\":\"baz\"}]'::json -> -3 \u2192 {\"a\":\"foo\"}"
     ],
     "Category": [
         "JSON Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT json_column -> 1 FROM your_table;",
+        "SELECT json_column -> 1;",
+        "SELECT '{}'::json -> 1;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 296,
+            "Prompt Tokens": 274,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 5.43e-05
+        },
+        {
+            "Total Tokens": 458,
+            "Prompt Tokens": 439,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 7.724999999999998e-05
+        },
+        {
+            "Total Tokens": 618,
+            "Prompt Tokens": 598,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 0.00010169999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedTable) relation \"your_table\" does not exist\nLINE 1: SELECT json_column -> 1 FROM your_table;\n                                     ^\n\n",
+        "(psycopg2.errors.UndefinedColumn) column \"json_column\" does not exist\nLINE 1: SELECT json_column -> 1;\n               ^\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT '{}'::json -> 1;"
     ]
 }

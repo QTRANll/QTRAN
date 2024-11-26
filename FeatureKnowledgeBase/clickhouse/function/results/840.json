@@ -26,5 +26,10 @@
     ],
     "Category": [
         "Strings Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "CREATE TABLE key_val(`key1` String, `key2` String, `value` UInt32) ENGINE = TinyLog;",
+        "INSERT INTO key_val VALUES ('Hello, ','World',1), ('Hello, ','World',2), ('Hello, ','World!',3), ('Hello',', World!',2);",
+        "SELECT * from key_val;"
     ]
 }

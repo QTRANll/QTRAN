@@ -15,5 +15,23 @@
     "Examples": [],
     "Category": [
         "Pseudo-Types"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT ARRAY[1, 2, 3]::anycompatiblearray;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 302,
+            "Prompt Tokens": 274,
+            "Completion Tokens": 28,
+            "Total Cost (USD)": 5.79e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT ARRAY[1, 2, 3]::anycompatiblearray;"
     ]
 }

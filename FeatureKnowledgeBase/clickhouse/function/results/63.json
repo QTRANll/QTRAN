@@ -48,5 +48,14 @@
     ],
     "Category": [
         "Arrays Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT arraySort([1, 3, 3, 0]);",
+        "SELECT arraySort(['hello', 'world', '!']);",
+        "SELECT arraySort([1, nan, 2, NULL, 3, nan, -4, NULL, inf, -inf]);",
+        "SELECT arraySort((x) -> -x, [1, 2, 3]) as res;",
+        "SELECT arraySort((x, y) -> y, ['hello', 'world'], [2, 1]) as res;",
+        "SELECT arraySort((x, y) -> y, [0, 1, 2], ['c', 'b', 'a']) as res;",
+        "SELECT arraySort((x, y) -> -y, [0, 1, 2], [1, 2, 3]) as res;"
     ]
 }

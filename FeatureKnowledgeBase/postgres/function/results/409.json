@@ -6,7 +6,7 @@
         "has_schema_privilege"
     ],
     "Feature": [
-        "has_schema_privilege ( [ user name or oid, ] schema text or oid, privilege text ) → boolean"
+        "has_schema_privilege ( [ user name or oid, ] schema text or oid, privilege text ) \u2192 boolean"
     ],
     "Description": [
         "Does user have privilege for schema? Allowable privilege types are CREATE and USAGE."
@@ -14,5 +14,39 @@
     "Examples": [],
     "Category": [
         "System Information Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT has_schema_privilege('username', 'schema_name', 'USAGE');",
+        "SELECT has_schema_privilege(current_user, 'schema_name', 'USAGE');",
+        "SELECT has_schema_privilege(current_user, 'public', 'USAGE');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 307,
+            "Prompt Tokens": 278,
+            "Completion Tokens": 29,
+            "Total Cost (USD)": 5.91e-05
+        },
+        {
+            "Total Tokens": 461,
+            "Prompt Tokens": 432,
+            "Completion Tokens": 29,
+            "Total Cost (USD)": 8.219999999999999e-05
+        },
+        {
+            "Total Tokens": 614,
+            "Prompt Tokens": 586,
+            "Completion Tokens": 28,
+            "Total Cost (USD)": 0.00010469999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedObject) role \"username\" does not exist\n\n",
+        "(psycopg2.errors.InvalidSchemaName) schema \"schema_name\" does not exist\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT has_schema_privilege(current_user, 'public', 'USAGE');"
     ]
 }

@@ -47,5 +47,32 @@
         "Built-In Functions and Operators",
         "Comparison Functions and Operators",
         "String Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT 'David!' LIKE 'David_';",
+        "SELECT 'David!' LIKE '%D%v%';",
+        "SELECT 'David!' LIKE 'David\\_';",
+        "SELECT 'David_' LIKE 'David\\_';",
+        "SELECT 'David_' LIKE 'David|_' ESCAPE '|';",
+        "SELECT 'abc' LIKE 'ABC';",
+        "SELECT 'abc' LIKE _utf8mb4 'ABC' COLLATE utf8mb4_0900_as_cs;",
+        "SELECT 'abc' LIKE _utf8mb4 'ABC' COLLATE utf8mb4_bin;",
+        "SELECT 'abc' LIKE BINARY 'ABC';",
+        "SELECT 10 LIKE '1%';"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT 'David!' LIKE 'David_';",
+        "SELECT 'David!' LIKE '%D%v%';",
+        "SELECT 'David!' LIKE 'David\\_';",
+        "SELECT 'David_' LIKE 'David\\_';",
+        "SELECT 'David_' LIKE 'David|_' ESCAPE '|';",
+        "SELECT 'abc' LIKE 'ABC';",
+        "SELECT 'abc' LIKE _utf8mb4 'ABC' COLLATE utf8mb4_0900_as_cs;",
+        "SELECT 'abc' LIKE _utf8mb4 'ABC' COLLATE utf8mb4_bin;",
+        "SELECT 'abc' LIKE BINARY 'ABC';",
+        "SELECT 10 LIKE '1%';"
     ]
 }

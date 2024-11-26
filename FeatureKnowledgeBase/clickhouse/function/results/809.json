@@ -27,5 +27,9 @@
     ],
     "Category": [
         "Splitting Strings Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT splitByRegexp('\\\\d+', 'a12bc23de345f');",
+        "SELECT splitByRegexp('', 'abcde');"
     ]
 }

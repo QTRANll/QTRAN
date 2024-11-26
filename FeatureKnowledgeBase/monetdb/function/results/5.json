@@ -18,5 +18,63 @@
     ],
     "Category": [
         "Comparison Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        [
+            ">\"(arg1, arg2)\""
+        ],
+        [
+            ">>(arg1, arg2)"
+        ],
+        [
+            "arg1 > arg2"
+        ],
+        [
+            "\">\"(arg1, arg2)"
+        ],
+        [
+            "\">\"(arg1, arg2)"
+        ]
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 303,
+            "Prompt Tokens": 276,
+            "Completion Tokens": 27,
+            "Total Cost (USD)": 5.759999999999999e-05
+        },
+        {
+            "Total Tokens": 451,
+            "Prompt Tokens": 427,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 7.845e-05
+        },
+        {
+            "Total Tokens": 598,
+            "Prompt Tokens": 575,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 0.00010004999999999998
+        },
+        {
+            "Total Tokens": 748,
+            "Prompt Tokens": 722,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 0.00012389999999999998
+        },
+        {
+            "Total Tokens": 898,
+            "Prompt Tokens": 872,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 0.00014639999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "expected string or bytes-like object, got 'list'",
+        "expected string or bytes-like object, got 'list'",
+        "expected string or bytes-like object, got 'list'",
+        "expected string or bytes-like object, got 'list'",
+        "expected string or bytes-like object, got 'list'"
+    ],
+    "EffectiveSQLs": []
 }

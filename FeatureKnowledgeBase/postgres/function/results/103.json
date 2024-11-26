@@ -6,17 +6,65 @@
         "to_ascii"
     ],
     "Feature": [
-        "to_ascii ( string text ) → text",
-        "to_ascii ( string text, encoding name ) → text",
-        "to_ascii ( string text, encoding integer ) → text"
+        "to_ascii ( string text ) \u2192 text",
+        "to_ascii ( string text, encoding name ) \u2192 text",
+        "to_ascii ( string text, encoding integer ) \u2192 text"
     ],
     "Description": [
         "Converts string to ASCII from another encoding, which may be identified by name or number. If encoding is omitted the database encoding is assumed (which in practice is the only useful case). The conversion consists primarily of dropping accents. Conversion is only supported from LATIN1, LATIN2, LATIN9, and WIN1250 encodings. (See the unaccent module for another, more flexible solution.)"
     ],
     "Examples": [
-        "to_ascii('Karél') → Karel"
+        "to_ascii('Kar\u00e9l') \u2192 Karel"
     ],
     "Category": [
         "String Functions and Operators"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT to_ascii('\u00e9xample');",
+        "SELECT to_ascii(convert_to('\u00e9xample', 'LATIN1'));",
+        "SELECT to_ascii(convert_to('\u00e9xample', 'LATIN1')::text);",
+        "SELECT to_ascii('\u00e9xample'::text USING LATIN1);",
+        "SELECT to_ascii(convert_to('\u00e9xample', 'LATIN1')::text);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 370,
+            "Prompt Tokens": 349,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 6.494999999999999e-05
+        },
+        {
+            "Total Tokens": 522,
+            "Prompt Tokens": 494,
+            "Completion Tokens": 28,
+            "Total Cost (USD)": 9.09e-05
+        },
+        {
+            "Total Tokens": 723,
+            "Prompt Tokens": 692,
+            "Completion Tokens": 31,
+            "Total Cost (USD)": 0.0001224
+        },
+        {
+            "Total Tokens": 875,
+            "Prompt Tokens": 847,
+            "Completion Tokens": 28,
+            "Total Cost (USD)": 0.00014385
+        },
+        {
+            "Total Tokens": 1051,
+            "Prompt Tokens": 1020,
+            "Completion Tokens": 31,
+            "Total Cost (USD)": 0.00017159999999999997
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.FeatureNotSupported) encoding conversion from UTF8 to ASCII not supported\n\n",
+        "(psycopg2.errors.UndefinedFunction) function to_ascii(bytea) does not exist\nLINE 1: SELECT to_ascii(convert_to('\u00e9xample', 'LATIN1'));\n               ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.\n\n",
+        "(psycopg2.errors.FeatureNotSupported) encoding conversion from UTF8 to ASCII not supported\n\n",
+        "(psycopg2.errors.SyntaxError) syntax error at or near \"USING\"\nLINE 1: SELECT to_ascii('\u00e9xample'::text USING LATIN1);\n                                        ^\n\n",
+        "(psycopg2.errors.FeatureNotSupported) encoding conversion from UTF8 to ASCII not supported\n\n"
+    ],
+    "EffectiveSQLs": []
 }

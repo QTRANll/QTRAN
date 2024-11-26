@@ -6,17 +6,35 @@
         "json_to_record"
     ],
     "Feature": [
-        "json_to_record ( json ) → record",
-        "jsonb_to_record ( jsonb ) → record"
+        "json_to_record ( json ) \u2192 record",
+        "jsonb_to_record ( jsonb ) \u2192 record"
     ],
     "Description": [
         "Expands the top-level JSON object to a row having the composite type defined by an AS clause. (As with all functions returning record, the calling query must explicitly define the structure of the record with an AS clause.) The output record is filled from fields of the JSON object, in the same way as described above for json[b]_populate_record. Since there is no input record value, unmatched columns are always filled with nulls.",
         "create type myrowtype as (a int, b text);"
     ],
     "Examples": [
-        "select * from json_to_record('{\"a\":1,\"b\":[1,2,3],\"c\":[1,2,3],\"e\":\"bar\",\"r\": {\"a\": 123, \"b\": \"a b c\"}}') as x(a int, b text, c int[], d text, r myrowtype) →"
+        "select * from json_to_record('{\"a\":1,\"b\":[1,2,3],\"c\":[1,2,3],\"e\":\"bar\",\"r\": {\"a\": 123, \"b\": \"a b c\"}}') as x(a int, b text, c int[], d text, r myrowtype) \u2192"
     ],
     "Category": [
         "JSON Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT * FROM json_to_record('{\"a\": 1, \"b\": \"example\"}') AS myrowtype(a int, b text);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 400,
+            "Prompt Tokens": 357,
+            "Completion Tokens": 43,
+            "Total Cost (USD)": 7.934999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT * FROM json_to_record('{\"a\": 1, \"b\": \"example\"}') AS myrowtype(a int, b text);"
     ]
 }

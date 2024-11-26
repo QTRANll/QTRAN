@@ -14,5 +14,31 @@
     "Examples": [],
     "Category": [
         "Core SQL Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT coalesce(column1, column2) FROM table_name;",
+        "SELECT coalesce(1, NULL);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 321,
+            "Prompt Tokens": 296,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 5.9399999999999994e-05
+        },
+        {
+            "Total Tokens": 463,
+            "Prompt Tokens": 442,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 7.89e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(sqlite3.OperationalError) no such table: table_name\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT coalesce(1, NULL);"
     ]
 }

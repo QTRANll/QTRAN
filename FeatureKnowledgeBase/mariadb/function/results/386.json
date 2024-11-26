@@ -18,5 +18,52 @@
     "Category": [
         "Vector Functions"
     ],
-    "EffectiveSQLsRefined": []
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT VEC_ToText(your_vector) AS json_array;",
+        "SELECT VEC_ToText(0) AS json_array;",
+        "SELECT VEC_ToText(NULL) AS json_array;",
+        "SELECT VEC_ToText('[]') AS json_array;",
+        "SELECT VEC_ToText('1,2,3') AS json_array;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 306,
+            "Prompt Tokens": 281,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 5.715e-05
+        },
+        {
+            "Total Tokens": 467,
+            "Prompt Tokens": 443,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 8.084999999999999e-05
+        },
+        {
+            "Total Tokens": 627,
+            "Prompt Tokens": 604,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 0.00010439999999999999
+        },
+        {
+            "Total Tokens": 788,
+            "Prompt Tokens": 764,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 0.000129
+        },
+        {
+            "Total Tokens": 953,
+            "Prompt Tokens": 925,
+            "Completion Tokens": 28,
+            "Total Cost (USD)": 0.00015554999999999999
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION pinolo_temp_mariadb.VEC_ToText does not exist')\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION pinolo_temp_mariadb.VEC_ToText does not exist')\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION pinolo_temp_mariadb.VEC_ToText does not exist')\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION pinolo_temp_mariadb.VEC_ToText does not exist')\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION pinolo_temp_mariadb.VEC_ToText does not exist')\n"
+    ],
+    "EffectiveSQLs": []
 }

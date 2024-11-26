@@ -6,7 +6,7 @@
         "pg_ls_archive_statusdir"
     ],
     "Feature": [
-        "pg_ls_archive_statusdir () → setof record ( name text, size bigint, modification timestamp with time zone )"
+        "pg_ls_archive_statusdir () \u2192 setof record ( name text, size bigint, modification timestamp with time zone )"
     ],
     "Description": [
         "Returns the name, size, and last modification time (mtime) of each ordinary file in the server's WAL archive status directory (pg_wal/archive_status). Filenames beginning with a dot, directories, and other special files are excluded.",
@@ -15,5 +15,23 @@
     "Examples": [],
     "Category": [
         "System Administration Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT * FROM pg_ls_archive_statusdir();"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 366,
+            "Prompt Tokens": 344,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 6.479999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT * FROM pg_ls_archive_statusdir();"
     ]
 }

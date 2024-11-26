@@ -18,5 +18,31 @@
     ],
     "Category": [
         "Mathematics Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT sign(x);",
+        "SELECT sign(1);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 292,
+            "Prompt Tokens": 275,
+            "Completion Tokens": 17,
+            "Total Cost (USD)": 5.1450000000000004e-05
+        },
+        {
+            "Total Tokens": 438,
+            "Prompt Tokens": 420,
+            "Completion Tokens": 18,
+            "Total Cost (USD)": 7.379999999999998e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: identifier 'x' unknown\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT sign(1);"
     ]
 }

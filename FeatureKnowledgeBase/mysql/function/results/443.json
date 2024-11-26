@@ -23,5 +23,53 @@
     ],
     "Category": [
         "Loadable Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT firewall_group_enlist('g', 'fwuser@localhost');",
+        "SELECT firewall_group_enlist('example_group', 'example_user');",
+        "SELECT firewall_group_enlist('test_group', 'test_user');",
+        "SELECT firewall_group_enlist('group_name', 'user_name');",
+        "SELECT firewall_group_enlist('default_group', 'default_user');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 406,
+            "Prompt Tokens": 379,
+            "Completion Tokens": 27,
+            "Total Cost (USD)": 7.304999999999999e-05
+        },
+        {
+            "Total Tokens": 570,
+            "Prompt Tokens": 544,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 9.72e-05
+        },
+        {
+            "Total Tokens": 734,
+            "Prompt Tokens": 708,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 0.00012179999999999998
+        },
+        {
+            "Total Tokens": 898,
+            "Prompt Tokens": 872,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 0.00014639999999999998
+        },
+        {
+            "Total Tokens": 1062,
+            "Prompt Tokens": 1036,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 0.00017099999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.firewall_group_enlist does not exist')\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.firewall_group_enlist does not exist')\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.firewall_group_enlist does not exist')\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.firewall_group_enlist does not exist')\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.firewall_group_enlist does not exist')\n"
+    ],
+    "EffectiveSQLs": []
 }

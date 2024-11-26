@@ -6,15 +6,63 @@
         "anymultirange && anymultirange"
     ],
     "Feature": [
-        "anymultirange && anymultirange → boolean"
+        "anymultirange && anymultirange \u2192 boolean"
     ],
     "Description": [
         "Do the multiranges overlap, that is, have any elements in common?"
     ],
     "Examples": [
-        "'{[3,7)}'::int8multirange && '{[4,12)}'::int8multirange → t"
+        "'{[3,7)}'::int8multirange && '{[4,12)}'::int8multirange \u2192 t"
     ],
     "Category": [
         "Range divide Multirange Functions and Operators"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT (anymultirange && anymultirange);",
+        "SELECT (range1 && range2) FROM (SELECT '[(1,5), (10,15)]'::numrange AS range1, '[(3,7), (12,18)]'::numrange AS range2) AS ranges;",
+        "SELECT (range1 && range2) FROM (SELECT '[(1,5)]'::numrange AS range1, '[(3,7)]'::numrange AS range2) AS ranges;",
+        "SELECT (range1 && range2) FROM (SELECT '[(1,5)]'::numrange AS range1, '[3,7]'::numrange AS range2) AS ranges;",
+        "SELECT (range1 && range2) FROM (SELECT '1,5'::numrange AS range1, '3,7'::numrange AS range2) AS ranges;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 306,
+            "Prompt Tokens": 281,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 5.715e-05
+        },
+        {
+            "Total Tokens": 523,
+            "Prompt Tokens": 459,
+            "Completion Tokens": 64,
+            "Total Cost (USD)": 0.00010724999999999999
+        },
+        {
+            "Total Tokens": 758,
+            "Prompt Tokens": 704,
+            "Completion Tokens": 54,
+            "Total Cost (USD)": 0.00013799999999999997
+        },
+        {
+            "Total Tokens": 983,
+            "Prompt Tokens": 931,
+            "Completion Tokens": 52,
+            "Total Cost (USD)": 0.00017085
+        },
+        {
+            "Total Tokens": 1206,
+            "Prompt Tokens": 1156,
+            "Completion Tokens": 50,
+            "Total Cost (USD)": 0.00020339999999999996
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedColumn) column \"anymultirange\" does not exist\nLINE 1: SELECT (anymultirange && anymultirange);\n                ^\n\n",
+        "(psycopg2.errors.InvalidTextRepresentation) malformed range literal: \"[(1,5), (10,15)]\"\nLINE 1: SELECT (range1 && range2) FROM (SELECT '[(1,5), (10,15)]'::n...\n                                               ^\nDETAIL:  Junk after right parenthesis or bracket.\n\n",
+        "(psycopg2.errors.InvalidTextRepresentation) malformed range literal: \"[(1,5)]\"\nLINE 1: SELECT (range1 && range2) FROM (SELECT '[(1,5)]'::numrange A...\n                                               ^\nDETAIL:  Junk after right parenthesis or bracket.\n\n",
+        "(psycopg2.errors.InvalidTextRepresentation) malformed range literal: \"[(1,5)]\"\nLINE 1: SELECT (range1 && range2) FROM (SELECT '[(1,5)]'::numrange A...\n                                               ^\nDETAIL:  Junk after right parenthesis or bracket.\n\n",
+        "(psycopg2.errors.InvalidTextRepresentation) malformed range literal: \"1,5\"\nLINE 1: SELECT (range1 && range2) FROM (SELECT '1,5'::numrange AS ra...\n                                               ^\nDETAIL:  Missing left parenthesis or bracket.\n\n"
+    ],
+    "EffectiveSQLs": []
 }

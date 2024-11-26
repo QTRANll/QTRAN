@@ -18,5 +18,53 @@
     ],
     "Category": [
         "Aggregate Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT listagg(col_expr) FROM your_table;",
+        "SELECT listagg(col_expr) FROM (SELECT col_expr FROM your_table) AS subquery;",
+        "SELECT listagg(col_expr) FROM (SELECT col_expr) AS subquery;",
+        "SELECT listagg('example_value');",
+        "SELECT listagg('example_value') OVER ();"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 319,
+            "Prompt Tokens": 297,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 5.774999999999999e-05
+        },
+        {
+            "Total Tokens": 483,
+            "Prompt Tokens": 452,
+            "Completion Tokens": 31,
+            "Total Cost (USD)": 8.639999999999999e-05
+        },
+        {
+            "Total Tokens": 644,
+            "Prompt Tokens": 616,
+            "Completion Tokens": 28,
+            "Total Cost (USD)": 0.0001092
+        },
+        {
+            "Total Tokens": 795,
+            "Prompt Tokens": 775,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 0.00012825
+        },
+        {
+            "Total Tokens": 952,
+            "Prompt Tokens": 930,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 0.0001527
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymonetdb.exceptions.OperationalError) 42S02!SELECT: no such table 'your_table'\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42S02!SELECT: no such table 'your_table'\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: identifier 'col_expr' unknown\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: no such unary operator 'listagg(char)'\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!syntax error, unexpected OVER, expecting SCOLON in: \"select listagg('example_value') over\"\n\n"
+    ],
+    "EffectiveSQLs": []
 }

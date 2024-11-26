@@ -22,5 +22,22 @@
     ],
     "Category": [
         "Date and Time Data Types"
+    ],
+    "EffectiveSQLsRefined": [
+        "INSERT INTO y VALUES (1990),('2012');",
+        "SELECT * FROM y;",
+        "SELECT * FROM y;",
+        "INSERT INTO y2 VALUES(0,0),('0','0');",
+        "SELECT YEAR(y),YEAR(y2) FROM y2;"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "INSERT INTO y VALUES (1990),('2012');",
+        "SELECT * FROM y;",
+        "SELECT * FROM y;",
+        "INSERT INTO y2 VALUES(0,0),('0','0');",
+        "SELECT YEAR(y),YEAR(y2) FROM y2;"
     ]
 }

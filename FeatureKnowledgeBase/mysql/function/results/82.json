@@ -24,5 +24,47 @@
     "Category": [
         "Built-In Functions and Operators",
         "Window Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT FIRST_VALUE(val) OVER (PARTITION BY subject ORDER BY time) AS first_value FROM observations;",
+        "SELECT FIRST_VALUE(val) OVER (PARTITION BY subject ORDER BY time) AS first FROM observations;",
+        "SELECT FIRST_VALUE(1) OVER () AS first_value;",
+        "SELECT FIRST_VALUE(1) OVER () AS first;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 942,
+            "Prompt Tokens": 909,
+            "Completion Tokens": 33,
+            "Total Cost (USD)": 0.00015614999999999997
+        },
+        {
+            "Total Tokens": 1137,
+            "Prompt Tokens": 1105,
+            "Completion Tokens": 32,
+            "Total Cost (USD)": 0.00018495
+        },
+        {
+            "Total Tokens": 1300,
+            "Prompt Tokens": 1276,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 0.0002058
+        },
+        {
+            "Total Tokens": 1484,
+            "Prompt Tokens": 1461,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 0.00023295
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.ProgrammingError) (1064, \"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'first_value FROM observations' at line 1\")\n",
+        "(pymysql.err.ProgrammingError) (1146, \"Table 'knowledge_base_preprocess_mysql.observations' doesn't exist\")\n",
+        "(pymysql.err.ProgrammingError) (1064, \"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'first_value' at line 1\")\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT FIRST_VALUE(1) OVER () AS first;"
     ]
 }

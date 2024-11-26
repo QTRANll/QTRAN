@@ -6,8 +6,8 @@
         "json_populate_record"
     ],
     "Feature": [
-        "json_populate_record ( base anyelement, from_json json ) → anyelement",
-        "jsonb_populate_record ( base anyelement, from_json jsonb ) → anyelement"
+        "json_populate_record ( base anyelement, from_json json ) \u2192 anyelement",
+        "jsonb_populate_record ( base anyelement, from_json jsonb ) \u2192 anyelement"
     ],
     "Description": [
         "Expands the top-level JSON object to a row having the composite type of the base argument. The JSON object is scanned for fields whose names match column names of the output row type, and their values are inserted into those columns of the output. (Fields that do not correspond to any output column name are ignored.) In typical use, the value of base is just NULL, which means that any output columns that do not match any object field will be filled with nulls. However, if base isn't NULL then the values it contains will be used for unmatched columns.",
@@ -22,9 +22,59 @@
         "create type subrowtype as (d int, e text); create type myrowtype as (a int, b text[], c subrowtype);"
     ],
     "Examples": [
-        "select * from json_populate_record(null::myrowtype, '{\"a\": 1, \"b\": [\"2\", \"a b\"], \"c\": {\"d\": 4, \"e\": \"a b c\"}, \"x\": \"foo\"}') →"
+        "select * from json_populate_record(null::myrowtype, '{\"a\": 1, \"b\": [\"2\", \"a b\"], \"c\": {\"d\": 4, \"e\": \"a b c\"}, \"x\": \"foo\"}') \u2192"
     ],
     "Category": [
         "JSON Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT json_populate_record(NULL::myrowtype, '{\"a\": 1, \"b\": [\"text1\", \"text2\"], \"c\": {\"d\": 2, \"e\": \"text3\"}}');",
+        "SELECT json_populate_record(NULL::subrowtype, '{\"d\": 2, \"e\": \"text3\"}');",
+        "SELECT json_populate_record(NULL, '{\"field1\": \"value1\", \"field2\": \"value2\"}');",
+        "SELECT json_populate_record(NULL::record, '{\"field1\": \"value1\", \"field2\": \"value2\"}');",
+        "SELECT * FROM json_populate_record(NULL::record, '{\"field1\": \"value1\", \"field2\": \"value2\"}') AS t(field1 text, field2 text);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 745,
+            "Prompt Tokens": 682,
+            "Completion Tokens": 63,
+            "Total Cost (USD)": 0.0001401
+        },
+        {
+            "Total Tokens": 941,
+            "Prompt Tokens": 901,
+            "Completion Tokens": 40,
+            "Total Cost (USD)": 0.00015914999999999997
+        },
+        {
+            "Total Tokens": 1136,
+            "Prompt Tokens": 1097,
+            "Completion Tokens": 39,
+            "Total Cost (USD)": 0.00018795
+        },
+        {
+            "Total Tokens": 1305,
+            "Prompt Tokens": 1264,
+            "Completion Tokens": 41,
+            "Total Cost (USD)": 0.00021419999999999998
+        },
+        {
+            "Total Tokens": 1512,
+            "Prompt Tokens": 1460,
+            "Completion Tokens": 52,
+            "Total Cost (USD)": 0.00025019999999999996
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedObject) type \"myrowtype\" does not exist\nLINE 1: SELECT json_populate_record(NULL::myrowtype, '{\"a\": 1, \"b\": ...\n                                          ^\n\n",
+        "(psycopg2.errors.UndefinedObject) type \"subrowtype\" does not exist\nLINE 1: SELECT json_populate_record(NULL::subrowtype, '{\"d\": 2, \"e\":...\n                                          ^\n\n",
+        "(psycopg2.errors.DatatypeMismatch) could not determine polymorphic type because input has type unknown\n\n",
+        "(psycopg2.errors.FeatureNotSupported) could not determine row type for result of json_populate_record\nHINT:  Provide a non-null record argument, or call the function in the FROM clause using a column definition list.\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT * FROM json_populate_record(NULL::record, '{\"field1\": \"value1\", \"field2\": \"value2\"}') AS t(field1 text, field2 text);"
     ]
 }

@@ -6,15 +6,33 @@
         "tsquery <-> tsquery"
     ],
     "Feature": [
-        "tsquery <-> tsquery → tsquery"
+        "tsquery <-> tsquery \u2192 tsquery"
     ],
     "Description": [
         "Constructs a phrase query, which matches if the two input queries match at successive lexemes."
     ],
     "Examples": [
-        "to_tsquery('fat') <-> to_tsquery('rat') → 'fat' <-> 'rat'"
+        "to_tsquery('fat') <-> to_tsquery('rat') \u2192 'fat' <-> 'rat'"
     ],
     "Category": [
         "Text Search Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT to_tsquery('word1') <-> to_tsquery('word2');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 303,
+            "Prompt Tokens": 273,
+            "Completion Tokens": 30,
+            "Total Cost (USD)": 5.8949999999999996e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT to_tsquery('word1') <-> to_tsquery('word2');"
     ]
 }

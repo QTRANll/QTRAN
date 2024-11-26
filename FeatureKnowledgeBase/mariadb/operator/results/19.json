@@ -18,5 +18,18 @@
     ],
     "Category": [
         "Comparison Operators"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT '.01' <> '0.01';",
+        "SELECT .01 <> '0.01';",
+        "SELECT 'zapp' <> 'zappp';"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT '.01' <> '0.01';",
+        "SELECT .01 <> '0.01';",
+        "SELECT 'zapp' <> 'zappp';"
     ]
 }

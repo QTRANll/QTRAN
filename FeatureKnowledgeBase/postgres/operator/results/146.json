@@ -6,15 +6,33 @@
         "anyrange @> anyrange"
     ],
     "Feature": [
-        "anyrange @> anyrange → boolean"
+        "anyrange @> anyrange \u2192 boolean"
     ],
     "Description": [
         "Does the first range contain the second?"
     ],
     "Examples": [
-        "int4range(2,4) @> int4range(2,3) → t"
+        "int4range(2,4) @> int4range(2,3) \u2192 t"
     ],
     "Category": [
         "Range divide Multirange Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT '[1,5]'::int4range @> '[2,3]'::int4range;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 295,
+            "Prompt Tokens": 261,
+            "Completion Tokens": 34,
+            "Total Cost (USD)": 5.955e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT '[1,5]'::int4range @> '[2,3]'::int4range;"
     ]
 }

@@ -17,5 +17,31 @@
     "Category": [
         "Built-In Functions and Operators",
         "Internal Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT GET_DD_CREATE_OPTIONS('example_args');",
+        "SELECT 'Access to native function is restricted.' AS message;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 296,
+            "Prompt Tokens": 273,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 5.4749999999999996e-05
+        },
+        {
+            "Total Tokens": 459,
+            "Prompt Tokens": 435,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 7.965e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.OperationalError) (3566, \"Access to native function 'GET_DD_CREATE_OPTIONS' is rejected.\")\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT 'Access to native function is restricted.' AS message;"
     ]
 }

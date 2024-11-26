@@ -6,15 +6,33 @@
         "netmask"
     ],
     "Feature": [
-        "netmask ( inet ) → inet"
+        "netmask ( inet ) \u2192 inet"
     ],
     "Description": [
         "Computes the network mask for the address's network."
     ],
     "Examples": [
-        "netmask(inet '192.168.1.5/24') → 255.255.255.0"
+        "netmask(inet '192.168.1.5/24') \u2192 255.255.255.0"
     ],
     "Category": [
         "Network Address Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT '192.168.1.1'::inet::cidr;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 279,
+            "Prompt Tokens": 251,
+            "Completion Tokens": 28,
+            "Total Cost (USD)": 5.4449999999999995e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT '192.168.1.1'::inet::cidr;"
     ]
 }

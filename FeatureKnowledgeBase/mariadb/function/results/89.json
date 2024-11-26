@@ -21,5 +21,11 @@
     ],
     "EffectiveSQLsRefined": [
         "SELECT sys.extract_schema_from_file_name('/usr/local/mysql/data/db/t1.ibd');"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT sys.extract_schema_from_file_name('/usr/local/mysql/data/db/t1.ibd');"
     ]
 }

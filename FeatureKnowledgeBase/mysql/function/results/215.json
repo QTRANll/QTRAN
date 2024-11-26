@@ -19,5 +19,53 @@
     "Category": [
         "Built-In Functions and Operators",
         "Spatial Analysis Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT MBRDisjoint(g1, g2);",
+        "SELECT MBRDisjoint(GeomFromText('POINT(1 1)'), GeomFromText('POINT(2 2)'));",
+        "SELECT MBRDisjoint(0, 0);",
+        "SELECT MBRDisjoint(GeomFromText('POLYGON((0 0, 0 1, 1 1, 1 0, 0 0))'), GeomFromText('POLYGON((2 2, 2 3, 3 3, 3 2, 2 2))'));",
+        "SELECT MBRDisjoint(1, 2);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 374,
+            "Prompt Tokens": 350,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 6.69e-05
+        },
+        {
+            "Total Tokens": 551,
+            "Prompt Tokens": 510,
+            "Completion Tokens": 41,
+            "Total Cost (USD)": 0.00010109999999999999
+        },
+        {
+            "Total Tokens": 714,
+            "Prompt Tokens": 690,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 0.00011789999999999998
+        },
+        {
+            "Total Tokens": 934,
+            "Prompt Tokens": 850,
+            "Completion Tokens": 84,
+            "Total Cost (USD)": 0.0001779
+        },
+        {
+            "Total Tokens": 1097,
+            "Prompt Tokens": 1073,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 0.00017534999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.OperationalError) (1054, \"Unknown column 'g1' in 'field list'\")\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.GeomFromText does not exist')\n",
+        "(pymysql.err.OperationalError) (3037, 'Invalid GIS data provided to function mbrdisjoint.')\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.GeomFromText does not exist')\n",
+        "(pymysql.err.OperationalError) (3037, 'Invalid GIS data provided to function mbrdisjoint.')\n"
+    ],
+    "EffectiveSQLs": []
 }

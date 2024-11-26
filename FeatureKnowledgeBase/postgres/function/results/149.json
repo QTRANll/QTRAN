@@ -6,15 +6,33 @@
         "current_time"
     ],
     "Feature": [
-        "current_time ( integer ) → time with time zone"
+        "current_time ( integer ) \u2192 time with time zone"
     ],
     "Description": [
-        "Current time of day, with limited precision; see Section 9.9.5"
+        "Current time of day, with limited precision; see Section\u00a09.9.5"
     ],
     "Examples": [
-        "current_time(2) → 14:39:53.66-05"
+        "current_time(2) \u2192 14:39:53.66-05"
     ],
     "Category": [
         "Date divide Time Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT current_time;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 276,
+            "Prompt Tokens": 260,
+            "Completion Tokens": 16,
+            "Total Cost (USD)": 4.86e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT current_time;"
     ]
 }

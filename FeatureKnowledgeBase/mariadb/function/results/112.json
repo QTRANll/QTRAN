@@ -23,5 +23,14 @@
         "SELECT IFNULL(NULL,10);",
         "SELECT IFNULL(1/0,10);",
         "SELECT IFNULL(1/0,'yes');"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT IFNULL(1,0);",
+        "SELECT IFNULL(NULL,10);",
+        "SELECT IFNULL(1/0,10);",
+        "SELECT IFNULL(1/0,'yes');"
     ]
 }

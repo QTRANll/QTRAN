@@ -10,10 +10,10 @@
     ],
     "Description": [
         "NAME_CONST()",
-        "函数 NAME_CONST() 用于命名列。建议使用列别名功能代替。",
+        "\u51fd\u6570 NAME_CONST() \u7528\u4e8e\u547d\u540d\u5217\u3002\u5efa\u8bae\u4f7f\u7528\u5217\u522b\u540d\u529f\u80fd\u4ee3\u66ff\u3002",
         "SELECT NAME_CONST('column name', 'value') UNION ALL SELECT 'another value';\n",
         "+---------------+\n| column name   |\n+---------------+\n| another value |\n| value         |\n+---------------+\n2 rows in set (0.00 sec)\n",
-        "上面这条语句使用了 NAME_CONST()，下面这条语句使用了列别名的方式（推荐）。",
+        "\u4e0a\u9762\u8fd9\u6761\u8bed\u53e5\u4f7f\u7528\u4e86 NAME_CONST()\uff0c\u4e0b\u9762\u8fd9\u6761\u8bed\u53e5\u4f7f\u7528\u4e86\u5217\u522b\u540d\u7684\u65b9\u5f0f\uff08\u63a8\u8350\uff09\u3002",
         "SELECT 'value' AS 'column name' UNION ALL SELECT 'another value';\n",
         "+---------------+\n| column name   |\n+---------------+\n| value         |\n| another value |\n+---------------+\n2 rows in set (0.00 sec)\n"
     ],
@@ -22,6 +22,17 @@
         "SELECT 'value' AS 'column name' UNION ALL SELECT 'another value';\n"
     ],
     "Category": [
-        "其它函数"
+        "\u5176\u5b83\u51fd\u6570"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT NAME_CONST('column name', 'value') UNION ALL SELECT 'another value';",
+        "SELECT 'value' AS 'column name' UNION ALL SELECT 'another value';"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT NAME_CONST('column name', 'value') UNION ALL SELECT 'another value';",
+        "SELECT 'value' AS 'column name' UNION ALL SELECT 'another value';"
     ]
 }

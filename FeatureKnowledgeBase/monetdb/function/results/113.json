@@ -18,5 +18,31 @@
     ],
     "Category": [
         "Character String Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT startswith('Hello, World!', 'Hello', true);",
+        "SELECT CASE WHEN 'Hello, World!' LIKE 'Hello%' THEN true ELSE false END;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 343,
+            "Prompt Tokens": 317,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 6.314999999999999e-05
+        },
+        {
+            "Total Tokens": 509,
+            "Prompt Tokens": 479,
+            "Completion Tokens": 30,
+            "Total Cost (USD)": 8.984999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: no such operator 'startswith'\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT CASE WHEN 'Hello, World!' LIKE 'Hello%' THEN true ELSE false END;"
     ]
 }

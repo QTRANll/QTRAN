@@ -18,5 +18,23 @@
     ],
     "Category": [
         "Character String Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT editdistance2('hello', 'hallo');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 329,
+            "Prompt Tokens": 305,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 6.014999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT editdistance2('hello', 'hallo');"
     ]
 }

@@ -6,7 +6,7 @@
         "pg_backup_stop"
     ],
     "Feature": [
-        "pg_backup_stop ( [wait_for_archive boolean ] ) → record ( lsn pg_lsn, labelfile text, spcmapfile text )"
+        "pg_backup_stop ( [wait_for_archive boolean ] ) \u2192 record ( lsn pg_lsn, labelfile text, spcmapfile text )"
     ],
     "Description": [
         "Finishes performing an on-line backup. The desired contents of the backup label file and the tablespace map file are returned as part of the result of the function and must be written to files in the backup area. These files must not be written to the live data directory (doing so will cause PostgreSQL to fail to restart in the event of a crash).",
@@ -18,5 +18,53 @@
     "Examples": [],
     "Category": [
         "System Administration Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT pg_backup_stop();",
+        "SELECT pg_backup_start();",
+        "SELECT pg_backup_stop(true);",
+        "SELECT pg_backup_start();",
+        "SELECT pg_backup_stop(false);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 702,
+            "Prompt Tokens": 684,
+            "Completion Tokens": 18,
+            "Total Cost (USD)": 0.00011339999999999999
+        },
+        {
+            "Total Tokens": 857,
+            "Prompt Tokens": 839,
+            "Completion Tokens": 18,
+            "Total Cost (USD)": 0.00013665
+        },
+        {
+            "Total Tokens": 1036,
+            "Prompt Tokens": 1017,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 0.00016394999999999997
+        },
+        {
+            "Total Tokens": 1191,
+            "Prompt Tokens": 1173,
+            "Completion Tokens": 18,
+            "Total Cost (USD)": 0.00018674999999999999
+        },
+        {
+            "Total Tokens": 1370,
+            "Prompt Tokens": 1351,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 0.00021404999999999997
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.ObjectNotInPrerequisiteState) backup is not in progress\nHINT:  Did you call pg_backup_start()?\n\n",
+        "(psycopg2.errors.UndefinedFunction) function pg_backup_start() does not exist\nLINE 1: SELECT pg_backup_start();\n               ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.\n\n",
+        "(psycopg2.errors.ObjectNotInPrerequisiteState) backup is not in progress\nHINT:  Did you call pg_backup_start()?\n\n",
+        "(psycopg2.errors.UndefinedFunction) function pg_backup_start() does not exist\nLINE 1: SELECT pg_backup_start();\n               ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.\n\n",
+        "(psycopg2.errors.ObjectNotInPrerequisiteState) backup is not in progress\nHINT:  Did you call pg_backup_start()?\n\n"
+    ],
+    "EffectiveSQLs": []
 }

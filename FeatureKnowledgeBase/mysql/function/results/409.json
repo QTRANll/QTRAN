@@ -22,5 +22,53 @@
     "Category": [
         "Built-In Functions and Operators",
         "Miscellaneous Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "INSERT INTO table (a,b,c) VALUES (1,2,3),(4,5,6) ON DUPLICATE KEY UPDATE c=VALUES(a)+VALUES(b);",
+        "INSERT INTO my_table (a,b,c) VALUES (1,2,3),(4,5,6) ON DUPLICATE KEY UPDATE c=VALUES(a)+VALUES(b);",
+        "INSERT INTO your_table_name (a,b,c) VALUES (1,2,3),(4,5,6) ON DUPLICATE KEY UPDATE c=VALUES(a)+VALUES(b);",
+        "INSERT INTO example_table (a,b,c) VALUES (1,2,3),(4,5,6) ON DUPLICATE KEY UPDATE c=VALUES(a)+VALUES(b);",
+        "INSERT INTO my_custom_table (a,b,c) VALUES (1,2,3),(4,5,6) ON DUPLICATE KEY UPDATE c=VALUES(a)+VALUES(b);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 617,
+            "Prompt Tokens": 568,
+            "Completion Tokens": 49,
+            "Total Cost (USD)": 0.00011459999999999998
+        },
+        {
+            "Total Tokens": 858,
+            "Prompt Tokens": 808,
+            "Completion Tokens": 50,
+            "Total Cost (USD)": 0.0001512
+        },
+        {
+            "Total Tokens": 1047,
+            "Prompt Tokens": 996,
+            "Completion Tokens": 51,
+            "Total Cost (USD)": 0.00017999999999999998
+        },
+        {
+            "Total Tokens": 1237,
+            "Prompt Tokens": 1187,
+            "Completion Tokens": 50,
+            "Total Cost (USD)": 0.00020805
+        },
+        {
+            "Total Tokens": 1426,
+            "Prompt Tokens": 1375,
+            "Completion Tokens": 51,
+            "Total Cost (USD)": 0.00023684999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.ProgrammingError) (1064, \"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'table (a,b,c) VALUES (1,2,3),(4,5,6) ON DUPLICATE KEY UPDATE c=VALUES(a)+VALUES(' at line 1\")\n",
+        "(pymysql.err.ProgrammingError) (1146, \"Table 'knowledge_base_preprocess_mysql.my_table' doesn't exist\")\n",
+        "(pymysql.err.ProgrammingError) (1146, \"Table 'knowledge_base_preprocess_mysql.your_table_name' doesn't exist\")\n",
+        "(pymysql.err.ProgrammingError) (1146, \"Table 'knowledge_base_preprocess_mysql.example_table' doesn't exist\")\n",
+        "(pymysql.err.ProgrammingError) (1146, \"Table 'knowledge_base_preprocess_mysql.my_custom_table' doesn't exist\")\n"
+    ],
+    "EffectiveSQLs": []
 }

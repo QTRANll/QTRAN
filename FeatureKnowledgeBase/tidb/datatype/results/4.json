@@ -3,18 +3,36 @@
         "https://docs.pingcap.com/zh/tidb/v8.3/data-type-numeric"
     ],
     "Title": [
-        "MEDIUMINT 类型"
+        "MEDIUMINT \u7c7b\u578b"
     ],
     "Feature": [
-        "MEDIUMINT 类型"
+        "MEDIUMINT \u7c7b\u578b"
     ],
     "Description": [
-        "MEDIUMINT 类型",
-        "MEDIUMINT 类型。有符号数的范围是 [-8388608, 8388607]。无符号数的范围是 [0, 16777215]。",
+        "MEDIUMINT \u7c7b\u578b",
+        "MEDIUMINT \u7c7b\u578b\u3002\u6709\u7b26\u53f7\u6570\u7684\u8303\u56f4\u662f [-8388608, 8388607]\u3002\u65e0\u7b26\u53f7\u6570\u7684\u8303\u56f4\u662f [0, 16777215]\u3002",
         "MEDIUMINT[(M)] [UNSIGNED] [ZEROFILL]\n"
     ],
     "Examples": [],
     "Category": [
-        "数值类型"
+        "\u6570\u503c\u7c7b\u578b"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "CREATE TABLE example_table (id MEDIUMINT);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 329,
+            "Prompt Tokens": 306,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 5.9699999999999994e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "CREATE TABLE example_table (id MEDIUMINT);"
     ]
 }

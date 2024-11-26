@@ -16,5 +16,53 @@
     ],
     "Category": [
         "Utility Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT currval('sequence_name');",
+        "SELECT currval('existing_sequence_name');",
+        "SELECT currval('another_existing_sequence_name');",
+        "SELECT currval('some_valid_sequence_name');",
+        "SELECT currval('valid_sequence_name');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 296,
+            "Prompt Tokens": 276,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 5.34e-05
+        },
+        {
+            "Total Tokens": 448,
+            "Prompt Tokens": 427,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 7.664999999999999e-05
+        },
+        {
+            "Total Tokens": 602,
+            "Prompt Tokens": 580,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 0.00010019999999999998
+        },
+        {
+            "Total Tokens": 757,
+            "Prompt Tokens": 735,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 0.00012345
+        },
+        {
+            "Total Tokens": 911,
+            "Prompt Tokens": 890,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 0.0001461
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.CatalogException) Catalog Error: Sequence with name sequence_name does not exist!\n",
+        "(duckdb.duckdb.CatalogException) Catalog Error: Sequence with name existing_sequence_name does not exist!\n",
+        "(duckdb.duckdb.CatalogException) Catalog Error: Sequence with name another_existing_sequence_name does not exist!\n",
+        "(duckdb.duckdb.CatalogException) Catalog Error: Sequence with name some_valid_sequence_name does not exist!\n",
+        "(duckdb.duckdb.CatalogException) Catalog Error: Sequence with name valid_sequence_name does not exist!\n"
+    ],
+    "EffectiveSQLs": []
 }

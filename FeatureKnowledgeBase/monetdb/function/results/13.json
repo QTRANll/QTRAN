@@ -18,5 +18,23 @@
     ],
     "Category": [
         "Comparison Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT ifthenelse(true, 'Yes', 'No');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 334,
+            "Prompt Tokens": 309,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 6.135e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT ifthenelse(true, 'Yes', 'No');"
     ]
 }

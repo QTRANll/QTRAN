@@ -18,5 +18,39 @@
     ],
     "Category": [
         "Aggregate Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT prod(numeric_expr);",
+        "SELECT prod(column_name) FROM table_name;",
+        "SELECT prod(1);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 297,
+            "Prompt Tokens": 278,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 5.3099999999999996e-05
+        },
+        {
+            "Total Tokens": 449,
+            "Prompt Tokens": 428,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 7.679999999999998e-05
+        },
+        {
+            "Total Tokens": 600,
+            "Prompt Tokens": 582,
+            "Completion Tokens": 18,
+            "Total Cost (USD)": 9.809999999999997e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: identifier 'numeric_expr' unknown\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42S02!SELECT: no such table 'table_name'\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT prod(1);"
     ]
 }

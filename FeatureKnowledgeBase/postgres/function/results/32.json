@@ -6,7 +6,7 @@
         "setseed"
     ],
     "Feature": [
-        "setseed ( double precision ) → void"
+        "setseed ( double precision ) \u2192 void"
     ],
     "Description": [
         "Sets the seed for subsequent random() and random_normal() calls; argument must be between -1.0 and 1.0, inclusive",
@@ -15,5 +15,31 @@
     "Examples": [],
     "Category": [
         "Mathematical Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SETSEED(0.12345);",
+        "SELECT setseed(0.12345);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 301,
+            "Prompt Tokens": 279,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 5.5049999999999996e-05
+        },
+        {
+            "Total Tokens": 463,
+            "Prompt Tokens": 441,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 7.934999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.SyntaxError) syntax error at or near \"SETSEED\"\nLINE 1: SETSEED(0.12345);\n        ^\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT setseed(0.12345);"
     ]
 }

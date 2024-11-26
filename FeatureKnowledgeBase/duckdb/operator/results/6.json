@@ -16,5 +16,23 @@
     ],
     "Category": [
         "Date Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT CURRENT_DATE + 5;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 258,
+            "Prompt Tokens": 239,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 4.7249999999999997e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT CURRENT_DATE + 5;"
     ]
 }

@@ -25,5 +25,13 @@
         "SELECT CHAR_LENGTH('MariaDB');",
         "SELECT CHAR_LENGTH('\u03c0'), LENGTH('\u03c0'), LENGTHB('\u03c0'), OCTET_LENGTH('\u03c0');",
         "SELECT CHAR_LENGTH('\u03c0'), LENGTH('\u03c0'), LENGTHB('\u03c0'), OCTET_LENGTH('\u03c0');"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT CHAR_LENGTH('MariaDB');",
+        "SELECT CHAR_LENGTH('\u03c0'), LENGTH('\u03c0'), LENGTHB('\u03c0'), OCTET_LENGTH('\u03c0');",
+        "SELECT CHAR_LENGTH('\u03c0'), LENGTH('\u03c0'), LENGTHB('\u03c0'), OCTET_LENGTH('\u03c0');"
     ]
 }

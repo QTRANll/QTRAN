@@ -6,7 +6,7 @@
         "lag"
     ],
     "Feature": [
-        "lag ( value anycompatible [, offset integer [, default anycompatible ]] ) → anycompatible"
+        "lag ( value anycompatible [, offset integer [, default anycompatible ]] ) \u2192 anycompatible"
     ],
     "Description": [
         "Returns value evaluated at the row that is offset rows before the current row within the partition; if there is no such row, instead returns default (which must be of a type compatible with value). Both offset and default are evaluated with respect to the current row. If omitted, offset defaults to 1 and default to NULL."
@@ -14,5 +14,39 @@
     "Examples": [],
     "Category": [
         "Window Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT lag(value) FROM your_table;",
+        "SELECT lag(value) FROM (SELECT 1 AS value) AS subquery;",
+        "SELECT lag(value) OVER () FROM (SELECT 1 AS value) AS subquery;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 332,
+            "Prompt Tokens": 312,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 5.88e-05
+        },
+        {
+            "Total Tokens": 499,
+            "Prompt Tokens": 471,
+            "Completion Tokens": 28,
+            "Total Cost (USD)": 8.745e-05
+        },
+        {
+            "Total Tokens": 675,
+            "Prompt Tokens": 645,
+            "Completion Tokens": 30,
+            "Total Cost (USD)": 0.00011475
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedTable) relation \"your_table\" does not exist\nLINE 1: SELECT lag(value) FROM your_table;\n                               ^\n\n",
+        "(psycopg2.errors.WrongObjectType) window function lag requires an OVER clause\nLINE 1: SELECT lag(value) FROM (SELECT 1 AS value) AS subquery;\n               ^\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT lag(value) OVER () FROM (SELECT 1 AS value) AS subquery;"
     ]
 }

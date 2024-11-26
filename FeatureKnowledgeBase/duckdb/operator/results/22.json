@@ -16,5 +16,47 @@
     ],
     "Category": [
         "List Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "<@",
+        "SELECT * FROM table_name WHERE column_name <@ list_value;",
+        "SELECT * FROM (VALUES (1), (2), (3)) AS t(column_name) WHERE column_name <@ ARRAY[1, 2];",
+        "SELECT * FROM (VALUES (ARRAY[1]), (ARRAY[2]), (ARRAY[3])) AS t(column_name) WHERE column_name <@ ARRAY[1, 2];"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 270,
+            "Prompt Tokens": 256,
+            "Completion Tokens": 14,
+            "Total Cost (USD)": 4.68e-05
+        },
+        {
+            "Total Tokens": 420,
+            "Prompt Tokens": 395,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 7.424999999999999e-05
+        },
+        {
+            "Total Tokens": 619,
+            "Prompt Tokens": 575,
+            "Completion Tokens": 44,
+            "Total Cost (USD)": 0.00011264999999999997
+        },
+        {
+            "Total Tokens": 851,
+            "Prompt Tokens": 801,
+            "Completion Tokens": 50,
+            "Total Cost (USD)": 0.00015015
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.ParserException) Parser Error: syntax error at or near \"<@\"\n",
+        "(duckdb.duckdb.CatalogException) Catalog Error: Table with name table_name does not exist!\nDid you mean \"pg_tablespace\"?\nLINE 1: SELECT * FROM table_name WHERE column_name <@ list_va...\n                      ^\n",
+        "(duckdb.duckdb.BinderException) Binder Error: No function matches the given name and argument types '<@(INTEGER, INTEGER[])'. You might need to add explicit type casts.\n\tCandidate functions:\n\t<@(ANY[], ANY[]) -> BOOLEAN\n\nLINE 1: ...)) AS t(column_name) WHERE column_name <@ ARRAY[1, 2];\n                                                  ^\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT * FROM (VALUES (ARRAY[1]), (ARRAY[2]), (ARRAY[3])) AS t(column_name) WHERE column_name <@ ARRAY[1, 2];"
     ]
 }

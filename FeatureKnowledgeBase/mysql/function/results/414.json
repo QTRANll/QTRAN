@@ -28,5 +28,31 @@
     "Category": [
         "Built-In Functions and Operators",
         "Replication Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT WAIT_FOR_EXECUTED_GTID_SET('3E11FA47-71CA-11E1-9E33-C80AA9429562:1-5');",
+        "SELECT @@GLOBAL.gtid_mode;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 868,
+            "Prompt Tokens": 818,
+            "Completion Tokens": 50,
+            "Total Cost (USD)": 0.00015269999999999997
+        },
+        {
+            "Total Tokens": 1029,
+            "Prompt Tokens": 1010,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 0.0001629
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.OperationalError) (3062, 'Cannot use WAIT_FOR_EXECUTED_GTID_SET when GTID_MODE = OFF.')\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT @@GLOBAL.gtid_mode;"
     ]
 }

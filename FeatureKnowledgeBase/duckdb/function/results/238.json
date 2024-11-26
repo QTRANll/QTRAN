@@ -17,5 +17,47 @@
     ],
     "Category": [
         "List Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT list_extract(my_list, 0);",
+        "SELECT list_extract(my_list_column, 0) FROM my_table;",
+        "SELECT list_extract([]::list, 0);",
+        "SELECT list_extract(ARRAY[1, 2, 3], 0);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 272,
+            "Prompt Tokens": 250,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 5.069999999999999e-05
+        },
+        {
+            "Total Tokens": 444,
+            "Prompt Tokens": 418,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 7.829999999999999e-05
+        },
+        {
+            "Total Tokens": 623,
+            "Prompt Tokens": 600,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 0.00010379999999999999
+        },
+        {
+            "Total Tokens": 779,
+            "Prompt Tokens": 749,
+            "Completion Tokens": 30,
+            "Total Cost (USD)": 0.00013035
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.BinderException) Binder Error: Referenced column \"my_list\" not found in FROM clause!\nLINE 1: SELECT list_extract(my_list, 0);\n                            ^\n",
+        "(duckdb.duckdb.CatalogException) Catalog Error: Table with name my_table does not exist!\nDid you mean \"pg_tables\"?\nLINE 1: ...T list_extract(my_list_column, 0) FROM my_table;\n                                                  ^\n",
+        "(duckdb.duckdb.ParserException) Parser Error: LIST is not valid as a stand-alone type\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT list_extract(ARRAY[1, 2, 3], 0);"
     ]
 }

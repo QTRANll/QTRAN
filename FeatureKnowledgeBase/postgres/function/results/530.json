@@ -6,7 +6,7 @@
         "pg_wal_replay_pause"
     ],
     "Feature": [
-        "pg_wal_replay_pause () → void"
+        "pg_wal_replay_pause () \u2192 void"
     ],
     "Description": [
         "Request to pause recovery. A request doesn't mean that recovery stops right away. If you want a guarantee that recovery is actually paused, you need to check for the recovery pause state returned by pg_get_wal_replay_pause_state(). Note that pg_is_wal_replay_paused() returns whether a request is made. While recovery is paused, no further database changes are applied. If hot standby is active, all new queries will see the same consistent snapshot of the database, and no further query conflicts will be generated until recovery is resumed.",
@@ -15,5 +15,53 @@
     "Examples": [],
     "Category": [
         "System Administration Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT pg_wal_replay_pause();",
+        "SELECT pg_wal_replay_pause(); -- Ensure recovery is in progress before executing this command.",
+        "-- Recovery is not in progress, so pg_wal_replay_pause() cannot be executed.",
+        "-- Unable to execute pg_wal_replay_pause() as recovery is not in progress.",
+        "-- Recovery is not in progress; pg_wal_replay_pause() cannot be executed."
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 407,
+            "Prompt Tokens": 386,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 7.049999999999999e-05
+        },
+        {
+            "Total Tokens": 580,
+            "Prompt Tokens": 549,
+            "Completion Tokens": 31,
+            "Total Cost (USD)": 0.00010094999999999999
+        },
+        {
+            "Total Tokens": 752,
+            "Prompt Tokens": 722,
+            "Completion Tokens": 30,
+            "Total Cost (USD)": 0.00012629999999999998
+        },
+        {
+            "Total Tokens": 904,
+            "Prompt Tokens": 875,
+            "Completion Tokens": 29,
+            "Total Cost (USD)": 0.00014864999999999998
+        },
+        {
+            "Total Tokens": 1056,
+            "Prompt Tokens": 1027,
+            "Completion Tokens": 29,
+            "Total Cost (USD)": 0.00017144999999999997
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.ObjectNotInPrerequisiteState) recovery is not in progress\nHINT:  Recovery control functions can only be executed during recovery.\n\n",
+        "(psycopg2.errors.ObjectNotInPrerequisiteState) recovery is not in progress\nHINT:  Recovery control functions can only be executed during recovery.\n\n",
+        "(psycopg2.ProgrammingError) can't execute an empty query\n",
+        "(psycopg2.ProgrammingError) can't execute an empty query\n",
+        "(psycopg2.ProgrammingError) can't execute an empty query\n"
+    ],
+    "EffectiveSQLs": []
 }

@@ -22,5 +22,13 @@
         "SELECT MID('abcd',4,1);",
         "SELECT MID('abcd',2,2);",
         "SELECT MID('abcd',-2,4);"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT MID('abcd',4,1);",
+        "SELECT MID('abcd',2,2);",
+        "SELECT MID('abcd',-2,4);"
     ]
 }

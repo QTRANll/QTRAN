@@ -6,15 +6,63 @@
         "geometric_type >> geometric_type"
     ],
     "Feature": [
-        "geometric_type >> geometric_type → boolean"
+        "geometric_type >> geometric_type \u2192 boolean"
     ],
     "Description": [
         "Is first object strictly right of second? Available for point, box, polygon, circle."
     ],
     "Examples": [
-        "circle '<(5,0),1>' >> circle '<(0,0),1>' → t"
+        "circle '<(5,0),1>' >> circle '<(0,0),1>' \u2192 t"
     ],
     "Category": [
         "Geometric Functions and Operators"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT (geometric_type1 >> geometric_type2) AS is_strictly_right;",
+        "SELECT (geometric_type >> geometric_type) AS is_strictly_right;",
+        "SELECT (point1 >> point2) AS is_strictly_right;",
+        "SELECT (geom1 >> geom2) AS is_strictly_right;",
+        "SELECT (geometric_point1 >> geometric_point2) AS is_strictly_right;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 301,
+            "Prompt Tokens": 271,
+            "Completion Tokens": 30,
+            "Total Cost (USD)": 5.8649999999999996e-05
+        },
+        {
+            "Total Tokens": 485,
+            "Prompt Tokens": 457,
+            "Completion Tokens": 28,
+            "Total Cost (USD)": 8.535e-05
+        },
+        {
+            "Total Tokens": 666,
+            "Prompt Tokens": 639,
+            "Completion Tokens": 27,
+            "Total Cost (USD)": 0.00011205
+        },
+        {
+            "Total Tokens": 844,
+            "Prompt Tokens": 817,
+            "Completion Tokens": 27,
+            "Total Cost (USD)": 0.00013874999999999996
+        },
+        {
+            "Total Tokens": 1025,
+            "Prompt Tokens": 995,
+            "Completion Tokens": 30,
+            "Total Cost (USD)": 0.00016725
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedColumn) column \"geometric_type1\" does not exist\nLINE 1: SELECT (geometric_type1 >> geometric_type2) AS is_strictly_r...\n                ^\n\n",
+        "(psycopg2.errors.UndefinedColumn) column \"geometric_type\" does not exist\nLINE 1: SELECT (geometric_type >> geometric_type) AS is_strictly_rig...\n                ^\n\n",
+        "(psycopg2.errors.UndefinedColumn) column \"point1\" does not exist\nLINE 1: SELECT (point1 >> point2) AS is_strictly_right;\n                ^\n\n",
+        "(psycopg2.errors.UndefinedColumn) column \"geom1\" does not exist\nLINE 1: SELECT (geom1 >> geom2) AS is_strictly_right;\n                ^\n\n",
+        "(psycopg2.errors.UndefinedColumn) column \"geometric_point1\" does not exist\nLINE 1: SELECT (geometric_point1 >> geometric_point2) AS is_strictly...\n                ^\n\n"
+    ],
+    "EffectiveSQLs": []
 }

@@ -6,7 +6,7 @@
         "pg_get_viewdef"
     ],
     "Feature": [
-        "pg_get_viewdef ( view text [, pretty boolean ] ) → text"
+        "pg_get_viewdef ( view text [, pretty boolean ] ) \u2192 text"
     ],
     "Description": [
         "Reconstructs the underlying SELECT command for a view or materialized view, working from a textual name for the view rather than its OID. (This is deprecated; use the OID variant instead.)"
@@ -14,5 +14,53 @@
     "Examples": [],
     "Category": [
         "System Information Functions and Operators"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT pg_get_viewdef('your_view_name');",
+        "SELECT pg_get_viewdef('existing_view_name');",
+        "SELECT pg_get_viewdef('another_view_name');",
+        "SELECT pg_get_viewdef('some_view_name');",
+        "SELECT pg_get_viewdef('non_existent_view_name');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 317,
+            "Prompt Tokens": 294,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 5.789999999999999e-05
+        },
+        {
+            "Total Tokens": 467,
+            "Prompt Tokens": 444,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 8.039999999999999e-05
+        },
+        {
+            "Total Tokens": 617,
+            "Prompt Tokens": 594,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 0.00010289999999999998
+        },
+        {
+            "Total Tokens": 767,
+            "Prompt Tokens": 744,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 0.00012539999999999999
+        },
+        {
+            "Total Tokens": 919,
+            "Prompt Tokens": 894,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 0.0001491
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedTable) relation \"your_view_name\" does not exist\n\n",
+        "(psycopg2.errors.UndefinedTable) relation \"existing_view_name\" does not exist\n\n",
+        "(psycopg2.errors.UndefinedTable) relation \"another_view_name\" does not exist\n\n",
+        "(psycopg2.errors.UndefinedTable) relation \"some_view_name\" does not exist\n\n",
+        "(psycopg2.errors.UndefinedTable) relation \"non_existent_view_name\" does not exist\n\n"
+    ],
+    "EffectiveSQLs": []
 }

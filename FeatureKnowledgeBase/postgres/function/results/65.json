@@ -6,15 +6,33 @@
         "rpad"
     ],
     "Feature": [
-        "rpad ( string text, length integer [, fill text ] ) → text"
+        "rpad ( string text, length integer [, fill text ] ) \u2192 text"
     ],
     "Description": [
         "Extends the string to length length by appending the characters fill (a space by default). If the string is already longer than length then it is truncated."
     ],
     "Examples": [
-        "rpad('hi', 5, 'xy') → hixyx"
+        "rpad('hi', 5, 'xy') \u2192 hixyx"
     ],
     "Category": [
         "String Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT rpad('hello', 10);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 302,
+            "Prompt Tokens": 280,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 5.519999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT rpad('hello', 10);"
     ]
 }

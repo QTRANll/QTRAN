@@ -18,5 +18,53 @@
     ],
     "Category": [
         "Date Time Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT timestampdiff_quarter(ts_tm_tz, ts_tm_tz);",
+        "SELECT timestampdiff_quarter(TIMESTAMP '2023-01-01 00:00:00', TIMESTAMP '2023-04-01 00:00:00');",
+        "SELECT timestampdiff_quarter(TIMESTAMP WITH TIME ZONE '2023-01-01 00:00:00+00', TIMESTAMP WITH TIME ZONE '2023-04-01 00:00:00+00');",
+        "SELECT timestampdiff_quarter(TIMESTAMP '2023-01-01 00:00:00', TIMESTAMP '2023-04-01 00:00:00');",
+        "SELECT timestampdiff_quarter(CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 332,
+            "Prompt Tokens": 304,
+            "Completion Tokens": 28,
+            "Total Cost (USD)": 6.24e-05
+        },
+        {
+            "Total Tokens": 525,
+            "Prompt Tokens": 474,
+            "Completion Tokens": 51,
+            "Total Cost (USD)": 0.00010169999999999999
+        },
+        {
+            "Total Tokens": 736,
+            "Prompt Tokens": 673,
+            "Completion Tokens": 63,
+            "Total Cost (USD)": 0.00013874999999999998
+        },
+        {
+            "Total Tokens": 942,
+            "Prompt Tokens": 891,
+            "Completion Tokens": 51,
+            "Total Cost (USD)": 0.00016425
+        },
+        {
+            "Total Tokens": 1115,
+            "Prompt Tokens": 1090,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 0.0001785
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: identifier 'ts_tm_tz' unknown\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: no such binary operator 'timestampdiff_quarter(timestamp,timestamp)'\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: no such binary operator 'timestampdiff_quarter(timestamptz,timestamptz)'\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: no such binary operator 'timestampdiff_quarter(timestamp,timestamp)'\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: no such binary operator 'timestampdiff_quarter(timestamptz,timestamptz)'\n\n"
+    ],
+    "EffectiveSQLs": []
 }

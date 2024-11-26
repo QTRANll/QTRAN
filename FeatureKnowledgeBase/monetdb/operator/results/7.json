@@ -16,5 +16,31 @@
     ],
     "Category": [
         "Cast Conversion Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT 'R'any string'';",
+        "SELECT 'R''any string';"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 281,
+            "Prompt Tokens": 262,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 5.07e-05
+        },
+        {
+            "Total Tokens": 441,
+            "Prompt Tokens": 421,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 7.514999999999998e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymonetdb.exceptions.OperationalError) 42000!syntax error, unexpected ANY, expecting SCOLON in: \"select 'R'any\"\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT 'R''any string';"
     ]
 }

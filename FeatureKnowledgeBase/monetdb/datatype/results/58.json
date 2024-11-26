@@ -1,0 +1,54 @@
+{
+    "HTML": [
+        "https://www.monetdb.org/documentation-Aug2024/user-guide/sql-manual/data-types/temporal-types"
+    ],
+    "Title": [
+        "arrival_date"
+    ],
+    "Feature": [
+        "arrival_date"
+    ],
+    "Description": [
+        "date",
+        "yes",
+        "The date at which the voyage ended"
+    ],
+    "Examples": [],
+    "Category": [
+        "Temporal Datatypes"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT arrival_date FROM voyages;",
+        "SELECT arrival_date;",
+        "SELECT * FROM (VALUES (NULL)) AS t(arrival_date);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 268,
+            "Prompt Tokens": 250,
+            "Completion Tokens": 18,
+            "Total Cost (USD)": 4.8299999999999995e-05
+        },
+        {
+            "Total Tokens": 414,
+            "Prompt Tokens": 398,
+            "Completion Tokens": 16,
+            "Total Cost (USD)": 6.93e-05
+        },
+        {
+            "Total Tokens": 569,
+            "Prompt Tokens": 542,
+            "Completion Tokens": 27,
+            "Total Cost (USD)": 9.75e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymonetdb.exceptions.OperationalError) 42S02!SELECT: no such table 'voyages'\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: identifier 'arrival_date' unknown\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT * FROM (VALUES (NULL)) AS t(arrival_date);"
+    ]
+}

@@ -6,15 +6,33 @@
         "current_setting"
     ],
     "Feature": [
-        "current_setting ( setting_name text [, missing_ok boolean ] ) → text"
+        "current_setting ( setting_name text [, missing_ok boolean ] ) \u2192 text"
     ],
     "Description": [
         "Returns the current value of the setting setting_name. If there is no such setting, current_setting throws an error unless missing_ok is supplied and is true (in which case NULL is returned). This function corresponds to the SQL command SHOW."
     ],
     "Examples": [
-        "current_setting('datestyle') → ISO, MDY"
+        "current_setting('datestyle') \u2192 ISO, MDY"
     ],
     "Category": [
         "System Administration Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT current_setting('search_path');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 314,
+            "Prompt Tokens": 294,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 5.6099999999999995e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT current_setting('search_path');"
     ]
 }

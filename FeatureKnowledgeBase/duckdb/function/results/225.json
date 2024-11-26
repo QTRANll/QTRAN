@@ -17,5 +17,31 @@
     ],
     "Category": [
         "List Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT array_resize(my_list, 10, 0);",
+        "SELECT array_resize(ARRAY[1, 2, 3], 5, 0);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 293,
+            "Prompt Tokens": 268,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 5.52e-05
+        },
+        {
+            "Total Tokens": 475,
+            "Prompt Tokens": 442,
+            "Completion Tokens": 33,
+            "Total Cost (USD)": 8.61e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.BinderException) Binder Error: Referenced column \"my_list\" not found in FROM clause!\nLINE 1: SELECT array_resize(my_list, 10, 0);\n                            ^\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT array_resize(ARRAY[1, 2, 3], 5, 0);"
     ]
 }

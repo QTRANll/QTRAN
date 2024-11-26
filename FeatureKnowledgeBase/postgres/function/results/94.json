@@ -6,15 +6,33 @@
         "replace"
     ],
     "Feature": [
-        "replace ( string text, from text, to text ) → text"
+        "replace ( string text, from text, to text ) \u2192 text"
     ],
     "Description": [
         "Replaces all occurrences in string of substring from with substring to."
     ],
     "Examples": [
-        "replace('abcdefabcdef', 'cd', 'XX') → abXXefabXXef"
+        "replace('abcdefabcdef', 'cd', 'XX') \u2192 abXXefabXXef"
     ],
     "Category": [
         "String Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT replace('Hello World', 'World', 'PostgreSQL');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 283,
+            "Prompt Tokens": 256,
+            "Completion Tokens": 27,
+            "Total Cost (USD)": 5.46e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT replace('Hello World', 'World', 'PostgreSQL');"
     ]
 }

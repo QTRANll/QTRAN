@@ -18,5 +18,47 @@
     ],
     "Category": [
         "JSON Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT json.filter(js, indx) AS extracted_component;",
+        "SELECT json.filter('your_json_string', indx) AS extracted_component;",
+        "SELECT json.filter('your_json_string', 0) AS extracted_component;",
+        "SELECT json.filter('{\"key\": [\"value1\", \"value2\"]}', 0) AS extracted_component;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 303,
+            "Prompt Tokens": 280,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 5.5799999999999994e-05
+        },
+        {
+            "Total Tokens": 460,
+            "Prompt Tokens": 434,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 8.07e-05
+        },
+        {
+            "Total Tokens": 618,
+            "Prompt Tokens": 591,
+            "Completion Tokens": 27,
+            "Total Cost (USD)": 0.00010484999999999999
+        },
+        {
+            "Total Tokens": 787,
+            "Prompt Tokens": 751,
+            "Completion Tokens": 36,
+            "Total Cost (USD)": 0.00013424999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: identifier 'js' unknown\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: identifier 'indx' unknown\n\n",
+        "(pymonetdb.exceptions.OperationalError) JSON syntax error: json parse failed, expecting '{', '['\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT json.filter('{\"key\": [\"value1\", \"value2\"]}', 0) AS extracted_component;"
     ]
 }

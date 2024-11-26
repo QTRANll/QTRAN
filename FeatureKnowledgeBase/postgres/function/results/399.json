@@ -6,7 +6,7 @@
         "system_user"
     ],
     "Feature": [
-        "system_user → text"
+        "system_user \u2192 text"
     ],
     "Description": [
         "Returns the authentication method and the identity (if any) that the user presented during the authentication cycle before they were assigned a database role. It is represented as auth_method:identity or NULL if the user has not been authenticated (for example if Trust authentication has been used)."
@@ -14,5 +14,31 @@
     "Examples": [],
     "Category": [
         "System Information Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT auth_method FROM system_user;",
+        "SELECT * FROM system_user;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 310,
+            "Prompt Tokens": 291,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 5.504999999999999e-05
+        },
+        {
+            "Total Tokens": 467,
+            "Prompt Tokens": 449,
+            "Completion Tokens": 18,
+            "Total Cost (USD)": 7.815e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedColumn) column \"auth_method\" does not exist\nLINE 1: SELECT auth_method FROM system_user;\n               ^\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT * FROM system_user;"
     ]
 }

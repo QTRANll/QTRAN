@@ -6,8 +6,8 @@
         "percentile_cont"
     ],
     "Feature": [
-        "percentile_cont ( fractions double precision[] ) WITHIN GROUP ( ORDER BY double precision ) → double precision[]",
-        "percentile_cont ( fractions double precision[] ) WITHIN GROUP ( ORDER BY interval ) → interval[]"
+        "percentile_cont ( fractions double precision[] ) WITHIN GROUP ( ORDER BY double precision ) \u2192 double precision[]",
+        "percentile_cont ( fractions double precision[] ) WITHIN GROUP ( ORDER BY interval ) \u2192 interval[]"
     ],
     "Description": [
         "Computes multiple continuous percentiles. The result is an array of the same dimensions as the fractions parameter, with each non-null element replaced by the (possibly interpolated) value corresponding to that percentile."
@@ -15,5 +15,39 @@
     "Examples": [],
     "Category": [
         "Aggregate Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT percentile_cont(ARRAY[0.25, 0.5, 0.75]) WITHIN GROUP (ORDER BY some_column) FROM some_table;",
+        "SELECT percentile_cont(ARRAY[0.25, 0.5, 0.75]) WITHIN GROUP (ORDER BY some_value);",
+        "SELECT percentile_cont(ARRAY[0.25, 0.5, 0.75]) WITHIN GROUP (ORDER BY 1);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 365,
+            "Prompt Tokens": 320,
+            "Completion Tokens": 45,
+            "Total Cost (USD)": 7.5e-05
+        },
+        {
+            "Total Tokens": 559,
+            "Prompt Tokens": 517,
+            "Completion Tokens": 42,
+            "Total Cost (USD)": 0.00010275
+        },
+        {
+            "Total Tokens": 762,
+            "Prompt Tokens": 720,
+            "Completion Tokens": 42,
+            "Total Cost (USD)": 0.00013319999999999999
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedTable) relation \"some_table\" does not exist\nLINE 1: ..., 0.75]) WITHIN GROUP (ORDER BY some_column) FROM some_table...\n                                                             ^\n\n",
+        "(psycopg2.errors.UndefinedColumn) column \"some_value\" does not exist\nLINE 1: ...nt(ARRAY[0.25, 0.5, 0.75]) WITHIN GROUP (ORDER BY some_value...\n                                                             ^\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT percentile_cont(ARRAY[0.25, 0.5, 0.75]) WITHIN GROUP (ORDER BY 1);"
     ]
 }

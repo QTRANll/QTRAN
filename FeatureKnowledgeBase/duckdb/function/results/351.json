@@ -16,5 +16,31 @@
     ],
     "Category": [
         "Numeric Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT xor(x, y);",
+        "SELECT xor(1, 0);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 271,
+            "Prompt Tokens": 252,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 4.9199999999999997e-05
+        },
+        {
+            "Total Tokens": 437,
+            "Prompt Tokens": 416,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 7.499999999999998e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.BinderException) Binder Error: Referenced column \"x\" not found in FROM clause!\nLINE 1: SELECT xor(x, y);\n                   ^\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT xor(1, 0);"
     ]
 }

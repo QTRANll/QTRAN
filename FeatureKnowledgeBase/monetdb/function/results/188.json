@@ -18,5 +18,31 @@
     ],
     "Category": [
         "Date Time Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT sys.str_to_time('12:30:00', '%H:%i:%s');",
+        "SELECT sys.str_to_time('12:30:00', '%H:%M:%S');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 328,
+            "Prompt Tokens": 296,
+            "Completion Tokens": 32,
+            "Total Cost (USD)": 6.36e-05
+        },
+        {
+            "Total Tokens": 501,
+            "Prompt Tokens": 469,
+            "Completion Tokens": 32,
+            "Total Cost (USD)": 8.954999999999998e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymonetdb.exceptions.OperationalError) format '%H:%i:%s', doesn't match time '12:30:00'\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT sys.str_to_time('12:30:00', '%H:%M:%S');"
     ]
 }

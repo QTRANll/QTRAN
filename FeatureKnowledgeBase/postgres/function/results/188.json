@@ -6,15 +6,33 @@
         "slope"
     ],
     "Feature": [
-        "slope ( point, point ) → double precision"
+        "slope ( point, point ) \u2192 double precision"
     ],
     "Description": [
         "Computes slope of a line drawn through the two points."
     ],
     "Examples": [
-        "slope(point '(0,0)', point '(2,1)') → 0.5"
+        "slope(point '(0,0)', point '(2,1)') \u2192 0.5"
     ],
     "Category": [
         "Geometric Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT slope(POINT(1, 2), POINT(3, 4));"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 285,
+            "Prompt Tokens": 255,
+            "Completion Tokens": 30,
+            "Total Cost (USD)": 5.624999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT slope(POINT(1, 2), POINT(3, 4));"
     ]
 }

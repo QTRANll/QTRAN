@@ -6,15 +6,63 @@
         "isopen"
     ],
     "Feature": [
-        "isopen ( path ) → boolean"
+        "isopen ( path ) \u2192 boolean"
     ],
     "Description": [
         "Is path open?"
     ],
     "Examples": [
-        "isopen(path '[(0,0),(1,1),(2,0)]') → t"
+        "isopen(path '[(0,0),(1,1),(2,0)]') \u2192 t"
     ],
     "Category": [
         "Geometric Functions and Operators"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT isopen('/some/path');",
+        "SELECT isopen('some/path');",
+        "SELECT isopen('\\\\some\\\\path');",
+        "SELECT isopen('/');",
+        "SELECT isopen('');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 264,
+            "Prompt Tokens": 244,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 4.8599999999999995e-05
+        },
+        {
+            "Total Tokens": 424,
+            "Prompt Tokens": 404,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 7.259999999999999e-05
+        },
+        {
+            "Total Tokens": 586,
+            "Prompt Tokens": 564,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 9.779999999999998e-05
+        },
+        {
+            "Total Tokens": 746,
+            "Prompt Tokens": 728,
+            "Completion Tokens": 18,
+            "Total Cost (USD)": 0.00011999999999999999
+        },
+        {
+            "Total Tokens": 899,
+            "Prompt Tokens": 881,
+            "Completion Tokens": 18,
+            "Total Cost (USD)": 0.00014294999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.InvalidTextRepresentation) invalid input syntax for type path: \"/some/path\"\nLINE 1: SELECT isopen('/some/path');\n                      ^\n\n",
+        "(psycopg2.errors.InvalidTextRepresentation) invalid input syntax for type path: \"some/path\"\nLINE 1: SELECT isopen('some/path');\n                      ^\n\n",
+        "(psycopg2.errors.InvalidTextRepresentation) invalid input syntax for type path: \"\\\\some\\\\path\"\nLINE 1: SELECT isopen('\\\\some\\\\path');\n                      ^\n\n",
+        "(psycopg2.errors.InvalidTextRepresentation) invalid input syntax for type path: \"/\"\nLINE 1: SELECT isopen('/');\n                      ^\n\n",
+        "(psycopg2.errors.InvalidTextRepresentation) invalid input syntax for type path: \"\"\nLINE 1: SELECT isopen('');\n                      ^\n\n"
+    ],
+    "EffectiveSQLs": []
 }

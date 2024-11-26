@@ -18,5 +18,47 @@
     ],
     "Category": [
         "Aggregate Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT sys.group_concat(column_name, ', ') FROM table_name;",
+        "SELECT sys.group_concat(column_name, ', ');",
+        "SELECT sys.group_concat(value, ', ');",
+        "SELECT sys.group_concat(NULL, ', ');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 320,
+            "Prompt Tokens": 295,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 5.924999999999999e-05
+        },
+        {
+            "Total Tokens": 480,
+            "Prompt Tokens": 457,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 8.235e-05
+        },
+        {
+            "Total Tokens": 637,
+            "Prompt Tokens": 615,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 0.00010544999999999999
+        },
+        {
+            "Total Tokens": 793,
+            "Prompt Tokens": 771,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 0.00012885
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymonetdb.exceptions.OperationalError) 42S02!SELECT: no such table 'table_name'\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: identifier 'column_name' unknown\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: identifier 'value' unknown\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT sys.group_concat(NULL, ', ');"
     ]
 }

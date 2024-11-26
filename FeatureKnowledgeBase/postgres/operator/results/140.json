@@ -6,15 +6,33 @@
         "anyarray @> anyarray"
     ],
     "Feature": [
-        "anyarray @> anyarray → boolean"
+        "anyarray @> anyarray \u2192 boolean"
     ],
     "Description": [
         "Does the first array contain the second, that is, does each element appearing in the second array equal some element of the first array? (Duplicates are not treated specially, thus ARRAY[1] and ARRAY[1,1] are each considered to contain the other.)"
     ],
     "Examples": [
-        "ARRAY[1,4,3] @> ARRAY[3,1,3] → t"
+        "ARRAY[1,4,3] @> ARRAY[3,1,3] \u2192 t"
     ],
     "Category": [
         "Array Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT ARRAY[1, 2, 3] @> ARRAY[2];"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 337,
+            "Prompt Tokens": 307,
+            "Completion Tokens": 30,
+            "Total Cost (USD)": 6.404999999999998e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT ARRAY[1, 2, 3] @> ARRAY[2];"
     ]
 }

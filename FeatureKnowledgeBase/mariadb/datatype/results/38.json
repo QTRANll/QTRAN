@@ -25,5 +25,38 @@
     ],
     "Category": [
         "Date and Time Data Types"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT * FROM t;",
+        "SELECT * FROM t;",
+        "SELECT * FROM t;",
+        "SELECT * FROM t2;",
+        "SELECT * FROM t2;",
+        "SELECT * FROM t2;",
+        "INSERT INTO t3(id)  VALUES (1),(2);",
+        "SELECT * FROM t3;",
+        "INSERT INTO t3(id,ts2)  VALUES (3,CURRENT_TIMESTAMP());",
+        "SELECT * FROM t3;",
+        "SELECT SLEEP(1);",
+        "INSERT INTO t4(id,ts) VALUES (2,NULL);",
+        "SELECT * FROM t4;"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT * FROM t;",
+        "SELECT * FROM t;",
+        "SELECT * FROM t;",
+        "SELECT * FROM t2;",
+        "SELECT * FROM t2;",
+        "SELECT * FROM t2;",
+        "INSERT INTO t3(id)  VALUES (1),(2);",
+        "SELECT * FROM t3;",
+        "INSERT INTO t3(id,ts2)  VALUES (3,CURRENT_TIMESTAMP());",
+        "SELECT * FROM t3;",
+        "SELECT SLEEP(1);",
+        "INSERT INTO t4(id,ts) VALUES (2,NULL);",
+        "SELECT * FROM t4;"
     ]
 }

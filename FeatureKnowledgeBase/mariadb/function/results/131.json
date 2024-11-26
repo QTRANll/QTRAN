@@ -22,5 +22,14 @@
         "SELECT JSON_CONTAINS(@json, '2', '$.D');",
         "SELECT JSON_CONTAINS(@json, '{\"C\": 1}', '$.A');",
         "SELECT JSON_CONTAINS(@json, '{\"C\": 1}', '$.B');"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT JSON_CONTAINS(@json, '2', '$.A');",
+        "SELECT JSON_CONTAINS(@json, '2', '$.D');",
+        "SELECT JSON_CONTAINS(@json, '{\"C\": 1}', '$.A');",
+        "SELECT JSON_CONTAINS(@json, '{\"C\": 1}', '$.B');"
     ]
 }

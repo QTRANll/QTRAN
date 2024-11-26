@@ -25,5 +25,10 @@
     ],
     "Category": [
         "Bit Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT 101 AS a, bin(a), bitShiftRight(a, 2) AS a_shifted, bin(a_shifted);",
+        "SELECT 'abc' AS a, hex(a), bitShiftRight(a, 12) AS a_shifted, hex(a_shifted);",
+        "SELECT toFixedString('abc', 3) AS a, hex(a), bitShiftRight(a, 12) AS a_shifted, hex(a_shifted);"
     ]
 }

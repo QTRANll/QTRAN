@@ -23,5 +23,8 @@
     ],
     "Category": [
         "Hash Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT halfMD5(array('e','x','a'), 'mple', 10, toDateTime('2019-06-15 23:00:00')) AS halfMD5hash, toTypeName(halfMD5hash) AS type;"
     ]
 }

@@ -6,15 +6,33 @@
         "anyrange + anyrange"
     ],
     "Feature": [
-        "anyrange + anyrange → anyrange"
+        "anyrange + anyrange \u2192 anyrange"
     ],
     "Description": [
         "Computes the union of the ranges. The ranges must overlap or be adjacent, so that the union is a single range (but see range_merge())."
     ],
     "Examples": [
-        "numrange(5,15) + numrange(10,20) → [5,20)"
+        "numrange(5,15) + numrange(10,20) \u2192 [5,20)"
     ],
     "Category": [
         "Range divide Multirange Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT '[1, 5]'::int4range + '[5, 10]'::int4range;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 315,
+            "Prompt Tokens": 280,
+            "Completion Tokens": 35,
+            "Total Cost (USD)": 6.3e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT '[1, 5]'::int4range + '[5, 10]'::int4range;"
     ]
 }

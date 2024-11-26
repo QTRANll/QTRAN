@@ -6,15 +6,49 @@
         "jsonb_path_query"
     ],
     "Feature": [
-        "jsonb_path_query ( target jsonb, path jsonpath [, vars jsonb [, silent boolean ]] ) → setof jsonb"
+        "jsonb_path_query ( target jsonb, path jsonpath [, vars jsonb [, silent boolean ]] ) \u2192 setof jsonb"
     ],
     "Description": [
         "Returns all JSON items returned by the JSON path for the specified JSON value. The optional vars and silent arguments act the same as for jsonb_path_exists."
     ],
     "Examples": [
-        "select * from jsonb_path_query('{\"a\":[1,2,3,4,5]}', '$.a[*] ? (@ >= $min && @ <= $max)', '{\"min\":2, \"max\":4}') →"
+        "select * from jsonb_path_query('{\"a\":[1,2,3,4,5]}', '$.a[*] ? (@ >= $min && @ <= $max)', '{\"min\":2, \"max\":4}') \u2192"
     ],
     "Category": [
         "JSON Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT jsonb_path_query(your_jsonb_column, '$.your_json_path') FROM your_table;",
+        "SELECT jsonb_path_query(your_jsonb_column, '$.your_json_path');",
+        "SELECT jsonb_path_query('{\"key\": \"value\"}'::jsonb, '$.key');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 329,
+            "Prompt Tokens": 296,
+            "Completion Tokens": 33,
+            "Total Cost (USD)": 6.419999999999999e-05
+        },
+        {
+            "Total Tokens": 511,
+            "Prompt Tokens": 481,
+            "Completion Tokens": 30,
+            "Total Cost (USD)": 9.015e-05
+        },
+        {
+            "Total Tokens": 885,
+            "Prompt Tokens": 851,
+            "Completion Tokens": 34,
+            "Total Cost (USD)": 0.00014805
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedTable) relation \"your_table\" does not exist\nLINE 1: ...query(your_jsonb_column, '$.your_json_path') FROM your_table...\n                                                             ^\n\n",
+        "(psycopg2.errors.UndefinedColumn) column \"your_jsonb_column\" does not exist\nLINE 1: SELECT jsonb_path_query(your_jsonb_column, '$.your_json_path...\n                                ^\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT jsonb_path_query('{\"key\": \"value\"}'::jsonb, '$.key');"
     ]
 }

@@ -14,5 +14,31 @@
     "Examples": [],
     "Category": [
         "Window Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT ntile(4) OVER (ORDER BY column_name) FROM table_name;",
+        "SELECT ntile(4) OVER () FROM (SELECT 1 AS column_name UNION ALL SELECT 2 UNION ALL SELECT 3 UNION ALL SELECT 4 UNION ALL SELECT 5);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 365,
+            "Prompt Tokens": 336,
+            "Completion Tokens": 29,
+            "Total Cost (USD)": 6.78e-05
+        },
+        {
+            "Total Tokens": 535,
+            "Prompt Tokens": 485,
+            "Completion Tokens": 50,
+            "Total Cost (USD)": 0.00010274999999999999
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(sqlite3.OperationalError) no such table: table_name\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT ntile(4) OVER () FROM (SELECT 1 AS column_name UNION ALL SELECT 2 UNION ALL SELECT 3 UNION ALL SELECT 4 UNION ALL SELECT 5);"
     ]
 }

@@ -18,5 +18,31 @@
     ],
     "Category": [
         "Mathematics Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT degrees(rad) FROM sys.dual;",
+        "SELECT degrees(1.0);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 311,
+            "Prompt Tokens": 290,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 5.6099999999999995e-05
+        },
+        {
+            "Total Tokens": 461,
+            "Prompt Tokens": 441,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 7.814999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymonetdb.exceptions.OperationalError) 42S02!SELECT: no such table 'dual'\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT degrees(1.0);"
     ]
 }

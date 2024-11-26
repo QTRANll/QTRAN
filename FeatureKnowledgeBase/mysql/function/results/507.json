@@ -20,5 +20,53 @@
     ],
     "Category": [
         "Loadable Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT version_tokens_lock_exclusive('lock1', 'lock2', 10);",
+        "SELECT version_tokens_lock_exclusive('lock1', 10);",
+        "SELECT version_tokens_lock_exclusive('lock1');",
+        "SELECT version_tokens_lock_exclusive();",
+        "SELECT version_tokens_lock_exclusive();"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 430,
+            "Prompt Tokens": 400,
+            "Completion Tokens": 30,
+            "Total Cost (USD)": 7.8e-05
+        },
+        {
+            "Total Tokens": 594,
+            "Prompt Tokens": 568,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 0.00010079999999999998
+        },
+        {
+            "Total Tokens": 755,
+            "Prompt Tokens": 732,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 0.0001236
+        },
+        {
+            "Total Tokens": 913,
+            "Prompt Tokens": 893,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 0.00014595
+        },
+        {
+            "Total Tokens": 1071,
+            "Prompt Tokens": 1051,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 0.00016964999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.version_tokens_lock_exclusive does not exist')\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.version_tokens_lock_exclusive does not exist')\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.version_tokens_lock_exclusive does not exist')\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.version_tokens_lock_exclusive does not exist')\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.version_tokens_lock_exclusive does not exist')\n"
+    ],
+    "EffectiveSQLs": []
 }

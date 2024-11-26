@@ -6,15 +6,63 @@
         "popen"
     ],
     "Feature": [
-        "popen ( path ) → path"
+        "popen ( path ) \u2192 path"
     ],
     "Description": [
         "Converts path to open form."
     ],
     "Examples": [
-        "popen(path '((0,0),(1,1),(2,0))') → [(0,0),(1,1),(2,0)]"
+        "popen(path '((0,0),(1,1),(2,0))') \u2192 [(0,0),(1,1),(2,0)]"
     ],
     "Category": [
         "Geometric Functions and Operators"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT popen('/path/to/file');",
+        "SELECT popen('valid/path/to/file');",
+        "SELECT popen('');",
+        "SELECT popen('valid/path/to/directory/');",
+        "SELECT popen('valid_path');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 268,
+            "Prompt Tokens": 247,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 4.965e-05
+        },
+        {
+            "Total Tokens": 432,
+            "Prompt Tokens": 410,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 7.469999999999999e-05
+        },
+        {
+            "Total Tokens": 594,
+            "Prompt Tokens": 576,
+            "Completion Tokens": 18,
+            "Total Cost (USD)": 9.719999999999998e-05
+        },
+        {
+            "Total Tokens": 752,
+            "Prompt Tokens": 728,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 0.0001236
+        },
+        {
+            "Total Tokens": 918,
+            "Prompt Tokens": 898,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 0.0001467
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.InvalidTextRepresentation) invalid input syntax for type path: \"/path/to/file\"\nLINE 1: SELECT popen('/path/to/file');\n                     ^\n\n",
+        "(psycopg2.errors.InvalidTextRepresentation) invalid input syntax for type path: \"valid/path/to/file\"\nLINE 1: SELECT popen('valid/path/to/file');\n                     ^\n\n",
+        "(psycopg2.errors.InvalidTextRepresentation) invalid input syntax for type path: \"\"\nLINE 1: SELECT popen('');\n                     ^\n\n",
+        "(psycopg2.errors.InvalidTextRepresentation) invalid input syntax for type path: \"valid/path/to/directory/\"\nLINE 1: SELECT popen('valid/path/to/directory/');\n                     ^\n\n",
+        "(psycopg2.errors.InvalidTextRepresentation) invalid input syntax for type path: \"valid_path\"\nLINE 1: SELECT popen('valid_path');\n                     ^\n\n"
+    ],
+    "EffectiveSQLs": []
 }

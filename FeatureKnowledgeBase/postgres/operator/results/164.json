@@ -6,15 +6,65 @@
         "anymultirange <@ anyrange"
     ],
     "Feature": [
-        "anymultirange <@ anyrange → boolean"
+        "anymultirange <@ anyrange \u2192 boolean"
     ],
     "Description": [
         "Is the multirange contained by the range?"
     ],
     "Examples": [
-        "'{[2,4)}'::int4multirange <@ int4range(1,7) → t"
+        "'{[2,4)}'::int4multirange <@ int4range(1,7) \u2192 t"
     ],
     "Category": [
         "Range divide Multirange Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT anymultirange <@ anyrange;",
+        "SELECT $1 <@ $2;",
+        "SELECT anymultirange <@ anyrange FROM (VALUES (NULL::anymultirange, NULL::anyrange)) AS t(anymultirange, anyrange);",
+        "SELECT (NULL::int4range[])::anymultirange <@ (NULL::int4range[])::anyrange;",
+        "SELECT (NULL::int4range) <@ (NULL::int4range) AS result;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 293,
+            "Prompt Tokens": 271,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 5.3849999999999994e-05
+        },
+        {
+            "Total Tokens": 463,
+            "Prompt Tokens": 443,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 7.844999999999998e-05
+        },
+        {
+            "Total Tokens": 655,
+            "Prompt Tokens": 607,
+            "Completion Tokens": 48,
+            "Total Cost (USD)": 0.00011984999999999999
+        },
+        {
+            "Total Tokens": 833,
+            "Prompt Tokens": 795,
+            "Completion Tokens": 38,
+            "Total Cost (USD)": 0.00014205
+        },
+        {
+            "Total Tokens": 1029,
+            "Prompt Tokens": 997,
+            "Completion Tokens": 32,
+            "Total Cost (USD)": 0.00016874999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedColumn) column \"anymultirange\" does not exist\nLINE 1: SELECT anymultirange <@ anyrange;\n               ^\n\n",
+        "(psycopg2.errors.UndefinedParameter) there is no parameter $1\nLINE 1: SELECT $1 <@ $2;\n               ^\n\n",
+        "(psycopg2.errors.DatatypeMismatch) argument declared anymultirange is not a multirange type but type anymultirange\n\n",
+        "(psycopg2.errors.CannotCoerce) cannot cast type int4range[] to anymultirange\nLINE 1: SELECT (NULL::int4range[])::anymultirange <@ (NULL::int4rang...\n                                  ^\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT (NULL::int4range) <@ (NULL::int4range) AS result;"
     ]
 }

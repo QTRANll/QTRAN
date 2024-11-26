@@ -15,5 +15,39 @@
     "Examples": [],
     "Category": [
         "Aggregate Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT covar_pop(y, x);",
+        "SELECT covar_pop(y, x) FROM your_table_name;",
+        "SELECT covar_pop(y, x) FROM (SELECT 1 AS y, 2 AS x) AS temp;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 339,
+            "Prompt Tokens": 318,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 6.0299999999999995e-05
+        },
+        {
+            "Total Tokens": 513,
+            "Prompt Tokens": 488,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 8.819999999999999e-05
+        },
+        {
+            "Total Tokens": 710,
+            "Prompt Tokens": 674,
+            "Completion Tokens": 36,
+            "Total Cost (USD)": 0.0001227
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.BinderException) Binder Error: Referenced column \"y\" not found in FROM clause!\nLINE 1: SELECT covar_pop(y, x);\n                         ^\n",
+        "(duckdb.duckdb.CatalogException) Catalog Error: Table with name your_table_name does not exist!\nDid you mean \"pg_tablespace\"?\nLINE 1: SELECT covar_pop(y, x) FROM your_table_name;\n                                    ^\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT covar_pop(y, x) FROM (SELECT 1 AS y, 2 AS x) AS temp;"
     ]
 }

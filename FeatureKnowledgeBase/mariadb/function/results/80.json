@@ -17,5 +17,52 @@
     "Category": [
         "Geographic Functions"
     ],
-    "EffectiveSQLsRefined": []
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT DISJOINT(g1, g2);",
+        "SELECT DISJOINT(geom1, geom2);",
+        "SELECT DISJOINT(geometryA, geometryB);",
+        "SELECT DISJOINT(geometry1, geometry2);",
+        "SELECT DISJOINT(geom, geom2);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 339,
+            "Prompt Tokens": 316,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 6.12e-05
+        },
+        {
+            "Total Tokens": 495,
+            "Prompt Tokens": 471,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 8.505e-05
+        },
+        {
+            "Total Tokens": 651,
+            "Prompt Tokens": 627,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 0.00010845
+        },
+        {
+            "Total Tokens": 807,
+            "Prompt Tokens": 783,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 0.00013185
+        },
+        {
+            "Total Tokens": 962,
+            "Prompt Tokens": 939,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 0.00015465
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.OperationalError) (1054, \"Unknown column 'g1' in 'field list'\")\n",
+        "(pymysql.err.OperationalError) (1054, \"Unknown column 'geom1' in 'field list'\")\n",
+        "(pymysql.err.OperationalError) (1054, \"Unknown column 'geometryA' in 'field list'\")\n",
+        "(pymysql.err.OperationalError) (1054, \"Unknown column 'geometry1' in 'field list'\")\n",
+        "(pymysql.err.OperationalError) (1054, \"Unknown column 'geom' in 'field list'\")\n"
+    ],
+    "EffectiveSQLs": []
 }

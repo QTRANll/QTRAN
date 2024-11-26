@@ -7,11 +7,37 @@
     "Description": [
         "\nRELEASE_LOCK(str)\n",
         "\n          Releases the lock named by the string\n          str that was obtained with\n          GET_LOCK(). Returns\n          1 if the lock was released,\n          0 if the lock was not established by this\n          thread (in which case the lock is not released), and\n          NULL if the named lock did not exist. The\n          lock does not exist if it was never obtained by a call to\n          GET_LOCK() or if it has\n          previously been released.\n        ",
-        "\n          The DO statement is convenient\n          to use with RELEASE_LOCK(). See\n          Section 15.2.3, “DO Statement”.\n        ",
+        "\n          The DO statement is convenient\n          to use with RELEASE_LOCK(). See\n          Section\u00a015.2.3, \u201cDO Statement\u201d.\n        ",
         "\n          This function is unsafe for statement-based replication. A\n          warning is logged if you use this function when\n          binlog_format is set to\n          STATEMENT.\n"
     ],
     "Examples": [],
     "Category": [
-        "锁函数"
+        "\u9501\u51fd\u6570"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "RELEASE_LOCK('my_lock')",
+        "SELECT RELEASE_LOCK('my_lock')"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 445,
+            "Prompt Tokens": 425,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 7.574999999999998e-05
+        },
+        {
+            "Total Tokens": 626,
+            "Prompt Tokens": 606,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 0.00010289999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.ProgrammingError) (1064, 'You have an error in your SQL syntax; check the manual that corresponds to your TiDB version for the right syntax to use line 1 column 12 near \"RELEASE_LOCK(\\'my_lock\\')\" ')\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT RELEASE_LOCK('my_lock')"
     ]
 }

@@ -6,15 +6,33 @@
         "jsonb_pretty"
     ],
     "Feature": [
-        "jsonb_pretty ( jsonb ) → text"
+        "jsonb_pretty ( jsonb ) \u2192 text"
     ],
     "Description": [
         "Converts the given JSON value to pretty-printed, indented text."
     ],
     "Examples": [
-        "jsonb_pretty('[{\"f1\":1,\"f2\":null}, 2]') →"
+        "jsonb_pretty('[{\"f1\":1,\"f2\":null}, 2]') \u2192"
     ],
     "Category": [
         "JSON Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT jsonb_pretty('{\"name\": \"John\", \"age\": 30, \"city\": \"New York\"}'::jsonb);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 457,
+            "Prompt Tokens": 414,
+            "Completion Tokens": 43,
+            "Total Cost (USD)": 8.79e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT jsonb_pretty('{\"name\": \"John\", \"age\": 30, \"city\": \"New York\"}'::jsonb);"
     ]
 }

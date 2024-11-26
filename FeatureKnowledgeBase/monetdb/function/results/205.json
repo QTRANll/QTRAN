@@ -18,5 +18,53 @@
     ],
     "Category": [
         "Date Time Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        [
+            "SELECT \"year\"(CURRENT_TIMESTAMP);"
+        ],
+        [
+            "SELECT \"year\"(NOW());"
+        ],
+        [
+            "SELECT \"year\"('2023-01-01'::timestamp);"
+        ],
+        "SELECT \"year\"(CURRENT_DATE);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 307,
+            "Prompt Tokens": 281,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 5.7749999999999994e-05
+        },
+        {
+            "Total Tokens": 455,
+            "Prompt Tokens": 430,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 7.95e-05
+        },
+        {
+            "Total Tokens": 611,
+            "Prompt Tokens": 578,
+            "Completion Tokens": 33,
+            "Total Cost (USD)": 0.00010649999999999999
+        },
+        {
+            "Total Tokens": 755,
+            "Prompt Tokens": 734,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 0.0001227
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "expected string or bytes-like object, got 'list'",
+        "expected string or bytes-like object, got 'list'",
+        "expected string or bytes-like object, got 'list'",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT \"year\"(CURRENT_DATE);"
     ]
 }

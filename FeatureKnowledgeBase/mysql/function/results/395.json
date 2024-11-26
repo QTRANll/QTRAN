@@ -21,5 +21,16 @@
     "Category": [
         "Built-In Functions and Operators",
         "Encryption and Compression Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT UNCOMPRESS(COMPRESS('any string'));",
+        "SELECT UNCOMPRESS('any string');"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT UNCOMPRESS(COMPRESS('any string'));",
+        "SELECT UNCOMPRESS('any string');"
     ]
 }

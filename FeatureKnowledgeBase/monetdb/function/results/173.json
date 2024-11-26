@@ -18,5 +18,31 @@
     ],
     "Category": [
         "Date Time Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT quarter(dt_or_ts);",
+        "SELECT quarter(CURRENT_TIMESTAMP);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 294,
+            "Prompt Tokens": 275,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 5.265e-05
+        },
+        {
+            "Total Tokens": 445,
+            "Prompt Tokens": 426,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 7.529999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: identifier 'dt_or_ts' unknown\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT quarter(CURRENT_TIMESTAMP);"
     ]
 }

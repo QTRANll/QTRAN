@@ -6,15 +6,33 @@
         "reverse"
     ],
     "Feature": [
-        "reverse ( text ) → text"
+        "reverse ( text ) \u2192 text"
     ],
     "Description": [
         "Reverses the order of the characters in the string."
     ],
     "Examples": [
-        "reverse('abcde') → edcba"
+        "reverse('abcde') \u2192 edcba"
     ],
     "Category": [
         "String Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT reverse('Hello, World!');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 269,
+            "Prompt Tokens": 248,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 4.98e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT reverse('Hello, World!');"
     ]
 }

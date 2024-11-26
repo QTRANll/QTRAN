@@ -18,5 +18,53 @@
     ],
     "Category": [
         "Date Time Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT sys.time_to_str('2023-10-01 12:00:00-05:00', 'YYYY-MM-DD HH24:MI:SS TZ')",
+        "SELECT sys.time_to_str(TIMETZ '2023-10-01 12:00:00-05:00', 'YYYY-MM-DD HH24:MI:SS TZ')",
+        "SELECT sys.time_to_str(TIMETZ '2023-10-01 12:00:00-05:00', 'YYYY-MM-DD HH24:MI:SS TZ')",
+        "SELECT sys.time_to_str(TIMETZ '2023-10-01 12:00:00-05', 'YYYY-MM-DD HH24:MI:SS TZ')",
+        "SELECT sys.time_to_str(TIMETZ '2023-10-01 12:00:00-05:00', 'YYYY-MM-DD HH24:MI:SS')"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 347,
+            "Prompt Tokens": 299,
+            "Completion Tokens": 48,
+            "Total Cost (USD)": 7.364999999999999e-05
+        },
+        {
+            "Total Tokens": 551,
+            "Prompt Tokens": 499,
+            "Completion Tokens": 52,
+            "Total Cost (USD)": 0.00010604999999999998
+        },
+        {
+            "Total Tokens": 806,
+            "Prompt Tokens": 754,
+            "Completion Tokens": 52,
+            "Total Cost (USD)": 0.00014429999999999998
+        },
+        {
+            "Total Tokens": 1059,
+            "Prompt Tokens": 1009,
+            "Completion Tokens": 50,
+            "Total Cost (USD)": 0.00018134999999999996
+        },
+        {
+            "Total Tokens": 1309,
+            "Prompt Tokens": 1258,
+            "Completion Tokens": 51,
+            "Total Cost (USD)": 0.00021929999999999996
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymonetdb.exceptions.OperationalError) 22007!Daytime (2023-10-01 12:00:00-05:00) has incorrect format\n\n",
+        "(pymonetdb.exceptions.OperationalError) 22000!incorrect timetz 2023-10-01 12:00:00-05:00 in: \"select sys.time_to_str(timetz '2023-10-01 12:00:00-05:00',\"\n!42000!syntax error, unexpected STRING in: \"'YYYY-MM-DD HH24:MI:SS TZ'\"\n\n",
+        "(pymonetdb.exceptions.OperationalError) 22000!incorrect timetz 2023-10-01 12:00:00-05:00 in: \"select sys.time_to_str(timetz '2023-10-01 12:00:00-05:00',\"\n!42000!syntax error, unexpected STRING in: \"'YYYY-MM-DD HH24:MI:SS TZ'\"\n\n",
+        "(pymonetdb.exceptions.OperationalError) 22000!incorrect timetz 2023-10-01 12:00:00-05 in: \"select sys.time_to_str(timetz '2023-10-01 12:00:00-05',\"\n!42000!syntax error, unexpected STRING in: \"'YYYY-MM-DD HH24:MI:SS TZ'\"\n\n",
+        "(pymonetdb.exceptions.OperationalError) 22000!incorrect timetz 2023-10-01 12:00:00-05:00 in: \"select sys.time_to_str(timetz '2023-10-01 12:00:00-05:00',\"\n!42000!syntax error, unexpected STRING in: \"'YYYY-MM-DD HH24:MI:SS'\"\n\n"
+    ],
+    "EffectiveSQLs": []
 }

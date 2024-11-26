@@ -22,5 +22,20 @@
     ],
     "Category": [
         "Date and Time Data Types"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT * FROM t1;",
+        "SELECT * FROM t2;",
+        "SELECT CONVERT('2007-11-30 10:30:19',datetime);",
+        "SELECT CONVERT('2007-11-30 10:30:19',datetime(6));"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT * FROM t1;",
+        "SELECT * FROM t2;",
+        "SELECT CONVERT('2007-11-30 10:30:19',datetime);",
+        "SELECT CONVERT('2007-11-30 10:30:19',datetime(6));"
     ]
 }

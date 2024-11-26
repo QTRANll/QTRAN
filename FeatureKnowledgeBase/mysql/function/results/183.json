@@ -27,5 +27,22 @@
     "Category": [
         "Built-In Functions and Operators",
         "JSON Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT @j, JSON_UNQUOTE(@j);",
+        "SELECT @j, JSON_UNQUOTE(@j);",
+        "SELECT @@sql_mode;",
+        "SELECT JSON_UNQUOTE('\"\\\\t\\\\u0032\"');",
+        "SELECT JSON_UNQUOTE('\"\\\\t\\\\u0032\"');"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT @j, JSON_UNQUOTE(@j);",
+        "SELECT @j, JSON_UNQUOTE(@j);",
+        "SELECT @@sql_mode;",
+        "SELECT JSON_UNQUOTE('\"\\\\t\\\\u0032\"');",
+        "SELECT JSON_UNQUOTE('\"\\\\t\\\\u0032\"');"
     ]
 }

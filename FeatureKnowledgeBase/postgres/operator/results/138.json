@@ -6,15 +6,33 @@
         "number / number"
     ],
     "Feature": [
-        "number / number → number"
+        "number / number \u2192 number"
     ],
     "Description": [
         "Division"
     ],
     "Examples": [
-        "jsonb_path_query('[8.5]', '$[0] / 2') → 4.2500000000000000"
+        "jsonb_path_query('[8.5]', '$[0] / 2') \u2192 4.2500000000000000"
     ],
     "Category": [
         "JSON Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT 10 / 2;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 261,
+            "Prompt Tokens": 242,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 4.7699999999999994e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT 10 / 2;"
     ]
 }

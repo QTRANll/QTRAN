@@ -23,5 +23,14 @@
         "SELECT MICROSECOND('2009-12-31 23:59:59.000010');",
         "SELECT MICROSECOND('2013-08-07 12:13:14');",
         "SELECT MICROSECOND('2013-08-07');"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT MICROSECOND('12:00:00.123456');",
+        "SELECT MICROSECOND('2009-12-31 23:59:59.000010');",
+        "SELECT MICROSECOND('2013-08-07 12:13:14');",
+        "SELECT MICROSECOND('2013-08-07');"
     ]
 }

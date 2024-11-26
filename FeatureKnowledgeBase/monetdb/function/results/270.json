@@ -18,5 +18,31 @@
     ],
     "Category": [
         "Aggregate Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT sys.group_concat(col_expr) FROM your_table;",
+        "SELECT sys.group_concat(col_expr) FROM (SELECT NULL AS col_expr) AS temp;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 311,
+            "Prompt Tokens": 288,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 5.699999999999999e-05
+        },
+        {
+            "Total Tokens": 475,
+            "Prompt Tokens": 445,
+            "Completion Tokens": 30,
+            "Total Cost (USD)": 8.475e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymonetdb.exceptions.OperationalError) 42S02!SELECT: no such table 'your_table'\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT sys.group_concat(col_expr) FROM (SELECT NULL AS col_expr) AS temp;"
     ]
 }

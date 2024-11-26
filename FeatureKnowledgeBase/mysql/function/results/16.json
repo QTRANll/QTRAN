@@ -23,5 +23,31 @@
     "Category": [
         "Built-In Functions and Operators",
         "Aggregate Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT AVG(test_score) FROM student;",
+        "SELECT AVG(1);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 464,
+            "Prompt Tokens": 444,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 7.859999999999999e-05
+        },
+        {
+            "Total Tokens": 619,
+            "Prompt Tokens": 601,
+            "Completion Tokens": 18,
+            "Total Cost (USD)": 0.00010094999999999999
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.ProgrammingError) (1146, \"Table 'knowledge_base_preprocess_mysql.student' doesn't exist\")\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT AVG(1);"
     ]
 }

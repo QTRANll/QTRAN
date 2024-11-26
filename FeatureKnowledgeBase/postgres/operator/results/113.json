@@ -6,15 +6,33 @@
         "tsquery @> tsquery"
     ],
     "Feature": [
-        "tsquery @> tsquery → boolean"
+        "tsquery @> tsquery \u2192 boolean"
     ],
     "Description": [
         "Does first tsquery contain the second? (This considers only whether all the lexemes appearing in one query appear in the other, ignoring the combining operators.)"
     ],
     "Examples": [
-        "'cat'::tsquery @> 'cat & rat'::tsquery → f"
+        "'cat'::tsquery @> 'cat & rat'::tsquery \u2192 f"
     ],
     "Category": [
         "Text Search Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT 'tsquery1'::tsquery @> 'tsquery2'::tsquery;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 316,
+            "Prompt Tokens": 284,
+            "Completion Tokens": 32,
+            "Total Cost (USD)": 6.179999999999998e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT 'tsquery1'::tsquery @> 'tsquery2'::tsquery;"
     ]
 }

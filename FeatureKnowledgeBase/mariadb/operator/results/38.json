@@ -19,5 +19,24 @@
     ],
     "Category": [
         "Comparison Operators"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT 2 NOT IN (0,3,5,7);",
+        "SELECT 'wefwf' NOT IN ('wee','wefwf','weg');",
+        "SELECT 1 NOT IN ('1', '2', '3');",
+        "SELECT NULL NOT IN (1, 2, 3);",
+        "SELECT 1 NOT IN (1, 2, NULL);",
+        "SELECT 5 NOT IN (1, 2, NULL);"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT 2 NOT IN (0,3,5,7);",
+        "SELECT 'wefwf' NOT IN ('wee','wefwf','weg');",
+        "SELECT 1 NOT IN ('1', '2', '3');",
+        "SELECT NULL NOT IN (1, 2, 3);",
+        "SELECT 1 NOT IN (1, 2, NULL);",
+        "SELECT 5 NOT IN (1, 2, NULL);"
     ]
 }

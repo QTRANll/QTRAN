@@ -30,5 +30,15 @@
         "SELECT UNIX_TIMESTAMP(\"2007-11-30 10:30:19.123456\");",
         "SELECT FROM_UNIXTIME(UNIX_TIMESTAMP('2007-11-30 10:30:19'));",
         "SELECT FROM_UNIXTIME(FLOOR(UNIX_TIMESTAMP('2007-11-30 10:30:19')));"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT UNIX_TIMESTAMP();",
+        "SELECT UNIX_TIMESTAMP('2007-11-30 10:30:19');",
+        "SELECT UNIX_TIMESTAMP(\"2007-11-30 10:30:19.123456\");",
+        "SELECT FROM_UNIXTIME(UNIX_TIMESTAMP('2007-11-30 10:30:19'));",
+        "SELECT FROM_UNIXTIME(FLOOR(UNIX_TIMESTAMP('2007-11-30 10:30:19')));"
     ]
 }

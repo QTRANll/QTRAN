@@ -22,5 +22,39 @@
     "Category": [
         "Built-In Functions and Operators",
         "Spatial Analysis Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT ST_PointAtDistance(LineString('LINESTRING(0 0, 10 10)'), 400);",
+        "SELECT ST_PointAtDistance(ST_GeomFromText('LINESTRING(0 0, 10 10)'), 400);",
+        "SELECT ST_PointAtDistance(ST_GeomFromText('LINESTRING(0 0, 10 10)'), ST_Length(ST_GeomFromText('LINESTRING(0 0, 10 10)')));"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 591,
+            "Prompt Tokens": 555,
+            "Completion Tokens": 36,
+            "Total Cost (USD)": 0.00010485
+        },
+        {
+            "Total Tokens": 777,
+            "Prompt Tokens": 737,
+            "Completion Tokens": 40,
+            "Total Cost (USD)": 0.00013455
+        },
+        {
+            "Total Tokens": 975,
+            "Prompt Tokens": 915,
+            "Completion Tokens": 60,
+            "Total Cost (USD)": 0.00017325
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.DataError) (1367, \"Illegal non geometric ''LINESTRING(0 0, 10 10)'' value found during parsing\")\n",
+        "(pymysql.err.OperationalError) (1690, \"Distance value is out of range in 'st_pointatdistance'\")\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT ST_PointAtDistance(ST_GeomFromText('LINESTRING(0 0, 10 10)'), ST_Length(ST_GeomFromText('LINESTRING(0 0, 10 10)')));"
     ]
 }

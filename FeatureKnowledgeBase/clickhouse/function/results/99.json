@@ -26,5 +26,9 @@
     ],
     "Category": [
         "Arrays Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT arrayLastOrNull(x -> x >= 2, [1, 2, 3]);",
+        "SELECT arrayLastOrNull(x -> x >= 2, emptyArrayUInt8());"
     ]
 }

@@ -104,5 +104,40 @@
     ],
     "Category": [
         "Enum"
+    ],
+    "EffectiveSQLsRefined": [
+        "CREATE TYPE mood AS ENUM ('sad', 'ok', 'happy');",
+        "CREATE TABLE my_inputs AS\n    SELECT 'duck'  AS my_varchar UNION ALL\n    SELECT 'duck'  AS my_varchar UNION ALL\n    SELECT 'goose' AS my_varchar;",
+        "CREATE TYPE birds AS ENUM (SELECT my_varchar FROM my_inputs);",
+        "SELECT enum_range(NULL::birds) AS my_enum_range;",
+        "CREATE TABLE person (\n    name TEXT,\n    current_mood mood\n);",
+        "INSERT INTO person\nVALUES ('Pedro', 'happy'), ('Mark', NULL), ('Pagliacci', 'sad'), ('Mr. Mackey', 'ok');",
+        "SELECT *\nFROM person\nWHERE current_mood = 'sad';",
+        "SELECT regexp_matches(current_mood, '.*a.*') AS contains_a\nFROM person;",
+        "CREATE TYPE new_mood AS ENUM ('happy', 'anxious');",
+        "CREATE TABLE person_2 (\n    name text,\n    current_mood mood,\n    future_mood new_mood,\n    past_mood VARCHAR\n);",
+        "SELECT *\nFROM person_2\nWHERE current_mood = future_mood;",
+        "SELECT *\nFROM person_2\nWHERE current_mood = past_mood;",
+        "SELECT 'sad'::mood < 'ok'::mood AS comp;",
+        "SELECT unnest(['ok'::mood, 'happy'::mood, 'sad'::mood]) AS m\nORDER BY m;"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "CREATE TYPE mood AS ENUM ('sad', 'ok', 'happy');",
+        "CREATE TABLE my_inputs AS\n    SELECT 'duck'  AS my_varchar UNION ALL\n    SELECT 'duck'  AS my_varchar UNION ALL\n    SELECT 'goose' AS my_varchar;",
+        "CREATE TYPE birds AS ENUM (SELECT my_varchar FROM my_inputs);",
+        "SELECT enum_range(NULL::birds) AS my_enum_range;",
+        "CREATE TABLE person (\n    name TEXT,\n    current_mood mood\n);",
+        "INSERT INTO person\nVALUES ('Pedro', 'happy'), ('Mark', NULL), ('Pagliacci', 'sad'), ('Mr. Mackey', 'ok');",
+        "SELECT *\nFROM person\nWHERE current_mood = 'sad';",
+        "SELECT regexp_matches(current_mood, '.*a.*') AS contains_a\nFROM person;",
+        "CREATE TYPE new_mood AS ENUM ('happy', 'anxious');",
+        "CREATE TABLE person_2 (\n    name text,\n    current_mood mood,\n    future_mood new_mood,\n    past_mood VARCHAR\n);",
+        "SELECT *\nFROM person_2\nWHERE current_mood = future_mood;",
+        "SELECT *\nFROM person_2\nWHERE current_mood = past_mood;",
+        "SELECT 'sad'::mood < 'ok'::mood AS comp;",
+        "SELECT unnest(['ok'::mood, 'happy'::mood, 'sad'::mood]) AS m\nORDER BY m;"
     ]
 }

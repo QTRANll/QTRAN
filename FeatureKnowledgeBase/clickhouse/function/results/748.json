@@ -31,5 +31,9 @@
     ],
     "Category": [
         "Searching in Strings Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT position('Hello, world!', '!');",
+        "SELECT 6 = position('/' IN s) FROM (SELECT 'Hello/World' AS s);"
     ]
 }

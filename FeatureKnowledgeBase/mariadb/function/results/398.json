@@ -18,5 +18,38 @@
     "Category": [
         "Galera Functions"
     ],
-    "EffectiveSQLsRefined": []
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT WSREP_SYNC_WAIT_UPTO_GTID('your-gtid-here');",
+        "SELECT WSREP_SYNC_WAIT_UPTO_GTID('valid-gtid');",
+        "SELECT WSREP_SYNC_WAIT_UPTO_GTID('0-1-2');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 423,
+            "Prompt Tokens": 393,
+            "Completion Tokens": 30,
+            "Total Cost (USD)": 7.695e-05
+        },
+        {
+            "Total Tokens": 584,
+            "Prompt Tokens": 556,
+            "Completion Tokens": 28,
+            "Total Cost (USD)": 0.0001002
+        },
+        {
+            "Total Tokens": 746,
+            "Prompt Tokens": 717,
+            "Completion Tokens": 29,
+            "Total Cost (USD)": 0.00012494999999999997
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.OperationalError) (1941, 'Could not parse GTID list')\n",
+        "(pymysql.err.OperationalError) (1941, 'Could not parse GTID list')\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT WSREP_SYNC_WAIT_UPTO_GTID('0-1-2');"
+    ]
 }

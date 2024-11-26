@@ -10,19 +10,30 @@
     ],
     "Description": [
         "JSON_VALID()",
-        "JSON_VALID(str) 函数检查输入的参数是否为有效的 JSON 格式。该函数对于在将列转换为 JSON 类型之前进行检查非常有用。",
+        "JSON_VALID(str) \u51fd\u6570\u68c0\u67e5\u8f93\u5165\u7684\u53c2\u6570\u662f\u5426\u4e3a\u6709\u6548\u7684 JSON \u683c\u5f0f\u3002\u8be5\u51fd\u6570\u5bf9\u4e8e\u5728\u5c06\u5217\u8f6c\u6362\u4e3a JSON \u7c7b\u578b\u4e4b\u524d\u8fdb\u884c\u68c0\u67e5\u975e\u5e38\u6709\u7528\u3002",
         "SELECT JSON_VALID('{\"foo\"=\"bar\"}');\n",
         "+-----------------------------+\n| JSON_VALID('{\"foo\"=\"bar\"}') |\n+-----------------------------+\n|                           0 |\n+-----------------------------+\n1 row in set (0.01 sec)\n",
         "SELECT JSON_VALID('{\"foo\": \"bar\"}');\n",
         "+------------------------------+\n| JSON_VALID('{\"foo\": \"bar\"}') |\n+------------------------------+\n|                            1 |\n+------------------------------+\n1 row in set (0.01 sec)\n",
-        "另请参考",
-        "JSON 函数JSON 数据类型"
+        "\u53e6\u8bf7\u53c2\u8003",
+        "JSON \u51fd\u6570JSON \u6570\u636e\u7c7b\u578b"
     ],
     "Examples": [
         "SELECT JSON_VALID('{\"foo\"=\"bar\"}');\n",
         "SELECT JSON_VALID('{\"foo\": \"bar\"}');\n"
     ],
     "Category": [
-        "返回 JSON 的函数"
+        "\u8fd4\u56de JSON \u7684\u51fd\u6570"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT JSON_VALID('{\"foo\"=\"bar\"}');",
+        "SELECT JSON_VALID('{\"foo\": \"bar\"}');"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT JSON_VALID('{\"foo\"=\"bar\"}');",
+        "SELECT JSON_VALID('{\"foo\": \"bar\"}');"
     ]
 }

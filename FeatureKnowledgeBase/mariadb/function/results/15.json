@@ -17,5 +17,52 @@
     "Category": [
         "Information Functions"
     ],
-    "EffectiveSQLsRefined": []
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT BINLOG_GTID_POS('mysql-bin.000001', 12345);",
+        "SELECT BINLOG_GTID_POS('mysql-bin.000001', 12345) WHERE @@global.binlog_format IS NOT NULL;",
+        "SELECT BINLOG_GTID_POS('mysql-bin.000001', 12345) WHERE @@global.binlog_format = 'ROW';",
+        "SELECT BINLOG_GTID_POS('mysql-bin.000001', 12345) WHERE @@global.binlog_format IS NULL;",
+        "SELECT BINLOG_GTID_POS('mysql-bin.000001', 12345) WHERE @@global.binlog_format IS NOT 'OFF';"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 356,
+            "Prompt Tokens": 326,
+            "Completion Tokens": 30,
+            "Total Cost (USD)": 6.69e-05
+        },
+        {
+            "Total Tokens": 525,
+            "Prompt Tokens": 486,
+            "Completion Tokens": 39,
+            "Total Cost (USD)": 9.63e-05
+        },
+        {
+            "Total Tokens": 695,
+            "Prompt Tokens": 655,
+            "Completion Tokens": 40,
+            "Total Cost (USD)": 0.00012225
+        },
+        {
+            "Total Tokens": 863,
+            "Prompt Tokens": 825,
+            "Completion Tokens": 38,
+            "Total Cost (USD)": 0.00014654999999999996
+        },
+        {
+            "Total Tokens": 1034,
+            "Prompt Tokens": 993,
+            "Completion Tokens": 41,
+            "Total Cost (USD)": 0.00017355
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.OperationalError) (1381, 'You are not using binary logging')\n",
+        "(pymysql.err.OperationalError) (1381, 'You are not using binary logging')\n",
+        "(pymysql.err.OperationalError) (1381, 'You are not using binary logging')\n",
+        "(pymysql.err.OperationalError) (1381, 'You are not using binary logging')\n",
+        "(pymysql.err.OperationalError) (1381, 'You are not using binary logging')\n"
+    ],
+    "EffectiveSQLs": []
 }

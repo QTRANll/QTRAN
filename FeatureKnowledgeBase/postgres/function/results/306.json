@@ -6,15 +6,65 @@
         "upper_inc"
     ],
     "Feature": [
-        "upper_inc ( anymultirange ) → boolean"
+        "upper_inc ( anymultirange ) \u2192 boolean"
     ],
     "Description": [
         "Is the multirange's upper bound inclusive?"
     ],
     "Examples": [
-        "upper_inc('{[1.1,2.2)}'::nummultirange) → f"
+        "upper_inc('{[1.1,2.2)}'::nummultirange) \u2192 f"
     ],
     "Category": [
         "Range divide Multirange Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT upper_inc('[[1, 2], [3, 4]]');",
+        "SELECT upper_inc('[[1, 2], [3, 4]]'::anymultirange);",
+        "SELECT upper_inc('[[1, 2], [3, 4]]'::numrange[]);",
+        "SELECT upper_inc(ARRAY[numrange(1, 2), numrange(3, 4)]);",
+        "SELECT upper_inc(numrange(1, 2));"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 283,
+            "Prompt Tokens": 253,
+            "Completion Tokens": 30,
+            "Total Cost (USD)": 5.594999999999999e-05
+        },
+        {
+            "Total Tokens": 489,
+            "Prompt Tokens": 453,
+            "Completion Tokens": 36,
+            "Total Cost (USD)": 8.955e-05
+        },
+        {
+            "Total Tokens": 680,
+            "Prompt Tokens": 645,
+            "Completion Tokens": 35,
+            "Total Cost (USD)": 0.00011774999999999999
+        },
+        {
+            "Total Tokens": 887,
+            "Prompt Tokens": 852,
+            "Completion Tokens": 35,
+            "Total Cost (USD)": 0.00014879999999999998
+        },
+        {
+            "Total Tokens": 1087,
+            "Prompt Tokens": 1063,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 0.00017384999999999997
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.AmbiguousFunction) function upper_inc(unknown) is not unique\nLINE 1: SELECT upper_inc('[[1, 2], [3, 4]]');\n               ^\nHINT:  Could not choose a best candidate function. You might need to add explicit type casts.\n\n",
+        "(psycopg2.errors.FeatureNotSupported) cannot accept a value of type anymultirange\nLINE 1: SELECT upper_inc('[[1, 2], [3, 4]]'::anymultirange);\n                         ^\n\n",
+        "(psycopg2.errors.InvalidTextRepresentation) malformed array literal: \"[[1, 2], [3, 4]]\"\nLINE 1: SELECT upper_inc('[[1, 2], [3, 4]]'::numrange[]);\n                         ^\nDETAIL:  \"[\" must introduce explicitly-specified array dimensions.\n\n",
+        "(psycopg2.errors.UndefinedFunction) function upper_inc(numrange[]) does not exist\nLINE 1: SELECT upper_inc(ARRAY[numrange(1, 2), numrange(3, 4)]);\n               ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT upper_inc(numrange(1, 2));"
     ]
 }

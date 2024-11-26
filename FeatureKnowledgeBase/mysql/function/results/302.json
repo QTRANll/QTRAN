@@ -19,5 +19,55 @@
     "Category": [
         "Built-In Functions and Operators",
         "Spatial Analysis Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT ST_Disjoint(g1, g2);",
+        "SELECT ST_Disjoint(GeomFromText('POINT(1 1)'), GeomFromText('POINT(2 2)'));",
+        "SELECT ST_Disjoint(POINT(1 1), POINT(2 2));",
+        "SELECT ST_Disjoint(GeomFromText('POINT(1 1)'), GeomFromText('POINT(2 2)'));",
+        "SELECT ST_Disjoint(ST_GeomFromText('POINT(1 1)'), ST_GeomFromText('POINT(2 2)'));"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 360,
+            "Prompt Tokens": 337,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 6.435e-05
+        },
+        {
+            "Total Tokens": 536,
+            "Prompt Tokens": 496,
+            "Completion Tokens": 40,
+            "Total Cost (USD)": 9.839999999999999e-05
+        },
+        {
+            "Total Tokens": 705,
+            "Prompt Tokens": 675,
+            "Completion Tokens": 30,
+            "Total Cost (USD)": 0.00011925
+        },
+        {
+            "Total Tokens": 912,
+            "Prompt Tokens": 872,
+            "Completion Tokens": 40,
+            "Total Cost (USD)": 0.00015479999999999997
+        },
+        {
+            "Total Tokens": 1095,
+            "Prompt Tokens": 1051,
+            "Completion Tokens": 44,
+            "Total Cost (USD)": 0.00018404999999999997
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.OperationalError) (1054, \"Unknown column 'g1' in 'field list'\")\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.GeomFromText does not exist')\n",
+        "(pymysql.err.ProgrammingError) (1064, \"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '1), POINT(2 2))' at line 1\")\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.GeomFromText does not exist')\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT ST_Disjoint(ST_GeomFromText('POINT(1 1)'), ST_GeomFromText('POINT(2 2)'));"
     ]
 }

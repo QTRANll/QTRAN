@@ -26,5 +26,39 @@
     ],
     "Category": [
         "Loadable Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT gen_range(100, 200);",
+        "SELECT gen_range(1, 10);",
+        "SELECT NULL;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 588,
+            "Prompt Tokens": 566,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 9.809999999999999e-05
+        },
+        {
+            "Total Tokens": 745,
+            "Prompt Tokens": 723,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 0.00012164999999999999
+        },
+        {
+            "Total Tokens": 895,
+            "Prompt Tokens": 880,
+            "Completion Tokens": 15,
+            "Total Cost (USD)": 0.00014099999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.gen_range does not exist')\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.gen_range does not exist')\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT NULL;"
     ]
 }

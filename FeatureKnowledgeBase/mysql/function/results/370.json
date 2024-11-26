@@ -20,5 +20,31 @@
     "Category": [
         "Built-In Functions and Operators",
         "Aggregate Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT STDDEV_SAMP(column_name) FROM table_name;",
+        "SELECT STDDEV_SAMP(1);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 412,
+            "Prompt Tokens": 388,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 7.26e-05
+        },
+        {
+            "Total Tokens": 571,
+            "Prompt Tokens": 550,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 9.51e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.ProgrammingError) (1146, \"Table 'knowledge_base_preprocess_mysql.table_name' doesn't exist\")\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT STDDEV_SAMP(1);"
     ]
 }

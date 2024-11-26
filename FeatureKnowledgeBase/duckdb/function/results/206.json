@@ -16,5 +16,31 @@
     ],
     "Category": [
         "List Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT list_any_value(your_list) AS result;",
+        "SELECT list_any_value(list) AS result FROM (VALUES (ARRAY[1, NULL, 3]), (ARRAY[NULL, 5, 6])) AS t(list);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 281,
+            "Prompt Tokens": 258,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 5.2499999999999995e-05
+        },
+        {
+            "Total Tokens": 481,
+            "Prompt Tokens": 432,
+            "Completion Tokens": 49,
+            "Total Cost (USD)": 9.419999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.BinderException) Binder Error: Referenced column \"your_list\" not found in FROM clause!\nLINE 1: SELECT list_any_value(your_list) AS result;\n                              ^\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT list_any_value(list) AS result FROM (VALUES (ARRAY[1, NULL, 3]), (ARRAY[NULL, 5, 6])) AS t(list);"
     ]
 }

@@ -24,5 +24,9 @@
     ],
     "Category": [
         "Searching in Strings Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT countSubstringsCaseInsensitiveUTF8('\u043b\u043e\u0436\u043a\u0430, \u043a\u043e\u0448\u043a\u0430, \u043a\u0430\u0440\u0442\u043e\u0448\u043a\u0430', '\u041a\u0410');",
+        "SELECT countSubstringsCaseInsensitiveUTF8('\u043b\u043e\u0436\u043a\u0430, \u043a\u043e\u0448\u043a\u0430, \u043a\u0430\u0440\u0442\u043e\u0448\u043a\u0430', '\u041a\u0410', 13);"
     ]
 }

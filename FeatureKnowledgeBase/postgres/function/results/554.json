@@ -6,7 +6,7 @@
         "pg_replication_origin_progress"
     ],
     "Feature": [
-        "pg_replication_origin_progress ( node_name text, flush boolean ) → pg_lsn"
+        "pg_replication_origin_progress ( node_name text, flush boolean ) \u2192 pg_lsn"
     ],
     "Description": [
         "Returns the replay location for the given replication origin. The parameter flush determines whether the corresponding local transaction will be guaranteed to have been flushed to disk or not."
@@ -14,5 +14,53 @@
     "Examples": [],
     "Category": [
         "System Administration Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT pg_replication_origin_progress('node_name', true);",
+        "SELECT pg_replication_origin_progress('your_replication_origin', true);",
+        "SELECT pg_replication_origin_progress('existing_replication_origin', true);",
+        "SELECT pg_replication_origin_progress('valid_replication_origin', true);",
+        "SELECT pg_replication_origin_progress('default_replication_origin', true);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 315,
+            "Prompt Tokens": 290,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 5.849999999999999e-05
+        },
+        {
+            "Total Tokens": 470,
+            "Prompt Tokens": 443,
+            "Completion Tokens": 27,
+            "Total Cost (USD)": 8.264999999999999e-05
+        },
+        {
+            "Total Tokens": 627,
+            "Prompt Tokens": 600,
+            "Completion Tokens": 27,
+            "Total Cost (USD)": 0.00010619999999999999
+        },
+        {
+            "Total Tokens": 784,
+            "Prompt Tokens": 757,
+            "Completion Tokens": 27,
+            "Total Cost (USD)": 0.00012974999999999998
+        },
+        {
+            "Total Tokens": 941,
+            "Prompt Tokens": 914,
+            "Completion Tokens": 27,
+            "Total Cost (USD)": 0.00015329999999999999
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedObject) replication origin \"node_name\" does not exist\n\n",
+        "(psycopg2.errors.UndefinedObject) replication origin \"your_replication_origin\" does not exist\n\n",
+        "(psycopg2.errors.UndefinedObject) replication origin \"existing_replication_origin\" does not exist\n\n",
+        "(psycopg2.errors.UndefinedObject) replication origin \"valid_replication_origin\" does not exist\n\n",
+        "(psycopg2.errors.UndefinedObject) replication origin \"default_replication_origin\" does not exist\n\n"
+    ],
+    "EffectiveSQLs": []
 }

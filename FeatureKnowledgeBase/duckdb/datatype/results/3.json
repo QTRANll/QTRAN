@@ -38,5 +38,18 @@
     ],
     "Category": [
         "Boolean"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT true, false, NULL::BOOLEAN;",
+        "INSERT INTO integers VALUES (5), (15), (NULL);",
+        "SELECT * FROM integers WHERE i > 10;"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT true, false, NULL::BOOLEAN;",
+        "INSERT INTO integers VALUES (5), (15), (NULL);",
+        "SELECT * FROM integers WHERE i > 10;"
     ]
 }

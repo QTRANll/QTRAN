@@ -10,10 +10,10 @@
     ],
     "Description": [
         "EXPORT_SET()",
-        "EXPORT_SET() 函数返回一个由指定数量 (number_of_bits) 的 on/off 值组成的字符串，各个值之间可以用 separator 分隔（可选）。这些值将基于输入的 bits 参数中的相应 bit 是否为 1 而确定，其中第一个值对应于 bits 中的最右边（即最低）的 bit。",
-        "语法：",
+        "EXPORT_SET() \u51fd\u6570\u8fd4\u56de\u4e00\u4e2a\u7531\u6307\u5b9a\u6570\u91cf (number_of_bits) \u7684 on/off \u503c\u7ec4\u6210\u7684\u5b57\u7b26\u4e32\uff0c\u5404\u4e2a\u503c\u4e4b\u95f4\u53ef\u4ee5\u7528 separator \u5206\u9694\uff08\u53ef\u9009\uff09\u3002\u8fd9\u4e9b\u503c\u5c06\u57fa\u4e8e\u8f93\u5165\u7684 bits \u53c2\u6570\u4e2d\u7684\u76f8\u5e94 bit \u662f\u5426\u4e3a 1 \u800c\u786e\u5b9a\uff0c\u5176\u4e2d\u7b2c\u4e00\u4e2a\u503c\u5bf9\u5e94\u4e8e bits \u4e2d\u7684\u6700\u53f3\u8fb9\uff08\u5373\u6700\u4f4e\uff09\u7684 bit\u3002",
+        "\u8bed\u6cd5\uff1a",
         "EXPORT_SET(bits, on, off, [separator[, number_of_bits]])\n",
-        "bits：一个代表 bits 值的整数。on：如果对应的 bit 为 1，则返回该字符串。off：如果对应的 bit 为 0，则返回该字符串。separator（可选）：输出字符串中的分隔符。number_of_bits（可选）：要处理的位数。如果未设置，则默认使用 64（最大位数），这意味着 bits 将被视为一个无符号 64 位整数。"
+        "bits\uff1a\u4e00\u4e2a\u4ee3\u8868 bits \u503c\u7684\u6574\u6570\u3002on\uff1a\u5982\u679c\u5bf9\u5e94\u7684 bit \u4e3a 1\uff0c\u5219\u8fd4\u56de\u8be5\u5b57\u7b26\u4e32\u3002off\uff1a\u5982\u679c\u5bf9\u5e94\u7684 bit \u4e3a 0\uff0c\u5219\u8fd4\u56de\u8be5\u5b57\u7b26\u4e32\u3002separator\uff08\u53ef\u9009\uff09\uff1a\u8f93\u51fa\u5b57\u7b26\u4e32\u4e2d\u7684\u5206\u9694\u7b26\u3002number_of_bits\uff08\u53ef\u9009\uff09\uff1a\u8981\u5904\u7406\u7684\u4f4d\u6570\u3002\u5982\u679c\u672a\u8bbe\u7f6e\uff0c\u5219\u9ed8\u8ba4\u4f7f\u7528 64\uff08\u6700\u5927\u4f4d\u6570\uff09\uff0c\u8fd9\u610f\u5473\u7740 bits \u5c06\u88ab\u89c6\u4e3a\u4e00\u4e2a\u65e0\u7b26\u53f7 64 \u4f4d\u6574\u6570\u3002"
     ],
     "Examples": [
         "SELECT EXPORT_SET(b'101',\"ON\",'off','|',5);\n",
@@ -21,6 +21,19 @@
         "SELECT EXPORT_SET(b'01010101', 'x', '_', '', 8);\n"
     ],
     "Category": [
-        "字符串函数"
+        "\u5b57\u7b26\u4e32\u51fd\u6570"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT EXPORT_SET(b'101',\"ON\",'off','|',5);",
+        "SELECT EXPORT_SET(b'00001111', 'x', '_', '', 8);",
+        "SELECT EXPORT_SET(b'01010101', 'x', '_', '', 8);"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT EXPORT_SET(b'101',\"ON\",'off','|',5);",
+        "SELECT EXPORT_SET(b'00001111', 'x', '_', '', 8);",
+        "SELECT EXPORT_SET(b'01010101', 'x', '_', '', 8);"
     ]
 }

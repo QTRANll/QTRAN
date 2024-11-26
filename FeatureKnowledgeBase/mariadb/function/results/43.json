@@ -16,5 +16,52 @@
     "Category": [
         "Geographic Functions"
     ],
-    "EffectiveSQLsRefined": []
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT CONTAINS(g1, g2);",
+        "SELECT CONTAINS(geometry1, geometry2);",
+        "SELECT CONTAINS(geomA, geomB);",
+        "SELECT CONTAINS(geometry, geometry);",
+        "SELECT CONTAINS(?, ?);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 325,
+            "Prompt Tokens": 302,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 5.909999999999999e-05
+        },
+        {
+            "Total Tokens": 481,
+            "Prompt Tokens": 457,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 8.295e-05
+        },
+        {
+            "Total Tokens": 637,
+            "Prompt Tokens": 613,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 0.00010634999999999998
+        },
+        {
+            "Total Tokens": 791,
+            "Prompt Tokens": 769,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 0.00012855
+        },
+        {
+            "Total Tokens": 943,
+            "Prompt Tokens": 922,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 0.0001509
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.OperationalError) (1054, \"Unknown column 'g1' in 'field list'\")\n",
+        "(pymysql.err.OperationalError) (1054, \"Unknown column 'geometry1' in 'field list'\")\n",
+        "(pymysql.err.OperationalError) (1054, \"Unknown column 'geomA' in 'field list'\")\n",
+        "(pymysql.err.OperationalError) (1054, \"Unknown column 'geometry' in 'field list'\")\n",
+        "(pymysql.err.ProgrammingError) (1064, \"You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '?, ?)' at line 1\")\n"
+    ],
+    "EffectiveSQLs": []
 }

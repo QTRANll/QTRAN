@@ -27,5 +27,9 @@
     ],
     "Category": [
         "Dates and Times Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT dateDiff('hour', toDateTime('2018-01-01 22:00:00'), toDateTime('2018-01-02 23:00:00'));",
+        "SELECT    toDate('2022-01-01') AS e,    toDate('2021-12-29') AS s,    dateDiff('day', s, e) AS day_diff,    dateDiff('month', s, e) AS month__diff,    dateDiff('year', s, e) AS year_diff;"
     ]
 }

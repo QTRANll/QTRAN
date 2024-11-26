@@ -50,5 +50,13 @@
     ],
     "Category": [
         "DateTime64"
+    ],
+    "EffectiveSQLsRefined": [
+        "CREATE TABLE dt64(    `timestamp` DateTime64(3, 'Asia/Istanbul'),    `event_id` UInt8)ENGINE = TinyLog;",
+        "INSERT INTO dt64 VALUES (1546300800123, 1), (1546300800.123, 2), ('2019-01-01 00:00:00', 3);",
+        "SELECT * FROM dt64;",
+        "SELECT * FROM dt64 WHERE timestamp = toDateTime64('2019-01-01 00:00:00', 3, 'Asia/Istanbul');",
+        "SELECT * FROM dt64 WHERE timestamp = toDateTime64(1546300800.123, 3);",
+        "SELECT toDateTime64(now(), 3, 'Asia/Istanbul') AS column, toTypeName(column) AS x;"
     ]
 }

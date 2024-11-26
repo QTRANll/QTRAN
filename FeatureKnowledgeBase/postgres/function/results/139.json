@@ -6,15 +6,33 @@
         "substring"
     ],
     "Feature": [
-        "substring ( bits bit [ FROM start integer ] [ FOR count integer ] ) → bit"
+        "substring ( bits bit [ FROM start integer ] [ FOR count integer ] ) \u2192 bit"
     ],
     "Description": [
         "Extracts the substring of bits starting at the start'th bit if that is specified, and stopping after count bits if that is specified. Provide at least one of start and count."
     ],
     "Examples": [
-        "substring(B'110010111111' from 3 for 2) → 00"
+        "substring(B'110010111111' from 3 for 2) \u2192 00"
     ],
     "Category": [
         "Bit String Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT substring(b'11010101' FROM 3 FOR 4);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 312,
+            "Prompt Tokens": 284,
+            "Completion Tokens": 28,
+            "Total Cost (USD)": 5.9399999999999994e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT substring(b'11010101' FROM 3 FOR 4);"
     ]
 }

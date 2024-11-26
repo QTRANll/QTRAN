@@ -22,5 +22,53 @@
     ],
     "Category": [
         "Loadable Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT read_firewall_group_allowlist('my_fw_group', fgw.rule) FROM mysql.firewall_group_allowlist AS fgw WHERE NAME = 'my_fw_group';",
+        "SELECT read_firewall_group_allowlist('my_fw_group', 'some_rule');",
+        "SELECT read_firewall_group_allowlist('my_fw_group', 'rule_placeholder');",
+        "SELECT read_firewall_group_allowlist('my_fw_group', 'dummy_rule');",
+        "SELECT read_firewall_group_allowlist('my_fw_group', 'rule');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 446,
+            "Prompt Tokens": 399,
+            "Completion Tokens": 47,
+            "Total Cost (USD)": 8.805e-05
+        },
+        {
+            "Total Tokens": 610,
+            "Prompt Tokens": 581,
+            "Completion Tokens": 29,
+            "Total Cost (USD)": 0.00010455
+        },
+        {
+            "Total Tokens": 778,
+            "Prompt Tokens": 749,
+            "Completion Tokens": 29,
+            "Total Cost (USD)": 0.00012974999999999998
+        },
+        {
+            "Total Tokens": 946,
+            "Prompt Tokens": 917,
+            "Completion Tokens": 29,
+            "Total Cost (USD)": 0.00015494999999999997
+        },
+        {
+            "Total Tokens": 1113,
+            "Prompt Tokens": 1085,
+            "Completion Tokens": 28,
+            "Total Cost (USD)": 0.00017954999999999997
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.ProgrammingError) (1146, \"Table 'mysql.firewall_group_allowlist' doesn't exist\")\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.read_firewall_group_allowlist does not exist')\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.read_firewall_group_allowlist does not exist')\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.read_firewall_group_allowlist does not exist')\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.read_firewall_group_allowlist does not exist')\n"
+    ],
+    "EffectiveSQLs": []
 }

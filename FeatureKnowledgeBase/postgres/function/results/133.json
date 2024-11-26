@@ -6,15 +6,33 @@
         "bit_count"
     ],
     "Feature": [
-        "bit_count ( bit ) → bigint"
+        "bit_count ( bit ) \u2192 bigint"
     ],
     "Description": [
-        "Returns the number of bits set in the bit string (also known as “popcount”)."
+        "Returns the number of bits set in the bit string (also known as \u201cpopcount\u201d)."
     ],
     "Examples": [
-        "bit_count(B'10111') → 4"
+        "bit_count(B'10111') \u2192 4"
     ],
     "Category": [
         "Bit String Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT bit_count(B'101010')"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 279,
+            "Prompt Tokens": 258,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 5.13e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT bit_count(B'101010')"
     ]
 }

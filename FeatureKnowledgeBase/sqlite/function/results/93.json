@@ -14,5 +14,31 @@
     "Examples": [],
     "Category": [
         "Built-In Mathematical SQL Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT atanh(X);",
+        "SELECT atanh(1);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 276,
+            "Prompt Tokens": 258,
+            "Completion Tokens": 18,
+            "Total Cost (USD)": 4.95e-05
+        },
+        {
+            "Total Tokens": 413,
+            "Prompt Tokens": 394,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 7.05e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(sqlite3.OperationalError) no such column: X\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT atanh(1);"
     ]
 }

@@ -20,5 +20,30 @@
     "Category": [
         "Dynamic Columns Functions"
     ],
-    "EffectiveSQLsRefined": []
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "COLUMN_CREATE(1, 'value1', 2, 'value2' AS CHAR);",
+        "SELECT COLUMN_CREATE(1, 'value1', 2, 'value2' AS CHAR);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 459,
+            "Prompt Tokens": 427,
+            "Completion Tokens": 32,
+            "Total Cost (USD)": 8.324999999999999e-05
+        },
+        {
+            "Total Tokens": 664,
+            "Prompt Tokens": 631,
+            "Completion Tokens": 33,
+            "Total Cost (USD)": 0.00011444999999999999
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.ProgrammingError) (1064, \"You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'COLUMN_CREATE(1, 'value1', 2, 'value2' AS CHAR)' at line 1\")\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT COLUMN_CREATE(1, 'value1', 2, 'value2' AS CHAR);"
+    ]
 }

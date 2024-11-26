@@ -14,5 +14,31 @@
     "Examples": [],
     "Category": [
         "Built-In Mathematical SQL Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT log(X), log10(X), log(B, X);",
+        "SELECT log(1), log10(1), log(2, 1);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 445,
+            "Prompt Tokens": 419,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 7.845e-05
+        },
+        {
+            "Total Tokens": 600,
+            "Prompt Tokens": 570,
+            "Completion Tokens": 30,
+            "Total Cost (USD)": 0.0001035
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(sqlite3.OperationalError) no such column: X\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT log(1), log10(1), log(2, 1);"
     ]
 }

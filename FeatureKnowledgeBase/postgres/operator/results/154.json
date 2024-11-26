@@ -6,15 +6,63 @@
         "anyrange &> anyrange"
     ],
     "Feature": [
-        "anyrange &> anyrange → boolean"
+        "anyrange &> anyrange \u2192 boolean"
     ],
     "Description": [
         "Does the first range not extend to the left of the second?"
     ],
     "Examples": [
-        "int8range(7,20) &> int8range(5,10) → t"
+        "int8range(7,20) &> int8range(5,10) \u2192 t"
     ],
     "Category": [
         "Range divide Multirange Functions and Operators"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT (range1 &> range2) AS result;",
+        "SELECT (ANYRANGE1 &> ANYRANGE2) AS result;",
+        "SELECT (my_range1 &> my_range2) AS result;",
+        "SELECT (ANYRANGE &> ANYRANGE) AS result;",
+        "SELECT (NULL::anyrange &> NULL::anyrange) AS result;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 290,
+            "Prompt Tokens": 266,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 5.43e-05
+        },
+        {
+            "Total Tokens": 466,
+            "Prompt Tokens": 438,
+            "Completion Tokens": 28,
+            "Total Cost (USD)": 8.25e-05
+        },
+        {
+            "Total Tokens": 645,
+            "Prompt Tokens": 619,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 0.00010845
+        },
+        {
+            "Total Tokens": 822,
+            "Prompt Tokens": 796,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 0.000135
+        },
+        {
+            "Total Tokens": 1000,
+            "Prompt Tokens": 972,
+            "Completion Tokens": 28,
+            "Total Cost (USD)": 0.0001626
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedColumn) column \"range1\" does not exist\nLINE 1: SELECT (range1 &> range2) AS result;\n                ^\n\n",
+        "(psycopg2.errors.UndefinedColumn) column \"anyrange1\" does not exist\nLINE 1: SELECT (ANYRANGE1 &> ANYRANGE2) AS result;\n                ^\n\n",
+        "(psycopg2.errors.UndefinedColumn) column \"my_range1\" does not exist\nLINE 1: SELECT (my_range1 &> my_range2) AS result;\n                ^\n\n",
+        "(psycopg2.errors.UndefinedColumn) column \"anyrange\" does not exist\nLINE 1: SELECT (ANYRANGE &> ANYRANGE) AS result;\n                ^\n\n",
+        "(psycopg2.errors.DatatypeMismatch) argument declared anyrange is not a range type but type anyrange\n\n"
+    ],
+    "EffectiveSQLs": []
 }

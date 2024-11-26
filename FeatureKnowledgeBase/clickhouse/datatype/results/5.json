@@ -27,5 +27,10 @@
     ],
     "Category": [
         "Date"
+    ],
+    "EffectiveSQLsRefined": [
+        "CREATE TABLE dt(    `timestamp` Date,    `event_id` UInt8)ENGINE = TinyLog;",
+        "INSERT INTO dt VALUES ('2019-01-01', 1), (17897, 2), (1546300800, 3);",
+        "SELECT * FROM dt;"
     ]
 }

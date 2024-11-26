@@ -17,5 +17,39 @@
     ],
     "Category": [
         "Window Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT rank_dense()",
+        "SELECT range()",
+        "SELECT range(1, 10)"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 278,
+            "Prompt Tokens": 261,
+            "Completion Tokens": 17,
+            "Total Cost (USD)": 4.934999999999999e-05
+        },
+        {
+            "Total Tokens": 440,
+            "Prompt Tokens": 424,
+            "Completion Tokens": 16,
+            "Total Cost (USD)": 7.319999999999999e-05
+        },
+        {
+            "Total Tokens": 692,
+            "Prompt Tokens": 672,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 0.00011279999999999999
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.CatalogException) Catalog Error: Scalar Function with name rank_dense does not exist!\nDid you mean \"range\"?\nLINE 1: SELECT rank_dense()\n               ^\n",
+        "(duckdb.duckdb.BinderException) Binder Error: No function matches the given name and argument types 'range()'. You might need to add explicit type casts.\n\tCandidate functions:\n\trange(BIGINT) -> BIGINT[]\n\trange(BIGINT, BIGINT) -> BIGINT[]\n\trange(BIGINT, BIGINT, BIGINT) -> BIGINT[]\n\trange(TIMESTAMP, TIMESTAMP, INTERVAL) -> TIMESTAMP[]\n\trange(TIMESTAMP WITH TIME ZONE, TIMESTAMP WITH TIME ZONE, INTERVAL) -> TIMESTAMP WITH TIME ZONE[]\n\nLINE 1: SELECT range()\n               ^\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT range(1, 10)"
     ]
 }

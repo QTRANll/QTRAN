@@ -25,5 +25,53 @@
     ],
     "Category": [
         "Loadable Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT mask_pan_relaxed('1234567890123456');",
+        "SELECT mask_pan_relaxed('1234567812345678');",
+        "SELECT mask_pan_relaxed('1234567890123456');",
+        "SELECT mask_pan_relaxed('1234567812345678');",
+        "SELECT mask_pan_relaxed('1234567812345678');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 674,
+            "Prompt Tokens": 648,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 0.00011279999999999999
+        },
+        {
+            "Total Tokens": 837,
+            "Prompt Tokens": 811,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 0.00013725
+        },
+        {
+            "Total Tokens": 1000,
+            "Prompt Tokens": 974,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 0.00016169999999999997
+        },
+        {
+            "Total Tokens": 1163,
+            "Prompt Tokens": 1137,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 0.00018615
+        },
+        {
+            "Total Tokens": 1326,
+            "Prompt Tokens": 1300,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 0.0002106
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.mask_pan_relaxed does not exist')\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.mask_pan_relaxed does not exist')\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.mask_pan_relaxed does not exist')\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.mask_pan_relaxed does not exist')\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.mask_pan_relaxed does not exist')\n"
+    ],
+    "EffectiveSQLs": []
 }

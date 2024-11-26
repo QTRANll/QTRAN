@@ -19,5 +19,9 @@
     ],
     "Category": [
         "Encryption Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "CREATE TABLE decrypt_null (  dt DateTime,  user_id UInt32,  encrypted String,  iv String) ENGINE = Memory;",
+        "INSERT INTO decrypt_null VALUES    ('2022-08-02 00:00:00', 1, encrypt('aes-256-gcm', 'value1', 'keykeykeykeykeykeykeykeykeykey01', 'iv1'), 'iv1'),    ('2022-09-02 00:00:00', 2, encrypt('aes-256-gcm', 'value2', 'keykeykeykeykeykeykeykeykeykey02', 'iv2'), 'iv2'),    ('2022-09-02 00:00:01', 3, encrypt('aes-256-gcm', 'value3', 'keykeykeykeykeykeykeykeykeykey03', 'iv3'), 'iv3');"
     ]
 }

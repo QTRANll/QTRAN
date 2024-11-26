@@ -6,8 +6,8 @@
         "generate_series"
     ],
     "Feature": [
-        "generate_series ( start timestamp, stop timestamp, step interval ) → setof timestamp",
-        "generate_series ( start timestamp with time zone, stop timestamp with time zone, step interval [, timezone text ] ) → setof timestamp with time zone"
+        "generate_series ( start timestamp, stop timestamp, step interval ) \u2192 setof timestamp",
+        "generate_series ( start timestamp with time zone, stop timestamp with time zone, step interval [, timezone text ] ) \u2192 setof timestamp with time zone"
     ],
     "Description": [
         "Generates a series of values from start to stop, with a step size of step. In the timezone-aware form, times of day and daylight-savings adjustments are computed according to the time zone named by the timezone argument, or the current TimeZone setting if that is omitted."
@@ -15,5 +15,23 @@
     "Examples": [],
     "Category": [
         "Set Returning Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT generate_series('2023-01-01'::timestamp, '2023-01-10'::timestamp, '1 day'::interval);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 381,
+            "Prompt Tokens": 336,
+            "Completion Tokens": 45,
+            "Total Cost (USD)": 7.74e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT generate_series('2023-01-01'::timestamp, '2023-01-10'::timestamp, '1 day'::interval);"
     ]
 }

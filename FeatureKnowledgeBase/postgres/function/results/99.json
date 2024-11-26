@@ -6,15 +6,33 @@
         "string_to_array"
     ],
     "Feature": [
-        "string_to_array ( string text, delimiter text [, null_string text ] ) → text[]"
+        "string_to_array ( string text, delimiter text [, null_string text ] ) \u2192 text[]"
     ],
     "Description": [
         "Splits the string at occurrences of delimiter and forms the resulting fields into a text array. If delimiter is NULL, each character in the string will become a separate element in the array. If delimiter is an empty string, then the string is treated as a single field. If null_string is supplied and is not NULL, fields matching that string are replaced by NULL. See also array_to_string."
     ],
     "Examples": [
-        "string_to_array('xx~~yy~~zz', '~~', 'yy') → {xx,NULL,zz}"
+        "string_to_array('xx~~yy~~zz', '~~', 'yy') \u2192 {xx,NULL,zz}"
     ],
     "Category": [
         "String Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT string_to_array('apple,banana,cherry', ',');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 359,
+            "Prompt Tokens": 333,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 6.555e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT string_to_array('apple,banana,cherry', ',');"
     ]
 }

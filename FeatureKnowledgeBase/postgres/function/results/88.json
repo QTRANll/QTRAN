@@ -6,15 +6,33 @@
         "regexp_matches"
     ],
     "Feature": [
-        "regexp_matches ( string text, pattern text [, flags text ] ) → setof text[]"
+        "regexp_matches ( string text, pattern text [, flags text ] ) \u2192 setof text[]"
     ],
     "Description": [
-        "Returns substrings within the first match of the POSIX regular expression pattern to the string, or substrings within all such matches if the g flag is used; see Section 9.7.3."
+        "Returns substrings within the first match of the POSIX regular expression pattern to the string, or substrings within all such matches if the g flag is used; see Section\u00a09.7.3."
     ],
     "Examples": [
-        "regexp_matches('foobarbequebaz', 'ba.', 'g') →"
+        "regexp_matches('foobarbequebaz', 'ba.', 'g') \u2192"
     ],
     "Category": [
         "String Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT regexp_matches('abc123def456', '\\d+', 'g');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 320,
+            "Prompt Tokens": 292,
+            "Completion Tokens": 28,
+            "Total Cost (USD)": 6.0599999999999996e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT regexp_matches('abc123def456', '\\d+', 'g');"
     ]
 }

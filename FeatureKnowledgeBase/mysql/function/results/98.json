@@ -22,5 +22,18 @@
     "Category": [
         "Built-In Functions and Operators",
         "Comparison Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT GREATEST(2,0);",
+        "SELECT GREATEST(34.0,3.0,5.0,767.0);",
+        "SELECT GREATEST('B','A','C');"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT GREATEST(2,0);",
+        "SELECT GREATEST(34.0,3.0,5.0,767.0);",
+        "SELECT GREATEST('B','A','C');"
     ]
 }

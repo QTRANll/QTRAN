@@ -15,5 +15,53 @@
     "Examples": [],
     "Category": [
         "Window Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT listagg(column_name, ', ') FROM table_name;",
+        "SELECT listagg(column_name, ', ') FROM (VALUES ('value1'), ('value2'), ('value3')) AS temp(column_name);",
+        "SELECT listagg(column_name, ', ') FROM (SELECT 'value1' AS column_name UNION ALL SELECT 'value2' UNION ALL SELECT 'value3') AS temp;",
+        "SELECT listagg(column_name, ', ') FROM (SELECT 'value1' AS column_name UNION SELECT 'value2' UNION SELECT 'value3') AS temp;",
+        "SELECT listagg(column_name, ', ') FROM (SELECT 'value1' AS column_name UNION SELECT 'value2' UNION SELECT 'value3') AS temp(column_name);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 295,
+            "Prompt Tokens": 271,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 5.5049999999999996e-05
+        },
+        {
+            "Total Tokens": 473,
+            "Prompt Tokens": 432,
+            "Completion Tokens": 41,
+            "Total Cost (USD)": 8.939999999999999e-05
+        },
+        {
+            "Total Tokens": 660,
+            "Prompt Tokens": 613,
+            "Completion Tokens": 47,
+            "Total Cost (USD)": 0.00012014999999999998
+        },
+        {
+            "Total Tokens": 845,
+            "Prompt Tokens": 800,
+            "Completion Tokens": 45,
+            "Total Cost (USD)": 0.000147
+        },
+        {
+            "Total Tokens": 1033,
+            "Prompt Tokens": 985,
+            "Completion Tokens": 48,
+            "Total Cost (USD)": 0.00017654999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymonetdb.exceptions.OperationalError) 42S02!SELECT: no such table 'table_name'\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: no such binary operator 'listagg(char,char)'\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: no such binary operator 'listagg(char,char)'\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: no such binary operator 'listagg(char,char)'\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: no such binary operator 'listagg(char,char)'\n\n"
+    ],
+    "EffectiveSQLs": []
 }

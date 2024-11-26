@@ -16,5 +16,53 @@
     ],
     "Category": [
         "Map Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT element_at(map[entry], 1);",
+        "SELECT element_at(array['entry'], 1);",
+        "SELECT map_extract(map[entry], 'key');",
+        "SELECT map_extract(MAP['key1', 'value1', 'key2', 'value2'], 'key1');",
+        "SELECT map_extract(MAP['key1', 'value1'], 'key1');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 272,
+            "Prompt Tokens": 249,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 5.1149999999999996e-05
+        },
+        {
+            "Total Tokens": 443,
+            "Prompt Tokens": 420,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 7.679999999999998e-05
+        },
+        {
+            "Total Tokens": 595,
+            "Prompt Tokens": 572,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 9.959999999999998e-05
+        },
+        {
+            "Total Tokens": 781,
+            "Prompt Tokens": 743,
+            "Completion Tokens": 38,
+            "Total Cost (USD)": 0.00013424999999999998
+        },
+        {
+            "Total Tokens": 937,
+            "Prompt Tokens": 907,
+            "Completion Tokens": 30,
+            "Total Cost (USD)": 0.00015405
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.BinderException) Binder Error: Referenced column \"map\" not found in FROM clause!\nLINE 1: SELECT element_at(map[entry], 1);\n                          ^\n",
+        "(duckdb.duckdb.BinderException) Binder Error: MAP_EXTRACT can only operate on MAPs\n",
+        "(duckdb.duckdb.BinderException) Binder Error: Referenced column \"map\" not found in FROM clause!\nLINE 1: SELECT map_extract(map[entry], 'key');\n                           ^\n",
+        "(duckdb.duckdb.ParserException) Parser Error: syntax error at or near \",\"\n",
+        "(duckdb.duckdb.ParserException) Parser Error: syntax error at or near \",\"\n"
+    ],
+    "EffectiveSQLs": []
 }

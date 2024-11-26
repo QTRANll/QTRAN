@@ -23,5 +23,18 @@
     "Category": [
         "Built-In Functions and Operators",
         "JSON Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT JSON_PRETTY('123');",
+        "SELECT JSON_PRETTY(\"[1,3,5]\");",
+        "SELECT JSON_PRETTY('{\"a\":\"10\",\"b\":\"15\",\"x\":\"25\"}');"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT JSON_PRETTY('123');",
+        "SELECT JSON_PRETTY(\"[1,3,5]\");",
+        "SELECT JSON_PRETTY('{\"a\":\"10\",\"b\":\"15\",\"x\":\"25\"}');"
     ]
 }

@@ -17,5 +17,31 @@
     ],
     "Category": [
         "Window Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT last_value(column_name IGNORE NULLS) OVER (PARTITION BY some_column ORDER BY another_column) AS last_value_result",
+        "SELECT last_value(1 IGNORE NULLS) OVER () AS last_value_result"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 342,
+            "Prompt Tokens": 303,
+            "Completion Tokens": 39,
+            "Total Cost (USD)": 6.884999999999999e-05
+        },
+        {
+            "Total Tokens": 530,
+            "Prompt Tokens": 501,
+            "Completion Tokens": 29,
+            "Total Cost (USD)": 9.255e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.BinderException) Binder Error: Referenced column \"column_name\" not found in FROM clause!\nLINE 1: SELECT last_value(column_name IGNORE NULLS) OVER (PARTITI...\n                          ^\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT last_value(1 IGNORE NULLS) OVER () AS last_value_result"
     ]
 }

@@ -18,5 +18,31 @@
     ],
     "Category": [
         "List Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT array_reduce(array[1, 2, 3], x -> x + 1);",
+        "SELECT list_reduce(array[1, 2, 3], (x, y) -> x + y);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 306,
+            "Prompt Tokens": 273,
+            "Completion Tokens": 33,
+            "Total Cost (USD)": 6.075e-05
+        },
+        {
+            "Total Tokens": 471,
+            "Prompt Tokens": 435,
+            "Completion Tokens": 36,
+            "Total Cost (USD)": 8.685e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.BinderException) Binder Error: list_reduce expects a function with 2 or 3 arguments\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT list_reduce(array[1, 2, 3], (x, y) -> x + y);"
     ]
 }

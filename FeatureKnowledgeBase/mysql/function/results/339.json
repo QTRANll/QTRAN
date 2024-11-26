@@ -20,5 +20,53 @@
     "Category": [
         "Built-In Functions and Operators",
         "Spatial Analysis Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT ST_MPointFromWKB('your_wkb_data_here', 4326);",
+        "SELECT ST_MPointFromWKB(0x01020000005839B4C76F8C4C3F9D7F8C3F6F8C4C3F, 4326);",
+        "SELECT ST_MPointFromWKB(0x01020000005839B4C76F8C4C3F9D7F8C3F6F8C4C3F, 4326);",
+        "SELECT ST_MPointFromWKB(0x01020000005839B4C76F8C4C3F9D7F8C3F6F8C4C3F, 4326);",
+        "SELECT ST_MPointFromWKB(0x01020000005839B4C76F8C4C3F9D7F8C3F6F8C4C3F, 4326);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 417,
+            "Prompt Tokens": 386,
+            "Completion Tokens": 31,
+            "Total Cost (USD)": 7.649999999999999e-05
+        },
+        {
+            "Total Tokens": 615,
+            "Prompt Tokens": 555,
+            "Completion Tokens": 60,
+            "Total Cost (USD)": 0.00011925
+        },
+        {
+            "Total Tokens": 813,
+            "Prompt Tokens": 753,
+            "Completion Tokens": 60,
+            "Total Cost (USD)": 0.00014895
+        },
+        {
+            "Total Tokens": 1011,
+            "Prompt Tokens": 951,
+            "Completion Tokens": 60,
+            "Total Cost (USD)": 0.00017864999999999998
+        },
+        {
+            "Total Tokens": 1209,
+            "Prompt Tokens": 1149,
+            "Completion Tokens": 60,
+            "Total Cost (USD)": 0.00020835
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.OperationalError) (3037, 'Invalid GIS data provided to function st_mpointfromwkb.')\n",
+        "(pymysql.err.OperationalError) (3037, 'Invalid GIS data provided to function st_mpointfromwkb.')\n",
+        "(pymysql.err.OperationalError) (3037, 'Invalid GIS data provided to function st_mpointfromwkb.')\n",
+        "(pymysql.err.OperationalError) (3037, 'Invalid GIS data provided to function st_mpointfromwkb.')\n",
+        "(pymysql.err.OperationalError) (3037, 'Invalid GIS data provided to function st_mpointfromwkb.')\n"
+    ],
+    "EffectiveSQLs": []
 }

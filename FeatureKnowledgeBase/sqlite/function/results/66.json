@@ -13,20 +13,46 @@
         "The json_array() SQL function accepts zero or more arguments and\nreturns a well-formed JSON array that is composed from those arguments.\nIf any argument to json_array() is a BLOB then an error is thrown.\n\n",
         "An argument with SQL type TEXT is normally converted into a quoted \nJSON string.  However, if the argument is the output from another json1\nfunction, then it is stored as JSON.  This allows calls to json_array()\nand json_object() to be nested.  The json() function can also\nbe used to force strings to be recognized as JSON.\n\n",
         "Examples:\n\n",
-        "json_array(1,2,'3',4)\n→ '[1,2,\"3\",4]'",
-        "json_array('[1,2]')\n→ '[\"[1,2]\"]'",
-        "json_array(json_array(1,2))\n→ '[[1,2]]'",
-        "json_array(1,null,'3','[4,5]','{\"six\":7.7}')\n→ '[1,null,\"3\",\"[4,5]\",\"{\\\"six\\\":7.7}\"]'",
-        "json_array(1,null,'3',json('[4,5]'),json('{\"six\":7.7}'))\n→ '[1,null,\"3\",[4,5],{\"six\":7.7}]'"
+        "json_array(1,2,'3',4)\n\u2192 '[1,2,\"3\",4]'",
+        "json_array('[1,2]')\n\u2192 '[\"[1,2]\"]'",
+        "json_array(json_array(1,2))\n\u2192 '[[1,2]]'",
+        "json_array(1,null,'3','[4,5]','{\"six\":7.7}')\n\u2192 '[1,null,\"3\",\"[4,5]\",\"{\\\"six\\\":7.7}\"]'",
+        "json_array(1,null,'3',json('[4,5]'),json('{\"six\":7.7}'))\n\u2192 '[1,null,\"3\",[4,5],{\"six\":7.7}]'"
     ],
     "Examples": [
-        "json_array(1,2,'3',4)\n→ '[1,2,\"3\",4]'",
-        "json_array('[1,2]')\n→ '[\"[1,2]\"]'",
-        "json_array(json_array(1,2))\n→ '[[1,2]]'",
-        "json_array(1,null,'3','[4,5]','{\"six\":7.7}')\n→ '[1,null,\"3\",\"[4,5]\",\"{\\\"six\\\":7.7}\"]'",
-        "json_array(1,null,'3',json('[4,5]'),json('{\"six\":7.7}'))\n→ '[1,null,\"3\",[4,5],{\"six\":7.7}]'"
+        "json_array(1,2,'3',4)\n\u2192 '[1,2,\"3\",4]'",
+        "json_array('[1,2]')\n\u2192 '[\"[1,2]\"]'",
+        "json_array(json_array(1,2))\n\u2192 '[[1,2]]'",
+        "json_array(1,null,'3','[4,5]','{\"six\":7.7}')\n\u2192 '[1,null,\"3\",\"[4,5]\",\"{\\\"six\\\":7.7}\"]'",
+        "json_array(1,null,'3',json('[4,5]'),json('{\"six\":7.7}'))\n\u2192 '[1,null,\"3\",[4,5],{\"six\":7.7}]'"
     ],
     "Category": [
         "JSON Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "json_array(1, 2, '3', 4)",
+        "SELECT json_array(1, 2, '3', 4);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 607,
+            "Prompt Tokens": 581,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 0.00010274999999999999
+        },
+        {
+            "Total Tokens": 760,
+            "Prompt Tokens": 732,
+            "Completion Tokens": 28,
+            "Total Cost (USD)": 0.0001266
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(sqlite3.OperationalError) near \"json_array\": syntax error\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT json_array(1, 2, '3', 4);"
     ]
 }

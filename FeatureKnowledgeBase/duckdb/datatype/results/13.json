@@ -35,5 +35,16 @@
     ],
     "Category": [
         "Text"
+    ],
+    "EffectiveSQLsRefined": [
+        "CREATE TABLE strings (\n    val VARCHAR CHECK (length(val) <= 10) -- val has a maximum length of 10\n);",
+        "SELECT 'Hello' || chr(10) || 'world' AS msg;"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "CREATE TABLE strings (\n    val VARCHAR CHECK (length(val) <= 10) -- val has a maximum length of 10\n);",
+        "SELECT 'Hello' || chr(10) || 'world' AS msg;"
     ]
 }

@@ -16,5 +16,53 @@
     ],
     "Category": [
         "Struct Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT struct_extract(entry) FROM your_table;",
+        "SELECT struct_extract(entry);",
+        "SELECT struct_extract(entry) FROM (SELECT NULL AS entry);",
+        "SELECT struct_extract(entry) FROM (SELECT CAST(NULL AS STRUCT<entry VARCHAR>));",
+        "SELECT struct_extract(entry) FROM (SELECT CAST(NULL AS STRUCT(entry VARCHAR)));"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 280,
+            "Prompt Tokens": 259,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 5.145e-05
+        },
+        {
+            "Total Tokens": 450,
+            "Prompt Tokens": 432,
+            "Completion Tokens": 18,
+            "Total Cost (USD)": 7.56e-05
+        },
+        {
+            "Total Tokens": 618,
+            "Prompt Tokens": 593,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 0.00010394999999999999
+        },
+        {
+            "Total Tokens": 834,
+            "Prompt Tokens": 804,
+            "Completion Tokens": 30,
+            "Total Cost (USD)": 0.00013859999999999998
+        },
+        {
+            "Total Tokens": 988,
+            "Prompt Tokens": 960,
+            "Completion Tokens": 28,
+            "Total Cost (USD)": 0.00016079999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.CatalogException) Catalog Error: Table with name your_table does not exist!\nDid you mean \"pg_tables\"?\nLINE 1: SELECT struct_extract(entry) FROM your_table;\n                                          ^\n",
+        "(duckdb.duckdb.BinderException) Binder Error: Referenced column \"entry\" not found in FROM clause!\nLINE 1: SELECT struct_extract(entry);\n                              ^\n",
+        "(duckdb.duckdb.BinderException) Binder Error: No function matches the given name and argument types 'struct_extract(\"NULL\")'. You might need to add explicit type casts.\n\tCandidate functions:\n\tstruct_extract(STRUCT, VARCHAR) -> ANY\n\tstruct_extract(STRUCT, BIGINT) -> ANY\n\nLINE 1: SELECT struct_extract(entry) FROM (SELECT NULL...\n               ^\n",
+        "(duckdb.duckdb.ParserException) Parser Error: syntax error at or near \"<\"\n",
+        "(duckdb.duckdb.BinderException) Binder Error: Referenced column \"entry\" not found in FROM clause!\nCandidate bindings: \"unnamed_subquery.CAST(NULL AS STRUCT(entry VARCHAR))\"\nLINE 1: SELECT struct_extract(entry) FROM (SELECT CAST(NULL AS STRUCT...\n                              ^\n"
+    ],
+    "EffectiveSQLs": []
 }

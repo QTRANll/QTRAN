@@ -14,5 +14,55 @@
     "Examples": [],
     "Category": [
         "String Data Types"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT * FROM your_table WHERE your_blob_column IS NOT NULL;",
+        "SELECT * FROM your_blob_column WHERE your_blob_column IS NOT NULL;",
+        "SELECT * FROM (SELECT your_blob_column FROM your_table) AS temp WHERE your_blob_column IS NOT NULL;",
+        "SELECT your_blob_column FROM DUAL WHERE your_blob_column IS NOT NULL;",
+        "SELECT NULL AS your_blob_column;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 322,
+            "Prompt Tokens": 297,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 5.954999999999999e-05
+        },
+        {
+            "Total Tokens": 485,
+            "Prompt Tokens": 459,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 8.444999999999999e-05
+        },
+        {
+            "Total Tokens": 657,
+            "Prompt Tokens": 623,
+            "Completion Tokens": 34,
+            "Total Cost (USD)": 0.00011385
+        },
+        {
+            "Total Tokens": 821,
+            "Prompt Tokens": 794,
+            "Completion Tokens": 27,
+            "Total Cost (USD)": 0.00013529999999999998
+        },
+        {
+            "Total Tokens": 974,
+            "Prompt Tokens": 955,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 0.00015465
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.ProgrammingError) (1146, \"Table 'pinolo_temp_mariadb.your_table' doesn't exist\")\n",
+        "(pymysql.err.ProgrammingError) (1146, \"Table 'pinolo_temp_mariadb.your_blob_column' doesn't exist\")\n",
+        "(pymysql.err.ProgrammingError) (1146, \"Table 'pinolo_temp_mariadb.your_table' doesn't exist\")\n",
+        "(pymysql.err.OperationalError) (1054, \"Unknown column 'your_blob_column' in 'field list'\")\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT NULL AS your_blob_column;"
     ]
 }

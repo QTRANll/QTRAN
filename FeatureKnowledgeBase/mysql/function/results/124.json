@@ -22,5 +22,16 @@
     "Category": [
         "Built-In Functions and Operators",
         "String Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT INSTR('foobarbar', 'bar');",
+        "SELECT INSTR('xbar', 'foobar');"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT INSTR('foobarbar', 'bar');",
+        "SELECT INSTR('xbar', 'foobar');"
     ]
 }

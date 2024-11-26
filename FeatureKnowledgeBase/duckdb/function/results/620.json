@@ -16,5 +16,55 @@
     "Examples": [],
     "Category": [
         "Window Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT lead(column, 3, 0) FROM your_table;",
+        "SELECT lead(your_column, 3, 0) FROM your_table;",
+        "SELECT lead(your_column, 3, 0) FROM pg_tables;",
+        "SELECT lead(your_column, 3, 0) OVER () FROM pg_tables;",
+        "SELECT lead(tablename, 3, 0) OVER () FROM pg_tables;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 393,
+            "Prompt Tokens": 367,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 7.065e-05
+        },
+        {
+            "Total Tokens": 553,
+            "Prompt Tokens": 525,
+            "Completion Tokens": 28,
+            "Total Cost (USD)": 9.554999999999999e-05
+        },
+        {
+            "Total Tokens": 745,
+            "Prompt Tokens": 717,
+            "Completion Tokens": 28,
+            "Total Cost (USD)": 0.00012435
+        },
+        {
+            "Total Tokens": 939,
+            "Prompt Tokens": 909,
+            "Completion Tokens": 30,
+            "Total Cost (USD)": 0.00015434999999999998
+        },
+        {
+            "Total Tokens": 1140,
+            "Prompt Tokens": 1111,
+            "Completion Tokens": 29,
+            "Total Cost (USD)": 0.00018404999999999997
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.ParserException) Parser Error: syntax error at or near \"column\"\n",
+        "(duckdb.duckdb.CatalogException) Catalog Error: Table with name your_table does not exist!\nDid you mean \"pg_tables\"?\nLINE 1: SELECT lead(your_column, 3, 0) FROM your_table;\n                                            ^\n",
+        "(duckdb.duckdb.CatalogException) Catalog Error: Scalar Function with name lead does not exist!\nDid you mean \"lpad\"?\nLINE 1: SELECT lead(your_column, 3, 0) FROM pg_tables;\n               ^\n",
+        "(duckdb.duckdb.BinderException) Binder Error: Referenced column \"your_column\" not found in FROM clause!\nCandidate bindings: \"pg_tables.tablename\"\nLINE 1: SELECT lead(your_column, 3, 0) OVER () FROM pg_tabl...\n                    ^\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT lead(tablename, 3, 0) OVER () FROM pg_tables;"
     ]
 }

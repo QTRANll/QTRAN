@@ -16,5 +16,47 @@
     ],
     "Category": [
         "Bitstring Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT ~column_name FROM table_name;",
+        "SELECT ~column_name FROM pg_tablespace;",
+        "SELECT ~spcname FROM pg_tablespace;",
+        "SELECT ~spcowner FROM pg_tablespace;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 255,
+            "Prompt Tokens": 235,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 4.7249999999999997e-05
+        },
+        {
+            "Total Tokens": 425,
+            "Prompt Tokens": 404,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 7.319999999999999e-05
+        },
+        {
+            "Total Tokens": 627,
+            "Prompt Tokens": 605,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 0.00010394999999999998
+        },
+        {
+            "Total Tokens": 929,
+            "Prompt Tokens": 907,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 0.00014925
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.CatalogException) Catalog Error: Table with name table_name does not exist!\nDid you mean \"pg_tablespace\"?\nLINE 1: SELECT ~column_name FROM table_name;\n                                 ^\n",
+        "(duckdb.duckdb.BinderException) Binder Error: Referenced column \"column_name\" not found in FROM clause!\nCandidate bindings: \"pg_tablespace.spcname\", \"pg_tablespace.spcowner\", \"pg_tablespace.spcoptions\", \"pg_tablespace.spcacl\"\nLINE 1: SELECT ~column_name FROM pg_tablespace;\n                ^\n",
+        "(duckdb.duckdb.BinderException) Binder Error: No function matches the given name and argument types '~(VARCHAR)'. You might need to add explicit type casts.\n\tCandidate functions:\n\t~(TINYINT) -> TINYINT\n\t~(SMALLINT) -> SMALLINT\n\t~(INTEGER) -> INTEGER\n\t~(BIGINT) -> BIGINT\n\t~(HUGEINT) -> HUGEINT\n\t~(UTINYINT) -> UTINYINT\n\t~(USMALLINT) -> USMALLINT\n\t~(UINTEGER) -> UINTEGER\n\t~(UBIGINT) -> UBIGINT\n\t~(UHUGEINT) -> UHUGEINT\n\t~(BIT) -> BIT\n\nLINE 1: SELECT ~spcname FROM pg_tablespace;\n               ^\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT ~spcowner FROM pg_tablespace;"
     ]
 }

@@ -6,17 +6,35 @@
         "numeric_type / numeric_type"
     ],
     "Feature": [
-        "numeric_type / numeric_type → numeric_type"
+        "numeric_type / numeric_type \u2192 numeric_type"
     ],
     "Description": [
         "Division (for integral types, division truncates the result towards zero)"
     ],
     "Examples": [
-        "5.0 / 2 → 2.5000000000000000",
-        "5 / 2 → 2",
-        "(-5) / 2 → -2"
+        "5.0 / 2 \u2192 2.5000000000000000",
+        "5 / 2 \u2192 2",
+        "(-5) / 2 \u2192 -2"
     ],
     "Category": [
         "Mathematical Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT 10 / 3;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 283,
+            "Prompt Tokens": 264,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 5.1e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT 10 / 3;"
     ]
 }

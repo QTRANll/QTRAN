@@ -6,15 +6,41 @@
         "anymultirange -|- anyrange"
     ],
     "Feature": [
-        "anymultirange -|- anyrange → boolean"
+        "anymultirange -|- anyrange \u2192 boolean"
     ],
     "Description": [
         "Is the multirange adjacent to the range?"
     ],
     "Examples": [
-        "'{[1.1,2.2)}'::nummultirange -|- numrange(2.2,3.3) → t"
+        "'{[1.1,2.2)}'::nummultirange -|- numrange(2.2,3.3) \u2192 t"
     ],
     "Category": [
         "Range divide Multirange Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT 'anymultirange'::anymultirange && 'anyrange'::anyrange;",
+        "SELECT '[1, 2)'::int4range && '[2, 3)'::int4range;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 304,
+            "Prompt Tokens": 271,
+            "Completion Tokens": 33,
+            "Total Cost (USD)": 6.045e-05
+        },
+        {
+            "Total Tokens": 499,
+            "Prompt Tokens": 464,
+            "Completion Tokens": 35,
+            "Total Cost (USD)": 9.059999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.FeatureNotSupported) cannot accept a value of type anymultirange\nLINE 1: SELECT 'anymultirange'::anymultirange && 'anyrange'::anyrang...\n               ^\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT '[1, 2)'::int4range && '[2, 3)'::int4range;"
     ]
 }

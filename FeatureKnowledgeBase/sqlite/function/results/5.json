@@ -14,5 +14,23 @@
     "Examples": [],
     "Category": [
         "Core SQL Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT concat_ws(',', 'Hello', 'World', NULL, 'SQLite');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 368,
+            "Prompt Tokens": 340,
+            "Completion Tokens": 28,
+            "Total Cost (USD)": 6.78e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT concat_ws(',', 'Hello', 'World', NULL, 'SQLite');"
     ]
 }

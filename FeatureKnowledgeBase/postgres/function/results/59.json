@@ -6,15 +6,33 @@
         "lpad"
     ],
     "Feature": [
-        "lpad ( string text, length integer [, fill text ] ) → text"
+        "lpad ( string text, length integer [, fill text ] ) \u2192 text"
     ],
     "Description": [
         "Extends the string to length length by prepending the characters fill (a space by default). If the string is already longer than length then it is truncated (on the right)."
     ],
     "Examples": [
-        "lpad('hi', 5, 'xy') → xyxhi"
+        "lpad('hi', 5, 'xy') \u2192 xyxhi"
     ],
     "Category": [
         "String Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT lpad('Hello', 10, '*');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 308,
+            "Prompt Tokens": 284,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 5.699999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT lpad('Hello', 10, '*');"
     ]
 }

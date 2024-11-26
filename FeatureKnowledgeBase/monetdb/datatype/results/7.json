@@ -1,0 +1,53 @@
+{
+    "HTML": [
+        "https://www.monetdb.org/documentation-Aug2024/user-guide/sql-manual/data-types/base-types"
+    ],
+    "Title": [
+        "BINARY LARGE OBJECT"
+    ],
+    "Feature": [
+        "BINARY LARGE OBJECT"
+    ],
+    "Description": [
+        "BLOB",
+        "bytes string with unbounded length"
+    ],
+    "Examples": [],
+    "Category": [
+        "Base Types"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "CREATE TABLE example_table (id INT, data BLOB);",
+        "CREATE TABLE new_table (id INT, data BLOB);",
+        "CREATE TABLE another_table (id INT, data BLOB);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 280,
+            "Prompt Tokens": 255,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 5.324999999999999e-05
+        },
+        {
+            "Total Tokens": 439,
+            "Prompt Tokens": 414,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 7.709999999999999e-05
+        },
+        {
+            "Total Tokens": 598,
+            "Prompt Tokens": 573,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 0.00010094999999999999
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymonetdb.exceptions.OperationalError) 42S01!CREATE TABLE: name 'example_table' already in use\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42S01!CREATE TABLE: name 'new_table' already in use\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "CREATE TABLE another_table (id INT, data BLOB);"
+    ]
+}

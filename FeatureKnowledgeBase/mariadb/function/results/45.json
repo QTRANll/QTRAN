@@ -28,5 +28,11 @@
     ],
     "EffectiveSQLsRefined": [
         "SELECT LOWER(@x), LOWER(CONVERT (@x USING latin1));"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT LOWER(@x), LOWER(CONVERT (@x USING latin1));"
     ]
 }

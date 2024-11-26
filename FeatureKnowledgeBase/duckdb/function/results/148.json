@@ -16,5 +16,31 @@
     ],
     "Category": [
         "Date Part Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT hour(date) AS hour_of_day",
+        "SELECT hour(current_timestamp) AS hour_of_day"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 263,
+            "Prompt Tokens": 242,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 4.8899999999999996e-05
+        },
+        {
+            "Total Tokens": 431,
+            "Prompt Tokens": 409,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 7.454999999999998e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.BinderException) Binder Error: Referenced column \"date\" not found in FROM clause!\nLINE 1: SELECT hour(date) AS hour_of_day\n                    ^\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT hour(current_timestamp) AS hour_of_day"
     ]
 }

@@ -25,5 +25,15 @@
         "SELECT sys.format_bytes(1000000000),sys.format_bytes(1073741874);",
         "SELECT sys.format_bytes(1000000000000),sys.format_bytes(1099511627776);",
         "SELECT sys.format_bytes(1000000000000000),sys.format_bytes(1125899906842624);"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT sys.format_bytes(1000),sys.format_bytes(1024);",
+        "SELECT sys.format_bytes(1000000),sys.format_bytes(1048576);",
+        "SELECT sys.format_bytes(1000000000),sys.format_bytes(1073741874);",
+        "SELECT sys.format_bytes(1000000000000),sys.format_bytes(1099511627776);",
+        "SELECT sys.format_bytes(1000000000000000),sys.format_bytes(1125899906842624);"
     ]
 }

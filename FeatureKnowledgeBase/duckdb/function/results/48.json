@@ -15,5 +15,39 @@
     "Examples": [],
     "Category": [
         "Aggregate Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT quantile_cont(x, 0.5)",
+        "SELECT quantile_cont(value, 0.5) FROM my_table",
+        "SELECT quantile_cont(1, 0.5)"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 366,
+            "Prompt Tokens": 343,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 6.525e-05
+        },
+        {
+            "Total Tokens": 545,
+            "Prompt Tokens": 518,
+            "Completion Tokens": 27,
+            "Total Cost (USD)": 9.389999999999999e-05
+        },
+        {
+            "Total Tokens": 730,
+            "Prompt Tokens": 706,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 0.00012029999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.BinderException) Binder Error: Referenced column \"x\" not found in FROM clause!\nLINE 1: SELECT quantile_cont(x, 0.5)\n                             ^\n",
+        "(duckdb.duckdb.CatalogException) Catalog Error: Table with name my_table does not exist!\nDid you mean \"pg_tables\"?\nLINE 1: SELECT quantile_cont(value, 0.5) FROM my_table\n                                              ^\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT quantile_cont(1, 0.5)"
     ]
 }

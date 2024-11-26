@@ -10,7 +10,7 @@
     ],
     "Description": [
         "IS_UUID()",
-        "IS_UUID() 函数用于判断输入的参数是否为 UUID。",
+        "IS_UUID() \u51fd\u6570\u7528\u4e8e\u5224\u65ad\u8f93\u5165\u7684\u53c2\u6570\u662f\u5426\u4e3a UUID\u3002",
         "SELECT IS_UUID('eb48c08c-eb71-11ee-bacf-5405db7aad56');\n",
         "+-------------------------------------------------+\n| IS_UUID('eb48c08c-eb71-11ee-bacf-5405db7aad56') |\n+-------------------------------------------------+\n|                                               1 |\n+-------------------------------------------------+\n1 row in set (0.00 sec)\n"
     ],
@@ -18,6 +18,15 @@
         "SELECT IS_UUID('eb48c08c-eb71-11ee-bacf-5405db7aad56');\n"
     ],
     "Category": [
-        "其它函数"
+        "\u5176\u5b83\u51fd\u6570"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT IS_UUID('eb48c08c-eb71-11ee-bacf-5405db7aad56');"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT IS_UUID('eb48c08c-eb71-11ee-bacf-5405db7aad56');"
     ]
 }

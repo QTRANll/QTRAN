@@ -19,5 +19,26 @@
     ],
     "Category": [
         "Numeric Data Types"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT IF(0, 'true', 'false');",
+        "SELECT IF(1, 'true', 'false');",
+        "SELECT IF(2, 'true', 'false');",
+        "SELECT IF(0 = FALSE, 'true', 'false');",
+        "SELECT IF(1 = TRUE, 'true', 'false');",
+        "SELECT IF(2 = TRUE, 'true', 'false');",
+        "SELECT IF(2 = FALSE, 'true', 'false');"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT IF(0, 'true', 'false');",
+        "SELECT IF(1, 'true', 'false');",
+        "SELECT IF(2, 'true', 'false');",
+        "SELECT IF(0 = FALSE, 'true', 'false');",
+        "SELECT IF(1 = TRUE, 'true', 'false');",
+        "SELECT IF(2 = TRUE, 'true', 'false');",
+        "SELECT IF(2 = FALSE, 'true', 'false');"
     ]
 }

@@ -16,5 +16,23 @@
     ],
     "Category": [
         "Interval Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT CURRENT_TIMESTAMP + INTERVAL '1 day';"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 260,
+            "Prompt Tokens": 237,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 4.934999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT CURRENT_TIMESTAMP + INTERVAL '1 day';"
     ]
 }

@@ -6,15 +6,33 @@
         "tsvector_to_array"
     ],
     "Feature": [
-        "tsvector_to_array ( tsvector ) → text[]"
+        "tsvector_to_array ( tsvector ) \u2192 text[]"
     ],
     "Description": [
         "Converts a tsvector to an array of lexemes."
     ],
     "Examples": [
-        "tsvector_to_array('fat:2,4 cat:3 rat:5A'::tsvector) → {cat,fat,rat}"
+        "tsvector_to_array('fat:2,4 cat:3 rat:5A'::tsvector) \u2192 {cat,fat,rat}"
     ],
     "Category": [
         "Text Search Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT tsvector_to_array('example tsvector')"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 289,
+            "Prompt Tokens": 264,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 5.46e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT tsvector_to_array('example tsvector')"
     ]
 }

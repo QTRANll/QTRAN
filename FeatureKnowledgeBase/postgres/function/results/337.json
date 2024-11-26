@@ -6,7 +6,7 @@
         "corr"
     ],
     "Feature": [
-        "corr ( Y double precision, X double precision ) → double precision"
+        "corr ( Y double precision, X double precision ) \u2192 double precision"
     ],
     "Description": [
         "Computes the correlation coefficient."
@@ -14,5 +14,53 @@
     "Examples": [],
     "Category": [
         "Aggregate Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT corr(Y, X);",
+        "SELECT corr(y, x);",
+        "SELECT corr(value1, value2);",
+        "SELECT corr(column_a, column_b);",
+        "SELECT corr(x_value, y_value);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 268,
+            "Prompt Tokens": 249,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 4.875e-05
+        },
+        {
+            "Total Tokens": 423,
+            "Prompt Tokens": 404,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 7.199999999999999e-05
+        },
+        {
+            "Total Tokens": 580,
+            "Prompt Tokens": 559,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 9.645e-05
+        },
+        {
+            "Total Tokens": 740,
+            "Prompt Tokens": 719,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 0.00012044999999999999
+        },
+        {
+            "Total Tokens": 900,
+            "Prompt Tokens": 879,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 0.00014445
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedColumn) column \"y\" does not exist\nLINE 1: SELECT corr(Y, X);\n                    ^\n\n",
+        "(psycopg2.errors.UndefinedColumn) column \"y\" does not exist\nLINE 1: SELECT corr(y, x);\n                    ^\n\n",
+        "(psycopg2.errors.UndefinedColumn) column \"value1\" does not exist\nLINE 1: SELECT corr(value1, value2);\n                    ^\n\n",
+        "(psycopg2.errors.UndefinedColumn) column \"column_a\" does not exist\nLINE 1: SELECT corr(column_a, column_b);\n                    ^\n\n",
+        "(psycopg2.errors.UndefinedColumn) column \"x_value\" does not exist\nLINE 1: SELECT corr(x_value, y_value);\n                    ^\n\n"
+    ],
+    "EffectiveSQLs": []
 }

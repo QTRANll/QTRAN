@@ -6,16 +6,34 @@
         "anycompatiblearray || anycompatiblearray"
     ],
     "Feature": [
-        "anycompatiblearray || anycompatiblearray → anycompatiblearray"
+        "anycompatiblearray || anycompatiblearray \u2192 anycompatiblearray"
     ],
     "Description": [
-        "Concatenates the two arrays. Concatenating a null or empty array is a no-op; otherwise the arrays must have the same number of dimensions (as illustrated by the first example) or differ in number of dimensions by one (as illustrated by the second). If the arrays are not of identical element types, they will be coerced to a common type (see Section 10.5)."
+        "Concatenates the two arrays. Concatenating a null or empty array is a no-op; otherwise the arrays must have the same number of dimensions (as illustrated by the first example) or differ in number of dimensions by one (as illustrated by the second). If the arrays are not of identical element types, they will be coerced to a common type (see Section\u00a010.5)."
     ],
     "Examples": [
-        "ARRAY[1,2,3] || ARRAY[4,5,6,7] → {1,2,3,4,5,6,7}",
-        "ARRAY[1,2,3] || ARRAY[[4,5,6],[7,8,9.9]] → {{1,2,3},{4,5,6},{7,8,9.9}}"
+        "ARRAY[1,2,3] || ARRAY[4,5,6,7] \u2192 {1,2,3,4,5,6,7}",
+        "ARRAY[1,2,3] || ARRAY[[4,5,6],[7,8,9.9]] \u2192 {{1,2,3},{4,5,6},{7,8,9.9}}"
     ],
     "Category": [
         "Array Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT ARRAY[1, 2] || ARRAY[3, 4];"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 368,
+            "Prompt Tokens": 339,
+            "Completion Tokens": 29,
+            "Total Cost (USD)": 6.824999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT ARRAY[1, 2] || ARRAY[3, 4];"
     ]
 }

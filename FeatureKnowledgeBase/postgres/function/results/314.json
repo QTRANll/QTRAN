@@ -6,13 +6,13 @@
         "avg"
     ],
     "Feature": [
-        "avg ( smallint ) → numeric",
-        "avg ( integer ) → numeric",
-        "avg ( bigint ) → numeric",
-        "avg ( numeric ) → numeric",
-        "avg ( real ) → double precision",
-        "avg ( double precision ) → double precision",
-        "avg ( interval ) → interval"
+        "avg ( smallint ) \u2192 numeric",
+        "avg ( integer ) \u2192 numeric",
+        "avg ( bigint ) \u2192 numeric",
+        "avg ( numeric ) \u2192 numeric",
+        "avg ( real ) \u2192 double precision",
+        "avg ( double precision ) \u2192 double precision",
+        "avg ( interval ) \u2192 interval"
     ],
     "Description": [
         "Computes the average (arithmetic mean) of all the non-null input values."
@@ -20,5 +20,31 @@
     "Examples": [],
     "Category": [
         "Aggregate Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT AVG(column_name) FROM table_name;",
+        "SELECT AVG(value) FROM (VALUES (1), (2), (3), (4), (5)) AS temp(value);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 326,
+            "Prompt Tokens": 305,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 5.8349999999999995e-05
+        },
+        {
+            "Total Tokens": 505,
+            "Prompt Tokens": 466,
+            "Completion Tokens": 39,
+            "Total Cost (USD)": 9.329999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedTable) relation \"table_name\" does not exist\nLINE 1: SELECT AVG(column_name) FROM table_name;\n                                     ^\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT AVG(value) FROM (VALUES (1), (2), (3), (4), (5)) AS temp(value);"
     ]
 }

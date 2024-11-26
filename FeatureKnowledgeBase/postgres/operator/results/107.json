@@ -6,16 +6,50 @@
         "tsvector @@@ tsquery"
     ],
     "Feature": [
-        "tsvector @@@ tsquery → boolean",
-        "tsquery @@@ tsvector → boolean"
+        "tsvector @@@ tsquery \u2192 boolean",
+        "tsquery @@@ tsvector \u2192 boolean"
     ],
     "Description": [
         "This is a deprecated synonym for @@."
     ],
     "Examples": [
-        "to_tsvector('fat cats ate rats') @@@ to_tsquery('cat & rat') → t"
+        "to_tsvector('fat cats ate rats') @@@ to_tsquery('cat & rat') \u2192 t"
     ],
     "Category": [
         "Text Search Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "tsvector @@ tsquery",
+        "SELECT tsvector @@ tsquery",
+        "SELECT 'your_tsvector' @@ 'your_tsquery'"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 290,
+            "Prompt Tokens": 272,
+            "Completion Tokens": 18,
+            "Total Cost (USD)": 5.16e-05
+        },
+        {
+            "Total Tokens": 451,
+            "Prompt Tokens": 431,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 7.664999999999999e-05
+        },
+        {
+            "Total Tokens": 620,
+            "Prompt Tokens": 595,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 0.00010424999999999999
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.SyntaxError) syntax error at or near \"tsvector\"\nLINE 1: tsvector @@ tsquery\n        ^\n\n",
+        "(psycopg2.errors.UndefinedColumn) column \"tsvector\" does not exist\nLINE 1: SELECT tsvector @@ tsquery\n               ^\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT 'your_tsvector' @@ 'your_tsquery'"
     ]
 }

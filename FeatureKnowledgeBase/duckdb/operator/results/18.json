@@ -16,5 +16,23 @@
     ],
     "Category": [
         "Interval Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT TIMESTAMP '2023-10-01 12:00:00' - INTERVAL '1 day';"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 275,
+            "Prompt Tokens": 238,
+            "Completion Tokens": 37,
+            "Total Cost (USD)": 5.789999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT TIMESTAMP '2023-10-01 12:00:00' - INTERVAL '1 day';"
     ]
 }

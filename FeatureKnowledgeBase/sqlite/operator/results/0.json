@@ -30,5 +30,31 @@
     ],
     "Category": [
         "JSON Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT json_column -> 'key' FROM json_table;",
+        "SELECT json_column -> 'key' FROM (SELECT '{}' AS json_column);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 434,
+            "Prompt Tokens": 411,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 7.544999999999999e-05
+        },
+        {
+            "Total Tokens": 579,
+            "Prompt Tokens": 551,
+            "Completion Tokens": 28,
+            "Total Cost (USD)": 9.945e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(sqlite3.OperationalError) no such table: json_table\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT json_column -> 'key' FROM (SELECT '{}' AS json_column);"
     ]
 }

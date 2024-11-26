@@ -6,15 +6,33 @@
         "masklen"
     ],
     "Feature": [
-        "masklen ( inet ) → integer"
+        "masklen ( inet ) \u2192 integer"
     ],
     "Description": [
         "Returns the netmask length in bits."
     ],
     "Examples": [
-        "masklen(inet '192.168.1.5/24') → 24"
+        "masklen(inet '192.168.1.5/24') \u2192 24"
     ],
     "Category": [
         "Network Address Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT masklen('192.168.1.1'::inet);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 276,
+            "Prompt Tokens": 248,
+            "Completion Tokens": 28,
+            "Total Cost (USD)": 5.4e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT masklen('192.168.1.1'::inet);"
     ]
 }

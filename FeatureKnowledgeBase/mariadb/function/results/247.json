@@ -21,5 +21,12 @@
     "EffectiveSQLsRefined": [
         "SELECT sys.quote_identifier(\"Identifier with spaces\");",
         "SELECT sys.quote_identifier(\"Identifier` containing `backticks\");"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT sys.quote_identifier(\"Identifier with spaces\");",
+        "SELECT sys.quote_identifier(\"Identifier` containing `backticks\");"
     ]
 }

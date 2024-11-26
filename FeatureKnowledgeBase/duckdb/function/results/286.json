@@ -16,5 +16,31 @@
     ],
     "Category": [
         "Map Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT cardinality(map(1, 'a', 2, 'b'))",
+        "SELECT cardinality(map(ARRAY['key1', 'key2'], ARRAY['val1', 'val2']))"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 289,
+            "Prompt Tokens": 260,
+            "Completion Tokens": 29,
+            "Total Cost (USD)": 5.64e-05
+        },
+        {
+            "Total Tokens": 493,
+            "Prompt Tokens": 457,
+            "Completion Tokens": 36,
+            "Total Cost (USD)": 9.015e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.InvalidInputException) Invalid Input Error: Invalid map argument(s). Valid map arguments are a list of key-value pairs (MAP {'key1': 'val1', ...}), two lists (MAP ([1, 2], [10, 11])), or no arguments.\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT cardinality(map(ARRAY['key1', 'key2'], ARRAY['val1', 'val2']))"
     ]
 }

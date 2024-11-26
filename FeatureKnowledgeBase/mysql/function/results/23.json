@@ -25,5 +25,39 @@
     "Category": [
         "Built-In Functions and Operators",
         "Aggregate Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT BIT_OR(expr) FROM your_table;",
+        "SELECT BIT_OR(expr);",
+        "SELECT BIT_OR(1);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 752,
+            "Prompt Tokens": 731,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 0.00012225
+        },
+        {
+            "Total Tokens": 909,
+            "Prompt Tokens": 891,
+            "Completion Tokens": 18,
+            "Total Cost (USD)": 0.00014445
+        },
+        {
+            "Total Tokens": 1063,
+            "Prompt Tokens": 1044,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 0.000168
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.ProgrammingError) (1146, \"Table 'knowledge_base_preprocess_mysql.your_table' doesn't exist\")\n",
+        "(pymysql.err.OperationalError) (1054, \"Unknown column 'expr' in 'field list'\")\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT BIT_OR(1);"
     ]
 }

@@ -6,15 +6,33 @@
         "time - time"
     ],
     "Feature": [
-        "time - time → interval"
+        "time - time \u2192 interval"
     ],
     "Description": [
         "Subtract times"
     ],
     "Examples": [
-        "time '05:00' - time '03:00' → 02:00:00"
+        "time '05:00' - time '03:00' \u2192 02:00:00"
     ],
     "Category": [
         "Date divide Time Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT '2023-10-01 12:00:00'::timestamp - '2023-10-01 10:00:00'::timestamp;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 290,
+            "Prompt Tokens": 243,
+            "Completion Tokens": 47,
+            "Total Cost (USD)": 6.465e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT '2023-10-01 12:00:00'::timestamp - '2023-10-01 10:00:00'::timestamp;"
     ]
 }

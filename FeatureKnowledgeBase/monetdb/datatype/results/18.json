@@ -1,0 +1,67 @@
+{
+    "HTML": [
+        "https://www.monetdb.org/documentation-Aug2024/user-guide/sql-manual/data-types/base-types"
+    ],
+    "Title": [
+        ""
+    ],
+    "Feature": [
+        ""
+    ],
+    "Description": [
+        "",
+        ""
+    ],
+    "Examples": [],
+    "Category": [
+        "Base Types"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT * FROM features WHERE feature_name = '';",
+        "SELECT * FROM feature_table WHERE feature_name = '';",
+        "SELECT * FROM my_table WHERE feature_name = '';",
+        "SELECT * FROM another_table WHERE feature_name = '';",
+        "SELECT * FROM your_table WHERE feature_name = '';"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 253,
+            "Prompt Tokens": 231,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 4.785e-05
+        },
+        {
+            "Total Tokens": 403,
+            "Prompt Tokens": 380,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 7.08e-05
+        },
+        {
+            "Total Tokens": 554,
+            "Prompt Tokens": 531,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 9.345e-05
+        },
+        {
+            "Total Tokens": 705,
+            "Prompt Tokens": 682,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 0.00011609999999999999
+        },
+        {
+            "Total Tokens": 856,
+            "Prompt Tokens": 833,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 0.00013874999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymonetdb.exceptions.OperationalError) 42S02!SELECT: no such table 'features'\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42S02!SELECT: no such table 'feature_table'\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42S02!SELECT: no such table 'my_table'\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42S02!SELECT: no such table 'another_table'\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42S02!SELECT: no such table 'your_table'\n\n"
+    ],
+    "EffectiveSQLs": []
+}

@@ -25,5 +25,13 @@
         "SELECT FROM_UNIXTIME(1196440219);",
         "SELECT FROM_UNIXTIME(1196440219) + 0;",
         "SELECT FROM_UNIXTIME(UNIX_TIMESTAMP(), '%Y %D %M %h:%i:%s %x');"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT FROM_UNIXTIME(1196440219);",
+        "SELECT FROM_UNIXTIME(1196440219) + 0;",
+        "SELECT FROM_UNIXTIME(UNIX_TIMESTAMP(), '%Y %D %M %h:%i:%s %x');"
     ]
 }

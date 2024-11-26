@@ -6,7 +6,7 @@
         "has_foreign_data_wrapper_privilege"
     ],
     "Feature": [
-        "has_foreign_data_wrapper_privilege ( [ user name or oid, ] fdw text or oid, privilege text ) → boolean"
+        "has_foreign_data_wrapper_privilege ( [ user name or oid, ] fdw text or oid, privilege text ) \u2192 boolean"
     ],
     "Description": [
         "Does user have privilege for foreign-data wrapper? The only allowable privilege type is USAGE."
@@ -14,5 +14,53 @@
     "Examples": [],
     "Category": [
         "System Information Functions and Operators"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT has_foreign_data_wrapper_privilege('username', 'fdw_name', 'USAGE');",
+        "SELECT has_foreign_data_wrapper_privilege('existing_username', 'fdw_name', 'USAGE');",
+        "SELECT has_foreign_data_wrapper_privilege(current_user, 'fdw_name', 'USAGE');",
+        "SELECT has_foreign_data_wrapper_privilege(current_user, 'existing_fdw', 'USAGE');",
+        "SELECT has_foreign_data_wrapper_privilege(current_user, 'valid_fdw', 'USAGE');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 325,
+            "Prompt Tokens": 292,
+            "Completion Tokens": 33,
+            "Total Cost (USD)": 6.36e-05
+        },
+        {
+            "Total Tokens": 487,
+            "Prompt Tokens": 453,
+            "Completion Tokens": 34,
+            "Total Cost (USD)": 8.835e-05
+        },
+        {
+            "Total Tokens": 649,
+            "Prompt Tokens": 616,
+            "Completion Tokens": 33,
+            "Total Cost (USD)": 0.00011219999999999999
+        },
+        {
+            "Total Tokens": 814,
+            "Prompt Tokens": 781,
+            "Completion Tokens": 33,
+            "Total Cost (USD)": 0.00013695
+        },
+        {
+            "Total Tokens": 979,
+            "Prompt Tokens": 946,
+            "Completion Tokens": 33,
+            "Total Cost (USD)": 0.00016169999999999997
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedObject) role \"username\" does not exist\n\n",
+        "(psycopg2.errors.UndefinedObject) role \"existing_username\" does not exist\n\n",
+        "(psycopg2.errors.UndefinedObject) foreign-data wrapper \"fdw_name\" does not exist\n\n",
+        "(psycopg2.errors.UndefinedObject) foreign-data wrapper \"existing_fdw\" does not exist\n\n",
+        "(psycopg2.errors.UndefinedObject) foreign-data wrapper \"valid_fdw\" does not exist\n\n"
+    ],
+    "EffectiveSQLs": []
 }

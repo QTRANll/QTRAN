@@ -17,5 +17,31 @@
     "Category": [
         "Built-In Functions and Operators",
         "Internal Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT INTERNAL_DATA_FREE('example_args');",
+        "SELECT 'Access to native function is restricted';"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 292,
+            "Prompt Tokens": 271,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 5.325e-05
+        },
+        {
+            "Total Tokens": 452,
+            "Prompt Tokens": 430,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 7.769999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.OperationalError) (3566, \"Access to native function 'INTERNAL_DATA_FREE' is rejected.\")\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT 'Access to native function is restricted';"
     ]
 }

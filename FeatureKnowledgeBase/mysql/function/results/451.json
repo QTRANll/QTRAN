@@ -25,5 +25,53 @@
     ],
     "Category": [
         "Loadable Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT gen_dictionary('mydict');",
+        "SELECT gen_dictionary('no-such-dict');",
+        "SELECT gen_dictionary('mydict');",
+        "SELECT gen_dictionary('example-dict');",
+        "SELECT gen_dictionary('test-dict');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 468,
+            "Prompt Tokens": 448,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 7.919999999999999e-05
+        },
+        {
+            "Total Tokens": 626,
+            "Prompt Tokens": 603,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 0.00010424999999999999
+        },
+        {
+            "Total Tokens": 781,
+            "Prompt Tokens": 761,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 0.00012615
+        },
+        {
+            "Total Tokens": 937,
+            "Prompt Tokens": 916,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 0.00015000000000000001
+        },
+        {
+            "Total Tokens": 1093,
+            "Prompt Tokens": 1072,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 0.0001734
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.gen_dictionary does not exist')\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.gen_dictionary does not exist')\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.gen_dictionary does not exist')\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.gen_dictionary does not exist')\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.gen_dictionary does not exist')\n"
+    ],
+    "EffectiveSQLs": []
 }

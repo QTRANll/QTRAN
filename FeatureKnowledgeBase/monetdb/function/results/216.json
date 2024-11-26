@@ -18,5 +18,23 @@
     ],
     "Category": [
         "INET Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT sys.right_shift_assign(inet '192.168.1.1', inet '255.255.255.0');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 315,
+            "Prompt Tokens": 276,
+            "Completion Tokens": 39,
+            "Total Cost (USD)": 6.48e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT sys.right_shift_assign(inet '192.168.1.1', inet '255.255.255.0');"
     ]
 }

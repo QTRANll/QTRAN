@@ -24,5 +24,31 @@
     "Category": [
         "Built-In Functions and Operators",
         "Aggregate Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT MAX(test_score) FROM student;",
+        "SELECT MAX(1);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 569,
+            "Prompt Tokens": 549,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 9.434999999999999e-05
+        },
+        {
+            "Total Tokens": 724,
+            "Prompt Tokens": 706,
+            "Completion Tokens": 18,
+            "Total Cost (USD)": 0.00011669999999999999
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.ProgrammingError) (1146, \"Table 'knowledge_base_preprocess_mysql.student' doesn't exist\")\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT MAX(1);"
     ]
 }

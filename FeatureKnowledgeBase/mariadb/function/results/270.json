@@ -32,8 +32,15 @@
         "SEQUENCE Functions"
     ],
     "EffectiveSQLsRefined": [
-        "SELECT SETVAL(s, 100);",
-        "SELECT SETVAL(s, 50);",
+        "CREATE OR REPLACE SEQUENCE s1\n  START WITH 1\n  MINVALUE 1\n  MAXVALUE 99\n  INCREMENT BY 1 \n  CACHE 20 \n  CYCLE;",
+        "SELECT SETVAL(s1, 99, 1, 0);",
+        "SELECT SETVAL(s1, 99, 1, 0);",
+        "SELECT SETVAL(s1, 99, 1, 1);"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
         "CREATE OR REPLACE SEQUENCE s1\n  START WITH 1\n  MINVALUE 1\n  MAXVALUE 99\n  INCREMENT BY 1 \n  CACHE 20 \n  CYCLE;",
         "SELECT SETVAL(s1, 99, 1, 0);",
         "SELECT SETVAL(s1, 99, 1, 0);",

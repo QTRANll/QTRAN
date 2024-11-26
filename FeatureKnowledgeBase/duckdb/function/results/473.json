@@ -17,5 +17,31 @@
     ],
     "Category": [
         "Text Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT to_base64(your_blob_column) AS encoded_blob FROM your_table;",
+        "SELECT to_base64('your_blob_data') AS encoded_blob;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 280,
+            "Prompt Tokens": 252,
+            "Completion Tokens": 28,
+            "Total Cost (USD)": 5.46e-05
+        },
+        {
+            "Total Tokens": 458,
+            "Prompt Tokens": 433,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 7.994999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.CatalogException) Catalog Error: Table with name your_table does not exist!\nDid you mean \"pg_tables\"?\nLINE 1: ...your_blob_column) AS encoded_blob FROM your_table;\n                                                  ^\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT to_base64('your_blob_data') AS encoded_blob;"
     ]
 }

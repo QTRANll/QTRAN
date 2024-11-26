@@ -6,15 +6,57 @@
         "rtrim"
     ],
     "Feature": [
-        "rtrim ( bytes bytea, bytesremoved bytea ) → bytea"
+        "rtrim ( bytes bytea, bytesremoved bytea ) \u2192 bytea"
     ],
     "Description": [
         "Removes the longest string containing only bytes appearing in bytesremoved from the end of bytes."
     ],
     "Examples": [
-        "rtrim('\\x1234567890'::bytea, '\\x9012'::bytea) → \\x12345678"
+        "rtrim('\\x1234567890'::bytea, '\\x9012'::bytea) \u2192 \\x12345678"
     ],
     "Category": [
         "Binary String Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT rtrim(your_bytea_column, your_bytesremoved_column) FROM your_table;",
+        "SELECT rtrim(b'example_bytes', b'remove_bytes');",
+        "SELECT rtrim(E'example\\x00\\x01\\x02', E'\\x01\\x02');",
+        "SELECT rtrim(E'example\\x01\\x02', E'\\x01\\x02');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 296,
+            "Prompt Tokens": 266,
+            "Completion Tokens": 30,
+            "Total Cost (USD)": 5.79e-05
+        },
+        {
+            "Total Tokens": 469,
+            "Prompt Tokens": 443,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 8.204999999999999e-05
+        },
+        {
+            "Total Tokens": 652,
+            "Prompt Tokens": 614,
+            "Completion Tokens": 38,
+            "Total Cost (USD)": 0.00011489999999999999
+        },
+        {
+            "Total Tokens": 817,
+            "Prompt Tokens": 782,
+            "Completion Tokens": 35,
+            "Total Cost (USD)": 0.0001383
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedTable) relation \"your_table\" does not exist\nLINE 1: ...your_bytea_column, your_bytesremoved_column) FROM your_table...\n                                                             ^\n\n",
+        "(psycopg2.errors.InvalidTextRepresentation) \"e\" is not a valid binary digit\nLINE 1: SELECT rtrim(b'example_bytes', b'remove_bytes');\n                     ^\n\n",
+        "(psycopg2.errors.CharacterNotInRepertoire) invalid byte sequence for encoding \"UTF8\": 0x00\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT rtrim(E'example\\x01\\x02', E'\\x01\\x02');"
     ]
 }

@@ -26,5 +26,20 @@
     "Category": [
         "Built-In Functions and Operators",
         "JSON Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT JSON_CONTAINS(@j, @j2, '$.a');",
+        "SELECT JSON_CONTAINS(@j, @j2, '$.b');",
+        "SELECT JSON_CONTAINS(@j, @j2, '$.a');",
+        "SELECT JSON_CONTAINS(@j, @j2, '$.c');"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT JSON_CONTAINS(@j, @j2, '$.a');",
+        "SELECT JSON_CONTAINS(@j, @j2, '$.b');",
+        "SELECT JSON_CONTAINS(@j, @j2, '$.a');",
+        "SELECT JSON_CONTAINS(@j, @j2, '$.c');"
     ]
 }

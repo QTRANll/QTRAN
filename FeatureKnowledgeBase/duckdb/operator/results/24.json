@@ -16,5 +16,47 @@
     ],
     "Category": [
         "List Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "<=>",
+        "SELECT list_cosine_distance(column1, column2) FROM table_name;",
+        "SELECT list_cosine_distance('value1', 'value2');",
+        "SELECT list_cosine_distance(ARRAY[1.0, 2.0], ARRAY[3.0, 4.0]);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 257,
+            "Prompt Tokens": 243,
+            "Completion Tokens": 14,
+            "Total Cost (USD)": 4.485e-05
+        },
+        {
+            "Total Tokens": 409,
+            "Prompt Tokens": 382,
+            "Completion Tokens": 27,
+            "Total Cost (USD)": 7.35e-05
+        },
+        {
+            "Total Tokens": 591,
+            "Prompt Tokens": 565,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 0.00010034999999999999
+        },
+        {
+            "Total Tokens": 835,
+            "Prompt Tokens": 794,
+            "Completion Tokens": 41,
+            "Total Cost (USD)": 0.0001437
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.ParserException) Parser Error: syntax error at or near \"<=>\"\n",
+        "(duckdb.duckdb.CatalogException) Catalog Error: Table with name table_name does not exist!\nDid you mean \"pg_tablespace\"?\nLINE 1: ...cosine_distance(column1, column2) FROM table_name;\n                                                  ^\n",
+        "(duckdb.duckdb.BinderException) Binder Error: Could not choose a best candidate function for the function call \"list_cosine_distance(STRING_LITERAL, STRING_LITERAL)\". In order to select one, please add explicit type casts.\n\tCandidate functions:\n\tlist_cosine_distance(DOUBLE[], DOUBLE[]) -> DOUBLE\n\tlist_cosine_distance(FLOAT[], FLOAT[]) -> FLOAT\n\nLINE 1: SELECT list_cosine_distance('value1', 'value2'...\n               ^\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT list_cosine_distance(ARRAY[1.0, 2.0], ARRAY[3.0, 4.0]);"
     ]
 }

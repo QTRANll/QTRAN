@@ -6,15 +6,33 @@
         "number . floor"
     ],
     "Feature": [
-        "number . floor() → number"
+        "number . floor() \u2192 number"
     ],
     "Description": [
         "Nearest integer less than or equal to the given number"
     ],
     "Examples": [
-        "jsonb_path_query('{\"h\": 1.7}', '$.h.floor()') → 1"
+        "jsonb_path_query('{\"h\": 1.7}', '$.h.floor()') \u2192 1"
     ],
     "Category": [
         "JSON Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT floor(3.7);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 272,
+            "Prompt Tokens": 252,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 4.98e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT floor(3.7);"
     ]
 }

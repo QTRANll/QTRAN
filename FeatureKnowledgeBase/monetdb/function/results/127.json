@@ -18,5 +18,53 @@
     ],
     "Category": [
         "Character String Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT dameraulevenshtein('example', 'samples');",
+        "SELECT dameraulevenshtein('example', 'samples'::text);",
+        "SELECT dameraulevenshtein('example', 'samples');",
+        "SELECT dameraulevenshtein('example', 'samples');",
+        "SELECT dameraulevenshtein('example', 'samples');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 341,
+            "Prompt Tokens": 315,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 6.285e-05
+        },
+        {
+            "Total Tokens": 519,
+            "Prompt Tokens": 490,
+            "Completion Tokens": 29,
+            "Total Cost (USD)": 9.09e-05
+        },
+        {
+            "Total Tokens": 680,
+            "Prompt Tokens": 654,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 0.0001137
+        },
+        {
+            "Total Tokens": 855,
+            "Prompt Tokens": 829,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 0.00013995
+        },
+        {
+            "Total Tokens": 1030,
+            "Prompt Tokens": 1004,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 0.00016619999999999997
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: no such binary operator 'dameraulevenshtein(char,char)'\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!Unexpected symbol (:)\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: no such binary operator 'dameraulevenshtein(char,char)'\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: no such binary operator 'dameraulevenshtein(char,char)'\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: no such binary operator 'dameraulevenshtein(char,char)'\n\n"
+    ],
+    "EffectiveSQLs": []
 }

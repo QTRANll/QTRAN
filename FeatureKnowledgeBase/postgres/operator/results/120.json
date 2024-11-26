@@ -6,16 +6,50 @@
         "json #>> text[]"
     ],
     "Feature": [
-        "json #>> text[] → text",
-        "jsonb #>> text[] → text"
+        "json #>> text[] \u2192 text",
+        "jsonb #>> text[] \u2192 text"
     ],
     "Description": [
         "Extracts JSON sub-object at the specified path as text."
     ],
     "Examples": [
-        "'{\"a\": {\"b\": [\"foo\",\"bar\"]}}'::json #>> '{a,b,1}' → bar"
+        "'{\"a\": {\"b\": [\"foo\",\"bar\"]}}'::json #>> '{a,b,1}' \u2192 bar"
     ],
     "Category": [
         "JSON Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT json #>> '{key1, key2}' FROM your_table;",
+        "SELECT json #>> '{key1, key2}' FROM json_data;",
+        "SELECT json #>> '{key1, key2}' FROM (SELECT '{}'::json AS json) AS temp;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 298,
+            "Prompt Tokens": 271,
+            "Completion Tokens": 27,
+            "Total Cost (USD)": 5.685e-05
+        },
+        {
+            "Total Tokens": 475,
+            "Prompt Tokens": 448,
+            "Completion Tokens": 27,
+            "Total Cost (USD)": 8.34e-05
+        },
+        {
+            "Total Tokens": 660,
+            "Prompt Tokens": 625,
+            "Completion Tokens": 35,
+            "Total Cost (USD)": 0.00011474999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedTable) relation \"your_table\" does not exist\nLINE 1: SELECT json #>> '{key1, key2}' FROM your_table;\n                                            ^\n\n",
+        "(psycopg2.errors.UndefinedTable) relation \"json_data\" does not exist\nLINE 1: SELECT json #>> '{key1, key2}' FROM json_data;\n                                            ^\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT json #>> '{key1, key2}' FROM (SELECT '{}'::json AS json) AS temp;"
     ]
 }

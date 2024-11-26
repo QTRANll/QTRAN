@@ -17,5 +17,53 @@
     ],
     "Category": [
         "List Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT list_extract(list, index) FROM your_table",
+        "SELECT list_extract(list, index)",
+        "SELECT list_extract(column_name, index) FROM your_table",
+        "SELECT list_extract(column_name, index)",
+        "SELECT list_extract(value, index)"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 273,
+            "Prompt Tokens": 250,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 5.129999999999999e-05
+        },
+        {
+            "Total Tokens": 444,
+            "Prompt Tokens": 425,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 7.514999999999998e-05
+        },
+        {
+            "Total Tokens": 611,
+            "Prompt Tokens": 587,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 0.00010244999999999998
+        },
+        {
+            "Total Tokens": 784,
+            "Prompt Tokens": 764,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 0.0001266
+        },
+        {
+            "Total Tokens": 948,
+            "Prompt Tokens": 929,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 0.00015075
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.CatalogException) Catalog Error: Table with name your_table does not exist!\nDid you mean \"pg_tables\"?\nLINE 1: SELECT list_extract(list, index) FROM your_table\n                                              ^\n",
+        "(duckdb.duckdb.BinderException) Binder Error: Referenced column \"list\" not found in FROM clause!\nLINE 1: SELECT list_extract(list, index)\n                            ^\n",
+        "(duckdb.duckdb.CatalogException) Catalog Error: Table with name your_table does not exist!\nDid you mean \"pg_tables\"?\nLINE 1: ... list_extract(column_name, index) FROM your_table\n                                                  ^\n",
+        "(duckdb.duckdb.BinderException) Binder Error: Referenced column \"column_name\" not found in FROM clause!\nLINE 1: SELECT list_extract(column_name, index)\n                            ^\n",
+        "(duckdb.duckdb.BinderException) Binder Error: Referenced column \"value\" not found in FROM clause!\nLINE 1: SELECT list_extract(value, index)\n                            ^\n"
+    ],
+    "EffectiveSQLs": []
 }

@@ -6,15 +6,33 @@
         "anyrange @> anyelement"
     ],
     "Feature": [
-        "anyrange @> anyelement → boolean"
+        "anyrange @> anyelement \u2192 boolean"
     ],
     "Description": [
         "Does the range contain the element?"
     ],
     "Examples": [
-        "'[2011-01-01,2011-03-01)'::tsrange @> '2011-01-10'::timestamp → t"
+        "'[2011-01-01,2011-03-01)'::tsrange @> '2011-01-10'::timestamp \u2192 t"
     ],
     "Category": [
         "Range divide Multirange Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT '[1, 5]'::int4range @> 3;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 288,
+            "Prompt Tokens": 260,
+            "Completion Tokens": 28,
+            "Total Cost (USD)": 5.58e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT '[1, 5]'::int4range @> 3;"
     ]
 }

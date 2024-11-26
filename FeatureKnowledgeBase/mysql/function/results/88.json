@@ -22,5 +22,14 @@
     "Category": [
         "Built-In Functions and Operators",
         "String Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT TO_BASE64('abc'), FROM_BASE64(TO_BASE64('abc'));"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT TO_BASE64('abc'), FROM_BASE64(TO_BASE64('abc'));"
     ]
 }

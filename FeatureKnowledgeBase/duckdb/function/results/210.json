@@ -16,5 +16,31 @@
     ],
     "Category": [
         "List Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT list_cosine_similarity(list1, list2);",
+        "SELECT list_cosine_similarity(ARRAY[1, 2, 3], ARRAY[4, 5, 6]);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 300,
+            "Prompt Tokens": 276,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 5.5799999999999994e-05
+        },
+        {
+            "Total Tokens": 495,
+            "Prompt Tokens": 456,
+            "Completion Tokens": 39,
+            "Total Cost (USD)": 9.18e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.BinderException) Binder Error: Referenced column \"list1\" not found in FROM clause!\nLINE 1: SELECT list_cosine_similarity(list1, list2);\n                                      ^\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT list_cosine_similarity(ARRAY[1, 2, 3], ARRAY[4, 5, 6]);"
     ]
 }

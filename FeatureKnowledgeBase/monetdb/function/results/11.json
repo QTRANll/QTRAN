@@ -18,5 +18,31 @@
     ],
     "Category": [
         "Comparison Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT coalesce(column1, column2) FROM my_table;",
+        "SELECT coalesce(NULL, 'value2');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 331,
+            "Prompt Tokens": 306,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 6.0899999999999996e-05
+        },
+        {
+            "Total Tokens": 490,
+            "Prompt Tokens": 468,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 8.34e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymonetdb.exceptions.OperationalError) 42S02!SELECT: no such table 'my_table'\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT coalesce(NULL, 'value2');"
     ]
 }

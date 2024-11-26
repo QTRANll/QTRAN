@@ -6,7 +6,7 @@
         "pg_event_trigger_table_rewrite_reason"
     ],
     "Feature": [
-        "pg_event_trigger_table_rewrite_reason () → integer"
+        "pg_event_trigger_table_rewrite_reason () \u2192 integer"
     ],
     "Description": [
         "Returns a code explaining the reason(s) for rewriting. The exact meaning of the codes is release dependent."
@@ -14,5 +14,31 @@
     "Examples": [],
     "Category": [
         "Event Trigger Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT pg_event_trigger_table_rewrite_reason();",
+        "CREATE FUNCTION my_table_rewrite_trigger() RETURNS event_trigger AS $$ BEGIN PERFORM pg_event_trigger_table_rewrite_reason(); END; $$ LANGUAGE plpgsql;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 301,
+            "Prompt Tokens": 279,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 5.5049999999999996e-05
+        },
+        {
+            "Total Tokens": 486,
+            "Prompt Tokens": 443,
+            "Completion Tokens": 43,
+            "Total Cost (USD)": 9.224999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.EventTriggerProtocolViolated) pg_event_trigger_table_rewrite_reason() can only be called in a table_rewrite event trigger function\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "CREATE FUNCTION my_table_rewrite_trigger() RETURNS event_trigger AS $$ BEGIN PERFORM pg_event_trigger_table_rewrite_reason(); END; $$ LANGUAGE plpgsql;"
     ]
 }

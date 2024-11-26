@@ -24,5 +24,10 @@
     ],
     "Category": [
         "Dates and Times Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT subtractInterval(INTERVAL 1 DAY, INTERVAL 1 MONTH);",
+        "SELECT subtractInterval((INTERVAL 1 DAY, INTERVAL 1 YEAR), INTERVAL 1 MONTH);",
+        "SELECT subtractInterval(INTERVAL 2 DAY, INTERVAL 1 DAY);"
     ]
 }

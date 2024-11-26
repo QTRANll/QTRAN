@@ -19,5 +19,31 @@
     "Examples": [],
     "Category": [
         "Object Identifier Types"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT 'your_table_name'::regclass;",
+        "SELECT 'pg_class'::regclass;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 277,
+            "Prompt Tokens": 255,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 5.144999999999999e-05
+        },
+        {
+            "Total Tokens": 441,
+            "Prompt Tokens": 420,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 7.559999999999998e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedTable) relation \"your_table_name\" does not exist\nLINE 1: SELECT 'your_table_name'::regclass;\n               ^\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT 'pg_class'::regclass;"
     ]
 }

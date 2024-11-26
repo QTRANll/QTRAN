@@ -17,5 +17,31 @@
     "Category": [
         "Built-In Functions and Operators",
         "Internal Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT INTERNAL_GET_COMMENT_OR_ERROR('example comment');",
+        "SELECT 'Access to native function is rejected.' AS error_message;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 298,
+            "Prompt Tokens": 275,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 5.5049999999999996e-05
+        },
+        {
+            "Total Tokens": 463,
+            "Prompt Tokens": 438,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 8.07e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.OperationalError) (3566, \"Access to native function 'INTERNAL_GET_COMMENT_OR_ERROR' is rejected.\")\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT 'Access to native function is rejected.' AS error_message;"
     ]
 }

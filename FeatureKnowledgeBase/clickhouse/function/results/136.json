@@ -22,5 +22,8 @@
     ],
     "Category": [
         "Bitmap Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT bitmapContains(bitmapBuild([1,5,7,9]), toUInt32(9)) AS res;"
     ]
 }

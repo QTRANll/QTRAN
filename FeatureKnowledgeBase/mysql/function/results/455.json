@@ -25,5 +25,53 @@
     ],
     "Category": [
         "Loadable Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT gen_rnd_email(4, 5, 'mynet.com');",
+        "SELECT gen_rnd_email();",
+        "SELECT gen_rnd_email();",
+        "SELECT gen_rnd_email(5, 7, 'example.com');",
+        "SELECT gen_rnd_email();"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 640,
+            "Prompt Tokens": 611,
+            "Completion Tokens": 29,
+            "Total Cost (USD)": 0.00010905
+        },
+        {
+            "Total Tokens": 796,
+            "Prompt Tokens": 777,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 0.00012795
+        },
+        {
+            "Total Tokens": 952,
+            "Prompt Tokens": 933,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 0.00015135
+        },
+        {
+            "Total Tokens": 1117,
+            "Prompt Tokens": 1089,
+            "Completion Tokens": 28,
+            "Total Cost (USD)": 0.00018015
+        },
+        {
+            "Total Tokens": 1273,
+            "Prompt Tokens": 1254,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 0.0001995
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.gen_rnd_email does not exist')\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.gen_rnd_email does not exist')\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.gen_rnd_email does not exist')\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.gen_rnd_email does not exist')\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.gen_rnd_email does not exist')\n"
+    ],
+    "EffectiveSQLs": []
 }

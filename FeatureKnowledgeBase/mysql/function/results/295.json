@@ -24,5 +24,14 @@
     "Category": [
         "Built-In Functions and Operators",
         "Spatial Analysis Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT ST_GeometryType(@poly),ST_AsText(ST_Centroid(@poly));"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT ST_GeometryType(@poly),ST_AsText(ST_Centroid(@poly));"
     ]
 }

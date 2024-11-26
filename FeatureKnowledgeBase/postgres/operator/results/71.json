@@ -6,15 +6,49 @@
         "geometric_type <-> geometric_type"
     ],
     "Feature": [
-        "geometric_type <-> geometric_type → double precision"
+        "geometric_type <-> geometric_type \u2192 double precision"
     ],
     "Description": [
         "Computes the distance between the objects. Available for all seven geometric types, for all combinations of point with another geometric type, and for these additional pairs of types: (box, lseg), (lseg, line), (polygon, circle) (and the commutator cases)."
     ],
     "Examples": [
-        "circle '<(0,0),1>' <-> circle '<(5,0),1>' → 3"
+        "circle '<(0,0),1>' <-> circle '<(5,0),1>' \u2192 3"
     ],
     "Category": [
         "Geometric Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT point1 <-> point2;",
+        "SELECT 'point'::point <-> 'point'::point;",
+        "SELECT '(1, 2)'::point <-> '(3, 4)'::point;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 336,
+            "Prompt Tokens": 316,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 5.9399999999999994e-05
+        },
+        {
+            "Total Tokens": 507,
+            "Prompt Tokens": 481,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 8.774999999999999e-05
+        },
+        {
+            "Total Tokens": 690,
+            "Prompt Tokens": 658,
+            "Completion Tokens": 32,
+            "Total Cost (USD)": 0.00011789999999999999
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedColumn) column \"point1\" does not exist\nLINE 1: SELECT point1 <-> point2;\n               ^\n\n",
+        "(psycopg2.errors.InvalidTextRepresentation) invalid input syntax for type point: \"point\"\nLINE 1: SELECT 'point'::point <-> 'point'::point;\n               ^\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT '(1, 2)'::point <-> '(3, 4)'::point;"
     ]
 }

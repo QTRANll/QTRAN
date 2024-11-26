@@ -18,5 +18,63 @@
     ],
     "Category": [
         "Date Time Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        [
+            "SELECT \"day\"(CURRENT_DATE);"
+        ],
+        [
+            "SELECT \"day\"(CAST(CURRENT_DATE AS TIMESTAMP));"
+        ],
+        [
+            "SELECT \"day\"(CURRENT_TIMESTAMP);"
+        ],
+        [
+            "SELECT \"day\"(NOW());"
+        ],
+        "SELECT \"day\"(CURRENT_DATE);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 319,
+            "Prompt Tokens": 293,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 5.9549999999999984e-05
+        },
+        {
+            "Total Tokens": 473,
+            "Prompt Tokens": 442,
+            "Completion Tokens": 31,
+            "Total Cost (USD)": 8.49e-05
+        },
+        {
+            "Total Tokens": 622,
+            "Prompt Tokens": 596,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 0.00010499999999999999
+        },
+        {
+            "Total Tokens": 770,
+            "Prompt Tokens": 745,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 0.00012675
+        },
+        {
+            "Total Tokens": 914,
+            "Prompt Tokens": 893,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 0.00014655
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "expected string or bytes-like object, got 'list'",
+        "expected string or bytes-like object, got 'list'",
+        "expected string or bytes-like object, got 'list'",
+        "expected string or bytes-like object, got 'list'",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT \"day\"(CURRENT_DATE);"
     ]
 }

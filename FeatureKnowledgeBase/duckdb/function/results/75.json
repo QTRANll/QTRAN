@@ -18,5 +18,31 @@
     ],
     "Category": [
         "Aggregate Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT kahan_sum(column_name) FROM table_name;",
+        "SELECT kahan_sum(1.0) AS sum_result;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 290,
+            "Prompt Tokens": 267,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 5.3849999999999994e-05
+        },
+        {
+            "Total Tokens": 469,
+            "Prompt Tokens": 444,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 8.159999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.CatalogException) Catalog Error: Table with name table_name does not exist!\nDid you mean \"pg_tablespace\"?\nLINE 1: SELECT kahan_sum(column_name) FROM table_name;\n                                           ^\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT kahan_sum(1.0) AS sum_result;"
     ]
 }

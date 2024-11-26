@@ -6,15 +6,33 @@
         "starts_with"
     ],
     "Feature": [
-        "starts_with ( string text, prefix text ) → boolean"
+        "starts_with ( string text, prefix text ) \u2192 boolean"
     ],
     "Description": [
         "Returns true if string starts with prefix."
     ],
     "Examples": [
-        "starts_with('alphabet', 'alph') → t"
+        "starts_with('alphabet', 'alph') \u2192 t"
     ],
     "Category": [
         "String Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT starts_with('hello world', 'hello');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 275,
+            "Prompt Tokens": 252,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 5.1599999999999994e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT starts_with('hello world', 'hello');"
     ]
 }

@@ -16,5 +16,52 @@
     "Category": [
         "Dynamic Columns Functions"
     ],
-    "EffectiveSQLsRefined": []
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT `dyncol_blob` FROM `your_table_name`;",
+        "SELECT `dyncol_blob`;",
+        "SELECT *;",
+        "SELECT `COLUMN_LIST`;",
+        "SELECT * FROM `your_table_name`;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 293,
+            "Prompt Tokens": 268,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 5.52e-05
+        },
+        {
+            "Total Tokens": 448,
+            "Prompt Tokens": 429,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 7.575e-05
+        },
+        {
+            "Total Tokens": 595,
+            "Prompt Tokens": 580,
+            "Completion Tokens": 15,
+            "Total Cost (USD)": 9.599999999999999e-05
+        },
+        {
+            "Total Tokens": 737,
+            "Prompt Tokens": 719,
+            "Completion Tokens": 18,
+            "Total Cost (USD)": 0.00011864999999999998
+        },
+        {
+            "Total Tokens": 889,
+            "Prompt Tokens": 868,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 0.0001428
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.ProgrammingError) (1146, \"Table 'pinolo_temp_mariadb.your_table_name' doesn't exist\")\n",
+        "(pymysql.err.OperationalError) (1054, \"Unknown column 'dyncol_blob' in 'field list'\")\n",
+        "(pymysql.err.OperationalError) (1096, 'No tables used')\n",
+        "(pymysql.err.OperationalError) (1054, \"Unknown column 'COLUMN_LIST' in 'field list'\")\n",
+        "(pymysql.err.ProgrammingError) (1146, \"Table 'pinolo_temp_mariadb.your_table_name' doesn't exist\")\n"
+    ],
+    "EffectiveSQLs": []
 }

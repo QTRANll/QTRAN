@@ -6,15 +6,57 @@
         "anyrange && anymultirange"
     ],
     "Feature": [
-        "anyrange && anymultirange → boolean"
+        "anyrange && anymultirange \u2192 boolean"
     ],
     "Description": [
         "Does the range overlap the multirange?"
     ],
     "Examples": [
-        "int8range(3,7) && '{[4,12)}'::int8multirange → t"
+        "int8range(3,7) && '{[4,12)}'::int8multirange \u2192 t"
     ],
     "Category": [
         "Range divide Multirange Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT anyrange && anymultirange;",
+        "SELECT $1 && $2;",
+        "SELECT anyrange && anymultirange FROM (SELECT NULL::int4range AS anyrange, NULL::int4range[] AS anymultirange) AS temp;",
+        "SELECT anyrange && unnest(anymultirange) FROM (SELECT NULL::int4range AS anyrange, ARRAY[NULL::int4range] AS anymultirange) AS temp;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 287,
+            "Prompt Tokens": 266,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 5.25e-05
+        },
+        {
+            "Total Tokens": 452,
+            "Prompt Tokens": 433,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 7.634999999999999e-05
+        },
+        {
+            "Total Tokens": 641,
+            "Prompt Tokens": 594,
+            "Completion Tokens": 47,
+            "Total Cost (USD)": 0.00011729999999999998
+        },
+        {
+            "Total Tokens": 873,
+            "Prompt Tokens": 821,
+            "Completion Tokens": 52,
+            "Total Cost (USD)": 0.00015434999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedColumn) column \"anyrange\" does not exist\nLINE 1: SELECT anyrange && anymultirange;\n               ^\n\n",
+        "(psycopg2.errors.UndefinedParameter) there is no parameter $1\nLINE 1: SELECT $1 && $2;\n               ^\n\n",
+        "(psycopg2.errors.UndefinedFunction) operator does not exist: int4range && int4range[]\nLINE 1: SELECT anyrange && anymultirange FROM (SELECT NULL::int4rang...\n                        ^\nHINT:  No operator matches the given name and argument types. You might need to add explicit type casts.\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT anyrange && unnest(anymultirange) FROM (SELECT NULL::int4range AS anyrange, ARRAY[NULL::int4range] AS anymultirange) AS temp;"
     ]
 }

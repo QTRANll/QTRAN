@@ -6,16 +6,27 @@
     ],
     "Description": [
         "\nCONVERT_TZ(dt,from_tz,to_tz)\n",
-        "\nCONVERT_TZ() converts a\n          datetime value dt from the time\n          zone given by from_tz to the time\n          zone given by to_tz and returns the\n          resulting value. Time zones are specified as described in\n          Section 7.1.15, “MySQL Server Time Zone Support”. This function returns\n          NULL if any of the arguments are invalid,\n          or if any of them are NULL.\n        ",
-        "\n          On 32-bit platforms, the supported range of values for this\n          function is the same as for the\n          TIMESTAMP type (see\n          Section 13.2.1, “Date and Time Data Type Syntax”, for range\n          information). On 64-bit platforms, beginning with MySQL\n          8.0.28, the maximum supported value is '3001-01-18\n          23:59:59.999999' UTC.\n        ",
+        "\nCONVERT_TZ() converts a\n          datetime value dt from the time\n          zone given by from_tz to the time\n          zone given by to_tz and returns the\n          resulting value. Time zones are specified as described in\n          Section\u00a07.1.15, \u201cMySQL Server Time Zone Support\u201d. This function returns\n          NULL if any of the arguments are invalid,\n          or if any of them are NULL.\n        ",
+        "\n          On 32-bit platforms, the supported range of values for this\n          function is the same as for the\n          TIMESTAMP type (see\n          Section\u00a013.2.1, \u201cDate and Time Data Type Syntax\u201d, for range\n          information). On 64-bit platforms, beginning with MySQL\n          8.0.28, the maximum supported value is '3001-01-18\n          23:59:59.999999' UTC.\n        ",
         "\n          Regardless of platform or MySQL version, if the value falls\n          out of the supported range when converted from\n          from_tz to UTC, no conversion\n          occurs.\n        ",
         "Press CTRL+C to copy mysql> SELECT CONVERT_TZ('2004-01-01 12:00:00','GMT','MET');\n        -> '2004-01-01 13:00:00'\nmysql> SELECT CONVERT_TZ('2004-01-01 12:00:00','+00:00','+10:00');\n        -> '2004-01-01 22:00:00'",
-        "\n\nNote\n\n\n            To use named time zones such as 'MET' or\n            'Europe/Amsterdam', the time zone tables\n            must be properly set up. For instructions, see\n            Section 7.1.15, “MySQL Server Time Zone Support”.\n\n"
+        "\n\nNote\n\n\n            To use named time zones such as 'MET' or\n            'Europe/Amsterdam', the time zone tables\n            must be properly set up. For instructions, see\n            Section\u00a07.1.15, \u201cMySQL Server Time Zone Support\u201d.\n\n"
     ],
     "Examples": [
         "mysql> SELECT CONVERT_TZ('2004-01-01 12:00:00','GMT','MET');\n        -> '2004-01-01 13:00:00'\nmysql> SELECT CONVERT_TZ('2004-01-01 12:00:00','+00:00','+10:00');\n        -> '2004-01-01 22:00:00'"
     ],
     "Category": [
-        "日期和时间函数"
+        "\u65e5\u671f\u548c\u65f6\u95f4\u51fd\u6570"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT CONVERT_TZ('2004-01-01 12:00:00','GMT','MET');",
+        "SELECT CONVERT_TZ('2004-01-01 12:00:00','+00:00','+10:00');"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT CONVERT_TZ('2004-01-01 12:00:00','GMT','MET');",
+        "SELECT CONVERT_TZ('2004-01-01 12:00:00','+00:00','+10:00');"
     ]
 }

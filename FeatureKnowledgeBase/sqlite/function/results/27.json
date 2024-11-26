@@ -14,5 +14,31 @@
     "Examples": [],
     "Category": [
         "Core SQL Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "randomblob(16)",
+        "SELECT randomblob(16);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 353,
+            "Prompt Tokens": 336,
+            "Completion Tokens": 17,
+            "Total Cost (USD)": 6.0599999999999996e-05
+        },
+        {
+            "Total Tokens": 492,
+            "Prompt Tokens": 473,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 8.235e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(sqlite3.OperationalError) near \"randomblob\": syntax error\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT randomblob(16);"
     ]
 }

@@ -20,5 +20,11 @@
     ],
     "EffectiveSQLsRefined": [
         "SELECT AsText(ExteriorRing(GeomFromText(@poly)));"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT AsText(ExteriorRing(GeomFromText(@poly)));"
     ]
 }

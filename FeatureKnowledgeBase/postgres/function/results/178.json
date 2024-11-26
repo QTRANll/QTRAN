@@ -6,15 +6,33 @@
         "diagonal"
     ],
     "Feature": [
-        "diagonal ( box ) → lseg"
+        "diagonal ( box ) \u2192 lseg"
     ],
     "Description": [
         "Extracts box's diagonal as a line segment (same as lseg(box))."
     ],
     "Examples": [
-        "diagonal(box '(1,2),(0,0)') → [(1,2),(0,0)]"
+        "diagonal(box '(1,2),(0,0)') \u2192 [(1,2),(0,0)]"
     ],
     "Category": [
         "Geometric Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT diagonal(box '((0,0),(1,1))');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 284,
+            "Prompt Tokens": 257,
+            "Completion Tokens": 27,
+            "Total Cost (USD)": 5.474999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT diagonal(box '((0,0),(1,1))');"
     ]
 }

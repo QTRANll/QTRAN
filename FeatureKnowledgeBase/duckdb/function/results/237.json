@@ -16,5 +16,31 @@
     ],
     "Category": [
         "List Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT unnest(list);",
+        "SELECT unnest(ARRAY[1, 2, 3]);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 296,
+            "Prompt Tokens": 278,
+            "Completion Tokens": 18,
+            "Total Cost (USD)": 5.2499999999999995e-05
+        },
+        {
+            "Total Tokens": 466,
+            "Prompt Tokens": 439,
+            "Completion Tokens": 27,
+            "Total Cost (USD)": 8.204999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.BinderException) Binder Error: Referenced column \"list\" not found in FROM clause!\nLINE 1: SELECT unnest(list);\n                      ^\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT unnest(ARRAY[1, 2, 3]);"
     ]
 }

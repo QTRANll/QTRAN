@@ -6,13 +6,47 @@
         "pg_index_column_has_property"
     ],
     "Feature": [
-        "pg_index_column_has_property ( index regclass, column integer, property text ) → boolean"
+        "pg_index_column_has_property ( index regclass, column integer, property text ) \u2192 boolean"
     ],
     "Description": [
-        "Tests whether an index column has the named property. Common index column properties are listed in Table 9.73. (Note that extension access methods can define additional property names for their indexes.) NULL is returned if the property name is not known or does not apply to the particular object, or if the OID or column number does not identify a valid object."
+        "Tests whether an index column has the named property. Common index column properties are listed in Table\u00a09.73. (Note that extension access methods can define additional property names for their indexes.) NULL is returned if the property name is not known or does not apply to the particular object, or if the OID or column number does not identify a valid object."
     ],
     "Examples": [],
     "Category": [
         "System Information Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT pg_index_column_has_property('my_index', 1, 'unique');",
+        "SELECT pg_index_column_has_property('pg_catalog.my_index', 1, 'unique');",
+        "SELECT pg_index_column_has_property('pg_index', 1, 'unique');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 361,
+            "Prompt Tokens": 332,
+            "Completion Tokens": 29,
+            "Total Cost (USD)": 6.72e-05
+        },
+        {
+            "Total Tokens": 544,
+            "Prompt Tokens": 513,
+            "Completion Tokens": 31,
+            "Total Cost (USD)": 9.554999999999999e-05
+        },
+        {
+            "Total Tokens": 725,
+            "Prompt Tokens": 696,
+            "Completion Tokens": 29,
+            "Total Cost (USD)": 0.00012179999999999999
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedTable) relation \"my_index\" does not exist\nLINE 1: SELECT pg_index_column_has_property('my_index', 1, 'unique')...\n                                            ^\n\n",
+        "(psycopg2.errors.UndefinedTable) relation \"pg_catalog.my_index\" does not exist\nLINE 1: SELECT pg_index_column_has_property('pg_catalog.my_index', 1...\n                                            ^\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT pg_index_column_has_property('pg_index', 1, 'unique');"
     ]
 }

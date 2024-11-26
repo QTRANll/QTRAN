@@ -6,15 +6,41 @@
         "text ~ text"
     ],
     "Feature": [
-        "text ~ text → boolean"
+        "text ~ text \u2192 boolean"
     ],
     "Description": [
         "String matches regular expression, case sensitively"
     ],
     "Examples": [
-        "'thomas' ~ 't.*ma' → t"
+        "'thomas' ~ 't.*ma' \u2192 t"
     ],
     "Category": [
         "Pattern Matching"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT * FROM table_name WHERE column_name ~ 'text';",
+        "SELECT * FROM pg_catalog.pg_tables WHERE tablename ~ 'text';"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 274,
+            "Prompt Tokens": 249,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 5.235e-05
+        },
+        {
+            "Total Tokens": 446,
+            "Prompt Tokens": 419,
+            "Completion Tokens": 27,
+            "Total Cost (USD)": 7.905e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedTable) relation \"table_name\" does not exist\nLINE 1: SELECT * FROM table_name WHERE column_name ~ 'text';\n                      ^\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT * FROM pg_catalog.pg_tables WHERE tablename ~ 'text';"
     ]
 }

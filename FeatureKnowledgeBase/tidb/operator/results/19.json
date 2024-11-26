@@ -12,12 +12,23 @@
         "\n          Bits shifted off the end of the value are lost without\n          warning, regardless of the argument type. In particular, if\n          the shift count is greater or equal to the number of bits in\n          the bit argument, all bits in the result are 0.\n        ",
         "\n          For more information, see the introductory discussion in this\n          section.\n        ",
         "Press CTRL+C to copy mysql> SELECT 1 << 2;\n        -> 4\nmysql> SELECT HEX(_binary X'00FF00FF00FF' << 8);\n        -> 'FF00FF00FF00'",
-        "\n          If a bit shift is invoked from within the\n          mysql client, binary string results display\n          using hexadecimal notation, depending on the value of the\n          --binary-as-hex. For more\n          information about that option, see Section 6.5.1, “mysql — The MySQL Command-Line Client”.\n        "
+        "\n          If a bit shift is invoked from within the\n          mysql client, binary string results display\n          using hexadecimal notation, depending on the value of the\n          --binary-as-hex. For more\n          information about that option, see Section\u00a06.5.1, \u201cmysql \u2014 The MySQL Command-Line Client\u201d.\n        "
     ],
     "Examples": [
         "mysql> SELECT 1 << 2;\n        -> 4\nmysql> SELECT HEX(_binary X'00FF00FF00FF' << 8);\n        -> 'FF00FF00FF00'"
     ],
     "Category": [
         "Bit Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT 1 << 2;",
+        "SELECT HEX(_binary X'00FF00FF00FF' << 8);"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT 1 << 2;",
+        "SELECT HEX(_binary X'00FF00FF00FF' << 8);"
     ]
 }

@@ -6,15 +6,63 @@
         "geometric_type |>> geometric_type"
     ],
     "Feature": [
-        "geometric_type |>> geometric_type → boolean"
+        "geometric_type |>> geometric_type \u2192 boolean"
     ],
     "Description": [
         "Is first object strictly above second? Available for point, box, polygon, circle."
     ],
     "Examples": [
-        "box '(5,5),(3,4)' |>> box '(3,3),(0,0)' → t"
+        "box '(5,5),(3,4)' |>> box '(3,3),(0,0)' \u2192 t"
     ],
     "Category": [
         "Geometric Functions and Operators"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT geometric_type1 >> geometric_type2;",
+        "SELECT geometric_type >> geometric_type;",
+        "SELECT $1 >> $2;",
+        "SELECT geometric_type_a >> geometric_type_b;",
+        "SELECT point1 >> point2;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 295,
+            "Prompt Tokens": 274,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 5.3700000000000004e-05
+        },
+        {
+            "Total Tokens": 462,
+            "Prompt Tokens": 443,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 7.785e-05
+        },
+        {
+            "Total Tokens": 626,
+            "Prompt Tokens": 607,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 0.00010245
+        },
+        {
+            "Total Tokens": 789,
+            "Prompt Tokens": 768,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 0.0001278
+        },
+        {
+            "Total Tokens": 956,
+            "Prompt Tokens": 937,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 0.00015195
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedColumn) column \"geometric_type1\" does not exist\nLINE 1: SELECT geometric_type1 >> geometric_type2;\n               ^\n\n",
+        "(psycopg2.errors.UndefinedColumn) column \"geometric_type\" does not exist\nLINE 1: SELECT geometric_type >> geometric_type;\n               ^\n\n",
+        "(psycopg2.errors.UndefinedParameter) there is no parameter $1\nLINE 1: SELECT $1 >> $2;\n               ^\n\n",
+        "(psycopg2.errors.UndefinedColumn) column \"geometric_type_a\" does not exist\nLINE 1: SELECT geometric_type_a >> geometric_type_b;\n               ^\n\n",
+        "(psycopg2.errors.UndefinedColumn) column \"point1\" does not exist\nLINE 1: SELECT point1 >> point2;\n               ^\n\n"
+    ],
+    "EffectiveSQLs": []
 }

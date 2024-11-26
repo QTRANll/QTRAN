@@ -18,5 +18,53 @@
     ],
     "Category": [
         "Date Time Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT usweekofyear(CURRENT_DATE);",
+        "SELECT usweekofyear('2023-10-01');",
+        "SELECT usweekofyear(DATE '2023-10-01');",
+        "SELECT usweekofyear(CAST('2023-10-01' AS DATE));",
+        "SELECT usweekofyear(DATE '2023-10-01'::DATE);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 320,
+            "Prompt Tokens": 298,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 5.789999999999999e-05
+        },
+        {
+            "Total Tokens": 484,
+            "Prompt Tokens": 458,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 8.43e-05
+        },
+        {
+            "Total Tokens": 650,
+            "Prompt Tokens": 622,
+            "Completion Tokens": 28,
+            "Total Cost (USD)": 0.00011009999999999999
+        },
+        {
+            "Total Tokens": 819,
+            "Prompt Tokens": 788,
+            "Completion Tokens": 31,
+            "Total Cost (USD)": 0.0001368
+        },
+        {
+            "Total Tokens": 988,
+            "Prompt Tokens": 957,
+            "Completion Tokens": 31,
+            "Total Cost (USD)": 0.00016214999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: no such unary operator 'usweekofyear(date)'\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: no such unary operator 'usweekofyear(char)'\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: no such unary operator 'usweekofyear(date)'\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: no such unary operator 'usweekofyear(date)'\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!Unexpected symbol (:)\n\n"
+    ],
+    "EffectiveSQLs": []
 }

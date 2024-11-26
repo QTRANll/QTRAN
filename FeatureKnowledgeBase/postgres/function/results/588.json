@@ -6,7 +6,7 @@
         "pg_read_binary_file"
     ],
     "Feature": [
-        "pg_read_binary_file ( filename text [, offset bigint, length bigint ] [, missing_ok boolean ] ) → bytea"
+        "pg_read_binary_file ( filename text [, offset bigint, length bigint ] [, missing_ok boolean ] ) \u2192 bytea"
     ],
     "Description": [
         "Returns all or part of a file. This function is identical to pg_read_file except that it can read arbitrary binary data, returning the result as bytea not text; accordingly, no encoding checks are performed.",
@@ -16,5 +16,53 @@
     "Examples": [],
     "Category": [
         "System Administration Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT pg_read_binary_file('example_file.bin');",
+        "SELECT pg_read_binary_file('non_existent_file.bin', 0, 100);",
+        "SELECT pg_read_binary_file('another_non_existent_file.bin');",
+        "SELECT pg_read_binary_file('dummy_file.bin', 0, 1);",
+        "SELECT pg_read_binary_file('non_existent_file.bin', 0, 0);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 382,
+            "Prompt Tokens": 359,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 6.764999999999999e-05
+        },
+        {
+            "Total Tokens": 548,
+            "Prompt Tokens": 517,
+            "Completion Tokens": 31,
+            "Total Cost (USD)": 9.615e-05
+        },
+        {
+            "Total Tokens": 711,
+            "Prompt Tokens": 685,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 0.00011835
+        },
+        {
+            "Total Tokens": 878,
+            "Prompt Tokens": 849,
+            "Completion Tokens": 29,
+            "Total Cost (USD)": 0.00014474999999999997
+        },
+        {
+            "Total Tokens": 1044,
+            "Prompt Tokens": 1013,
+            "Completion Tokens": 31,
+            "Total Cost (USD)": 0.00017054999999999997
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedFile) could not open file \"example_file.bin\" for reading: No such file or directory\n\n",
+        "(psycopg2.errors.UndefinedFile) could not open file \"non_existent_file.bin\" for reading: No such file or directory\n\n",
+        "(psycopg2.errors.UndefinedFile) could not open file \"another_non_existent_file.bin\" for reading: No such file or directory\n\n",
+        "(psycopg2.errors.UndefinedFile) could not open file \"dummy_file.bin\" for reading: No such file or directory\n\n",
+        "(psycopg2.errors.UndefinedFile) could not open file \"non_existent_file.bin\" for reading: No such file or directory\n\n"
+    ],
+    "EffectiveSQLs": []
 }

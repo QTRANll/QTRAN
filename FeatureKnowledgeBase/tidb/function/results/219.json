@@ -6,9 +6,9 @@
     ],
     "Description": [
         "\nMAX([DISTINCT]\n            expr)\n            [over_clause]\n",
-        "\n            Returns the maximum value of\n            expr.\n            MAX() may take a string\n            argument; in such cases, it returns the maximum string\n            value. See Section 10.3.1, “How MySQL Uses Indexes”. The\n            DISTINCT keyword can be used to find the\n            maximum of the distinct values of\n            expr, however, this produces the\n            same result as omitting DISTINCT.\n          ",
+        "\n            Returns the maximum value of\n            expr.\n            MAX() may take a string\n            argument; in such cases, it returns the maximum string\n            value. See Section\u00a010.3.1, \u201cHow MySQL Uses Indexes\u201d. The\n            DISTINCT keyword can be used to find the\n            maximum of the distinct values of\n            expr, however, this produces the\n            same result as omitting DISTINCT.\n          ",
         "\n            If there are no matching rows, or if\n            expr is NULL,\n            MAX() returns\n            NULL.\n          ",
-        "\n            This function executes as a window function if\n            over_clause is present.\n            over_clause is as described in\n            Section 14.20.2, “Window Function Concepts and Syntax”; it cannot be used\n            with DISTINCT.\n          ",
+        "\n            This function executes as a window function if\n            over_clause is present.\n            over_clause is as described in\n            Section\u00a014.20.2, \u201cWindow Function Concepts and Syntax\u201d; it cannot be used\n            with DISTINCT.\n          ",
         "Press CTRL+C to copy mysql> SELECT student_name, MIN(test_score), MAX(test_score)\n       FROM student\n       GROUP BY student_name;",
         "\n            For MAX(), MySQL currently\n            compares ENUM and\n            SET columns by their string\n            value rather than by the string's relative position in the\n            set. This differs from how ORDER BY\n            compares them.\n          "
     ],
@@ -16,6 +16,48 @@
         "mysql> SELECT student_name, MIN(test_score), MAX(test_score)\n       FROM student\n       GROUP BY student_name;"
     ],
     "Category": [
-        "GROUP BY 聚合函数"
+        "GROUP BY \u805a\u5408\u51fd\u6570"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT MAX(test_score) FROM student;",
+        "SELECT MAX(value) FROM my_table;",
+        "SELECT MAX(expr) FROM dual;",
+        "SELECT MAX(1);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 543,
+            "Prompt Tokens": 523,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 9.044999999999999e-05
+        },
+        {
+            "Total Tokens": 693,
+            "Prompt Tokens": 673,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 0.00011295
+        },
+        {
+            "Total Tokens": 843,
+            "Prompt Tokens": 824,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 0.000135
+        },
+        {
+            "Total Tokens": 986,
+            "Prompt Tokens": 968,
+            "Completion Tokens": 18,
+            "Total Cost (USD)": 0.00015599999999999997
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.ProgrammingError) (1146, \"Table 'knowledge_base_preprocess_tidb.student' doesn't exist\")\n",
+        "(pymysql.err.ProgrammingError) (1146, \"Table 'knowledge_base_preprocess_tidb.my_table' doesn't exist\")\n",
+        "(pymysql.err.OperationalError) (1054, \"Unknown column 'expr' in ''\")\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT MAX(1);"
     ]
 }

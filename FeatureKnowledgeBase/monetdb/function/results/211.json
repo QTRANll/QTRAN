@@ -18,5 +18,47 @@
     ],
     "Category": [
         "INET Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT sys.left_shift_assign(inet, inet);",
+        "SELECT sys.left_shift_assign('inet', 'inet');",
+        "SELECT sys.left_shift_assign(CAST('inet' AS inet), CAST('inet' AS inet));",
+        "SELECT sys.left_shift_assign(CAST('0.0.0.0' AS inet), CAST('0.0.0.0' AS inet));"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 301,
+            "Prompt Tokens": 278,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 5.5499999999999994e-05
+        },
+        {
+            "Total Tokens": 459,
+            "Prompt Tokens": 435,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 7.965e-05
+        },
+        {
+            "Total Tokens": 629,
+            "Prompt Tokens": 596,
+            "Completion Tokens": 33,
+            "Total Cost (USD)": 0.0001092
+        },
+        {
+            "Total Tokens": 811,
+            "Prompt Tokens": 766,
+            "Completion Tokens": 45,
+            "Total Cost (USD)": 0.00014189999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: identifier 'inet' unknown\n\n",
+        "(pymonetdb.exceptions.OperationalError) GDK reported error: Error while parsing, unexpected string 'inet'\n\n",
+        "(pymonetdb.exceptions.OperationalError) GDK reported error: Error while parsing, unexpected string 'inet'\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT sys.left_shift_assign(CAST('0.0.0.0' AS inet), CAST('0.0.0.0' AS inet));"
     ]
 }

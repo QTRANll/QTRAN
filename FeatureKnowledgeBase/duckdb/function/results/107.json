@@ -16,5 +16,39 @@
     ],
     "Category": [
         "Blob Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT blob1 || blob2;",
+        "SELECT blob || blob;",
+        "SELECT NULL || NULL;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 264,
+            "Prompt Tokens": 245,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 4.815e-05
+        },
+        {
+            "Total Tokens": 426,
+            "Prompt Tokens": 409,
+            "Completion Tokens": 17,
+            "Total Cost (USD)": 7.154999999999999e-05
+        },
+        {
+            "Total Tokens": 585,
+            "Prompt Tokens": 568,
+            "Completion Tokens": 17,
+            "Total Cost (USD)": 9.539999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.BinderException) Binder Error: Referenced column \"blob1\" not found in FROM clause!\nLINE 1: SELECT blob1 || blob2;\n               ^\n",
+        "(duckdb.duckdb.BinderException) Binder Error: Referenced column \"blob\" not found in FROM clause!\nLINE 1: SELECT blob || blob;\n               ^\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT NULL || NULL;"
     ]
 }

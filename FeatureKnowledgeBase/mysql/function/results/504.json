@@ -22,5 +22,53 @@
     ],
     "Category": [
         "Loadable Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT set_firewall_mode('fwuser@localhost', 'RECORDING');",
+        "SELECT set_firewall_mode('user', 'mode');",
+        "SELECT set_firewall_mode('example_user', 'example_mode');",
+        "SELECT set_firewall_mode('test_user', 'test_mode');",
+        "SELECT set_firewall_mode('user_name', 'mode_name');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 417,
+            "Prompt Tokens": 388,
+            "Completion Tokens": 29,
+            "Total Cost (USD)": 7.56e-05
+        },
+        {
+            "Total Tokens": 578,
+            "Prompt Tokens": 554,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 9.75e-05
+        },
+        {
+            "Total Tokens": 741,
+            "Prompt Tokens": 715,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 0.00012284999999999998
+        },
+        {
+            "Total Tokens": 904,
+            "Prompt Tokens": 878,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 0.00014729999999999998
+        },
+        {
+            "Total Tokens": 1067,
+            "Prompt Tokens": 1041,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 0.00017174999999999997
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.set_firewall_mode does not exist')\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.set_firewall_mode does not exist')\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.set_firewall_mode does not exist')\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.set_firewall_mode does not exist')\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.set_firewall_mode does not exist')\n"
+    ],
+    "EffectiveSQLs": []
 }

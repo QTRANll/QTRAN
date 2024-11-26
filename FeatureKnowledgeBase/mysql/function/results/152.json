@@ -26,5 +26,24 @@
     "Category": [
         "Built-In Functions and Operators",
         "Miscellaneous Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT IS_UUID('6ccd780c-baba-1026-9564-5b8c656024db');",
+        "SELECT IS_UUID('6CCD780C-BABA-1026-9564-5B8C656024DB');",
+        "SELECT IS_UUID('6ccd780cbaba102695645b8c656024db');",
+        "SELECT IS_UUID('{6ccd780c-baba-1026-9564-5b8c656024db}');",
+        "SELECT IS_UUID('6ccd780c-baba-1026-9564-5b8c6560');",
+        "SELECT IS_UUID(RAND());"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT IS_UUID('6ccd780c-baba-1026-9564-5b8c656024db');",
+        "SELECT IS_UUID('6CCD780C-BABA-1026-9564-5B8C656024DB');",
+        "SELECT IS_UUID('6ccd780cbaba102695645b8c656024db');",
+        "SELECT IS_UUID('{6ccd780c-baba-1026-9564-5b8c656024db}');",
+        "SELECT IS_UUID('6ccd780c-baba-1026-9564-5b8c6560');",
+        "SELECT IS_UUID(RAND());"
     ]
 }

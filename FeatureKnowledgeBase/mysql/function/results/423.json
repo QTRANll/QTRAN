@@ -27,5 +27,53 @@
     ],
     "Category": [
         "Loadable Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT asymmetric_derive('public_key_1', 'private_key_2');",
+        "SELECT asymmetric_derive('valid_public_key', 'valid_private_key');",
+        "SELECT asymmetric_derive('example_pub_key', 'example_priv_key');",
+        "SELECT asymmetric_derive('dummy_public_key', 'dummy_private_key');",
+        "SELECT asymmetric_derive('sample_pub_key', 'sample_priv_key');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 821,
+            "Prompt Tokens": 792,
+            "Completion Tokens": 29,
+            "Total Cost (USD)": 0.0001362
+        },
+        {
+            "Total Tokens": 985,
+            "Prompt Tokens": 958,
+            "Completion Tokens": 27,
+            "Total Cost (USD)": 0.00015989999999999996
+        },
+        {
+            "Total Tokens": 1149,
+            "Prompt Tokens": 1122,
+            "Completion Tokens": 27,
+            "Total Cost (USD)": 0.00018449999999999999
+        },
+        {
+            "Total Tokens": 1313,
+            "Prompt Tokens": 1286,
+            "Completion Tokens": 27,
+            "Total Cost (USD)": 0.0002091
+        },
+        {
+            "Total Tokens": 1477,
+            "Prompt Tokens": 1450,
+            "Completion Tokens": 27,
+            "Total Cost (USD)": 0.00023369999999999996
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.asymmetric_derive does not exist')\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.asymmetric_derive does not exist')\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.asymmetric_derive does not exist')\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.asymmetric_derive does not exist')\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.asymmetric_derive does not exist')\n"
+    ],
+    "EffectiveSQLs": []
 }

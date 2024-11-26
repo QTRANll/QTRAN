@@ -6,16 +6,34 @@
         "sign"
     ],
     "Feature": [
-        "sign ( numeric ) → numeric",
-        "sign ( double precision ) → double precision"
+        "sign ( numeric ) \u2192 numeric",
+        "sign ( double precision ) \u2192 double precision"
     ],
     "Description": [
         "Sign of the argument (-1, 0, or +1)"
     ],
     "Examples": [
-        "sign(-8.4) → -1"
+        "sign(-8.4) \u2192 -1"
     ],
     "Category": [
         "Mathematical Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT sign(-10);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 278,
+            "Prompt Tokens": 260,
+            "Completion Tokens": 18,
+            "Total Cost (USD)": 4.98e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT sign(-10);"
     ]
 }

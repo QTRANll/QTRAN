@@ -17,5 +17,39 @@
     ],
     "Category": [
         "Aggregate Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT array_agg(column_name) FROM table_name;",
+        "SELECT array_agg(column_name);",
+        "SELECT array_agg(value) FROM (SELECT 1 AS value UNION ALL SELECT 2 UNION ALL SELECT 3);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 285,
+            "Prompt Tokens": 262,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 5.3099999999999996e-05
+        },
+        {
+            "Total Tokens": 459,
+            "Prompt Tokens": 439,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 7.784999999999998e-05
+        },
+        {
+            "Total Tokens": 641,
+            "Prompt Tokens": 604,
+            "Completion Tokens": 37,
+            "Total Cost (USD)": 0.00011279999999999999
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.CatalogException) Catalog Error: Table with name table_name does not exist!\nDid you mean \"pg_tablespace\"?\nLINE 1: SELECT array_agg(column_name) FROM table_name;\n                                           ^\n",
+        "(duckdb.duckdb.BinderException) Binder Error: Referenced column \"column_name\" not found in FROM clause!\nLINE 1: SELECT array_agg(column_name);\n                         ^\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT array_agg(value) FROM (SELECT 1 AS value UNION ALL SELECT 2 UNION ALL SELECT 3);"
     ]
 }

@@ -21,5 +21,23 @@
     ],
     "Category": [
         "Lambda Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT array_apply(array[1, 2, 3], x -> x * 2)"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 334,
+            "Prompt Tokens": 302,
+            "Completion Tokens": 32,
+            "Total Cost (USD)": 6.45e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT array_apply(array[1, 2, 3], x -> x * 2)"
     ]
 }

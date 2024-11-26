@@ -21,5 +21,23 @@
     "Examples": [],
     "Category": [
         "XML Type"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT xmlparse(document '<?xml version=\"1.0\"?><root><element>Value</element></root>');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 1736,
+            "Prompt Tokens": 1699,
+            "Completion Tokens": 37,
+            "Total Cost (USD)": 0.00027705
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT xmlparse(document '<?xml version=\"1.0\"?><root><element>Value</element></root>');"
     ]
 }

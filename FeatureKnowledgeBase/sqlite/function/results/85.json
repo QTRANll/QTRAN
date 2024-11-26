@@ -15,5 +15,39 @@
     "Examples": [],
     "Category": [
         "JSON Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT json_group_array(value) FROM my_table;",
+        "SELECT json_group_array(value);",
+        "SELECT json_group_array('example_value');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 382,
+            "Prompt Tokens": 360,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 6.72e-05
+        },
+        {
+            "Total Tokens": 525,
+            "Prompt Tokens": 506,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 8.729999999999998e-05
+        },
+        {
+            "Total Tokens": 669,
+            "Prompt Tokens": 648,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 0.00010979999999999999
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(sqlite3.OperationalError) no such table: my_table\n",
+        "(sqlite3.OperationalError) no such column: value\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT json_group_array('example_value');"
     ]
 }

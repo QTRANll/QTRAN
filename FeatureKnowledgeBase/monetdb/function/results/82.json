@@ -18,5 +18,53 @@
     ],
     "Category": [
         "Character String Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT field('s', 's1', 's2', 's3')",
+        "SELECT position('s', 's1, s2, s3')",
+        "SELECT position('s', 's1 s2 s3')",
+        "SELECT position('s', 's1 s2 s3')",
+        "SELECT position('s', 's1 s2 s3')"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 349,
+            "Prompt Tokens": 319,
+            "Completion Tokens": 30,
+            "Total Cost (USD)": 6.585e-05
+        },
+        {
+            "Total Tokens": 516,
+            "Prompt Tokens": 488,
+            "Completion Tokens": 28,
+            "Total Cost (USD)": 8.999999999999999e-05
+        },
+        {
+            "Total Tokens": 687,
+            "Prompt Tokens": 661,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 0.00011475
+        },
+        {
+            "Total Tokens": 858,
+            "Prompt Tokens": 832,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 0.00014039999999999997
+        },
+        {
+            "Total Tokens": 1029,
+            "Prompt Tokens": 1003,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 0.00016604999999999997
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: no such operator 'field'\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!syntax error, unexpected ',' in: \"select position('s',\"\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!syntax error, unexpected ',' in: \"select position('s',\"\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!syntax error, unexpected ',' in: \"select position('s',\"\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!syntax error, unexpected ',' in: \"select position('s',\"\n\n"
+    ],
+    "EffectiveSQLs": []
 }

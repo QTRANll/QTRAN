@@ -19,5 +19,39 @@
     "Category": [
         "Built-In Functions and Operators",
         "Spatial Analysis Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT MBREquals(g1, g2);",
+        "SELECT MBREquals(GeomFromText('POINT(1 1)'), GeomFromText('POINT(1 1)'));",
+        "SELECT MBREquals(ST_GeomFromText('POINT(1 1)'), ST_GeomFromText('POINT(1 1)'));"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 380,
+            "Prompt Tokens": 357,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 6.735e-05
+        },
+        {
+            "Total Tokens": 556,
+            "Prompt Tokens": 516,
+            "Completion Tokens": 40,
+            "Total Cost (USD)": 0.0001014
+        },
+        {
+            "Total Tokens": 739,
+            "Prompt Tokens": 695,
+            "Completion Tokens": 44,
+            "Total Cost (USD)": 0.00013064999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.OperationalError) (1054, \"Unknown column 'g1' in 'field list'\")\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.GeomFromText does not exist')\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT MBREquals(ST_GeomFromText('POINT(1 1)'), ST_GeomFromText('POINT(1 1)'));"
     ]
 }

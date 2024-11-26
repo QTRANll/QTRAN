@@ -18,5 +18,39 @@
     ],
     "Category": [
         "INET Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT sys.abbrev(inet);",
+        "SELECT sys.abbrev('inet');",
+        "SELECT sys.abbrev(NULL);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 289,
+            "Prompt Tokens": 269,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 5.235e-05
+        },
+        {
+            "Total Tokens": 440,
+            "Prompt Tokens": 420,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 7.499999999999998e-05
+        },
+        {
+            "Total Tokens": 593,
+            "Prompt Tokens": 574,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 9.749999999999998e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: identifier 'inet' unknown\n\n",
+        "(pymonetdb.exceptions.OperationalError) GDK reported error: Error while parsing, unexpected string 'inet'\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT sys.abbrev(NULL);"
     ]
 }

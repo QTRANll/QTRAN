@@ -6,15 +6,33 @@
         "num_nonnulls"
     ],
     "Feature": [
-        "num_nonnulls ( VARIADIC \"any\" ) → integer"
+        "num_nonnulls ( VARIADIC \"any\" ) \u2192 integer"
     ],
     "Description": [
         "Returns the number of non-null arguments."
     ],
     "Examples": [
-        "num_nonnulls(1, NULL, 2) → 2"
+        "num_nonnulls(1, NULL, 2) \u2192 2"
     ],
     "Category": [
         "Comparison Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT num_nonnulls(1, NULL, 3, NULL, 5);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 293,
+            "Prompt Tokens": 262,
+            "Completion Tokens": 31,
+            "Total Cost (USD)": 5.79e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT num_nonnulls(1, NULL, 3, NULL, 5);"
     ]
 }

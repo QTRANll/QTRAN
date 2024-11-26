@@ -20,5 +20,28 @@
     ],
     "Category": [
         "Comparison Operators"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT 1 = 0;",
+        "SELECT '0' = 0;",
+        "SELECT '0.0' = 0;",
+        "SELECT '0.01' = 0;",
+        "SELECT '.01' = 0.01;",
+        "SELECT (5 * 2) = CONCAT('1', '0');",
+        "SELECT 1 = NULL;",
+        "SELECT NULL = NULL;"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT 1 = 0;",
+        "SELECT '0' = 0;",
+        "SELECT '0.0' = 0;",
+        "SELECT '0.01' = 0;",
+        "SELECT '.01' = 0.01;",
+        "SELECT (5 * 2) = CONCAT('1', '0');",
+        "SELECT 1 = NULL;",
+        "SELECT NULL = NULL;"
     ]
 }

@@ -6,7 +6,7 @@
         "pg_partition_root"
     ],
     "Feature": [
-        "pg_partition_root ( regclass ) → regclass"
+        "pg_partition_root ( regclass ) \u2192 regclass"
     ],
     "Description": [
         "Returns the top-most parent of the partition tree to which the given relation belongs. Returns NULL if the relation does not exist or is not a partition or partitioned table."
@@ -14,5 +14,53 @@
     "Examples": [],
     "Category": [
         "System Administration Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT pg_partition_root('your_partitioned_table'::regclass);",
+        "SELECT pg_partition_root('existing_partitioned_table'::regclass);",
+        "SELECT pg_partition_root('some_partitioned_table'::regclass);",
+        "SELECT pg_partition_root('your_actual_partitioned_table'::regclass);",
+        "SELECT pg_partition_root('non_existent_partitioned_table'::regclass);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 307,
+            "Prompt Tokens": 280,
+            "Completion Tokens": 27,
+            "Total Cost (USD)": 5.819999999999999e-05
+        },
+        {
+            "Total Tokens": 484,
+            "Prompt Tokens": 457,
+            "Completion Tokens": 27,
+            "Total Cost (USD)": 8.475e-05
+        },
+        {
+            "Total Tokens": 660,
+            "Prompt Tokens": 633,
+            "Completion Tokens": 27,
+            "Total Cost (USD)": 0.00011114999999999999
+        },
+        {
+            "Total Tokens": 838,
+            "Prompt Tokens": 810,
+            "Completion Tokens": 28,
+            "Total Cost (USD)": 0.0001383
+        },
+        {
+            "Total Tokens": 1017,
+            "Prompt Tokens": 988,
+            "Completion Tokens": 29,
+            "Total Cost (USD)": 0.0001656
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedTable) relation \"your_partitioned_table\" does not exist\nLINE 1: SELECT pg_partition_root('your_partitioned_table'::regclass)...\n                                 ^\n\n",
+        "(psycopg2.errors.UndefinedTable) relation \"existing_partitioned_table\" does not exist\nLINE 1: SELECT pg_partition_root('existing_partitioned_table'::regcl...\n                                 ^\n\n",
+        "(psycopg2.errors.UndefinedTable) relation \"some_partitioned_table\" does not exist\nLINE 1: SELECT pg_partition_root('some_partitioned_table'::regclass)...\n                                 ^\n\n",
+        "(psycopg2.errors.UndefinedTable) relation \"your_actual_partitioned_table\" does not exist\nLINE 1: SELECT pg_partition_root('your_actual_partitioned_table'::re...\n                                 ^\n\n",
+        "(psycopg2.errors.UndefinedTable) relation \"non_existent_partitioned_table\" does not exist\nLINE 1: SELECT pg_partition_root('non_existent_partitioned_table'::r...\n                                 ^\n\n"
+    ],
+    "EffectiveSQLs": []
 }

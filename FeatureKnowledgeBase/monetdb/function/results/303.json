@@ -15,5 +15,39 @@
     "Examples": [],
     "Category": [
         "Window Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT sum(numeric_expr);",
+        "SELECT sum(column_name) FROM table_name;",
+        "SELECT sum(1);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 279,
+            "Prompt Tokens": 260,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 5.04e-05
+        },
+        {
+            "Total Tokens": 431,
+            "Prompt Tokens": 410,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 7.409999999999999e-05
+        },
+        {
+            "Total Tokens": 582,
+            "Prompt Tokens": 564,
+            "Completion Tokens": 18,
+            "Total Cost (USD)": 9.539999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: identifier 'numeric_expr' unknown\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42S02!SELECT: no such table 'table_name'\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT sum(1);"
     ]
 }

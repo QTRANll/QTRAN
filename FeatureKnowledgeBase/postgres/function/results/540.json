@@ -6,7 +6,7 @@
         "pg_logical_slot_peek_changes"
     ],
     "Feature": [
-        "pg_logical_slot_peek_changes ( slot_name name, upto_lsn pg_lsn, upto_nchanges integer, VARIADIC options text[] ) → setof record ( lsn pg_lsn, xid xid, data text )"
+        "pg_logical_slot_peek_changes ( slot_name name, upto_lsn pg_lsn, upto_nchanges integer, VARIADIC options text[] ) \u2192 setof record ( lsn pg_lsn, xid xid, data text )"
     ],
     "Description": [
         "Behaves just like the pg_logical_slot_get_changes() function, except that changes are not consumed; that is, they will be returned again on future calls."
@@ -14,5 +14,53 @@
     "Examples": [],
     "Category": [
         "System Administration Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT * FROM pg_logical_slot_peek_changes('my_slot', '0/0', 10);",
+        "SELECT * FROM pg_logical_slot_peek_changes('my_slot', '0/0', 10) WHERE wal_level >= 'logical';",
+        "SELECT * FROM pg_logical_slot_peek_changes('my_slot', '0/0', 10);",
+        "SELECT * FROM pg_logical_slot_peek_changes('my_slot', '0/0', 10);",
+        "SELECT * FROM pg_logical_slot_peek_changes('my_slot', '0/0', 10);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 365,
+            "Prompt Tokens": 330,
+            "Completion Tokens": 35,
+            "Total Cost (USD)": 7.049999999999999e-05
+        },
+        {
+            "Total Tokens": 537,
+            "Prompt Tokens": 495,
+            "Completion Tokens": 42,
+            "Total Cost (USD)": 9.944999999999999e-05
+        },
+        {
+            "Total Tokens": 731,
+            "Prompt Tokens": 696,
+            "Completion Tokens": 35,
+            "Total Cost (USD)": 0.00012539999999999999
+        },
+        {
+            "Total Tokens": 896,
+            "Prompt Tokens": 861,
+            "Completion Tokens": 35,
+            "Total Cost (USD)": 0.00015015
+        },
+        {
+            "Total Tokens": 1061,
+            "Prompt Tokens": 1026,
+            "Completion Tokens": 35,
+            "Total Cost (USD)": 0.0001749
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.ObjectNotInPrerequisiteState) logical decoding requires wal_level >= logical\n\n",
+        "(psycopg2.errors.UndefinedColumn) column \"wal_level\" does not exist\nLINE 1: ...cal_slot_peek_changes('my_slot', '0/0', 10) WHERE wal_level ...\n                                                             ^\n\n",
+        "(psycopg2.errors.ObjectNotInPrerequisiteState) logical decoding requires wal_level >= logical\n\n",
+        "(psycopg2.errors.ObjectNotInPrerequisiteState) logical decoding requires wal_level >= logical\n\n",
+        "(psycopg2.errors.ObjectNotInPrerequisiteState) logical decoding requires wal_level >= logical\n\n"
+    ],
+    "EffectiveSQLs": []
 }

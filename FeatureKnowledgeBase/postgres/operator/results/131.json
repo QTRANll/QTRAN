@@ -6,15 +6,41 @@
         "jsonb @? jsonpath"
     ],
     "Feature": [
-        "jsonb @? jsonpath → boolean"
+        "jsonb @? jsonpath \u2192 boolean"
     ],
     "Description": [
         "Does JSON path return any item for the specified JSON value?"
     ],
     "Examples": [
-        "'{\"a\":[1,2,3,4,5]}'::jsonb @? '$.a[*] ? (@ > 2)' → t"
+        "'{\"a\":[1,2,3,4,5]}'::jsonb @? '$.a[*] ? (@ > 2)' \u2192 t"
     ],
     "Category": [
         "JSON Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT jsonb @? '$.store.book[*].author' FROM your_table;",
+        "SELECT jsonb @? '$.store.book[*].author' FROM (SELECT '{}'::jsonb AS jsonb) AS temp;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 294,
+            "Prompt Tokens": 265,
+            "Completion Tokens": 29,
+            "Total Cost (USD)": 5.714999999999999e-05
+        },
+        {
+            "Total Tokens": 486,
+            "Prompt Tokens": 447,
+            "Completion Tokens": 39,
+            "Total Cost (USD)": 9.044999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedTable) relation \"your_table\" does not exist\nLINE 1: SELECT jsonb @? '$.store.book[*].author' FROM your_table;\n                                                      ^\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT jsonb @? '$.store.book[*].author' FROM (SELECT '{}'::jsonb AS jsonb) AS temp;"
     ]
 }

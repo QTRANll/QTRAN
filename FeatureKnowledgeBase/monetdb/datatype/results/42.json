@@ -1,0 +1,68 @@
+{
+    "HTML": [
+        "https://www.monetdb.org/documentation-Aug2024/user-guide/sql-manual/data-types/temporal-types"
+    ],
+    "Title": [
+        "INTERVAL YEAR"
+    ],
+    "Feature": [
+        "INTERVAL YEAR"
+    ],
+    "Description": [
+        "month_interval",
+        "4-bytes",
+        "integer number of months"
+    ],
+    "Examples": [],
+    "Category": [
+        "Temporal Datatypes"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT INTERVAL '1 YEAR';",
+        "SELECT INTERVAL '1 YEAR'",
+        "SELECT INTERVAL '1 YEAR' AS interval_year",
+        "SELECT INTERVAL '1 YEAR'",
+        "SELECT INTERVAL '1 YEAR'"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 274,
+            "Prompt Tokens": 254,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 5.01e-05
+        },
+        {
+            "Total Tokens": 431,
+            "Prompt Tokens": 412,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 7.319999999999999e-05
+        },
+        {
+            "Total Tokens": 594,
+            "Prompt Tokens": 571,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 9.944999999999998e-05
+        },
+        {
+            "Total Tokens": 750,
+            "Prompt Tokens": 731,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 0.00012104999999999999
+        },
+        {
+            "Total Tokens": 909,
+            "Prompt Tokens": 890,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 0.0001449
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymonetdb.exceptions.OperationalError) 42000!syntax error, unexpected SCOLON in: \"select interval '1 YEAR';\"\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!syntax error, unexpected SCOLON in: \"select interval '1 YEAR'\n!;\"\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!syntax error, unexpected AS in: \"select interval '1 YEAR' as\"\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!syntax error, unexpected SCOLON in: \"select interval '1 YEAR'\n!;\"\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!syntax error, unexpected SCOLON in: \"select interval '1 YEAR'\n!;\"\n\n"
+    ],
+    "EffectiveSQLs": []
+}

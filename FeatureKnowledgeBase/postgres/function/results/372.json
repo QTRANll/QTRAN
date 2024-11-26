@@ -6,7 +6,7 @@
         "last_value"
     ],
     "Feature": [
-        "last_value ( value anyelement ) → anyelement"
+        "last_value ( value anyelement ) \u2192 anyelement"
     ],
     "Description": [
         "Returns value evaluated at the row that is the last row of the window frame."
@@ -14,5 +14,31 @@
     "Examples": [],
     "Category": [
         "Window Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT last_value(some_column) OVER (ORDER BY some_order_column) FROM some_table;",
+        "SELECT last_value(some_column) OVER () FROM (VALUES (1), (2), (3)) AS some_table(some_column);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 290,
+            "Prompt Tokens": 259,
+            "Completion Tokens": 31,
+            "Total Cost (USD)": 5.7449999999999994e-05
+        },
+        {
+            "Total Tokens": 479,
+            "Prompt Tokens": 438,
+            "Completion Tokens": 41,
+            "Total Cost (USD)": 9.03e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedTable) relation \"some_table\" does not exist\nLINE 1: ...me_column) OVER (ORDER BY some_order_column) FROM some_table...\n                                                             ^\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT last_value(some_column) OVER () FROM (VALUES (1), (2), (3)) AS some_table(some_column);"
     ]
 }

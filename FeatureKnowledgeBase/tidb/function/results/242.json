@@ -10,7 +10,7 @@
     ],
     "Description": [
         "INET_ATON()",
-        "INET_ATON() 函数用于将点分十进制形式表示的 IPv4 地址转换为可有效存储的二进制形式。",
+        "INET_ATON() \u51fd\u6570\u7528\u4e8e\u5c06\u70b9\u5206\u5341\u8fdb\u5236\u5f62\u5f0f\u8868\u793a\u7684 IPv4 \u5730\u5740\u8f6c\u6362\u4e3a\u53ef\u6709\u6548\u5b58\u50a8\u7684\u4e8c\u8fdb\u5236\u5f62\u5f0f\u3002",
         "SELECT INET_ATON('127.0.0.1');\n",
         "+------------------------+\n| INET_ATON('127.0.0.1') |\n+------------------------+\n|             2130706433 |\n+------------------------+\n1 row in set (0.00 sec)\n"
     ],
@@ -18,6 +18,15 @@
         "SELECT INET_ATON('127.0.0.1');\n"
     ],
     "Category": [
-        "其它函数"
+        "\u5176\u5b83\u51fd\u6570"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT INET_ATON('127.0.0.1');"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT INET_ATON('127.0.0.1');"
     ]
 }

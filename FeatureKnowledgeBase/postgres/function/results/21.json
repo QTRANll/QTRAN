@@ -6,16 +6,34 @@
         "power"
     ],
     "Feature": [
-        "power ( a numeric, b numeric ) → numeric",
-        "power ( a double precision, b double precision ) → double precision"
+        "power ( a numeric, b numeric ) \u2192 numeric",
+        "power ( a double precision, b double precision ) \u2192 double precision"
     ],
     "Description": [
         "a raised to the power of b"
     ],
     "Examples": [
-        "power(9, 3) → 729"
+        "power(9, 3) \u2192 729"
     ],
     "Category": [
         "Mathematical Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT power(2, 3);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 283,
+            "Prompt Tokens": 262,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 5.19e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT power(2, 3);"
     ]
 }

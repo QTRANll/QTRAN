@@ -6,15 +6,33 @@
         "get_bit"
     ],
     "Feature": [
-        "get_bit ( bits bit, n integer ) → integer"
+        "get_bit ( bits bit, n integer ) \u2192 integer"
     ],
     "Description": [
         "Extracts n'th bit from bit string; the first (leftmost) bit is bit 0."
     ],
     "Examples": [
-        "get_bit(B'101010101010101010', 6) → 1"
+        "get_bit(B'101010101010101010', 6) \u2192 1"
     ],
     "Category": [
         "Bit String Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT get_bit(B'101010', 2);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 289,
+            "Prompt Tokens": 265,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 5.4149999999999995e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT get_bit(B'101010', 2);"
     ]
 }

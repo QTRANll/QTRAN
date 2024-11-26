@@ -6,7 +6,7 @@
         "stddev_samp"
     ],
     "Feature": [
-        "stddev_samp ( numeric_type ) → double precision for real or double precision, otherwise numeric"
+        "stddev_samp ( numeric_type ) \u2192 double precision for real or double precision, otherwise numeric"
     ],
     "Description": [
         "Computes the sample standard deviation of the input values."
@@ -14,5 +14,31 @@
     "Examples": [],
     "Category": [
         "Aggregate Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT stddev_samp(column_name) FROM table_name;",
+        "SELECT stddev_samp(value) FROM (VALUES (1), (2), (3), (4), (5)) AS temp(value);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 293,
+            "Prompt Tokens": 269,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 5.4749999999999996e-05
+        },
+        {
+            "Total Tokens": 481,
+            "Prompt Tokens": 439,
+            "Completion Tokens": 42,
+            "Total Cost (USD)": 9.104999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedTable) relation \"table_name\" does not exist\nLINE 1: SELECT stddev_samp(column_name) FROM table_name;\n                                             ^\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT stddev_samp(value) FROM (VALUES (1), (2), (3), (4), (5)) AS temp(value);"
     ]
 }

@@ -23,5 +23,14 @@
         "SELECT BINARY 'a' = 'A';",
         "SELECT 'a' = 'a ';",
         "SELECT BINARY 'a' = 'a ';"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT 'a' = 'A';",
+        "SELECT BINARY 'a' = 'A';",
+        "SELECT 'a' = 'a ';",
+        "SELECT BINARY 'a' = 'a ';"
     ]
 }

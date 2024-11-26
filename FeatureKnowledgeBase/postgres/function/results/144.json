@@ -6,15 +6,33 @@
         "to_number"
     ],
     "Feature": [
-        "to_number ( text, text ) → numeric"
+        "to_number ( text, text ) \u2192 numeric"
     ],
     "Description": [
         "Converts string to numeric according to the given format."
     ],
     "Examples": [
-        "to_number('12,454.8-', '99G999D9S') → -12454.8"
+        "to_number('12,454.8-', '99G999D9S') \u2192 -12454.8"
     ],
     "Category": [
         "Data Type Formatting Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT to_number('123.45', '999.99');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 279,
+            "Prompt Tokens": 253,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 5.354999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT to_number('123.45', '999.99');"
     ]
 }

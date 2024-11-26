@@ -6,15 +6,33 @@
         "text @@ tsquery"
     ],
     "Feature": [
-        "text @@ tsquery → boolean"
+        "text @@ tsquery \u2192 boolean"
     ],
     "Description": [
         "Does text string, after implicit invocation of to_tsvector(), match tsquery?"
     ],
     "Examples": [
-        "'fat cats ate rats' @@ to_tsquery('cat & rat') → t"
+        "'fat cats ate rats' @@ to_tsquery('cat & rat') \u2192 t"
     ],
     "Category": [
         "Text Search Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT 'your text here' @@ to_tsquery('your_query_here');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 290,
+            "Prompt Tokens": 262,
+            "Completion Tokens": 28,
+            "Total Cost (USD)": 5.6099999999999995e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT 'your text here' @@ to_tsquery('your_query_here');"
     ]
 }

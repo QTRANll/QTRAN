@@ -6,7 +6,7 @@
         "pg_copy_logical_replication_slot"
     ],
     "Feature": [
-        "pg_copy_logical_replication_slot ( src_slot_name name, dst_slot_name name [, temporary boolean [, plugin name ]] ) → record ( slot_name name, lsn pg_lsn )"
+        "pg_copy_logical_replication_slot ( src_slot_name name, dst_slot_name name [, temporary boolean [, plugin name ]] ) \u2192 record ( slot_name name, lsn pg_lsn )"
     ],
     "Description": [
         "Copies an existing logical replication slot named src_slot_name to a logical replication slot named dst_slot_name, optionally changing the output plugin and persistence. The copied logical slot starts from the same LSN as the source logical slot. Both temporary and plugin are optional; if they are omitted, the values of the source slot are used."
@@ -14,5 +14,53 @@
     "Examples": [],
     "Category": [
         "System Administration Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT pg_copy_logical_replication_slot('source_slot', 'destination_slot');",
+        "SET wal_level = 'logical'; SELECT pg_copy_logical_replication_slot('source_slot', 'destination_slot');",
+        "SELECT pg_copy_logical_replication_slot('source_slot', 'destination_slot'); -- Ensure wal_level is set to 'logical' before executing this.",
+        "-- Please ensure that wal_level is set to 'logical' in the postgresql.conf file and restart the server before executing the following command.\nSELECT pg_copy_logical_replication_slot('source_slot', 'destination_slot');",
+        "-- Ensure wal_level is set to 'logical' in postgresql.conf and restart the server before executing:\nSELECT pg_copy_logical_replication_slot('source_slot', 'destination_slot');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 380,
+            "Prompt Tokens": 351,
+            "Completion Tokens": 29,
+            "Total Cost (USD)": 7.005e-05
+        },
+        {
+            "Total Tokens": 546,
+            "Prompt Tokens": 510,
+            "Completion Tokens": 36,
+            "Total Cost (USD)": 9.809999999999999e-05
+        },
+        {
+            "Total Tokens": 722,
+            "Prompt Tokens": 680,
+            "Completion Tokens": 42,
+            "Total Cost (USD)": 0.0001272
+        },
+        {
+            "Total Tokens": 909,
+            "Prompt Tokens": 852,
+            "Completion Tokens": 57,
+            "Total Cost (USD)": 0.00016199999999999998
+        },
+        {
+            "Total Tokens": 1089,
+            "Prompt Tokens": 1039,
+            "Completion Tokens": 50,
+            "Total Cost (USD)": 0.00018584999999999996
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.ObjectNotInPrerequisiteState) logical decoding requires wal_level >= logical\n\n",
+        "(psycopg2.errors.CantChangeRuntimeParam) parameter \"wal_level\" cannot be changed without restarting the server\n\n",
+        "(psycopg2.errors.ObjectNotInPrerequisiteState) logical decoding requires wal_level >= logical\n\n",
+        "(psycopg2.errors.ObjectNotInPrerequisiteState) logical decoding requires wal_level >= logical\n\n",
+        "(psycopg2.errors.ObjectNotInPrerequisiteState) logical decoding requires wal_level >= logical\n\n"
+    ],
+    "EffectiveSQLs": []
 }

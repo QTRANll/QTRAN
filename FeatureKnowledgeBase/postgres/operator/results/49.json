@@ -6,15 +6,33 @@
         "date - interval"
     ],
     "Feature": [
-        "date - interval → timestamp"
+        "date - interval \u2192 timestamp"
     ],
     "Description": [
         "Subtract an interval from a date"
     ],
     "Examples": [
-        "date '2001-09-28' - interval '1 hour' → 2001-09-27 23:00:00"
+        "date '2001-09-28' - interval '1 hour' \u2192 2001-09-27 23:00:00"
     ],
     "Category": [
         "Date divide Time Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT NOW() - INTERVAL '1 day';"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 270,
+            "Prompt Tokens": 247,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 5.0849999999999996e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT NOW() - INTERVAL '1 day';"
     ]
 }

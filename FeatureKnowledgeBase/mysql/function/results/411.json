@@ -20,5 +20,39 @@
     "Category": [
         "Built-In Functions and Operators",
         "Aggregate Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT VAR_SAMP(column_name) FROM table_name;",
+        "SELECT VAR_SAMP(column_name);",
+        "SELECT VAR_SAMP(1);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 411,
+            "Prompt Tokens": 388,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 7.2e-05
+        },
+        {
+            "Total Tokens": 569,
+            "Prompt Tokens": 549,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 9.434999999999999e-05
+        },
+        {
+            "Total Tokens": 725,
+            "Prompt Tokens": 705,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 0.00011774999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.ProgrammingError) (1146, \"Table 'knowledge_base_preprocess_mysql.table_name' doesn't exist\")\n",
+        "(pymysql.err.OperationalError) (1054, \"Unknown column 'column_name' in 'field list'\")\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT VAR_SAMP(1);"
     ]
 }

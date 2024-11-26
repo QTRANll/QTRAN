@@ -22,5 +22,11 @@
     ],
     "EffectiveSQLsRefined": [
         "SELECT AsText(ST_ENVELOPE(GeomFromText('LineString(1 1,4 4)')));"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT AsText(ST_ENVELOPE(GeomFromText('LineString(1 1,4 4)')));"
     ]
 }

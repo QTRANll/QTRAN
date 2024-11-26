@@ -6,15 +6,33 @@
         "trunc"
     ],
     "Feature": [
-        "trunc ( v numeric, s integer ) → numeric"
+        "trunc ( v numeric, s integer ) \u2192 numeric"
     ],
     "Description": [
         "Truncates v to s decimal places"
     ],
     "Examples": [
-        "trunc(42.4382, 2) → 42.43"
+        "trunc(42.4382, 2) \u2192 42.43"
     ],
     "Category": [
         "Mathematical Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT trunc(123.4567, 2);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 276,
+            "Prompt Tokens": 252,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 5.2199999999999995e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT trunc(123.4567, 2);"
     ]
 }

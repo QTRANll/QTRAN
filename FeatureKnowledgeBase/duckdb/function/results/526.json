@@ -16,5 +16,23 @@
     ],
     "Category": [
         "Timestamp with Time Zone Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT greatest('2023-10-01 12:00:00+00', '2023-10-02 12:00:00+00');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 333,
+            "Prompt Tokens": 286,
+            "Completion Tokens": 47,
+            "Total Cost (USD)": 7.11e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT greatest('2023-10-01 12:00:00+00', '2023-10-02 12:00:00+00');"
     ]
 }

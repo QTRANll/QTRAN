@@ -6,8 +6,8 @@
         "pg_advisory_lock"
     ],
     "Feature": [
-        "pg_advisory_lock ( key bigint ) → void",
-        "pg_advisory_lock ( key1 integer, key2 integer ) → void"
+        "pg_advisory_lock ( key bigint ) \u2192 void",
+        "pg_advisory_lock ( key1 integer, key2 integer ) \u2192 void"
     ],
     "Description": [
         "Obtains an exclusive session-level advisory lock, waiting if necessary."
@@ -15,5 +15,23 @@
     "Examples": [],
     "Category": [
         "System Administration Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT pg_advisory_lock(12345);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 307,
+            "Prompt Tokens": 284,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 5.639999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT pg_advisory_lock(12345);"
     ]
 }

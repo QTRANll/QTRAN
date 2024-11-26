@@ -24,5 +24,13 @@
         "SELECT LOCATE('bar', 'foobarbar');",
         "SELECT LOCATE('My', 'Maria');",
         "SELECT LOCATE('bar', 'foobarbar', 5);"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT LOCATE('bar', 'foobarbar');",
+        "SELECT LOCATE('My', 'Maria');",
+        "SELECT LOCATE('bar', 'foobarbar', 5);"
     ]
 }

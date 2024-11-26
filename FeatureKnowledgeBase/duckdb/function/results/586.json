@@ -16,5 +16,31 @@
     ],
     "Category": [
         "Utility Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT ifnull(column_name, 'default_value');",
+        "SELECT ifnull(1, 'default_value');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 284,
+            "Prompt Tokens": 261,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 5.294999999999999e-05
+        },
+        {
+            "Total Tokens": 458,
+            "Prompt Tokens": 435,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 7.905e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.BinderException) Binder Error: Referenced column \"column_name\" not found in FROM clause!\nLINE 1: SELECT ifnull(column_name, 'default_value');\n                      ^\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT ifnull(1, 'default_value');"
     ]
 }

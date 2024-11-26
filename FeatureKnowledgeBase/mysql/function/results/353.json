@@ -26,5 +26,16 @@
     "Category": [
         "Built-In Functions and Operators",
         "Spatial Analysis Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT ST_AsText(ST_Simplify(@g, 0.5));",
+        "SELECT ST_AsText(ST_Simplify(@g, 1.0));"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT ST_AsText(ST_Simplify(@g, 0.5));",
+        "SELECT ST_AsText(ST_Simplify(@g, 1.0));"
     ]
 }

@@ -14,5 +14,39 @@
     "Examples": [],
     "Category": [
         "String Data Types"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "CREATE TABLE example_table (example_column MEDIUMTEXT);",
+        "ALTER TABLE example_table ADD COLUMN example_column MEDIUMTEXT;",
+        "SELECT example_column FROM example_table;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 347,
+            "Prompt Tokens": 323,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 6.285e-05
+        },
+        {
+            "Total Tokens": 500,
+            "Prompt Tokens": 476,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 8.579999999999998e-05
+        },
+        {
+            "Total Tokens": 641,
+            "Prompt Tokens": 622,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 0.0001047
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.OperationalError) (1050, \"Table 'example_table' already exists\")\n",
+        "This result object does not return rows. It has been closed automatically.",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT example_column FROM example_table;"
     ]
 }

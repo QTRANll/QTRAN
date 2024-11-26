@@ -3,18 +3,68 @@
         "https://docs.pingcap.com/zh/tidb/v8.3/data-type-numeric"
     ],
     "Title": [
-        "BIT 类型"
+        "BIT \u7c7b\u578b"
     ],
     "Feature": [
-        "BIT 类型"
+        "BIT \u7c7b\u578b"
     ],
     "Description": [
-        "BIT 类型",
-        "比特值类型。M 表示比特位的长度，取值范围从 1 到 64，其默认值是 1。",
+        "BIT \u7c7b\u578b",
+        "\u6bd4\u7279\u503c\u7c7b\u578b\u3002M \u8868\u793a\u6bd4\u7279\u4f4d\u7684\u957f\u5ea6\uff0c\u53d6\u503c\u8303\u56f4\u4ece 1 \u5230 64\uff0c\u5176\u9ed8\u8ba4\u503c\u662f 1\u3002",
         "BIT[(M)]\n"
     ],
     "Examples": [],
     "Category": [
-        "数值类型"
+        "\u6570\u503c\u7c7b\u578b"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT BIT(1);",
+        "SELECT BIT;",
+        "SELECT CAST(1 AS BIT);",
+        "SELECT BIT(1);",
+        "SELECT 1 & 1;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 296,
+            "Prompt Tokens": 278,
+            "Completion Tokens": 18,
+            "Total Cost (USD)": 5.2499999999999995e-05
+        },
+        {
+            "Total Tokens": 466,
+            "Prompt Tokens": 451,
+            "Completion Tokens": 15,
+            "Total Cost (USD)": 7.664999999999999e-05
+        },
+        {
+            "Total Tokens": 615,
+            "Prompt Tokens": 595,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 0.00010124999999999998
+        },
+        {
+            "Total Tokens": 788,
+            "Prompt Tokens": 770,
+            "Completion Tokens": 18,
+            "Total Cost (USD)": 0.00012629999999999998
+        },
+        {
+            "Total Tokens": 962,
+            "Prompt Tokens": 943,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 0.00015284999999999997
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.ProgrammingError) (1064, 'You have an error in your SQL syntax; check the manual that corresponds to your TiDB version for the right syntax to use line 1 column 11 near \"(1);\" ')\n",
+        "(pymysql.err.OperationalError) (1054, \"Unknown column 'bit' in 'field list'\")\n",
+        "(pymysql.err.ProgrammingError) (1064, 'You have an error in your SQL syntax; check the manual that corresponds to your TiDB version for the right syntax to use line 1 column 20 near \"BIT);\" ')\n",
+        "(pymysql.err.ProgrammingError) (1064, 'You have an error in your SQL syntax; check the manual that corresponds to your TiDB version for the right syntax to use line 1 column 11 near \"(1);\" ')\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT 1 & 1;"
     ]
 }

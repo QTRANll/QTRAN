@@ -18,5 +18,39 @@
     ],
     "Category": [
         "List Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT array_filter(my_list, lambda x: x > 10) AS filtered_list",
+        "SELECT array_filter(my_list, (x) -> x > 10) AS filtered_list",
+        "SELECT array_filter(ARRAY[1, 2, 3, 4, 5], (x) -> x > 3) AS filtered_list"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 301,
+            "Prompt Tokens": 271,
+            "Completion Tokens": 30,
+            "Total Cost (USD)": 5.8649999999999996e-05
+        },
+        {
+            "Total Tokens": 456,
+            "Prompt Tokens": 425,
+            "Completion Tokens": 31,
+            "Total Cost (USD)": 8.235e-05
+        },
+        {
+            "Total Tokens": 653,
+            "Prompt Tokens": 608,
+            "Completion Tokens": 45,
+            "Total Cost (USD)": 0.00011819999999999999
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.ParserException) Parser Error: syntax error at or near \"x\"\n",
+        "(duckdb.duckdb.BinderException) Binder Error: failed to bind function, either: Referenced column \"my_list\" not found in FROM clause!\n or: Referenced column \"my_list\" not found in FROM clause!\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT array_filter(ARRAY[1, 2, 3, 4, 5], (x) -> x > 3) AS filtered_list"
     ]
 }

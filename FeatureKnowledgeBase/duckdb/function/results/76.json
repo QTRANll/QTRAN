@@ -17,5 +17,39 @@
     ],
     "Category": [
         "Aggregate Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT geometric_mean(A);",
+        "SELECT geometric_mean(value) FROM your_table_name;",
+        "SELECT geometric_mean(value) FROM (VALUES (1), (2), (3)) AS your_table(value);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 285,
+            "Prompt Tokens": 267,
+            "Completion Tokens": 18,
+            "Total Cost (USD)": 5.0849999999999996e-05
+        },
+        {
+            "Total Tokens": 451,
+            "Prompt Tokens": 429,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 7.754999999999999e-05
+        },
+        {
+            "Total Tokens": 642,
+            "Prompt Tokens": 607,
+            "Completion Tokens": 35,
+            "Total Cost (USD)": 0.00011204999999999999
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.BinderException) Binder Error: Referenced column \"A\" not found in FROM clause!\nLINE 1: SELECT geometric_mean(A);\n                              ^\n",
+        "(duckdb.duckdb.CatalogException) Catalog Error: Table with name your_table_name does not exist!\nDid you mean \"pg_tablespace\"?\nLINE 1: SELECT geometric_mean(value) FROM your_table_name;\n                                          ^\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT geometric_mean(value) FROM (VALUES (1), (2), (3)) AS your_table(value);"
     ]
 }

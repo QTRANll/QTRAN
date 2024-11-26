@@ -21,5 +21,18 @@
     "Category": [
         "Built-In Functions and Operators",
         "Date and Time Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT EXTRACT(YEAR FROM '2019-07-02');",
+        "SELECT EXTRACT(YEAR_MONTH FROM '2019-07-02 01:02:03');",
+        "SELECT EXTRACT(DAY_MINUTE FROM '2019-07-02 01:02:03');"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT EXTRACT(YEAR FROM '2019-07-02');",
+        "SELECT EXTRACT(YEAR_MONTH FROM '2019-07-02 01:02:03');",
+        "SELECT EXTRACT(DAY_MINUTE FROM '2019-07-02 01:02:03');"
     ]
 }

@@ -12,5 +12,31 @@
     "Examples": [],
     "Category": [
         "String Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT * FROM table_name WHERE column_name NOT REGEXP 'pattern';",
+        "SELECT * FROM information_schema.tables WHERE table_name NOT REGEXP 'pattern';"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 316,
+            "Prompt Tokens": 289,
+            "Completion Tokens": 27,
+            "Total Cost (USD)": 5.9549999999999984e-05
+        },
+        {
+            "Total Tokens": 476,
+            "Prompt Tokens": 448,
+            "Completion Tokens": 28,
+            "Total Cost (USD)": 8.4e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.ProgrammingError) (1146, \"Table 'knowledge_base_preprocess_tidb.table_name' doesn't exist\")\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT * FROM information_schema.tables WHERE table_name NOT REGEXP 'pattern';"
     ]
 }

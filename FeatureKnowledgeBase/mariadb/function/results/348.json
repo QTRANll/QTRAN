@@ -26,5 +26,13 @@
         "SELECT NOW(), SLEEP(2), NOW();",
         "SELECT SYSDATE(), SLEEP(2), SYSDATE();",
         "SELECT SYSDATE(4);"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT NOW(), SLEEP(2), NOW();",
+        "SELECT SYSDATE(), SLEEP(2), SYSDATE();",
+        "SELECT SYSDATE(4);"
     ]
 }

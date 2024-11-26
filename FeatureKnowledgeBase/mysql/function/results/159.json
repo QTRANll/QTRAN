@@ -24,5 +24,20 @@
     "Category": [
         "Built-In Functions and Operators",
         "JSON Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT JSON_CONTAINS_PATH(@j, 'one', '$.a', '$.e');",
+        "SELECT JSON_CONTAINS_PATH(@j, 'all', '$.a', '$.e');",
+        "SELECT JSON_CONTAINS_PATH(@j, 'one', '$.c.d');",
+        "SELECT JSON_CONTAINS_PATH(@j, 'one', '$.a.d');"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT JSON_CONTAINS_PATH(@j, 'one', '$.a', '$.e');",
+        "SELECT JSON_CONTAINS_PATH(@j, 'all', '$.a', '$.e');",
+        "SELECT JSON_CONTAINS_PATH(@j, 'one', '$.c.d');",
+        "SELECT JSON_CONTAINS_PATH(@j, 'one', '$.a.d');"
     ]
 }

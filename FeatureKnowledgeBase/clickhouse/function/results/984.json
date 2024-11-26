@@ -27,5 +27,8 @@
     ],
     "Category": [
         "Type Conversion Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT    toFloat32OrNull('42.7'),    toFloat32OrNull('abc')FORMAT Vertical;"
     ]
 }

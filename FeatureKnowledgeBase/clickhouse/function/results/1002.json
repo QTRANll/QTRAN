@@ -26,5 +26,11 @@
     ],
     "Category": [
         "Type Conversion Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT toDateTime64('1955-01-01 00:00:00.000', 3) AS value, toTypeName(value);",
+        "SELECT toDateTime64(1546300800.000, 3) AS value, toTypeName(value);",
+        "SELECT toDateTime64(1546300800000, 3) AS value, toTypeName(value);",
+        "SELECT toDateTime64('2019-01-01 00:00:00', 3, 'Asia/Istanbul') AS value, toTypeName(value);"
     ]
 }

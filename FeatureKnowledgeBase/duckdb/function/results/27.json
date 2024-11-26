@@ -16,5 +16,55 @@
     ],
     "Category": [
         "Aggregate Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT max_by(arg, val) FROM your_table;",
+        "SELECT max_by(arg, val);",
+        "SELECT max_by(column1, column2) FROM your_table;",
+        "SELECT max_by(arg, val) FROM (SELECT arg, val);",
+        "SELECT max_by(column1, column2) FROM (SELECT 1 AS column1, 2 AS column2);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 299,
+            "Prompt Tokens": 276,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 5.519999999999999e-05
+        },
+        {
+            "Total Tokens": 475,
+            "Prompt Tokens": 455,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 8.024999999999999e-05
+        },
+        {
+            "Total Tokens": 647,
+            "Prompt Tokens": 622,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 0.00010829999999999999
+        },
+        {
+            "Total Tokens": 832,
+            "Prompt Tokens": 805,
+            "Completion Tokens": 27,
+            "Total Cost (USD)": 0.00013695
+        },
+        {
+            "Total Tokens": 1023,
+            "Prompt Tokens": 986,
+            "Completion Tokens": 37,
+            "Total Cost (USD)": 0.0001701
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.CatalogException) Catalog Error: Table with name your_table does not exist!\nDid you mean \"pg_tables\"?\nLINE 1: SELECT max_by(arg, val) FROM your_table;\n                                     ^\n",
+        "(duckdb.duckdb.BinderException) Binder Error: Referenced column \"arg\" not found in FROM clause!\nLINE 1: SELECT max_by(arg, val);\n                      ^\n",
+        "(duckdb.duckdb.CatalogException) Catalog Error: Table with name your_table does not exist!\nDid you mean \"pg_tables\"?\nLINE 1: SELECT max_by(column1, column2) FROM your_table;\n                                             ^\n",
+        "(duckdb.duckdb.BinderException) Binder Error: Referenced column \"arg\" not found in FROM clause!\nLINE 1: SELECT max_by(arg, val) FROM (SELECT arg, val);\n                                             ^\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT max_by(column1, column2) FROM (SELECT 1 AS column1, 2 AS column2);"
     ]
 }

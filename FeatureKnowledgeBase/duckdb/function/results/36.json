@@ -16,5 +16,39 @@
     ],
     "Category": [
         "Aggregate Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT approx_count_distinct(x);",
+        "SELECT approx_count_distinct(column_name) FROM table_name;",
+        "SELECT approx_count_distinct(column_name) FROM (VALUES (1), (2), (3), (1), (2)) AS t(column_name);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 285,
+            "Prompt Tokens": 265,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 5.175e-05
+        },
+        {
+            "Total Tokens": 456,
+            "Prompt Tokens": 432,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 7.919999999999999e-05
+        },
+        {
+            "Total Tokens": 659,
+            "Prompt Tokens": 615,
+            "Completion Tokens": 44,
+            "Total Cost (USD)": 0.00011864999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.BinderException) Binder Error: Referenced column \"x\" not found in FROM clause!\nLINE 1: SELECT approx_count_distinct(x);\n                                     ^\n",
+        "(duckdb.duckdb.CatalogException) Catalog Error: Table with name table_name does not exist!\nDid you mean \"pg_tablespace\"?\nLINE 1: ...pprox_count_distinct(column_name) FROM table_name;\n                                                  ^\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT approx_count_distinct(column_name) FROM (VALUES (1), (2), (3), (1), (2)) AS t(column_name);"
     ]
 }

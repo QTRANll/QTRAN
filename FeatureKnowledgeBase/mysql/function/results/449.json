@@ -26,5 +26,53 @@
     ],
     "Category": [
         "Loadable Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT gen_dictionary_drop('mydict');",
+        "SELECT gen_dictionary_drop('no-such-dict');",
+        "SELECT gen_dictionary_drop('testdict');",
+        "SELECT gen_dictionary_drop('sampledict');",
+        "SELECT gen_dictionary_drop('exampledict');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 495,
+            "Prompt Tokens": 474,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 8.369999999999999e-05
+        },
+        {
+            "Total Tokens": 655,
+            "Prompt Tokens": 631,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 0.00010905
+        },
+        {
+            "Total Tokens": 812,
+            "Prompt Tokens": 791,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 0.00013125
+        },
+        {
+            "Total Tokens": 969,
+            "Prompt Tokens": 948,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 0.0001548
+        },
+        {
+            "Total Tokens": 1126,
+            "Prompt Tokens": 1105,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 0.00017835
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.gen_dictionary_drop does not exist')\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.gen_dictionary_drop does not exist')\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.gen_dictionary_drop does not exist')\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.gen_dictionary_drop does not exist')\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.gen_dictionary_drop does not exist')\n"
+    ],
+    "EffectiveSQLs": []
 }

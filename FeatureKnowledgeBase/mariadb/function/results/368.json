@@ -20,5 +20,12 @@
     "EffectiveSQLsRefined": [
         "SELECT UNCOMPRESS(COMPRESS('a string'));",
         "SELECT UNCOMPRESS('a string');"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT UNCOMPRESS(COMPRESS('a string'));",
+        "SELECT UNCOMPRESS('a string');"
     ]
 }

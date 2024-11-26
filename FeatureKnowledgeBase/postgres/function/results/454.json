@@ -6,13 +6,31 @@
         "pg_indexam_has_property"
     ],
     "Feature": [
-        "pg_indexam_has_property ( am oid, property text ) → boolean"
+        "pg_indexam_has_property ( am oid, property text ) \u2192 boolean"
     ],
     "Description": [
-        "Tests whether an index access method has the named property. Access method properties are listed in Table 9.75. NULL is returned if the property name is not known or does not apply to the particular object, or if the OID does not identify a valid object."
+        "Tests whether an index access method has the named property. Access method properties are listed in Table\u00a09.75. NULL is returned if the property name is not known or does not apply to the particular object, or if the OID does not identify a valid object."
     ],
     "Examples": [],
     "Category": [
         "System Information Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT pg_indexam_has_property(12345, 'property_name');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 337,
+            "Prompt Tokens": 310,
+            "Completion Tokens": 27,
+            "Total Cost (USD)": 6.269999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT pg_indexam_has_property(12345, 'property_name');"
     ]
 }

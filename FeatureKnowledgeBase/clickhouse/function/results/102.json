@@ -27,5 +27,9 @@
     ],
     "Category": [
         "Arrays Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT arrayMin([1, 2, 4]) AS res;",
+        "SELECT arrayMin(x -> (-x), [1, 2, 4]) AS res;"
     ]
 }

@@ -6,7 +6,7 @@
         "pg_get_partkeydef"
     ],
     "Feature": [
-        "pg_get_partkeydef ( table oid ) → text"
+        "pg_get_partkeydef ( table oid ) \u2192 text"
     ],
     "Description": [
         "Reconstructs the definition of a partitioned table's partition key, in the form it would have in the PARTITION BY clause of CREATE TABLE. (This is a decompiled reconstruction, not the original text of the command.)"
@@ -14,5 +14,23 @@
     "Examples": [],
     "Category": [
         "System Information Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT pg_get_partkeydef(oid) FROM pg_class WHERE relname = 'your_partitioned_table';"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 334,
+            "Prompt Tokens": 299,
+            "Completion Tokens": 35,
+            "Total Cost (USD)": 6.584999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT pg_get_partkeydef(oid) FROM pg_class WHERE relname = 'your_partitioned_table';"
     ]
 }

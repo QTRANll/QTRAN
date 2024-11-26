@@ -6,15 +6,49 @@
         "tsquery && tsquery"
     ],
     "Feature": [
-        "tsquery && tsquery → tsquery"
+        "tsquery && tsquery \u2192 tsquery"
     ],
     "Description": [
         "ANDs two tsquerys together, producing a query that matches documents that match both input queries."
     ],
     "Examples": [
-        "'fat | rat'::tsquery && 'cat'::tsquery → ( 'fat' | 'rat' ) & 'cat'"
+        "'fat | rat'::tsquery && 'cat'::tsquery \u2192 ( 'fat' | 'rat' ) & 'cat'"
     ],
     "Category": [
         "Text Search Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT * FROM documents WHERE to_tsvector(content) @@ (tsquery1 && tsquery2);",
+        "SELECT * FROM (VALUES (NULL)) AS dummy WHERE (NULL)::tsquery && (NULL)::tsquery;",
+        "SELECT (NULL)::tsquery && (NULL)::tsquery;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 304,
+            "Prompt Tokens": 270,
+            "Completion Tokens": 34,
+            "Total Cost (USD)": 6.09e-05
+        },
+        {
+            "Total Tokens": 489,
+            "Prompt Tokens": 454,
+            "Completion Tokens": 35,
+            "Total Cost (USD)": 8.91e-05
+        },
+        {
+            "Total Tokens": 669,
+            "Prompt Tokens": 644,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 0.00011159999999999999
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedTable) relation \"documents\" does not exist\nLINE 1: SELECT * FROM documents WHERE to_tsvector(content) @@ (tsque...\n                      ^\n\n",
+        "(psycopg2.errors.DatatypeMismatch) argument of WHERE must be type boolean, not type tsquery\nLINE 1: SELECT * FROM (VALUES (NULL)) AS dummy WHERE (NULL)::tsquery...\n                                                      ^\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT (NULL)::tsquery && (NULL)::tsquery;"
     ]
 }

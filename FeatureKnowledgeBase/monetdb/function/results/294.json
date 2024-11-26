@@ -16,5 +16,53 @@
     "Examples": [],
     "Category": [
         "Window Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT ntile(4) OVER (ORDER BY some_column) FROM some_table",
+        "SELECT ntile(4, 1) FROM some_table",
+        "SELECT ntile(4, 1)",
+        "SELECT ntile(4) FROM dual",
+        "SELECT ntile(4, 1) FROM (SELECT 1 AS dummy) AS temp"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 333,
+            "Prompt Tokens": 304,
+            "Completion Tokens": 29,
+            "Total Cost (USD)": 6.3e-05
+        },
+        {
+            "Total Tokens": 508,
+            "Prompt Tokens": 483,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 8.744999999999998e-05
+        },
+        {
+            "Total Tokens": 668,
+            "Prompt Tokens": 647,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 0.00010965
+        },
+        {
+            "Total Tokens": 835,
+            "Prompt Tokens": 814,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 0.0001347
+        },
+        {
+            "Total Tokens": 1005,
+            "Prompt Tokens": 973,
+            "Completion Tokens": 32,
+            "Total Cost (USD)": 0.00016515
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymonetdb.exceptions.OperationalError) 42000!syntax error, unexpected OVER, expecting SCOLON in: \"select ntile(4) over\"\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42S02!SELECT: no such table 'some_table'\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: no such binary operator 'ntile(tinyint,tinyint)'\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42S02!SELECT: no such table 'dual'\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: no such binary operator 'ntile(tinyint,tinyint)'\n\n"
+    ],
+    "EffectiveSQLs": []
 }

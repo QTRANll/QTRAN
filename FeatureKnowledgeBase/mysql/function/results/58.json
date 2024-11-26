@@ -32,5 +32,20 @@
     "Category": [
         "Built-In Functions and Operators",
         "Information Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT USER();",
+        "SELECT * FROM mysql.user;",
+        "SELECT CURRENT_USER();",
+        "CREATE TABLE t (c VARCHAR(288) DEFAULT (CURRENT_USER()));"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT USER();",
+        "SELECT * FROM mysql.user;",
+        "SELECT CURRENT_USER();",
+        "CREATE TABLE t (c VARCHAR(288) DEFAULT (CURRENT_USER()));"
     ]
 }

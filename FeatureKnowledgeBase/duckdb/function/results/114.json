@@ -16,5 +16,31 @@
     ],
     "Category": [
         "Date Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT date_add('2023-10-01', interval '10 days');",
+        "SELECT date_add(DATE '2023-10-01', INTERVAL '10 days');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 288,
+            "Prompt Tokens": 259,
+            "Completion Tokens": 29,
+            "Total Cost (USD)": 5.625e-05
+        },
+        {
+            "Total Tokens": 583,
+            "Prompt Tokens": 551,
+            "Completion Tokens": 32,
+            "Total Cost (USD)": 0.00010185000000000001
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.BinderException) Binder Error: Could not choose a best candidate function for the function call \"+(STRING_LITERAL, INTERVAL)\". In order to select one, please add explicit type casts.\n\tCandidate functions:\n\t+(DATE, INTERVAL) -> TIMESTAMP\n\t+(TIME, INTERVAL) -> TIME\n\t+(TIMESTAMP, INTERVAL) -> TIMESTAMP\n\t+(TIME WITH TIME ZONE, INTERVAL) -> TIME WITH TIME ZONE\n\t+(TIMESTAMP WITH TIME ZONE, INTERVAL) -> TIMESTAMP WITH TIME ZONE\n\t+(INTERVAL, INTERVAL) -> INTERVAL\n\nLINE 1: SELECT date_add('2023-10-01', interval '10 days');\n                    ^\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT date_add(DATE '2023-10-01', INTERVAL '10 days');"
     ]
 }

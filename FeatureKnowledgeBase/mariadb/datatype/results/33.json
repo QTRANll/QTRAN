@@ -16,5 +16,53 @@
     "Examples": [],
     "Category": [
         "String Data Types"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SET @my_set = SET('value1', 'value2', 'value3');",
+        "SET @my_set = 'value1,value2,value3';",
+        "SET @my_set = 'value1,value2,value3'; SELECT @my_set;",
+        "SET @my_set = 'value1,value2,value3';",
+        "SET @my_set = 'value1,value2,value3'; SELECT @my_set AS my_set;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 387,
+            "Prompt Tokens": 356,
+            "Completion Tokens": 31,
+            "Total Cost (USD)": 7.199999999999999e-05
+        },
+        {
+            "Total Tokens": 581,
+            "Prompt Tokens": 555,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 9.885e-05
+        },
+        {
+            "Total Tokens": 733,
+            "Prompt Tokens": 703,
+            "Completion Tokens": 30,
+            "Total Cost (USD)": 0.00012345
+        },
+        {
+            "Total Tokens": 918,
+            "Prompt Tokens": 892,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 0.0001494
+        },
+        {
+            "Total Tokens": 1073,
+            "Prompt Tokens": 1040,
+            "Completion Tokens": 33,
+            "Total Cost (USD)": 0.0001758
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.ProgrammingError) (1064, \"You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'SET('value1', 'value2', 'value3')' at line 1\")\n",
+        "This result object does not return rows. It has been closed automatically.",
+        "(pymysql.err.ProgrammingError) (1064, \"You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'SELECT @my_set' at line 1\")\n",
+        "This result object does not return rows. It has been closed automatically.",
+        "(pymysql.err.ProgrammingError) (1064, \"You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'SELECT @my_set AS my_set' at line 1\")\n"
+    ],
+    "EffectiveSQLs": []
 }

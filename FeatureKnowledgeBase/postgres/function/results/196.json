@@ -6,15 +6,63 @@
         "point"
     ],
     "Feature": [
-        "point ( polygon ) → point"
+        "point ( polygon ) \u2192 point"
     ],
     "Description": [
         "Computes center of polygon (the mean of the positions of the polygon's points)."
     ],
     "Examples": [
-        "point(polygon '((0,0),(1,1),(2,0))') → (1,0.3333333333333333)"
+        "point(polygon '((0,0),(1,1),(2,0))') \u2192 (1,0.3333333333333333)"
     ],
     "Category": [
         "Geometric Functions and Operators"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT point(geom) FROM (SELECT ST_Centroid(ST_MakePolygon(ST_MakeLine(ARRAY[point1, point2, point3, point1]))) AS geom) AS subquery;",
+        "SELECT point(ST_X(centroid), ST_Y(centroid)) FROM (SELECT ST_Centroid(ST_MakePolygon(ST_MakeLine(ARRAY[ST_MakePoint(0, 0), ST_MakePoint(1, 1), ST_MakePoint(1, 0), ST_MakePoint(0, 0)]))) AS centroid) AS subquery;",
+        "SELECT point(ST_X(centroid), ST_Y(centroid)) FROM (SELECT ST_Centroid(ST_MakePolygon(ST_MakeLine(ARRAY[ST_MakePoint(0.0, 0.0), ST_MakePoint(1.0, 1.0), ST_MakePoint(1.0, 0.0), ST_MakePoint(0.0, 0.0)]))) AS centroid) AS subquery;",
+        "SELECT point(ST_X(centroid), ST_Y(centroid)) FROM (SELECT ST_Centroid(ST_MakePolygon(ST_MakeLine(ARRAY[ST_MakePoint(0::float, 0::float), ST_MakePoint(1::float, 1::float), ST_MakePoint(1::float, 0::float), ST_MakePoint(0::float, 0::float)]))) AS centroid) AS subquery;",
+        "SELECT point(ST_X(centroid), ST_Y(centroid)) FROM (SELECT ST_Centroid(ST_MakePolygon(ST_MakeLine(ARRAY[ST_MakePoint(0.0::numeric, 0.0::numeric), ST_MakePoint(1.0::numeric, 1.0::numeric), ST_MakePoint(1.0::numeric, 0.0::numeric), ST_MakePoint(0.0::numeric, 0.0::numeric)]))) AS centroid) AS subquery;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 307,
+            "Prompt Tokens": 253,
+            "Completion Tokens": 54,
+            "Total Cost (USD)": 7.034999999999999e-05
+        },
+        {
+            "Total Tokens": 552,
+            "Prompt Tokens": 460,
+            "Completion Tokens": 92,
+            "Total Cost (USD)": 0.00012419999999999998
+        },
+        {
+            "Total Tokens": 838,
+            "Prompt Tokens": 730,
+            "Completion Tokens": 108,
+            "Total Cost (USD)": 0.00017429999999999998
+        },
+        {
+            "Total Tokens": 1125,
+            "Prompt Tokens": 1017,
+            "Completion Tokens": 108,
+            "Total Cost (USD)": 0.00021734999999999994
+        },
+        {
+            "Total Tokens": 1429,
+            "Prompt Tokens": 1305,
+            "Completion Tokens": 124,
+            "Total Cost (USD)": 0.0002701499999999999
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedColumn) column \"point1\" does not exist\nLINE 1: ...LECT ST_Centroid(ST_MakePolygon(ST_MakeLine(ARRAY[point1, po...\n                                                             ^\n\n",
+        "(psycopg2.errors.UndefinedFunction) function st_makepoint(integer, integer) does not exist\nLINE 1: ...LECT ST_Centroid(ST_MakePolygon(ST_MakeLine(ARRAY[ST_MakePoi...\n                                                             ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.\n\n",
+        "(psycopg2.errors.UndefinedFunction) function st_makepoint(numeric, numeric) does not exist\nLINE 1: ...LECT ST_Centroid(ST_MakePolygon(ST_MakeLine(ARRAY[ST_MakePoi...\n                                                             ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.\n\n",
+        "(psycopg2.errors.UndefinedFunction) function st_makepoint(double precision, double precision) does not exist\nLINE 1: ...LECT ST_Centroid(ST_MakePolygon(ST_MakeLine(ARRAY[ST_MakePoi...\n                                                             ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.\n\n",
+        "(psycopg2.errors.UndefinedFunction) function st_makepoint(numeric, numeric) does not exist\nLINE 1: ...LECT ST_Centroid(ST_MakePolygon(ST_MakeLine(ARRAY[ST_MakePoi...\n                                                             ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.\n\n"
+    ],
+    "EffectiveSQLs": []
 }

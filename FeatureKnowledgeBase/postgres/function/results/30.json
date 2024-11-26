@@ -6,15 +6,33 @@
         "random"
     ],
     "Feature": [
-        "random ( ) → double precision"
+        "random ( ) \u2192 double precision"
     ],
     "Description": [
         "Returns a random value in the range 0.0 <= x < 1.0"
     ],
     "Examples": [
-        "random() → 0.897124072839091"
+        "random() \u2192 0.897124072839091"
     ],
     "Category": [
         "Mathematical Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT random();"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 270,
+            "Prompt Tokens": 254,
+            "Completion Tokens": 16,
+            "Total Cost (USD)": 4.7699999999999994e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT random();"
     ]
 }

@@ -29,5 +29,39 @@
     ],
     "Category": [
         "Loadable Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT asymmetric_encrypt('RSA', 'Hello, World!', '-----BEGIN PUBLIC KEY-----\\n...\\n-----END PUBLIC KEY-----');",
+        "SELECT asymmetric_encrypt('RSA', 'Hello, World!', 'your_public_key_here');",
+        "SELECT NULL;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 763,
+            "Prompt Tokens": 722,
+            "Completion Tokens": 41,
+            "Total Cost (USD)": 0.00013289999999999998
+        },
+        {
+            "Total Tokens": 929,
+            "Prompt Tokens": 899,
+            "Completion Tokens": 30,
+            "Total Cost (USD)": 0.00015285
+        },
+        {
+            "Total Tokens": 1080,
+            "Prompt Tokens": 1065,
+            "Completion Tokens": 15,
+            "Total Cost (USD)": 0.00016874999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.asymmetric_encrypt does not exist')\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.asymmetric_encrypt does not exist')\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT NULL;"
     ]
 }

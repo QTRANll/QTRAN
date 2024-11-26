@@ -6,15 +6,33 @@
         "make_interval"
     ],
     "Feature": [
-        "make_interval ( [ years int [, months int [, weeks int [, days int [, hours int [, mins int [, secs double precision ]]]]]]] ) → interval"
+        "make_interval ( [ years int [, months int [, weeks int [, days int [, hours int [, mins int [, secs double precision ]]]]]]] ) \u2192 interval"
     ],
     "Description": [
         "Create interval from years, months, weeks, days, hours, minutes and seconds fields, each of which can default to zero"
     ],
     "Examples": [
-        "make_interval(days => 10) → 10 days"
+        "make_interval(days => 10) \u2192 10 days"
     ],
     "Category": [
         "Date divide Time Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT make_interval(years => 1, months => 2, days => 3);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 322,
+            "Prompt Tokens": 290,
+            "Completion Tokens": 32,
+            "Total Cost (USD)": 6.269999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT make_interval(years => 1, months => 2, days => 3);"
     ]
 }

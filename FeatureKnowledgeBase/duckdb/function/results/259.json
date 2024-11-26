@@ -18,5 +18,55 @@
     ],
     "Category": [
         "List Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT array_filter(your_array, lambda x: x > 10)",
+        "SELECT array_filter(your_array, (x) -> x > 10)",
+        "SELECT array_filter(array_column, (x) -> x > 10) FROM your_table",
+        "SELECT array_filter(array_column, (x) -> x > 10) FROM pg_tables",
+        "SELECT array_filter(ARRAY[1, 2, 3, 4, 5], (x) -> x > 3)"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 298,
+            "Prompt Tokens": 271,
+            "Completion Tokens": 27,
+            "Total Cost (USD)": 5.685e-05
+        },
+        {
+            "Total Tokens": 450,
+            "Prompt Tokens": 422,
+            "Completion Tokens": 28,
+            "Total Cost (USD)": 8.01e-05
+        },
+        {
+            "Total Tokens": 633,
+            "Prompt Tokens": 602,
+            "Completion Tokens": 31,
+            "Total Cost (USD)": 0.00010889999999999999
+        },
+        {
+            "Total Tokens": 823,
+            "Prompt Tokens": 792,
+            "Completion Tokens": 31,
+            "Total Cost (USD)": 0.0001374
+        },
+        {
+            "Total Tokens": 1062,
+            "Prompt Tokens": 1021,
+            "Completion Tokens": 41,
+            "Total Cost (USD)": 0.00017774999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.ParserException) Parser Error: syntax error at or near \"x\"\n",
+        "(duckdb.duckdb.BinderException) Binder Error: failed to bind function, either: Referenced column \"your_array\" not found in FROM clause!\n or: Referenced column \"your_array\" not found in FROM clause!\n",
+        "(duckdb.duckdb.CatalogException) Catalog Error: Table with name your_table does not exist!\nDid you mean \"pg_tables\"?\nLINE 1: ...lter(array_column, (x) -> x > 10) FROM your_table\n                                                  ^\n",
+        "(duckdb.duckdb.BinderException) Binder Error: failed to bind function, either: Referenced column \"array_column\" not found in FROM clause!\nCandidate bindings: \"pg_tables.hasrules\", \"pg_tables.tablename\", \"pg_tables.schemaname\"\n or: Referenced column \"array_column\" not found in FROM clause!\nCandidate bindings: \"pg_tables.hasrules\", \"pg_tables.tablename\", \"pg_tables.schemaname\"\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT array_filter(ARRAY[1, 2, 3, 4, 5], (x) -> x > 3)"
     ]
 }

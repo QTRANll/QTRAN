@@ -16,5 +16,31 @@
     ],
     "Category": [
         "Utility Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT read_blob('example_file.txt');",
+        "SELECT * FROM read_blob('example_file.txt');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 298,
+            "Prompt Tokens": 277,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 5.415e-05
+        },
+        {
+            "Total Tokens": 489,
+            "Prompt Tokens": 466,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 8.369999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.BinderException) Binder Error: Function \"read_blob\" is a table function but it was used as a scalar function. This function has to be called in a FROM clause (similar to a table).\nLINE 1: SELECT read_blob('example_file.txt');\n               ^\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT * FROM read_blob('example_file.txt');"
     ]
 }

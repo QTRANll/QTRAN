@@ -18,5 +18,39 @@
     ],
     "Category": [
         "Aggregate Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT sys.var_pop(column_name) FROM table_name;",
+        "SELECT sys.var_pop(numeric_expr);",
+        "SELECT sys.var_pop(1.0);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 329,
+            "Prompt Tokens": 306,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 5.9699999999999994e-05
+        },
+        {
+            "Total Tokens": 485,
+            "Prompt Tokens": 464,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 8.219999999999999e-05
+        },
+        {
+            "Total Tokens": 640,
+            "Prompt Tokens": 618,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 0.00010589999999999999
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymonetdb.exceptions.OperationalError) 42S02!SELECT: no such table 'table_name'\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: identifier 'numeric_expr' unknown\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT sys.var_pop(1.0);"
     ]
 }

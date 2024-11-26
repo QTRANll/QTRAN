@@ -16,5 +16,53 @@
     ],
     "Category": [
         "Array Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT array_dot_product(array1, array2);",
+        "SELECT array_dot_product(ARRAY[1, 2, 3], ARRAY[4, 5, 6]);",
+        "SELECT array_dot_product(ARRAY[1.0, 2.0, 3.0], ARRAY[4.0, 5.0, 6.0]);",
+        "SELECT array_dot_product(ARRAY[1.0::FLOAT, 2.0::FLOAT, 3.0::FLOAT], ARRAY[4.0::FLOAT, 5.0::FLOAT, 6.0::FLOAT]);",
+        "SELECT array_dot_product(ARRAY[1.0::DOUBLE, 2.0::DOUBLE, 3.0::DOUBLE], ARRAY[4.0::DOUBLE, 5.0::DOUBLE, 6.0::DOUBLE]);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 298,
+            "Prompt Tokens": 275,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 5.5049999999999996e-05
+        },
+        {
+            "Total Tokens": 490,
+            "Prompt Tokens": 452,
+            "Completion Tokens": 38,
+            "Total Cost (USD)": 9.059999999999999e-05
+        },
+        {
+            "Total Tokens": 751,
+            "Prompt Tokens": 701,
+            "Completion Tokens": 50,
+            "Total Cost (USD)": 0.00013514999999999998
+        },
+        {
+            "Total Tokens": 1041,
+            "Prompt Tokens": 979,
+            "Completion Tokens": 62,
+            "Total Cost (USD)": 0.00018405
+        },
+        {
+            "Total Tokens": 1315,
+            "Prompt Tokens": 1253,
+            "Completion Tokens": 62,
+            "Total Cost (USD)": 0.00022514999999999997
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.BinderException) Binder Error: Referenced column \"array1\" not found in FROM clause!\nLINE 1: SELECT array_dot_product(array1, array2);\n                                 ^\n",
+        "(duckdb.duckdb.BinderException) Binder Error: No function matches the given name and argument types 'array_dot_product(INTEGER[], INTEGER[])'. You might need to add explicit type casts.\n\tCandidate functions:\n\tarray_dot_product(FLOAT[ANY], FLOAT[ANY]) -> FLOAT\n\tarray_dot_product(DOUBLE[ANY], DOUBLE[ANY]) -> DOUBLE\n\nLINE 1: SELECT array_dot_product(ARRAY[1, 2, 3], ARRAY...\n               ^\n",
+        "(duckdb.duckdb.BinderException) Binder Error: No function matches the given name and argument types 'array_dot_product(DECIMAL(2,1)[], DECIMAL(2,1)[])'. You might need to add explicit type casts.\n\tCandidate functions:\n\tarray_dot_product(FLOAT[ANY], FLOAT[ANY]) -> FLOAT\n\tarray_dot_product(DOUBLE[ANY], DOUBLE[ANY]) -> DOUBLE\n\nLINE 1: SELECT array_dot_product(ARRAY[1.0, 2.0, 3.0],...\n               ^\n",
+        "(duckdb.duckdb.BinderException) Binder Error: No function matches the given name and argument types 'array_dot_product(FLOAT[], FLOAT[])'. You might need to add explicit type casts.\n\tCandidate functions:\n\tarray_dot_product(FLOAT[ANY], FLOAT[ANY]) -> FLOAT\n\tarray_dot_product(DOUBLE[ANY], DOUBLE[ANY]) -> DOUBLE\n\nLINE 1: SELECT array_dot_product(ARRAY[1.0::FLOAT, 2.0...\n               ^\n",
+        "(duckdb.duckdb.BinderException) Binder Error: No function matches the given name and argument types 'array_dot_product(DOUBLE[], DOUBLE[])'. You might need to add explicit type casts.\n\tCandidate functions:\n\tarray_dot_product(FLOAT[ANY], FLOAT[ANY]) -> FLOAT\n\tarray_dot_product(DOUBLE[ANY], DOUBLE[ANY]) -> DOUBLE\n\nLINE 1: SELECT array_dot_product(ARRAY[1.0::DOUBLE, 2....\n               ^\n"
+    ],
+    "EffectiveSQLs": []
 }

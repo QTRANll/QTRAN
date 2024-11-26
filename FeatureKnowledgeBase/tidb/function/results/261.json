@@ -10,7 +10,7 @@
     ],
     "Description": [
         "TIDB_CURRENT_TSO",
-        "TIDB_CURRENT_TSO() 函数返回当前事务的 TSO，类似于 tidb_current_ts 变量。",
+        "TIDB_CURRENT_TSO() \u51fd\u6570\u8fd4\u56de\u5f53\u524d\u4e8b\u52a1\u7684 TSO\uff0c\u7c7b\u4f3c\u4e8e tidb_current_ts \u53d8\u91cf\u3002",
         "BEGIN;\n",
         "Query OK, 0 rows affected (0.00 sec)\n",
         "SELECT TIDB_CURRENT_TSO();\n",
@@ -24,6 +24,17 @@
         "SELECT @@tidb_current_ts;\n"
     ],
     "Category": [
-        "TiDB 特有的函数"
+        "TiDB \u7279\u6709\u7684\u51fd\u6570"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT TIDB_CURRENT_TSO();",
+        "SELECT @@tidb_current_ts;"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT TIDB_CURRENT_TSO();",
+        "SELECT @@tidb_current_ts;"
     ]
 }

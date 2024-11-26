@@ -22,5 +22,13 @@
         "SELECT sys.ps_is_thread_instrumented(CONNECTION_ID());",
         "SELECT sys.ps_is_thread_instrumented(2042);",
         "SELECT sys.ps_is_thread_instrumented(NULL);"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT sys.ps_is_thread_instrumented(CONNECTION_ID());",
+        "SELECT sys.ps_is_thread_instrumented(2042);",
+        "SELECT sys.ps_is_thread_instrumented(NULL);"
     ]
 }

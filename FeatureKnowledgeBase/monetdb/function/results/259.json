@@ -18,5 +18,55 @@
     ],
     "Category": [
         "Aggregate Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT min(col_expr);",
+        "SELECT min(column_name) FROM table_name;",
+        "SELECT min(col_expr);",
+        "SELECT min(column_value) FROM some_table;",
+        "SELECT min(1);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 286,
+            "Prompt Tokens": 268,
+            "Completion Tokens": 18,
+            "Total Cost (USD)": 5.1e-05
+        },
+        {
+            "Total Tokens": 437,
+            "Prompt Tokens": 416,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 7.499999999999998e-05
+        },
+        {
+            "Total Tokens": 587,
+            "Prompt Tokens": 569,
+            "Completion Tokens": 18,
+            "Total Cost (USD)": 9.614999999999998e-05
+        },
+        {
+            "Total Tokens": 738,
+            "Prompt Tokens": 717,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 0.00012014999999999998
+        },
+        {
+            "Total Tokens": 888,
+            "Prompt Tokens": 870,
+            "Completion Tokens": 18,
+            "Total Cost (USD)": 0.0001413
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: identifier 'col_expr' unknown\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42S02!SELECT: no such table 'table_name'\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: identifier 'col_expr' unknown\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42S02!SELECT: no such table 'some_table'\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT min(1);"
     ]
 }

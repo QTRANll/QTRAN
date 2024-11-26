@@ -20,5 +20,12 @@
     "EffectiveSQLsRefined": [
         "SELECT JSON_EQUALS('{\"a\"   :[1, 2, 3],\"b\":[4]}', '{\"b\":[4],\"a\":[1, 2, 3.0]}');",
         "SELECT JSON_EQUALS('{\"a\":[1, 2, 3]}', '{\"a\":[1, 2, 3.01]}');"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT JSON_EQUALS('{\"a\"   :[1, 2, 3],\"b\":[4]}', '{\"b\":[4],\"a\":[1, 2, 3.0]}');",
+        "SELECT JSON_EQUALS('{\"a\":[1, 2, 3]}', '{\"a\":[1, 2, 3.01]}');"
     ]
 }

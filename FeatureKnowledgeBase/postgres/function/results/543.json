@@ -6,7 +6,7 @@
         "pg_replication_slot_advance"
     ],
     "Feature": [
-        "pg_replication_slot_advance ( slot_name name, upto_lsn pg_lsn ) → record ( slot_name name, end_lsn pg_lsn )"
+        "pg_replication_slot_advance ( slot_name name, upto_lsn pg_lsn ) \u2192 record ( slot_name name, end_lsn pg_lsn )"
     ],
     "Description": [
         "Advances the current confirmed position of a replication slot named slot_name. The slot will not be moved backwards, and it will not be moved beyond the current insert location. Returns the name of the slot and the actual position that it was advanced to. The updated slot position information is written out at the next checkpoint if any advancing is done. So in the event of a crash, the slot may return to an earlier position."
@@ -14,5 +14,53 @@
     "Examples": [],
     "Category": [
         "System Administration Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT pg_replication_slot_advance('my_slot', '0/3000000');",
+        "SELECT pg_replication_slot_advance('existing_slot', '0/3000000');",
+        "SELECT pg_replication_slot_advance('default_slot', '0/3000000');",
+        "SELECT pg_replication_slot_advance('new_slot', '0/3000000');",
+        "SELECT pg_replication_slot_advance('valid_slot_name', '0/3000000');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 393,
+            "Prompt Tokens": 362,
+            "Completion Tokens": 31,
+            "Total Cost (USD)": 7.289999999999998e-05
+        },
+        {
+            "Total Tokens": 553,
+            "Prompt Tokens": 522,
+            "Completion Tokens": 31,
+            "Total Cost (USD)": 9.69e-05
+        },
+        {
+            "Total Tokens": 713,
+            "Prompt Tokens": 682,
+            "Completion Tokens": 31,
+            "Total Cost (USD)": 0.00012089999999999998
+        },
+        {
+            "Total Tokens": 873,
+            "Prompt Tokens": 842,
+            "Completion Tokens": 31,
+            "Total Cost (USD)": 0.00014489999999999997
+        },
+        {
+            "Total Tokens": 1034,
+            "Prompt Tokens": 1002,
+            "Completion Tokens": 32,
+            "Total Cost (USD)": 0.0001695
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedObject) replication slot \"my_slot\" does not exist\n\n",
+        "(psycopg2.errors.UndefinedObject) replication slot \"existing_slot\" does not exist\n\n",
+        "(psycopg2.errors.UndefinedObject) replication slot \"default_slot\" does not exist\n\n",
+        "(psycopg2.errors.UndefinedObject) replication slot \"new_slot\" does not exist\n\n",
+        "(psycopg2.errors.UndefinedObject) replication slot \"valid_slot_name\" does not exist\n\n"
+    ],
+    "EffectiveSQLs": []
 }

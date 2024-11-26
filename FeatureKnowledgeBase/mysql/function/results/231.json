@@ -18,5 +18,31 @@
     "Category": [
         "Built-In Functions and Operators",
         "Spatial Analysis Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT ST_MultiPoint(POINT(1, 1), POINT(2, 2));",
+        "SELECT ST_GeomFromText('MULTIPOINT(1 1, 2 2)');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 334,
+            "Prompt Tokens": 301,
+            "Completion Tokens": 33,
+            "Total Cost (USD)": 6.494999999999999e-05
+        },
+        {
+            "Total Tokens": 508,
+            "Prompt Tokens": 473,
+            "Completion Tokens": 35,
+            "Total Cost (USD)": 9.194999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.ST_MultiPoint does not exist')\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT ST_GeomFromText('MULTIPOINT(1 1, 2 2)');"
     ]
 }

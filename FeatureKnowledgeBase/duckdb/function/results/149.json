@@ -16,5 +16,31 @@
     ],
     "Category": [
         "Date Part Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT isodow('2023-10-01');",
+        "SELECT isodow(DATE '2023-10-01');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 287,
+            "Prompt Tokens": 262,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 5.43e-05
+        },
+        {
+            "Total Tokens": 536,
+            "Prompt Tokens": 509,
+            "Completion Tokens": 27,
+            "Total Cost (USD)": 9.255e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.BinderException) Binder Error: Could not choose a best candidate function for the function call \"isodow(STRING_LITERAL)\". In order to select one, please add explicit type casts.\n\tCandidate functions:\n\tisodow(TIMESTAMP) -> BIGINT\n\tisodow(INTERVAL) -> BIGINT\n\tisodow(TIMESTAMP WITH TIME ZONE) -> BIGINT\n\tisodow(DATE) -> BIGINT\n\nLINE 1: SELECT isodow('2023-10-01');\n               ^\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT isodow(DATE '2023-10-01');"
     ]
 }

@@ -6,15 +6,41 @@
         "ts_debug"
     ],
     "Feature": [
-        "ts_debug ( [ config regconfig, ] document text ) → setof record ( alias text, description text, token text, dictionaries regdictionary[], dictionary regdictionary, lexemes text[] )"
+        "ts_debug ( [ config regconfig, ] document text ) \u2192 setof record ( alias text, description text, token text, dictionaries regdictionary[], dictionary regdictionary, lexemes text[] )"
     ],
     "Description": [
-        "Extracts and normalizes tokens from the document according to the specified or default text search configuration, and returns information about how each token was processed. See Section 12.8.1 for details."
+        "Extracts and normalizes tokens from the document according to the specified or default text search configuration, and returns information about how each token was processed. See Section\u00a012.8.1 for details."
     ],
     "Examples": [
-        "ts_debug('english', 'The Brightest supernovaes') → (asciiword,\"Word, all ASCII\",The,{english_stem},english_stem,{}) ..."
+        "ts_debug('english', 'The Brightest supernovaes') \u2192 (asciiword,\"Word, all ASCII\",The,{english_stem},english_stem,{}) ..."
     ],
     "Category": [
         "Text Search Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT * FROM ts_debug('default', 'This is a sample text for tokenization.')",
+        "SELECT * FROM ts_debug('english', 'This is a sample text for tokenization.')"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 343,
+            "Prompt Tokens": 312,
+            "Completion Tokens": 31,
+            "Total Cost (USD)": 6.539999999999999e-05
+        },
+        {
+            "Total Tokens": 523,
+            "Prompt Tokens": 492,
+            "Completion Tokens": 31,
+            "Total Cost (USD)": 9.24e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedObject) text search configuration \"default\" does not exist\nLINE 1: SELECT * FROM ts_debug('default', 'This is a sample text for...\n                               ^\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT * FROM ts_debug('english', 'This is a sample text for tokenization.')"
     ]
 }

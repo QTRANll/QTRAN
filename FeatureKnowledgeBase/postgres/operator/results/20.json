@@ -6,15 +6,63 @@
         "integral_type # integral_type"
     ],
     "Feature": [
-        "integral_type # integral_type → integral_type"
+        "integral_type # integral_type \u2192 integral_type"
     ],
     "Description": [
         "Bitwise exclusive OR"
     ],
     "Examples": [
-        "17 # 5 → 20"
+        "17 # 5 \u2192 20"
     ],
     "Category": [
         "Mathematical Functions and Operators"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT integral_type # integral_type;",
+        "SELECT $1 # $2;",
+        "SELECT integral_type1 # integral_type2;",
+        "SELECT a.integral_type # b.integral_type FROM table_name AS a, table_name AS b;",
+        "SELECT integral_type # integral_type;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 277,
+            "Prompt Tokens": 258,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 5.01e-05
+        },
+        {
+            "Total Tokens": 440,
+            "Prompt Tokens": 421,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 7.455e-05
+        },
+        {
+            "Total Tokens": 602,
+            "Prompt Tokens": 581,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 9.974999999999999e-05
+        },
+        {
+            "Total Tokens": 782,
+            "Prompt Tokens": 749,
+            "Completion Tokens": 33,
+            "Total Cost (USD)": 0.00013215
+        },
+        {
+            "Total Tokens": 952,
+            "Prompt Tokens": 933,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 0.00015135
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedColumn) column \"integral_type\" does not exist\nLINE 1: SELECT integral_type # integral_type;\n               ^\n\n",
+        "(psycopg2.errors.UndefinedParameter) there is no parameter $1\nLINE 1: SELECT $1 # $2;\n               ^\n\n",
+        "(psycopg2.errors.UndefinedColumn) column \"integral_type1\" does not exist\nLINE 1: SELECT integral_type1 # integral_type2;\n               ^\n\n",
+        "(psycopg2.errors.UndefinedTable) relation \"table_name\" does not exist\nLINE 1: SELECT a.integral_type # b.integral_type FROM table_name AS ...\n                                                      ^\n\n",
+        "(psycopg2.errors.UndefinedColumn) column \"integral_type\" does not exist\nLINE 1: SELECT integral_type # integral_type;\n               ^\n\n"
+    ],
+    "EffectiveSQLs": []
 }

@@ -6,15 +6,49 @@
         "overlay"
     ],
     "Feature": [
-        "overlay ( bytes bytea PLACING newsubstring bytea FROM start integer [ FOR count integer ] ) → bytea"
+        "overlay ( bytes bytea PLACING newsubstring bytea FROM start integer [ FOR count integer ] ) \u2192 bytea"
     ],
     "Description": [
         "Replaces the substring of bytes that starts at the start'th byte and extends for count bytes with newsubstring. If count is omitted, it defaults to the length of newsubstring."
     ],
     "Examples": [
-        "overlay('\\x1234567890'::bytea placing '\\002\\003'::bytea from 2 for 3) → \\x12020390"
+        "overlay('\\x1234567890'::bytea placing '\\002\\003'::bytea from 2 for 3) \u2192 \\x12020390"
     ],
     "Category": [
         "Binary String Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT overlay(bytes_column PLACING new_substring FROM start_position);",
+        "SELECT overlay(b'example_bytes' PLACING b'new_substring' FROM 1);",
+        "SELECT overlay(E'example\\x6578616d706c65' PLACING E'new\\x6e657773757274' FROM 1);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 316,
+            "Prompt Tokens": 290,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 5.9099999999999986e-05
+        },
+        {
+            "Total Tokens": 491,
+            "Prompt Tokens": 459,
+            "Completion Tokens": 32,
+            "Total Cost (USD)": 8.805e-05
+        },
+        {
+            "Total Tokens": 686,
+            "Prompt Tokens": 640,
+            "Completion Tokens": 46,
+            "Total Cost (USD)": 0.0001236
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedColumn) column \"bytes_column\" does not exist\nLINE 1: SELECT overlay(bytes_column PLACING new_substring FROM start...\n                       ^\n\n",
+        "(psycopg2.errors.InvalidTextRepresentation) \"e\" is not a valid binary digit\nLINE 1: SELECT overlay(b'example_bytes' PLACING b'new_substring' FRO...\n                       ^\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT overlay(E'example\\x6578616d706c65' PLACING E'new\\x6e657773757274' FROM 1);"
     ]
 }

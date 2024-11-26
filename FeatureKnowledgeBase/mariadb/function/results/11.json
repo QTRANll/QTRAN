@@ -23,12 +23,31 @@
         "Aggregate Functions"
     ],
     "EffectiveSQLsRefined": [
+        "CREATE TABLE sales (sales_value INT);",
         "INSERT INTO sales VALUES(10),(20),(20),(40);",
         "SELECT AVG(sales_value) FROM sales;",
         "SELECT AVG(DISTINCT(sales_value)) FROM sales;",
+        "CREATE TABLE student (name CHAR(10), test CHAR(10), score TINYINT);",
         "INSERT INTO student VALUES \n  ('Chun', 'SQL', 75), ('Chun', 'Tuning', 73), \n  ('Esben', 'SQL', 43), ('Esben', 'Tuning', 31), \n  ('Kaolin', 'SQL', 56), ('Kaolin', 'Tuning', 88), \n  ('Tatiana', 'SQL', 87), ('Tatiana', 'Tuning', 83);",
         "SELECT name, AVG(score) FROM student GROUP BY name;",
         "SELECT name,test,AVG(score) FROM student;",
+        "CREATE TABLE student_test (name CHAR(10), test CHAR(10), score TINYINT);",
+        "INSERT INTO student_test VALUES \n    ('Chun', 'SQL', 75), ('Chun', 'Tuning', 73), \n    ('Esben', 'SQL', 43), ('Esben', 'Tuning', 31), \n    ('Kaolin', 'SQL', 56), ('Kaolin', 'Tuning', 88), \n    ('Tatiana', 'SQL', 87), ('Tatiana', 'Tuning', 83);",
+        "SELECT name, test, score, AVG(score) OVER (PARTITION BY test) \n    AS average_by_test FROM student_test;"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "CREATE TABLE sales (sales_value INT);",
+        "INSERT INTO sales VALUES(10),(20),(20),(40);",
+        "SELECT AVG(sales_value) FROM sales;",
+        "SELECT AVG(DISTINCT(sales_value)) FROM sales;",
+        "CREATE TABLE student (name CHAR(10), test CHAR(10), score TINYINT);",
+        "INSERT INTO student VALUES \n  ('Chun', 'SQL', 75), ('Chun', 'Tuning', 73), \n  ('Esben', 'SQL', 43), ('Esben', 'Tuning', 31), \n  ('Kaolin', 'SQL', 56), ('Kaolin', 'Tuning', 88), \n  ('Tatiana', 'SQL', 87), ('Tatiana', 'Tuning', 83);",
+        "SELECT name, AVG(score) FROM student GROUP BY name;",
+        "SELECT name,test,AVG(score) FROM student;",
+        "CREATE TABLE student_test (name CHAR(10), test CHAR(10), score TINYINT);",
         "INSERT INTO student_test VALUES \n    ('Chun', 'SQL', 75), ('Chun', 'Tuning', 73), \n    ('Esben', 'SQL', 43), ('Esben', 'Tuning', 31), \n    ('Kaolin', 'SQL', 56), ('Kaolin', 'Tuning', 88), \n    ('Tatiana', 'SQL', 87), ('Tatiana', 'Tuning', 83);",
         "SELECT name, test, score, AVG(score) OVER (PARTITION BY test) \n    AS average_by_test FROM student_test;"
     ]

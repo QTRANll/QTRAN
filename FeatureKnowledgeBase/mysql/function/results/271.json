@@ -33,5 +33,30 @@
     "Category": [
         "Built-In Functions and Operators",
         "Mathematical Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT ROUND(-1.23);",
+        "SELECT ROUND(-1.58);",
+        "SELECT ROUND(1.58);",
+        "SELECT ROUND(1.298, 1);",
+        "SELECT ROUND(1.298, 0);",
+        "SELECT ROUND(23.298, -1);",
+        "SELECT ROUND(.12345678901234567890123456789012345, 35);",
+        "SELECT ROUND(150.000,2), ROUND(150,2);",
+        "SELECT ROUND(2.5), ROUND(25E-1);"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT ROUND(-1.23);",
+        "SELECT ROUND(-1.58);",
+        "SELECT ROUND(1.58);",
+        "SELECT ROUND(1.298, 1);",
+        "SELECT ROUND(1.298, 0);",
+        "SELECT ROUND(23.298, -1);",
+        "SELECT ROUND(.12345678901234567890123456789012345, 35);",
+        "SELECT ROUND(150.000,2), ROUND(150,2);",
+        "SELECT ROUND(2.5), ROUND(25E-1);"
     ]
 }

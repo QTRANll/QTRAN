@@ -19,5 +19,39 @@
     "Category": [
         "Built-In Functions and Operators",
         "Spatial Analysis Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT ST_Within(g1, g2);",
+        "SELECT ST_Within(GeomFromText('POINT(1 1)'), GeomFromText('POLYGON((0 0, 0 2, 2 2, 2 0, 0 0))'));",
+        "SELECT ST_Within(ST_GeomFromText('POINT(1 1)'), ST_GeomFromText('POLYGON((0 0, 0 2, 2 2, 2 0, 0 0))'));"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 367,
+            "Prompt Tokens": 344,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 6.539999999999999e-05
+        },
+        {
+            "Total Tokens": 564,
+            "Prompt Tokens": 503,
+            "Completion Tokens": 61,
+            "Total Cost (USD)": 0.00011204999999999999
+        },
+        {
+            "Total Tokens": 768,
+            "Prompt Tokens": 703,
+            "Completion Tokens": 65,
+            "Total Cost (USD)": 0.00014445
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.OperationalError) (1054, \"Unknown column 'g1' in 'field list'\")\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.GeomFromText does not exist')\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT ST_Within(ST_GeomFromText('POINT(1 1)'), ST_GeomFromText('POLYGON((0 0, 0 2, 2 2, 2 0, 0 0))'));"
     ]
 }

@@ -1,0 +1,53 @@
+{
+    "HTML": [
+        "https://www.monetdb.org/documentation-Aug2024/user-guide/sql-manual/data-types/base-types"
+    ],
+    "Title": [
+        ""
+    ],
+    "Feature": [
+        ""
+    ],
+    "Description": [
+        "",
+        ""
+    ],
+    "Examples": [],
+    "Category": [
+        "Base Types"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT * FROM features WHERE feature_name IN ('' );",
+        "SELECT * FROM information_schema.tables WHERE table_name = '';",
+        "SELECT '' AS feature;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 255,
+            "Prompt Tokens": 231,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 4.905e-05
+        },
+        {
+            "Total Tokens": 406,
+            "Prompt Tokens": 382,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 7.17e-05
+        },
+        {
+            "Total Tokens": 551,
+            "Prompt Tokens": 534,
+            "Completion Tokens": 17,
+            "Total Cost (USD)": 9.03e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymonetdb.exceptions.OperationalError) 42S02!SELECT: no such table 'features'\n\n",
+        "(pymonetdb.exceptions.OperationalError) 3F000!SELECT: no such schema 'information_schema'\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT '' AS feature;"
+    ]
+}

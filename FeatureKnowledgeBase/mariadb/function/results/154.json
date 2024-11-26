@@ -61,5 +61,22 @@
     "Category": [
         "JSON Functions"
     ],
-    "EffectiveSQLsRefined": []
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT * FROM JSON_TABLE(@json, '$[*]' COLUMNS (name VARCHAR(10) PATH '$.name')) AS jt;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 2377,
+            "Prompt Tokens": 2338,
+            "Completion Tokens": 39,
+            "Total Cost (USD)": 0.00037409999999999993
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT * FROM JSON_TABLE(@json, '$[*]' COLUMNS (name VARCHAR(10) PATH '$.name')) AS jt;"
+    ]
 }

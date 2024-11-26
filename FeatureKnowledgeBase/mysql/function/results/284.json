@@ -22,8 +22,8 @@
         "SLEEP(duration)"
     ],
     "Examples": [
-        "mysql> SELECT SLEEP(1000);\n+-------------+\n| SLEEP(1000) |\n+-------------+\n|           0 |\n+-------------+",
-        "mysql> SELECT SLEEP(1000);\n+-------------+\n| SLEEP(1000) |\n+-------------+\n|           1 |\n+-------------+",
+        "mysql> SELECT SLEEP(1);\n+-------------+\n| SLEEP(1000) |\n+-------------+\n|           0 |\n+-------------+",
+        "mysql> SELECT SLEEP(1);\n+-------------+\n| SLEEP(1000) |\n+-------------+\n|           1 |\n+-------------+",
         "mysql> SELECT /*+ MAX_EXECUTION_TIME(1) */ SLEEP(1000);\n+-------------+\n| SLEEP(1000) |\n+-------------+\n|           1 |\n+-------------+",
         "mysql> SELECT 1 FROM t1 WHERE SLEEP(1000);\nERROR 1317 (70100): Query execution was interrupted",
         "mysql> SELECT /*+ MAX_EXECUTION_TIME(1000) */ 1 FROM t1 WHERE SLEEP(1000);\nERROR 3024 (HY000): Query execution was interrupted, maximum statement\nexecution time exceeded"
@@ -31,5 +31,18 @@
     "Category": [
         "Built-In Functions and Operators",
         "Miscellaneous Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT SLEEP(1);",
+        "SELECT SLEEP(1);",
+        "SELECT /*+ MAX_EXECUTION_TIME(1) */ SLEEP(1000);"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT SLEEP(1);",
+        "SELECT SLEEP(1);",
+        "SELECT /*+ MAX_EXECUTION_TIME(1) */ SLEEP(1000);"
     ]
 }

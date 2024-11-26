@@ -6,15 +6,33 @@
         "pg_safe_snapshot_blocking_pids"
     ],
     "Feature": [
-        "pg_safe_snapshot_blocking_pids ( integer ) → integer[]"
+        "pg_safe_snapshot_blocking_pids ( integer ) \u2192 integer[]"
     ],
     "Description": [
         "Returns an array of the process ID(s) of the sessions that are blocking the server process with the specified process ID from acquiring a safe snapshot, or an empty array if there is no such server process or it is not blocked.",
-        "A session running a SERIALIZABLE transaction blocks a SERIALIZABLE READ ONLY DEFERRABLE transaction from acquiring a snapshot until the latter determines that it is safe to avoid taking any predicate locks. See Section 13.2.3 for more information about serializable and deferrable transactions.",
+        "A session running a SERIALIZABLE transaction blocks a SERIALIZABLE READ ONLY DEFERRABLE transaction from acquiring a snapshot until the latter determines that it is safe to avoid taking any predicate locks. See Section\u00a013.2.3 for more information about serializable and deferrable transactions.",
         "Frequent calls to this function could have some impact on database performance, because it needs access to the predicate lock manager's shared state for a short time."
     ],
     "Examples": [],
     "Category": [
         "System Information Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT pg_safe_snapshot_blocking_pids(pid) FROM pg_stat_activity;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 425,
+            "Prompt Tokens": 398,
+            "Completion Tokens": 27,
+            "Total Cost (USD)": 7.59e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT pg_safe_snapshot_blocking_pids(pid) FROM pg_stat_activity;"
     ]
 }

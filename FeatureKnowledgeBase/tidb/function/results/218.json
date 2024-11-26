@@ -8,13 +8,47 @@
         "\nAVG([DISTINCT]\n            expr)\n            [over_clause]\n",
         "\n            Returns the average value of\n            expr. The\n            DISTINCT option can be used to return the\n            average of the distinct values of\n            expr.\n          ",
         "\n            If there are no matching rows,\n            AVG() returns\n            NULL. The function also returns\n            NULL if expr\n            is NULL.\n          ",
-        "\n            This function executes as a window function if\n            over_clause is present.\n            over_clause is as described in\n            Section 14.20.2, “Window Function Concepts and Syntax”; it cannot be used\n            with DISTINCT.\n          ",
+        "\n            This function executes as a window function if\n            over_clause is present.\n            over_clause is as described in\n            Section\u00a014.20.2, \u201cWindow Function Concepts and Syntax\u201d; it cannot be used\n            with DISTINCT.\n          ",
         "Press CTRL+C to copy mysql> SELECT student_name, AVG(test_score)\n       FROM student\n       GROUP BY student_name;"
     ],
     "Examples": [
         "mysql> SELECT student_name, AVG(test_score)\n       FROM student\n       GROUP BY student_name;"
     ],
     "Category": [
-        "GROUP BY 聚合函数"
+        "GROUP BY \u805a\u5408\u51fd\u6570"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT AVG(test_score) FROM student;",
+        "SELECT AVG(expr);",
+        "SELECT AVG(1);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 438,
+            "Prompt Tokens": 418,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 7.469999999999999e-05
+        },
+        {
+            "Total Tokens": 585,
+            "Prompt Tokens": 568,
+            "Completion Tokens": 17,
+            "Total Cost (USD)": 9.539999999999999e-05
+        },
+        {
+            "Total Tokens": 728,
+            "Prompt Tokens": 710,
+            "Completion Tokens": 18,
+            "Total Cost (USD)": 0.00011729999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.ProgrammingError) (1146, \"Table 'knowledge_base_preprocess_tidb.student' doesn't exist\")\n",
+        "(pymysql.err.OperationalError) (1054, \"Unknown column 'expr' in ''\")\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT AVG(1);"
     ]
 }

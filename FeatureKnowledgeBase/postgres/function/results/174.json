@@ -6,15 +6,63 @@
         "enum_last"
     ],
     "Feature": [
-        "enum_last ( anyenum ) → anyenum"
+        "enum_last ( anyenum ) \u2192 anyenum"
     ],
     "Description": [
         "Returns the last value of the input enum type."
     ],
     "Examples": [
-        "enum_last(null::rainbow) → purple"
+        "enum_last(null::rainbow) \u2192 purple"
     ],
     "Category": [
         "Enum Support Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT enum_last(your_enum_column) FROM your_table;",
+        "SELECT enum_last(your_enum_column);",
+        "SELECT enum_last(NULL::your_enum_type);",
+        "SELECT enum_last(NULL::my_enum);",
+        "SELECT enum_last(NULL::example_enum);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 276,
+            "Prompt Tokens": 252,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 5.2199999999999995e-05
+        },
+        {
+            "Total Tokens": 441,
+            "Prompt Tokens": 420,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 7.559999999999998e-05
+        },
+        {
+            "Total Tokens": 604,
+            "Prompt Tokens": 582,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 0.00010049999999999998
+        },
+        {
+            "Total Tokens": 767,
+            "Prompt Tokens": 746,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 0.0001245
+        },
+        {
+            "Total Tokens": 928,
+            "Prompt Tokens": 907,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 0.00014865
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedTable) relation \"your_table\" does not exist\nLINE 1: SELECT enum_last(your_enum_column) FROM your_table;\n                                                ^\n\n",
+        "(psycopg2.errors.UndefinedColumn) column \"your_enum_column\" does not exist\nLINE 1: SELECT enum_last(your_enum_column);\n                         ^\n\n",
+        "(psycopg2.errors.UndefinedObject) type \"your_enum_type\" does not exist\nLINE 1: SELECT enum_last(NULL::your_enum_type);\n                               ^\n\n",
+        "(psycopg2.errors.UndefinedObject) type \"my_enum\" does not exist\nLINE 1: SELECT enum_last(NULL::my_enum);\n                               ^\n\n",
+        "(psycopg2.errors.UndefinedObject) type \"example_enum\" does not exist\nLINE 1: SELECT enum_last(NULL::example_enum);\n                               ^\n\n"
+    ],
+    "EffectiveSQLs": []
 }

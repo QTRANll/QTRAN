@@ -13,6 +13,17 @@
         "mysql> SELECT MICROSECOND('12:00:00.123456');\n        -> 123456\nmysql> SELECT MICROSECOND('2019-12-31 23:59:59.000010');\n        -> 10"
     ],
     "Category": [
-        "日期和时间函数"
+        "\u65e5\u671f\u548c\u65f6\u95f4\u51fd\u6570"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT MICROSECOND('12:00:00.123456');",
+        "SELECT MICROSECOND('2019-12-31 23:59:59.000010');"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT MICROSECOND('12:00:00.123456');",
+        "SELECT MICROSECOND('2019-12-31 23:59:59.000010');"
     ]
 }

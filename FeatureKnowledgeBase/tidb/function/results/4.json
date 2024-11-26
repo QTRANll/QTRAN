@@ -10,14 +10,23 @@
     ],
     "Description": [
         "ASCII()",
-        "ASCII() 函数用于获取输入的参数中最左字符的 ASCII 值。该参数可以为字符串或数字。",
-        "如果输入参数不为空，该函数返回参数中最左字符的 ASCII 值。如果输入参数为空字符串，该函数返回 0。如果输入参数为 NULL，该函数返回 NULL。",
-        "注意ASCII() 只能处理那些用 8 个二进制数字（即单个字节）来表示的字符。"
+        "ASCII() \u51fd\u6570\u7528\u4e8e\u83b7\u53d6\u8f93\u5165\u7684\u53c2\u6570\u4e2d\u6700\u5de6\u5b57\u7b26\u7684 ASCII \u503c\u3002\u8be5\u53c2\u6570\u53ef\u4ee5\u4e3a\u5b57\u7b26\u4e32\u6216\u6570\u5b57\u3002",
+        "\u5982\u679c\u8f93\u5165\u53c2\u6570\u4e0d\u4e3a\u7a7a\uff0c\u8be5\u51fd\u6570\u8fd4\u56de\u53c2\u6570\u4e2d\u6700\u5de6\u5b57\u7b26\u7684 ASCII \u503c\u3002\u5982\u679c\u8f93\u5165\u53c2\u6570\u4e3a\u7a7a\u5b57\u7b26\u4e32\uff0c\u8be5\u51fd\u6570\u8fd4\u56de 0\u3002\u5982\u679c\u8f93\u5165\u53c2\u6570\u4e3a NULL\uff0c\u8be5\u51fd\u6570\u8fd4\u56de NULL\u3002",
+        "\u6ce8\u610fASCII() \u53ea\u80fd\u5904\u7406\u90a3\u4e9b\u7528 8 \u4e2a\u4e8c\u8fdb\u5236\u6570\u5b57\uff08\u5373\u5355\u4e2a\u5b57\u8282\uff09\u6765\u8868\u793a\u7684\u5b57\u7b26\u3002"
     ],
     "Examples": [
         "SELECT ASCII('A'), ASCII('TiDB'), ASCII(23);\n"
     ],
     "Category": [
-        "字符串函数"
+        "\u5b57\u7b26\u4e32\u51fd\u6570"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT ASCII('A'), ASCII('TiDB'), ASCII(23);"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT ASCII('A'), ASCII('TiDB'), ASCII(23);"
     ]
 }

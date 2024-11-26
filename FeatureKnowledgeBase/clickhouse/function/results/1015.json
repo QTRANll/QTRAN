@@ -28,5 +28,8 @@
     ],
     "Category": [
         "Type Conversion Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT    toDecimal128OrZero(toString(0.0001), 38) AS a,    toTypeName(a),    toDecimal128OrZero(toString('Inf'), 38) as b,    toTypeName(b)FORMAT Vertical;"
     ]
 }

@@ -6,7 +6,7 @@
         "suppress_redundant_updates_trigger"
     ],
     "Feature": [
-        "suppress_redundant_updates_trigger ( ) → trigger"
+        "suppress_redundant_updates_trigger ( ) \u2192 trigger"
     ],
     "Description": [
         "Suppresses do-nothing update operations. See below for details.",
@@ -15,5 +15,53 @@
     "Examples": [],
     "Category": [
         "Trigger Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "CREATE TRIGGER my_trigger_name BEFORE UPDATE ON my_table FOR EACH ROW EXECUTE FUNCTION suppress_redundant_updates_trigger();",
+        "CREATE TRIGGER my_trigger_name BEFORE UPDATE ON my_table FOR EACH ROW EXECUTE FUNCTION suppress_redundant_updates_trigger();",
+        "CREATE TRIGGER my_trigger_name BEFORE UPDATE ON some_existing_table FOR EACH ROW EXECUTE FUNCTION suppress_redundant_updates_trigger();",
+        "CREATE TRIGGER my_trigger_name BEFORE UPDATE ON another_existing_table FOR EACH ROW EXECUTE FUNCTION suppress_redundant_updates_trigger();",
+        "CREATE TRIGGER my_trigger_name BEFORE UPDATE ON pg_catalog.pg_class FOR EACH ROW EXECUTE FUNCTION suppress_redundant_updates_trigger();"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 327,
+            "Prompt Tokens": 289,
+            "Completion Tokens": 38,
+            "Total Cost (USD)": 6.614999999999998e-05
+        },
+        {
+            "Total Tokens": 495,
+            "Prompt Tokens": 457,
+            "Completion Tokens": 38,
+            "Total Cost (USD)": 9.135e-05
+        },
+        {
+            "Total Tokens": 664,
+            "Prompt Tokens": 625,
+            "Completion Tokens": 39,
+            "Total Cost (USD)": 0.00011714999999999999
+        },
+        {
+            "Total Tokens": 834,
+            "Prompt Tokens": 795,
+            "Completion Tokens": 39,
+            "Total Cost (USD)": 0.00014265
+        },
+        {
+            "Total Tokens": 1005,
+            "Prompt Tokens": 965,
+            "Completion Tokens": 40,
+            "Total Cost (USD)": 0.00016874999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedTable) relation \"my_table\" does not exist\n\n",
+        "(psycopg2.errors.UndefinedTable) relation \"my_table\" does not exist\n\n",
+        "(psycopg2.errors.UndefinedTable) relation \"some_existing_table\" does not exist\n\n",
+        "(psycopg2.errors.UndefinedTable) relation \"another_existing_table\" does not exist\n\n",
+        "(psycopg2.errors.InsufficientPrivilege) permission denied: \"pg_class\" is a system catalog\n\n"
+    ],
+    "EffectiveSQLs": []
 }

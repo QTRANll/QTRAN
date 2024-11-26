@@ -6,7 +6,7 @@
         "pg_create_restore_point"
     ],
     "Feature": [
-        "pg_create_restore_point ( name text ) → pg_lsn"
+        "pg_create_restore_point ( name text ) \u2192 pg_lsn"
     ],
     "Description": [
         "Creates a named marker record in the write-ahead log that can later be used as a recovery target, and returns the corresponding write-ahead log location. The given name can then be used with recovery_target_name to specify the point up to which recovery will proceed. Avoid creating multiple restore points with the same name, since recovery will stop at the first one whose name matches the recovery target.",
@@ -15,5 +15,23 @@
     "Examples": [],
     "Category": [
         "System Administration Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT pg_create_restore_point('my_restore_point');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 376,
+            "Prompt Tokens": 353,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 6.675e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT pg_create_restore_point('my_restore_point');"
     ]
 }

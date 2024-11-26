@@ -22,5 +22,13 @@
         "SELECT sys.ps_is_instrument_default_enabled('statement/sql/select');",
         "SELECT sys.ps_is_instrument_default_enabled('memory/sql/nonexistent');",
         "SELECT sys.ps_is_instrument_default_enabled(NULL);"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT sys.ps_is_instrument_default_enabled('statement/sql/select');",
+        "SELECT sys.ps_is_instrument_default_enabled('memory/sql/nonexistent');",
+        "SELECT sys.ps_is_instrument_default_enabled(NULL);"
     ]
 }

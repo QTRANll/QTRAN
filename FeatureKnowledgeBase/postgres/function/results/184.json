@@ -6,15 +6,49 @@
         "npoints"
     ],
     "Feature": [
-        "npoints ( geometric_type ) → integer"
+        "npoints ( geometric_type ) \u2192 integer"
     ],
     "Description": [
         "Returns the number of points. Available for path, polygon."
     ],
     "Examples": [
-        "npoints(path '[(0,0),(1,1),(2,0)]') → 3"
+        "npoints(path '[(0,0),(1,1),(2,0)]') \u2192 3"
     ],
     "Category": [
         "Geometric Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT npoints(path) FROM your_table;",
+        "SELECT npoints(path);",
+        "SELECT npoints('((0,0), (1,1), (2,2))'::path);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 274,
+            "Prompt Tokens": 253,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 5.0549999999999995e-05
+        },
+        {
+            "Total Tokens": 433,
+            "Prompt Tokens": 415,
+            "Completion Tokens": 18,
+            "Total Cost (USD)": 7.304999999999999e-05
+        },
+        {
+            "Total Tokens": 605,
+            "Prompt Tokens": 569,
+            "Completion Tokens": 36,
+            "Total Cost (USD)": 0.00010694999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedTable) relation \"your_table\" does not exist\nLINE 1: SELECT npoints(path) FROM your_table;\n                                  ^\n\n",
+        "(psycopg2.errors.UndefinedColumn) column \"path\" does not exist\nLINE 1: SELECT npoints(path);\n                       ^\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT npoints('((0,0), (1,1), (2,2))'::path);"
     ]
 }

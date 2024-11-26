@@ -38,5 +38,10 @@
     ],
     "Category": [
         "IPv6"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT * FROM hits;",
+        "SELECT toTypeName(from), hex(from) FROM hits LIMIT 1;",
+        "SELECT toIPv4('127.0.0.1') = toIPv6('::ffff:127.0.0.1');"
     ]
 }

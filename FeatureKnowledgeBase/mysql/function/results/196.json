@@ -23,5 +23,23 @@
     "Category": [
         "Built-In Functions and Operators",
         "String Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT LOAD_FILE('/path/to/your/file.txt');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 533,
+            "Prompt Tokens": 509,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 9.075e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT LOAD_FILE('/path/to/your/file.txt');"
     ]
 }

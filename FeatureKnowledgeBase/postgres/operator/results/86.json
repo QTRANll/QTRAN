@@ -6,16 +6,64 @@
         "?- line"
     ],
     "Feature": [
-        "?- line → boolean",
-        "?- lseg → boolean"
+        "?- line \u2192 boolean",
+        "?- lseg \u2192 boolean"
     ],
     "Description": [
         "Is line horizontal?"
     ],
     "Examples": [
-        "?- lseg '[(-1,0),(1,0)]' → t"
+        "?- lseg '[(-1,0),(1,0)]' \u2192 t"
     ],
     "Category": [
         "Geometric Functions and Operators"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT ?- line;",
+        "SELECT ?- lseg;",
+        "SELECT ?- line;",
+        "SELECT ?- line FROM your_table_name;",
+        "SELECT ?- line FROM (SELECT 1) AS dummy;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 265,
+            "Prompt Tokens": 248,
+            "Completion Tokens": 17,
+            "Total Cost (USD)": 4.74e-05
+        },
+        {
+            "Total Tokens": 419,
+            "Prompt Tokens": 401,
+            "Completion Tokens": 18,
+            "Total Cost (USD)": 7.094999999999999e-05
+        },
+        {
+            "Total Tokens": 574,
+            "Prompt Tokens": 557,
+            "Completion Tokens": 17,
+            "Total Cost (USD)": 9.375e-05
+        },
+        {
+            "Total Tokens": 731,
+            "Prompt Tokens": 710,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 0.00011909999999999998
+        },
+        {
+            "Total Tokens": 898,
+            "Prompt Tokens": 873,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 0.00014595
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedColumn) column \"line\" does not exist\nLINE 1: SELECT ?- line;\n                  ^\n\n",
+        "(psycopg2.errors.UndefinedColumn) column \"lseg\" does not exist\nLINE 1: SELECT ?- lseg;\n                  ^\n\n",
+        "(psycopg2.errors.UndefinedColumn) column \"line\" does not exist\nLINE 1: SELECT ?- line;\n                  ^\n\n",
+        "(psycopg2.errors.UndefinedTable) relation \"your_table_name\" does not exist\nLINE 1: SELECT ?- line FROM your_table_name;\n                            ^\n\n",
+        "(psycopg2.errors.UndefinedColumn) column \"line\" does not exist\nLINE 1: SELECT ?- line FROM (SELECT 1) AS dummy;\n                  ^\n\n"
+    ],
+    "EffectiveSQLs": []
 }

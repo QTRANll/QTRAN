@@ -6,16 +6,34 @@
         "json_to_recordset"
     ],
     "Feature": [
-        "json_to_recordset ( json ) → setof record",
-        "jsonb_to_recordset ( jsonb ) → setof record"
+        "json_to_recordset ( json ) \u2192 setof record",
+        "jsonb_to_recordset ( jsonb ) \u2192 setof record"
     ],
     "Description": [
         "Expands the top-level JSON array of objects to a set of rows having the composite type defined by an AS clause. (As with all functions returning record, the calling query must explicitly define the structure of the record with an AS clause.) Each element of the JSON array is processed as described above for json[b]_populate_record."
     ],
     "Examples": [
-        "select * from json_to_recordset('[{\"a\":1,\"b\":\"foo\"}, {\"a\":\"2\",\"c\":\"bar\"}]') as x(a int, b text) →"
+        "select * from json_to_recordset('[{\"a\":1,\"b\":\"foo\"}, {\"a\":\"2\",\"c\":\"bar\"}]') as x(a int, b text) \u2192"
     ],
     "Category": [
         "JSON Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT * FROM json_to_recordset('[{\"name\": \"Alice\", \"age\": 30}, {\"name\": \"Bob\", \"age\": 25}]') AS x(name text, age int);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 386,
+            "Prompt Tokens": 331,
+            "Completion Tokens": 55,
+            "Total Cost (USD)": 8.265e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT * FROM json_to_recordset('[{\"name\": \"Alice\", \"age\": 30}, {\"name\": \"Bob\", \"age\": 25}]') AS x(name text, age int);"
     ]
 }

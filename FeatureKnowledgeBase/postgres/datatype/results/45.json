@@ -19,5 +19,23 @@
     "Examples": [],
     "Category": [
         "Domain Types"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "CREATE DOMAIN posint AS integer CHECK (VALUE > 0);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 614,
+            "Prompt Tokens": 588,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 0.00010379999999999999
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "CREATE DOMAIN posint AS integer CHECK (VALUE > 0);"
     ]
 }

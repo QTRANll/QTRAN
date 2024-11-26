@@ -16,5 +16,47 @@
     ],
     "Category": [
         "Utility Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT alias(column) FROM your_table;",
+        "SELECT alias AS column_name FROM your_table;",
+        "SELECT alias(column) FROM pg_tables;",
+        "SELECT alias('column') AS column_name;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 267,
+            "Prompt Tokens": 247,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 4.905e-05
+        },
+        {
+            "Total Tokens": 414,
+            "Prompt Tokens": 393,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 7.154999999999999e-05
+        },
+        {
+            "Total Tokens": 585,
+            "Prompt Tokens": 565,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 9.674999999999998e-05
+        },
+        {
+            "Total Tokens": 732,
+            "Prompt Tokens": 711,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 0.00011924999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.ParserException) Parser Error: syntax error at or near \"column\"\n",
+        "(duckdb.duckdb.CatalogException) Catalog Error: Table with name your_table does not exist!\nDid you mean \"pg_tables\"?\nLINE 1: SELECT alias AS column_name FROM your_table;\n                                         ^\n",
+        "(duckdb.duckdb.ParserException) Parser Error: syntax error at or near \"column\"\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT alias('column') AS column_name;"
     ]
 }

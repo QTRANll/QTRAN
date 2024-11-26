@@ -20,5 +20,9 @@
     ],
     "Category": [
         "Type Conversion Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT toFixedString('foo', 8) AS s, toStringCutToZero(s) AS s_cut;",
+        "SELECT toFixedString('foo\\0bar', 8) AS s, toStringCutToZero(s) AS s_cut;"
     ]
 }

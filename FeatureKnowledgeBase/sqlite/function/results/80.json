@@ -15,26 +15,52 @@
         "If the json_remove(X) function is called with no path arguments,\nthen it returns the input X reformatted, with excess whitespace\nremoved.\n\n",
         "The json_remove() function throws an error if the first argument\nis not well-formed JSON or if any later argument is not a well-formed\npath.\n\n",
         "Examples:\n\n",
-        "json_remove('[0,1,2,3,4]','$[2]')\n→ '[0,1,3,4]'",
-        "json_remove('[0,1,2,3,4]','$[2]','$[0]')\n→ '[1,3,4]'",
-        "json_remove('[0,1,2,3,4]','$[0]','$[2]')\n→ '[1,2,4]'",
-        "json_remove('[0,1,2,3,4]','$[#-1]','$[0]')\n→ '[1,2,3]'",
-        "json_remove('{\"x\":25,\"y\":42}')\n→ '{\"x\":25,\"y\":42}'",
-        "json_remove('{\"x\":25,\"y\":42}','$.z')\n→ '{\"x\":25,\"y\":42}'",
-        "json_remove('{\"x\":25,\"y\":42}','$.y')\n→ '{\"x\":25}'",
-        "json_remove('{\"x\":25,\"y\":42}','$')\n→ NULL"
+        "json_remove('[0,1,2,3,4]','$[2]')\n\u2192 '[0,1,3,4]'",
+        "json_remove('[0,1,2,3,4]','$[2]','$[0]')\n\u2192 '[1,3,4]'",
+        "json_remove('[0,1,2,3,4]','$[0]','$[2]')\n\u2192 '[1,2,4]'",
+        "json_remove('[0,1,2,3,4]','$[#-1]','$[0]')\n\u2192 '[1,2,3]'",
+        "json_remove('{\"x\":25,\"y\":42}')\n\u2192 '{\"x\":25,\"y\":42}'",
+        "json_remove('{\"x\":25,\"y\":42}','$.z')\n\u2192 '{\"x\":25,\"y\":42}'",
+        "json_remove('{\"x\":25,\"y\":42}','$.y')\n\u2192 '{\"x\":25}'",
+        "json_remove('{\"x\":25,\"y\":42}','$')\n\u2192 NULL"
     ],
     "Examples": [
-        "json_remove('[0,1,2,3,4]','$[2]')\n→ '[0,1,3,4]'",
-        "json_remove('[0,1,2,3,4]','$[2]','$[0]')\n→ '[1,3,4]'",
-        "json_remove('[0,1,2,3,4]','$[0]','$[2]')\n→ '[1,2,4]'",
-        "json_remove('[0,1,2,3,4]','$[#-1]','$[0]')\n→ '[1,2,3]'",
-        "json_remove('{\"x\":25,\"y\":42}')\n→ '{\"x\":25,\"y\":42}'",
-        "json_remove('{\"x\":25,\"y\":42}','$.z')\n→ '{\"x\":25,\"y\":42}'",
-        "json_remove('{\"x\":25,\"y\":42}','$.y')\n→ '{\"x\":25}'",
-        "json_remove('{\"x\":25,\"y\":42}','$')\n→ NULL"
+        "json_remove('[0,1,2,3,4]','$[2]')\n\u2192 '[0,1,3,4]'",
+        "json_remove('[0,1,2,3,4]','$[2]','$[0]')\n\u2192 '[1,3,4]'",
+        "json_remove('[0,1,2,3,4]','$[0]','$[2]')\n\u2192 '[1,2,4]'",
+        "json_remove('[0,1,2,3,4]','$[#-1]','$[0]')\n\u2192 '[1,2,3]'",
+        "json_remove('{\"x\":25,\"y\":42}')\n\u2192 '{\"x\":25,\"y\":42}'",
+        "json_remove('{\"x\":25,\"y\":42}','$.z')\n\u2192 '{\"x\":25,\"y\":42}'",
+        "json_remove('{\"x\":25,\"y\":42}','$.y')\n\u2192 '{\"x\":25}'",
+        "json_remove('{\"x\":25,\"y\":42}','$')\n\u2192 NULL"
     ],
     "Category": [
         "JSON Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "json_remove('[0,1,2,3,4]', '$[2]')",
+        "SELECT json_remove('[0,1,2,3,4]', '$[2]')"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 735,
+            "Prompt Tokens": 704,
+            "Completion Tokens": 31,
+            "Total Cost (USD)": 0.00012419999999999998
+        },
+        {
+            "Total Tokens": 892,
+            "Prompt Tokens": 860,
+            "Completion Tokens": 32,
+            "Total Cost (USD)": 0.0001482
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(sqlite3.OperationalError) near \"json_remove\": syntax error\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT json_remove('[0,1,2,3,4]', '$[2]')"
     ]
 }

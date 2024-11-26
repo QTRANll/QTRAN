@@ -16,5 +16,53 @@
     ],
     "Category": [
         "INET Operators"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT * FROM features WHERE description LIKE '%contains%'",
+        "SELECT * FROM information WHERE description LIKE '%contains%'",
+        "SELECT * FROM data WHERE feature LIKE '%contains%'",
+        "SELECT * FROM features_table WHERE feature_description LIKE '%contains%'",
+        "SELECT * FROM features_data WHERE feature_info LIKE '%contains%'"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 257,
+            "Prompt Tokens": 234,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 4.8899999999999996e-05
+        },
+        {
+            "Total Tokens": 408,
+            "Prompt Tokens": 385,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 7.154999999999999e-05
+        },
+        {
+            "Total Tokens": 559,
+            "Prompt Tokens": 536,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 9.42e-05
+        },
+        {
+            "Total Tokens": 712,
+            "Prompt Tokens": 687,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 0.00011805
+        },
+        {
+            "Total Tokens": 866,
+            "Prompt Tokens": 841,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 0.00014115
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymonetdb.exceptions.OperationalError) 42S02!SELECT: no such table 'features'\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42S02!SELECT: no such table 'information'\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42S02!SELECT: no such table 'data'\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42S02!SELECT: no such table 'features_table'\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42S02!SELECT: no such table 'features_data'\n\n"
+    ],
+    "EffectiveSQLs": []
 }

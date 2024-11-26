@@ -18,5 +18,39 @@
     ],
     "Category": [
         "JSON Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT json.valuearray(js) FROM your_table_name",
+        "SELECT json.valuearray(js)",
+        "SELECT json.valuearray('{\"key\": \"value\"}')"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 311,
+            "Prompt Tokens": 288,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 5.699999999999999e-05
+        },
+        {
+            "Total Tokens": 463,
+            "Prompt Tokens": 445,
+            "Completion Tokens": 18,
+            "Total Cost (USD)": 7.754999999999999e-05
+        },
+        {
+            "Total Tokens": 618,
+            "Prompt Tokens": 593,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 0.00010394999999999999
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymonetdb.exceptions.OperationalError) 42S02!SELECT: no such table 'your_table_name'\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: identifier 'js' unknown\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT json.valuearray('{\"key\": \"value\"}')"
     ]
 }

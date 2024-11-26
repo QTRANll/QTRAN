@@ -17,5 +17,39 @@
     ],
     "Category": [
         "Aggregate Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT arbitrary(A);",
+        "SELECT arbitrary(column_name) FROM table_name;",
+        "SELECT arbitrary(A) FROM (SELECT 1 AS A UNION SELECT 2 AS A UNION SELECT 3 AS A) AS temp;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 285,
+            "Prompt Tokens": 268,
+            "Completion Tokens": 17,
+            "Total Cost (USD)": 5.0400000000000005e-05
+        },
+        {
+            "Total Tokens": 448,
+            "Prompt Tokens": 427,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 7.664999999999999e-05
+        },
+        {
+            "Total Tokens": 640,
+            "Prompt Tokens": 601,
+            "Completion Tokens": 39,
+            "Total Cost (USD)": 0.00011354999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.BinderException) Binder Error: Referenced column \"A\" not found in FROM clause!\nLINE 1: SELECT arbitrary(A);\n                         ^\n",
+        "(duckdb.duckdb.CatalogException) Catalog Error: Table with name table_name does not exist!\nDid you mean \"pg_tablespace\"?\nLINE 1: SELECT arbitrary(column_name) FROM table_name;\n                                           ^\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT arbitrary(A) FROM (SELECT 1 AS A UNION SELECT 2 AS A UNION SELECT 3 AS A) AS temp;"
     ]
 }

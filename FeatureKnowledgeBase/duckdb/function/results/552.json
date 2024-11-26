@@ -16,5 +16,31 @@
     ],
     "Category": [
         "Timestamp with Time Zone Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT strftime(timestamptz, '%Y-%m-%d %H:%M:%S')",
+        "SELECT strftime(current_timestamp, '%Y-%m-%d %H:%M:%S')"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 317,
+            "Prompt Tokens": 282,
+            "Completion Tokens": 35,
+            "Total Cost (USD)": 6.33e-05
+        },
+        {
+            "Total Tokens": 518,
+            "Prompt Tokens": 486,
+            "Completion Tokens": 32,
+            "Total Cost (USD)": 9.209999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.BinderException) Binder Error: Referenced column \"timestamptz\" not found in FROM clause!\nLINE 1: SELECT strftime(timestamptz, '%Y-%m-%d %H:%M:%S')\n                        ^\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT strftime(current_timestamp, '%Y-%m-%d %H:%M:%S')"
     ]
 }

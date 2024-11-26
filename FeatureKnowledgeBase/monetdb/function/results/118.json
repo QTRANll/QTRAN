@@ -18,5 +18,31 @@
     ],
     "Category": [
         "Character String Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT trim(s) FROM your_table;",
+        "SELECT trim('   example string   ');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 278,
+            "Prompt Tokens": 258,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 5.07e-05
+        },
+        {
+            "Total Tokens": 431,
+            "Prompt Tokens": 409,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 7.454999999999998e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymonetdb.exceptions.OperationalError) 42S02!SELECT: no such table 'your_table'\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT trim('   example string   ');"
     ]
 }

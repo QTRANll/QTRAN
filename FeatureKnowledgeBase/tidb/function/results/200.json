@@ -10,11 +10,29 @@
     ],
     "Description": [
         "JSON_MERGE()",
-        "警告该函数已废弃。",
-        "该函数为 JSON_MERGE_PRESERVE() 已废弃的别名。"
+        "\u8b66\u544a\u8be5\u51fd\u6570\u5df2\u5e9f\u5f03\u3002",
+        "\u8be5\u51fd\u6570\u4e3a JSON_MERGE_PRESERVE() \u5df2\u5e9f\u5f03\u7684\u522b\u540d\u3002"
     ],
     "Examples": [],
     "Category": [
-        "修改 JSON 的函数"
+        "\u4fee\u6539 JSON \u7684\u51fd\u6570"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT JSON_MERGE('{}', '{}');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 304,
+            "Prompt Tokens": 282,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 5.549999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT JSON_MERGE('{}', '{}');"
     ]
 }

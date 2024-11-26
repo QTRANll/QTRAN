@@ -6,8 +6,8 @@
         "pg_try_advisory_xact_lock"
     ],
     "Feature": [
-        "pg_try_advisory_xact_lock ( key bigint ) → boolean",
-        "pg_try_advisory_xact_lock ( key1 integer, key2 integer ) → boolean"
+        "pg_try_advisory_xact_lock ( key bigint ) \u2192 boolean",
+        "pg_try_advisory_xact_lock ( key1 integer, key2 integer ) \u2192 boolean"
     ],
     "Description": [
         "Obtains an exclusive transaction-level advisory lock if available. This will either obtain the lock immediately and return true, or return false without waiting if the lock cannot be acquired immediately."
@@ -15,5 +15,23 @@
     "Examples": [],
     "Category": [
         "System Administration Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT pg_try_advisory_xact_lock(1);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 346,
+            "Prompt Tokens": 321,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 6.314999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT pg_try_advisory_xact_lock(1);"
     ]
 }

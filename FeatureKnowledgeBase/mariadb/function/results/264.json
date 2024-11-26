@@ -27,5 +27,14 @@
         "SELECT RPAD('hello',2,'.');",
         "SELECT RPAD('hello',30);",
         "SELECT RPAD('',0),RPAD_ORACLE('',0);"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT RPAD('hello',10,'.');",
+        "SELECT RPAD('hello',2,'.');",
+        "SELECT RPAD('hello',30);",
+        "SELECT RPAD('',0),RPAD_ORACLE('',0);"
     ]
 }

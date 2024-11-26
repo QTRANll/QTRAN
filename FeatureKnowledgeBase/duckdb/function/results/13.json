@@ -16,5 +16,55 @@
     ],
     "Category": [
         "Aggregate Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT bitstring_agg(arg) FROM your_table;",
+        "SELECT bitstring_agg(arg) FROM pg_tables;",
+        "SELECT bitstring_agg(hastriggers) FROM pg_tables;",
+        "SELECT bitstring_agg(hastriggers::INTEGER) FROM pg_tables;",
+        "SELECT bitstring_agg(hastriggers::INTEGER, 0, 1) FROM pg_tables;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 307,
+            "Prompt Tokens": 284,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 5.639999999999999e-05
+        },
+        {
+            "Total Tokens": 486,
+            "Prompt Tokens": 463,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 8.324999999999999e-05
+        },
+        {
+            "Total Tokens": 678,
+            "Prompt Tokens": 653,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 0.00011295
+        },
+        {
+            "Total Tokens": 1196,
+            "Prompt Tokens": 1169,
+            "Completion Tokens": 27,
+            "Total Cost (USD)": 0.00019154999999999997
+        },
+        {
+            "Total Tokens": 1376,
+            "Prompt Tokens": 1343,
+            "Completion Tokens": 33,
+            "Total Cost (USD)": 0.00022124999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.CatalogException) Catalog Error: Table with name your_table does not exist!\nDid you mean \"pg_tables\"?\nLINE 1: SELECT bitstring_agg(arg) FROM your_table;\n                                       ^\n",
+        "(duckdb.duckdb.BinderException) Binder Error: Referenced column \"arg\" not found in FROM clause!\nCandidate bindings: \"pg_tables.hastriggers\", \"pg_tables.hasrules\"\nLINE 1: SELECT bitstring_agg(arg) FROM pg_tables;\n                             ^\n",
+        "(duckdb.duckdb.BinderException) Binder Error: No function matches the given name and argument types 'bitstring_agg(BOOLEAN)'. You might need to add explicit type casts.\n\tCandidate functions:\n\tbitstring_agg(TINYINT) -> BIT\n\tbitstring_agg(TINYINT, TINYINT, TINYINT) -> BIT\n\tbitstring_agg(SMALLINT) -> BIT\n\tbitstring_agg(SMALLINT, SMALLINT, SMALLINT) -> BIT\n\tbitstring_agg(INTEGER) -> BIT\n\tbitstring_agg(INTEGER, INTEGER, INTEGER) -> BIT\n\tbitstring_agg(BIGINT) -> BIT\n\tbitstring_agg(BIGINT, BIGINT, BIGINT) -> BIT\n\tbitstring_agg(HUGEINT) -> BIT\n\tbitstring_agg(HUGEINT, HUGEINT, HUGEINT) -> BIT\n\tbitstring_agg(UTINYINT) -> BIT\n\tbitstring_agg(UTINYINT, UTINYINT, UTINYINT) -> BIT\n\tbitstring_agg(USMALLINT) -> BIT\n\tbitstring_agg(USMALLINT, USMALLINT, USMALLINT) -> BIT\n\tbitstring_agg(UINTEGER) -> BIT\n\tbitstring_agg(UINTEGER, UINTEGER, UINTEGER) -> BIT\n\tbitstring_agg(UBIGINT) -> BIT\n\tbitstring_agg(UBIGINT, UBIGINT, UBIGINT) -> BIT\n\tbitstring_agg(UHUGEINT) -> BIT\n\tbitstring_agg(UHUGEINT, UHUGEINT, UHUGEINT) -> BIT\n\nLINE 1: SELECT bitstring_agg(hastriggers) FROM pg_tabl...\n               ^\n",
+        "(duckdb.duckdb.BinderException) Binder Error: Could not retrieve required statistics. Alternatively, try by providing the statistics explicitly: BITSTRING_AGG(col, min, max) \n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT bitstring_agg(hastriggers::INTEGER, 0, 1) FROM pg_tables;"
     ]
 }

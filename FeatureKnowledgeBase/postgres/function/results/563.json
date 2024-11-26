@@ -6,7 +6,7 @@
         "pg_table_size"
     ],
     "Feature": [
-        "pg_table_size ( regclass ) → bigint"
+        "pg_table_size ( regclass ) \u2192 bigint"
     ],
     "Description": [
         "Computes the disk space used by the specified table, excluding indexes (but including its TOAST table if any, free space map, and visibility map)."
@@ -14,5 +14,31 @@
     "Examples": [],
     "Category": [
         "System Administration Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT pg_table_size('your_table_name');",
+        "SELECT pg_table_size('pg_catalog.pg_tables');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 298,
+            "Prompt Tokens": 276,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 5.459999999999999e-05
+        },
+        {
+            "Total Tokens": 464,
+            "Prompt Tokens": 441,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 7.994999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedTable) relation \"your_table_name\" does not exist\nLINE 1: SELECT pg_table_size('your_table_name');\n                             ^\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT pg_table_size('pg_catalog.pg_tables');"
     ]
 }

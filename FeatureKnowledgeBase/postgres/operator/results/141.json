@@ -6,15 +6,33 @@
         "anyarray <@ anyarray"
     ],
     "Feature": [
-        "anyarray <@ anyarray → boolean"
+        "anyarray <@ anyarray \u2192 boolean"
     ],
     "Description": [
         "Is the first array contained by the second?"
     ],
     "Examples": [
-        "ARRAY[2,2,7] <@ ARRAY[1,7,4,2,6] → t"
+        "ARRAY[2,2,7] <@ ARRAY[1,7,4,2,6] \u2192 t"
     ],
     "Category": [
         "Array Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT ARRAY[1, 2] <@ ARRAY[1, 2, 3];"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 295,
+            "Prompt Tokens": 262,
+            "Completion Tokens": 33,
+            "Total Cost (USD)": 5.91e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT ARRAY[1, 2] <@ ARRAY[1, 2, 3];"
     ]
 }

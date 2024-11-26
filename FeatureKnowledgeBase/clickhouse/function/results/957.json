@@ -29,5 +29,8 @@
     ],
     "Category": [
         "Type Conversion Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT    toInt256OrDefault('-256', CAST('-1', 'Int256')),    toInt256OrDefault('abc', CAST('-1', 'Int256'))FORMAT Vertical;"
     ]
 }

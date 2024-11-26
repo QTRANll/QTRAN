@@ -6,15 +6,33 @@
         "set_bit"
     ],
     "Feature": [
-        "set_bit ( bits bit, n integer, newvalue integer ) → bit"
+        "set_bit ( bits bit, n integer, newvalue integer ) \u2192 bit"
     ],
     "Description": [
         "Sets n'th bit in bit string to newvalue; the first (leftmost) bit is bit 0."
     ],
     "Examples": [
-        "set_bit(B'101010101010101010', 6, 0) → 101010001010101010"
+        "set_bit(B'101010101010101010', 6, 0) \u2192 101010001010101010"
     ],
     "Category": [
         "Bit String Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT set_bit(B'1010', 1, 1);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 298,
+            "Prompt Tokens": 271,
+            "Completion Tokens": 27,
+            "Total Cost (USD)": 5.685e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT set_bit(B'1010', 1, 1);"
     ]
 }

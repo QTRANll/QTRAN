@@ -16,5 +16,47 @@
     ],
     "Category": [
         "Timestamp Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT to_timestamp(epoch_ms(ms))",
+        "SELECT to_timestamp(epoch_ms(0))",
+        "SELECT to_timestamp(epoch_ms(0.0))",
+        "SELECT epoch_ms(0)"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 273,
+            "Prompt Tokens": 253,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 4.9949999999999994e-05
+        },
+        {
+            "Total Tokens": 439,
+            "Prompt Tokens": 418,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 7.529999999999999e-05
+        },
+        {
+            "Total Tokens": 640,
+            "Prompt Tokens": 617,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 0.00010634999999999998
+        },
+        {
+            "Total Tokens": 910,
+            "Prompt Tokens": 892,
+            "Completion Tokens": 18,
+            "Total Cost (USD)": 0.0001446
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.BinderException) Binder Error: Referenced column \"ms\" not found in FROM clause!\nLINE 1: SELECT to_timestamp(epoch_ms(ms))\n                                     ^\n",
+        "(duckdb.duckdb.BinderException) Binder Error: No function matches the given name and argument types 'to_timestamp(TIMESTAMP)'. You might need to add explicit type casts.\n\tCandidate functions:\n\tto_timestamp(DOUBLE) -> TIMESTAMP WITH TIME ZONE\n\nLINE 1: SELECT to_timestamp(epoch_ms(0))\n               ^\n",
+        "(duckdb.duckdb.BinderException) Binder Error: No function matches the given name and argument types 'epoch_ms(DECIMAL(2,1))'. You might need to add explicit type casts.\n\tCandidate functions:\n\tepoch_ms(DATE) -> BIGINT\n\tepoch_ms(TIMESTAMP) -> BIGINT\n\tepoch_ms(INTERVAL) -> BIGINT\n\tepoch_ms(TIME) -> BIGINT\n\tepoch_ms(TIME WITH TIME ZONE) -> BIGINT\n\tepoch_ms(TIMESTAMP WITH TIME ZONE) -> BIGINT\n\tepoch_ms(BIGINT) -> TIMESTAMP\n\nLINE 1: SELECT to_timestamp(epoch_ms(0.0))\n                            ^\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT epoch_ms(0)"
     ]
 }

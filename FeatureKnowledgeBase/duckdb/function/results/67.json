@@ -17,5 +17,47 @@
     ],
     "Category": [
         "Aggregate Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT argMax(arg, val, n) FROM your_table",
+        "SELECT argMax(arg, val, n)",
+        "SELECT argMax(arg, val, n) FROM (SELECT 1 AS arg, 10 AS val UNION ALL SELECT 2 AS arg, 20 AS val)",
+        "SELECT argMax(arg, val, 2) FROM (SELECT 1 AS arg, 10 AS val UNION ALL SELECT 2 AS arg, 20 AS val)"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 328,
+            "Prompt Tokens": 303,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 6.044999999999999e-05
+        },
+        {
+            "Total Tokens": 509,
+            "Prompt Tokens": 488,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 8.579999999999998e-05
+        },
+        {
+            "Total Tokens": 706,
+            "Prompt Tokens": 660,
+            "Completion Tokens": 46,
+            "Total Cost (USD)": 0.0001266
+        },
+        {
+            "Total Tokens": 928,
+            "Prompt Tokens": 881,
+            "Completion Tokens": 47,
+            "Total Cost (USD)": 0.00016035
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.CatalogException) Catalog Error: Table with name your_table does not exist!\nDid you mean \"pg_tables\"?\nLINE 1: SELECT argMax(arg, val, n) FROM your_table\n                                        ^\n",
+        "(duckdb.duckdb.BinderException) Binder Error: Referenced column \"arg\" not found in FROM clause!\nLINE 1: SELECT argMax(arg, val, n)\n                      ^\n",
+        "(duckdb.duckdb.BinderException) Binder Error: Referenced column \"n\" not found in FROM clause!\nCandidate bindings: \"unnamed_subquery.arg\"\nLINE 1: SELECT argMax(arg, val, n) FROM (SELECT 1 AS arg, 10 AS val UNI...\n                                ^\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT argMax(arg, val, 2) FROM (SELECT 1 AS arg, 10 AS val UNION ALL SELECT 2 AS arg, 20 AS val)"
     ]
 }

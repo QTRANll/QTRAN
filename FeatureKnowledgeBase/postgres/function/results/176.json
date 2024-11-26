@@ -6,15 +6,33 @@
         "area"
     ],
     "Feature": [
-        "area ( geometric_type ) → double precision"
+        "area ( geometric_type ) \u2192 double precision"
     ],
     "Description": [
         "Computes area. Available for box, path, circle. A path input must be closed, else NULL is returned. Also, if the path is self-intersecting, the result may be meaningless."
     ],
     "Examples": [
-        "area(box '(2,2),(0,0)') → 4"
+        "area(box '(2,2),(0,0)') \u2192 4"
     ],
     "Category": [
         "Geometric Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT area('((0,0),(0,1),(1,1),(1,0),(0,0))'::path);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 320,
+            "Prompt Tokens": 279,
+            "Completion Tokens": 41,
+            "Total Cost (USD)": 6.645e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT area('((0,0),(0,1),(1,1),(1,0),(0,0))'::path);"
     ]
 }

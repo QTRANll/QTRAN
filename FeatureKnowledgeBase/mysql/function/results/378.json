@@ -20,5 +20,39 @@
     "Category": [
         "Built-In Functions and Operators",
         "Aggregate Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT SUM(expr) FROM your_table;",
+        "SELECT SUM(expr);",
+        "SELECT SUM(1);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 440,
+            "Prompt Tokens": 420,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 7.499999999999998e-05
+        },
+        {
+            "Total Tokens": 596,
+            "Prompt Tokens": 579,
+            "Completion Tokens": 17,
+            "Total Cost (USD)": 9.704999999999999e-05
+        },
+        {
+            "Total Tokens": 749,
+            "Prompt Tokens": 731,
+            "Completion Tokens": 18,
+            "Total Cost (USD)": 0.00012044999999999997
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.ProgrammingError) (1146, \"Table 'knowledge_base_preprocess_mysql.your_table' doesn't exist\")\n",
+        "(pymysql.err.OperationalError) (1054, \"Unknown column 'expr' in 'field list'\")\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT SUM(1);"
     ]
 }

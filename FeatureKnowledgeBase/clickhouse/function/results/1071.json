@@ -32,5 +32,12 @@
     ],
     "Category": [
         "Type Conversion Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT parseDateTimeBestEffort('23/10/2020 12:12:57')AS parseDateTimeBestEffort;",
+        "SELECT parseDateTimeBestEffort('Sat, 18 Aug 2018 07:22:16 GMT', 'Asia/Istanbul')AS parseDateTimeBestEffort;",
+        "SELECT parseDateTimeBestEffort('1284101485')AS parseDateTimeBestEffort;",
+        "SELECT parseDateTimeBestEffort('2018-10-23 10:12:12')AS parseDateTimeBestEffort;",
+        "SELECT toYear(now()) as year, parseDateTimeBestEffort('10 20:19');"
     ]
 }

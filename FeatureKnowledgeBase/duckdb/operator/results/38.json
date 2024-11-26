@@ -16,5 +16,39 @@
     ],
     "Category": [
         "Numeric Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT ~column_name FROM table_name;",
+        "SELECT ~column_name;",
+        "SELECT ~0;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 256,
+            "Prompt Tokens": 236,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 4.7399999999999993e-05
+        },
+        {
+            "Total Tokens": 422,
+            "Prompt Tokens": 405,
+            "Completion Tokens": 17,
+            "Total Cost (USD)": 7.095e-05
+        },
+        {
+            "Total Tokens": 579,
+            "Prompt Tokens": 563,
+            "Completion Tokens": 16,
+            "Total Cost (USD)": 9.404999999999998e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.CatalogException) Catalog Error: Table with name table_name does not exist!\nDid you mean \"pg_tablespace\"?\nLINE 1: SELECT ~column_name FROM table_name;\n                                 ^\n",
+        "(duckdb.duckdb.BinderException) Binder Error: Referenced column \"column_name\" not found in FROM clause!\nLINE 1: SELECT ~column_name;\n                ^\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT ~0;"
     ]
 }

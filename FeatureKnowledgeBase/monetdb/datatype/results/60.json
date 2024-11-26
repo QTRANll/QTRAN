@@ -1,0 +1,54 @@
+{
+    "HTML": [
+        "https://www.monetdb.org/documentation-Aug2024/user-guide/sql-manual/data-types/temporal-types"
+    ],
+    "Title": [
+        "arrival_timestamp"
+    ],
+    "Feature": [
+        "arrival_timestamp"
+    ],
+    "Description": [
+        "timestamp",
+        "no",
+        "Combination of arrival_date and arrival_time"
+    ],
+    "Examples": [],
+    "Category": [
+        "Temporal Datatypes"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT arrival_timestamp FROM your_table;",
+        "SELECT arrival_timestamp;",
+        "SELECT * FROM (SELECT NOW() AS arrival_timestamp) AS temp;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 269,
+            "Prompt Tokens": 250,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 4.8899999999999996e-05
+        },
+        {
+            "Total Tokens": 415,
+            "Prompt Tokens": 399,
+            "Completion Tokens": 16,
+            "Total Cost (USD)": 6.945e-05
+        },
+        {
+            "Total Tokens": 569,
+            "Prompt Tokens": 543,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 9.705e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymonetdb.exceptions.OperationalError) 42S02!SELECT: no such table 'your_table'\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: identifier 'arrival_timestamp' unknown\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT * FROM (SELECT NOW() AS arrival_timestamp) AS temp;"
+    ]
+}

@@ -6,15 +6,33 @@
         "date_bin"
     ],
     "Feature": [
-        "date_bin ( interval, timestamp, timestamp ) → timestamp"
+        "date_bin ( interval, timestamp, timestamp ) \u2192 timestamp"
     ],
     "Description": [
-        "Bin input into specified interval aligned with specified origin; see Section 9.9.3"
+        "Bin input into specified interval aligned with specified origin; see Section\u00a09.9.3"
     ],
     "Examples": [
-        "date_bin('15 minutes', timestamp '2001-02-16 20:38:40', timestamp '2001-02-16 20:05:00') → 2001-02-16 20:35:00"
+        "date_bin('15 minutes', timestamp '2001-02-16 20:38:40', timestamp '2001-02-16 20:05:00') \u2192 2001-02-16 20:35:00"
     ],
     "Category": [
         "Date divide Time Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT date_bin('1 day', '2023-01-01 12:00:00', '2023-01-01 00:00:00');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 310,
+            "Prompt Tokens": 262,
+            "Completion Tokens": 48,
+            "Total Cost (USD)": 6.81e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT date_bin('1 day', '2023-01-01 12:00:00', '2023-01-01 00:00:00');"
     ]
 }

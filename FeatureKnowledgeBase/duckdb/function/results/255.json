@@ -18,5 +18,31 @@
     ],
     "Category": [
         "List Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT list_negative_dot_product(list1, list2);",
+        "SELECT list_negative_dot_product(ARRAY[1, 2, 3], ARRAY[4, 5, 6]);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 321,
+            "Prompt Tokens": 297,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 5.894999999999999e-05
+        },
+        {
+            "Total Tokens": 510,
+            "Prompt Tokens": 471,
+            "Completion Tokens": 39,
+            "Total Cost (USD)": 9.405e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.BinderException) Binder Error: Referenced column \"list1\" not found in FROM clause!\nLINE 1: SELECT list_negative_dot_product(list1, list2);\n                                         ^\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT list_negative_dot_product(ARRAY[1, 2, 3], ARRAY[4, 5, 6]);"
     ]
 }

@@ -30,5 +30,53 @@
         "Built-In Functions and Operators",
         "Replication Functions",
         "Loadable Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT asynchronous_connection_failover_delete_managed('channel2', 'aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa');",
+        "SELECT asynchronous_connection_failover_delete_managed('channel2', 'new-managed-group-id');",
+        "SELECT asynchronous_connection_failover_delete_managed('channel2', 'aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa');",
+        "SELECT asynchronous_connection_failover_delete_managed('channel2', 'valid-managed-group-id');",
+        "SELECT asynchronous_connection_failover_delete_managed('channel2', '123e4567-e89b-12d3-a456-426614174000');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 638,
+            "Prompt Tokens": 601,
+            "Completion Tokens": 37,
+            "Total Cost (USD)": 0.00011234999999999998
+        },
+        {
+            "Total Tokens": 816,
+            "Prompt Tokens": 785,
+            "Completion Tokens": 31,
+            "Total Cost (USD)": 0.00013634999999999998
+        },
+        {
+            "Total Tokens": 1002,
+            "Prompt Tokens": 965,
+            "Completion Tokens": 37,
+            "Total Cost (USD)": 0.00016695
+        },
+        {
+            "Total Tokens": 1180,
+            "Prompt Tokens": 1149,
+            "Completion Tokens": 31,
+            "Total Cost (USD)": 0.00019094999999999998
+        },
+        {
+            "Total Tokens": 1374,
+            "Prompt Tokens": 1329,
+            "Completion Tokens": 45,
+            "Total Cost (USD)": 0.00022634999999999997
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.OperationalError) (3200, 'asynchronous_connection_failover_delete_managed UDF failed; Error no matching row was found to be deleted.')\n",
+        "(pymysql.err.OperationalError) (1123, \"Can't initialize function 'asynchronous_connection_failover_delete_managed'; Wrong value: Please specify valid UUID for managed name.\")\n",
+        "(pymysql.err.OperationalError) (3200, 'asynchronous_connection_failover_delete_managed UDF failed; Error no matching row was found to be deleted.')\n",
+        "(pymysql.err.OperationalError) (1123, \"Can't initialize function 'asynchronous_connection_failover_delete_managed'; Wrong value: Please specify valid UUID for managed name.\")\n",
+        "(pymysql.err.OperationalError) (3200, 'asynchronous_connection_failover_delete_managed UDF failed; Error no matching row was found to be deleted.')\n"
+    ],
+    "EffectiveSQLs": []
 }

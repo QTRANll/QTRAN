@@ -45,5 +45,28 @@
     "Category": [
         "Built-In Functions and Operators",
         "String Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT @s, HEX(@s), HEX(WEIGHT_STRING(@s));",
+        "SELECT @s, HEX(@s), HEX(WEIGHT_STRING(@s));",
+        "SELECT @s, HEX(@s), HEX(WEIGHT_STRING(@s));",
+        "SELECT @s, HEX(@s), HEX(WEIGHT_STRING(@s));",
+        "SELECT HEX(WEIGHT_STRING(@s));",
+        "SELECT HEX(WEIGHT_STRING('ab' AS CHAR(4)));",
+        "SELECT HEX(WEIGHT_STRING('ab' AS CHAR(4)));",
+        "SELECT HEX(WEIGHT_STRING('ab' AS BINARY(4)));"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT @s, HEX(@s), HEX(WEIGHT_STRING(@s));",
+        "SELECT @s, HEX(@s), HEX(WEIGHT_STRING(@s));",
+        "SELECT @s, HEX(@s), HEX(WEIGHT_STRING(@s));",
+        "SELECT @s, HEX(@s), HEX(WEIGHT_STRING(@s));",
+        "SELECT HEX(WEIGHT_STRING(@s));",
+        "SELECT HEX(WEIGHT_STRING('ab' AS CHAR(4)));",
+        "SELECT HEX(WEIGHT_STRING('ab' AS CHAR(4)));",
+        "SELECT HEX(WEIGHT_STRING('ab' AS BINARY(4)));"
     ]
 }

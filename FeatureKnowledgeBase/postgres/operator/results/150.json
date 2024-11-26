@@ -6,15 +6,65 @@
         "anyrange && anyrange"
     ],
     "Feature": [
-        "anyrange && anyrange → boolean"
+        "anyrange && anyrange \u2192 boolean"
     ],
     "Description": [
         "Do the ranges overlap, that is, have any elements in common?"
     ],
     "Examples": [
-        "int8range(3,7) && int8range(4,12) → t"
+        "int8range(3,7) && int8range(4,12) \u2192 t"
     ],
     "Category": [
         "Range divide Multirange Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT (range1 && range2) AS overlap;",
+        "SELECT (ANYRANGE1 && ANYRANGE2) AS overlap;",
+        "SELECT (ANYRANGE && ANYRANGE) AS overlap;",
+        "SELECT (NULL::anyrange && NULL::anyrange) AS overlap;",
+        "SELECT (int4range(1, 5) && int4range(3, 7)) AS overlap;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 286,
+            "Prompt Tokens": 263,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 5.324999999999999e-05
+        },
+        {
+            "Total Tokens": 459,
+            "Prompt Tokens": 432,
+            "Completion Tokens": 27,
+            "Total Cost (USD)": 8.099999999999999e-05
+        },
+        {
+            "Total Tokens": 635,
+            "Prompt Tokens": 610,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 0.00010649999999999999
+        },
+        {
+            "Total Tokens": 810,
+            "Prompt Tokens": 783,
+            "Completion Tokens": 27,
+            "Total Cost (USD)": 0.00013365
+        },
+        {
+            "Total Tokens": 977,
+            "Prompt Tokens": 941,
+            "Completion Tokens": 36,
+            "Total Cost (USD)": 0.00016274999999999997
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedColumn) column \"range1\" does not exist\nLINE 1: SELECT (range1 && range2) AS overlap;\n                ^\n\n",
+        "(psycopg2.errors.UndefinedColumn) column \"anyrange1\" does not exist\nLINE 1: SELECT (ANYRANGE1 && ANYRANGE2) AS overlap;\n                ^\n\n",
+        "(psycopg2.errors.UndefinedColumn) column \"anyrange\" does not exist\nLINE 1: SELECT (ANYRANGE && ANYRANGE) AS overlap;\n                ^\n\n",
+        "(psycopg2.errors.DatatypeMismatch) argument declared anyrange is not a range type but type anyrange\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT (int4range(1, 5) && int4range(3, 7)) AS overlap;"
     ]
 }

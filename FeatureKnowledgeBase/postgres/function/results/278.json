@@ -6,15 +6,63 @@
         "object . keyvalue"
     ],
     "Feature": [
-        "object . keyvalue() → array"
+        "object . keyvalue() \u2192 array"
     ],
     "Description": [
         "The object's key-value pairs, represented as an array of objects containing three fields: \"key\", \"value\", and \"id\"; \"id\" is a unique identifier of the object the key-value pair belongs to"
     ],
     "Examples": [
-        "jsonb_path_query_array('{\"x\": \"20\", \"y\": 32}', '$.keyvalue()') → [{\"id\": 0, \"key\": \"x\", \"value\": \"20\"}, {\"id\": 0, \"key\": \"y\", \"value\": 32}]"
+        "jsonb_path_query_array('{\"x\": \"20\", \"y\": 32}', '$.keyvalue()') \u2192 [{\"id\": 0, \"key\": \"x\", \"value\": \"20\"}, {\"id\": 0, \"key\": \"y\", \"value\": 32}]"
     ],
     "Category": [
         "JSON Functions and Operators"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT object.keyvalue()",
+        "SELECT keyvalue() FROM your_table_name",
+        "SELECT keyvalue()",
+        "SELECT object.keyvalue()::text[]",
+        "SELECT keyvalue()::text[] FROM your_table_name"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 308,
+            "Prompt Tokens": 290,
+            "Completion Tokens": 18,
+            "Total Cost (USD)": 5.429999999999999e-05
+        },
+        {
+            "Total Tokens": 466,
+            "Prompt Tokens": 445,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 7.934999999999999e-05
+        },
+        {
+            "Total Tokens": 627,
+            "Prompt Tokens": 610,
+            "Completion Tokens": 17,
+            "Total Cost (USD)": 0.00010169999999999999
+        },
+        {
+            "Total Tokens": 807,
+            "Prompt Tokens": 786,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 0.0001305
+        },
+        {
+            "Total Tokens": 971,
+            "Prompt Tokens": 947,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 0.00015644999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.InvalidSchemaName) schema \"object\" does not exist\nLINE 1: SELECT object.keyvalue()\n               ^\n\n",
+        "(psycopg2.errors.UndefinedTable) relation \"your_table_name\" does not exist\nLINE 1: SELECT keyvalue() FROM your_table_name\n                               ^\n\n",
+        "(psycopg2.errors.UndefinedFunction) function keyvalue() does not exist\nLINE 1: SELECT keyvalue()\n               ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.\n\n",
+        "(psycopg2.errors.InvalidSchemaName) schema \"object\" does not exist\nLINE 1: SELECT object.keyvalue()::text[]\n               ^\n\n",
+        "(psycopg2.errors.UndefinedTable) relation \"your_table_name\" does not exist\nLINE 1: SELECT keyvalue()::text[] FROM your_table_name\n                                       ^\n\n"
+    ],
+    "EffectiveSQLs": []
 }

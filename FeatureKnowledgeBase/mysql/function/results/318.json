@@ -26,5 +26,18 @@
     "Category": [
         "Built-In Functions and Operators",
         "Spatial Analysis Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT ST_HausdorffDistance(@ls1, @ls2);",
+        "SELECT ST_HausdorffDistance(@ls1, @ls2);",
+        "SELECT ST_HausdorffDistance(@ls1, @ls2, 'foot');"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT ST_HausdorffDistance(@ls1, @ls2);",
+        "SELECT ST_HausdorffDistance(@ls1, @ls2);",
+        "SELECT ST_HausdorffDistance(@ls1, @ls2, 'foot');"
     ]
 }

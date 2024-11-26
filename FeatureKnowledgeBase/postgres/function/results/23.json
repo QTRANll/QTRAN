@@ -6,16 +6,34 @@
         "round"
     ],
     "Feature": [
-        "round ( v numeric, s integer ) → numeric"
+        "round ( v numeric, s integer ) \u2192 numeric"
     ],
     "Description": [
         "Rounds v to s decimal places. Ties are broken by rounding away from zero."
     ],
     "Examples": [
-        "round(42.4382, 2) → 42.44",
-        "round(1234.56, -1) → 1230"
+        "round(42.4382, 2) \u2192 42.44",
+        "round(1234.56, -1) \u2192 1230"
     ],
     "Category": [
         "Mathematical Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT round(123.4567, 2);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 281,
+            "Prompt Tokens": 257,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 5.294999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT round(123.4567, 2);"
     ]
 }

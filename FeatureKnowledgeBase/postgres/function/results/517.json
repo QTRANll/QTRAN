@@ -6,7 +6,7 @@
         "pg_switch_wal"
     ],
     "Feature": [
-        "pg_switch_wal () → pg_lsn"
+        "pg_switch_wal () \u2192 pg_lsn"
     ],
     "Description": [
         "Forces the server to switch to a new write-ahead log file, which allows the current file to be archived (assuming you are using continuous archiving). The result is the ending write-ahead log location plus 1 within the just-completed write-ahead log file. If there has been no write-ahead log activity since the last write-ahead log switch, pg_switch_wal does nothing and returns the start location of the write-ahead log file currently in use.",
@@ -15,5 +15,23 @@
     "Examples": [],
     "Category": [
         "System Administration Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT pg_switch_wal();"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 388,
+            "Prompt Tokens": 369,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 6.675e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT pg_switch_wal();"
     ]
 }

@@ -19,5 +19,52 @@
     "Category": [
         "Miscellaneous Functions"
     ],
-    "EffectiveSQLsRefined": []
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "INSERT INTO table_name (col_name) VALUES (value) ON DUPLICATE KEY UPDATE col_name = VALUES(col_name);",
+        "INSERT INTO existing_table (col_name) VALUES (value) ON DUPLICATE KEY UPDATE col_name = VALUES(col_name);",
+        "INSERT INTO another_table (col_name) VALUES (value) ON DUPLICATE KEY UPDATE col_name = VALUES(col_name);",
+        "INSERT INTO any_table (col_name) VALUES (value) ON DUPLICATE KEY UPDATE col_name = VALUES(col_name);",
+        "INSERT INTO my_table (col_name) VALUES (value) ON DUPLICATE KEY UPDATE col_name = VALUES(col_name);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 492,
+            "Prompt Tokens": 454,
+            "Completion Tokens": 38,
+            "Total Cost (USD)": 9.09e-05
+        },
+        {
+            "Total Tokens": 665,
+            "Prompt Tokens": 627,
+            "Completion Tokens": 38,
+            "Total Cost (USD)": 0.00011685
+        },
+        {
+            "Total Tokens": 839,
+            "Prompt Tokens": 801,
+            "Completion Tokens": 38,
+            "Total Cost (USD)": 0.00014294999999999998
+        },
+        {
+            "Total Tokens": 1013,
+            "Prompt Tokens": 975,
+            "Completion Tokens": 38,
+            "Total Cost (USD)": 0.00016904999999999996
+        },
+        {
+            "Total Tokens": 1186,
+            "Prompt Tokens": 1148,
+            "Completion Tokens": 38,
+            "Total Cost (USD)": 0.00019499999999999997
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.ProgrammingError) (1146, \"Table 'pinolo_temp_mariadb.table_name' doesn't exist\")\n",
+        "(pymysql.err.ProgrammingError) (1146, \"Table 'pinolo_temp_mariadb.existing_table' doesn't exist\")\n",
+        "(pymysql.err.ProgrammingError) (1146, \"Table 'pinolo_temp_mariadb.another_table' doesn't exist\")\n",
+        "(pymysql.err.ProgrammingError) (1146, \"Table 'pinolo_temp_mariadb.any_table' doesn't exist\")\n",
+        "(pymysql.err.ProgrammingError) (1146, \"Table 'pinolo_temp_mariadb.my_table' doesn't exist\")\n"
+    ],
+    "EffectiveSQLs": []
 }

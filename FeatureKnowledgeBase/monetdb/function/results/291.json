@@ -16,5 +16,53 @@
     "Examples": [],
     "Category": [
         "Window Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT last_value(value) OVER ()",
+        "SELECT last_value(value) FROM your_table_name",
+        "SELECT last_value(value) FROM (VALUES (1), (2), (3)) AS temp(value)",
+        "SELECT last_value(value) FROM (VALUES (1), (2), (3)) AS temp(value) WINDOW w AS (ROWS BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING)",
+        "SELECT last_value(value) FROM (VALUES (1), (2), (3)) AS temp(value)"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 295,
+            "Prompt Tokens": 275,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 5.325e-05
+        },
+        {
+            "Total Tokens": 460,
+            "Prompt Tokens": 438,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 7.89e-05
+        },
+        {
+            "Total Tokens": 627,
+            "Prompt Tokens": 594,
+            "Completion Tokens": 33,
+            "Total Cost (USD)": 0.00010889999999999999
+        },
+        {
+            "Total Tokens": 818,
+            "Prompt Tokens": 764,
+            "Completion Tokens": 54,
+            "Total Cost (USD)": 0.000147
+        },
+        {
+            "Total Tokens": 1010,
+            "Prompt Tokens": 977,
+            "Completion Tokens": 33,
+            "Total Cost (USD)": 0.00016634999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymonetdb.exceptions.OperationalError) 42000!syntax error, unexpected OVER, expecting SCOLON in: \"select last_value(value) over\"\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42S02!SELECT: no such table 'your_table_name'\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: no such unary operator 'last_value(tinyint)'\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!syntax error, unexpected IDENT, expecting SCOLON in: \"select last_value(value) from (values (1), (2), (3)) as temp(value) window\"\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: no such unary operator 'last_value(tinyint)'\n\n"
+    ],
+    "EffectiveSQLs": []
 }

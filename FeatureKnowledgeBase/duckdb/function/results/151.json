@@ -16,5 +16,31 @@
     ],
     "Category": [
         "Date Part Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT microsecond('2023-10-01 12:34:56.789123')",
+        "SELECT microsecond(TIMESTAMP '2023-10-01 12:34:56.789123')"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 282,
+            "Prompt Tokens": 249,
+            "Completion Tokens": 33,
+            "Total Cost (USD)": 5.715e-05
+        },
+        {
+            "Total Tokens": 570,
+            "Prompt Tokens": 534,
+            "Completion Tokens": 36,
+            "Total Cost (USD)": 0.00010169999999999999
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.BinderException) Binder Error: Could not choose a best candidate function for the function call \"microsecond(STRING_LITERAL)\". In order to select one, please add explicit type casts.\n\tCandidate functions:\n\tmicrosecond(TIMESTAMP) -> BIGINT\n\tmicrosecond(INTERVAL) -> BIGINT\n\tmicrosecond(TIME) -> BIGINT\n\tmicrosecond(TIME WITH TIME ZONE) -> BIGINT\n\tmicrosecond(TIMESTAMP WITH TIME ZONE) -> BIGINT\n\tmicrosecond(DATE) -> BIGINT\n\nLINE 1: SELECT microsecond('2023-10-01 12:34:56.789123...\n               ^\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT microsecond(TIMESTAMP '2023-10-01 12:34:56.789123')"
     ]
 }

@@ -6,15 +6,41 @@
         "value . double"
     ],
     "Feature": [
-        "value . double() → number"
+        "value . double() \u2192 number"
     ],
     "Description": [
         "Approximate floating-point number converted from a JSON number or string"
     ],
     "Examples": [
-        "jsonb_path_query('{\"len\": \"1.9\"}', '$.len.double() * 2') → 3.8"
+        "jsonb_path_query('{\"len\": \"1.9\"}', '$.len.double() * 2') \u2192 3.8"
     ],
     "Category": [
         "JSON Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT value.double FROM your_table;",
+        "SELECT value.double FROM (VALUES (1.0)) AS value(double);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 273,
+            "Prompt Tokens": 254,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 4.95e-05
+        },
+        {
+            "Total Tokens": 441,
+            "Prompt Tokens": 413,
+            "Completion Tokens": 28,
+            "Total Cost (USD)": 7.874999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedTable) relation \"your_table\" does not exist\nLINE 1: SELECT value.double FROM your_table;\n                                 ^\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT value.double FROM (VALUES (1.0)) AS value(double);"
     ]
 }

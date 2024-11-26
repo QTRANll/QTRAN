@@ -29,5 +29,8 @@
     ],
     "Category": [
         "Type Conversion Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT    toInt256OrZero('-256'),    toInt256OrZero('abc')FORMAT Vertical;"
     ]
 }

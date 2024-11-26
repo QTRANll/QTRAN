@@ -6,7 +6,7 @@
         "has_database_privilege"
     ],
     "Feature": [
-        "has_database_privilege ( [ user name or oid, ] database text or oid, privilege text ) → boolean"
+        "has_database_privilege ( [ user name or oid, ] database text or oid, privilege text ) \u2192 boolean"
     ],
     "Description": [
         "Does user have privilege for database? Allowable privilege types are CREATE, CONNECT, TEMPORARY, and TEMP (which is equivalent to TEMPORARY)."
@@ -14,5 +14,55 @@
     "Examples": [],
     "Category": [
         "System Information Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT has_database_privilege('username', 'database_name', 'CONNECT');",
+        "SELECT has_database_privilege('existing_user', 'database_name', 'CONNECT');",
+        "SELECT has_database_privilege(current_user, 'database_name', 'CONNECT');",
+        "SELECT has_database_privilege(current_user, 'existing_database', 'CONNECT');",
+        "SELECT has_database_privilege(current_user, 'template1', 'CONNECT');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 320,
+            "Prompt Tokens": 292,
+            "Completion Tokens": 28,
+            "Total Cost (USD)": 6.0599999999999996e-05
+        },
+        {
+            "Total Tokens": 474,
+            "Prompt Tokens": 445,
+            "Completion Tokens": 29,
+            "Total Cost (USD)": 8.415e-05
+        },
+        {
+            "Total Tokens": 628,
+            "Prompt Tokens": 600,
+            "Completion Tokens": 28,
+            "Total Cost (USD)": 0.0001068
+        },
+        {
+            "Total Tokens": 781,
+            "Prompt Tokens": 753,
+            "Completion Tokens": 28,
+            "Total Cost (USD)": 0.00012974999999999998
+        },
+        {
+            "Total Tokens": 934,
+            "Prompt Tokens": 906,
+            "Completion Tokens": 28,
+            "Total Cost (USD)": 0.0001527
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedObject) role \"username\" does not exist\n\n",
+        "(psycopg2.errors.UndefinedObject) role \"existing_user\" does not exist\n\n",
+        "(psycopg2.errors.InvalidCatalogName) database \"database_name\" does not exist\n\n",
+        "(psycopg2.errors.InvalidCatalogName) database \"existing_database\" does not exist\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT has_database_privilege(current_user, 'template1', 'CONNECT');"
     ]
 }

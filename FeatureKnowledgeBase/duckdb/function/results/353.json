@@ -17,5 +17,47 @@
     ],
     "Category": [
         "Numeric Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT abs(@);",
+        "SELECT abs(@) AS absolute_value;",
+        "SELECT abs(@) FROM (SELECT 1) AS temp;",
+        "SELECT abs(1) AS absolute_value;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 256,
+            "Prompt Tokens": 239,
+            "Completion Tokens": 17,
+            "Total Cost (USD)": 4.6049999999999994e-05
+        },
+        {
+            "Total Tokens": 399,
+            "Prompt Tokens": 379,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 6.884999999999999e-05
+        },
+        {
+            "Total Tokens": 547,
+            "Prompt Tokens": 522,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 9.329999999999999e-05
+        },
+        {
+            "Total Tokens": 691,
+            "Prompt Tokens": 670,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 0.0001131
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.ParserException) Parser Error: syntax error at or near \")\"\n",
+        "(duckdb.duckdb.ParserException) Parser Error: syntax error at or near \")\"\n",
+        "(duckdb.duckdb.ParserException) Parser Error: syntax error at or near \")\"\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT abs(1) AS absolute_value;"
     ]
 }

@@ -24,5 +24,9 @@
     ],
     "Category": [
         "Replacing in Strings Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT overlay('My father is from Mexico.', 'mother', 4) AS res;",
+        "SELECT overlay('My father is from Mexico.', 'dad', 4, 6) AS res;"
     ]
 }

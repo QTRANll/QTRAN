@@ -10,7 +10,7 @@
     ],
     "Description": [
         "JSON_ARRAY()",
-        "JSON_ARRAY([val[, val] ...]) 函数接受一个值列表（可能为空）作为参数，并返回一个包含这些值的 JSON 数组。",
+        "JSON_ARRAY([val[, val] ...]) \u51fd\u6570\u63a5\u53d7\u4e00\u4e2a\u503c\u5217\u8868\uff08\u53ef\u80fd\u4e3a\u7a7a\uff09\u4f5c\u4e3a\u53c2\u6570\uff0c\u5e76\u8fd4\u56de\u4e00\u4e2a\u5305\u542b\u8fd9\u4e9b\u503c\u7684 JSON \u6570\u7ec4\u3002",
         "SELECT JSON_ARRAY(1,2,3,4,5), JSON_ARRAY(\"foo\", \"bar\");\n",
         "+-----------------------+--------------------------+\n| JSON_ARRAY(1,2,3,4,5) | JSON_ARRAY(\"foo\", \"bar\") |\n+-----------------------+--------------------------+\n| [1, 2, 3, 4, 5]       | [\"foo\", \"bar\"]           |\n+-----------------------+--------------------------+\n1 row in set (0.00 sec)\n"
     ],
@@ -18,6 +18,15 @@
         "SELECT JSON_ARRAY(1,2,3,4,5), JSON_ARRAY(\"foo\", \"bar\");\n"
     ],
     "Category": [
-        "创建 JSON 的函数"
+        "\u521b\u5efa JSON \u7684\u51fd\u6570"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT JSON_ARRAY(1,2,3,4,5), JSON_ARRAY(\"foo\", \"bar\");"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT JSON_ARRAY(1,2,3,4,5), JSON_ARRAY(\"foo\", \"bar\");"
     ]
 }

@@ -6,15 +6,33 @@
         "regexp_replace"
     ],
     "Feature": [
-        "regexp_replace ( string text, pattern text, replacement text, start integer, N integer [, flags text ] ) → text"
+        "regexp_replace ( string text, pattern text, replacement text, start integer, N integer [, flags text ] ) \u2192 text"
     ],
     "Description": [
-        "Replaces the substring that is the N'th match to the POSIX regular expression pattern, or all such matches if N is zero; see Section 9.7.3."
+        "Replaces the substring that is the N'th match to the POSIX regular expression pattern, or all such matches if N is zero; see Section\u00a09.7.3."
     ],
     "Examples": [
-        "regexp_replace('Thomas', '.', 'X', 3, 2) → ThoXas"
+        "regexp_replace('Thomas', '.', 'X', 3, 2) \u2192 ThoXas"
     ],
     "Category": [
         "String Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT regexp_replace('hello world', 'o', '0', 1, 1);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 326,
+            "Prompt Tokens": 294,
+            "Completion Tokens": 32,
+            "Total Cost (USD)": 6.33e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT regexp_replace('hello world', 'o', '0', 1, 1);"
     ]
 }

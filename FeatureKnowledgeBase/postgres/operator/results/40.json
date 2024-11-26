@@ -6,15 +6,33 @@
         "date + integer"
     ],
     "Feature": [
-        "date + integer → date"
+        "date + integer \u2192 date"
     ],
     "Description": [
         "Add a number of days to a date"
     ],
     "Examples": [
-        "date '2001-09-28' + 7 → 2001-10-05"
+        "date '2001-09-28' + 7 \u2192 2001-10-05"
     ],
     "Category": [
         "Date divide Time Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT CURRENT_DATE + INTERVAL '5 days';"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 272,
+            "Prompt Tokens": 249,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 5.1149999999999996e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT CURRENT_DATE + INTERVAL '5 days';"
     ]
 }

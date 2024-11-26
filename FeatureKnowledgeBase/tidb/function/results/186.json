@@ -10,7 +10,7 @@
     ],
     "Description": [
         "JSON_OBJECT()",
-        "JSON_OBJECT([key,val[,key,val]...]) 函数接受一个键值对列表（可能为空）作为参数，并返回一个包含这些键值对的 JSON 对象。",
+        "JSON_OBJECT([key,val[,key,val]...]) \u51fd\u6570\u63a5\u53d7\u4e00\u4e2a\u952e\u503c\u5bf9\u5217\u8868\uff08\u53ef\u80fd\u4e3a\u7a7a\uff09\u4f5c\u4e3a\u53c2\u6570\uff0c\u5e76\u8fd4\u56de\u4e00\u4e2a\u5305\u542b\u8fd9\u4e9b\u952e\u503c\u5bf9\u7684 JSON \u5bf9\u8c61\u3002",
         "SELECT JSON_OBJECT(\"database\", \"TiDB\", \"distributed\", TRUE);\n",
         "+------------------------------------------------------+\n| JSON_OBJECT(\"database\", \"TiDB\", \"distributed\", TRUE) |\n+------------------------------------------------------+\n| {\"database\": \"TiDB\", \"distributed\": true}            |\n+------------------------------------------------------+\n1 row in set (0.00 sec)\n"
     ],
@@ -18,6 +18,15 @@
         "SELECT JSON_OBJECT(\"database\", \"TiDB\", \"distributed\", TRUE);\n"
     ],
     "Category": [
-        "创建 JSON 的函数"
+        "\u521b\u5efa JSON \u7684\u51fd\u6570"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT JSON_OBJECT(\"database\", \"TiDB\", \"distributed\", TRUE);"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT JSON_OBJECT(\"database\", \"TiDB\", \"distributed\", TRUE);"
     ]
 }

@@ -6,15 +6,33 @@
         "array_positions"
     ],
     "Feature": [
-        "array_positions ( anycompatiblearray, anycompatible ) → integer[]"
+        "array_positions ( anycompatiblearray, anycompatible ) \u2192 integer[]"
     ],
     "Description": [
         "Returns an array of the subscripts of all occurrences of the second argument in the array given as first argument. The array must be one-dimensional. Comparisons are done using IS NOT DISTINCT FROM semantics, so it is possible to search for NULL. NULL is returned only if the array is NULL; if the value is not found in the array, an empty array is returned."
     ],
     "Examples": [
-        "array_positions(ARRAY['A','A','B','A'], 'A') → {1,2,4}"
+        "array_positions(ARRAY['A','A','B','A'], 'A') \u2192 {1,2,4}"
     ],
     "Category": [
         "Array Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT array_positions(ARRAY[1, 2, 3, 2, 4], 2);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 357,
+            "Prompt Tokens": 321,
+            "Completion Tokens": 36,
+            "Total Cost (USD)": 6.974999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT array_positions(ARRAY[1, 2, 3, 2, 4], 2);"
     ]
 }

@@ -6,15 +6,63 @@
         "box >^ box"
     ],
     "Feature": [
-        "box >^ box → boolean"
+        "box >^ box \u2192 boolean"
     ],
     "Description": [
         "Is first object above second (allows edges to touch)?"
     ],
     "Examples": [
-        "box '((2,2),(1,1))' >^ box '((1,1),(0,0))' → t"
+        "box '((2,2),(1,1))' >^ box '((1,1),(0,0))' \u2192 t"
     ],
     "Category": [
         "Geometric Functions and Operators"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT box >^ box;",
+        "SELECT 'box' >^ 'box';",
+        "SELECT 'box'::text >^ 'box'::text;",
+        "SELECT 'box'::text::varchar >^ 'box'::text::varchar;",
+        "SELECT 'box'::text::text >^ 'box'::text::text;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 274,
+            "Prompt Tokens": 256,
+            "Completion Tokens": 18,
+            "Total Cost (USD)": 4.9199999999999997e-05
+        },
+        {
+            "Total Tokens": 435,
+            "Prompt Tokens": 413,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 7.514999999999998e-05
+        },
+        {
+            "Total Tokens": 625,
+            "Prompt Tokens": 599,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 0.00010544999999999999
+        },
+        {
+            "Total Tokens": 826,
+            "Prompt Tokens": 796,
+            "Completion Tokens": 30,
+            "Total Cost (USD)": 0.0001374
+        },
+        {
+            "Total Tokens": 1033,
+            "Prompt Tokens": 1003,
+            "Completion Tokens": 30,
+            "Total Cost (USD)": 0.00016844999999999997
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedColumn) column \"box\" does not exist\nLINE 1: SELECT box >^ box;\n               ^\n\n",
+        "(psycopg2.errors.AmbiguousFunction) operator is not unique: unknown >^ unknown\nLINE 1: SELECT 'box' >^ 'box';\n                     ^\nHINT:  Could not choose a best candidate operator. You might need to add explicit type casts.\n\n",
+        "(psycopg2.errors.UndefinedFunction) operator does not exist: text >^ text\nLINE 1: SELECT 'box'::text >^ 'box'::text;\n                           ^\nHINT:  No operator matches the given name and argument types. You might need to add explicit type casts.\n\n",
+        "(psycopg2.errors.UndefinedFunction) operator does not exist: character varying >^ character varying\nLINE 1: SELECT 'box'::text::varchar >^ 'box'::text::varchar;\n                                    ^\nHINT:  No operator matches the given name and argument types. You might need to add explicit type casts.\n\n",
+        "(psycopg2.errors.UndefinedFunction) operator does not exist: text >^ text\nLINE 1: SELECT 'box'::text::text >^ 'box'::text::text;\n                                 ^\nHINT:  No operator matches the given name and argument types. You might need to add explicit type casts.\n\n"
+    ],
+    "EffectiveSQLs": []
 }

@@ -18,5 +18,47 @@
     ],
     "Category": [
         "Character String Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT least(s1, s2);",
+        "SELECT least('value1', 'value2');",
+        "SELECT min('value1', 'value2');",
+        "SELECT min('value1' || 'value2');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 313,
+            "Prompt Tokens": 292,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 5.6399999999999995e-05
+        },
+        {
+            "Total Tokens": 469,
+            "Prompt Tokens": 446,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 8.07e-05
+        },
+        {
+            "Total Tokens": 629,
+            "Prompt Tokens": 606,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 0.00010469999999999998
+        },
+        {
+            "Total Tokens": 795,
+            "Prompt Tokens": 771,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 0.00013005
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: identifier 's1' unknown\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!SELECT: no such binary operator 'least(char,char)'\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!syntax error, unexpected ',', expecting ')' in: \"select min('value1',\"\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT min('value1' || 'value2');"
     ]
 }

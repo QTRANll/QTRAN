@@ -24,5 +24,12 @@
     "EffectiveSQLsRefined": [
         "SELECT SUBSTRING_INDEX('www.mariadb.org', '.', 2);",
         "SELECT SUBSTRING_INDEX('www.mariadb.org', '.', -2);"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT SUBSTRING_INDEX('www.mariadb.org', '.', 2);",
+        "SELECT SUBSTRING_INDEX('www.mariadb.org', '.', -2);"
     ]
 }

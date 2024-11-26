@@ -24,6 +24,20 @@
         "Information Functions"
     ],
     "EffectiveSQLsRefined": [
+        "CREATE TABLE t1 (a int, b int);",
+        "INSERT INTO t1 VALUES(1,10),(2,20);",
+        "DELETE FROM t1 WHERE a=1 AND last_value(@a:=a,@b:=b,1);",
+        "SELECT @a,@b;",
+        "CREATE OR REPLACE TABLE t1 (i int);",
+        "INSERT INTO t1 VALUES (1),(2),(3),(4),(5),(6),(7),(8),(9),(10);",
+        "SELECT i,\n  FIRST_VALUE(i) OVER (ORDER BY i ROWS BETWEEN CURRENT ROW and 1 FOLLOWING) AS f_1f,\n  LAST_VALUE(i) OVER (ORDER BY i ROWS BETWEEN CURRENT ROW and 1 FOLLOWING) AS l_1f,\n  FIRST_VALUE(i) OVER (ORDER BY i ROWS BETWEEN 1 PRECEDING AND 1 FOLLOWING) AS f_1p1f,\n  LAST_VALUE(i) OVER (ORDER BY i ROWS BETWEEN 1 PRECEDING AND 1 FOLLOWING) AS l_1p1f,\n  FIRST_VALUE(i) OVER (ORDER BY i ROWS BETWEEN 2 PRECEDING AND 1 PRECEDING) AS f_2p1p,\n  LAST_VALUE(i) OVER (ORDER BY i ROWS BETWEEN 2 PRECEDING AND 1 PRECEDING) AS l_2p1p,\n  FIRST_VALUE(i) OVER (ORDER BY i ROWS BETWEEN 1 FOLLOWING AND 2 FOLLOWING) AS f_1f2f,\n  LAST_VALUE(i) OVER (ORDER BY i ROWS BETWEEN 1 FOLLOWING AND 2 FOLLOWING) AS l_1f2f\nFROM t1;"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "CREATE TABLE t1 (a int, b int);",
+        "INSERT INTO t1 VALUES(1,10),(2,20);",
         "DELETE FROM t1 WHERE a=1 AND last_value(@a:=a,@b:=b,1);",
         "SELECT @a,@b;",
         "CREATE OR REPLACE TABLE t1 (i int);",

@@ -37,5 +37,8 @@
     ],
     "Category": [
         "Aggregate Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "CREATE TABLE IF NOT EXISTS train_data(    param1 Float64,    param2 Float64,    target Float64) ENGINE = Memory;"
     ]
 }

@@ -1,0 +1,3 @@
+{"index": 367, "a_db": "tidb", "b_db": "monetdb", "molt": "tlp (where extended)", "sql": "CREATE TABLE t0(c0 BOOL);"}
+{"index": 367, "a_db": "tidb", "b_db": "monetdb", "molt": "tlp (where extended)", "sql": "INSERT INTO t0 VALUES (0);"}
+{"index": 367, "a_db": "tidb", "b_db": "monetdb", "molt": "tlp (where extended)", "sql": "SELECT * FROM t0 WHERE 1 AND 0.4; -- expected: {0}, actual: {}"}

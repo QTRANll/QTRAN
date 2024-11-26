@@ -29,5 +29,11 @@
     ],
     "Category": [
         "Aggregate Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT groupArrayInsertAt(toString(number), number * 2) FROM numbers(5);",
+        "SELECT groupArrayInsertAt('-')(toString(number), number * 2) FROM numbers(5);",
+        "SELECT groupArrayInsertAt('-', 5)(toString(number), number * 2) FROM numbers(5);",
+        "SELECT groupArrayInsertAt(number, 0) FROM numbers_mt(10) SETTINGS max_block_size = 1;"
     ]
 }

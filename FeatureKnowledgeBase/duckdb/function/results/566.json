@@ -16,5 +16,39 @@
     ],
     "Category": [
         "Union Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT union_extract(union, 'tag')",
+        "SELECT union_extract(value, 'tag') FROM your_table_name",
+        "SELECT union_extract(NULL, 'tag')"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 302,
+            "Prompt Tokens": 280,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 5.519999999999999e-05
+        },
+        {
+            "Total Tokens": 458,
+            "Prompt Tokens": 433,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 7.994999999999999e-05
+        },
+        {
+            "Total Tokens": 643,
+            "Prompt Tokens": 622,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 0.00010589999999999999
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.ParserException) Parser Error: syntax error at or near \"union\"\n",
+        "(duckdb.duckdb.CatalogException) Catalog Error: Table with name your_table_name does not exist!\nDid you mean \"pg_tablespace\"?\nLINE 1: ...ELECT union_extract(value, 'tag') FROM your_table_name\n                                                  ^\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT union_extract(NULL, 'tag')"
     ]
 }

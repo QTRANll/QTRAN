@@ -1,0 +1,45 @@
+{
+    "HTML": [
+        "https://www.monetdb.org/documentation-Aug2024/user-guide/sql-manual/data-types/base-types"
+    ],
+    "Title": [
+        "HUGEINT"
+    ],
+    "Feature": [
+        "HUGEINT"
+    ],
+    "Description": [
+        "",
+        "128 bit signed integer between -2^127 +1 and +2^127 -1 (\u00b1170141183460469231731687303715884105727)"
+    ],
+    "Examples": [],
+    "Category": [
+        "Base Types"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT HUGEINT FROM my_table;",
+        "SELECT CAST(123456789012345678901234567890 AS HUGEINT);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 296,
+            "Prompt Tokens": 277,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 5.295e-05
+        },
+        {
+            "Total Tokens": 460,
+            "Prompt Tokens": 430,
+            "Completion Tokens": 30,
+            "Total Cost (USD)": 8.25e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymonetdb.exceptions.OperationalError) 42000!syntax error, unexpected HUGEINT in: \"select hugeint\"\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT CAST(123456789012345678901234567890 AS HUGEINT);"
+    ]
+}

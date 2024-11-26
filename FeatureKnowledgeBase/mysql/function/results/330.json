@@ -20,5 +20,53 @@
     "Category": [
         "Built-In Functions and Operators",
         "Spatial Analysis Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT ST_LineFromWKB('your_wkb_data_here', 4326);",
+        "SELECT ST_LineFromWKB(0x010200000002000000000000000000000000000000000000000000000000000000);",
+        "SELECT ST_LineFromWKB(0x0102000000, 4326);",
+        "SELECT ST_LineFromWKB(0x010200000002000000000000000000000000000000000000000000000000000000, 4326);",
+        "SELECT ST_LineFromWKB(0x010200000002000000000000000000000000000000000000000000000000000000, 4326) WHERE ST_IsValid(ST_LineFromWKB(0x010200000002000000000000000000000000000000000000000000000000000000, 4326));"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 412,
+            "Prompt Tokens": 382,
+            "Completion Tokens": 30,
+            "Total Cost (USD)": 7.529999999999999e-05
+        },
+        {
+            "Total Tokens": 594,
+            "Prompt Tokens": 549,
+            "Completion Tokens": 45,
+            "Total Cost (USD)": 0.00010934999999999999
+        },
+        {
+            "Total Tokens": 762,
+            "Prompt Tokens": 731,
+            "Completion Tokens": 31,
+            "Total Cost (USD)": 0.00012824999999999997
+        },
+        {
+            "Total Tokens": 948,
+            "Prompt Tokens": 899,
+            "Completion Tokens": 49,
+            "Total Cost (USD)": 0.00016425
+        },
+        {
+            "Total Tokens": 1173,
+            "Prompt Tokens": 1085,
+            "Completion Tokens": 88,
+            "Total Cost (USD)": 0.00021554999999999995
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.OperationalError) (3037, 'Invalid GIS data provided to function st_linefromwkb.')\n",
+        "(pymysql.err.OperationalError) (3037, 'Invalid GIS data provided to function st_linefromwkb.')\n",
+        "(pymysql.err.OperationalError) (3037, 'Invalid GIS data provided to function st_linefromwkb.')\n",
+        "(pymysql.err.OperationalError) (3037, 'Invalid GIS data provided to function st_linefromwkb.')\n",
+        "(pymysql.err.OperationalError) (3037, 'Invalid GIS data provided to function st_linefromwkb.')\n"
+    ],
+    "EffectiveSQLs": []
 }

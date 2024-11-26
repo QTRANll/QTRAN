@@ -18,5 +18,63 @@
     ],
     "Category": [
         "Comparison Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        [
+            "SELECT \"like\"(s, 'pattern%', '\\', false) AS match_result;"
+        ],
+        [
+            "SELECT \"like\"(s, 'pattern', '\\', false) AS match_result;"
+        ],
+        [
+            "SELECT \"like\"(s, 'pattern', '\\', true) AS match_result;"
+        ],
+        [
+            "SELECT \"like\"(s, 'pattern', '\\', false) AS match_result;"
+        ],
+        [
+            "SELECT \"like\"(s, 'pattern', '\\', false) AS match_result;"
+        ]
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 365,
+            "Prompt Tokens": 330,
+            "Completion Tokens": 35,
+            "Total Cost (USD)": 7.049999999999999e-05
+        },
+        {
+            "Total Tokens": 529,
+            "Prompt Tokens": 494,
+            "Completion Tokens": 35,
+            "Total Cost (USD)": 9.51e-05
+        },
+        {
+            "Total Tokens": 693,
+            "Prompt Tokens": 658,
+            "Completion Tokens": 35,
+            "Total Cost (USD)": 0.0001197
+        },
+        {
+            "Total Tokens": 857,
+            "Prompt Tokens": 822,
+            "Completion Tokens": 35,
+            "Total Cost (USD)": 0.00014429999999999998
+        },
+        {
+            "Total Tokens": 1021,
+            "Prompt Tokens": 986,
+            "Completion Tokens": 35,
+            "Total Cost (USD)": 0.00016889999999999999
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "expected string or bytes-like object, got 'list'",
+        "expected string or bytes-like object, got 'list'",
+        "expected string or bytes-like object, got 'list'",
+        "expected string or bytes-like object, got 'list'",
+        "expected string or bytes-like object, got 'list'"
+    ],
+    "EffectiveSQLs": []
 }

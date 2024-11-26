@@ -16,5 +16,31 @@
     ],
     "Category": [
         "Numeric Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "+ 1, 2",
+        "SELECT 1 + 2"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 251,
+            "Prompt Tokens": 233,
+            "Completion Tokens": 18,
+            "Total Cost (USD)": 4.5749999999999994e-05
+        },
+        {
+            "Total Tokens": 392,
+            "Prompt Tokens": 373,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 6.735e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.ParserException) Parser Error: syntax error at or near \"+\"\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT 1 + 2"
     ]
 }

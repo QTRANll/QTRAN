@@ -16,5 +16,23 @@
     ],
     "Category": [
         "Date Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT DATE '2023-10-01' - DATE '2023-09-01';"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 270,
+            "Prompt Tokens": 237,
+            "Completion Tokens": 33,
+            "Total Cost (USD)": 5.535e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT DATE '2023-10-01' - DATE '2023-09-01';"
     ]
 }

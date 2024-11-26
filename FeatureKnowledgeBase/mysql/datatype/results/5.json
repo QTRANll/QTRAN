@@ -16,5 +16,23 @@
     ],
     "Category": [
         "The DATE, DATETIME, and TIMESTAMP Types"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT NOW();"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 2232,
+            "Prompt Tokens": 2216,
+            "Completion Tokens": 16,
+            "Total Cost (USD)": 0.000342
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT NOW();"
     ]
 }

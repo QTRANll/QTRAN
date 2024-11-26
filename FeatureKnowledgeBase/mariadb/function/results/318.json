@@ -17,5 +17,30 @@
     "Category": [
         "Geographic Functions"
     ],
-    "EffectiveSQLsRefined": []
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT ST_IsEmpty(geometry_column) FROM your_table;",
+        "SELECT ST_IsEmpty(geometry_column) FROM (SELECT NULL AS geometry_column) AS temp_table;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 361,
+            "Prompt Tokens": 337,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 6.495e-05
+        },
+        {
+            "Total Tokens": 530,
+            "Prompt Tokens": 498,
+            "Completion Tokens": 32,
+            "Total Cost (USD)": 9.39e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.ProgrammingError) (1146, \"Table 'pinolo_temp_mariadb.your_table' doesn't exist\")\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT ST_IsEmpty(geometry_column) FROM (SELECT NULL AS geometry_column) AS temp_table;"
+    ]
 }

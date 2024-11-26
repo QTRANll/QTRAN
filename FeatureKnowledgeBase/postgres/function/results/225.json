@@ -6,15 +6,49 @@
         "ts_delete"
     ],
     "Feature": [
-        "ts_delete ( vector tsvector, lexemes text[] ) → tsvector"
+        "ts_delete ( vector tsvector, lexemes text[] ) \u2192 tsvector"
     ],
     "Description": [
         "Removes any occurrences of the lexemes in lexemes from the vector. The strings in lexemes are taken as lexemes as-is, without further processing. Strings that do not match any lexeme in vector are ignored."
     ],
     "Examples": [
-        "ts_delete('fat:2,4 cat:3 rat:5A'::tsvector, ARRAY['fat','rat']) → 'cat':3"
+        "ts_delete('fat:2,4 cat:3 rat:5A'::tsvector, ARRAY['fat','rat']) \u2192 'cat':3"
     ],
     "Category": [
         "Text Search Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT ts_delete(vector_column, ARRAY['lexeme1', 'lexeme2']);",
+        "SELECT ts_delete(ARRAY['example_vector'], ARRAY['lexeme1', 'lexeme2']);",
+        "SELECT ts_delete(to_tsvector('example text'), ARRAY['lexeme1', 'lexeme2']);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 325,
+            "Prompt Tokens": 295,
+            "Completion Tokens": 30,
+            "Total Cost (USD)": 6.225e-05
+        },
+        {
+            "Total Tokens": 508,
+            "Prompt Tokens": 475,
+            "Completion Tokens": 33,
+            "Total Cost (USD)": 9.104999999999999e-05
+        },
+        {
+            "Total Tokens": 716,
+            "Prompt Tokens": 681,
+            "Completion Tokens": 35,
+            "Total Cost (USD)": 0.00012315
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedColumn) column \"vector_column\" does not exist\nLINE 1: SELECT ts_delete(vector_column, ARRAY['lexeme1', 'lexeme2'])...\n                         ^\n\n",
+        "(psycopg2.errors.UndefinedFunction) function ts_delete(text[], text[]) does not exist\nLINE 1: SELECT ts_delete(ARRAY['example_vector'], ARRAY['lexeme1', '...\n               ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT ts_delete(to_tsvector('example text'), ARRAY['lexeme1', 'lexeme2']);"
     ]
 }

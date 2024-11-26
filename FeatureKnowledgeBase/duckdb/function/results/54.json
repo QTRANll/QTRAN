@@ -15,5 +15,47 @@
     "Examples": [],
     "Category": [
         "Aggregate Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT regr_r2(y, x) FROM your_table;",
+        "SELECT regr_r2(y, x);",
+        "SELECT regr_r2(y, x) FROM your_table_name;",
+        "SELECT regr_r2(y, x) FROM (SELECT 1 AS y, 2 AS x) AS temp;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 320,
+            "Prompt Tokens": 295,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 5.924999999999999e-05
+        },
+        {
+            "Total Tokens": 502,
+            "Prompt Tokens": 480,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 8.519999999999998e-05
+        },
+        {
+            "Total Tokens": 679,
+            "Prompt Tokens": 653,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 0.00011355
+        },
+        {
+            "Total Tokens": 879,
+            "Prompt Tokens": 842,
+            "Completion Tokens": 37,
+            "Total Cost (USD)": 0.00014849999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.CatalogException) Catalog Error: Table with name your_table does not exist!\nDid you mean \"pg_tables\"?\nLINE 1: SELECT regr_r2(y, x) FROM your_table;\n                                  ^\n",
+        "(duckdb.duckdb.BinderException) Binder Error: Referenced column \"y\" not found in FROM clause!\nLINE 1: SELECT regr_r2(y, x);\n                       ^\n",
+        "(duckdb.duckdb.CatalogException) Catalog Error: Table with name your_table_name does not exist!\nDid you mean \"pg_tablespace\"?\nLINE 1: SELECT regr_r2(y, x) FROM your_table_name;\n                                  ^\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT regr_r2(y, x) FROM (SELECT 1 AS y, 2 AS x) AS temp;"
     ]
 }

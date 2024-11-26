@@ -18,6 +18,19 @@
         "mysql> SELECT SUBDATE('2008-01-02 12:00:00', 31);\n        -> '2007-12-02 12:00:00'"
     ],
     "Category": [
-        "日期和时间函数"
+        "\u65e5\u671f\u548c\u65f6\u95f4\u51fd\u6570"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT DATE_SUB('2008-01-02', INTERVAL 31 DAY);",
+        "SELECT SUBDATE('2008-01-02', INTERVAL 31 DAY);",
+        "SELECT SUBDATE('2008-01-02 12:00:00', 31);"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT DATE_SUB('2008-01-02', INTERVAL 31 DAY);",
+        "SELECT SUBDATE('2008-01-02', INTERVAL 31 DAY);",
+        "SELECT SUBDATE('2008-01-02 12:00:00', 31);"
     ]
 }

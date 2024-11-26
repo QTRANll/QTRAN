@@ -16,5 +16,53 @@
     ],
     "Category": [
         "Enum Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT enum_first(enum) AS first_value;",
+        "SELECT enum_first(enum) AS first_value FROM (VALUES (1), (2), (3)) AS t(enum);",
+        "SELECT enum_first(ENUM('value1', 'value2', 'value3')) AS first_value;",
+        "SELECT enum_first(enum_code('value1', 'value2', 'value3')) AS first_value;",
+        "SELECT enum_first(enum_code('value1')) AS first_value;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 275,
+            "Prompt Tokens": 254,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 5.07e-05
+        },
+        {
+            "Total Tokens": 459,
+            "Prompt Tokens": 422,
+            "Completion Tokens": 37,
+            "Total Cost (USD)": 8.549999999999999e-05
+        },
+        {
+            "Total Tokens": 620,
+            "Prompt Tokens": 587,
+            "Completion Tokens": 33,
+            "Total Cost (USD)": 0.00010784999999999999
+        },
+        {
+            "Total Tokens": 815,
+            "Prompt Tokens": 782,
+            "Completion Tokens": 33,
+            "Total Cost (USD)": 0.0001371
+        },
+        {
+            "Total Tokens": 1028,
+            "Prompt Tokens": 1003,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 0.00016544999999999998
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(duckdb.duckdb.BinderException) Binder Error: Referenced column \"enum\" not found in FROM clause!\nLINE 1: SELECT enum_first(enum) AS first_value;\n                          ^\n",
+        "(duckdb.duckdb.BinderException) Binder Error: This function needs an ENUM as an argument\n",
+        "(duckdb.duckdb.CatalogException) Catalog Error: Scalar Function with name enum does not exist!\nDid you mean \"enum_code\"?\nLINE 1: SELECT enum_first(ENUM('value1', 'value2', 'value3')) AS ...\n                          ^\n",
+        "(duckdb.duckdb.BinderException) Binder Error: No function matches the given name and argument types 'enum_code(STRING_LITERAL, STRING_LITERAL, STRING_LITERAL)'. You might need to add explicit type casts.\n\tCandidate functions:\n\tenum_code(ANY) -> ANY\n\nLINE 1: SELECT enum_first(enum_code('value1', 'value2', 'value3')...\n                          ^\n",
+        "(duckdb.duckdb.BinderException) Binder Error: This function needs an ENUM as an argument\n"
+    ],
+    "EffectiveSQLs": []
 }

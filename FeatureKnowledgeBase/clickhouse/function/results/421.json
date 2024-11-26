@@ -34,5 +34,14 @@
     ],
     "Category": [
         "Encoding Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT hilbertEncode(3, 4);",
+        "SELECT hilbertEncode((10,6), 1024, 16);",
+        "SELECT hilbertEncode(1);",
+        "SELECT hilbertEncode(tuple(2), 128);",
+        "create table hilbert_numbers(    n1 UInt32,    n2 UInt32)Engine=MergeTree()ORDER BY n1 SETTINGS index_granularity = 8192, index_granularity_bytes = '10Mi';",
+        "insert into hilbert_numbers (*) values(1,2);",
+        "SELECT hilbertEncode(n1, n2) FROM hilbert_numbers;"
     ]
 }

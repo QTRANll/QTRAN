@@ -24,5 +24,20 @@
     "Category": [
         "Built-In Functions and Operators",
         "Encryption and Compression Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT LENGTH(COMPRESS(REPEAT('a',1000)));",
+        "SELECT LENGTH(COMPRESS(''));",
+        "SELECT LENGTH(COMPRESS('a'));",
+        "SELECT LENGTH(COMPRESS(REPEAT('a',16)));"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT LENGTH(COMPRESS(REPEAT('a',1000)));",
+        "SELECT LENGTH(COMPRESS(''));",
+        "SELECT LENGTH(COMPRESS('a'));",
+        "SELECT LENGTH(COMPRESS(REPEAT('a',16)));"
     ]
 }

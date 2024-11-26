@@ -17,5 +17,18 @@
     ],
     "Category": [
         "String Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT 'Michael!' REGEXP '.*';",
+        "SELECT 'new*\\n*line' REGEXP 'new\\\\*.\\\\*line';",
+        "SELECT 'a' REGEXP '^[a-d]';"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT 'Michael!' REGEXP '.*';",
+        "SELECT 'new*\\n*line' REGEXP 'new\\\\*.\\\\*line';",
+        "SELECT 'a' REGEXP '^[a-d]';"
     ]
 }

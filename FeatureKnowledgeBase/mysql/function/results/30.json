@@ -34,5 +34,22 @@
     "Category": [
         "Built-In Functions and Operators",
         "Cast Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT CAST(\"11:35:00\" AS YEAR), CAST(TIME \"11:35:00\" AS YEAR);",
+        "SELECT CAST(1944.35 AS YEAR), CAST(1944.50 AS YEAR);",
+        "SELECT CAST(66.35 AS YEAR), CAST(66.50 AS YEAR);",
+        "SELECT CAST(\"1979aaa\" AS YEAR);",
+        "SELECT @@system_time_zone;"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT CAST(\"11:35:00\" AS YEAR), CAST(TIME \"11:35:00\" AS YEAR);",
+        "SELECT CAST(1944.35 AS YEAR), CAST(1944.50 AS YEAR);",
+        "SELECT CAST(66.35 AS YEAR), CAST(66.50 AS YEAR);",
+        "SELECT CAST(\"1979aaa\" AS YEAR);",
+        "SELECT @@system_time_zone;"
     ]
 }

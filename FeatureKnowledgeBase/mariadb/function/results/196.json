@@ -22,6 +22,19 @@
         "Window Functions"
     ],
     "EffectiveSQLsRefined": [
+        "CREATE TABLE book_rating (name CHAR(30), star_rating TINYINT);",
+        "INSERT INTO book_rating VALUES ('Lord of the Ladybirds', 5);",
+        "INSERT INTO book_rating VALUES ('Lord of the Ladybirds', 3);",
+        "INSERT INTO book_rating VALUES ('Lady of the Flies', 1);",
+        "INSERT INTO book_rating VALUES ('Lady of the Flies', 2);",
+        "INSERT INTO book_rating VALUES ('Lady of the Flies', 5);",
+        "SELECT name, median(star_rating) OVER (PARTITION BY name) FROM book_rating;"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "CREATE TABLE book_rating (name CHAR(30), star_rating TINYINT);",
         "INSERT INTO book_rating VALUES ('Lord of the Ladybirds', 5);",
         "INSERT INTO book_rating VALUES ('Lord of the Ladybirds', 3);",
         "INSERT INTO book_rating VALUES ('Lady of the Flies', 1);",

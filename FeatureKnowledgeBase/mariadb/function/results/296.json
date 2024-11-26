@@ -22,5 +22,12 @@
     "EffectiveSQLsRefined": [
         "SELECT ST_CONTAINS(@g1,@g2);",
         "SELECT ST_CONTAINS(@g1,@g2);"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT ST_CONTAINS(@g1,@g2);",
+        "SELECT ST_CONTAINS(@g1,@g2);"
     ]
 }

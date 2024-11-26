@@ -6,15 +6,33 @@
         "to_timestamp"
     ],
     "Feature": [
-        "to_timestamp ( text, text ) → timestamp with time zone"
+        "to_timestamp ( text, text ) \u2192 timestamp with time zone"
     ],
     "Description": [
-        "Converts string to time stamp according to the given format. (See also to_timestamp(double precision) in Table 9.33.)"
+        "Converts string to time stamp according to the given format. (See also to_timestamp(double precision) in Table\u00a09.33.)"
     ],
     "Examples": [
-        "to_timestamp('05 Dec 2000', 'DD Mon YYYY') → 2000-12-05 00:00:00-05"
+        "to_timestamp('05 Dec 2000', 'DD Mon YYYY') \u2192 2000-12-05 00:00:00-05"
     ],
     "Category": [
         "Data Type Formatting Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT to_timestamp('2023-10-01 12:00:00', 'YYYY-MM-DD HH24:MI:SS');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 313,
+            "Prompt Tokens": 272,
+            "Completion Tokens": 41,
+            "Total Cost (USD)": 6.54e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT to_timestamp('2023-10-01 12:00:00', 'YYYY-MM-DD HH24:MI:SS');"
     ]
 }

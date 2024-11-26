@@ -29,5 +29,14 @@
         "SELECT NEXTVAL(s);",
         "SELECT NEXTVAL(s);",
         "SELECT NEXTVAL(s);"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "CREATE OR REPLACE SEQUENCE s MAXVALUE=2;",
+        "SELECT NEXTVAL(s);",
+        "SELECT NEXTVAL(s);",
+        "SELECT NEXTVAL(s);"
     ]
 }

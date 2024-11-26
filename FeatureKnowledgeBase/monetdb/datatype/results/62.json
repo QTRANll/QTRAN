@@ -1,0 +1,47 @@
+{
+    "HTML": [
+        "https://www.monetdb.org/documentation-Aug2024/user-guide/sql-manual/data-types/network-types"
+    ],
+    "Title": [
+        "Network Datatype"
+    ],
+    "Feature": [
+        "Network Datatype"
+    ],
+    "Description": [
+        "Network Types",
+        "The SQL type inet describes IPv4 network addresses, such as 192.168.1.5/24.",
+        "Usage example:",
+        "CREATE TABLE inet_example (address inet NOT NULL);\n",
+        "A valid IPv4 Network Address string has a specific syntax, see also IPv4 address.",
+        "You can use cast() and convert() functions to convert a valid inet string into an inet value.",
+        "select cast('192.168.1.5/24' as inet); \n",
+        "select convert('192.168.1.5/24', inet); \n",
+        "You can also use the inet casting prefix:",
+        "select inet '192.168.1.5/24'; \n",
+        "The inet module contains a collection of functions and operators\nthat operate on IPv4 addresses.\nThe most relevant functions are the 'containment' functions that deal with subnet masks.\nThe functionality of this module is greatly inspired by the PostgreSQL inet data type.",
+        "It is currently extended to also support IPv6."
+    ],
+    "Examples": [
+        "CREATE TABLE inet_example (address inet NOT NULL);\n",
+        "select cast('192.168.1.5/24' as inet); \n",
+        "select convert('192.168.1.5/24', inet); \n",
+        "select inet '192.168.1.5/24'; \n"
+    ],
+    "Category": [
+        "Network Datatype"
+    ],
+    "EffectiveSQLsRefined": [
+        "select cast('192.168.1.5/24' as inet);",
+        "select convert('192.168.1.5/24', inet);",
+        "select inet '192.168.1.5/24';"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "select cast('192.168.1.5/24' as inet);",
+        "select convert('192.168.1.5/24', inet);",
+        "select inet '192.168.1.5/24';"
+    ]
+}

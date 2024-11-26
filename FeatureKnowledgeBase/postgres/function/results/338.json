@@ -6,7 +6,7 @@
         "covar_pop"
     ],
     "Feature": [
-        "covar_pop ( Y double precision, X double precision ) → double precision"
+        "covar_pop ( Y double precision, X double precision ) \u2192 double precision"
     ],
     "Description": [
         "Computes the population covariance."
@@ -14,5 +14,31 @@
     "Examples": [],
     "Category": [
         "Aggregate Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT covar_pop(Y, X);",
+        "SELECT covar_pop(1.0, 2.0);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 278,
+            "Prompt Tokens": 257,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 5.1149999999999996e-05
+        },
+        {
+            "Total Tokens": 445,
+            "Prompt Tokens": 418,
+            "Completion Tokens": 27,
+            "Total Cost (USD)": 7.89e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedColumn) column \"y\" does not exist\nLINE 1: SELECT covar_pop(Y, X);\n                         ^\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT covar_pop(1.0, 2.0);"
     ]
 }

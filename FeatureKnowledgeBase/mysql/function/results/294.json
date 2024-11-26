@@ -25,5 +25,23 @@
     "Category": [
         "Built-In Functions and Operators",
         "Spatial Analysis Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT ST_Buffer_Strategy('point_circle', 10);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 655,
+            "Prompt Tokens": 630,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 0.00010949999999999999
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT ST_Buffer_Strategy('point_circle', 10);"
     ]
 }

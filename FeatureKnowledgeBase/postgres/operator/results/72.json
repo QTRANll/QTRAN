@@ -6,15 +6,57 @@
         "geometric_type @> geometric_type"
     ],
     "Feature": [
-        "geometric_type @> geometric_type → boolean"
+        "geometric_type @> geometric_type \u2192 boolean"
     ],
     "Description": [
         "Does first object contain second? Available for these pairs of types: (box, point), (box, box), (path, point), (polygon, point), (polygon, polygon), (circle, point), (circle, circle)."
     ],
     "Examples": [
-        "circle '<(0,0),2>' @> point '(1,1)' → t"
+        "circle '<(0,0),2>' @> point '(1,1)' \u2192 t"
     ],
     "Category": [
         "Geometric Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT box1 @> point1;",
+        "SELECT box @> point FROM your_table;",
+        "SELECT box @> point;",
+        "SELECT '((0,0),(1,1))'::box @> '(0.5,0.5)'::point;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 325,
+            "Prompt Tokens": 305,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 5.7749999999999994e-05
+        },
+        {
+            "Total Tokens": 491,
+            "Prompt Tokens": 470,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 8.309999999999999e-05
+        },
+        {
+            "Total Tokens": 655,
+            "Prompt Tokens": 637,
+            "Completion Tokens": 18,
+            "Total Cost (USD)": 0.00010634999999999998
+        },
+        {
+            "Total Tokens": 837,
+            "Prompt Tokens": 797,
+            "Completion Tokens": 40,
+            "Total Cost (USD)": 0.00014355
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedColumn) column \"box1\" does not exist\nLINE 1: SELECT box1 @> point1;\n               ^\n\n",
+        "(psycopg2.errors.UndefinedTable) relation \"your_table\" does not exist\nLINE 1: SELECT box @> point FROM your_table;\n                                 ^\n\n",
+        "(psycopg2.errors.UndefinedColumn) column \"box\" does not exist\nLINE 1: SELECT box @> point;\n               ^\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT '((0,0),(1,1))'::box @> '(0.5,0.5)'::point;"
     ]
 }

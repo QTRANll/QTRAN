@@ -17,5 +17,31 @@
     "Category": [
         "Built-In Functions and Operators",
         "Internal Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT INTERNAL_AUTO_INCREMENT(1);",
+        "SELECT 1 + 1;"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 291,
+            "Prompt Tokens": 271,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 5.265e-05
+        },
+        {
+            "Total Tokens": 448,
+            "Prompt Tokens": 429,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 7.575e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.OperationalError) (3566, \"Access to native function 'INTERNAL_AUTO_INCREMENT' is rejected.\")\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT 1 + 1;"
     ]
 }

@@ -6,15 +6,33 @@
         "right"
     ],
     "Feature": [
-        "right ( string text, n integer ) → text"
+        "right ( string text, n integer ) \u2192 text"
     ],
     "Description": [
         "Returns last n characters in the string, or when n is negative, returns all but first |n| characters."
     ],
     "Examples": [
-        "right('abcde', 2) → de"
+        "right('abcde', 2) \u2192 de"
     ],
     "Category": [
         "String Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT right('Hello, World!', 5);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 286,
+            "Prompt Tokens": 263,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 5.324999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT right('Hello, World!', 5);"
     ]
 }

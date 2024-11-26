@@ -13,30 +13,56 @@
         "The json_type(X) function returns the \"type\" of the outermost element\nof X.  The json_type(X,P) function returns the \"type\" of the element\nin X that is selected by path P.  The \"type\" returned by json_type() is\none of the following SQL text values:\n'null', 'true', 'false', 'integer', 'real', 'text', 'array', or 'object'.\nIf the path P in json_type(X,P) selects an element that does not exist\nin X, then this function returns NULL.\n\n",
         "The json_type() function throws an error if its first argument is\nnot well-formed JSON or JSONB or if its second argument is not a well-formed\nJSON path.\n\n",
         "Examples:\n\n",
-        "json_type('{\"a\":[2,3.5,true,false,null,\"x\"]}')\n→ 'object'",
-        "json_type('{\"a\":[2,3.5,true,false,null,\"x\"]}','$')\n→ 'object'",
-        "json_type('{\"a\":[2,3.5,true,false,null,\"x\"]}','$.a')\n→ 'array'",
-        "json_type('{\"a\":[2,3.5,true,false,null,\"x\"]}','$.a[0]')\n→ 'integer'",
-        "json_type('{\"a\":[2,3.5,true,false,null,\"x\"]}','$.a[1]')\n→ 'real'",
-        "json_type('{\"a\":[2,3.5,true,false,null,\"x\"]}','$.a[2]')\n→ 'true'",
-        "json_type('{\"a\":[2,3.5,true,false,null,\"x\"]}','$.a[3]')\n→ 'false'",
-        "json_type('{\"a\":[2,3.5,true,false,null,\"x\"]}','$.a[4]')\n→ 'null'",
-        "json_type('{\"a\":[2,3.5,true,false,null,\"x\"]}','$.a[5]')\n→ 'text'",
-        "json_type('{\"a\":[2,3.5,true,false,null,\"x\"]}','$.a[6]')\n→ NULL"
+        "json_type('{\"a\":[2,3.5,true,false,null,\"x\"]}')\n\u2192 'object'",
+        "json_type('{\"a\":[2,3.5,true,false,null,\"x\"]}','$')\n\u2192 'object'",
+        "json_type('{\"a\":[2,3.5,true,false,null,\"x\"]}','$.a')\n\u2192 'array'",
+        "json_type('{\"a\":[2,3.5,true,false,null,\"x\"]}','$.a[0]')\n\u2192 'integer'",
+        "json_type('{\"a\":[2,3.5,true,false,null,\"x\"]}','$.a[1]')\n\u2192 'real'",
+        "json_type('{\"a\":[2,3.5,true,false,null,\"x\"]}','$.a[2]')\n\u2192 'true'",
+        "json_type('{\"a\":[2,3.5,true,false,null,\"x\"]}','$.a[3]')\n\u2192 'false'",
+        "json_type('{\"a\":[2,3.5,true,false,null,\"x\"]}','$.a[4]')\n\u2192 'null'",
+        "json_type('{\"a\":[2,3.5,true,false,null,\"x\"]}','$.a[5]')\n\u2192 'text'",
+        "json_type('{\"a\":[2,3.5,true,false,null,\"x\"]}','$.a[6]')\n\u2192 NULL"
     ],
     "Examples": [
-        "json_type('{\"a\":[2,3.5,true,false,null,\"x\"]}')\n→ 'object'",
-        "json_type('{\"a\":[2,3.5,true,false,null,\"x\"]}','$')\n→ 'object'",
-        "json_type('{\"a\":[2,3.5,true,false,null,\"x\"]}','$.a')\n→ 'array'",
-        "json_type('{\"a\":[2,3.5,true,false,null,\"x\"]}','$.a[0]')\n→ 'integer'",
-        "json_type('{\"a\":[2,3.5,true,false,null,\"x\"]}','$.a[1]')\n→ 'real'",
-        "json_type('{\"a\":[2,3.5,true,false,null,\"x\"]}','$.a[2]')\n→ 'true'",
-        "json_type('{\"a\":[2,3.5,true,false,null,\"x\"]}','$.a[3]')\n→ 'false'",
-        "json_type('{\"a\":[2,3.5,true,false,null,\"x\"]}','$.a[4]')\n→ 'null'",
-        "json_type('{\"a\":[2,3.5,true,false,null,\"x\"]}','$.a[5]')\n→ 'text'",
-        "json_type('{\"a\":[2,3.5,true,false,null,\"x\"]}','$.a[6]')\n→ NULL"
+        "json_type('{\"a\":[2,3.5,true,false,null,\"x\"]}')\n\u2192 'object'",
+        "json_type('{\"a\":[2,3.5,true,false,null,\"x\"]}','$')\n\u2192 'object'",
+        "json_type('{\"a\":[2,3.5,true,false,null,\"x\"]}','$.a')\n\u2192 'array'",
+        "json_type('{\"a\":[2,3.5,true,false,null,\"x\"]}','$.a[0]')\n\u2192 'integer'",
+        "json_type('{\"a\":[2,3.5,true,false,null,\"x\"]}','$.a[1]')\n\u2192 'real'",
+        "json_type('{\"a\":[2,3.5,true,false,null,\"x\"]}','$.a[2]')\n\u2192 'true'",
+        "json_type('{\"a\":[2,3.5,true,false,null,\"x\"]}','$.a[3]')\n\u2192 'false'",
+        "json_type('{\"a\":[2,3.5,true,false,null,\"x\"]}','$.a[4]')\n\u2192 'null'",
+        "json_type('{\"a\":[2,3.5,true,false,null,\"x\"]}','$.a[5]')\n\u2192 'text'",
+        "json_type('{\"a\":[2,3.5,true,false,null,\"x\"]}','$.a[6]')\n\u2192 NULL"
     ],
     "Category": [
         "JSON Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "json_type('{\"a\":[2,3.5,true,false,null,\"x\"]}')",
+        "SELECT json_type('{\"a\":[2,3.5,true,false,null,\"x\"]}')"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 802,
+            "Prompt Tokens": 770,
+            "Completion Tokens": 32,
+            "Total Cost (USD)": 0.0001347
+        },
+        {
+            "Total Tokens": 960,
+            "Prompt Tokens": 927,
+            "Completion Tokens": 33,
+            "Total Cost (USD)": 0.00015884999999999999
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(sqlite3.OperationalError) near \"json_type\": syntax error\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT json_type('{\"a\":[2,3.5,true,false,null,\"x\"]}')"
     ]
 }

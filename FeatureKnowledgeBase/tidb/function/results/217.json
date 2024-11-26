@@ -8,10 +8,44 @@
         "\nSUM([DISTINCT]\n            expr)\n            [over_clause]\n",
         "\n            Returns the sum of expr. If the\n            return set has no rows, SUM()\n            returns NULL. The\n            DISTINCT keyword can be used to sum only\n            the distinct values of expr.\n          ",
         "\n            If there are no matching rows, or if\n            expr is NULL,\n            SUM() returns\n            NULL.\n          ",
-        "\n            This function executes as a window function if\n            over_clause is present.\n            over_clause is as described in\n            Section 14.20.2, “Window Function Concepts and Syntax”; it cannot be used\n            with DISTINCT.\n          "
+        "\n            This function executes as a window function if\n            over_clause is present.\n            over_clause is as described in\n            Section\u00a014.20.2, \u201cWindow Function Concepts and Syntax\u201d; it cannot be used\n            with DISTINCT.\n          "
     ],
     "Examples": [],
     "Category": [
-        "GROUP BY 聚合函数"
+        "GROUP BY \u805a\u5408\u51fd\u6570"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT SUM(expr) FROM table_name;",
+        "SELECT SUM(expr);",
+        "SELECT SUM(1);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 414,
+            "Prompt Tokens": 394,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 7.11e-05
+        },
+        {
+            "Total Tokens": 562,
+            "Prompt Tokens": 545,
+            "Completion Tokens": 17,
+            "Total Cost (USD)": 9.195e-05
+        },
+        {
+            "Total Tokens": 705,
+            "Prompt Tokens": 687,
+            "Completion Tokens": 18,
+            "Total Cost (USD)": 0.00011385
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.ProgrammingError) (1146, \"Table 'knowledge_base_preprocess_tidb.table_name' doesn't exist\")\n",
+        "(pymysql.err.OperationalError) (1054, \"Unknown column 'expr' in ''\")\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT SUM(1);"
     ]
 }

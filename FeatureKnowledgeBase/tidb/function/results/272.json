@@ -10,12 +10,30 @@
     ],
     "Description": [
         "TIDB_VERSION",
-        "TIDB_VERSION() 函数用于获取当前连接的 TiDB 服务器版本和构建详细信息。向 GitHub 上提交 issue 时，你可使用此函数获取相关信息。",
+        "TIDB_VERSION() \u51fd\u6570\u7528\u4e8e\u83b7\u53d6\u5f53\u524d\u8fde\u63a5\u7684 TiDB \u670d\u52a1\u5668\u7248\u672c\u548c\u6784\u5efa\u8be6\u7ec6\u4fe1\u606f\u3002\u5411 GitHub \u4e0a\u63d0\u4ea4 issue \u65f6\uff0c\u4f60\u53ef\u4f7f\u7528\u6b64\u51fd\u6570\u83b7\u53d6\u76f8\u5173\u4fe1\u606f\u3002",
         "SELECT TIDB_VERSION()\\G\n",
         "*************************** 1. row ***************************\nTIDB_VERSION(): Release Version: v8.3.0\nEdition: Community\nGit Commit Hash: 821e491a20fbab36604b36b647b5bae26a2c1418\nGit Branch: HEAD\nUTC Build Time: 2024-07-11 19:16:25\nGoVersion: go1.21.10\nRace Enabled: false\nCheck Table Before Drop: false\nStore: tikv\n1 row in set (0.00 sec)\n"
     ],
     "Examples": [],
     "Category": [
-        "TiDB 特有的函数"
+        "TiDB \u7279\u6709\u7684\u51fd\u6570"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT TIDB_VERSION();"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 440,
+            "Prompt Tokens": 421,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 7.455e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT TIDB_VERSION();"
     ]
 }

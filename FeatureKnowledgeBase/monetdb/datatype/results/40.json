@@ -1,0 +1,38 @@
+{
+    "HTML": [
+        "https://www.monetdb.org/documentation-Aug2024/user-guide/sql-manual/data-types/temporal-types"
+    ],
+    "Title": [
+        "TIMESTAMP [ time_precision ]"
+    ],
+    "Feature": [
+        "TIMESTAMP [ time_precision ]"
+    ],
+    "Description": [
+        "timestamp",
+        "8-bytes",
+        "date and time data type combined, optional seconds fraction precision (default 6 decimals)"
+    ],
+    "Examples": [],
+    "Category": [
+        "Temporal Datatypes"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT TIMESTAMP '2023-10-01 12:00:00';"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 308,
+            "Prompt Tokens": 278,
+            "Completion Tokens": 30,
+            "Total Cost (USD)": 5.9699999999999994e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT TIMESTAMP '2023-10-01 12:00:00';"
+    ]
+}

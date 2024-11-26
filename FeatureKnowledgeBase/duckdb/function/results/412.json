@@ -16,5 +16,23 @@
     ],
     "Category": [
         "Text Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT parse_dirpath('/user/home/documents/file.txt', 'forward_slash');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 327,
+            "Prompt Tokens": 297,
+            "Completion Tokens": 30,
+            "Total Cost (USD)": 6.254999999999999e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT parse_dirpath('/user/home/documents/file.txt', 'forward_slash');"
     ]
 }

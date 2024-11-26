@@ -6,15 +6,57 @@
         "unnest"
     ],
     "Feature": [
-        "unnest ( anyarray, anyarray [, ... ] ) → setof anyelement, anyelement [, ... ]"
+        "unnest ( anyarray, anyarray [, ... ] ) \u2192 setof anyelement, anyelement [, ... ]"
     ],
     "Description": [
-        "Expands multiple arrays (possibly of different data types) into a set of rows. If the arrays are not all the same length then the shorter ones are padded with NULLs. This form is only allowed in a query's FROM clause; see Section 7.2.1.4."
+        "Expands multiple arrays (possibly of different data types) into a set of rows. If the arrays are not all the same length then the shorter ones are padded with NULLs. This form is only allowed in a query's FROM clause; see Section\u00a07.2.1.4."
     ],
     "Examples": [
-        "select * from unnest(ARRAY[1,2], ARRAY['foo','bar','baz']) as x(a,b) →"
+        "select * from unnest(ARRAY[1,2], ARRAY['foo','bar','baz']) as x(a,b) \u2192"
     ],
     "Category": [
         "Array Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT unnest(ARRAY[1, 2, 3], ARRAY['a', 'b'])",
+        "SELECT unnest(ARRAY[1::integer, 2::integer, 3::integer], ARRAY['a', 'b', NULL])",
+        "SELECT unnest(ARRAY[1::integer, 2::integer, 3::integer]::integer[], ARRAY[NULL::text, 'a', 'b'])",
+        "SELECT unnest(ARRAY[1, 2, 3]::integer[])::text, unnest(ARRAY['a', 'b', NULL]::text[])"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 349,
+            "Prompt Tokens": 315,
+            "Completion Tokens": 34,
+            "Total Cost (USD)": 6.764999999999999e-05
+        },
+        {
+            "Total Tokens": 568,
+            "Prompt Tokens": 526,
+            "Completion Tokens": 42,
+            "Total Cost (USD)": 0.0001041
+        },
+        {
+            "Total Tokens": 794,
+            "Prompt Tokens": 746,
+            "Completion Tokens": 48,
+            "Total Cost (USD)": 0.0001407
+        },
+        {
+            "Total Tokens": 1021,
+            "Prompt Tokens": 973,
+            "Completion Tokens": 48,
+            "Total Cost (USD)": 0.00017475
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedFunction) function unnest(integer[], text[]) does not exist\nLINE 1: SELECT unnest(ARRAY[1, 2, 3], ARRAY['a', 'b'])\n               ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.\n\n",
+        "(psycopg2.errors.UndefinedFunction) function unnest(integer[], text[]) does not exist\nLINE 1: SELECT unnest(ARRAY[1::integer, 2::integer, 3::integer], ARR...\n               ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.\n\n",
+        "(psycopg2.errors.UndefinedFunction) function unnest(integer[], text[]) does not exist\nLINE 1: SELECT unnest(ARRAY[1::integer, 2::integer, 3::integer]::int...\n               ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT unnest(ARRAY[1, 2, 3]::integer[])::text, unnest(ARRAY['a', 'b', NULL]::text[])"
     ]
 }

@@ -28,5 +28,9 @@
     ],
     "Category": [
         "Encoding Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT UNBIN('001100000011000100110010'), UNBIN('0100110101111001010100110101000101001100');",
+        "SELECT reinterpretAsUInt64(reverse(unbin('1110'))) AS num;"
     ]
 }

@@ -6,15 +6,33 @@
         "unnest"
     ],
     "Feature": [
-        "unnest ( tsvector ) → setof record ( lexeme text, positions smallint[], weights text )"
+        "unnest ( tsvector ) \u2192 setof record ( lexeme text, positions smallint[], weights text )"
     ],
     "Description": [
         "Expands a tsvector into a set of rows, one per lexeme."
     ],
     "Examples": [
-        "select * from unnest('cat:3 fat:2,4 rat:5A'::tsvector) →"
+        "select * from unnest('cat:3 fat:2,4 rat:5A'::tsvector) \u2192"
     ],
     "Category": [
         "Text Search Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT unnest(to_tsvector('example text'))"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 297,
+            "Prompt Tokens": 273,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 5.535e-05
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT unnest(to_tsvector('example text'))"
     ]
 }

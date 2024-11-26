@@ -19,5 +19,11 @@
     ],
     "EffectiveSQLsRefined": [
         "SELECT ST_LENGTH(ST_GeomFromText(@ls));"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT ST_LENGTH(ST_GeomFromText(@ls));"
     ]
 }

@@ -6,8 +6,8 @@
         "json_object_agg"
     ],
     "Feature": [
-        "json_object_agg ( key \"any\", value \"any\" ) → json",
-        "jsonb_object_agg ( key \"any\", value \"any\" ) → jsonb"
+        "json_object_agg ( key \"any\", value \"any\" ) \u2192 json",
+        "jsonb_object_agg ( key \"any\", value \"any\" ) \u2192 jsonb"
     ],
     "Description": [
         "Collects all the key/value pairs into a JSON object. Key arguments are coerced to text; value arguments are converted as per to_json or to_jsonb. Values can be null, but keys cannot."
@@ -15,5 +15,31 @@
     "Examples": [],
     "Category": [
         "Aggregate Functions"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT json_object_agg(key, value) FROM your_table;",
+        "SELECT json_object_agg(key, value) FROM (VALUES ('key1', 'value1'), ('key2', 'value2')) AS t(key, value);"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 342,
+            "Prompt Tokens": 317,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 6.255e-05
+        },
+        {
+            "Total Tokens": 536,
+            "Prompt Tokens": 489,
+            "Completion Tokens": 47,
+            "Total Cost (USD)": 0.00010154999999999999
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedTable) relation \"your_table\" does not exist\nLINE 1: SELECT json_object_agg(key, value) FROM your_table;\n                                                ^\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT json_object_agg(key, value) FROM (VALUES ('key1', 'value1'), ('key2', 'value2')) AS t(key, value);"
     ]
 }

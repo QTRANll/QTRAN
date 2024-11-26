@@ -23,5 +23,53 @@
     "Examples": [],
     "Category": [
         "Loadable Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT keyring_key_type_fetch('your_key_id');",
+        "SELECT keyring_key_type_fetch('example_key_id');",
+        "SELECT keyring_key_type_fetch('sample_key_id');",
+        "SELECT keyring_key_type_fetch('test_key_id');",
+        "SELECT keyring_key_type_fetch('dummy_key_id');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 403,
+            "Prompt Tokens": 379,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 7.125e-05
+        },
+        {
+            "Total Tokens": 565,
+            "Prompt Tokens": 541,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 9.554999999999999e-05
+        },
+        {
+            "Total Tokens": 727,
+            "Prompt Tokens": 703,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 0.00011984999999999999
+        },
+        {
+            "Total Tokens": 889,
+            "Prompt Tokens": 865,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 0.00014414999999999998
+        },
+        {
+            "Total Tokens": 1051,
+            "Prompt Tokens": 1027,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 0.00016844999999999997
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.keyring_key_type_fetch does not exist')\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.keyring_key_type_fetch does not exist')\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.keyring_key_type_fetch does not exist')\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.keyring_key_type_fetch does not exist')\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.keyring_key_type_fetch does not exist')\n"
+    ],
+    "EffectiveSQLs": []
 }

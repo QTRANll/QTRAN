@@ -19,5 +19,11 @@
     ],
     "EffectiveSQLsRefined": [
         "SELECT MBRWithin(@g1,@g2), MBRWithin(@g2,@g1);"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT MBRWithin(@g1,@g2), MBRWithin(@g2,@g1);"
     ]
 }

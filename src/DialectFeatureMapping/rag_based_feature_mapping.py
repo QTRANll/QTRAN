@@ -755,4 +755,3 @@ def rag_feature_mapping_count(version_id, search_k, a_db, b_db, feature_types, c
     for key_, value_ in mapping_category_cnt.items():
         fail_cnt = mapping_fail_cnt[key_] if key_ in mapping_fail_cnt else 0
         print(key_+":"+str(fail_cnt/value_) + "(" + str(fail_cnt)+"/"+str(value_)+")")
-

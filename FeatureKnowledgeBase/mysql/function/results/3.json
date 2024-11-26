@@ -23,5 +23,16 @@
     "Category": [
         "Built-In Functions and Operators",
         "Date and Time Functions"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT ADDTIME('2007-12-31 23:59:59.999999', '1 1:1:1.000002');",
+        "SELECT ADDTIME('01:00:00.999999', '02:00:00.999998');"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT ADDTIME('2007-12-31 23:59:59.999999', '1 1:1:1.000002');",
+        "SELECT ADDTIME('01:00:00.999999', '02:00:00.999998');"
     ]
 }

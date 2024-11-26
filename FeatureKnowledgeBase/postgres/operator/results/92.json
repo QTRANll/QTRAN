@@ -6,15 +6,65 @@
         "geometric_type ~= geometric_type"
     ],
     "Feature": [
-        "geometric_type ~= geometric_type → boolean"
+        "geometric_type ~= geometric_type \u2192 boolean"
     ],
     "Description": [
         "Are these objects the same? Available for point, box, polygon, circle."
     ],
     "Examples": [
-        "polygon '((0,0),(1,1))' ~= polygon '((1,1),(0,0))' → t"
+        "polygon '((0,0),(1,1))' ~= polygon '((1,1),(0,0))' \u2192 t"
     ],
     "Category": [
         "Geometric Functions and Operators"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT geometric_type ~= geometric_type;",
+        "SELECT $1::geometric_type ~= $2::geometric_type;",
+        "SELECT 'POINT'::geometry ~= 'POINT'::geometry;",
+        "SELECT 'POINT'::text ~= 'POINT'::text;",
+        "SELECT 'POINT' = 'POINT';"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 288,
+            "Prompt Tokens": 269,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 5.175e-05
+        },
+        {
+            "Total Tokens": 459,
+            "Prompt Tokens": 432,
+            "Completion Tokens": 27,
+            "Total Cost (USD)": 8.099999999999999e-05
+        },
+        {
+            "Total Tokens": 636,
+            "Prompt Tokens": 611,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 0.00010664999999999999
+        },
+        {
+            "Total Tokens": 809,
+            "Prompt Tokens": 784,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 0.0001326
+        },
+        {
+            "Total Tokens": 1001,
+            "Prompt Tokens": 980,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 0.0001596
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.UndefinedColumn) column \"geometric_type\" does not exist\nLINE 1: SELECT geometric_type ~= geometric_type;\n               ^\n\n",
+        "(psycopg2.errors.UndefinedObject) type \"geometric_type\" does not exist\nLINE 1: SELECT $1::geometric_type ~= $2::geometric_type;\n                   ^\n\n",
+        "(psycopg2.errors.UndefinedObject) type \"geometry\" does not exist\nLINE 1: SELECT 'POINT'::geometry ~= 'POINT'::geometry;\n                        ^\n\n",
+        "(psycopg2.errors.UndefinedFunction) operator does not exist: text ~= text\nLINE 1: SELECT 'POINT'::text ~= 'POINT'::text;\n                             ^\nHINT:  No operator matches the given name and argument types. You might need to add explicit type casts.\n\n",
+        "None"
+    ],
+    "EffectiveSQLs": [
+        "SELECT 'POINT' = 'POINT';"
     ]
 }

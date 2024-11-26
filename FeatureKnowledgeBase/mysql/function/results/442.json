@@ -22,5 +22,53 @@
     ],
     "Category": [
         "Loadable Functions"
-    ]
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [
+        "SELECT firewall_group_delist('g', 'fwuser@localhost');",
+        "SELECT firewall_group_delist('example_group', 'example_user');",
+        "SELECT firewall_group_delist('test_group', 'test_user');",
+        "SELECT firewall_group_delist('group_name', 'user_name');",
+        "SELECT firewall_group_delist('default_group', 'default_user');"
+    ],
+    "EffectiveSQLsGeneratedCosts": [
+        {
+            "Total Tokens": 378,
+            "Prompt Tokens": 351,
+            "Completion Tokens": 27,
+            "Total Cost (USD)": 6.884999999999999e-05
+        },
+        {
+            "Total Tokens": 542,
+            "Prompt Tokens": 516,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 9.3e-05
+        },
+        {
+            "Total Tokens": 706,
+            "Prompt Tokens": 680,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 0.0001176
+        },
+        {
+            "Total Tokens": 870,
+            "Prompt Tokens": 844,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 0.0001422
+        },
+        {
+            "Total Tokens": 1034,
+            "Prompt Tokens": 1008,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 0.0001668
+        }
+    ],
+    "EffectiveSQLsGeneratedErrors": [
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.firewall_group_delist does not exist')\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.firewall_group_delist does not exist')\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.firewall_group_delist does not exist')\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.firewall_group_delist does not exist')\n",
+        "(pymysql.err.OperationalError) (1305, 'FUNCTION knowledge_base_preprocess_mysql.firewall_group_delist does not exist')\n"
+    ],
+    "EffectiveSQLs": []
 }
